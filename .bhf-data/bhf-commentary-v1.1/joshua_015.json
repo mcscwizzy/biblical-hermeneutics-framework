@@ -1,0 +1,53 @@
+{
+  "reference": "Joshua 15",
+  "book": "Joshua",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_76",
+          "text": "Read the chapter with this setting in view: Campaign summaries of broad victory must be read together with explicit remaining-land and incomplete-possession notices. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "joshua:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Joshua 15:63"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_77",
+          "text": "For its historical and cultural setting, note that Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Joshua 15:1-63"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f745c5c81f6f08c2009d83b245e43420cc539ea3c8c0cb3f5ce84bb3798c9f66",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

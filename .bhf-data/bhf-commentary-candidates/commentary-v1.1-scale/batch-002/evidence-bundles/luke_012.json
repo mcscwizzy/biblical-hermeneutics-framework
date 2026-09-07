@@ -1,0 +1,274 @@
+{
+  "passage_ref": "Luke 12",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "luke-rich-fool",
+      "claim": "The rich fool exposes hoarding, imagined self-sufficiency, mortality, and failure to be rich toward God; it does not condemn prudent provision or promise wealth to generous donors.",
+      "category": "economics",
+      "source_ids": [
+        "luke-greek",
+        "esler-poor-rich"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 12:13-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "luke-spirit-blasphemy",
+      "claim": "Luke distinguishes speaking against the Son of Man from blasphemy against the Holy Spirit but does not define the saying as an intrusive thought or diagnose anxious people as unforgiven.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "green-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 12:8-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "micah-new-testament-reception",
+      "claim": "Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts.",
+      "category": "culture",
+      "source_ids": [
+        "micah-new-testament",
+        "shepherd-early-christianity",
+        "gignilliat-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 12:53"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Poor and the Rich",
+        "author": "Philip Francis Esler",
+        "publisher": "Cambridge University Press",
+        "year": 1987,
+        "locator": "Community and Gospel in Luke-Acts, chapter 7",
+        "url": "https://www.cambridge.org/core/books/community-and-gospel-in-lukeacts/poor-and-the-rich/AC0ECD7AA1B60E1A2C3657DF097E1A64",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Economic language and community context.",
+        "id": "esler-poor-rich",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Micah",
+        "author": "Mark S. Gignilliat",
+        "publisher": "T&T Clark",
+        "year": 2025,
+        "locator": "International Theological Commentary",
+        "url": "https://www.bloomsbury.com/ca/micah-itc-9780567716606/",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "micah-mercy-conclusion",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Recent theological commentary attentive to critical study, the Twelve, and Micah's theological witness.",
+        "id": "gignilliat-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of Luke",
+        "author": "Joel B. Green",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "New Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-gospel-of-luke/64F2896964BA4BF847E8F5433E87CA03",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Book-level theological study.",
+        "id": "green-theology",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "New Testament reception of Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 2:5-6; 10:35-36; Luke 12:53; John 7:42",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Primary Christian reception witnesses; each passage must be read in its own Gospel setting.",
+        "id": "micah-new-testament",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Overview of New Testament and early Christian reception of the Twelve.",
+        "id": "shepherd-early-christianity",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "micah",
+        "type": "book",
+        "title": "Micah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "56d91fdbe5331bd08ed64105c5ac236d09ecee894da434858b6a52a48b28e502",
+  "evidence_hash_version": "2"
+}

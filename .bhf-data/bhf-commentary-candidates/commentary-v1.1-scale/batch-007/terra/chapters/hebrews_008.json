@@ -1,0 +1,101 @@
+{
+  "reference": "Hebrews 8",
+  "book": "Hebrews",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_107",
+          "text": "Read the chapter with this setting in view: New covenant exposition quotes Jeremiah 31 within Jewish Scripture; Christian fulfillment claims must not become replacement of Jews or erasure of Israel. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hebrews:interpretive_note:18"
+          ],
+          "verse_refs": [
+            "Hebrews 8:6-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_108",
+          "text": "For its historical and cultural setting, note that Date and destination: proposals before or after 70 CE and destinations including Rome or Jerusalem remain disputed; present-tense cultic language does not date the temple. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hebrews:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Hebrews 8:4-5"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_109",
+          "text": "For its historical and cultural setting, note that Hebrews quotes Jeremiah's new-covenant promise and calls Jesus mediator of a better covenant enacted on better promises. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "heb-covenant"
+          ],
+          "verse_refs": [
+            "Hebrews 8:6-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_108",
+          "text": "A literary feature to notice is that Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "heb-sinaiticus"
+          ],
+          "verse_refs": [
+            "Hebrews 8:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_108",
+          "text": "For the chapter's sequence and setting, note that Narrative setting: Sinai and wilderness journey; date disputed This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "what-is-the-tabernacle:date_ranges:0"
+          ],
+          "verse_refs": [
+            "Hebrews 8:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "014c3768239840679a6643cce0cb3994edc8e4687a1fbc0623772483df34291a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

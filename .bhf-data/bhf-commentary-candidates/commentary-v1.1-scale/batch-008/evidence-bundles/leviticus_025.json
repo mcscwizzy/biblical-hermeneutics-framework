@@ -1,0 +1,743 @@
+{
+  "passage_ref": "Leviticus 25",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "kinship-legal-caution",
+      "claim": "Leviticus 25, Deuteronomy 25, and Ruth 4 address related land and family-continuity concerns but should not be treated as descriptions of one identical legal mechanism.",
+      "category": "culture",
+      "source_ids": [
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 25:23-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "kinship-inheritance-and-redemption",
+        "parent_title": "Kinship, Inheritance, and Redemption",
+        "parent_type": "cultural_background",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 7
+      }
+    },
+    {
+      "id": "leviticus-literary-movement",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 2400,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:1",
+      "claim": "Ruth 4 links family property, responsible kinship, public transfer, marriage, and preservation of the deceased's name, but its arrangement is not identical to the brother-in-law duty in Deuteronomy 25.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 25:23-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "sabbath-theme:ancient_near_east_context:0",
+      "claim": "Ancient cultures knew rest and festival calendars, but Israel's Sabbath uniquely ties rest to creation, redemption from slavery, and covenant holiness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-2-1-3",
+        "exodus-20-8-11",
+        "exodus-31-12-17",
+        "deuteronomy-5-12-15",
+        "leviticus-25-1-7",
+        "isaiah-58-13-14",
+        "hebrews-3-7-4-11",
+        "revelation-14-13",
+        "sabbath-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 25:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sabbath-theme",
+        "parent_title": "Sabbath Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sabbath-theme:hebraic_worldview:0",
+      "claim": "Creation rhythm, memory, trust, holiness, household rest, and freedom from oppression.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-2-1-3",
+        "exodus-20-8-11",
+        "exodus-31-12-17",
+        "deuteronomy-5-12-15",
+        "leviticus-25-1-7",
+        "isaiah-58-13-14",
+        "hebrews-3-7-4-11",
+        "revelation-14-13",
+        "sabbath-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 25:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sabbath-theme",
+        "parent_title": "Sabbath Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sabbath-theme:historical_context:0",
+      "claim": "Sabbath emerges in creation theology and then in Israel's covenant life as a weekly sign of trust, liberation, and ordered time.",
+      "category": "history",
+      "source_ids": [
+        "genesis-2-1-3",
+        "exodus-20-8-11",
+        "exodus-31-12-17",
+        "deuteronomy-5-12-15",
+        "leviticus-25-1-7",
+        "isaiah-58-13-14",
+        "hebrews-3-7-4-11",
+        "revelation-14-13",
+        "sabbath-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 25:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sabbath-theme",
+        "parent_title": "Sabbath Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sabbath-theme:second_temple_context:0",
+      "claim": "By the Second Temple period Sabbath observance marked covenant fidelity and shaped synagogue and household rhythms.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-2-1-3",
+        "exodus-20-8-11",
+        "exodus-31-12-17",
+        "deuteronomy-5-12-15",
+        "leviticus-25-1-7",
+        "isaiah-58-13-14",
+        "hebrews-3-7-4-11",
+        "revelation-14-13",
+        "sabbath-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 25:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sabbath-theme",
+        "parent_title": "Sabbath Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Deuteronomy 5:12-15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "remembering liberation",
+        "id": "deuteronomy-5-12-15",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "Exodus 20:8-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "the Sabbath command",
+        "id": "exodus-20-8-11",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "Exodus 31:12-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "the Sabbath as sign",
+        "id": "exodus-31-12-17",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "Genesis 2:1-3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "creation rest",
+        "id": "genesis-2-1-3",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "Hebrews 3:7-4:11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "promised rest",
+        "id": "hebrews-3-7-4-11",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Robert L. Hubbard Jr.",
+        "publisher": "Eerdmans",
+        "year": 1989,
+        "locator": "Commentary on Ruth 4",
+        "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "kinship-ruth-arrangement",
+          "kinship-legal-caution"
+        ],
+        "notes": "Technical commentary on the Hebrew text and legal background.",
+        "id": "hubbard-ruth",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "ruth"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Book of Ruth",
+            "author": "Robert L. Hubbard Jr.",
+            "publisher": "Eerdmans",
+            "year": 1989,
+            "locator": "Commentary on Ruth 4",
+            "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "kinship-ruth-arrangement",
+              "kinship-legal-caution"
+            ],
+            "notes": "Technical commentary on the Hebrew text and legal background.",
+            "id": "hubbard-ruth"
+          },
+          {
+            "title": "The Book of Ruth",
+            "author": "Robert L. Hubbard Jr.",
+            "publisher": "Eerdmans",
+            "year": 1989,
+            "locator": "Introduction and commentary on Ruth 1-4",
+            "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "authorship-positions",
+              "historical-context",
+              "literary-context",
+              "hebrew-words",
+              "interpretive-notes",
+              "ruth-literary-movement",
+              "ruth-gleaning-protection",
+              "ruth-redemption-arrangement",
+              "ruth-providence-through-action"
+            ],
+            "notes": "Technical commentary treating text, genre, date, legal background, language, literary form, and theology.",
+            "id": "hubbard-ruth"
+          }
+        ]
+      },
+      {
+        "title": "Isaiah 58:13-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "delight in the LORD",
+        "id": "isaiah-58-13-14",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Peter H. W. Lau",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Ruth 4",
+        "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "kinship-ruth-arrangement",
+          "kinship-legal-caution"
+        ],
+        "notes": "NICOT commentary with literary, historical, and cultural analysis.",
+        "id": "lau-ruth",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "ruth"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Book of Ruth",
+            "author": "Peter H. W. Lau",
+            "publisher": "Eerdmans",
+            "year": 2023,
+            "locator": "Commentary on Ruth 4",
+            "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "kinship-ruth-arrangement",
+              "kinship-legal-caution"
+            ],
+            "notes": "NICOT commentary with literary, historical, and cultural analysis.",
+            "id": "lau-ruth"
+          },
+          {
+            "title": "The Book of Ruth",
+            "author": "Peter H. W. Lau",
+            "publisher": "Eerdmans",
+            "year": 2023,
+            "locator": "Introduction and commentary on Ruth 1-4",
+            "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "literary-context",
+              "historical-context",
+              "canonical-context",
+              "later-christian-reception",
+              "interpretive-notes",
+              "ruth-literary-movement",
+              "ruth-loyal-pledge",
+              "ruth-redemption-arrangement",
+              "ruth-providence-through-action",
+              "ruth-obed-david-genealogy"
+            ],
+            "notes": "NICOT commentary with detailed Hebrew, literary, historical, canonical, theological, and cultural analysis.",
+            "id": "lau-ruth"
+          }
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Leviticus",
+        "author": "Baruch A. Levine",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "levine-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Leviticus 1-27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 1:1-27:34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "leviticus-1-27",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Leviticus 25:1-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "land rest",
+        "id": "leviticus-25-1-7",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "Revelation 14:13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "blessing for the faithful dead",
+        "id": "revelation-14-13",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "Ruth 1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ruth 1:1-4:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-gleaning-protection",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ruth-1-4",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Sabbath Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "sabbath-theme-historical-orientation",
+        "canonical_object_ids": [
+          "sabbath-theme"
+        ]
+      },
+      {
+        "title": "The Book of Leviticus",
+        "author": "Gordon J. Wenham",
+        "publisher": "Eerdmans",
+        "year": 1979,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "id": "wenham-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+        "author": "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Ruth commentary and background notes",
+        "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "archaeology",
+          "hebrew-words",
+          "interpretive-notes",
+          "ruth-gleaning-protection"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-historical-books-backgrounds",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "kinship-inheritance-and-redemption",
+        "type": "cultural_background",
+        "title": "Kinship, Inheritance, and Redemption",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "leviticus",
+        "type": "book",
+        "title": "Leviticus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "ruth",
+        "type": "book",
+        "title": "Ruth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "sabbath-theme",
+        "type": "theme",
+        "title": "Sabbath Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "df4a75878d80aee9c62b1110768f51273532693f60bc45ffce0937a271469707",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,565 @@
+{
+  "passage_ref": "Deuteronomy 18",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "deuteronomy-literary-movement",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "deuteronomy:interpretive_note:1",
+      "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "how-should-i-read-prophecy:ancient_near_east_context:0",
+      "claim": "Prophetic oracles use treaty, courtroom, and royal imagery familiar in the ancient world, but they do so to speak for the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-18",
+        "isaiah-6",
+        "jeremiah-1",
+        "ezekiel-37",
+        "amos-5",
+        "luke-4",
+        "2-peter-1",
+        "how-should-i-read-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 18:15-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "how-should-i-read-prophecy",
+        "parent_title": "How should I read prophecy?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "how-should-i-read-prophecy:historical_context:0",
+      "claim": "The prophets address real crises in Israel, Judah, and the nations, speaking to covenant breach and coming judgment or restoration.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-18",
+        "isaiah-6",
+        "jeremiah-1",
+        "ezekiel-37",
+        "amos-5",
+        "luke-4",
+        "2-peter-1",
+        "how-should-i-read-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 18:15-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "how-should-i-read-prophecy",
+        "parent_title": "How should I read prophecy?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-a-prophet:ancient_near_east_context:0",
+      "claim": "Kings often had advisers and seers, but biblical prophets are distinct because they speak with the authority of the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-18",
+        "1-samuel-3",
+        "isaiah-6",
+        "jeremiah-1",
+        "ezekiel-2",
+        "amos-5",
+        "luke-4",
+        "acts-3",
+        "what-is-a-prophet-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 18:15-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-prophet",
+        "parent_title": "What is a prophet?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-a-prophet:historical_context:0",
+      "claim": "Prophets appear in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-18",
+        "1-samuel-3",
+        "isaiah-6",
+        "jeremiah-1",
+        "ezekiel-2",
+        "amos-5",
+        "luke-4",
+        "acts-3",
+        "what-is-a-prophet-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 18:15-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-prophet",
+        "parent_title": "What is a prophet?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Samuel 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-3",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "2 Peter 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-peter-1",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy"
+        ]
+      },
+      {
+        "title": "Acts 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-3",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Amos 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "amos-5",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy",
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Deuteronomy: Word and Presence",
+        "author": "Ian Cairns",
+        "publisher": "Eerdmans",
+        "year": 1992,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://www.eerdmans.com/9780802801609/deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "covenantal-significance",
+          "canonical-context",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-choose-life"
+        ],
+        "notes": "Theological commentary treating Deuteronomy as speech, covenant, law, and final Pentateuchal volume.",
+        "id": "cairns-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 1-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Deuteronomy 1:1-34:12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-moab-covenant",
+          "deuteronomy-choose-life",
+          "deuteronomy-moses-joshua-transition"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "deuteronomy-1-34",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-18",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy",
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Ezekiel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-2",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Ezekiel 37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-37",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for How should I read prophecy?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "how-should-i-read-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-6",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy",
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Jeremiah 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-1",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy",
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Luke 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-4",
+        "canonical_object_ids": [
+          "how-should-i-read-prophecy",
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Deuteronomy",
+        "author": "Jeffrey H. Tigay",
+        "publisher": "Jewish Publication Society",
+        "year": 1996,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://jps.org/books/jps-torah-commentary-deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-moab-covenant"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "tigay-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is a prophet?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-a-prophet-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "deuteronomy",
+        "type": "book",
+        "title": "Deuteronomy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "how-should-i-read-prophecy",
+        "type": "faq",
+        "title": "How should I read prophecy?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "what-is-a-prophet",
+        "type": "faq",
+        "title": "What is a prophet?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9e2ced7006299bac1b10f062bb9ad979f259dbe9703b717e5fc1dc6d537f2512",
+  "evidence_hash_version": "2"
+}

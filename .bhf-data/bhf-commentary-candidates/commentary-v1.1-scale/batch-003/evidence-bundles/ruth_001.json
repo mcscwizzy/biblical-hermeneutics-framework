@@ -1,0 +1,1060 @@
+{
+  "passage_ref": "Ruth 1",
+  "entities": {
+    "people": [
+      {
+        "id": "cornelius",
+        "title": "Cornelius",
+        "type": "person",
+        "aliases": [
+          "who is cornelius",
+          "tell me about cornelius",
+          "why is cornelius important"
+        ],
+        "metadata": {
+          "summary": "Cornelius is a faithful outsider whose story shows that God's promise reaches beyond Israel's borders.",
+          "importance": 64,
+          "retrieval_score": 0.884,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:1-3",
+            "Joshua 2:1-24",
+            "Ruth 1:16-18",
+            "Acts 10:1-48"
+          ]
+        }
+      },
+      {
+        "id": "rahab",
+        "title": "Rahab",
+        "type": "person",
+        "aliases": [
+          "who is rahab",
+          "tell me about rahab",
+          "why is rahab important"
+        ],
+        "metadata": {
+          "summary": "Rahab is a faithful outsider whose story shows that God's promise reaches beyond Israel's borders.",
+          "importance": 64,
+          "retrieval_score": 0.884,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:1-3",
+            "Joshua 2:1-24",
+            "Ruth 1:16-18",
+            "Acts 10:1-48"
+          ]
+        }
+      },
+      {
+        "id": "ruth-the-moabite",
+        "title": "Ruth the Moabite",
+        "type": "person",
+        "aliases": [
+          "who is ruth the moabite",
+          "tell me about ruth the moabite",
+          "why is ruth the moabite important"
+        ],
+        "metadata": {
+          "summary": "Ruth the Moabite is a faithful outsider whose story shows that God's promise reaches beyond Israel's borders.",
+          "importance": 64,
+          "retrieval_score": 0.884,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:1-3",
+            "Joshua 2:1-24",
+            "Ruth 1:16-18",
+            "Acts 10:1-48"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "cornelius:ancient_near_east_context:0",
+      "claim": "Cornelius belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "joshua-2",
+        "ruth-1-4",
+        "acts-10",
+        "cornelius-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "cornelius"
+      ],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "cornelius",
+        "parent_title": "Cornelius",
+        "parent_type": "person",
+        "object_importance": 64,
+        "retrieval_score": 0.884,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "cornelius:historical_context:0",
+      "claim": "Historically, Cornelius is located by its canonical setting; this entry connects that setting with abraham, covenant-theme, messiah-theme and related CKL objects for contextual retrieval.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "joshua-2",
+        "ruth-1-4",
+        "acts-10",
+        "cornelius-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "cornelius"
+      ],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "cornelius",
+        "parent_title": "Cornelius",
+        "parent_type": "person",
+        "object_importance": 64,
+        "retrieval_score": 0.884,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:7",
+      "claim": "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "shepherd-wright-ezra-nehemiah",
+        "williamson-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:1-4:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "rahab:ancient_near_east_context:0",
+      "claim": "Rahab belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "joshua-2",
+        "ruth-1-4",
+        "acts-10",
+        "rahab-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "rahab"
+      ],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rahab",
+        "parent_title": "Rahab",
+        "parent_type": "person",
+        "object_importance": 64,
+        "retrieval_score": 0.884,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "rahab:historical_context:0",
+      "claim": "Historically, Rahab is located by its canonical setting; this entry connects that setting with abraham, covenant-theme, messiah-theme and related CKL objects for contextual retrieval.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "joshua-2",
+        "ruth-1-4",
+        "acts-10",
+        "rahab-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "rahab"
+      ],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rahab",
+        "parent_title": "Rahab",
+        "parent_type": "person",
+        "object_importance": 64,
+        "retrieval_score": 0.884,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "ruth-literary-movement",
+      "claim": "Ruth moves from famine, bereavement, and Naomi's emptiness to harvest, kinship redemption, birth, communal blessing, and genealogy.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "ruth-loyal-pledge",
+      "claim": "Ruth pledges to accompany Naomi, share her people and God, and remain with her until death.",
+      "category": "history",
+      "source_ids": [
+        "ruth-1-4",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "ruth-providence-through-action",
+      "claim": "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "ruth-the-moabite:ancient_near_east_context:0",
+      "claim": "Ruth the Moabite belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "joshua-2",
+        "ruth-1-4",
+        "acts-10",
+        "ruth-the-moabite-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "ruth-the-moabite"
+      ],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ruth-the-moabite",
+        "parent_title": "Ruth the Moabite",
+        "parent_type": "person",
+        "object_importance": 64,
+        "retrieval_score": 0.884,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "ruth-the-moabite:historical_context:0",
+      "claim": "Historically, Ruth the Moabite is located by its canonical setting; this entry connects that setting with abraham, covenant-theme, messiah-theme and related CKL objects for contextual retrieval.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "joshua-2",
+        "ruth-1-4",
+        "acts-10",
+        "ruth-the-moabite-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "ruth-the-moabite"
+      ],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ruth-the-moabite",
+        "parent_title": "Ruth the Moabite",
+        "parent_type": "person",
+        "object_importance": 64,
+        "retrieval_score": 0.884,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:0",
+      "claim": "Ruth's narrated setting in the days of the judges and genealogy to David do not establish the date when the anonymous book reached its final form.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:3",
+      "claim": "Ruth repeatedly retains the designation Moabite while pledging herself to Naomi, Israel's people, and Israel's God; proposals that the book directly answers a specific later intermarriage policy remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:16-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "what-does-hesed-mean:ancient_near_east_context:0",
+      "claim": "Loyalty language in treaties and kinship helps explain hesed, but Scripture grounds it in God's mercy and faithfulness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-34",
+        "ruth-1",
+        "psalm-136",
+        "psalm-89",
+        "hosea-2",
+        "micah-6"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:8-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-hesed-mean",
+        "parent_title": "What does hesed mean?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-hesed-mean:historical_context:0",
+      "claim": "The word is used in covenant and relational settings to describe enduring commitment rather than fleeting feeling.",
+      "category": "history",
+      "source_ids": [
+        "exodus-34",
+        "ruth-1",
+        "psalm-136",
+        "psalm-89",
+        "hosea-2",
+        "micah-6"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:8-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-hesed-mean",
+        "parent_title": "What does hesed mean?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-10",
+        "canonical_object_ids": [
+          "cornelius",
+          "rahab",
+          "ruth-the-moabite"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Cornelius",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "cornelius-historical-orientation",
+        "canonical_object_ids": [
+          "cornelius"
+        ]
+      },
+      {
+        "title": "Exodus 34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-34",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Genesis 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12",
+        "canonical_object_ids": [
+          "cornelius",
+          "rahab",
+          "ruth-the-moabite"
+        ]
+      },
+      {
+        "title": "Hosea 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hosea-2",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Robert L. Hubbard Jr.",
+        "publisher": "Eerdmans",
+        "year": 1989,
+        "locator": "Introduction and commentary on Ruth 1-4",
+        "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "ruth-literary-movement",
+          "ruth-gleaning-protection",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action"
+        ],
+        "notes": "Technical commentary treating text, genre, date, legal background, language, literary form, and theology.",
+        "id": "hubbard-ruth",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "Joshua 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-2",
+        "canonical_object_ids": [
+          "cornelius",
+          "rahab",
+          "ruth-the-moabite"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Peter H. W. Lau",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Introduction and commentary on Ruth 1-4",
+        "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "NICOT commentary with detailed Hebrew, literary, historical, canonical, theological, and cultural analysis.",
+        "id": "lau-ruth",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "Micah 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-6",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "nehemiah-prayer-authorization",
+          "nehemiah-wall-opposition",
+          "nehemiah-economic-justice",
+          "nehemiah-wall-completed",
+          "nehemiah-torah-understanding",
+          "nehemiah-covenant-commitments",
+          "nehemiah-dedication-support",
+          "nehemiah-later-reforms"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "nehemiah-1-13",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Psalm 136",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-136",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Rahab",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "rahab-historical-orientation",
+        "canonical_object_ids": [
+          "rahab"
+        ]
+      },
+      {
+        "title": "Ruth 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ruth-1",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Ruth 1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ruth 1:1-4:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-gleaning-protection",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ruth-1-4",
+        "canonical_object_ids": [
+          "cornelius",
+          "rahab",
+          "ruth",
+          "ruth-the-moabite"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Ruth the Moabite",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "ruth-the-moabite-historical-orientation",
+        "canonical_object_ids": [
+          "ruth-the-moabite"
+        ]
+      },
+      {
+        "title": "Ezra and Nehemiah",
+        "author": "David J. Shepherd and Christopher J. H. Wright",
+        "publisher": "Eerdmans",
+        "year": 2018,
+        "locator": "Two Horizons Old Testament Commentary",
+        "url": "https://www.eerdmans.com/9781467449625/ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "canonical-role",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Theological commentary that directly engages leadership and ethically difficult texts.",
+        "id": "shepherd-wright-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "cornelius",
+        "type": "person",
+        "title": "Cornelius",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.884
+      },
+      {
+        "id": "nehemiah",
+        "type": "book",
+        "title": "Nehemiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "rahab",
+        "type": "person",
+        "title": "Rahab",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.884
+      },
+      {
+        "id": "ruth",
+        "type": "book",
+        "title": "Ruth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.93
+      },
+      {
+        "id": "ruth-the-moabite",
+        "type": "person",
+        "title": "Ruth the Moabite",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.884
+      },
+      {
+        "id": "what-does-hesed-mean",
+        "type": "faq",
+        "title": "What does hesed mean?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "aff7e97bba5a2d8339d47863757e49c748cab69865315e61e4c926ef58905c72",
+  "evidence_hash_version": "2"
+}

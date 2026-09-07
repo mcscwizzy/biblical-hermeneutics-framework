@@ -1,0 +1,83 @@
+{
+  "reference": "Joshua 4",
+  "book": "Joshua",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_140",
+          "text": "Read the chapter with this setting in view: Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Joshua 4:1-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_141",
+          "text": "For its historical and cultural setting, note that The event belongs to the transition from wilderness wandering to settlement in Canaan under Joshua's leadership. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "crossing-the-jordan:historical_context:0"
+          ],
+          "verse_refs": [
+            "Joshua 4:1-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_142",
+          "text": "For its historical and cultural setting, note that River crossings could mark military and territorial transitions, while Joshua frames the crossing as covenant fulfillment. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "crossing-the-jordan:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Joshua 4:1-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_141",
+          "text": "A literary feature to notice is that Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "joshua-literary-movement"
+          ],
+          "verse_refs": [
+            "Joshua 4:1-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f938b16452ece9cea2d2044b4b389b107f01e05596cedcb4cb5f90b8d13e36e2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

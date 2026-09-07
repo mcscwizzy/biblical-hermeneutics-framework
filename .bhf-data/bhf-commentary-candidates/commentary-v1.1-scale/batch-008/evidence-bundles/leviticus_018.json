@@ -1,0 +1,590 @@
+{
+  "passage_ref": "Leviticus 18",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-timothy:interpretive_note:5",
+      "claim": "Vice list: arsenokoitai is a rare compound with debated scope; translating it with a modern identity label can collapse lexical, historical, and ethical questions.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "bdag",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 18:22"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "1tim-arsenokoitai",
+      "claim": "Arsenokoitai occurs in the vice list and plausibly echoes Greek Levitical wording, but its exact historical scope is disputed.",
+      "category": "language",
+      "source_ids": [
+        "1tim-greek",
+        "nets-lxx",
+        "bdag",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 18:22"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "acts-decree-porneia-legal-dispute",
+      "claim": "Acts lists porneia without defining it, while scholars propose broad sexual wrongdoing, prohibited kinship unions, resident-alien legislation, Noachide rules, and table-fellowship frameworks.",
+      "category": "culture",
+      "source_ids": [
+        "acts-decree-text",
+        "bauckham-acts15",
+        "taylor-decrees",
+        "loader-sexuality"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 17:1-18:30"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-decree-porneia-legal-dispute:passage-relevance",
+      "claim": "Prevents a disputed background from being declared certain or expanded into every modern sex, marriage, gender, and identity question.",
+      "category": "culture",
+      "source_ids": [
+        "acts-decree-text",
+        "bauckham-acts15",
+        "taylor-decrees",
+        "loader-sexuality"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 17:1-18:30"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-decree-porneia-legal-dispute"
+        ]
+      }
+    },
+    {
+      "id": "leviticus-literary-movement",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "leviticus-purity-distinctions",
+      "claim": "Leviticus distinguishes ritual impurity from moral offenses rather than treating every unclean condition as personal sin.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 18-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "leviticus:interpretive_note:1",
+      "claim": "Ritual impurity should not be treated as a simple synonym for personal moral guilt; Leviticus distinguishes bodily states, ritual status, prohibited acts, and culpable offenses.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 18-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Timothy 1:1-6:21",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; individual variants require an apparatus.",
+        "id": "1tim-greek",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Acts 15:1-35",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 15:1-35",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later primary narrative evidence for the gentile deliberation and decree.",
+        "id": "acts-decree-text",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "James and the Gentiles (Acts 15:13-21)",
+        "author": "Richard Bauckham",
+        "publisher": "Cambridge University Press",
+        "year": 1996,
+        "locator": "History, Literature, and Society in the Book of Acts, pages 154-184",
+        "url": "https://doi.org/10.1017/CBO9780511555176.008",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-gentile-inclusion-decree",
+          "acts-decree-porneia-legal-dispute"
+        ],
+        "notes": "Peer-reviewed academic book chapter studying James's speech, Scripture, gentile inclusion, and decree.",
+        "id": "bauckham-acts15",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer; Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Third edition; selected 1 Timothy lexemes",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical starting point; entries do not by themselves resolve discourse or application.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition; 1 Timothy and Jewish contexts",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish-context control; verify individual annotations.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Leviticus",
+        "author": "Baruch A. Levine",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "levine-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Leviticus 1-27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 1:1-27:34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "leviticus-1-27",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "The New Testament on Sexuality",
+        "author": "William Loader",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Romans 1; 1 Corinthians 5-7; marriage, celibacy, slavery, and same-sex intercourse",
+        "url": "https://www.eerdmans.com/9780802867247/the-new-testament-on-sexuality/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Historical study of New Testament sexuality in Jewish and Greco-Roman contexts.",
+        "id": "loader-sexuality",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Deuteronomy, Leviticus, and wisdom comparanda",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "intertextuality",
+          "hebrew-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint control; not evidence that every verbal parallel is a direct citation.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Jerusalem Decrees and the Incident at Antioch",
+        "author": "Justin Taylor",
+        "publisher": "New Testament Studies",
+        "year": 2001,
+        "locator": "47.3, pages 372-380",
+        "url": "https://doi.org/10.1017/S0028688501000224",
+        "source_type": "journal-article",
+        "supports": [
+          "acts-decree-porneia-legal-dispute",
+          "acts-paul-chronology-control"
+        ],
+        "notes": "Compares Noachide and resident-alien explanations and the Antioch incident.",
+        "id": "taylor-decrees",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "The Book of Leviticus",
+        "author": "Gordon J. Wenham",
+        "publisher": "Eerdmans",
+        "year": 1979,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "id": "wenham-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Leviticus commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Comparative textual, material, historical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-timothy",
+        "type": "book",
+        "title": "1 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "leviticus",
+        "type": "book",
+        "title": "Leviticus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "type": "cultural_background",
+        "title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5d7e490785d0995a4ce97e508a9a39cd095be8adec846962a408185b9c01376e",
+  "evidence_hash_version": "2"
+}

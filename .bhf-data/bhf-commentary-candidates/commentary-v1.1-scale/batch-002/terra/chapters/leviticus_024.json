@@ -1,0 +1,35 @@
+{
+  "reference": "Leviticus 24",
+  "book": "Leviticus",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_6",
+          "text": "Read the chapter with this setting in view: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 24:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a7bbb265d727c19a3ce43e20617801f309687c6736d98216c42150b262ce9b81",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

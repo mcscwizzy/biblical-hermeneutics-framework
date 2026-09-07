@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 10",
+  "book": "Acts",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_125",
+          "text": "Read the chapter with this setting in view: Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "cross-passage-diet-code-limit"
+          ],
+          "verse_refs": [
+            "Acts 10:1-48"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_126",
+          "text": "For its historical and cultural setting, note that Acts narrates household baptisms but does not state the age or belief status of every household member, leaving infant-baptism arguments tradition-dependent. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-household-baptism"
+          ],
+          "verse_refs": [
+            "Acts 10:44-48"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_127",
+          "text": "For its historical and cultural setting, note that Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 10:1-48"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_126",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 10:1-48"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_126",
+          "text": "For a later or comparative connection, note that Four prominent Acts scenes vary the ordering and presence of hearing, repentance or faith, water baptism, prayer, laying on hands, tongues, prophecy, and Spirit reception. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-variable-reception-sequences"
+          ],
+          "verse_refs": [
+            "Acts 10:34-48"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5d8b5f8a8a9880f2b00dd1017a500120805d6a5ecc89f6e2d98762b1da30d7cd",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

@@ -1,0 +1,2401 @@
+{
+  "passage_ref": "Matthew 1",
+  "entities": {
+    "people": [
+      {
+        "id": "jesus",
+        "title": "Jesus",
+        "type": "person",
+        "aliases": [
+          "who is jesus",
+          "tell me about jesus",
+          "why is jesus important"
+        ],
+        "metadata": {
+          "summary": "The incarnate Son, Messiah, and Lord whose life, death, resurrection, and reign fulfill Israel's story.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Mark 1:1-15",
+            "Luke 4:16-21",
+            "John 1:1-18",
+            "Philippians 2:5-11",
+            "Colossians 1:15-20",
+            "Hebrews 1:1-4",
+            "1 Corinthians 15:1-28"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "annunciation-to-mary",
+        "title": "Annunciation to Mary",
+        "type": "event",
+        "aliases": [
+          "annunciation",
+          "gabriel visits mary",
+          "luke 1 mary",
+          "announcement to mary"
+        ],
+        "metadata": {
+          "summary": "Gabriel announces to Mary that she will bear Jesus, the Son of David and Son of God.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Luke 1:26-38",
+            "2 Samuel 7:12-16",
+            "Isaiah 7:14",
+            "Matthew 1:18-25"
+          ]
+        }
+      },
+      {
+        "id": "birth-of-jesus",
+        "title": "Birth of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in birth of jesus",
+          "tell me about birth of jesus",
+          "why is birth of jesus important"
+        ],
+        "metadata": {
+          "summary": "Jesus is born in Bethlehem under Roman rule as the promised Messiah and Son of David.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Matthew 2:1-12",
+            "Luke 1:26-38",
+            "Luke 2:1-20",
+            "Micah 5:2",
+            "Isaiah 7:14",
+            "Isaiah 9:1-7",
+            "Galatians 4:4-5",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "annunciation-to-mary:ancient_near_east_context:0",
+      "claim": "Birth announcements are known literary forms, while Luke frames this announcement through Israel's royal and prophetic hopes.",
+      "category": "culture",
+      "source_ids": [
+        "luke-1-26-38",
+        "2-samuel-7-12-16",
+        "isaiah-7-14",
+        "matthew-1-18-25",
+        "annunciation-to-mary-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "annunciation-to-mary"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "annunciation-to-mary",
+        "parent_title": "Annunciation to Mary",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "annunciation-to-mary:historical_context:0",
+      "claim": "The event belongs to first-century Jewish life under Roman rule, in the setting of Nazareth and Davidic expectation.",
+      "category": "history",
+      "source_ids": [
+        "luke-1-26-38",
+        "2-samuel-7-12-16",
+        "isaiah-7-14",
+        "matthew-1-18-25",
+        "annunciation-to-mary-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "annunciation-to-mary"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "annunciation-to-mary",
+        "parent_title": "Annunciation to Mary",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:ancient_near_east_context:0",
+      "claim": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:historical_context:0",
+      "claim": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "immanuel-prophecy:ancient_near_east_context:0",
+      "claim": "Immanuel Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-7",
+        "isaiah-8",
+        "matthew-1",
+        "immanuel-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "immanuel-prophecy",
+        "parent_title": "Immanuel Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "immanuel-prophecy:historical_context:0",
+      "claim": "The sign belongs to the Syro-Ephraimite crisis and the fear of political collapse in Judah.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-7",
+        "isaiah-8",
+        "matthew-1",
+        "immanuel-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "immanuel-prophecy",
+        "parent_title": "Immanuel Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "isaiah-immanuel-sign",
+      "claim": "Isaiah 7 presents Immanuel as a time-sensitive sign to Ahaz during the Syro-Ephraimite crisis; the child's immediate identity and the relationship between this setting and Matthew's christological reuse remain disputed.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-1-39",
+        "williamson-book-called-isaiah",
+        "greek-esaias-nets",
+        "moyise-isaiah-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jesus:ancient_near_east_context:0",
+      "claim": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:hebraic_worldview:0",
+      "claim": "Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:historical_context:0",
+      "claim": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:1",
+      "claim": "nazareth",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:3",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:second_temple_context:0",
+      "claim": "Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:4",
+      "claim": "Christian connections involving Rahab and rest are later canonical reception and should be stated separately from the book's own land and covenant claims.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "matthew-genealogy",
+      "claim": "Matthew 1:1-17 structures Jesus' ancestry from Abraham through David and exile in three announced groups of fourteen.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "davies-allison-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-genealogy-women",
+      "claim": "Tamar, Rahab, Ruth, Uriah's wife, and Mary receive unusual genealogical attention whose collective significance is debated.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-genealogy-women",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:3-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "matthew-greek-narrative",
+      "claim": "The extant Gospel is a Greek narrative whose internal narrator does not identify an author.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "cambridge-matthew-introduction"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "matthew-isaiah-714",
+      "claim": "Matthew narrates conception from the Holy Spirit and interprets it through Greek Isaiah 7:14's parthenos and Emmanuel.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-septuagint",
+        "davies-allison-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:18-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-scripture-use",
+      "claim": "Matthew repeatedly frames events with citations and fulfillment formulas drawing on varied Hebrew and Greek scriptural forms.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-hebrew-bible",
+        "matthew-septuagint",
+        "deines-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:22-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:4",
+      "claim": "Matthew's genealogy explicitly includes Ruth and Boaz, while interpreting Boaz as a direct type of Christ is later Christian reception rather than an explicit New Testament identification.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "what-is-intertextuality:ancient_near_east_context:0",
+      "claim": "In the ancient world, authoritative texts were often reactivated through citation and echo, and the Bible uses that practice to show ongoing divine speech.",
+      "category": "culture",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:22-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-intertextuality:historical_context:0",
+      "claim": "Biblical authors wrote within a tradition of remembering, reusing, and reinterpreting earlier Scripture for new settings and audiences.",
+      "category": "history",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:22-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:ancient_near_east_context:0",
+      "claim": "Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:historical_context:0",
+      "claim": "Ancient families preserved lineages to mark belonging, rights, and memory.",
+      "category": "history",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 1:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-chronicles-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "1 Corinthians 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-10",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "2 Samuel 7:12-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Davidic promise",
+        "id": "2-samuel-7-12-16",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Annunciation to Mary",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "annunciation-to-mary-historical-orientation",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Birth of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "birth-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Isaiah 1-39",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 19",
+        "url": "https://yalebooks.yale.edu/book/9780300139617/isaiah-1-39/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "isaiah-superscription-prophet",
+          "isaiah-long-composition",
+          "isaiah-assyria-trust",
+          "isaiah-immanuel-sign",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-death-new-creation"
+        ],
+        "notes": "Critical commentary addressing formation, eighth-century settings, major disputed texts, and final form.",
+        "id": "blenkinsopp-isaiah-1-39",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Gospel of Matthew",
+        "author": "Bond, Helen K.",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "An Introduction to the New Testament and the Origins of Christianity",
+        "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/the-gospel-of-matthew/7FF359C848331FB62140F92867D726E6",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "matthew-authorship"
+        ],
+        "notes": "Academic introduction distinguishing Papias's Hebrew or Aramaic work from the extant Greek Gospel question.",
+        "id": "cambridge-matthew-introduction",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew, Volume 1: 1-7",
+        "author": "Davies, W. D., and Dale C. Allison Jr.",
+        "publisher": "T&T Clark / Bloomsbury",
+        "year": 1988,
+        "locator": "International Critical Commentary; representative publisher page for three-volume work",
+        "url": "https://www.bloomsbury.com/us/matthew-9780567094810/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-genealogy",
+          "matthew-torah",
+          "matthew-eschatology"
+        ],
+        "notes": "Major historical-critical commentary; all volume-specific locators require reviewer verification.",
+        "id": "davies-allison-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Ezra 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-2",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Galatians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-4",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Genesis 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-10",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-11",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-5",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Esaias",
+        "author": "Mois\u00e9s Silva",
+        "publisher": "Oxford University Press / International Organization for Septuagint and Cognate Studies",
+        "year": 2007,
+        "locator": "Translation and translation profile of Old Greek Esaias",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/33-esaias-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "greek-words",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-old-greek"
+        ],
+        "notes": "Scholarly English translation with an introduction to the Greek translation's profile.",
+        "id": "greek-esaias-nets",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "jesus",
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Immanuel Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "immanuel-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "immanuel-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-7",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "immanuel-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 7:14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "birth-sign tradition",
+        "id": "isaiah-7-14",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Isaiah 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-8",
+        "canonical_object_ids": [
+          "immanuel-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jesus-historical-orientation",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Levine, Amy-Jill, and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Matthew annotations and contextual essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "hebraic-worldview",
+          "matthew-jewish-context",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Jewish scholarly contextualization and reception-aware annotation; exact edition page locators require human review.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "John 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-21",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Joshua 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 1:1-24:33",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-rahab-rescue",
+          "joshua-fulfilled-and-remaining-land",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "joshua-1-24",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Peter H. W. Lau",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Introduction and commentary on Ruth 1-4",
+        "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "NICOT commentary with detailed Hebrew, literary, historical, canonical, theological, and cultural analysis.",
+        "id": "lau-ruth",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "Luke 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Luke 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-24",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Luke 1:26-38",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Gabriel announces Jesus' birth",
+        "id": "luke-1-26-38",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Luke 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-3",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Mark 1-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1-16",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "immanuel-prophecy",
+          "what-is-intertextuality",
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Matthew 1:18-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Joseph and Jesus' birth",
+        "id": "matthew-1-18-25",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Matthew 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-28",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Something about Mary? Remarks about the Five Women in the Matthean Genealogy",
+        "author": "Smit, Peter-Ben",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2010,
+        "locator": "NTS 56",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/something-about-mary-remarks-about-the-five-women-in-the-matthean-genealogy/BEBFF20CBBE7289133B5E52496831753",
+        "source_type": "journal-article",
+        "supports": [
+          "matthew-genealogy",
+          "matthew-genealogy-women"
+        ],
+        "notes": "Gender-sensitive study emphasizing debate around the genealogy's women.",
+        "id": "matthew-genealogy-women",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Hebrew Bible passages received in Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Genesis through Malachi comparanda",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "hebrew-words",
+          "intertextuality",
+          "matthew-scripture-use"
+        ],
+        "notes": "Primary scriptural comparanda; individual textual forms require case-by-case review.",
+        "id": "matthew-hebrew-bible",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Septuagint passages received in Matthew",
+        "author": "",
+        "publisher": "Society of Biblical Literature / German Bible Society",
+        "year": null,
+        "locator": "Greek Genesis through Malachi comparanda",
+        "url": "https://www.sbl-site.org/resources/digital-texts/",
+        "source_type": "scripture",
+        "supports": [
+          "greek-words",
+          "intertextuality",
+          "matthew-scripture-use",
+          "matthew-isaiah-714"
+        ],
+        "notes": "Ancient Greek Jewish scriptural tradition used for comparison with Matthean citations.",
+        "id": "matthew-septuagint",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Micah 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-5",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Isaiah in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 28",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334632502",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-suffering-servant",
+          "isaiah-death-new-creation",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "New Testament quotation and allusion, Gentile inclusion, new exodus, new creation, and New Jerusalem.",
+        "id": "moyise-isaiah-nt",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "jesus"
+        ]
+      },
+      {
+        "title": "Revelation 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-5",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Romans 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-15",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Ruth 1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ruth 1:1-4:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-gleaning-protection",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ruth-1-4",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "Ruth 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ruth-4",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is intertextuality?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-intertextuality-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Why are genealogies Included?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "why-are-genealogies-included-historical-orientation",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "The Book Called Isaiah: Deutero-Isaiah's Role in Composition and Redaction",
+        "author": "H. G. M. Williamson",
+        "publisher": "Oxford University Press",
+        "year": 1994,
+        "locator": "Composition, redaction, unity, diversity, and witnesses",
+        "url": "https://academic.oup.com/book/27499",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "structure",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-immanuel-sign",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Study of unity and diversity through historical-critical and literary questions.",
+        "id": "williamson-book-called-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Book of Joshua",
+        "author": "Marten Woudstra",
+        "publisher": "Eerdmans",
+        "year": 1981,
+        "locator": "Introduction and commentary on Joshua 1-24",
+        "url": "https://www.eerdmans.com/9780802825254/the-book-of-joshua/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Technical and theological commentary in the NICOT series.",
+        "id": "woudstra-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "annunciation-to-mary",
+        "type": "event",
+        "title": "Annunciation to Mary",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "birth-of-jesus",
+        "type": "event",
+        "title": "Birth of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "immanuel-prophecy",
+        "type": "prophecy",
+        "title": "Immanuel Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "jesus",
+        "type": "person",
+        "title": "Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "joshua",
+        "type": "book",
+        "title": "Joshua",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "ruth",
+        "type": "book",
+        "title": "Ruth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "what-is-intertextuality",
+        "type": "faq",
+        "title": "What is intertextuality?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      },
+      {
+        "id": "why-are-genealogies-included",
+        "type": "faq",
+        "title": "Why are genealogies Included?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "88eb08e06e34c9cf46fe09f853be5125aaf9e742963bf63902ae234fc9a073b8",
+  "evidence_hash_version": "2"
+}

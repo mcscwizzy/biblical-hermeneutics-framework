@@ -1,0 +1,325 @@
+{
+  "passage_ref": "1 Chronicles 7",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "gezer-excavations",
+        "title": "Gezer Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "gezer excavations artifact",
+          "gezer excavations discovery",
+          "gezer excavations excavation",
+          "gezer excavations find"
+        ],
+        "metadata": {
+          "summary": "A border city near the coastal plain and hill country with strong Bronze and Iron Age significance.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 10",
+            "1 Kings 9",
+            "1 Chronicles 7"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "1-chronicles:interpretive_note:0",
+      "claim": "The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review.",
+      "category": "culture",
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-1-9"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Chronicles 1:1-9:44"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-chronicles",
+        "parent_title": "1 Chronicles",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 600,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "gezer-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Gezer Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 10, 1 Kings 9, joshua, and 1-kings without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "gezer",
+        "tell-border-city",
+        "joshua-10",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "gezer-excavations"
+      ],
+      "passage_anchors": [
+        "1 Chronicles 7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "gezer-excavations",
+        "parent_title": "Gezer Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "gezer-excavations:historical_context:0",
+      "claim": "Gezer helps illuminate border control, agricultural life, and royal building programs.",
+      "category": "history",
+      "source_ids": [
+        "gezer",
+        "tell-border-city",
+        "joshua-10",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "gezer-excavations"
+      ],
+      "passage_anchors": [
+        "1 Chronicles 7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "gezer-excavations",
+        "parent_title": "Gezer Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Chronicles 1:1-29:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-chronicles-genealogical-identity",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-chronicles-1-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "1 Kings 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-9",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Excavation report and stratigraphic study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "excavation-report-and-stratigraphic-study",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Gezer",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "gezer",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Joshua 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-10",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "I Chronicles 1-9",
+        "author": "Gary N. Knoppers",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary on 1 Chronicles 1-9",
+        "url": "https://yalebooks.yale.edu/book/9780300139525/i-chronicles-1-9/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "original-audience",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "interpretive-notes",
+          "first-chronicles-genealogical-identity"
+        ],
+        "notes": "Technical commentary emphasizing genealogy, text criticism, identity, postexilic context, and relationship to earlier Scripture.",
+        "id": "knoppers-first-chronicles-1-9",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "Tell / border city",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "tell-border-city",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-chronicles",
+        "type": "book",
+        "title": "1 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "gezer-excavations",
+        "type": "archaeology",
+        "title": "Gezer Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "01cae42ff4782ce6077b4530a53e2aaf12ea6852d8296c9f55383a67e2149a86",
+  "evidence_hash_version": "2"
+}

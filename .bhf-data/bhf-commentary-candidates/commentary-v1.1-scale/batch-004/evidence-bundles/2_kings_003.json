@@ -1,0 +1,473 @@
+{
+  "passage_ref": "2 Kings 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "mesha-stele",
+        "title": "Mesha Stele",
+        "type": "archaeology",
+        "aliases": [
+          "mesha stele artifact",
+          "mesha stele discovery",
+          "mesha stele excavation",
+          "mesha stele find"
+        ],
+        "metadata": {
+          "summary": "A Moabite inscription describing King Mesha's achievements and conflict with Israel.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 3"
+          ]
+        }
+      },
+      {
+        "id": "moabite-stone",
+        "title": "Moabite Stone",
+        "type": "archaeology",
+        "aliases": [
+          "moabite stone artifact",
+          "moabite stone discovery",
+          "moabite stone excavation",
+          "moabite stone find"
+        ],
+        "metadata": {
+          "summary": "A Moabite inscription describing King Mesha's achievements and conflict with Israel.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 3"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "2-kings:interpretive_note:1",
+      "claim": "The Moab campaign ends with Mesha's sacrifice of his firstborn and great wrath against Israel; interpreters dispute whether the wrath is divine, human, Moabite, or a description of battlefield reversal, and the text does not settle the referent.",
+      "category": "culture",
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 3:26-27"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-kings",
+        "parent_title": "2 Kings",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "mesha-stele:ancient_near_east_context:0",
+      "claim": "Ancient background for Mesha Stele includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Kings 3, moabite-stone, and jerusalem without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "mesha-stele",
+        "louvre",
+        "louvre-museum-paris",
+        "royal-victory-stele",
+        "2-kings-3"
+      ],
+      "related_entity_ids": [
+        "mesha-stele"
+      ],
+      "passage_anchors": [
+        "2 Kings 3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "mesha-stele",
+        "parent_title": "Mesha Stele",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "mesha-stele:historical_context:0",
+      "claim": "A major Iron Age West Semitic inscription and an important external witness to Moab and Israel.",
+      "category": "history",
+      "source_ids": [
+        "mesha-stele",
+        "louvre",
+        "louvre-museum-paris",
+        "royal-victory-stele",
+        "2-kings-3"
+      ],
+      "related_entity_ids": [
+        "mesha-stele"
+      ],
+      "passage_anchors": [
+        "2 Kings 3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "mesha-stele",
+        "parent_title": "Mesha Stele",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "moabite-stone:ancient_near_east_context:0",
+      "claim": "Ancient background for Moabite Stone includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Kings 3, jerusalem, and joshua without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "mesha-stele",
+        "louvre",
+        "louvre-museum-paris",
+        "royal-victory-stele",
+        "2-kings-3"
+      ],
+      "related_entity_ids": [
+        "moabite-stone"
+      ],
+      "passage_anchors": [
+        "2 Kings 3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moabite-stone",
+        "parent_title": "Moabite Stone",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "moabite-stone:historical_context:0",
+      "claim": "A major Iron Age West Semitic inscription and an important external witness to Moab and Israel.",
+      "category": "history",
+      "source_ids": [
+        "mesha-stele",
+        "louvre",
+        "louvre-museum-paris",
+        "royal-victory-stele",
+        "2-kings-3"
+      ],
+      "related_entity_ids": [
+        "moabite-stone"
+      ],
+      "passage_anchors": [
+        "2 Kings 3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moabite-stone",
+        "parent_title": "Moabite Stone",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Kings 1-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 1:1-25:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-kings-literary-movement",
+          "second-kings-elisha-succeeds",
+          "second-kings-naaman-healed",
+          "second-kings-samaria-falls",
+          "second-kings-jerusalem-delivered",
+          "second-kings-josiah-reform",
+          "second-kings-jerusalem-falls",
+          "second-kings-jehoiachin-released"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-kings-1-25",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      },
+      {
+        "title": "2 Kings 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-3",
+        "canonical_object_ids": [
+          "mesha-stele",
+          "moabite-stone"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Yale University Press",
+        "year": 1988,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "second-kings-literary-movement",
+          "second-kings-elisha-succeeds",
+          "second-kings-naaman-healed",
+          "second-kings-samaria-falls",
+          "second-kings-jerusalem-delivered",
+          "second-kings-josiah-reform",
+          "second-kings-jerusalem-falls",
+          "second-kings-jehoiachin-released"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, regnal chronology, political history, and extra-biblical documentation.",
+        "id": "cogan-tadmor-second-kings",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      },
+      {
+        "title": "Louvre",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "louvre",
+        "canonical_object_ids": [
+          "mesha-stele",
+          "moabite-stone"
+        ]
+      },
+      {
+        "title": "Louvre Museum, Paris",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "louvre-museum-paris",
+        "canonical_object_ids": [
+          "mesha-stele",
+          "moabite-stone"
+        ]
+      },
+      {
+        "title": "Mesha Stele",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "mesha-stele",
+        "canonical_object_ids": [
+          "mesha-stele",
+          "moabite-stone"
+        ]
+      },
+      {
+        "title": "Royal victory stele",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "royal-victory-stele",
+        "canonical_object_ids": [
+          "mesha-stele",
+          "moabite-stone"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+        "author": "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "2 Kings commentary and background notes",
+        "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "maps",
+          "interpretive-notes",
+          "second-kings-samaria-falls"
+        ],
+        "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+        "id": "zondervan-kings-chronicles-backgrounds",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-kings",
+        "type": "book",
+        "title": "2 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "mesha-stele",
+        "type": "archaeology",
+        "title": "Mesha Stele",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "moabite-stone",
+        "type": "archaeology",
+        "title": "Moabite Stone",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "12504529a368fd8119df95624c0c34545f450dbacdf048ef5b1f5b0851e50b66",
+  "evidence_hash_version": "2"
+}

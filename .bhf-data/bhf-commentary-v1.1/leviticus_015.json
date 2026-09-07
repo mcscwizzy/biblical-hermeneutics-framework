@@ -1,0 +1,53 @@
+{
+  "reference": "Leviticus 15",
+  "book": "Leviticus",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_30",
+          "text": "Read the chapter with this setting in view: Leviticus distinguishes ritual impurity from moral offenses rather than treating every unclean condition as personal sin. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "leviticus-purity-distinctions"
+          ],
+          "verse_refs": [
+            "Leviticus 15:1-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_31",
+          "text": "For its historical and cultural setting, note that Ritual impurity should not be treated as a simple synonym for personal moral guilt; Leviticus distinguishes bodily states, ritual status, prohibited acts, and culpable offenses. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Leviticus 15:1-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e60326ba41f3a842ea9083d8f8f8f3f78996a3409bd9126e534720fc6777ae19",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

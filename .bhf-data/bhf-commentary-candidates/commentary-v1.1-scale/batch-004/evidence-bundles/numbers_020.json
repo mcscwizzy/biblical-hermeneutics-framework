@@ -1,0 +1,430 @@
+{
+  "passage_ref": "Numbers 20",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "wilderness-wandering",
+        "title": "Wilderness Wandering",
+        "type": "event",
+        "aliases": [
+          "Israel in the wilderness",
+          "Exodus wilderness journey",
+          "wilderness itinerary and water crises"
+        ],
+        "metadata": {
+          "summary": "Israel's extended journey between Egypt and the Transjordan, narrated through ordered stations, resource crises, covenant episodes, rebellions, and changes of generation.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 15:22-27",
+            "Exodus 16:1-36",
+            "Exodus 17:1-7",
+            "Exodus 19:1-6",
+            "Numbers 10:11-12",
+            "Numbers 20:1-13",
+            "Numbers 33:1-49"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "numbers-literary-journey",
+      "claim": "Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 20:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "numbers:interpretive_note:2",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "category": "geography",
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10-21"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1000,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "wilderness-wandering:ancient_near_east_context:0",
+      "claim": "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 20:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "wilderness-wandering:historical_context:0",
+      "claim": "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates.",
+      "category": "history",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 20:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+        "author": "G. I. Davies",
+        "publisher": "Cambridge University Press",
+        "year": 1979,
+        "locator": "Chapters 7-9: route points, Sinai routes, and identification",
+        "url": "https://www.cambridge.org/core/books/way-of-the-wilderness/19AE62B5E4C086F242F5C1F95BCC9CB1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical-geographic survey of itinerary interpretation and competing routes.",
+        "id": "davies-way-wilderness-1979",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Exodus 15-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 15:22-27; 16:1-36; 17:1-7; 19:1-6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative text; no modern translation is reproduced.",
+        "id": "exodus-wilderness-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Traditions",
+        "author": "James K. Hoffmeier",
+        "publisher": "Oxford University Press",
+        "year": 2005,
+        "locator": "Chapters 4-7: route, Sea, mountain, and wilderness travel",
+        "url": "https://academic.oup.com/book/36060",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "One detailed route reconstruction, retained as a scholarly model rather than CKL's settled map.",
+        "id": "hoffmeier-ancient-israel-sinai-2005",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Exodus",
+        "author": "Carol Meyers",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "New Cambridge Bible Commentary, Exodus 15-19",
+        "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Literary, social, and historical commentary on the initial wilderness episodes.",
+        "id": "meyers-exodus-2005",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Numbers",
+        "author": "Jacob Milgrom",
+        "publisher": "Jewish Publication Society",
+        "year": 1990,
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "milgrom-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 1:1-36:13",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "numbers-two-generations",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing",
+          "numbers-inheritance-preparation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "numbers-1-36",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 10, 20, and 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 10:11-12; 20:1-13; 33:1-49",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative and itinerary text.",
+        "id": "numbers-wilderness-itinerary-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Numbers commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "wilderness-wandering",
+        "type": "event",
+        "title": "Wilderness Wandering",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d86df2e03d46fbd2c75589ebbf7d9f8e22bb88c2d75ac7b7f1760c4bcbdac50b",
+  "evidence_hash_version": "2"
+}

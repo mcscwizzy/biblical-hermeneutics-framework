@@ -1,0 +1,101 @@
+{
+  "reference": "Job 42",
+  "book": "Job",
+  "chapter": 42,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_106",
+          "text": "Read the chapter with this setting in view: Job's fortunes and social relationships are restored, his livestock totals are doubled, seven sons and three named daughters are born, the daughters inherit among their brothers, and Job dies old and full of days. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "job-restoration-new-family"
+          ],
+          "verse_refs": [
+            "Job 42:10-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_107",
+          "text": "For its historical and cultural setting, note that In the epilogue YHWH says Eliphaz and his two companions have not spoken rightly as Job has, orders sacrifices, and accepts Job's prayer for them. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "job-friends-rebuked-intercession"
+          ],
+          "verse_refs": [
+            "Job 42:7-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_108",
+          "text": "For its historical and cultural setting, note that Job 42:6 is textually and lexically difficult: its verbs can be rendered reject, recant, despise, relent, repent, or be comforted, and 'dust and ashes' may mark what Job rejects, what he repents concerning, or where he sits. Claims that Job simply confesses that all his earlier protest was sinful overstate one disputed translation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "job:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Job 42:1-6"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_107",
+          "text": "A literary feature to notice is that Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "job:interpretive_note:11"
+          ],
+          "verse_refs": [
+            "Job 42:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_107",
+          "text": "For a later or comparative connection, note that James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jas-job"
+          ],
+          "verse_refs": [
+            "Job 42:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ce244b73a0fc399548e1147c4f7f8d9250f3d154b722eb13cea22d922c26b6b4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "Luke 19",
+  "book": "Luke",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_114",
+          "text": "Read the chapter with this setting in view: Gospel passages use different settings and vocabulary for imperial tribute, toll collectors, and temple-associated payments. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-taxation-distinctions"
+          ],
+          "verse_refs": [
+            "Luke 19:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_115",
+          "text": "For its historical and cultural setting, note that Zacchaeus' hospitality, giving, and restitution narrate salvation entering a compromised household; translation and timing of his verbs remain debated, and the scene does not excuse extortion without repair. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-zacchaeus"
+          ],
+          "verse_refs": [
+            "Luke 19:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_116",
+          "text": "For its historical and cultural setting, note that Dates around 70-100 CE are common, but proposed dates range from before 70 CE into the early second century and depend on Synoptic relations, temple language, Acts, and reception. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-date"
+          ],
+          "verse_refs": [
+            "Luke 19:41-44"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_115",
+          "text": "A literary feature to notice is that The minas parable uses a violent elite claimant and coerced economy, while Luke 22 critiques rulers called benefactors; readers dispute whether the ruler transparently represents God, exposes domination, or works by analogy and contrast. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-minas-benefactors"
+          ],
+          "verse_refs": [
+            "Luke 19:11-27"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "92b1fdd8086cd07c8e90d4c86d31237860fada13a9d7531d2dc02e7075c9211e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

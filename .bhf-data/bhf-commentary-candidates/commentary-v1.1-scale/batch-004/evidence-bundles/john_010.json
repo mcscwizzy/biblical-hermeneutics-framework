@@ -1,0 +1,173 @@
+{
+  "passage_ref": "John 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-10-30",
+      "claim": "'I and the Father are one' occurs within shepherding, protection, works, agency, and dispute; later Trinitarian reception is important but should be distinguished from the immediate argument.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 10:22-39"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "systematic_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "john-i-am",
+      "claim": "John's predicated and absolute ego eimi sayings participate in characterization through ordinary identification, symbolic predicates, scriptural echoes, and divine-agency claims; each context must be read separately.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology",
+        "boyarin-logos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 10:7-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Gospel of the Memra: Jewish Binitarianism and the Prologue to John",
+        "author": "Daniel Boyarin",
+        "publisher": "Harvard Theological Review / Cambridge University Press",
+        "year": 2001,
+        "locator": "Harvard Theological Review 94",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/gospel-of-the-memra-jewish-binitarianism-and-the-prologue-to-john/A97052954F201A3B1B79FD50EB9E3EFA",
+        "source_type": "journal-article",
+        "supports": [
+          "hebraic-worldview",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish-contextual proposal for the Logos prologue.",
+        "id": "boyarin-logos",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of John",
+        "author": "Dwight Moody Smith",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "Theology of John and the issues it raises",
+        "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-john/theology-of-john-and-the-issues-it-raises/975440B1EAE9424C6B2C919A3CC03DEB",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Theological synthesis with attention to Christology, anti-Judaism, and reception.",
+        "id": "smith-theology",
+        "canonical_object_ids": [
+          "john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "90e4c3aa2ebc016ac47bb6faec3dde442981d4bee959c09080f834debd6b0096",
+  "evidence_hash_version": "2"
+}

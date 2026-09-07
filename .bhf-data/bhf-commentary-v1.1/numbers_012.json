@@ -1,0 +1,35 @@
+{
+  "reference": "Numbers 12",
+  "book": "Numbers",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_37",
+          "text": "Read the chapter with this setting in view: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 12:1-16"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0e98262d467dbaf829b9ffc84451eb854c212f0b031c75f23be383958f75780c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "passage_ref": "Matthew 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "calling-of-the-twelve",
+        "title": "Calling of the Twelve",
+        "type": "event",
+        "aliases": [
+          "calling of the twelve",
+          "jesus appoints twelve apostles",
+          "mark 3 twelve",
+          "the twelve apostles"
+        ],
+        "metadata": {
+          "summary": "Jesus appoints twelve apostles to be with him and to participate in his mission.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 3:13-19",
+            "Luke 6:12-16",
+            "Matthew 10:1-4",
+            "Acts 1:15-26"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "calling-of-the-twelve:ancient_near_east_context:0",
+      "claim": "Teacher-disciple relationships were familiar in Jewish settings, while the number twelve evokes Israel's tribal identity.",
+      "category": "culture",
+      "source_ids": [
+        "mark-3-13-19",
+        "luke-6-12-16",
+        "matthew-10-1-4",
+        "acts-1-15-26",
+        "calling-of-the-twelve-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "calling-of-the-twelve"
+      ],
+      "passage_anchors": [
+        "Matthew 10:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "calling-of-the-twelve",
+        "parent_title": "Calling of the Twelve",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "calling-of-the-twelve:historical_context:0",
+      "claim": "The event belongs to Jesus' Galilean ministry, where discipleship, teaching, healing, and opposition develop together.",
+      "category": "history",
+      "source_ids": [
+        "mark-3-13-19",
+        "luke-6-12-16",
+        "matthew-10-1-4",
+        "acts-1-15-26",
+        "calling-of-the-twelve-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "calling-of-the-twelve"
+      ],
+      "passage_anchors": [
+        "Matthew 10:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "calling-of-the-twelve",
+        "parent_title": "Calling of the Twelve",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "matthew-mission-israel-nations",
+      "claim": "Matthew juxtaposes an initial mission focused on Israel with a concluding commission directed to all nations.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "deines-matthew",
+        "teaching-all-nations"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 10:5-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "micah-new-testament-reception",
+      "claim": "Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts.",
+      "category": "culture",
+      "source_ids": [
+        "micah-new-testament",
+        "shepherd-early-christianity",
+        "gignilliat-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 10:35-36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 34,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 1:15-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "apostolic witness restored",
+        "id": "acts-1-15-26",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Calling of the Twelve",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "calling-of-the-twelve-historical-orientation",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Micah",
+        "author": "Mark S. Gignilliat",
+        "publisher": "T&T Clark",
+        "year": 2025,
+        "locator": "International Theological Commentary",
+        "url": "https://www.bloomsbury.com/ca/micah-itc-9780567716606/",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "micah-mercy-conclusion",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Recent theological commentary attentive to critical study, the Twelve, and Micah's theological witness.",
+        "id": "gignilliat-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Luke 6:12-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "appointment after prayer",
+        "id": "luke-6-12-16",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "Mark 3:13-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Jesus appoints the Twelve",
+        "id": "mark-3-13-19",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "Matthew 10:1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "mission of the Twelve",
+        "id": "matthew-10-1-4",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "New Testament reception of Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 2:5-6; 10:35-36; Luke 12:53; John 7:42",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Primary Christian reception witnesses; each passage must be read in its own Gospel setting.",
+        "id": "micah-new-testament",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Overview of New Testament and early Christian reception of the Twelve.",
+        "id": "shepherd-early-christianity",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Teaching All Nations: Interrogating the Matthean Great Commission",
+        "author": "Levison, John R., and Priscilla Pope-Levison, editors",
+        "publisher": "Fortress Press",
+        "year": 2014,
+        "locator": "Introduction and womanist, feminist, postcolonial studies",
+        "url": "https://ms.fortresspress.com/downloads/9781451470499Intro.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "matthew-commission",
+          "matthew-mission-safeguards",
+          "later-christian-reception"
+        ],
+        "notes": "Multi-perspectival ethical and contextual reception of Matthew 28:16-20.",
+        "id": "teaching-all-nations",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "calling-of-the-twelve",
+        "type": "event",
+        "title": "Calling of the Twelve",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "micah",
+        "type": "book",
+        "title": "Micah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "74ab307d0d07397493c3cdb7aed68ca0b68b2fe3f0d34a85c632c885b705bb7d",
+  "evidence_hash_version": "2"
+}

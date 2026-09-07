@@ -1,0 +1,53 @@
+{
+  "reference": "Matthew 12",
+  "book": "Matthew",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_15",
+          "text": "Read the chapter with this setting in view: Matthew connects Jonah's three days and nights with the Son of Man and also invokes Nineveh's response, whereas Luke emphasizes Jonah as a sign and Nineveh's response to his proclamation. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jonah-sign-reception"
+          ],
+          "verse_refs": [
+            "Matthew 12:38-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_16",
+          "text": "For a later or comparative connection, note that Matthew and Luke develop distinct sign-of-Jonah formulations: Matthew explicitly adds the fish and three-day comparison, while Luke foregrounds Jonah and his proclamation as sign. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jonah:interpretive_note:36"
+          ],
+          "verse_refs": [
+            "Matthew 12:38-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4937191a9b53f7677ea0e0c55e2872ed556d92cab49cfe4df1afcc9872efeaf3",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

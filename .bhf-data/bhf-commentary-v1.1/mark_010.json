@@ -1,0 +1,101 @@
+{
+  "reference": "Mark 10",
+  "book": "Mark",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_20",
+          "text": "Read the chapter with this setting in view: No Markan text authorizes coercive conversion, colonial mission, religious violence, abuse, medical neglect, dangerous exorcism, snake handling, poison drinking, prosperity extraction, apocalyptic date-setting, or testing God. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mark-safety"
+          ],
+          "verse_refs": [
+            "Mark 10:42-45"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_21",
+          "text": "For its historical and cultural setting, note that Mark 10:45 links the Son of Man's service and death with a ransom 'for many'; liberation, Isaiah-servant, martyr, covenant, and atonement readings remain debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-ransom"
+          ],
+          "verse_refs": [
+            "Mark 10:45"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that Mark depicts hired labor, fishers, tolls, farms, tenants, debt, wealthy patrons, impoverished people, enslaved persons, widows, and elite extraction within unequal agrarian and imperial economies. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-economic-world"
+          ],
+          "verse_refs": [
+            "Mark 10:17-31"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_21",
+          "text": "A literary feature to notice is that The plot turns near Mark 8:22-10:52 from partial sight and confession toward three passion predictions and the journey to Jerusalem. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "mark-structure"
+          ],
+          "verse_refs": [
+            "Mark 10:32-52"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_21",
+          "text": "For a later or comparative connection, note that Mark exposes Roman coercion and crucifixion while also using imperial language and patriarchal conventions; postcolonial interpretation must resist both imperial domination and romantic claims that the text stands outside its world. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-imperial-reception"
+          ],
+          "verse_refs": [
+            "Mark 10:42-45"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d82d7908216ceba10e792c4d09e6bff938f5e548bc4f2bdae60b7f4a61e319b4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

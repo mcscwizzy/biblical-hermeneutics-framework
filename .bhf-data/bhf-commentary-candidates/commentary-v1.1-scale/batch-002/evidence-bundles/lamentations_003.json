@@ -1,0 +1,558 @@
+{
+  "passage_ref": "Lamentations 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "lam-acrostics",
+      "claim": "Chapters 1-4 use alphabetic structures, while chapter 5 has twenty-two lines without alphabetic progression.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "dobbs-allsopp",
+        "kotze"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "lam-five-poems",
+      "claim": "The received book contains five poems with distinct voices and formal profiles.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "lam-good-calamity",
+      "claim": "Lamentations 3:38 attributes both good and raah to the Most High, with raah capable of denoting calamity rather than moral evil.",
+      "category": "language",
+      "source_ids": [
+        "lam-mt",
+        "halot",
+        "fretheim"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:37-39"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 36,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "lam-hope-memory",
+      "claim": "The chapter 3 speaker turns toward hope by recalling steadfast love, mercies, and faithfulness.",
+      "category": "history",
+      "source_ids": [
+        "lam-mt",
+        "kotze",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:19-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "lam-hope-not-resolution",
+      "claim": "Hope in 3:21-33 does not end complaint; the poem and book return to blocked prayer, violence, vengeance, abandonment, and possible rejection.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "linafelt",
+        "o-connor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:40-66"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 39,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "lam-man-unknown",
+      "claim": "The first-person man of chapter 3 is unnamed, and proposed historical identities exceed the text.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "salters",
+        "linafelt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:1-66"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "lam-multiple-voices",
+      "claim": "Narrator, Daughter Zion, the chapter 3 man, communal speakers, enemies, and addresses to God cannot be reduced securely to one biography.",
+      "category": "culture",
+      "source_ids": [
+        "lanahan",
+        "mandolfo",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:1-66"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "lam-vengeance-prayer",
+      "claim": "Chapter 3 ends with petitions that God attend persecutors and repay them.",
+      "category": "history",
+      "source_ids": [
+        "lam-mt",
+        "westermann"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:55-66"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 54,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "lam-wormwood",
+      "claim": "Wormwood functions as bitterness imagery for remembered affliction.",
+      "category": "language",
+      "source_ids": [
+        "lam-mt",
+        "halot"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 3:15",
+        "Lamentations 3:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "probable",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Lamentations: A Commentary",
+        "author": "Adele Berlin",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664229743-lamentations/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and historical commentary.",
+        "id": "berlin",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations",
+        "author": "F. W. Dobbs-Allsopp",
+        "publisher": "Westminster John Knox Press",
+        "year": 2011,
+        "locator": "Interpretation commentary",
+        "url": "https://www.wjkbooks.com/productcategories/bseint-interpretation-a-bible-commentary/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Poetic, historical, and comparative commentary.",
+        "id": "dobbs-allsopp",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Suffering of God: An Old Testament Perspective",
+        "author": "Terence E. Fretheim",
+        "publisher": "Fortress Press",
+        "year": 1984,
+        "locator": "Divine agency and suffering",
+        "url": "https://www.fortresspress.com/store/product/9780800618209/The-Suffering-of-God",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Theological resource representing one approach to divine pathos.",
+        "id": "fretheim",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Hebrew and Aramaic Lexicon of the Old Testament",
+        "author": "Ludwig Koehler, Walter Baumgartner, and Johann Jakob Stamm",
+        "publisher": "Brill",
+        "year": 2000,
+        "locator": "Relevant Hebrew lemmas",
+        "url": "https://brill.com/display/title/812",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Lexical control; meanings require contextual judgment.",
+        "id": "halot",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Qumran Manuscripts of Lamentations: A Text-Critical Study",
+        "author": "Gideon R. Kotz\u00e9",
+        "publisher": "Brill",
+        "year": 2013,
+        "locator": "Studia Semitica Neerlandica 61",
+        "url": "https://brill.com/display/title/22977",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Detailed analysis of four Qumran witnesses.",
+        "id": "kotze",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Masoretic Lamentations",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Lamentations 1:1-5:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew text.",
+        "id": "lam-mt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Speaking Voice in the Book of Lamentations",
+        "author": "William F. Lanahan",
+        "publisher": "Journal of Biblical Literature",
+        "year": 1974,
+        "locator": "JBL 93, pages 41-49",
+        "url": "https://www.jstor.org/stable/3263865",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Influential study of shifting speakers.",
+        "id": "lanahan",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Surviving Lamentations: Catastrophe, Lament, and Protest in the Afterlife of a Biblical Book",
+        "author": "Tod Linafelt",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Entire volume",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/S/bo3631419.html",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and reception study emphasizing unresolved protest.",
+        "id": "linafelt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion Talks Back to the Prophets",
+        "author": "Carleen R. Mandolfo",
+        "publisher": "Society of Biblical Literature",
+        "year": 2007,
+        "locator": "Semeia Studies 58",
+        "url": "https://www.sbl-site.org/publications/Books_Semeia.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Dialogic and gender-critical study.",
+        "id": "mandolfo",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations and the Tears of the World",
+        "author": "Kathleen M. O'Connor",
+        "publisher": "Orbis Books",
+        "year": 2002,
+        "locator": "Entire volume",
+        "url": "https://orbisbooks.com/products/lamentations-and-the-tears-of-the-world",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Trauma-aware theological and pastoral reading.",
+        "id": "o-connor",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "A Critical and Exegetical Commentary on Lamentations",
+        "author": "R. B. Salters",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/critical-and-exegetical-commentary-on-lamentations-9780567576514/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Philological and text-critical commentary.",
+        "id": "salters",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations: Issues and Interpretation",
+        "author": "Claus Westermann",
+        "publisher": "Fortress Press",
+        "year": 1994,
+        "locator": "Entire volume",
+        "url": "https://www.fortresspress.com/store/product/9780800626990/Lamentations",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Genre, lament, and theological study.",
+        "id": "westermann",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "lamentations",
+        "type": "book",
+        "title": "Lamentations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.968
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f55b37074f06bcf159997a246a77ece0a5fbc58b851e5b498de3d699de2db8cb",
+  "evidence_hash_version": "2"
+}

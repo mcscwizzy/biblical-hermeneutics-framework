@@ -1,0 +1,83 @@
+{
+  "reference": "Isaiah 6",
+  "book": "Isaiah",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_12",
+          "text": "Read the chapter with this setting in view: Isaiah 1:1 presents the book as the vision of Isaiah son of Amoz concerning Judah and Jerusalem during four Judahite reigns, while other passages portray Isaiah in first person, third-person reports, sign actions, and royal narratives. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-superscription-prophet"
+          ],
+          "verse_refs": [
+            "Isaiah 6:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_13",
+          "text": "For its historical and cultural setting, note that Isaiah joins YHWH's holiness to justice and righteousness and repeatedly rejects worship that coexists with bloodshed, exploitation, or refusal to repair communal wrong. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "isaiah-holiness-justice-worship"
+          ],
+          "verse_refs": [
+            "Isaiah 6:1-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_14",
+          "text": "For its historical and cultural setting, note that Holiness structures tabernacle and temple worship, but it also reaches into Israel's daily ethics and communal life. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-holiness:historical_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 6:1-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_13",
+          "text": "A literary feature to notice is that Isaiah contains the named prophet, divine speech, sign children, royal and national addressees, servants, heralds, Zion and Babylon as personified women, communal voices, and third-person prose narration; speaker identity must be established passage by passage. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "isaiah-many-voices"
+          ],
+          "verse_refs": [
+            "Isaiah 6:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "74034cea0c72ccebcad3c86155074bd9c11d5ecdad10ada1fc2f42f0e08fa6fd",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

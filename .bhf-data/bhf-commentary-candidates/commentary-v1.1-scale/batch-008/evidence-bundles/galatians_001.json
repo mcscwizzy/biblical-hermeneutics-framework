@@ -1,0 +1,3815 @@
+{
+  "passage_ref": "Galatians 1",
+  "entities": {
+    "people": [
+      {
+        "id": "paul",
+        "title": "Paul",
+        "type": "person",
+        "aliases": [
+          "who is paul",
+          "tell me about paul",
+          "why is paul important"
+        ],
+        "metadata": {
+          "summary": "The apostle to the Gentiles whose letters unfold the gospel, covenant inclusion, and new creation.",
+          "importance": 96,
+          "retrieval_score": 0.916,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 9:1-19",
+            "Acts 13:1-3",
+            "Acts 17:16-34",
+            "Acts 28:23-31",
+            "Romans 1:1-17",
+            "Romans 8:1-39",
+            "Galatians 1:11-24",
+            "Galatians 3:6-29",
+            "1 Corinthians 15:1-8",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "places": [
+      {
+        "id": "galatia",
+        "title": "Roman and Ethnic Galatia",
+        "type": "place",
+        "aliases": [
+          "Galatia in the Bible",
+          "Roman province of Galatia",
+          "ethnic Galatia",
+          "North Galatia",
+          "South Galatia",
+          "Galatian region"
+        ],
+        "metadata": {
+          "summary": "Galatia in early Christian texts can evoke both the central Anatolian homeland associated with Galatian peoples and a much larger Roman province that included culturally diverse southern districts; this distinction is essential for reading Acts 13-16 and the address to the assemblies of Galatia.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Roman road and milestone survey",
+            "Pisidian Antioch civic and cultic remains",
+            "Iconium inscriptions and coinage",
+            "Lystra colonial inscriptions",
+            "competing Derbe site identifications"
+          ],
+          "related_passages": [
+            "Acts 13:13-52",
+            "Acts 14:1-28",
+            "Acts 16:1-6",
+            "Acts 18:23",
+            "Galatians 1:2",
+            "Galatians 3:1",
+            "Galatians 4:13-15"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "caiaphas-ossuary",
+        "title": "Caiaphas Ossuary",
+        "type": "archaeology",
+        "aliases": [
+          "caiaphas ossuary artifact",
+          "caiaphas ossuary discovery",
+          "caiaphas ossuary excavation",
+          "caiaphas ossuary find"
+        ],
+        "metadata": {
+          "summary": "An ossuary with an inscription that has been proposed as referring to James, the brother of Jesus.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 12",
+            "Galatians 1:19"
+          ]
+        }
+      },
+      {
+        "id": "james-ossuary",
+        "title": "James Ossuary",
+        "type": "archaeology",
+        "aliases": [
+          "james ossuary artifact",
+          "james ossuary discovery",
+          "james ossuary excavation",
+          "james ossuary find"
+        ],
+        "metadata": {
+          "summary": "An ossuary with an inscription that has been proposed as referring to James, the brother of Jesus.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 12",
+            "Galatians 1:19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "acts-and-galatians-distinct-itinerary-witnesses",
+      "claim": "Acts narrates named southern cities, regional traversals, and a Jerusalem council; Galatians narrates selective first-person movements, Jerusalem meetings, Antioch conflict, and an unnamed Galatian audience.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "galatians-geography-text",
+        "keener-galatians-destination"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance",
+      "claim": "The comparison permits historical correlation while preventing Acts from filling every silence in Galatians or the letter from becoming a key to every Acts journey.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "galatians-geography-text",
+        "keener-galatians-destination"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-and-galatians-distinct-itinerary-witnesses"
+        ]
+      }
+    },
+    {
+      "id": "acts-galatians",
+      "claim": "Acts' sequence around Paul's call and Jerusalem visits differs in emphasis and detail from Galatians 1-2, and exact harmonization remains disputed.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "paul-letters-sbl"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "caiaphas-ossuary:ancient_near_east_context:0",
+      "claim": "Ancient background for Caiaphas Ossuary includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Acts 12, Galatians 1:19, jerusalem, and joshua without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "james-ossuary",
+        "private-collection",
+        "private-collection-contested-custody",
+        "bone-box",
+        "acts-12"
+      ],
+      "related_entity_ids": [
+        "caiaphas-ossuary"
+      ],
+      "passage_anchors": [
+        "Galatians 1:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "caiaphas-ossuary",
+        "parent_title": "Caiaphas Ossuary",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "caiaphas-ossuary:historical_context:0",
+      "claim": "Famous because of the inscription and the controversy around provenance and reading.",
+      "category": "history",
+      "source_ids": [
+        "james-ossuary",
+        "private-collection",
+        "private-collection-contested-custody",
+        "bone-box",
+        "acts-12"
+      ],
+      "related_entity_ids": [
+        "caiaphas-ossuary"
+      ],
+      "passage_anchors": [
+        "Galatians 1:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "caiaphas-ossuary",
+        "parent_title": "Caiaphas Ossuary",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 5,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "gal-acts",
+      "claim": "Acts and Galatians differ in selection, emphasis, and sequence when narrating Paul's call and Jerusalem contacts; exact harmonizations remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "longenecker-galatians",
+        "barclay-crisis"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "gal-authorship",
+      "claim": "Pauline authorship of Galatians is a strong critical consensus, while an unnamed secretary or scribal assistant remains possible.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "gal-curse",
+      "claim": "The doubled curse in Galatians 1 targets proclamations that overturn Paul's gospel and functions as polemical rhetoric, not authorization for violence against dissenters.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:8-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "gal-date",
+      "claim": "A date between the late 40s and mid-50s CE is plausible, but Galatians supplies no absolute date or named provenance.",
+      "category": "culture",
+      "source_ids": [
+        "barclay-crisis",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "gal-destination",
+      "claim": "Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province.",
+      "category": "culture",
+      "source_ids": [
+        "longenecker-galatians",
+        "pleiades-galatia",
+        "phi-inscriptions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "gal-jerusalem",
+      "claim": "Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain.",
+      "category": "history",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:18-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "gal-opponents",
+      "claim": "The letter indicates teachers pressing circumcision and Torah obligation, but their number, origin, self-description, motives, and full program cannot be recovered from Paul's polemic alone.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "barclay-crisis",
+        "nanos-irony"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-rhetoric",
+      "claim": "Galatians combines letter conventions with rebuke, curse, autobiography, scriptural argument, allegory, exhortation, warning, and autograph; assignment to one classical rhetorical species is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1-6:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "gal-sender",
+      "claim": "Galatians names Paul as sender to multiple assemblies of Galatia and does not name a co-sender.",
+      "category": "history",
+      "source_ids": [
+        "gal-greek",
+        "p46-csntm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "galatia-acts-sequence",
+      "claim": "Acts narrates a southern city sequence and return journey but does not identify those assemblies as the recipients of Galatians.",
+      "category": "history",
+      "source_ids": [
+        "galatia-acts-text",
+        "galatia-galatians-text",
+        "keener-galatians"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "galatia-letter-destination",
+      "claim": "Galatians names plural assemblies and addresses Galatians but supplies no city names, so North- and South-Galatian destination theories remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "galatia-galatians-text",
+        "keener-galatians",
+        "martyn-galatians-region"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "galatia-provincial-ethnic-distinction",
+      "claim": "Early imperial Galatia could denote a Roman province larger than the older north-central ethnic region, and the intended range must be argued text by text.",
+      "category": "politics",
+      "source_ids": [
+        "galatia-acts-text",
+        "galatia-galatians-text",
+        "pleiades-galatia-region",
+        "mitchell-anatolia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "galatia:interpretive_note:0",
+      "claim": "Roman provincial Galatia and ethnic Galatia were overlapping but nonidentical geographic categories; neither should silently replace the other in every text.",
+      "category": "culture",
+      "source_ids": [
+        "galatia-acts-text",
+        "galatia-galatians-text",
+        "mitchell-anatolia",
+        "keener-galatians"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "galatia:interpretive_note:1",
+      "claim": "The letter names no city, road, province boundary, or ethnic census; both North- and South-Galatian destinations remain scholarly hypotheses.",
+      "category": "culture",
+      "source_ids": [
+        "galatia-galatians-text",
+        "keener-galatians",
+        "martyn-galatians-region"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "galatia:interpretive_note:2",
+      "claim": "Acts' city sequence can support a South-Galatian proposal but does not say that those congregations received Galatians or give a complete Pauline itinerary.",
+      "category": "culture",
+      "source_ids": [
+        "galatia-acts-text",
+        "galatia-galatians-text",
+        "keener-galatians"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "galatian-curse-rhetoric-boundary",
+      "claim": "Paul expresses astonishment at desertion and twice pronounces a curse on anyone proclaiming a contrary gospel.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:6-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatian-curse-rhetoric-boundary:passage-relevance",
+      "claim": "Marks perceived stakes without licensing threats, harassment, damnation campaigns, or treating disagreement itself as abuse.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:6-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatian-curse-rhetoric-boundary"
+        ]
+      }
+    },
+    {
+      "id": "galatians-call-independent-chronology",
+      "claim": "Paul says the disclosure of God's son led him not immediately to consult flesh and blood or go to Jerusalem, but to go to Arabia and return to Damascus.",
+      "category": "history",
+      "source_ids": [
+        "galatians-mission-text",
+        "campbell-framing-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians-call-independent-chronology:passage-relevance",
+      "claim": "Starts chronology with the earlier direct letter and does not silently harmonize its sequence to Acts.",
+      "category": "history",
+      "source_ids": [
+        "galatians-mission-text",
+        "campbell-framing-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "galatians-call-independent-chronology"
+        ]
+      }
+    },
+    {
+      "id": "galatians-greeting-to-rebuke",
+      "claim": "Galatians moves from grace-and-peace greeting and doxology directly to astonishment at the audience's movement toward another message.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer",
+        "obrien-thanksgiving-gospel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:3-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-greeting-to-rebuke:passage-relevance",
+      "claim": "Shows that blessing language need not suppress disagreement, warning, or truth-telling.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer",
+        "obrien-thanksgiving-gospel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:3-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-greeting-to-rebuke"
+        ]
+      }
+    },
+    {
+      "id": "galatians-missing-thanksgiving",
+      "claim": "Unlike several Pauline letters, Galatians has no opening thanksgiving period, yet Paul continues appeal, kinship language, memory, and labor for the audience.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "obrien-thanksgiving-gospel",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-missing-thanksgiving:passage-relevance",
+      "claim": "Prevents withholding gratitude from becoming humiliation or proof that conflicted people are worthless or beyond care.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "obrien-thanksgiving-gospel",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-missing-thanksgiving"
+        ]
+      }
+    },
+    {
+      "id": "galatians-plural-assemblies-and-demographic-limits",
+      "claim": "The letter addresses multiple assemblies and implies substantial gentile participation, yet it gives no population proportions, city names, occupations, household lists, or uniform ethnic profile.",
+      "category": "social",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians-plural-assemblies-and-demographic-limits:passage-relevance",
+      "claim": "The evidence prevents either destination model from turning Galatians into a census of uniformly Celtic, Roman, Lycaonian, gentile, poor, elite, male, or urban recipients.",
+      "category": "social",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "galatians-plural-assemblies-and-demographic-limits"
+        ]
+      }
+    },
+    {
+      "id": "galatians-syria-cilicia-unknown",
+      "claim": "Paul says he went into the regions of Syria and Cilicia and remained personally unknown to the Judean assemblies in Messiah, which heard reports about him.",
+      "category": "geography",
+      "source_ids": [
+        "galatians-mission-text",
+        "campbell-framing-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:21-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 75
+      }
+    },
+    {
+      "id": "galatians-syria-cilicia-unknown:passage-relevance",
+      "claim": "Preserves uneven knowledge and mediated reports within the network.",
+      "category": "geography",
+      "source_ids": [
+        "galatians-mission-text",
+        "campbell-framing-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:21-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 75,
+        "supports_evidence_ids": [
+          "galatians-syria-cilicia-unknown"
+        ]
+      }
+    },
+    {
+      "id": "galatians-three-years-jerusalem",
+      "claim": "Galatians says that after three years Paul went to Jerusalem to visit Cephas, remained fifteen days, saw no other apostle except James, and invokes God as witness.",
+      "category": "history",
+      "source_ids": [
+        "galatians-mission-text",
+        "campbell-framing-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians-three-years-jerusalem:passage-relevance",
+      "claim": "Supplies relative chronology and limited named contact without turning the account into a complete diary.",
+      "category": "history",
+      "source_ids": [
+        "galatians-mission-text",
+        "campbell-framing-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "galatians-three-years-jerusalem"
+        ]
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:0",
+      "claim": "Paul is the sole named sender; possible scribal assistance should not be converted into a named coauthor or used to erase collaborative letter production.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:1",
+      "claim": "North- and South-Galatian theories remain hypotheses; geography must not invent a city, route, audience ethnicity, or single assembly.",
+      "category": "geography",
+      "source_ids": [
+        "longenecker-galatians",
+        "pleiades-galatia",
+        "phi-inscriptions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "disputed",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:2",
+      "claim": "Dates in the late 40s through 50s depend on disputed Jerusalem and Acts synchronisms and should not be presented as an explicit colophon.",
+      "category": "culture",
+      "source_ids": [
+        "barclay-crisis",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:3",
+      "claim": "Paul's opponents must be reconstructed through his adversarial rhetoric; calling them one settled Jewish-Christian party confuses a scholarly model with direct evidence.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "nanos-irony"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:4",
+      "claim": "The doubled curse is forceful boundary rhetoric, not permission for religious violence, forced conversion, public targeting, or authoritarian suppression of questions.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:8-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:5",
+      "claim": "Paul describes a divine disclosure and call through scriptural prophetic language; historical description should distinguish his autobiographical claim from later doctrine about revelation.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:6",
+      "claim": "Galatians and Acts are independent rhetorical narratives; neither automatic harmonization nor automatic contradiction can replace passage-by-passage comparison.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:7",
+      "claim": "Paul's oath that he is not lying signals contested autobiography; it strengthens the claim that these are his assertions without independently verifying every itinerary detail.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james-ossuary:ancient_near_east_context:0",
+      "claim": "Ancient background for James Ossuary includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Acts 12, Galatians 1:19, jerusalem, and joshua without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "james-ossuary",
+        "private-collection",
+        "private-collection-contested-custody",
+        "bone-box",
+        "acts-12"
+      ],
+      "related_entity_ids": [
+        "james-ossuary"
+      ],
+      "passage_anchors": [
+        "Galatians 1:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "james-ossuary",
+        "parent_title": "James Ossuary",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "james-ossuary:historical_context:0",
+      "claim": "Famous because of the inscription and the controversy around provenance and reading.",
+      "category": "history",
+      "source_ids": [
+        "james-ossuary",
+        "private-collection",
+        "private-collection-contested-custody",
+        "bone-box",
+        "acts-12"
+      ],
+      "related_entity_ids": [
+        "james-ossuary"
+      ],
+      "passage_anchors": [
+        "Galatians 1:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "james-ossuary",
+        "parent_title": "James Ossuary",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 5,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "north-south-galatia-destination-dispute",
+      "claim": "Galatians addresses plural assemblies of Galatia and later says Galatians, but it names no city and never identifies the Acts 13-14 congregations as its recipients.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "north-south-galatia-destination-dispute:passage-relevance",
+      "claim": "The item keeps both destination models visible and prevents a reconstructed city list from being inserted into the letter.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "north-south-galatia-destination-dispute"
+        ]
+      }
+    },
+    {
+      "id": "paul-former-violence-disclosure",
+      "claim": "Paul says he violently persecuted and tried to destroy God's assembly while advancing in ancestral traditions.",
+      "category": "history",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:13-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "paul-former-violence-disclosure:passage-relevance",
+      "claim": "Prevents zeal, pedigree, dramatic conversion, or later office from erasing prior harm or the need for accountability.",
+      "category": "history",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:13-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "paul-former-violence-disclosure"
+        ]
+      }
+    },
+    {
+      "id": "paul:ancient_near_east_context:0",
+      "claim": "Paul\u2019s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel\u2019s Scriptures for a multinational church.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:hebraic_worldview:0",
+      "claim": "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:historical_context:0",
+      "claim": "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation.",
+      "category": "history",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:0",
+      "claim": "damascus",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:1",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:2",
+      "claim": "corinth",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:3",
+      "claim": "ephesus",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:4",
+      "claim": "rome",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:second_temple_context:0",
+      "claim": "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+      "claim": "Build chronology first from the direct letters. Acts 13-20 is a later narrative witness whose sequence, speeches, travel compression, and emphases must not silently replace Galatians or the letters' own plans and absences.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-mission-text",
+        "acts-mission-text",
+        "campbell-framing-paul",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience:interpretive_note:4",
+      "claim": "Neither a South-Galatian reconstruction nor a North-Galatian reconstruction permits treating the recipients as uniformly Celtic, gentile, urban, poor, elite, or attached to one city.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-province-and-ethnic-galatia",
+      "claim": "The province organized from 25 BCE included the north-central Galatian homeland and diverse southern districts with older Phrygian, Pisidian, and Lycaonian identities.",
+      "category": "geography",
+      "source_ids": [
+        "strabo-geography-12",
+        "pliny-natural-history-5",
+        "pleiades-south-galatia",
+        "mitchell-anatolia-galatia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "roman-province-and-ethnic-galatia:passage-relevance",
+      "claim": "The distinction frames both Acts' compact regional language and the letter's Galatia address without deciding either one by definition.",
+      "category": "geography",
+      "source_ids": [
+        "strabo-geography-12",
+        "pliny-natural-history-5",
+        "pleiades-south-galatia",
+        "mitchell-anatolia-galatia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "roman-province-and-ethnic-galatia"
+        ]
+      }
+    },
+    {
+      "id": "who-was-paul:ancient_near_east_context:0",
+      "claim": "Paul operates in diaspora synagogue and Greco-Roman city contexts, translating the gospel for mixed communities.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9",
+        "acts-13",
+        "romans-1",
+        "1-corinthians-15",
+        "galatians-1-2",
+        "philippians-3",
+        "2-timothy-4",
+        "who-was-paul-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-paul",
+        "parent_title": "Who was Paul?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-paul:historical_context:0",
+      "claim": "A former persecutor turned missionary, Paul travels across Roman cities and writes to churches in the Mediterranean world.",
+      "category": "history",
+      "source_ids": [
+        "acts-9",
+        "acts-13",
+        "romans-1",
+        "1-corinthians-15",
+        "galatians-1-2",
+        "philippians-3",
+        "2-timothy-4",
+        "who-was-paul-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-paul",
+        "parent_title": "Who was Paul?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "paul",
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "2 Timothy 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-timothy-4",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Acts 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-12",
+        "canonical_object_ids": [
+          "caiaphas-ossuary",
+          "james-ossuary"
+        ]
+      },
+      {
+        "title": "Acts 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-13",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Acts 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-9",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Acts 9-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-9-28",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-highland-sequence",
+          "antioch-synagogue-audience",
+          "iconium-regional-setting",
+          "lystra-language",
+          "lystra-cult-interpretation",
+          "lystra-healing-agency",
+          "lystra-crowd-violence",
+          "derbe-location-limits",
+          "return-route-elders",
+          "timothy-origin-limits",
+          "acts-regional-wording",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Primary narrative witness; no modern translation is reproduced.",
+        "id": "acts-galatia-cluster-text",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 13:1-20:38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; it is not treated as a transcript of the letters.",
+        "id": "acts-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Paul: Crisis in Galatia, Second Edition",
+        "author": "John M. G. Barclay",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Galatian crisis, opponents, chronology, Torah",
+        "url": "https://www.cambridge.org/core/books/paul-crisis-in-galatia/0FEBDAE0C710746C0685D5A70913F9BE",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Reconstruction of the crisis; hypotheses remain contestable.",
+        "id": "barclay-crisis",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Bone box",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "bone-box",
+        "canonical_object_ids": [
+          "caiaphas-ossuary",
+          "james-ossuary"
+        ]
+      },
+      {
+        "title": "Framing Paul: An Epistolary Biography",
+        "author": "Douglas A. Campbell",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "chapters on Galatians, Corinthians, Romans, and Philippians",
+        "url": "https://www.eerdmans.com/9780802871510/framing-paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Builds a chronology from the letters and explicitly weighs its relation to Acts.",
+        "id": "campbell-framing-paul",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Foolish Galatians",
+        "author": "Matthijs den Dulk",
+        "publisher": "Cambridge University Press",
+        "year": 2026,
+        "locator": "Ethnic Stereotypes and the Letters of Paul, chapter 4",
+        "url": "https://doi.org/10.1017/9781009448772.005",
+        "source_type": "academic-book",
+        "supports": [
+          "galatians-destination",
+          "galatian-audience-diversity"
+        ],
+        "notes": "Shows why Galatian address language does not establish a uniformly ethnic-Galatian audience in either destination model.",
+        "id": "den-dulk-galatians-ethnicity",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text, checked alongside manuscript resources.",
+        "id": "gal-greek",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatia-acts-sequence",
+          "galatia-regional-wording"
+        ],
+        "notes": "Primary narrative witness; no modern translation is reproduced.",
+        "id": "galatia-acts-text",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians 1:2; 3:1; 4:13-15",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 1:2; 3:1; 4:13-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-weakness-limits"
+        ],
+        "notes": "Primary letter witness under conventional Pauline authorship.",
+        "id": "galatia-galatians-text",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-1-2",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Galatians 1-3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-1-3",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for confrontation and restoration.",
+        "id": "galatians-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "Galatians 1:2; 3:1; 4:8-15",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 1:2; 3:1; 4:8-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatians-destination",
+          "galatian-audience-diversity",
+          "galatians-weakness-route",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Primary letter witness under conventional Pauline authorship.",
+        "id": "galatians-geography-text",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1:1-2:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for Paul's retrospective chronology and negotiated mission.",
+        "id": "galatians-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1, 4, and 6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for greeting, Abba prayer, peace, mercy, and grace.",
+        "id": "galatians-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "James Ossuary",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "james-ossuary",
+        "canonical_object_ids": [
+          "caiaphas-ossuary",
+          "james-ossuary"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts",
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "Volumes 1-4",
+            "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "archaeology"
+            ],
+            "notes": "Extensive historical, literary, and comparative commentary.",
+            "id": "keener-acts"
+          },
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "volumes 2-3, Acts 13-20",
+            "url": "https://bakeracademic.com/pages/keener-acts-esources",
+            "source_type": "reference-work",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Detailed literary and historical commentary on the later Acts mission narrative.",
+            "id": "keener-acts"
+          }
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Craig S. Keener",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Author, provenance, and date; north and south Galatia discussion",
+        "url": "https://doi.org/10.1017/9781108565875",
+        "source_type": "academic-book",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-acts-sequence"
+        ],
+        "notes": "Reviews competing destination arguments and Acts comparisons.",
+        "id": "keener-galatians",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Craig S. Keener",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Author, provenance, date, and destination",
+        "url": "https://doi.org/10.1017/9781108565875",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-regional-wording",
+          "galatians-destination",
+          "galatian-audience-diversity",
+          "galatians-weakness-route",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Reviews north and south arguments and their dependence on Acts.",
+        "id": "keener-galatians-destination",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Bruce W. Longenecker",
+        "publisher": "Cambridge University Press",
+        "year": 2003,
+        "locator": "The Cambridge Companion to St Paul, chapter 4",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-st-paul/galatians/405399A77EA4FE97DF9270CB98D95903",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Concise orientation to audience, crisis, rhetoric, and theology.",
+        "id": "longenecker-galatians",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Galatians: A New Translation with Introduction and Commentary",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 33A",
+        "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "literary-context",
+          "historical-context"
+        ],
+        "notes": "Major apocalyptic commentary; used alongside competing views.",
+        "id": "martyn-galatians",
+        "canonical_object_ids": [
+          "galatians",
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Galatians: A New Translation with Introduction and Commentary",
+            "author": "J. Louis Martyn",
+            "publisher": "Yale University Press",
+            "year": 2004,
+            "locator": "Anchor Yale Bible 33A",
+            "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "literary-context",
+              "historical-context"
+            ],
+            "notes": "Major apocalyptic commentary; used alongside competing views.",
+            "id": "martyn-galatians"
+          },
+          {
+            "title": "Galatians",
+            "author": "J. Louis Martyn",
+            "publisher": "Yale University Press",
+            "year": 2004,
+            "locator": "Galatians 1-6",
+            "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Major commentary on the letter's crisis and opponents; its reconstruction remains one position among others.",
+            "id": "martyn-galatians"
+          }
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Galatians 1, 4, and 6",
+        "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Major commentary on the letter's crisis, rhetoric, and prayer language.",
+        "id": "martyn-galatians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 1997,
+        "locator": "Anchor Yale Bible 33A, introduction and Galatians 1:2; 3:1; 4:13-15",
+        "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-weakness-limits"
+        ],
+        "notes": "Major critical commentary representing a North-Galatian reconstruction while documenting uncertainty.",
+        "id": "martyn-galatians-region",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Anatolia: Land, Men, and Gods in Asia Minor",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford University Press",
+        "year": 1993,
+        "locator": "Volumes 1-2; Galatia, Pisidia, Lycaonia, cities, roads, and cults",
+        "url": "https://global.oup.com/academic/product/anatolia-9780198150299",
+        "source_type": "academic-book",
+        "supports": [
+          "galatia-provincial-ethnic-distinction",
+          "galatia-city-differences"
+        ],
+        "notes": "Regional historical and epigraphic synthesis.",
+        "id": "mitchell-anatolia",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Anatolia: Land, Men, and Gods in Asia Minor",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford University Press",
+        "year": 1993,
+        "locator": "Volumes 1-2; Galatia, Pisidia, Lycaonia, colonies, cults, and roads",
+        "url": "https://global.oup.com/academic/product/anatolia-9780198150299",
+        "source_type": "academic-book",
+        "supports": [
+          "provincial-ethnic-geography",
+          "antioch-colony-setting",
+          "iconium-regional-setting",
+          "lystra-colony-setting",
+          "lystra-language",
+          "lystra-cult-interpretation",
+          "derbe-location-limits"
+        ],
+        "notes": "Regional historical and epigraphic synthesis.",
+        "id": "mitchell-anatolia-galatia",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Irony of Galatians: Paul's Letter in First-Century Context",
+        "author": "Mark D. Nanos",
+        "publisher": "Fortress Press",
+        "year": 2002,
+        "locator": "Opponents, irony, Jewish context, Israel of God",
+        "url": "https://www.fortresspress.com/store/product/9781451413762/The-Irony-of-Galatians",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Revisionist Jewish-context reading used as a contested position.",
+        "id": "nanos-irony",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Thanksgiving and the Gospel in Paul",
+        "author": "P. T. O'Brien",
+        "publisher": "Cambridge University Press",
+        "year": 1974,
+        "locator": "New Testament Studies 21, pp. 144-155",
+        "url": "https://doi.org/10.1017/S0028688500008833",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Examines epistolary, didactic, and paraenetic functions of Pauline thanksgivings and Galatians' missing thanksgiving.",
+        "id": "obrien-thanksgiving-gospel",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "GA P46 Digital Images and Metadata",
+        "author": "Center for the Study of New Testament Manuscripts",
+        "publisher": "CSNTM",
+        "year": null,
+        "locator": "Galatians portions",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Early papyrus witness; surviving extent and readings require folio-level review.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Paul",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "paul-historical-orientation",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "Pauline Letters in the SBL Greek New Testament",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians, Romans, Corinthians, Philippians",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Independent canonical primary texts for comparison with Acts' portrait and chronology.",
+        "id": "paul-letters-sbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Searchable Greek Inscriptions",
+        "author": "Packard Humanities Institute",
+        "publisher": "Cornell University and Ohio State University",
+        "year": null,
+        "locator": "Galatia and Anatolia",
+        "url": "https://inscriptions.packhum.org/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Epigraphic comparanda for geography, institutions, ethnicity, status, and names.",
+        "id": "phi-inscriptions",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "Philippians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-3",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Pleiades: A Gazetteer of Past Places",
+        "author": "Ancient World Mapping Center and Institute for the Study of the Ancient World",
+        "publisher": "Pleiades",
+        "year": null,
+        "locator": "Galatia and Asia Minor",
+        "url": "https://pleiades.stoa.org/",
+        "source_type": "reference-work",
+        "supports": [
+          "key-places",
+          "maps",
+          "claims"
+        ],
+        "notes": "Geographic control; specific place identifiers and ancient boundaries require review.",
+        "id": "pleiades-galatia",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Pleiades: A Gazetteer of Past Places",
+        "author": "Ancient World Mapping Center and Institute for the Study of the Ancient World",
+        "publisher": "Pleiades",
+        "year": null,
+        "locator": "Galatia, Pisidia, Lycaonia, Antiochia, Iconium, Lystra, and Derbe records",
+        "url": "https://pleiades.stoa.org/",
+        "source_type": "reference-work",
+        "supports": [
+          "galatia-provincial-ethnic-distinction",
+          "galatia-city-differences"
+        ],
+        "notes": "Stable ancient-place control; ancient boundaries and identifications remain evidence-dependent.",
+        "id": "pleiades-galatia-region",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Pleiades: A Gazetteer of Past Places",
+        "author": "Ancient World Mapping Center and Institute for the Study of the Ancient World",
+        "publisher": "Pleiades",
+        "year": null,
+        "locator": "Galatia, Antiochia/Colonia Caesarea, Iconium/Claudiconium, Lystra, and Derbe",
+        "url": "https://pleiades.stoa.org/",
+        "source_type": "reference-work",
+        "supports": [
+          "provincial-ethnic-geography",
+          "antioch-colony-setting",
+          "iconium-regional-setting",
+          "lystra-colony-setting",
+          "derbe-location-limits"
+        ],
+        "notes": "Linked ancient-place control; boundaries and site identifications remain qualified.",
+        "id": "pleiades-south-galatia",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Natural History",
+        "author": "Pliny the Elder",
+        "publisher": "Perseus Digital Library",
+        "year": 1855,
+        "locator": "Book 5, Anatolian peoples and cities; John Bostock edition and translation",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Plin.+Nat.+5",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "provincial-ethnic-geography",
+          "iconium-regional-setting",
+          "derbe-location-limits"
+        ],
+        "notes": "First-century geographic witness; categories are not a modern boundary map.",
+        "id": "pliny-natural-history-5",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Private collection",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "private-collection",
+        "canonical_object_ids": [
+          "caiaphas-ossuary",
+          "james-ossuary"
+        ]
+      },
+      {
+        "title": "Private collection / contested custody",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "private-collection-contested-custody",
+        "canonical_object_ids": [
+          "caiaphas-ossuary",
+          "james-ossuary"
+        ]
+      },
+      {
+        "title": "Romans 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Romans 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1-8",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "Geography",
+        "author": "Strabo",
+        "publisher": "Perseus Digital Library",
+        "year": 1924,
+        "locator": "Book 12; H. L. Jones edition and translation",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=12",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "provincial-ethnic-geography",
+          "iconium-regional-setting"
+        ],
+        "notes": "Near-contemporary literary geography whose regional classifications require comparison with Roman administration.",
+        "id": "strabo-geography-12",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Who was Paul?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "who-was-paul-historical-orientation",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "caiaphas-ossuary",
+        "type": "archaeology",
+        "title": "Caiaphas Ossuary",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "galatia",
+        "type": "place",
+        "title": "Roman and Ethnic Galatia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "galatians",
+        "type": "book",
+        "title": "Galatians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.923
+      },
+      {
+        "id": "james-ossuary",
+        "type": "archaeology",
+        "title": "James Ossuary",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "paul",
+        "type": "person",
+        "title": "Paul",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "type": "cultural_background",
+        "title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "roman-galatia-regions-roads-cities-and-audience",
+        "type": "cultural_background",
+        "title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "who-was-paul",
+        "type": "faq",
+        "title": "Who was Paul?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f13166a6c0ed535921c57fae680ba865373df846a12a667ffd7c67bc9404bca5",
+  "evidence_hash_version": "2"
+}

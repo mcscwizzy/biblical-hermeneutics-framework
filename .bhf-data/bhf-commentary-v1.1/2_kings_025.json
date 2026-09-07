@@ -1,0 +1,101 @@
+{
+  "reference": "2 Kings 25",
+  "book": "2 Kings",
+  "chapter": 25,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_105",
+          "text": "Read the chapter with this setting in view: Babylon breaches Jerusalem, burns the temple and major buildings, dismantles the city, executes officials, deports inhabitants, and ends Zedekiah's reign. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-kings-jerusalem-falls"
+          ],
+          "verse_refs": [
+            "2 Kings 25:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_106",
+          "text": "For its historical and cultural setting, note that Second Kings ends with Jehoiachin released from prison, given an honored position, and maintained at the Babylonian king's table. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "second-kings-jehoiachin-released"
+          ],
+          "verse_refs": [
+            "2 Kings 25:27-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_107",
+          "text": "For its historical and cultural setting, note that Kings and Jeremiah distinguish the 597 BCE removal of Jehoiachin and selected groups from the later destruction of Jerusalem and additional deportations under Zedekiah. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "kings-jeremiah-deportation-sequence"
+          ],
+          "verse_refs": [
+            "2 Kings 25:1-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_106",
+          "text": "A literary feature to notice is that Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "second-kings-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Kings 25:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_106",
+          "text": "For the chapter's sequence and setting, note that New creation dwelling This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "exile-and-return-storyline:timeline:6"
+          ],
+          "verse_refs": [
+            "2 Kings 25:8-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "59b03799abc37a4aee46b316c70763be255b66d82221c8ee7c1234b2f7c6da5d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

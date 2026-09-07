@@ -1,0 +1,83 @@
+{
+  "reference": "Proverbs 1",
+  "book": "Proverbs",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_17",
+          "text": "Read the chapter with this setting in view: The received book explicitly contains distinct Solomonic collections, words of unnamed wise teachers, material copied by Hezekiah's officials, words of Agur, and instruction from Lemuel's mother. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "proverbs-multiple-collections"
+          ],
+          "verse_refs": [
+            "Proverbs 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_18",
+          "text": "For its historical and cultural setting, note that Proverbs 1:2-7 announces an educational purpose involving wisdom, discipline, justice, and discernment and identifies fear of YHWH as the beginning of knowledge. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "proverbs-purpose-fear-yhwh"
+          ],
+          "verse_refs": [
+            "Proverbs 1:2-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_19",
+          "text": "For its historical and cultural setting, note that Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-biblical-wisdom:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Proverbs 1:7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_18",
+          "text": "A literary feature to notice is that Proverbs 1-9 personifies Wisdom and Folly as women whose public calls, houses, meals, and paths embody rival forms of desire and lead respectively toward life and death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "proverbs-rival-women-paths"
+          ],
+          "verse_refs": [
+            "Proverbs 1:20-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a26ad6bb1594c112c5328a9a5b363e323d3f1fd94ea9fd3ed95fe6e87d6f49aa",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

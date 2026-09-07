@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 7",
+  "book": "Luke",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_66",
+          "text": "Read the chapter with this setting in view: Luke 7 calls the anointing woman a sinner but does not identify her sin as sexual, name her Mary Magdalene, or license sexual shaming; forgiveness, hospitality, love, and the host's judgment drive the scene. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "luke-sinful-woman"
+          ],
+          "verse_refs": [
+            "Luke 7:36-50"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_67",
+          "text": "For its historical and cultural setting, note that Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "pharisees:original_audience:0"
+          ],
+          "verse_refs": [
+            "Luke 7:36-50"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_68",
+          "text": "For its historical and cultural setting, note that Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "pharisees:historical_setting:0"
+          ],
+          "verse_refs": [
+            "Luke 7:36-50"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "988cb564a2fe7d4376d50a28342896eba421417ec65e9dedd242bc67ee1338b7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

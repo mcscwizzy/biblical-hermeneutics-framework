@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 22",
+  "book": "Luke",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_39",
+          "text": "Read the chapter with this setting in view: The minas parable uses a violent elite claimant and coerced economy, while Luke 22 critiques rulers called benefactors; readers dispute whether the ruler transparently represents God, exposes domination, or works by analogy and contrast. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "luke-minas-benefactors"
+          ],
+          "verse_refs": [
+            "Luke 22:24-27"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_40",
+          "text": "For its historical and cultural setting, note that The angel and sweat like drops of blood in Luke 22:43-44 have ancient support and omission; textual and reception questions must be disclosed, and the passage cannot glorify trauma or demand medical neglect. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-agony-variant"
+          ],
+          "verse_refs": [
+            "Luke 22:39-46"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_41",
+          "text": "For its historical and cultural setting, note that A fisherman from Galilee, Peter becomes a leading witness in Jesus' ministry and the early church. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-peter:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 22:31-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

@@ -8,6 +8,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 
 from bhf_web.services.commentary_coverage import build_commentary_coverage_snapshot
+from bhf_web.services.bhf_commentary import COMMENTARY_RELEASE
 
 
 def register_commentary_coverage_routes(
@@ -23,7 +24,7 @@ def register_commentary_coverage_routes(
         return templates.TemplateResponse(
             request,
             "commentary_coverage.html",
-            {"release": "commentary-v1.0"},
+            {"release": COMMENTARY_RELEASE},
         )
 
     @app.get("/api/internal/bhf-commentary/coverage", response_class=JSONResponse)

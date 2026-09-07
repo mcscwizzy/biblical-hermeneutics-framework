@@ -1,0 +1,661 @@
+{
+  "passage_ref": "Nehemiah 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "elephantine-judah-governor-correspondence",
+      "claim": "Papyrus Berlin P. 13495 is an Imperial Aramaic copy of a 407 BCE petition from Judeans at Elephantine to Bagohi, governor of Judah, concerning reconstruction of their damaged YHW temple.",
+      "category": "politics",
+      "source_ids": [
+        "elephantine-p13495",
+        "porten-yardeni-tad-a47",
+        "grabbe-persian-period",
+        "williamson-ezra-nehemiah-persia"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:14-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "manuscript",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "elephantine-judah-governor-correspondence:passage-relevance",
+      "claim": "The letter provides later comparative evidence for a Persian governor of Judah, Jerusalem priestly authority, written interprovincial appeals, and connections with Samaria relevant to Ezra-Nehemiah's administrative world.",
+      "category": "politics",
+      "source_ids": [
+        "elephantine-p13495",
+        "porten-yardeni-tad-a47",
+        "grabbe-persian-period",
+        "williamson-ezra-nehemiah-persia"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:14-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "manuscript",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "elephantine-judah-governor-correspondence"
+        ]
+      }
+    },
+    {
+      "id": "nehemiah-economic-justice",
+      "claim": "Nehemiah confronts nobles and officials over debt, interest, land loss, taxes, and the enslavement of Judeans, requiring restitution and presenting his own refusal of the governor's food allowance as accountable leadership.",
+      "category": "politics",
+      "source_ids": [
+        "nehemiah-1-13",
+        "shepherd-wright-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:1-19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:0",
+      "claim": "Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432 BCE, but exact dates vary with accession-year and calendar reckoning.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "fensham-ezra-nehemiah",
+        "grabbe-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:1",
+      "claim": "The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "myers-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 1:1-7:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:4",
+      "claim": "Nehemiah 5 interrupts the external-conflict story to expose exploitation within the community. The chapter condemns debt pressure, loss of fields, tax burdens, and enslavement and requires restitution, so wall completion cannot be separated from economic justice.",
+      "category": "economics",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "shepherd-wright-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:1-19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:9",
+      "claim": "The book's final relapse means the wall dedication and covenant ceremony are not a simple success formula. Nehemiah repeatedly asks God to remember him because institutional reform remains vulnerable and the restored community still needs mercy.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "shepherd-wright-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "yehud-stamp-administration",
+      "claim": "Hundreds of inscribed stamp impressions on jars from Persian and early Hellenistic Judah, concentrated especially at Ramat Rahel and Jerusalem, preserve the provincial name Yehud and an evolving administrative system.",
+      "category": "archaeology",
+      "source_ids": [
+        "lipschits-vanderhooft-yehud-stamps-2020",
+        "lipschits-vanderhooft-yehud-corpus",
+        "grabbe-persian-period",
+        "ezra-chronicles-restoration-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "yehud-stamp-administration:passage-relevance",
+      "claim": "The stamped-jar system provides material context for the provincial taxation, provisioning, officials, and economic pressures assumed in Ezra-Nehemiah without verifying a specific decree or debt complaint.",
+      "category": "archaeology",
+      "source_ids": [
+        "lipschits-vanderhooft-yehud-stamps-2020",
+        "lipschits-vanderhooft-yehud-corpus",
+        "grabbe-persian-period",
+        "ezra-chronicles-restoration-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 5:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "yehud-stamp-administration"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Copy of a Petition to Bagohi, Governor of Judah",
+        "author": "Yedanyah and the priests at Elephantine",
+        "publisher": "ERC Elephantine / Staatliche Museen zu Berlin",
+        "year": -407,
+        "locator": "Pap. Berlin P. 13495; TAD A.4.7; recto lines 1-17 and verso lines 1-13; dataset 100282",
+        "url": "https://elephantine.smb.museum/objects/object.php?o=100282",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Open scholarly object record, transcription, translation, date, and bibliography; CKL reproduces no long translated passage.",
+        "id": "elephantine-p13495",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36:22-23; Ezra 1-6; Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-6:22; Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Primary biblical presentations; no modern translation is reproduced.",
+        "id": "ezra-chronicles-restoration-text",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "The Books of Ezra and Nehemiah",
+        "author": "F. Charles Fensham",
+        "publisher": "Eerdmans",
+        "year": 1983,
+        "locator": "NICOT introduction, translation, and commentary",
+        "url": "https://www.eerdmans.com/9780802882288/the-books-of-ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "genre",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary emphasizing Semitic language, ancient Near Eastern context, historical background, theology, and major interpretive options.",
+        "id": "fensham-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Eerdmans Commentary on the Bible: Ezra and Nehemiah",
+        "author": "Lester L. Grabbe",
+        "publisher": "Eerdmans",
+        "year": 2019,
+        "locator": "Introduction and concise commentary",
+        "url": "https://www.eerdmans.com/9781467453608/eerdmans-commentary-on-the-bible-ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "date-ranges",
+          "authorship-positions",
+          "interpretive-notes"
+        ],
+        "notes": "Concise modern critical introduction and commentary.",
+        "id": "grabbe-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1: Yehud\u2014A History of the Persian Province of Judah",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Chapters on sources, Persian administration, economy, Ezra-Nehemiah, and Elephantine",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Critical history that compares literary, archaeological, numismatic, and documentary evidence.",
+        "id": "grabbe-persian-period",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "The Yehud Stamp Impressions: A Corpus of Inscribed Impressions from the Persian and Hellenistic Periods in Judah",
+        "author": "Oded Lipschits and David S. Vanderhooft",
+        "publisher": "Eisenbrauns",
+        "year": 2011,
+        "locator": "Introduction, geopolitical distribution, typology, and catalogue of 582 impressions",
+        "url": "https://doi.org/10.5325/j.ctv1bxh4n1",
+        "source_type": "academic-book",
+        "supports": [
+          "yehud-stamp-administration"
+        ],
+        "notes": "Corpus and analysis of inscribed impressions; later discoveries increased the known total.",
+        "id": "lipschits-vanderhooft-yehud-corpus",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Yehud Stamp Impressions from Ramat-Rahel: An Updated Tabulation",
+        "author": "Oded Lipschits and David S. Vanderhooft",
+        "publisher": "Bulletin of the American Schools of Oriental Research",
+        "year": 2020,
+        "locator": "BASOR 384, pp. 191-209",
+        "url": "https://doi.org/10.1086/710530",
+        "source_type": "journal-article",
+        "supports": [
+          "yehud-stamp-administration"
+        ],
+        "notes": "Peer-reviewed updated corpus count and assessment of Ramat Rahel's administrative significance.",
+        "id": "lipschits-vanderhooft-yehud-stamps-2020",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "Jacob M. Myers",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139556/ezra-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on the textual, historical, literary, and compositional complexity of Ezra-Nehemiah.",
+        "id": "myers-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "nehemiah-prayer-authorization",
+          "nehemiah-wall-opposition",
+          "nehemiah-economic-justice",
+          "nehemiah-wall-completed",
+          "nehemiah-torah-understanding",
+          "nehemiah-covenant-commitments",
+          "nehemiah-dedication-support",
+          "nehemiah-later-reforms"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "nehemiah-1-13",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Textbook of Aramaic Documents from Ancient Egypt, Volume 1: Letters",
+        "author": "Bezalel Porten and Ada Yardeni",
+        "publisher": "Hebrew University",
+        "year": 1986,
+        "locator": "TAD A.4.7, Pap. Berlin P. 13495",
+        "url": "https://elephantine.smb.museum/objects/object.php?o=100282",
+        "source_type": "academic-book",
+        "supports": [
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Standard edition referenced by the Elephantine research portal.",
+        "id": "porten-yardeni-tad-a47",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra and Nehemiah",
+        "author": "David J. Shepherd and Christopher J. H. Wright",
+        "publisher": "Eerdmans",
+        "year": 2018,
+        "locator": "Two Horizons Old Testament Commentary",
+        "url": "https://www.eerdmans.com/9781467449625/ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "canonical-role",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Theological commentary that directly engages leadership and ethically difficult texts.",
+        "id": "shepherd-wright-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, introductions and commentary on Ezra 1-6 and Nehemiah 1-6",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Technical textual, historical, literary, and documentary commentary.",
+        "id": "williamson-ezra-nehemiah-persia",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "nehemiah",
+        "type": "book",
+        "title": "Nehemiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "persian-restoration-and-yehud-administration",
+        "type": "cultural_background",
+        "title": "Persian Restoration and Yehud Administration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "27374f5f8e447a0c9b3095ebaeb35ab375c5ee5ad44f956733d5f09f45b2d8b6",
+  "evidence_hash_version": "2"
+}

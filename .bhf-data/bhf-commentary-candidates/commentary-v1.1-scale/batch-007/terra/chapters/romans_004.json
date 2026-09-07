@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 4",
+  "book": "Romans",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_135",
+          "text": "Read the chapter with this setting in view: Romans frames justification as God's action in relation to faith, grace, Messiah, resurrection, boasting, Abraham, Torah, Jew and gentile, not as an isolated abstract formula. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans-justification"
+          ],
+          "verse_refs": [
+            "Romans 4:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_136",
+          "text": "For its historical and cultural setting, note that Romans 4 reads Abraham through Genesis in an argument about uncircumcision, promise, and life from death; later faith-versus-works slogans can obscure those features. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans:interpretive_note:26"
+          ],
+          "verse_refs": [
+            "Romans 4:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_137",
+          "text": "For its historical and cultural setting, note that Romans says the world-inheritance promise came not through Torah but through faith-righteousness and narrates trust in the life-giving God. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-promise-not-through-torah"
+          ],
+          "verse_refs": [
+            "Romans 4:13-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_136",
+          "text": "A literary feature to notice is that Romans 4 presents uncircumcised Abraham as ancestor of trusting Jews and gentiles while maintaining a scriptural promise narrative. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-abraham"
+          ],
+          "verse_refs": [
+            "Romans 4:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_136",
+          "text": "For the chapter's sequence and setting, note that Abraham called from his kinship setting This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "abrahamic-covenant-framework:timeline:0"
+          ],
+          "verse_refs": [
+            "Romans 4:1-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "534c1ec8e784b538d95048bde385ffd206a0a6f91fa406399a5ffa9c2f3c70b5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

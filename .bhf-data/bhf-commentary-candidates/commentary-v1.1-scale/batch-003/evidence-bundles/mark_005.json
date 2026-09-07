@@ -1,0 +1,416 @@
+{
+  "passage_ref": "Mark 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "mark-aramaic",
+      "claim": "Mark preserves and translates several Semitic expressions, including Boanerges, Talitha koum, Corban, Ephphatha, Bartimaeus, Abba, Golgotha, and Eloi.",
+      "category": "language",
+      "source_ids": [
+        "mark-greek",
+        "sblgnt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 5:41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "mark-exorcism",
+      "claim": "Mark narrates hostile spirits and exorcisms within ancient conceptual worlds; these stories do not authorize diagnosing modern illness as demonic or replacing medical and mental-health care.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "oxford-synoptics",
+        "disabled-body"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 5:1-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "mark-gerasene",
+      "claim": "The Gerasene episode combines contested geography, the military name Legion, a large herd of pigs, liberation, social fear, and animal death; historical and symbolic explanations remain disputed.",
+      "category": "geography",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-1-8",
+        "postcolonial-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 5:1-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "mark-imperial-reception",
+      "claim": "Mark exposes Roman coercion and crucifixion while also using imperial language and patriarchal conventions; postcolonial interpretation must resist both imperial domination and romantic claims that the text stands outside its world.",
+      "category": "politics",
+      "source_ids": [
+        "postcolonial-mark",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 5:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "mark-intercalation",
+      "claim": "Mark repeatedly intercalates one story within another so that the paired episodes interpret each other.",
+      "category": "culture",
+      "source_ids": [
+        "marcus-mark-1-8",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 5:21-43"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "mark-women",
+      "claim": "Women act as petitioners, recipients of healing, prophetic exemplars, providers, witnesses to crucifixion and burial, and first recipients of the empty-tomb announcement.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "women-mark-mary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 5:21-43"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "This Abled Body: Rethinking Disabilities in Biblical Studies",
+        "author": "Hector Avalos, Sarah J. Melcher, and Jeremy Schipper, editors",
+        "publisher": "SBL Press",
+        "year": 2007,
+        "locator": "Disability studies essays including Mark 5",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Avalos.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Disability-critical biblical interpretation.",
+        "id": "disabled-body",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 1-8",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300139792/mark-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 1-8.",
+        "id": "marcus-mark-1-8",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Synoptic Gospels",
+        "author": "Stephen P. Ahearne-Kroll, editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/45760",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative research on sources, manuscripts, bodies, power, healing, food, suffering, wealth, and gender.",
+        "id": "oxford-synoptics",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial feminist reading of Mark 14-16 and related essays",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Postcolonial, gender-aware, and embodied reception.",
+        "id": "postcolonial-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament",
+        "author": "Michael W. Holmes",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Women in the Gospels of Mark and Mary",
+        "author": "",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Connecting Gospels",
+        "url": "https://academic.oup.com/book/32601/chapter-abstract/270427996",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative study of women and discipleship.",
+        "id": "women-mark-mary",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8d2c761269b4e949516bdf3c2414d863e78236519e0bf30862e228c5c0c24dc0",
+  "evidence_hash_version": "2"
+}

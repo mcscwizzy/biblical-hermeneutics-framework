@@ -1,0 +1,1084 @@
+{
+  "passage_ref": "Matthew 23",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "pharisees",
+        "title": "Pharisees",
+        "type": "institution",
+        "aliases": [
+          "pharisees institution",
+          "pharisees in scripture",
+          "pharisees structure",
+          "pharisees role"
+        ],
+        "metadata": {
+          "summary": "A diverse late Second Temple Jewish association known especially through Josephus, the New Testament, and later rabbinic memory, with influence in Torah interpretation and public life but no surviving Pharisaic archive.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 7:1-23",
+            "Matthew 23:1-36",
+            "Luke 7:36-50",
+            "John 3:1-21",
+            "Acts 5:33-40",
+            "Acts 23:1-10"
+          ]
+        }
+      },
+      {
+        "id": "scribes",
+        "title": "Scribes",
+        "type": "institution",
+        "aliases": [
+          "scribes institution",
+          "scribes in scripture",
+          "scribes structure",
+          "scribes role"
+        ],
+        "metadata": {
+          "summary": "Literate specialists whose work could include administration, document production, textual study, teaching, legal interpretation, counsel, and public authority across different biblical periods.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 22:3-13",
+            "Ezra 7:1-10",
+            "Nehemiah 8:1-18",
+            "Mark 7:1-23",
+            "Mark 12:28-34",
+            "Matthew 23:1-36"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ben-sira-scribal-vocation",
+      "claim": "Ben Sira contrasts the leisure needed for scribal wisdom with agricultural and craft labor, then depicts the scribe studying inherited writings, traveling, advising, praying, teaching, and composing.",
+      "category": "history",
+      "source_ids": [
+        "ben-sira-scribe-text",
+        "wilson-wisdom-sirach",
+        "collins-harlow-early-judaism",
+        "vanderkam-early-judaism-groups"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "second-temple-synagogues-scribes-and-sectarian-groups",
+        "parent_title": "Second Temple Synagogues, Scribes, and Sectarian Groups",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "ben-sira-scribal-vocation:passage-relevance",
+      "claim": "The portrait cautions readers against treating Gospel scribes as mere copyists and supplies earlier comparative evidence for learned interpretation and public authority.",
+      "category": "history",
+      "source_ids": [
+        "ben-sira-scribe-text",
+        "wilson-wisdom-sirach",
+        "collins-harlow-early-judaism",
+        "vanderkam-early-judaism-groups"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "second-temple-synagogues-scribes-and-sectarian-groups",
+        "parent_title": "Second Temple Synagogues, Scribes, and Sectarian Groups",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "ben-sira-scribal-vocation"
+        ]
+      }
+    },
+    {
+      "id": "matthew-anti-judaism",
+      "claim": "Matthew's polemic and passion have contributed to Christian anti-Judaism, supersessionism, and deicide accusations, requiring explicit safeguards in interpretation.",
+      "category": "culture",
+      "source_ids": [
+        "reinhartz-anti-judaism",
+        "matthew-27-25-study",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 23:1-39"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "matthew-jewish-context",
+      "claim": "Matthew's Scripture, Torah debate, practices, institutions, and actors locate it within diverse Jewish worlds even where later identity conflict shapes its polemic.",
+      "category": "culture",
+      "source_ids": [
+        "jewish-annotated-nt",
+        "deines-matthew",
+        "reinhartz-anti-judaism"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 23:1-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "matthew-woes-polemic",
+      "claim": "Matthew 23 intensifies polemic against scribes and Pharisees while ending with lament over Jerusalem.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "jewish-annotated-nt",
+        "reinhartz-anti-judaism"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 23:1-39"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "pharisees:ancient_near_east_context:0",
+      "claim": "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:hebraic_worldview:0",
+      "claim": "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:historical_context:0",
+      "claim": "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:historical_setting:0",
+      "claim": "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:original_audience:0",
+      "claim": "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:second_temple_context:0",
+      "claim": "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:ancient_near_east_context:0",
+      "claim": "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:hebraic_worldview:0",
+      "claim": "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:historical_context:0",
+      "claim": "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:historical_setting:0",
+      "claim": "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:original_audience:0",
+      "claim": "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:second_temple_context:0",
+      "claim": "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Matthew 23:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "pharisees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "pharisees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Ben Sira 38:24-39:11",
+        "author": "Ben Sira",
+        "publisher": "",
+        "year": -180,
+        "locator": "Sirach 38:24-39:11; Hebrew and Greek textual traditions",
+        "url": "https://www.eerdmans.com/9780802881762/the-wisdom-of-sirach/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "ben-sira-scribal-vocation"
+        ],
+        "notes": "Second-century BCE wisdom text; no copyrighted modern translation is reproduced.",
+        "id": "ben-sira-scribe-text",
+        "canonical_object_ids": [
+          "second-temple-synagogues-scribes-and-sectarian-groups"
+        ]
+      },
+      {
+        "title": "Early Judaism: A Comprehensive Overview",
+        "author": "John J. Collins and Daniel C. Harlow, editors",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Essays on Jewish history, literature, archaeology, groups, and institutions in Hellenistic and Roman periods",
+        "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "ben-sira-scribal-vocation",
+          "josephus-jewish-group-descriptions",
+          "4qmmt-legal-disagreement"
+        ],
+        "notes": "Multi-author academic overview.",
+        "id": "collins-harlow-early-judaism",
+        "canonical_object_ids": [
+          "second-temple-synagogues-scribes-and-sectarian-groups"
+        ]
+      },
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "pharisees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "pharisees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Levine, Amy-Jill, and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Matthew annotations and contextual essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "hebraic-worldview",
+          "matthew-jewish-context",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Jewish scholarly contextualization and reception-aware annotation; exact edition page locators require human review.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Difficult Texts: Matthew 27.25",
+        "author": "Worthen, Jeremy",
+        "publisher": "Theology / SAGE",
+        "year": 2015,
+        "locator": "Theology 118.5",
+        "url": "https://journals.sagepub.com/doi/10.1177/0040571X15586758",
+        "source_type": "journal-article",
+        "supports": [
+          "matthew-blood-guilt",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Focused ethical and reception study of Matthew 27:25 and Christian anti-Judaism.",
+        "id": "matthew-27-25-study",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "An Introduction to Early Judaism",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapter 4, Jewish groups and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Source-critical overview of the evidence for Pharisees and other early Jewish groups.",
+        "id": "pharisees-historical-orientation",
+        "canonical_object_ids": [
+          "pharisees"
+        ]
+      },
+      {
+        "title": "New Testament Origins of Christian Anti-Judaism",
+        "author": "Reinhartz, Adele",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Antisemitism, chapter 2",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-antisemitism/new-testament-origins-of-christian-antijudaism/B13BB1532EC63836E2B5DADF9CED9D00",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-blood-guilt",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Addresses supersessionism, deicide, Satanic association, and post-Holocaust interpretation.",
+        "id": "reinhartz-anti-judaism",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Wisdom of Sirach: A New Translation with Notes",
+        "author": "Walter T. Wilson",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Sirach 38:24-39:11",
+        "url": "https://www.eerdmans.com/9780802881762/the-wisdom-of-sirach/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Critical translation and commentary used for the Second Temple learned-scribe portrait.",
+        "id": "scribes-historical-orientation",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "An Introduction to Early Judaism",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapters 1 and 4 on history, leaders, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-acts-synagogue-reading",
+          "theodotus-synagogue-inscription",
+          "ben-sira-scribal-vocation",
+          "josephus-jewish-group-descriptions",
+          "4qmmt-legal-disagreement"
+        ],
+        "notes": "Current broad scholarly synthesis.",
+        "id": "vanderkam-early-judaism-groups",
+        "canonical_object_ids": [
+          "second-temple-synagogues-scribes-and-sectarian-groups"
+        ]
+      },
+      {
+        "title": "The Wisdom of Sirach",
+        "author": "Walter T. Wilson",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Sirach 38:24-39:11 and introduction to Ben Sira's scribal setting",
+        "url": "https://www.eerdmans.com/9780802881762/the-wisdom-of-sirach/",
+        "source_type": "reference-work",
+        "supports": [
+          "ben-sira-scribal-vocation"
+        ],
+        "notes": "Recent historical and literary commentary.",
+        "id": "wilson-wisdom-sirach",
+        "canonical_object_ids": [
+          "second-temple-synagogues-scribes-and-sectarian-groups"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "pharisees",
+        "type": "institution",
+        "title": "Pharisees",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "scribes",
+        "type": "institution",
+        "title": "Scribes",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "second-temple-synagogues-scribes-and-sectarian-groups",
+        "type": "cultural_background",
+        "title": "Second Temple Synagogues, Scribes, and Sectarian Groups",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "36153683b44595549db7ab15426fc22d45b6d4bb676152c6cfc3bfca19eeb898",
+  "evidence_hash_version": "2"
+}

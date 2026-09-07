@@ -1,0 +1,84 @@
+{
+  "reference": "Lamentations 2",
+  "book": "Lamentations",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_18",
+          "text": "Read the chapter with this setting in view: Jerusalem's 587/586 BCE destruction is the most probable historical horizon, though exact poem dates are unstated. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "lam-catastrophe-horizon"
+          ],
+          "verse_refs": [
+            "Lamentations 2:1-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_19",
+          "text": "For its historical and cultural setting, note that Chapter 2 portrays the Lord as acting like an enemy while also naming human adversaries. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "lam-divine-enemy"
+          ],
+          "verse_refs": [
+            "Lamentations 2:1-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_20",
+          "text": "For its historical and cultural setting, note that The poems make children's starvation and siege-driven maternal horror central accusations. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "lam-children-famine"
+          ],
+          "verse_refs": [
+            "Lamentations 2:11-12",
+            "Lamentations 2:20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_19",
+          "text": "A literary feature to notice is that Daughter Zion personifies Jerusalem as bereaved city, mother, sufferer, accused party, and speaking complainant. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "lam-daughter-zion"
+          ],
+          "verse_refs": [
+            "Lamentations 2:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dfd6fd228e7bc926fd3ebf7762913e886e76ea6eb944fe222985e1b22b1388bd",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

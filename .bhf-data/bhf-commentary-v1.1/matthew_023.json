@@ -1,0 +1,101 @@
+{
+  "reference": "Matthew 23",
+  "book": "Matthew",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: Matthew's Scripture, Torah debate, practices, institutions, and actors locate it within diverse Jewish worlds even where later identity conflict shapes its polemic. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-jewish-context"
+          ],
+          "verse_refs": [
+            "Matthew 23:1-39"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "scribes:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 23:1-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "scribes:original_audience:0"
+          ],
+          "verse_refs": [
+            "Matthew 23:1-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_3",
+          "text": "A literary feature to notice is that Matthew 23 intensifies polemic against scribes and Pharisees while ending with lament over Jerusalem. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-woes-polemic"
+          ],
+          "verse_refs": [
+            "Matthew 23:1-39"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_3",
+          "text": "For a later or comparative connection, note that Ben Sira contrasts the leisure needed for scribal wisdom with agricultural and craft labor, then depicts the scribe studying inherited writings, traveling, advising, praying, teaching, and composing. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ben-sira-scribal-vocation"
+          ],
+          "verse_refs": [
+            "Matthew 23:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "36153683b44595549db7ab15426fc22d45b6d4bb676152c6cfc3bfca19eeb898",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

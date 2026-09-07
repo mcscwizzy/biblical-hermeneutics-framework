@@ -1,0 +1,740 @@
+{
+  "passage_ref": "Ecclesiastes 12",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ecclesiastes-date-language-qumran",
+      "claim": "The book's late Hebrew features and loanwords support a Persian- or early Hellenistic-period date in most critical scholarship, while 4QQoha demonstrates that a Hebrew form circulated by approximately 175-150 BCE.",
+      "category": "culture",
+      "source_ids": [
+        "seow-ecclesiastes",
+        "weeks-ecclesiastes",
+        "ecclesiastes-qumran",
+        "usc-4q109",
+        "gerstenberger-qoheleth-writings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ecclesiastes",
+        "parent_title": "Ecclesiastes",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "ecclesiastes-death-time-chance",
+      "claim": "Qohelet presents death as a common fate that disrupts achievement and remembrance and presents time and chance as breaking predictable links between skill and outcome.",
+      "category": "culture",
+      "source_ids": [
+        "ecclesiastes-masoretic",
+        "bundvad-time",
+        "fox-jps-ecclesiastes",
+        "keefer-meaning-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ecclesiastes",
+        "parent_title": "Ecclesiastes",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "ecclesiastes-frame-qohelet-epilogue",
+      "claim": "The received book distinguishes a third-person frame, Qohelet's extended first-person discourse, a closing hebel refrain, and a third-person epilogue that evaluates Qohelet and concludes with fear of God and judgment.",
+      "category": "culture",
+      "source_ids": [
+        "ecclesiastes-masoretic",
+        "longman-ecclesiastes-second",
+        "cambridge-companion-ecclesiastes",
+        "weeks-ecclesiastes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:8-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ecclesiastes",
+        "parent_title": "Ecclesiastes",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "ecclesiastes-god-fear-gift-judgment",
+      "claim": "The received book speaks of God's enduring action, gifts, inscrutability, judgment of injustice, human fear, and final accountability without offering humans mastery of God's whole work.",
+      "category": "culture",
+      "source_ids": [
+        "ecclesiastes-masoretic",
+        "seow-ecclesiastes",
+        "fox-jps-ecclesiastes",
+        "longman-ecclesiastes-second",
+        "bartholomew-ecclesiastes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:13-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ecclesiastes",
+        "parent_title": "Ecclesiastes",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "ecclesiastes-hebel-multivalent",
+      "claim": "Hebel is a concrete vapor or breath image whose uses across Ecclesiastes convey overlapping ideas such as transience, frustration, enigma, insubstantiality, and absurd mismatch rather than one mechanically identical gloss.",
+      "category": "language",
+      "source_ids": [
+        "ecclesiastes-masoretic",
+        "miller-hebel",
+        "seow-ecclesiastes",
+        "fox-jps-ecclesiastes",
+        "weeks-ecclesiastes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ecclesiastes",
+        "parent_title": "Ecclesiastes",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "claim": "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:13-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-biblical-wisdom",
+        "parent_title": "What is biblical wisdom?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-biblical-wisdom:historical_context:0",
+      "claim": "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 12:13-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-biblical-wisdom",
+        "parent_title": "What is biblical wisdom?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Ecclesiastes",
+        "author": "Craig G. Bartholomew",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms",
+        "url": "https://dev.bakeracademic.com/p/Ecclesiastes-Craig-G-Bartholomew/41449",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Exegetical and theological commentary engaging Hebrew, literary shape, canonical context, and contemporary significance.",
+        "id": "bartholomew-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Time in the Book of Ecclesiastes",
+        "author": "Mette Bundvad",
+        "publisher": "Oxford University Press",
+        "year": 2015,
+        "locator": "Oxford Theology and Religion Monographs",
+        "url": "https://academic.oup.com/book/7347",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "major-themes",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of cosmic time, human time experience, structure, composition, and protest in Qohelet.",
+        "id": "bundvad-time",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Ecclesiastes",
+        "author": "Mette Bundvad",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Biblical Wisdom Literature, chapter 10, pp. 184-199",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-biblical-wisdom-literature/ecclesiastes/88E7F86EA58E601F569CFD4FDACE14E0",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "interpretive-disputes",
+          "canonical-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Current overview emphasizing contradiction, narrator, royal persona, and distinctive thematic concerns.",
+        "id": "cambridge-companion-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Ecclesiastes 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ecclesiastes-12",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Masoretic Ecclesiastes",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ecclesiastes 1-12 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ecclesiastes-masoretic",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Qumran Qohelet manuscripts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "4QQoha (4Q109) and 4QQohb (4Q110)",
+        "url": "",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "date-ranges",
+          "second-temple-context",
+          "primary-sources",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Fragmentary Hebrew manuscript witnesses from Qumran Cave 4.",
+        "id": "ecclesiastes-qumran",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "The JPS Bible Commentary: Ecclesiastes",
+        "author": "Michael V. Fox",
+        "publisher": "Jewish Publication Society",
+        "year": 2004,
+        "locator": "JPS Bible Commentary",
+        "url": "https://jps.org/books/jps-bible-commentary-ecclesiastes/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "major-themes",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Hebrew-text commentary focused on Qohelet's argument, absurdity, injustice, wisdom, enjoyment, God, and Jewish interpretation.",
+        "id": "fox-jps-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Qoheleth in the Writings",
+        "author": "Erhard S. Gerstenberger",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "The Oxford Handbook of the Writings of the Hebrew Bible, chapter 16, pp. 245-260",
+        "url": "https://academic.oup.com/edited-volume/28060/chapter-abstract/212046332",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "canonical-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Overview of Qohelet's setting, wisdom antecedents, property, honor, power, skepticism, enjoyment, and place in the Writings.",
+        "id": "gerstenberger-qoheleth-writings",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "James 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-3",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Job 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "job-28",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Ecclesiastes and the Meaning of Life in the Ancient World",
+        "author": "Arthur Keefer",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "Chapters 5-7 on Ecclesiastes, suffering, joy, and ancient contexts",
+        "url": "https://www.cambridge.org/core/books/ecclesiastes-and-the-meaning-of-life-in-the-ancient-world/8F9D3CFEF326DF6FD5E7A804C0E0DFFD",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "major-themes",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Comparative study distinguishing coherence, purpose, and significance in Ecclesiastes and ancient reflection on suffering and joy.",
+        "id": "keefer-meaning-life",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "The Book of Ecclesiastes, 2nd ed.",
+        "author": "Tremper Longman III",
+        "publisher": "Eerdmans",
+        "year": 2026,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802879059/the-book-of-ecclesiastes-2nd-ed/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "structure",
+          "authorship-positions",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "A current commentary arguing for a prologue, Qohelet discourse, and epilogue structure and a strongly evaluative frame.",
+        "id": "longman-ecclesiastes-second",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Matthew 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-7",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Symbol and Rhetoric in Ecclesiastes: The Place of Hebel in Qohelet's Work",
+        "author": "Douglas B. Miller",
+        "publisher": "Society of Biblical Literature",
+        "year": 2002,
+        "locator": "Academia Biblica 2",
+        "url": "https://cart.sbl-site.org/books/065002P",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Focused lexical, metaphorical, and rhetorical study of hebel as a multivalent vapor symbol.",
+        "id": "miller-hebel",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Proverbs 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Proverbs 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs-3",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Psalm 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Ecclesiastes",
+        "author": "Choon-Leong Seow",
+        "publisher": "Yale University Press",
+        "year": 1997,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139600/ecclesiastes/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Critical translation and commentary attending to language, social history, ancient comparisons, theology, and reception.",
+        "id": "seow-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Qohelet (Ecclesiastes): Fragments from Qumran Cave 4",
+        "author": "",
+        "publisher": "University of Southern California, West Semitic Research Project",
+        "year": null,
+        "locator": "4Q109 - 4Q Qohelet a",
+        "url": "https://dornsife.usc.edu/wsrp/qohelet-ecclesiastes/",
+        "source_type": "reference-work",
+        "supports": [
+          "date-ranges",
+          "second-temple-context",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "University manuscript presentation with images, contents, and the approximate 175-150 BCE date of the earlier fragmentary Qumran witness.",
+        "id": "usc-4q109",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Ecclesiastes 1-5: A Critical and Exegetical Commentary",
+        "author": "Stuart Weeks",
+        "publisher": "T&T Clark",
+        "year": 2020,
+        "locator": "International Critical Commentary; introduction and Ecclesiastes 1-5",
+        "url": "https://www.bloomsbury.com/us/ecclesiastes-15-9780567031136/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "greek-words",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed philological, text-critical, historical, literary, and theological commentary with an introduction to the whole book.",
+        "id": "weeks-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ecclesiastes",
+        "type": "book",
+        "title": "Ecclesiastes",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      },
+      {
+        "id": "what-is-biblical-wisdom",
+        "type": "faq",
+        "title": "What is biblical wisdom?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "fd0de1d1d1bb2967b900603a826c4d37da85a167e7dd4c29189a368ee0c208a8",
+  "evidence_hash_version": "2"
+}

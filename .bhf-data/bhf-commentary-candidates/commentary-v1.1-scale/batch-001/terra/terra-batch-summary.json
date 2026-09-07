@@ -1,0 +1,2842 @@
+{
+  "report_version": "commentary-v1.1-terra-scaled-batch-v1",
+  "generated_at": "2026-09-05T21:35:03Z",
+  "model": "terra-codex-commentary-v1.1-batch-001-medium",
+  "batch_id": "batch-001",
+  "status": "READY_FOR_BATCH_002",
+  "lock_revalidation": {
+    "report_version": "commentary-v1.1-terra-scaled-batch-v1",
+    "generated_at": "2026-09-05T21:35:03Z",
+    "phase": "pre_generation_lock_revalidation",
+    "chapters_checked": 50,
+    "locks_revalidated": 50,
+    "stale_locks": [],
+    "results": [
+      {
+        "reference": "Daniel 9",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "39019503fe0602353e0a38ee2bee01d72cd27bcfd75eb1c8b010a2bd25926c80",
+        "actual_hash": "39019503fe0602353e0a38ee2bee01d72cd27bcfd75eb1c8b010a2bd25926c80",
+        "expected_evidence_ids": [
+          "daniel-seventy-weeks",
+          "daniel:interpretive_note:17",
+          "daniel:interpretive_note:18",
+          "daniel:interpretive_note:19",
+          "daniel:interpretive_note:27",
+          "dead-sea-scrolls:ancient_near_east_context:0",
+          "dead-sea-scrolls:historical_context:0",
+          "jeremiah-reception-distinction",
+          "jeremiah-seventy-years",
+          "temple-mount-area-finds:ancient_near_east_context:0",
+          "temple-mount-area-finds:historical_context:0",
+          "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+          "wadi-murabbaat-scrolls:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "daniel-seventy-weeks",
+          "daniel:interpretive_note:17",
+          "daniel:interpretive_note:18",
+          "daniel:interpretive_note:19",
+          "daniel:interpretive_note:27",
+          "dead-sea-scrolls:ancient_near_east_context:0",
+          "dead-sea-scrolls:historical_context:0",
+          "jeremiah-reception-distinction",
+          "jeremiah-seventy-years",
+          "temple-mount-area-finds:ancient_near_east_context:0",
+          "temple-mount-area-finds:historical_context:0",
+          "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+          "wadi-murabbaat-scrolls:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Matthew 23",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "36153683b44595549db7ab15426fc22d45b6d4bb676152c6cfc3bfca19eeb898",
+        "actual_hash": "36153683b44595549db7ab15426fc22d45b6d4bb676152c6cfc3bfca19eeb898",
+        "expected_evidence_ids": [
+          "ben-sira-scribal-vocation",
+          "ben-sira-scribal-vocation:passage-relevance",
+          "matthew-anti-judaism",
+          "matthew-jewish-context",
+          "matthew-woes-polemic",
+          "pharisees:ancient_near_east_context:0",
+          "pharisees:hebraic_worldview:0",
+          "pharisees:historical_context:0",
+          "pharisees:historical_setting:0",
+          "pharisees:original_audience:0",
+          "pharisees:second_temple_context:0",
+          "scribes:ancient_near_east_context:0",
+          "scribes:hebraic_worldview:0",
+          "scribes:historical_context:0",
+          "scribes:historical_setting:0",
+          "scribes:original_audience:0",
+          "scribes:second_temple_context:0"
+        ],
+        "actual_evidence_ids": [
+          "ben-sira-scribal-vocation",
+          "ben-sira-scribal-vocation:passage-relevance",
+          "matthew-anti-judaism",
+          "matthew-jewish-context",
+          "matthew-woes-polemic",
+          "pharisees:ancient_near_east_context:0",
+          "pharisees:hebraic_worldview:0",
+          "pharisees:historical_context:0",
+          "pharisees:historical_setting:0",
+          "pharisees:original_audience:0",
+          "pharisees:second_temple_context:0",
+          "scribes:ancient_near_east_context:0",
+          "scribes:hebraic_worldview:0",
+          "scribes:historical_context:0",
+          "scribes:historical_setting:0",
+          "scribes:original_audience:0",
+          "scribes:second_temple_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Acts 7",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "c9c333dfeb40cde683bb389496793a99579f5591bd6a22d73b7021629b9d5196",
+        "actual_hash": "c9c333dfeb40cde683bb389496793a99579f5591bd6a22d73b7021629b9d5196",
+        "expected_evidence_ids": [
+          "acts-historical-method",
+          "acts-speeches",
+          "acts-stephen",
+          "acts-text-witnesses",
+          "acts-western-text",
+          "amos-acts7-reuse",
+          "amos:interpretive_note:16",
+          "amos:interpretive_note:32",
+          "amos:interpretive_note:34",
+          "joseph-interprets-pharaohs-dreams:ancient_near_east_context:0",
+          "joseph-interprets-pharaohs-dreams:historical_context:0",
+          "moses:ancient_near_east_context:0",
+          "moses:hebraic_worldview:0",
+          "moses:historical_context:0",
+          "moses:key_places:0",
+          "moses:key_places:1",
+          "moses:key_places:2",
+          "moses:key_places:3",
+          "moses:second_temple_context:0"
+        ],
+        "actual_evidence_ids": [
+          "acts-historical-method",
+          "acts-speeches",
+          "acts-stephen",
+          "acts-text-witnesses",
+          "acts-western-text",
+          "amos-acts7-reuse",
+          "amos:interpretive_note:16",
+          "amos:interpretive_note:32",
+          "amos:interpretive_note:34",
+          "joseph-interprets-pharaohs-dreams:ancient_near_east_context:0",
+          "joseph-interprets-pharaohs-dreams:historical_context:0",
+          "moses:ancient_near_east_context:0",
+          "moses:hebraic_worldview:0",
+          "moses:historical_context:0",
+          "moses:key_places:0",
+          "moses:key_places:1",
+          "moses:key_places:2",
+          "moses:key_places:3",
+          "moses:second_temple_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Psalms 78",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "5f4977074ca2775d7626d6817ac3c39f52b71eb077c01097e3e2147702b25a80",
+        "actual_hash": "5f4977074ca2775d7626d6817ac3c39f52b71eb077c01097e3e2147702b25a80",
+        "expected_evidence_ids": [
+          "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+          "why-does-the-bible-repeat-themes:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+          "why-does-the-bible-repeat-themes:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Ezekiel 43",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "26e2425543433df4708d0e35944363c730475a42d59d11acad6fec67eeda4e53",
+        "actual_hash": "26e2425543433df4708d0e35944363c730475a42d59d11acad6fec67eeda4e53",
+        "expected_evidence_ids": [
+          "ezekiel-glory-departure-return",
+          "ezekiel-temple-vision"
+        ],
+        "actual_evidence_ids": [
+          "ezekiel-glory-departure-return",
+          "ezekiel-temple-vision"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Ecclesiastes 9",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "c28c567ef06c441d63b52199e9ad6d72e8c86274afad579f220757d772d54359",
+        "actual_hash": "c28c567ef06c441d63b52199e9ad6d72e8c86274afad579f220757d772d54359",
+        "expected_evidence_ids": [
+          "ecclesiastes-death-time-chance",
+          "ecclesiastes-enjoyment-divine-gift",
+          "ecclesiastes-oppression-injustice",
+          "ecclesiastes-wisdom-relative-not-control"
+        ],
+        "actual_evidence_ids": [
+          "ecclesiastes-death-time-chance",
+          "ecclesiastes-enjoyment-divine-gift",
+          "ecclesiastes-oppression-injustice",
+          "ecclesiastes-wisdom-relative-not-control"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Revelation 3",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "f49db4df40ff90c5a256286b3043c2eb9d8fa95017a60903f6ce2e6f5b9f8ea0",
+        "actual_hash": "f49db4df40ff90c5a256286b3043c2eb9d8fa95017a60903f6ce2e6f5b9f8ea0",
+        "expected_evidence_ids": [
+          "rev-no-uniform-persecution",
+          "rev-scriptural-reuse"
+        ],
+        "actual_evidence_ids": [
+          "rev-no-uniform-persecution",
+          "rev-scriptural-reuse"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Matthew 8",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "0cccd72ddb8a4bef688a6d1e6c030d9e0924ab0d2e646272143f7b68b568b73f",
+        "actual_hash": "0cccd72ddb8a4bef688a6d1e6c030d9e0924ab0d2e646272143f7b68b568b73f",
+        "expected_evidence_ids": [
+          "matthew-healing-disability"
+        ],
+        "actual_evidence_ids": [
+          "matthew-healing-disability"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Leviticus 21",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "b1d139c1253f531036f9730604ae8d61fa80259eba32f0f95f49006362b1c04f",
+        "actual_hash": "b1d139c1253f531036f9730604ae8d61fa80259eba32f0f95f49006362b1c04f",
+        "expected_evidence_ids": [
+          "leviticus-literary-movement"
+        ],
+        "actual_evidence_ids": [
+          "leviticus-literary-movement"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "1 Chronicles 29",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "2fedff998ef075a900d7f5d086d3e894566de00c17aa7d01e79719b4872c1fe9",
+        "actual_hash": "2fedff998ef075a900d7f5d086d3e894566de00c17aa7d01e79719b4872c1fe9",
+        "expected_evidence_ids": [
+          "first-chronicles-david-prepares"
+        ],
+        "actual_evidence_ids": [
+          "first-chronicles-david-prepares"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Psalms 79",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "ff407b0ac94bf425b1498bdb9d5014090982a2dc9bdda4d148885720e930775a",
+        "actual_hash": "ff407b0ac94bf425b1498bdb9d5014090982a2dc9bdda4d148885720e930775a",
+        "expected_evidence_ids": [
+          "psalms-exile-restoration-pilgrimage"
+        ],
+        "actual_evidence_ids": [
+          "psalms-exile-restoration-pilgrimage"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Ezekiel 8",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "d4e800b36719e6f41798d77ebcf389ff11003740a863d35726fb63552999e037",
+        "actual_hash": "d4e800b36719e6f41798d77ebcf389ff11003740a863d35726fb63552999e037",
+        "expected_evidence_ids": [
+          "ezekiel-glory-departure-return"
+        ],
+        "actual_evidence_ids": [
+          "ezekiel-glory-departure-return"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Proverbs 29",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "5903c5af82160aace447a302a8cc45d3d5cfbb450ca452f505dadb938de9920e",
+        "actual_hash": "5903c5af82160aace447a302a8cc45d3d5cfbb450ca452f505dadb938de9920e",
+        "expected_evidence_ids": [
+          "proverbs-poverty-justice-complexity"
+        ],
+        "actual_evidence_ids": [
+          "proverbs-poverty-justice-complexity"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Revelation 16",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "fbf1720c8d253a2293f49737b95aa9f45c387ec6e25efb521ccaf0adc4b072c2",
+        "actual_hash": "fbf1720c8d253a2293f49737b95aa9f45c387ec6e25efb521ccaf0adc4b072c2",
+        "expected_evidence_ids": [
+          "megiddo-excavations:ancient_near_east_context:0",
+          "megiddo-excavations:historical_context:0",
+          "rev-armageddon",
+          "rev-scriptural-reuse",
+          "rev-septets"
+        ],
+        "actual_evidence_ids": [
+          "megiddo-excavations:ancient_near_east_context:0",
+          "megiddo-excavations:historical_context:0",
+          "rev-armageddon",
+          "rev-scriptural-reuse",
+          "rev-septets"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Matthew 12",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "4937191a9b53f7677ea0e0c55e2872ed556d92cab49cfe4df1afcc9872efeaf3",
+        "actual_hash": "4937191a9b53f7677ea0e0c55e2872ed556d92cab49cfe4df1afcc9872efeaf3",
+        "expected_evidence_ids": [
+          "jonah-sign-reception",
+          "jonah-three-days",
+          "jonah:interpretive_note:16",
+          "jonah:interpretive_note:35",
+          "jonah:interpretive_note:36"
+        ],
+        "actual_evidence_ids": [
+          "jonah-sign-reception",
+          "jonah-three-days",
+          "jonah:interpretive_note:16",
+          "jonah:interpretive_note:35",
+          "jonah:interpretive_note:36"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Deuteronomy 28",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "9fa5b2acc13fbcfa39f4f0d8cc80e75ebea11c039400e55db2d3d8377d73039a",
+        "actual_hash": "9fa5b2acc13fbcfa39f4f0d8cc80e75ebea11c039400e55db2d3d8377d73039a",
+        "expected_evidence_ids": [
+          "deuteronomy-literary-movement",
+          "deuteronomy:interpretive_note:2",
+          "exile-theme:ancient_near_east_context:0",
+          "exile-theme:hebraic_worldview:0",
+          "exile-theme:historical_context:0",
+          "exile-theme:second_temple_context:0",
+          "haggai-scarcity"
+        ],
+        "actual_evidence_ids": [
+          "deuteronomy-literary-movement",
+          "deuteronomy:interpretive_note:2",
+          "exile-theme:ancient_near_east_context:0",
+          "exile-theme:hebraic_worldview:0",
+          "exile-theme:historical_context:0",
+          "exile-theme:second_temple_context:0",
+          "haggai-scarcity"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "2 Chronicles 35",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "1a03c8262aa79a45d9bc47d313277b58cf2af3d20bb845cc4e60c726ca5fbf5b",
+        "actual_hash": "1a03c8262aa79a45d9bc47d313277b58cf2af3d20bb845cc4e60c726ca5fbf5b",
+        "expected_evidence_ids": [
+          "2-kings:interpretive_note:5",
+          "lam-jeremiah-reception",
+          "second-chronicles-josiah-reform"
+        ],
+        "actual_evidence_ids": [
+          "2-kings:interpretive_note:5",
+          "lam-jeremiah-reception",
+          "second-chronicles-josiah-reform"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Lamentations 2",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "dfd6fd228e7bc926fd3ebf7762913e886e76ea6eb944fe222985e1b22b1388bd",
+        "actual_hash": "dfd6fd228e7bc926fd3ebf7762913e886e76ea6eb944fe222985e1b22b1388bd",
+        "expected_evidence_ids": [
+          "lam-acrostics",
+          "lam-catastrophe-horizon",
+          "lam-children-famine",
+          "lam-daughter-zion",
+          "lam-divine-enemy",
+          "lam-five-poems"
+        ],
+        "actual_evidence_ids": [
+          "lam-acrostics",
+          "lam-catastrophe-horizon",
+          "lam-children-famine",
+          "lam-daughter-zion",
+          "lam-divine-enemy",
+          "lam-five-poems"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Isaiah 66",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "a0d7ac4e4f0892c87e5534a098973f9e7d476429cfe940e487f806a1db95f923",
+        "actual_hash": "a0d7ac4e4f0892c87e5534a098973f9e7d476429cfe940e487f806a1db95f923",
+        "expected_evidence_ids": [
+          "2-peter:interpretive_note:38",
+          "isaiah-death-new-creation",
+          "isaiah-nations-empire",
+          "isaiah-qumran-witnesses",
+          "isaiah-reception-distinction",
+          "new-jerusalem-prophecy:ancient_near_east_context:0",
+          "new-jerusalem-prophecy:historical_context:0",
+          "new-jerusalem:ancient_near_east_context:0",
+          "new-jerusalem:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "2-peter:interpretive_note:38",
+          "isaiah-death-new-creation",
+          "isaiah-nations-empire",
+          "isaiah-qumran-witnesses",
+          "isaiah-reception-distinction",
+          "new-jerusalem-prophecy:ancient_near_east_context:0",
+          "new-jerusalem-prophecy:historical_context:0",
+          "new-jerusalem:ancient_near_east_context:0",
+          "new-jerusalem:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Matthew 11",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "e35cddeb854eac6a569807d499161075ca68fb27f09e6827a4948c29a13ad9b4",
+        "actual_hash": "e35cddeb854eac6a569807d499161075ca68fb27f09e6827a4948c29a13ad9b4",
+        "expected_evidence_ids": [
+          "malachi-new-testament",
+          "matthew-discourses"
+        ],
+        "actual_evidence_ids": [
+          "malachi-new-testament",
+          "matthew-discourses"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Deuteronomy 15",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "6f264377f07d0c2aa8ca787d930013cac8d786bc10afc25cb1bf71daff533c43",
+        "actual_hash": "6f264377f07d0c2aa8ca787d930013cac8d786bc10afc25cb1bf71daff533c43",
+        "expected_evidence_ids": [
+          "deuteronomy-literary-movement",
+          "deuteronomy:interpretive_note:1"
+        ],
+        "actual_evidence_ids": [
+          "deuteronomy-literary-movement",
+          "deuteronomy:interpretive_note:1"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "2 Chronicles 26",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "11e43e30f507230697833e329860e7f591e921fbf941d5ba7af27717390b2c12",
+        "actual_hash": "11e43e30f507230697833e329860e7f591e921fbf941d5ba7af27717390b2c12",
+        "expected_evidence_ids": [
+          "second-chronicles-seek-humble-pattern"
+        ],
+        "actual_evidence_ids": [
+          "second-chronicles-seek-humble-pattern"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Psalms 132",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "06f0094a80896c25abe1fc242d06f855e7ed0362ae2b399d0e05298303a3e92a",
+        "actual_hash": "06f0094a80896c25abe1fc242d06f855e7ed0362ae2b399d0e05298303a3e92a",
+        "expected_evidence_ids": [
+          "psalms-exile-restoration-pilgrimage"
+        ],
+        "actual_evidence_ids": [
+          "psalms-exile-restoration-pilgrimage"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Isaiah 62",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "7fd7647a02040e5f721cef71acddb270f33f87b6896bd97065c43ddf7936ffcf",
+        "actual_hash": "7fd7647a02040e5f721cef71acddb270f33f87b6896bd97065c43ddf7936ffcf",
+        "expected_evidence_ids": [
+          "isaiah-qumran-witnesses"
+        ],
+        "actual_evidence_ids": [
+          "isaiah-qumran-witnesses"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Proverbs 14",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "119ba543ed2108d4ac77733ca66efffc2885cbe32e5498fffb621c127f2fd28e",
+        "actual_hash": "119ba543ed2108d4ac77733ca66efffc2885cbe32e5498fffb621c127f2fd28e",
+        "expected_evidence_ids": [
+          "proverbs-poverty-justice-complexity"
+        ],
+        "actual_evidence_ids": [
+          "proverbs-poverty-justice-complexity"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Daniel 11",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "7e7161c1c3b285ce6e1c4413a437467aff7ecd4853b2f3eb335ef6d81bf3ae98",
+        "actual_hash": "7e7161c1c3b285ce6e1c4413a437467aff7ecd4853b2f3eb335ef6d81bf3ae98",
+        "expected_evidence_ids": [
+          "ammon:ancient_near_east_context:0",
+          "ammon:historical_context:0",
+          "chaldea:ancient_near_east_context:0",
+          "chaldea:historical_context:0",
+          "daniel-compositional-horizons",
+          "daniel-imperial-resistance",
+          "daniel-kingdom-review",
+          "daniel:interpretive_note:0",
+          "daniel:interpretive_note:19",
+          "daniel:interpretive_note:22",
+          "daniel:interpretive_note:28",
+          "dead-sea-scrolls:ancient_near_east_context:0",
+          "dead-sea-scrolls:historical_context:0",
+          "edom:ancient_near_east_context:0",
+          "edom:historical_context:0",
+          "midian:ancient_near_east_context:0",
+          "midian:historical_context:0",
+          "moab-1:ancient_near_east_context:0",
+          "moab-1:historical_context:0",
+          "philistia:ancient_near_east_context:0",
+          "philistia:historical_context:0",
+          "syria-1:ancient_near_east_context:0",
+          "syria-1:historical_context:0",
+          "temple-mount-area-finds:ancient_near_east_context:0",
+          "temple-mount-area-finds:historical_context:0",
+          "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+          "wadi-murabbaat-scrolls:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "ammon:ancient_near_east_context:0",
+          "ammon:historical_context:0",
+          "chaldea:ancient_near_east_context:0",
+          "chaldea:historical_context:0",
+          "daniel-compositional-horizons",
+          "daniel-imperial-resistance",
+          "daniel-kingdom-review",
+          "daniel:interpretive_note:0",
+          "daniel:interpretive_note:19",
+          "daniel:interpretive_note:22",
+          "daniel:interpretive_note:28",
+          "dead-sea-scrolls:ancient_near_east_context:0",
+          "dead-sea-scrolls:historical_context:0",
+          "edom:ancient_near_east_context:0",
+          "edom:historical_context:0",
+          "midian:ancient_near_east_context:0",
+          "midian:historical_context:0",
+          "moab-1:ancient_near_east_context:0",
+          "moab-1:historical_context:0",
+          "philistia:ancient_near_east_context:0",
+          "philistia:historical_context:0",
+          "syria-1:ancient_near_east_context:0",
+          "syria-1:historical_context:0",
+          "temple-mount-area-finds:ancient_near_east_context:0",
+          "temple-mount-area-finds:historical_context:0",
+          "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+          "wadi-murabbaat-scrolls:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Luke 11",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "0abed47b51e8a0610ff6751c9aea7bd1d2cee1db202d79c11886569acefb36a3",
+        "actual_hash": "0abed47b51e8a0610ff6751c9aea7bd1d2cee1db202d79c11886569acefb36a3",
+        "expected_evidence_ids": [
+          "jonah-sign-reception",
+          "jonah:interpretive_note:35",
+          "jonah:interpretive_note:36",
+          "luke-prayer",
+          "prayer-theme:ancient_near_east_context:0",
+          "prayer-theme:historical_context:0",
+          "theology-of-prayer:ancient_near_east_context:0",
+          "theology-of-prayer:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "jonah-sign-reception",
+          "jonah:interpretive_note:35",
+          "jonah:interpretive_note:36",
+          "luke-prayer",
+          "prayer-theme:ancient_near_east_context:0",
+          "prayer-theme:historical_context:0",
+          "theology-of-prayer:ancient_near_east_context:0",
+          "theology-of-prayer:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "2 Kings 23",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "37e1a48ab0c9a66820e4c9898dc44c38fdc626da90a58314efa155289fb80e2f",
+        "actual_hash": "37e1a48ab0c9a66820e4c9898dc44c38fdc626da90a58314efa155289fb80e2f",
+        "expected_evidence_ids": [
+          "2-kings:interpretive_note:5",
+          "second-kings-josiah-reform",
+          "second-kings-literary-movement"
+        ],
+        "actual_evidence_ids": [
+          "2-kings:interpretive_note:5",
+          "second-kings-josiah-reform",
+          "second-kings-literary-movement"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Lamentations 4",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "c70b123c324e5c98c61ac799f03ffda951773710b9eb769638b41ad2d775ce5a",
+        "actual_hash": "c70b123c324e5c98c61ac799f03ffda951773710b9eb769638b41ad2d775ce5a",
+        "expected_evidence_ids": [
+          "job:interpretive_note:1",
+          "lam-acrostics",
+          "lam-anointed-one",
+          "lam-catastrophe-horizon",
+          "lam-children-famine",
+          "lam-edom",
+          "lam-five-poems"
+        ],
+        "actual_evidence_ids": [
+          "job:interpretive_note:1",
+          "lam-acrostics",
+          "lam-anointed-one",
+          "lam-catastrophe-horizon",
+          "lam-children-famine",
+          "lam-edom",
+          "lam-five-poems"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Jeremiah 51",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "ac385ffbeb300507b1f93c288c697931cc083e48b2c01fe9f3a905dc9c08f10d",
+        "actual_hash": "ac385ffbeb300507b1f93c288c697931cc083e48b2c01fe9f3a905dc9c08f10d",
+        "expected_evidence_ids": [
+          "jeremiah-long-composition",
+          "jeremiah-practical-mt-outline",
+          "jeremiah-two-editions"
+        ],
+        "actual_evidence_ids": [
+          "jeremiah-long-composition",
+          "jeremiah-practical-mt-outline",
+          "jeremiah-two-editions"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Proverbs 30",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "d78029d8decc2af29b91f67d72f5d34c47b799e2b9e580fc796a57d97a6e893c",
+        "actual_hash": "d78029d8decc2af29b91f67d72f5d34c47b799e2b9e580fc796a57d97a6e893c",
+        "expected_evidence_ids": [
+          "proverbs-agur-lemuel-voices",
+          "proverbs-greek-order",
+          "proverbs-multiple-collections"
+        ],
+        "actual_evidence_ids": [
+          "proverbs-agur-lemuel-voices",
+          "proverbs-greek-order",
+          "proverbs-multiple-collections"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Luke 20",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "a1ef012a9fbf588e183f3eb53ffa7e0088d41a727897f87bb459d7b13ff20555",
+        "actual_hash": "a1ef012a9fbf588e183f3eb53ffa7e0088d41a727897f87bb459d7b13ff20555",
+        "expected_evidence_ids": [
+          "luke-widow"
+        ],
+        "actual_evidence_ids": [
+          "luke-widow"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Leviticus 13",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "46e2be594780491ea4c96e03f3268e8a4fefe67e9197b8a59dde541d2a668c8d",
+        "actual_hash": "46e2be594780491ea4c96e03f3268e8a4fefe67e9197b8a59dde541d2a668c8d",
+        "expected_evidence_ids": [
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions",
+          "leviticus:interpretive_note:1"
+        ],
+        "actual_evidence_ids": [
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions",
+          "leviticus:interpretive_note:1"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "2 Chronicles 29",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "a99932edffd94967bbcbf4ef49446cc99dc2215810d92baf8218d81e8eba78de",
+        "actual_hash": "a99932edffd94967bbcbf4ef49446cc99dc2215810d92baf8218d81e8eba78de",
+        "expected_evidence_ids": [
+          "second-chronicles-hezekiah-passover"
+        ],
+        "actual_evidence_ids": [
+          "second-chronicles-hezekiah-passover"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Psalms 18",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "2114d7b6bf4e32fd4e2e58150e56b643d2c492cf21e54d68572766c04dc56fc2",
+        "actual_hash": "2114d7b6bf4e32fd4e2e58150e56b643d2c492cf21e54d68572766c04dc56fc2",
+        "expected_evidence_ids": [
+          "jonah:interpretive_note:12"
+        ],
+        "actual_evidence_ids": [
+          "jonah:interpretive_note:12"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Jeremiah 19",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "39c0f907153b2486d33a8788cc53bd25b992e138446b24898a76c5c9636ffb7e",
+        "actual_hash": "39c0f907153b2486d33a8788cc53bd25b992e138446b24898a76c5c9636ffb7e",
+        "expected_evidence_ids": [
+          "jeremiah-long-composition",
+          "jeremiah-practical-mt-outline"
+        ],
+        "actual_evidence_ids": [
+          "jeremiah-long-composition",
+          "jeremiah-practical-mt-outline"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Proverbs 17",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "3676a53e3335f69caccd4f6d3c7ce288255d5094d1ef94f3f482b59d68628a8f",
+        "actual_hash": "3676a53e3335f69caccd4f6d3c7ce288255d5094d1ef94f3f482b59d68628a8f",
+        "expected_evidence_ids": [
+          "proverbs-poverty-justice-complexity"
+        ],
+        "actual_evidence_ids": [
+          "proverbs-poverty-justice-complexity"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Revelation 1",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "dbccb2d775f13823b172cbfeefd4efd3208a863a9ed63ab5613b50fd94af9bf5",
+        "actual_hash": "dbccb2d775f13823b172cbfeefd4efd3208a863a9ed63ab5613b50fd94af9bf5",
+        "expected_evidence_ids": [
+          "daniel-new-testament-reuse",
+          "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0",
+          "how-should-i-read-apocalyptic-literature:historical_context:0",
+          "rev-john-named",
+          "rev-mixed-genre",
+          "rev-patmos",
+          "rev-scriptural-reuse",
+          "rev-seven-assemblies",
+          "rev-title-genre"
+        ],
+        "actual_evidence_ids": [
+          "daniel-new-testament-reuse",
+          "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0",
+          "how-should-i-read-apocalyptic-literature:historical_context:0",
+          "rev-john-named",
+          "rev-mixed-genre",
+          "rev-patmos",
+          "rev-scriptural-reuse",
+          "rev-seven-assemblies",
+          "rev-title-genre"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Luke 22",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e",
+        "actual_hash": "ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e",
+        "expected_evidence_ids": [
+          "blessing-and-curse-theme:ancient_near_east_context:0",
+          "blessing-and-curse-theme:historical_context:0",
+          "covenant-faithfulness:ancient_near_east_context:0",
+          "covenant-faithfulness:historical_context:0",
+          "covenant-theme:ancient_near_east_context:0",
+          "covenant-theme:hebraic_worldview:0",
+          "covenant-theme:historical_context:0",
+          "covenant-theme:second_temple_context:0",
+          "covenant-theology:ancient_near_east_context:0",
+          "covenant-theology:historical_context:0",
+          "divine-wrath:ancient_near_east_context:0",
+          "divine-wrath:historical_context:0",
+          "election:ancient_near_east_context:0",
+          "election:historical_context:0",
+          "exodus-pattern-theme:ancient_near_east_context:0",
+          "exodus-pattern-theme:historical_context:0",
+          "fire-theme:ancient_near_east_context:0",
+          "fire-theme:historical_context:0",
+          "hamartiology:ancient_near_east_context:0",
+          "hamartiology:historical_context:0",
+          "imago-dei:ancient_near_east_context:0",
+          "imago-dei:historical_context:0",
+          "judgment:ancient_near_east_context:0",
+          "judgment:historical_context:0",
+          "justification:ancient_near_east_context:0",
+          "justification:historical_context:0",
+          "law-and-gospel:ancient_near_east_context:0",
+          "law-and-gospel:historical_context:0",
+          "lords-supper:ancient_near_east_context:0",
+          "lords-supper:hebraic_worldview:0",
+          "lords-supper:historical_context:0",
+          "lords-supper:second_temple_context:0",
+          "luke-agony-variant",
+          "luke-meal-variant",
+          "luke-minas-benefactors",
+          "luke-passion-responsibility",
+          "luke-swords",
+          "mountain-theme:ancient_near_east_context:0",
+          "mountain-theme:historical_context:0",
+          "new-covenant-prophecy:ancient_near_east_context:0",
+          "new-covenant-prophecy:historical_context:0",
+          "new-covenant-theme:ancient_near_east_context:0",
+          "new-covenant-theme:historical_context:0",
+          "new-covenant:ancient_near_east_context:0",
+          "new-covenant:historical_context:0",
+          "passover:ancient_near_east_context:0",
+          "passover:historical_context:0",
+          "priestly-mediation-theme:ancient_near_east_context:0",
+          "priestly-mediation-theme:historical_context:0",
+          "promise-theme:ancient_near_east_context:0",
+          "promise-theme:historical_context:0",
+          "sacramental-theology:ancient_near_east_context:0",
+          "sacramental-theology:historical_context:0",
+          "wedding-theme:ancient_near_east_context:0",
+          "wedding-theme:historical_context:0",
+          "what-is-a-covenant-sign:ancient_near_east_context:0",
+          "what-is-a-covenant-sign:historical_context:0",
+          "what-is-covenant:ancient_near_east_context:0",
+          "what-is-covenant:historical_context:0",
+          "what-is-the-new-covenant:ancient_near_east_context:0",
+          "what-is-the-new-covenant:historical_context:0",
+          "what-is-the-significance-of-passover:ancient_near_east_context:0",
+          "what-is-the-significance-of-passover:historical_context:0",
+          "who-was-peter:ancient_near_east_context:0",
+          "who-was-peter:historical_context:0",
+          "wisdom-theme:ancient_near_east_context:0",
+          "wisdom-theme:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "blessing-and-curse-theme:ancient_near_east_context:0",
+          "blessing-and-curse-theme:historical_context:0",
+          "covenant-faithfulness:ancient_near_east_context:0",
+          "covenant-faithfulness:historical_context:0",
+          "covenant-theme:ancient_near_east_context:0",
+          "covenant-theme:hebraic_worldview:0",
+          "covenant-theme:historical_context:0",
+          "covenant-theme:second_temple_context:0",
+          "covenant-theology:ancient_near_east_context:0",
+          "covenant-theology:historical_context:0",
+          "divine-wrath:ancient_near_east_context:0",
+          "divine-wrath:historical_context:0",
+          "election:ancient_near_east_context:0",
+          "election:historical_context:0",
+          "exodus-pattern-theme:ancient_near_east_context:0",
+          "exodus-pattern-theme:historical_context:0",
+          "fire-theme:ancient_near_east_context:0",
+          "fire-theme:historical_context:0",
+          "hamartiology:ancient_near_east_context:0",
+          "hamartiology:historical_context:0",
+          "imago-dei:ancient_near_east_context:0",
+          "imago-dei:historical_context:0",
+          "judgment:ancient_near_east_context:0",
+          "judgment:historical_context:0",
+          "justification:ancient_near_east_context:0",
+          "justification:historical_context:0",
+          "law-and-gospel:ancient_near_east_context:0",
+          "law-and-gospel:historical_context:0",
+          "lords-supper:ancient_near_east_context:0",
+          "lords-supper:hebraic_worldview:0",
+          "lords-supper:historical_context:0",
+          "lords-supper:second_temple_context:0",
+          "luke-agony-variant",
+          "luke-meal-variant",
+          "luke-minas-benefactors",
+          "luke-passion-responsibility",
+          "luke-swords",
+          "mountain-theme:ancient_near_east_context:0",
+          "mountain-theme:historical_context:0",
+          "new-covenant-prophecy:ancient_near_east_context:0",
+          "new-covenant-prophecy:historical_context:0",
+          "new-covenant-theme:ancient_near_east_context:0",
+          "new-covenant-theme:historical_context:0",
+          "new-covenant:ancient_near_east_context:0",
+          "new-covenant:historical_context:0",
+          "passover:ancient_near_east_context:0",
+          "passover:historical_context:0",
+          "priestly-mediation-theme:ancient_near_east_context:0",
+          "priestly-mediation-theme:historical_context:0",
+          "promise-theme:ancient_near_east_context:0",
+          "promise-theme:historical_context:0",
+          "sacramental-theology:ancient_near_east_context:0",
+          "sacramental-theology:historical_context:0",
+          "wedding-theme:ancient_near_east_context:0",
+          "wedding-theme:historical_context:0",
+          "what-is-a-covenant-sign:ancient_near_east_context:0",
+          "what-is-a-covenant-sign:historical_context:0",
+          "what-is-covenant:ancient_near_east_context:0",
+          "what-is-covenant:historical_context:0",
+          "what-is-the-new-covenant:ancient_near_east_context:0",
+          "what-is-the-new-covenant:historical_context:0",
+          "what-is-the-significance-of-passover:ancient_near_east_context:0",
+          "what-is-the-significance-of-passover:historical_context:0",
+          "who-was-peter:ancient_near_east_context:0",
+          "who-was-peter:historical_context:0",
+          "wisdom-theme:ancient_near_east_context:0",
+          "wisdom-theme:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Deuteronomy 7",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "d171c5f8d1d96c2052ea2347ce664822d34db91ee3b90e24082980026e16fde9",
+        "actual_hash": "d171c5f8d1d96c2052ea2347ce664822d34db91ee3b90e24082980026e16fde9",
+        "expected_evidence_ids": [
+          "2-john:interpretive_note:2",
+          "deuteronomy-literary-movement",
+          "deuteronomy:interpretive_note:1",
+          "deuteronomy:interpretive_note:3",
+          "titus:interpretive_note:22"
+        ],
+        "actual_evidence_ids": [
+          "2-john:interpretive_note:2",
+          "deuteronomy-literary-movement",
+          "deuteronomy:interpretive_note:1",
+          "deuteronomy:interpretive_note:3",
+          "titus:interpretive_note:22"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Joel 2",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "1c09d71f5c2d5a42cb7315b2a0128766eb58bef1e84b2380f8a557723b6b702e",
+        "actual_hash": "1c09d71f5c2d5a42cb7315b2a0128766eb58bef1e84b2380f8a557723b6b702e",
+        "expected_evidence_ids": [
+          "acts-joel",
+          "day-of-the-lord-prophecy:ancient_near_east_context:0",
+          "day-of-the-lord-prophecy:historical_context:0",
+          "hope-theme:ancient_near_east_context:0",
+          "hope-theme:historical_context:0",
+          "joel-army-metaphor",
+          "joel-cosmic-deliverance",
+          "joel-day-yhwh-alarm",
+          "joel-divine-response",
+          "joel-ecological-restoration",
+          "joel-lament-fast",
+          "joel-locust-terms",
+          "joel-priestly-plea",
+          "joel-return-divine-character",
+          "joel-spirit-all-flesh",
+          "joel-text-versification",
+          "joel-twelve-intertexts",
+          "joel:interpretive_note:10",
+          "joel:interpretive_note:11",
+          "joel:interpretive_note:12",
+          "joel:interpretive_note:13",
+          "joel:interpretive_note:14",
+          "joel:interpretive_note:15",
+          "joel:interpretive_note:16",
+          "joel:interpretive_note:17",
+          "joel:interpretive_note:18",
+          "joel:interpretive_note:19",
+          "joel:interpretive_note:2",
+          "joel:interpretive_note:20",
+          "joel:interpretive_note:21",
+          "joel:interpretive_note:26",
+          "joel:interpretive_note:27",
+          "joel:interpretive_note:4",
+          "joel:interpretive_note:5",
+          "joel:interpretive_note:7",
+          "joel:interpretive_note:8",
+          "land-theme:ancient_near_east_context:0",
+          "land-theme:historical_context:0",
+          "messianic-hope:ancient_near_east_context:0",
+          "messianic-hope:historical_context:0",
+          "new-exodus-theme:ancient_near_east_context:0",
+          "new-exodus-theme:historical_context:0",
+          "new-jerusalem-theme:ancient_near_east_context:0",
+          "new-jerusalem-theme:historical_context:0",
+          "pentecost:ancient_near_east_context:0",
+          "pentecost:historical_context:0",
+          "pneumatology:ancient_near_east_context:0",
+          "pneumatology:historical_context:0",
+          "providence:ancient_near_east_context:0",
+          "providence:historical_context:0",
+          "redemption-theme:ancient_near_east_context:0",
+          "redemption-theme:historical_context:0",
+          "remnant-theme:ancient_near_east_context:0",
+          "remnant-theme:historical_context:0",
+          "remnant:ancient_near_east_context:0",
+          "remnant:historical_context:0",
+          "repentance:ancient_near_east_context:0",
+          "repentance:historical_context:0",
+          "restoration-theme:ancient_near_east_context:0",
+          "restoration-theme:historical_context:0",
+          "seed-theme:ancient_near_east_context:0",
+          "seed-theme:historical_context:0",
+          "shepherd-theme:ancient_near_east_context:0",
+          "shepherd-theme:historical_context:0",
+          "spirit-theme:ancient_near_east_context:0",
+          "spirit-theme:historical_context:0",
+          "spiritual-gifts:ancient_near_east_context:0",
+          "spiritual-gifts:historical_context:0",
+          "water-and-spirit-theme:ancient_near_east_context:0",
+          "water-and-spirit-theme:historical_context:0",
+          "what-does-ruach-mean:ancient_near_east_context:0",
+          "what-does-ruach-mean:historical_context:0",
+          "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+          "what-is-the-day-of-the-lord:historical_context:0",
+          "what-is-the-holy-spirit:ancient_near_east_context:0",
+          "what-is-the-holy-spirit:historical_context:0",
+          "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+          "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "acts-joel",
+          "day-of-the-lord-prophecy:ancient_near_east_context:0",
+          "day-of-the-lord-prophecy:historical_context:0",
+          "hope-theme:ancient_near_east_context:0",
+          "hope-theme:historical_context:0",
+          "joel-army-metaphor",
+          "joel-cosmic-deliverance",
+          "joel-day-yhwh-alarm",
+          "joel-divine-response",
+          "joel-ecological-restoration",
+          "joel-lament-fast",
+          "joel-locust-terms",
+          "joel-priestly-plea",
+          "joel-return-divine-character",
+          "joel-spirit-all-flesh",
+          "joel-text-versification",
+          "joel-twelve-intertexts",
+          "joel:interpretive_note:10",
+          "joel:interpretive_note:11",
+          "joel:interpretive_note:12",
+          "joel:interpretive_note:13",
+          "joel:interpretive_note:14",
+          "joel:interpretive_note:15",
+          "joel:interpretive_note:16",
+          "joel:interpretive_note:17",
+          "joel:interpretive_note:18",
+          "joel:interpretive_note:19",
+          "joel:interpretive_note:2",
+          "joel:interpretive_note:20",
+          "joel:interpretive_note:21",
+          "joel:interpretive_note:26",
+          "joel:interpretive_note:27",
+          "joel:interpretive_note:4",
+          "joel:interpretive_note:5",
+          "joel:interpretive_note:7",
+          "joel:interpretive_note:8",
+          "land-theme:ancient_near_east_context:0",
+          "land-theme:historical_context:0",
+          "messianic-hope:ancient_near_east_context:0",
+          "messianic-hope:historical_context:0",
+          "new-exodus-theme:ancient_near_east_context:0",
+          "new-exodus-theme:historical_context:0",
+          "new-jerusalem-theme:ancient_near_east_context:0",
+          "new-jerusalem-theme:historical_context:0",
+          "pentecost:ancient_near_east_context:0",
+          "pentecost:historical_context:0",
+          "pneumatology:ancient_near_east_context:0",
+          "pneumatology:historical_context:0",
+          "providence:ancient_near_east_context:0",
+          "providence:historical_context:0",
+          "redemption-theme:ancient_near_east_context:0",
+          "redemption-theme:historical_context:0",
+          "remnant-theme:ancient_near_east_context:0",
+          "remnant-theme:historical_context:0",
+          "remnant:ancient_near_east_context:0",
+          "remnant:historical_context:0",
+          "repentance:ancient_near_east_context:0",
+          "repentance:historical_context:0",
+          "restoration-theme:ancient_near_east_context:0",
+          "restoration-theme:historical_context:0",
+          "seed-theme:ancient_near_east_context:0",
+          "seed-theme:historical_context:0",
+          "shepherd-theme:ancient_near_east_context:0",
+          "shepherd-theme:historical_context:0",
+          "spirit-theme:ancient_near_east_context:0",
+          "spirit-theme:historical_context:0",
+          "spiritual-gifts:ancient_near_east_context:0",
+          "spiritual-gifts:historical_context:0",
+          "water-and-spirit-theme:ancient_near_east_context:0",
+          "water-and-spirit-theme:historical_context:0",
+          "what-does-ruach-mean:ancient_near_east_context:0",
+          "what-does-ruach-mean:historical_context:0",
+          "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+          "what-is-the-day-of-the-lord:historical_context:0",
+          "what-is-the-holy-spirit:ancient_near_east_context:0",
+          "what-is-the-holy-spirit:historical_context:0",
+          "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+          "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Psalms 89",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "dd6d8a20ea9d18fcdbf976f9d2d4d24c4923aeadd3580115c7921a888f79f865",
+        "actual_hash": "dd6d8a20ea9d18fcdbf976f9d2d4d24c4923aeadd3580115c7921a888f79f865",
+        "expected_evidence_ids": [
+          "2-samuel:interpretive_note:0",
+          "col-firstborn",
+          "davidic-covenant:ancient_near_east_context:0",
+          "davidic-covenant:historical_context:0",
+          "psalms-book-three-crisis",
+          "psalms-five-book-anthology",
+          "psalms-superscription-collections",
+          "ugaritic-council-comparison",
+          "ugaritic-council-comparison:passage-relevance",
+          "what-does-hesed-mean:ancient_near_east_context:0",
+          "what-does-hesed-mean:historical_context:0",
+          "what-is-the-kingdom-of-judah:ancient_near_east_context:0",
+          "what-is-the-kingdom-of-judah:historical_context:0"
+        ],
+        "actual_evidence_ids": [
+          "2-samuel:interpretive_note:0",
+          "col-firstborn",
+          "davidic-covenant:ancient_near_east_context:0",
+          "davidic-covenant:historical_context:0",
+          "psalms-book-three-crisis",
+          "psalms-five-book-anthology",
+          "psalms-superscription-collections",
+          "ugaritic-council-comparison",
+          "ugaritic-council-comparison:passage-relevance",
+          "what-does-hesed-mean:ancient_near_east_context:0",
+          "what-does-hesed-mean:historical_context:0",
+          "what-is-the-kingdom-of-judah:ancient_near_east_context:0",
+          "what-is-the-kingdom-of-judah:historical_context:0"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Jeremiah 33",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "5e7465a385c96368b385ad6350ffbe2d28b14ad7916d8e1bb60414ee24a05932",
+        "actual_hash": "5e7465a385c96368b385ad6350ffbe2d28b14ad7916d8e1bb60414ee24a05932",
+        "expected_evidence_ids": [
+          "branch-prophecy:ancient_near_east_context:0",
+          "branch-prophecy:historical_context:0",
+          "jeremiah-long-composition",
+          "jeremiah-practical-mt-outline",
+          "jeremiah-restoration-hope"
+        ],
+        "actual_evidence_ids": [
+          "branch-prophecy:ancient_near_east_context:0",
+          "branch-prophecy:historical_context:0",
+          "jeremiah-long-composition",
+          "jeremiah-practical-mt-outline",
+          "jeremiah-restoration-hope"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Ecclesiastes 8",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "39cf8b02c52d2e88a3e35c57ccde5a7149f447eb937c156801068fb353193a0c",
+        "actual_hash": "39cf8b02c52d2e88a3e35c57ccde5a7149f447eb937c156801068fb353193a0c",
+        "expected_evidence_ids": [
+          "ecclesiastes-enjoyment-divine-gift",
+          "ecclesiastes-god-fear-gift-judgment",
+          "ecclesiastes-hebel-multivalent",
+          "ecclesiastes-oppression-injustice",
+          "ecclesiastes-wisdom-relative-not-control"
+        ],
+        "actual_evidence_ids": [
+          "ecclesiastes-enjoyment-divine-gift",
+          "ecclesiastes-god-fear-gift-judgment",
+          "ecclesiastes-hebel-multivalent",
+          "ecclesiastes-oppression-injustice",
+          "ecclesiastes-wisdom-relative-not-control"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Luke 16",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "09468ccd946d37233af5206dcb76c4172246618e8eaf886342c422a088beeb9f",
+        "actual_hash": "09468ccd946d37233af5206dcb76c4172246618e8eaf886342c422a088beeb9f",
+        "expected_evidence_ids": [
+          "luke-manager",
+          "luke-rich-lazarus"
+        ],
+        "actual_evidence_ids": [
+          "luke-manager",
+          "luke-rich-lazarus"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Leviticus 14",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "18ea933e43802186fc1a49dd91517abd401875034faefc6c6fdc9c703046d5c9",
+        "actual_hash": "18ea933e43802186fc1a49dd91517abd401875034faefc6c6fdc9c703046d5c9",
+        "expected_evidence_ids": [
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions",
+          "leviticus:interpretive_note:1"
+        ],
+        "actual_evidence_ids": [
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions",
+          "leviticus:interpretive_note:1"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "1 Chronicles 16",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "a7d50a9620f2ec2e4b0c1f182b8864ef4b51e93c1a75ac488fc4fb960aa20bc3",
+        "actual_hash": "a7d50a9620f2ec2e4b0c1f182b8864ef4b51e93c1a75ac488fc4fb960aa20bc3",
+        "expected_evidence_ids": [
+          "first-chronicles-ark-ordered"
+        ],
+        "actual_evidence_ids": [
+          "first-chronicles-ark-ordered"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Ezekiel 11",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "c9b5054da708cffa1e7b3b11a28275fc1f22baf3f494123043f4d4cbde8c14ef",
+        "actual_hash": "c9b5054da708cffa1e7b3b11a28275fc1f22baf3f494123043f4d4cbde8c14ef",
+        "expected_evidence_ids": [
+          "ezekiel-glory-departure-return"
+        ],
+        "actual_evidence_ids": [
+          "ezekiel-glory-departure-return"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Proverbs 7",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "4444b9d9dba147914add12a6951e72b02fff87220978cfffbfb74662358d5c99",
+        "actual_hash": "4444b9d9dba147914add12a6951e72b02fff87220978cfffbfb74662358d5c99",
+        "expected_evidence_ids": [
+          "proverbs-rival-women-paths"
+        ],
+        "actual_evidence_ids": [
+          "proverbs-rival-women-paths"
+        ],
+        "expected_availability": "THIN",
+        "actual_availability": "THIN",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      },
+      {
+        "reference": "Revelation 11",
+        "checks": {
+          "reference_matches": true,
+          "bundle_version_matches": true,
+          "hash_version_matches": true,
+          "hash_matches": true,
+          "evidence_ids_match": true,
+          "availability_matches": true,
+          "semantic_presentation_valid": true
+        },
+        "expected_hash": "697ac28f5b173260fa90558951c1ee879e62675290a4772f14e073df3cf2b28a",
+        "actual_hash": "697ac28f5b173260fa90558951c1ee879e62675290a4772f14e073df3cf2b28a",
+        "expected_evidence_ids": [
+          "kingdom-theme:ancient_near_east_context:0",
+          "kingdom-theme:hebraic_worldview:0",
+          "kingdom-theme:historical_context:0",
+          "kingdom-theme:second_temple_context:0",
+          "kingdom-theology:ancient_near_east_context:0",
+          "kingdom-theology:historical_context:0",
+          "rev-scriptural-reuse",
+          "rev-septets",
+          "rev-two-witnesses",
+          "theology-of-the-kingdom:ancient_near_east_context:0",
+          "theology-of-the-kingdom:historical_context:0",
+          "what-is-the-kingdom-of-god:ancient_near_east_context:0",
+          "what-is-the-kingdom-of-god:historical_context:0",
+          "zechariah-new-testament-reception"
+        ],
+        "actual_evidence_ids": [
+          "kingdom-theme:ancient_near_east_context:0",
+          "kingdom-theme:hebraic_worldview:0",
+          "kingdom-theme:historical_context:0",
+          "kingdom-theme:second_temple_context:0",
+          "kingdom-theology:ancient_near_east_context:0",
+          "kingdom-theology:historical_context:0",
+          "rev-scriptural-reuse",
+          "rev-septets",
+          "rev-two-witnesses",
+          "theology-of-the-kingdom:ancient_near_east_context:0",
+          "theology-of-the-kingdom:historical_context:0",
+          "what-is-the-kingdom-of-god:ancient_near_east_context:0",
+          "what-is-the-kingdom-of-god:historical_context:0",
+          "zechariah-new-testament-reception"
+        ],
+        "expected_availability": "AVAILABLE",
+        "actual_availability": "AVAILABLE",
+        "metadata_errors": [],
+        "status": "LOCKED"
+      }
+    ],
+    "status": "PASS"
+  },
+  "generation": {
+    "chapters_generated": 50,
+    "prose_generated": true,
+    "provider_calls": 0
+  },
+  "validation": {
+    "report_version": "commentary-v1.1-terra-scaled-batch-v1",
+    "generated_at": "2026-09-05T21:35:03Z",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "chapters": 50,
+    "valid": 50,
+    "invalid": 0,
+    "results": [
+      {
+        "reference": "Daniel 9",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Matthew 23",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Acts 7",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 78",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Ezekiel 43",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Ecclesiastes 9",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Revelation 3",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Matthew 8",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Leviticus 21",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "1 Chronicles 29",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 79",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Ezekiel 8",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Proverbs 29",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Revelation 16",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Matthew 12",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Deuteronomy 28",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "2 Chronicles 35",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Lamentations 2",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Isaiah 66",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Matthew 11",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Deuteronomy 15",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "2 Chronicles 26",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 132",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Isaiah 62",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Proverbs 14",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Daniel 11",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 11",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "2 Kings 23",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Lamentations 4",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Jeremiah 51",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Proverbs 30",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 20",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Leviticus 13",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "2 Chronicles 29",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 18",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Jeremiah 19",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Proverbs 17",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Revelation 1",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 22",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Deuteronomy 7",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Joel 2",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 89",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Jeremiah 33",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Ecclesiastes 8",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 16",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Leviticus 14",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "1 Chronicles 16",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Ezekiel 11",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Proverbs 7",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Revelation 11",
+        "valid": true,
+        "errors": []
+      }
+    ],
+    "invalid_evidence_citations": 0,
+    "invalid_verse_references": 0,
+    "quarantined_chapters_generated": []
+  },
+  "availability_distribution": {
+    "AVAILABLE": 26,
+    "THIN": 24
+  },
+  "statistics": {
+    "by_availability": {
+      "AVAILABLE": {
+        "chapter_count": 26,
+        "mean_word_count": 196.9,
+        "median_word_count": 200.0,
+        "min_word_count": 90,
+        "max_word_count": 282,
+        "mean_section_count": 2.9,
+        "median_section_count": 3.0,
+        "evidence_citations": 93,
+        "citations_per_chapter": 3.58
+      },
+      "THIN": {
+        "chapter_count": 24,
+        "mean_word_count": 76.2,
+        "median_word_count": 63.0,
+        "min_word_count": 53,
+        "max_word_count": 130,
+        "mean_section_count": 1.3,
+        "median_section_count": 1.0,
+        "evidence_citations": 31,
+        "citations_per_chapter": 1.29
+      }
+    },
+    "total_generated_words": 6948,
+    "total_evidence_citations": 124,
+    "unique_evidence_ids_cited": 103,
+    "available_evidence_ids": 333,
+    "available_evidence_used_percent": 30.93,
+    "dig_deeper_frequency": 15,
+    "section_kind_frequency": {
+      "archaeology_geography": 1,
+      "chapter_overview": 50,
+      "dig_deeper": 15,
+      "historical_context": 25,
+      "language_literary": 16
+    }
+  },
+  "quality": {
+    "report_version": "commentary-v1.1-terra-scaled-batch-v1",
+    "generated_at": "2026-09-05T21:35:03Z",
+    "chapters": 50,
+    "flag_counts": {
+      "LOW_INFORMATION": 0,
+      "EVIDENCE_DUMP": 0,
+      "OVEREXPANDED": 0,
+      "UNSUPPORTED_SYNTHESIS": 0,
+      "THEOLOGICAL_OVERREACH": 0,
+      "UNCERTAINTY_LOST": 0,
+      "READER_UNFRIENDLY": 0
+    },
+    "possible_evidence_review": [
+      {
+        "reference": "Luke 22",
+        "evidence_id": "luke-meal-variant",
+        "status": "POSSIBLE_EVIDENCE_REVIEW",
+        "reason": "A textual-variant claim is routed as archaeology/geography; it was omitted from prose and left unchanged for Luna review."
+      }
+    ],
+    "prose_review_required": [],
+    "rows": [
+      {
+        "reference": "Daniel 9",
+        "flags": [],
+        "word_count": 236,
+        "section_count": 3
+      },
+      {
+        "reference": "Matthew 23",
+        "flags": [],
+        "word_count": 262,
+        "section_count": 4
+      },
+      {
+        "reference": "Acts 7",
+        "flags": [],
+        "word_count": 282,
+        "section_count": 4
+      },
+      {
+        "reference": "Psalms 78",
+        "flags": [],
+        "word_count": 90,
+        "section_count": 2
+      },
+      {
+        "reference": "Ezekiel 43",
+        "flags": [],
+        "word_count": 110,
+        "section_count": 2
+      },
+      {
+        "reference": "Ecclesiastes 9",
+        "flags": [],
+        "word_count": 181,
+        "section_count": 2
+      },
+      {
+        "reference": "Revelation 3",
+        "flags": [],
+        "word_count": 100,
+        "section_count": 2
+      },
+      {
+        "reference": "Matthew 8",
+        "flags": [],
+        "word_count": 54,
+        "section_count": 1
+      },
+      {
+        "reference": "Leviticus 21",
+        "flags": [],
+        "word_count": 57,
+        "section_count": 1
+      },
+      {
+        "reference": "1 Chronicles 29",
+        "flags": [],
+        "word_count": 53,
+        "section_count": 1
+      },
+      {
+        "reference": "Psalms 79",
+        "flags": [],
+        "word_count": 62,
+        "section_count": 1
+      },
+      {
+        "reference": "Ezekiel 8",
+        "flags": [],
+        "word_count": 59,
+        "section_count": 1
+      },
+      {
+        "reference": "Proverbs 29",
+        "flags": [],
+        "word_count": 63,
+        "section_count": 1
+      },
+      {
+        "reference": "Revelation 16",
+        "flags": [],
+        "word_count": 146,
+        "section_count": 3
+      },
+      {
+        "reference": "Matthew 12",
+        "flags": [],
+        "word_count": 125,
+        "section_count": 2
+      },
+      {
+        "reference": "Deuteronomy 28",
+        "flags": [],
+        "word_count": 206,
+        "section_count": 3
+      },
+      {
+        "reference": "2 Chronicles 35",
+        "flags": [],
+        "word_count": 121,
+        "section_count": 2
+      },
+      {
+        "reference": "Lamentations 2",
+        "flags": [],
+        "word_count": 194,
+        "section_count": 3
+      },
+      {
+        "reference": "Isaiah 66",
+        "flags": [],
+        "word_count": 241,
+        "section_count": 3
+      },
+      {
+        "reference": "Matthew 11",
+        "flags": [],
+        "word_count": 106,
+        "section_count": 2
+      },
+      {
+        "reference": "Deuteronomy 15",
+        "flags": [],
+        "word_count": 104,
+        "section_count": 2
+      },
+      {
+        "reference": "2 Chronicles 26",
+        "flags": [],
+        "word_count": 60,
+        "section_count": 1
+      },
+      {
+        "reference": "Psalms 132",
+        "flags": [],
+        "word_count": 62,
+        "section_count": 1
+      },
+      {
+        "reference": "Isaiah 62",
+        "flags": [],
+        "word_count": 70,
+        "section_count": 1
+      },
+      {
+        "reference": "Proverbs 14",
+        "flags": [],
+        "word_count": 63,
+        "section_count": 1
+      },
+      {
+        "reference": "Daniel 11",
+        "flags": [],
+        "word_count": 187,
+        "section_count": 2
+      },
+      {
+        "reference": "Luke 11",
+        "flags": [],
+        "word_count": 123,
+        "section_count": 2
+      },
+      {
+        "reference": "2 Kings 23",
+        "flags": [],
+        "word_count": 171,
+        "section_count": 3
+      },
+      {
+        "reference": "Lamentations 4",
+        "flags": [],
+        "word_count": 258,
+        "section_count": 4
+      },
+      {
+        "reference": "Jeremiah 51",
+        "flags": [],
+        "word_count": 123,
+        "section_count": 2
+      },
+      {
+        "reference": "Proverbs 30",
+        "flags": [],
+        "word_count": 173,
+        "section_count": 2
+      },
+      {
+        "reference": "Luke 20",
+        "flags": [],
+        "word_count": 71,
+        "section_count": 1
+      },
+      {
+        "reference": "Leviticus 13",
+        "flags": [],
+        "word_count": 117,
+        "section_count": 2
+      },
+      {
+        "reference": "2 Chronicles 29",
+        "flags": [],
+        "word_count": 65,
+        "section_count": 1
+      },
+      {
+        "reference": "Psalms 18",
+        "flags": [],
+        "word_count": 63,
+        "section_count": 1
+      },
+      {
+        "reference": "Jeremiah 19",
+        "flags": [],
+        "word_count": 114,
+        "section_count": 2
+      },
+      {
+        "reference": "Proverbs 17",
+        "flags": [],
+        "word_count": 63,
+        "section_count": 1
+      },
+      {
+        "reference": "Revelation 1",
+        "flags": [],
+        "word_count": 233,
+        "section_count": 4
+      },
+      {
+        "reference": "Luke 22",
+        "flags": [],
+        "word_count": 183,
+        "section_count": 2
+      },
+      {
+        "reference": "Deuteronomy 7",
+        "flags": [],
+        "word_count": 215,
+        "section_count": 4
+      },
+      {
+        "reference": "Joel 2",
+        "flags": [],
+        "word_count": 275,
+        "section_count": 4
+      },
+      {
+        "reference": "Psalms 89",
+        "flags": [],
+        "word_count": 275,
+        "section_count": 4
+      },
+      {
+        "reference": "Jeremiah 33",
+        "flags": [],
+        "word_count": 215,
+        "section_count": 3
+      },
+      {
+        "reference": "Ecclesiastes 8",
+        "flags": [],
+        "word_count": 243,
+        "section_count": 3
+      },
+      {
+        "reference": "Luke 16",
+        "flags": [],
+        "word_count": 130,
+        "section_count": 2
+      },
+      {
+        "reference": "Leviticus 14",
+        "flags": [],
+        "word_count": 117,
+        "section_count": 2
+      },
+      {
+        "reference": "1 Chronicles 16",
+        "flags": [],
+        "word_count": 54,
+        "section_count": 1
+      },
+      {
+        "reference": "Ezekiel 11",
+        "flags": [],
+        "word_count": 59,
+        "section_count": 1
+      },
+      {
+        "reference": "Proverbs 7",
+        "flags": [],
+        "word_count": 63,
+        "section_count": 1
+      },
+      {
+        "reference": "Revelation 11",
+        "flags": [],
+        "word_count": 251,
+        "section_count": 4
+      }
+    ]
+  },
+  "review_sample": {
+    "references": [
+      "Daniel 9",
+      "Matthew 23",
+      "Deuteronomy 28",
+      "Acts 7",
+      "Psalms 78",
+      "Ezekiel 43",
+      "Ecclesiastes 9",
+      "Revelation 3",
+      "Matthew 8",
+      "Leviticus 21",
+      "1 Chronicles 29",
+      "Psalms 79",
+      "Ezekiel 8",
+      "Proverbs 29",
+      "Joel 2",
+      "Revelation 16",
+      "Matthew 12",
+      "2 Chronicles 35"
+    ],
+    "results": [
+      {
+        "reference": "Daniel 9",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Matthew 23",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Deuteronomy 28",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Acts 7",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Psalms 78",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Ezekiel 43",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Ecclesiastes 9",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Revelation 3",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Matthew 8",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Leviticus 21",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "1 Chronicles 29",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Psalms 79",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Ezekiel 8",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Proverbs 29",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Joel 2",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Revelation 16",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "Matthew 12",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      },
+      {
+        "reference": "2 Chronicles 35",
+        "overview_useful": true,
+        "explains_not_dumps": true,
+        "length_fits_availability": true,
+        "sections_useful": true,
+        "first_audience_and_later_reception_separated": true,
+        "uncertainty_preserved": true,
+        "verse_anchors_precise": true,
+        "unsupported_contextual_knowledge": false,
+        "ordinary_reader_readable": true,
+        "acceptable_for_final_v11": true,
+        "flags": []
+      }
+    ]
+  },
+  "canary_artifacts": {
+    "before": {
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/1_kings_007.json": "fa3db6513d4310bbce8144ccbdda729d7aa47b5d9be9c577d0254fff0f7c51e2",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/2_chronicles_008.json": "09cf3f46432345d093e6ca1606718748e059a7823362105ca94831d4da494775",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/deuteronomy_021.json": "a56f32f3b8a3f1a93f371a0d0bd2e9fa95874cffb38da7062db9adebbf0ed762",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/deuteronomy_026.json": "0cf80fe0815f7950ccf090451330f2b95f05f1a52834b6b9a0582ba3cc4cbfb3",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/ezekiel_007.json": "ce70dc1a13a3e4e5f8fa264088eca43f6a9ad1e2ec4bb72c8ceecde7a53b3ff0",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/genesis_001.json": "020ce9ea2ec6d66675027438c73be10e604cda537494e2abc8f0e634a589716b",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/isaiah_028.json": "f4252b15747a18cdf09ccfef09f38d3d683795d24435319648f8d993360f724b",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/jeremiah_002.json": "70a002d2dbc7572f52d31f68a3cf9914fba9a5a4f529c14da8f4f1c80b668f0c",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/judges_020.json": "ab667640d1be1000ee5639f5138bcf0be99b28543f256d93e454283f3c053f5b",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/leviticus_001.json": "081e7c1e4f2e76c9085369990ca767f928df28fc431f0d5acc56a1018c57f52f",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/leviticus_022.json": "5c43483e980172702378f606d7dbeb98aeb5835013b98ffac00ad972291c63db",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_001.json": "af6d9065f43af852fbe3eb62e182213a051cdeae1918ac80f8f8fe13ec8e2064",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_005.json": "ef98db24e089e8f69dfbd969c40a2719c5c1e3ea56b0bb6a8ba4b583fc51d1c8",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_008.json": "e0f92989517492ed3e6e630ee59601557bd9f5a2298514bdf95430f0f3bb84e9",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_013.json": "6a379ca485a00d00b62630ad5188137a9a3bdf267a4f3c37a9d2bf78ceb56172",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_003.json": "d6050172b2c1758ab4ca7795e83b593447a55e823f9d4cba7861f369a993deda",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_005.json": "2fe4ca30bc8bff000beae6f18ac19d485ff6f75d7de478f7c48ca46c853dcb0e",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_007.json": "276460a75b44e85ae50cff1515c4a5645d48e27fa696fa2da007e3cc5865e549",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_008.json": "1fb8a45d959a9ee68f26ff70cef1abef37e767d1afa48c9f78edb53f29716e45",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_016.json": "e01906f4cc0714189a2f57357662e729d203a6c90e335c82e096c1104de107e4",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_019.json": "7a91a893519d3c746556d519560ef28add5813e08d19b51ebaff374f4bde765d",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_031.json": "412c15286f6624be36b066b76b973318b12997cfde67b4b5fa2eec1c26428354",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/psalms_001.json": "d3fcd04c074f2f9b7c022ae93e798306cf64285e20929712c1c79a5190b9fa64",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/psalms_106.json": "b45f0eadd01be2b34e80808696ef9fc90b8d60646cb8b0c0524293bca40096cc",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/zephaniah_001.json": "537529757a8fb1de8a18adb11cf777bcb16fbee9d8f2ac305682c4ad8a84a322",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/supplemental-integrity-controls/chapters/1_samuel_028.json": "4c71fc984d00d0211a7f19eb62c09702b968bc9f07c1fd8939bc33494b63c5e7"
+    },
+    "after": {
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/1_kings_007.json": "fa3db6513d4310bbce8144ccbdda729d7aa47b5d9be9c577d0254fff0f7c51e2",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/2_chronicles_008.json": "09cf3f46432345d093e6ca1606718748e059a7823362105ca94831d4da494775",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/deuteronomy_021.json": "a56f32f3b8a3f1a93f371a0d0bd2e9fa95874cffb38da7062db9adebbf0ed762",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/deuteronomy_026.json": "0cf80fe0815f7950ccf090451330f2b95f05f1a52834b6b9a0582ba3cc4cbfb3",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/ezekiel_007.json": "ce70dc1a13a3e4e5f8fa264088eca43f6a9ad1e2ec4bb72c8ceecde7a53b3ff0",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/genesis_001.json": "020ce9ea2ec6d66675027438c73be10e604cda537494e2abc8f0e634a589716b",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/isaiah_028.json": "f4252b15747a18cdf09ccfef09f38d3d683795d24435319648f8d993360f724b",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/jeremiah_002.json": "70a002d2dbc7572f52d31f68a3cf9914fba9a5a4f529c14da8f4f1c80b668f0c",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/judges_020.json": "ab667640d1be1000ee5639f5138bcf0be99b28543f256d93e454283f3c053f5b",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/leviticus_001.json": "081e7c1e4f2e76c9085369990ca767f928df28fc431f0d5acc56a1018c57f52f",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/leviticus_022.json": "5c43483e980172702378f606d7dbeb98aeb5835013b98ffac00ad972291c63db",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_001.json": "af6d9065f43af852fbe3eb62e182213a051cdeae1918ac80f8f8fe13ec8e2064",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_005.json": "ef98db24e089e8f69dfbd969c40a2719c5c1e3ea56b0bb6a8ba4b583fc51d1c8",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_008.json": "e0f92989517492ed3e6e630ee59601557bd9f5a2298514bdf95430f0f3bb84e9",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_013.json": "6a379ca485a00d00b62630ad5188137a9a3bdf267a4f3c37a9d2bf78ceb56172",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_003.json": "d6050172b2c1758ab4ca7795e83b593447a55e823f9d4cba7861f369a993deda",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_005.json": "2fe4ca30bc8bff000beae6f18ac19d485ff6f75d7de478f7c48ca46c853dcb0e",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_007.json": "276460a75b44e85ae50cff1515c4a5645d48e27fa696fa2da007e3cc5865e549",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_008.json": "1fb8a45d959a9ee68f26ff70cef1abef37e767d1afa48c9f78edb53f29716e45",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_016.json": "e01906f4cc0714189a2f57357662e729d203a6c90e335c82e096c1104de107e4",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_019.json": "7a91a893519d3c746556d519560ef28add5813e08d19b51ebaff374f4bde765d",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_031.json": "412c15286f6624be36b066b76b973318b12997cfde67b4b5fa2eec1c26428354",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/psalms_001.json": "d3fcd04c074f2f9b7c022ae93e798306cf64285e20929712c1c79a5190b9fa64",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/psalms_106.json": "b45f0eadd01be2b34e80808696ef9fc90b8d60646cb8b0c0524293bca40096cc",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/zephaniah_001.json": "537529757a8fb1de8a18adb11cf777bcb16fbee9d8f2ac305682c4ad8a84a322",
+      ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/supplemental-integrity-controls/chapters/1_samuel_028.json": "4c71fc984d00d0211a7f19eb62c09702b968bc9f07c1fd8939bc33494b63c5e7"
+    },
+    "unchanged": true,
+    "artifact_count": 26,
+    "fingerprint": "e4304a46da2d4725018648239e098aeaa2b3fe5dda98470406c88c6cd6f02646"
+  },
+  "quarantined_chapters_not_generated": true,
+  "quarantined_references": [
+    "Deuteronomy 32",
+    "Job 1",
+    "Leviticus 19"
+  ],
+  "batch_002_recommendation": "100 chapters"
+}

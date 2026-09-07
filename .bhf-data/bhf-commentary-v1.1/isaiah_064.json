@@ -1,0 +1,53 @@
+{
+  "reference": "Isaiah 64",
+  "book": "Isaiah",
+  "chapter": 64,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_13",
+          "text": "Read the chapter with this setting in view: Isaiah contains the named prophet, divine speech, sign children, royal and national addressees, servants, heralds, Zion and Babylon as personified women, communal voices, and third-person prose narration; speaker identity must be established passage by passage. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "isaiah-many-voices"
+          ],
+          "verse_refs": [
+            "Isaiah 64:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_14",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 64:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9eb9433739517c939402a1116e744ae936ecb5feccb9c7b6fd4cee3cdd0f38a7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

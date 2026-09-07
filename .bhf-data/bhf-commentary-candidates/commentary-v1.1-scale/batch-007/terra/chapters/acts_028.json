@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 28",
+  "book": "Acts",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_103",
+          "text": "Read the chapter with this setting in view: Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 28:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_104",
+          "text": "For its historical and cultural setting, note that Acts ends with Paul under house arrest proclaiming in Rome and does not narrate his trial outcome or death. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "acts-ending"
+          ],
+          "verse_refs": [
+            "Acts 28:16-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_105",
+          "text": "For its historical and cultural setting, note that Late-first-century 1 Clement remembers Peter's lethal suffering and Paul's endurance and death, while later sources and monuments make increasingly specific Roman claims. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "peter-paul-memory-and-sites"
+          ],
+          "verse_refs": [
+            "Acts 28:30-31"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_104",
+          "text": "For its geographical or material setting, note that Acts names Puteoli, Forum of Appius, and Three Taverns on the approach to Rome; port and road evidence establishes a coherent transport corridor. It can illuminate the passage, while its limits should be kept in view. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "puteoli-appian-approach"
+          ],
+          "verse_refs": [
+            "Acts 28:11-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_104",
+          "text": "A literary feature to notice is that Acts 1:8 supplies a major geographic and theological program of witness in Jerusalem, Judea, Samaria, and to the earth's end. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "acts-geographic-program"
+          ],
+          "verse_refs": [
+            "Acts 28:30-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c295a9fac26193705875cb48c0475d76b265ae83d934da2ceab50aeef5876de5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "passage_ref": "Ezekiel 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-call-watchman",
+      "claim": "Ezekiel 2-3 joins scroll eating, mission to a rebellious house, Spirit and hand language, watchman responsibility, constrained movement, and episodic speech.",
+      "category": "history",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "greenberg-ezekiel-1-20",
+        "sweeney-communications"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 2:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "what-is-a-prophet:ancient_near_east_context:0",
+      "claim": "Kings often had advisers and seers, but biblical prophets are distinct because they speak with the authority of the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-18",
+        "1-samuel-3",
+        "isaiah-6",
+        "jeremiah-1",
+        "ezekiel-2",
+        "amos-5",
+        "luke-4",
+        "acts-3",
+        "what-is-a-prophet-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-prophet",
+        "parent_title": "What is a prophet?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-a-prophet:historical_context:0",
+      "claim": "Prophets appear in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-18",
+        "1-samuel-3",
+        "isaiah-6",
+        "jeremiah-1",
+        "ezekiel-2",
+        "amos-5",
+        "luke-4",
+        "acts-3",
+        "what-is-a-prophet-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-prophet",
+        "parent_title": "What is a prophet?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Samuel 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-3",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Acts 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-3",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Amos 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "amos-5",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Deuteronomy 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-18",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Ezekiel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-2",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel 1-20",
+        "author": "Moshe Greenberg",
+        "publisher": "Yale University Press",
+        "year": 1983,
+        "locator": "Anchor Yale Bible 22",
+        "url": "https://yalebooks.yale.edu/book/9780300139662/ezekiel-1-20/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "hebrew-words",
+          "ezekiel-superscription-call",
+          "ezekiel-throne-vision",
+          "ezekiel-call-watchman",
+          "ezekiel-glory-departure-return",
+          "ezekiel-responsibility"
+        ],
+        "notes": "Detailed holistic Jewish commentary on Ezekiel 1-20.",
+        "id": "greenberg-ezekiel-1-20",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Isaiah 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-6",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Jeremiah 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-1",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Luke 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-4",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      },
+      {
+        "title": "Communications of the Book of Ezekiel: From the Iron Wall to the Voice in the Air",
+        "author": "Soo J. Kim Sweeney",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 16",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ezekiel-call-watchman"
+        ],
+        "notes": "Study of speech, silence, embodiment, and communication.",
+        "id": "sweeney-communications",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is a prophet?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-a-prophet-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-a-prophet"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "what-is-a-prophet",
+        "type": "faq",
+        "title": "What is a prophet?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a09c4207a4cb4fef8afe487968284de4af39888e98c7fbd55b63d23412fb9e95",
+  "evidence_hash_version": "2"
+}

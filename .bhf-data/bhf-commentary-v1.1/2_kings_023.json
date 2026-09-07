@@ -1,0 +1,71 @@
+{
+  "reference": "2 Kings 23",
+  "book": "2 Kings",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_28",
+          "text": "Read the chapter with this setting in view: Josiah responds to the discovered scroll by consulting Huldah, renewing covenant, removing prohibited worship, and holding Passover, yet the narrator says accumulated judgment will still come. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-kings-josiah-reform"
+          ],
+          "verse_refs": [
+            "2 Kings 23:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_29",
+          "text": "For its historical and cultural setting, note that Kings reports Josiah's death at Megiddo without Chronicles' speech explaining his decision; reconstructions should preserve the distinct wording and aims of both accounts rather than importing one into the other unnoticed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2-kings:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "2 Kings 23:28-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_29",
+          "text": "A literary feature to notice is that Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "second-kings-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Kings 23:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "37e1a48ab0c9a66820e4c9898dc44c38fdc626da90a58314efa155289fb80e2f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

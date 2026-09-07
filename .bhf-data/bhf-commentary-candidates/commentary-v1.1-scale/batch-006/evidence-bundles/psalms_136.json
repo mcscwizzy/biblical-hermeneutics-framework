@@ -1,0 +1,212 @@
+{
+  "passage_ref": "Psalms 136",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "what-does-hesed-mean:ancient_near_east_context:0",
+      "claim": "Loyalty language in treaties and kinship helps explain hesed, but Scripture grounds it in God's mercy and faithfulness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-34",
+        "ruth-1",
+        "psalm-136",
+        "psalm-89",
+        "hosea-2",
+        "micah-6"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 136:1-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-hesed-mean",
+        "parent_title": "What does hesed mean?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-hesed-mean:historical_context:0",
+      "claim": "The word is used in covenant and relational settings to describe enduring commitment rather than fleeting feeling.",
+      "category": "history",
+      "source_ids": [
+        "exodus-34",
+        "ruth-1",
+        "psalm-136",
+        "psalm-89",
+        "hosea-2",
+        "micah-6"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 136:1-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-hesed-mean",
+        "parent_title": "What does hesed mean?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Exodus 34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-34",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Hosea 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hosea-2",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Micah 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-6",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Psalm 136",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-136",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      },
+      {
+        "title": "Ruth 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ruth-1",
+        "canonical_object_ids": [
+          "what-does-hesed-mean"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "what-does-hesed-mean",
+        "type": "faq",
+        "title": "What does hesed mean?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "cb8e0d08abc352768b2dc5e937a2566d4348dc2e65840a17d361d7891a44ca95",
+  "evidence_hash_version": "2"
+}

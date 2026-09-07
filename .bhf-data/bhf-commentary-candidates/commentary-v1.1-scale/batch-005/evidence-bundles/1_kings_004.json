@@ -1,0 +1,348 @@
+{
+  "passage_ref": "1 Kings 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "beth-shean-excavations",
+        "title": "Beth Shean Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "beth shean excavations artifact",
+          "beth shean excavations discovery",
+          "beth shean excavations excavation",
+          "beth shean excavations find"
+        ],
+        "metadata": {
+          "summary": "A major settlement in the Jordan Valley with impressive Egyptian, Israelite, and Roman remains.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Samuel 31",
+            "1 Kings 4"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "1-kings:interpretive_note:0",
+      "claim": "The scale, administration, chronology, and archaeological profile of Solomon's kingdom remain disputed; monumental remains may illuminate Iron Age state formation without independently proving every attribution in Kings.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 4:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "beth-shean-excavations:ancient_near_east_context:0",
+      "claim": "Beth Shean Excavations belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
+      "category": "culture",
+      "source_ids": [
+        "beth-shean",
+        "multi-period-city",
+        "1-samuel-31",
+        "1-kings-4",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "beth-shean-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "beth-shean-excavations",
+        "parent_title": "Beth Shean Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "beth-shean-excavations:historical_context:0",
+      "claim": "Beth Shean shows how a major regional center changed across imperial transitions.",
+      "category": "history",
+      "source_ids": [
+        "beth-shean",
+        "multi-period-city",
+        "1-samuel-31",
+        "1-kings-4",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "beth-shean-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "beth-shean-excavations",
+        "parent_title": "Beth Shean Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 1-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Kings 1:1-22:53",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-carmel-confession",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-kings-1-22",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "1 Kings 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-4",
+        "canonical_object_ids": [
+          "beth-shean-excavations"
+        ]
+      },
+      {
+        "title": "1 Samuel 31",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-31",
+        "canonical_object_ids": [
+          "beth-shean-excavations"
+        ]
+      },
+      {
+        "title": "Beth Shean",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "beth-shean",
+        "canonical_object_ids": [
+          "beth-shean-excavations"
+        ]
+      },
+      {
+        "title": "I Kings",
+        "author": "Mordechai Cogan",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/9780300140538/i-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, literary composition, regnal and political history, and external evidence.",
+        "id": "cogan-first-kings",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "Excavation report and stratigraphic study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "excavation-report-and-stratigraphic-study",
+        "canonical_object_ids": [
+          "beth-shean-excavations"
+        ]
+      },
+      {
+        "title": "Multi-period city",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "multi-period-city",
+        "canonical_object_ids": [
+          "beth-shean-excavations"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+        "author": "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "1 Kings commentary and background notes",
+        "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "maps",
+          "interpretive-notes"
+        ],
+        "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+        "id": "zondervan-kings-chronicles-backgrounds",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-kings",
+        "type": "book",
+        "title": "1 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "beth-shean-excavations",
+        "type": "archaeology",
+        "title": "Beth Shean Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "aa3a9ac40129201702ffe85cdafb860215fd82f4b67b640a61c3c272804ddc11",
+  "evidence_hash_version": "2"
+}

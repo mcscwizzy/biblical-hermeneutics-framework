@@ -1,0 +1,35 @@
+{
+  "reference": "Matthew 9",
+  "book": "Matthew",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_5",
+          "text": "Read the chapter with this setting in view: Matthew's summaries and stories present Jesus teaching, proclaiming, healing, and exorcising amid ancient understandings of bodies and spirits. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-healing-disability"
+          ],
+          "verse_refs": [
+            "Matthew 9:1-38"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f053545ea5cce4bfdec1f44aaa1daabf5b129071800684d5ebd512dc2b4e2634",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

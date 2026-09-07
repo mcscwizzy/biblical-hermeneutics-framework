@@ -1,0 +1,353 @@
+{
+  "passage_ref": "Proverbs 25",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "proverbs-hezekiah-copying",
+      "claim": "Proverbs 25:1 states that the following proverbs are Solomonic sayings copied or transcribed by officials of King Hezekiah of Judah.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-ten-thirty-one",
+        "clifford-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 25:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "proverbs-multiple-collections",
+      "claim": "The received book explicitly contains distinct Solomonic collections, words of unnamed wise teachers, material copied by Hezekiah's officials, words of Agur, and instruction from Lemuel's mother.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "fox-proverbs-ten-thirty-one",
+        "waltke-proverbs-one-fifteen"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 25:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "romans-enemies",
+      "claim": "Romans 12 rejects private vengeance and commands care for enemies, quoting Proverbs' heaping-coals image whose precise metaphorical effect is debated.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 25:21-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "romans:interpretive_note:51",
+      "claim": "Feeding enemies and heaping coals cannot authorize covert cruelty or retaliation; the explicit frame is blessing, nonvengeance, material care, peace, and overcoming evil with good.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 25:21-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Proverbs: A Commentary",
+        "author": "Richard J. Clifford",
+        "publisher": "Westminster John Knox Press",
+        "year": 1999,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664228534-proverbs/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation, technical notes, and rhetorical commentary on the book's continuing search for wisdom.",
+        "id": "clifford-proverbs",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 1-9",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139594/proverbs-1-9/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary with ancient Near Eastern survey, thematic essays on personified Wisdom, and textual notes.",
+        "id": "fox-proverbs-one-nine",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 10-31",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300142099/proverbs-10-31/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "structure",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary on the later collections with attention to ethics, Egyptian comparison, medieval Jewish interpretation, text, and language.",
+        "id": "fox-proverbs-ten-thirty-one",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Deuteronomy, Psalms, Proverbs, Isaiah, Habakkuk and the Twelve",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "intertextuality"
+        ],
+        "notes": "Greek Jewish Scripture comparison for Romans' quotations.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Masoretic Proverbs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Proverbs 1-31 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "proverbs-masoretic",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "scripture-references"
+        ],
+        "notes": "Open critical Greek text for direct textual and lexical control.",
+        "id": "romans-greek",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Book of Proverbs, Chapters 1-15",
+        "author": "Bruce K. Waltke",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2004,
+        "locator": "New International Commentary on the Old Testament, volume 1",
+        "url": "https://www.eerdmans.com/9780802825452/the-book-of-proverbs-chapters-1-15/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "canonical-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed literary, Hebrew, ancient Near Eastern, theological, and Christian commentary.",
+        "id": "waltke-proverbs-one-fifteen",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "proverbs",
+        "type": "book",
+        "title": "Proverbs",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "romans",
+        "type": "book",
+        "title": "Romans",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "0081e4e6967f13273e8aea1bcf122e690e7e001ca3044e67b03110360c7a623d",
+  "evidence_hash_version": "2"
+}

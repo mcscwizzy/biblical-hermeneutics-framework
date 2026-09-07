@@ -1,0 +1,102 @@
+{
+  "reference": "Haggai 1",
+  "book": "Haggai",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_130",
+          "text": "Read the chapter with this setting in view: The Cyrus Cylinder and Darius inscriptions illuminate Achaemenid royal legitimation, cult restoration, divine patronage, empire, and kingship but do not directly document Haggai's temple work. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "haggai-persian-context"
+          ],
+          "verse_refs": [
+            "Haggai 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_131",
+          "text": "For its historical and cultural setting, note that Haggai 1:1 dates the first word to Darius I's second year and addresses Zerubbabel governor of Judah and Joshua the high priest. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "haggai-superscription"
+          ],
+          "verse_refs": [
+            "Haggai 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_132",
+          "text": "For its historical and cultural setting, note that The book calls Haggai a prophet and YHWH's messenger but does not identify his ancestry, birthplace, age, prior exile, or institutional office. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "haggai-biography"
+          ],
+          "verse_refs": [
+            "Haggai 1:1",
+            "Haggai 1:13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_131",
+          "text": "For its geographical or material setting, note that Archaeology and administrative evidence support an early Persian-period Yehud that was materially smaller and economically vulnerable, while population, taxation, drought, and labor conditions remain reconstructed rather than narrated fully by Haggai. It can illuminate the passage, while its limits should be kept in view. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "haggai-yehud"
+          ],
+          "verse_refs": [
+            "Haggai 1:2-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_131",
+          "text": "A literary feature to notice is that The final book alternates quoted prophetic speech with prose framing, and scholars dispute the relationship between Haggai's oracles, narrative reports, later editing, and shaping within the Twelve. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "haggai-composition"
+          ],
+          "verse_refs": [
+            "Haggai 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8bc7a7fcbd3ab51723dd7e6b925554bb2f5f96bf52619a4477cd09b286d4f292",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

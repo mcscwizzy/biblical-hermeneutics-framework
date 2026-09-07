@@ -1,0 +1,65 @@
+{
+  "reference": "Psalms 119",
+  "book": "Psalms",
+  "chapter": 119,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_39",
+          "text": "Read the chapter with this setting in view: Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "psalms-exile-restoration-pilgrimage"
+          ],
+          "verse_refs": [
+            "Psalms 119:1-176"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_40",
+          "text": "For its historical and cultural setting, note that Historically, Wadi Murabba'at Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "wadi-murabbaat-scrolls:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 119:1-176"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_41",
+          "text": "For its historical and cultural setting, note that Historically, Temple Mount Area Finds is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "temple-mount-area-finds:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 119:1-176"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "65540ccc387f8f1105da4f10699cbf7143e1fc8827d9a883594fe3f9858fcf8a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

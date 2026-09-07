@@ -1,0 +1,1548 @@
+{
+  "passage_ref": "Acts 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "pharisees",
+        "title": "Pharisees",
+        "type": "institution",
+        "aliases": [
+          "pharisees institution",
+          "pharisees in scripture",
+          "pharisees structure",
+          "pharisees role"
+        ],
+        "metadata": {
+          "summary": "A diverse late Second Temple Jewish association known especially through Josephus, the New Testament, and later rabbinic memory, with influence in Torah interpretation and public life but no surviving Pharisaic archive.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 7:1-23",
+            "Matthew 23:1-36",
+            "Luke 7:36-50",
+            "John 3:1-21",
+            "Acts 5:33-40",
+            "Acts 23:1-10"
+          ]
+        }
+      },
+      {
+        "id": "sadducees",
+        "title": "Sadducees",
+        "type": "institution",
+        "aliases": [
+          "sadducees institution",
+          "sadducees in scripture",
+          "sadducees structure",
+          "sadducees role"
+        ],
+        "metadata": {
+          "summary": "A late Second Temple Jewish group known through external descriptions and New Testament disputes, often associated with elite and priestly circles but poorly documented in its own voice.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 22:23-33",
+            "Mark 12:18-27",
+            "Acts 4:1-22",
+            "Acts 5:17-42",
+            "Acts 23:1-10"
+          ]
+        }
+      },
+      {
+        "id": "sanhedrin",
+        "title": "Sanhedrin",
+        "type": "institution",
+        "aliases": [
+          "sanhedrin institution",
+          "sanhedrin in scripture",
+          "sanhedrin structure",
+          "sanhedrin role"
+        ],
+        "metadata": {
+          "summary": "A conventional label for Jewish councils represented by Greek synedrion terminology in late Second Temple sources, whose composition, jurisdiction, meeting forms, and institutional continuity remain debated.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 14:53-65",
+            "John 11:47-53",
+            "Acts 4:1-22",
+            "Acts 5:21-42",
+            "Acts 23:1-10"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-ananias-sapphira",
+      "claim": "Acts narrates Ananias and Sapphira dying after deceptive claims about a sale, but does not command leaders to threaten donors or reproduce the judgment.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "johnson-sharing"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 5:1-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-property",
+      "claim": "Acts presents voluntary selling and distribution as community ideals in particular summaries, not an explicit universal legal code abolishing all possession.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "johnson-sharing"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 4:32-5:4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 78
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "josephus-census-tax-resistance",
+      "claim": "Josephus reports that Quirinius assessed Judean property after Archelaus's removal and that Judas opposed the assessment as enslavement.",
+      "category": "history",
+      "source_ids": [
+        "josephus-antiquities-18-tax",
+        "judean-gospel-acts-passages",
+        "keddie-taxation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 5:33-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "josephus-census-tax-resistance:passage-relevance",
+      "claim": "The account closely contextualizes Acts 5's memory of Judas while exposing rather than resolving the chronological difficulty posed by Luke 2.",
+      "category": "history",
+      "source_ids": [
+        "josephus-antiquities-18-tax",
+        "judean-gospel-acts-passages",
+        "keddie-taxation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 5:33-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "josephus-census-tax-resistance"
+        ]
+      }
+    },
+    {
+      "id": "pharisees:ancient_near_east_context:0",
+      "claim": "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Acts 5:33-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:hebraic_worldview:0",
+      "claim": "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Acts 5:33-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:historical_context:0",
+      "claim": "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Acts 5:33-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:historical_setting:0",
+      "claim": "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Acts 5:33-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:original_audience:0",
+      "claim": "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Acts 5:33-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pharisees:second_temple_context:0",
+      "claim": "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "pharisees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pharisees"
+      ],
+      "passage_anchors": [
+        "Acts 5:33-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pharisees",
+        "parent_title": "Pharisees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:ancient_near_east_context:0",
+      "claim": "The relevant setting is Hellenistic and Roman Judea rather than generic ancient leadership or village authority.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Acts 5:17-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:hebraic_worldview:0",
+      "claim": "Ancient sources connect Sadducees with disputes about written authority, providence, resurrection, angels or spirits, and temple-linked power, but the sources are selective and often adversarial.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Acts 5:17-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:historical_context:0",
+      "claim": "Sadducees are attested by Josephus and the New Testament in the Hasmonean and Roman periods. Their precise origins, membership, priestly connections, and legal positions remain difficult to reconstruct because no self-authored Sadducean corpus survives.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Acts 5:17-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:historical_setting:0",
+      "claim": "Hasmonean and Roman Judea before 70 CE, with Josephus's retrospective accounts composed later in the first century.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Acts 5:17-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:original_audience:0",
+      "claim": "Readers of the Gospels and Acts encountering a sparsely documented Jewish group through polemical and narrative sources.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Acts 5:17-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:second_temple_context:0",
+      "claim": "Josephus contrasts Sadducees with Pharisees and Essenes; the Gospels and Acts associate them especially with resurrection disputes and Jerusalem leadership.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Acts 5:17-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanhedrin:ancient_near_east_context:0",
+      "claim": "The operative comparison is Hellenistic and Roman civic and provincial council practice, not generic Ancient Near Eastern judges or monarchy.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Acts 5:21-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanhedrin:hebraic_worldview:0",
+      "claim": "Council scenes concern communal judgment, Torah, temple authority, public order, and accountability under both divine claims and imperial constraints.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Acts 5:21-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanhedrin:historical_context:0",
+      "claim": "Josephus and the New Testament attest councils and assemblies of rulers, elders, priests, and scribes under Hasmonean and Roman rule. The evidence does not justify one unchanged seventy-one-member body operating identically in every passage.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Acts 5:21-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanhedrin:historical_setting:0",
+      "claim": "Jerusalem under Hasmonean, Herodian, and early Roman rule, with changing local and imperial jurisdictions.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Acts 5:21-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanhedrin:original_audience:0",
+      "claim": "Readers of Gospel passion accounts and Acts hearings who need cautious institutional rather than harmonized courtroom reconstruction.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Acts 5:21-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanhedrin:second_temple_context:0",
+      "claim": "The Gospels and Acts use council language for Jerusalem hearings involving high priests, chief priests, elders, scribes, and rulers; source-specific composition and jurisdiction must be preserved.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Acts 5:21-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "pharisees",
+          "sadducees",
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "pharisees",
+          "sadducees",
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "pharisees",
+          "sadducees",
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "pharisees",
+          "sadducees",
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "The Literary Function of Possessions in Luke-Acts",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Scholars Press",
+        "year": 1977,
+        "locator": "Possessions and sharing in Acts",
+        "url": "https://archive.org/details/literaryfunction0000john",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Foundational literary study of wealth and possessions.",
+        "id": "johnson-sharing",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities, Book 18",
+        "author": "Flavius Josephus",
+        "publisher": "University of Chicago LacusCurtius",
+        "year": 94,
+        "locator": "Antiquities 18.1-10, 26-35, 55-89",
+        "url": "https://penelope.uchicago.edu/josephus/ant-18.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "josephus-census-tax-resistance",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Later first-century historiography used with chronological and rhetorical caution.",
+        "id": "josephus-antiquities-18-tax",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Pilgrimage, taxation, Roman trial, crucifixion, and burial passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 2:1-52; 19:1-10; Mark 11:1-25; 12:13-17; 15:21-47; John 18:28-19:42; Acts 5:33-39",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "gospel-crucifixion-and-burial",
+          "josephus-census-tax-resistance",
+          "stepped-street-jerusalem",
+          "pilate-prefect-inscription",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "judean-gospel-acts-passages",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Taxation: Render unto Caesar and the Local Elites",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Class and Power in Roman Palestine, chapter 3, pp. 111-151",
+        "url": "https://doi.org/10.1017/9781108656757.004",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance"
+        ],
+        "notes": "Distinguishes direct tribute, censuses, tolls, customs, tax farming, and local elite supervision.",
+        "id": "keddie-taxation",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "An Introduction to Early Judaism",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapter 4, Jewish groups and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Source-critical overview of the evidence for Pharisees and other early Jewish groups.",
+        "id": "pharisees-historical-orientation",
+        "canonical_object_ids": [
+          "pharisees"
+        ]
+      },
+      {
+        "title": "Early Judaism: A Comprehensive Overview",
+        "author": "John J. Collins and Daniel C. Harlow, editors",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Sections on Jewish groups, law, and the Dead Sea Scrolls",
+        "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Multi-author scholarly overview used for source limits and disputed group reconstruction.",
+        "id": "sadducees-historical-orientation",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "An Introduction to Second Temple Judaism",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "Chapters on sources, institutions, and Roman Judea",
+        "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Source-critical overview used to bound reconstruction of councils and jurisdiction.",
+        "id": "sanhedrin-historical-orientation",
+        "canonical_object_ids": [
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "pharisees",
+        "type": "institution",
+        "title": "Pharisees",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "sadducees",
+        "type": "institution",
+        "title": "Sadducees",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "sanhedrin",
+        "type": "institution",
+        "title": "Sanhedrin",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f4e73954c68609c58b4cb79064da2efa1806db2a6416fc905a96df994a3a1ba1",
+  "evidence_hash_version": "2"
+}

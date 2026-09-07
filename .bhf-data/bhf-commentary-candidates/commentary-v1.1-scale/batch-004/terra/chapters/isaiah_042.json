@@ -1,0 +1,89 @@
+{
+  "reference": "Isaiah 42",
+  "book": "Isaiah",
+  "chapter": 42,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_128",
+          "text": "Read the chapter with this setting in view: Isaiah's servant language has multiple referents, explicitly including Jacob or Israel and a plural community, while several singular servant poems invite but do not settle individual, collective, prophetic, royal, or messianic identification. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-servants-plural"
+          ],
+          "verse_refs": [
+            "Isaiah 42:1-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_129",
+          "text": "For its historical and cultural setting, note that The servant songs emerge from Isaiah's prophetic world and hold together Israel's vocation, suffering, and restoration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "suffering-servant-prophecy:historical_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 42:1-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_129",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 42:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_129",
+          "text": "For a later or comparative connection, note that Responsible interpretation distinguishes a passage's literary sense and historical referent from prediction claims, typology, quotation, allusion, canonical synthesis, Jewish reception, and later christological or ecclesial readings. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-reception-distinction"
+          ],
+          "verse_refs": [
+            "Isaiah 42:1-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a5df27ae6e5de0910ca9b8bb40a8eb198a49120911bdbb01ba7e252535aa8ce2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

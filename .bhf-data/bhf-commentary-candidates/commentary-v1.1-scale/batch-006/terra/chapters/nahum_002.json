@@ -1,0 +1,101 @@
+{
+  "reference": "Nahum 2",
+  "book": "Nahum",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: Assyrian inscriptions and palace reliefs illuminate imperial ideology, conquest, deportation, tribute, violence, lion symbolism, and Thebes, but are royal representations rather than neutral reports. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "nahum-assyrian-sources"
+          ],
+          "verse_refs": [
+            "Nahum 2:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Babylonian Chronicle BM 21901 records Babylonian and Median campaigns culminating in Nineveh's capture and destruction in 612 BCE. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "nahum-chronicle"
+          ],
+          "verse_refs": [
+            "Nahum 2:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Northern Mesopotamia and the Neo-Assyrian imperial system, especially its Levantine expansion from the ninth to seventh centuries BCE. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "assyria:historical_setting:0"
+          ],
+          "verse_refs": [
+            "Nahum 2:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_3",
+          "text": "For its geographical or material setting, note that Nineveh's river gates, palace, and pool imagery can be read against its hydraulic setting, but the text does not prove that a literal flood caused the city's breach. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "nahum-water"
+          ],
+          "verse_refs": [
+            "Nahum 2:6-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_3",
+          "text": "A literary feature to notice is that Nahum 2:11-13 turns Assyrian royal lion imagery into a taunt over an emptied den and ends with YHWH's declaration against Nineveh. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "nahum-lions"
+          ],
+          "verse_refs": [
+            "Nahum 2:11-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d32a84c47066d53881d3314f2f5dba4b9f232469c9ebd471f4830ca9ed751723",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

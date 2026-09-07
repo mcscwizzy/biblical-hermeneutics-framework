@@ -1,0 +1,886 @@
+{
+  "passage_ref": "Lamentations 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "babylonian-exile",
+        "title": "Babylonian Exile",
+        "type": "event",
+        "aliases": [
+          "what happened in babylonian exile",
+          "tell me about babylonian exile",
+          "why is babylonian exile important"
+        ],
+        "metadata": {
+          "summary": "The forced displacement of Judeans in several Babylonian campaigns, especially the elite deportation of 597 BCE and the removals surrounding Jerusalem's destruction in 587/586 BCE, followed by enduring communities in both Judah and Babylonia.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 24:8-20",
+            "2 Kings 25:1-30",
+            "2 Chronicles 36:11-23",
+            "Jeremiah 25:8-14",
+            "Jeremiah 29:1-14",
+            "Lamentations 1:1-22",
+            "Ezekiel 1:1-3",
+            "Daniel 1:1-21",
+            "Psalms 137:1-9"
+          ]
+        }
+      },
+      {
+        "id": "fall-of-jerusalem",
+        "title": "Fall of Jerusalem",
+        "type": "event",
+        "aliases": [
+          "what happened in fall of jerusalem",
+          "tell me about fall of jerusalem",
+          "why is fall of jerusalem important"
+        ],
+        "metadata": {
+          "summary": "Babylon destroys Jerusalem and the temple, sending Judah into exile.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 25:1-21",
+            "Jeremiah 39:1-10",
+            "Jeremiah 52:1-30",
+            "Lamentations 1:1-22",
+            "Psalms 137:1-9",
+            "Ezra 1:1-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "babylonian-exile:ancient_near_east_context:0",
+      "claim": "Neo-Babylonian policy combined vassal kingship, tribute, punitive siege, elite removal, destruction after revolt, and resettlement within imperial agricultural and service systems. Chronicles, ration lists, and private documents illuminate different levels of this system.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "babylonian-exile:hebraic_worldview:0",
+      "claim": "Biblical writers interpret exile through covenant judgment, lament, repentance, divine presence outside the land, responsibility, and promised restoration. Those theological claims belong to the biblical witnesses rather than the Babylonian records.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "babylonian-exile:historical_context:0",
+      "claim": "Babylon reduced Judah in stages: Jehoiachin and selected royal, military, administrative, and skilled groups were removed in 597 BCE; Zedekiah's revolt led to Jerusalem's destruction and further deportation in 587/586 BCE. Not everyone was removed, and Judean communities persisted in Babylonia after Persian-period returns began.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "babylonian-exile:second_temple_context:0",
+      "claim": "Return did not end the Babylonian diaspora. The Al-Yahudu corpus continues into Persian rule, showing that the early Second Temple community in Yehud developed alongside Judean communities that remained abroad.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:ancient_near_east_context:0",
+      "claim": "The destruction followed Neo-Babylonian practices of punitive siege, royal removal, plunder, destruction, deportation, and installation of subordinate administration after rebellion. BM 21946 records the earlier 597 BCE capture, not this later catastrophe.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:hebraic_worldview:0",
+      "claim": "Kings and Jeremiah interpret the fall as judgment after persistent covenant breach and rejected prophetic warning; Lamentations voices grief, protest, confession, and appeal from within the catastrophe.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:historical_context:0",
+      "claim": "After Zedekiah's revolt, Babylon besieged Jerusalem, breached the city, removed and executed officials, burned the temple and major buildings, dismantled defenses, and deported further inhabitants. The absolute date is conventionally 587/586 BCE because regnal-year and calendar calculations differ.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lam-acrostics",
+      "claim": "Chapters 1-4 use alphabetic structures, while chapter 5 has twenty-two lines without alphabetic progression.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "dobbs-allsopp",
+        "kotze"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "lam-anonymous-title",
+      "claim": "The Hebrew book is anonymous and takes its title Eikhah from its opening word.",
+      "category": "history",
+      "source_ids": [
+        "lam-mt",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "lam-catastrophe-horizon",
+      "claim": "Jerusalem's 587/586 BCE destruction is the most probable historical horizon, though exact poem dates are unstated.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "babylonian-chronicle",
+        "dobbs-allsopp"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "lam-daughter-zion",
+      "claim": "Daughter Zion personifies Jerusalem as bereaved city, mother, sufferer, accused party, and speaking complainant.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "holt",
+        "mandolfo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "lam-five-poems",
+      "claim": "The received book contains five poems with distinct voices and formal profiles.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "lam-multiple-voices",
+      "claim": "Narrator, Daughter Zion, the chapter 3 man, communal speakers, enemies, and addresses to God cannot be reduced securely to one biography.",
+      "category": "culture",
+      "source_ids": [
+        "lanahan",
+        "mandolfo",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Israel in Exile: The History and Literature of the Sixth Century B.C.E.",
+        "author": "Rainer Albertz",
+        "publisher": "Society of Biblical Literature",
+        "year": 2003,
+        "locator": "Studies in Biblical Literature 3, historical reconstruction and social groups in the exile",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/AlbertzIsrael.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical and literary study of sixth-century Judean communities.",
+        "id": "albertz-israel-exile",
+        "canonical_object_ids": [
+          "babylonian-exile"
+        ]
+      },
+      {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "publisher": "Brill",
+        "year": 2020,
+        "locator": "Culture and History of the Ancient Near East 109, chapters 2-5",
+        "url": "https://doi.org/10.1163/9789004365421",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Open-access social and economic study of Babylonian Judeans.",
+        "id": "alstola-judeans-babylonia",
+        "canonical_object_ids": [
+          "babylonian-exile"
+        ]
+      },
+      {
+        "title": "Nebuchadnezzar Chronicle",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; museum number 1896,0409.51",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "Neo-Babylonian chronicle recording the 597 BCE campaign against Jerusalem; it does not narrate the 587/586 destruction.",
+        "id": "babylonian-chronicle",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations: A Commentary",
+        "author": "Adele Berlin",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664229743-lamentations/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and historical commentary.",
+        "id": "berlin",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle for 605-594 BCE",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; date range 605-594 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Used to enforce the boundary between the documented 597 BCE capture and the later destruction.",
+        "id": "bm-21946-fall-boundary",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 24:18-25:30",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical-critical commentary on the final siege, chronology, destruction, and aftermath.",
+        "id": "cogan-tadmor-fall-jerusalem",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Lamentations",
+        "author": "F. W. Dobbs-Allsopp",
+        "publisher": "Westminster John Knox Press",
+        "year": 2011,
+        "locator": "Interpretation commentary",
+        "url": "https://www.wjkbooks.com/productcategories/bseint-interpretation-a-bible-commentary/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Poetic, historical, and comparative commentary.",
+        "id": "dobbs-allsopp",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion: Trauma, Cultural Memory and Gender in OT Poetics",
+        "author": "Else K. Holt",
+        "publisher": "Vandenhoeck & Ruprecht",
+        "year": 2014,
+        "locator": "Trauma and Traumatization in Individual and Collective Dimensions",
+        "url": "https://pure.au.dk/portal/en/publications/daughter-zion-trauma-cultural-memory-and-gender-in-ot-poetics/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Gender, trauma, and cultural-memory analysis.",
+        "id": "holt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Second Kings 24-25; Jeremiah 29, 39, and 52; Ezekiel 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:8-25:30; Jeremiah 29:1-14; 39:1-10; 52:1-34; Ezekiel 1:1-3",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical witnesses; no modern translation is reproduced.",
+        "id": "kings-jeremiah-babylonian-exile",
+        "canonical_object_ids": [
+          "babylonian-exile"
+        ]
+      },
+      {
+        "title": "Second Kings 25; Jeremiah 39 and 52; Lamentations 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 25:1-21; Jeremiah 39:1-10; 52:1-30; Lamentations 1:1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical witnesses in prose and poetry.",
+        "id": "kings-jeremiah-fall-jerusalem",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "The Qumran Manuscripts of Lamentations: A Text-Critical Study",
+        "author": "Gideon R. Kotz\u00e9",
+        "publisher": "Brill",
+        "year": 2013,
+        "locator": "Studia Semitica Neerlandica 61",
+        "url": "https://brill.com/display/title/22977",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Detailed analysis of four Qumran witnesses.",
+        "id": "kotze",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Masoretic Lamentations",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Lamentations 1:1-5:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew text.",
+        "id": "lam-mt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Speaking Voice in the Book of Lamentations",
+        "author": "William F. Lanahan",
+        "publisher": "Journal of Biblical Literature",
+        "year": 1974,
+        "locator": "JBL 93, pages 41-49",
+        "url": "https://www.jstor.org/stable/3263865",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Influential study of shifting speakers.",
+        "id": "lanahan",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion Talks Back to the Prophets",
+        "author": "Carleen R. Mandolfo",
+        "publisher": "Society of Biblical Literature",
+        "year": 2007,
+        "locator": "Semeia Studies 58",
+        "url": "https://www.sbl-site.org/publications/Books_Semeia.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Dialogic and gender-critical study.",
+        "id": "mandolfo",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "babylonian-exile",
+        "type": "event",
+        "title": "Babylonian Exile",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "fall-of-jerusalem",
+        "type": "event",
+        "title": "Fall of Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "lamentations",
+        "type": "book",
+        "title": "Lamentations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.948
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "2fa0b743191b699b37abd63faac81ca52556170f01ec06b314381996741154a1",
+  "evidence_hash_version": "2"
+}

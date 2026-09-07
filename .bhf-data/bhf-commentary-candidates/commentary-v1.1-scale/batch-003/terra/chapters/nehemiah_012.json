@@ -1,0 +1,66 @@
+{
+  "reference": "Nehemiah 12",
+  "book": "Nehemiah",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_114",
+          "text": "Read the chapter with this setting in view: Jerusalem is repopulated, the wall is dedicated by two thanksgiving processions, and arrangements are made for offerings that support priests and Levites. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "nehemiah-dedication-support"
+          ],
+          "verse_refs": [
+            "Nehemiah 12:1-47"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_115",
+          "text": "For its historical and cultural setting, note that Archaeology confirms Persian-period occupation and administration in Jerusalem and Yehud but does not yield an uncontested route, height, or full circuit for Nehemiah's wall. Proposed identifications of gates and the night inspection must remain provisional. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Nehemiah 12:27-43"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_116",
+          "text": "For its historical and cultural setting, note that The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Nehemiah 12:1-26",
+            "Nehemiah 12:1-47"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "22d8e14eaf4484bbdb0ea5be284c0c4987c30d4a9e41920c1d5164180a1446c2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

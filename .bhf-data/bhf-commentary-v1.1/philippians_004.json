@@ -1,0 +1,101 @@
+{
+  "reference": "Philippians 4",
+  "book": "Philippians",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_52",
+          "text": "Read the chapter with this setting in view: The letter frames the Philippians' relation to Paul as partnership in the gospel from the first day through imprisonment and renewed material aid. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "phl-partnership"
+          ],
+          "verse_refs": [
+            "Philippians 4:10-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_53",
+          "text": "For its historical and cultural setting, note that The letter answers anxiety with communal prayer, petition, thanksgiving, and divine peace, not with a clinical diagnosis. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "phl-anxiety"
+          ],
+          "verse_refs": [
+            "Philippians 4:4-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_54",
+          "text": "For its historical and cultural setting, note that Philippians refers to the whole praetorium and greeters from Caesar's household while leaving the prison city and these groups' precise identity unstated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "praetorium-caesars-household-provenance-limit"
+          ],
+          "verse_refs": [
+            "Philippians 4:22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_53",
+          "text": "A literary feature to notice is that One-letter and composite-letter models both account for features of the canonical text; no proposed component survives separately. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "phl-integrity"
+          ],
+          "verse_refs": [
+            "Philippians 4:10-20"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_53",
+          "text": "For the chapter's sequence and setting, note that Philippians names bonds, uncertain trial outcome, desire concerning life and death, continued labor for others, allied messengers, and material gifts. This gives the reader a frame for the passage without deciding every larger reconstruction. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "philippians-prison-life-death"
+          ],
+          "verse_refs": [
+            "Philippians 4:10-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4364f775a99863680a090a1bbb438ed95573287e4f93fdd0ab79b2e52d49043b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

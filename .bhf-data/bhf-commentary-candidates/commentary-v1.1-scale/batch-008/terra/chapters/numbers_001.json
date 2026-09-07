@@ -1,0 +1,89 @@
+{
+  "reference": "Numbers 1",
+  "book": "Numbers",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_9",
+          "text": "Read the chapter with this setting in view: Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Numbers 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_10",
+          "text": "For its historical and cultural setting, note that The two census totals and the scale of Israel's wilderness population have major literary and historical interpretations; the record should not silently select one reconstruction. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "numbers:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Numbers 1:1-54"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_10",
+          "text": "A literary feature to notice is that The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "numbers-two-generations"
+          ],
+          "verse_refs": [
+            "Numbers 1:1-54"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_10",
+          "text": "For a later or comparative connection, note that Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Numbers 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "32ad96aa8d5c08dea0f1f961bc8c34f4fcf4c1187da84f7c7008bf658f0c6b84",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "passage_ref": "Psalms 50",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "psalms-superscription-collections",
+      "claim": "The received superscriptions associate psalms with David, Asaph, the sons of Korah, Solomon, Moses, Heman, and Ethan and also preserve genre, performance, tune, instrument, and narrated-setting labels.",
+      "category": "history",
+      "source_ids": [
+        "psalms-masoretic",
+        "baker-introducing-psalms",
+        "goldingay-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 50:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Chapter 20: Psalms",
+        "author": "Rolf A. Jacobson and Michael J. Chan",
+        "publisher": "Baker Academic",
+        "year": 2023,
+        "locator": "Introducing the Old Testament online textbook resources",
+        "url": "https://bakeracademic.com/pages/jacobson-chan-introducing-the-old-testament-esources-1",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "interpretive-notes"
+        ],
+        "notes": "Accessible overview of the Psalter's contents, smaller collections, five-book division, superscriptions, and formation.",
+        "id": "baker-introducing-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms, three-volume set",
+        "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "genre",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary, historical, grammatical, theological, and pastoral commentary with original translation.",
+        "id": "goldingay-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "2ce76d2bd06aeb7f32dde4b34c2a5de57254ef61b325ab03323029b818c3f54f",
+  "evidence_hash_version": "2"
+}

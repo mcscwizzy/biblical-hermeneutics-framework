@@ -1,0 +1,2819 @@
+{
+  "passage_ref": "1 Corinthians 1",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "corinth",
+        "title": "Corinth",
+        "type": "place",
+        "aliases": [
+          "where is corinth",
+          "tell me about corinth",
+          "why is corinth important"
+        ],
+        "metadata": {
+          "summary": "A Roman colony and capital of Achaia on the Isthmus, connected to Cenchreae and Lechaeum and central to Paul's mission, correspondence, and collection network.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 18:1-18",
+            "Romans 16:1-2",
+            "Romans 16:23",
+            "1 Corinthians 1:1-9",
+            "2 Corinthians 1:1-2"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-corinthians:interpretive_note:0",
+      "claim": "Paul is principal sender and Sosthenes is named co-sender; Sosthenes must not be erased or assigned an invented secretarial role.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "thiselton-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:1",
+      "claim": "The Sosthenes in Acts 18 and the co-sender in 1 Corinthians may be the same person, but the name alone cannot establish identity.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "murphy-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:3",
+      "claim": "Chloe's people supplied a report, but whether they were relatives, enslaved agents, employees, clients, or assembly members is unknown.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "winter-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:5",
+      "claim": "Faction names need not denote four organized parties, and the Christ slogan need not reveal a uniquely superior or hostile group.",
+      "category": "culture",
+      "source_ids": [
+        "mitchell-rhetoric",
+        "malcolm-reversal"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:6",
+      "claim": "The word of the cross overturns status boasting; it cannot authorize anti-intellectualism, contempt for education, or conspiracy thinking.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "welborn-wisdom"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:7",
+      "claim": "Calling divine action foolish or weak is paradoxical rhetoric and not a claim that God lacks wisdom or power.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "malcolm-reversal"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:84",
+      "claim": "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm",
+        "sinaiticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:85",
+      "claim": "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+      "category": "culture",
+      "source_ids": [
+        "malcolm-reversal",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:86",
+      "claim": "The letter's unity appeals cannot be recruited for sectarian suppression, nationalism, partisan capture, or enforced institutional unanimity.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "mitchell-rhetoric"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:10-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1cor-chloe",
+      "claim": "Chloe's people reported quarrels among the Corinthians.",
+      "category": "history",
+      "source_ids": [
+        "1cor-greek",
+        "hays-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1cor-cross",
+      "claim": "The word of the cross reverses conventional evaluations of wisdom, power, status, and boasting.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "malcolm-reversal"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-2:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "1cor-factions",
+      "claim": "Factional claims invoked Paul, Apollos, Cephas, and Christ, but their organization is uncertain.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "mitchell-rhetoric"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:12-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "1cor-integrity",
+      "claim": "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+      "category": "culture",
+      "source_ids": [
+        "malcolm-reversal",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "1cor-manuscripts",
+      "claim": "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+      "category": "archaeology",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm",
+        "sinaiticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 23
+      }
+    },
+    {
+      "id": "1cor-paul",
+      "claim": "1 Corinthians names Paul as apostle and principal sender.",
+      "category": "history",
+      "source_ids": [
+        "1cor-greek",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "1cor-sosthenes",
+      "claim": "Sosthenes is named as brother and co-sender, although his compositional role is not described.",
+      "category": "history",
+      "source_ids": [
+        "1cor-greek",
+        "thiselton-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "1cor-wisdom",
+      "claim": "Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "welborn-wisdom"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-3:4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "categories-remain-distinct",
+      "claim": "Social weakness, bodily impairment, illness, injury, persecution, economic precarity, imprisonment, rhetorical weakness, and cruciform power overlap but are not interchangeable.",
+      "category": "economics",
+      "source_ids": [
+        "first-corinthians-suffering-text",
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "philippians-prison-text",
+        "acts-suffering-text",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:17-4:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 17
+      }
+    },
+    {
+      "id": "chloe-reporting-channel",
+      "claim": "Paul says Chloe's people informed him of quarrels in Corinth, while their roles and the report process remain unstated.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "gorman-first-corinthians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "chloe-reporting-channel:passage-relevance",
+      "claim": "Makes mediated reporting visible and rejects punishing reporters merely for bringing conflict to attention.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "gorman-first-corinthians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "chloe-reporting-channel"
+        ]
+      }
+    },
+    {
+      "id": "corinth-faction-slogans",
+      "claim": "First Corinthians reports name-based slogans around Paul, Apollos, Cephas, and Christ while appealing against divisions.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "finney-honour-conflict"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-faction-slogans:passage-relevance",
+      "claim": "Prevents reconstructing rigid parties or using unity language to silence a substantiated complaint.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "finney-honour-conflict"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-faction-slogans"
+        ]
+      }
+    },
+    {
+      "id": "corinth-thanksgiving-amid-conflict",
+      "claim": "First Corinthians thanks God for grace, enriched speech and knowledge, gifts, and divine faithfulness before immediately naming quarrels.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "obrien-thanksgiving-gospel",
+        "gorman-first-corinthians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:4-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-thanksgiving-amid-conflict:passage-relevance",
+      "claim": "Thanksgiving need not deny conflict, and conflict reporting does not cancel every good in a community.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "obrien-thanksgiving-gospel",
+        "gorman-first-corinthians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:4-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-thanksgiving-amid-conflict"
+        ]
+      }
+    },
+    {
+      "id": "corinth:ancient_near_east_context:0",
+      "claim": "Corinth belongs to the Greco-Roman Mediterranean and should not be interpreted through generic Levantine or Ancient Near Eastern geography.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-scripture",
+        "corinth-ascsa",
+        "corinth-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "corinth",
+        "parent_title": "Corinth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "corinth:hebraic_worldview:0",
+      "claim": "Acts locates Paul's initial activity in a diaspora synagogue, while the letters reason from Israel's Scriptures within mixed urban assemblies. Jewish and Greco-Roman horizons must remain mutually visible.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-scripture",
+        "corinth-ascsa",
+        "corinth-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "corinth",
+        "parent_title": "Corinth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "corinth:historical_context:0",
+      "claim": "Julius Caesar refounded Corinth in 44 BCE. By the early 50s CE its colonial institutions, provincial administration, two-port geography, migration, trade, slavery, sanctuaries, households, and economic inequalities formed the setting of Paul's activity and the Corinthian assemblies.",
+      "category": "history",
+      "source_ids": [
+        "corinth-scripture",
+        "corinth-ascsa",
+        "corinth-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "corinth",
+        "parent_title": "Corinth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "corinth:second_temple_context:0",
+      "claim": "The city's Jewish diaspora setting, synagogue, and scriptural debates belong to first-century Judaism; later conflict must not be projected backward as a complete Jewish-Christian separation.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-scripture",
+        "corinth-ascsa",
+        "corinth-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "corinth",
+        "parent_title": "Corinth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "cross-power-status-reversal",
+      "claim": "First Corinthians names a crucified Messiah as apparent foolishness and weakness yet also as God's power and wisdom in a community marked by low status.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinthians-suffering-text",
+        "thiselton-1cor-suffering",
+        "savage-power-weakness",
+        "massmann-weakness-disability"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:17-2:5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "cross-power-status-reversal:passage-relevance",
+      "claim": "Locates power reversal in cross proclamation and community formation rather than in demanding that vulnerable people remain powerless.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinthians-suffering-text",
+        "thiselton-1cor-suffering",
+        "savage-power-weakness",
+        "massmann-weakness-disability"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:17-2:5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "cross-power-status-reversal"
+        ]
+      }
+    },
+    {
+      "id": "cross-status-reversal",
+      "claim": "Paul contrasts the word of the cross with status-producing wisdom and relocates boasting in the Lord.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "finney-honour-conflict"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "cross-status-reversal:passage-relevance",
+      "claim": "Constrains leadership prestige, educational elitism, and claims that public success proves divine approval.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "finney-honour-conflict"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "cross-status-reversal"
+        ]
+      }
+    },
+    {
+      "id": "household-slavery-status",
+      "claim": "The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "glancy-slavery",
+        "friesen-economics",
+        "last-associations",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:26-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "household-slavery-status:passage-relevance",
+      "claim": "The evidence keeps calling, freedom, bodily belonging, meal humiliation, and household service within a slaveholding and economically unequal society without turning description into endorsement.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "glancy-slavery",
+        "friesen-economics",
+        "last-associations",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:26-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "household-slavery-status"
+        ]
+      }
+    },
+    {
+      "id": "modern-confidentiality-not-concealment",
+      "claim": "Confidentiality protects privacy and fair process, but secrecy that hides danger, blocks reporting, destroys records, coordinates stories, or protects reputation is concealment.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "second-corinth-conflict-text",
+        "finney-honour-conflict",
+        "ilo-c190"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-confidentiality-not-concealment:passage-relevance",
+      "claim": "Requires data minimization, informed privacy limits, secure records, need-to-know access, lawful reporting, and transparent conflict-of-interest handling.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "second-corinth-conflict-text",
+        "finney-honour-conflict",
+        "ilo-c190"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-confidentiality-not-concealment"
+        ]
+      }
+    },
+    {
+      "id": "modern-independent-reporting-nonretaliation",
+      "claim": "Safe systems provide channels outside the accused person's authority, external options, conflict disclosure, timely triage, support, secure records, protection for complainants and witnesses, and remedies for retaliation.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "second-corinth-conflict-text",
+        "long-ancient-rhetoric",
+        "ilo-c190"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-independent-reporting-nonretaliation:passage-relevance",
+      "claim": "Rejects accused leaders receiving sole reports, selecting investigators, controlling communications, funding silence, threatening status, or retaliating through sermons, references, work, housing, aid, immigration, or social networks.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "second-corinth-conflict-text",
+        "long-ancient-rhetoric",
+        "ilo-c190"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-independent-reporting-nonretaliation"
+        ]
+      }
+    },
+    {
+      "id": "roman-colony-public-space",
+      "claim": "Excavated Corinth preserves a Roman forum, roads, basilicas, shops, fountains, temples, theater, inscriptions, and administrative monuments within a refounded colony and provincial capital.",
+      "category": "archaeology",
+      "source_ids": [
+        "ascsa-corinth",
+        "pausanias-corinth",
+        "murphy-corinth",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:10-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "roman-colony-public-space:passage-relevance",
+      "claim": "Public hierarchy, adjudication, honor, commerce, and religious visibility form concrete context for status competition and lawsuits without identifying a faction or courtroom in First Corinthians.",
+      "category": "archaeology",
+      "source_ids": [
+        "ascsa-corinth",
+        "pausanias-corinth",
+        "murphy-corinth",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [
+        "corinth"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 1:10-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "roman-colony-public-space"
+        ]
+      }
+    },
+    {
+      "id": "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "claim": "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-biblical-wisdom",
+        "parent_title": "What is biblical wisdom?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-biblical-wisdom:historical_context:0",
+      "claim": "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:18-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-biblical-wisdom",
+        "parent_title": "What is biblical wisdom?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "scripture-references"
+        ],
+        "notes": "Open critical Greek text for direct textual and lexical control.",
+        "id": "1cor-greek",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later primary narrative evidence; narrated events and composition horizon remain distinct.",
+        "id": "acts-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Ancient Corinth Excavations",
+        "author": "",
+        "publisher": "American School of Classical Studies at Athens",
+        "year": null,
+        "locator": "Corinth excavation archive and publications",
+        "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Primary archaeological program and publication gateway.",
+        "id": "ascsa-corinth",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Ancient Corinth Excavations",
+            "author": "",
+            "publisher": "American School of Classical Studies at Athens",
+            "year": null,
+            "locator": "Corinth excavation archive and publications",
+            "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth",
+            "source_type": "excavation-report",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "claims"
+            ],
+            "notes": "Primary archaeological program and publication gateway.",
+            "id": "ascsa-corinth"
+          },
+          {
+            "title": "Ancient Corinth Excavations and Digital Resources",
+            "author": "",
+            "publisher": "American School of Classical Studies at Athens",
+            "year": null,
+            "locator": "Roman Corinth excavation archive, publications, site history, and GIS",
+            "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth/digital-corinth",
+            "source_type": "excavation-report",
+            "supports": [
+              "roman-colony-public-space",
+              "erastus-benefaction-inscription",
+              "sanctuary-market-idol-food",
+              "two-harbor-travel-network"
+            ],
+            "notes": "Primary archaeological program and publication gateway.",
+            "id": "ascsa-corinth"
+          }
+        ]
+      },
+      {
+        "title": "Ancient Corinth Excavations and Digital Resources",
+        "author": "",
+        "publisher": "American School of Classical Studies at Athens",
+        "year": null,
+        "locator": "Roman Corinth excavation archive, publications, site history, and GIS",
+        "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth/digital-corinth",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary archaeological program and publication gateway.",
+        "id": "corinth-ascsa",
+        "canonical_object_ids": [
+          "corinth"
+        ]
+      },
+      {
+        "title": "Corinthian narrative and letter passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:1-18; Romans 16:1-2, 23; 1 Corinthians 1:10-31; 6:1-11; 7:17-24; 8:1-13; 9:19-27; 10:14-33; 11:17-34; 16:1-24; 2 Corinthians 8:1-9:15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-corinthian-work-household-synagogue",
+          "acts-gallio-hearing",
+          "gallio-delphi-inscription",
+          "roman-colony-public-space",
+          "two-harbor-travel-network",
+          "erastus-benefaction-inscription",
+          "sanctuary-market-idol-food",
+          "association-meal-status",
+          "household-slavery-status",
+          "isthmian-athletic-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "corinth-biblical-texts",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Roman Corinth: Civic, Household, and Association Life",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "roman-corinth-civic-household-and-association-life",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Internal pointer to the sourced evidence cluster; substantive claims resolve to that object's external sources.",
+        "id": "corinth-evidence-cluster",
+        "canonical_object_ids": [
+          "corinth"
+        ]
+      },
+      {
+        "title": "Acts and Pauline Corinth passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:1-18; Romans 16:1-2, 23; 1 Corinthians 1:1-9; 2 Corinthians 1:1-2",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "corinth-scripture",
+        "canonical_object_ids": [
+          "corinth"
+        ]
+      },
+      {
+        "title": "Ecclesiastes 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ecclesiastes-12",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians, Revised Edition",
+        "author": "Gordon D. Fee",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "passim",
+        "url": "https://www.eerdmans.com/9780802871367/the-first-epistle-to-the-corinthians-revised-edition/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "literary-context"
+        ],
+        "notes": "Major critical commentary.",
+        "id": "fee-1cor",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Honour and Conflict in the Ancient World: 1 Corinthians in its Greco-Roman Social Setting",
+        "author": "Mark T. Finney",
+        "publisher": "T&T Clark",
+        "year": 2011,
+        "locator": "chapters 2-7",
+        "url": "https://www.bloomsbury.com/uk/honour-and-conflict-in-the-ancient-world-9780567386793/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Argues that honor competition illuminates Corinthian conflict while also reviewing limits of honor-shame models.",
+        "id": "finney-honour-conflict",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1-6; 10-14",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "first-corinth-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1 and 16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for thanksgiving and closing language.",
+        "id": "first-corinth-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "1 Corinthians 1:17-4:21 and 9:1-27",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1:17-4:21; 9:1-27",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; no modern translation is reproduced.",
+        "id": "first-corinthians-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Paul and Economics",
+        "author": "Steven J. Friesen",
+        "publisher": "Fortress Press",
+        "year": 2017,
+        "locator": "Corinthian assemblies, economic stratification, and collection",
+        "url": "https://www.fortresspress.com/store/product/9781451481662/Paul-and-Economics",
+        "source_type": "academic-book",
+        "supports": [
+          "association-meal-status",
+          "household-slavery-status",
+          "erastus-benefaction-inscription"
+        ],
+        "notes": "Economic analysis without assigning every participant to a fixed modern class.",
+        "id": "friesen-economics",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Galatians 4:12-20",
+        "author": "Paul and unnamed coworkers",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 4:12-20",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for unspecified bodily weakness and Galatian welcome.",
+        "id": "galatians-weakness-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Slavery in Early Christianity",
+        "author": "Jennifer A. Glancy",
+        "publisher": "Oxford University Press",
+        "year": 2002,
+        "locator": "Bodies and Pauline churches",
+        "url": "https://academic.oup.com/book/7076",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study foregrounding enslaved bodies and sexual vulnerability.",
+        "id": "glancy-slavery",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Slavery in Early Christianity",
+            "author": "Jennifer A. Glancy",
+            "publisher": "Oxford University Press",
+            "year": 2002,
+            "locator": "Bodies and Pauline churches",
+            "url": "https://academic.oup.com/book/7076",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Critical study foregrounding enslaved bodies and sexual vulnerability.",
+            "id": "glancy-slavery"
+          },
+          {
+            "title": "Slavery in Early Christianity",
+            "author": "Jennifer A. Glancy",
+            "publisher": "Oxford University Press",
+            "year": 2002,
+            "locator": "Enslaved bodies, households, sexuality, and Pauline assemblies",
+            "url": "https://academic.oup.com/book/7076",
+            "source_type": "academic-book",
+            "supports": [
+              "household-slavery-status"
+            ],
+            "notes": "Critical study foregrounding coercion and enslaved people's vulnerability.",
+            "id": "glancy-slavery"
+          }
+        ]
+      },
+      {
+        "title": "1 Corinthians",
+        "author": "Michael J. Gorman",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "1 Corinthians 1-6 and 10-14",
+        "url": "https://www.eerdmans.com/9781467465748/1-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Recent theological commentary attentive to communal restoration and contemporary reception.",
+        "id": "gorman-first-corinthians",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "1 Corinthians",
+        "author": "Michael J. Gorman",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "1 Corinthians 1 and 16",
+        "url": "https://www.eerdmans.com/9781467465748/1-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Recent commentary attentive to communal ethics and contemporary reception.",
+        "id": "gorman-first-corinthians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "First Corinthians",
+        "author": "Richard B. Hays",
+        "publisher": "Westminster John Knox Press",
+        "year": 1997,
+        "locator": "passim",
+        "url": "https://www.wjkbooks.com/Products/0664234408/first-corinthians.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "canonical-context"
+        ],
+        "notes": "Literary and theological commentary.",
+        "id": "hays-1cor",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Violence and Harassment Convention, 2019 (No. 190)",
+        "author": "International Labour Organization",
+        "publisher": "ILO",
+        "year": 2019,
+        "locator": "Articles 4, 9 and 10",
+        "url": "https://www.ilo.org/resource/other/c190-violence-and-harassment-convention-2019-no-190",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern legal standard for safe reporting, external mechanisms, privacy, support, and protection from retaliation; not ancient evidence.",
+        "id": "ilo-c190",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "James 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-3",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Job 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "job-28",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "The Pauline Church and the Corinthian Ekklesia",
+        "author": "Richard Last",
+        "publisher": "Cambridge University Press",
+        "year": 2016,
+        "locator": "Greco-Roman associations in comparative context",
+        "url": "https://doi.org/10.1017/CBO9781316338104",
+        "source_type": "academic-book",
+        "supports": [
+          "association-meal-status",
+          "household-slavery-status"
+        ],
+        "notes": "Comparative association model; similarity does not establish institutional identity.",
+        "id": "last-associations",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Ancient Rhetoric and Paul's Apology: The Compositional Unity of 2 Corinthians",
+        "author": "Fredrick J. Long",
+        "publisher": "Cambridge University Press",
+        "year": 2004,
+        "locator": "chapters 6-10",
+        "url": "https://doi.org/10.1017/CBO9780511488054",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Situates 2 Corinthians within disputed ancient forensic and apologetic conventions.",
+        "id": "long-ancient-rhetoric",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "Paul and the Rhetoric of Reversal in 1 Corinthians",
+        "author": "Matthew R. Malcolm",
+        "publisher": "Cambridge University Press",
+        "year": 2013,
+        "locator": "passim",
+        "url": "https://www.cambridge.org/core/books/paul-and-the-rhetoric-of-reversal-in-1-corinthians/941B2433019D1F7ABE0E68651DF76BA2",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of coherence, arrangement, and cruciform reversal.",
+        "id": "malcolm-reversal",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Fleshing Out the Strength of Weakness: Intercorporeality in the Theological Discourse on Disability",
+        "author": "Alexander Massmann",
+        "publisher": "Harvard Theological Review",
+        "year": 2024,
+        "locator": "117.2, pages 391-416; 1 Corinthians 1-2 and 12; 2 Corinthians 4 and 12",
+        "url": "https://doi.org/10.1017/S0017816024000063",
+        "source_type": "journal-article",
+        "supports": [
+          "cross-power-status-reversal",
+          "jars-body-metaphor-distinction",
+          "thorn-diagnosis-limit",
+          "power-in-weakness-not-coercion",
+          "signs-authority-accountability"
+        ],
+        "notes": "Open-access peer-reviewed disability-theology reading that also identifies risks in weakness and healing discourse.",
+        "id": "massmann-weakness-disability",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Matthew 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-7",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Paul and the Rhetoric of Reconciliation",
+        "author": "Margaret M. Mitchell",
+        "publisher": "Mohr Siebeck",
+        "year": 1991,
+        "locator": "passim",
+        "url": "https://www.mohrsiebeck.com/en/book/paul-and-the-rhetoric-of-reconciliation-9783161570018/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Rhetorical study of unity and deliberation.",
+        "id": "mitchell-rhetoric",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "St. Paul's Corinth: Texts and Archaeology",
+        "author": "Jerome Murphy-O'Connor",
+        "publisher": "Liturgical Press",
+        "year": 2002,
+        "locator": "Roman city, ports, inscriptions, cults, and Pauline passages",
+        "url": "https://litpress.org/Products/2336/St-Pauls-Corinth",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-corinthian-work-household-synagogue",
+          "acts-gallio-hearing",
+          "gallio-delphi-inscription",
+          "roman-colony-public-space",
+          "two-harbor-travel-network",
+          "erastus-benefaction-inscription",
+          "sanctuary-market-idol-food",
+          "isthmian-athletic-comparison"
+        ],
+        "notes": "Textual and archaeological sourcebook.",
+        "id": "murphy-corinth",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "St. Paul's Corinth: Texts and Archaeology",
+            "author": "Jerome Murphy-O'Connor",
+            "publisher": "Liturgical Press",
+            "year": 2002,
+            "locator": "Roman city, ports, inscriptions, cults, and Pauline passages",
+            "url": "https://litpress.org/Products/2336/St-Pauls-Corinth",
+            "source_type": "academic-book",
+            "supports": [
+              "acts-corinthian-work-household-synagogue",
+              "acts-gallio-hearing",
+              "gallio-delphi-inscription",
+              "roman-colony-public-space",
+              "two-harbor-travel-network",
+              "erastus-benefaction-inscription",
+              "sanctuary-market-idol-food",
+              "isthmian-athletic-comparison"
+            ],
+            "notes": "Textual and archaeological sourcebook.",
+            "id": "murphy-corinth"
+          },
+          {
+            "title": "St. Paul's Corinth: Texts and Archaeology",
+            "author": "Jerome Murphy-O'Connor",
+            "publisher": "Liturgical Press",
+            "year": 2002,
+            "locator": "passim",
+            "url": "https://litpress.org/Products/2336/St-Pauls-Corinth",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "claims"
+            ],
+            "notes": "Textual and archaeological sourcebook.",
+            "id": "murphy-corinth"
+          }
+        ]
+      },
+      {
+        "title": "Archaeology and the Letters of Paul",
+        "author": "Laura Salah Nasrallah",
+        "publisher": "Oxford University Press",
+        "year": 2019,
+        "locator": "Corinth, public life, bodies, inequality, and archaeological method",
+        "url": "https://academic.oup.com/book/34986",
+        "source_type": "academic-book",
+        "supports": [
+          "roman-colony-public-space",
+          "erastus-benefaction-inscription",
+          "sanctuary-market-idol-food",
+          "association-meal-status",
+          "household-slavery-status"
+        ],
+        "notes": "Material-culture study that resists using monuments as decorative proof texts.",
+        "id": "nasrallah-corinth",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "1 Corinthians witnesses including P15, P46, P123 and majuscules",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalogue and research workspace.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Thanksgiving and the Gospel in Paul",
+        "author": "P. T. O'Brien",
+        "publisher": "Cambridge University Press",
+        "year": 1974,
+        "locator": "New Testament Studies 21, pp. 144-155",
+        "url": "https://doi.org/10.1017/S0028688500008833",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Examines epistolary, didactic, and paraenetic functions of Pauline thanksgivings and Galatians' missing thanksgiving.",
+        "id": "obrien-thanksgiving-gospel",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Gregory-Aland P46",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Pauline codex including most of 1 Corinthians",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Digital images and catalogue data.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Description of Greece 2.1-5",
+        "author": "Pausanias",
+        "publisher": "Perseus Digital Library",
+        "year": 160,
+        "locator": "Book 2, Corinth and its ports",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Paus.+2.1&lang=original",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "roman-colony-public-space",
+          "two-harbor-travel-network",
+          "sanctuary-market-idol-food",
+          "isthmian-athletic-comparison"
+        ],
+        "notes": "Second-century local description used as explicitly later comparative evidence.",
+        "id": "pausanias-corinth",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Philippians 1:12-3:21",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1:12-3:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek prison-letter evidence for custody, possible death, suffering, illness, recovery, loss, and hope.",
+        "id": "philippians-prison-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Proverbs 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Proverbs 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs-3",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Psalm 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Power through Weakness: Paul's Understanding of the Christian Ministry in 2 Corinthians",
+        "author": "Timothy B. Savage",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "2 Corinthians 10-13; conclusion pages 187-190",
+        "url": "https://doi.org/10.1017/CBO9780511520457",
+        "source_type": "academic-book",
+        "supports": [
+          "cross-power-status-reversal",
+          "corinthian-presence-speech-contest",
+          "foolish-boasting-irony",
+          "hardship-catalogue-violence",
+          "power-in-weakness-not-coercion"
+        ],
+        "notes": "Studies the paradox of ministry, weakness, shame, power, and cultural self-exaltation.",
+        "id": "savage-power-weakness",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 2 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1-7; 10-13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for the letter's contested relationship and rhetoric.",
+        "id": "second-corinth-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "2 Corinthians 1:3-11; 4:7-6:13; 10:1-13:10",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1:3-11; 4:7-6:13; 10:1-13:10",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for affliction, comfort, weakness, boasting, visions, thorn, signs, and authority.",
+        "id": "second-corinthians-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "1 Corinthians",
+        "url": "https://www.codexsinaiticus.org/en/",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official collaborative digital edition.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "A Disabled Apostle: Impairment and Disability in the Letters of Paul",
+        "author": "Isaac T. Soon",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "chapters 1-4 and epilogue; Pauline impairment and disability method",
+        "url": "https://doi.org/10.1093/oso/9780192885241.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "categories-remain-distinct",
+          "corinthian-presence-speech-contest",
+          "thorn-diagnosis-limit",
+          "galatians-illness-eyes-limit",
+          "acts-letter-chronology-control"
+        ],
+        "notes": "Disability-studies analysis that critiques assumed able-bodiedness while controlling retrospective diagnosis.",
+        "id": "soon-disabled-apostle",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians",
+        "author": "Anthony C. Thiselton",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "passim",
+        "url": "https://www.eerdmans.com/9780802824493/the-first-epistle-to-the-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Detailed commentary with lexical and reception analysis.",
+        "id": "thiselton-1cor",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians",
+        "author": "Anthony C. Thiselton",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "1 Corinthians 1-4 and 9",
+        "url": "https://www.eerdmans.com/9780802824493/the-first-epistle-to-the-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed literary, rhetorical, social, and theological commentary.",
+        "id": "thiselton-1cor-suffering",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Corinthian Wisdom, Stoic Philosophy, and the Ancient Economy",
+        "author": "Timothy A. Brookins",
+        "publisher": "Cambridge University Press",
+        "year": 2014,
+        "locator": "1 Corinthians 1-4",
+        "url": "https://www.cambridge.org/core/books/corinthian-wisdom-stoic-philosophy-and-the-ancient-economy/66A68CDD01E4DCFD7EE4AACD378C6B01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Wisdom, philosophy, rhetoric, and economy.",
+        "id": "welborn-wisdom",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "After Paul Left Corinth",
+        "author": "Bruce W. Winter",
+        "publisher": "Eerdmans",
+        "year": 2001,
+        "locator": "passim",
+        "url": "https://www.eerdmans.com/9780802848987/after-paul-left-corinth/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Social-history proposals requiring critical comparison.",
+        "id": "winter-corinth",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-corinthians",
+        "type": "book",
+        "title": "1 Corinthians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "corinth",
+        "type": "place",
+        "title": "Corinth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "type": "cultural_background",
+        "title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.889
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.849
+      },
+      {
+        "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "type": "cultural_background",
+        "title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.939
+      },
+      {
+        "id": "roman-corinth-civic-household-and-association-life",
+        "type": "cultural_background",
+        "title": "Roman Corinth: Civic, Household, and Association Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "what-is-biblical-wisdom",
+        "type": "faq",
+        "title": "What is biblical wisdom?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "82dcd6a9a7d97e9f34c3e545acd7026b797741db734d01dda36b266b8c419787",
+  "evidence_hash_version": "2"
+}

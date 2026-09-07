@@ -1,0 +1,963 @@
+{
+  "passage_ref": "1 Kings 12",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "dan",
+        "title": "Dan",
+        "type": "place",
+        "aliases": [
+          "Laish",
+          "Leshem",
+          "Tell Dan",
+          "northern Dan"
+        ],
+        "metadata": {
+          "summary": "Dan is the northern city formerly called Laish in Judges 18, renamed after a Danite migration and associated there with a tribal cult installation; later it became a northern royal sanctuary and a boundary marker in the phrase 'from Dan to Beersheba.'",
+          "importance": 58,
+          "retrieval_score": 0.878,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Judges 18:1-31",
+            "Joshua 19:40-48",
+            "1 Kings 12:25-33",
+            "Amos 8:13-14"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [
+      {
+        "id": "division-of-the-kingdom",
+        "title": "Division of the Kingdom",
+        "type": "event",
+        "aliases": [
+          "what happened in division of the kingdom",
+          "tell me about division of the kingdom",
+          "why is division of the kingdom important"
+        ],
+        "metadata": {
+          "summary": "After Solomon's death, the united monarchy splits into the northern kingdom of Israel and the southern kingdom of Judah.",
+          "importance": 96,
+          "retrieval_score": 0.936,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Kings 12:1-24",
+            "2 Chronicles 10:1-19",
+            "1 Kings 12:25-33",
+            "1 Kings 14:1-20",
+            "2 Chronicles 13:1-22"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-kings:interpretive_note:2",
+      "claim": "First Kings presents the division through both divine judgment on Solomon and human political choices by Rehoboam, Jeroboam, and their counselors; these levels should not be reduced to a single cause.",
+      "category": "politics",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "dan:ancient_near_east_context:0",
+      "claim": "Laish occupied a fertile, well-watered corridor near routes connecting the Jordan Valley, Lebanon, and Syria. Judges 18 portrays geographic distance and weak political protection as important to the Danite assessment of the city.",
+      "category": "culture",
+      "source_ids": [
+        "dan-biblical-texts",
+        "webb-dan-2012",
+        "butler-dan-2009"
+      ],
+      "related_entity_ids": [
+        "dan"
+      ],
+      "passage_anchors": [
+        "1 Kings 12:25-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dan",
+        "parent_title": "Dan",
+        "parent_type": "place",
+        "object_importance": 58,
+        "retrieval_score": 0.878,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "dan:hebraic_worldview:0",
+      "claim": "The Danite narrative ties land seeking, kinship identity, violence, priestly patronage, and cult objects together, while the no-king frame and the notice about the image guide readers away from treating success as divine approval.",
+      "category": "culture",
+      "source_ids": [
+        "dan-biblical-texts",
+        "webb-dan-2012",
+        "butler-dan-2009"
+      ],
+      "related_entity_ids": [
+        "dan"
+      ],
+      "passage_anchors": [
+        "1 Kings 12:25-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dan",
+        "parent_title": "Dan",
+        "parent_type": "place",
+        "object_importance": 58,
+        "retrieval_score": 0.878,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "dan:historical_context:0",
+      "claim": "The site commonly identified as Tell Dan lies near major springs at the northern edge of the Hula Valley. Judges distinguishes the tribe's earlier allotted territory from its later seizure of Laish, and later royal and prophetic texts give the northern city additional roles.",
+      "category": "history",
+      "source_ids": [
+        "dan-biblical-texts",
+        "webb-dan-2012",
+        "butler-dan-2009"
+      ],
+      "related_entity_ids": [
+        "dan"
+      ],
+      "passage_anchors": [
+        "1 Kings 12:25-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dan",
+        "parent_title": "Dan",
+        "parent_type": "place",
+        "object_importance": 58,
+        "retrieval_score": 0.878,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "division-of-the-kingdom:ancient_near_east_context:0",
+      "claim": "The event reflects a common ancient pattern of dynastic fracture, but Scripture interprets it as covenant consequence.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-12",
+        "2-chronicles-10",
+        "hosea-1",
+        "amos-7",
+        "matthew-12",
+        "division-of-the-kingdom-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "division-of-the-kingdom"
+      ],
+      "passage_anchors": [
+        "1 Kings 12:1-24",
+        "1 Kings 12:25-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "division-of-the-kingdom",
+        "parent_title": "Division of the Kingdom",
+        "parent_type": "event",
+        "object_importance": 96,
+        "retrieval_score": 0.936,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "division-of-the-kingdom:historical_context:0",
+      "claim": "The split follows political grievance, heavy labor, and fragile succession in the wake of Solomon's reign.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-12",
+        "2-chronicles-10",
+        "hosea-1",
+        "amos-7",
+        "matthew-12",
+        "division-of-the-kingdom-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "division-of-the-kingdom"
+      ],
+      "passage_anchors": [
+        "1 Kings 12:1-24",
+        "1 Kings 12:25-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "division-of-the-kingdom",
+        "parent_title": "Division of the Kingdom",
+        "parent_type": "event",
+        "object_importance": 96,
+        "retrieval_score": 0.936,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "first-kings-kingdom-division",
+      "claim": "The kingdom divides when Rehoboam refuses experienced counsel and answers the northern tribes harshly, within the earlier announced judgment on Solomon's disloyalty.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "first-kings-literary-movement",
+      "claim": "First Kings moves from contested succession through Solomon's wisdom, temple, and failure to divided kingdoms and prophetic confrontation under Ahab.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:1-33"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 113
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-israel:ancient_near_east_context:0",
+      "claim": "Small kingdoms lived under pressure from larger empires, and Israel's political instability becomes a theological warning sign in Scripture.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-12",
+        "1-kings-16",
+        "2-kings-17",
+        "hosea-1",
+        "amos-5",
+        "isaiah-7",
+        "what-is-the-kingdom-of-israel-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:16-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-israel",
+        "parent_title": "What is the Kingdom of Israel?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-israel:historical_context:0",
+      "claim": "After Solomon, the united monarchy split, and the northern tribes formed a kingdom centered on Samaria.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-12",
+        "1-kings-16",
+        "2-kings-17",
+        "hosea-1",
+        "amos-5",
+        "isaiah-7",
+        "what-is-the-kingdom-of-israel-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:16-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-israel",
+        "parent_title": "What is the Kingdom of Israel?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-judah:ancient_near_east_context:0",
+      "claim": "Like other small kingdoms, Judah lives under imperial pressure, but Scripture frames its history around covenant fidelity and Davidic promise.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-12",
+        "2-kings-25",
+        "2-chronicles-36",
+        "jeremiah-22",
+        "ezekiel-17",
+        "psalm-89"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:21-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-judah",
+        "parent_title": "What is the Kingdom of Judah?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-judah:historical_context:0",
+      "claim": "Judah survives after the split monarchy, then falls to Babylon and enters exile with its temple and king removed.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-12",
+        "2-kings-25",
+        "2-chronicles-36",
+        "jeremiah-22",
+        "ezekiel-17",
+        "psalm-89"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 12:21-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-judah",
+        "parent_title": "What is the Kingdom of Judah?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 1-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Kings 1:1-22:53",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-carmel-confession",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-kings-1-22",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "1 Kings 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-12",
+        "canonical_object_ids": [
+          "division-of-the-kingdom",
+          "what-is-the-kingdom-of-israel",
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "1 Kings 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-16",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-israel"
+        ]
+      },
+      {
+        "title": "2 Chronicles 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles-10",
+        "canonical_object_ids": [
+          "division-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "2 Chronicles 36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles-36",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "2 Kings 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-17",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-israel"
+        ]
+      },
+      {
+        "title": "2 Kings 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-25",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Amos 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "amos-5",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-israel"
+        ]
+      },
+      {
+        "title": "Amos 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "amos-7",
+        "canonical_object_ids": [
+          "division-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Judges, Volume 8",
+        "author": "Trent C. Butler",
+        "publisher": "Zondervan Academic",
+        "year": 2009,
+        "locator": "Word Biblical Commentary on Judges 18",
+        "url": "https://zondervanacademic.com/products/judges-volume-8",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context"
+        ],
+        "notes": "Historical-geographic and textual discussion of Laish or Dan.",
+        "id": "butler-dan-2009",
+        "canonical_object_ids": [
+          "dan"
+        ]
+      },
+      {
+        "title": "I Kings",
+        "author": "Mordechai Cogan",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/9780300140538/i-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, literary composition, regnal and political history, and external evidence.",
+        "id": "cogan-first-kings",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "Biblical Dan Passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 19:40-48; Judges 18:1-31; 1 Kings 12:25-33; Amos 8:13-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context"
+        ],
+        "notes": "Primary biblical texts for the city's changing canonical roles.",
+        "id": "dan-biblical-texts",
+        "canonical_object_ids": [
+          "dan"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Division of the Kingdom",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "division-of-the-kingdom-historical-orientation",
+        "canonical_object_ids": [
+          "division-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Ezekiel 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-17",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Hosea 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hosea-1",
+        "canonical_object_ids": [
+          "division-of-the-kingdom",
+          "what-is-the-kingdom-of-israel"
+        ]
+      },
+      {
+        "title": "Isaiah 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-7",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-israel"
+        ]
+      },
+      {
+        "title": "Jeremiah 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-22",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Matthew 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-12",
+        "canonical_object_ids": [
+          "division-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "The Book of Judges",
+        "author": "Barry G. Webb",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "NICOT commentary on Judges 17-18",
+        "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "covenantal-significance"
+        ],
+        "notes": "Literary and theological treatment of migration and cult installation.",
+        "id": "webb-dan-2012",
+        "canonical_object_ids": [
+          "dan"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Kingdom of Israel?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-kingdom-of-israel-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-israel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-kings",
+        "type": "book",
+        "title": "1 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "dan",
+        "type": "place",
+        "title": "Dan",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.878
+      },
+      {
+        "id": "division-of-the-kingdom",
+        "type": "event",
+        "title": "Division of the Kingdom",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.936
+      },
+      {
+        "id": "what-is-the-kingdom-of-israel",
+        "type": "faq",
+        "title": "What is the Kingdom of Israel?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "what-is-the-kingdom-of-judah",
+        "type": "faq",
+        "title": "What is the Kingdom of Judah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d9f26554dfb8514a0483814295170948e7a22564f22397546a2bc9f1e80ad800",
+  "evidence_hash_version": "2"
+}

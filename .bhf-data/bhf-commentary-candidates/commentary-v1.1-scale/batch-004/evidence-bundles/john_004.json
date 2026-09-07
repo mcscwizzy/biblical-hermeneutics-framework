@@ -1,0 +1,501 @@
+{
+  "passage_ref": "John 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-4-22",
+      "claim": "'Salvation is from the Jews' locates Jesus and salvation history within Jewish people and Scripture; worship in Spirit and truth cannot responsibly mean Jewish erasure or Samaritan inferiority.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "jewish-annotated-nt",
+        "reinhartz-anti-judaism"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:19-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "john-ioudaioi",
+      "claim": "Hoi Ioudaioi has context-sensitive referents including Jewish people, Judeans, festival crowds, and particular authorities; rendering or treating every occurrence as one hostile ethnic bloc distorts the Gospel and intensifies antisemitic harm.",
+      "category": "language",
+      "source_ids": [
+        "john-greek",
+        "vonwahlde-jews",
+        "reinhartz-anti-judaism",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:9-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 96
+      }
+    },
+    {
+      "id": "john-samaritan-woman",
+      "claim": "The Samaritan woman becomes an extended theological interlocutor and witness; the five husbands should not be used to label her sexually immoral because the text does not state adultery or prostitution.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "jewish-annotated-nt",
+        "postcolonial-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:4-42"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "theology-of-worship:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of Worship includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 15:1-18, Psalm 95:1-7, worship-theme, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-95",
+        "john-4",
+        "romans-12",
+        "revelation-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:19-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-worship",
+        "parent_title": "Theology of Worship",
+        "parent_type": "theology",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-worship:historical_context:0",
+      "claim": "Theology of Worship is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-15",
+        "psalm-95",
+        "john-4",
+        "romans-12",
+        "revelation-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:19-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-worship",
+        "parent_title": "Theology of Worship",
+        "parent_type": "theology",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "worship-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Worship Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 15:1-18, Psalm 95:1-7, theology-of-worship, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-95",
+        "john-4",
+        "romans-12",
+        "revelation-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:19-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "worship-theme",
+        "parent_title": "Worship Theme",
+        "parent_type": "theme",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "worship-theme:historical_context:0",
+      "claim": "Worship Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-15",
+        "psalm-95",
+        "john-4",
+        "romans-12",
+        "revelation-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 4:19-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "worship-theme",
+        "parent_title": "Worship Theme",
+        "parent_type": "theme",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Exodus 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-15",
+        "canonical_object_ids": [
+          "theology-of-worship",
+          "worship-theme"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "John introduction, annotations, and Jewish-context essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish scholarly annotation and context.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "John 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-4",
+        "canonical_object_ids": [
+          "theology-of-worship",
+          "worship-theme"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial methods for empire, mission, gender, land, and power",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Safeguards against colonial and coercive interpretation.",
+        "id": "postcolonial-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Psalm 95",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-95",
+        "canonical_object_ids": [
+          "theology-of-worship",
+          "worship-theme"
+        ]
+      },
+      {
+        "title": "New Testament Origins of Christian Anti-Judaism",
+        "author": "Adele Reinhartz",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Antisemitism, chapter 2",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-antisemitism/new-testament-origins-of-christian-antijudaism/B13BB1532EC63836E2B5DADF9CED9D00",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Addresses supersessionism, deicide, Satan language, and harmful reception.",
+        "id": "reinhartz-anti-judaism",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Revelation 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-4",
+        "canonical_object_ids": [
+          "theology-of-worship",
+          "worship-theme"
+        ]
+      },
+      {
+        "title": "Romans 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-12",
+        "canonical_object_ids": [
+          "theology-of-worship",
+          "worship-theme"
+        ]
+      },
+      {
+        "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+        "author": "Urban C. von Wahlde",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2017,
+        "locator": "New Testament Studies 63",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Argues for context-sensitive differentiation among Jewish group labels.",
+        "id": "vonwahlde-jews",
+        "canonical_object_ids": [
+          "john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "theology-of-worship",
+        "type": "theology",
+        "title": "Theology of Worship",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "worship-theme",
+        "type": "theme",
+        "title": "Worship Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "1df2b3b4b0ec5a4b8e72e61f5968359257e53adc25b7b930fdc8fc60e7e223bf",
+  "evidence_hash_version": "2"
+}

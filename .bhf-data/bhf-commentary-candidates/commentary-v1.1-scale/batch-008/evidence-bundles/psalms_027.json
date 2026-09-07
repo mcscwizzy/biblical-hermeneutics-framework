@@ -1,0 +1,201 @@
+{
+  "passage_ref": "Psalms 27",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "light-and-darkness-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 27:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "light-and-darkness-theme",
+        "parent_title": "Light and Darkness Theme",
+        "parent_type": "theme",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "light-and-darkness-theme:historical_context:0",
+      "claim": "Light and Darkness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 27:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "light-and-darkness-theme",
+        "parent_title": "Light and Darkness Theme",
+        "parent_type": "theme",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-john-1",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "Ephesians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-5",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "Genesis 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-1",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "Psalm 27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-27",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "light-and-darkness-theme",
+        "type": "theme",
+        "title": "Light and Darkness Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c24433de72f8530ebad1fe4f920caa9a191f6c200b9f929e70727e94e3170af9",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,287 @@
+{
+  "passage_ref": "Matthew 15",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-canaanite-woman",
+      "claim": "Matthew 15:21-28 narrates a Canaanite woman's persistent petition, a harsh boundary metaphor, Jesus' praise of her faith, and her daughter's healing.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "canaanite-woman-study",
+        "postcolonial-reader"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 15:21-28"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-healing-disability",
+      "claim": "Matthew's summaries and stories present Jesus teaching, proclaiming, healing, and exorcising amid ancient understandings of bodies and spirits.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-healer",
+        "women-healing-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 15:29-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-mission-israel-nations",
+      "claim": "Matthew juxtaposes an initial mission focused on Israel with a concluding commission directed to all nations.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "deines-matthew",
+        "teaching-all-nations"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 15:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Faith of the Canaanite Woman, Matthew 15:21-28",
+        "author": "Lee, Dorothy A.",
+        "publisher": "Journal of Anglican Studies / Cambridge University Press",
+        "year": 2014,
+        "locator": "Narrative, Theology, Ministry",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B615AE2C3074A061CC35B0E4D9F5D542/S1740355314000187a.pdf/the-faith-of-the-canaanite-woman-mt-1521-28-narrative-theology-ministry1.pdf",
+        "source_type": "journal-article",
+        "supports": [
+          "matthew-canaanite-woman",
+          "matthew-mission-israel-nations"
+        ],
+        "notes": "Narrative and ministerial interpretation that acknowledges the story's disturbing features.",
+        "id": "canaanite-woman-study",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Jesus as Healer: The Gospel of Matthew",
+        "author": "Remus, Harold",
+        "publisher": "Cambridge University Press",
+        "year": 2018,
+        "locator": "Jesus as Healer, chapter 3",
+        "url": "https://www.cambridge.org/core/books/jesus-as-healer/jesus-as-healer-the-gospel-of-matthew/16F613B68C8DCF8E4BD38D73F7E61A65",
+        "source_type": "academic-book",
+        "supports": [
+          "matthew-healing-disability",
+          "literary-context"
+        ],
+        "notes": "Comparative study of Matthew's healing narratives and redaction of Mark.",
+        "id": "matthew-healer",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Postcolonial Biblical Reader",
+        "author": "Sugirtharajah, R. S., editor",
+        "publisher": "Blackwell / Society of Biblical Literature resource",
+        "year": 2006,
+        "locator": "Postcolonial and feminist readings, including Matthew 15",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/12/Sugirtharajah_Postcolonial.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-application-boundaries",
+          "matthew-mission-safeguards"
+        ],
+        "notes": "Collection used to audit colonial, gendered, racialized, and geopolitical reception.",
+        "id": "postcolonial-reader",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Teaching All Nations: Interrogating the Matthean Great Commission",
+        "author": "Levison, John R., and Priscilla Pope-Levison, editors",
+        "publisher": "Fortress Press",
+        "year": 2014,
+        "locator": "Introduction and womanist, feminist, postcolonial studies",
+        "url": "https://ms.fortresspress.com/downloads/9781451470499Intro.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "matthew-commission",
+          "matthew-mission-safeguards",
+          "later-christian-reception"
+        ],
+        "notes": "Multi-perspectival ethical and contextual reception of Matthew 28:16-20.",
+        "id": "teaching-all-nations",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Re-telling Stories of Women Healing/Healing Women: The Gospel of Matthew",
+        "author": "Wainwright, Elaine",
+        "publisher": "Cambridge University Press / Acumen",
+        "year": 2006,
+        "locator": "Women Healing/Healing Women, chapter 5, pages 139-159",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/20EBA49A0F5CE3706AA28E619D1C0C7C/9781845534868c5_p139-159_CBO.pdf/retelling_stories_of_women_healinghealing_women_the_gospel_of_matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "matthew-healing-disability",
+          "matthew-application-boundaries"
+        ],
+        "notes": "Gender-aware analysis of Matthew's reshaping of healing narratives.",
+        "id": "women-healing-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "2e5d6dfd5abf969810217c68bc8869984a3e383bea60960d7ea4afdfc9c54d71",
+  "evidence_hash_version": "2"
+}

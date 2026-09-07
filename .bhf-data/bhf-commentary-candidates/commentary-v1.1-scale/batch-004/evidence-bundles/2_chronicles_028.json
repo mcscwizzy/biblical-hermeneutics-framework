@@ -1,0 +1,131 @@
+{
+  "passage_ref": "2 Chronicles 28",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "second-chronicles-judah-focus",
+      "claim": "After the division, the narrative follows the Davidic kings of Judah and the Jerusalem temple while continuing to address priests, Levites, worshipers, and captives from the northern tribes as part of all Israel.",
+      "category": "culture",
+      "source_ids": [
+        "2-chronicles-1-36",
+        "devries-first-second-chronicles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Chronicles 28:8-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-chronicles",
+        "parent_title": "2 Chronicles",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Chronicles 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 1:1-36:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-chronicles-solomon-temple",
+          "second-chronicles-fire-warning",
+          "second-chronicles-judah-focus",
+          "second-chronicles-seek-humble-pattern",
+          "second-chronicles-jehoshaphat-prayer",
+          "second-chronicles-hezekiah-passover",
+          "second-chronicles-manasseh-humbles",
+          "second-chronicles-josiah-reform",
+          "second-chronicles-exile-cyrus"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-chronicles-1-36",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      },
+      {
+        "title": "1 and 2 Chronicles",
+        "author": "Simon J. De Vries",
+        "publisher": "Eerdmans",
+        "year": 1989,
+        "locator": "Introduction and form-critical commentary on 2 Chronicles",
+        "url": "https://www.eerdmans.com/9780802802361/1-and-2-chronicles/",
+        "source_type": "reference-work",
+        "supports": [
+          "genre",
+          "literary-context",
+          "canonical-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Form-critical and literary study of Chronicles as genealogical and narrative history defining ideal Israel.",
+        "id": "devries-first-second-chronicles",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-chronicles",
+        "type": "book",
+        "title": "2 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "415fe93755f2933bf273ccf03a7799d138c55696e317e0dd0aaf600666f84088",
+  "evidence_hash_version": "2"
+}

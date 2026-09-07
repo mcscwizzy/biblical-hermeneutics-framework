@@ -1,0 +1,773 @@
+{
+  "passage_ref": "Revelation 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "daniel-new-testament-reuse",
+      "claim": "The Synoptic Gospels and Revelation reuse Danielic abomination, distress, humanlike-figure, beast, horn, time, saint, book, and judgment imagery in new literary settings.",
+      "category": "culture",
+      "source_ids": [
+        "new-testament-daniel",
+        "collins-daniel-hermeneia",
+        "holm-book-of-daniel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0",
+      "claim": "Beasts, numbers, and cosmic imagery were common ways to speak about empires and divine sovereignty.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-7",
+        "daniel-12",
+        "zechariah-1",
+        "matthew-24",
+        "1-thessalonians-4",
+        "revelation-1",
+        "revelation-13",
+        "revelation-21",
+        "how-should-i-read-apocalyptic-literature-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:9-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "how-should-i-read-apocalyptic-literature",
+        "parent_title": "How should I read apocalyptic literature?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "how-should-i-read-apocalyptic-literature:historical_context:0",
+      "claim": "Apocalyptic writing emerges in pressure, exile, and persecution as faithful communities ask how God will act.",
+      "category": "history",
+      "source_ids": [
+        "daniel-7",
+        "daniel-12",
+        "zechariah-1",
+        "matthew-24",
+        "1-thessalonians-4",
+        "revelation-1",
+        "revelation-13",
+        "revelation-21",
+        "how-should-i-read-apocalyptic-literature-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:9-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "how-should-i-read-apocalyptic-literature",
+        "parent_title": "How should I read apocalyptic literature?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "rev-john-named",
+      "claim": "The seer and sender names himself John without explicitly claiming apostolic identity.",
+      "category": "history",
+      "source_ids": [
+        "rev-greek",
+        "boxall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1",
+        "Revelation 1:4",
+        "Revelation 1:9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "rev-mixed-genre",
+      "claim": "Revelation combines apocalypse, prophecy, and circular letter.",
+      "category": "culture",
+      "source_ids": [
+        "collins-apocalypse",
+        "aune",
+        "carey"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "rev-patmos",
+      "claim": "John reports being on Patmos because of God's word and Jesus's testimony, without stating a legal sentence.",
+      "category": "history",
+      "source_ids": [
+        "rev-greek",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "rev-scriptural-reuse",
+      "claim": "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+      "category": "culture",
+      "source_ids": [
+        "beale",
+        "moyise",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-22:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "rev-seven-assemblies",
+      "claim": "The letter explicitly addresses seven assemblies in Roman Asia by city.",
+      "category": "culture",
+      "source_ids": [
+        "rev-greek",
+        "friesen"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:4",
+        "Revelation 1:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "rev-title-genre",
+      "claim": "The opening identifies the work as a revelation of Jesus Christ and calls its words prophecy.",
+      "category": "history",
+      "source_ids": [
+        "rev-greek",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Thessalonians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-thessalonians-4",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Revelation",
+        "author": "David E. Aune",
+        "publisher": "Zondervan Academic",
+        "year": 1997,
+        "locator": "Word Biblical Commentary 52A-C",
+        "url": "https://zondervanacademic.com/products/revelation-1-5-volume-52a",
+        "source_type": "academic-book",
+        "supports": [
+          "date-ranges",
+          "genre",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Detailed three-volume critical commentary.",
+        "id": "aune",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Book of Revelation: A Commentary on the Greek Text",
+        "author": "G. K. Beale",
+        "publisher": "Eerdmans",
+        "year": 1999,
+        "locator": "New International Greek Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802821744/the-book-of-revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "structure",
+          "claims"
+        ],
+        "notes": "Extensive study of Greek text and scriptural reuse representing a recapitulative reading.",
+        "id": "beale",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Revelation of Saint John",
+        "author": "Ian Boxall",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 2006,
+        "locator": "Black's New Testament Commentary",
+        "url": "https://www.bloomsbury.com/ca/commentary-on-the-revelation-of-st-john-9780826471352/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Visionary, literary, historical, and reception-sensitive commentary.",
+        "id": "boxall",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Ultimate Things",
+        "author": "Greg Carey",
+        "publisher": "Chalice Press",
+        "year": 2005,
+        "locator": "An Introduction to Jewish and Christian Apocalyptic Literature",
+        "url": "https://chalicepress.com/products/ultimate-things",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Accessible scholarly guide emphasizing ethical interpretation.",
+        "id": "carey",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Apocalyptic Imagination",
+        "author": "John J. Collins",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "Third edition",
+        "url": "https://www.eerdmans.com/9780802872791/the-apocalyptic-imagination/",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "genre",
+          "claims"
+        ],
+        "notes": "Historical and genre framework for Jewish apocalypse.",
+        "id": "collins-apocalypse",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Daniel: A Commentary on the Book of Daniel",
+        "author": "John J. Collins with an essay by Adela Yarbro Collins",
+        "publisher": "Fortress Press",
+        "year": 1993,
+        "locator": "Hermeneia",
+        "url": "https://books.google.com/books/about/Daniel.html?id=zYrNxwEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "daniel-four-beasts-humanlike",
+          "daniel-resurrection",
+          "daniel-new-testament-reuse"
+        ],
+        "notes": "Standard critical commentary and reception study; bibliographic page used because the publisher page was unavailable to automated verification.",
+        "id": "collins-daniel-hermeneia",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Daniel 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-12",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Daniel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Imperial Cults and the Apocalypse of John",
+        "author": "Steven J. Friesen",
+        "publisher": "Oxford University Press",
+        "year": 2001,
+        "locator": "Entire volume",
+        "url": "https://global.oup.com/academic/product/imperial-cults-and-the-apocalypse-of-john-9780195131536",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Imperial-cult institutions and social context.",
+        "id": "friesen",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Book of Daniel",
+        "author": "Tawny Holm",
+        "publisher": "Oxford Research Encyclopedia of Religion",
+        "year": 2019,
+        "locator": "History, form, texts, themes, and reception",
+        "url": "https://academic.oup.com/edited-volume/62249/chapter-abstract/551358644",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "second-temple-context",
+          "primary-sources",
+          "claims"
+        ],
+        "notes": "Peer-reviewed overview of court tales, visions, composition, textual forms, and reception.",
+        "id": "holm-book-of-daniel",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for How should I read apocalyptic literature?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "how-should-i-read-apocalyptic-literature-historical-orientation",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Revelation: A New Translation with Introduction and Commentary",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2014,
+        "locator": "Anchor Yale Bible 38A",
+        "url": "https://yalebooks.yale.edu/book/9780300216912/revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major historical, literary, textual, and theological commentary.",
+        "id": "koester",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Matthew 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-24",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "The Old Testament in the Book of Revelation",
+        "author": "Steve Moyise",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 1995,
+        "locator": "Journal for the Study of the New Testament Supplement 115",
+        "url": "https://www.bloomsbury.com/us/old-testament-in-the-book-of-revelation-9780567705341/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "claims"
+        ],
+        "notes": "Study of allusion, intertextual method, and scriptural transformation.",
+        "id": "moyise",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Daniel Traditions in the New Testament",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Selected Gospel, Pauline, and Revelation reuse",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "daniel-new-testament-reuse"
+        ],
+        "notes": "Primary later Christian texts read as reception, not direct historical commentary on every Daniel passage.",
+        "id": "new-testament-daniel",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Revelation: Greek textual tradition",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Revelation 1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek text; variants require manuscript and critical-edition control.",
+        "id": "rev-greek",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Revelation 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-1",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Revelation 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-13",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      },
+      {
+        "title": "Zechariah 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zechariah-1",
+        "canonical_object_ids": [
+          "how-should-i-read-apocalyptic-literature"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "daniel",
+        "type": "book",
+        "title": "Daniel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "how-should-i-read-apocalyptic-literature",
+        "type": "faq",
+        "title": "How should I read apocalyptic literature?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "revelation",
+        "type": "book",
+        "title": "Revelation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "dbccb2d775f13823b172cbfeefd4efd3208a863a9ed63ab5613b50fd94af9bf5",
+  "evidence_hash_version": "2"
+}

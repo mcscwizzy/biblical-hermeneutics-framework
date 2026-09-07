@@ -1,0 +1,83 @@
+{
+  "reference": "Ephesians 1",
+  "book": "Ephesians",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_35",
+          "text": "Read the chapter with this setting in view: Ephesus had prominent Artemis institutions, but Ephesians never names Artemis and its imagery cannot be reduced to that cult. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-artemis"
+          ],
+          "verse_refs": [
+            "Ephesians 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_36",
+          "text": "For its historical and cultural setting, note that The opening blessing announces election, adoption, redemption, forgiveness, inheritance, sealing, and cosmic summing-up in the Messiah. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "eph-blessing"
+          ],
+          "verse_refs": [
+            "Ephesians 1:3-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_37",
+          "text": "For its historical and cultural setting, note that Creation's cosmic summing-up and body language resist ecological neglect; human salvation is not permission to exploit the nonhuman world. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ephesians:interpretive_note:45"
+          ],
+          "verse_refs": [
+            "Ephesians 1:10"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_36",
+          "text": "A literary feature to notice is that The words \u201cin Ephesus\u201d are absent from important early witnesses, making destination and circularity uncertain. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "eph-destination"
+          ],
+          "verse_refs": [
+            "Ephesians 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "86ef5650251535c69677247ed0c2bf14f2f7fcea9600a55889367fe4e8c05e42",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

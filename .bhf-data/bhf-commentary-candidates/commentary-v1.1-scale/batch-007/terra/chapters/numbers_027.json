@@ -1,0 +1,65 @@
+{
+  "reference": "Numbers 27",
+  "book": "Numbers",
+  "chapter": 27,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_138",
+          "text": "Read the chapter with this setting in view: The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers-inheritance-preparation"
+          ],
+          "verse_refs": [
+            "Numbers 27:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_139",
+          "text": "For its historical and cultural setting, note that His world is the world of tribal settlement, land claims, and fortified cities, but the narrative insists that inheritance depends on the LORD's faithfulness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joshua-son-of-nun:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 27:18-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_140",
+          "text": "For its historical and cultural setting, note that Joshua stands at the transition from wilderness wandering to settlement in Canaan, carrying the commission of Moses into the next generation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joshua-son-of-nun:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 27:18-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bd0afd5e258b09cc69c0e4dbb3a53d1e25fe43350e6261f0af216c1055893a93",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

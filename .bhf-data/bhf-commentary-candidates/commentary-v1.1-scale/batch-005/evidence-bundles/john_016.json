@@ -1,0 +1,741 @@
+{
+  "passage_ref": "John 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-aposynagogos",
+      "claim": "John's aposynagogos notices have supported staged Johannine-community and synagogue-expulsion reconstructions, but a single late-first-century decree or uniform rupture is not established by the text.",
+      "category": "culture",
+      "source_ids": [
+        "cambridge-john-companion",
+        "oxford-johannine",
+        "vonwahlde-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-paraclete",
+      "claim": "The Paraclete sayings describe the Spirit of truth as remaining, teaching, reminding, testifying, exposing, guiding, and glorifying Jesus; person, presence, advocacy, community memory, and later Trinitarian readings overlap but are not interchangeable.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:4-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "spirit-theme:ancient_near_east_context:0",
+      "claim": "The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:7-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "spirit-theme:historical_context:0",
+      "claim": "Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:7-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "synagogue-exclusion-caution",
+      "claim": "John's aposynagogos notices support historical inquiry but do not by themselves establish one late-first-century decree or a uniform rupture between synagogue and church.",
+      "category": "culture",
+      "source_ids": [
+        "synagogue-passages",
+        "oxford-johannine",
+        "vonwahlde-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "synagogue-life-and-exclusion",
+        "parent_title": "Synagogue Life and Exclusion",
+        "parent_type": "cultural_background",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God\u2019s living presence among his people.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:7-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-holy-spirit",
+        "parent_title": "What is the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-holy-spirit:historical_context:0",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:7-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-holy-spirit",
+        "parent_title": "What is the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:7-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+        "parent_title": "What is the significance of the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 16:7-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+        "parent_title": "What is the significance of the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 12-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-12-14",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "The Gospel of John",
+        "author": "George Parsenios",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the New Testament, chapter 8",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/gospel-of-john/148BF75C92C615531EA1EF732393F0D1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Survey of date, historical value, Synoptic relation, Jewish characterization, and community theories.",
+        "id": "cambridge-john-companion",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Ezekiel 36-37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-36-37",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Galatians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-5",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Genesis 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-1",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Joel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joel-2",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "John 14-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14-16",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john",
+          "synagogue-life-and-exclusion"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of John",
+        "author": "Dwight Moody Smith",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "Theology of John and the issues it raises",
+        "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-john/theology-of-john-and-the-issues-it-raises/975440B1EAE9424C6B2C919A3CC03DEB",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Theological synthesis with attention to Christology, anti-Judaism, and reception.",
+        "id": "smith-theology",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Spirit Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "spirit-theme-historical-orientation",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Luke 4; Acts 13; John 9, 12, and 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 4:16-30; Acts 13:14-43; John 9:22; 12:42-43; 16:1-4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "synagogue-textual-settings",
+          "synagogue-exclusion-caution"
+        ],
+        "notes": "Primary biblical texts.",
+        "id": "synagogue-passages",
+        "canonical_object_ids": [
+          "synagogue-life-and-exclusion"
+        ]
+      },
+      {
+        "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+        "author": "Urban C. von Wahlde",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2017,
+        "locator": "New Testament Studies 63",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Argues for context-sensitive differentiation among Jewish group labels.",
+        "id": "vonwahlde-jews",
+        "canonical_object_ids": [
+          "john",
+          "synagogue-life-and-exclusion"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Holy Spirit?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-holy-spirit-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the significance of the Holy Spirit?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-significance-of-the-holy-spirit-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "spirit-theme",
+        "type": "theme",
+        "title": "Spirit Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "synagogue-life-and-exclusion",
+        "type": "cultural_background",
+        "title": "Synagogue Life and Exclusion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "what-is-the-holy-spirit",
+        "type": "faq",
+        "title": "What is the Holy Spirit?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "what-is-the-significance-of-the-holy-spirit",
+        "type": "faq",
+        "title": "What is the significance of the Holy Spirit?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "7c1c72ab28febdda1ae1e277309f0a1b352bca6c69b7ad48895edc4c29309206",
+  "evidence_hash_version": "2"
+}

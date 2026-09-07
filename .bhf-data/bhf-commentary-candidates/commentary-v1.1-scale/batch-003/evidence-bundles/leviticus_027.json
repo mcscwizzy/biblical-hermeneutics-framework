@@ -1,0 +1,150 @@
+{
+  "passage_ref": "Leviticus 27",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "leviticus-literary-movement",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 2600,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 113
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The JPS Torah Commentary: Leviticus",
+        "author": "Baruch A. Levine",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "levine-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Leviticus 1-27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 1:1-27:34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "leviticus-1-27",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "The Book of Leviticus",
+        "author": "Gordon J. Wenham",
+        "publisher": "Eerdmans",
+        "year": 1979,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "id": "wenham-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "leviticus",
+        "type": "book",
+        "title": "Leviticus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4230ee34921a7e9fff4bc051093bfebe6f18b9f02a6c023f64d290db9cd03276",
+  "evidence_hash_version": "2"
+}

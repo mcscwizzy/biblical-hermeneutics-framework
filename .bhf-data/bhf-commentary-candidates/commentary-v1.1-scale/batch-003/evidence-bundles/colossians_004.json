@@ -1,0 +1,955 @@
+{
+  "passage_ref": "Colossians 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-luke-tradition",
+      "claim": "Later Christian tradition identifies the author as Luke, Paul's physician companion, but Acts itself does not make that identification.",
+      "category": "culture",
+      "source_ids": [
+        "eusebius-history",
+        "cambridge-unity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "col-archippus",
+      "claim": "Archippus is exhorted to fulfill a ministry received in the Lord, but its content and office are undisclosed.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "barclay-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-coworkers",
+      "claim": "Tychicus, Onesimus, Aristarchus, Mark, Jesus Justus, Epaphras, Luke, and Demas form the named messenger and greeting network.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "barclay-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:7-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-date-prison",
+      "claim": "The writer is in chains, but the text supplies neither an absolute date nor a named prison.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "dunn-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:3",
+        "Colossians 4:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-epaphras",
+      "claim": "Epaphras taught the recipients the gospel, reported their love, labored in prayer for them, and cared for neighboring communities.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "barclay-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:12-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "col-household",
+      "claim": "The household code addresses wives, husbands, children, fathers, enslaved people, and masters within unequal ancient household structures.",
+      "category": "culture",
+      "source_ids": [
+        "lincoln-household",
+        "standhartinger-household",
+        "glancy-slavery"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-laodicean-letter",
+      "claim": "The Colossian and Laodicean assemblies are told to exchange letters, but the letter from Laodicea is not securely identifiable with a surviving work.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "dunn-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-lycus",
+      "claim": "Colossae, Laodicea, and Hierapolis belong to a linked Lycus Valley setting, while the precise Colossian audience and teaching remain archaeologically underdetermined.",
+      "category": "archaeology",
+      "source_ids": [
+        "colossae-research",
+        "hierapolis-unesco",
+        "laodicea-excavation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:13-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "col-nympha",
+      "claim": "A house assembly is associated with Nympha under a textual variant affecting the host's gender and the possessive pronoun.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "ntvmr",
+        "p46-csntm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:15"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "disputed",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "col-senders",
+      "claim": "Paul and Timothy are named as senders, while the dominant singular voice claims apostolic ministry and a closing Pauline autograph.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "foster-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-slavery",
+      "claim": "Enslaved people receive extended labor instructions, while masters are ordered to provide what is just and fair because they answer to a heavenly Lord.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "glancy-slavery"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 3:22-4:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-witness",
+      "claim": "Prayer for an open door and clear proclamation is joined to wise conduct toward outsiders and gracious fitting speech.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "moo-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:2-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "philemon:interpretive_note:2",
+      "claim": "Destination: Colossae is plausible from shared names in Colossians, but Philemon never names Colossae or a province.",
+      "category": "culture",
+      "source_ids": [
+        "phm-greek",
+        "barclay",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:7-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philemon",
+        "parent_title": "Philemon",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "philemon:interpretive_note:34",
+      "claim": "Colossians comparison reveals striking shared names, but it cannot by itself settle literary dependence, simultaneous delivery, destination, or whether both Onesimus references describe the same reconstructed episode.",
+      "category": "culture",
+      "source_ids": [
+        "phm-greek",
+        "barclay",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:7-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philemon",
+        "parent_title": "Philemon",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "phm-colossians",
+      "claim": "Philemon and Colossians share Onesimus, Archippus, Epaphras, Mark, Aristarchus, Demas, Luke, and house-assembly connections.",
+      "category": "culture",
+      "source_ids": [
+        "phm-greek",
+        "barclay",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 4:7-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philemon",
+        "parent_title": "Philemon",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Colossians and Philemon",
+        "author": "John M. G. Barclay",
+        "publisher": "T&T Clark",
+        "year": 1997,
+        "locator": "New Testament Guides",
+        "url": "https://www.bloomsbury.com/us/colossians-and-philemon-9780567085696/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "canonical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical orientation to historical reconstruction and Colossians comparison; verify locators.",
+        "id": "barclay",
+        "canonical_object_ids": [
+          "philemon"
+        ]
+      },
+      {
+        "title": "Colossians and Philemon",
+        "author": "John M. G. Barclay",
+        "publisher": "Sheffield Academic Press",
+        "year": 1997,
+        "locator": "Introduction and commentary",
+        "url": "https://books.google.com/books?id=jc7YAAAAMAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "key-people",
+          "interpretive-notes"
+        ],
+        "notes": "Critical issues guide.",
+        "id": "barclay-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "The Assumed Authorial Unity of Luke and Acts",
+        "author": "Patricia Walters",
+        "publisher": "Cambridge University Press",
+        "year": 2009,
+        "locator": "Compositional unity and authorship",
+        "url": "https://doi.org/10.1017/CBO9780511575204",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Tests common authorship through prose composition.",
+        "id": "cambridge-unity",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Colossians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Colossians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "col-greek",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Colossae Archaeological Research Project",
+        "author": "",
+        "publisher": "Flinders University",
+        "year": null,
+        "locator": "Colossae",
+        "url": "https://colossae.org/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-setting",
+          "maps",
+          "archaeology"
+        ],
+        "notes": "Site-focused archaeological research orientation.",
+        "id": "colossae-research",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "The Epistles to the Colossians and to Philemon",
+        "author": "James D. G. Dunn",
+        "publisher": "Eerdmans",
+        "year": 1996,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802824417/the-epistles-to-the-colossians-and-to-philemon/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Critical Greek-text commentary.",
+        "id": "dunn-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Ecclesiastical History",
+        "author": "Eusebius of Caesarea",
+        "publisher": "Perseus Digital Library",
+        "year": null,
+        "locator": "Early attribution and traditions about Paul",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:2008.01.0640",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Later reception witness, not contemporary proof of authorship or Paul's fate.",
+        "id": "eusebius-history",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Colossians",
+        "author": "Paul Foster",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 2016,
+        "locator": "Introduction and commentary",
+        "url": "https://www.bloomsbury.com/uk/colossians-9780567667809/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Critical commentary and reception control.",
+        "id": "foster-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Slavery as Moral Problem",
+        "author": "Jennifer A. Glancy",
+        "publisher": "Fortress Press",
+        "year": 2011,
+        "locator": "New Testament slavery and embodied ethics",
+        "url": "https://www.fortresspress.com/store/product/9781451410921/Slavery-as-Moral-Problem",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-setting",
+          "interpretive-notes"
+        ],
+        "notes": "Ethical and historical control for slavery interpretation.",
+        "id": "glancy-slavery",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Hierapolis-Pamukkale",
+        "author": "",
+        "publisher": "UNESCO World Heritage Centre",
+        "year": null,
+        "locator": "Lycus Valley regional setting",
+        "url": "https://whc.unesco.org/en/list/485/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-setting",
+          "maps",
+          "archaeology"
+        ],
+        "notes": "Official regional archaeological orientation.",
+        "id": "hierapolis-unesco",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Laodikeia Excavations",
+        "author": "",
+        "publisher": "Pamukkale University",
+        "year": null,
+        "locator": "Lycus Valley regional evidence",
+        "url": "https://laodikeia.pau.edu.tr/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-setting",
+          "maps",
+          "archaeology"
+        ],
+        "notes": "Regional excavation project.",
+        "id": "laodicea-excavation",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "The Household Code and Wisdom Mode of Colossians",
+        "author": "Andrew T. Lincoln",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 1999,
+        "locator": "21.4: 93-112",
+        "url": "https://doi.org/10.1177/0142064X9902107405",
+        "source_type": "journal-article",
+        "supports": [
+          "genre",
+          "historical-setting",
+          "interpretive-notes"
+        ],
+        "notes": "Household-code genre and function study.",
+        "id": "lincoln-household",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "The Letters to the Colossians and to Philemon",
+        "author": "Douglas J. Moo",
+        "publisher": "Eerdmans",
+        "year": 2008,
+        "locator": "Pillar New Testament Commentary; Philemon",
+        "url": "https://www.eerdmans.com/9780802837271/the-letters-to-the-colossians-and-to-philemon/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary representing Pauline-authorship and evangelical interpretation; verify locators.",
+        "id": "moo",
+        "canonical_object_ids": [
+          "philemon"
+        ]
+      },
+      {
+        "title": "The Letters to the Colossians and to Philemon",
+        "author": "Douglas J. Moo",
+        "publisher": "Eerdmans",
+        "year": 2008,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802837271/the-letters-to-the-colossians-and-to-philemon/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Exegetical commentary defending Pauline authorship.",
+        "id": "moo-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "Colossians witnesses and variants",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Manuscript catalog and image workspace.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "colossians",
+          "philemon"
+        ]
+      },
+      {
+        "title": "Papyrus 46",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Colossians",
+        "url": "https://collections.csntm.org/manuscripts/MNTGRCP46_2",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "timeline",
+          "interpretive-notes"
+        ],
+        "notes": "Early Pauline collection witness.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Philemon",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Philemon 1-25",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; individual variants require an apparatus.",
+        "id": "phm-greek",
+        "canonical_object_ids": [
+          "philemon"
+        ]
+      },
+      {
+        "title": "The Origin and Intention of the Household Code in the Letter to the Colossians",
+        "author": "Angela Standhartinger",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 2001,
+        "locator": "23.3: 117-130",
+        "url": "https://doi.org/10.1177/0142064X0102307910",
+        "source_type": "journal-article",
+        "supports": [
+          "genre",
+          "historical-setting",
+          "interpretive-notes"
+        ],
+        "notes": "Household-code origin and reception study.",
+        "id": "standhartinger-household",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "colossians",
+        "type": "book",
+        "title": "Colossians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.959
+      },
+      {
+        "id": "philemon",
+        "type": "book",
+        "title": "Philemon",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c9c3ed0683217b1418e363a4dcb302588a24ab10a9d27ca3c2fb05a914889ad6",
+  "evidence_hash_version": "2"
+}

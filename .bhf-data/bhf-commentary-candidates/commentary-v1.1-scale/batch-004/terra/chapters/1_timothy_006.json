@@ -1,0 +1,102 @@
+{
+  "reference": "1 Timothy 6",
+  "book": "1 Timothy",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_81",
+          "text": "Read the chapter with this setting in view: Love of money is described as a root of all kinds of evils, and desire for riches as a source of temptation, harm, and wandering from faith. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "1tim-money"
+          ],
+          "verse_refs": [
+            "1 Timothy 6:9-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_82",
+          "text": "For its historical and cultural setting, note that The closing charge tells Timothy to guard the entrusted deposit and avoid profane chatter, contradictions, and falsely named knowledge. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1tim-trust"
+          ],
+          "verse_refs": [
+            "1 Timothy 6:20-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_83",
+          "text": "For its historical and cultural setting, note that Enslaved people are instructed to honor masters, including believing masters; the passage regulates conduct within slavery and does not abolish ownership. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1tim-slavery"
+          ],
+          "verse_refs": [
+            "1 Timothy 6:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_82",
+          "text": "A literary feature to notice is that The letter attacks different teaching, myths, genealogies, speculative inquiry, misused law, ascetic prohibitions, controversy, and falsely named knowledge without demonstrating one opponent system. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1tim-opponents"
+          ],
+          "verse_refs": [
+            "1 Timothy 6:3-5",
+            "1 Timothy 6:20-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_82",
+          "text": "For a later or comparative connection, note that Roman households joined kinship, marriage, children, property, labor, freed status, enslavement, dependency, and cult in variable and coercively unequal arrangements. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "household-slavery-status-comparison"
+          ],
+          "verse_refs": [
+            "1 Timothy 6:1-2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ff60d87a06fa3e82c74e797567bcfd498c79f4a69e6cb3a816a88058c3711a41",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "passage_ref": "Ezekiel 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-gendered-city-allegories",
+      "claim": "Ezekiel 16 and 23 personify Jerusalem and Samaria through sexualized marriage, prostitution, exposure, and punishment rhetoric that is central to the argument and ethically disturbing.",
+      "category": "culture",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "kalmanofsky-ezekiel-gender",
+        "graybill-embodiment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 16:1-63"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Embodiment in Ezekiel",
+        "author": "Rhiannon Graybill",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 22",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ezekiel-gendered-city-allegories"
+        ],
+        "notes": "Analysis of bodies, gender, power, and prophetic rhetoric.",
+        "id": "graybill-embodiment",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel and Gender",
+        "author": "Amy Kalmanofsky",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 21",
+        "url": "https://academic.oup.com/edited-volume/35418/chapter-abstract/303167215",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "ezekiel-gendered-city-allegories"
+        ],
+        "notes": "Gender-critical analysis of Israel, prophet, God, masculinity, and female-coded rhetoric.",
+        "id": "kalmanofsky-ezekiel-gender",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9c38c521e0a8c40abee5301862634d707a0321e9f85bcc58641aece1341d4431",
+  "evidence_hash_version": "2"
+}

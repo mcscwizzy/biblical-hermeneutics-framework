@@ -1,0 +1,231 @@
+{
+  "passage_ref": "Psalms 147",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "psalms-five-book-anthology",
+      "claim": "The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150.",
+      "category": "culture",
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "oxford-psalter-metanarrative"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 146:1-150:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "psalms-numbering-witnesses",
+      "claim": "Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count.",
+      "category": "history",
+      "source_ids": [
+        "psalms-ancient-numbering",
+        "goldingay-psalms",
+        "declaisse-walford-jacobson-tanner"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 147:1-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Psalms",
+        "author": "Nancy L. deClaiss\u00e9-Walford, Rolf A. Jacobson, and Beth LaNeel Tanner",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2014,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802824936/the-book-of-psalms/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "One-volume commentary emphasizing translation, poetry, theology, textual criticism, Dead Sea Scrolls, and canonical shaping.",
+        "id": "declaisse-walford-jacobson-tanner",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms, three-volume set",
+        "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "genre",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary, historical, grammatical, theological, and pastoral commentary with original translation.",
+        "id": "goldingay-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "The Meta-Narrative of the Psalter",
+        "author": "Nancy L. deClaiss\u00e9-Walford",
+        "publisher": "Oxford University Press",
+        "year": 2014,
+        "locator": "The Oxford Handbook of the Psalms, pages 363-376",
+        "url": "https://academic.oup.com/edited-volume/35006/chapter/298743361",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "canonical-role",
+          "structure",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes"
+        ],
+        "notes": "Survey of form-critical, cultic, canonical, and editorial approaches to the shape and shaping of the Psalter.",
+        "id": "oxford-psalter-metanarrative",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Greek and Latin Psalter numbering",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Septuagint Psalms 1-151 and subsequent Latin numbering traditions",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "greek-words",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient translation tradition that combines and divides several psalms differently and transmits Psalm 151.",
+        "id": "psalms-ancient-numbering",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "802c8f25e9c227ee67ab9b68d04beca5cf6fcb1ce562cd580c1fd84f6af6ee35",
+  "evidence_hash_version": "2"
+}

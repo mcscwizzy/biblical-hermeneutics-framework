@@ -1,0 +1,1545 @@
+{
+  "passage_ref": "Micah 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "birth-of-jesus",
+        "title": "Birth of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in birth of jesus",
+          "tell me about birth of jesus",
+          "why is birth of jesus important"
+        ],
+        "metadata": {
+          "summary": "Jesus is born in Bethlehem under Roman rule as the promised Messiah and Son of David.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Matthew 2:1-12",
+            "Luke 1:26-38",
+            "Luke 2:1-20",
+            "Micah 5:2",
+            "Isaiah 7:14",
+            "Isaiah 9:1-7",
+            "Galatians 4:4-5",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "birth-of-jesus:ancient_near_east_context:0",
+      "claim": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Micah 5:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:historical_context:0",
+      "claim": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Micah 5:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:ancient_near_east_context:0",
+      "claim": "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God\u2019s promise, righteousness, and suffering victory.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:historical_context:0",
+      "claim": "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messianic-prophecy:ancient_near_east_context:0",
+      "claim": "Messianic Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "micah-5",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messianic-prophecy",
+        "parent_title": "Messianic Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messianic-prophecy:historical_context:0",
+      "claim": "Messianic hope develops from the Davidic covenant and the prophetic search for a righteous king who will heal exile and injustice.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "micah-5",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messianic-prophecy",
+        "parent_title": "Messianic Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "micah-assyria",
+      "claim": "Micah 5 imagines defense against Assyria through a ruler, seven shepherds, and eight leaders, while the unit's historical and later symbolic horizons remain uncertain.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "allen-micah",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:5-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "micah-bethlehem-ruler",
+      "claim": "Micah 5:2-5 identifies Bethlehem Ephrathah as the source of a ruler for Israel and associates that figure with ancient origins, shepherding strength, security, and peace.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "andersen-freedman-micah",
+        "waltke-micah",
+        "gignilliat-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "micah-empire-reception",
+      "claim": "Postcolonial and trauma-aware interpretations examine Assyrian empire, siege, displacement, communal fracture, resistance, and hope while distinguishing ancient referent from modern analogy.",
+      "category": "politics",
+      "source_ids": [
+        "kessler-micah",
+        "cataldo-postcolonial",
+        "oxford-minor-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:5-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "plausible",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "micah-gendered-images",
+      "claim": "Daughter Zion, labor, women and children dispossessed, and the gathered vulnerable remnant make gender, embodiment, and erasure necessary interpretive questions.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "kessler-micah",
+        "scholz-gender"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "micah-genre",
+      "claim": "Micah combines superscription, theophany, lament, dirge, woe, accusation, disputed speech, judgment and salvation oracles, instruction, disputation, confession, prayer, and doxology.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "sbl-new-form-twelve",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "micah-jewish-reception",
+      "claim": "Early and later Jewish readers received Micah as Scripture, including its judgment, consolation, ethical summons, Bethlehem hope, and divine mercy.",
+      "category": "culture",
+      "source_ids": [
+        "simkovich-early-judaism",
+        "fuchs-jewish-life",
+        "iaa-8hevxii"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 4:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "micah-numbering",
+      "claim": "The verse commonly numbered Micah 4:14 in English is Micah 5:1 in the Masoretic chapter division.",
+      "category": "history",
+      "source_ids": [
+        "micah-masoretic",
+        "catss-micah",
+        "nets-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "micah-purification",
+      "claim": "Micah 5:10-15 lists the removal of military assets, fortified cities, sorceries, images, pillars, and cultic poles before judgment on disobedient nations.",
+      "category": "history",
+      "source_ids": [
+        "micah-masoretic",
+        "andersen-freedman-micah",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:10-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "micah-structure",
+      "claim": "Micah's final form repeatedly alternates judgment and hope while moving through chapters 1-2, 3-5, and 6-7 in one influential three-part reading.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "kessler-micah",
+        "waltke-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "micah-textual-witnesses",
+      "claim": "Micah is witnessed by the Masoretic tradition, Old Greek Michaias, Hebrew 4Q81 and 4Q82, MurXII, and the Greek Minor Prophets scroll from Nahal Hever, among other versions and fragments.",
+      "category": "culture",
+      "source_ids": [
+        "catss-micah",
+        "nets-twelve",
+        "iaa-4q81",
+        "iaa-4q82",
+        "iaa-murxii",
+        "iaa-8hevxii"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "micah-twelve-placement",
+      "claim": "Micah stands sixth in the Masoretic order of the Twelve and participates in both book-specific interpretation and collection-level links.",
+      "category": "culture",
+      "source_ids": [
+        "kessler-micah",
+        "sieges-one-or-twelve",
+        "sbl-new-form-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.931,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "what-is-the-messiah:ancient_near_east_context:0",
+      "claim": "Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God\u2019s promise and righteous rule.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-messiah:historical_context:0",
+      "claim": "Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 5:2-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Samuel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-7",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "messianic-prophecy"
+        ]
+      },
+      {
+        "title": "The Books of Joel, Obadiah, Jonah, and Micah",
+        "author": "Leslie C. Allen",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "Eerdmans Classic Biblical Commentaries edition",
+        "url": "https://www.eerdmans.com/9780802883964/the-books-of-joel-obadiah-jonah-and-micah/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "micah-place-dirge",
+          "micah-assyria"
+        ],
+        "notes": "Reissued commentary originally published in 1976; source year records this publisher edition.",
+        "id": "allen-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Micah: A New Translation with Introduction and Commentary",
+        "author": "Francis I. Andersen; David Noel Freedman",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Bible 24E",
+        "url": "https://drupal.yalebooks.yale.edu/sites/default/files/anchor_bible_2018_online_0.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "hebrew-words",
+          "interpretive-disputes",
+          "micah-place-dirge",
+          "micah-bethlehem-ruler",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Detailed critical and philological commentary; URL is Yale's Anchor Yale Bible catalogue.",
+        "id": "andersen-freedman-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Birth of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "birth-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Postcolonial Approaches to the Minor Prophets",
+        "author": "Jeremiah W. Cataldo",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 25",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372842",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "interpretive-disputes",
+          "micah-empire-reception"
+        ],
+        "notes": "Methodological source for bounded postcolonial analysis of empire and modern appropriation.",
+        "id": "cataldo-postcolonial",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Text and Textual Variants for the Old Greek Book of Micah",
+        "author": "Center for Computer Analysis of Texts",
+        "publisher": "University of Pennsylvania",
+        "year": 2005,
+        "locator": "CATSS Old Greek Minor Prophets, Micah",
+        "url": "https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/active/06Micah.html",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "micah-numbering",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Electronic Old Greek variant resource based on the G\u00f6ttingen Twelve edition; specialist verification remains required.",
+        "id": "catss-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Jewish Life Today",
+        "author": "Stephen Lewis Fuchs",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 26",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372906",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "micah-jewish-reception"
+        ],
+        "notes": "Jewish reception source used to keep living Jewish readings distinct from Christian appropriation.",
+        "id": "fuchs-jewish-life",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Galatians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-4",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Micah",
+        "author": "Mark S. Gignilliat",
+        "publisher": "T&T Clark",
+        "year": 2025,
+        "locator": "International Theological Commentary",
+        "url": "https://www.bloomsbury.com/ca/micah-itc-9780567716606/",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "micah-mercy-conclusion",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Recent theological commentary attentive to critical study, the Twelve, and Micah's theological witness.",
+        "id": "gignilliat-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "4Q Minor Prophets (4Q81)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "4Q81 / 4QXII-f",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q81-1?locale=en_US",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official catalogue for a Hasmonean Hebrew Minor Prophets manuscript preserving Micah material.",
+        "id": "iaa-4q81",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "4Q Minor Prophets (4Q82)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "4Q82 / 4QXII-g",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q82-1",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official manuscript catalogue and image record; exact Micah readings require specialist transcription.",
+        "id": "iaa-4q82",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Greek Minor Prophets Scroll from Nahal Hever (8HevXII)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "Columns preserving Micah 4-6",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-314652",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official image record identifies Greek Minor Prophets columns from Micah 4-5; detailed boundaries require critical publication.",
+        "id": "iaa-8hevxii",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Murabba'at Minor Prophets Scroll (MurXII / Mur88)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "MUR88 image preserving Jonah 3:2-4:11 and Micah 1:1-5",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-281189?locale=en_US",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official image catalogue; passage identification and readings require specialist verification.",
+        "id": "iaa-murxii",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Isaiah 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-11",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-7",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Micah",
+        "author": "Rainer Kessler",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 34, pages 461-471",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373451",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "micah-composition",
+          "micah-structure"
+        ],
+        "notes": "Current overview of structure, long formation history, doom and hope, social critique, nations, gender, and trauma.",
+        "id": "kessler-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Luke 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Matthew 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Micah 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-5",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "messianic-prophecy"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Micah 1:1-7:20, with MT chapter numbering",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "micah-superscription",
+          "micah-land-seizure",
+          "micah-mercy-conclusion"
+        ],
+        "notes": "Primary Hebrew witness; translations, syntax, and numbering require review against a critical edition.",
+        "id": "micah-masoretic",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "George E. Howard",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Michaias",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "micah-numbering",
+          "micah-textual-witnesses"
+        ],
+        "notes": "NETS translation and introduction for Old Greek Michaias and the Twelve.",
+        "id": "nets-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Minor Prophets",
+        "author": "Julia M. O'Brien, editor",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Overview and thematic essays",
+        "url": "https://academic.oup.com/edited-volume/38566",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "micah-later-reception"
+        ],
+        "notes": "Scholarly handbook framing historical, literary, reception, ideological, gender, ecological, and trauma-aware approaches.",
+        "id": "oxford-minor-prophets",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Romans 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "New Form Criticism and the Book of the Twelve",
+        "author": "Mark J. Boda; Michael H. Floyd; Colin M. Toffelmire, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2015,
+        "locator": "Open-access volume",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/9781628370614_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "micah-genre",
+          "micah-isaiah-parallel"
+        ],
+        "notes": "Scholarly source for form, genre, rhetoric, and the Twelve.",
+        "id": "sbl-new-form-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Reading the Minor Prophets for Gender and Sexuality",
+        "author": "Susanne Scholz",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 22",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372627",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "micah-gendered-images"
+        ],
+        "notes": "Methodological source for gender-aware interpretation that resists essentializing ancient metaphors.",
+        "id": "scholz-gender",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "One Book or Twelve Books?",
+        "author": "Anna Sieges",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 3",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334371290",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "micah-twelve-placement"
+        ],
+        "notes": "Overview of debates concerning the Twelve as distinct books and a shaped collection.",
+        "id": "sieges-one-or-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Judaism",
+        "author": "Malka Z. Simkovich",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 17",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372283",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "micah-jewish-reception"
+        ],
+        "notes": "Scholarly overview of early Jewish reception of the Twelve.",
+        "id": "simkovich-early-judaism",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "A Commentary on Micah",
+        "author": "Bruce K. Waltke",
+        "publisher": "Eerdmans",
+        "year": 2008,
+        "locator": "Eerdmans commentary",
+        "url": "https://www.eerdmans.com/9780802864123/a-commentary-on-micah/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "micah-three-cycle",
+          "micah-bethlehem-ruler",
+          "micah-six-eight"
+        ],
+        "notes": "Thorough evangelical commentary defending substantial composition and editing by Micah and a three-cycle structure.",
+        "id": "waltke-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "birth-of-jesus",
+        "type": "event",
+        "title": "Birth of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "messiah-theme",
+        "type": "theme",
+        "title": "Messiah Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "messianic-prophecy",
+        "type": "prophecy",
+        "title": "Messianic Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "micah",
+        "type": "book",
+        "title": "Micah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.931
+      },
+      {
+        "id": "what-is-the-messiah",
+        "type": "faq",
+        "title": "What is the Messiah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c1cb37e45a0d8fbc6368ec7eebefa3fc772ba781f27028f057f6ed4053ca1320",
+  "evidence_hash_version": "2"
+}

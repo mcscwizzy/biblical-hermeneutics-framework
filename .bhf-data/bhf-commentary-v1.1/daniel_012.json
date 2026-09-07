@@ -1,0 +1,65 @@
+{
+  "reference": "Daniel 12",
+  "book": "Daniel",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_54",
+          "text": "Read the chapter with this setting in view: Chapters 1-6 as court tales and 7-12 as first-person visions provide a useful practical outline, though chapter 7 is Aramaic and narrated chronology resumes earlier royal reigns. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel-practical-outline"
+          ],
+          "verse_refs": [
+            "Daniel 12:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "daniel:interpretive_note:19"
+          ],
+          "verse_refs": [
+            "Daniel 12:11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_56",
+          "text": "For its historical and cultural setting, note that Daniel 12:1-3 anticipates deliverance, the awakening of many who sleep in the dust to differentiated destinies, and the shining of the wise. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "daniel-resurrection"
+          ],
+          "verse_refs": [
+            "Daniel 12:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "05eb5aa083fad1f415aef33e92d974d8aedbbce194134d0f44b278085a43abfa",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

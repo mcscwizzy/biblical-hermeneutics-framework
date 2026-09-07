@@ -1,0 +1,287 @@
+{
+  "passage_ref": "Isaiah 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "isaiah-nations-empire",
+      "claim": "Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "oxford-handbook-isaiah",
+        "cambridge-ane-prophecy",
+        "cambridge-migration-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 13:1-23:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ancient Near Eastern Prophecy and the Study of Isaiah",
+        "author": "Jonathan St\u00f6kl",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 8",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/ancient-near-eastern-prophecy-and-the-study-of-isaiah/3B0E4F90F810DDF2B09BB57E186E25A5",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "genre",
+          "isaiah-nations-empire"
+        ],
+        "notes": "Comparative prophetic texts, literary compilation, and gender without assuming direct dependence.",
+        "id": "cambridge-ane-prophecy",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Migration in the Book of Isaiah",
+        "author": "C. L. Crouch",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 11",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/migration-in-the-book-of-isaiah/4C9BFF7B3BA5ABE66F2EF5100170B206",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "original-audience",
+          "isaiah-nations-empire",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Assyrian and Babylonian deportation, other forced movements, displacement, and literary reception.",
+        "id": "cambridge-migration-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "fddcdc0ab8bdc6ebffd452d7b8c0e91fa67691961e0920b0742678fe9acd516e",
+  "evidence_hash_version": "2"
+}

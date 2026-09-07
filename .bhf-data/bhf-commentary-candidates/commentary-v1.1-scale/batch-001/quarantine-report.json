@@ -1,0 +1,63 @@
+{
+  "batch_id": "batch-001",
+  "status": "REVIEWED",
+  "chapters": [
+    {
+      "reference": "Deuteronomy 32",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "deuteronomy-32-8-manuscript-variant",
+        "deuteronomy-32-8-manuscript-variant:passage-relevance",
+        "mishpat:ancient_near_east_context:0",
+        "mishpat:historical_context:0",
+        "tsedeq:ancient_near_east_context:0",
+        "tsedeq:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "ancient-divine-assembly-imagery",
+        "mishpat",
+        "tsedeq"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.; The word-study parent has a broad or cross-book authored anchor set.; The word-study parent has a broad or cross-book authored anchor set.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Job 1",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "job-sons-of-god-assembly",
+        "job-sons-of-god-assembly:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "ancient-divine-assembly-imagery"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Leviticus 19",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "agios:ancient_near_east_context:0",
+        "agios:historical_context:0",
+        "qadosh:ancient_near_east_context:0",
+        "qadosh:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "agios",
+        "qadosh"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; The word-study parent has a broad or cross-book authored anchor set.; The word-study parent has a broad or cross-book authored anchor set.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    }
+  ],
+  "unresolved_blocker_count": 12,
+  "systemic_concern": "Repeated template-shaped background and broad-parent reuse should be handled in a separate CKL cleanup task; this preflight does not repair evidence."
+}

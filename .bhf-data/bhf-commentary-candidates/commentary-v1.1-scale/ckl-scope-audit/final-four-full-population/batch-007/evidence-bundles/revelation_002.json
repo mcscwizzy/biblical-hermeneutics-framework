@@ -1,0 +1,948 @@
+{
+  "passage_ref": "Revelation 2",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "ephesus",
+        "title": "Ephesus",
+        "type": "place",
+        "aliases": [
+          "where is ephesus",
+          "tell me about ephesus",
+          "why is ephesus important"
+        ],
+        "metadata": {
+          "summary": "Ephesus was a major harbor city of Roman Asia and the explicit setting for mission, teaching, ritual conflict, civic assembly, and farewell traditions in Acts; it also anchors Revelation 2 and the narrated setting of 1 Timothy, while Ephesians' original destination remains textually disputed.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 18:18-28",
+            "Acts 19:1-20",
+            "Acts 19:21-41",
+            "Acts 20:1-38",
+            "Ephesians 1:1",
+            "1 Timothy 1:3-7",
+            "Revelation 2:1-7"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "artemision-civic-cult",
+      "claim": "Excavation, dedications, boundary texts, statues, coins, and literary testimony document a long-lived sanctuary and the civic reach of Artemis Ephesia.",
+      "category": "archaeology",
+      "source_ids": [
+        "oeai-artemision",
+        "oeai-inscriptions",
+        "rogers-artemis",
+        "unesco-ephesus",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "artemision-civic-cult:passage-relevance",
+      "claim": "The Artemision explains why Acts can present Artemis's honor as a civic concern, while supplying no physical proof for Demetrius, the silver shrines, the crowd's words, or every Ephesian religious identity.",
+      "category": "archaeology",
+      "source_ids": [
+        "oeai-artemision",
+        "oeai-inscriptions",
+        "rogers-artemis",
+        "unesco-ephesus",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "artemision-civic-cult"
+        ]
+      }
+    },
+    {
+      "id": "ephesus:ancient_near_east_context:0",
+      "claim": "Not directly applicable; Ephesus belongs to the Greco-Roman eastern Mediterranean, with earlier Near Eastern contexts entering through Jewish Scripture and diaspora traditions.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:hebraic_worldview:0",
+      "claim": "Acts places Ephesian mission within diaspora synagogue and scriptural networks before narrating wider gentile reception. Jewish exorcists, synagogue hearers, and gentile ritual practitioners must remain differentiated rather than fused into a stereotype.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 20,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:historical_context:0",
+      "claim": "Roman Ephesus connected an engineered Aegean harbor with inland Anatolia. The city combined Greek civic institutions, Roman provincial power, the Artemision, imperial cults, associations, benefaction, craft and trade networks, households, slavery, and substantial migration. Surviving monuments span many centuries and require phase-specific use.",
+      "category": "history",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:second_temple_context:0",
+      "claim": "First-century diaspora Judaism, synagogue debate, scriptural instruction, and Jewish ritual specialists form part of Acts' Ephesian horizon. These settings do not identify the opponents in 1 Timothy or prove that every local Christ-follower shared one background.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "imperial-cult-and-civic-honor",
+      "claim": "Ephesian inscriptions and monuments attest cults for Roman rulers, civic temple-keeping claims, provincial competition, festivals, priesthoods, benefaction, and public honors.",
+      "category": "social",
+      "source_ids": [
+        "oeai-inscriptions",
+        "friesen-imperial-ephesus",
+        "harland-associations-ephesus",
+        "mitchell-imperial-cult",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "imperial-cult-and-civic-honor:passage-relevance",
+      "claim": "Imperial-cult and honor institutions contextualize public allegiance in Acts and Revelation without making every Ephesian a worshiper, proving systematic persecution, or decoding each symbol.",
+      "category": "social",
+      "source_ids": [
+        "oeai-inscriptions",
+        "friesen-imperial-ephesus",
+        "harland-associations-ephesus",
+        "mitchell-imperial-cult",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Revelation 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "imperial-cult-and-civic-honor"
+        ]
+      }
+    },
+    {
+      "id": "numbers:interpretive_note:4",
+      "claim": "New Testament use of the wilderness generation, bronze serpent, and Balaam is later canonical reception and should be identified separately from interpretation of Numbers in its Torah context.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-1-36",
+        "ashley-numbers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 2:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "rev-no-uniform-persecution",
+      "claim": "The evidence does not establish one continuous empire-wide persecution program behind all seven messages.",
+      "category": "politics",
+      "source_ids": [
+        "friesen",
+        "de-silva",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 2:1-3:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "rev-scriptural-reuse",
+      "claim": "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+      "category": "culture",
+      "source_ids": [
+        "beale",
+        "moyise",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-22:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary narrative witness.",
+        "id": "acts-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "The Book of Revelation: A Commentary on the Greek Text",
+        "author": "G. K. Beale",
+        "publisher": "Eerdmans",
+        "year": 1999,
+        "locator": "New International Greek Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802821744/the-book-of-revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "structure",
+          "claims"
+        ],
+        "notes": "Extensive study of Greek text and scriptural reuse representing a recapitulative reading.",
+        "id": "beale",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Seeing Things John's Way",
+        "author": "David A. deSilva",
+        "publisher": "Westminster John Knox Press",
+        "year": 2009,
+        "locator": "The Rhetoric of the Book of Revelation",
+        "url": "https://www.wjkbooks.com/bookproduct/0664232957-seeing-things-johns-way/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "claims"
+        ],
+        "notes": "Rhetorical and social study of allegiance, commerce, and assemblies.",
+        "id": "de-silva",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Ephesians, First Timothy, and Revelation",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ephesians 1:1; 1 Timothy 1:3-7; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Distinct canonical witnesses with different destination and chronology questions.",
+        "id": "ephesian-letter-passages",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Ephesian narrative, letter, and apocalypse passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38; Ephesians 1:1; 5:21-6:20; 1 Timothy 1:3-7; 3:1-15; 5:3-6:19; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-apollos-teaching-network",
+          "acts-tyrannus-regional-teaching",
+          "acts-exorcism-and-book-burning",
+          "artemis-craft-economy",
+          "theater-civic-assembly-offices",
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "imperial-cult-and-civic-honor",
+          "ephesians-destination-variant",
+          "first-timothy-ephesian-setting",
+          "household-slavery-status-comparison",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "ephesus-biblical-texts",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "author": "Canonical Knowledge Library",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Companion cultural-background object",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "canonical-context",
+          "archaeology",
+          "interpretive-notes",
+          "related-objects"
+        ],
+        "notes": "Passage-bounded evidence, sources, chronology, and dispute controls.",
+        "id": "ephesus-evidence-cluster",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Imperial Cults and the Apocalypse of John",
+        "author": "Steven J. Friesen",
+        "publisher": "Oxford University Press",
+        "year": 2001,
+        "locator": "Entire volume",
+        "url": "https://global.oup.com/academic/product/imperial-cults-and-the-apocalypse-of-john-9780195131536",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Imperial-cult institutions and social context.",
+        "id": "friesen",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Imperial Cults and the Apocalypse of John",
+        "author": "Steven J. Friesen",
+        "publisher": "Oxford University Press",
+        "year": 2001,
+        "locator": "Ephesus, Roman Asia, imperial-cult institutions, and Revelation",
+        "url": "https://global.oup.com/academic/product/imperial-cults-and-the-apocalypse-of-john-9780195131536",
+        "source_type": "academic-book",
+        "supports": [
+          "imperial-cult-and-civic-honor",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Institutional context does not prove continuous coercion or one-to-one symbol referents.",
+        "id": "friesen-imperial-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Honours and Worship: Emperors, Imperial Cults and Associations at Ephesus",
+        "author": "Philip A. Harland",
+        "publisher": "Studies in Religion",
+        "year": 1996,
+        "locator": "Volume 25, issue 3, pages 319-334",
+        "url": "https://journals.sagepub.com/doi/10.1177/000842989602500306",
+        "source_type": "journal-article",
+        "supports": [
+          "imperial-cult-and-civic-honor",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Epigraphic comparison; associations varied by date, membership, and purpose.",
+        "id": "harland-associations-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Revelation: A New Translation with Introduction and Commentary",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2014,
+        "locator": "Anchor Yale Bible 38A",
+        "url": "https://yalebooks.yale.edu/book/9780300216912/revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major historical, literary, textual, and theological commentary.",
+        "id": "koester",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Anatolia: Land, Men, and Gods in Asia Minor",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford University Press",
+        "year": 1993,
+        "locator": "Chapter 8, The Imperial Cult, pages 102-120",
+        "url": "https://academic.oup.com/book/47035/chapter-abstract/422655051",
+        "source_type": "academic-book",
+        "supports": [
+          "imperial-cult-and-civic-honor"
+        ],
+        "notes": "Regional institutional synthesis with chronology-sensitive Ephesian evidence.",
+        "id": "mitchell-imperial-cult",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "The Old Testament in the Book of Revelation",
+        "author": "Steve Moyise",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 1995,
+        "locator": "Journal for the Study of the New Testament Supplement 115",
+        "url": "https://www.bloomsbury.com/us/old-testament-in-the-book-of-revelation-9780567705341/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "claims"
+        ],
+        "notes": "Study of allusion, intertextual method, and scriptural transformation.",
+        "id": "moyise",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Numbers 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 1:1-36:13",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "numbers-two-generations",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing",
+          "numbers-inheritance-preparation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "numbers-1-36",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Cult and Sanctuary: Artemision of Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Sanctuary form, functions, cult activities, and dedication practices",
+        "url": "https://www.oeaw.ac.at/en/oeai/research/historical-archaeology/historical-archaeology-in-the-mediterranean/cult-and-sanctuary",
+        "source_type": "excavation-report",
+        "supports": [
+          "artemision-civic-cult",
+          "artemis-craft-economy"
+        ],
+        "notes": "Archaeological program; it does not recover Demetrius's workshop or the Acts crowd.",
+        "id": "oeai-artemision",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Forschungen in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Open-access excavation monographs and monument studies",
+        "url": "https://www.oeaw.ac.at/en/oeai/publishing/series/forschungen-in-ephesos",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Monument phases and later rebuilding require publication-level control.",
+        "id": "oeai-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "The Inscriptions of Ephesus",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Approximately 7000 stone inscriptions and 1500 graffiti and dipinti",
+        "url": "https://www.oeaw.ac.at/en/oeai/research/classical-studies/epigraphy/the-inscriptions-of-asia-minor",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "theater-civic-assembly-offices",
+          "artemision-civic-cult",
+          "imperial-cult-and-civic-honor",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Corpus and project gateway; titles and institutions require inscription-level dating.",
+        "id": "oeai-inscriptions",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "The Mysteries of Artemis of Ephesos",
+        "author": "Guy MacLean Rogers",
+        "publisher": "Yale University Press",
+        "year": 2012,
+        "locator": "Artemis cult, mysteries, festivals, inscriptions, and urban development",
+        "url": "https://academic.oup.com/yale-scholarship-online/book/29769",
+        "source_type": "academic-book",
+        "supports": [
+          "artemision-civic-cult",
+          "artemis-craft-economy",
+          "imperial-cult-and-civic-honor"
+        ],
+        "notes": "Synthetic reconstruction; proposed ritual interpretations remain disputable.",
+        "id": "rogers-artemis",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Ephesus World Heritage Site",
+        "author": "UNESCO World Heritage Centre",
+        "publisher": "UNESCO",
+        "year": 2015,
+        "locator": "World Heritage List 1018rev",
+        "url": "https://whc.unesco.org/en/list/1018/",
+        "source_type": "reference-work",
+        "supports": [
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "theater-civic-assembly-offices"
+        ],
+        "notes": "Site orientation only; standing monuments span many periods.",
+        "id": "unesco-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ephesus",
+        "type": "place",
+        "title": "Ephesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "revelation",
+        "type": "book",
+        "title": "Revelation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "roman-ephesus-civic-cultic-and-household-life",
+        "type": "cultural_background",
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "682fab0f1dcddc58449dc15fd23b8eb4ecc218d43346a7f5237265f37015aba1",
+  "evidence_hash_version": "2"
+}

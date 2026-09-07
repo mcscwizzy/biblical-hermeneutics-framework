@@ -1,0 +1,151 @@
+{
+  "passage_ref": "Ezekiel 34",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-shepherd-david",
+      "claim": "Ezekiel 34 condemns self-serving shepherds, portrays YHWH seeking and judging the flock, and promises one shepherd, 'my servant David,' within a covenant of peace.",
+      "category": "culture",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "greenberg-ezekiel-21-37",
+        "block-ezekiel-25-48"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 34:1-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Ezekiel, Chapters 25-48",
+        "author": "Daniel I. Block",
+        "publisher": "Eerdmans",
+        "year": 1998,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9781467423717/the-book-of-ezekiel-chapters-2548/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "structure",
+          "ezekiel-practical-outline",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones",
+          "ezekiel-gog",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Extensive evangelical commentary on Ezekiel 25-48.",
+        "id": "block-ezekiel-25-48",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel 21-37",
+        "author": "Moshe Greenberg",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible 22A",
+        "url": "https://yalebooks.yale.edu/book/9780300139679/ezekiel-21-37/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "hebrew-words",
+          "ezekiel-tyre-laments",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones"
+        ],
+        "notes": "Detailed holistic Jewish commentary on Ezekiel 21-37.",
+        "id": "greenberg-ezekiel-21-37",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "221ae52a596fb4cdd72abd82103dbe24085e72d2d544bca1e2e2074958ab86e2",
+  "evidence_hash_version": "2"
+}

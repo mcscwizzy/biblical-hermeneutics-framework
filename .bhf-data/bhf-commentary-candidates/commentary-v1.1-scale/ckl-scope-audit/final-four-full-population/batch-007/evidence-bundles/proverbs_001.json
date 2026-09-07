@@ -1,0 +1,541 @@
+{
+  "passage_ref": "Proverbs 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "proverbs-multiple-collections",
+      "claim": "The received book explicitly contains distinct Solomonic collections, words of unnamed wise teachers, material copied by Hezekiah's officials, words of Agur, and instruction from Lemuel's mother.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "fox-proverbs-ten-thirty-one",
+        "waltke-proverbs-one-fifteen"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "proverbs-purpose-fear-yhwh",
+      "claim": "Proverbs 1:2-7 announces an educational purpose involving wisdom, discipline, justice, and discernment and identifies fear of YHWH as the beginning of knowledge.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "dell-theology-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 1:2-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "proverbs-rival-women-paths",
+      "claim": "Proverbs 1-9 personifies Wisdom and Folly as women whose public calls, houses, meals, and paths embody rival forms of desire and lead respectively toward life and death.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "weeks-instruction-imagery",
+        "stewart-poetic-ethics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 1:20-33"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "claim": "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 1:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-biblical-wisdom",
+        "parent_title": "What is biblical wisdom?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-biblical-wisdom:historical_context:0",
+      "claim": "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 1:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-biblical-wisdom",
+        "parent_title": "What is biblical wisdom?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Proverbs",
+        "author": "Katharine J. Dell",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Old Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-book-of-proverbs/BC224F5F5A33D9C03C3173D2CB22FF8F",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "canonical-role",
+          "major-themes",
+          "second-temple-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Recent synthesis of literary forms, social contexts, creation, Woman Wisdom, canonical relationships, and reception.",
+        "id": "dell-theology-proverbs",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Ecclesiastes 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ecclesiastes-12",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Proverbs 1-9",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139594/proverbs-1-9/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary with ancient Near Eastern survey, thematic essays on personified Wisdom, and textual notes.",
+        "id": "fox-proverbs-one-nine",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 10-31",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300142099/proverbs-10-31/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "structure",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary on the later collections with attention to ethics, Egyptian comparison, medieval Jewish interpretation, text, and language.",
+        "id": "fox-proverbs-ten-thirty-one",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "James 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-3",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Job 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "job-28",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Matthew 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-7",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Proverbs 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Proverbs 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs-3",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Masoretic Proverbs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Proverbs 1-31 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "proverbs-masoretic",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Psalm 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-1",
+        "canonical_object_ids": [
+          "what-is-biblical-wisdom"
+        ]
+      },
+      {
+        "title": "Poetic Ethics in Proverbs",
+        "author": "Anne W. Stewart",
+        "publisher": "Cambridge University Press",
+        "year": 2015,
+        "locator": "Wisdom Literature and the Shaping of the Moral Self",
+        "url": "https://www.cambridge.org/core/books/poetic-ethics-in-proverbs/FE8E38BAC87C85476599B746D75FCBAE",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "literary-context",
+          "genre",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetic form, desire, perception, pedagogy, and complex moral character formation.",
+        "id": "stewart-poetic-ethics",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "The Book of Proverbs, Chapters 1-15",
+        "author": "Bruce K. Waltke",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2004,
+        "locator": "New International Commentary on the Old Testament, volume 1",
+        "url": "https://www.eerdmans.com/9780802825452/the-book-of-proverbs-chapters-1-15/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "canonical-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed literary, Hebrew, ancient Near Eastern, theological, and Christian commentary.",
+        "id": "waltke-proverbs-one-fifteen",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Instruction and Imagery in Proverbs 1-9",
+        "author": "Stuart Weeks",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Comparative study of instruction, paths, Wisdom, and the foreign woman",
+        "url": "https://academic.oup.com/book/11971",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "literary-context",
+          "major-themes",
+          "interpretive-disputes",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and comparative analysis of Proverbs 1-9 as instruction and of its gendered imagery.",
+        "id": "weeks-instruction-imagery",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "proverbs",
+        "type": "book",
+        "title": "Proverbs",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "what-is-biblical-wisdom",
+        "type": "faq",
+        "title": "What is biblical wisdom?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a26ad6bb1594c112c5328a9a5b363e323d3f1fd94ea9fd3ed95fe6e87d6f49aa",
+  "evidence_hash_version": "2"
+}

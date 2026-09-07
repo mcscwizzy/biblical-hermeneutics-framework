@@ -105,7 +105,7 @@ def discover_module_paths(root: Path) -> list[Path]:
     return sorted(
         p
         for p in root.rglob("*.md")
-        if not is_template(p) and p.name.lower() != "readme.md"
+        if not is_template(p) and p.name.lower() not in {"readme.md", "deprecated.md"}
     )
 
 

@@ -1,0 +1,1053 @@
+{
+  "passage_ref": "Isaiah 2",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "jerusalem",
+        "title": "Jerusalem",
+        "type": "place",
+        "aliases": [
+          "where is jerusalem",
+          "tell me about jerusalem",
+          "why is jerusalem important"
+        ],
+        "metadata": {
+          "summary": "The city of David, temple center, and prophetic symbol of God\u2019s reign, judgment, and future restoration.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 5:6-10",
+            "1 Kings 8:1-13",
+            "Psalms 122:1-9",
+            "Isaiah 2:1-4",
+            "Luke 19:41-44",
+            "Acts 1:4-14",
+            "Acts 2:1-13",
+            "Revelation 21:1-4",
+            "Revelation 21:22-27"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "isaiah-nations-empire",
+      "claim": "Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "oxford-handbook-isaiah",
+        "cambridge-ane-prophecy",
+        "cambridge-migration-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 2:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "jerusalem:ancient_near_east_context:0",
+      "claim": "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:hebraic_worldview:0",
+      "claim": "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:historical_context:0",
+      "claim": "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:0",
+      "claim": "city-of-david",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:1",
+      "claim": "zion",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:2",
+      "claim": "mount-zion",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:3",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:second_temple_context:0",
+      "claim": "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "micah-isaiah-parallel",
+      "claim": "Micah 4:1-3 and Isaiah 2:2-4 share close verbal material about Zion, divine instruction, international adjudication, and weapons transformed for agriculture.",
+      "category": "culture",
+      "source_ids": [
+        "micah-canonical-comparanda",
+        "kessler-micah",
+        "sbl-new-form-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 2:2-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-jerusalem:ancient_near_east_context:0",
+      "claim": "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "acts-1-2",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-jerusalem",
+        "parent_title": "What is the significance of Jerusalem?",
+        "parent_type": "faq",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-jerusalem:historical_context:0",
+      "claim": "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "acts-1-2",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 2:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-jerusalem",
+        "parent_title": "What is the significance of Jerusalem?",
+        "parent_type": "faq",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "2 Samuel 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-5",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Acts 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-1-2",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ancient Near Eastern Prophecy and the Study of Isaiah",
+        "author": "Jonathan St\u00f6kl",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 8",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/ancient-near-eastern-prophecy-and-the-study-of-isaiah/3B0E4F90F810DDF2B09BB57E186E25A5",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "genre",
+          "isaiah-nations-empire"
+        ],
+        "notes": "Comparative prophetic texts, literary compilation, and gender without assuming direct dependence.",
+        "id": "cambridge-ane-prophecy",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Migration in the Book of Isaiah",
+        "author": "C. L. Crouch",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 11",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/migration-in-the-book-of-isaiah/4C9BFF7B3BA5ABE66F2EF5100170B206",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "original-audience",
+          "isaiah-nations-empire",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Assyrian and Babylonian deportation, other forced movements, displacement, and literary reception.",
+        "id": "cambridge-migration-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-2",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Micah",
+        "author": "Rainer Kessler",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 34, pages 461-471",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373451",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "micah-composition",
+          "micah-structure"
+        ],
+        "notes": "Current overview of structure, long formation history, doom and hope, social critique, nations, gender, and trauma.",
+        "id": "kessler-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Luke 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-19",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Canonical Hebrew Bible comparanda for Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 2:2-4; Jeremiah 26:18-19; 2 Kings 17-20; 2 Chronicles 28-32; Torah; Psalms; Hosea; Amos; Jonah; Nahum",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "intertextuality",
+          "micah-jeremiah-reception",
+          "micah-isaiah-parallel",
+          "micah-assyrian-horizon"
+        ],
+        "notes": "Primary canonical comparanda; verbal parallel, quotation, background, and thematic relationship are kept distinct.",
+        "id": "micah-canonical-comparanda",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Psalm 122",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-122",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Revelation 21-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21-22",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "New Form Criticism and the Book of the Twelve",
+        "author": "Mark J. Boda; Michael H. Floyd; Colin M. Toffelmire, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2015,
+        "locator": "Open-access volume",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/9781628370614_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "micah-genre",
+          "micah-isaiah-parallel"
+        ],
+        "notes": "Scholarly source for form, genre, rhetoric, and the Twelve.",
+        "id": "sbl-new-form-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "jerusalem",
+        "type": "place",
+        "title": "Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "micah",
+        "type": "book",
+        "title": "Micah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "what-is-the-significance-of-jerusalem",
+        "type": "faq",
+        "title": "What is the significance of Jerusalem?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "383364239e3eccf12ce9745abf4c2b46be33155a34bd85e1a56473fcddd797d2",
+  "evidence_hash_version": "2"
+}

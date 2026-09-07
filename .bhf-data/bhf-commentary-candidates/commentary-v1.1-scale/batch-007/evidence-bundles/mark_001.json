@@ -1,0 +1,3474 @@
+{
+  "passage_ref": "Mark 1",
+  "entities": {
+    "people": [
+      {
+        "id": "jesus",
+        "title": "Jesus",
+        "type": "person",
+        "aliases": [
+          "who is jesus",
+          "tell me about jesus",
+          "why is jesus important"
+        ],
+        "metadata": {
+          "summary": "The incarnate Son, Messiah, and Lord whose life, death, resurrection, and reign fulfill Israel's story.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Mark 1:1-15",
+            "Luke 4:16-21",
+            "John 1:1-18",
+            "Philippians 2:5-11",
+            "Colossians 1:15-20",
+            "Hebrews 1:1-4",
+            "1 Corinthians 15:1-28"
+          ]
+        }
+      }
+    ],
+    "places": [
+      {
+        "id": "capernaum",
+        "title": "Capernaum",
+        "type": "place",
+        "aliases": [
+          "where is capernaum",
+          "tell me about capernaum",
+          "why is capernaum important"
+        ],
+        "metadata": {
+          "summary": "A fishing and farming settlement on the northwestern Sea of Galilee that Mark and Matthew present as a principal base for Jesus's Galilean ministry.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 4:12-17",
+            "Mark 1:21-34",
+            "Mark 2:1-12",
+            "Mark 9:33-37",
+            "John 6:16-24"
+          ]
+        }
+      },
+      {
+        "id": "galilee-1",
+        "title": "Galilee",
+        "type": "place",
+        "aliases": [
+          "where is galilee",
+          "tell me about galilee",
+          "why is galilee important"
+        ],
+        "metadata": {
+          "summary": "The northern region around the Sea of Galilee where the Gospels locate much of Jesus's proclamation, village ministry, travel, and disciple formation.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 4:12-25",
+            "Mark 1:14-39",
+            "Luke 4:14-44",
+            "John 2:1-12",
+            "John 6:1-24"
+          ]
+        }
+      }
+    ],
+    "groups": [
+      {
+        "id": "household",
+        "title": "Household",
+        "type": "institution",
+        "aliases": [
+          "household institution",
+          "household in scripture",
+          "household structure",
+          "household role"
+        ],
+        "metadata": {
+          "summary": "Household is a community institution that shapes shared life, worship, and instruction among God's people.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 1:29-34",
+            "Mark 2:1-12",
+            "Acts 16:25-34",
+            "Romans 16:1-16"
+          ]
+        }
+      },
+      {
+        "id": "synagogue",
+        "title": "Synagogue",
+        "type": "institution",
+        "aliases": [
+          "synagogue institution",
+          "synagogue in scripture",
+          "synagogue structure",
+          "synagogue role"
+        ],
+        "metadata": {
+          "summary": "A local Jewish assembly and institution used in varied pre-70 settings for Torah reading, instruction, communal affairs, hospitality, prayer, and debate.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 1:21-28",
+            "Luke 4:16-30",
+            "Acts 13:14-43",
+            "Acts 17:1-12",
+            "John 9:22",
+            "James 2:1-4"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "capernaum-domestic-remains",
+      "claim": "Excavation at lakeside Capernaum exposed dense domestic construction associated with the early Roman settlement beneath later monumental phases.",
+      "category": "archaeology",
+      "source_ids": [
+        "capernaum-national-park",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "capernaum",
+        "household",
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "capernaum-domestic-remains:passage-relevance",
+      "claim": "The remains provide local-scale comparison for the crowded house, roof access, shared courtyards, and household movement narrated in Mark 1-2.",
+      "category": "archaeology",
+      "source_ids": [
+        "capernaum-national-park",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "capernaum",
+        "household",
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "capernaum-domestic-remains"
+        ]
+      }
+    },
+    {
+      "id": "capernaum:ancient_near_east_context:0",
+      "claim": "Capernaum belongs to the Roman-period Galilean lake economy rather than a generalized ancient Near Eastern setting.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "capernaum:hebraic_worldview:0",
+      "claim": "Homes, Sabbath assembly, healing, hospitality, and communal reputation overlap in the Gospel episodes located here.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "capernaum:historical_context:0",
+      "claim": "Early Roman Capernaum consisted of basalt-built domestic compounds beside the lake and near regional routes. Archaeology supplies settlement context but cannot identify a particular excavated room as the house in Mark 2.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "capernaum:second_temple_context:0",
+      "claim": "The village was a Jewish settlement in the territory of Herod Antipas during Jesus's ministry; its later monumental synagogue must not be treated as the standing building of Mark 1.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "galilee-1:ancient_near_east_context:0",
+      "claim": "The relevant comparative setting is Early Roman Galilee within the southern Levant and Roman eastern Mediterranean.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:14-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "galilee-1:hebraic_worldview:0",
+      "claim": "Jewish village, household, synagogue, purity, festival, and subsistence practices shaped life while communities also participated in wider regional exchange.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:14-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "galilee-1:historical_context:0",
+      "claim": "During most of Jesus's ministry Galilee was governed by Herod Antipas, not by the Roman prefect of Judea. Its villages combined farming, fishing, craft production, local markets, and movement along lake and land routes.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:14-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "galilee-1:second_temple_context:0",
+      "claim": "Archaeology and texts indicate substantial Jewish practice alongside local variation; Galilee should be neither isolated from Judaism nor flattened into Jerusalem's institutions.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:14-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "gospel-galilean-households",
+      "claim": "Mark locates healing, teaching, hospitality, crowds, and conflict in village houses and describes movement between neighboring settlements.",
+      "category": "culture",
+      "source_ids": [
+        "galilean-gospel-passages",
+        "fiensy-daily-life",
+        "fiensy-strange-galilee"
+      ],
+      "related_entity_ids": [
+        "household",
+        "capernaum",
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "gospel-galilean-households:passage-relevance",
+      "claim": "The passages make domestic space and village networks integral to Jesus's Galilean activity rather than incidental scenery.",
+      "category": "culture",
+      "source_ids": [
+        "galilean-gospel-passages",
+        "fiensy-daily-life",
+        "fiensy-strange-galilee"
+      ],
+      "related_entity_ids": [
+        "household",
+        "capernaum",
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "gospel-galilean-households"
+        ]
+      }
+    },
+    {
+      "id": "household:ancient_near_east_context:0",
+      "claim": "Household is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "household-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "household"
+      ],
+      "passage_anchors": [
+        "Mark 1:29-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "household",
+        "parent_title": "Household",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "household:historical_context:0",
+      "claim": "Household belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered.",
+      "category": "history",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "household-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "household"
+      ],
+      "passage_anchors": [
+        "Mark 1:29-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "household",
+        "parent_title": "Household",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:ancient_near_east_context:0",
+      "claim": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:hebraic_worldview:0",
+      "claim": "Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:historical_context:0",
+      "claim": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:1",
+      "claim": "nazareth",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:3",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:second_temple_context:0",
+      "claim": "Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Mark 1:1-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:ancient_near_east_context:0",
+      "claim": "Biblical kingship is often set against empire, but the LORD\u2019s rule transcends and judges all earthly powers.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:hebraic_worldview:0",
+      "claim": "Kingdom language joins God's reign with justice, peace, obedience, and faithful kingship under his rule.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:historical_context:0",
+      "claim": "Kingdom language arises from Israel\u2019s confession that the LORD reigns and reaches its fullest expression in the Davidic promise and Jesus\u2019 proclamation.",
+      "category": "history",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:second_temple_context:0",
+      "claim": "Messianic expectation, foreign rule, and hopes of restoration sharpen the kingdom theme.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "magdala-fishing-and-harbor",
+      "claim": "Excavations at early Roman Magdala exposed a lakeside harbor zone, settlement remains, and a fish hook among the recovered objects.",
+      "category": "archaeology",
+      "source_ids": [
+        "magdala-excavation-2013",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:16-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "magdala-fishing-and-harbor:passage-relevance",
+      "claim": "The site supplies contemporary evidence that fishing, landing, storage, and transport were embedded in developed lakeside settlements near Gospel activity.",
+      "category": "archaeology",
+      "source_ids": [
+        "magdala-excavation-2013",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "Mark 1:16-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "magdala-fishing-and-harbor"
+        ]
+      }
+    },
+    {
+      "id": "malachi-new-testament",
+      "claim": "Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau language.",
+      "category": "culture",
+      "source_ids": [
+        "sblgnt",
+        "schart-malachi",
+        "early-christian-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:2-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "mark-anonymous-greek",
+      "claim": "The extant continuous Gospel is a Greek narrative whose internal narrator does not identify an author.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "cambridge-mark-introduction"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "mark-archaeology",
+      "claim": "Archaeology and documentary evidence illuminate Galilean villages, fishing, agriculture, roads, households, purity practices, Jerusalem, taxation, status, and Roman execution but rarely verify individual narrated episodes.",
+      "category": "archaeology",
+      "source_ids": [
+        "magness-archaeology",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:16-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "mark-christology",
+      "claim": "Mark portrays Jesus through Messiah, Son of God, Son of Man, teacher, healer, exorcist, servant, suffering figure, vindicated figure, and kingly categories without reducing them to one later doctrinal formula.",
+      "category": "culture",
+      "source_ids": [
+        "collins-mark",
+        "marcus-mark-8-16",
+        "mark-readers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-discipleship",
+      "claim": "The disciples are called, authorized, repeatedly uncomprehending, self-protective, and finally absent, making following on the way both gift and warning.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:16-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "mark-economic-world",
+      "claim": "Mark depicts hired labor, fishers, tolls, farms, tenants, debt, wealthy patrons, impoverished people, enslaved persons, widows, and elite extraction within unequal agrarian and imperial economies.",
+      "category": "politics",
+      "source_ids": [
+        "keddie-class-power",
+        "oxford-synoptics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-exorcism",
+      "claim": "Mark narrates hostile spirits and exorcisms within ancient conceptual worlds; these stories do not authorize diagnosing modern illness as demonic or replacing medical and mental-health care.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "oxford-synoptics",
+        "disabled-body"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "mark-genre",
+      "claim": "Mark is reasonably read in relation to ancient biography while also functioning as the genre-shaping narrative called Gospel.",
+      "category": "culture",
+      "source_ids": [
+        "collins-mark",
+        "marcus-mark-1-8"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "mark-kingdom",
+      "claim": "Jesus' opening proclamation declares God's kingdom near and calls for repentance and trust in the gospel.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "mark-manuscripts",
+      "claim": "P45, Sinaiticus, Vaticanus, Washingtonianus, later Greek manuscripts, lectionaries, and Old Latin, Syriac, Coptic, and other versions preserve an evolving textual history of Mark.",
+      "category": "history",
+      "source_ids": [
+        "p45",
+        "sinaiticus-mark",
+        "vaticanus",
+        "washingtonianus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 63
+      }
+    },
+    {
+      "id": "mark-opening-citation",
+      "claim": "Mark 1:2-3 places a composite scriptural citation drawing on Exodus, Malachi, and Isaiah under an Isaiah heading.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-1-8"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:2-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-secrecy",
+      "claim": "Commands to silence spirits, healed people, and disciples form a repeated pattern commonly called the messianic secret, but its narrative, historical, and theological explanations remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "marcus-mark-1-8",
+        "collins-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 33,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "mark-son-of-god-variant",
+      "claim": "The words 'Son of God' in Mark 1:1 have significant manuscript variation and must not bear the whole weight of Mark's Christology.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "ntvmr",
+        "sinaiticus-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "synagogue:ancient_near_east_context:0",
+      "claim": "The relevant evidence belongs to Hellenistic and Roman Jewish communities rather than generic Ancient Near Eastern village or sanctuary institutions.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "synagogue:hebraic_worldview:0",
+      "claim": "Synagogue gatherings expressed communal identity through Torah, instruction, prayer, hospitality, deliberation, and discipline alongside continued orientation toward Jerusalem's temple.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "synagogue:historical_context:0",
+      "claim": "Synagogues are epigraphically, archaeologically, and literarily attested before 70 CE in Judea and the diaspora, but their origin, architecture, leadership, and activities differed by place. An exilic origin is possible but not directly documented.",
+      "category": "history",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "synagogue:historical_setting:0",
+      "claim": "Hellenistic and Roman Jewish communities before and after 70 CE, with pre-70 evidence kept distinct from later standardized practice.",
+      "category": "history",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "synagogue:original_audience:0",
+      "claim": "Readers of the Gospels, Acts, and James encountering varied Jewish assembly settings in Judea and the diaspora.",
+      "category": "social",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "synagogue:second_temple_context:0",
+      "claim": "Theodotus attests a Jerusalem synagogue for Torah reading and teaching before 70 CE; the Gospels and Acts portray diverse local synagogue scenes in Galilee and the diaspora.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "Mark 1:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-god:ancient_near_east_context:0",
+      "claim": "Kingship language was familiar across the ancient world, but Scripture insists that the LORD\u2019s rule is the true and final kingdom.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-god",
+        "parent_title": "What is the Kingdom of God?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-god:historical_context:0",
+      "claim": "The phrase gathers Israel\u2019s royal psalms, prophetic hope, and Jesus\u2019 proclamation into one story of divine reign.",
+      "category": "history",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 1:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-god",
+        "parent_title": "What is the Kingdom of God?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 11-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-11-14",
+        "canonical_object_ids": [
+          "household",
+          "synagogue"
+        ]
+      },
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "household",
+          "jesus",
+          "synagogue"
+        ]
+      },
+      {
+        "title": "The Gospel of Mark",
+        "author": "Delbert Burkett",
+        "publisher": "Cambridge University Press",
+        "year": 2018,
+        "locator": "An Introduction to the New Testament and the Origins of Christianity, chapter 11",
+        "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/the-gospel-of-mark/4E533B5CA894B84D1E9D5A501AA74352",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "University introduction distinguishing anonymity, tradition, and historical analysis.",
+        "id": "cambridge-mark-introduction",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Capernaum",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "capernaum-historical-orientation",
+        "canonical_object_ids": [
+          "capernaum"
+        ]
+      },
+      {
+        "title": "Kfar Nahum (Capernaum) National Park: Archaeology and History",
+        "author": "",
+        "publisher": "Israel Nature and Parks Authority",
+        "year": null,
+        "locator": "Second Temple fishing village, domestic and later religious remains",
+        "url": "https://en.parks.org.il/reserve-park/kfar-nahum-capernaum-national-park/",
+        "source_type": "museum-collection",
+        "supports": [
+          "capernaum-domestic-remains"
+        ],
+        "notes": "Official site overview; later veneration claims are kept distinct from first-century occupation.",
+        "id": "capernaum-national-park",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Greco-Roman Culture and the Galilee of Jesus",
+        "author": "Mark A. Chancey",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "Chapters 1-6 on chronology, settlement, roads, language, and coinage",
+        "url": "https://doi.org/10.1017/CBO9780511487910",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Chronologically controlled synthesis of Greco-Roman material in Galilee.",
+        "id": "chancey-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Mark: A Commentary",
+        "author": "Adela Yarbro Collins",
+        "publisher": "Fortress Press",
+        "year": 2007,
+        "locator": "Hermeneia",
+        "url": "https://ms.fortresspress.com/downloads/9780800660789_The%20Catholic%20Biblical%20Quarterly_Review.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; linked scholarly review summarizes its major coverage.",
+        "id": "collins-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Daniel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-2",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Daniel 2-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-2-7",
+        "canonical_object_ids": [
+          "kingdom-theme"
+        ]
+      },
+      {
+        "title": "Daniel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Deuteronomy 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-6",
+        "canonical_object_ids": [
+          "household",
+          "synagogue"
+        ]
+      },
+      {
+        "title": "This Abled Body: Rethinking Disabilities in Biblical Studies",
+        "author": "Hector Avalos, Sarah J. Melcher, and Jeremy Schipper, editors",
+        "publisher": "SBL Press",
+        "year": 2007,
+        "locator": "Disability studies essays including Mark 5",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Avalos.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Disability-critical biblical interpretation.",
+        "id": "disabled-body",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Early Christian Reception of the Prophets",
+        "author": "Heine, Ronald E.",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211816065",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "malachi-new-testament"
+        ],
+        "notes": "Early Christian reading practices, worship, and prophetic interpretation.",
+        "id": "early-christian-prophets",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Exodus 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-15",
+        "canonical_object_ids": [
+          "kingdom-theme"
+        ]
+      },
+      {
+        "title": "Exodus 19-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-19-24",
+        "canonical_object_ids": [
+          "household",
+          "synagogue"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on dwellings, occupations, family, religion, mortality, and burial",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Archaeological synthesis focused on ordinary life rather than elite monuments.",
+        "id": "fiensy-daily-life",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilee in the Late Second Temple and Mishnaic Periods, Volumes 1-2",
+        "author": "David A. Fiensy and James Riley Strange, editors",
+        "publisher": "Fortress Press",
+        "year": 2015,
+        "locator": "Volume 1: village life, economics, roads, and households; Volume 2: Capernaum, Nazareth, and Magdala",
+        "url": "https://academic.oup.com/jts/article-pdf/69/2/765/26180095/fly066.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Multi-author archaeological and social-historical synthesis preserving scholarly disagreement.",
+        "id": "fiensy-strange-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilean household, agriculture, and lake passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Mark 1:16-4:41; 6:1-13; Luke 4:16-30; John 2:1-12; 6:1-24",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "galilean-gospel-passages",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Galilee 1",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "galilee-1-historical-orientation",
+        "canonical_object_ids": [
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Household",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "household-historical-orientation",
+        "canonical_object_ids": [
+          "household"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jesus-historical-orientation",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "John 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-21",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "G. Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Whole volume",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of class, extraction, status, and power in Roman Palestine.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Kingdom Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "kingdom-theme-historical-orientation",
+        "canonical_object_ids": [
+          "kingdom-theme"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Luke 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-24",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Magdala 2008",
+        "author": "Magdala Project excavation team",
+        "publisher": "Israel Antiquities Authority",
+        "year": 2013,
+        "locator": "Hadashot Arkheologiyot 125, License G-11/2008",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=5433&mag_=",
+        "source_type": "excavation-report",
+        "supports": [
+          "magdala-fishing-and-harbor"
+        ],
+        "notes": "Reports Early Roman pottery, a fish hook, and harbor remains; precise industrial scale remains debated.",
+        "id": "magdala-excavation-2013",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "The Archaeology of the Holy Land",
+        "author": "Jodi Magness",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Early Roman period",
+        "url": "https://www.cambridge.org/core/books/abs/archaeology-of-the-holy-land/early-roman-herodian-period-40-bce70-ce/0A26A9F4D24BE3BA15CB261FE3A171F7",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Archaeological synthesis for the early Roman setting.",
+        "id": "magness-archaeology",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 1-8",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300139792/mark-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 1-8.",
+        "id": "marcus-mark-1-8",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Mark 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Mark 1-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1-16",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark and His Readers: The Son of God among Jews",
+        "author": "Adela Yarbro Collins",
+        "publisher": "Cambridge University Press",
+        "year": 1999,
+        "locator": "Harvard Theological Review",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/mark-and-his-readers-the-son-of-god-among-jews/765FC451556FBA90D6D0E95A2E2E1679",
+        "source_type": "journal-article",
+        "supports": [
+          "original-audience",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of sonship and Jewish hearers.",
+        "id": "mark-readers",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Matthew 1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-28",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "year": null,
+        "locator": "Mark manuscript workspace",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalog, images, transcriptions, and textual data.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Synoptic Gospels",
+        "author": "Stephen P. Ahearne-Kroll, editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/45760",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative research on sources, manuscripts, bodies, power, healing, food, suffering, wealth, and gender.",
+        "id": "oxford-synoptics",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I, P45",
+        "author": "Frederic G. Kenyon",
+        "publisher": "Chester Beatty Library",
+        "year": 1933,
+        "locator": "Gospel fragments including Mark",
+        "url": "https://chesterbeatty.ie/assets/uploads/2018/11/Biblical-Papyri-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Papyrus-of-The-Greek-Bible-II-text-Opt.pdf",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Early third-century Gospel codex fragments and scholarly edition.",
+        "id": "p45",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Psalm 2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-2"
+          },
+          {
+            "title": "Psalm 2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-2"
+          }
+        ]
+      },
+      {
+        "title": "Revelation 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-11",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Romans 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-14",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 11; Matthew 17; Mark 1; Luke 1 and 7; Romans 9",
+        "url": "https://www.sbl-site.org/resources/digital-texts/",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "malachi-new-testament"
+        ],
+        "notes": "Critical Greek New Testament reading edition for explicit reception claims.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "malachi",
+          "mark"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Greek New Testament: SBL Edition",
+            "author": "Holmes, Michael W., editor",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Matthew 11; Matthew 17; Mark 1; Luke 1 and 7; Romans 9",
+            "url": "https://www.sbl-site.org/resources/digital-texts/",
+            "source_type": "reference-work",
+            "supports": [
+              "new-testament-connections",
+              "malachi-new-testament"
+            ],
+            "notes": "Critical Greek New Testament reading edition for explicit reception claims.",
+            "id": "sblgnt"
+          },
+          {
+            "title": "SBL Greek New Testament",
+            "author": "Michael W. Holmes",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Mark",
+            "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+            "source_type": "reference-work",
+            "supports": [
+              "greek-words",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Open critical Greek text.",
+            "id": "sblgnt"
+          }
+        ]
+      },
+      {
+        "title": "Malachi",
+        "author": "Schart, Aaron",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 40, pages 535-546",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373857",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "malachi-identity",
+          "malachi-persian-setting",
+          "malachi-disputation-form",
+          "malachi-final-shaping"
+        ],
+        "notes": "Specialist overview addressing textual transmission, Greek translation, disputations, redaction, historical economy, theology, and New Testament reception.",
+        "id": "schart-malachi",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Mark",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Mark, beginning folio 217b",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=34",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-century Greek manuscript images and transcription.",
+        "id": "sinaiticus-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Invention of the First-Century Synagogue: A Critical Examination of the Archaeological Evidence",
+        "author": "Lidia D. Matassa",
+        "publisher": "Society of Biblical Literature Press",
+        "year": 2018,
+        "locator": "Ancient Near East Monographs 22; literary, epigraphic, and archaeological evidence",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/12/9780884143208_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Open-access critical reassessment of pre-70 synagogue evidence.",
+        "id": "synagogue-historical-orientation",
+        "canonical_object_ids": [
+          "synagogue"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat.gr.1209",
+        "author": "",
+        "publisher": "Biblioteca Apostolica Vaticana",
+        "year": null,
+        "locator": "Greek Gospel manuscript",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-century Greek manuscript digital facsimile.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Codex Washingtonianus, Washington Manuscript III",
+        "author": "",
+        "publisher": "Smithsonian National Museum of Asian Art",
+        "year": null,
+        "locator": "Four Gospels, including Mark and Freer Logion",
+        "url": "https://archive.asia.si.edu/research/sets/biblical.asp",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-fifth-century Greek Gospel codex.",
+        "id": "washingtonianus",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "capernaum",
+        "type": "place",
+        "title": "Capernaum",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "galilean-villages-households-and-subsistence",
+        "type": "cultural_background",
+        "title": "Galilean Villages, Households, and Subsistence",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.958
+      },
+      {
+        "id": "galilee-1",
+        "type": "place",
+        "title": "Galilee",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "household",
+        "type": "institution",
+        "title": "Household",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "jesus",
+        "type": "person",
+        "title": "Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "kingdom-theme",
+        "type": "theme",
+        "title": "Kingdom Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "malachi",
+        "type": "book",
+        "title": "Malachi",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.955
+      },
+      {
+        "id": "synagogue",
+        "type": "institution",
+        "title": "Synagogue",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "what-is-the-kingdom-of-god",
+        "type": "faq",
+        "title": "What is the Kingdom of God?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ee21b3c13ddb9487a76a379a8979ab76c7309c4a527495a8ec406ef792e24f53",
+  "evidence_hash_version": "2"
+}

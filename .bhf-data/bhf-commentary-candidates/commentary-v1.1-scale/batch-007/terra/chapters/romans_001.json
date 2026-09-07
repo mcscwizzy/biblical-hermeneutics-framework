@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 1",
+  "book": "Romans",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_19",
+          "text": "Read the chapter with this setting in view: Romans does not authorize anti-Roman or anti-Italian racism; critique of empire and governing power concerns institutions and conduct, not ethnic contempt. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:70"
+          ],
+          "verse_refs": [
+            "Romans 1:7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_20",
+          "text": "For its historical and cultural setting, note that Romans 1:16-17 presents the gospel as divine power for salvation to Jew first and also Greek and links it to the revelation of God's righteousness through Habakkuk. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-thesis"
+          ],
+          "verse_refs": [
+            "Romans 1:16-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_21",
+          "text": "For its historical and cultural setting, note that Romans 1:18-32 employs ancient Jewish and Greco-Roman categories of idolatry, passions, gender, nature, status, and acts rather than the modern psychological category of sexual orientation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans-sexuality"
+          ],
+          "verse_refs": [
+            "Romans 1:18-32"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_20",
+          "text": "A literary feature to notice is that Romans serves overlapping aims of gospel exposition, mission self-presentation, Rome and Spain travel, collection legitimation, and communal welcome rather than one demonstrable purpose. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-purpose"
+          ],
+          "verse_refs": [
+            "Romans 1:8-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_20",
+          "text": "For the chapter's sequence and setting, note that approximately 60s CE: conventional horizon for Acts' Roman custody This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "rome:timeline:3"
+          ],
+          "verse_refs": [
+            "Romans 1:7-15"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "49c646c803dc3587bb1012553857a69bdfbfc0ea2389e456a3495b3d6f3d2084",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

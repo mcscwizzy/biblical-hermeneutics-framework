@@ -1,0 +1,374 @@
+{
+  "passage_ref": "Psalms 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "resurrection",
+        "title": "Resurrection",
+        "type": "event",
+        "aliases": [
+          "what happened in resurrection",
+          "tell me about resurrection",
+          "why is resurrection important"
+        ],
+        "metadata": {
+          "summary": "The bodily raising of Jesus from the dead on the third day, central to Christian proclamation and hope.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Psalms 16:8-11",
+            "Matthew 28:1-20",
+            "Luke 24:1-53",
+            "John 20:1-31",
+            "Acts 2:22-36",
+            "Romans 6:1-11",
+            "1 Corinthians 15:1-28",
+            "1 Peter 1:3-5"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "resurrection:ancient_near_east_context:0",
+      "claim": "The event is announced within a world where death was final, making the claim of bodily resurrection a startling theological and historical assertion.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-16",
+        "matthew-28",
+        "luke-24",
+        "john-20",
+        "acts-2",
+        "1-corinthians-15",
+        "romans-6"
+      ],
+      "related_entity_ids": [
+        "resurrection"
+      ],
+      "passage_anchors": [
+        "Psalms 16:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "resurrection",
+        "parent_title": "Resurrection",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "resurrection:historical_context:0",
+      "claim": "The resurrection is proclaimed in the earliest Christian preaching as the vindication of Jesus and the launch of new-creation hope.",
+      "category": "history",
+      "source_ids": [
+        "psalm-16",
+        "matthew-28",
+        "luke-24",
+        "john-20",
+        "acts-2",
+        "1-corinthians-15",
+        "romans-6"
+      ],
+      "related_entity_ids": [
+        "resurrection"
+      ],
+      "passage_anchors": [
+        "Psalms 16:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "resurrection",
+        "parent_title": "Resurrection",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-resurrection:ancient_near_east_context:0",
+      "claim": "The claim stands out in a world where death was treated as final, making bodily resurrection a startling theological and historical announcement.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-16",
+        "matthew-28",
+        "luke-24",
+        "john-20",
+        "acts-2",
+        "1-corinthians-15",
+        "romans-6"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 16:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-resurrection",
+        "parent_title": "What is the significance of the Resurrection?",
+        "parent_type": "faq",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-resurrection:historical_context:0",
+      "claim": "The resurrection is proclaimed in the earliest Christian witness as the vindication of Jesus and the beginning of new-creation hope.",
+      "category": "history",
+      "source_ids": [
+        "psalm-16",
+        "matthew-28",
+        "luke-24",
+        "john-20",
+        "acts-2",
+        "1-corinthians-15",
+        "romans-6"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 16:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-resurrection",
+        "parent_title": "What is the significance of the Resurrection?",
+        "parent_type": "faq",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      },
+      {
+        "title": "John 20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-20",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      },
+      {
+        "title": "Matthew 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-28",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      },
+      {
+        "title": "Psalm 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-16",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      },
+      {
+        "title": "Romans 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-6",
+        "canonical_object_ids": [
+          "resurrection",
+          "what-is-the-significance-of-the-resurrection"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "resurrection",
+        "type": "event",
+        "title": "Resurrection",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "what-is-the-significance-of-the-resurrection",
+        "type": "faq",
+        "title": "What is the significance of the Resurrection?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "325331d8ab16bcf9eab222046ac4f7264030a88fe64dba3103a7da7fd558e86b",
+  "evidence_hash_version": "2"
+}

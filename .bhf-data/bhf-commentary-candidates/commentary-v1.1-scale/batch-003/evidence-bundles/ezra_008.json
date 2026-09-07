@@ -1,0 +1,404 @@
+{
+  "passage_ref": "Ezra 8",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "return-from-exile",
+        "title": "Return from Exile",
+        "type": "event",
+        "aliases": [
+          "what happened in return from exile",
+          "tell me about return from exile",
+          "why is return from exile important"
+        ],
+        "metadata": {
+          "summary": "A series of Persian-period movements from Babylonia to Judah, beginning in Ezra's Cyrus-era horizon and continuing through later groups, that restored settlement and worship without emptying the diaspora or restoring an independent monarchy.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Chronicles 36:22-23",
+            "Ezra 1:1-11",
+            "Ezra 2:1-70",
+            "Ezra 7:1-28",
+            "Ezra 8:1-36"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezra-ahava-journey",
+      "claim": "Ezra gathers returnees at Ahava, recruits needed Levites, proclaims a fast rather than requesting a military escort, entrusts gifts by weight, and credits God for safe arrival.",
+      "category": "history",
+      "source_ids": [
+        "ezra-1-10",
+        "fensham-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 8:1-36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezra",
+        "parent_title": "Ezra",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "return-from-exile:ancient_near_east_context:0",
+      "claim": "Return occurred within Achaemenid imperial government through royal authorization, provincial officials, temple patronage, taxation, written decrees, and travel across imperial routes. The Cyrus Cylinder offers Babylonian comparative restoration rhetoric but does not name Judah.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 8:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "return-from-exile:hebraic_worldview:0",
+      "claim": "Ezra portrays return as the LORD stirring rulers and people, preserving a remnant, restoring vessels and sacrifice, and calling the community to covenant faithfulness. Imperial permission is a means within that presentation, not its theological source.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 8:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "return-from-exile:historical_context:0",
+      "claim": "After Cyrus captured Babylon in 539 BCE, Ezra presents authorization and support for return toward Jerusalem. The narrative distinguishes an early return and temple community from Ezra's later Artaxerxes-era journey; dates, group sizes, and the historical form of the decrees remain debated.",
+      "category": "history",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 8:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "return-from-exile:second_temple_context:0",
+      "claim": "Return established and enlarged an early Second Temple community concerned with worship, genealogy, land, Torah, taxation, and boundaries while many Judeans continued living throughout the empire.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 8:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "publisher": "Brill",
+        "year": 2020,
+        "locator": "Chapters on Judeans under Babylonian and Persian rule",
+        "url": "https://doi.org/10.1163/9789004365421",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence for continuing Judean communities in Babylonia.",
+        "id": "alstola-return-diaspora",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      },
+      {
+        "title": "The Cyrus Cylinder",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 90920; collection object 1880,0617.1941",
+        "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative Babylonian evidence; it does not mention Judah.",
+        "id": "bm-cyrus-return",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      },
+      {
+        "title": "Ezra 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-10:44",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "ezra-cyrus-return",
+          "ezra-altar-temple",
+          "ezra-opposition-darius",
+          "ezra-temple-passover",
+          "ezra-torah-vocation",
+          "ezra-ahava-journey",
+          "ezra-confession-reform"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ezra-1-10",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36:22-23 and Ezra 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-8:36",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical return narratives; no modern translation is reproduced.",
+        "id": "ezra-return-text",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      },
+      {
+        "title": "The Books of Ezra and Nehemiah",
+        "author": "F. Charles Fensham",
+        "publisher": "Eerdmans",
+        "year": 1983,
+        "locator": "NICOT introduction, translation, and commentary",
+        "url": "https://www.eerdmans.com/9780802882288/the-books-of-ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "genre",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary emphasizing Semitic language, ancient Near Eastern context, historical background, theology, and major interpretive options.",
+        "id": "fensham-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, commentary on Ezra 1-8",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Technical commentary on chronology, sources, documents, and return groups.",
+        "id": "williamson-return",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezra",
+        "type": "book",
+        "title": "Ezra",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "return-from-exile",
+        "type": "event",
+        "title": "Return from Exile",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9b098a2f6c3fddc0d34fd390efcd0185c7e0aeb043a575fb041867616b77b2ca",
+  "evidence_hash_version": "2"
+}

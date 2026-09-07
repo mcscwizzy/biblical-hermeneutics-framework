@@ -1,0 +1,83 @@
+{
+  "reference": "Judges 8",
+  "book": "Judges",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_3",
+          "text": "Read the chapter with this setting in view: Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "judges-literary-movement"
+          ],
+          "verse_refs": [
+            "Judges 8:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social collapse, not supplied as moral templates for imitation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "judges:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "Judges 8:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_5",
+          "text": "For its historical and cultural setting, note that Archaeology and settlement studies do not produce one uncontested chronology or historical model for all episodes in Judges. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "judges:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "Judges 8:1-35"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_4",
+          "text": "A literary feature to notice is that Gideon's narrative and Abimelech's kingship form a turning point in which deliverance becomes entangled with dynastic ambition, idolatry, and violence within Israel. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "judges-gideon-abimelech-turn"
+          ],
+          "verse_refs": [
+            "Judges 8:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "efe43dd941e05c538028200e1c989cde76736711995026956cfd9f8c6a218824",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "reference": "2 Samuel 12",
+  "book": "2 Samuel",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_119",
+          "text": "Read the chapter with this setting in view: The narrator declares David's action displeasing to the LORD, and Nathan identifies David as the rich man who took from the poor man and had Uriah killed. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-samuel-david-condemned"
+          ],
+          "verse_refs": [
+            "2 Samuel 12:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_120",
+          "text": "For its historical and cultural setting, note that David summons and takes Bathsheba while exercising royal power, then engineers Uriah's death; the narrative condemns David and should not be retold as a harmless mutual romance. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2-samuel:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "2 Samuel 12:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_120",
+          "text": "A literary feature to notice is that Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "second-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Samuel 12:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b3ae49e9bba3d1a6347d830f7bc42d93726e5c7130d29ed24ee9328b3c4b4b9b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

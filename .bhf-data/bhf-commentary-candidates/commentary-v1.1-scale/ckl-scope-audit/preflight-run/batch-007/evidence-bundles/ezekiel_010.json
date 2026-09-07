@@ -1,0 +1,971 @@
+{
+  "passage_ref": "Ezekiel 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-glory-departure-return",
+      "claim": "Ezekiel narrates YHWH's glory moving from the defiled Jerusalem temple and city in chapters 8-11 and returning to the visionary sanctuary in chapter 43.",
+      "category": "culture",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "greenberg-ezekiel-1-20",
+        "block-ezekiel-25-48"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "ezekiel-throne-vision",
+      "claim": "The inaugural vision uses repeated likeness and appearance language for storm, living creatures, wheels, expanse, throne, human-like figure, radiance, and the glory of YHWH.",
+      "category": "history",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "greenberg-ezekiel-1-20",
+        "bodi-mesopotamian-context"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "temple-symbol:ancient_near_east_context:0",
+      "claim": "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:hebraic_worldview:0",
+      "claim": "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:historical_context:0",
+      "claim": "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:historical_setting:0",
+      "claim": "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation",
+      "category": "history",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:key_places:0",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:key_places:1",
+      "claim": "zion",
+      "category": "geography",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:key_places:2",
+      "claim": "holy-place-2",
+      "category": "geography",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:key_places:3",
+      "claim": "most-holy-place-2",
+      "category": "geography",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:original_audience:0",
+      "claim": "Readers tracing worship and divine presence across the canon",
+      "category": "social",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:second_temple_context:0",
+      "claim": "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:timeline:0",
+      "claim": "Tabernacle presence in the wilderness",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:timeline:1",
+      "claim": "Solomon's temple dedicated in Jerusalem",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:timeline:2",
+      "claim": "Temple judged and destroyed",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:timeline:3",
+      "claim": "Second Temple worship restored",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:timeline:4",
+      "claim": "Jesus identifies himself with temple fulfillment",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-symbol:timeline:5",
+      "claim": "New Jerusalem has no temple because God and the Lamb dwell there",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "john-2",
+        "revelation-21",
+        "temple-symbol-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 10:18-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-symbol",
+        "parent_title": "Temple Symbol",
+        "parent_type": "symbol",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "temple-symbol"
+        ]
+      },
+      {
+        "title": "The Book of Ezekiel, Chapters 25-48",
+        "author": "Daniel I. Block",
+        "publisher": "Eerdmans",
+        "year": 1998,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9781467423717/the-book-of-ezekiel-chapters-2548/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "structure",
+          "ezekiel-practical-outline",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones",
+          "ezekiel-gog",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Extensive evangelical commentary on Ezekiel 25-48.",
+        "id": "block-ezekiel-25-48",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "The Mesopotamian Context of Ezekiel",
+        "author": "Daniel Bodi",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 3",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "ezekiel-throne-vision"
+        ],
+        "notes": "Comparative literary, philological, and iconographic context.",
+        "id": "bodi-mesopotamian-context",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Exodus 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-25",
+        "canonical_object_ids": [
+          "temple-symbol"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel 1-20",
+        "author": "Moshe Greenberg",
+        "publisher": "Yale University Press",
+        "year": 1983,
+        "locator": "Anchor Yale Bible 22",
+        "url": "https://yalebooks.yale.edu/book/9780300139662/ezekiel-1-20/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "hebrew-words",
+          "ezekiel-superscription-call",
+          "ezekiel-throne-vision",
+          "ezekiel-call-watchman",
+          "ezekiel-glory-departure-return",
+          "ezekiel-responsibility"
+        ],
+        "notes": "Detailed holistic Jewish commentary on Ezekiel 1-20.",
+        "id": "greenberg-ezekiel-1-20",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "John 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-2",
+        "canonical_object_ids": [
+          "temple-symbol"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "temple-symbol"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Temple Symbol",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Recurring symbol from Genesis to Revelation",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "temple-symbol-historical-orientation",
+        "canonical_object_ids": [
+          "temple-symbol"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "temple-symbol",
+        "type": "symbol",
+        "title": "Temple Symbol",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "85a254bb8b6ede76abf0e5a1b98f710e0dda93d2f0231400d61c3d776a737899",
+  "evidence_hash_version": "2"
+}

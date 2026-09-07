@@ -149,6 +149,41 @@ GENRE_MAP: dict[str, GenreContext] = {
     ),
 }
 
+# Complete canonical coverage is kept separately from the richer guidance
+# entries above.  This prevents an omitted book name (notably Song of Songs)
+# from falling through to a low-confidence or narrative default.
+CANONICAL_BOOK_GENRE_BUCKETS: dict[str, str] = {
+    **{book: "Torah" for book in {"Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"}},
+    **{
+        book: "narrative"
+        for book in {
+            "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
+            "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Acts",
+        }
+    },
+    **{book: "wisdom literature" for book in {"Job", "Proverbs", "Ecclesiastes"}},
+    **{book: "poetry" for book in {"Psalms", "Song of Songs", "Lamentations"}},
+    **{
+        book: "prophecy"
+        for book in {
+            "Isaiah", "Jeremiah", "Ezekiel", "Hosea", "Joel", "Amos", "Obadiah",
+            "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai",
+            "Zechariah", "Malachi",
+        }
+    },
+    **{book: "apocalyptic" for book in {"Daniel", "Revelation"}},
+    **{book: "Gospel" for book in {"Matthew", "Mark", "Luke", "John"}},
+    **{
+        book: "epistle"
+        for book in {
+            "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
+            "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians",
+            "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James",
+            "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude",
+        }
+    },
+}
+
 NARRATIVE_BOOKS = {
     "Joshua",
     "Judges",
@@ -224,6 +259,15 @@ def classify_genre(reference: ReferenceContext) -> GenreContext:
                 confidence=genre.confidence,
             )
         return genre
+    if reference.book in CANONICAL_BOOK_GENRE_BUCKETS:
+        primary = CANONICAL_BOOK_GENRE_BUCKETS[reference.book]
+        return GenreContext(
+            primary_genre=primary,
+            secondary_genres=[],
+            historical_context_hint=f"{primary} literary and historical context",
+            recommended_modules=[f"genre.{primary.casefold().replace(' ', '-')}"],
+            confidence=0.8,
+        )
     if reference.book in NARRATIVE_BOOKS:
         return GenreContext(
             "narrative",

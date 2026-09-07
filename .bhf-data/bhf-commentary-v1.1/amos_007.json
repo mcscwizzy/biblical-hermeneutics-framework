@@ -1,0 +1,83 @@
+{
+  "reference": "Amos 7",
+  "book": "Amos",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_126",
+          "text": "Read the chapter with this setting in view: The book contains eighth-century historical signals alongside signs of collection and later interpretation, but no single redactional reconstruction commands consensus. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "amos-composition-final-form"
+          ],
+          "verse_refs": [
+            "Amos 7:10-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_127",
+          "text": "For its historical and cultural setting, note that Amos 7:10-17 shifts to third-person narrative: Amaziah reports Amos to Jeroboam, orders him to flee to Judah and cease at Bethel, and receives Amos's judgment speech. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "amos-amaziah-bethel"
+          ],
+          "verse_refs": [
+            "Amos 7:10-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_128",
+          "text": "For its historical and cultural setting, note that Judgment, exile, and divine violence in Amos require lament and ethical scrutiny; readers are not authorized to enact vengeance, war, coercion, or punishment in the prophet's name. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "amos:interpretive_note:38"
+          ],
+          "verse_refs": [
+            "Amos 7:10-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_127",
+          "text": "A literary feature to notice is that The terms noqed, boqer, and dresser of sycamore figs associate Amos with livestock and arboriculture but do not securely determine his wealth, poverty, profession, or landholding. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "amos-occupation"
+          ],
+          "verse_refs": [
+            "Amos 7:10-17"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b16bff63f59a877f4b838db9ec87c14e5f8ded621a8d48738a6021e1c664dafa",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

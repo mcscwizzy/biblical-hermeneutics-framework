@@ -1,0 +1,101 @@
+{
+  "reference": "Ephesians 2",
+  "book": "Ephesians",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_55",
+          "text": "Read the chapter with this setting in view: Gentile and Jewish believers are portrayed together as citizens, household members, and a growing holy temple. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "eph-temple"
+          ],
+          "verse_refs": [
+            "Ephesians 2:19-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_56",
+          "text": "For its historical and cultural setting, note that \u201cUncircumcision\u201d reports social labeling and cannot license ethnic contempt or coercive circumcision or anti-circumcision. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "ephesians:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Ephesians 2:11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_57",
+          "text": "For its historical and cultural setting, note that Household and temple metaphors describe a community and do not validate nationalism, territorial claims, forced conversion, or sacred-building power. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "ephesians:interpretive_note:14"
+          ],
+          "verse_refs": [
+            "Ephesians 2:19-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_56",
+          "text": "A literary feature to notice is that The gender and syntax of \u201cthis\u201d in 2:8 do not by themselves identify faith alone as the gift. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-faith-grammar"
+          ],
+          "verse_refs": [
+            "Ephesians 2:8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_56",
+          "text": "For a later or comparative connection, note that Later uses of Ephesians for antisemitism, marital domination, child abuse, slavery, or violent spiritual warfare exceed and can contradict its peace, love, truth, and nonthreatening commands. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-reception"
+          ],
+          "verse_refs": [
+            "Ephesians 2:11-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "754f0e0f933535c1fa4777193312e7cf3429f909192ac934aeb28f3c00432182",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

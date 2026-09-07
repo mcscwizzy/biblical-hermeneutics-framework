@@ -1,0 +1,65 @@
+{
+  "reference": "Psalms 84",
+  "book": "Psalms",
+  "chapter": 84,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_5",
+          "text": "Read the chapter with this setting in view: The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-the-temple:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 84:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_6",
+          "text": "For its historical and cultural setting, note that Temples were common in the ancient world, but Israel\u2019s temple is defined by covenant holiness and the one true God. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-temple:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 84:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_7",
+          "text": "For its historical and cultural setting, note that The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-significance-of-the-temple:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 84:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8296c9f756b2d245f4d2c4663ead93acc3b2838f45d6730aeb397710a6547a5c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

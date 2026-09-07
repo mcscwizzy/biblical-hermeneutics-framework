@@ -1,0 +1,326 @@
+{
+  "passage_ref": "Matthew 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "qumran-caves",
+        "title": "Qumran Caves",
+        "type": "archaeology",
+        "aliases": [
+          "qumran caves artifact",
+          "qumran caves discovery",
+          "qumran caves excavation",
+          "qumran caves find"
+        ],
+        "metadata": {
+          "summary": "Qumran caves and manuscript recovery illuminates the biblical world through material remains and historical context.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 40:1-11",
+            "Daniel 7:1-28",
+            "Matthew 3:1-12",
+            "Luke 3:1-18"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-baptism-temptation",
+      "claim": "Matthew presents baptism and wilderness testing as Spirit-marked sonship interpreted through scriptural voices and Deuteronomy.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-septuagint",
+        "deines-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 3:13-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "qumran-caves:ancient_near_east_context:0",
+      "claim": "Ancient background for Qumran Caves includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40:1-11, Daniel 7:1-28, qumran-archaeological-site, and dead-sea-scrolls without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "qumran-caves-and-manuscript-recovery",
+        "isaiah-40-1-11",
+        "daniel-7-1-28",
+        "archaeological-survey-and-historical-background"
+      ],
+      "related_entity_ids": [
+        "qumran-caves"
+      ],
+      "passage_anchors": [
+        "Matthew 3:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "qumran-caves",
+        "parent_title": "Qumran Caves",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "qumran-caves:historical_context:0",
+      "claim": "Qumran Caves helps anchor the biblical world in physical evidence and archaeological context.",
+      "category": "history",
+      "source_ids": [
+        "qumran-caves-and-manuscript-recovery",
+        "isaiah-40-1-11",
+        "daniel-7-1-28",
+        "archaeological-survey-and-historical-background"
+      ],
+      "related_entity_ids": [
+        "qumran-caves"
+      ],
+      "passage_anchors": [
+        "Matthew 3:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "qumran-caves",
+        "parent_title": "Qumran Caves",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Archaeological survey and historical background",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "archaeological-survey-and-historical-background",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "Daniel 7:1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7-1-28",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Isaiah 40:1-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-40-1-11",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Septuagint passages received in Matthew",
+        "author": "",
+        "publisher": "Society of Biblical Literature / German Bible Society",
+        "year": null,
+        "locator": "Greek Genesis through Malachi comparanda",
+        "url": "https://www.sbl-site.org/resources/digital-texts/",
+        "source_type": "scripture",
+        "supports": [
+          "greek-words",
+          "intertextuality",
+          "matthew-scripture-use",
+          "matthew-isaiah-714"
+        ],
+        "notes": "Ancient Greek Jewish scriptural tradition used for comparison with Matthean citations.",
+        "id": "matthew-septuagint",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Qumran caves and manuscript recovery",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "qumran-caves-and-manuscript-recovery",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "qumran-caves",
+        "type": "archaeology",
+        "title": "Qumran Caves",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8213ee510836748014074346b3a74113fe422a2aaa3a1fea31f9b8b8861c82c2",
+  "evidence_hash_version": "2"
+}

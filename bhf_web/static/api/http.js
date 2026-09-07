@@ -3,7 +3,7 @@
   // the UI adopts a newer published corpus so an older IndexedDB entry cannot
   // silently appear as current commentary while offline.
   const COMMENTARY_RELEASE = String(
-    window.BHFRuntimeConfig?.commentaryRelease || "commentary-v1.0"
+    window.BHFRuntimeConfig?.commentaryRelease || "commentary-v1.1"
   );
   const backendRouting = window.BHFBackendRouting || {};
 

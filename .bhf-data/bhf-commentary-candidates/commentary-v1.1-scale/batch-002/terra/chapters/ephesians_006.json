@@ -1,0 +1,101 @@
+{
+  "reference": "Ephesians 6",
+  "book": "Ephesians",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_91",
+          "text": "Read the chapter with this setting in view: Ephesians addresses enslaved people and enslavers without abolishing Roman slavery; the passage cannot legitimate ownership or modern worker exploitation. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "eph-slavery"
+          ],
+          "verse_refs": [
+            "Ephesians 6:5-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_92",
+          "text": "For its historical and cultural setting, note that Ephesus had prominent Artemis institutions, but Ephesians never names Artemis and its imagery cannot be reduced to that cult. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-artemis"
+          ],
+          "verse_refs": [
+            "Ephesians 6:12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_93",
+          "text": "For its historical and cultural setting, note that Tychicus is named as beloved sibling and faithful minister sent to report and encourage. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "eph-tychicus"
+          ],
+          "verse_refs": [
+            "Ephesians 6:21-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_92",
+          "text": "A literary feature to notice is that Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-colossians"
+          ],
+          "verse_refs": [
+            "Ephesians 6:1-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_92",
+          "text": "For a later or comparative connection, note that Roman households joined kinship, marriage, children, property, labor, freed status, enslavement, dependency, and cult in variable and coercively unequal arrangements. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "household-slavery-status-comparison"
+          ],
+          "verse_refs": [
+            "Ephesians 6:1-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0c837095395b3b11900b1d8232d65605269227c52be2de49eed5a6d121ebd1ed",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

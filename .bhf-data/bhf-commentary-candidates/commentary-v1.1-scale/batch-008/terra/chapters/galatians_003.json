@@ -1,0 +1,101 @@
+{
+  "reference": "Galatians 3",
+  "book": "Galatians",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_90",
+          "text": "Read the chapter with this setting in view: Baptismal clothing and unity in Messiah are ecclesial metaphors rooted in a ritual practice; they must not be confused with forced baptism or colonial conversion. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "galatians:interpretive_note:26"
+          ],
+          "verse_refs": [
+            "Galatians 3:26-29"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_91",
+          "text": "For its historical and cultural setting, note that The curse sequence draws on Deuteronomy and crucifixion language; it does not declare Jews, Jewish bodies, Torah scrolls, or Torah observance cursed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "galatians:interpretive_note:21"
+          ],
+          "verse_refs": [
+            "Galatians 3:10-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_92",
+          "text": "For its historical and cultural setting, note that Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "gal-destination"
+          ],
+          "verse_refs": [
+            "Galatians 3:1"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_91",
+          "text": "A literary feature to notice is that Works of Torah in Galatians concern practices required by Torah, prominently circumcision in the crisis, but whether the phrase denotes Torah-observance generally, identity practices, human performance, or overlapping categories is disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "gal-works-torah"
+          ],
+          "verse_refs": [
+            "Galatians 3:2-10"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_91",
+          "text": "For the chapter's sequence and setting, note that The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims. This gives the reader a frame for the passage without deciding every larger reconstruction. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-letters-chronology-spirit"
+          ],
+          "verse_refs": [
+            "Galatians 3:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a3c2d6fd22f425283dcbf162a469b351f216fe2fc9293b0acbd3dbc043c78401",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

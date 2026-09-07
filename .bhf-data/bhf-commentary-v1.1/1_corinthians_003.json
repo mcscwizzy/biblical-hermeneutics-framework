@@ -1,0 +1,101 @@
+{
+  "reference": "1 Corinthians 3",
+  "book": "1 Corinthians",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_141",
+          "text": "Read the chapter with this setting in view: The temple image in 3:16-17 addresses the community collectively. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1cor-temple"
+          ],
+          "verse_refs": [
+            "1 Corinthians 3:16-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_142",
+          "text": "For its historical and cultural setting, note that The temple in 3:16-17 is grammatically communal; individual-body temple language appears later in 6:19. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1-corinthians:interpretive_note:10"
+          ],
+          "verse_refs": [
+            "1 Corinthians 3:16-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_143",
+          "text": "For its historical and cultural setting, note that Paul and Apollos are servants through whom the audience believed, while God gives growth. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "servants-not-founders"
+          ],
+          "verse_refs": [
+            "1 Corinthians 3:1-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_142",
+          "text": "A literary feature to notice is that Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1cor-wisdom"
+          ],
+          "verse_refs": [
+            "1 Corinthians 3:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_142",
+          "text": "For the chapter's sequence and setting, note that New Jerusalem has no temple because God and the Lamb dwell there This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "temple-symbol:timeline:5"
+          ],
+          "verse_refs": [
+            "1 Corinthians 3:16-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "285b415cfa3dc6bcca71edab966f939c7f18c0a670697d776520b9b7f16de0a8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

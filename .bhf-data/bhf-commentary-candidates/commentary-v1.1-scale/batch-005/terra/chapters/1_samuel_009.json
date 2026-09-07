@@ -1,0 +1,53 @@
+{
+  "reference": "1 Samuel 9",
+  "book": "1 Samuel",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_24",
+          "text": "Read the chapter with this setting in view: First Samuel presents monarchy as granted by the LORD while warning that king and people remain obligated to fear, serve, and obey the LORD. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "first-samuel-accountable-monarchy"
+          ],
+          "verse_refs": [
+            "1 Samuel 9:15-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_25",
+          "text": "For its historical and cultural setting, note that First Samuel 8-12 preserves both severe criticism of Israel's request and positive divine selection and empowerment of Saul; the final form presents monarchy as permitted but covenantally accountable rather than simply good or evil. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 9:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "eb81202a827fbc06d58ec285a49c597c247383e7c49ac8da34615b680e632851",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

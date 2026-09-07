@@ -1,0 +1,65 @@
+{
+  "reference": "Deuteronomy 10",
+  "book": "Deuteronomy",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 10:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Deuteronomy 10:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Historically, Sodom belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "sodom:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 10:6-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fd862e7216199d18be9030ac25b3d3894387a05f448f929f7d0b4513239fd7d4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

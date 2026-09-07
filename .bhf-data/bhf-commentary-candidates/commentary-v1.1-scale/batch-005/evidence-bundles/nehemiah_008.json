@@ -1,0 +1,1180 @@
+{
+  "passage_ref": "Nehemiah 8",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "scribes",
+        "title": "Scribes",
+        "type": "institution",
+        "aliases": [
+          "scribes institution",
+          "scribes in scripture",
+          "scribes structure",
+          "scribes role"
+        ],
+        "metadata": {
+          "summary": "Literate specialists whose work could include administration, document production, textual study, teaching, legal interpretation, counsel, and public authority across different biblical periods.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 22:3-13",
+            "Ezra 7:1-10",
+            "Nehemiah 8:1-18",
+            "Mark 7:1-23",
+            "Mark 12:28-34",
+            "Matthew 23:1-36"
+          ]
+        }
+      },
+      {
+        "id": "second-temple-administration",
+        "title": "Second Temple Administration",
+        "type": "institution",
+        "aliases": [
+          "Second Temple leadership",
+          "Jerusalem temple administration",
+          "priests scribes and councils",
+          "Jewish institutions under Persia and Rome"
+        ],
+        "metadata": {
+          "summary": "The changing network of temple personnel, high priests, scribes, elders, local assemblies, councils, and imperial authorities that ordered Jewish public life from Persian restoration to 70 CE.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Ezra 7:1-10",
+            "Nehemiah 8:1-18",
+            "Malachi 2:1-9",
+            "Luke 2:25-38",
+            "John 11:45-57",
+            "Acts 4:1-22",
+            "Acts 23:1-10"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezra:interpretive_note:5",
+      "claim": "Ezra's seventh-year Artaxerxes is most commonly identified as Artaxerxes I, placing the mission in 458/457 BCE before Nehemiah, but proposals for Artaxerxes II or a reordered Ezra-Nehemiah chronology remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-1-10",
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "myers-ezra-nehemiah",
+        "grabbe-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ezra",
+        "parent_title": "Ezra",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "nehemiah-torah-understanding",
+      "claim": "Ezra reads Torah to an attentive assembly, Levites assist the people's understanding, grief gives way to celebration, and the community observes Booths.",
+      "category": "history",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:1",
+      "claim": "The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "myers-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 8:1-12:26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:6",
+      "claim": "Nehemiah 8:8 clearly links Torah reading with making its sense understood, but the exact technique may involve explanation, translation, division into sections, or a combination; claims that the verse establishes one later preaching or translation method exceed the evidence.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "myers-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 8:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "scribes:ancient_near_east_context:0",
+      "claim": "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:hebraic_worldview:0",
+      "claim": "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:historical_context:0",
+      "claim": "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:historical_setting:0",
+      "claim": "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:original_audience:0",
+      "claim": "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "scribes:second_temple_context:0",
+      "claim": "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "second-temple-administration:ancient_near_east_context:0",
+      "claim": "Persian provincial administration is relevant to the early period; Hellenistic civic and Roman provincial structures are more relevant later. Comparative institutional claims must be tied to a particular century and source.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "second-temple-administration:hebraic_worldview:0",
+      "claim": "Temple holiness, Torah, priestly teaching, sacrifice, purity, communal responsibility, and hope for divine rule shaped institutional life even when offices were entangled with imperial power.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "second-temple-administration:historical_context:0",
+      "claim": "Second Temple administration changed substantially across Persian, Hellenistic, Hasmonean, Herodian, and Roman rule. Temple and Torah remained central, but no single arrangement should be projected across the entire 515 BCE-70 CE period.",
+      "category": "history",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "second-temple-administration:historical_setting:0",
+      "claim": "Jerusalem, Judea, and Jewish diaspora communities from approximately 515 BCE to 70 CE under successive imperial and local regimes.",
+      "category": "history",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "second-temple-administration:original_audience:0",
+      "claim": "Readers tracing how postexilic temple and Torah institutions developed into the diverse Jewish leadership world of the Gospels and Acts.",
+      "category": "social",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "second-temple-administration:second_temple_context:0",
+      "claim": "Ezra-Nehemiah presents early priestly, Levitical, scribal, and gubernatorial arrangements. Josephus, inscriptions, the Gospels, and Acts attest later high priests, temple officers, synagogues, named groups, and councils under Herodian and Roman power.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Nehemiah 8:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "Acts 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "Acts 4-5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-4-5",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Early Judaism: A Comprehensive Overview",
+        "author": "John J. Collins and Daniel C. Harlow, editors",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Essays on history, literature, archaeology, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "canonical-role",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author academic overview.",
+        "id": "collins-harlow-second-temple-institutions",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "Ezra 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-10:44",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "intertextuality",
+          "timeline",
+          "interpretive-notes"
+        ],
+        "notes": "Canonical partner and source for the temple, Ezra, Torah, and reform background.",
+        "id": "ezra-1-10",
+        "canonical_object_ids": [
+          "ezra",
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra 7-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-7-10",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Eerdmans Commentary on the Bible: Ezra and Nehemiah",
+        "author": "Lester L. Grabbe",
+        "publisher": "Eerdmans",
+        "year": 2019,
+        "locator": "Introduction and concise commentary",
+        "url": "https://www.eerdmans.com/9781467453608/eerdmans-commentary-on-the-bible-ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "date-ranges",
+          "authorship-positions",
+          "interpretive-notes"
+        ],
+        "notes": "Concise modern critical introduction and commentary.",
+        "id": "grabbe-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra",
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "An Introduction to Second Temple Judaism",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "Chapters on sources, history, and currents within Judaism",
+        "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Source-critical period overview.",
+        "id": "grabbe-second-temple-administration",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Haggai 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "haggai-1-2",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "John 11-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-11-18",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Luke 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-2",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Malachi 1-3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "malachi-1-3",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "Jacob M. Myers",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139556/ezra-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on the textual, historical, literary, and compositional complexity of Ezra-Nehemiah.",
+        "id": "myers-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra",
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "nehemiah-prayer-authorization",
+          "nehemiah-wall-opposition",
+          "nehemiah-economic-justice",
+          "nehemiah-wall-completed",
+          "nehemiah-torah-understanding",
+          "nehemiah-covenant-commitments",
+          "nehemiah-dedication-support",
+          "nehemiah-later-reforms"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "nehemiah-1-13",
+        "canonical_object_ids": [
+          "ezra",
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Nehemiah 8-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "nehemiah-8-13",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "The Wisdom of Sirach: A New Translation with Notes",
+        "author": "Walter T. Wilson",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Sirach 38:24-39:11",
+        "url": "https://www.eerdmans.com/9780802881762/the-wisdom-of-sirach/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Critical translation and commentary used for the Second Temple learned-scribe portrait.",
+        "id": "scribes-historical-orientation",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Second Temple Administration",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapters 1 and 4 on history, leaders, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "canonical-role",
+          "interpretive-notes"
+        ],
+        "notes": "Current scholarly synthesis of Second Temple institutions.",
+        "id": "vanderkam-second-temple-institutions",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra",
+          "nehemiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezra",
+        "type": "book",
+        "title": "Ezra",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "nehemiah",
+        "type": "book",
+        "title": "Nehemiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "scribes",
+        "type": "institution",
+        "title": "Scribes",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "second-temple-administration",
+        "type": "institution",
+        "title": "Second Temple Administration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ec1564ad8bb72e6dff49cefc433ae0c96c5dff0d82c2d6af32347daa3f277125",
+  "evidence_hash_version": "2"
+}

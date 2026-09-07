@@ -1,0 +1,604 @@
+{
+  "passage_ref": "Mark 6",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "nazareth",
+        "title": "Nazareth",
+        "type": "place",
+        "aliases": [
+          "where is nazareth",
+          "tell me about nazareth",
+          "why is nazareth important"
+        ],
+        "metadata": {
+          "summary": "A small Galilean settlement remembered in the Gospels as Jesus's hometown and the setting of family identity, synagogue reception, and hometown rejection.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 2:19-23",
+            "Mark 6:1-6",
+            "Luke 1:26-38",
+            "Luke 2:39-52",
+            "Luke 4:16-30"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "gospel-galilean-households",
+      "claim": "Mark locates healing, teaching, hospitality, crowds, and conflict in village houses and describes movement between neighboring settlements.",
+      "category": "culture",
+      "source_ids": [
+        "galilean-gospel-passages",
+        "fiensy-daily-life",
+        "fiensy-strange-galilee"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 6:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "gospel-galilean-households:passage-relevance",
+      "claim": "The passages make domestic space and village networks integral to Jesus's Galilean activity rather than incidental scenery.",
+      "category": "culture",
+      "source_ids": [
+        "galilean-gospel-passages",
+        "fiensy-daily-life",
+        "fiensy-strange-galilee"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 6:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "gospel-galilean-households"
+        ]
+      }
+    },
+    {
+      "id": "nazareth-early-roman-dwelling",
+      "claim": "An IAA excavation in central Nazareth identified a late Hellenistic-Early Roman dwelling with rock-cut storage or silo installations and locally used pottery.",
+      "category": "archaeology",
+      "source_ids": [
+        "alexandre-nazareth-settlement",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Mark 6:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "nazareth-early-roman-dwelling:passage-relevance",
+      "claim": "The find independently anchors Nazareth as an inhabited early Roman village while supplying no evidence for the synagogue speech or a named family home.",
+      "category": "archaeology",
+      "source_ids": [
+        "alexandre-nazareth-settlement",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Mark 6:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "nazareth-early-roman-dwelling"
+        ]
+      }
+    },
+    {
+      "id": "nazareth:ancient_near_east_context:0",
+      "claim": "Ancient background for Nazareth includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Matthew 28:16-20, Mark 16:19-20, jesus, and acts without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Mark 6:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "nazareth:hebraic_worldview:0",
+      "claim": "Kinship, hometown knowledge, synagogue assembly, and honor shape how the Gospel narratives portray recognition and rejection.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Mark 6:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "nazareth:historical_context:0",
+      "claim": "Early Roman remains at Nazareth include a dwelling and subterranean storage installations. They establish a modest inhabited settlement, not the identity of a particular family home.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Mark 6:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "nazareth:second_temple_context:0",
+      "claim": "Nazareth was a Jewish Galilean settlement under Herodian rule rather than direct Judean prefectural administration during most of Jesus's ministry.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Mark 6:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "The Settlement History of Nazareth in the Iron Age and Early Roman Period",
+        "author": "Yardenna Alexandre",
+        "publisher": "'Atiqot / Israel Antiquities Authority",
+        "year": 2020,
+        "locator": "'Atiqot 98, pp. 25-92",
+        "url": "https://publications.iaa.org.il/atiqot/vol98/iss1/3/",
+        "source_type": "excavation-report",
+        "supports": [
+          "nazareth-early-roman-dwelling"
+        ],
+        "notes": "Primary excavation publication of a late Hellenistic-Early Roman dwelling and subterranean installations.",
+        "id": "alexandre-nazareth-settlement",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Greco-Roman Culture and the Galilee of Jesus",
+        "author": "Mark A. Chancey",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "Chapters 1-6 on chronology, settlement, roads, language, and coinage",
+        "url": "https://doi.org/10.1017/CBO9780511487910",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Chronologically controlled synthesis of Greco-Roman material in Galilee.",
+        "id": "chancey-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on dwellings, occupations, family, religion, mortality, and burial",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Archaeological synthesis focused on ordinary life rather than elite monuments.",
+        "id": "fiensy-daily-life",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilee in the Late Second Temple and Mishnaic Periods, Volumes 1-2",
+        "author": "David A. Fiensy and James Riley Strange, editors",
+        "publisher": "Fortress Press",
+        "year": 2015,
+        "locator": "Volume 1: village life, economics, roads, and households; Volume 2: Capernaum, Nazareth, and Magdala",
+        "url": "https://academic.oup.com/jts/article-pdf/69/2/765/26180095/fly066.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Multi-author archaeological and social-historical synthesis preserving scholarly disagreement.",
+        "id": "fiensy-strange-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilean household, agriculture, and lake passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Mark 1:16-4:41; 6:1-13; Luke 4:16-30; John 2:1-12; 6:1-24",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "galilean-gospel-passages",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Nazareth",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "nazareth-historical-orientation",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "galilean-villages-households-and-subsistence",
+        "type": "cultural_background",
+        "title": "Galilean Villages, Households, and Subsistence",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "nazareth",
+        "type": "place",
+        "title": "Nazareth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "0b00d6fc9049197594bc7a2bab27b55be1b1a193bdf923ff52ae3cd213078642",
+  "evidence_hash_version": "2"
+}

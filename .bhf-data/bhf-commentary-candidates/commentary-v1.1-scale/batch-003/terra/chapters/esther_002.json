@@ -1,0 +1,65 @@
+{
+  "reference": "Esther 2",
+  "book": "Esther",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_143",
+          "text": "Read the chapter with this setting in view: Esther, also called Hadassah, is taken into royal custody, follows Mordecai's instruction not to disclose her people, gains favor, and becomes queen in Ahasuerus's seventh year. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "esther-queen-hidden-identity"
+          ],
+          "verse_refs": [
+            "Esther 2:5-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_144",
+          "text": "For its historical and cultural setting, note that The Hebrew text does not state Vashti's reason for refusing, describe her later fate, say Esther volunteered for the royal search, or narrate Esther's sexual experience. Interpretation should name the coercive power imbalance without inventing motives, consent, romance, or blame for either woman. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "esther:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Esther 2:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_145",
+          "text": "For its historical and cultural setting, note that Ahasuerus is plausibly identified with Xerxes I because the Hebrew royal name corresponds closely to Old Persian Xshayarsha and the setting is Achaemenid Susa. This probable identification does not independently verify every person, date, edict, speech, or conflict in Esther. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "esther:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Esther 2:16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3d22cc9557309e80aef33bda7e1e0020bf71e36201565fe0b52d3a49a4d1ef56",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import replace
+import json
 from typing import Any, Iterable, Mapping, Sequence
 
 from .evidence_normalization import (
@@ -27,6 +28,12 @@ from .eligibility import (
 )
 from .models import EVIDENCE_BUNDLE_VERSION, EntityRef, EvidenceBundle, EvidenceItem, mapping
 from .references import anchor_specificity, reference_distance, references_overlap
+from .relevance import (
+    SEMANTICALLY_MISANCHORED,
+    applicability_scope,
+    with_presentation_metadata,
+    with_semantic_relationship,
+)
 
 
 def build_evidence_bundle(
@@ -35,6 +42,7 @@ def build_evidence_bundle(
     canonical_results: Sequence[Any] = (),
     geography: Mapping[str, Any] | None = None,
     archaeology: Sequence[Mapping[str, Any]] = (),
+    bundle_version: str = EVIDENCE_BUNDLE_VERSION,
 ) -> EvidenceBundle:
     """Build a stable, UI/model-independent record of passage knowledge.
 
@@ -67,7 +75,9 @@ def build_evidence_bundle(
         object_id = _text(data.get("id"))
         eligible = is_canonical_object_passage_eligible(normalized_reference, data)
         bucket = _ENTITY_BUCKET_BY_TYPE.get(_text(data.get("type")).casefold())
-        if bucket and eligible and object_id:
+        if bucket and eligible and object_id and not _object_semantically_misanchored(
+            normalized_reference, data
+        ):
             entities[bucket][object_id] = _entity_from_object(data, score)
 
         if object_id:
@@ -130,7 +140,9 @@ def build_evidence_bundle(
         source_ids = _archaeology_source_ids(record_data, record_id, sources)
         claim = _text(record_data.get("summary") or record_data.get("description"))
         if claim:
-            archaeology_metadata = {
+            archaeology_metadata = with_semantic_relationship(
+                normalized_reference,
+                {
                 "source_kind": "archaeology_resolver",
                 "passage_relationship": "direct",
                 "anchor_specificity": anchor_specificity(normalized_reference),
@@ -138,7 +150,9 @@ def build_evidence_bundle(
                 "exploration_potential": 1.0,
                 "presentation_role": "significance",
                 "interpretive_caution": _text(record_data.get("caution")),
-            }
+                },
+                anchors=[normalized_reference],
+            )
             _add_evidence(
                 evidence,
                 EvidenceItem(
@@ -229,7 +243,7 @@ def build_evidence_bundle(
             ),
             "resolvers": ["canonical_knowledge_library", "passage_maps", "archaeology"],
         },
-        version=EVIDENCE_BUNDLE_VERSION,
+        version=bundle_version,
     )
     return replace(bundle, evidence_hash=calculate_evidence_hash(bundle))
 
@@ -270,16 +284,20 @@ def _append_geography_evidence(
             related_entity_ids=[record_id] if kind == "place" else [],
             passage_anchors=[passage_ref],
             confidence=_confidence(record.get("confidence")),
-            relevance_metadata={
-                "source_kind": f"passage_map_{kind}",
-                "passage_relationship": "direct",
-                "map_resource_kind": kind,
-                "map_resource_id": record_id,
-                "map_relationship": relationship or "passage-map-link",
-                "anchor_specificity": anchor_specificity(passage_ref),
-                "verse_distance": 0,
-                "exploration_potential": 1.0,
-            },
+            relevance_metadata=with_semantic_relationship(
+                passage_ref,
+                {
+                    "source_kind": f"passage_map_{kind}",
+                    "passage_relationship": "direct",
+                    "map_resource_kind": kind,
+                    "map_resource_id": record_id,
+                    "map_relationship": relationship or "passage-map-link",
+                    "anchor_specificity": anchor_specificity(passage_ref),
+                    "verse_distance": 0,
+                    "exploration_potential": 1.0,
+                },
+                anchors=[passage_ref],
+            ),
         ),
     )
 def _append_object_evidence(
@@ -338,6 +356,8 @@ def _append_object_evidence(
             item=item,
             retrieval_score=retrieval_score,
         )
+        if metadata.get("semantic_relationship") == SEMANTICALLY_MISANCHORED:
+            continue
         _add_evidence(
             evidence,
             EvidenceItem(
@@ -475,6 +495,12 @@ def _append_object_evidence(
     # evidence for the requested passage. Only legacy-only records may use the
     # compatibility bridge below.
     if added == 0 and not has_structured_evidence:
+        # A word-study parent is a conceptual/lexical container.  Its legacy
+        # prose does not prove that the lemma is present in this passage.
+        # Without an authored child anchor, fail closed instead of exposing
+        # every parent field as lexical evidence.
+        if _text(data.get("type")).casefold() == "word_study":
+            return
         matched_parent = [anchor for anchor in parent_anchors if references_overlap(passage_ref, anchor)]
         if not matched_parent:
             return
@@ -482,6 +508,17 @@ def _append_object_evidence(
             for index, value in enumerate(_sequence(data.get(field_name))):
                 claim_text = _text(value)
                 if not claim_text:
+                    continue
+                legacy_metadata = _legacy_relevance_metadata(
+                    passage_ref,
+                    matched_parent,
+                    data=data,
+                    field_name=field_name,
+                    category=category,
+                    claim=claim_text,
+                    retrieval_score=retrieval_score,
+                )
+                if legacy_metadata.get("semantic_relationship") == SEMANTICALLY_MISANCHORED:
                     continue
                 _add_evidence(
                     evidence,
@@ -493,13 +530,7 @@ def _append_object_evidence(
                         related_entity_ids=[object_id] if object_id in known_entity_ids else [],
                         passage_anchors=_unique(matched_parent),
                         confidence=parent_confidence,
-                        relevance_metadata=_legacy_relevance_metadata(
-                            passage_ref,
-                            matched_parent,
-                            data=data,
-                            field_name=field_name,
-                            retrieval_score=retrieval_score,
-                        ),
+                        relevance_metadata=legacy_metadata,
                     ),
                 )
 
@@ -517,7 +548,7 @@ def _relevance_metadata(
     numeric_distances = [distance for distance in distances if distance is not None]
     specificities = [anchor_specificity(anchor) for anchor in anchors]
     relationship = _strongest_relationship(item)
-    return {
+    metadata = {
         "source_kind": source_kind,
         "parent_object_id": _text(data.get("id")),
         "parent_title": _text(data.get("title")),
@@ -533,6 +564,35 @@ def _relevance_metadata(
         "exploration_potential": _exploration_potential(item, data),
         "broad_tag_only": False,
     }
+    metadata["claim_type"] = _text(item.get("claim_type"))
+    metadata["note_type"] = _text(item.get("note_type"))
+    evidence_type = _text(item.get("evidence_type"))
+    if evidence_type:
+        metadata["evidence_type"] = evidence_type
+    metadata["field"] = _text(item.get("field"))
+    metadata["applicability_scope"] = applicability_scope(
+        passage_ref,
+        anchors=anchors,
+        metadata=metadata,
+    )
+    metadata["anchor_source"] = "child"
+    metadata = with_semantic_relationship(
+        passage_ref,
+        metadata,
+        anchors=anchors,
+    )
+    claim = _text(
+        item.get("claim")
+        or item.get("claim_text")
+        or item.get("description")
+        or item.get("primary_observation")
+        or item.get("note")
+    )
+    category = _category(
+        item.get("evidence_type") or item.get("claim_type") or item.get("note_type"),
+        claim,
+    )
+    return with_presentation_metadata(metadata, category=category, claim=claim)
 
 
 def _legacy_relevance_metadata(
@@ -541,6 +601,8 @@ def _legacy_relevance_metadata(
     *,
     data: Mapping[str, Any],
     field_name: str,
+    category: str,
+    claim: str,
     retrieval_score: float,
 ) -> dict[str, Any]:
     metadata = _relevance_metadata(
@@ -551,10 +613,45 @@ def _legacy_relevance_metadata(
         item={"field": field_name},
         retrieval_score=retrieval_score,
     )
+    metadata = with_presentation_metadata(
+        metadata,
+        category=category,
+        claim=claim,
+    )
     if _text(data.get("type")).casefold() == "book":
         metadata["passage_relationship"] = "background"
         metadata["broad_tag_only"] = True
+    metadata["applicability_scope"] = applicability_scope(
+        passage_ref,
+        anchors=anchors,
+        metadata=metadata,
+        inherited=True,
+    )
+    metadata["anchor_source"] = "parent"
+    metadata["inherited_from_parent"] = True
     return metadata
+
+
+def _object_semantically_misanchored(
+    passage_ref: str, data: Mapping[str, Any]
+) -> bool:
+    metadata = {
+        "parent_object_id": _text(data.get("id")),
+        "parent_type": _text(data.get("type")),
+        "parent_title": _text(data.get("title")),
+        "source_kind": "ckl_legacy_field",
+        "passage_relationship": "contextual",
+    }
+    from .relevance import classify_semantic_relationship
+
+    return (
+        classify_semantic_relationship(
+            passage_ref,
+            anchors=_object_anchors(data),
+            metadata=metadata,
+        )
+        == SEMANTICALLY_MISANCHORED
+    )
 
 
 def _object_anchors(data: Mapping[str, Any]) -> list[str]:
@@ -572,15 +669,30 @@ def _register_object_sources(data: Mapping[str, Any], target: dict[str, dict[str
         source_id = _text(source.get("id") or source.get("source_id"))
         if not source_id:
             continue
-        if source_id not in target:
-            normalized = dict(source)
-            normalized["id"] = source_id
-            normalized["canonical_object_ids"] = []
-            target[source_id] = normalized
-        canonical_ids = target[source_id].setdefault("canonical_object_ids", [])
-        if object_id and object_id not in canonical_ids:
-            canonical_ids.append(object_id)
-            canonical_ids.sort()
+        normalized = dict(source)
+        normalized["id"] = source_id
+        normalized.pop("canonical_object_ids", None)
+        existing = target.get(source_id)
+        variants = []
+        if existing is not None:
+            variants.extend(existing.get("canonical_source_variants", []))
+            variants.append({key: value for key, value in existing.items() if key not in {"canonical_object_ids", "canonical_source_variants"}})
+        variants.append(normalized)
+        unique_variants = {
+            json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False): value
+            for value in variants
+        }
+        canonical = dict(unique_variants[sorted(unique_variants)[0]])
+        canonical["id"] = source_id
+        canonical_ids = set(existing.get("canonical_object_ids", [])) if existing else set()
+        if object_id:
+            canonical_ids.add(object_id)
+        canonical["canonical_object_ids"] = sorted(canonical_ids)
+        if len(unique_variants) > 1:
+            canonical["canonical_source_variants"] = [
+                unique_variants[key] for key in sorted(unique_variants)
+            ]
+        target[source_id] = canonical
 
 
 def _internal_source(object_id: str, data: Mapping[str, Any], target: dict[str, dict[str, Any]]) -> str:

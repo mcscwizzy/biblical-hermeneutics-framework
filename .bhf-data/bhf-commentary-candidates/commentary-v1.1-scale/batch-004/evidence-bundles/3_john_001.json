@@ -1,0 +1,1302 @@
+{
+  "passage_ref": "3 John 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2jn-johannine-relation",
+      "claim": "2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel.",
+      "category": "culture",
+      "source_ids": [
+        "john-gospel",
+        "1jn-scripture",
+        "3jn-scripture",
+        "brown",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:1-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-john",
+        "parent_title": "2 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.899,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "3jn-coworkers",
+      "claim": "Supporting these travelers is linked to becoming coworkers with the truth.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-scripture",
+        "thompson",
+        "yarbrough"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-demetrius",
+      "claim": "Demetrius receives testimony from everyone, from the truth itself, and from the elder and associates.",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "brown",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-diotrephes-first",
+      "claim": "Diotrephes is portrayed as loving to be first among them.",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-elder",
+      "claim": "The sender identifies himself as 'the elder' and does not supply a personal name.",
+      "category": "history",
+      "source_ids": [
+        "3jn-scripture",
+        "3jn-greek",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-expulsion",
+      "claim": "Diotrephes is accused of putting supporters out of the church.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "mendez"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-face-to-face",
+      "claim": "The elder hopes to see Gaius soon and speak mouth to mouth.",
+      "category": "history",
+      "source_ids": [
+        "3jn-scripture",
+        "stowers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-faithful-work",
+      "claim": "Gaius's work for the siblings, even though they were strangers, is called faithful.",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-gaius",
+      "claim": "The elder addresses a person named Gaius as beloved and says he loves him in truth.",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "brown",
+        "kruse"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-gentiles",
+      "claim": "The travelers are said to accept nothing from 'the Gentiles' or 'the nations.'",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "desilva",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-greatest-joy",
+      "claim": "The elder describes hearing that his children walk in truth as his greatest joy.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "thompson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-health-wish",
+      "claim": "The elder wishes that Gaius may fare well and be healthy just as his psyche fares well.",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "stowers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-imitate",
+      "claim": "Gaius is told not to imitate evil but good.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "nets",
+        "thompson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-love-church",
+      "claim": "The travelers testified to Gaius's love before a church.",
+      "category": "history",
+      "source_ids": [
+        "3jn-scripture",
+        "brown"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-malicious-words",
+      "claim": "The elder accuses Diotrephes of making malicious or nonsensical accusations against them.",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "lsj"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-name",
+      "claim": "The travelers went out 'for the Name,' without the letter expanding the expression.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "nets",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-of-god",
+      "claim": "The one doing good is said to be from God, whereas the one doing evil has not seen God.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-scripture",
+        "yarbrough",
+        "thompson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-peace-friends",
+      "claim": "The letter closes with peace, greetings from the friends, and a request to greet the friends by name.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "smalley",
+        "kruse"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "3jn-prior-letter",
+      "claim": "The elder says he wrote something to the church, but that writing is not preserved or quoted here.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "brown",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "3jn-refusal",
+      "claim": "The elder says Diotrephes does not receive or acknowledge 'us.'",
+      "category": "history",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "kruse"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-refuse-siblings",
+      "claim": "Diotrephes is accused of refusing the siblings and hindering those who want to receive them.",
+      "category": "history",
+      "source_ids": [
+        "3jn-scripture",
+        "brown",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-send-worthily",
+      "claim": "The elder asks Gaius to send the travelers onward in a manner worthy of God.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "bdag",
+        "richards"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-support-duty",
+      "claim": "The elder says 'we ought' to support or welcome such people.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "kruse",
+        "smalley"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-testimony-truth",
+      "claim": "Traveling siblings testified to Gaius's truth and to his walking in truth.",
+      "category": "history",
+      "source_ids": [
+        "3jn-scripture",
+        "lieu",
+        "yarbrough"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-visit",
+      "claim": "The elder anticipates coming and calling attention to Diotrephes's works.",
+      "category": "history",
+      "source_ids": [
+        "3jn-scripture",
+        "smalley"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "3jn-writing-media",
+      "claim": "The elder says he has much to write but does not wish to do so with ink and pen.",
+      "category": "culture",
+      "source_ids": [
+        "3jn-greek",
+        "stowers",
+        "richards"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "3 John 1:13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "3-john",
+        "parent_title": "3 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The First Letter of John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 John 1:1-5:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Canonical and literary comparator.",
+        "id": "1jn-scripture",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: 3 John",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "3 John",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical control.",
+        "id": "3jn-greek",
+        "canonical_object_ids": [
+          "3-john"
+        ]
+      },
+      {
+        "title": "The Third Letter of John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "3 John 1:1-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references"
+        ],
+        "notes": "Primary canonical text.",
+        "id": "3jn-scripture",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "3rd edition",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3624576.html",
+        "source_type": "lexicon",
+        "supports": [],
+        "notes": "Greek lexical control.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "The Epistles of John",
+        "author": "Raymond E. Brown",
+        "publisher": "Yale University Press",
+        "year": 1982,
+        "locator": "Anchor Bible 30, 3 John",
+        "url": "https://yalebooks.yale.edu/book/9780300140279/the-epistles-of-john/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major critical commentary; community reconstruction remains a proposal.",
+        "id": "brown",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "Honor, Patronage, Kinship & Purity",
+        "author": "David A. deSilva",
+        "publisher": "IVP Academic",
+        "year": 2022,
+        "locator": "2nd edition, patronage, kinship, travel, and hospitality",
+        "url": "https://www.ivpress.com/honor-patronage-kinship-purity",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Greco-Roman social-world comparator.",
+        "id": "desilva",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "The Gospel according to John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "John 1-21",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Canonical and literary comparator; shared language does not settle authorship or direction.",
+        "id": "john-gospel",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "The Letters of John",
+        "author": "Colin G. Kruse",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "Pillar New Testament Commentary, 3 John",
+        "url": "https://www.eerdmans.com/9780802837288/the-letters-of-john/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Exegetical and historical commentary.",
+        "id": "kruse",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "2nd edition, 3 John and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Jewish contextual and anti-supersessionist control.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "I, II, & III John: A Commentary",
+        "author": "Judith M. Lieu",
+        "publisher": "Westminster John Knox Press",
+        "year": 2008,
+        "locator": "New Testament Library, 3 John",
+        "url": "https://www.wjkbooks.com/Products/0664220983/i-ii-iii-john.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary, historical, theological, and ethical control.",
+        "id": "lieu",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "Liddell-Scott-Jones Greek-English Lexicon",
+        "author": "Henry George Liddell, Robert Scott, and Henry Stuart Jones",
+        "publisher": "Perseus Digital Library",
+        "year": null,
+        "locator": "Wider Greek lexical comparanda",
+        "url": "https://www.perseus.tufts.edu/hopper/resolveform?redirect=true",
+        "source_type": "lexicon",
+        "supports": [],
+        "notes": "Wider Greek lexical comparator.",
+        "id": "lsj",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "Did the Johannine Community Exist?",
+        "author": "Hugo M\u00e9ndez",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 2020,
+        "locator": "42.3, 350-374",
+        "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490",
+        "source_type": "journal-article",
+        "supports": [],
+        "notes": "Critical challenge to community and correspondence reconstructions.",
+        "id": "mendez",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Deuteronomy, Psalms, Proverbs, and lexical comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and intertextual control.",
+        "id": "nets",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "Paul and First-Century Letter Writing",
+        "author": "E. Randolph Richards",
+        "publisher": "IVP Academic",
+        "year": 2004,
+        "locator": "Materials, production, delivery, and travel support comparanda",
+        "url": "https://www.ivpress.com/paul-and-first-century-letter-writing",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Ancient letter-production comparator; Pauline evidence is not direct evidence for 3 John.",
+        "id": "richards",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "1, 2, 3 John",
+        "author": "Stephen S. Smalley",
+        "publisher": "Word Books",
+        "year": 1984,
+        "locator": "Word Biblical Commentary 51, 3 John",
+        "url": "https://www.worldcat.org/title/10277754",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Greek, structural, exegetical, and theological commentary.",
+        "id": "smalley",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "Letter Writing in Greco-Roman Antiquity",
+        "author": "Stanley K. Stowers",
+        "publisher": "Westminster John Knox Press",
+        "year": 1986,
+        "locator": "Letter forms, commendation, travel, greeting, and paraenesis",
+        "url": "https://www.wjkbooks.com/bookproduct/0664250157-letter-writing-in-greco-roman-antiquity/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Greco-Roman epistolary comparator.",
+        "id": "stowers",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "1-3 John",
+        "author": "Marianne Meye Thompson",
+        "publisher": "IVP Academic",
+        "year": 1992,
+        "locator": "IVP New Testament Commentary, 3 John",
+        "url": "https://www.ivpress.com/1-3-john",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and theological commentary.",
+        "id": "thompson",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      },
+      {
+        "title": "1-3 John",
+        "author": "Robert W. Yarbrough",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Exegetical Commentary, 3 John",
+        "url": "https://bakeracademic.com/p/1-3-john-robert-w-yarbrough/230267",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Greek, exegetical, theological, and reception control.",
+        "id": "yarbrough",
+        "canonical_object_ids": [
+          "2-john",
+          "3-john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-john",
+        "type": "book",
+        "title": "2 John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.899
+      },
+      {
+        "id": "3-john",
+        "type": "book",
+        "title": "3 John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.959
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "6d7fded811a231d0b29c66ba680b2f0450510d1c3643591c28983440ac4dedb7",
+  "evidence_hash_version": "2"
+}

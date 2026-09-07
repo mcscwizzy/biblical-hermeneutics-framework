@@ -1,0 +1,101 @@
+{
+  "reference": "John 11",
+  "book": "John",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_84",
+          "text": "Read the chapter with this setting in view: The Lazarus narrative combines friendship, grief, delay, belief, glory, embodied death, a life-giving sign, and political escalation; Jesus' tears resist readings that treat grief as spiritual failure. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-lazarus"
+          ],
+          "verse_refs": [
+            "John 11:1-57"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_85",
+          "text": "For its historical and cultural setting, note that Multiple New Testament scenes distinguish a serving high priest, chief priests, temple officers, elders, scribes, rulers, and councils in Jerusalem. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "gospel-acts-priestly-authority"
+          ],
+          "verse_refs": [
+            "John 11:47-53"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_86",
+          "text": "For its historical and cultural setting, note that John's predicated and absolute ego eimi sayings participate in characterization through ordinary identification, symbolic predicates, scriptural echoes, and divine-agency claims; each context must be read separately. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-i-am"
+          ],
+          "verse_refs": [
+            "John 11:25-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_85",
+          "text": "A literary feature to notice is that Caiaphas's statement that one person should die for the people operates through dramatic irony: political expediency is narrated as an unintended prophecy, not as moral approval of scapegoating. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-caiaphas"
+          ],
+          "verse_refs": [
+            "John 11:45-53"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_85",
+          "text": "For a later or comparative connection, note that Josephus reports repeated appointment and removal of high priests by Herodian and Roman authorities, disputes over custody of vestments, and continuing priestly political influence. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "josephus-high-priestly-appointments"
+          ],
+          "verse_refs": [
+            "John 11:47-53"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a23fd1ba4dd2c694612c1b95017bd8e86a9af909f1e9319cd59a6fa77b122d23",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

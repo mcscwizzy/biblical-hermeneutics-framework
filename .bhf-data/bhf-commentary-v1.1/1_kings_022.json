@@ -1,0 +1,53 @@
+{
+  "reference": "1 Kings 22",
+  "book": "1 Kings",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_43",
+          "text": "Read the chapter with this setting in view: First Kings moves from contested succession through Solomon's wisdom, temple, and failure to divided kingdoms and prophetic confrontation under Ahab. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-kings-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Kings 22:1-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_44",
+          "text": "For its historical and cultural setting, note that The Kurkh Monolith names Ahab in a coalition at Qarqar, an event not narrated in 1 Kings; it independently locates an Israelite king in ninth-century regional politics but does not validate every detail or theological claim in the book. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "1-kings:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "1 Kings 22:1-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ee1ed26ae9acace7860273a4d37494681999de2bcfa6513b453c0822ebe224e8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

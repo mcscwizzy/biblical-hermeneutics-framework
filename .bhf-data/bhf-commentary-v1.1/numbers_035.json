@@ -1,0 +1,65 @@
+{
+  "reference": "Numbers 35",
+  "book": "Numbers",
+  "chapter": 35,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_62",
+          "text": "Read the chapter with this setting in view: The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers-inheritance-preparation"
+          ],
+          "verse_refs": [
+            "Numbers 35:1-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_63",
+          "text": "For its historical and cultural setting, note that Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "high-priesthood:original_audience:0"
+          ],
+          "verse_refs": [
+            "Numbers 35:25-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_64",
+          "text": "For its historical and cultural setting, note that Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "high-priesthood:historical_setting:0"
+          ],
+          "verse_refs": [
+            "Numbers 35:25-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dafa654540226dee6f94e41270f7a92e0c74142437a7f1fa5ad50356987e29a7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

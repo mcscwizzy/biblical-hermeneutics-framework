@@ -1,0 +1,83 @@
+{
+  "reference": "Ezra 7",
+  "book": "Ezra",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_115",
+          "text": "Read the chapter with this setting in view: Ezra is presented as a priestly scribe who sets his heart to study the LORD's Torah, practice it, and teach its statutes and ordinances in Israel. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ezra-torah-vocation"
+          ],
+          "verse_refs": [
+            "Ezra 7:1-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_116",
+          "text": "For its historical and cultural setting, note that Ezra's imperial authorization, separation policies, and assembly discipline belong to a vulnerable Persian-period temple community and do not directly authorize modern ethnic exclusion, forced divorce, theocratic state power, or coercive religious reform. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ezra:interpretive_note:8"
+          ],
+          "verse_refs": [
+            "Ezra 7:11-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_117",
+          "text": "For its historical and cultural setting, note that The Aramaic blocks in Ezra 4:8-6:18 and 7:12-26 fit the imperial and regional lingua franca and contain letters or decrees, but language alone does not prove that every document survives unchanged from a royal archive. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ezra:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Ezra 7:12-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_116",
+          "text": "For a later or comparative connection, note that Ben Sira contrasts the leisure needed for scribal wisdom with agricultural and craft labor, then depicts the scribe studying inherited writings, traveling, advising, praying, teaching, and composing. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ben-sira-scribal-vocation"
+          ],
+          "verse_refs": [
+            "Ezra 7:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f115af62596dc894ba55be01b9cf8c5a9586607a3995f3d7e0415fb0a19b93d5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

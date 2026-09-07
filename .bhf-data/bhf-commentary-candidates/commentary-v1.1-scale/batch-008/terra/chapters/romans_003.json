@@ -1,0 +1,102 @@
+{
+  "reference": "Romans 3",
+  "book": "Romans",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_77",
+          "text": "Read the chapter with this setting in view: Universal sin language cannot justify racism, caste, xenophobia, misogyny, disability stigma, or treating any group as especially depraved. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:71"
+          ],
+          "verse_refs": [
+            "Romans 3:1-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_78",
+          "text": "For its historical and cultural setting, note that Romans cannot make Torah or Judaism uniquely legalistic: Paul identifies sin and boasting across peoples and repeatedly honors Israel's Scriptures and gifts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans:interpretive_note:47"
+          ],
+          "verse_refs": [
+            "Romans 3:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_79",
+          "text": "For its historical and cultural setting, note that Hilasterion in Romans 3:25 may evoke sacrifice, expiation, propitiation, or the mercy seat; translations should disclose rather than conceal this lexical uncertainty. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans:interpretive_note:24"
+          ],
+          "verse_refs": [
+            "Romans 3:25"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_78",
+          "text": "A literary feature to notice is that Erga nomou means works of law or Torah; debate concerns whether it emphasizes boundary practices, all commanded deeds, identity performance, or a broader posture. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans-works-law"
+          ],
+          "verse_refs": [
+            "Romans 3:20",
+            "Romans 3:28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_78",
+          "text": "For a later or comparative connection, note that Faith and works in James addresses a claim to faith without material aid or obedient action; Paul addresses different rhetorical questions even where vocabulary overlaps. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "james:interpretive_note:17"
+          ],
+          "verse_refs": [
+            "Romans 3:1-31"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "29ad454129fc29b21f2d080357b5a98920bc3925353ccb1714682e6755316332",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

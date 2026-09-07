@@ -1,0 +1,570 @@
+{
+  "passage_ref": "Malachi 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "malachi-disputation-form",
+      "claim": "Repeated assertions, audience questions, and extended answers give Malachi a characteristic but flexible disputation pattern.",
+      "category": "culture",
+      "source_ids": [
+        "mason-malachi",
+        "schart-malachi",
+        "genres-minor-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:2-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "malachi-governor",
+      "claim": "The challenge to offer blemished animals to a governor supplies an imperial-administrative analogy, not the governor's identity.",
+      "category": "politics",
+      "source_ids": [
+        "malachi-masoretic",
+        "berquist-persian-yehud",
+        "hill-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "malachi-identity",
+      "claim": "The book supplies no biography for malakhi and does not decide whether the term is a personal name, shortened name, or title meaning 'my messenger.'",
+      "category": "language",
+      "source_ids": [
+        "sbl-bhs-malachi",
+        "schart-malachi",
+        "hill-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "malachi-love-edom",
+      "claim": "The first dispute answers doubt about YHWH's love by contrasting Jacob with Esau and describing Edom's devastation and failed rebuilding.",
+      "category": "history",
+      "source_ids": [
+        "malachi-masoretic",
+        "hill-malachi",
+        "schart-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:2-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "malachi-nations-offering",
+      "claim": "Malachi 1:11 contrasts defective local worship with YHWH's great name and pure offering among the nations from sunrise to sunset.",
+      "category": "history",
+      "source_ids": [
+        "malachi-masoretic",
+        "malachi-old-greek",
+        "schart-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:10-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "malachi-persian-setting",
+      "claim": "A functioning Second Temple, priestly offerings, governor, tithes, storehouse, and agrarian economy make a Persian-period Yehud setting probable.",
+      "category": "economics",
+      "source_ids": [
+        "schart-malachi",
+        "berquist-persian-yehud",
+        "postexilic-archaeology",
+        "historical-economics-minor-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:6-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "malachi-priestly-dishonor",
+      "claim": "Malachi accuses priests of dishonoring YHWH's name by presenting polluted food and blemished animals at the divine table.",
+      "category": "history",
+      "source_ids": [
+        "malachi-masoretic",
+        "hill-malachi",
+        "priesthood-prophecy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:6-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "malachi-superscription",
+      "claim": "Malachi 1:1 calls the work a massa of YHWH's word to Israel through malakhi.",
+      "category": "history",
+      "source_ids": [
+        "malachi-masoretic",
+        "sbl-bhs-malachi",
+        "schart-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Malachi 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Prophecy in Persian Yehud",
+        "author": "Berquist, Jon L.",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 4",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211800229",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "malachi-governor",
+          "malachi-persian-setting"
+        ],
+        "notes": "Persian imperial and Yehud context for prophetic production and identity.",
+        "id": "berquist-persian-yehud",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Genres and Forms in the Minor Prophets",
+        "author": "Floyd, Michael H.",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 6",
+        "url": "https://academic.oup.com/edited-volume/38566",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "literary-context",
+          "malachi-disputation-form"
+        ],
+        "notes": "Genre and form context for reading prophetic speech without flattening distinct units.",
+        "id": "genres-minor-prophets",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Malachi",
+        "author": "Hill, Andrew E.",
+        "publisher": "Yale University Press",
+        "year": 1998,
+        "locator": "Anchor Yale Bible 25D",
+        "url": "https://yalebooks.yale.edu/book/9780300139778/malachi/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-disputes",
+          "malachi-governor",
+          "malachi-test-blessing"
+        ],
+        "notes": "Major critical commentary with translation, textual, historical, literary, and theological discussion.",
+        "id": "hill-malachi",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Historical Economics and the Minor Prophets",
+        "author": "Silverman, Jason M.",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 24",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372754",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "historical-setting",
+          "malachi-vulnerable-neighbors",
+          "malachi-tithes",
+          "malachi-application-boundaries"
+        ],
+        "notes": "Economic sociology and material context for production, consumption, temple, labor, wealth, and markets.",
+        "id": "historical-economics-minor-prophets",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Malachi",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Malachi 1:1-3:24 in Hebrew numbering",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "malachi-superscription",
+          "malachi-love-edom",
+          "malachi-priestly-dishonor",
+          "malachi-levi-covenant",
+          "malachi-divorce-text",
+          "malachi-messengers",
+          "malachi-tithes",
+          "malachi-day",
+          "malachi-elijah"
+        ],
+        "notes": "Primary Hebrew text in the received Masoretic tradition; its three-chapter numbering is recorded alongside common Christian numbering.",
+        "id": "malachi-masoretic",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "Howard, Kevin D.",
+        "publisher": "NETS / University of Pennsylvania",
+        "year": 2009,
+        "locator": "Malachias",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "scripture",
+        "supports": [
+          "greek-words",
+          "malachi-nations-offering",
+          "malachi-divorce-text",
+          "malachi-messengers",
+          "malachi-numbering"
+        ],
+        "notes": "Translation of the Old Greek Twelve based on the G\u00f6ttingen edition; useful as an ancient Jewish translation witness.",
+        "id": "malachi-old-greek",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "The Book of Malachi",
+        "author": "Mason, Rex",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "Preaching the Tradition, chapter 7, pages 235-256",
+        "url": "https://www.cambridge.org/core/books/abs/preaching-the-tradition/book-of-malachi/08C8D64E26B27F4E4BD1CC11BBCB9DE9",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "structure",
+          "malachi-justice-complaint",
+          "malachi-disputation-form"
+        ],
+        "notes": "Focused analysis of six broad sections and the flexible prophetic disputation pattern.",
+        "id": "mason-malachi",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Archaeology of the Postexilic Period and the Writings",
+        "author": "",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "The Oxford Handbook of the Writings of the Hebrew Bible",
+        "url": "https://academic.oup.com/edited-volume/28060/chapter/212044009",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "malachi-persian-setting"
+        ],
+        "notes": "Archaeological synthesis addressing Persian provincialization, demographics, and material culture.",
+        "id": "postexilic-archaeology",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Prophecy and Priesthood",
+        "author": "Grabbe, Lester L.",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 2",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211799469",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "malachi-priestly-dishonor",
+          "malachi-levi-covenant"
+        ],
+        "notes": "Comparative study of prophetic and priestly roles.",
+        "id": "priesthood-prophecy",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Biblica Hebraica Stuttgartensia: Maleachi",
+        "author": "",
+        "publisher": "Society of Biblical Literature and German Bible Society",
+        "year": null,
+        "locator": "Maleachi",
+        "url": "https://www.sbl-site.org/resources/digital-texts/biblica-hebraica-stuttgartensia/",
+        "source_type": "reference-work",
+        "supports": [
+          "hebrew-words",
+          "malachi-superscription",
+          "malachi-identity",
+          "malachi-numbering"
+        ],
+        "notes": "Academic Hebrew reading text and gateway to the Masoretic textual tradition.",
+        "id": "sbl-bhs-malachi",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Malachi",
+        "author": "Schart, Aaron",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 40, pages 535-546",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373857",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "malachi-identity",
+          "malachi-persian-setting",
+          "malachi-disputation-form",
+          "malachi-final-shaping"
+        ],
+        "notes": "Specialist overview addressing textual transmission, Greek translation, disputations, redaction, historical economy, theology, and New Testament reception.",
+        "id": "schart-malachi",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "malachi",
+        "type": "book",
+        "title": "Malachi",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.96
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "616f9f31b29e32dbed8b9ab34ff5cd097950e81eb9b909f699abf564defd720a",
+  "evidence_hash_version": "2"
+}

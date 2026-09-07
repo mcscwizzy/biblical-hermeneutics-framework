@@ -1,0 +1,210 @@
+{
+  "passage_ref": "Amos 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos-election-accountability",
+      "claim": "Amos 3:1-2 turns exodus election into intensified accountability: knowing Israel grounds judgment for iniquity rather than immunity from it.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "barton-theology-amos",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 3:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "amos:interpretive_note:8",
+      "claim": "Election in Amos 3:2 intensifies accountability; it should not be flattened into either ethnic superiority or a claim that Israel's election has been erased.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "barton-theology-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 3:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Amos in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Amos 1-9 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-day-yhwh",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-altar-vision",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-composition-final-form"
+        ],
+        "notes": "Primary Hebrew textual tradition.",
+        "id": "amos-masoretic",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Amos",
+        "author": "John Barton",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Old Testament Theology",
+        "url": "https://assets.cambridge.org/97805218/55778/frontmatter/9780521855778_frontmatter.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "authorship-positions",
+          "amos-election-accountability",
+          "amos-day-yhwh",
+          "amos-famine-hearing",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-acts15-reuse",
+          "amos-composition-final-form"
+        ],
+        "notes": "Surveys critical issues, final-form theology, rabbinic and Christian reception, and liberation theology.",
+        "id": "barton-theology-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8feb0e10a8c65906e1bb62166b9b34790d2afe76a3a8bafb99d42eb1dec48c3f",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,53 @@
+{
+  "reference": "1 Samuel 19",
+  "book": "1 Samuel",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_6",
+          "text": "Read the chapter with this setting in view: The book explicitly attributes a harmful spirit affecting Saul to the LORD after the Spirit of the LORD departs; medical, psychological, spiritual, and theological explanations should not be collapsed into one diagnosis. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "1 Samuel 19:9-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_7",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 19:1-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6602b1079de055406bfc9489a34f67e3b6aa5c0dc72a99bf5c3b4f424bc86602",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

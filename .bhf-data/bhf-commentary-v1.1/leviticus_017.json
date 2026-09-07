@@ -1,0 +1,83 @@
+{
+  "reference": "Leviticus 17",
+  "book": "Leviticus",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_71",
+          "text": "Read the chapter with this setting in view: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 17:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_72",
+          "text": "For its historical and cultural setting, note that Acts lists porneia without defining it, while scholars propose broad sexual wrongdoing, prohibited kinship unions, resident-alien legislation, Noachide rules, and table-fellowship frameworks. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-decree-porneia-legal-dispute"
+          ],
+          "verse_refs": [
+            "Leviticus 17:1-16"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_73",
+          "text": "For its historical and cultural setting, note that The sacrificial system is rooted in the wilderness tabernacle and continues through the temple periods as the central grammar of covenant approach to God. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "sacrificial-system:historical_context:0"
+          ],
+          "verse_refs": [
+            "Leviticus 17:11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_72",
+          "text": "For a later or comparative connection, note that The dominant form names idols, sexual immorality, strangled material, and blood; Codex Bezae omits the strangled item and adds negative reciprocity. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "apostolic-decree-forms-and-backgrounds"
+          ],
+          "verse_refs": [
+            "Leviticus 17:1-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b2a226dd378311eb19b9de83a9363dd391d7fad2844b0ca6dc5fd7ff343d3e1f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

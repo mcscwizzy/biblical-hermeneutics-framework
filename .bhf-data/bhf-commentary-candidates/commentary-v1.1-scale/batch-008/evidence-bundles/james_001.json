@@ -1,0 +1,1647 @@
+{
+  "passage_ref": "James 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "the-fall",
+        "title": "The Fall",
+        "type": "event",
+        "aliases": [
+          "what happened in the fall",
+          "tell me about the fall",
+          "why is the fall important"
+        ],
+        "metadata": {
+          "summary": "The human rebellion in Eden that brings sin, shame, curse, and exile into the biblical story.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 3:1-24",
+            "Romans 5:12-21",
+            "1 Corinthians 15:21-22",
+            "James 1:13-15",
+            "Revelation 20:11-15"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "james:interpretive_note:0",
+      "claim": "Authorship remains open: the superscription says James but does not say brother of Jesus, apostle, or Jerusalem leader.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 67
+      }
+    },
+    {
+      "id": "james:interpretive_note:1",
+      "claim": "Jerusalem is a plausible provenance only within some authorship reconstructions; the letter names no place of composition.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison",
+        "davids"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 67
+      }
+    },
+    {
+      "id": "james:interpretive_note:10",
+      "claim": "Desire is personified as conceiving and birthing sin; this rhetoric does not make every desire evil or assign blame for abuse to victims.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james:interpretive_note:11",
+      "claim": "Firstfruits characterizes the recipients within God's creative gift; whether it implies a wider eschatological harvest is plausible but not fully specified.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "davids",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:17-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "plausible",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james:interpretive_note:12",
+      "claim": "Implanted word evokes received divine instruction capable of saving; its exact relation to Torah, gospel proclamation, wisdom, or creation speech is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:18-25"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james:interpretive_note:13",
+      "claim": "Religion in James 1:26-27 concerns practiced devotion; care for orphans and widows cannot be reduced to private piety or used to paternalize vulnerable people.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "johnson",
+        "batten"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:26-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "james:interpretive_note:14",
+      "claim": "Law of liberty and royal law are affirmative Torah-shaped formulations in James, not warrants for supersessionism or claims that Jewish law is bondage.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "levine-jant",
+        "allison"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "james:interpretive_note:16",
+      "claim": "Wealth-based partiality is condemned; application must resist class and caste hierarchy without class contempt, poverty romanticization, or treating poor people as moral props.",
+      "category": "economics",
+      "source_ids": [
+        "batten",
+        "kloppenborg",
+        "james-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:9-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "james:interpretive_note:3",
+      "claim": "Diaspora can denote geographic dispersion, an Israel-shaped identity, or a rhetorical address; it does not by itself prove one ethnic composition or destination.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "hartin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "james:interpretive_note:4",
+      "claim": "Jewish language in James must not become antisemitism or supersessionism: the letter reasons within Israel's scriptures rather than denigrating Jews or Torah.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "nets-lxx",
+        "hartin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "james:interpretive_note:40",
+      "claim": "James addresses brothers and sisters through conventionally masculine Greek forms; reception should neither erase women nor turn ancient address forms into a warrant for misogyny.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "levine-jant",
+        "allison"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "james:interpretive_note:5",
+      "claim": "The epistolary greeting and paraenetic sequence coexist; labeling James wisdom, diatribe, sermon, or anthology highlights features without exhausting its genre.",
+      "category": "culture",
+      "source_ids": [
+        "allison",
+        "dibelius",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1-5:20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "james:interpretive_note:6",
+      "claim": "Parallels to sayings of Jesus can reflect shared tradition, memory, indirect influence, or literary contact; exact dependence is not uniform or demonstrable.",
+      "category": "culture",
+      "source_ids": [
+        "hartin",
+        "allison",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:22-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james:interpretive_note:7",
+      "claim": "Testing and temptation translate the same Greek word-group in different contexts; James denies that God entices people toward evil while describing tested endurance.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "davids"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:2-4",
+        "James 1:12-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james:interpretive_note:8",
+      "claim": "Perfect language emphasizes completeness or wholeness in context; claims of sinless perfection require a separate theological argument.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:4",
+        "James 1:17",
+        "James 1:25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "james:interpretive_note:9",
+      "claim": "Double-minded describes divided loyalty in James; it must not stigmatize mental illness, neurodivergence, doubt, or people seeking help.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "avalos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "jas-address",
+      "claim": "The addressees are styled the twelve tribes in the diaspora.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "hartin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "jas-author-identity",
+      "claim": "The letter does not explicitly identify its James as the brother of Jesus, an apostle, or the Jerusalem leader.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "jas-desire",
+      "claim": "James denies that God tempts anyone with evil and locates enticement in desire's personified sequence toward sin and death.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "jas-firstfruits",
+      "claim": "God brings the recipients forth by a word of truth so that they are a kind of firstfruits of God's creatures.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:17-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "jas-genre",
+      "claim": "James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison",
+        "dibelius"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1-5:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "jas-implanted-word",
+      "claim": "James joins receiving the implanted word with hearing and doing rather than hearing alone.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:19-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "jas-provenance",
+      "claim": "James does not name Jerusalem or another place of composition.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "allison"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1-5:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 50
+      }
+    },
+    {
+      "id": "jas-religion",
+      "claim": "James tests religious practice by controlled speech, care for orphans and widows in distress, and integrity from the world.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "johnson",
+        "batten"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:26-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "jas-sender",
+      "claim": "The prescript names James as a servant of God and of the Lord Jesus Christ.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "jas-testing",
+      "claim": "James 1 links diverse tests with endurance and the goal of completeness.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "moo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:2-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "jas-wisdom",
+      "claim": "Those lacking wisdom are instructed to ask God in faith without divided loyalty.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "bdag",
+        "davids"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:5-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "perseverance:ancient_near_east_context:0",
+      "claim": "Ancient background for Perseverance includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Romans 5:1-5, Hebrews 3:14, hupomone, and sanctification without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "romans-5",
+        "hebrews-3",
+        "hebrews-10",
+        "hebrews-12",
+        "james-1",
+        "perseverance-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:2-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "perseverance",
+        "parent_title": "Perseverance",
+        "parent_type": "theology",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "perseverance:historical_context:0",
+      "claim": "Perseverance is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "romans-5",
+        "hebrews-3",
+        "hebrews-10",
+        "hebrews-12",
+        "james-1",
+        "perseverance-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "James 1:2-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "perseverance",
+        "parent_title": "Perseverance",
+        "parent_type": "theology",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "the-fall:ancient_near_east_context:0",
+      "claim": "The garden narrative uses familiar imagery of sacred space, guarded boundaries, and moral order, but it insists on one sovereign God rather than a pantheon.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-3",
+        "romans-5",
+        "1-corinthians-15",
+        "james-1",
+        "the-fall-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "the-fall"
+      ],
+      "passage_anchors": [
+        "James 1:13-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "the-fall",
+        "parent_title": "The Fall",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "the-fall:historical_context:0",
+      "claim": "Genesis 3 functions as the interpretive root of human estrangement, death, and the need for redemption.",
+      "category": "history",
+      "source_ids": [
+        "genesis-3",
+        "romans-5",
+        "1-corinthians-15",
+        "james-1",
+        "the-fall-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "the-fall"
+      ],
+      "passage_anchors": [
+        "James 1:13-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "the-fall",
+        "parent_title": "The Fall",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "the-fall"
+        ]
+      },
+      {
+        "title": "James: A Critical and Exegetical Commentary",
+        "author": "Dale C. Allison Jr.",
+        "publisher": "T&T Clark",
+        "year": 2013,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/james-icc-9780567716934/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major critical commentary.",
+        "id": "allison",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Health Care and the Rise of Christianity",
+        "author": "Hector Avalos",
+        "publisher": "Hendrickson",
+        "year": 1999,
+        "locator": "Ancient healing and health-care contexts",
+        "url": "https://www.worldcat.org/title/41090650",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Historical comparator for healing practices; pastoral safeguards require contemporary clinical judgment.",
+        "id": "avalos",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Friendship and Benefaction in James",
+        "author": "Alicia J. Batten",
+        "publisher": "Deo Publishing",
+        "year": 2010,
+        "locator": "Social-scientific study",
+        "url": "https://www.worldcat.org/title/495781226",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Control for patronage, wealth, and friendship discourse.",
+        "id": "batten",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "3rd edition",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3624576.html",
+        "source_type": "lexicon",
+        "supports": [],
+        "notes": "Lexical control; reviewers must verify each entry and sense.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "The Epistle of James",
+        "author": "Peter H. Davids",
+        "publisher": "Eerdmans",
+        "year": 1982,
+        "locator": "New International Greek Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802823885/the-epistle-of-james/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Greek-text commentary.",
+        "id": "davids",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "James",
+        "author": "Martin Dibelius, revised by Heinrich Greeven",
+        "publisher": "Fortress Press",
+        "year": 1976,
+        "locator": "Hermeneia",
+        "url": "https://www.worldcat.org/title/1529578",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Influential paraenesis analysis requiring critical comparison.",
+        "id": "dibelius",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Genesis 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-3",
+        "canonical_object_ids": [
+          "the-fall"
+        ]
+      },
+      {
+        "title": "James",
+        "author": "Patrick J. Hartin",
+        "publisher": "Liturgical Press",
+        "year": 2009,
+        "locator": "Sacra Pagina 14",
+        "url": "https://litpress.org/Products/5975",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Emphasizes Jewish and Jesus-tradition contexts.",
+        "id": "hartin",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Hebrews 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-10",
+        "canonical_object_ids": [
+          "perseverance"
+        ]
+      },
+      {
+        "title": "Hebrews 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-12",
+        "canonical_object_ids": [
+          "perseverance"
+        ]
+      },
+      {
+        "title": "Hebrews 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-3",
+        "canonical_object_ids": [
+          "perseverance"
+        ]
+      },
+      {
+        "title": "James 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-1",
+        "canonical_object_ids": [
+          "perseverance",
+          "the-fall"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: James",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "James",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical and textual controls.",
+        "id": "james-greek",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "The Letter of James",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Yale University Press",
+        "year": 2005,
+        "locator": "Anchor Yale Bible 37A",
+        "url": "https://yalebooks.yale.edu/book/9780300139907/the-letter-of-james/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Argues for James the brother of Jesus while documenting reception and exegesis.",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Christ's Associations",
+        "author": "John S. Kloppenborg",
+        "publisher": "Yale University Press",
+        "year": 2019,
+        "locator": "Comparative associations and assemblies",
+        "url": "https://yalebooks.yale.edu/book/9780300217049/christs-associations/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Greco-Roman associational comparator, not a direct reconstruction of James.",
+        "id": "kloppenborg",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "2nd edition, James",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Jewish-context and anti-supersessionist control.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "The Letter of James",
+        "author": "Douglas J. Moo",
+        "publisher": "Eerdmans",
+        "year": 2021,
+        "locator": "Pillar New Testament Commentary, 2nd edition",
+        "url": "https://www.eerdmans.com/9780802876669/the-letter-of-james/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Commentary including authorship, genre, faith and works, and healing.",
+        "id": "moo",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Proverbs, Job, Sirach, Wisdom, and prophetic comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Translation control for Greek Jewish scriptural comparisons.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Perseverance",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "perseverance-historical-orientation",
+        "canonical_object_ids": [
+          "perseverance"
+        ]
+      },
+      {
+        "title": "Romans 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-5",
+        "canonical_object_ids": [
+          "perseverance",
+          "the-fall"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for The Fall",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "the-fall-historical-orientation",
+        "canonical_object_ids": [
+          "the-fall"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "james",
+        "type": "book",
+        "title": "James",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.957
+      },
+      {
+        "id": "perseverance",
+        "type": "theology",
+        "title": "Perseverance",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "the-fall",
+        "type": "event",
+        "title": "The Fall",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "abbda8aa6fea2c32680338380ade8d478068a988fbc54bc2377a48bb8b18a305",
+  "evidence_hash_version": "2"
+}

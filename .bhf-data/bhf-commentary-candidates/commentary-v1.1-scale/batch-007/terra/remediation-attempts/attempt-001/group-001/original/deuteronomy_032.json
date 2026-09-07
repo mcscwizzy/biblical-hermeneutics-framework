@@ -1,0 +1,101 @@
+{
+  "reference": "Deuteronomy 32",
+  "book": "Deuteronomy",
+  "chapter": 32,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_4",
+          "text": "Read the chapter with this setting in view: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 32:1-52"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_5",
+          "text": "For its historical and cultural setting, note that Historically, Wadi Murabba'at Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "wadi-murabbaat-scrolls:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 32:1-52"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_6",
+          "text": "For its historical and cultural setting, note that Historically, Temple Mount Area Finds is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "temple-mount-area-finds:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 32:1-52"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_5",
+          "text": "A literary feature to notice is that The Masoretic, Qumran, and Greek textual traditions differ in the phrase that describes the allocation of the nations in Deuteronomy 32:8. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "deuteronomy-32-8-manuscript-variant"
+          ],
+          "verse_refs": [
+            "Deuteronomy 32:8-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_5",
+          "text": "For a later or comparative connection, note that The \u2018crooked generation\u2019 and shining imagery draw on scriptural language; they do not authorize sectarian contempt for outsiders or conspiracy theories. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "philippians:interpretive_note:20"
+          ],
+          "verse_refs": [
+            "Deuteronomy 32:5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "566e8e9fd0933a4026fbd4201a863c34b9c3b21c54144140593e5dbfeb7cd3d7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

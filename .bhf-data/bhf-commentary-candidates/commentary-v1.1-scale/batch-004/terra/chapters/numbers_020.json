@@ -1,0 +1,65 @@
+{
+  "reference": "Numbers 20",
+  "book": "Numbers",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_1",
+          "text": "Read the chapter with this setting in view: Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers-literary-journey"
+          ],
+          "verse_refs": [
+            "Numbers 20:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_2",
+          "text": "For its historical and cultural setting, note that Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 20:1-29"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "wilderness-wandering:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 20:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d86df2e03d46fbd2c75589ebbf7d9f8e22bb88c2d75ac7b7f1760c4bcbdac50b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 14",
+  "book": "Acts",
+  "chapter": 14,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_58",
+          "text": "Read the chapter with this setting in view: Acts introduces a man unable to use his feet from birth who listens to Paul, is addressed, springs up, and walks, without assigning moral fault for his disability. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "lystra-healing-disability-and-agency"
+          ],
+          "verse_refs": [
+            "Acts 14:8-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_59",
+          "text": "For its historical and cultural setting, note that Acts narrates the crowd identifying Barnabas as Zeus and Paul as Hermes, followed by a priest, oxen, garlands, and attempted sacrifice; regional texts and inscriptions provide nonidentical divine-pair and cult comparisons. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "lystra-zeus-hermes-and-sacrifice-comparanda"
+          ],
+          "verse_refs": [
+            "Acts 14:11-18"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_60",
+          "text": "For its historical and cultural setting, note that Acts moves from a crowd restrained from sacrifice to persuasion by visitors from Antioch and Iconium, Paul's stoning, removal outside the city, survival, and departure. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "lystra-crowd-reversal-and-stoning-limits"
+          ],
+          "verse_refs": [
+            "Acts 14:18-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_59",
+          "text": "For its geographical or material setting, note that Acts securely names Derbe as a Lycaonian mission destination, while ancient geographic notices and modern archaeological proposals do not yield a universally uncontested site and first-century civic profile. It can illuminate the passage, while its limits should be kept in view. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "derbe-name-and-site-identification-limits"
+          ],
+          "verse_refs": [
+            "Acts 14:20-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_59",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 14:1-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9fca804f1da62ced7be3405a315a1eb329e907c214836750b027ddbd9e2c33a0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

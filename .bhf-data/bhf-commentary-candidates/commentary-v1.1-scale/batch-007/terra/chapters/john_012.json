@@ -1,0 +1,65 @@
+{
+  "reference": "John 12",
+  "book": "John",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_78",
+          "text": "Read the chapter with this setting in view: John 12:32 links being lifted up with Jesus' death and drawing 'all' or 'all people'; universal, representative, and judgment readings debate the scope, and no reading licenses coercion. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-draw-all"
+          ],
+          "verse_refs": [
+            "John 12:20-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_79",
+          "text": "For its historical and cultural setting, note that John's aposynagogos notices have supported staged Johannine-community and synagogue-expulsion reconstructions, but a single late-first-century decree or uniform rupture is not established by the text. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-aposynagogos"
+          ],
+          "verse_refs": [
+            "John 12:42-43"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_80",
+          "text": "For its historical and cultural setting, note that The event belongs to Jesus' Judean ministry near Jerusalem shortly before the passion narrative. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "raising-of-lazarus:historical_context:0"
+          ],
+          "verse_refs": [
+            "John 12:9-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "46f10a0f5c34bb2229b77588c5a75b4509b455359288498cc2a1868ba7f0cf17",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

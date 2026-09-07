@@ -1,0 +1,211 @@
+{
+  "passage_ref": "2 Kings 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2-kings:interpretive_note:0",
+      "claim": "The Hebrew phrase nearim qetannim does not require very young children and can describe youths, but uncertainty about age does not remove the ethical and theological difficulty of the bears killing forty-two after Elisha's curse.",
+      "category": "culture",
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 2:23-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-kings",
+        "parent_title": "2 Kings",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "probable",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "second-kings-elisha-succeeds",
+      "claim": "Elisha witnesses Elijah's ascent, receives his mantle, parts the Jordan, and is recognized by the prophetic company as Elijah's successor.",
+      "category": "history",
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 2:1-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-kings",
+        "parent_title": "2 Kings",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "second-kings-literary-movement",
+      "claim": "Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile.",
+      "category": "culture",
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 2:1-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-kings",
+        "parent_title": "2 Kings",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 113
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Kings 1-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 1:1-25:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-kings-literary-movement",
+          "second-kings-elisha-succeeds",
+          "second-kings-naaman-healed",
+          "second-kings-samaria-falls",
+          "second-kings-jerusalem-delivered",
+          "second-kings-josiah-reform",
+          "second-kings-jerusalem-falls",
+          "second-kings-jehoiachin-released"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-kings-1-25",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Yale University Press",
+        "year": 1988,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "second-kings-literary-movement",
+          "second-kings-elisha-succeeds",
+          "second-kings-naaman-healed",
+          "second-kings-samaria-falls",
+          "second-kings-jerusalem-delivered",
+          "second-kings-josiah-reform",
+          "second-kings-jerusalem-falls",
+          "second-kings-jehoiachin-released"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, regnal chronology, political history, and extra-biblical documentation.",
+        "id": "cogan-tadmor-second-kings",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-kings",
+        "type": "book",
+        "title": "2 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "51f9001dea5f2d2d530592004afc4fb9c7ca179e94cc8ef0c596924978402fa5",
+  "evidence_hash_version": "2"
+}

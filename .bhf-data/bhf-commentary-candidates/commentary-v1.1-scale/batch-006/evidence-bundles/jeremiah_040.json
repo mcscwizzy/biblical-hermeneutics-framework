@@ -1,0 +1,314 @@
+{
+  "passage_ref": "Jeremiah 40",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "jeremiah-historical-crisis",
+      "claim": "Jeremiah's narrated world is rooted in Judah's transition from Josiah through Babylonian domination, the 597 deportation, Zedekiah's siege, Jerusalem's 587/586 destruction, Gedaliah, and flight to Egypt.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "crouch-jeremiah-contexts",
+        "british-museum-babylonian-chronicle",
+        "lundbom-jeremiah-37-52"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 40:1-44:30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "jeremiah-long-composition",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3900,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "jeremiah-practical-mt-outline",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3900,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Jeremiah: Content and Structure",
+        "author": "Mark E. Biddle",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 13, pages 235-251",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323191290",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetry, prose, headings, collections, and the two versions.",
+        "id": "biddle-jeremiah-content",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle BM 21946",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Museum number 21946; chronicle for 605-594 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "timeline",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Clay tablet describing Nebuchadnezzar's 597 BCE Jerusalem campaign.",
+        "id": "british-museum-babylonian-chronicle",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Historical Contexts of the Books of Jeremiah",
+        "author": "C. L. Crouch",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 1, pages 25-39",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323186242",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "timeline",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Historical study of Assyria, Egypt, Babylonia, Judah, and the book's crisis settings.",
+        "id": "crouch-jeremiah-contexts",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Masoretic Jeremiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jeremiah 1-52 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "jeremiah-masoretic",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Jeremiah 37-52",
+        "author": "Jack R. Lundbom",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 21C",
+        "url": "https://yalebooks.yale.edu/book/9780300139655/jeremiah-37-52/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on Jeremiah 37-52.",
+        "id": "lundbom-jeremiah-37-52",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Jeremiah",
+        "author": "Louis Stulman and Edward Silver, editors",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/37089",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Multi-author scholarly reference work spanning history, text, themes, reception, and ethics.",
+        "id": "oxford-handbook-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Abingdon Old Testament Commentaries: Jeremiah",
+        "author": "Louis Stulman",
+        "publisher": "Abingdon Press",
+        "year": 2005,
+        "locator": "Introduction and commentary",
+        "url": "https://www.abingdonpress.com/product/9780687057962/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Final-form and prose-sensitive critical commentary.",
+        "id": "stulman-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "jeremiah",
+        "type": "book",
+        "title": "Jeremiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e095ba11fdc6caa8d96570d980fba277209a582dc452df7e72f97c876fdbff10",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,1484 @@
+{
+  "passage_ref": "Mark 12",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "sadducees",
+        "title": "Sadducees",
+        "type": "institution",
+        "aliases": [
+          "sadducees institution",
+          "sadducees in scripture",
+          "sadducees structure",
+          "sadducees role"
+        ],
+        "metadata": {
+          "summary": "A late Second Temple Jewish group known through external descriptions and New Testament disputes, often associated with elite and priestly circles but poorly documented in its own voice.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 22:23-33",
+            "Mark 12:18-27",
+            "Acts 4:1-22",
+            "Acts 5:17-42",
+            "Acts 23:1-10"
+          ]
+        }
+      },
+      {
+        "id": "scribes",
+        "title": "Scribes",
+        "type": "institution",
+        "aliases": [
+          "scribes institution",
+          "scribes in scripture",
+          "scribes structure",
+          "scribes role"
+        ],
+        "metadata": {
+          "summary": "Literate specialists whose work could include administration, document production, textual study, teaching, legal interpretation, counsel, and public authority across different biblical periods.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 22:3-13",
+            "Ezra 7:1-10",
+            "Nehemiah 8:1-18",
+            "Mark 7:1-23",
+            "Mark 12:28-34",
+            "Matthew 23:1-36"
+          ]
+        }
+      },
+      {
+        "id": "temple-tax",
+        "title": "Temple Tax",
+        "type": "institution",
+        "aliases": [
+          "temple tax institution",
+          "temple tax in scripture",
+          "temple tax structure",
+          "temple tax role"
+        ],
+        "metadata": {
+          "summary": "A Jewish payment associated with maintaining the Jerusalem temple, distinct from Roman tribute, customs tolls, voluntary offerings, and sacrificial purchases.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 30:11-16",
+            "2 Chronicles 24:4-14",
+            "Matthew 17:24-27",
+            "Mark 12:13-17"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "gospel-taxation-distinctions",
+      "claim": "Gospel passages use different settings and vocabulary for imperial tribute, toll collectors, and temple-associated payments.",
+      "category": "politics",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "british-museum-tiberius-denarius",
+        "keddie-taxation",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "temple-tax"
+      ],
+      "passage_anchors": [
+        "Mark 12:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "gospel-taxation-distinctions:passage-relevance",
+      "claim": "The evidence prevents Mark 12's tribute question, Zacchaeus's toll-related role, and temple payments from being flattened into a single tax.",
+      "category": "politics",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "british-museum-tiberius-denarius",
+        "keddie-taxation",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "temple-tax"
+      ],
+      "passage_anchors": [
+        "Mark 12:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "gospel-taxation-distinctions"
+        ]
+      }
+    },
+    {
+      "id": "mark-economic-world",
+      "claim": "Mark depicts hired labor, fishers, tolls, farms, tenants, debt, wealthy patrons, impoverished people, enslaved persons, widows, and elite extraction within unequal agrarian and imperial economies.",
+      "category": "politics",
+      "source_ids": [
+        "keddie-class-power",
+        "oxford-synoptics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 12:1-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-jewish-debate",
+      "claim": "Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic.",
+      "category": "culture",
+      "source_ids": [
+        "jewish-annotated-nt",
+        "mark-food-purity",
+        "mark-religious-authorities"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "mark-widow",
+      "claim": "Mark 12:41-44 can portray the widow's total gift as exemplary, expose a system that consumes widows' houses, or do both; it cannot require vulnerable people to surrender necessities to institutions.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "oxford-synoptics",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 12:38-44"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "sadducees:ancient_near_east_context:0",
+      "claim": "The relevant setting is Hellenistic and Roman Judea rather than generic ancient leadership or village authority.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Mark 12:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sadducees:hebraic_worldview:0",
+      "claim": "Ancient sources connect Sadducees with disputes about written authority, providence, resurrection, angels or spirits, and temple-linked power, but the sources are selective and often adversarial.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Mark 12:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sadducees:historical_context:0",
+      "claim": "Sadducees are attested by Josephus and the New Testament in the Hasmonean and Roman periods. Their precise origins, membership, priestly connections, and legal positions remain difficult to reconstruct because no self-authored Sadducean corpus survives.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Mark 12:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sadducees:historical_setting:0",
+      "claim": "Hasmonean and Roman Judea before 70 CE, with Josephus's retrospective accounts composed later in the first century.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Mark 12:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sadducees:original_audience:0",
+      "claim": "Readers of the Gospels and Acts encountering a sparsely documented Jewish group through polemical and narrative sources.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Mark 12:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sadducees:second_temple_context:0",
+      "claim": "Josephus contrasts Sadducees with Pharisees and Essenes; the Gospels and Acts associate them especially with resurrection disputes and Jerusalem leadership.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Mark 12:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "scribes:ancient_near_east_context:0",
+      "claim": "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "scribes:hebraic_worldview:0",
+      "claim": "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "scribes:historical_context:0",
+      "claim": "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "scribes:historical_setting:0",
+      "claim": "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "scribes:original_audience:0",
+      "claim": "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "scribes:second_temple_context:0",
+      "claim": "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "scribes-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "scribes"
+      ],
+      "passage_anchors": [
+        "Mark 12:28-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "scribes",
+        "parent_title": "Scribes",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-tax:ancient_near_east_context:0",
+      "claim": "Temple Tax is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "temple-tax-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "temple-tax"
+      ],
+      "passage_anchors": [
+        "Mark 12:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-tax",
+        "parent_title": "Temple Tax",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-tax:hebraic_worldview:0",
+      "claim": "The payment expresses corporate responsibility for sanctuary worship while remaining distinguishable from gifts, vows, and imperial taxation.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "temple-tax-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "temple-tax"
+      ],
+      "passage_anchors": [
+        "Mark 12:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-tax",
+        "parent_title": "Temple Tax",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-tax:historical_context:0",
+      "claim": "Exodus 30's half-shekel levy became a key scriptural precedent for later temple revenue. By the first century, collection practices were embedded in diaspora and Judean temple support and could create practical and political questions.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "temple-tax-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "temple-tax"
+      ],
+      "passage_anchors": [
+        "Mark 12:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-tax",
+        "parent_title": "Temple Tax",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-tax:second_temple_context:0",
+      "claim": "Matthew 17's didrachma collectors presuppose a temple-associated payment; after 70 CE Rome redirected a Jewish tax to Jupiter Capitolinus, a later development not to be imported into Jesus's ministry.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "temple-tax-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "temple-tax"
+      ],
+      "passage_anchors": [
+        "Mark 12:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-tax",
+        "parent_title": "Temple Tax",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "temple-tax"
+        ]
+      },
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "sadducees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "sadducees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Two silver denarii of Tiberius",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Money Gallery, Roman Empire AD 14-37",
+        "url": "https://www.britishmuseum.org/sites/default/files/2021-05/Money_Gallery_LPG_2020_Room_68.pdf",
+        "source_type": "museum-collection",
+        "supports": [
+          "gospel-taxation-distinctions"
+        ],
+        "notes": "Museum orientation for denarius coinage under Tiberius; no claim that either coin appears in Mark 12.",
+        "id": "british-museum-tiberius-denarius",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "sadducees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "sadducees",
+          "scribes"
+        ]
+      },
+      {
+        "title": "Exodus 25-40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-25-40",
+        "canonical_object_ids": [
+          "temple-tax"
+        ]
+      },
+      {
+        "title": "Hebrews 8-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-8-10",
+        "canonical_object_ids": [
+          "temple-tax"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Mark and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive context for New Testament texts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Pilgrimage, taxation, Roman trial, crucifixion, and burial passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 2:1-52; 19:1-10; Mark 11:1-25; 12:13-17; 15:21-47; John 18:28-19:42; Acts 5:33-39",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "gospel-crucifixion-and-burial",
+          "josephus-census-tax-resistance",
+          "stepped-street-jerusalem",
+          "pilate-prefect-inscription",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "judean-gospel-acts-passages",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "url": "https://doi.org/10.1017/9781108656757",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "stepped-street-jerusalem",
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power",
+          "mark"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Class and Power in Roman Palestine",
+            "author": "Anthony Keddie",
+            "publisher": "Cambridge University Press",
+            "year": 2019,
+            "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+            "url": "https://doi.org/10.1017/9781108656757",
+            "source_type": "academic-book",
+            "supports": [
+              "gospel-pilgrimage-and-temple-economy",
+              "stepped-street-jerusalem",
+              "gospel-taxation-distinctions",
+              "josephus-census-tax-resistance",
+              "gospel-roman-hearing",
+              "pilate-prefect-inscription"
+            ],
+            "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+            "id": "keddie-class-power"
+          },
+          {
+            "title": "Class and Power in Roman Palestine",
+            "author": "G. Anthony Keddie",
+            "publisher": "Cambridge University Press",
+            "year": 2019,
+            "locator": "Whole volume",
+            "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Study of class, extraction, status, and power in Roman Palestine.",
+            "id": "keddie-class-power"
+          }
+        ]
+      },
+      {
+        "title": "Taxation: Render unto Caesar and the Local Elites",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Class and Power in Roman Palestine, chapter 3, pp. 111-151",
+        "url": "https://doi.org/10.1017/9781108656757.004",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance"
+        ],
+        "notes": "Distinguishes direct tribute, censuses, tolls, customs, tax farming, and local elite supervision.",
+        "id": "keddie-taxation",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Leviticus",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus",
+        "canonical_object_ids": [
+          "temple-tax"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Stomach Purifies All Foods: Jesus' Anatomical Argument in Mark 7.18-19",
+        "author": "Logan Williams",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "New Testament Studies 70.3, 371-391",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/stomach-purifies-all-foods-jesus-anatomical-argument-in-mark-71819/FC869FEDFEB2425BEAC3029C21B5900A",
+        "source_type": "journal-article",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Recent argument distinguishing ritual impurity, digestion, and kashrut.",
+        "id": "mark-food-purity",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Religious Authorities in the Gospel of Mark",
+        "author": "Jack Dean Kingsbury",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "New Testament Studies 36",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/religious-authorities-in-the-gospel-of-mark/9BF67DFC9981C8AC28BF6C210DEC883A",
+        "source_type": "journal-article",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary characterization of Mark's varied authority groups.",
+        "id": "mark-religious-authorities",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Synoptic Gospels",
+        "author": "Stephen P. Ahearne-Kroll, editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/45760",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative research on sources, manuscripts, bodies, power, healing, food, suffering, wealth, and gender.",
+        "id": "oxford-synoptics",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Early Judaism: A Comprehensive Overview",
+        "author": "John J. Collins and Daniel C. Harlow, editors",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Sections on Jewish groups, law, and the Dead Sea Scrolls",
+        "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Multi-author scholarly overview used for source limits and disputed group reconstruction.",
+        "id": "sadducees-historical-orientation",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "The Wisdom of Sirach: A New Translation with Notes",
+        "author": "Walter T. Wilson",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Sirach 38:24-39:11",
+        "url": "https://www.eerdmans.com/9780802881762/the-wisdom-of-sirach/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Critical translation and commentary used for the Second Temple learned-scribe portrait.",
+        "id": "scribes-historical-orientation",
+        "canonical_object_ids": [
+          "scribes"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Temple Tax",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "temple-tax-historical-orientation",
+        "canonical_object_ids": [
+          "temple-tax"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "sadducees",
+        "type": "institution",
+        "title": "Sadducees",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "scribes",
+        "type": "institution",
+        "title": "Scribes",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "temple-tax",
+        "type": "institution",
+        "title": "Temple Tax",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "52521229b2ddf7872848e3eb205674c76d845ee76711d475a4e8e1b4c5b2b603",
+  "evidence_hash_version": "2"
+}

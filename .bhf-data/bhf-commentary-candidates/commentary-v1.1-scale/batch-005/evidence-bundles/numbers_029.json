@@ -1,0 +1,153 @@
+{
+  "passage_ref": "Numbers 29",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "numbers-inheritance-preparation",
+      "claim": "The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 26-36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Numbers",
+        "author": "Jacob Milgrom",
+        "publisher": "Jewish Publication Society",
+        "year": 1990,
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "milgrom-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 1:1-36:13",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "numbers-two-generations",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing",
+          "numbers-inheritance-preparation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "numbers-1-36",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "0c811b1b80543162c1478610f791789111c6d6169e8b311b6f5743e71e7f17c3",
+  "evidence_hash_version": "2"
+}

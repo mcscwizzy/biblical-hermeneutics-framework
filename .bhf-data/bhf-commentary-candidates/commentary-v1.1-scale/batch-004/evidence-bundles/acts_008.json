@@ -1,0 +1,1107 @@
+{
+  "passage_ref": "Acts 8",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-ethiopian",
+      "claim": "Acts identifies the Ethiopian court official as a eunuch and powerful treasury administrator; modern racial categories and stereotypes must not be imposed on him.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "spencer-eunuch"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:26-40"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-samaria-power-not-for-sale",
+      "claim": "Acts separates Samaritan baptism from a later apostolic prayer and laying-on of hands scene, then narrates Simon offering money for the same mediating authority and receiving a severe rebuke.",
+      "category": "culture",
+      "source_ids": [
+        "acts-spirit-text",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:4-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-samaria-power-not-for-sale:passage-relevance",
+      "claim": "Rejects selling anointing, donor access, credentials, prophecy, healing, or Spirit power.",
+      "category": "culture",
+      "source_ids": [
+        "acts-spirit-text",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:4-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-samaria-power-not-for-sale"
+        ]
+      }
+    },
+    {
+      "id": "acts-stephen",
+      "claim": "Stephen's speech retells Israel's contested history as character rhetoric before hostile council members and cannot be assigned as blanket blame to all Jews.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "reinhartz-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 6:8-8:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "acts-variable-reception-sequences",
+      "claim": "Four prominent Acts scenes vary the ordering and presence of hearing, repentance or faith, water baptism, prayer, laying on hands, tongues, prophecy, and Spirit reception.",
+      "category": "culture",
+      "source_ids": [
+        "acts-spirit-text",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:4-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "acts-variable-reception-sequences:passage-relevance",
+      "claim": "Prevents coercing one experiential sequence or treating absence of one sign as proof of exclusion.",
+      "category": "culture",
+      "source_ids": [
+        "acts-spirit-text",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:4-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "acts-variable-reception-sequences"
+        ]
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "isaiah-suffering-servant",
+      "claim": "Isaiah 52:13-53:12 narrates a servant's humiliation, suffering, death, representative bearing, vindication, and benefit to others, but does not explicitly name the servant; collective, individual, prophetic, messianic, and christological readings have long histories.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-40-55",
+        "paul-isaiah-40-66",
+        "oxford-handbook-isaiah",
+        "moyise-isaiah-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:26-40"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:2",
+      "claim": "Tongues, prophecy, healing, or Spirit reception cannot be manufactured, compelled, sold, or required as proof of salvation or spiritual rank.",
+      "category": "culture",
+      "source_ids": [
+        "corinthians-spirit-text",
+        "acts-spirit-text",
+        "fee-1cor",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:14-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "suffering-servant-prophecy:ancient_near_east_context:0",
+      "claim": "Ancient background for Suffering Servant Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 42:1-9, Isaiah 49:1-7, isaiah, and jesus without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-42",
+        "isaiah-49",
+        "isaiah-50",
+        "isaiah-52-53",
+        "acts-8",
+        "1-peter-2",
+        "suffering-servant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:26-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "suffering-servant-prophecy",
+        "parent_title": "Suffering Servant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "suffering-servant-prophecy:historical_context:0",
+      "claim": "The servant songs emerge from Isaiah's prophetic world and hold together Israel's vocation, suffering, and restoration.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-42",
+        "isaiah-49",
+        "isaiah-50",
+        "isaiah-52-53",
+        "acts-8",
+        "1-peter-2",
+        "suffering-servant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 8:26-40"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "suffering-servant-prophecy",
+        "parent_title": "Suffering Servant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Acts 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-8",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts 2:1-21; 8:4-25; 10:34-48; 19:1-7",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 2:1-21; 8:4-25; 10:34-48; 19:1-7",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; narrated events and source composition remain chronologically distinct.",
+        "id": "acts-spirit-text",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Isaiah 40-55",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible 19A",
+        "url": "https://yalebooks.yale.edu/book/9780300140545/isaiah-40-55/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Critical commentary on exilic context, Cyrus, servants, comfort, and return.",
+        "id": "blenkinsopp-isaiah-40-55",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "1 Corinthians 2:6-16 and 12:1-14:40",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 2:6-16; 12:1-14:40",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence for wisdom, gifts, body, love, tongues, prophecy, and order.",
+        "id": "corinthians-spirit-text",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians, Revised Edition",
+        "author": "Gordon D. Fee",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "1 Corinthians 2 and 12-14",
+        "url": "https://www.eerdmans.com/9780802871367/the-first-epistle-to-the-corinthians-revised-edition/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed exegetical and theological commentary from a Pentecostal scholar.",
+        "id": "fee-1cor",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "Isaiah 42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-42",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 49",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-49",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 50",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-50",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 52-53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-52-53",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Acts 2, 8, 10, and 19",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Extensive historical and exegetical commentary; narrative patterns remain interpreted.",
+        "id": "keener-acts-spirit",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Isaiah in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 28",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334632502",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-suffering-servant",
+          "isaiah-death-new-creation",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "New Testament quotation and allusion, Gentile inclusion, new exodus, new creation, and New Jerusalem.",
+        "id": "moyise-isaiah-nt",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Isaiah 40-66: A Commentary",
+        "author": "Shalom M. Paul",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Eerdmans Critical Commentary",
+        "url": "https://www.eerdmans.com/9780802826039/isaiah-40-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus",
+          "isaiah-justice-fasting-inclusion"
+        ],
+        "notes": "Jewish critical commentary with detailed philological, textual, literary, historical, and ancient Near Eastern analysis.",
+        "id": "paul-isaiah-40-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Jewish People and Their Scriptures in the Christian Bible",
+        "author": "Adele Reinhartz, contributor",
+        "publisher": "Cambridge University Press",
+        "year": 2008,
+        "locator": "Jewish-Christian interpretation and anti-Judaism",
+        "url": "https://doi.org/10.1017/CBO9780511619946",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Context for resisting anti-Jewish and supersessionist readings.",
+        "id": "reinhartz-acts",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Ethiopian Eunuch and His Bible",
+        "author": "F. Scott Spencer",
+        "publisher": "Biblical Interpretation",
+        "year": 1992,
+        "locator": "Acts 8:26-40",
+        "url": "https://doi.org/10.1163/156851592X00125",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of the Ethiopian official's characterization and scriptural encounter.",
+        "id": "spencer-eunuch",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Suffering Servant Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "suffering-servant-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "type": "cultural_background",
+        "title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "suffering-servant-prophecy",
+        "type": "prophecy",
+        "title": "Suffering Servant Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e499f377a4bb911a67b5a522024e24082e1808a50ec3a76ab65866e53d6fe62e",
+  "evidence_hash_version": "2"
+}

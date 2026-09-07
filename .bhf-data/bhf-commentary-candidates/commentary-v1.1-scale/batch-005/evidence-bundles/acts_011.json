@@ -1,0 +1,945 @@
+{
+  "passage_ref": "Acts 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "cornelius-household-receives-spirit",
+        "title": "Cornelius's Household Receives the Spirit",
+        "type": "event",
+        "aliases": [
+          "cornelius household receives spirit",
+          "acts 10 cornelius",
+          "gentiles receive holy spirit",
+          "peter and cornelius"
+        ],
+        "metadata": {
+          "summary": "The Holy Spirit falls on Cornelius and his household as Peter proclaims Jesus, confirming Gentile inclusion.",
+          "importance": 86,
+          "retrieval_score": 0.906,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 10:1-48",
+            "Acts 11:1-18",
+            "Acts 15:7-11",
+            "Galatians 3:6-14"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-11-retelling",
+      "claim": "Acts retells the vision and household episode before a Jerusalem audience and closes with recognition of gentile repentance.",
+      "category": "culture",
+      "source_ids": [
+        "acts-10-15-greek",
+        "fitzmyer-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 11:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-11-retelling:passage-relevance",
+      "claim": "Confirms gentile reception rather than presenting the sheet as an isolated diet oracle.",
+      "category": "culture",
+      "source_ids": [
+        "acts-10-15-greek",
+        "fitzmyer-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 11:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-11-retelling"
+        ]
+      }
+    },
+    {
+      "id": "acts-antioch",
+      "claim": "Acts depicts Antioch as a multilingual leadership and mission center and locates there the first naming of disciples as Christians.",
+      "category": "history",
+      "source_ids": [
+        "acts-greek",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 11:19-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "acts-cornelius",
+      "claim": "Peter's vision is interpreted within Acts chiefly through God's cleansing and acceptance of gentile people, culminating in table fellowship and Spirit reception.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "jervell-israel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 10:1-11:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "acts-galatians",
+      "claim": "Acts' sequence around Paul's call and Jerusalem visits differs in emphasis and detail from Galatians 1-2, and exact harmonization remains disputed.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "paul-letters-sbl"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 11:27-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 26,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1000,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1000,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1000,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "cornelius-household-receives-spirit:ancient_near_east_context:0",
+      "claim": "Household conversion, patronage, and ethnic boundary markers shape the social setting of Acts 10.",
+      "category": "culture",
+      "source_ids": [
+        "acts-10-1-48",
+        "acts-11-1-18",
+        "acts-15-7-11",
+        "galatians-3-6-14",
+        "cornelius-household-receives-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "cornelius-household-receives-spirit"
+      ],
+      "passage_anchors": [
+        "Acts 11:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "cornelius-household-receives-spirit",
+        "parent_title": "Cornelius's Household Receives the Spirit",
+        "parent_type": "event",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "cornelius-household-receives-spirit:historical_context:0",
+      "claim": "The event belongs to the early church's expansion beyond Judea into Gentile households under Roman rule.",
+      "category": "history",
+      "source_ids": [
+        "acts-10-1-48",
+        "acts-11-1-18",
+        "acts-15-7-11",
+        "galatians-3-6-14",
+        "cornelius-household-receives-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "cornelius-household-receives-spirit"
+      ],
+      "passage_anchors": [
+        "Acts 11:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "cornelius-household-receives-spirit",
+        "parent_title": "Cornelius's Household Receives the Spirit",
+        "parent_type": "event",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "gal-acts",
+      "claim": "Acts and Galatians differ in selection, emphasis, and sequence when narrating Paul's call and Jerusalem contacts; exact harmonizations remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "longenecker-galatians",
+        "barclay-crisis"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 11:27-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 26,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:6",
+      "claim": "Galatians and Acts are independent rhetorical narratives; neither automatic harmonization nor automatic contradiction can replace passage-by-passage comparison.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 11:27-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 26,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 10:1-48",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Cornelius and the Spirit",
+        "id": "acts-10-1-48",
+        "canonical_object_ids": [
+          "cornelius-household-receives-spirit"
+        ]
+      },
+      {
+        "title": "Acts 10-15 and 21:25",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 10:1-11:18; 15:1-35; 21:25",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary narrative evidence; historicity and textual form remain separate questions.",
+        "id": "acts-10-15-greek",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Acts 11:1-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Peter explains Gentile inclusion",
+        "id": "acts-11-1-18",
+        "canonical_object_ids": [
+          "cornelius-household-receives-spirit"
+        ]
+      },
+      {
+        "title": "Acts 15:7-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Peter recalls the event at Jerusalem",
+        "id": "acts-15-7-11",
+        "canonical_object_ids": [
+          "cornelius-household-receives-spirit"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Paul: Crisis in Galatia, Second Edition",
+        "author": "John M. G. Barclay",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Galatian crisis, opponents, chronology, Torah",
+        "url": "https://www.cambridge.org/core/books/paul-crisis-in-galatia/0FEBDAE0C710746C0685D5A70913F9BE",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Reconstruction of the crisis; hypotheses remain contestable.",
+        "id": "barclay-crisis",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Cornelius's Household Receives the Spirit",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "cornelius-household-receives-spirit-historical-orientation",
+        "canonical_object_ids": [
+          "cornelius-household-receives-spirit"
+        ]
+      },
+      {
+        "title": "The Acts of the Apostles",
+        "author": "Joseph A. Fitzmyer",
+        "publisher": "Yale University Press",
+        "year": 1998,
+        "locator": "Anchor Bible 31; Acts 10:1-11:18 and 15:1-35",
+        "url": "https://yalebooks.yale.edu/book/9780300139822/the-acts-of-the-apostles/",
+        "source_type": "reference-work",
+        "supports": [
+          "acts-animal-vision-perplexity",
+          "acts-people-hospitality-spirit",
+          "acts-11-retelling",
+          "acts-15-gentile-question"
+        ],
+        "notes": "Historical-critical and textual commentary.",
+        "id": "fitzmyer-acts",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text, checked alongside manuscript resources.",
+        "id": "gal-greek",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Galatians 3:6-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Gentiles and Abrahamic blessing",
+        "id": "galatians-3-6-14",
+        "canonical_object_ids": [
+          "cornelius-household-receives-spirit"
+        ]
+      },
+      {
+        "title": "The Theology of the Acts of the Apostles",
+        "author": "Jacob Jervell",
+        "publisher": "Cambridge University Press",
+        "year": 1996,
+        "locator": "Israel, salvation, law, and mission",
+        "url": "https://doi.org/10.1017/CBO9780511554995",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Influential account of Israel and gentile inclusion in Acts.",
+        "id": "jervell-israel",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Bruce W. Longenecker",
+        "publisher": "Cambridge University Press",
+        "year": 2003,
+        "locator": "The Cambridge Companion to St Paul, chapter 4",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-st-paul/galatians/405399A77EA4FE97DF9270CB98D95903",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Concise orientation to audience, crisis, rhetoric, and theology.",
+        "id": "longenecker-galatians",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Pauline Letters in the SBL Greek New Testament",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians, Romans, Corinthians, Philippians",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Independent canonical primary texts for comparison with Acts' portrait and chronology.",
+        "id": "paul-letters-sbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "acts",
+          "galatians"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "acts",
+          "galatians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "cornelius-household-receives-spirit",
+        "type": "event",
+        "title": "Cornelius's Household Receives the Spirit",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      },
+      {
+        "id": "galatians",
+        "type": "book",
+        "title": "Galatians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.903
+      },
+      {
+        "id": "ritual-purity-and-communal-holiness",
+        "type": "cultural_background",
+        "title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5079ae5887dfd7580acf57368d89670ad0bdf7296d258aff01392e8d7a7f2ea4",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,71 @@
+{
+  "reference": "1 Samuel 15",
+  "book": "1 Samuel",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_72",
+          "text": "Read the chapter with this setting in view: Saul is rejected from enduring kingship because he does not keep the commanded word, with First Samuel 15 emphasizing that obedience is better than sacrifice. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-samuel-saul-rejected"
+          ],
+          "verse_refs": [
+            "1 Samuel 15:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_73",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 15:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_73",
+          "text": "For a later or comparative connection, note that The narrator never states why Mordecai refuses to bow to Haman. Mordecai's Benjaminite ancestry and Haman's Agagite title invite an Amalek-Saul echo, but religious-law explanations, personal defiance, and ethnic feud reconstructions should remain proposals rather than explicit facts. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "esther:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "1 Samuel 15:1-35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "600002ffb3ffc4649ff0e1e04ec5a0d96f316e3e9165604e7472160c88762875",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

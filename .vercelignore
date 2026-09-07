@@ -1,0 +1,20 @@
+# Commentary generation, evidence, and audit work is not production runtime data.
+.bhf-data/bhf-commentary-candidates/**
+
+# Local state and build caches are not part of the Git deployment source.
+.bhf/
+.venv/
+build/
+dist/
+.pytest_cache/
+**/__pycache__/**
+
+# Development-only source and documentation.
+tests/**
+docs/**
+.github/**
+mobile/**
+scripts/**
+requirements-gui.txt
+Dockerfile
+docker-compose*.yml

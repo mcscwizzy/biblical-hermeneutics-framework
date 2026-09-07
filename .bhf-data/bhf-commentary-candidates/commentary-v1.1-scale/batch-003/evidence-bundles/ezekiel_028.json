@@ -1,0 +1,145 @@
+{
+  "passage_ref": "Ezekiel 28",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-tyre-laments",
+      "claim": "Ezekiel 26-28 addresses historical Tyre and its rulers through siege, ship, lament, garden, precious-stone, and cherub imagery rather than explicitly naming Satan.",
+      "category": "history",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "greenberg-ezekiel-21-37",
+        "crouch-foreign-nations"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 28:1-19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Ezekiel and the Foreign Nations",
+        "author": "C. L. Crouch",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 14",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "ezekiel-tyre-laments"
+        ],
+        "notes": "Context and rhetoric of Ezekiel's nation oracles.",
+        "id": "crouch-foreign-nations",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel 21-37",
+        "author": "Moshe Greenberg",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible 22A",
+        "url": "https://yalebooks.yale.edu/book/9780300139679/ezekiel-21-37/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "hebrew-words",
+          "ezekiel-tyre-laments",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones"
+        ],
+        "notes": "Detailed holistic Jewish commentary on Ezekiel 21-37.",
+        "id": "greenberg-ezekiel-21-37",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e96a53cd7f3735fabb09165ba69cbe38ff539c5e226fb54244947b4347bedb37",
+  "evidence_hash_version": "2"
+}

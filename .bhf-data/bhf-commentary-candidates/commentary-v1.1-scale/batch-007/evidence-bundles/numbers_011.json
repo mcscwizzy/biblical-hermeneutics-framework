@@ -1,0 +1,369 @@
+{
+  "passage_ref": "Numbers 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "numbers:interpretive_note:2",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "category": "geography",
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10-21"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 100,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "spirit-theme:ancient_near_east_context:0",
+      "claim": "The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 11:16-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "spirit-theme:historical_context:0",
+      "claim": "Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 11:16-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Ezekiel 36-37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-36-37",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Galatians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-5",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Genesis 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-1",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Joel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joel-2",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "John 14-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14-16",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Numbers",
+        "author": "Jacob Milgrom",
+        "publisher": "Jewish Publication Society",
+        "year": 1990,
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "milgrom-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Spirit Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "spirit-theme-historical-orientation",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Numbers commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "spirit-theme",
+        "type": "theme",
+        "title": "Spirit Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4d1f62ac85bb5a996b9ed47363475376f17b7612d9ed06bd466935a994271051",
+  "evidence_hash_version": "2"
+}

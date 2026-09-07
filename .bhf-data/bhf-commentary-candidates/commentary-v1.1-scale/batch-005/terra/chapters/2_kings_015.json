@@ -1,0 +1,83 @@
+{
+  "reference": "2 Kings 15",
+  "book": "2 Kings",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_64",
+          "text": "Read the chapter with this setting in view: Second Kings distributes Israel's territorial loss, Samaria's siege, deportation, and incoming resettlement across several notices rather than presenting them as one action. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "kings-staged-assyrian-reduction"
+          ],
+          "verse_refs": [
+            "2 Kings 15:29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_65",
+          "text": "For its historical and cultural setting, note that Second Kings reports Menahem purchasing Assyrian support, Ahaz appealing for rescue with temple and palace wealth, Hoshea paying and then withholding tribute, and Hezekiah paying after revolt and invasion. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "kings-tribute-vassalage-sequence"
+          ],
+          "verse_refs": [
+            "2 Kings 15:17-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_66",
+          "text": "For its historical and cultural setting, note that Northern Israel and Assyrian resettlement destinations during the later eighth and seventh centuries BCE. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "assyrian-exile-of-israel:historical_setting:0"
+          ],
+          "verse_refs": [
+            "2 Kings 15:29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_65",
+          "text": "For a later or comparative connection, note that Tribute could result from defeat, strategic submission, purchased support, or restored vassalage; the payment itself does not reveal one ruler's complete motives. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "assyrian-tribute-and-royal-representation:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "2 Kings 15:17-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ae1fb63ad5e180b6217906c22620e4fba40b4b43e2030964828bd7dfa053945b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

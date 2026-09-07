@@ -1,0 +1,89 @@
+{
+  "reference": "Numbers 24",
+  "book": "Numbers",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_15",
+          "text": "Read the chapter with this setting in view: In Numbers 22-24, Balak summons Balaam to curse Israel, but Balaam repeatedly delivers blessings under divine constraint. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers-balaam-blessing"
+          ],
+          "verse_refs": [
+            "Numbers 24:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_16",
+          "text": "For its historical and cultural setting, note that The Deir Alla inscription witnesses to a later tradition about Balaam son of Beor but does not verify the speeches, date, or events narrated in Numbers 22-24. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "numbers:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "Numbers 24:1-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_16",
+          "text": "For its geographical or material setting, note that The Deir Alla inscription attests a later nonbiblical tradition about Balaam son of Beor, but it does not independently verify the speeches or events narrated in Numbers 22-24. It can illuminate the passage, while its limits should be kept in view. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "numbers-deir-alla-limits"
+          ],
+          "verse_refs": [
+            "Numbers 24:1-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_16",
+          "text": "For a later or comparative connection, note that Balaam and the donkey condemn profit-seeking error through scriptural retelling; the textual Bosor or Beor problem and differences from Numbers and Jude must remain visible. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "2-peter:interpretive_note:24"
+          ],
+          "verse_refs": [
+            "Numbers 24:1-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d2ca753d6053bb906f174c4bfe8fea3acd8ea6d1ef5db028d7eb9d077047c6fb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

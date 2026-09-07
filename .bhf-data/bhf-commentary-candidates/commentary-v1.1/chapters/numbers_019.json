@@ -1,0 +1,56 @@
+{
+  "reference": "Numbers 19",
+  "book": "Numbers",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+          "verse_refs": [
+            "Numbers 19:1-22"
+          ],
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Haggai asks priests for Torah rulings: holiness is not transferred through a second contact, while corpse impurity is transferred by contact.",
+          "verse_refs": [
+            "Numbers 19:11-22"
+          ],
+          "evidence_ids": [
+            "haggai-torah-inquiry"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1a9e4236c1f53c12a1f355fb1deec04727b8510ade98088db81ca30674207c8c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:56.674696+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

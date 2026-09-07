@@ -1,0 +1,134 @@
+{
+  "passage_ref": "1 Chronicles 15",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "first-chronicles-ark-ordered",
+      "claim": "After the failed first procession, David assigns priests and Levites to carry the ark according to prescribed order and establishes continuing worship before it.",
+      "category": "history",
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Chronicles 15:1-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-chronicles",
+        "parent_title": "1 Chronicles",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Chronicles 1:1-29:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-chronicles-genealogical-identity",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-chronicles-1-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "I Chronicles 10-29",
+        "author": "Gary N. Knoppers",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible translation, notes, and commentary on 1 Chronicles 10-29",
+        "url": "https://yalebooks.yale.edu/book/9780300139532/i-chronicles-10-29/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Technical commentary emphasizing the Davidic narrative, textual witnesses, historiography, institutions, and reuse of Samuel.",
+        "id": "knoppers-first-chronicles-10-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-chronicles",
+        "type": "book",
+        "title": "1 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "3ad1b78ae5c7d725a627e714641fee6ae49e2ee5685ff147a01d3cb33c927d42",
+  "evidence_hash_version": "2"
+}

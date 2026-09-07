@@ -1,0 +1,83 @@
+{
+  "reference": "1 Peter 4",
+  "book": "1 Peter",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_137",
+          "text": "Read the chapter with this setting in view: First Peter attests social hostility and suffering but does not name Nero, Domitian, Trajan, or an empire-wide persecution decree. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1pet-persecution"
+          ],
+          "verse_refs": [
+            "1 Peter 4:12-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_138",
+          "text": "For its historical and cultural setting, note that The letter says it is time for judgment to begin from God's household. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1pet-judgment"
+          ],
+          "verse_refs": [
+            "1 Peter 4:17-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_139",
+          "text": "For its historical and cultural setting, note that The letter's language supports debate over Jewish, gentile, and mixed recipients but does not settle exact demographics. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1pet-audience"
+          ],
+          "verse_refs": [
+            "1 Peter 4:3-4"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_138",
+          "text": "A literary feature to notice is that Eschatological exhortation joins prayer, persistent love, hospitality, and stewarding gifts in speech and service. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "1pet-love-gifts"
+          ],
+          "verse_refs": [
+            "1 Peter 4:7-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ec1da19f0f0b4005ce1b9d6e99a8bf77dcea4d32b7305436c351bd5f788cd96b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

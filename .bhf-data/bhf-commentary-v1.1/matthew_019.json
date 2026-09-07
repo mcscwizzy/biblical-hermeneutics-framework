@@ -1,0 +1,53 @@
+{
+  "reference": "Matthew 19",
+  "book": "Matthew",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_17",
+          "text": "Read the chapter with this setting in view: Matthew 19 preserves disputed divorce exception language and a threefold eunuch saying within teaching on marriage, children, and discipleship. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-divorce-eunuchs"
+          ],
+          "verse_refs": [
+            "Matthew 19:1-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_18",
+          "text": "A literary feature to notice is that Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-discourses"
+          ],
+          "verse_refs": [
+            "Matthew 19:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "01ccf4f032d02c6e26f3ca12342b52b6582b147eec5506eeb90d848a73770b85",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

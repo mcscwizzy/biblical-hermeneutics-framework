@@ -1,0 +1,23 @@
+{
+  "review_version": "commentary-v1.1-post-batch-routing-review-v1",
+  "reference": "Luke 22",
+  "evidence_id": "luke-meal-variant",
+  "classification": "isolated_deterministic_presentation_role_bug",
+  "actual_claim": "Luke 22:19b-20, including the second cup and new-covenant language, is present in many major witnesses but absent in important Western witnesses; shorter-text, longer-text, and harmonization models remain debated.",
+  "ckl_parent_record": "luke",
+  "stored_category": "geography",
+  "claim_type": "biblical_text",
+  "note_type": "",
+  "source_kind": "ckl_claim",
+  "semantic_relationship": "DIRECT_CONTEXT",
+  "old_presentation_role": "archaeology_geography",
+  "new_presentation_role": "language_literary",
+  "root_cause": "The role projector honored the legacy geography category after seeing claim_type= biblical_text and did not recognize the authored textual-variant metadata/content signals.",
+  "fix": "The shared presentation-role rule now gives narrow textual-criticism signals precedence over legacy geography/archaeology categories. Interpretive textual notes route to interpretive_questions; other textual evidence routes to language_literary.",
+  "old_locked_hash": "ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e",
+  "new_reconstructed_hash": "dabf2f65b9dc00872535abcca1d8d7206d24a846e5390d1e128cdc4459b204f7",
+  "evidence_ids_changed": false,
+  "batch_001_lock_mutated": false,
+  "batch_001_luke_22_regeneration_required": true,
+  "recommendation": "Keep the original Batch 001 evidence lock and Terra artifact unchanged. Recertify and regenerate Luke 22 in a future corrective batch after Luna review."
+}

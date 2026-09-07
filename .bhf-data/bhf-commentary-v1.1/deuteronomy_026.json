@@ -1,0 +1,54 @@
+{
+  "reference": "Deuteronomy 26",
+  "book": "Deuteronomy",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "This chapter stands near the close of Deuteronomy's covenant instruction. The book moves from remembered wilderness history through instruction and covenant consequences to renewal, succession, song, blessing, and Moses' death. Within that wider movement, Deuteronomy's repeated teaching is rhetorically adapted for a successor generation rather than simply copied word for word from earlier laws. That frame helps readers follow the chapter as part of a continuing address.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement",
+            "deuteronomy:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Deuteronomy 26:1-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "The chapter's place in the book matters as much as any one isolated phrase. Deuteronomy deliberately weaves memory, instruction, covenant consequences, renewal, blessing, and Moses' final acts into a single movement. This observation is literary orientation, not a claim that every legal unit has one simple relationship to its earlier parallel.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 26:1-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "30a1e8f4f627879c4af21c960bb1820fc34d8bba4477b032496616b1e0a1b14d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:38.448332+00:00"
+  }
+}

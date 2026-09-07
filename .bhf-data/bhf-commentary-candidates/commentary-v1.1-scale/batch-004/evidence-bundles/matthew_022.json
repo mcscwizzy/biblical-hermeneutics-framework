@@ -1,0 +1,801 @@
+{
+  "passage_ref": "Matthew 22",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "sadducees",
+        "title": "Sadducees",
+        "type": "institution",
+        "aliases": [
+          "sadducees institution",
+          "sadducees in scripture",
+          "sadducees structure",
+          "sadducees role"
+        ],
+        "metadata": {
+          "summary": "A late Second Temple Jewish group known through external descriptions and New Testament disputes, often associated with elite and priestly circles but poorly documented in its own voice.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 22:23-33",
+            "Mark 12:18-27",
+            "Acts 4:1-22",
+            "Acts 5:17-42",
+            "Acts 23:1-10"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-application-boundaries",
+      "claim": "Matthew cannot legitimately be used to excuse abuse, stigmatize disability or mental illness, enforce misogyny or anti-LGBTQ harm, blame poverty, set apocalyptic dates, or map ancient judgments onto modern peoples.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-feminist-methods",
+        "women-healing-matthew",
+        "postcolonial-reader",
+        "reinhartz-anti-judaism"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 22:34-40"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 33,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "matthew-date",
+      "claim": "Many scholars date Matthew approximately 70-100 CE, often after Jerusalem's temple destruction, but no exact year is textually stated.",
+      "category": "culture",
+      "source_ids": [
+        "larsen-dating",
+        "oxford-synoptic-handbook",
+        "france-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 22:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "matthew-roman-setting",
+      "claim": "Herodian client rule, Roman provincial authority, taxation, elite power, and crucifixion frame Matthew's remembered first-century setting.",
+      "category": "culture",
+      "source_ids": [
+        "josephus-herod",
+        "josephus-roman-judea",
+        "riches-roman-palestine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 22:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "matthew-temple-tax",
+      "claim": "Matthew distinguishes a temple-tax scene from the later tribute-to-Caesar controversy within layered fiscal and political contexts.",
+      "category": "politics",
+      "source_ids": [
+        "matthew-greek",
+        "keddie-class-power",
+        "temple-tax-study"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 22:15-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "sadducees:ancient_near_east_context:0",
+      "claim": "The relevant setting is Hellenistic and Roman Judea rather than generic ancient leadership or village authority.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Matthew 22:23-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:hebraic_worldview:0",
+      "claim": "Ancient sources connect Sadducees with disputes about written authority, providence, resurrection, angels or spirits, and temple-linked power, but the sources are selective and often adversarial.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Matthew 22:23-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:historical_context:0",
+      "claim": "Sadducees are attested by Josephus and the New Testament in the Hasmonean and Roman periods. Their precise origins, membership, priestly connections, and legal positions remain difficult to reconstruct because no self-authored Sadducean corpus survives.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Matthew 22:23-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:historical_setting:0",
+      "claim": "Hasmonean and Roman Judea before 70 CE, with Josephus's retrospective accounts composed later in the first century.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Matthew 22:23-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:original_audience:0",
+      "claim": "Readers of the Gospels and Acts encountering a sparsely documented Jewish group through polemical and narrative sources.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Matthew 22:23-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sadducees:second_temple_context:0",
+      "claim": "Josephus contrasts Sadducees with Pharisees and Essenes; the Gospels and Acts associate them especially with resurrection disputes and Jerusalem leadership.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sadducees-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sadducees"
+      ],
+      "passage_anchors": [
+        "Matthew 22:23-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sadducees",
+        "parent_title": "Sadducees",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "The Gospel of Matthew",
+        "author": "France, R. T.",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825018/the-gospel-of-matthew/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Major exegetical commentary focused on Matthew's final form in historical and cultural context.",
+        "id": "france-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities: Herod and succession",
+        "author": "Josephus, Flavius",
+        "publisher": "Loeb Classical Library",
+        "year": null,
+        "locator": "Antiquities 14-17",
+        "url": "https://www.loebclassics.com/view/LCL410/1963/volume.xml",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "matthew-herod-bethlehem"
+        ],
+        "notes": "Ancient literary witness for Herodian rule; it does not independently report Matthew's infancy events.",
+        "id": "josephus-herod",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities and Jewish War: Roman Judea",
+        "author": "Josephus, Flavius",
+        "publisher": "Loeb Classical Library",
+        "year": null,
+        "locator": "Pilate, priestly leadership, Jerusalem, temple, and war contexts",
+        "url": "https://www.loebclassics.com/view/LCL433/1965/volume.xml",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "matthew-passion-responsibility",
+          "matthew-roman-setting"
+        ],
+        "notes": "Ancient comparative evidence requiring source-critical evaluation.",
+        "id": "josephus-roman-judea",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Keddie, Anthony",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "The Socioeconomic Setting of Judaism and Christian Origins",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-rural-economy",
+          "matthew-temple-tax"
+        ],
+        "notes": "Literary, documentary, epigraphic, and archaeological analysis of taxation, tenancy, temple, and unequal power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Publication of the Synoptics and the Problem of Dating",
+        "author": "Larsen, Matthew",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "The Oxford Handbook of the Synoptic Gospels, pages 175-203",
+        "url": "https://academic.oup.com/edited-volume/45760/chapter-abstract/398724672",
+        "source_type": "academic-book",
+        "supports": [
+          "date-ranges",
+          "matthew-date",
+          "original-audience"
+        ],
+        "notes": "Challenges overly simple publication moments, places, and singular authorship models.",
+        "id": "larsen-dating",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Feminist Criticism and the Gospel of Matthew",
+        "author": "Wainwright, Elaine M.",
+        "publisher": "Cambridge University Press",
+        "year": 2009,
+        "locator": "Methods for Matthew, pages 83-117",
+        "url": "https://www.cambridge.org/core/books/methods-for-matthew/feminist-criticism-and-the-gospel-of-matthew/1AE9A1B8CFF3F8975BCD55889906772A",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-application-boundaries",
+          "matthew-women-witnesses"
+        ],
+        "notes": "Methodological account of feminist Matthean interpretation.",
+        "id": "matthew-feminist-methods",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Synoptic Gospels",
+        "author": "Ahearne-Kroll, Stephen P., editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Synoptic relationships, manuscripts, dating, narrative, bodies, gender, violence, wealth, and power",
+        "url": "https://academic.oup.com/edited-volume/45760",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "matthew-synoptic-relationship"
+        ],
+        "notes": "Current multi-author state-of-the-field collection.",
+        "id": "oxford-synoptic-handbook",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Postcolonial Biblical Reader",
+        "author": "Sugirtharajah, R. S., editor",
+        "publisher": "Blackwell / Society of Biblical Literature resource",
+        "year": 2006,
+        "locator": "Postcolonial and feminist readings, including Matthew 15",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/12/Sugirtharajah_Postcolonial.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-application-boundaries",
+          "matthew-mission-safeguards"
+        ],
+        "notes": "Collection used to audit colonial, gendered, racialized, and geopolitical reception.",
+        "id": "postcolonial-reader",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "New Testament Origins of Christian Anti-Judaism",
+        "author": "Reinhartz, Adele",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Antisemitism, chapter 2",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-antisemitism/new-testament-origins-of-christian-antijudaism/B13BB1532EC63836E2B5DADF9CED9D00",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-blood-guilt",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Addresses supersessionism, deicide, Satanic association, and post-Holocaust interpretation.",
+        "id": "reinhartz-anti-judaism",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Political, Economic, Social, and Cultural Context of First-Century Palestinian Judaism",
+        "author": "Riches, John",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "The World of Jesus, chapter 1, pages 10-29",
+        "url": "https://www.cambridge.org/core/books/abs/world-of-jesus/political-economic-social-and-cultural-context-of-firstcentury-palestinian-judaism/78E9FC5FF52226BA04868426D9EDF481",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-roman-setting"
+        ],
+        "notes": "Broad political and socioeconomic context for Herodian and Roman Jewish life.",
+        "id": "riches-roman-palestine",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Early Judaism: A Comprehensive Overview",
+        "author": "John J. Collins and Daniel C. Harlow, editors",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Sections on Jewish groups, law, and the Dead Sea Scrolls",
+        "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Multi-author scholarly overview used for source limits and disputed group reconstruction.",
+        "id": "sadducees-historical-orientation",
+        "canonical_object_ids": [
+          "sadducees"
+        ]
+      },
+      {
+        "title": "The Temple Tax",
+        "author": "Bammel, Ernst",
+        "publisher": "Cambridge University Press",
+        "year": 1984,
+        "locator": "Jesus and the Politics of His Day",
+        "url": "https://www.cambridge.org/core/books/abs/jesus-and-the-politics-of-his-day/temple-tax/5F205AEE2EA7AD1E9E08C32521C5051E",
+        "source_type": "academic-book",
+        "supports": [
+          "matthew-temple-tax",
+          "historical-context"
+        ],
+        "notes": "Focused history of interpretation and taxation context for Matthew 17:24-27.",
+        "id": "temple-tax-study",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Re-telling Stories of Women Healing/Healing Women: The Gospel of Matthew",
+        "author": "Wainwright, Elaine",
+        "publisher": "Cambridge University Press / Acumen",
+        "year": 2006,
+        "locator": "Women Healing/Healing Women, chapter 5, pages 139-159",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/20EBA49A0F5CE3706AA28E619D1C0C7C/9781845534868c5_p139-159_CBO.pdf/retelling_stories_of_women_healinghealing_women_the_gospel_of_matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "matthew-healing-disability",
+          "matthew-application-boundaries"
+        ],
+        "notes": "Gender-aware analysis of Matthew's reshaping of healing narratives.",
+        "id": "women-healing-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "sadducees",
+        "type": "institution",
+        "title": "Sadducees",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e0b27617e981866675a838ddf48ea0f3f7507597ac59c52458f89951f74086b4",
+  "evidence_hash_version": "2"
+}

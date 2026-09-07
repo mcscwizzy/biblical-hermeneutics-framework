@@ -1,0 +1,380 @@
+{
+  "passage_ref": "Proverbs 22",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "proverbs-amenemope-parallels",
+      "claim": "Proverbs 22:17-24:22 shares a sequence of unusually close themes and expressions with the Egyptian Instruction of Amenemope.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "amenemope-british-museum",
+        "fox-proverbs-ten-thirty-one",
+        "clifford-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 22:17-24:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "proverbs-contextual-generalizations",
+      "claim": "Proverbs teaches through compressed, context-sensitive generalizations and strategically juxtaposed sayings rather than presenting every sentence as an exceptionless promise or rule.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-ten-thirty-one",
+        "stewart-poetic-ethics",
+        "dell-theology-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 22:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "proverbs-multiple-collections",
+      "claim": "The received book explicitly contains distinct Solomonic collections, words of unnamed wise teachers, material copied by Hezekiah's officials, words of Agur, and instruction from Lemuel's mother.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "fox-proverbs-ten-thirty-one",
+        "waltke-proverbs-one-fifteen"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 22:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "proverbs-poverty-justice-complexity",
+      "claim": "Proverbs relates material outcomes to diligence and choice while also condemning unjust scales, bribery, boundary theft, exploitative lending, oppression of the poor, and rulers who deny justice.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-ten-thirty-one",
+        "clifford-proverbs",
+        "dell-theology-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 22:7",
+        "Proverbs 22:22-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Papyrus EA10474,2: Teaching of Amenemope",
+        "author": "",
+        "publisher": "The British Museum",
+        "year": null,
+        "locator": "Museum number EA10474,2; hieratic text on the recto",
+        "url": "https://www.britishmuseum.org/collection/object/Y_EA10474-2",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "primary-sources",
+          "timeline",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Institutional catalog record for the principal papyrus witness to the Teaching of Amenemope.",
+        "id": "amenemope-british-museum",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs: A Commentary",
+        "author": "Richard J. Clifford",
+        "publisher": "Westminster John Knox Press",
+        "year": 1999,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664228534-proverbs/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation, technical notes, and rhetorical commentary on the book's continuing search for wisdom.",
+        "id": "clifford-proverbs",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Proverbs",
+        "author": "Katharine J. Dell",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Old Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-book-of-proverbs/BC224F5F5A33D9C03C3173D2CB22FF8F",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "canonical-role",
+          "major-themes",
+          "second-temple-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Recent synthesis of literary forms, social contexts, creation, Woman Wisdom, canonical relationships, and reception.",
+        "id": "dell-theology-proverbs",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 1-9",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139594/proverbs-1-9/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary with ancient Near Eastern survey, thematic essays on personified Wisdom, and textual notes.",
+        "id": "fox-proverbs-one-nine",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 10-31",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300142099/proverbs-10-31/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "structure",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary on the later collections with attention to ethics, Egyptian comparison, medieval Jewish interpretation, text, and language.",
+        "id": "fox-proverbs-ten-thirty-one",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Masoretic Proverbs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Proverbs 1-31 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "proverbs-masoretic",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Poetic Ethics in Proverbs",
+        "author": "Anne W. Stewart",
+        "publisher": "Cambridge University Press",
+        "year": 2015,
+        "locator": "Wisdom Literature and the Shaping of the Moral Self",
+        "url": "https://www.cambridge.org/core/books/poetic-ethics-in-proverbs/FE8E38BAC87C85476599B746D75FCBAE",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "literary-context",
+          "genre",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetic form, desire, perception, pedagogy, and complex moral character formation.",
+        "id": "stewart-poetic-ethics",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "The Book of Proverbs, Chapters 1-15",
+        "author": "Bruce K. Waltke",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2004,
+        "locator": "New International Commentary on the Old Testament, volume 1",
+        "url": "https://www.eerdmans.com/9780802825452/the-book-of-proverbs-chapters-1-15/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "canonical-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed literary, Hebrew, ancient Near Eastern, theological, and Christian commentary.",
+        "id": "waltke-proverbs-one-fifteen",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "proverbs",
+        "type": "book",
+        "title": "Proverbs",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "87c818d4892fb08e6f80a69a431f8773049715533459e7ef2df56abd9b12334e",
+  "evidence_hash_version": "2"
+}

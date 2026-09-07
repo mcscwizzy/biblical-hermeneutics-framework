@@ -1,0 +1,1137 @@
+{
+  "passage_ref": "Ezra 5",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "persia",
+        "title": "Persia",
+        "type": "place",
+        "aliases": [
+          "Achaemenid Persia",
+          "Persian Empire",
+          "Achaemenid Empire",
+          "Persian-period biblical world"
+        ],
+        "metadata": {
+          "summary": "The Achaemenid imperial world that succeeded Babylon in 539 BCE and forms the historical setting for return, Yehud, Ezra-Nehemiah, Esther, and Persian-period visions in Daniel.",
+          "importance": 72,
+          "retrieval_score": 0.892,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Chronicles 36:22-23",
+            "Ezra 1:1-11",
+            "Ezra 5:1-17",
+            "Ezra 6:1-22",
+            "Nehemiah 2:1-20",
+            "Esther 1:1-22",
+            "Daniel 10:1-21"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [
+      {
+        "id": "rebuilding-the-temple",
+        "title": "Rebuilding the Temple",
+        "type": "event",
+        "aliases": [
+          "what happened in rebuilding the temple",
+          "tell me about rebuilding the temple",
+          "why is rebuilding the temple important"
+        ],
+        "metadata": {
+          "summary": "The Persian-period restoration of Jerusalem's altar and temple, begun by the returned community and conventionally completed in 515 BCE under Darius I after interruption, opposition, and prophetic encouragement.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Ezra 1:1-11",
+            "Ezra 3:1-13",
+            "Ezra 5:1-17",
+            "Ezra 6:1-22",
+            "Haggai 1:1-15",
+            "Zechariah 4:1-14"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezra-opposition-darius",
+      "claim": "Haggai and Zechariah encourage Zerubbabel and Jeshua to resume temple construction, and Darius's inquiry results in confirmation and imperial support rather than suppression.",
+      "category": "politics",
+      "source_ids": [
+        "ezra-1-10",
+        "fensham-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 5:1-6:12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezra",
+        "parent_title": "Ezra",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "ezra-persian-return-and-temple-sequence",
+      "claim": "Ezra 1-6 narrates return support, temple vessels, altar restoration, opposition, prophetic encouragement, Persian inquiries, and completion under successive kings rather than one instantaneous restoration.",
+      "category": "history",
+      "source_ids": [
+        "ezra-chronicles-restoration-text",
+        "williamson-ezra-nehemiah-persia",
+        "grabbe-persian-period"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple",
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "ezra-persian-return-and-temple-sequence:passage-relevance",
+      "claim": "This sequence controls interpretation of Ezra 1 by locating Cyrus's authorization at the beginning of a longer, contested restoration that reaches completion under Darius.",
+      "category": "history",
+      "source_ids": [
+        "ezra-chronicles-restoration-text",
+        "williamson-ezra-nehemiah-persia",
+        "grabbe-persian-period"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple",
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "ezra-persian-return-and-temple-sequence"
+        ]
+      }
+    },
+    {
+      "id": "ezra:interpretive_note:1",
+      "claim": "The Aramaic blocks in Ezra 4:8-6:18 and 7:12-26 fit the imperial and regional lingua franca and contain letters or decrees, but language alone does not prove that every document survives unchanged from a royal archive.",
+      "category": "politics",
+      "source_ids": [
+        "ezra-1-10",
+        "williamson-ezra-nehemiah",
+        "fensham-ezra-nehemiah",
+        "myers-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 4:8-6:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ezra",
+        "parent_title": "Ezra",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "persia:ancient_near_east_context:0",
+      "claim": "Achaemenid government worked through satrapies and provinces, officials, taxation and service, roads, multilingual written administration, local elites, and selective support of temples. Institutions and policy varied by region and reign.",
+      "category": "culture",
+      "source_ids": [
+        "persian-period-biblical-texts",
+        "grabbe-persia-yehud",
+        "bm-cyrus-persia",
+        "kuhrt-persia-cylinder"
+      ],
+      "related_entity_ids": [
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "persia",
+        "parent_title": "Persia",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "persia:hebraic_worldview:0",
+      "claim": "Ezra, Nehemiah, and related prophets portray Persian kings as real imperial authorities whose decisions can serve the God of Israel's purposes without becoming covenant rulers or restoring Davidic sovereignty.",
+      "category": "culture",
+      "source_ids": [
+        "persian-period-biblical-texts",
+        "grabbe-persia-yehud",
+        "bm-cyrus-persia",
+        "kuhrt-persia-cylinder"
+      ],
+      "related_entity_ids": [
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "persia",
+        "parent_title": "Persia",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "persia:historical_context:0",
+      "claim": "Cyrus II captured Babylon in 539 BCE and inherited its western territories. Judah became the small province of Yehud within the wider imperial system. Biblical narratives span Cyrus, Darius I, Xerxes, and Artaxerxes, whose reigns must not be collapsed into a generic Persian era.",
+      "category": "history",
+      "source_ids": [
+        "persian-period-biblical-texts",
+        "grabbe-persia-yehud",
+        "bm-cyrus-persia",
+        "kuhrt-persia-cylinder"
+      ],
+      "related_entity_ids": [
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "persia",
+        "parent_title": "Persia",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "persia:second_temple_context:0",
+      "claim": "Persian rule supplied the political framework for the early Second Temple, provincial Yehud, governors, priesthood, Torah-centered reforms, economic disputes, and continuing diaspora communities in Babylonia, Susa, and Egypt.",
+      "category": "culture",
+      "source_ids": [
+        "persian-period-biblical-texts",
+        "grabbe-persia-yehud",
+        "bm-cyrus-persia",
+        "kuhrt-persia-cylinder"
+      ],
+      "related_entity_ids": [
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "persia",
+        "parent_title": "Persia",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:ancient_near_east_context:0",
+      "claim": "Achaemenid rulers governed temples through local elites, grants, taxation, offerings, officials, and written authorizations. Persian support did not grant political independence, and the Cyrus Cylinder's Babylonian restoration rhetoric is comparative rather than a copy of Ezra's decree.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:hebraic_worldview:0",
+      "claim": "Ezra, Haggai, and Zechariah present rebuilding as obedience, renewed divine presence, worship, communal ordering, and providential use of imperial authority, while also portraying scarcity, opposition, and incomplete restoration.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:historical_context:0",
+      "claim": "Ezra 1-6 presents an initial Cyrus-era authorization, altar and foundation work, opposition, renewed construction under Darius I through Haggai and Zechariah, an imperial inquiry, and completion in Darius's sixth year. The exact documentary history and archaeology of each stage remain debated.",
+      "category": "history",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:second_temple_context:0",
+      "claim": "Completion of the sanctuary begins the Second Temple's institutional history, including priestly and Levitical service, sacrifice, Passover, gifts, and continuing negotiation with Persian authorities and neighboring groups.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "yehud-stamp-administration",
+      "claim": "Hundreds of inscribed stamp impressions on jars from Persian and early Hellenistic Judah, concentrated especially at Ramat Rahel and Jerusalem, preserve the provincial name Yehud and an evolving administrative system.",
+      "category": "archaeology",
+      "source_ids": [
+        "lipschits-vanderhooft-yehud-stamps-2020",
+        "lipschits-vanderhooft-yehud-corpus",
+        "grabbe-persian-period",
+        "ezra-chronicles-restoration-text"
+      ],
+      "related_entity_ids": [
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "yehud-stamp-administration:passage-relevance",
+      "claim": "The stamped-jar system provides material context for the provincial taxation, provisioning, officials, and economic pressures assumed in Ezra-Nehemiah without verifying a specific decree or debt complaint.",
+      "category": "archaeology",
+      "source_ids": [
+        "lipschits-vanderhooft-yehud-stamps-2020",
+        "lipschits-vanderhooft-yehud-corpus",
+        "grabbe-persian-period",
+        "ezra-chronicles-restoration-text"
+      ],
+      "related_entity_ids": [
+        "persia"
+      ],
+      "passage_anchors": [
+        "Ezra 5:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "yehud-stamp-administration"
+        ]
+      }
+    },
+    {
+      "id": "zechariah-dated-core",
+      "claim": "The dated prose and visions of chapters 1-8 substantially fit the early Persian Yehud setting of temple rebuilding under Darius I.",
+      "category": "culture",
+      "source_ids": [
+        "redditt-zechariah",
+        "meyers-zechariah",
+        "berquist-yehud",
+        "iranica-bible-achaemenid"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 5:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Prophecy in Persian Yehud",
+        "author": "Jon L. Berquist",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 4, pages 55-66",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211800229",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "zechariah-dated-core"
+        ],
+        "notes": "Contextualizes Zechariah and prophetic literature in Persian Yehud.",
+        "id": "berquist-yehud",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Cyrus Cylinder",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 90920; collection object 1880,0617.1941",
+        "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Official record for Cyrus's Babylonian inscription.",
+        "id": "bm-cyrus-persia",
+        "canonical_object_ids": [
+          "persia"
+        ]
+      },
+      {
+        "title": "Ezra 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-10:44",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "ezra-cyrus-return",
+          "ezra-altar-temple",
+          "ezra-opposition-darius",
+          "ezra-temple-passover",
+          "ezra-torah-vocation",
+          "ezra-ahava-journey",
+          "ezra-confession-reform"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ezra-1-10",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36:22-23; Ezra 1-6; Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-6:22; Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Primary biblical presentations; no modern translation is reproduced.",
+        "id": "ezra-chronicles-restoration-text",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra 1-6; Haggai 1-2; Zechariah 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-6:22; Haggai 1:1-2:23; Zechariah 1:1-8:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narratives and dated prophetic texts.",
+        "id": "ezra-haggai-temple-text",
+        "canonical_object_ids": [
+          "rebuilding-the-temple"
+        ]
+      },
+      {
+        "title": "The Books of Ezra and Nehemiah",
+        "author": "F. Charles Fensham",
+        "publisher": "Eerdmans",
+        "year": 1983,
+        "locator": "NICOT introduction, translation, and commentary",
+        "url": "https://www.eerdmans.com/9780802882288/the-books-of-ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "genre",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary emphasizing Semitic language, ancient Near Eastern context, historical background, theology, and major interpretive options.",
+        "id": "fensham-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Persian-period chronology, Yehud, administration, and sources",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Critical synthesis of Persian-period literary and external evidence.",
+        "id": "grabbe-persia-yehud",
+        "canonical_object_ids": [
+          "persia"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1: Yehud\u2014A History of the Persian Province of Judah",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Chapters on sources, Persian administration, economy, Ezra-Nehemiah, and Elephantine",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Critical history that compares literary, archaeological, numismatic, and documentary evidence.",
+        "id": "grabbe-persian-period",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Persian-period Yehud, temple, administration, and source criticism",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Critical synthesis of literary and external evidence.",
+        "id": "grabbe-temple-persia",
+        "canonical_object_ids": [
+          "rebuilding-the-temple"
+        ]
+      },
+      {
+        "title": "Bible i. As a Source for Median and Achaemenid History",
+        "author": "Encyclopaedia Iranica contributors",
+        "publisher": "Encyclopaedia Iranica",
+        "year": 1989,
+        "locator": "Haggai and Zechariah under Darius I",
+        "url": "https://www.iranicaonline.org/articles/bible-i/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "zechariah-dated-core"
+        ],
+        "notes": "Iranian-history reference context for the Darius-era dates.",
+        "id": "iranica-bible-achaemenid",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Cyrus Cylinder and Achaemenid Imperial Policy",
+        "author": "Am\u00e9lie Kuhrt",
+        "publisher": "Journal for the Study of the Old Testament",
+        "year": 1983,
+        "locator": "JSOT 8.25, pp. 83-97",
+        "url": "https://doi.org/10.1177/030908928300802507",
+        "source_type": "journal-article",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Source-critical boundary for generalizing from the cylinder.",
+        "id": "kuhrt-persia-cylinder",
+        "canonical_object_ids": [
+          "persia"
+        ]
+      },
+      {
+        "title": "The Yehud Stamp Impressions: A Corpus of Inscribed Impressions from the Persian and Hellenistic Periods in Judah",
+        "author": "Oded Lipschits and David S. Vanderhooft",
+        "publisher": "Eisenbrauns",
+        "year": 2011,
+        "locator": "Introduction, geopolitical distribution, typology, and catalogue of 582 impressions",
+        "url": "https://doi.org/10.5325/j.ctv1bxh4n1",
+        "source_type": "academic-book",
+        "supports": [
+          "yehud-stamp-administration"
+        ],
+        "notes": "Corpus and analysis of inscribed impressions; later discoveries increased the known total.",
+        "id": "lipschits-vanderhooft-yehud-corpus",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Yehud Stamp Impressions from Ramat-Rahel: An Updated Tabulation",
+        "author": "Oded Lipschits and David S. Vanderhooft",
+        "publisher": "Bulletin of the American Schools of Oriental Research",
+        "year": 2020,
+        "locator": "BASOR 384, pp. 191-209",
+        "url": "https://doi.org/10.1086/710530",
+        "source_type": "journal-article",
+        "supports": [
+          "yehud-stamp-administration"
+        ],
+        "notes": "Peer-reviewed updated corpus count and assessment of Ramat Rahel's administrative significance.",
+        "id": "lipschits-vanderhooft-yehud-stamps-2020",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Haggai, Zechariah 1-8",
+        "author": "Carol L. Meyers; Eric M. Meyers",
+        "publisher": "Yale University Press",
+        "year": 1987,
+        "locator": "Anchor Yale Bible 25B",
+        "url": "https://yalebooks.yale.edu/book/9780300139754/haggai-zechariah-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "zechariah-superscriptions",
+          "zechariah-measurement",
+          "zechariah-joshua-cleansing",
+          "zechariah-spirit-zerubbabel",
+          "zechariah-fasting-question"
+        ],
+        "notes": "Linguistic, social, historical, and literary commentary on the dated material.",
+        "id": "meyers-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "Jacob M. Myers",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139556/ezra-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on the textual, historical, literary, and compositional complexity of Ezra-Nehemiah.",
+        "id": "myers-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36; Ezra; Nehemiah; Esther; Daniel 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-10:44; Nehemiah 1:1-13:31; Esther 1:1-10:3; Daniel 10:1-21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary biblical Persian-period settings across several genres.",
+        "id": "persian-period-biblical-texts",
+        "canonical_object_ids": [
+          "persia"
+        ]
+      },
+      {
+        "title": "Zechariah",
+        "author": "Paul L. Redditt",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 39, pages 524-534",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373790",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "zechariah-superscriptions",
+          "zechariah-dated-core",
+          "zechariah-later-oracles"
+        ],
+        "notes": "Zechariah-specific overview of origin, composition, location in the Twelve, and themes.",
+        "id": "redditt-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, introductions and commentary on Ezra 1-6 and Nehemiah 1-6",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Technical textual, historical, literary, and documentary commentary.",
+        "id": "williamson-ezra-nehemiah-persia",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, commentary on Ezra 1-6",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Technical commentary on chronology, documents, opposition, and temple completion.",
+        "id": "williamson-temple",
+        "canonical_object_ids": [
+          "rebuilding-the-temple"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezra",
+        "type": "book",
+        "title": "Ezra",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "persia",
+        "type": "place",
+        "title": "Persia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.892
+      },
+      {
+        "id": "persian-restoration-and-yehud-administration",
+        "type": "cultural_background",
+        "title": "Persian Restoration and Yehud Administration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "rebuilding-the-temple",
+        "type": "event",
+        "title": "Rebuilding the Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "eb4efd449144beedaf782b2f20188ea4fe3eec583257ffcfe5fac86bce4b9cb3",
+  "evidence_hash_version": "2"
+}

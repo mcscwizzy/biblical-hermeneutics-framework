@@ -1,0 +1,83 @@
+{
+  "reference": "1 Timothy 2",
+  "book": "1 Timothy",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_93",
+          "text": "Read the chapter with this setting in view: The letter calls for varied prayer for all people, including rulers, toward peaceful and dignified life. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "1tim-prayer"
+          ],
+          "verse_refs": [
+            "1 Timothy 2:1-4"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_94",
+          "text": "For its historical and cultural setting, note that Mission: ransom and herald language cannot legitimate forced conversion, colonial mission, cultural erasure, or religious violence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1-timothy:interpretive_note:10"
+          ],
+          "verse_refs": [
+            "1 Timothy 2:5-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_95",
+          "text": "For its historical and cultural setting, note that A woman is commanded to learn in quietness and full submission before the prohibition involving teaching and authentein. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1tim-women-learn"
+          ],
+          "verse_refs": [
+            "1 Timothy 2:11-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_94",
+          "text": "A literary feature to notice is that Authentein is a rare verb linked with teaching in 2:12, and proposals range from neutral exercise of authority to domineering or unauthorized action. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1tim-authentein"
+          ],
+          "verse_refs": [
+            "1 Timothy 2:12"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "04a00806d65aa01f782caa874e8dd74d143d538c631d0af04e467917c6d1456c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "reference": "Isaiah 28",
+  "book": "Isaiah",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: The divisions 1-12, 13-27, 28-35, 36-39, 40-55, and 56-66 provide a practical reading map, not a proof of six authors or one uncontested macrostructure.",
+          "verse_refs": [
+            "Isaiah 28:1"
+          ],
+          "evidence_ids": [
+            "isaiah-practical-outline"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+          "verse_refs": [
+            "Isaiah 28:1-29"
+          ],
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "68713989692be5cc5e23567d6f9438f0b50992a58b46c8c281803b57674fad5d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:56.932214+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

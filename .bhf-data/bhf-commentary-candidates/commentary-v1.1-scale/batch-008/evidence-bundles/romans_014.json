@@ -1,0 +1,4948 @@
+{
+  "passage_ref": "Romans 14",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "rome",
+        "title": "Rome",
+        "type": "place",
+        "aliases": [
+          "where is Rome",
+          "imperial Rome",
+          "Rome in Acts",
+          "Rome in Romans",
+          "biblical Rome"
+        ],
+        "metadata": {
+          "summary": "Rome was the imperial capital, the named destination and audience city of Romans, and the geographic endpoint of Acts, where Jewish communities, mobile coworkers, multiple Christ-following groups, imperial institutions, unequal households, slavery, and later contested apostolic memory intersect.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Appia",
+            "Ostia and Portus",
+            "urban dwellings and commercial spaces",
+            "Jewish catacombs",
+            "later basilicas and commemorative sites"
+          ],
+          "related_passages": [
+            "Romans 1:7-15",
+            "Romans 13:1-14",
+            "Romans 14:1-23",
+            "Romans 15:1-13",
+            "Romans 15:22-33",
+            "Romans 16:1-16",
+            "Acts 18:1-3",
+            "Acts 28:11-16",
+            "Acts 28:17-31"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-paul-chronology-control",
+      "claim": "Acts narrates an earlier council from a later composition horizon, while Galatians, Corinthians, and Romans are earlier occasional letters with different selections and disputes.",
+      "category": "chronology",
+      "source_ids": [
+        "acts-decree-text",
+        "galatians-restoration-text",
+        "romans-bodies-text",
+        "taylor-decrees"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "chronology",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "acts-paul-chronology-control:passage-relevance",
+      "claim": "Prevents Acts 15 from silently replacing Paul's arguments or Pauline silence from erasing the decree narrative.",
+      "category": "chronology",
+      "source_ids": [
+        "acts-decree-text",
+        "galatians-restoration-text",
+        "romans-bodies-text",
+        "taylor-decrees"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 52,
+        "supports_evidence_ids": [
+          "acts-paul-chronology-control"
+        ]
+      }
+    },
+    {
+      "id": "cross-passage-diet-code-limit",
+      "claim": "Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes.",
+      "category": "culture",
+      "source_ids": [
+        "mark-7-greek",
+        "acts-10-15-greek",
+        "romans-14-greek",
+        "first-corinthians-food-greek",
+        "bockmuehl-jewish-law",
+        "reasoner-strong-weak",
+        "fotopoulos-idol-food"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "cross-passage-diet-code-limit:passage-relevance",
+      "claim": "Requires passage-level interpretation before any verse becomes a timeless diet rule or cancels another text.",
+      "category": "culture",
+      "source_ids": [
+        "mark-7-greek",
+        "acts-10-15-greek",
+        "romans-14-greek",
+        "first-corinthians-food-greek",
+        "bockmuehl-jewish-law",
+        "reasoner-strong-weak",
+        "fotopoulos-idol-food"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "cross-passage-diet-code-limit"
+        ]
+      }
+    },
+    {
+      "id": "kingdom-theme:ancient_near_east_context:0",
+      "claim": "Biblical kingship is often set against empire, but the LORD\u2019s rule transcends and judges all earthly powers.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:hebraic_worldview:0",
+      "claim": "Kingdom language joins God's reign with justice, peace, obedience, and faithful kingship under his rule.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:historical_context:0",
+      "claim": "Kingdom language arises from Israel\u2019s confession that the LORD reigns and reaches its fullest expression in the Davidic promise and Jesus\u2019 proclamation.",
+      "category": "history",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theme:second_temple_context:0",
+      "claim": "Messianic expectation, foreign rule, and hopes of restoration sharpen the kingdom theme.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-15",
+        "psalm-2",
+        "daniel-2-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11",
+        "kingdom-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theme",
+        "parent_title": "Kingdom Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "modern-access-care-table-boundary",
+      "claim": "Allergy, disability, addiction, eating disorder, poverty, food safety, and interfaith-family questions are modern applications rather than hidden first-century diagnoses.",
+      "category": "chronology",
+      "source_ids": [
+        "romans-table-text",
+        "corinth-food-text",
+        "galatians-table-text",
+        "un-disability-convention",
+        "who-food-safety"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-15:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-access-care-table-boundary:passage-relevance",
+      "claim": "Applies welcome, nonharm, another's good, hunger, dignity, waiting, and shared participation without claiming modern conditions are ancient lexical referents.",
+      "category": "chronology",
+      "source_ids": [
+        "romans-table-text",
+        "corinth-food-text",
+        "galatians-table-text",
+        "un-disability-convention",
+        "who-food-safety"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-15:7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-access-care-table-boundary"
+        ]
+      }
+    },
+    {
+      "id": "pauline-distinct-meal-settings",
+      "claim": "Romans, First Corinthians, and Galatians differentiate disputed household practice, cultic dining, market food, private hospitality, assembly supper, and table withdrawal.",
+      "category": "economics",
+      "source_ids": [
+        "romans-table-text",
+        "corinth-food-text",
+        "galatians-table-text",
+        "thiselton-corinth-food"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "pauline-distinct-meal-settings:passage-relevance",
+      "claim": "Prevents a single rule about idol food, conscience, Eucharist, or Jewish-gentile tables from flattening all cases.",
+      "category": "economics",
+      "source_ids": [
+        "romans-table-text",
+        "corinth-food-text",
+        "galatians-table-text",
+        "thiselton-corinth-food"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 97,
+        "supports_evidence_ids": [
+          "pauline-distinct-meal-settings"
+        ]
+      }
+    },
+    {
+      "id": "romans-bodies-love-nonharm-welcome",
+      "claim": "Romans 12-14 presents bodies as living worship, differentiated members, agents of sincere love and non-harm, and participants who welcome one another amid disputed practices.",
+      "category": "culture",
+      "source_ids": [
+        "romans-bodies-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "romans-clean-and-conviction",
+      "claim": "Paul states that nothing is unclean in itself while qualifying the claim for the person who construes something as unclean and later warns against action not from faith.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:14-15",
+        "Romans 14:22-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-clean-and-conviction:passage-relevance",
+      "claim": "Prevents a purity conclusion from becoming coerced eating and prevents conscience from becoming coercive abstention.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:14-15",
+        "Romans 14:22-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-clean-and-conviction"
+        ]
+      }
+    },
+    {
+      "id": "romans-codices",
+      "claim": "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus are major Greek witnesses to Romans with distinct omissions, corrections, and textual profiles.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "vaticanus",
+        "alexandrinus",
+        "claromontanus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "romans-common-welcome",
+      "claim": "Paul combines conviction that nothing is common in itself with accommodation of contrary conviction and reciprocal welcome.",
+      "category": "culture",
+      "source_ids": [
+        "romans-14-greek",
+        "reasoner-strong-weak",
+        "jewett-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "romans-common-welcome:passage-relevance",
+      "claim": "Prevents verse 14 becoming a coercive slogan detached from welcome and judgment warnings.",
+      "category": "culture",
+      "source_ids": [
+        "romans-14-greek",
+        "reasoner-strong-weak",
+        "jewett-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "romans-common-welcome"
+        ]
+      }
+    },
+    {
+      "id": "romans-conscience-noncoercion",
+      "claim": "Romans directs participants away from obstacles, grief, and destruction and toward peace, upbuilding, welcome, and restraint.",
+      "category": "culture",
+      "source_ids": [
+        "romans-14-greek",
+        "reasoner-strong-weak",
+        "jewett-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-conscience-noncoercion:passage-relevance",
+      "claim": "Safeguards the text from being used to shame or force a person to eat or abstain against conscience.",
+      "category": "culture",
+      "source_ids": [
+        "romans-14-greek",
+        "reasoner-strong-weak",
+        "jewett-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-conscience-noncoercion"
+        ]
+      }
+    },
+    {
+      "id": "romans-days-eating-thanksgiving",
+      "claim": "Romans places day observance, eating, and abstaining within personal conviction, Lord-directed action, and thanksgiving.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:5-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-days-eating-thanksgiving:passage-relevance",
+      "claim": "Prevents unity from requiring identical calendars or diets.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:5-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-days-eating-thanksgiving"
+        ]
+      }
+    },
+    {
+      "id": "romans-everything-and-vegetables",
+      "claim": "Romans contrasts comprehensive eating confidence with eating vegetables and immediately prohibits contempt and judgment.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:2-3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-everything-and-vegetables:passage-relevance",
+      "claim": "Keeps observation separate from speculative profiles and modern diet debates.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:2-3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-everything-and-vegetables"
+        ]
+      }
+    },
+    {
+      "id": "romans-judgment-seat-accountability",
+      "claim": "Romans asks why siblings judge or despise one another and points to universal appearance before the divine judgment seat and personal account.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:10-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-judgment-seat-accountability:passage-relevance",
+      "claim": "Limits peer surveillance without erasing accountability for harm.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:10-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-judgment-seat-accountability"
+        ]
+      }
+    },
+    {
+      "id": "romans-kingdom-and-upbuilding",
+      "claim": "Romans contrasts God's kingdom with food and drink and calls recipients to pursue peace, mutual upbuilding, and preservation of God's work.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-kingdom-and-upbuilding:passage-relevance",
+      "claim": "Redirects status competition toward communal flourishing without trivializing food safety or identity.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-kingdom-and-upbuilding"
+        ]
+      }
+    },
+    {
+      "id": "romans-living-dying-judgment",
+      "claim": "Romans 14 situates life and death before the Lord and universal judgment within a dispute governed by welcome, non-contempt, and non-judgment of one another.",
+      "category": "culture",
+      "source_ids": [
+        "romans-resurrection-text",
+        "moo-romans-resurrection"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+        "parent_title": "Pauline Death, Resurrection, Transformed Embodiment, Grief, Hope, Judgment, and Baptism for the Dead",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-living-dying-judgment:passage-relevance",
+      "claim": "Prevents belonging-to-the-Lord language from becoming leader control over treatment, dying, corpses, funerals, or conscience.",
+      "category": "culture",
+      "source_ids": [
+        "romans-resurrection-text",
+        "moo-romans-resurrection"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+        "parent_title": "Pauline Death, Resurrection, Transformed Embodiment, Grief, Hope, Judgment, and Baptism for the Dead",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-living-dying-judgment"
+        ]
+      }
+    },
+    {
+      "id": "romans-obstacle-grief-destruction",
+      "claim": "Romans moves from nonjudgment to a decision not to place an obstacle, grieve a sibling by food, destroy the one for whom Messiah died, or tear down God's work.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-21"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-obstacle-grief-destruction:passage-relevance",
+      "claim": "Makes another person's embodied and communal welfare a constraint on liberty.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-21"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-obstacle-grief-destruction"
+        ]
+      }
+    },
+    {
+      "id": "romans-papyri",
+      "claim": "P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness.",
+      "category": "archaeology",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "romans-practice-labels-identity-limit",
+      "claim": "The weak and strong labels occur with eating everything, vegetables, days, wine, faith, and burden-bearing, but Romans does not fully identify the groups.",
+      "category": "social",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment",
+        "kraemer-jewish-food"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-practice-labels-identity-limit:passage-relevance",
+      "claim": "Prevents equating weak with Jews or strong with gentiles and preserves Jewish practice diversity.",
+      "category": "social",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table",
+        "meeks-romans-judgment",
+        "kraemer-jewish-food"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-practice-labels-identity-limit"
+        ]
+      }
+    },
+    {
+      "id": "romans-practices-identity-limits",
+      "claim": "Romans names omnivorous eating, vegetables, days, abstention, wine, judgment, and welcome without a complete profile of each side.",
+      "category": "culture",
+      "source_ids": [
+        "romans-14-greek",
+        "reasoner-strong-weak",
+        "jewett-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-practices-identity-limits:passage-relevance",
+      "claim": "Blocks automatic equations of weak with Jews, strong with gentiles, or vegetable eating with idol-meat fear alone.",
+      "category": "culture",
+      "source_ids": [
+        "romans-14-greek",
+        "reasoner-strong-weak",
+        "jewett-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.956,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-practices-identity-limits"
+        ]
+      }
+    },
+    {
+      "id": "romans-purpose",
+      "claim": "Romans serves overlapping aims of gospel exposition, mission self-presentation, Rome and Spain travel, collection legitimation, and communal welcome rather than one demonstrable purpose.",
+      "category": "culture",
+      "source_ids": [
+        "gaventa-romans",
+        "nanos-mystery"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "romans-reciprocal-noncontempt",
+      "claim": "The eater must not despise the abstainer and the abstainer must not judge the eater because God has welcomed the person and can make a servant stand.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-reciprocal-noncontempt:passage-relevance",
+      "claim": "Rejects both libertine contempt and purity-based condemnation.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-reciprocal-noncontempt"
+        ]
+      }
+    },
+    {
+      "id": "romans-weak-strong",
+      "claim": "Romans 14:1-15:13 addresses weak and strong or powerful participants over food and days, commanding noncontempt, nonjudgment, conscience, accommodation, and mutual welcome.",
+      "category": "culture",
+      "source_ids": [
+        "reasoner-strong-weak",
+        "romans-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "romans-welcome-without-quarrel",
+      "claim": "Romans commands reception of the person weak in faith without turning welcome into adjudication of disputed reasonings.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 67
+      }
+    },
+    {
+      "id": "romans-welcome-without-quarrel:passage-relevance",
+      "claim": "Makes belonging prior to winning food and calendar disputes.",
+      "category": "culture",
+      "source_ids": [
+        "romans-table-text",
+        "wolter-romans-table"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "parent_title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 67,
+        "supports_evidence_ids": [
+          "romans-welcome-without-quarrel"
+        ]
+      }
+    },
+    {
+      "id": "romans:interpretive_note:10",
+      "claim": "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus provide distinct textual witnesses; majority, antiquity, and manuscript prestige do not mechanically decide a reading.",
+      "category": "culture",
+      "source_ids": [
+        "sinaiticus",
+        "vaticanus",
+        "alexandrinus",
+        "claromontanus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "romans:interpretive_note:57",
+      "claim": "Weak and strong or powerful in Romans 14-15 concern food, days, conscience, contempt, judgment, and accommodation; simple identification as Jewish versus gentile is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "reasoner-strong-weak",
+        "nanos-mystery"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "romans:interpretive_note:58",
+      "claim": "Romans 14 does not impose universal vegetarianism or calendar observance; it commands noncontempt, nonjudgment, conscience, and protection from stumbling within a concrete dispute.",
+      "category": "culture",
+      "source_ids": [
+        "reasoner-strong-weak",
+        "romans-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans:interpretive_note:59",
+      "claim": "Conscience in Romans 14 is not permission to control all others; the powerful are asked to relinquish practices that destroy or grieve another.",
+      "category": "culture",
+      "source_ids": [
+        "reasoner-strong-weak",
+        "romans-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:13-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans:interpretive_note:6",
+      "claim": "Paul's Spain plan, Jerusalem collection, gospel exposition, self-presentation, and appeals for welcome are complementary purposes; no one aim exhausts the letter.",
+      "category": "culture",
+      "source_ids": [
+        "gaventa-romans",
+        "fredriksen-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-15:33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "romans:interpretive_note:68",
+      "claim": "Romans 16:17-20's warning must not erase Romans 14-15's welcome or become a tool for leaders to label every critic divisive and evade accountability.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "gaventa-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:1-16:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "romans:interpretive_note:7",
+      "claim": "Romans is an occasional letter and should not be converted into a contextless systematic-theology outline, even though later systems legitimately engage it.",
+      "category": "culture",
+      "source_ids": [
+        "gaventa-romans",
+        "wolter-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "romans:interpretive_note:75",
+      "claim": "Do not infer that every historical analogy in Romans maps directly onto a modern nation, ethnic group, party, economic system, sexual identity, or church institution.",
+      "category": "economics",
+      "source_ids": [
+        "gaventa-romans",
+        "wolter-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "romans:interpretive_note:76",
+      "claim": "Claims about Paul, Rome, Corinth, Cenchreae, households, slavery, gender, sexuality, empire, and manuscripts should distinguish direct text, external evidence, inference, analogy, and later reception.",
+      "category": "politics",
+      "source_ids": [
+        "wolter-romans",
+        "holmes-textual"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "romans:interpretive_note:77",
+      "claim": "No automated validation, retrieval score, confessional popularity, or manuscript count constitutes human approval of this Romans record.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "holmes-textual"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "romans:interpretive_note:8",
+      "claim": "P10, P26, P27, P31, P40, P46, and P61 preserve different Romans portions; their Gregory-Aland labels must not imply equal date, extent, or textual weight.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "romans:interpretive_note:9",
+      "claim": "P46 is an early, extensive Pauline codex, but it is not the autograph and its readings require comparison with other Greek and versional witnesses.",
+      "category": "culture",
+      "source_ids": [
+        "p46-csntm",
+        "chester-beatty-p46"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 5:17-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 900,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "rome:ancient_near_east_context:0",
+      "claim": "Rome is not an Ancient Near Eastern setting. Israel's Scriptures and Jewish diaspora practices are crucial for Romans, but the city's immediate institutions are Roman Mediterranean.",
+      "category": "culture",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:archaeology:0",
+      "claim": "Via Appia",
+      "category": "archaeology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:archaeology:1",
+      "claim": "Ostia and Portus",
+      "category": "archaeology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:archaeology:2",
+      "claim": "urban dwellings and commercial spaces",
+      "category": "archaeology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:archaeology:3",
+      "claim": "Jewish catacombs",
+      "category": "archaeology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:archaeology:4",
+      "claim": "later basilicas and commemorative sites",
+      "category": "archaeology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:hebraic_worldview:0",
+      "claim": "Romans addresses Israel's God, Scriptures, Torah, covenant promises, Israel, and the nations within a city containing plural Jewish communities. Jewish practice must not be reduced to a foil for Christianity or assumed uniform.",
+      "category": "culture",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:historical_context:0",
+      "claim": "First-century Rome was connected to Italy and the Mediterranean through ports, roads, migration, trade, administration, military power, slavery, and patronage. Jewish residents were established before Paul wrote Romans. Claudian action disrupted some residents and gatherings, but its scope and cause remain disputed; Nero's violence after the fire of 64 belongs later than Romans' probable composition.",
+      "category": "history",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 20,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:historical_setting:0",
+      "claim": "Central Italy on the Tiber, approached by Mediterranean ports and major roads, especially approximately 40-70 CE.",
+      "category": "history",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:0",
+      "claim": "Tiber",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:1",
+      "claim": "Puteoli",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:2",
+      "claim": "Via Appia",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:3",
+      "claim": "Forum of Appius",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:4",
+      "claim": "Three Taverns",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:5",
+      "claim": "Ostia",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:key_places:6",
+      "claim": "Trastevere",
+      "category": "geography",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:original_audience:0",
+      "claim": "Readers seeking a geographically and chronologically controlled setting for Romans, Acts 18, and Acts 28.",
+      "category": "social",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:second_temple_context:0",
+      "claim": "Philo describes Jewish residents, citizenship, synagogues, Sabbath gathering, and Jerusalem contributions in Rome before Claudius. Romans and Acts belong within this diaspora setting, while later catacomb evidence cannot be projected backward without controls.",
+      "category": "culture",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:0",
+      "claim": "before 41 CE: Philo describes Jewish life in Rome",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:1",
+      "claim": "approximately 49 CE: conventional date for a Claudian expulsion action, scope disputed",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:2",
+      "claim": "approximately 56-58 CE: Romans composed",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:3",
+      "claim": "approximately 60s CE: conventional horizon for Acts' Roman custody",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:4",
+      "claim": "64 CE: fire and Neronian violence",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:5",
+      "claim": "late first century CE: 1 Clement remembers Peter, Paul, and other sufferers",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rome:timeline:6",
+      "claim": "third-fourth centuries CE: most Jewish catacomb inscriptions and major Christian monumental reception",
+      "category": "chronology",
+      "source_ids": [
+        "romans-rome",
+        "acts-rome",
+        "philo-rome",
+        "suetonius-claudius-rome",
+        "tacitus-rome",
+        "first-clement-rome",
+        "lampe-rome-place",
+        "taylor-rome-place",
+        "rome-cluster-source"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rome",
+        "parent_title": "Rome",
+        "parent_type": "place",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 5,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "weak-strong-food-and-days",
+      "claim": "Romans 14-15 names disagreement over eating, abstention, wine, and valuing days, and commands mutual welcome and restraint.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "nanos-mystery",
+        "jewett-romans",
+        "lampe-rome"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "weak-strong-food-and-days:passage-relevance",
+      "claim": "The evidence keeps Roman Jewish, gentile, market, and household possibilities open without equating weak with Jews, strong with gentiles, or Jewish observance with defective legalism.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "nanos-mystery",
+        "jewett-romans",
+        "lampe-rome"
+      ],
+      "related_entity_ids": [
+        "rome"
+      ],
+      "passage_anchors": [
+        "Romans 14:1-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "weak-strong-food-and-days"
+        ]
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-god:ancient_near_east_context:0",
+      "claim": "Kingship language was familiar across the ancient world, but Scripture insists that the LORD\u2019s rule is the true and final kingdom.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-god",
+        "parent_title": "What is the Kingdom of God?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-god:historical_context:0",
+      "claim": "The phrase gathers Israel\u2019s royal psalms, prophetic hope, and Jesus\u2019 proclamation into one story of divine reign.",
+      "category": "history",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 14:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-god",
+        "parent_title": "What is the Kingdom of God?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 10-15 and 21:25",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 10:1-11:18; 15:1-35; 21:25",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary narrative evidence; historicity and textual form remain separate questions.",
+        "id": "acts-10-15-greek",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Acts 15:1-35",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 15:1-35",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later primary narrative evidence for the gentile deliberation and decree.",
+        "id": "acts-decree-text",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "Acts 18:1-3 and 28:11-31",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Acts 18:1-3; 28:11-31",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary narrative evidence.",
+        "id": "acts-rome",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "Codex Alexandrinus, Royal MS 1 D VIII",
+        "author": "",
+        "publisher": "British Library",
+        "year": null,
+        "locator": "Romans",
+        "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek manuscript witness.",
+        "id": "alexandrinus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Jewish Law in Gentile Churches",
+        "author": "Markus Bockmuehl",
+        "publisher": "T&T Clark",
+        "year": 2000,
+        "locator": "Chapters on Jesus traditions, Acts 15, gentile ethics, and early Christian halakhah",
+        "url": "https://www.bloomsbury.com/us/jewish-law-in-gentile-churches-9780567706799/",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-15-gentile-question",
+          "apostolic-decree-forms-and-backgrounds",
+          "shared-table-antioch-comparison",
+          "cross-passage-diet-code-limit"
+        ],
+        "notes": "Jewish-legal contextualization resisting a simplistic law-versus-grace contrast.",
+        "id": "bockmuehl-jewish-law",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus II",
+        "author": "Frederic G. Kenyon, ed.",
+        "publisher": "Chester Beatty",
+        "year": 1936,
+        "locator": "Pauline Epistles, Romans leaves",
+        "url": "https://chesterbeatty.ie/assets/uploads/2018/11/Biblical-Papyri-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Papyrus-of-the-Greek-Bible-III-Text-Opt_Part1.pdf",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Collection publication and material description of P46.",
+        "id": "chester-beatty-p46",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Codex Claromontanus, GA 06",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Romans in Greek-Latin Pauline codex",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_06",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Sixth-century Greek-Latin manuscript witness.",
+        "id": "claromontanus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 8:1-11:34",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for food, rights, participation, and assembly meals.",
+        "id": "corinth-food-text",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "Daniel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-2",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Daniel 2-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-2-7",
+        "canonical_object_ids": [
+          "kingdom-theme"
+        ]
+      },
+      {
+        "title": "Daniel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Exodus 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-15",
+        "canonical_object_ids": [
+          "kingdom-theme"
+        ]
+      },
+      {
+        "title": "1 Clement",
+        "author": "Church of Rome",
+        "publisher": "Wikisource, Ante-Nicene Fathers",
+        "year": 96,
+        "locator": "5-6",
+        "url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_IX/The_Epistles_of_Clement/The_First_Epistle_of_Clement_to_the_Corinthians/Chapter_5",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Early Roman Christian memory.",
+        "id": "first-clement-rome",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "1 Corinthians 8:1-13",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 8:1-13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary literary evidence; punctuation of possible slogans remains interpretive.",
+        "id": "first-corinthians-food-greek",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Food Offered to Idols in Roman Corinth",
+        "author": "John Fotopoulos",
+        "publisher": "Mohr Siebeck",
+        "year": 2003,
+        "locator": "1 Corinthians 8:1-11:1 and Corinthian archaeological settings",
+        "url": "https://www.mohrsiebeck.com/en/book/food-offered-to-idols-in-roman-corinth-9783161574801/",
+        "source_type": "academic-book",
+        "supports": [
+          "corinth-knowledge-love-conscience",
+          "corinth-idol-ontology-cultic-table",
+          "corinth-market-home-disclosure",
+          "later-sarapis-meal-comparison",
+          "cross-passage-diet-code-limit"
+        ],
+        "notes": "Its temple-dining emphasis is influential but debated.",
+        "id": "fotopoulos-idol-food",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Paul: The Pagans' Apostle",
+        "author": "Paula Fredriksen",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Paul's Jewish apocalyptic mission and chronology",
+        "url": "https://yalebooks.yale.edu/book/9780300240740/paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical reconstruction of Paul, gentiles, Israel and empire.",
+        "id": "fredriksen-paul",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Galatians 5:13-26",
+        "author": "Paul and unnamed coworkers",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 5:13-26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek ethical and restorative evidence.",
+        "id": "galatians-restoration-text",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 2:11-14",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Earlier first-person letter testimony about Antioch.",
+        "id": "galatians-table-text",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+          "ritual-purity-and-communal-holiness"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Greek New Testament: Galatians",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Galatians 2:11-14",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Earlier first-person letter testimony about Antioch.",
+            "id": "galatians-table-text"
+          },
+          {
+            "title": "Galatians 2:11-14",
+            "author": "Paul",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Galatians 2:11-14",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "shared-table-antioch-comparison"
+            ],
+            "notes": "Independent Pauline account, not a transcript of Acts 15.",
+            "id": "galatians-table-text"
+          }
+        ]
+      },
+      {
+        "title": "When in Romans: An Invitation to Linger with the Gospel according to Paul",
+        "author": "Beverly Roberts Gaventa",
+        "publisher": "Baker Academic",
+        "year": 2016,
+        "locator": "Romans as letter and theological argument",
+        "url": "https://bakeracademic.com/p/when-in-romans-beverly-roberts-gaventa/231078",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary-theological orientation emphasizing cosmic powers and the letter's whole argument.",
+        "id": "gaventa-romans",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Textual History of the Letter to the Romans",
+        "author": "Michael W. Holmes",
+        "publisher": "Brill",
+        "year": 2013,
+        "locator": "Textual criticism and the endings of Romans",
+        "url": "https://doi.org/10.1163/9789004250442_004",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Focused textual-history orientation requiring reviewer verification of individual variants.",
+        "id": "holmes-textual",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Romans: A Commentary",
+        "author": "Robert Jewett",
+        "publisher": "Fortress Press",
+        "year": 2007,
+        "locator": "Hermeneia; Romans 14:1-15:13",
+        "url": "https://www.fortresspress.com/store/product/9780800660840/Romans",
+        "source_type": "reference-work",
+        "supports": [
+          "romans-practices-identity-limits",
+          "romans-common-welcome",
+          "romans-conscience-noncoercion"
+        ],
+        "notes": "Detailed commentary whose audience reconstruction remains an argument.",
+        "id": "jewett-romans",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness",
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Romans: A Commentary",
+            "author": "Robert Jewett",
+            "publisher": "Fortress Press",
+            "year": 2007,
+            "locator": "Hermeneia; Romans 14:1-15:13",
+            "url": "https://www.fortresspress.com/store/product/9780800660840/Romans",
+            "source_type": "reference-work",
+            "supports": [
+              "romans-practices-identity-limits",
+              "romans-common-welcome",
+              "romans-conscience-noncoercion"
+            ],
+            "notes": "Detailed commentary whose audience reconstruction remains an argument.",
+            "id": "jewett-romans"
+          },
+          {
+            "title": "Romans: A Commentary",
+            "author": "Robert Jewett",
+            "publisher": "Fortress Press",
+            "year": 2007,
+            "locator": "Introduction; Romans 13-16",
+            "url": "https://www.fortresspress.com/store/product/9780800660840/Romans",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Audience and mission reconstructions are arguments, not direct observations.",
+            "id": "jewett-romans"
+          }
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Kingdom Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "kingdom-theme-historical-orientation",
+        "canonical_object_ids": [
+          "kingdom-theme"
+        ]
+      },
+      {
+        "title": "Food, Eating, and Meals",
+        "author": "David Kraemer",
+        "publisher": "Oxford University Press",
+        "year": 2012,
+        "locator": "The Oxford Handbook of Jewish Daily Life in Roman Palestine, pages 403-419",
+        "url": "https://doi.org/10.1093/oxfordhb/9780199216437.013.0023",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Jewish food-practice diversity control; Roman Palestine does not map directly onto Rome or Antioch.",
+        "id": "kraemer-jewish-food",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries: From Paul to Valentinus",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Parts 1-2: topography, persons, groups, stratification, and fractionation",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Prosopographic and topographic reconstructions remain probabilistic.",
+        "id": "lampe-rome",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Topography, persons, groups, and social stratification",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Reconstruction remains probabilistic.",
+        "id": "lampe-rome-place",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "Mark 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Mark 7:1-23",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 7:1-23",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; no modern translation is reproduced.",
+        "id": "mark-7-greek",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Judgment and the Brother: Romans 14:1-15:13",
+        "author": "Wayne A. Meeks",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "In Search of the Early Christians, pages 153-166",
+        "url": "https://doi.org/10.12987/yale/9780300091427.003.0007",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Interprets judgment, welcome, and Jewish-gentile coexistence.",
+        "id": "meeks-romans-judgment",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "The Letter to the Romans",
+        "author": "Douglas J. Moo",
+        "publisher": "Eerdmans",
+        "year": 2018,
+        "locator": "Romans 6-8 and 14",
+        "url": "https://www.eerdmans.com/9781467451437/the-letter-to-the-romans/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Revised exegetical commentary used for participation, personification, bodily redemption, and judgment.",
+        "id": "moo-romans-resurrection",
+        "canonical_object_ids": [
+          "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+        ]
+      },
+      {
+        "title": "The Mystery of Romans",
+        "author": "Mark D. Nanos",
+        "publisher": "Fortress Press",
+        "year": 1996,
+        "locator": "Roman Jewish setting; weak and strong; chapters 9-16",
+        "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "One influential reconstruction within a disputed field.",
+        "id": "nanos-mystery",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life",
+          "romans"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Mystery of Romans",
+            "author": "Mark D. Nanos",
+            "publisher": "Fortress Press",
+            "year": 1996,
+            "locator": "Roman Jewish setting; weak and strong; chapters 9-16",
+            "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "One influential reconstruction within a disputed field.",
+            "id": "nanos-mystery"
+          },
+          {
+            "title": "The Mystery of Romans: The Jewish Context of Paul's Letter",
+            "author": "Mark D. Nanos",
+            "publisher": "Fortress Press",
+            "year": 1996,
+            "locator": "Roman assemblies, Jews and gentiles, Romans 9-16",
+            "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Jewish-context reconstruction used as a debated scholarly position.",
+            "id": "nanos-mystery"
+          }
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "Romans witnesses P10, P26, P27, P31, P40, P46, P61 and codices",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Official catalogue and workspace for Greek New Testament manuscripts.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Gregory-Aland P46",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Pauline papyrus codex including most of Romans",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Digital images and catalog description of the late second- or early third-century codex.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "On the Embassy to Gaius",
+        "author": "Philo of Alexandria",
+        "publisher": "Early Jewish Writings",
+        "year": 40,
+        "locator": "155-158",
+        "url": "https://www.earlyjewishwritings.com/text/philo/book40.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "second-temple-context"
+        ],
+        "notes": "Near-contemporary Jewish evidence.",
+        "id": "philo-rome",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Psalm 2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-2"
+          },
+          {
+            "title": "Psalm 2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-2"
+          }
+        ]
+      },
+      {
+        "title": "The Strong and the Weak: Romans 14.1-15.13 in Context",
+        "author": "Mark Reasoner",
+        "publisher": "Cambridge University Press",
+        "year": 1999,
+        "locator": "Romans 14:1-15:13",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Focused historical and exegetical study of weak and strong language.",
+        "id": "reasoner-strong-weak",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness",
+          "romans"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Strong and the Weak: Romans 14.1-15.13 in Context",
+            "author": "Mark Reasoner",
+            "publisher": "Cambridge University Press",
+            "year": 1999,
+            "locator": "Romans 14:1-15:13",
+            "url": "https://doi.org/10.1017/CBO9780511488061",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Focused historical and exegetical study of weak and strong language.",
+            "id": "reasoner-strong-weak"
+          },
+          {
+            "title": "The Strong and the Weak",
+            "author": "Mark Reasoner",
+            "publisher": "Cambridge University Press",
+            "year": 1999,
+            "locator": "Romans 14:1-23",
+            "url": "https://doi.org/10.1017/CBO9780511487996",
+            "source_type": "academic-book",
+            "supports": [
+              "romans-practices-identity-limits",
+              "romans-common-welcome",
+              "romans-conscience-noncoercion",
+              "cross-passage-diet-code-limit"
+            ],
+            "notes": "Major contextual reconstruction; ethnic, ascetic, and status explanations remain disputed.",
+            "id": "reasoner-strong-weak"
+          }
+        ]
+      },
+      {
+        "title": "Revelation 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-11",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Romans 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-14",
+        "canonical_object_ids": [
+          "kingdom-theme",
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Romans 14:1-23",
+        "author": "Paul, with Tertius named as scribe",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 14:1-23",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary literary evidence; audience identities are reconstructed.",
+        "id": "romans-14-greek",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "Romans 1:18-32 and 12:1-14:23",
+        "author": "Paul, with Tertius named as scribe",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 1:18-32; 12:1-14:23",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; no modern translation is reproduced.",
+        "id": "romans-bodies-text",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "scripture-references"
+        ],
+        "notes": "Open critical Greek text for direct textual and lexical control.",
+        "id": "romans-greek",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life",
+          "romans"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Greek New Testament: Romans",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Romans 1-16",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "scripture-references"
+            ],
+            "notes": "Open critical Greek text for direct textual and lexical control.",
+            "id": "romans-greek"
+          },
+          {
+            "title": "Romans",
+            "author": "Paul, with Tertius named as scribe",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Romans 1-16",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Primary literary evidence; translation and audience reconstruction remain interpretive.",
+            "id": "romans-greek"
+          }
+        ]
+      },
+      {
+        "title": "Romans 6:1-8:39 and 14:1-12",
+        "author": "Paul",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 6:1-8:39; 14:1-12",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; no modern translation is reproduced.",
+        "id": "romans-resurrection-text",
+        "canonical_object_ids": [
+          "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+        ]
+      },
+      {
+        "title": "Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Romans 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary letter evidence.",
+        "id": "romans-rome",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 14:1-15:13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "romans-table-text",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "author": "Canonical Knowledge Library",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Evidence cluster with external source provenance",
+        "url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-notes"
+        ],
+        "notes": "Orientation pointer only; substantive claims resolve to external sources in the linked cluster.",
+        "id": "rome-cluster-source",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Romans",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Life of Claudius",
+        "author": "Suetonius",
+        "publisher": "Perseus Digital Library",
+        "year": 121,
+        "locator": "25.4",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0061:life=cl.:chapter=25",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Later compressed notice.",
+        "id": "suetonius-claudius-rome",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "Annals",
+        "author": "Tacitus",
+        "publisher": "Perseus Digital Library",
+        "year": 116,
+        "locator": "15.44",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15.44",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Later report about the fire of 64 and punishments.",
+        "id": "tacitus-rome",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "The Jerusalem Decrees and the Incident at Antioch",
+        "author": "Justin Taylor",
+        "publisher": "New Testament Studies",
+        "year": 2001,
+        "locator": "47.3, pages 372-380",
+        "url": "https://doi.org/10.1017/S0028688501000224",
+        "source_type": "journal-article",
+        "supports": [
+          "acts-decree-porneia-legal-dispute",
+          "acts-paul-chronology-control"
+        ],
+        "notes": "Compares Noachide and resident-alien explanations and the Antioch incident.",
+        "id": "taylor-decrees",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "Rome: An Urban History from Antiquity to the Present",
+        "author": "Rabun Taylor, Katherine Wentworth Rinne, and Spiro Kostof",
+        "publisher": "Cambridge University Press",
+        "year": 2016,
+        "locator": "Ancient urban fabric and pre-Constantinian Christian infrastructure",
+        "url": "https://doi.org/10.1017/CBO9781139012911",
+        "source_type": "academic-book",
+        "supports": [
+          "archaeology",
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Specific early house churches remain archaeologically unidentified.",
+        "id": "taylor-rome-place",
+        "canonical_object_ids": [
+          "rome"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians",
+        "author": "Anthony C. Thiselton",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "1 Corinthians 8:1-11:34",
+        "url": "https://www.eerdmans.com/9780802824493/the-first-epistle-to-the-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed exegetical commentary; disputed reconstructions remain labeled.",
+        "id": "thiselton-corinth-food",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "Convention on the Rights of Persons with Disabilities",
+        "author": "United Nations",
+        "publisher": "United Nations",
+        "year": 2006,
+        "locator": "Articles 5, 9, 21, 25, and 30",
+        "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-persons-disabilities",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-notes",
+          "evidence-items"
+        ],
+        "notes": "Official modern legal reference for access and nondiscrimination, not evidence for ancient practice.",
+        "id": "un-disability-convention",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Romans",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Food Safety",
+        "author": "World Health Organization",
+        "publisher": "World Health Organization",
+        "year": 2024,
+        "locator": "Foodborne disease, allergens, and safe food systems overview",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/food-safety",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-notes",
+          "evidence-items"
+        ],
+        "notes": "Modern health and food-safety control, not evidence for ancient practice.",
+        "id": "who-food-safety",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      },
+      {
+        "title": "The Letter to the Romans: A Commentary",
+        "author": "Michael Wolter",
+        "publisher": "Baylor University Press",
+        "year": 2023,
+        "locator": "Romans 1-16",
+        "url": "https://www.baylorpress.com/9781481317726/the-letter-to-the-romans/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Recent comprehensive historical and exegetical commentary.",
+        "id": "wolter-romans",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Letter to the Romans: A Commentary",
+        "author": "Michael Wolter",
+        "publisher": "Baylor University Press",
+        "year": 2023,
+        "locator": "Romans 14:1-15:13",
+        "url": "https://www.baylorpress.com/9781481317726/the-letter-to-the-romans/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Recent commentary used with competing weak-strong reconstructions.",
+        "id": "wolter-romans-table",
+        "canonical_object_ids": [
+          "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "kingdom-theme",
+        "type": "theme",
+        "title": "Kingdom Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "type": "cultural_background",
+        "title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+        "type": "cultural_background",
+        "title": "Pauline Death, Resurrection, Transformed Embodiment, Grief, Hope, Judgment, and Baptism for the Dead",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+        "type": "cultural_background",
+        "title": "Pauline Idols, Sacrificed Food, Market and Temple Meals, Conscience, Knowledge, Love, Weak and Strong, Stumbling, Participation, Lord's Supper, Shared Table, and Economic Status",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.979
+      },
+      {
+        "id": "ritual-purity-and-communal-holiness",
+        "type": "cultural_background",
+        "title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.956
+      },
+      {
+        "id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "type": "cultural_background",
+        "title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "romans",
+        "type": "book",
+        "title": "Romans",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "rome",
+        "type": "place",
+        "title": "Rome",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "what-is-the-kingdom-of-god",
+        "type": "faq",
+        "title": "What is the Kingdom of God?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e3f30180d4de86ebfbf225a40813015b0b36c767311638e5cd8f7ba44555c963",
+  "evidence_hash_version": "2"
+}

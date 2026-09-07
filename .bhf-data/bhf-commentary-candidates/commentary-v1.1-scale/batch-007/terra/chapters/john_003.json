@@ -1,0 +1,101 @@
+{
+  "reference": "John 3",
+  "book": "John",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_119",
+          "text": "Read the chapter with this setting in view: John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-baptist-lamb"
+          ],
+          "verse_refs": [
+            "John 3:22-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_120",
+          "text": "For its historical and cultural setting, note that Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "pharisees:original_audience:0"
+          ],
+          "verse_refs": [
+            "John 3:1-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_121",
+          "text": "For its historical and cultural setting, note that Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "pharisees:historical_setting:0"
+          ],
+          "verse_refs": [
+            "John 3:1-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_120",
+          "text": "A literary feature to notice is that In John 3, anothen can mean 'from above' or 'again'; Nicodemus hears repetition while the discourse develops heavenly origin and Spirit birth. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-anothen"
+          ],
+          "verse_refs": [
+            "John 3:1-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_120",
+          "text": "For a later or comparative connection, note that New Testament use of the wilderness generation, bronze serpent, and Balaam is later canonical reception and should be identified separately from interpretation of Numbers in its Torah context. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "numbers:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "John 3:14-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b95bc27afdfcce7aafef918e97f93aaf4db770911d197c1dd3ac2a386954d81c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

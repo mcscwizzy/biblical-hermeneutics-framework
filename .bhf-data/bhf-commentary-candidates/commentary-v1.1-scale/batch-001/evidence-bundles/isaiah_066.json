@@ -1,0 +1,868 @@
+{
+  "passage_ref": "Isaiah 66",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "new-jerusalem",
+        "title": "New Jerusalem",
+        "type": "event",
+        "aliases": [
+          "what happened in new jerusalem",
+          "tell me about new jerusalem",
+          "why is new jerusalem important"
+        ],
+        "metadata": {
+          "summary": "The eschatological city of Revelation 21-22 where God dwells with his people and creation is renewed.",
+          "importance": 92,
+          "retrieval_score": 0.912,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 65:17-25",
+            "Isaiah 66:22-23",
+            "Ezekiel 48:30-35",
+            "Revelation 21:1-27",
+            "Revelation 22:1-5"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2-peter:interpretive_note:38",
+      "claim": "New heavens and new earth echo Isaiah and may emphasize transformation, renewal, or replacement differently; righteousness dwelling there is the ethical center.",
+      "category": "culture",
+      "source_ids": [
+        "nets-lxx",
+        "bauckham",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 66:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-peter",
+        "parent_title": "2 Peter",
+        "parent_type": "book",
+        "object_importance": 77,
+        "retrieval_score": 0.897,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "isaiah-death-new-creation",
+      "claim": "Isaiah 25-27 and 65-66 use death-defeat, bodily revival, transformed longevity, renewed Jerusalem, and new-heavens-and-earth imagery that becomes foundational for later Jewish and Christian resurrection and new-creation hope.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-1-39",
+        "blenkinsopp-isaiah-56-66",
+        "oxford-handbook-isaiah",
+        "moyise-isaiah-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 66:22-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "isaiah-nations-empire",
+      "claim": "Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "oxford-handbook-isaiah",
+        "cambridge-ane-prophecy",
+        "cambridge-migration-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 66:18-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6500,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "isaiah-reception-distinction",
+      "claim": "Responsible interpretation distinguishes a passage's literary sense and historical referent from prediction claims, typology, quotation, allusion, canonical synthesis, Jewish reception, and later christological or ecclesial readings.",
+      "category": "culture",
+      "source_ids": [
+        "oxford-handbook-isaiah",
+        "moyise-isaiah-nt",
+        "sweeney-post-shoah-isaiah",
+        "greek-esaias-nets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 65:17-66:24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 75
+      }
+    },
+    {
+      "id": "new-jerusalem-prophecy:ancient_near_east_context:0",
+      "claim": "Ancient background for New Jerusalem Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 65:17-25, Isaiah 66:22-24, new-jerusalem-theme, and new-creation-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-65-66",
+        "ezekiel-40-48",
+        "revelation-21-22",
+        "new-jerusalem-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 66:22-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem-prophecy",
+        "parent_title": "New Jerusalem Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "new-jerusalem-prophecy:historical_context:0",
+      "claim": "The vision grows from exile and temple loss into a picture of final dwelling and restored holiness.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-65-66",
+        "ezekiel-40-48",
+        "revelation-21-22",
+        "new-jerusalem-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 66:22-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem-prophecy",
+        "parent_title": "New Jerusalem Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "new-jerusalem:ancient_near_east_context:0",
+      "claim": "The vision reuses city and temple imagery familiar in the ancient world while transforming them around God\u2019s direct presence.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-65-66",
+        "ezekiel-48",
+        "revelation-21-22",
+        "new-jerusalem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "new-jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 66:22-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem",
+        "parent_title": "New Jerusalem",
+        "parent_type": "event",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "new-jerusalem:historical_context:0",
+      "claim": "New Jerusalem appears as the final hope of the biblical story, reshaping Zion imagery after judgment and exile.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-65-66",
+        "ezekiel-48",
+        "revelation-21-22",
+        "new-jerusalem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "new-jerusalem"
+      ],
+      "passage_anchors": [
+        "Isaiah 66:22-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem",
+        "parent_title": "New Jerusalem",
+        "parent_type": "event",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Jude, 2 Peter",
+        "author": "Richard J. Bauckham",
+        "publisher": "Word Books",
+        "year": 1983,
+        "locator": "Word Biblical Commentary 50",
+        "url": "https://www.worldcat.org/title/8114821",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major critical control for literary relationship, genre, authorship, date, and exegesis.",
+        "id": "bauckham",
+        "canonical_object_ids": [
+          "2-peter"
+        ]
+      },
+      {
+        "title": "Isaiah 1-39",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 19",
+        "url": "https://yalebooks.yale.edu/book/9780300139617/isaiah-1-39/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "isaiah-superscription-prophet",
+          "isaiah-long-composition",
+          "isaiah-assyria-trust",
+          "isaiah-immanuel-sign",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-death-new-creation"
+        ],
+        "notes": "Critical commentary addressing formation, eighth-century settings, major disputed texts, and final form.",
+        "id": "blenkinsopp-isaiah-1-39",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 56-66",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2003,
+        "locator": "Anchor Yale Bible 19B",
+        "url": "https://yalebooks.yale.edu/book/9780300139624/isaiah-56-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation"
+        ],
+        "notes": "Critical commentary on postexilic community, justice, Zion, inclusion, judgment, and new creation.",
+        "id": "blenkinsopp-isaiah-56-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ancient Near Eastern Prophecy and the Study of Isaiah",
+        "author": "Jonathan St\u00f6kl",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 8",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/ancient-near-eastern-prophecy-and-the-study-of-isaiah/3B0E4F90F810DDF2B09BB57E186E25A5",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "genre",
+          "isaiah-nations-empire"
+        ],
+        "notes": "Comparative prophetic texts, literary compilation, and gender without assuming direct dependence.",
+        "id": "cambridge-ane-prophecy",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Migration in the Book of Isaiah",
+        "author": "C. L. Crouch",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 11",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/migration-in-the-book-of-isaiah/4C9BFF7B3BA5ABE66F2EF5100170B206",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "original-audience",
+          "isaiah-nations-empire",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Assyrian and Babylonian deportation, other forced movements, displacement, and literary reception.",
+        "id": "cambridge-migration-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ezekiel 40-48",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-40-48",
+        "canonical_object_ids": [
+          "new-jerusalem-prophecy"
+        ]
+      },
+      {
+        "title": "Ezekiel 48",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-48",
+        "canonical_object_ids": [
+          "new-jerusalem"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Esaias",
+        "author": "Mois\u00e9s Silva",
+        "publisher": "Oxford University Press / International Organization for Septuagint and Cognate Studies",
+        "year": 2007,
+        "locator": "Translation and translation profile of Old Greek Esaias",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/33-esaias-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "greek-words",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-old-greek"
+        ],
+        "notes": "Scholarly English translation with an introduction to the Greek translation's profile.",
+        "id": "greek-esaias-nets",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 65-66",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-65-66",
+        "canonical_object_ids": [
+          "new-jerusalem",
+          "new-jerusalem-prophecy"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "2nd edition, 2 Peter and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Jewish contextual and anti-supersessionist control.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "2-peter"
+        ]
+      },
+      {
+        "title": "Isaiah in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 28",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334632502",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-suffering-servant",
+          "isaiah-death-new-creation",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "New Testament quotation and allusion, Gentile inclusion, new exodus, new creation, and New Jerusalem.",
+        "id": "moyise-isaiah-nt",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Numbers, Psalms, Proverbs, and Isaiah comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "2-peter"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for New Jerusalem",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "new-jerusalem-historical-orientation",
+        "canonical_object_ids": [
+          "new-jerusalem"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for New Jerusalem Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "new-jerusalem-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "new-jerusalem-prophecy"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Revelation 21-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21-22",
+        "canonical_object_ids": [
+          "new-jerusalem",
+          "new-jerusalem-prophecy"
+        ]
+      },
+      {
+        "title": "Post-Shoah Readings of Isaiah",
+        "author": "Marvin A. Sweeney",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter/334632598",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Ethically critical Jewish reading of hardening, empire, covenant, blame, and failed national security after the Shoah.",
+        "id": "sweeney-post-shoah-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-peter",
+        "type": "book",
+        "title": "2 Peter",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.897
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "new-jerusalem",
+        "type": "event",
+        "title": "New Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "new-jerusalem-prophecy",
+        "type": "prophecy",
+        "title": "New Jerusalem Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a0d7ac4e4f0892c87e5534a098973f9e7d476429cfe940e487f806a1db95f923",
+  "evidence_hash_version": "2"
+}

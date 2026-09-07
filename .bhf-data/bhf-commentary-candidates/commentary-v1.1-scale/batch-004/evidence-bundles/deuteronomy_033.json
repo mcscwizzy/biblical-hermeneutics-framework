@@ -1,0 +1,475 @@
+{
+  "passage_ref": "Deuteronomy 33",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "priesthood",
+        "title": "Priesthood",
+        "type": "institution",
+        "aliases": [
+          "priesthood institution",
+          "priesthood in scripture",
+          "priesthood structure",
+          "priesthood role"
+        ],
+        "metadata": {
+          "summary": "The mediating office charged with teaching, sacrifice, blessing, and maintaining holy access to God.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 28:1-43",
+            "Leviticus 8:1-36",
+            "Leviticus 9:1-24",
+            "Leviticus 16:1-34",
+            "Numbers 18:1-32",
+            "Deuteronomy 33:8-11",
+            "Psalms 110:4",
+            "Hebrews 4:14-16",
+            "Hebrews 7:1-28",
+            "1 Peter 2:4-10"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "deuteronomy-literary-movement",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 3200,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "priesthood:ancient_near_east_context:0",
+      "claim": "Ancient priests often mediated cult and purity; Israel\u2019s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 33:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "priesthood:hebraic_worldview:0",
+      "claim": "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 33:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "priesthood:historical_context:0",
+      "claim": "Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel\u2019s worship, then reappears in the second temple world and in New Testament reflection.",
+      "category": "history",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 33:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "priesthood:second_temple_context:0",
+      "claim": "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 33:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Deuteronomy: Word and Presence",
+        "author": "Ian Cairns",
+        "publisher": "Eerdmans",
+        "year": 1992,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://www.eerdmans.com/9780802801609/deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "covenantal-significance",
+          "canonical-context",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-choose-life"
+        ],
+        "notes": "Theological commentary treating Deuteronomy as speech, covenant, law, and final Pentateuchal volume.",
+        "id": "cairns-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 1-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Deuteronomy 1:1-34:12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-moab-covenant",
+          "deuteronomy-choose-life",
+          "deuteronomy-moses-joshua-transition"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "deuteronomy-1-34",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Exodus 28-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-28-29",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Hebrews 4-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-4-7",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Leviticus 8-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-8-16",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Numbers 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-18",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Priesthood",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "priesthood-historical-orientation",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Deuteronomy",
+        "author": "Jeffrey H. Tigay",
+        "publisher": "Jewish Publication Society",
+        "year": 1996,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://jps.org/books/jps-torah-commentary-deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-moab-covenant"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "tigay-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "deuteronomy",
+        "type": "book",
+        "title": "Deuteronomy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "priesthood",
+        "type": "institution",
+        "title": "Priesthood",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8e3c6d9d349aeab7a554c74f161956de178026183cede3ec989ec1bc32b3fd59",
+  "evidence_hash_version": "2"
+}

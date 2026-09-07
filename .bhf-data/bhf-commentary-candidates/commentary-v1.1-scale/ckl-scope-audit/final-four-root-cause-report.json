@@ -1,0 +1,146 @@
+{
+  "artifact": "final-four-root-cause-report",
+  "chapters": [
+    {
+      "after": {
+        "presentation_audit": "PASS",
+        "route": "historical_context",
+        "terra_suppressed": false,
+        "textual_routing": "PASS"
+      },
+      "before": {
+        "audit_expected_route": "language_literary",
+        "route": "historical_context",
+        "semantically_correct_route": "historical_context",
+        "terra_suppressed": true
+      },
+      "classification": [
+        "B",
+        "C",
+        "F"
+      ],
+      "evidence_ids": [
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:historical_context:0"
+      ],
+      "reference": "Deuteronomy 32",
+      "underlying_semantics": "Generic archaeology background; not a manuscript reading or textual variant."
+    },
+    {
+      "after": {
+        "presentation_audit": "PASS",
+        "route": "language_literary",
+        "terra_suppressed": false,
+        "textual_routing": "PASS"
+      },
+      "before": {
+        "audit_expected_route": "language_literary",
+        "route": "historical_context",
+        "semantically_correct_route": "language_literary",
+        "terra_suppressed": true
+      },
+      "classification": [
+        "C",
+        "D",
+        "E"
+      ],
+      "evidence_ids": [
+        "ketef-hinnom-silver-scrolls:historical_context:0"
+      ],
+      "reference": "Numbers 6",
+      "underlying_semantics": "Legitimate textual-witness evidence, safely restricted to language_literary; only its legacy historical role was wrong."
+    },
+    {
+      "after": {
+        "presentation_audit": "PASS",
+        "route": "historical_context",
+        "terra_suppressed": false,
+        "textual_routing": "PASS"
+      },
+      "before": {
+        "audit_expected_route": "language_literary",
+        "route": "historical_context",
+        "semantically_correct_route": "historical_context",
+        "terra_suppressed": true
+      },
+      "classification": [
+        "B",
+        "C",
+        "F"
+      ],
+      "evidence_ids": [
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:historical_context:0"
+      ],
+      "reference": "Isaiah 40",
+      "underlying_semantics": "Generic archaeology background; not a manuscript reading or textual variant."
+    },
+    {
+      "after": {
+        "presentation_audit": "PASS",
+        "route": "historical_context",
+        "terra_suppressed": false,
+        "textual_routing": "PASS"
+      },
+      "before": {
+        "audit_expected_route": "language_literary",
+        "route": "historical_context",
+        "semantically_correct_route": "historical_context",
+        "terra_suppressed": true
+      },
+      "classification": [
+        "B",
+        "C",
+        "F"
+      ],
+      "evidence_ids": [
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:historical_context:0"
+      ],
+      "reference": "Psalms 119",
+      "underlying_semantics": "Generic archaeology background; no textual-witness route is present in this chapter."
+    }
+  ],
+  "classification_legend": {
+    "B": "ROUTING_LOGIC_FALSE_POSITIVE",
+    "C": "PRESENTATION_ROLE_FALSE_POSITIVE",
+    "D": "LEGITIMATE_TEXTUAL_WITNESS",
+    "E": "LEGITIMATE_PRESENTATION_RESTRICTION",
+    "F": "MATERIAL_OBJECT_VS_MANUSCRIPT_CONFUSION"
+  },
+  "code_fix": {
+    "changes": [
+      "Pass authored legacy claim text into presentation-role derivation.",
+      "Use a narrow textual-witness fallback for readings, variants, manuscripts, papyri, codices, and named textual traditions.",
+      "Keep explicit evidence_type/dispute metadata authoritative and keep the archaeology material-object guard."
+    ],
+    "ckl_content_changes": 0,
+    "ckl_metadata_changes": 0,
+    "files": [
+      "bhf_agent/presentation/evidence.py",
+      "bhf_agent/presentation/relevance.py",
+      "tools/commentary_v11_scaled_preflight.py"
+    ]
+  },
+  "general_root_cause": {
+    "classification": [
+      "B",
+      "C",
+      "F"
+    ],
+    "description": "Legacy evidence projection supplied an empty claim to role derivation, while the textual fallback matched incidental 'textual transmission' in generic archaeology background. This made material-context evidence look like manuscript evidence only in the audit path.",
+    "known_false_positive_variant": [
+      "dispute_status alone is not used as textual-witness evidence",
+      "material archaeology objects are not manuscripts by default",
+      "global/entity background does not inherit passage presentation restrictions"
+    ]
+  },
+  "routing_trace": [
+    "bhf_agent.presentation.evidence._append_object_evidence passes the authored legacy claim to _legacy_relevance_metadata.",
+    "bhf_agent.presentation.evidence._legacy_relevance_metadata calls with_presentation_metadata with that claim instead of an empty string.",
+    "bhf_agent.presentation.relevance.presentation_role applies explicit metadata first, then the narrow TEXTUAL_WITNESS_CLAIM_TEXT_RE fallback, while retaining the archaeology material-object guard.",
+    "tools.commentary_v11_scaled_preflight._mapping_is_textual and _is_textual_witness_material use the same narrow witness predicate.",
+    "_presentation_audit, _textual_routing_audit, and terra_textual_suppression_simulation therefore see historical_context archaeology background as background, while Ketef remains language_literary."
+  ],
+  "version": 1
+}

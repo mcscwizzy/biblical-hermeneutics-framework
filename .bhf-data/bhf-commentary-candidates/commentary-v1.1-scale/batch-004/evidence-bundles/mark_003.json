@@ -1,0 +1,409 @@
+{
+  "passage_ref": "Mark 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "calling-of-the-twelve",
+        "title": "Calling of the Twelve",
+        "type": "event",
+        "aliases": [
+          "calling of the twelve",
+          "jesus appoints twelve apostles",
+          "mark 3 twelve",
+          "the twelve apostles"
+        ],
+        "metadata": {
+          "summary": "Jesus appoints twelve apostles to be with him and to participate in his mission.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 3:13-19",
+            "Luke 6:12-16",
+            "Matthew 10:1-4",
+            "Acts 1:15-26"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "calling-of-the-twelve:ancient_near_east_context:0",
+      "claim": "Teacher-disciple relationships were familiar in Jewish settings, while the number twelve evokes Israel's tribal identity.",
+      "category": "culture",
+      "source_ids": [
+        "mark-3-13-19",
+        "luke-6-12-16",
+        "matthew-10-1-4",
+        "acts-1-15-26",
+        "calling-of-the-twelve-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "calling-of-the-twelve"
+      ],
+      "passage_anchors": [
+        "Mark 3:13-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "calling-of-the-twelve",
+        "parent_title": "Calling of the Twelve",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "calling-of-the-twelve:historical_context:0",
+      "claim": "The event belongs to Jesus' Galilean ministry, where discipleship, teaching, healing, and opposition develop together.",
+      "category": "history",
+      "source_ids": [
+        "mark-3-13-19",
+        "luke-6-12-16",
+        "matthew-10-1-4",
+        "acts-1-15-26",
+        "calling-of-the-twelve-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "calling-of-the-twelve"
+      ],
+      "passage_anchors": [
+        "Mark 3:13-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "calling-of-the-twelve",
+        "parent_title": "Calling of the Twelve",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "mark-anti-judaism-safeguard",
+      "claim": "Mark's conflicts with particular Jewish leaders cannot authorize antisemitism, supersessionism, deicide accusations, collective Jewish guilt, or portraying Pharisees and Judaism as uniquely hypocritical, impure, or hard-hearted.",
+      "category": "culture",
+      "source_ids": [
+        "jewish-annotated-nt",
+        "mark-religious-authorities",
+        "mark-food-purity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 3:1-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "mark-intercalation",
+      "claim": "Mark repeatedly intercalates one story within another so that the paired episodes interpret each other.",
+      "category": "culture",
+      "source_ids": [
+        "marcus-mark-1-8",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 3:20-35"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 1:15-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "apostolic witness restored",
+        "id": "acts-1-15-26",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Calling of the Twelve",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "calling-of-the-twelve-historical-orientation",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Mark and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive context for New Testament texts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Luke 6:12-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "appointment after prayer",
+        "id": "luke-6-12-16",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "Mark 1-8",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300139792/mark-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 1-8.",
+        "id": "marcus-mark-1-8",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 3:13-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Jesus appoints the Twelve",
+        "id": "mark-3-13-19",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      },
+      {
+        "title": "The Stomach Purifies All Foods: Jesus' Anatomical Argument in Mark 7.18-19",
+        "author": "Logan Williams",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "New Testament Studies 70.3, 371-391",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/stomach-purifies-all-foods-jesus-anatomical-argument-in-mark-71819/FC869FEDFEB2425BEAC3029C21B5900A",
+        "source_type": "journal-article",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Recent argument distinguishing ritual impurity, digestion, and kashrut.",
+        "id": "mark-food-purity",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Religious Authorities in the Gospel of Mark",
+        "author": "Jack Dean Kingsbury",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "New Testament Studies 36",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/religious-authorities-in-the-gospel-of-mark/9BF67DFC9981C8AC28BF6C210DEC883A",
+        "source_type": "journal-article",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary characterization of Mark's varied authority groups.",
+        "id": "mark-religious-authorities",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Matthew 10:1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "mission of the Twelve",
+        "id": "matthew-10-1-4",
+        "canonical_object_ids": [
+          "calling-of-the-twelve"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "calling-of-the-twelve",
+        "type": "event",
+        "title": "Calling of the Twelve",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "83268a580a37dd7437b82509f5e63025235563df528d762cd9fee8ae8b11cbe0",
+  "evidence_hash_version": "2"
+}

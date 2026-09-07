@@ -7,6 +7,7 @@ from typing import Any, Mapping
 
 
 EVIDENCE_BUNDLE_VERSION = "1.0"
+EVIDENCE_BUNDLE_CANDIDATE_VERSION = "1.1"
 PRESENTATION_SCHEMA_VERSION = "1.0"
 
 EVIDENCE_CATEGORIES = frozenset(
@@ -80,6 +81,12 @@ class EvidenceBundle:
     version: str = EVIDENCE_BUNDLE_VERSION
     evidence_hash: str = ""
 
+    @property
+    def evidence_hash_version(self) -> str:
+        """Identity-hash contract used by this bundle generation."""
+
+        return "2" if self.version == EVIDENCE_BUNDLE_CANDIDATE_VERSION else "1"
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "passage_ref": self.passage_ref,
@@ -92,6 +99,7 @@ class EvidenceBundle:
             "provenance": self.provenance,
             "version": self.version,
             "evidence_hash": self.evidence_hash,
+            "evidence_hash_version": self.evidence_hash_version,
         }
 
     @property

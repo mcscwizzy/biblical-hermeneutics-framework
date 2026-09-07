@@ -1,0 +1,65 @@
+{
+  "reference": "2 Kings 8",
+  "book": "2 Kings",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_72",
+          "text": "Read the chapter with this setting in view: Historically, Tell Dan Excavations is located by its canonical setting; this entry connects that setting with jerusalem, joshua, hebrews and related CKL objects for contextual retrieval. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "tell-dan-excavations:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 8:1-29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_73",
+          "text": "For its historical and cultural setting, note that Historically, Tel Rehov Honey Workshop is located by its canonical setting; this entry connects that setting with tell-dan-excavations, jerusalem, joshua and related CKL objects for contextual retrieval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "tel-rehov-honey-workshop:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 8:1-29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_74",
+          "text": "For its historical and cultural setting, note that Historically, Tel Dan Stele is located by its canonical setting; this entry connects that setting with tell-dan-excavations, jerusalem, joshua and related CKL objects for contextual retrieval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "tel-dan-stele:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 8:1-29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d22922abf36a62214d371e3fabf66a998910bc8c341330453026151b7dc2e60c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

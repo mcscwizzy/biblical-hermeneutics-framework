@@ -1,0 +1,128 @@
+{
+  "reference": "Psalms 1",
+  "book": "Psalms",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 13 source-addressable item(s). The strongest eligible contextual observation is: In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "torah:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "what-does-torah-mean:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "what-does-torah-mean:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection.",
+          "verse_refs": [
+            "Psalms 1:1-6"
+          ],
+          "evidence_ids": [
+            "psalms-gateway-torah-king"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Ancient treaty and legal traditions provide background, but torah is distinct because it is the instruction of the covenant LORD.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "torah:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Ancient background for makarios includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Psalm 1:1-3, Psalm 32:1-2, wisdom-theme, and psalms without letting comparison replace the biblical witness.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "makarios:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: In Hebrew and Greek usage, makarios carries a range of meaning, so context determines how the term functions in a given passage.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "makarios:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b7759e4e8a9c0b1a00d786c112c0773732c8ccd1b73afef95ca7d28e75b40450",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:57.439957+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

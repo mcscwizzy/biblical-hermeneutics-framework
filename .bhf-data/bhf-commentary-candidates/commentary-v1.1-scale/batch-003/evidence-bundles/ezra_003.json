@@ -1,0 +1,676 @@
+{
+  "passage_ref": "Ezra 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "rebuilding-the-temple",
+        "title": "Rebuilding the Temple",
+        "type": "event",
+        "aliases": [
+          "what happened in rebuilding the temple",
+          "tell me about rebuilding the temple",
+          "why is rebuilding the temple important"
+        ],
+        "metadata": {
+          "summary": "The Persian-period restoration of Jerusalem's altar and temple, begun by the returned community and conventionally completed in 515 BCE under Darius I after interruption, opposition, and prophetic encouragement.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Ezra 1:1-11",
+            "Ezra 3:1-13",
+            "Ezra 5:1-17",
+            "Ezra 6:1-22",
+            "Haggai 1:1-15",
+            "Zechariah 4:1-14"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezra-altar-temple",
+      "claim": "The returned community rebuilds the altar and resumes offerings before the temple is completed, then lays the foundation amid simultaneous praise, shouting, and weeping.",
+      "category": "history",
+      "source_ids": [
+        "ezra-1-10",
+        "williamson-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 3:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezra",
+        "parent_title": "Ezra",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "ezra-persian-return-and-temple-sequence",
+      "claim": "Ezra presents return, restored temple vessels, altar worship, and temple completion as a multi-reign process involving Cyrus, Darius I, local leaders, prophets, and imperial correspondence.",
+      "category": "politics",
+      "source_ids": [
+        "ezra-chronicles-restoration-text",
+        "williamson-ezra-nehemiah-persia",
+        "grabbe-persian-period"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 3:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "haggai-former-house",
+      "claim": "Haggai 2 addresses those who saw the house in its former glory or knew that comparison and acknowledges that the present work appeared insignificant.",
+      "category": "history",
+      "source_ids": [
+        "haggai-masoretic",
+        "haggai-comparanda",
+        "barker-haggai",
+        "kessler-haggai"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 3:12-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "haggai",
+        "parent_title": "Haggai",
+        "parent_type": "book",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "haggai-foundation",
+      "claim": "The command to consider from the day the temple was founded has been related to 520 BCE work, earlier return-era foundation traditions, or a rhetorical resetting of the project's beginning.",
+      "category": "culture",
+      "source_ids": [
+        "haggai-masoretic",
+        "haggai-comparanda",
+        "barker-haggai",
+        "kessler-haggai"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 3:8-13"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "haggai",
+        "parent_title": "Haggai",
+        "parent_type": "book",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:ancient_near_east_context:0",
+      "claim": "Achaemenid rulers governed temples through local elites, grants, taxation, offerings, officials, and written authorizations. Persian support did not grant political independence, and the Cyrus Cylinder's Babylonian restoration rhetoric is comparative rather than a copy of Ezra's decree.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 3:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:hebraic_worldview:0",
+      "claim": "Ezra, Haggai, and Zechariah present rebuilding as obedience, renewed divine presence, worship, communal ordering, and providential use of imperial authority, while also portraying scarcity, opposition, and incomplete restoration.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 3:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:historical_context:0",
+      "claim": "Ezra 1-6 presents an initial Cyrus-era authorization, altar and foundation work, opposition, renewed construction under Darius I through Haggai and Zechariah, an imperial inquiry, and completion in Darius's sixth year. The exact documentary history and archaeology of each stage remain debated.",
+      "category": "history",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 3:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "rebuilding-the-temple:second_temple_context:0",
+      "claim": "Completion of the sanctuary begins the Second Temple's institutional history, including priestly and Levitical service, sacrifice, Passover, gifts, and continuing negotiation with Persian authorities and neighboring groups.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-haggai-temple-text",
+        "williamson-temple",
+        "grabbe-temple-persia"
+      ],
+      "related_entity_ids": [
+        "rebuilding-the-temple"
+      ],
+      "passage_anchors": [
+        "Ezra 3:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "rebuilding-the-temple",
+        "parent_title": "Rebuilding the Temple",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Haggai",
+        "author": "John R. Barker, OFM",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 38, pages 511-523",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373730",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "haggai-superscription",
+          "haggai-date",
+          "haggai-composition",
+          "haggai-delay",
+          "haggai-shaking",
+          "haggai-nations-treasure",
+          "haggai-glory-peace",
+          "haggai-torah-inquiry",
+          "haggai-foundation",
+          "haggai-zerubbabel"
+        ],
+        "notes": "Book-specific overview of content, historical context, socioeconomic dispute, temple, divine presence, and composition.",
+        "id": "barker-haggai",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "Ezra 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-10:44",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "ezra-cyrus-return",
+          "ezra-altar-temple",
+          "ezra-opposition-darius",
+          "ezra-temple-passover",
+          "ezra-torah-vocation",
+          "ezra-ahava-journey",
+          "ezra-confession-reform"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ezra-1-10",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36:22-23; Ezra 1-6; Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-6:22; Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Primary biblical presentations; no modern translation is reproduced.",
+        "id": "ezra-chronicles-restoration-text",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra 1-6; Haggai 1-2; Zechariah 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-6:22; Haggai 1:1-2:23; Zechariah 1:1-8:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narratives and dated prophetic texts.",
+        "id": "ezra-haggai-temple-text",
+        "canonical_object_ids": [
+          "rebuilding-the-temple"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1: Yehud\u2014A History of the Persian Province of Judah",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Chapters on sources, Persian administration, economy, Ezra-Nehemiah, and Elephantine",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Critical history that compares literary, archaeological, numismatic, and documentary evidence.",
+        "id": "grabbe-persian-period",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Persian-period Yehud, temple, administration, and source criticism",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Critical synthesis of literary and external evidence.",
+        "id": "grabbe-temple-persia",
+        "canonical_object_ids": [
+          "rebuilding-the-temple"
+        ]
+      },
+      {
+        "title": "Canonical comparanda for Haggai",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Exodus, Leviticus, Numbers, Deuteronomy, Kings, Chronicles, Ezra, Jeremiah, Zechariah",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "intertextuality",
+          "cross-references",
+          "haggai-scarcity",
+          "haggai-former-house",
+          "haggai-be-strong",
+          "haggai-torah-inquiry",
+          "haggai-foundation",
+          "haggai-zerubbabel",
+          "haggai-jeremiah-signet"
+        ],
+        "notes": "Scriptural comparison set; each relationship is separately labeled in the record.",
+        "id": "haggai-comparanda",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "Haggai",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Haggai 1:1-2:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "literary-context",
+          "haggai-superscription",
+          "haggai-delay",
+          "haggai-response",
+          "haggai-shaking",
+          "haggai-torah-inquiry",
+          "haggai-zerubbabel"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "haggai-masoretic",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "The Book of Haggai: Prophecy and Society in Early Persian Yehud",
+        "author": "John Kessler",
+        "publisher": "Brill",
+        "year": 2002,
+        "locator": "Vetus Testamentum Supplements 91; introduction to exegesis, pages 97-102",
+        "url": "https://brill.com/display/book/9789004276178/B9789004276178-s005.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "haggai-superscription",
+          "haggai-composition",
+          "haggai-paneled-houses",
+          "haggai-former-house",
+          "haggai-foundation",
+          "haggai-zerubbabel",
+          "haggai-yehud"
+        ],
+        "notes": "Major historical and social study of Haggai and early Persian Yehud; linked publisher chapter identifies the volume.",
+        "id": "kessler-haggai",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, introductions and commentary on Ezra 1-6 and Nehemiah 1-6",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Technical textual, historical, literary, and documentary commentary.",
+        "id": "williamson-ezra-nehemiah-persia",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, commentary on Ezra 1-6",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Technical commentary on chronology, documents, opposition, and temple completion.",
+        "id": "williamson-temple",
+        "canonical_object_ids": [
+          "rebuilding-the-temple"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezra",
+        "type": "book",
+        "title": "Ezra",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "haggai",
+        "type": "book",
+        "title": "Haggai",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "persian-restoration-and-yehud-administration",
+        "type": "cultural_background",
+        "title": "Persian Restoration and Yehud Administration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "rebuilding-the-temple",
+        "type": "event",
+        "title": "Rebuilding the Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e820660c39aeaac694b5ff929c66b98a7b2521c922a0d2d8cf1aaaf234496eeb",
+  "evidence_hash_version": "2"
+}

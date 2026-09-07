@@ -1,0 +1,409 @@
+{
+  "passage_ref": "Proverbs 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-peter:interpretive_note:33",
+      "claim": "Love covers a multitude of sins evokes wisdom tradition and communal forbearance; it cannot mean hiding abuse, destroying evidence, silencing survivors, or avoiding safeguarding reports.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "perkins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 10:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "proverbs-contextual-generalizations",
+      "claim": "Proverbs teaches through compressed, context-sensitive generalizations and strategically juxtaposed sayings rather than presenting every sentence as an exceptionless promise or rule.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-ten-thirty-one",
+        "stewart-poetic-ethics",
+        "dell-theology-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 10:1-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "proverbs-multiple-collections",
+      "claim": "The received book explicitly contains distinct Solomonic collections, words of unnamed wise teachers, material copied by Hezekiah's officials, words of Agur, and instruction from Lemuel's mother.",
+      "category": "history",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "fox-proverbs-ten-thirty-one",
+        "waltke-proverbs-one-fifteen"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 10:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "proverbs-poverty-justice-complexity",
+      "claim": "Proverbs relates material outcomes to diligence and choice while also condemning unjust scales, bribery, boundary theft, exploitative lending, oppression of the poor, and rulers who deny justice.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-ten-thirty-one",
+        "clifford-proverbs",
+        "dell-theology-proverbs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 10:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Peter",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Peter",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical and textual controls.",
+        "id": "1pet-greek",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Proverbs: A Commentary",
+        "author": "Richard J. Clifford",
+        "publisher": "Westminster John Knox Press",
+        "year": 1999,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664228534-proverbs/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation, technical notes, and rhetorical commentary on the book's continuing search for wisdom.",
+        "id": "clifford-proverbs",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Proverbs",
+        "author": "Katharine J. Dell",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Old Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-book-of-proverbs/BC224F5F5A33D9C03C3173D2CB22FF8F",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "canonical-role",
+          "major-themes",
+          "second-temple-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Recent synthesis of literary forms, social contexts, creation, Woman Wisdom, canonical relationships, and reception.",
+        "id": "dell-theology-proverbs",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 1-9",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139594/proverbs-1-9/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary with ancient Near Eastern survey, thematic essays on personified Wisdom, and textual notes.",
+        "id": "fox-proverbs-one-nine",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Proverbs 10-31",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300142099/proverbs-10-31/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "structure",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary on the later collections with attention to ethics, Egyptian comparison, medieval Jewish interpretation, text, and language.",
+        "id": "fox-proverbs-ten-thirty-one",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Exodus, Leviticus, Psalms, Proverbs, Isaiah, and Hosea comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "First and Second Peter, James, and Jude",
+        "author": "Pheme Perkins",
+        "publisher": "Westminster John Knox Press",
+        "year": 1995,
+        "locator": "Interpretation commentary",
+        "url": "https://www.wjkbooks.com/Products/0664238688/first-and-second-peter-james-and-jude.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary, pastoral, and reception commentary.",
+        "id": "perkins",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Masoretic Proverbs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Proverbs 1-31 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "proverbs-masoretic",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Poetic Ethics in Proverbs",
+        "author": "Anne W. Stewart",
+        "publisher": "Cambridge University Press",
+        "year": 2015,
+        "locator": "Wisdom Literature and the Shaping of the Moral Self",
+        "url": "https://www.cambridge.org/core/books/poetic-ethics-in-proverbs/FE8E38BAC87C85476599B746D75FCBAE",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "literary-context",
+          "genre",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetic form, desire, perception, pedagogy, and complex moral character formation.",
+        "id": "stewart-poetic-ethics",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "The Book of Proverbs, Chapters 1-15",
+        "author": "Bruce K. Waltke",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2004,
+        "locator": "New International Commentary on the Old Testament, volume 1",
+        "url": "https://www.eerdmans.com/9780802825452/the-book-of-proverbs-chapters-1-15/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "canonical-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed literary, Hebrew, ancient Near Eastern, theological, and Christian commentary.",
+        "id": "waltke-proverbs-one-fifteen",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-peter",
+        "type": "book",
+        "title": "1 Peter",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "proverbs",
+        "type": "book",
+        "title": "Proverbs",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a50cf0c7edea83a412fe25832588c543949ee1f46baa8b8e5341a6492dfd55e5",
+  "evidence_hash_version": "2"
+}

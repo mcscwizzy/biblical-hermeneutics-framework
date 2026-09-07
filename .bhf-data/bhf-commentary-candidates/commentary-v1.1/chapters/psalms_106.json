@@ -1,0 +1,38 @@
+{
+  "reference": "Psalms 106",
+  "book": "Psalms",
+  "chapter": 106,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 1 source-addressable item(s). The strongest eligible contextual observation is: The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150.",
+          "verse_refs": [
+            "Psalms 106:48"
+          ],
+          "evidence_ids": [
+            "psalms-five-book-anthology"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "beb37e4abea9c5a4fd87188e4f888c14827666d6793384f527d5a3e6f23c208d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:56.568089+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

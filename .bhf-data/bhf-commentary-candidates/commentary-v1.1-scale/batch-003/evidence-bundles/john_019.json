@@ -1,0 +1,2883 @@
+{
+  "passage_ref": "John 19",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "judea-1",
+        "title": "Judea",
+        "type": "place",
+        "aliases": [
+          "where is judea",
+          "tell me about judea",
+          "why is judea important"
+        ],
+        "metadata": {
+          "summary": "The southern region centered on Jerusalem and its temple, governed directly by Rome after 6 CE and central to Gospel passion and Acts narratives.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 10:1-34",
+            "Luke 19:28-48",
+            "John 18:28-40",
+            "John 19:1-42",
+            "Acts 1:1-8"
+          ]
+        }
+      }
+    ],
+    "groups": [
+      {
+        "id": "roman-governorship",
+        "title": "Roman Governorship",
+        "type": "institution",
+        "aliases": [
+          "roman governorship institution",
+          "roman governorship in scripture",
+          "roman governorship structure",
+          "roman governorship role"
+        ],
+        "metadata": {
+          "summary": "Roman provincial offices through which prefects, procurators, and governors exercised military, fiscal, judicial, and administrative authority in Judea and the eastern Mediterranean.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27:1-26",
+            "John 18:28-40",
+            "John 19:1-22",
+            "Acts 24:1-27"
+          ]
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": "burial-of-jesus",
+        "title": "Burial of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in burial of jesus",
+          "tell me about burial of jesus",
+          "why is burial of jesus important"
+        ],
+        "metadata": {
+          "summary": "The Gospel accounts of Jesus's removal from the cross, preparation, and placement in a tomb before Sabbath, followed narratively by discovery of the empty tomb.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27:57-61",
+            "Mark 15:42-47",
+            "Luke 23:50-56",
+            "John 19:38-42"
+          ]
+        }
+      },
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion",
+        "type": "event",
+        "aliases": [
+          "what happened in crucifixion",
+          "tell me about crucifixion",
+          "why is crucifixion important"
+        ],
+        "metadata": {
+          "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Psalms 22:1-31",
+            "Isaiah 53:1-12",
+            "Mark 15:1-47",
+            "Luke 23:26-49",
+            "John 19:16-37",
+            "Romans 3:21-26",
+            "1 Peter 2:21-25",
+            "Hebrews 10:1-18"
+          ]
+        }
+      },
+      {
+        "id": "passover",
+        "title": "Passover",
+        "type": "event",
+        "aliases": [
+          "what happened in passover",
+          "tell me about passover",
+          "why is passover important"
+        ],
+        "metadata": {
+          "summary": "The deliverance meal that marks Israel\u2019s rescue from Egypt and becomes a recurring redemption pattern.",
+          "importance": 99,
+          "retrieval_score": 0.919,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 12:1-14",
+            "Exodus 12:21-30",
+            "Exodus 13:1-16",
+            "Deuteronomy 16:1-8",
+            "Joshua 5:10-12",
+            "Luke 22:14-20",
+            "1 Corinthians 5:7-8",
+            "John 19:14-37",
+            "Hebrews 11:28"
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "pilate-stone",
+        "title": "Pilate Stone",
+        "type": "archaeology",
+        "aliases": [
+          "pilate stone artifact",
+          "pilate stone discovery",
+          "pilate stone excavation",
+          "pilate stone find"
+        ],
+        "metadata": {
+          "summary": "A Latin inscription naming Pontius Pilate and documenting Roman administration in Judea.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27",
+            "Mark 15",
+            "Luke 23",
+            "John 18",
+            "John 19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "burial-of-jesus:ancient_near_east_context:0",
+      "claim": "The immediate comparison is Early Roman Judean execution and burial rather than a generalized ancient Near Eastern funerary pattern.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "John 19:38-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "burial-of-jesus:hebraic_worldview:0",
+      "claim": "Prompt burial, care for the dead, corpse impurity, Sabbath timing, kin and patron obligations, and tomb location shape the narrative setting.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "John 19:38-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "burial-of-jesus:historical_context:0",
+      "claim": "The narratives combine Roman release of an executed body with Jewish concern for burial before Sabbath. Jerusalem rock-cut tombs and ossuary practice provide regional context but cannot identify Jesus's tomb or prove the narrated sequence.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "John 19:38-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "burial-of-jesus:second_temple_context:0",
+      "claim": "Rock-cut family tombs and secondary ossuary burial were especially associated with Jerusalem-area households possessing the resources and tenure for such tombs; practice varied by region and status.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "John 19:38-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "crucifixion:ancient_near_east_context:0",
+      "claim": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "John 19:16-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "crucifixion:hebraic_worldview:0",
+      "claim": "The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "John 19:16-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "crucifixion:historical_context:0",
+      "claim": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+      "category": "history",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "John 19:16-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "crucifixion:second_temple_context:0",
+      "claim": "Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "John 19:16-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "gospel-roman-hearing",
+      "claim": "John portrays movement between accusers and the governor, negotiation over charges, flogging, public presentation, sentencing, and inscription of the execution charge.",
+      "category": "politics",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "josephus-antiquities-18-tax",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "roman-governorship",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "gospel-roman-hearing:passage-relevance",
+      "claim": "The passage locates execution authority within Roman prefectural power while also portraying local political negotiation.",
+      "category": "politics",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "josephus-antiquities-18-tax",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "roman-governorship",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "gospel-roman-hearing"
+        ]
+      }
+    },
+    {
+      "id": "john-beloved-disciple",
+      "claim": "The beloved disciple is presented as an authoritative witness, yet the Gospel never names that figure John son of Zebedee and John 21:24 speaks of the disciple in the third person.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "cambridge-john-introduction",
+        "beloved-eyewitness"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:25-37"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "john-blood-water",
+      "claim": "Blood and water from Jesus' side are tied to narrated eyewitness testimony and scriptural fulfillment; physiological, baptismal, eucharistic, ecclesial, and symbolic readings should be labeled by evidence level.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "brodie-john",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:31-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-kingship",
+      "claim": "John's Pilate scenes repeatedly stage Jesus as 'King of the Jews' amid imperial violence and ironic political performance; the narrative does not authorize Christian empire or nationalism.",
+      "category": "politics",
+      "source_ids": [
+        "john-greek",
+        "keddie-power",
+        "postcolonial-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "john-passion-responsibility",
+      "claim": "John narrates conflict involving named Jewish leaders and participants while Pilate orders a Roman crucifixion carried out by Roman soldiers; it cannot sustain deicide doctrine or collective Jewish guilt.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "reinhartz-anti-judaism",
+        "jewish-annotated-nt",
+        "keddie-power"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 18:1-19:42"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "john-synoptic-relation",
+      "claim": "John shares people, places, passion, resurrection, and some episode patterns with the Synoptics but differs sharply in chronology, festival framework, speeches, signs, and characterization; direct literary dependence remains debated.",
+      "category": "culture",
+      "source_ids": [
+        "cambridge-john-companion",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 18:1-19:42"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "judea-1:ancient_near_east_context:0",
+      "claim": "The relevant setting is the Roman eastern Mediterranean and late Second Temple period rather than generalized ancient geography.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "judea-1:hebraic_worldview:0",
+      "claim": "Temple pilgrimage, purity, burial, land memory, and covenant identity persisted amid taxation, elite administration, and Roman coercion.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "judea-1:historical_context:0",
+      "claim": "Judea's political status changed from Herodian kingdom to Roman prefecture, with Jerusalem's priestly leadership operating under imperial authority. The region must be distinguished chronologically and administratively from Antipas's Galilee.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "judea-1:second_temple_context:0",
+      "claim": "Jerusalem concentrated sacrificial worship and festival pilgrimage while settlements and tomb landscapes extended across the Judean hills and wilderness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "passover:ancient_near_east_context:0",
+      "claim": "The narrative is set within Egypt and frames God\u2019s victory over imperial power and death through a covenant meal.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-12-13",
+        "deuteronomy-16",
+        "luke-22",
+        "1-corinthians-5",
+        "john-19",
+        "hebrews-11",
+        "passover-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "passover"
+      ],
+      "passage_anchors": [
+        "John 19:14-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "passover",
+        "parent_title": "Passover",
+        "parent_type": "event",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "passover:historical_context:0",
+      "claim": "Passover stands at the center of the exodus tradition and the formation of Israel as a redeemed people.",
+      "category": "history",
+      "source_ids": [
+        "exodus-12-13",
+        "deuteronomy-16",
+        "luke-22",
+        "1-corinthians-5",
+        "john-19",
+        "hebrews-11",
+        "passover-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "passover"
+      ],
+      "passage_anchors": [
+        "John 19:14-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "passover",
+        "parent_title": "Passover",
+        "parent_type": "event",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pilate-prefect-inscription",
+      "claim": "A damaged Latin building inscription reused at Caesarea preserves Pontius Pilate's name and title as prefect of Judea.",
+      "category": "archaeology",
+      "source_ids": [
+        "pilate-inscription-corpus",
+        "josephus-antiquities-18-tax",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "pilate-stone",
+        "roman-governorship",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "pilate-prefect-inscription:passage-relevance",
+      "claim": "The inscription independently anchors Pilate's historical office but supplies no evidence for Jesus, the hearing dialogue, or the Jerusalem location of the praetorium.",
+      "category": "archaeology",
+      "source_ids": [
+        "pilate-inscription-corpus",
+        "josephus-antiquities-18-tax",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "pilate-stone",
+        "roman-governorship",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "pilate-prefect-inscription"
+        ]
+      }
+    },
+    {
+      "id": "pilate-stone:ancient_near_east_context:0",
+      "claim": "The inscription belongs to Roman provincial administration in the eastern Mediterranean rather than generalized ancient Near Eastern kingship.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "John 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pilate-stone:hebraic_worldview:0",
+      "claim": "The stone supplies external evidence for the imperial office with which Judean leaders and populations had to negotiate.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "John 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pilate-stone:historical_context:0",
+      "claim": "A damaged Latin building inscription from Caesarea names Pontius Pilate and gives his title as prefect of Judea. It independently anchors his office and provincial patronage, not the Gospel hearing itself.",
+      "category": "history",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "John 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pilate-stone:second_temple_context:0",
+      "claim": "Pilate governed Judea from 26 to 36 CE while Jerusalem's temple and local elite institutions continued under Roman supremacy.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "John 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "roman-governorship:ancient_near_east_context:0",
+      "claim": "This is a Greco-Roman provincial institution and should not be derived from Israelite elders or monarchy texts.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "roman-governorship-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "roman-governorship"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "roman-governorship",
+        "parent_title": "Roman Governorship",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "roman-governorship:hebraic_worldview:0",
+      "claim": "Jewish communities negotiated imperial authority through accommodation, petition, legal appeal, protest, and resistance without a single uniform response.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "roman-governorship-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "roman-governorship"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "roman-governorship",
+        "parent_title": "Roman Governorship",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "roman-governorship:historical_context:0",
+      "claim": "Judea came under direct Roman administration in 6 CE. Pontius Pilate served as prefect in 26-36 CE from Caesarea, with authority expressed in taxation, troops, adjudication, patronage, and capital punishment.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "roman-governorship-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "roman-governorship"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "roman-governorship",
+        "parent_title": "Roman Governorship",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "roman-governorship:second_temple_context:0",
+      "claim": "Prefects governed alongside local priestly and elite institutions while retaining coercive and capital authority; jurisdiction and titles varied over time.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "roman-governorship-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "roman-governorship"
+      ],
+      "passage_anchors": [
+        "John 19:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "roman-governorship",
+        "parent_title": "Roman Governorship",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0",
+      "claim": "Imperial rule, public cult, and patronage were normal features of the ancient world, and the New Testament speaks into that environment.",
+      "category": "culture",
+      "source_ids": [
+        "luke-2",
+        "john-19",
+        "acts-17",
+        "romans-13",
+        "1-peter-2",
+        "revelation-13",
+        "revelation-17-18",
+        "what-is-the-roman-empire-in-the-bible-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-roman-empire-in-the-bible",
+        "parent_title": "What is the Roman Empire in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible:historical_context:0",
+      "claim": "The first-century world of Jesus and the apostles is governed by Rome, with local rulers, roads, and armies serving imperial power.",
+      "category": "history",
+      "source_ids": [
+        "luke-2",
+        "john-19",
+        "acts-17",
+        "romans-13",
+        "1-peter-2",
+        "revelation-13",
+        "revelation-17-18",
+        "what-is-the-roman-empire-in-the-bible-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-roman-empire-in-the-bible",
+        "parent_title": "What is the Roman Empire in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-passover:ancient_near_east_context:0",
+      "claim": "Meal, blood, and household identity are familiar motifs in the ancient world, but Passover uniquely centers the LORD's saving act for his people.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-12-13",
+        "deuteronomy-16",
+        "luke-22",
+        "john-19",
+        "1-corinthians-5",
+        "1-peter-1",
+        "what-is-the-significance-of-passover-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:14-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-passover",
+        "parent_title": "What is the significance of Passover?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-passover:historical_context:0",
+      "claim": "Passover originates in the exodus and becomes Israel's annual memorial of redemption, identity, and covenant belonging.",
+      "category": "history",
+      "source_ids": [
+        "exodus-12-13",
+        "deuteronomy-16",
+        "luke-22",
+        "john-19",
+        "1-corinthians-5",
+        "1-peter-1",
+        "what-is-the-significance-of-passover-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:14-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-passover",
+        "parent_title": "What is the significance of Passover?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "yehohanan-crucifixion-burial",
+      "claim": "An iron nail remains embedded through a heel bone found among remains in an inscribed ossuary from an early Roman Jerusalem tomb at Giv'at Ha-Mivtar.",
+      "category": "archaeology",
+      "source_ids": [
+        "israel-museum-yehohanan",
+        "fine-burial",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "crucifixion",
+        "burial-of-jesus",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:16-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "yehohanan-crucifixion-burial:passage-relevance",
+      "claim": "The find demonstrates that at least one crucified person received Jewish tomb and ossuary burial, countering absolute claims that such burial was impossible while not proving Jesus's case.",
+      "category": "archaeology",
+      "source_ids": [
+        "israel-museum-yehohanan",
+        "fine-burial",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "crucifixion",
+        "burial-of-jesus",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "John 19:16-42"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "yehohanan-crucifixion-burial"
+        ]
+      }
+    },
+    {
+      "id": "zechariah-new-testament-reception",
+      "claim": "The New Testament explicitly receives Zechariah's humble king, struck shepherd, and pierced figure and more broadly reuses its shepherd, silver, measuring, lampstand, olive-tree, and living-water imagery.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-new-testament",
+        "prophets-new-testament",
+        "sblgnt",
+        "early-christianity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 19:37"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 36,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-5",
+        "canonical_object_ids": [
+          "passover",
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "1 Peter 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-1",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "roman-governorship"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Acts 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-17",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "roman-governorship"
+        ]
+      },
+      {
+        "title": "The Beloved Eyewitness",
+        "author": "Richard Bauckham",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2022,
+        "locator": "Beloved disciple and eyewitness proposal",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/beloved-eyewitness/964BF90DF6ECDC4EA7C6144A17F55754",
+        "source_type": "journal-article",
+        "supports": [
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "A recent eyewitness proposal used as one side of an active debate.",
+        "id": "beloved-eyewitness",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Gospel According to John: A Literary and Theological Commentary",
+        "author": "Thomas L. Brodie",
+        "publisher": "Oxford University Press",
+        "year": 1997,
+        "locator": "Literary structure, narrative, and theology",
+        "url": "https://academic.oup.com/book/50293",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary.",
+        "id": "brodie-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Burial of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "burial-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "The Gospel of John",
+        "author": "George Parsenios",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the New Testament, chapter 8",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/gospel-of-john/148BF75C92C615531EA1EF732393F0D1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Survey of date, historical value, Synoptic relation, Jewish characterization, and community theories.",
+        "id": "cambridge-john-companion",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Gospel of John",
+        "author": "Delbert Burkett",
+        "publisher": "Cambridge University Press",
+        "year": 2018,
+        "locator": "An Introduction to the New Testament and the Origins of Christianity",
+        "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/the-gospel-of-john/E5DE55EB94D8BB02CCF12561DB2811F4",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Introduction including beloved disciple and authorship evidence.",
+        "id": "cambridge-john-introduction",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16",
+        "canonical_object_ids": [
+          "passover",
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "roman-governorship"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18, pages 243-251",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "New Testament and early Christian reception of the Twelve.",
+        "id": "early-christianity",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Exodus 12-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-12-13",
+        "canonical_object_ids": [
+          "passover",
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "roman-governorship"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on occupations, religion, mortality, disposal of the dead, and dwellings",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-crucifixion-and-burial",
+          "stepped-street-jerusalem",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Synthesis emphasizing ordinary persons and archaeological limits.",
+        "id": "fiensy-daily-life-judea",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Death, Burial, and Afterlife",
+        "author": "Steven Fine",
+        "publisher": "Oxford University Press",
+        "year": 2012,
+        "locator": "The Oxford Handbook of Jewish Daily Life in Roman Palestine, pp. 440-462",
+        "url": "https://doi.org/10.1093/oxfordhb/9780199216437.013.0025",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-crucifixion-and-burial",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Regional and chronological overview of tombs, ossuary burial, and later practice.",
+        "id": "fine-burial",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Hebrews 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-10",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Hebrews 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-11",
+        "canonical_object_ids": [
+          "passover"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Israel Museum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Israel Museum, Jerusalem",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum-jerusalem",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Ossuary of Yehohanan with heel bone and nail",
+        "author": "",
+        "publisher": "Israel Museum / Israel Antiquities Authority",
+        "year": null,
+        "locator": "Giv'at Ha-Mivtar, Herodian period; IAA collection",
+        "url": "https://artsandculture.google.com/asset/ossuary-of-yehohanan-son-of-hagkol-with-heel-bone-and-nail-unknown/8gEPRIAlblWlqw",
+        "source_type": "museum-collection",
+        "supports": [
+          "yehohanan-crucifixion-burial",
+          "gospel-crucifixion-and-burial"
+        ],
+        "notes": "Officially attributed museum object record; osteological reconstructions remain qualified.",
+        "id": "israel-museum-yehohanan",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "John introduction, annotations, and Jewish-context essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish scholarly annotation and context.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "burial-of-jesus",
+          "judea-1"
+        ]
+      },
+      {
+        "title": "John 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-19",
+        "canonical_object_ids": [
+          "crucifixion",
+          "passover",
+          "what-is-the-roman-empire-in-the-bible",
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities, Book 18",
+        "author": "Flavius Josephus",
+        "publisher": "University of Chicago LacusCurtius",
+        "year": 94,
+        "locator": "Antiquities 18.1-10, 26-35, 55-89",
+        "url": "https://penelope.uchicago.edu/josephus/ant-18.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "josephus-census-tax-resistance",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Later first-century historiography used with chronological and rhetorical caution.",
+        "id": "josephus-antiquities-18-tax",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Judea 1",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "judea-1-historical-orientation",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Pilgrimage, taxation, Roman trial, crucifixion, and burial passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 2:1-52; 19:1-10; Mark 11:1-25; 12:13-17; 15:21-47; John 18:28-19:42; Acts 5:33-39",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "gospel-crucifixion-and-burial",
+          "josephus-census-tax-resistance",
+          "stepped-street-jerusalem",
+          "pilate-prefect-inscription",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "judean-gospel-acts-passages",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "url": "https://doi.org/10.1017/9781108656757",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "stepped-street-jerusalem",
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "G. Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Roman Palestine, class, elite power, households, and labor",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Social and political context.",
+        "id": "keddie-power",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Latin inscription",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "latin-inscription",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "burial-of-jesus",
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Luke 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-2",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Luke 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-22",
+        "canonical_object_ids": [
+          "passover",
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "Luke 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-23",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "burial-of-jesus",
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Mark 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-15",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "burial-of-jesus",
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Matthew 27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-27",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Passover",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "passover-historical-orientation",
+        "canonical_object_ids": [
+          "passover"
+        ]
+      },
+      {
+        "title": "Pontius Pilate inscription from Caesarea Maritima",
+        "author": "",
+        "publisher": "Israel Museum / Israel Antiquities Authority",
+        "year": null,
+        "locator": "Latin building inscription naming Pontius Pilate as prefect of Judea",
+        "url": "https://www.imj.org.il/en/collections/371407-0",
+        "source_type": "museum-collection",
+        "supports": [
+          "pilate-prefect-inscription",
+          "gospel-roman-hearing"
+        ],
+        "notes": "Official collection record; the inscription documents office and building patronage, not a Gospel hearing.",
+        "id": "pilate-inscription-corpus",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Pilate Stone",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "pilate-stone",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial methods for empire, mission, gender, land, and power",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Safeguards against colonial and coercive interpretation.",
+        "id": "postcolonial-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Prophets in the New Testament",
+        "author": "J. Ross Wagner",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 21, pages 373-387",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter/211814413",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Framework for differentiating prophetic texts and their New Testament reuse.",
+        "id": "prophets-new-testament",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Psalm 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-22",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "New Testament Origins of Christian Anti-Judaism",
+        "author": "Adele Reinhartz",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Antisemitism, chapter 2",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-antisemitism/new-testament-origins-of-christian-antijudaism/B13BB1532EC63836E2B5DADF9CED9D00",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Addresses supersessionism, deicide, Satan language, and harmful reception.",
+        "id": "reinhartz-anti-judaism",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Revelation 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-13",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Revelation 17-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-17-18",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Roman Governorship",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "roman-governorship-historical-orientation",
+        "canonical_object_ids": [
+          "roman-governorship"
+        ]
+      },
+      {
+        "title": "Romans 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-13",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Romans 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-3",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew, Mark, John, Hebrews, and Revelation",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Critical Greek New Testament text for reception passages.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Roman Empire in the Bible?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-roman-empire-in-the-bible-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the significance of Passover?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-significance-of-passover-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-passover"
+        ]
+      },
+      {
+        "title": "New Testament reception of Zechariah",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Matthew; Mark; John; Hebrews; Revelation",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Primary New Testament texts, distinguishing quotation, allusion, and broader reception.",
+        "id": "zechariah-new-testament",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "burial-of-jesus",
+        "type": "event",
+        "title": "Burial of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "crucifixion",
+        "type": "event",
+        "title": "Crucifixion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "judea-1",
+        "type": "place",
+        "title": "Judea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "passover",
+        "type": "event",
+        "title": "Passover",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "pilate-stone",
+        "type": "archaeology",
+        "title": "Pilate Stone",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "roman-governorship",
+        "type": "institution",
+        "title": "Roman Governorship",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "what-is-the-roman-empire-in-the-bible",
+        "type": "faq",
+        "title": "What is the Roman Empire in the Bible?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "what-is-the-significance-of-passover",
+        "type": "faq",
+        "title": "What is the significance of Passover?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ad580ad236c12e1bea0c387fab3dcd424d42ef9ddf5bfdbe1b98225b533823fc",
+  "evidence_hash_version": "2"
+}

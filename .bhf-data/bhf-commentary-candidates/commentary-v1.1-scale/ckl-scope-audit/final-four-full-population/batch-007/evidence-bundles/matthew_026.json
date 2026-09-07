@@ -1,0 +1,955 @@
+{
+  "passage_ref": "Matthew 26",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "lords-supper",
+        "title": "Lord's Supper",
+        "type": "institution",
+        "aliases": [
+          "lords supper institution",
+          "lords supper in scripture",
+          "lords supper structure",
+          "lords supper role"
+        ],
+        "metadata": {
+          "summary": "Lord's Supper is a new covenant practice that marks initiation, remembrance, and communal identity in the church.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 26:17-30",
+            "Mark 14:12-26",
+            "Luke 22:7-23",
+            "1 Corinthians 10:14-22",
+            "1 Corinthians 11:17-34"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "caiaphas-ossuary-identification",
+      "claim": "A richly decorated ossuary from a first-century Jerusalem family tomb is inscribed with the name Joseph son of Caiaphas and has been associated with the high priest Caiaphas.",
+      "category": "archaeology",
+      "source_ids": [
+        "israel-museum-caiaphas-ossuary",
+        "greenhut-reich-caiaphas-tomb",
+        "josephus-antiquities-priesthood",
+        "vanderkam-early-judaism-institutions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:3-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "second-temple-priesthood-and-temple-authority",
+        "parent_title": "Second Temple Priesthood and Temple Authority",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "plausible",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "caiaphas-ossuary-identification:passage-relevance",
+      "claim": "The find supplies archaeological context for a Jerusalem priestly family bearing Caiaphas's name while stopping short of verifying the meetings or trial scenes in the Gospels.",
+      "category": "archaeology",
+      "source_ids": [
+        "israel-museum-caiaphas-ossuary",
+        "greenhut-reich-caiaphas-tomb",
+        "josephus-antiquities-priesthood",
+        "vanderkam-early-judaism-institutions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:3-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "second-temple-priesthood-and-temple-authority",
+        "parent_title": "Second Temple Priesthood and Temple Authority",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "plausible",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "caiaphas-ossuary-identification"
+        ]
+      }
+    },
+    {
+      "id": "gospel-acts-priestly-authority",
+      "claim": "The Gospels and Acts portray high priests, chief priests, temple officers, elders, scribes, and councils exercising overlapping but scene-specific forms of authority in Jerusalem.",
+      "category": "history",
+      "source_ids": [
+        "gospel-acts-priestly-text",
+        "vanderkam-early-judaism-institutions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:3-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "second-temple-priesthood-and-temple-authority",
+        "parent_title": "Second Temple Priesthood and Temple Authority",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "lords-supper:ancient_near_east_context:0",
+      "claim": "The immediate context is Jewish festival and Greco-Roman communal dining rather than generalized ancient ritual.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Matthew 26:17-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lords-supper:hebraic_worldview:0",
+      "claim": "Blessing, shared bread and cup, covenant memory, Passover chronology, table fellowship, and responsibility for other participants shape the meal traditions.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Matthew 26:17-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lords-supper:historical_context:0",
+      "claim": "The Synoptic passion narratives and First Corinthians preserve related but distinct meal traditions. First Corinthians embeds the received words within a conflict over unequal access, hunger, humiliation, and communal discernment.",
+      "category": "history",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Matthew 26:17-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lords-supper:second_temple_context:0",
+      "claim": "The Synoptic meals occur in a Jewish festival setting, though their chronology and relationship to Passover differ from John. Early assemblies also ate within hierarchical Roman households and cities.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Matthew 26:17-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "matthew-covenant-meal",
+      "claim": "At the final meal Jesus identifies bread and cup with his body and covenant blood poured out for many for forgiveness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-septuagint",
+        "france-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:26-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-discourses",
+      "claim": "Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "davies-allison-matthew",
+        "france-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "matthew-gethsemane",
+      "claim": "Matthew portrays Jesus in deep distress praying for the cup to pass while submitting to the Father's will as disciples fail to watch.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "france-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:36-46"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 35,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-passion-responsibility",
+      "claim": "Matthew's passion assigns narrative agency to multiple Judean and Roman actors while crucifixion remains Roman state execution.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "josephus-roman-judea",
+        "early-roman-archaeology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:47-75"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 46,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "zechariah-new-testament-reception",
+      "claim": "The New Testament explicitly receives Zechariah's humble king, struck shepherd, and pierced figure and more broadly reuses its shepherd, silver, measuring, lampstand, olive-tree, and living-water imagery.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-new-testament",
+        "prophets-new-testament",
+        "sblgnt",
+        "early-christianity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 26:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-11",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Matthew, Volume 1: 1-7",
+        "author": "Davies, W. D., and Dale C. Allison Jr.",
+        "publisher": "T&T Clark / Bloomsbury",
+        "year": 1988,
+        "locator": "International Critical Commentary; representative publisher page for three-volume work",
+        "url": "https://www.bloomsbury.com/us/matthew-9780567094810/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-genealogy",
+          "matthew-torah",
+          "matthew-eschatology"
+        ],
+        "notes": "Major historical-critical commentary; all volume-specific locators require reviewer verification.",
+        "id": "davies-allison-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18, pages 243-251",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "New Testament and early Christian reception of the Twelve.",
+        "id": "early-christianity",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Early Roman (Herodian) Period, 40 BCE-70 CE",
+        "author": "Magness, Jodi",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "The Archaeology of the Holy Land, chapter 9",
+        "url": "https://www.cambridge.org/core/books/abs/archaeology-of-the-holy-land/early-roman-herodian-period-40-bce70-ce/0A26A9F4D24BE3BA15CB261FE3A171F7",
+        "source_type": "excavation-report",
+        "supports": [
+          "archaeology",
+          "historical-context",
+          "matthew-rural-economy"
+        ],
+        "notes": "Archaeological synthesis for Bethlehem, Galilee, Jerusalem, rural life, and Early Roman material culture.",
+        "id": "early-roman-archaeology",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Gospel of Matthew",
+        "author": "France, R. T.",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825018/the-gospel-of-matthew/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Major exegetical commentary focused on Matthew's final form in historical and cultural context.",
+        "id": "france-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Priestly and temple-authority passages in the Gospels and Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 26:3-5; Mark 14:53-65; John 11:47-53; 18:12-24; Acts 4:1-22; 21:27-36",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-acts-priestly-authority",
+          "temple-warning-inscription-boundary",
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "gospel-acts-priestly-text",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "The 'Caiaphas' Tomb in North Talpiyot and Ossuary Inscriptions from the 'Caiaphas' Tomb",
+        "author": "Zvi Greenhut and Ronny Reich",
+        "publisher": "'Atiqot / Israel Antiquities Authority",
+        "year": 1992,
+        "locator": "'Atiqot 21, pp. 63-77",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=25865&mag_id=128",
+        "source_type": "excavation-report",
+        "supports": [
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Excavation and epigraphic reports; linked IAA page supplies the official bibliography.",
+        "id": "greenhut-reich-caiaphas-tomb",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "Ossuary of Caiaphas\u2014The High Priest (18-36 CE)",
+        "author": "",
+        "publisher": "Israel Museum",
+        "year": 1992,
+        "locator": "Exhibition record for the Joseph bar Caiaphas ossuary from a southern Jerusalem family tomb",
+        "url": "https://www.imj.org.il/en/exhibitions/ossuary-caiaphas-high-priest-18-36-ce",
+        "source_type": "museum-collection",
+        "supports": [
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Official museum presentation of the proposed identification.",
+        "id": "israel-museum-caiaphas-ossuary",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities, Books 18 and 20",
+        "author": "Flavius Josephus",
+        "publisher": "University of Chicago LacusCurtius",
+        "year": 94,
+        "locator": "Antiquities 18.26-35; 20.6-44, 179-181, 224-251",
+        "url": "https://penelope.uchicago.edu/josephus/ant-20.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "josephus-high-priestly-appointments",
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Later first-century historiography; CKL paraphrases rather than reproducing a long translation.",
+        "id": "josephus-antiquities-priesthood",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities and Jewish War: Roman Judea",
+        "author": "Josephus, Flavius",
+        "publisher": "Loeb Classical Library",
+        "year": null,
+        "locator": "Pilate, priestly leadership, Jerusalem, temple, and war contexts",
+        "url": "https://www.loebclassics.com/view/LCL433/1965/volume.xml",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "matthew-passion-responsibility",
+          "matthew-roman-setting"
+        ],
+        "notes": "Ancient comparative evidence requiring source-critical evaluation.",
+        "id": "josephus-roman-judea",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Lord's Supper",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "lords-supper-historical-orientation",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Matthew 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-28",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Septuagint passages received in Matthew",
+        "author": "",
+        "publisher": "Society of Biblical Literature / German Bible Society",
+        "year": null,
+        "locator": "Greek Genesis through Malachi comparanda",
+        "url": "https://www.sbl-site.org/resources/digital-texts/",
+        "source_type": "scripture",
+        "supports": [
+          "greek-words",
+          "intertextuality",
+          "matthew-scripture-use",
+          "matthew-isaiah-714"
+        ],
+        "notes": "Ancient Greek Jewish scriptural tradition used for comparison with Matthean citations.",
+        "id": "matthew-septuagint",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Prophets in the New Testament",
+        "author": "J. Ross Wagner",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 21, pages 373-387",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter/211814413",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Framework for differentiating prophetic texts and their New Testament reuse.",
+        "id": "prophets-new-testament",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Romans 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-6",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew, Mark, John, Hebrews, and Revelation",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Critical Greek New Testament text for reception passages.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "An Introduction to Early Judaism",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapters 1 and 4 on the Second Temple period, leaders, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-acts-priestly-authority",
+          "josephus-high-priestly-appointments",
+          "temple-warning-inscription-boundary",
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Current scholarly synthesis of history, sources, groups, and institutions.",
+        "id": "vanderkam-early-judaism-institutions",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "New Testament reception of Zechariah",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Matthew; Mark; John; Hebrews; Revelation",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Primary New Testament texts, distinguishing quotation, allusion, and broader reception.",
+        "id": "zechariah-new-testament",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "lords-supper",
+        "type": "institution",
+        "title": "Lord's Supper",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "second-temple-priesthood-and-temple-authority",
+        "type": "cultural_background",
+        "title": "Second Temple Priesthood and Temple Authority",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.932
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "947d50fa7baa436089889425a40421ab496ea884c30b133c5d2476d369ab8712",
+  "evidence_hash_version": "2"
+}

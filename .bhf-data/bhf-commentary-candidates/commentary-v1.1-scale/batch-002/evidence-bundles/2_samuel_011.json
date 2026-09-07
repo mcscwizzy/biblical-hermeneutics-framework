@@ -1,0 +1,350 @@
+{
+  "passage_ref": "2 Samuel 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-chronicles:interpretive_note:2",
+      "claim": "Chronicles' omission of episodes such as David and Bathsheba does not deny that Samuel preserves them; the retelling selects material for its own genealogy, temple, worship, and succession purposes.",
+      "category": "culture",
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29",
+        "devries-first-second-chronicles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 11:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-chronicles",
+        "parent_title": "1 Chronicles",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "2-samuel:interpretive_note:1",
+      "claim": "David summons and takes Bathsheba while exercising royal power, then engineers Uriah's death; the narrative condemns David and should not be retold as a harmless mutual romance.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 11:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "second-samuel-david-condemned",
+      "claim": "The narrator declares David's action displeasing to the LORD, and Nathan identifies David as the rich man who took from the poor man and had Uriah killed.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-1-24",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 11:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 26,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "second-samuel-literary-movement",
+      "claim": "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1000,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Chronicles 1:1-29:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-chronicles-genealogical-identity",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-chronicles-1-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "2 Samuel 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Samuel 1:1-24:25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "second-samuel-literary-movement",
+          "second-samuel-david-lament",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-davidic-house",
+          "second-samuel-david-condemned",
+          "second-samuel-absalom-rebellion"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-samuel-1-24",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      },
+      {
+        "title": "2 Samuel, Volume 11",
+        "author": "Arnold A. Anderson",
+        "publisher": "Zondervan",
+        "year": 2015,
+        "locator": "Word Biblical Commentary on 2 Samuel 1-24",
+        "url": "https://zondervanacademic.com/products/2-samuel-volume-11",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "second-samuel-literary-movement",
+          "second-samuel-davidic-house",
+          "second-samuel-david-condemned"
+        ],
+        "notes": "Technical commentary emphasizing textual, linguistic, structural, compositional, and theological evidence.",
+        "id": "anderson-second-samuel",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      },
+      {
+        "title": "1 and 2 Chronicles",
+        "author": "Simon J. De Vries",
+        "publisher": "Eerdmans",
+        "year": 1989,
+        "locator": "Introduction and form-critical commentary on 1 Chronicles",
+        "url": "https://www.eerdmans.com/9780802802361/1-and-2-chronicles/",
+        "source_type": "reference-work",
+        "supports": [
+          "genre",
+          "literary-context",
+          "canonical-context",
+          "interpretive-notes",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Form-critical and literary study of Chronicles as genealogical and narrative history defining ideal Israel.",
+        "id": "devries-first-second-chronicles",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "I Chronicles 10-29",
+        "author": "Gary N. Knoppers",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible translation, notes, and commentary on 1 Chronicles 10-29",
+        "url": "https://yalebooks.yale.edu/book/9780300139532/i-chronicles-10-29/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Technical commentary emphasizing the Davidic narrative, textual witnesses, historiography, institutions, and reuse of Samuel.",
+        "id": "knoppers-first-chronicles-10-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "The Second Book of Samuel",
+        "author": "David Toshio Tsumura",
+        "publisher": "Eerdmans",
+        "year": 2019,
+        "locator": "Introduction and commentary on 2 Samuel 1-24",
+        "url": "https://www.eerdmans.com/9780802870964/the-second-book-of-samuel/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "second-samuel-literary-movement",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-davidic-house",
+          "second-samuel-absalom-rebellion"
+        ],
+        "notes": "NICOT commentary with detailed Hebrew textual, literary, compositional, and historical analysis.",
+        "id": "tsumura-second-samuel",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-chronicles",
+        "type": "book",
+        "title": "1 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "2-samuel",
+        "type": "book",
+        "title": "2 Samuel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "7a5466dd8191c80677baa793d5918cd92c2254be77ebbd8ad4768fef546a237a",
+  "evidence_hash_version": "2"
+}

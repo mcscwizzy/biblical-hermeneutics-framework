@@ -1,0 +1,84 @@
+{
+  "reference": "1 Peter 1",
+  "book": "1 Peter",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_117",
+          "text": "Read the chapter with this setting in view: The letter's language supports debate over Jewish, gentile, and mixed recipients but does not settle exact demographics. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1pet-audience"
+          ],
+          "verse_refs": [
+            "1 Peter 1:1",
+            "1 Peter 1:14-18"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_118",
+          "text": "For its historical and cultural setting, note that Pontus, Galatia, Cappadocia, Asia, and Bithynia are named in the address. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "1pet-provinces"
+          ],
+          "verse_refs": [
+            "1 Peter 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_119",
+          "text": "For its historical and cultural setting, note that The opening blessing connects new birth into living hope with Jesus Christ's resurrection. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "1pet-hope"
+          ],
+          "verse_refs": [
+            "1 Peter 1:3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_118",
+          "text": "A literary feature to notice is that The prescript names Peter as an apostle of Jesus Christ. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "1pet-sender"
+          ],
+          "verse_refs": [
+            "1 Peter 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3bc49caceb6f9b8b0a19b3a1320598804eb6010e93d8257dbd5988e933f6cdd0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

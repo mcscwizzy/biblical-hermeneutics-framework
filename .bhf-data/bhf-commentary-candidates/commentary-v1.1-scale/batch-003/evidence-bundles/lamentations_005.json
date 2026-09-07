@@ -1,0 +1,521 @@
+{
+  "passage_ref": "Lamentations 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "lam-acrostics",
+      "claim": "Chapters 1-4 use alphabetic structures, while chapter 5 has twenty-two lines without alphabetic progression.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "dobbs-allsopp",
+        "kotze"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "lam-communal-prayer",
+      "claim": "Chapter 5 is a communal prayer asking God to remember, see, restore, and address abandonment.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "westermann"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 5:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "lam-final-unresolved",
+      "claim": "The book ends with a restoration petition followed by wording that preserves the possibility of utter rejection rather than narrated restoration.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "linafelt",
+        "nets-lam"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 5:19-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "lam-five-poems",
+      "claim": "The received book contains five poems with distinct voices and formal profiles.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "lam-hope-not-resolution",
+      "claim": "Hope in 3:21-33 does not end complaint; the poem and book return to blocked prayer, violence, vengeance, abandonment, and possible rejection.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "linafelt",
+        "o-connor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 5:19-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "lam-inherited-consequences",
+      "claim": "The community says ancestors sinned and the present generation bears their iniquities, expressing inherited consequences without resolving individual culpability.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "mandolfo",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 5:7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "lam-multiple-voices",
+      "claim": "Narrator, Daughter Zion, the chapter 3 man, communal speakers, enemies, and addresses to God cannot be reduced securely to one biography.",
+      "category": "culture",
+      "source_ids": [
+        "lanahan",
+        "mandolfo",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 5:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "lam-sexual-violence",
+      "claim": "Lamentations 5:11 reports sexual violence against women in Zion and girls in Judah as a feature of conquest.",
+      "category": "history",
+      "source_ids": [
+        "lam-mt",
+        "holt",
+        "boase"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 5:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Lamentations: A Commentary",
+        "author": "Adele Berlin",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664229743-lamentations/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and historical commentary.",
+        "id": "berlin",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Many Voices of Lament: An Exploration of the Book of Lamentations",
+        "author": "Elizabeth Boase",
+        "publisher": "SBL Press",
+        "year": 2016,
+        "locator": "Biblical Theology Bulletin and collected research",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/9780884141730_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Trauma, voice, and communal identity research.",
+        "id": "boase",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations",
+        "author": "F. W. Dobbs-Allsopp",
+        "publisher": "Westminster John Knox Press",
+        "year": 2011,
+        "locator": "Interpretation commentary",
+        "url": "https://www.wjkbooks.com/productcategories/bseint-interpretation-a-bible-commentary/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Poetic, historical, and comparative commentary.",
+        "id": "dobbs-allsopp",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion: Trauma, Cultural Memory and Gender in OT Poetics",
+        "author": "Else K. Holt",
+        "publisher": "Vandenhoeck & Ruprecht",
+        "year": 2014,
+        "locator": "Trauma and Traumatization in Individual and Collective Dimensions",
+        "url": "https://pure.au.dk/portal/en/publications/daughter-zion-trauma-cultural-memory-and-gender-in-ot-poetics/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Gender, trauma, and cultural-memory analysis.",
+        "id": "holt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Qumran Manuscripts of Lamentations: A Text-Critical Study",
+        "author": "Gideon R. Kotz\u00e9",
+        "publisher": "Brill",
+        "year": 2013,
+        "locator": "Studia Semitica Neerlandica 61",
+        "url": "https://brill.com/display/title/22977",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Detailed analysis of four Qumran witnesses.",
+        "id": "kotze",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Masoretic Lamentations",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Lamentations 1:1-5:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew text.",
+        "id": "lam-mt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Speaking Voice in the Book of Lamentations",
+        "author": "William F. Lanahan",
+        "publisher": "Journal of Biblical Literature",
+        "year": 1974,
+        "locator": "JBL 93, pages 41-49",
+        "url": "https://www.jstor.org/stable/3263865",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Influential study of shifting speakers.",
+        "id": "lanahan",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Surviving Lamentations: Catastrophe, Lament, and Protest in the Afterlife of a Biblical Book",
+        "author": "Tod Linafelt",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Entire volume",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/S/bo3631419.html",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and reception study emphasizing unresolved protest.",
+        "id": "linafelt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion Talks Back to the Prophets",
+        "author": "Carleen R. Mandolfo",
+        "publisher": "Society of Biblical Literature",
+        "year": 2007,
+        "locator": "Semeia Studies 58",
+        "url": "https://www.sbl-site.org/publications/Books_Semeia.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Dialogic and gender-critical study.",
+        "id": "mandolfo",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Lamentations",
+        "author": "Albert Pietersma",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Lamentations",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/35-lam-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Old Greek translation and introduction.",
+        "id": "nets-lam",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations and the Tears of the World",
+        "author": "Kathleen M. O'Connor",
+        "publisher": "Orbis Books",
+        "year": 2002,
+        "locator": "Entire volume",
+        "url": "https://orbisbooks.com/products/lamentations-and-the-tears-of-the-world",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Trauma-aware theological and pastoral reading.",
+        "id": "o-connor",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations: Issues and Interpretation",
+        "author": "Claus Westermann",
+        "publisher": "Fortress Press",
+        "year": 1994,
+        "locator": "Entire volume",
+        "url": "https://www.fortresspress.com/store/product/9780800626990/Lamentations",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Genre, lament, and theological study.",
+        "id": "westermann",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "lamentations",
+        "type": "book",
+        "title": "Lamentations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.948
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f72b27ca415aa2734e48fce288e4cc48da537d76b70adb9b5d51c7ea07ee05ec",
+  "evidence_hash_version": "2"
+}

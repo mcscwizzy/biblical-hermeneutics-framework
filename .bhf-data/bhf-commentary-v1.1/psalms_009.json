@@ -1,0 +1,35 @@
+{
+  "reference": "Psalms 9",
+  "book": "Psalms",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_8",
+          "text": "Read the chapter with this setting in view: Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "psalms-numbering-witnesses"
+          ],
+          "verse_refs": [
+            "Psalms 9:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "66f606ba517f405e5cd9685932378a487c48c2ed3e411fef7acc1a31b6dfa778",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

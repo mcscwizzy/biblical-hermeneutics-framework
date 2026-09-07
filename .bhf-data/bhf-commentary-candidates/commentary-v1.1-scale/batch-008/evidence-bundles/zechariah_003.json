@@ -1,0 +1,967 @@
+{
+  "passage_ref": "Zechariah 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "high-priesthood",
+        "title": "High Priesthood",
+        "type": "institution",
+        "aliases": [
+          "high priesthood institution",
+          "high priesthood in scripture",
+          "high priesthood structure",
+          "high priesthood role"
+        ],
+        "metadata": {
+          "summary": "The supreme priestly office that represents the people before God and oversees the climactic rites of atonement.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 28:1-43",
+            "Leviticus 16:1-34",
+            "Numbers 35:25-28",
+            "Zechariah 3:1-10",
+            "John 11:47-53",
+            "Acts 4:1-22",
+            "Hebrews 4:14-16",
+            "Hebrews 7:11-28",
+            "Hebrews 9:11-28",
+            "Hebrews 10:19-22"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "branch-prophecy:ancient_near_east_context:0",
+      "claim": "Branch Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-23",
+        "jeremiah-33",
+        "zechariah-3",
+        "zechariah-6",
+        "branch-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 3:8-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "branch-prophecy",
+        "parent_title": "Branch Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "branch-prophecy:historical_context:0",
+      "claim": "The branch image appears after the collapse of monarchy and promises a renewed Davidic ruler.",
+      "category": "history",
+      "source_ids": [
+        "jeremiah-23",
+        "jeremiah-33",
+        "zechariah-3",
+        "zechariah-6",
+        "branch-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 3:8-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "branch-prophecy",
+        "parent_title": "Branch Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "high-priesthood:ancient_near_east_context:0",
+      "claim": "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-16",
+        "numbers-35",
+        "zechariah-3",
+        "hebrews-4-10",
+        "high-priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "high-priesthood"
+      ],
+      "passage_anchors": [
+        "Zechariah 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "high-priesthood",
+        "parent_title": "High Priesthood",
+        "parent_type": "institution",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "high-priesthood:hebraic_worldview:0",
+      "claim": "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-16",
+        "numbers-35",
+        "zechariah-3",
+        "hebrews-4-10",
+        "high-priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "high-priesthood"
+      ],
+      "passage_anchors": [
+        "Zechariah 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "high-priesthood",
+        "parent_title": "High Priesthood",
+        "parent_type": "institution",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "high-priesthood:historical_context:0",
+      "claim": "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+      "category": "history",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-16",
+        "numbers-35",
+        "zechariah-3",
+        "hebrews-4-10",
+        "high-priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "high-priesthood"
+      ],
+      "passage_anchors": [
+        "Zechariah 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "high-priesthood",
+        "parent_title": "High Priesthood",
+        "parent_type": "institution",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "high-priesthood:historical_setting:0",
+      "claim": "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule.",
+      "category": "history",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-16",
+        "numbers-35",
+        "zechariah-3",
+        "hebrews-4-10",
+        "high-priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "high-priesthood"
+      ],
+      "passage_anchors": [
+        "Zechariah 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "high-priesthood",
+        "parent_title": "High Priesthood",
+        "parent_type": "institution",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "high-priesthood:original_audience:0",
+      "claim": "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+      "category": "social",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-16",
+        "numbers-35",
+        "zechariah-3",
+        "hebrews-4-10",
+        "high-priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "high-priesthood"
+      ],
+      "passage_anchors": [
+        "Zechariah 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "high-priesthood",
+        "parent_title": "High Priesthood",
+        "parent_type": "institution",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "high-priesthood:second_temple_context:0",
+      "claim": "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-16",
+        "numbers-35",
+        "zechariah-3",
+        "hebrews-4-10",
+        "high-priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "high-priesthood"
+      ],
+      "passage_anchors": [
+        "Zechariah 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "high-priesthood",
+        "parent_title": "High Priesthood",
+        "parent_type": "institution",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "job:interpretive_note:2",
+      "claim": "In Job 1-2 hasatan means the accuser or adversary and carries the Hebrew article; it designates a role in the heavenly council, not yet an unambiguous proper name for the later devil. Jewish and Christian canonical theology may connect this figure to Satan, but the developmental step should remain explicit.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "seow-job-1-21",
+        "pope-job-anchor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 3:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jude:interpretive_note:15",
+      "claim": "Michael refuses a slanderous judgment and invokes the Lord's rebuke. The scene cannot legitimate verbal abuse, exorcism theater, or leader claims to unaccountable angelic authority.",
+      "category": "culture",
+      "source_ids": [
+        "nets-lxx",
+        "green"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 3:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jude",
+        "parent_title": "Jude",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "zechariah-branch-stone",
+      "claim": "The Joshua vision calls the Branch a coming servant and places a seven-eyed or seven-faceted stone before Joshua, promising removal of the land's iniquity.",
+      "category": "history",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "branch-prophecy-source"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 3:8-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "zechariah-joshua-cleansing",
+      "claim": "Zechariah 3 portrays Joshua before the angel of YHWH, opposed by the accuser, divinely rebuked, stripped of filthy garments, reclothed, and commissioned conditionally.",
+      "category": "history",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "meyers-zechariah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 3:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Zechariah",
+        "author": "Mark J. Boda",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802823755/the-book-of-zechariah/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "zechariah-horse-patrol",
+          "zechariah-branch-stone",
+          "zechariah-lampstand",
+          "zechariah-crowning",
+          "zechariah-pierced-mourning"
+        ],
+        "notes": "Major historical, literary, theological, philological, and text-critical commentary.",
+        "id": "boda-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Branch Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "branch-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "branch-prophecy"
+        ]
+      },
+      {
+        "title": "Branch Prophecy canonical source set",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Isaiah 4:2; 11:1; Jeremiah 23:5; 33:15; Zechariah 3:8; 6:12",
+        "url": "https://www.sbl-site.org/resources/digital-texts/biblica-hebraica-stuttgartensia/",
+        "source_type": "reference-work",
+        "supports": [
+          "zechariah-branch-stone"
+        ],
+        "notes": "Primary-text orientation for royal Branch terminology; not a claim of identical referents.",
+        "id": "branch-prophecy-source",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Exodus 28-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-28-29",
+        "canonical_object_ids": [
+          "high-priesthood"
+        ]
+      },
+      {
+        "title": "Jude and 2 Peter",
+        "author": "Gene L. Green",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Exegetical Commentary, Jude",
+        "url": "https://bakeracademic.com/p/jude-and-2-peter-gene-l-green/229780",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Exegetical and social-historical commentary.",
+        "id": "green",
+        "canonical_object_ids": [
+          "jude"
+        ]
+      },
+      {
+        "title": "Hebrews 4-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-4-10",
+        "canonical_object_ids": [
+          "high-priesthood"
+        ]
+      },
+      {
+        "title": "An Introduction to Early Judaism",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapters 1 and 4 on period history, leaders, and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Scholarly synthesis used to distinguish the changing Second Temple office from its earlier biblical forms.",
+        "id": "high-priesthood-historical-orientation",
+        "canonical_object_ids": [
+          "high-priesthood"
+        ]
+      },
+      {
+        "title": "Jeremiah 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-23",
+        "canonical_object_ids": [
+          "branch-prophecy"
+        ]
+      },
+      {
+        "title": "Jeremiah 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-33",
+        "canonical_object_ids": [
+          "branch-prophecy"
+        ]
+      },
+      {
+        "title": "Job 1-42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Job 1:1-42:17 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "job-righteous-before-testing",
+          "job-heavenly-challenge-losses",
+          "job-lament-dialogues",
+          "job-wisdom-oath",
+          "job-elihu-intervention",
+          "job-whirlwind-creation",
+          "job-friends-rebuked-intercession",
+          "job-restoration-new-family"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "job-masoretic-1-42",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Leviticus 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-16",
+        "canonical_object_ids": [
+          "high-priesthood"
+        ]
+      },
+      {
+        "title": "Haggai, Zechariah 1-8",
+        "author": "Carol L. Meyers; Eric M. Meyers",
+        "publisher": "Yale University Press",
+        "year": 1987,
+        "locator": "Anchor Yale Bible 25B",
+        "url": "https://yalebooks.yale.edu/book/9780300139754/haggai-zechariah-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "zechariah-superscriptions",
+          "zechariah-measurement",
+          "zechariah-joshua-cleansing",
+          "zechariah-spirit-zerubbabel",
+          "zechariah-fasting-question"
+        ],
+        "notes": "Linguistic, social, historical, and literary commentary on the dated material.",
+        "id": "meyers-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "IOSCS",
+        "year": 2009,
+        "locator": "Genesis, Exodus, Numbers, Deuteronomy, and Zechariah",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and intertextual control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "jude"
+        ]
+      },
+      {
+        "title": "Numbers 35",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-35",
+        "canonical_object_ids": [
+          "high-priesthood"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "Marvin H. Pope",
+        "publisher": "Yale University Press",
+        "year": 1965,
+        "locator": "Anchor Yale Bible Commentary, third edition",
+        "url": "https://yalebooks.yale.edu/9780300140750/job/",
+        "source_type": "reference-work",
+        "supports": [
+          "hebrew-words",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "primary-sources",
+          "interpretive-notes"
+        ],
+        "notes": "Philological and comparative commentary incorporating ancient Near Eastern evidence and early Job textual witnesses.",
+        "id": "pope-job-anchor",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job 1-21: Interpretation and Commentary",
+        "author": "C. L. Seow",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2013,
+        "locator": "Illuminations commentary, introduction and Job 1-21",
+        "url": "https://eerdword.com/excerpt-from-c-l-seows-job-1-21-interpretation-and-commentary-illuminations/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "date-ranges",
+          "second-temple-context",
+          "later-christian-reception",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Reception-historical and exegetical commentary with extensive attention to text, language, interpretation, art, and theology.",
+        "id": "seow-job-1-21",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Zechariah 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zechariah-3",
+        "canonical_object_ids": [
+          "branch-prophecy",
+          "high-priesthood"
+        ]
+      },
+      {
+        "title": "Zechariah 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zechariah-6",
+        "canonical_object_ids": [
+          "branch-prophecy"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Zechariah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Zechariah 1:1-14:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "zechariah-superscriptions",
+          "zechariah-return",
+          "zechariah-horse-patrol",
+          "zechariah-joshua-cleansing",
+          "zechariah-lampstand",
+          "zechariah-fasting-question",
+          "zechariah-humble-king",
+          "zechariah-pierced-mourning",
+          "zechariah-day-mount"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "zechariah-masoretic",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "branch-prophecy",
+        "type": "prophecy",
+        "title": "Branch Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "high-priesthood",
+        "type": "institution",
+        "title": "High Priesthood",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "job",
+        "type": "book",
+        "title": "Job",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "jude",
+        "type": "book",
+        "title": "Jude",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "94a02c9d8ba15f0abc97062060f33acaaab6300f3f3f98c571ab1bc7bd780fb8",
+  "evidence_hash_version": "2"
+}

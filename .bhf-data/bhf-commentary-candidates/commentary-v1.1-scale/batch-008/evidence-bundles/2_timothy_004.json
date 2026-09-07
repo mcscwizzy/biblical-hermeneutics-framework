@@ -1,0 +1,2835 @@
+{
+  "passage_ref": "2 Timothy 4",
+  "entities": {
+    "people": [
+      {
+        "id": "aquila",
+        "title": "Aquila",
+        "type": "person",
+        "aliases": [
+          "Aquila of Pontus",
+          "Aquila husband of Priscilla",
+          "Aquila in Acts 18",
+          "Aquila in Romans 16"
+        ],
+        "metadata": {
+          "summary": "Aquila is a Jewish man from Pontus whom Acts and Pauline greetings portray with Prisca or Priscilla as displaced from Rome, sharing a craft and lodging with Paul at Corinth, traveling to Ephesus, instructing Apollos jointly, risking his life in coworking, and hosting assemblies across cities.",
+          "importance": 78,
+          "retrieval_score": 0.898,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "No securely identified house, workshop, inscription, or tomb belonging to the canonical Aquila"
+          ],
+          "related_passages": [
+            "Acts 18:1-3",
+            "Acts 18:18-26",
+            "Romans 16:3-5",
+            "1 Corinthians 16:19",
+            "2 Timothy 4:19"
+          ]
+        }
+      },
+      {
+        "id": "priscilla",
+        "title": "Priscilla (Prisca)",
+        "type": "person",
+        "aliases": [
+          "Prisca",
+          "Priscilla",
+          "Prisca wife of Aquila",
+          "Priscilla in Acts 18",
+          "Prisca in Romans 16"
+        ],
+        "metadata": {
+          "summary": "Prisca, called Priscilla in Acts, is portrayed with Aquila as displaced from Rome, traveling through Corinth and Ephesus, jointly instructing Apollos, coworking and risking life with Paul, and hosting assemblies; the texts give her unusual visibility without defining a later formal office.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "No securely identified canonical Prisca house, workshop, inscription, catacomb, church, or tomb"
+          ],
+          "related_passages": [
+            "Acts 18:1-3",
+            "Acts 18:18-26",
+            "Romans 16:3-5",
+            "1 Corinthians 16:19",
+            "2 Timothy 4:19"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2tim-authorship",
+      "claim": "Modern scholarship represents Pauline, secretary-assisted, composite, and Pauline-school explanations of the letter.",
+      "category": "culture",
+      "source_ids": [
+        "marshall",
+        "towner",
+        "ehrman",
+        "smith"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:22"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-coworkers",
+      "claim": "The closing names Demas, Crescens, Titus, Luke, Mark, Tychicus, Carpus, Prisca, Aquila, Erastus, Trophimus, Eubulus, Pudens, Linus, and Claudia.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:9-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-date",
+      "claim": "A date in the 60s CE depends on direct Pauline authorship and a final imprisonment, while Pauline-school dates commonly fall later.",
+      "category": "culture",
+      "source_ids": [
+        "marshall",
+        "towner",
+        "collins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:6-8"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "2tim-defense",
+      "claim": "The speaker says no one supported the first defense, the Lord strengthened him, proclamation was completed, and he was rescued from a lion's mouth.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "towner"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:16-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-departure",
+      "claim": "The speaker portrays being poured out, imminent departure, completed fight and race, kept faith, and an awaited crown from the righteous judge.",
+      "category": "culture",
+      "source_ids": [
+        "2tim-greek",
+        "smith",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:6-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "2tim-itching",
+      "claim": "Itching-ears imagery criticizes accumulating teachers according to desires and turning from truth toward myths.",
+      "category": "culture",
+      "source_ids": [
+        "2tim-greek",
+        "collins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:3-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "2tim-manuscripts",
+      "claim": "Codex Sinaiticus preserves 2 Timothy, while the surviving Codex Vaticanus ends before the Pastoral Epistles and is not a witness to this book.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "vaticanus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:1-4:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 83
+      }
+    },
+    {
+      "id": "2tim-proclaim",
+      "claim": "Timothy is charged before God and Christ to proclaim, persist, correct, rebuke, encourage, teach patiently, remain sober, endure, evangelize, and fulfill service.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "2tim-requests",
+      "claim": "The letter requests Timothy, Mark, a cloak left with Carpus at Troas, books, and especially parchments.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:9-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-testament",
+      "claim": "Farewell, succession, exemplary memory, warnings, final charge, and expected death make testament comparison plausible, though form and historicity remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "smith",
+        "johnson",
+        "aune-literary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:1-4:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 300,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "aquila:ancient_near_east_context:0",
+      "claim": "Aquila's immediate world is the Roman Mediterranean and Jewish diaspora rather than the Ancient Near East.",
+      "category": "culture",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:archaeology:0",
+      "claim": "No securely identified house, workshop, inscription, or tomb belonging to the canonical Aquila",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:hebraic_worldview:0",
+      "claim": "Acts explicitly calls Aquila Jewish. His diaspora life should be read within Jewish identity and practice without assuming a particular synagogue affiliation or complete Torah observance profile.",
+      "category": "culture",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:historical_context:0",
+      "claim": "Acts connects Aquila's arrival at Corinth with Claudius's order concerning Jews at Rome. His Pontic origin, Roman residence, movement through Corinth and Ephesus, shared work, and household hosting show diaspora mobility, but the texts do not state his citizenship, wealth, manumission history, age, or formal office.",
+      "category": "history",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:historical_setting:0",
+      "claim": "Rome, Corinth, and Ephesus in the mid-first-century Roman Mediterranean.",
+      "category": "history",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:key_places:0",
+      "claim": "Pontus",
+      "category": "geography",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:key_places:1",
+      "claim": "Rome",
+      "category": "geography",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:key_places:2",
+      "claim": "Corinth",
+      "category": "geography",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:key_places:3",
+      "claim": "Cenchreae",
+      "category": "geography",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:key_places:4",
+      "claim": "Ephesus",
+      "category": "geography",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:key_places:5",
+      "claim": "Syria",
+      "category": "geography",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:original_audience:0",
+      "claim": "Readers seeking a textually controlled profile of Aquila across Acts and Pauline greetings.",
+      "category": "social",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:second_temple_context:0",
+      "claim": "Aquila belongs to a mobile Jewish diaspora under Roman rule. Claudian policy and mixed urban networks contextualize his movement, but Chrestus and the scope of the expulsion remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:timeline:0",
+      "claim": "approximately 49 CE: conventional horizon for departure from Rome",
+      "category": "chronology",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:timeline:1",
+      "claim": "early 50s CE: Corinth and Ephesus episodes in Acts",
+      "category": "chronology",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:timeline:2",
+      "claim": "mid-50s CE: house assembly in Asia and greeting in Romans",
+      "category": "chronology",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "aquila:timeline:3",
+      "claim": "later first century CE: canonical greeting preserved in 2 Timothy",
+      "category": "chronology",
+      "source_ids": [
+        "acts-aquila",
+        "romans-aquila",
+        "pauline-aquila",
+        "lampe-aquila",
+        "murphy-o-connor-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "prisca-aquila-mobility",
+      "claim": "The canonical texts place Prisca and Aquila in Rome, Corinth, and Ephesus and identify shared work, instruction, coworking, risk, and hosted assembly.",
+      "category": "history",
+      "source_ids": [
+        "acts-rome-texts",
+        "pauline-prisca-aquila-texts",
+        "cohick-women",
+        "lampe-rome"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "priscilla:ancient_near_east_context:0",
+      "claim": "Prisca's immediate setting is the Roman Mediterranean, urban households, diaspora networks, craft work, and travel rather than the Ancient Near East.",
+      "category": "culture",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:archaeology:0",
+      "claim": "No securely identified canonical Prisca house, workshop, inscription, catacomb, church, or tomb",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:hebraic_worldview:0",
+      "claim": "Prisca shares a household and displacement narrative with Aquila, whom Acts explicitly calls Jewish. The text does not separately label her ancestry or define her prior religious identity.",
+      "category": "culture",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:historical_context:0",
+      "claim": "Acts introduces Priscilla at Corinth with Aquila after Claudius's action concerning Jews at Rome, then narrates travel and joint instruction at Ephesus. Pauline greetings call Prisca a coworker, remember risk, and name an assembly in the couple's house. Her ethnicity, birthplace, wealth, citizenship, occupation apart from the shared household craft, and formal office are unstated.",
+      "category": "history",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:historical_setting:0",
+      "claim": "Rome, Corinth, Cenchreae, and Ephesus in the mid-first-century Roman Mediterranean.",
+      "category": "history",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:key_places:0",
+      "claim": "Rome",
+      "category": "geography",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:key_places:1",
+      "claim": "Corinth",
+      "category": "geography",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:key_places:2",
+      "claim": "Cenchreae",
+      "category": "geography",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:key_places:3",
+      "claim": "Ephesus",
+      "category": "geography",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:key_places:4",
+      "claim": "Syria",
+      "category": "geography",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:original_audience:0",
+      "claim": "Readers seeking a textually controlled profile of Prisca or Priscilla and her shared and individual agency.",
+      "category": "social",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:second_temple_context:0",
+      "claim": "The couple's movement belongs within Jewish diaspora life under Claudian rule, but Prisca's individual ancestry, synagogue affiliation, and response to the decree are not separately narrated.",
+      "category": "culture",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:timeline:0",
+      "claim": "approximately 49 CE: conventional horizon for departure from Rome",
+      "category": "chronology",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:timeline:1",
+      "claim": "early 50s CE: Corinth and Ephesus episodes in Acts",
+      "category": "chronology",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:timeline:2",
+      "claim": "mid-50s CE: house assembly in Asia and greeting in Romans",
+      "category": "chronology",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priscilla:timeline:3",
+      "claim": "later first century CE: canonical greeting preserved in 2 Timothy",
+      "category": "chronology",
+      "source_ids": [
+        "acts-prisca",
+        "romans-prisca",
+        "pauline-prisca",
+        "lampe-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "2 Timothy 4:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-paul:ancient_near_east_context:0",
+      "claim": "Paul operates in diaspora synagogue and Greco-Roman city contexts, translating the gospel for mixed communities.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9",
+        "acts-13",
+        "romans-1",
+        "1-corinthians-15",
+        "galatians-1-2",
+        "philippians-3",
+        "2-timothy-4",
+        "who-was-paul-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-paul",
+        "parent_title": "Who was Paul?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-paul:historical_context:0",
+      "claim": "A former persecutor turned missionary, Paul travels across Roman cities and writes to churches in the Mediterranean world.",
+      "category": "history",
+      "source_ids": [
+        "acts-9",
+        "acts-13",
+        "romans-1",
+        "1-corinthians-15",
+        "galatians-1-2",
+        "philippians-3",
+        "2-timothy-4",
+        "who-was-paul-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-paul",
+        "parent_title": "Who was Paul?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "2 Timothy 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-timothy-4",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: 2 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Timothy 1:1-4:22",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; variants require an apparatus.",
+        "id": "2tim-greek",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Acts 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-13",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Acts 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-9",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Acts 18:1-3, 18-26",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Acts 18:1-3, 18-26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary narrative source.",
+        "id": "acts-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Acts 18:1-3, 18-26",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Acts 18:1-3, 18-26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary narrative source using Priscilla.",
+        "id": "acts-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 18:1-3; 28:11-31",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary narrative evidence, not an excavation report.",
+        "id": "acts-rome-texts",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "The New Testament in Its Literary Environment",
+        "author": "David E. Aune",
+        "publisher": "Westminster Press",
+        "year": 1987,
+        "locator": "Letters, paraenesis, testament and literary forms",
+        "url": "https://www.wjkbooks.com/Products/9780664250188/the-new-testament-in-its-literary-environment.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Genre control.",
+        "id": "aune-literary",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer; Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Third edition; selected 2 Timothy lexemes",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical starting point, not a substitute for discourse analysis.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Women in the World of the Earliest Christians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Prisca, households, work, patronage, and travel",
+        "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Social comparison does not establish individual wealth or office.",
+        "id": "cohick-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Women in the World of the Earliest Christians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Prisca, households, work, patronage, and travel",
+        "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Social comparison does not establish individual wealth or office.",
+        "id": "cohick-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "Women in the World of the Earliest Christians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Households, work, patronage, travel, and women",
+        "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Comparative social history does not assign unstated offices or wealth.",
+        "id": "cohick-women",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "1 & 2 Timothy and Titus",
+        "author": "Raymond F. Collins",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "New Testament Library; 2 Timothy",
+        "url": "https://www.wjkbooks.com/Products/9780664222475/1--2-timothy-and-titus.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; verify locators.",
+        "id": "collins",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Forgery and Counterforgery",
+        "author": "Bart D. Ehrman",
+        "publisher": "Oxford University Press",
+        "year": 2013,
+        "locator": "Pastoral Epistles and authorship discourse",
+        "url": "https://global.oup.com/academic/product/forgery-and-counterforgery-9780199928033",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical pseudepigraphy model; compare alternatives.",
+        "id": "ehrman",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Galatians 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-1-2",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "The First and Second Letters to Timothy",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 35A; 2 Timothy",
+        "url": "https://yalebooks.yale.edu/book/9780300139884/the-first-and-second-letters-to-timothy/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary; verify locators.",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Claudius, Prisca and Aquila, Roman groups, and topography",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical reconstruction remains probabilistic.",
+        "id": "lampe-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Claudius, Prisca and Aquila, Roman groups, topography, and later identifications",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Prosopographic and site identifications remain probabilistic.",
+        "id": "lampe-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries: From Paul to Valentinus",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Parts 1-2: topography, persons, groups, stratification, and fractionation",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Prosopographic and topographic reconstructions remain probabilistic.",
+        "id": "lampe-rome",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "The Pastoral Epistles",
+        "author": "I. Howard Marshall with Philip H. Towner",
+        "publisher": "T&T Clark",
+        "year": 1999,
+        "locator": "International Critical Commentary; 2 Timothy",
+        "url": "https://www.logos.com/product/4191/the-pastoral-epistles",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; verify locators.",
+        "id": "marshall",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Paul: A Critical Life",
+        "author": "Jerome Murphy-O'Connor",
+        "publisher": "Oxford University Press",
+        "year": 1996,
+        "locator": "Corinth, work, Prisca and Aquila, and Pauline chronology",
+        "url": "https://global.oup.com/academic/product/paul-9780198267492",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Biographical synthesis must remain subordinate to the texts.",
+        "id": "murphy-o-connor-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institute for New Testament Textual Research",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "2 Timothy manuscript witnesses",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Catalog and images; specialist verification required.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Pauline greetings to Prisca and Aquila",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Corinthians 16:19; 2 Timothy 4:19",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Distinct greeting contexts.",
+        "id": "pauline-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Pauline greetings to Prisca and Aquila",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Corinthians 16:19; 2 Timothy 4:19",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Distinct greeting contexts using Prisca.",
+        "id": "pauline-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "Pauline references to Prisca and Aquila",
+        "author": "Paul and later Pauline tradition",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 16:3-5; 1 Corinthians 16:19; 2 Timothy 4:19",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "The texts name locations and relationships selectively.",
+        "id": "pauline-prisca-aquila-texts",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Philippians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-3",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Romans 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      },
+      {
+        "title": "Romans 16:3-5",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Romans 16:3-5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Pauline greeting.",
+        "id": "romans-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Romans 16:3-5",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Romans 16:3-5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Pauline greeting using Prisca.",
+        "id": "romans-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: 2 Timothy",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": 350,
+        "locator": "2 Timothy",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=48&lid=en&side=r&zoomslider=0",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-century images and transcription; year approximate.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "2 Timothy",
+        "author": "Craig A. Smith",
+        "publisher": "Sheffield Phoenix Press",
+        "year": 2016,
+        "locator": "Authorship, amanuensis, paraenesis, and testament discussion",
+        "url": "https://cart.sbl-site.org/books/050919C",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Luke-as-amanuensis and paraenetic-letter proposal; verify locators.",
+        "id": "smith",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Women Leaders Lost in Translation? A Study in Romans 16:1-16",
+        "author": "Marieke Sybrandi",
+        "publisher": "The Expository Times",
+        "year": 2024,
+        "locator": "136.3, pages 92-101",
+        "url": "https://doi.org/10.1177/00145246241287148",
+        "source_type": "journal-article",
+        "supports": [
+          "interpretive-notes"
+        ],
+        "notes": "Examines Prisca and other women coworkers in Romans 16.",
+        "id": "sybrandi-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Women Leaders Lost in Translation? A Study in Romans 16:1-16",
+        "author": "Marieke Sybrandi",
+        "publisher": "The Expository Times",
+        "year": 2024,
+        "locator": "136.3, pages 92-101",
+        "url": "https://doi.org/10.1177/00145246241287148",
+        "source_type": "journal-article",
+        "supports": [
+          "interpretive-notes"
+        ],
+        "notes": "Examines Prisca and other women coworkers in Romans 16.",
+        "id": "sybrandi-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "The Letters to Timothy and Titus",
+        "author": "Philip H. Towner",
+        "publisher": "Eerdmans",
+        "year": 2006,
+        "locator": "2 Timothy",
+        "url": "https://www.eerdmans.com/9780802825131/the-letters-to-timothy-and-titus/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Pauline-author approach; verify locators.",
+        "id": "towner",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus",
+        "author": "",
+        "publisher": "Biblioteca Apostolica Vaticana",
+        "year": 350,
+        "locator": "Vat.gr.1209; surviving Pauline corpus ends before the Pastorals",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Negative control: it does not preserve 2 Timothy.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Who was Paul?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "who-was-paul-historical-orientation",
+        "canonical_object_ids": [
+          "who-was-paul"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-timothy",
+        "type": "book",
+        "title": "2 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.94
+      },
+      {
+        "id": "aquila",
+        "type": "person",
+        "title": "Aquila",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "priscilla",
+        "type": "person",
+        "title": "Priscilla (Prisca)",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "type": "cultural_background",
+        "title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "who-was-paul",
+        "type": "faq",
+        "title": "Who was Paul?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5ff8eadc97052bf0a74f938faa8596d2103521e3cd28d8eacd738645b5b75e20",
+  "evidence_hash_version": "2"
+}

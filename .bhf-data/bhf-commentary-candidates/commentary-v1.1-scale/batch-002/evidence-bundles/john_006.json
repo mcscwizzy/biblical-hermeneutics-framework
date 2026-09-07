@@ -1,0 +1,1046 @@
+{
+  "passage_ref": "John 6",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "capernaum",
+        "title": "Capernaum",
+        "type": "place",
+        "aliases": [
+          "where is capernaum",
+          "tell me about capernaum",
+          "why is capernaum important"
+        ],
+        "metadata": {
+          "summary": "A fishing and farming settlement on the northwestern Sea of Galilee that Mark and Matthew present as a principal base for Jesus's Galilean ministry.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 4:12-17",
+            "Mark 1:21-34",
+            "Mark 2:1-12",
+            "Mark 9:33-37",
+            "John 6:16-24"
+          ]
+        }
+      },
+      {
+        "id": "galilee-1",
+        "title": "Galilee",
+        "type": "place",
+        "aliases": [
+          "where is galilee",
+          "tell me about galilee",
+          "why is galilee important"
+        ],
+        "metadata": {
+          "summary": "The northern region around the Sea of Galilee where the Gospels locate much of Jesus's proclamation, village ministry, travel, and disciple formation.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 4:12-25",
+            "Mark 1:14-39",
+            "Luke 4:14-44",
+            "John 2:1-12",
+            "John 6:1-24"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "capernaum:ancient_near_east_context:0",
+      "claim": "Capernaum belongs to the Roman-period Galilean lake economy rather than a generalized ancient Near Eastern setting.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "capernaum:hebraic_worldview:0",
+      "claim": "Homes, Sabbath assembly, healing, hospitality, and communal reputation overlap in the Gospel episodes located here.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "capernaum:historical_context:0",
+      "claim": "Early Roman Capernaum consisted of basalt-built domestic compounds beside the lake and near regional routes. Archaeology supplies settlement context but cannot identify a particular excavated room as the house in Mark 2.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "capernaum:second_temple_context:0",
+      "claim": "The village was a Jewish settlement in the territory of Herod Antipas during Jesus's ministry; its later monumental synagogue must not be treated as the standing building of Mark 1.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "capernaum-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "capernaum"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "capernaum",
+        "parent_title": "Capernaum",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "galilee-1:ancient_near_east_context:0",
+      "claim": "The relevant comparative setting is Early Roman Galilee within the southern Levant and Roman eastern Mediterranean.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "galilee-1:hebraic_worldview:0",
+      "claim": "Jewish village, household, synagogue, purity, festival, and subsistence practices shaped life while communities also participated in wider regional exchange.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "galilee-1:historical_context:0",
+      "claim": "During most of Jesus's ministry Galilee was governed by Herod Antipas, not by the Roman prefect of Judea. Its villages combined farming, fishing, craft production, local markets, and movement along lake and land routes.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "galilee-1:second_temple_context:0",
+      "claim": "Archaeology and texts indicate substantial Jewish practice alongside local variation; Galilee should be neither isolated from Judaism nor flattened into Jerusalem's institutions.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "galilee-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "galilee-1",
+        "parent_title": "Galilee",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "galilee-boat-comparison",
+      "claim": "A preserved wooden boat recovered near Ginosar measures roughly eight meters and was built and repaired from multiple timbers within a dating range of approximately 100 BCE-100 CE.",
+      "category": "archaeology",
+      "source_ids": [
+        "yigal-allon-galilee-boat",
+        "fiensy-strange-galilee",
+        "fiensy-daily-life"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 20
+      }
+    },
+    {
+      "id": "galilee-boat-comparison:passage-relevance",
+      "claim": "The boat supplies a contemporary physical control for the size, construction, rowing, sailing, and repair of lake craft presupposed in Gospel crossings.",
+      "category": "archaeology",
+      "source_ids": [
+        "yigal-allon-galilee-boat",
+        "fiensy-strange-galilee",
+        "fiensy-daily-life"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 20,
+        "supports_evidence_ids": [
+          "galilee-boat-comparison"
+        ]
+      }
+    },
+    {
+      "id": "john-bread",
+      "claim": "John 6 links feeding, manna, coming, believing, eating flesh, drinking blood, abiding, death, and life; christological, sapiential, sacramental, and mixed readings remain contested.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 6:1-71"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-i-am",
+      "claim": "John's predicated and absolute ego eimi sayings participate in characterization through ordinary identification, symbolic predicates, scriptural echoes, and divine-agency claims; each context must be read separately.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology",
+        "boyarin-logos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 6:35"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 34,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-synoptic-relation",
+      "claim": "John shares people, places, passion, resurrection, and some episode patterns with the Synoptics but differs sharply in chronology, festival framework, speeches, signs, and characterization; direct literary dependence remains debated.",
+      "category": "culture",
+      "source_ids": [
+        "cambridge-john-companion",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 6:1-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "magdala-fishing-and-harbor",
+      "claim": "Excavations at early Roman Magdala exposed a lakeside harbor zone, settlement remains, and a fish hook among the recovered objects.",
+      "category": "archaeology",
+      "source_ids": [
+        "magdala-excavation-2013",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "magdala-fishing-and-harbor:passage-relevance",
+      "claim": "The site supplies contemporary evidence that fishing, landing, storage, and transport were embedded in developed lakeside settlements near Gospel activity.",
+      "category": "archaeology",
+      "source_ids": [
+        "magdala-excavation-2013",
+        "fiensy-strange-galilee",
+        "chancey-galilee"
+      ],
+      "related_entity_ids": [
+        "galilee-1"
+      ],
+      "passage_anchors": [
+        "John 6:16-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "magdala-fishing-and-harbor"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "The Gospel of the Memra: Jewish Binitarianism and the Prologue to John",
+        "author": "Daniel Boyarin",
+        "publisher": "Harvard Theological Review / Cambridge University Press",
+        "year": 2001,
+        "locator": "Harvard Theological Review 94",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/gospel-of-the-memra-jewish-binitarianism-and-the-prologue-to-john/A97052954F201A3B1B79FD50EB9E3EFA",
+        "source_type": "journal-article",
+        "supports": [
+          "hebraic-worldview",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish-contextual proposal for the Logos prologue.",
+        "id": "boyarin-logos",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Gospel of John",
+        "author": "George Parsenios",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the New Testament, chapter 8",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/gospel-of-john/148BF75C92C615531EA1EF732393F0D1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Survey of date, historical value, Synoptic relation, Jewish characterization, and community theories.",
+        "id": "cambridge-john-companion",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Capernaum",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "capernaum-historical-orientation",
+        "canonical_object_ids": [
+          "capernaum"
+        ]
+      },
+      {
+        "title": "Greco-Roman Culture and the Galilee of Jesus",
+        "author": "Mark A. Chancey",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "Chapters 1-6 on chronology, settlement, roads, language, and coinage",
+        "url": "https://doi.org/10.1017/CBO9780511487910",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Chronologically controlled synthesis of Greco-Roman material in Galilee.",
+        "id": "chancey-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on dwellings, occupations, family, religion, mortality, and burial",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Archaeological synthesis focused on ordinary life rather than elite monuments.",
+        "id": "fiensy-daily-life",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilee in the Late Second Temple and Mishnaic Periods, Volumes 1-2",
+        "author": "David A. Fiensy and James Riley Strange, editors",
+        "publisher": "Fortress Press",
+        "year": 2015,
+        "locator": "Volume 1: village life, economics, roads, and households; Volume 2: Capernaum, Nazareth, and Magdala",
+        "url": "https://academic.oup.com/jts/article-pdf/69/2/765/26180095/fly066.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Multi-author archaeological and social-historical synthesis preserving scholarly disagreement.",
+        "id": "fiensy-strange-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Galilee 1",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "galilee-1-historical-orientation",
+        "canonical_object_ids": [
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Magdala 2008",
+        "author": "Magdala Project excavation team",
+        "publisher": "Israel Antiquities Authority",
+        "year": 2013,
+        "locator": "Hadashot Arkheologiyot 125, License G-11/2008",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=5433&mag_=",
+        "source_type": "excavation-report",
+        "supports": [
+          "magdala-fishing-and-harbor"
+        ],
+        "notes": "Reports Early Roman pottery, a fish hook, and harbor remains; precise industrial scale remains debated.",
+        "id": "magdala-excavation-2013",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "capernaum",
+          "galilee-1"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of John",
+        "author": "Dwight Moody Smith",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "Theology of John and the issues it raises",
+        "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-john/theology-of-john-and-the-issues-it-raises/975440B1EAE9424C6B2C919A3CC03DEB",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Theological synthesis with attention to Christology, anti-Judaism, and reception.",
+        "id": "smith-theology",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Ancient Boat",
+        "author": "",
+        "publisher": "Yigal Allon Center",
+        "year": null,
+        "locator": "Ginosar display; radiocarbon range approximately 100 BCE-100 CE",
+        "url": "https://en.yigal-allon-centre.org.il/the-ancient-boat/",
+        "source_type": "museum-collection",
+        "supports": [
+          "galilee-boat-comparison"
+        ],
+        "notes": "Official display record; the popular association with Jesus is not treated as identification.",
+        "id": "yigal-allon-galilee-boat",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "capernaum",
+        "type": "place",
+        "title": "Capernaum",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "galilean-villages-households-and-subsistence",
+        "type": "cultural_background",
+        "title": "Galilean Villages, Households, and Subsistence",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "galilee-1",
+        "type": "place",
+        "title": "Galilee",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "2ecd3a7af485c9726f8213fc26992e92b819a59ea44fc7f0667f59369fd39b45",
+  "evidence_hash_version": "2"
+}

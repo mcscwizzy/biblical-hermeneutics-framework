@@ -1,0 +1,191 @@
+{
+  "passage_ref": "2 Samuel 18",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "second-samuel-absalom-rebellion",
+      "claim": "Absalom builds popular support, declares himself king, drives David from Jerusalem, and dies when Joab ignores David's command to deal gently with him.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 18:1-33"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "second-samuel-literary-movement",
+      "claim": "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Samuel 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Samuel 1:1-24:25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "second-samuel-literary-movement",
+          "second-samuel-david-lament",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-davidic-house",
+          "second-samuel-david-condemned",
+          "second-samuel-absalom-rebellion"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-samuel-1-24",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      },
+      {
+        "title": "2 Samuel, Volume 11",
+        "author": "Arnold A. Anderson",
+        "publisher": "Zondervan",
+        "year": 2015,
+        "locator": "Word Biblical Commentary on 2 Samuel 1-24",
+        "url": "https://zondervanacademic.com/products/2-samuel-volume-11",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "second-samuel-literary-movement",
+          "second-samuel-davidic-house",
+          "second-samuel-david-condemned"
+        ],
+        "notes": "Technical commentary emphasizing textual, linguistic, structural, compositional, and theological evidence.",
+        "id": "anderson-second-samuel",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      },
+      {
+        "title": "The Second Book of Samuel",
+        "author": "David Toshio Tsumura",
+        "publisher": "Eerdmans",
+        "year": 2019,
+        "locator": "Introduction and commentary on 2 Samuel 1-24",
+        "url": "https://www.eerdmans.com/9780802870964/the-second-book-of-samuel/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "second-samuel-literary-movement",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-davidic-house",
+          "second-samuel-absalom-rebellion"
+        ],
+        "notes": "NICOT commentary with detailed Hebrew textual, literary, compositional, and historical analysis.",
+        "id": "tsumura-second-samuel",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-samuel",
+        "type": "book",
+        "title": "2 Samuel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "663829286e668a2a0f89288334db6f60bff8ad5851b2aad372c00792175ee485",
+  "evidence_hash_version": "2"
+}

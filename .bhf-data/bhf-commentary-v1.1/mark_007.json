@@ -1,0 +1,101 @@
+{
+  "reference": "Mark 7",
+  "book": "Mark",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_148",
+          "text": "Read the chapter with this setting in view: Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-provenance"
+          ],
+          "verse_refs": [
+            "Mark 7:3-4"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_149",
+          "text": "For its historical and cultural setting, note that Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-jewish-debate"
+          ],
+          "verse_refs": [
+            "Mark 7:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_150",
+          "text": "For its historical and cultural setting, note that Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "cross-passage-diet-code-limit"
+          ],
+          "verse_refs": [
+            "Mark 7:1-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_149",
+          "text": "A literary feature to notice is that The Syrophoenician woman answers Jesus' children-and-dogs saying and obtains her daughter's release; interpretations of testing, boundary, ethnicity, gender, and change remain disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-syrophoenician"
+          ],
+          "verse_refs": [
+            "Mark 7:24-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_149",
+          "text": "For a later or comparative connection, note that 4QMMT preserves disputed rulings, Galilean limestone workshops attest purity-oriented vessels, and Mishnah Yadayim later details hand purification. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "second-temple-purity-diversity"
+          ],
+          "verse_refs": [
+            "Mark 7:1-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a9dd7d9fea16d672cd2453bd4e782d6a7d6323bebedce484933b3a027c84d8a1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

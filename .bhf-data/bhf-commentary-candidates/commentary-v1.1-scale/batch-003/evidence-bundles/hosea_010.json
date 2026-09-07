@@ -1,0 +1,270 @@
+{
+  "passage_ref": "Hosea 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "hosea-historical-memory",
+      "claim": "Hosea rhetorically reuses exodus, wilderness, Jacob, Gibeah, Baal-peor, and prophetic traditions to diagnose present identity and summon change.",
+      "category": "culture",
+      "source_ids": [
+        "hosea-masoretic",
+        "goldingay-hosea-recollection",
+        "irvine-hosea"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 10:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "hosea:interpretive_note:15",
+      "claim": "Assyrian royal inscriptions are imperial self-presentations; use them to contextualize campaigns and claims, not as neutral confirmation of each biblical detail.",
+      "category": "politics",
+      "source_ids": [
+        "oracc-sargon-samaria",
+        "aster-assyria-hosea",
+        "hasegawa-hosea-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 10:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "ancient-near-east-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "hosea:interpretive_note:16",
+      "claim": "The fall of Samaria is Hosea's major historical horizon, but the commonly cited 722/721 dates and Sargon II's 720 consolidation must be distinguished.",
+      "category": "culture",
+      "source_ids": [
+        "hasegawa-hosea-history",
+        "oracc-sargon-samaria"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 10:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Assyria and Its Image in Hosea",
+        "author": "Shawn Zelig Aster",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 3",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443857261",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "hosea-assyrian-crisis",
+          "interpretive-notes"
+        ],
+        "notes": "Study of Assyrian context and its rhetorical image in Hosea.",
+        "id": "aster-assyria-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea 12-13 and Prophetic Composition, Rhetoric, and Recollection",
+        "author": "John Goldingay",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 15",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443859939",
+        "source_type": "reference-work",
+        "supports": [
+          "hosea-historical-memory",
+          "literary-context"
+        ],
+        "notes": "Study of ambiguity, wordplay, prophetic compilation, and remembered traditions.",
+        "id": "goldingay-hosea-recollection",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Book of Hosea and the History of Eighth-Century BCE Israel",
+        "author": "Shuichi Hasegawa",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 2",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter-abstract/443857087",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "hosea-superscription-setting",
+          "hosea-assyrian-crisis"
+        ],
+        "notes": "Historical synthesis that also cautions against precise event matching.",
+        "id": "hasegawa-hosea-history",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Hosea 1-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "literary-context"
+        ],
+        "notes": "Primary Hebrew textual tradition; difficult passages require comparison with other witnesses.",
+        "id": "hosea-masoretic",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea",
+        "author": "Stuart A. Irvine",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of the Minor Prophets, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373123",
+        "source_type": "reference-work",
+        "supports": [
+          "structure",
+          "major-themes",
+          "hosea-priestly-failure",
+          "hosea-baal-fertility",
+          "hosea-historical-memory"
+        ],
+        "notes": "Overview of structure, themes, redaction, marriage, exodus, wilderness, and knowledge of God.",
+        "id": "irvine-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Royal Inscriptions of Sargon II mentioning Samaria",
+        "author": "Royal Inscriptions of the Neo-Assyrian Period project",
+        "publisher": "ORACC, University of Pennsylvania",
+        "year": null,
+        "locator": "RINAP 2, Sargon II corpus",
+        "url": "https://oracc.museum.upenn.edu/rinap/rinap2/Q006639",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "archaeology",
+          "hosea-assyrian-crisis"
+        ],
+        "notes": "Edition and metadata for Sargon II inscriptions associated with Samaria; imperial genre requires source criticism.",
+        "id": "oracc-sargon-samaria",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hosea",
+        "type": "book",
+        "title": "Hosea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "945399ba222bf24d304dc3d965934ffa50217920cc9dc0f7e5890baf651af835",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,86 @@
+{
+  "batch_id": "batch-007",
+  "status": "REVIEWED",
+  "chapters": [
+    {
+      "reference": "Deuteronomy 32",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "PRESENTATION_ROLE_AUDIT_FAILURE",
+        "PRESENTATION_ROLE_MISMATCH",
+        "TERRA_SUPPRESSION_REQUIRED",
+        "TEXTUAL_ROUTING_AUDIT_FAILURE"
+      ],
+      "evidence_ids": [
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "mount-ebal-altar-discovery",
+        "qumran-archaeological-site"
+      ],
+      "explanation": "Terra's defense-in-depth textual filter would have to suppress this item because it is routed as historical or material context.; Claim semantics expect 'language_literary', but metadata routes the item to 'historical_context'.",
+      "scope": "local"
+    },
+    {
+      "reference": "Numbers 6",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "PRESENTATION_ROLE_AUDIT_FAILURE",
+        "PRESENTATION_ROLE_MISMATCH",
+        "TERRA_SUPPRESSION_REQUIRED",
+        "TEXTUAL_ROUTING_AUDIT_FAILURE"
+      ],
+      "evidence_ids": [
+        "ketef-hinnom-silver-scrolls:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "ketef-hinnom-silver-scrolls"
+      ],
+      "explanation": "Terra's defense-in-depth textual filter would have to suppress this item because it is routed as historical or material context.; Claim semantics expect 'language_literary', but metadata routes the item to 'historical_context'.",
+      "scope": "local"
+    },
+    {
+      "reference": "Isaiah 40",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "PRESENTATION_ROLE_AUDIT_FAILURE",
+        "PRESENTATION_ROLE_MISMATCH",
+        "TERRA_SUPPRESSION_REQUIRED",
+        "TEXTUAL_ROUTING_AUDIT_FAILURE"
+      ],
+      "evidence_ids": [
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "mount-ebal-altar-discovery",
+        "qumran-archaeological-site"
+      ],
+      "explanation": "Terra's defense-in-depth textual filter would have to suppress this item because it is routed as historical or material context.; Claim semantics expect 'language_literary', but metadata routes the item to 'historical_context'.",
+      "scope": "local"
+    },
+    {
+      "reference": "Psalms 119",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "PRESENTATION_ROLE_AUDIT_FAILURE",
+        "PRESENTATION_ROLE_MISMATCH",
+        "TERRA_SUPPRESSION_REQUIRED",
+        "TEXTUAL_ROUTING_AUDIT_FAILURE"
+      ],
+      "evidence_ids": [
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "mount-ebal-altar-discovery",
+        "qumran-archaeological-site"
+      ],
+      "explanation": "Terra's defense-in-depth textual filter would have to suppress this item because it is routed as historical or material context.; Claim semantics expect 'language_literary', but metadata routes the item to 'historical_context'.",
+      "scope": "local"
+    }
+  ],
+  "unresolved_blocker_count": 4,
+  "systemic_concern": "Repeated template-shaped background and broad-parent reuse remain CKL cleanup concerns; this preflight does not repair evidence."
+}

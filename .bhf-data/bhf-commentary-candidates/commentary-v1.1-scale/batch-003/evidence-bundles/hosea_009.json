@@ -1,0 +1,216 @@
+{
+  "passage_ref": "Hosea 9",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "hosea-baal-fertility",
+      "claim": "Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult.",
+      "category": "culture",
+      "source_ids": [
+        "hosea-masoretic",
+        "kelle-hosea-overview",
+        "irvine-hosea",
+        "oxford-handbook-hosea"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 9:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "hosea-historical-memory",
+      "claim": "Hosea rhetorically reuses exodus, wilderness, Jacob, Gibeah, Baal-peor, and prophetic traditions to diagnose present identity and summon change.",
+      "category": "culture",
+      "source_ids": [
+        "hosea-masoretic",
+        "goldingay-hosea-recollection",
+        "irvine-hosea"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 9:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Hosea 12-13 and Prophetic Composition, Rhetoric, and Recollection",
+        "author": "John Goldingay",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 15",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443859939",
+        "source_type": "reference-work",
+        "supports": [
+          "hosea-historical-memory",
+          "literary-context"
+        ],
+        "notes": "Study of ambiguity, wordplay, prophetic compilation, and remembered traditions.",
+        "id": "goldingay-hosea-recollection",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Hosea 1-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "literary-context"
+        ],
+        "notes": "Primary Hebrew textual tradition; difficult passages require comparison with other witnesses.",
+        "id": "hosea-masoretic",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea",
+        "author": "Stuart A. Irvine",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of the Minor Prophets, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373123",
+        "source_type": "reference-work",
+        "supports": [
+          "structure",
+          "major-themes",
+          "hosea-priestly-failure",
+          "hosea-baal-fertility",
+          "hosea-historical-memory"
+        ],
+        "notes": "Overview of structure, themes, redaction, marriage, exodus, wilderness, and knowledge of God.",
+        "id": "irvine-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Book of Hosea",
+        "author": "Brad E. Kelle",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Research Encyclopedia of Religion",
+        "url": "https://academic.oup.com/edited-volume/62249/chapter-abstract/551368896",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "hosea-superscription-setting"
+        ],
+        "notes": "Current overview of history, composition, metaphor, politics, gender, violence, and interpretation.",
+        "id": "kelle-hosea-overview",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Hosea",
+        "author": "Brad E. Kelle, editor",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Thirty-two topical studies",
+        "url": "https://academic.oup.com/edited-volume/56211",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "interpretive-notes",
+          "major-themes"
+        ],
+        "notes": "Multi-perspectival reference work covering history, text, composition, gender, violence, ecology, and reception.",
+        "id": "oxford-handbook-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hosea",
+        "type": "book",
+        "title": "Hosea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a6ad947d17b7045dff8e53822768cb57b35274b4dcf05cfd82b19f592afc77c5",
+  "evidence_hash_version": "2"
+}

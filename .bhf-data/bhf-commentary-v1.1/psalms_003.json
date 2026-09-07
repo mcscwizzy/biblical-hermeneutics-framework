@@ -1,0 +1,35 @@
+{
+  "reference": "Psalms 3",
+  "book": "Psalms",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_43",
+          "text": "Read the chapter with this setting in view: The received superscriptions associate psalms with David, Asaph, the sons of Korah, Solomon, Moses, Heman, and Ethan and also preserve genre, performance, tune, instrument, and narrated-setting labels. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "psalms-superscription-collections"
+          ],
+          "verse_refs": [
+            "Psalms 3:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9e4a738c744f6d99d36bf5b813748b25bae2d40581913af4bac1739fa18db3b0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

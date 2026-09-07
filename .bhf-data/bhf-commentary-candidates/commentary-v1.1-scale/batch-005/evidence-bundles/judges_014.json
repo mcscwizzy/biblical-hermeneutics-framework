@@ -1,0 +1,284 @@
+{
+  "passage_ref": "Judges 14",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "judges-literary-movement",
+      "claim": "Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war.",
+      "category": "culture",
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Judges 1-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "judges",
+        "parent_title": "Judges",
+        "parent_type": "book",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "judges-samson-begins-deliverance",
+      "claim": "Samson is announced as one who will begin to deliver Israel from the Philistines, and the narrative never says that he completes that deliverance.",
+      "category": "history",
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Judges 13:1-16:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "judges",
+        "parent_title": "Judges",
+        "parent_type": "book",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "judges:interpretive_note:0",
+      "claim": "The programmatic pattern in Judges 2 guides the central narratives, but the individual episodes do not all contain every stage or follow a mechanically identical cycle.",
+      "category": "culture",
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Judges 3:7-16:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "judges",
+        "parent_title": "Judges",
+        "parent_type": "book",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "judges:interpretive_note:3",
+      "claim": "Archaeology and settlement studies do not produce one uncontested chronology or historical model for all episodes in Judges.",
+      "category": "culture",
+      "source_ids": [
+        "butler-judges",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Judges 1-16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "judges",
+        "parent_title": "Judges",
+        "parent_type": "book",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1300,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Judges, Volume 8",
+        "author": "Trent C. Butler",
+        "publisher": "Zondervan",
+        "year": 2014,
+        "locator": "Word Biblical Commentary, introduction and commentary on Judges 1-21",
+        "url": "https://zondervanacademic.com/products/judges-volume-8",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "judges-literary-movement",
+          "judges-gideon-abimelech-turn",
+          "judges-no-king-refrain"
+        ],
+        "notes": "Technical commentary treating textual, linguistic, structural, historical, and theological evidence.",
+        "id": "butler-judges",
+        "canonical_object_ids": [
+          "judges"
+        ]
+      },
+      {
+        "title": "Judges 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Judges 1:1-21:25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "judges-literary-movement",
+          "judges-programmatic-pattern",
+          "judges-deborah-leadership",
+          "judges-gideon-abimelech-turn",
+          "judges-samson-begins-deliverance",
+          "judges-no-king-refrain"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "judges-1-21",
+        "canonical_object_ids": [
+          "judges"
+        ]
+      },
+      {
+        "title": "The Book of Judges",
+        "author": "Barry G. Webb",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Introduction and commentary on Judges 1-21",
+        "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "interpretive-notes",
+          "judges-literary-movement",
+          "judges-programmatic-pattern",
+          "judges-gideon-abimelech-turn",
+          "judges-samson-begins-deliverance"
+        ],
+        "notes": "NICOT commentary emphasizing literary, exegetical, theological, violence, and characterization questions.",
+        "id": "webb-judges",
+        "canonical_object_ids": [
+          "judges"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+        "author": "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Judges commentary and background notes",
+        "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "hebrew-words",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-historical-books-backgrounds",
+        "canonical_object_ids": [
+          "judges"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "judges",
+        "type": "book",
+        "title": "Judges",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4f0227f9e4c6e90fcdd9ba87419943c87590f83bf875724fbf586ed5f6c239a1",
+  "evidence_hash_version": "2"
+}

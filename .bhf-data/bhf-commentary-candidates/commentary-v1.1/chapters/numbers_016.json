@@ -1,0 +1,57 @@
+{
+  "reference": "Numbers 16",
+  "book": "Numbers",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+          "verse_refs": [
+            "Numbers 16:1-50"
+          ],
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: The firm foundation's seal combines divine knowledge of God's own with a summons to turn from wickedness.",
+          "verse_refs": [
+            "Numbers 16:5",
+            "Numbers 16:26"
+          ],
+          "evidence_ids": [
+            "2tim-foundation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "57b85db0ee976d66f4c903fe2b3efa26c2a8abeafc2d443e6f235f0c1d1d02ad",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:56.423978+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

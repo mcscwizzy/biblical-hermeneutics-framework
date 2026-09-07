@@ -1,0 +1,512 @@
+{
+  "passage_ref": "Esther 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "esther-queen-hidden-identity",
+      "claim": "Esther, also called Hadassah, is taken into royal custody, follows Mordecai's instruction not to disclose her people, gains favor, and becomes queen in Ahasuerus's seventh year.",
+      "category": "history",
+      "source_ids": [
+        "esther-hebrew-1-10",
+        "berlin-jps-esther",
+        "jobes-esther-nivac"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 2:5-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "esther:interpretive_note:0",
+      "claim": "Ahasuerus is plausibly identified with Xerxes I because the Hebrew royal name corresponds closely to Old Persian Xshayarsha and the setting is Achaemenid Susa. This probable identification does not independently verify every person, date, edict, speech, or conflict in Esther.",
+      "category": "culture",
+      "source_ids": [
+        "esther-hebrew-1-10",
+        "iranica-esther-book",
+        "british-museum-xerxes-susa-jar",
+        "berlin-jps-esther"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 2:16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "esther:interpretive_note:1",
+      "claim": "Esther displays informed Persian color alongside stylization, satire, repeated improbability, exact symmetry, and dramatic reversal. Labels such as history, historical novella, comedy, court tale, and festival etiology describe different features; none should be treated as a neutral conclusion that resolves all historical questions.",
+      "category": "culture",
+      "source_ids": [
+        "berlin-jps-esther",
+        "fox-character-ideology-esther",
+        "bush-ruth-esther-wbc",
+        "iranica-esther-book"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 1:1-10:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "esther:interpretive_note:10",
+      "claim": "Greek Esther is not merely the Hebrew story with isolated devotional glosses: its forms expand, relocate, and interpret the narrative through dreams, prayers, divine naming, and fuller documents. Catholic, Orthodox, Protestant, and Jewish readers therefore encounter materially different canonical forms.",
+      "category": "culture",
+      "source_ids": [
+        "esther-greek-forms",
+        "levenson-esther-otl",
+        "bush-ruth-esther-wbc",
+        "jobes-esther-nivac"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 1:1-10:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "esther:interpretive_note:2",
+      "claim": "The Hebrew text does not state Vashti's reason for refusing, describe her later fate, say Esther volunteered for the royal search, or narrate Esther's sexual experience. Interpretation should name the coercive power imbalance without inventing motives, consent, romance, or blame for either woman.",
+      "category": "culture",
+      "source_ids": [
+        "esther-hebrew-1-10",
+        "berlin-jps-esther",
+        "fox-character-ideology-esther",
+        "jobes-esther-nivac"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 2:1-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "esther:interpretive_note:4",
+      "claim": "Esther and Mordecai may bear names comparable to Ishtar and Marduk, while Esther also has the Hebrew name Hadassah. Etymological proposals are disputed and do not by themselves prove apostasy, secret pagan worship, or complete assimilation.",
+      "category": "culture",
+      "source_ids": [
+        "esther-hebrew-1-10",
+        "berlin-jps-esther",
+        "bush-ruth-esther-wbc"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 2:5-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "plausible",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "esther:interpretive_note:5",
+      "claim": "The narrator never states why Mordecai refuses to bow to Haman. Mordecai's Benjaminite ancestry and Haman's Agagite title invite an Amalek-Saul echo, but religious-law explanations, personal defiance, and ethnic feud reconstructions should remain proposals rather than explicit facts.",
+      "category": "culture",
+      "source_ids": [
+        "esther-hebrew-1-10",
+        "levenson-esther-otl",
+        "fox-character-ideology-esther"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Esther 2:5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The JPS Bible Commentary: Esther",
+        "author": "Adele Berlin",
+        "publisher": "The Jewish Publication Society",
+        "year": 2001,
+        "locator": "Introduction, essays, Hebrew text, translation, and commentary",
+        "url": "https://jps.org/books/jps-bible-commentary-esther/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "second-temple-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Jewish literary and historical commentary with attention to Persian setting, diaspora, comedy, Purim, and rabbinic interpretation.",
+        "id": "berlin-jps-esther",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Calcite jar fragment inscribed for Xerxes I and excavated at Susa",
+        "author": "British Museum",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Museum number 91456,c",
+        "url": "https://www.britishmuseum.org/collection/object/W_1853-1219-10",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Material evidence connecting Xerxes I with Achaemenid Susa; it does not attest Esther's characters or plot.",
+        "id": "british-museum-xerxes-susa-jar",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Ruth-Esther, Volume 9",
+        "author": "Frederic W. Bush",
+        "publisher": "Zondervan Academic",
+        "year": 2015,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and Esther commentary",
+        "url": "https://zondervanacademic.com/products/ruth-esther-volume-9",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "greek-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, structural, historical, and theological commentary on Ruth and Esther.",
+        "id": "bush-ruth-esther-wbc",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Greek Esther and the Additions to Esther",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Old Greek, Alpha Text, and Additions A-F",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "later-christian-reception",
+          "greek-words",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient Greek textual forms and expansions, received differently across canonical traditions.",
+        "id": "esther-greek-forms",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Esther 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Esther 1:1-10:3 in the Hebrew textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "esther-vashti-deposed",
+          "esther-queen-hidden-identity",
+          "esther-haman-destruction-edict",
+          "esther-fast-risk-appeal",
+          "esther-honor-reversal",
+          "esther-counter-edict-defense",
+          "esther-conflict-no-plunder",
+          "esther-purim-established"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "esther-hebrew-1-10",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Character and Ideology in the Book of Esther",
+        "author": "Michael V. Fox",
+        "publisher": "Wipf and Stock",
+        "year": 2010,
+        "locator": "Second edition, translation, literary study, commentary, and scholarship postscript",
+        "url": "https://wipfandstock.com/9781608994953/character-and-ideology-in-the-book-of-esther/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "genre",
+          "authorship-positions",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed literary analysis of characterization, narrative artistry, ideology, diaspora, and Esther scholarship.",
+        "id": "fox-character-ideology-esther",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "ESTHER, BOOK OF",
+        "author": "Shaul Shaked",
+        "publisher": "Encyclopaedia Iranica",
+        "year": 1998,
+        "locator": "Encyclopaedia Iranica VIII/6, pages 655-657; updated 2017",
+        "url": "https://www.iranicaonline.org/articles/esther-book-of/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "date-ranges",
+          "authorship-positions",
+          "interpretive-notes"
+        ],
+        "notes": "Specialist reference treatment of Esther's Persian names, setting, possible composition, plot, and historical questions.",
+        "id": "iranica-esther-book",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Esther",
+        "author": "Karen H. Jobes",
+        "publisher": "Zondervan",
+        "year": 1999,
+        "locator": "NIV Application Commentary",
+        "url": "https://zondervanacademic.com/products/esther",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "canonical-role",
+          "later-christian-reception",
+          "common-questions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Exegetical and application-oriented commentary attentive to moral ambiguity, providence, difficult choices, and contemporary use.",
+        "id": "jobes-esther-nivac",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Esther: A Commentary",
+        "author": "Jon D. Levenson",
+        "publisher": "Westminster John Knox Press",
+        "year": 1997,
+        "locator": "Old Testament Library introduction and commentary",
+        "url": "https://www.wjkbooks.com/bookproduct/0664228879-esther/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "covenantal-significance",
+          "literary-context",
+          "second-temple-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary treating Hebrew and Greek versions, Jewish identity, Purim, theology, and literary coherence.",
+        "id": "levenson-esther-otl",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "esther",
+        "type": "book",
+        "title": "Esther",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.903
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "3d22cc9557309e80aef33bda7e1e0020bf71e36201565fe0b52d3a49a4d1ef56",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,246 @@
+{
+  "passage_ref": "Zechariah 13",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "zechariah-fountain",
+      "claim": "Zechariah 13 opens a fountain for the house of David and Jerusalem for sin and impurity and anticipates removal of idols and deceptive prophecy.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "foster-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 13:1-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "zechariah-refined-remnant",
+      "claim": "The following oracle describes two parts cut off and a third refined, tested, calling YHWH's name, and restored to mutual covenant recognition.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "god-violence-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 13:8-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "zechariah-struck-shepherd",
+      "claim": "Zechariah 13:7 calls for a sword against YHWH's shepherd and associate, links the strike with scattered sheep, and turns the divine hand toward the little ones.",
+      "category": "history",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "foster-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 13:7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Zechariah",
+        "author": "Mark J. Boda",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802823755/the-book-of-zechariah/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "zechariah-horse-patrol",
+          "zechariah-branch-stone",
+          "zechariah-lampstand",
+          "zechariah-crowning",
+          "zechariah-pierced-mourning"
+        ],
+        "notes": "Major historical, literary, theological, philological, and text-critical commentary.",
+        "id": "boda-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Theology of the Books of Haggai and Zechariah",
+        "author": "Robert L. Foster",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "Old Testament Theology",
+        "url": "https://www.cambridge.org/core/books/the-theology-of-the-books-of-haggai-and-zechariah/AD32181E6ADA835BF900CF0354E0A16F",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "covenantal-significance",
+          "zechariah-return",
+          "zechariah-spirit-zerubbabel",
+          "zechariah-justice",
+          "zechariah-restoration-fasts-nations",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Theological reading grounded in exegesis and contemporary ethical reflection.",
+        "id": "foster-theology",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "God and Violence in the Prophets",
+        "author": "L. Juliana Claassens",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 19, pages 334-350",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211812731",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "interpretive-notes",
+          "zechariah-covenant-prisoners",
+          "zechariah-jerusalem-conflict",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Trauma-aware and ethical framework for prophetic violence.",
+        "id": "god-violence-prophets",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Zechariah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Zechariah 1:1-14:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "zechariah-superscriptions",
+          "zechariah-return",
+          "zechariah-horse-patrol",
+          "zechariah-joshua-cleansing",
+          "zechariah-lampstand",
+          "zechariah-fasting-question",
+          "zechariah-humble-king",
+          "zechariah-pierced-mourning",
+          "zechariah-day-mount"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "zechariah-masoretic",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.932
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "87d136c159d105e08c8c74e9c5f10a71daf854e27540d7abc7d511d4609441f8",
+  "evidence_hash_version": "2"
+}

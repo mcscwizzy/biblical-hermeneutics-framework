@@ -1,0 +1,553 @@
+{
+  "passage_ref": "Acts 26",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-damascus-blindness-recovery",
+      "claim": "Acts portrays Paul unable to see, led by others, fasting three days, visited and touched by Ananias, regaining sight, receiving baptism and food, and entering mission.",
+      "category": "culture",
+      "source_ids": [
+        "acts-suffering-text",
+        "keener-acts-suffering",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 26:12-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-damascus-blindness-recovery:passage-relevance",
+      "claim": "Treats dependency and care as part of the call narrative without requiring cure before vocation or identifying the event as Paul's thorn.",
+      "category": "culture",
+      "source_ids": [
+        "acts-suffering-text",
+        "keener-acts-suffering",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 26:12-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-damascus-blindness-recovery"
+        ]
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2500,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-paul-call",
+      "claim": "Acts narrates Paul's encounter three times with rhetorical differences; conversion, prophetic call, and commissioning are overlapping but debated descriptions.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "cambridge-companion-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 26:9-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2500,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2500,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later primary narrative evidence; narrated events and composition horizon remain distinct.",
+        "id": "acts-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Acts of the Apostles",
+        "author": "Matthew L. Skinner",
+        "publisher": "Cambridge University Press",
+        "year": 2025,
+        "locator": "The Cambridge Companion to Biblical Narrative, chapter 14",
+        "url": "https://doi.org/10.1017/9781108888882.015",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Recent narrative orientation to Acts.",
+        "id": "cambridge-companion-acts",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Acts 9, 14, and 16, volumes 2-3",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-damascus-blindness-recovery",
+          "acts-lystra-stoning-recovery",
+          "acts-philippi-beating-custody-protest",
+          "acts-letter-chronology-control"
+        ],
+        "notes": "Extensive historical and narrative commentary; Acts' portrait remains distinct from Paul's letters.",
+        "id": "keener-acts-suffering",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "A Disabled Apostle: Impairment and Disability in the Letters of Paul",
+        "author": "Isaac T. Soon",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "chapters 1-4 and epilogue; Pauline impairment and disability method",
+        "url": "https://doi.org/10.1093/oso/9780192885241.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "categories-remain-distinct",
+          "corinthian-presence-speech-contest",
+          "thorn-diagnosis-limit",
+          "galatians-illness-eyes-limit",
+          "acts-letter-chronology-control"
+        ],
+        "notes": "Disability-studies analysis that critiques assumed able-bodiedness while controlling retrospective diagnosis.",
+        "id": "soon-disabled-apostle",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "type": "cultural_background",
+        "title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "124154e7773459d4d4c7cd595b92d42fd066faf5f6832d8488f5f3b6ba138240",
+  "evidence_hash_version": "2"
+}

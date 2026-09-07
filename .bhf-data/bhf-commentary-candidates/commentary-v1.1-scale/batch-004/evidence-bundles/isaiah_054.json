@@ -1,0 +1,828 @@
+{
+  "passage_ref": "Isaiah 54",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "the-flood",
+        "title": "The Flood",
+        "type": "event",
+        "aliases": [
+          "what happened in the flood",
+          "tell me about the flood",
+          "why is the flood important"
+        ],
+        "metadata": {
+          "summary": "Genesis 6-9 narrates divine judgment on pervasive violence, Noah's preservation through a flood, the post-flood human vocation, and God's covenant sign of the bow.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 6:1-22",
+            "Genesis 7:1-24",
+            "Genesis 8:1-22",
+            "Genesis 9:1-29",
+            "Isaiah 54:9-10",
+            "Hebrews 11:1-7",
+            "2 Peter 3:3-13"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "gal-allegory",
+      "claim": "Paul explicitly calls his Hagar-Sarah construction an allegory, mapping women, sons, mountains, covenants, and Jerusalems within a polemical argument whose details remain contested.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 54:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5300,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "isaiah-servants-plural",
+      "claim": "Isaiah's servant language has multiple referents, explicitly including Jacob or Israel and a plural community, while several singular servant poems invite but do not settle individual, collective, prophetic, royal, or messianic identification.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-40-55",
+        "paul-isaiah-40-66",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 54:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "the-flood:ancient_near_east_context:0",
+      "claim": "Mesopotamian flood traditions such as Atrahasis and Gilgamesh Tablet XI offer specific shared motifs and substantial differences. Comparison establishes an ancient literary environment but does not by itself prove direct borrowing or identify archaeological flood deposits with Genesis.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-flood-text",
+        "hebrews-11",
+        "2-peter-3",
+        "sarna-genesis-flood"
+      ],
+      "related_entity_ids": [
+        "the-flood"
+      ],
+      "passage_anchors": [
+        "Isaiah 54:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "the-flood",
+        "parent_title": "The Flood",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "the-flood:hebraic_worldview:0",
+      "claim": "Genesis attributes judgment, preservation, blessing, and covenant to one God and grounds post-flood human accountability in the divine image.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-flood-text",
+        "hebrews-11",
+        "2-peter-3",
+        "sarna-genesis-flood"
+      ],
+      "related_entity_ids": [
+        "the-flood"
+      ],
+      "passage_anchors": [
+        "Isaiah 54:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "the-flood",
+        "parent_title": "The Flood",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "the-flood:historical_context:0",
+      "claim": "The narrative belongs to Genesis's primeval history. Its event chronology and literary formation are debated, so the entry distinguishes the narrated world from the dates of surviving Mesopotamian flood witnesses.",
+      "category": "history",
+      "source_ids": [
+        "genesis-flood-text",
+        "hebrews-11",
+        "2-peter-3",
+        "sarna-genesis-flood"
+      ],
+      "related_entity_ids": [
+        "the-flood"
+      ],
+      "passage_anchors": [
+        "Isaiah 54:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "the-flood",
+        "parent_title": "The Flood",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-shalom-mean:ancient_near_east_context:0",
+      "claim": "Ancient peace language often described stability after conflict, but Scripture expands shalom into flourishing, justice, and fullness.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-6",
+        "psalm-29",
+        "isaiah-32",
+        "isaiah-54",
+        "john-14",
+        "ephesians-2",
+        "romans-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 54:10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-shalom-mean",
+        "parent_title": "What does shalom mean?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-shalom-mean:historical_context:0",
+      "claim": "Used as a greeting and blessing, shalom points beyond social calm to a life made whole by God.",
+      "category": "history",
+      "source_ids": [
+        "numbers-6",
+        "psalm-29",
+        "isaiah-32",
+        "isaiah-54",
+        "john-14",
+        "ephesians-2",
+        "romans-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 54:10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-shalom-mean",
+        "parent_title": "What does shalom mean?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Peter 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Peter 3:3-13",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-role"
+        ],
+        "notes": "Later comparison between the flood, judgment, and promised new creation.",
+        "id": "2-peter-3",
+        "canonical_object_ids": [
+          "the-flood"
+        ]
+      },
+      {
+        "title": "Isaiah 40-55",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible 19A",
+        "url": "https://yalebooks.yale.edu/book/9780300140545/isaiah-40-55/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Critical commentary on exilic context, Cyrus, servants, comfort, and return.",
+        "id": "blenkinsopp-isaiah-40-55",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ephesians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-2",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text, checked alongside manuscript resources.",
+        "id": "gal-greek",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Genesis 6-9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Genesis 6:1-9:29",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "covenantal-significance"
+        ],
+        "notes": "Primary biblical narrative; no modern translation is reproduced.",
+        "id": "genesis-flood-text",
+        "canonical_object_ids": [
+          "the-flood"
+        ]
+      },
+      {
+        "title": "Hebrews 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Hebrews 11:7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-role"
+        ],
+        "notes": "Later canonical reception of Noah's faithful response.",
+        "id": "hebrews-11",
+        "canonical_object_ids": [
+          "the-flood"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 32",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-32",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Isaiah 54",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-54",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "John 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Galatians: A New Translation with Introduction and Commentary",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 33A",
+        "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "literary-context",
+          "historical-context"
+        ],
+        "notes": "Major apocalyptic commentary; used alongside competing views.",
+        "id": "martyn-galatians",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Leviticus, Deuteronomy, Habakkuk, Isaiah",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek scriptural comparanda; translations and textual forms require review.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Numbers 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-6",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40-66: A Commentary",
+        "author": "Shalom M. Paul",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Eerdmans Critical Commentary",
+        "url": "https://www.eerdmans.com/9780802826039/isaiah-40-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus",
+          "isaiah-justice-fasting-inclusion"
+        ],
+        "notes": "Jewish critical commentary with detailed philological, textual, literary, historical, and ancient Near Eastern analysis.",
+        "id": "paul-isaiah-40-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Psalm 29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-29",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Romans 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-5",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Genesis",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Commentary on Genesis 6-9",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context"
+        ],
+        "notes": "Academic Jewish commentary used for literary and comparative orientation.",
+        "id": "sarna-genesis-flood",
+        "canonical_object_ids": [
+          "the-flood"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "galatians",
+        "type": "book",
+        "title": "Galatians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.903
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "the-flood",
+        "type": "event",
+        "title": "The Flood",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "what-does-shalom-mean",
+        "type": "faq",
+        "title": "What does shalom mean?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5d27a6ebb1de36b7e9ddf5803445e15565b50222167befba9403aa726c9bc94b",
+  "evidence_hash_version": "2"
+}

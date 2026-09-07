@@ -1,0 +1,4584 @@
+{
+  "passage_ref": "Philippians 2",
+  "entities": {
+    "people": [
+      {
+        "id": "jesus",
+        "title": "Jesus",
+        "type": "person",
+        "aliases": [
+          "who is jesus",
+          "tell me about jesus",
+          "why is jesus important"
+        ],
+        "metadata": {
+          "summary": "The incarnate Son, Messiah, and Lord whose life, death, resurrection, and reign fulfill Israel's story.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Mark 1:1-15",
+            "Luke 4:16-21",
+            "John 1:1-18",
+            "Philippians 2:5-11",
+            "Colossians 1:15-20",
+            "Hebrews 1:1-4",
+            "1 Corinthians 15:1-28"
+          ]
+        }
+      },
+      {
+        "id": "paul",
+        "title": "Paul",
+        "type": "person",
+        "aliases": [
+          "who is paul",
+          "tell me about paul",
+          "why is paul important"
+        ],
+        "metadata": {
+          "summary": "The apostle to the Gentiles whose letters unfold the gospel, covenant inclusion, and new creation.",
+          "importance": 96,
+          "retrieval_score": 0.916,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 9:1-19",
+            "Acts 13:1-3",
+            "Acts 17:16-34",
+            "Acts 28:23-31",
+            "Romans 1:1-17",
+            "Romans 8:1-39",
+            "Galatians 1:11-24",
+            "Galatians 3:6-29",
+            "1 Corinthians 15:1-8",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "birth-of-jesus",
+        "title": "Birth of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in birth of jesus",
+          "tell me about birth of jesus",
+          "why is birth of jesus important"
+        ],
+        "metadata": {
+          "summary": "Jesus is born in Bethlehem under Roman rule as the promised Messiah and Son of David.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Matthew 2:1-12",
+            "Luke 1:26-38",
+            "Luke 2:1-20",
+            "Micah 5:2",
+            "Isaiah 7:14",
+            "Isaiah 9:1-7",
+            "Galatians 4:4-5",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "birth-of-jesus:ancient_near_east_context:0",
+      "claim": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:historical_context:0",
+      "claim": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "chiasm:ancient_near_east_context:0",
+      "claim": "Chiasm appears in ancient Hebrew narrative and poetry as a literary ordering device, especially in parallel and concentric structures used for emphasis and memory.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9",
+        "philippians-2",
+        "chiasm-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "chiasm",
+        "parent_title": "Chiasm",
+        "parent_type": "literary_device",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "chiasm:hebraic_worldview:0",
+      "claim": "Biblical chiasm works within a Scripture-shaped habit of repetition, meditation, and patterned attention rather than a modern preference for linear outline only.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9",
+        "philippians-2",
+        "chiasm-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "chiasm",
+        "parent_title": "Chiasm",
+        "parent_type": "literary_device",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "chiasm:historical_context:0",
+      "claim": "Ancient oral and written compositions often used repetition, parallelism, and symmetry to organize material for memory, emphasis, and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "genesis-9",
+        "philippians-2",
+        "chiasm-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "chiasm",
+        "parent_title": "Chiasm",
+        "parent_type": "literary_device",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 5,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "chiasm:historical_setting:0",
+      "claim": "Ancient literary composition and interpretation",
+      "category": "history",
+      "source_ids": [
+        "genesis-9",
+        "philippians-2",
+        "chiasm-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "chiasm",
+        "parent_title": "Chiasm",
+        "parent_type": "literary_device",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 5,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "chiasm:original_audience:0",
+      "claim": "Readers learning to observe biblical literary structure",
+      "category": "social",
+      "source_ids": [
+        "genesis-9",
+        "philippians-2",
+        "chiasm-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "chiasm",
+        "parent_title": "Chiasm",
+        "parent_type": "literary_device",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "chiasm:second_temple_context:0",
+      "claim": "Second Temple Jewish interpretation was attentive to repeated wording, narrative pattern, and scriptural echoes, providing a receptive environment for structured readings.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9",
+        "philippians-2",
+        "chiasm-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "chiasm",
+        "parent_title": "Chiasm",
+        "parent_type": "literary_device",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "civic-honor-and-imperial-divine-honors",
+      "claim": "Philippian inscriptions and monuments attest civic rank, public benefaction, imperial-family priesthoods, dedications, images, calendars, and divine honors across dated phases.",
+      "category": "politics",
+      "source_ids": [
+        "packard-philippi-inscriptions",
+        "brelaz-philippi",
+        "hellerman-philippi",
+        "burnett-imperial-honors",
+        "philippians-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:1-11",
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "civic-honor-and-imperial-divine-honors:passage-relevance",
+      "claim": "The evidence supplies local comparison for humility, enslaved form, cross-shame, exaltation, honor, lordship, and savior language without making Roman ideology the letter's only background or proving systematic persecution.",
+      "category": "politics",
+      "source_ids": [
+        "packard-philippi-inscriptions",
+        "brelaz-philippi",
+        "hellerman-philippi",
+        "burnett-imperial-honors",
+        "philippians-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:1-11",
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "civic-honor-and-imperial-divine-honors"
+        ]
+      }
+    },
+    {
+      "id": "epaphroditus-illness-recovery",
+      "claim": "The letter calls Epaphroditus coworker and fellow soldier, reports illness near death and distress, credits mercy, and directs joyful welcome and honor.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-prison-text",
+        "fee-philippians",
+        "creamer-disability-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "epaphroditus-illness-recovery:passage-relevance",
+      "claim": "Refutes faith-deficit blame and forced-healing claims while preserving care and honor for people whether or not recovery occurs.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-prison-text",
+        "fee-philippians",
+        "creamer-disability-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "epaphroditus-illness-recovery"
+        ]
+      }
+    },
+    {
+      "id": "gift-partnership-and-economic-range",
+      "claim": "Philippians narrates repeated aid through partnership, account, offering, and provision language; Pauline and local evidence includes both scarcity and modest nonelite giving.",
+      "category": "economics",
+      "source_ids": [
+        "philippians-greek",
+        "pauline-macedonia-texts",
+        "nasrallah-poverty-philippi",
+        "briones-philippians-gift",
+        "oakes-philippi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "gift-partnership-and-economic-range:passage-relevance",
+      "claim": "The evidence contextualizes material partnership without assigning every gift to Lydia, assuming elite donors, reducing koinonia to money, or legitimating pressure and prosperity promises.",
+      "category": "economics",
+      "source_ids": [
+        "philippians-greek",
+        "pauline-macedonia-texts",
+        "nasrallah-poverty-philippi",
+        "briones-philippians-gift",
+        "oakes-philippi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 97,
+        "supports_evidence_ids": [
+          "gift-partnership-and-economic-range"
+        ]
+      }
+    },
+    {
+      "id": "jesus:ancient_near_east_context:0",
+      "claim": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:hebraic_worldview:0",
+      "claim": "Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:historical_context:0",
+      "claim": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:1",
+      "claim": "nazareth",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:3",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:second_temple_context:0",
+      "claim": "Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:ancient_near_east_context:0",
+      "claim": "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God\u2019s promise, righteousness, and suffering victory.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:historical_context:0",
+      "claim": "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:ancient_near_east_context:0",
+      "claim": "Paul\u2019s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel\u2019s Scriptures for a multinational church.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:hebraic_worldview:0",
+      "claim": "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:historical_context:0",
+      "claim": "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation.",
+      "category": "history",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:0",
+      "claim": "damascus",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:1",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:2",
+      "claim": "corinth",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:3",
+      "claim": "ephesus",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:key_places:4",
+      "claim": "rome",
+      "category": "geography",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "paul:second_temple_context:0",
+      "claim": "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging.",
+      "category": "culture",
+      "source_ids": [
+        "acts-9-28",
+        "romans-1-8",
+        "galatians-1-3",
+        "1-corinthians-15",
+        "philippians-2",
+        "paul-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "paul"
+      ],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "paul",
+        "parent_title": "Paul",
+        "parent_type": "person",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:4",
+      "claim": "Travel danger, imprisonment, illness, affliction, and chosen support nonuse cannot be made loyalty tests. Modern workers retain rights to fair support, rest, accessibility, medical care, insurance, safe housing and transport, evacuation, confidentiality, and unpenalized refusal or exit.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinth-mission-text",
+        "philippians-mission-text",
+        "luckritz-transient-apostle",
+        "un-migrant-workers",
+        "un-crpd-mission",
+        "ilo-fundamental-rights"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "philippian-humility-power-boundary",
+      "claim": "Philippians opposes selfish ambition and empty glory with attention to others and Messiah's self-emptying, obedient pattern.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-conflict-text",
+        "reumann-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippian-humility-power-boundary:passage-relevance",
+      "claim": "Applies humility to powerful people first and rejects demanding self-erasure, obedience to abuse, or surrender of safety from vulnerable people.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-conflict-text",
+        "reumann-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "philippian-humility-power-boundary"
+        ]
+      }
+    },
+    {
+      "id": "philippian-rejoice-not-compulsory-positivity",
+      "claim": "The repeated call to rejoice occurs in a letter naming suffering, imprisonment, rivalry, anxiety, dangerous illness, material need, and named disagreement.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-prayer-text",
+        "reumann-philippians-prayer",
+        "who-mental-health-rights"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippian-rejoice-not-compulsory-positivity:passage-relevance",
+      "claim": "Rejects enforced cheerfulness, testimony pressure, masking, and discipline for grief, distress, or a flat affect.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-prayer-text",
+        "reumann-philippians-prayer",
+        "who-mental-health-rights"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "philippian-rejoice-not-compulsory-positivity"
+        ]
+      }
+    },
+    {
+      "id": "philippians-epaphroditus-envoy-illness",
+      "claim": "Paul calls Epaphroditus brother, coworker, fellow soldier, the Philippians' apostolos and minister to Paul's need; he became near death through illness, recovered, longed for them, and is being sent back.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians-epaphroditus-envoy-illness:passage-relevance",
+      "claim": "Keeps his delegated status, care work, emotional distress, illness, recovery, and return together.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "philippians-epaphroditus-envoy-illness"
+        ]
+      }
+    },
+    {
+      "id": "philippians-exaltation-lordship-isaiah",
+      "claim": "God highly exalts Jesus, grants the name above every name, and directs every knee and tongue toward confessing Jesus Messiah as Lord to God's glory.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-politics-text",
+        "kim-christ-caesar"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "parent_title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians-exaltation-lordship-isaiah:passage-relevance",
+      "claim": "Makes supreme allegiance explicit while preserving dispute over direct Caesar contrast, imperial titles, and the confession's political intention.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-politics-text",
+        "kim-christ-caesar"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "parent_title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "philippians-exaltation-lordship-isaiah"
+        ]
+      }
+    },
+    {
+      "id": "philippians-messiah-status-descent",
+      "claim": "The Messiah passage moves through divine form, disputed harpagmos, self-emptying, enslaved form, human likeness, humility, obedience, and cross death.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-politics-text",
+        "hellerman-philippi-honor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "parent_title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians-messiah-status-descent:passage-relevance",
+      "claim": "Supplies a power-reversal pattern while keeping Adamic, Isaianic, wisdom, imperial, and honor-course backgrounds disputed.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-politics-text",
+        "hellerman-philippi-honor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "parent_title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "philippians-messiah-status-descent"
+        ]
+      }
+    },
+    {
+      "id": "philippians-timothy-genuine-concern",
+      "claim": "Paul hopes to send Timothy, says no one else is like-minded in genuinely caring for the Philippians, and describes his tested character and service alongside Paul.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:19-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians-timothy-genuine-concern:passage-relevance",
+      "claim": "Recognizes Timothy's relational agency while avoiding language that treats him as a replaceable extension of Paul.",
+      "category": "culture",
+      "source_ids": [
+        "philippians-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:19-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "philippians-timothy-genuine-concern"
+        ]
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:12",
+      "claim": "The appeal to one mind seeks solidaristic, self-giving practice; it cannot license coerced unity, silencing dissent, retaliation, or unaccountable leadership.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "cohick-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:13",
+      "claim": "Philippians 2:6-11 may reuse poetic or traditional material, but its prior form, author, cultic setting, and boundaries cannot be recovered with certainty.",
+      "category": "culture",
+      "source_ids": [
+        "fee-philippians",
+        "reumann-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:14",
+      "claim": "Morph\u0113 theou, equality with God, and Adamic, Isaianic, imperial, wisdom, or divine-identity backgrounds generate competing readings rather than one proven source.",
+      "category": "politics",
+      "source_ids": [
+        "phl-greek",
+        "fee-philippians",
+        "bird-gupta-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:15",
+      "claim": "Harpagmos is lexically disputed: grasping, exploiting, retaining, or advantage language must be argued from syntax and usage rather than a single gloss.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "bdag",
+        "lsj"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:16",
+      "claim": "Self-emptying is narrated through taking enslaved form, likeness, humility, obedience, and death; the verb alone does not explain metaphysical mechanism.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "fee-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:7-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:17",
+      "claim": "The enslaved-person metaphor describes Messiah's abasement inside a slaveholding world; it cannot legitimate slavery, forced labor, worker exploitation, or obedience to abuse.",
+      "category": "culture",
+      "source_ids": [
+        "glancy-slavery",
+        "standhartinger-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:18",
+      "claim": "Every knee and every tongue echo Isaiah's divine sovereignty; later doctrine must state when it moves from epistolary confession to a confessional system.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:19",
+      "claim": "\u2018Work out your salvation\u2019 is plural and paired with God's work in the community; it neither teaches self-salvation nor licenses leaders to control another person's salvation.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "silva-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:12-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:20",
+      "claim": "The \u2018crooked generation\u2019 and shining imagery draw on scriptural language; they do not authorize sectarian contempt for outsiders or conspiracy theories.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:14-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:21",
+      "claim": "Timothy is commended through tested care and service; the passage does not establish a permanent hierarchy, succession mechanism, or authoritarian ministry model.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "cohick-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:19-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:22",
+      "claim": "Epaphroditus is a messenger and minister of the Philippians as well as Paul's coworker; calling him an apostle in a later technical sense exceeds the local usage.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "bdag",
+        "fee-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:23",
+      "claim": "Epaphroditus's illness was grave and embodied; it is not called punishment or deficient faith, and it must not support disability stigma, medical neglect, or dangerous healing claims.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "cohick-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:45",
+      "claim": "Mission and gospel advance never authorize forced conversion, colonial domination, religious violence, public shaming, or partisan capture.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "bird-gupta-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:14-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:46",
+      "claim": "Paul's examples of leadership emphasize vulnerability, service, tested care, risk, and shared labor; they oppose celebrity culture, spiritual abuse, retaliation, and unaccountable authority.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "hellerman-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:48",
+      "claim": "The letter's hope for transformed bodies and reconciled life does not excuse ecological neglect; communities may extend humble, other-regarding practice to material and nonhuman neighbors.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "bird-gupta-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "tradition_dependent",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "phl-emptying",
+      "claim": "Messiah's self-emptying is narrated through taking enslaved form, human likeness, humility, obedience, and cross-death.",
+      "category": "history",
+      "source_ids": [
+        "phl-greek",
+        "fee-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:7-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "phl-epaphroditus",
+      "claim": "Epaphroditus is the Philippians' messenger and minister, Paul's coworker, and a gravely ill traveler whom Paul sends back with honor.",
+      "category": "history",
+      "source_ids": [
+        "phl-greek",
+        "fee-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:25-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "phl-exaltation",
+      "claim": "God highly exalts Messiah and grants the name associated with universal homage and confession, echoing Isaiah 45:23.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "phl-harpagmos",
+      "claim": "Harpagmos in 2:6 has disputed force involving grasping, retaining, or exploiting advantage.",
+      "category": "language",
+      "source_ids": [
+        "phl-greek",
+        "bdag",
+        "lsj"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "phl-poem",
+      "claim": "Philippians 2:6-11 is formally elevated and possibly traditional or poetic, but its pre-Pauline history is not recoverable with confidence.",
+      "category": "culture",
+      "source_ids": [
+        "fee-philippians",
+        "reumann-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:6-11"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "phl-salvation",
+      "claim": "The plural command to work out salvation is paired with God's effective work in the community.",
+      "category": "history",
+      "source_ids": [
+        "phl-greek",
+        "silva-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:12-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "phl-timothy",
+      "claim": "Timothy is commended as tested, genuinely concerned, and serving with Paul in the gospel.",
+      "category": "history",
+      "source_ids": [
+        "phl-greek",
+        "cohick-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:19-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.944,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "roman-philippi-colonial-civic-and-household-life:interpretive_note:6",
+      "claim": "Philippian imperial honors form relevant public context, but they do not prove continuous persecution or make 'Jesus is Lord, not Caesar' a quotation from the letter.",
+      "category": "politics",
+      "source_ids": [
+        "brelaz-philippi",
+        "burnett-imperial-honors",
+        "philippians-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "what-is-the-messiah:ancient_near_east_context:0",
+      "claim": "Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God\u2019s promise and righteous rule.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-messiah:historical_context:0",
+      "claim": "Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Philippians 2:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "jesus",
+          "paul"
+        ]
+      },
+      {
+        "title": "2 Samuel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-7",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Acts 9-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-9-28",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick W. Danker, rev. and ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "koinonia, politeuomai, harpagmos, kenoo, apostolos, dikaiosyne, pistis, autarkes",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3627098.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical range does not settle contextual meaning.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Philippians",
+        "author": "Michael F. Bird and Nijay K. Gupta",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "Introduction and commentary",
+        "url": "https://www.cambridge.org/core/books/philippians/F62254A02FFDF34E625C24B321D55860",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, rhetorical, theological, and reception claims require review.",
+        "id": "bird-gupta-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Birth of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "birth-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Philippes, colonie romaine d'Orient: Recherches d'histoire institutionnelle et sociale",
+        "author": "C\u00e9dric Br\u00e9laz",
+        "publisher": "\u00c9cole fran\u00e7aise d'Ath\u00e8nes",
+        "year": 2018,
+        "locator": "Parts I-III; institutions, magistracies, elites, imperial family, and Acts reception",
+        "url": "https://books.openedition.org/efa/3137",
+        "source_type": "academic-book",
+        "supports": [
+          "philippi-roman-colony-and-forum",
+          "riverside-prayer-gathering",
+          "magistrates-lictors-and-citizenship",
+          "custody-and-traditional-prison",
+          "civic-honor-and-imperial-divine-honors",
+          "women-public-roles-and-coworkers"
+        ],
+        "notes": "Open epigraphic and institutional synthesis; evidence spans several centuries and must be dated item by item.",
+        "id": "brelaz-philippi",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Paul's Intentional 'Thankless Thanks' in Philippians 4.10-20",
+        "author": "David E. Briones",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 2011,
+        "locator": "Volume 34, issue 1, pages 47-69",
+        "url": "https://journals.sagepub.com/doi/10.1177/0142064X11415319",
+        "source_type": "journal-article",
+        "supports": [
+          "gift-partnership-and-economic-range"
+        ],
+        "notes": "Brokerage, friendship, and patronage remain heuristic models for Paul's transformed gift language.",
+        "id": "briones-philippians-gift",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Paul and His Colleagues: Identity, Collaboration, and Community",
+        "author": "Trevor J. Burke",
+        "publisher": "T&T Clark",
+        "year": 2026,
+        "locator": "chapters on Timothy, Apollos, Titus, Phoebe, Junia, Epaphroditus, Euodia, and Syntyche",
+        "url": "https://www.bloomsbury.com/us/paul-and-his-colleagues-9780567680143/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Studies how coworker language constructs a differentiated social network.",
+        "id": "burke-paul-colleagues",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Paul and Imperial Divine Honors: Christ, Caesar, and the Gospel",
+        "author": "D. Clint Burnett",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "Chapter 2 and appendices: Philippi's Julio-Claudian divine honors and Pauline comparison",
+        "url": "https://www.eerdmans.com/9781467463539/paul-and-imperial-divine-honors/",
+        "source_type": "academic-book",
+        "supports": [
+          "civic-honor-and-imperial-divine-honors",
+          "politeuesthe-politeuma-colonial-resonance"
+        ],
+        "notes": "Local evidence complicates uniform imperial-cult and automatic-persecution models.",
+        "id": "burnett-imperial-honors",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Chiasm",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "A possible structure across multiple biblical genres",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "chiasm-historical-orientation",
+        "canonical_object_ids": [
+          "chiasm"
+        ]
+      },
+      {
+        "title": "The Letter to the Philippians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Eerdmans",
+        "year": 2013,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802827159/philippians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Social-historical and theological claims require reviewer verification.",
+        "id": "cohick-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Disability and Christian Theology: Embodied Limits and Constructive Possibilities",
+        "author": "Deborah Beth Creamer",
+        "publisher": "Oxford University Press",
+        "year": 2009,
+        "locator": "chapter 2, pages 35-52; limits and harmful disability interpretations",
+        "url": "https://doi.org/10.1093/acprof:oso/9780195369151.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "categories-remain-distinct",
+          "outer-inner-not-body-contempt",
+          "power-in-weakness-not-coercion",
+          "epaphroditus-illness-recovery"
+        ],
+        "notes": "Constructive disability theology addressing punishment, faith-deficit, test, inspiration, and healing assumptions.",
+        "id": "creamer-disability-theology",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Paul's Letter to the Philippians",
+        "author": "Gordon D. Fee",
+        "publisher": "Eerdmans",
+        "year": 1995,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802825117/pauls-letter-to-the-philippians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary positions require locator-level verification.",
+        "id": "fee-philippians",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+          "philippians"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Paul's Letter to the Philippians",
+            "author": "Gordon D. Fee",
+            "publisher": "Eerdmans",
+            "year": 1995,
+            "locator": "Introduction and commentary",
+            "url": "https://www.eerdmans.com/9780802825117/pauls-letter-to-the-philippians/",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "literary-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Commentary positions require locator-level verification.",
+            "id": "fee-philippians"
+          },
+          {
+            "title": "Paul's Letter to the Philippians",
+            "author": "Gordon D. Fee",
+            "publisher": "Eerdmans",
+            "year": 1995,
+            "locator": "Philippians 1:12-30; 2:25-30; 3:1-21",
+            "url": "https://www.eerdmans.com/9780802825117/pauls-letter-to-the-philippians/",
+            "source_type": "academic-book",
+            "supports": [
+              "philippians-prison-life-death",
+              "philippians-shared-suffering-limit",
+              "epaphroditus-illness-recovery",
+              "philippians-loss-resurrection"
+            ],
+            "notes": "Greek-based commentary on the prison setting, suffering, Epaphroditus, and resurrection hope.",
+            "id": "fee-philippians"
+          }
+        ]
+      },
+      {
+        "title": "Galatians 1-3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-1-3",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "Galatians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-4",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Genesis 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-9",
+        "canonical_object_ids": [
+          "chiasm"
+        ]
+      },
+      {
+        "title": "Slavery in Early Christianity",
+        "author": "Jennifer A. Glancy",
+        "publisher": "Oxford University Press",
+        "year": 2002,
+        "locator": "Enslaved bodies, metaphors, and early Christian practice",
+        "url": "https://global.oup.com/academic/product/slavery-in-early-christianity-9780195136098",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Controls reception of enslaved-person language and embodiment.",
+        "id": "glancy-slavery",
+        "canonical_object_ids": [
+          "philippians",
+          "roman-philippi-colonial-civic-and-household-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Slavery in Early Christianity",
+            "author": "Jennifer A. Glancy",
+            "publisher": "Oxford University Press",
+            "year": 2002,
+            "locator": "Enslaved bodies, metaphors, and early Christian practice",
+            "url": "https://global.oup.com/academic/product/slavery-in-early-christianity-9780195136098",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Controls reception of enslaved-person language and embodiment.",
+            "id": "glancy-slavery"
+          },
+          {
+            "title": "Slavery in Early Christianity",
+            "author": "Jennifer A. Glancy",
+            "publisher": "Oxford University Press",
+            "year": 2002,
+            "locator": "Enslaved bodies, ownership, labor, sexuality, and early Christian texts",
+            "url": "https://global.oup.com/academic/product/slavery-in-early-christianity-9780195136098",
+            "source_type": "academic-book",
+            "supports": [
+              "enslaved-diviner-profit-exploitation",
+              "custody-and-traditional-prison"
+            ],
+            "notes": "Centers slavery's coercion and bodily vulnerability rather than treating it as employment.",
+            "id": "glancy-slavery"
+          }
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "jesus",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Reconstructing Honor in Roman Philippi",
+        "author": "Joseph H. Hellerman",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "Chapters 3-6: colony, social stratification, cursus, honor, and Philippians",
+        "url": "https://www.cambridge.org/core/books/reconstructing-honor-in-roman-philippi/686CCB97AD89926831BB35934D0940BB",
+        "source_type": "academic-book",
+        "supports": [
+          "philippi-roman-colony-and-forum",
+          "civic-honor-and-imperial-divine-honors",
+          "politeuesthe-politeuma-colonial-resonance",
+          "women-public-roles-and-coworkers"
+        ],
+        "notes": "Influential social-historical reconstruction; one-to-one rhetorical derivation remains disputed.",
+        "id": "hellerman-philippi",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Reconstructing Honor in Roman Philippi",
+        "author": "Joseph H. Hellerman",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "Acts and Philippians; Philippians 2:6-11",
+        "url": "https://doi.org/10.1017/CBO9780511487972",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Argues Roman honor and cursus comparison; competing backgrounds remain labeled.",
+        "id": "hellerman-philippi-honor",
+        "canonical_object_ids": [
+          "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+        ]
+      },
+      {
+        "title": "Reconstructing Honor in Roman Philippi",
+        "author": "Joseph H. Hellerman",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "Roman colony, status, cursus, and Philippians",
+        "url": "https://www.cambridge.org/core/books/reconstructing-honor-in-roman-philippi/686CCB97AD89926831BB35934D0940BB",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Social reconstruction must remain bounded by evidence.",
+        "id": "hellerman-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Fundamental Principles and Rights at Work",
+        "author": "International Labour Organization",
+        "publisher": "ILO",
+        "year": 2022,
+        "locator": "forced labour, discrimination, association, and occupational safety",
+        "url": "https://www.ilo.org/topics-and-sectors/fundamental-principles-and-rights-work",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Current worker-rights framework used only for modern application safeguards.",
+        "id": "ilo-fundamental-rights",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Isaiah 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-11",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-7",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jesus-historical-orientation",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "John 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-21",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Christ and Caesar",
+        "author": "Seyoon Kim",
+        "publisher": "Eerdmans",
+        "year": 2008,
+        "locator": "Pauline letters and Luke-Acts in Roman imperial context",
+        "url": "https://www.eerdmans.com/9780802860088/christ-and-caesar/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Challenges programmatic anti-imperial readings and supplies an explicit counterposition.",
+        "id": "kim-christ-caesar",
+        "canonical_object_ids": [
+          "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+        ]
+      },
+      {
+        "title": "Liddell-Scott-Jones Greek-English Lexicon",
+        "author": "Henry George Liddell, Robert Scott, Henry Stuart Jones, and Roderick McKenzie",
+        "publisher": "Perseus Digital Library",
+        "year": null,
+        "locator": "harpagmos, politeuomai, politeuma, autarkes",
+        "url": "https://www.perseus.tufts.edu/hopper/resolveform?redirect=true",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Diachronic comparanda require contextual control.",
+        "id": "lsj",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Transient Apostle: Paul, Travel, and the Rhetoric of Empire",
+        "author": "Timothy Luckritz Marquis",
+        "publisher": "Yale University Press",
+        "year": 2013,
+        "locator": "chapters 1-6",
+        "url": "https://yalebooks.yale.edu/book/9780300187144/transient-apostle/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Relates travel rhetoric, material mobility, empire, and maintenance of translocal communities.",
+        "id": "luckritz-transient-apostle",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Luke 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Luke 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-24",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Mark 1-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1-16",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-28",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Micah 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-5",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "On Poverty and Abundance: Philippi and the Letter to the Philippians",
+        "author": "Laura Salah Nasrallah",
+        "publisher": "Oxford University Press",
+        "year": 2019,
+        "locator": "Archaeology and the Letters of Paul, chapter 7",
+        "url": "https://academic.oup.com/book/11593/chapter-abstract/160445230",
+        "source_type": "academic-book",
+        "supports": [
+          "gift-partnership-and-economic-range"
+        ],
+        "notes": "Uses modest cultic donations to challenge automatic elite profiles and to contextualize economic participation.",
+        "id": "nasrallah-poverty-philippi",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Isaiah, Deuteronomy, and Daniel",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint comparanda; Greek text and Hebrew relations need review.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Philippians: From People to Letter",
+        "author": "Peter Oakes",
+        "publisher": "Cambridge University Press",
+        "year": 2001,
+        "locator": "Chapters 1-3: colony, population, assembly social composition, suffering, and unity",
+        "url": "https://www.cambridge.org/core/books/philippians/30CA6D8A35D3CA3DA562658E468D1024",
+        "source_type": "academic-book",
+        "supports": [
+          "philippi-roman-colony-and-forum",
+          "lydia-trade-household-hospitality",
+          "civic-honor-and-imperial-divine-honors",
+          "politeuesthe-politeuma-colonial-resonance",
+          "gift-partnership-and-economic-range"
+        ],
+        "notes": "Population and assembly profiles are reasoned models rather than recovered censuses.",
+        "id": "oakes-philippi",
+        "canonical_object_ids": [
+          "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+          "roman-philippi-colonial-civic-and-household-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Philippians: From People to Letter",
+            "author": "Peter Oakes",
+            "publisher": "Cambridge University Press",
+            "year": 2001,
+            "locator": "Chapters 1-3: colony, population, assembly social composition, suffering, and unity",
+            "url": "https://www.cambridge.org/core/books/philippians/30CA6D8A35D3CA3DA562658E468D1024",
+            "source_type": "academic-book",
+            "supports": [
+              "philippi-roman-colony-and-forum",
+              "lydia-trade-household-hospitality",
+              "civic-honor-and-imperial-divine-honors",
+              "politeuesthe-politeuma-colonial-resonance",
+              "gift-partnership-and-economic-range"
+            ],
+            "notes": "Population and assembly profiles are reasoned models rather than recovered censuses.",
+            "id": "oakes-philippi"
+          },
+          {
+            "title": "Philippians: From People to Letter",
+            "author": "Peter Oakes",
+            "publisher": "Cambridge University Press",
+            "year": 2001,
+            "locator": "Philippi, social composition, citizenship, and letter setting",
+            "url": "https://assets.cambridge.org/97805217/90468/sample/9780521790468ws.pdf",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Social reconstruction is comparative and probabilistic.",
+            "id": "oakes-philippi"
+          }
+        ]
+      },
+      {
+        "title": "Searchable Greek Inscriptions: Macedonia and Philippi",
+        "author": "Packard Humanities Institute",
+        "publisher": "Packard Humanities Institute",
+        "year": null,
+        "locator": "Macedonia, Philippi, civic, cultic, and funerary inscriptions",
+        "url": "https://inscriptions.packhum.org/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "magistrates-lictors-and-citizenship",
+          "civic-honor-and-imperial-divine-honors",
+          "women-public-roles-and-coworkers",
+          "gift-partnership-and-economic-range"
+        ],
+        "notes": "Epigraphic database; each inscription's text, date, findspot, and restoration require specialist review.",
+        "id": "packard-philippi-inscriptions",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Paul",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "paul-historical-orientation",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "Pauline Macedonia and Gift Texts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15; 1 Thessalonians 2:1-2; Philippians 4:10-20",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "acts-neapolis-via-egnatia-route",
+          "gift-partnership-and-economic-range"
+        ],
+        "notes": "Independent Pauline comparanda; they do not supply a complete Acts chronology.",
+        "id": "pauline-macedonia-texts",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "chiasm",
+          "jesus",
+          "messiah-theme",
+          "paul",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Philippians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for rivalry, humility, mediation, and gentleness.",
+        "id": "philippians-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "Philippians in the SBL Greek New Testament",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Philippians 1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "civic-honor-and-imperial-divine-honors",
+          "politeuesthe-politeuma-colonial-resonance",
+          "women-public-roles-and-coworkers",
+          "gift-partnership-and-economic-range",
+          "praetorium-caesars-household-provenance-limit"
+        ],
+        "notes": "Primary letter text; lexical and historical claims require comparison.",
+        "id": "philippians-greek",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Philippians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1:1-30; 2:19-30; 4:2-23",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for partnership, proclamation, coworkers, travel, illness, and support.",
+        "id": "philippians-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Philippians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1:12-30; 2:5-11; 3:17-4:1; 4:20-23",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for prison, civic conduct, exaltation, citizenship, and Caesar's household.",
+        "id": "philippians-politics-text",
+        "canonical_object_ids": [
+          "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Philippians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1 and 4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for partnership memory, prayer, joy, peace, gifts, and provision.",
+        "id": "philippians-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Philippians 1:12-3:21",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1:12-3:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek prison-letter evidence for custody, possible death, suffering, illness, recovery, loss, and hope.",
+        "id": "philippians-prison-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Philippians 1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek base text; readings require apparatus review.",
+        "id": "phl-greek",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Philippians: A New Translation with Introduction and Commentary",
+        "author": "John Reumann",
+        "publisher": "Yale University Press",
+        "year": 2008,
+        "locator": "Introduction and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300140453/philippians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major critical commentary; partition and historical positions require review.",
+        "id": "reumann-philippians",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+          "philippians"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Philippians: A New Translation with Introduction and Commentary",
+            "author": "John Reumann",
+            "publisher": "Yale University Press",
+            "year": 2008,
+            "locator": "Introduction and commentary",
+            "url": "https://yalebooks.yale.edu/book/9780300140453/philippians/",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "literary-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Major critical commentary; partition and historical positions require review.",
+            "id": "reumann-philippians"
+          },
+          {
+            "title": "Philippians",
+            "author": "John Reumann",
+            "publisher": "Yale University Press",
+            "year": 2008,
+            "locator": "Philippians 1-4",
+            "url": "https://yalebooks.yale.edu/book/9780300140453/philippians/",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Detailed commentary on rhetoric, community relations, and the named women.",
+            "id": "reumann-philippians"
+          }
+        ]
+      },
+      {
+        "title": "Philippians",
+        "author": "John Reumann",
+        "publisher": "Yale University Press",
+        "year": 2008,
+        "locator": "Philippians 1 and 4",
+        "url": "https://yalebooks.yale.edu/book/9780300140453/philippians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed commentary on prayer, partnership, joy, peace, and gifts.",
+        "id": "reumann-philippians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Romans 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Romans 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1-8",
+        "canonical_object_ids": [
+          "paul"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 2 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1:1-3:18; 8:1-24; 11:23-33",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for itineraries, letters, coworkers, delegates, and travel hardship.",
+        "id": "second-corinth-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Philippians",
+        "author": "Mois\u00e9s Silva",
+        "publisher": "Baker Academic",
+        "year": 2005,
+        "locator": "Second edition, introduction and commentary",
+        "url": "https://bakeracademic.com/p/philippians-moises-silva/229836",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Exegetical positions require locator-level review.",
+        "id": "silva-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Philippians and Philemon",
+        "author": "Angela Standhartinger",
+        "publisher": "Fortress Press",
+        "year": 2021,
+        "locator": "Introduction and Philippians commentary",
+        "url": "https://www.fortresspress.com/store/product/9781506415840/Philippians-and-Philemon",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Letter, gender, economy, and empire readings require locator review.",
+        "id": "standhartinger-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Convention on the Rights of Persons with Disabilities",
+        "author": "United Nations",
+        "publisher": "United Nations",
+        "year": 2006,
+        "locator": "Articles 5, 9, 16, 21, 27 and 29",
+        "url": "https://www.un.org/disabilities/documents/convention/convoptprot-e.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern primary legal standard for accessibility, communication, protection, and work; not ancient evidence.",
+        "id": "un-crpd-mission",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "International Convention on the Protection of the Rights of All Migrant Workers and Members of Their Families",
+        "author": "United Nations",
+        "publisher": "OHCHR",
+        "year": 1990,
+        "locator": "Articles 7, 10-12, 16, 25 and 70",
+        "url": "https://www.ohchr.org/Documents/ProfessionalInterest/cmw.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern primary legal standard for nondiscrimination, safety, religious freedom, and migrant-worker rights; not ancient evidence.",
+        "id": "un-migrant-workers",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Mental Health, Human Rights and Legislation: Guidance and Practice",
+        "author": "World Health Organization and Office of the United Nations High Commissioner for Human Rights",
+        "publisher": "World Health Organization",
+        "year": 2023,
+        "locator": "modules on rights-based, person-centred, noncoercive care",
+        "url": "https://www.who.int/publications/i/item/9789240080737",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern rights-based mental-health guidance used only for application safeguards.",
+        "id": "who-mental-health-rights",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "birth-of-jesus",
+        "type": "event",
+        "title": "Birth of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "chiasm",
+        "type": "literary_device",
+        "title": "Chiasm",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "jesus",
+        "type": "person",
+        "title": "Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "messiah-theme",
+        "type": "theme",
+        "title": "Messiah Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "paul",
+        "type": "person",
+        "title": "Paul",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "type": "cultural_background",
+        "title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.849
+      },
+      {
+        "id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "type": "cultural_background",
+        "title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.939
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.849
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.829
+      },
+      {
+        "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "type": "cultural_background",
+        "title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.939
+      },
+      {
+        "id": "philippians",
+        "type": "book",
+        "title": "Philippians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.944
+      },
+      {
+        "id": "roman-philippi-colonial-civic-and-household-life",
+        "type": "cultural_background",
+        "title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.955
+      },
+      {
+        "id": "what-is-the-messiah",
+        "type": "faq",
+        "title": "What is the Messiah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e200e1e8f5d7323be6741691abe7fbb12e3f5012c5c41a2a9da45333fa431174",
+  "evidence_hash_version": "2"
+}

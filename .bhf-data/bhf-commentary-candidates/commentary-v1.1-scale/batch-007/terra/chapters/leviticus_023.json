@@ -1,0 +1,65 @@
+{
+  "reference": "Leviticus 23",
+  "book": "Leviticus",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_57",
+          "text": "Read the chapter with this setting in view: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 23:1-44"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_58",
+          "text": "For its historical and cultural setting, note that Priestly Service develops from wilderness worship into temple-centered practice and later second-temple memory. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "priestly-service:historical_context:0"
+          ],
+          "verse_refs": [
+            "Leviticus 23:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_59",
+          "text": "For its historical and cultural setting, note that Priestly Service is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "priestly-service:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Leviticus 23:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "411390682593ff4c9bf8add64a71a17d7a57980f82dfe4e765b9a39b4fe9e3e5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

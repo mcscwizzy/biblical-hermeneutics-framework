@@ -1,0 +1,957 @@
+{
+  "passage_ref": "Amos 8",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "dan",
+        "title": "Dan",
+        "type": "place",
+        "aliases": [
+          "Laish",
+          "Leshem",
+          "Tell Dan",
+          "northern Dan"
+        ],
+        "metadata": {
+          "summary": "Dan is the northern city formerly called Laish in Judges 18, renamed after a Danite migration and associated there with a tribal cult installation; later it became a northern royal sanctuary and a boundary marker in the phrase 'from Dan to Beersheba.'",
+          "importance": 58,
+          "retrieval_score": 0.878,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Judges 18:1-31",
+            "Joshua 19:40-48",
+            "1 Kings 12:25-33",
+            "Amos 8:13-14"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos-economic-exploitation",
+      "claim": "Amos accuses powerful Israelites of selling the righteous and needy, trampling poor people, taking grain levies, corrupting the gate, seizing pledged garments, and using dishonest measures.",
+      "category": "history",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "oxford-justice-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "amos-famine-hearing",
+      "claim": "Amos 8:11-12 announces a famine not of food or water but of hearing YHWH's words, resulting in futile searching.",
+      "category": "history",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "barton-theology-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:9-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "amos-five-visions",
+      "claim": "The final form presents five visions: locusts, consuming fire, an anak scene, summer fruit, and the Lord standing by or over the altar.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos",
+        "hamborg-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "amos-summer-fruit",
+      "claim": "The fourth vision uses the sound association between qayits, summer fruit, and qets, end, to announce that Israel's end has come.",
+      "category": "language",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "nets-twelve-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "amos:interpretive_note:14",
+      "claim": "Amos's justice language cannot be captured by one modern party, nation, economic ideology, or church program; proposed analogies require explicit evidence and accountability to affected people.",
+      "category": "economics",
+      "source_ids": [
+        "oxford-justice-twelve",
+        "carroll-amos",
+        "barton-theology-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "amos:interpretive_note:18",
+      "claim": "Drought, blight, locusts, earthquake, darkness, flood imagery, and harvest restoration connect human injustice with a destabilized creation, but they do not justify blaming disaster victims for particular sins.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "gillingham-creation-amos",
+        "couey-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:8-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:24",
+      "claim": "The qayits-qets summer-fruit wordplay announces an end; translations that explain it should identify the Hebrew sound association rather than inventing a botanical omen.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "nets-twelve-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:25",
+      "claim": "The merchants of Amos 8 combine impatience with sacred time, reduced measure, inflated price, dishonest scales, debt purchase, and degraded product; modern application should preserve this network rather than isolate one vice.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "oxford-justice-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:26",
+      "claim": "The famine of hearing YHWH's words is a judgment image in Amos 8, not permission for leaders to monopolize revelation or declare every disagreement proof of divine silence.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "barton-theology-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:9-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "amos:interpretive_note:37",
+      "claim": "Modern Jewish, Black, civil-rights, liberation, womanist, and ecological readings disclose real dimensions of Amos while remaining situated interpretations that should not be collapsed into one voice.",
+      "category": "culture",
+      "source_ids": [
+        "barton-theology-amos",
+        "oxford-minor-prophets-overview",
+        "couey-amos",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "amos:interpretive_note:4",
+      "claim": "Prosperity under Jeroboam II and the book's accusations of inequality provide a plausible social horizon, but prophetic rhetoric is not a census or complete economic archive.",
+      "category": "economics",
+      "source_ids": [
+        "carroll-amos",
+        "oxford-amos-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "amos:interpretive_note:9",
+      "claim": "Amos's economic accusations must not romanticize poverty, blame poor people, shame wealth apart from exploitative practice, or reduce structural debt and labor abuse to private generosity.",
+      "category": "economics",
+      "source_ids": [
+        "amos-masoretic",
+        "oxford-justice-twelve",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 8:1-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "dan:ancient_near_east_context:0",
+      "claim": "Laish occupied a fertile, well-watered corridor near routes connecting the Jordan Valley, Lebanon, and Syria. Judges 18 portrays geographic distance and weak political protection as important to the Danite assessment of the city.",
+      "category": "culture",
+      "source_ids": [
+        "dan-biblical-texts",
+        "webb-dan-2012",
+        "butler-dan-2009"
+      ],
+      "related_entity_ids": [
+        "dan"
+      ],
+      "passage_anchors": [
+        "Amos 8:13-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dan",
+        "parent_title": "Dan",
+        "parent_type": "place",
+        "object_importance": 58,
+        "retrieval_score": 0.878,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "dan:hebraic_worldview:0",
+      "claim": "The Danite narrative ties land seeking, kinship identity, violence, priestly patronage, and cult objects together, while the no-king frame and the notice about the image guide readers away from treating success as divine approval.",
+      "category": "culture",
+      "source_ids": [
+        "dan-biblical-texts",
+        "webb-dan-2012",
+        "butler-dan-2009"
+      ],
+      "related_entity_ids": [
+        "dan"
+      ],
+      "passage_anchors": [
+        "Amos 8:13-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dan",
+        "parent_title": "Dan",
+        "parent_type": "place",
+        "object_importance": 58,
+        "retrieval_score": 0.878,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "dan:historical_context:0",
+      "claim": "The site commonly identified as Tell Dan lies near major springs at the northern edge of the Hula Valley. Judges distinguishes the tribe's earlier allotted territory from its later seizure of Laish, and later royal and prophetic texts give the northern city additional roles.",
+      "category": "history",
+      "source_ids": [
+        "dan-biblical-texts",
+        "webb-dan-2012",
+        "butler-dan-2009"
+      ],
+      "related_entity_ids": [
+        "dan"
+      ],
+      "passage_anchors": [
+        "Amos 8:13-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dan",
+        "parent_title": "Dan",
+        "parent_type": "place",
+        "object_importance": 58,
+        "retrieval_score": 0.878,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Amos in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Amos 1-9 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-day-yhwh",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-altar-vision",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-composition-final-form"
+        ],
+        "notes": "Primary Hebrew textual tradition.",
+        "id": "amos-masoretic",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Amos",
+        "author": "John Barton",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Old Testament Theology",
+        "url": "https://assets.cambridge.org/97805218/55778/frontmatter/9780521855778_frontmatter.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "authorship-positions",
+          "amos-election-accountability",
+          "amos-day-yhwh",
+          "amos-famine-hearing",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-acts15-reuse",
+          "amos-composition-final-form"
+        ],
+        "notes": "Surveys critical issues, final-form theology, rabbinic and Christian reception, and liberation theology.",
+        "id": "barton-theology-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Judges, Volume 8",
+        "author": "Trent C. Butler",
+        "publisher": "Zondervan Academic",
+        "year": 2009,
+        "locator": "Word Biblical Commentary on Judges 18",
+        "url": "https://zondervanacademic.com/products/judges-volume-8",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context"
+        ],
+        "notes": "Historical-geographic and textual discussion of Laish or Dan.",
+        "id": "butler-dan-2009",
+        "canonical_object_ids": [
+          "dan"
+        ]
+      },
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "J. Blake Couey",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 31",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334373262",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "hermeneutical-lens-common-misinterpretations",
+          "retrieval-metadata-semantic-keywords",
+          "amos-day-yhwh"
+        ],
+        "notes": "Handbook treatment of structure, themes, contested issues, ideological critique, and ecology.",
+        "id": "couey-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Biblical Dan Passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 19:40-48; Judges 18:1-31; 1 Kings 12:25-33; Amos 8:13-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context"
+        ],
+        "notes": "Primary biblical texts for the city's changing canonical roles.",
+        "id": "dan-biblical-texts",
+        "canonical_object_ids": [
+          "dan"
+        ]
+      },
+      {
+        "title": "Amos: A New Translation with Introduction and Commentary",
+        "author": "G\u00f6ran Eidevall",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Anchor Yale Bible 24G",
+        "url": "https://yalebooks.yale.edu/book/9780300178784/amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "interpretive-disputes",
+          "amos-superscription-identity",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-david-booth",
+          "amos-composition-final-form"
+        ],
+        "notes": "Critical commentary emphasizing Amos as a literary composition.",
+        "id": "eidevall-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Who Makes the Morning Darkness: God and Creation in the Book of Amos",
+        "author": "Susan Gillingham",
+        "publisher": "Scottish Journal of Theology",
+        "year": 1992,
+        "locator": "Volume 45, issue 2, pages 165-184",
+        "url": "https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/who-makes-the-morning-darkness-god-and-creation-in-the-book-of-amos/7F89BE421F0AE1B15F1C6FFF18003946",
+        "source_type": "journal-article",
+        "supports": [
+          "major-themes",
+          "hebraic-worldview"
+        ],
+        "notes": "Study of creation and disorder in Amos.",
+        "id": "gillingham-creation-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Book of Amos",
+        "author": "Graham R. Hamborg",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Hosea, Joel, and Amos, pages 260-376",
+        "url": "https://www.cambridge.org/core/books/abs/hosea-joel-and-amos/book-of-amos/38376818DCC62BB9E6A9F3FDAAB50BDF",
+        "source_type": "academic-book",
+        "supports": [
+          "structure",
+          "major-themes",
+          "authorship-positions",
+          "amos-nations-sequence",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-restoration-ending"
+        ],
+        "notes": "Literary and redaction-critical commentary with focused discussions of justice, worship, and prophecy.",
+        "id": "hamborg-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "George E. Howard",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Amos, pages 789-794",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "new-testament-connections",
+          "amos-summer-fruit",
+          "amos-altar-vision",
+          "amos-hebrew-greek-witnesses",
+          "amos-acts7-reuse",
+          "amos-acts15-reuse"
+        ],
+        "notes": "Translation of Old Greek Amos with introduction to the Twelve.",
+        "id": "nets-twelve-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "Walter Houston",
+        "publisher": "Oxford University Press",
+        "year": 2025,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554094758",
+        "source_type": "reference-work",
+        "supports": [
+          "date-ranges",
+          "authorship-positions",
+          "canonical-placement",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-occupation",
+          "amos-composition-final-form"
+        ],
+        "notes": "Research bibliography and overview of major Amos questions.",
+        "id": "oxford-amos-bibliography",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Problem of Justice as Social Criticism in the Twelve Prophets",
+        "author": "Daniel L. Smith-Christopher",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, pages 159-172",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334371947",
+        "source_type": "reference-work",
+        "supports": [
+          "major-themes",
+          "amos-economic-exploitation",
+          "amos-worship-justice"
+        ],
+        "notes": "Examines justice and social criticism, especially in Amos and Micah.",
+        "id": "oxford-justice-twelve",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Overview: Approaching the Minor Prophets",
+        "author": "Julia M. O'Brien",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334371096",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "authorship-positions",
+          "interpretive-disputes"
+        ],
+        "notes": "Frames historical, literary, feminist, ideological, racial, ecological, and reception questions.",
+        "id": "oxford-minor-prophets-overview",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Book of Judges",
+        "author": "Barry G. Webb",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "NICOT commentary on Judges 17-18",
+        "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "covenantal-significance"
+        ],
+        "notes": "Literary and theological treatment of migration and cult installation.",
+        "id": "webb-dan-2012",
+        "canonical_object_ids": [
+          "dan"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "dan",
+        "type": "place",
+        "title": "Dan",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.878
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "6901f0b9ccae3eb93a522035b785bbc59030f0e973bb90e233e5ef077472bbf2",
+  "evidence_hash_version": "2"
+}

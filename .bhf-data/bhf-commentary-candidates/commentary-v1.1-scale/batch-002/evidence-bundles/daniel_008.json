@@ -1,0 +1,813 @@
+{
+  "passage_ref": "Daniel 8",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "dead-sea-scrolls",
+        "title": "Dead Sea Scrolls",
+        "type": "archaeology",
+        "aliases": [
+          "dead sea scrolls artifact",
+          "dead sea scrolls discovery",
+          "dead sea scrolls excavation",
+          "dead sea scrolls find"
+        ],
+        "metadata": {
+          "summary": "Dead Sea Scrolls is a CKL archaeology entry focused on qumran-archaeological-site, qumran-caves, isaiah, with links to the passages and related objects that orient interpretation.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 40",
+            "Psalms 119",
+            "Deuteronomy 32",
+            "Daniel 7",
+            "Daniel 8",
+            "Daniel 9",
+            "Daniel 10",
+            "Daniel 11",
+            "Daniel 12"
+          ]
+        }
+      },
+      {
+        "id": "temple-mount-area-finds",
+        "title": "Temple Mount Area Finds",
+        "type": "archaeology",
+        "aliases": [
+          "temple mount area finds artifact",
+          "temple mount area finds discovery",
+          "temple mount area finds excavation",
+          "temple mount area finds find"
+        ],
+        "metadata": {
+          "summary": "Temple Mount Area Finds is a CKL archaeology entry focused on qumran-archaeological-site, jerusalem, joshua, with links to the passages and related objects that orient interpretation.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 40",
+            "Psalms 119",
+            "Deuteronomy 32",
+            "Daniel 7",
+            "Daniel 8",
+            "Daniel 9",
+            "Daniel 10",
+            "Daniel 11",
+            "Daniel 12"
+          ]
+        }
+      },
+      {
+        "id": "wadi-murabbaat-scrolls",
+        "title": "Wadi Murabba'at Scrolls",
+        "type": "archaeology",
+        "aliases": [
+          "wadi murabbaat scrolls artifact",
+          "wadi murabbaat scrolls discovery",
+          "wadi murabbaat scrolls excavation",
+          "wadi murabbaat scrolls find"
+        ],
+        "metadata": {
+          "summary": "Wadi Murabba'at Scrolls is a CKL archaeology entry focused on qumran-archaeological-site, jerusalem, joshua, with links to the passages and related objects that orient interpretation.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 40",
+            "Psalms 119",
+            "Deuteronomy 32",
+            "Daniel 7",
+            "Daniel 8",
+            "Daniel 9",
+            "Daniel 10",
+            "Daniel 11",
+            "Daniel 12"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "daniel-language-structure",
+      "claim": "The Masoretic book moves from Hebrew to Aramaic at Daniel 2:4b and back to Hebrew at 8:1, so the Aramaic unit crosses the common tales-versus-visions division.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "holm-book-of-daniel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 8:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "daniel-ram-goat-antiochus",
+      "claim": "Daniel 8 identifies the ram and goat with Media-Persia and Greece and portrays a later horn whose attack on the sanctuary aligns most closely with Antiochus IV's persecution.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "holm-book-of-daniel",
+        "portier-young-empire"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 8:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:13",
+      "claim": "The beasts and horns cannot responsibly be mapped with certainty onto current rulers, ethnic groups, or states.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "holm-book-of-daniel",
+        "oxford-apocalyptic-handbook"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 8:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:16",
+      "claim": "The little horns in Daniel 7 and 8 have strong Antiochene horizons, but differences between visions and later reception should not be flattened into one timeless Antichrist profile.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "holm-book-of-daniel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 8:8-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:4",
+      "claim": "The Hebrew-Aramaic-Hebrew pattern is real evidence for literary analysis but does not by itself date each language section or prove one compositional theory.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "holm-book-of-daniel",
+        "collins-flint-composition"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 8:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "dead-sea-scrolls:ancient_near_east_context:0",
+      "claim": "Ancient background for Dead Sea Scrolls includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and qumran-caves without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "dead-sea-scrolls",
+        "israel-museum",
+        "shrine-of-the-book-israel-museum",
+        "manuscript-library",
+        "isaiah-40"
+      ],
+      "related_entity_ids": [
+        "dead-sea-scrolls"
+      ],
+      "passage_anchors": [
+        "Daniel 8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dead-sea-scrolls",
+        "parent_title": "Dead Sea Scrolls",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "dead-sea-scrolls:historical_context:0",
+      "claim": "Historically, Dead Sea Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, qumran-caves, isaiah and related CKL objects for contextual retrieval.",
+      "category": "history",
+      "source_ids": [
+        "dead-sea-scrolls",
+        "israel-museum",
+        "shrine-of-the-book-israel-museum",
+        "manuscript-library",
+        "isaiah-40"
+      ],
+      "related_entity_ids": [
+        "dead-sea-scrolls"
+      ],
+      "passage_anchors": [
+        "Daniel 8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dead-sea-scrolls",
+        "parent_title": "Dead Sea Scrolls",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "temple-mount-area-finds:ancient_near_east_context:0",
+      "claim": "Ancient background for Temple Mount Area Finds includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and jerusalem without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "dead-sea-scrolls",
+        "israel-museum",
+        "shrine-of-the-book-israel-museum",
+        "manuscript-library",
+        "isaiah-40"
+      ],
+      "related_entity_ids": [
+        "temple-mount-area-finds"
+      ],
+      "passage_anchors": [
+        "Daniel 8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-mount-area-finds",
+        "parent_title": "Temple Mount Area Finds",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "temple-mount-area-finds:historical_context:0",
+      "claim": "Historically, Temple Mount Area Finds is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval.",
+      "category": "history",
+      "source_ids": [
+        "dead-sea-scrolls",
+        "israel-museum",
+        "shrine-of-the-book-israel-museum",
+        "manuscript-library",
+        "isaiah-40"
+      ],
+      "related_entity_ids": [
+        "temple-mount-area-finds"
+      ],
+      "passage_anchors": [
+        "Daniel 8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-mount-area-finds",
+        "parent_title": "Temple Mount Area Finds",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+      "claim": "Ancient background for Wadi Murabba'at Scrolls includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and jerusalem without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "dead-sea-scrolls",
+        "israel-museum",
+        "shrine-of-the-book-israel-museum",
+        "manuscript-library",
+        "isaiah-40"
+      ],
+      "related_entity_ids": [
+        "wadi-murabbaat-scrolls"
+      ],
+      "passage_anchors": [
+        "Daniel 8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wadi-murabbaat-scrolls",
+        "parent_title": "Wadi Murabba'at Scrolls",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "wadi-murabbaat-scrolls:historical_context:0",
+      "claim": "Historically, Wadi Murabba'at Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval.",
+      "category": "history",
+      "source_ids": [
+        "dead-sea-scrolls",
+        "israel-museum",
+        "shrine-of-the-book-israel-museum",
+        "manuscript-library",
+        "isaiah-40"
+      ],
+      "related_entity_ids": [
+        "wadi-murabbaat-scrolls"
+      ],
+      "passage_anchors": [
+        "Daniel 8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wadi-murabbaat-scrolls",
+        "parent_title": "Wadi Murabba'at Scrolls",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Daniel: Composition and Reception, Volumes 1-2",
+        "author": "John J. Collins and Peter W. Flint, editors",
+        "publisher": "Brill",
+        "year": 2001,
+        "locator": "Supplements to Vetus Testamentum 83",
+        "url": "https://brill.com/edcollbook/title/7822",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "second-temple-context",
+          "primary-sources",
+          "daniel-compositional-horizons",
+          "daniel-qumran-witnesses"
+        ],
+        "notes": "Multi-author reference for composition, transmission, social setting, theology, and reception.",
+        "id": "collins-flint-composition",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Daniel: Masoretic Hebrew-Aramaic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Daniel 1-12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary received Hebrew-Aramaic text; textual form must be compared with Greek and Qumran witnesses.",
+        "id": "daniel-masoretic",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Dead Sea Scrolls",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "dead-sea-scrolls",
+        "canonical_object_ids": [
+          "dead-sea-scrolls",
+          "temple-mount-area-finds",
+          "wadi-murabbaat-scrolls"
+        ]
+      },
+      {
+        "title": "Book of Daniel",
+        "author": "Tawny Holm",
+        "publisher": "Oxford Research Encyclopedia of Religion",
+        "year": 2019,
+        "locator": "History, form, texts, themes, and reception",
+        "url": "https://academic.oup.com/edited-volume/62249/chapter-abstract/551358644",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "second-temple-context",
+          "primary-sources",
+          "claims"
+        ],
+        "notes": "Peer-reviewed overview of court tales, visions, composition, textual forms, and reception.",
+        "id": "holm-book-of-daniel",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Isaiah 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-40",
+        "canonical_object_ids": [
+          "dead-sea-scrolls",
+          "temple-mount-area-finds",
+          "wadi-murabbaat-scrolls"
+        ]
+      },
+      {
+        "title": "Israel Museum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum",
+        "canonical_object_ids": [
+          "dead-sea-scrolls",
+          "temple-mount-area-finds",
+          "wadi-murabbaat-scrolls"
+        ]
+      },
+      {
+        "title": "Manuscript library",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "manuscript-library",
+        "canonical_object_ids": [
+          "dead-sea-scrolls",
+          "temple-mount-area-finds",
+          "wadi-murabbaat-scrolls"
+        ]
+      },
+      {
+        "title": "Daniel: A Commentary",
+        "author": "Carol A. Newsom with Brennan W. Breed",
+        "publisher": "Westminster John Knox Press",
+        "year": 2014,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664260160-daniel/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major literary, historical, textual, and theological commentary.",
+        "id": "newsom-daniel-commentary",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Apocalyptic Literature",
+        "author": "John J. Collins, editor",
+        "publisher": "Oxford University Press",
+        "year": 2014,
+        "locator": "Genre, social function, rhetoric, theology, and modern reception",
+        "url": "https://academic.oup.com/edited-volume/34434",
+        "source_type": "reference-work",
+        "supports": [
+          "genre",
+          "later-christian-reception",
+          "daniel-imperial-resistance",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author framework for ancient apocalypse and responsible modern reception.",
+        "id": "oxford-apocalyptic-handbook",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Apocalypse against Empire",
+        "author": "Anathea E. Portier-Young",
+        "publisher": "Eerdmans",
+        "year": 2011,
+        "locator": "Theologies of Resistance in Early Judaism",
+        "url": "https://www.eerdmans.com/9780802870834/apocalypse-against-empire/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "daniel-furnace-resistance",
+          "daniel-ram-goat-antiochus",
+          "daniel-kingdom-review",
+          "daniel-imperial-resistance",
+          "interpretive-notes"
+        ],
+        "notes": "Historical and theoretical study of Daniel as resistance under Seleucid domination.",
+        "id": "portier-young-empire",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Shrine of the Book, Israel Museum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "shrine-of-the-book-israel-museum",
+        "canonical_object_ids": [
+          "dead-sea-scrolls",
+          "temple-mount-area-finds",
+          "wadi-murabbaat-scrolls"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "daniel",
+        "type": "book",
+        "title": "Daniel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "dead-sea-scrolls",
+        "type": "archaeology",
+        "title": "Dead Sea Scrolls",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "temple-mount-area-finds",
+        "type": "archaeology",
+        "title": "Temple Mount Area Finds",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "wadi-murabbaat-scrolls",
+        "type": "archaeology",
+        "title": "Wadi Murabba'at Scrolls",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c57b83ad588a593c2a818bc91b0e56eccca33b125c43d9a9532f591122ada7e3",
+  "evidence_hash_version": "2"
+}

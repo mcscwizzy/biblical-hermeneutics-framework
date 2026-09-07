@@ -1,0 +1,369 @@
+{
+  "passage_ref": "Matthew 12",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "jonah-sign-reception",
+      "claim": "Matthew connects Jonah's three days and nights with the Son of Man and also invokes Nineveh's response, whereas Luke emphasizes Jonah as a sign and Nineveh's response to his proclamation.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-new-testament",
+        "lovelace-jonah",
+        "shepherd-early-christianity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 12:38-41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah-three-days",
+      "claim": "Three days and three nights is a narrated duration for Jonah in the fish and later becomes important in Matthew 12:40; attempts to derive a precise biological chronology exceed the text.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-masoretic",
+        "jonah-new-testament",
+        "graybill-kaltner-mckenzie-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 12:40"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 39,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah:interpretive_note:16",
+      "claim": "Three days and three nights functions as narrated time and later typological language; reconstructions of exact hours or fish biology should not override its literary and reception contexts.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-masoretic",
+        "jonah-new-testament",
+        "graybill-kaltner-mckenzie-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 12:40"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 39,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah:interpretive_note:35",
+      "claim": "Christian use of the sign of Jonah must not erase Jewish interpretation, replace Israel, or reduce Jonah to a prediction whose only value lies in later christological reception.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-new-testament",
+        "simon-jonah",
+        "shepherd-early-christianity",
+        "fuchs-jewish-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 12:38-41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah:interpretive_note:36",
+      "claim": "Matthew and Luke develop distinct sign-of-Jonah formulations: Matthew explicitly adds the fish and three-day comparison, while Luke foregrounds Jonah and his proclamation as sign.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-new-testament",
+        "shepherd-early-christianity",
+        "lovelace-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 12:38-41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 37,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Minor Prophets in Jewish Life Today",
+        "author": "Stephen Lewis Fuchs",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 26",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372906",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "jonah-yom-kippur-reception"
+        ],
+        "notes": "Jewish reception source used to keep living Jewish interpretation distinct from Christian appropriation.",
+        "id": "fuchs-jewish-life",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Jonah: A New Translation with Introduction and Commentary",
+        "author": "Rhiannon Graybill; John Kaltner; Steven L. McKenzie",
+        "publisher": "Yale University Press",
+        "year": 2023,
+        "locator": "Anchor Yale Bible Commentaries",
+        "url": "https://yalebooks.yale.edu/book/9780300206678/jonah/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "jonah-prayer",
+          "jonah-nineveh-size",
+          "jonah-prayer-composition"
+        ],
+        "notes": "Current critical commentary addressing composition, Jonah 2, Nineveh, reception, animal studies, postcolonial, psychological, spatial, and trauma approaches.",
+        "id": "graybill-kaltner-mckenzie-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Jonah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jonah 1:1-4:11, with MT chapter numbering",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "jonah-great-fish",
+          "jonah-nineveh-response",
+          "jonah-right-left-ending"
+        ],
+        "notes": "Primary Hebrew witness; translations and verse numbering must be checked against a critical edition.",
+        "id": "jonah-masoretic",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "New Testament sign-of-Jonah passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 12:38-41; 16:1-4; Luke 11:29-32",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "jonah-sign-reception"
+        ],
+        "notes": "Primary Christian reception witnesses whose distinct Gospel contexts must be preserved.",
+        "id": "jonah-new-testament",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Jonah",
+        "author": "Vanessa Lovelace",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 33, pages 449-460",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373381",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "jonah-date-composition",
+          "jonah-genre"
+        ],
+        "notes": "Scholarly overview of narrative complexity, contested issues, themes, and multireligious reception.",
+        "id": "lovelace-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18, pages 243-251",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "jonah-sign-reception"
+        ],
+        "notes": "Bounded overview of New Testament and early Christian reception of the Twelve.",
+        "id": "shepherd-early-christianity",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "The JPS Bible Commentary: Jonah",
+        "author": "Uriel Simon",
+        "publisher": "Jewish Publication Society",
+        "year": 1999,
+        "locator": "JPS Bible Commentary",
+        "url": "https://www.nebraskapress.unl.edu/jps/9780827606722/the-jps-bible-commentary-jonah",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "hebrew-words",
+          "later-christian-reception",
+          "jonah-double-structure",
+          "jonah-yom-kippur-reception"
+        ],
+        "notes": "Jewish line-by-line literary and exegetical commentary with Hebrew text and JPS translation.",
+        "id": "simon-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "jonah",
+        "type": "book",
+        "title": "Jonah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4937191a9b53f7677ea0e0c55e2872ed556d92cab49cfe4df1afcc9872efeaf3",
+  "evidence_hash_version": "2"
+}

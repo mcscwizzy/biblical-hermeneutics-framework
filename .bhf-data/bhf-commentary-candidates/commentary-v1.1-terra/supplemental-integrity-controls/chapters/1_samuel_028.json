@@ -1,0 +1,53 @@
+{
+  "reference": "1 Samuel 28",
+  "book": "1 Samuel",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter comes near the end of First Samuel's account of Saul: after his kingship has been rejected, the narrative moves toward his death. Its scenes of fear before battle, unanswered inquiry, and a final encounter all sit inside that larger movement. That setting gives the chapter a place in the book's story without requiring the episode to settle every question readers may bring to it.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 28:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpretive questions",
+      "blocks": [
+        {
+          "id": "apparition_question",
+          "text": "In verses 3\u201325, the narrator calls the figure Samuel. Interpretations differ over how the appearance should be understood: some take it as an exceptional appearance of Samuel; others read it as an apparition produced by the medium or explain the scene differently. The available evidence does not settle the question, so this commentary leaves the apparition question open.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "1 Samuel 28:3-25"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ff5ec3f146c9caca69bd528149a6d6c121944c84535f24eff876db328f705d4f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T20:23:25.901325+00:00"
+  }
+}

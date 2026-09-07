@@ -1,0 +1,71 @@
+{
+  "reference": "Mark 5",
+  "book": "Mark",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_88",
+          "text": "Read the chapter with this setting in view: Mark narrates hostile spirits and exorcisms within ancient conceptual worlds; these stories do not authorize diagnosing modern illness as demonic or replacing medical and mental-health care. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mark-exorcism"
+          ],
+          "verse_refs": [
+            "Mark 5:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_89",
+          "text": "A literary feature to notice is that The Gerasene episode combines contested geography, the military name Legion, a large herd of pigs, liberation, social fear, and animal death; historical and symbolic explanations remain disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-gerasene"
+          ],
+          "verse_refs": [
+            "Mark 5:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_89",
+          "text": "For a later or comparative connection, note that Mark exposes Roman coercion and crucifixion while also using imperial language and patriarchal conventions; postcolonial interpretation must resist both imperial domination and romantic claims that the text stands outside its world. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-imperial-reception"
+          ],
+          "verse_refs": [
+            "Mark 5:1-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8d2c761269b4e949516bdf3c2414d863e78236519e0bf30862e228c5c0c24dc0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

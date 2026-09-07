@@ -1,0 +1,372 @@
+{
+  "passage_ref": "John 7",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-ioudaioi",
+      "claim": "Hoi Ioudaioi has context-sensitive referents including Jewish people, Judeans, festival crowds, and particular authorities; rendering or treating every occurrence as one hostile ethnic bloc distorts the Gospel and intensifies antisemitic harm.",
+      "category": "language",
+      "source_ids": [
+        "john-greek",
+        "vonwahlde-jews",
+        "reinhartz-anti-judaism",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 7:1-52"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 96
+      }
+    },
+    {
+      "id": "john-pericope-adulterae",
+      "claim": "John 7:53-8:11 is absent from the earliest major Greek witnesses, appears at different locations in later transmission, and is widely judged not part of the earliest recoverable form of John even though it has a long reception as Scripture.",
+      "category": "history",
+      "source_ids": [
+        "ntvmr-john",
+        "pericope-adulterae",
+        "sinaiticus-john",
+        "vaticanus-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 7:53"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "micah-new-testament-reception",
+      "claim": "Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts.",
+      "category": "culture",
+      "source_ids": [
+        "micah-new-testament",
+        "shepherd-early-christianity",
+        "gignilliat-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 7:42"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Micah",
+        "author": "Mark S. Gignilliat",
+        "publisher": "T&T Clark",
+        "year": 2025,
+        "locator": "International Theological Commentary",
+        "url": "https://www.bloomsbury.com/ca/micah-itc-9780567716606/",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "micah-mercy-conclusion",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Recent theological commentary attentive to critical study, the Twelve, and Micah's theological witness.",
+        "id": "gignilliat-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "John introduction, annotations, and Jewish-context essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish scholarly annotation and context.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "New Testament reception of Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 2:5-6; 10:35-36; Luke 12:53; John 7:42",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Primary Christian reception witnesses; each passage must be read in its own Gospel setting.",
+        "id": "micah-new-testament",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "year": null,
+        "locator": "John manuscripts and textual apparatus workspace",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Primary manuscript catalog and images where available.",
+        "id": "ntvmr-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Pericope of the Adulteress Reconsidered: The Nomadic Misfortunes of a Bold Pericope",
+        "author": "Josep Rius-Camps",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2007,
+        "locator": "New Testament Studies 53, pp. 379-405",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/pericope-of-the-adulteress-reconsidered-the-nomadic-misfortunes-of-a-bold-pericope/B2683848BFC23783001B8E89B601BA33",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of the passage's forms and mobile textual history; its compositional proposal remains disputed.",
+        "id": "pericope-adulterae",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "New Testament Origins of Christian Anti-Judaism",
+        "author": "Adele Reinhartz",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Antisemitism, chapter 2",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-antisemitism/new-testament-origins-of-christian-antijudaism/B13BB1532EC63836E2B5DADF9CED9D00",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Addresses supersessionism, deicide, Satan language, and harmful reception.",
+        "id": "reinhartz-anti-judaism",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "micah-new-testament-reception"
+        ],
+        "notes": "Overview of New Testament and early Christian reception of the Twelve.",
+        "id": "shepherd-early-christianity",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: John",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "John 1-21",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=36",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript with corrections.",
+        "id": "sinaiticus-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat.gr.1209",
+        "author": "",
+        "publisher": "Biblioteca Apostolica Vaticana",
+        "year": null,
+        "locator": "Gospel according to John",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript.",
+        "id": "vaticanus-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+        "author": "Urban C. von Wahlde",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2017,
+        "locator": "New Testament Studies 63",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Argues for context-sensitive differentiation among Jewish group labels.",
+        "id": "vonwahlde-jews",
+        "canonical_object_ids": [
+          "john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "micah",
+        "type": "book",
+        "title": "Micah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9f029f4b4ad82374d3dff95388959c0fe103b24377ec49e445153fdc84f9ac14",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,194 @@
+{
+  "passage_ref": "Ezekiel 13",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "peace-security-competing-backgrounds",
+      "claim": "First Thessalonians 5:3 combines peace and security within a sudden-day warning; scholars dispute whether this echoes prophetic false peace, Roman political claims, ordinary complacency, or overlapping resonances.",
+      "category": "politics",
+      "source_ids": [
+        "first-thessalonians-text",
+        "weima-peace-security",
+        "white-peace-security",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 13:10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "peace-security-competing-backgrounds:passage-relevance",
+      "claim": "The dispute keeps the verse anchored in its watchfulness argument and prevents modern news headlines from being treated as predictive fulfillment.",
+      "category": "politics",
+      "source_ids": [
+        "first-thessalonians-text",
+        "weima-peace-security",
+        "white-peace-security",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 13:10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "peace-security-competing-backgrounds"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "First Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 4:13-5:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "first-thessalonians-consolation",
+          "later-thessalonian-funerary-comparison",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Primary biblical text; observations are separated from proposed social scripts.",
+        "id": "first-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 32B; commentary on 1 Thessalonians 4:13-18",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "later-thessalonian-funerary-evidence",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Historical and literary commentary used to control both comparison and interpretation.",
+        "id": "malherbe-thessalonians-2000",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Peace and Security (1 Thess 5.3): Prophetic Warning or Political Propaganda?",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "New Testament Studies",
+        "year": 2012,
+        "locator": "NTS 58.3, 331-359",
+        "url": "https://doi.org/10.1017/S0028688512000045",
+        "source_type": "journal-article",
+        "supports": [
+          "peace-security-competing-backgrounds"
+        ],
+        "notes": "Argues for Roman political-propaganda resonance.",
+        "id": "weima-peace-security",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Peace and Security (1 Thessalonians 5.3): Is It Really a Roman Slogan?",
+        "author": "Joel R. White",
+        "publisher": "New Testament Studies",
+        "year": 2013,
+        "locator": "NTS 59.3, 382-395",
+        "url": "https://doi.org/10.1017/S0028688513000088",
+        "source_type": "journal-article",
+        "supports": [
+          "peace-security-competing-backgrounds"
+        ],
+        "notes": "Challenges the claim that the paired phrase was a recognizable Roman slogan.",
+        "id": "white-peace-security",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "thessalonian-civic-and-funerary-context",
+        "type": "cultural_background",
+        "title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "511440cb87b28f8cf0f0f714a49ba8d2f558d6313a3f889e884a8bd8b1631d09",
+  "evidence_hash_version": "2"
+}

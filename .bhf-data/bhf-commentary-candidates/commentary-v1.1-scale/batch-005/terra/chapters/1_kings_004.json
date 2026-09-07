@@ -1,0 +1,65 @@
+{
+  "reference": "1 Kings 4",
+  "book": "1 Kings",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_81",
+          "text": "Read the chapter with this setting in view: The scale, administration, chronology, and archaeological profile of Solomon's kingdom remain disputed; monumental remains may illuminate Iron Age state formation without independently proving every attribution in Kings. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-kings:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "1 Kings 4:1-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_82",
+          "text": "For its historical and cultural setting, note that Beth Shean shows how a major regional center changed across imperial transitions. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "beth-shean-excavations:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Kings 4:1-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_83",
+          "text": "For its historical and cultural setting, note that Beth Shean Excavations belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "beth-shean-excavations:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "1 Kings 4:1-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aa3a9ac40129201702ffe85cdafb860215fd82f4b67b640a61c3c272804ddc11",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

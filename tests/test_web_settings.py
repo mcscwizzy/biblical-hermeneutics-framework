@@ -40,7 +40,7 @@ class RuntimeDataPathTests(unittest.TestCase):
 
         self.assertEqual(paths.job_db_path, Path("/custom/jobs.sqlite"))
 
-    def test_local_default_uses_bhf_data_directory(self):
+    def test_local_default_uses_certified_v11_packaged_directory(self):
         paths = resolve_runtime_data_paths({})
 
         self.assertEqual(paths.data_dir, Path(".bhf-data"))
@@ -52,7 +52,7 @@ class RuntimeDataPathTests(unittest.TestCase):
         )
         self.assertEqual(
             paths.bhf_commentary_storage_path,
-            Path(".bhf-data/bhf-commentary"),
+            Path(".bhf-data/bhf-commentary-v1.1"),
         )
         self.assertTrue(paths.bhf_commentary_storage_path.is_dir())
         self.assertEqual(paths.translations_path, Path(".bhf-data/translations"))
@@ -66,18 +66,18 @@ class RuntimeDataPathTests(unittest.TestCase):
             Path(".bhf-data/public-answer-cache.json"),
         )
 
-    def test_patch_release_uses_separate_packaged_snapshot(self):
+    def test_unsupported_release_does_not_resolve_a_candidate_workspace(self):
         paths = resolve_runtime_data_paths({"BHF_COMMENTARY_RELEASE": "commentary-v1.0.1"})
 
         self.assertEqual(
             paths.bhf_commentary_storage_path,
-            Path(".bhf-data/bhf-commentary-candidates/commentary-v1.0.1"),
+            Path(".bhf-data/bhf-commentary-v1.1"),
         )
 
     def test_invalid_release_identifier_falls_back_to_frozen_release(self):
         paths = resolve_runtime_data_paths({"BHF_COMMENTARY_RELEASE": "../mutable"})
 
-        self.assertEqual(paths.bhf_commentary_storage_path, Path(".bhf-data/bhf-commentary"))
+        self.assertEqual(paths.bhf_commentary_storage_path, Path(".bhf-data/bhf-commentary-v1.1"))
 
     def test_vercel_defaults_to_tmp_runtime_data(self):
         paths = resolve_runtime_data_paths({"VERCEL": "1"})
@@ -147,6 +147,16 @@ class RuntimeDataPathTests(unittest.TestCase):
         )
 
         self.assertEqual(paths.bhf_commentary_storage_path, Path("/custom/commentary"))
+
+    def test_vercel_does_not_use_candidate_workspace_commentary_override(self):
+        paths = resolve_runtime_data_paths(
+            {
+                "VERCEL": "1",
+                "BHF_COMMENTARY_STORAGE_PATH": ".bhf-data/bhf-commentary-candidates/custom",
+            }
+        )
+
+        self.assertEqual(paths.bhf_commentary_storage_path.name, "bhf-commentary-v1.1")
 
     def test_individual_writable_path_overrides_beat_vercel_defaults(self):
         paths = resolve_runtime_data_paths(

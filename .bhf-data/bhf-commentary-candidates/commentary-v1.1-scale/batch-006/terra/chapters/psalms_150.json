@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 150",
+  "book": "Psalms",
+  "chapter": 150,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_19",
+          "text": "Read the chapter with this setting in view: The Psalter authorizes individuals and communities to address YHWH through lament, protest, confession, petition, trust, thanksgiving, and praise rather than presenting praise as its only faithful emotional register. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "psalms-lament-praise-range"
+          ],
+          "verse_refs": [
+            "Psalms 150:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_20",
+          "text": "A literary feature to notice is that The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "psalms-five-book-anthology"
+          ],
+          "verse_refs": [
+            "Psalms 150:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "23242e68c5d6fd019eef48c65b316603fff71bec29a285b4ce96f1915631740c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

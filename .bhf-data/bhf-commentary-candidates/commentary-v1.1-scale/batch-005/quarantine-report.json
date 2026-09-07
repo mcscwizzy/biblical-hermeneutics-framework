@@ -1,0 +1,819 @@
+{
+  "batch_id": "batch-005",
+  "status": "REVIEWED",
+  "chapters": [
+    {
+      "reference": "Romans 12",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "apostolos:ancient_near_east_context:0",
+        "apostolos:historical_context:0",
+        "diakonia:ancient_near_east_context:0",
+        "diakonia:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "apostolos",
+        "diakonia"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "John 13",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "apostolos:ancient_near_east_context:0",
+        "apostolos:historical_context:0",
+        "diakonia:ancient_near_east_context:0",
+        "diakonia:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "apostolos",
+        "diakonia"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Corinthians 2",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "Psalms 51",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:historical_context:0",
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3",
+        "david:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "david"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Romans 10",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "pauline-identity-categories-distinct",
+        "pauline-identity-categories-distinct:passage-relevance",
+        "romans-christ-telos-torah",
+        "romans-christ-telos-torah:passage-relevance",
+        "romans-near-word-confession",
+        "romans-near-word-confession:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Numbers 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "1 Samuel 17",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:historical_context:0",
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3",
+        "david:second_temple_context:0",
+        "who-was-david:ancient_near_east_context:0",
+        "who-was-david:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "david",
+        "who-was-david"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 8",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "katabole:ancient_near_east_context:0",
+        "katabole:historical_context:0",
+        "sarx:ancient_near_east_context:0",
+        "sarx:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "katabole",
+        "sarx"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Corinthians 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "Isaiah 11",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "christology:ancient_near_east_context:0",
+        "christology:historical_context:0",
+        "christos:ancient_near_east_context:0",
+        "christos:historical_context:0",
+        "incarnation:ancient_near_east_context:0",
+        "incarnation:historical_context:0",
+        "mashiach:ancient_near_east_context:0",
+        "mashiach:historical_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "messianic-prophecy:ancient_near_east_context:0",
+        "messianic-prophecy:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "christology",
+        "christos",
+        "incarnation",
+        "mashiach",
+        "messiah-theme",
+        "messianic-prophecy",
+        "what-is-the-messiah"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Corinthians 16",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "1 Corinthians 8",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "Matthew 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "annunciation-to-mary:ancient_near_east_context:0",
+        "annunciation-to-mary:historical_context:0",
+        "birth-of-jesus:ancient_near_east_context:0",
+        "birth-of-jesus:historical_context:0",
+        "why-are-genealogies-included:ancient_near_east_context:0",
+        "why-are-genealogies-included:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "annunciation-to-mary",
+        "birth-of-jesus",
+        "why-are-genealogies-included"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "2 Corinthians 2",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "1 Corinthians 13",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "2 Corinthians 9",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "Joshua 3",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "2 Samuel 7",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "annunciation-to-mary:ancient_near_east_context:0",
+        "annunciation-to-mary:historical_context:0",
+        "christology:ancient_near_east_context:0",
+        "christology:historical_context:0",
+        "christos:ancient_near_east_context:0",
+        "christos:historical_context:0",
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:historical_context:0",
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3",
+        "david:second_temple_context:0",
+        "incarnation:ancient_near_east_context:0",
+        "incarnation:historical_context:0",
+        "mashiach:ancient_near_east_context:0",
+        "mashiach:historical_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "messianic-prophecy:ancient_near_east_context:0",
+        "messianic-prophecy:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0",
+        "who-was-david:ancient_near_east_context:0",
+        "who-was-david:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "annunciation-to-mary",
+        "christology",
+        "christos",
+        "david",
+        "incarnation",
+        "mashiach",
+        "messiah-theme",
+        "messianic-prophecy",
+        "what-is-the-messiah",
+        "who-was-david"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Chronicles 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "why-are-genealogies-included:ancient_near_east_context:0",
+        "why-are-genealogies-included:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "why-are-genealogies-included"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Jeremiah 39",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "fall-of-jerusalem:ancient_near_east_context:0",
+        "fall-of-jerusalem:hebraic_worldview:0",
+        "fall-of-jerusalem:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "fall-of-jerusalem"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Isaiah 7",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "annunciation-to-mary:ancient_near_east_context:0",
+        "annunciation-to-mary:historical_context:0",
+        "birth-of-jesus:ancient_near_east_context:0",
+        "birth-of-jesus:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "annunciation-to-mary",
+        "birth-of-jesus"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Deuteronomy 6",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "adonai:ancient_near_east_context:0",
+        "adonai:historical_context:0",
+        "basileia:ancient_near_east_context:0",
+        "basileia:historical_context:0",
+        "berit:ancient_near_east_context:0",
+        "berit:historical_context:0",
+        "diatheke:ancient_near_east_context:0",
+        "diatheke:historical_context:0",
+        "elohim:ancient_near_east_context:0",
+        "elohim:historical_context:0",
+        "kyrios:ancient_near_east_context:0",
+        "kyrios:historical_context:0",
+        "nomos:ancient_near_east_context:0",
+        "nomos:historical_context:0",
+        "shema:ancient_near_east_context:0",
+        "shema:historical_context:0",
+        "theos:ancient_near_east_context:0",
+        "theos:historical_context:0",
+        "torah:ancient_near_east_context:0",
+        "torah:historical_context:0",
+        "yahweh:ancient_near_east_context:0",
+        "yahweh:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "adonai",
+        "basileia",
+        "berit",
+        "diatheke",
+        "elohim",
+        "kyrios",
+        "nomos",
+        "shema",
+        "theos",
+        "torah",
+        "yahweh"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Hosea 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "romans-hosea-isaiah-calling",
+        "romans-hosea-isaiah-calling:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Nehemiah 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "daniel-the-exile:ancient_near_east_context:0",
+        "daniel-the-exile:historical_context:0",
+        "esther-the-queen:ancient_near_east_context:0",
+        "esther-the-queen:historical_context:0",
+        "ezra-the-scribe:ancient_near_east_context:0",
+        "ezra-the-scribe:historical_context:0",
+        "mordecai:ancient_near_east_context:0",
+        "mordecai:historical_context:0",
+        "nehemiah-the-governor:ancient_near_east_context:0",
+        "nehemiah-the-governor:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "daniel-the-exile",
+        "esther-the-queen",
+        "ezra-the-scribe",
+        "mordecai",
+        "nehemiah-the-governor"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Ezra 1",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "daniel-the-exile:ancient_near_east_context:0",
+        "daniel-the-exile:historical_context:0",
+        "esther-the-queen:ancient_near_east_context:0",
+        "esther-the-queen:historical_context:0",
+        "ezra-the-scribe:ancient_near_east_context:0",
+        "ezra-the-scribe:historical_context:0",
+        "fall-of-jerusalem:ancient_near_east_context:0",
+        "fall-of-jerusalem:hebraic_worldview:0",
+        "fall-of-jerusalem:historical_context:0",
+        "mordecai:ancient_near_east_context:0",
+        "mordecai:historical_context:0",
+        "nehemiah-the-governor:ancient_near_east_context:0",
+        "nehemiah-the-governor:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "daniel-the-exile",
+        "esther-the-queen",
+        "ezra-the-scribe",
+        "fall-of-jerusalem",
+        "mordecai",
+        "nehemiah-the-governor"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 27",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "phos:ancient_near_east_context:0",
+        "phos:historical_context:0",
+        "skotia:ancient_near_east_context:0",
+        "skotia:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "phos",
+        "skotia"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 110",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:historical_context:0",
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3",
+        "david:second_temple_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0",
+        "who-was-david:ancient_near_east_context:0",
+        "who-was-david:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "david",
+        "messiah-theme",
+        "what-is-the-messiah",
+        "who-was-david"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Hosea 2",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "romans-hosea-isaiah-calling",
+        "romans-hosea-isaiah-calling:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Esther 4",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "daniel-the-exile:ancient_near_east_context:0",
+        "daniel-the-exile:historical_context:0",
+        "esther-the-queen:ancient_near_east_context:0",
+        "esther-the-queen:historical_context:0",
+        "ezra-the-scribe:ancient_near_east_context:0",
+        "ezra-the-scribe:historical_context:0",
+        "mordecai:ancient_near_east_context:0",
+        "mordecai:historical_context:0",
+        "nehemiah-the-governor:ancient_near_east_context:0",
+        "nehemiah-the-governor:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "daniel-the-exile",
+        "esther-the-queen",
+        "ezra-the-scribe",
+        "mordecai",
+        "nehemiah-the-governor"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 2",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "christology:ancient_near_east_context:0",
+        "christology:historical_context:0",
+        "christos:ancient_near_east_context:0",
+        "christos:historical_context:0",
+        "incarnation:ancient_near_east_context:0",
+        "incarnation:historical_context:0",
+        "mashiach:ancient_near_east_context:0",
+        "mashiach:historical_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "messianic-prophecy:ancient_near_east_context:0",
+        "messianic-prophecy:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0",
+        "who-was-david:ancient_near_east_context:0",
+        "who-was-david:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "christology",
+        "christos",
+        "incarnation",
+        "mashiach",
+        "messiah-theme",
+        "messianic-prophecy",
+        "what-is-the-messiah",
+        "who-was-david"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Ruth 4",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "why-are-genealogies-included:ancient_near_east_context:0",
+        "why-are-genealogies-included:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "why-are-genealogies-included"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "2 Samuel 5",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:historical_context:0",
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3",
+        "david:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "david"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "John 14",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "parakletos:ancient_near_east_context:0",
+        "parakletos:historical_context:0",
+        "pneuma:ancient_near_east_context:0",
+        "pneuma:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "parakletos",
+        "pneuma"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 137",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "fall-of-jerusalem:ancient_near_east_context:0",
+        "fall-of-jerusalem:hebraic_worldview:0",
+        "fall-of-jerusalem:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "fall-of-jerusalem"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Micah 5",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "birth-of-jesus:ancient_near_east_context:0",
+        "birth-of-jesus:historical_context:0",
+        "christos:ancient_near_east_context:0",
+        "christos:historical_context:0",
+        "mashiach:ancient_near_east_context:0",
+        "mashiach:historical_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "messianic-prophecy:ancient_near_east_context:0",
+        "messianic-prophecy:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "birth-of-jesus",
+        "christos",
+        "mashiach",
+        "messiah-theme",
+        "messianic-prophecy",
+        "what-is-the-messiah"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Deuteronomy 30",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "metanoia:ancient_near_east_context:0",
+        "metanoia:historical_context:0",
+        "romans-near-word-confession",
+        "romans-near-word-confession:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "metanoia",
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Isaiah 53",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "christology:ancient_near_east_context:0",
+        "christology:historical_context:0",
+        "hamartia:ancient_near_east_context:0",
+        "hamartia:historical_context:0",
+        "incarnation:ancient_near_east_context:0",
+        "incarnation:historical_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "soteria:ancient_near_east_context:0",
+        "soteria:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "christology",
+        "hamartia",
+        "incarnation",
+        "messiah-theme",
+        "soteria",
+        "what-is-the-messiah"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 32",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "makarios:ancient_near_east_context:0",
+        "makarios:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "makarios"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    }
+  ],
+  "unresolved_blocker_count": 38,
+  "systemic_concern": "Repeated template-shaped background and broad-parent reuse remain CKL cleanup concerns; this preflight does not repair evidence."
+}

@@ -1,0 +1,2499 @@
+{
+  "passage_ref": "2 Thessalonians 3",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "thessalonica",
+        "title": "Thessalonica",
+        "type": "place",
+        "aliases": [
+          "where is thessalonica",
+          "tell me about thessalonica",
+          "why is thessalonica important",
+          "Thessalonike",
+          "Salonika",
+          "Thessaloniki"
+        ],
+        "metadata": {
+          "summary": "Thessalonica was a free city, provincial center, road junction, and harbor on the Thermaic Gulf in Roman Macedonia. Acts 17 narrates a mission involving Paul and Silas, synagogue hearers, Jason, political accusations, and politarchs; First Thessalonians directly addresses the resulting assembly, while the historical placement of Second Thessalonians depends partly on its disputed authorship and date.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Thessalonian civic inscriptions including IG X,2 1 32",
+            "Julio-Claudian civic coin types RPC I 1555 and 1566",
+            "The Thessalonian sanctuary of Egyptian gods and its votives",
+            "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons"
+          ],
+          "related_passages": [
+            "Acts 17:1-9",
+            "1 Thessalonians 1:1-10",
+            "1 Thessalonians 4:13-18",
+            "2 Thessalonians 1:1-12",
+            "1 Thessalonians 4:9-12",
+            "1 Thessalonians 5:1-11",
+            "2 Thessalonians 3:6-15"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2th-authorship",
+      "claim": "Modern scholarship is divided between Pauline and Pauline-school authorship, with collaborative and secretary proposals also represented.",
+      "category": "culture",
+      "source_ids": [
+        "malherbe",
+        "wanamaker",
+        "weima",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:17"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "2th-autograph",
+      "claim": "The final greeting claims Pauline handwriting as the sign in every letter, while the historical force of that internal authentication is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "weima",
+        "aune-literary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "2th-discipline",
+      "claim": "Persistent disobedience prompts marking and limited association, but the person remains a sibling to admonish rather than an enemy.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "weima",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:14-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-disruption",
+      "claim": "Some members are reported as working at nothing but meddling and are commanded to work quietly and eat their own bread.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "bdag",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-labor-example",
+      "claim": "The senders present their night-and-day labor and refusal of free bread as an example despite claiming a right to support.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "malherbe",
+        "green"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:7-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-peace",
+      "claim": "The closing wish invokes the Lord of peace to give peace always in every way and to be with all recipients.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "2th-relation",
+      "claim": "Second Thessalonians shares extensive language and themes with 1 Thessalonians, but sequence, dependence, and common authorship remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "wanamaker",
+        "weima",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:1-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "2th-unwilling-work",
+      "claim": "The condition if anyone is unwilling to work targets refusal rather than inability.",
+      "category": "language",
+      "source_ids": [
+        "2th-greek",
+        "bdag",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 89
+      }
+    },
+    {
+      "id": "2th-word-run",
+      "claim": "The senders request prayer that the Lord's word may run, be glorified, and that they be delivered from wicked people.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "associations-bounded-comparison",
+      "claim": "Thessalonian association inscriptions offer local comparanda for membership, meetings, offices, mutual support, honor, and burial commemoration.",
+      "category": "social",
+      "source_ids": [
+        "ascough-macedonian-associations",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "associations-bounded-comparison:passage-relevance",
+      "claim": "Association practices may illuminate communal recognition, admonition, support, and discipline while leaving the Christ group's own kinship and eschatological language distinctive.",
+      "category": "social",
+      "source_ids": [
+        "ascough-macedonian-associations",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "associations-bounded-comparison"
+        ]
+      }
+    },
+    {
+      "id": "modern-worker-donor-governance-boundary",
+      "claim": "Ancient exhortations and collection practices do not themselves specify modern wages, rest, disability accommodation, caregiver support, unemployment systems, donor privacy, restricted funds, fraud controls, whistleblower protection, or independent governance.",
+      "category": "economics",
+      "source_ids": [
+        "thess-economics-text",
+        "second-thess-economics-text",
+        "first-corinth-economics-text",
+        "second-corinth-economics-text",
+        "ilo-wage-protection",
+        "ilo-forced-labour",
+        "un-crpd-work-support",
+        "irs-charity-governance"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-worker-donor-governance-boundary:passage-relevance",
+      "claim": "Applies nonburden, rights, willingness, need, noncompulsion, equality, and honorable administration through current rights and governance evidence rather than anachronism.",
+      "category": "economics",
+      "source_ids": [
+        "thess-economics-text",
+        "second-thess-economics-text",
+        "first-corinth-economics-text",
+        "second-corinth-economics-text",
+        "ilo-wage-protection",
+        "ilo-forced-labour",
+        "un-crpd-work-support",
+        "irs-charity-governance"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-worker-donor-governance-boundary"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-authorship-chronology",
+      "claim": "The idleness passage belongs to Second Thessalonians, whose authorship, date, and relationship to First Thessalonians are disputed.",
+      "category": "history",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "second-thess-authorship-chronology:passage-relevance",
+      "claim": "Prevents silent harmonization from making one timeless Pauline work code.",
+      "category": "history",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 52,
+        "supports_evidence_ids": [
+          "second-thess-authorship-chronology"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-disorder-busybodies",
+      "claim": "A report describes some as not working but working around or meddling, using a wordplay between work and busybody behavior.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "second-thess-disorder-busybodies:passage-relevance",
+      "claim": "Keeps the problem from being reduced to low income or unemployment alone.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "second-thess-disorder-busybodies"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-do-not-weary-good",
+      "claim": "The assembly is told not to grow weary in doing good immediately after the work command.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "second-thess-do-not-weary-good:passage-relevance",
+      "claim": "Prevents discipline from swallowing mutual aid, generosity, patient care, or social protection.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "second-thess-do-not-weary-good"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-example-right-not-burden",
+      "claim": "The writers invoke disciplined conduct and night-and-day labor, say they did not eat bread without paying, and explicitly retain a right they chose not to use in order to give an example.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:7-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "second-thess-example-right-not-burden:passage-relevance",
+      "claim": "Distinguishes a contextual nonuse of compensation from abolition of worker or minister support rights.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:7-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "second-thess-example-right-not-burden"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-quiet-work-own-bread",
+      "claim": "The writers command and exhort the targeted people to work with quietness and eat their own bread.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "second-thess-quiet-work-own-bread:passage-relevance",
+      "claim": "Directs the correction to identified unwilling actors rather than licensing blanket benefit cuts or public poverty surveillance.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "second-thess-quiet-work-own-bread"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-sibling-not-enemy",
+      "claim": "The letter calls for taking note and limiting association to produce shame, yet commands admonition as a sibling rather than treatment as an enemy.",
+      "category": "social",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "second-thess-sibling-not-enemy:passage-relevance",
+      "claim": "Rejects dehumanization, deprivation, retaliatory shunning, public doxxing, and permanent ostracism.",
+      "category": "social",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:14-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "second-thess-sibling-not-enemy"
+        ]
+      }
+    },
+    {
+      "id": "second-thess-unwilling-not-unable",
+      "claim": "The conditional maxim concerns anyone unwilling to work, not everyone unable to work.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "second-thess-unwilling-not-unable:passage-relevance",
+      "claim": "Makes the grammatical distinction essential before any application to disabled, ill, elderly, unemployed, displaced, caregiving, or underemployed people.",
+      "category": "culture",
+      "source_ids": [
+        "second-thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 3:10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "second-thess-unwilling-not-unable"
+        ]
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:0",
+      "claim": "Thessalonian civic inscriptions including IG X,2 1 32",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:1",
+      "claim": "Julio-Claudian civic coin types RPC I 1555 and 1566",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:2",
+      "claim": "The Thessalonian sanctuary of Egyptian gods and its votives",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:3",
+      "claim": "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:hebraic_worldview:0",
+      "claim": "The Thessalonian writings combine living-God, resurrection, day-of-the-Lord, trumpet, prophetic, and apocalyptic language with an address to gentiles turning from idols. The city's Roman setting does not cancel the Jewish scriptural world of the mission and letters.",
+      "category": "culture",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:historical_context:0",
+      "claim": "The city stood on the Via Egnatia at the head of the Thermaic Gulf and retained free-city institutions within Roman provincial rule. Pliny names its status; inscriptions attest politarchs; coins, sanctuaries, votives, associations, and later urban and funerary remains document a socially unequal and religiously plural city. These sources do not identify the assembly's building, full demographics, opponents, or every civic procedure narrated in Acts.",
+      "category": "history",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:second_temple_context:0",
+      "claim": "Acts places the mission in a synagogue and names Jewish, God-fearing Greek, and prominent female hearers. First Thessalonians suggests substantial gentile participation, but neither source gives a demographic census or warrants collective Jewish blame for the assembly's affliction.",
+      "category": "culture",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:0",
+      "claim": "Second century BCE: construction and development of the Via Egnatia strengthens Thessalonica's east-west connections",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:1",
+      "claim": "Late first century BCE: free-city privileges and early imperial civic coinage shape the Augustan setting",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:2",
+      "claim": "Approximately 49-52 CE: conventional horizon for the mission and First Thessalonians",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:3",
+      "claim": "Before the end of the first century CE: IG X,2 1 32 attests politarchs and civic-cult offices",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:4",
+      "claim": "Second century CE: the British Museum politarch block supplies later local attestation",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:5",
+      "claim": "Second through fourth centuries CE: surviving urban-house and funerary material supplies explicitly later comparisons",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "work-instruction-and-patronage-proposal",
+      "claim": "Second Thessalonians 3 addresses people acting ataktos and not working; patron-client dependence and eschatological excitement are competing reconstructions.",
+      "category": "culture",
+      "source_ids": [
+        "second-thessalonians-text",
+        "hock-social-context",
+        "ascough-macedonian-associations"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "disputed",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "work-instruction-and-patronage-proposal:passage-relevance",
+      "claim": "The evidence prevents a debated social reconstruction from becoming a timeless weapon against unemployed, disabled, exploited, or poor people.",
+      "category": "culture",
+      "source_ids": [
+        "second-thessalonians-text",
+        "hock-social-context",
+        "ascough-macedonian-associations"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 3:6-15"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "disputed",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 47,
+        "supports_evidence_ids": [
+          "work-instruction-and-patronage-proposal"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 2 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Thessalonians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "2th-greek",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "Acts 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 17:1-9",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context"
+        ],
+        "notes": "Primary mission narrative; no modern translation is reproduced.",
+        "id": "acts-17-thessalonica",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Field, House, Garden, Grave",
+        "author": "Archaeological Museum of Thessaloniki",
+        "publisher": "Archaeological Museum of Thessaloniki",
+        "year": null,
+        "locator": "Permanent exhibition: second- to fourth-century CE cemetery and house material",
+        "url": "https://www.amth.gr/en/exhibitions/permanent-exhibitions/field-house-garden-grave",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Explicitly later evidence used only for diachronic local context.",
+        "id": "amth-thessalonian-funerary-context",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Thessaloniki, Metropolis of Macedonia: Museum Highlights",
+        "author": "Archaeological Museum of Thessaloniki",
+        "publisher": "Archaeological Museum of Thessaloniki",
+        "year": null,
+        "locator": "Augustus, Egyptian sanctuary, houses, honorific bases, and later graves",
+        "url": "https://www.amth.gr/en/exhibitions/highlights",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "timeline"
+        ],
+        "notes": "Official museum synthesis with artifacts from distinct periods.",
+        "id": "amth-thessalonica-metropolis",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Paul's Macedonian Associations: The Social Context of Philippians and 1 Thessalonians",
+        "author": "Richard S. Ascough",
+        "publisher": "Mohr Siebeck",
+        "year": 2003,
+        "locator": "Thessalonian association inscriptions and comparison with 1 Thessalonians",
+        "url": "https://www.mohrsiebeck.com/en/book/pauls-macedonian-associations-9783161574825",
+        "source_type": "academic-book",
+        "supports": [
+          "associations-bounded-comparison",
+          "prominent-women-status-limits"
+        ],
+        "notes": "Original 2003 edition; the 2019 unrevised e-book preserves the study. Association analogies illuminate selected practices but do not establish organizational identity or direct dependence.",
+        "id": "ascough-macedonian-associations",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The New Testament in Its Literary Environment",
+        "author": "David E. Aune",
+        "publisher": "Westminster John Knox Press",
+        "year": 1987,
+        "locator": "Letters, apocalyptic literature, and pseudepigraphy",
+        "url": "https://www.wjkbooks.com/Products/9780664250188/the-new-testament-in-its-literary-environment.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "authorship-positions",
+          "interpretive-notes"
+        ],
+        "notes": "Genre and ancient literary-environment control.",
+        "id": "aune-literary",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick William Danker, ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "apostasia, katecho, ataktos, olethros, related entries",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical control; glosses do not settle context.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Via Egnatia through the ages",
+        "author": "Hellenic Ministry of Culture",
+        "publisher": "Cultural Egnatia",
+        "year": null,
+        "locator": "Roman road history, course, and milestones",
+        "url": "https://culturalegnatia.culture.gov.gr/en/the-via-egnatia-through-the-ages/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "maps"
+        ],
+        "notes": "Official route orientation; it does not fix Paul's travel schedule.",
+        "id": "cultural-egnatia-thessalonica",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 9:1-27; 16:1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for maintenance rights, nonuse, and collection procedure.",
+        "id": "first-corinth-economics-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "First and Second Thessalonians",
+        "author": "Beverly Roberts Gaventa",
+        "publisher": "Westminster John Knox Press",
+        "year": 1998,
+        "locator": "2 Thessalonians",
+        "url": "https://www.wjkbooks.com/Products/0664236553/first-and-second-thessalonians.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary.",
+        "id": "gaventa",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Gene L. Green",
+        "publisher": "Eerdmans",
+        "year": 2002,
+        "locator": "2 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802837387/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "historical-setting",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary emphasizing Thessalonian social and archaeological setting.",
+        "id": "green",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Social Context of Paul's Ministry: Tentmaking and Apostleship",
+        "author": "Ronald F. Hock",
+        "publisher": "Fortress Press",
+        "year": 1980,
+        "locator": "Chapters 2-4: workshop, trade, support, and apostolic labor",
+        "url": "https://books.google.com/books/about/The_Social_Context_of_Paul_s_Ministry.html?id=nWkRAQAAIAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "missionary-manual-labor",
+          "work-instruction-and-patronage-proposal"
+        ],
+        "notes": "Comparative reconstruction of Paul's workshop and social location; the precise Thessalonian trade is not named.",
+        "id": "hock-social-context",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "What is forced labour?",
+        "author": "International Labour Organization",
+        "publisher": "International Labour Organization",
+        "year": 2024,
+        "locator": "free informed consent, freedom to leave, coercion, and abuse of vulnerability",
+        "url": "https://www.ilo.org/topics/forced-labour-modern-slavery-and-trafficking-persons/what-forced-labour",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "evidence-items"
+        ],
+        "notes": "Modern rights evidence for application safeguards.",
+        "id": "ilo-forced-labour",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The Protection of Wages",
+        "author": "International Labour Organization",
+        "publisher": "International Labour Organization",
+        "year": 2024,
+        "locator": "timely payment, non-payment, debt bondage, and vulnerable workers",
+        "url": "https://www.ilo.org/resource/other/protection-wages",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "evidence-items"
+        ],
+        "notes": "Modern labor standard; not an ancient lexical source.",
+        "id": "ilo-wage-protection",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "Instructions for Form 990: Governance, Management, and Disclosure",
+        "author": "Internal Revenue Service",
+        "publisher": "United States Department of the Treasury",
+        "year": 2025,
+        "locator": "Part VI: independence, conflicts, whistleblowers, records, compensation, and disclosure",
+        "url": "https://www.irs.gov/instructions/i990",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "evidence-items"
+        ],
+        "notes": "United States governance example; local law and independent professional advice remain necessary elsewhere.",
+        "id": "irs-charity-governance",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Introduction and commentary on 2 Thessalonians",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, literary, philosophical, and social commentary.",
+        "id": "malherbe",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 32B; commentary on 1 Thessalonians 4:13-18",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "later-thessalonian-funerary-evidence",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Historical and literary commentary used to control both comparison and interpretation.",
+        "id": "malherbe-thessalonians-2000",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Thessalonica",
+        "author": "Nicholas Geoffrey Lempriere Hammond",
+        "publisher": "Oxford Classical Dictionary",
+        "year": 2015,
+        "locator": "Foundation, provincial capital, free-city status, Via Egnatia, and prosperity",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548205401",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "timeline"
+        ],
+        "notes": "Concise historical synthesis.",
+        "id": "ocd-thessalonica-place",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Thessalonian civic inscription IG X,2 1 32",
+        "author": "",
+        "publisher": "Packard Humanities Institute",
+        "year": 75,
+        "locator": "IG X,2 1 32; before the end of the first century CE",
+        "url": "https://inscriptions.packhum.org/text/137214",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Local inscription naming politarchs and civic-cult officials; year is approximate.",
+        "id": "phi-thessalonica-politarchs-32",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context",
+          "thessalonica"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Thessalonian civic inscription IG X,2 1 32",
+            "author": "",
+            "publisher": "Packard Humanities Institute",
+            "year": 75,
+            "locator": "IG X,2 1 32; before the end of the first century CE",
+            "url": "https://inscriptions.packhum.org/text/137214",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "historical-context"
+            ],
+            "notes": "Local inscription naming politarchs and civic-cult officials; year is approximate.",
+            "id": "phi-thessalonica-politarchs-32"
+          },
+          {
+            "title": "Thessalonian civic inscription IG X,2 1 32",
+            "author": "",
+            "publisher": "Packard Humanities Institute",
+            "year": 75,
+            "locator": "IG X,2 1 32; dated before the end of the first century CE",
+            "url": "https://inscriptions.packhum.org/text/137214",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "thessalonian-politarch-inscription",
+              "acts-politarch-title"
+            ],
+            "notes": "Greek epigraphic record naming politarchs and civic-cult officials; the exact year is approximate.",
+            "id": "phi-thessalonica-politarchs-32"
+          }
+        ]
+      },
+      {
+        "title": "Natural History",
+        "author": "Pliny the Elder",
+        "publisher": "Perseus Digital Library",
+        "year": 77,
+        "locator": "4.17: Macedonia and Thessalonica as a free city",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0137%3Abook%3D4%3Achapter%3D17",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "summary",
+          "historical-context",
+          "timeline"
+        ],
+        "notes": "First-century geographic witness later than the conventional mission date.",
+        "id": "pliny-thessalonica-free-city",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "RPC I 1555: Thessalonica, Augustus and Divus Julius",
+        "author": "Roman Provincial Coinage Online",
+        "publisher": "Ashmolean Museum and partners",
+        "year": -20,
+        "locator": "RPC I 1555; local coin type and specimens",
+        "url": "https://rpc.ashmus.ox.ac.uk/coins/1/1555",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "timeline"
+        ],
+        "notes": "Issue date is approximate; coin imagery does not establish individual belief.",
+        "id": "rpc-thessalonica-place-1555",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 2 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for the collection appeal and administration.",
+        "id": "second-corinth-economics-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 2 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Thessalonians 3:6-15",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; authorship and relation to First Thessalonians remain disputed.",
+        "id": "second-thess-economics-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "Second Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Thessalonians 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "work-instruction-and-patronage-proposal"
+        ],
+        "notes": "Primary biblical text within the canon; Pauline authorship and date remain disputed.",
+        "id": "second-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 2:1-12; 4:9-12",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "thess-economics-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "First and Second Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 1:1-5:28; 2 Thessalonians 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "covenantal-significance"
+        ],
+        "notes": "Primary letters addressed to the Thessalonian community.",
+        "id": "thessalonian-correspondence",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Convention on the Rights of Persons with Disabilities, Articles 27-28",
+        "author": "United Nations",
+        "publisher": "United Nations",
+        "year": 2006,
+        "locator": "work and employment; adequate standard of living and social protection",
+        "url": "https://www.un.org/disabilities/documents/convention/convoptprot-e.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "evidence-items"
+        ],
+        "notes": "Modern disability-rights evidence; not a first-century diagnosis.",
+        "id": "un-crpd-work-support",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The Epistle to the Thessalonians",
+        "author": "Charles A. Wanamaker",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "2 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802823946/the-epistle-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek-text and social-science commentary.",
+        "id": "wanamaker",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "1-2 Thessalonians",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "2 Thessalonians",
+        "url": "https://bakeracademic.com/collections/bible/products/9780801026850_1-2-thessalonians",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Exegetical and epistolary commentary.",
+        "id": "weima",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "1-2 Thessalonians",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "1 Thessalonians 2:1-12; 4:9-12; 2 Thessalonians 3:6-15",
+        "url": "https://newassets.bakerpublishinggroup.com/misc/catalogs/catalog_fa14/Fall2014Catalog_All.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Exegetical commentary used while retaining authorship, eschatology, and social-setting disputes.",
+        "id": "weima-thessalonians",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-thessalonians",
+        "type": "book",
+        "title": "2 Thessalonians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.958
+      },
+      {
+        "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "type": "cultural_background",
+        "title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.979
+      },
+      {
+        "id": "thessalonian-civic-and-funerary-context",
+        "type": "cultural_background",
+        "title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "thessalonica",
+        "type": "place",
+        "title": "Thessalonica",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "94095189d7532a8aaf4966fd93d0120fe594e7fc276f2be512b892550a2f1bc0",
+  "evidence_hash_version": "2"
+}

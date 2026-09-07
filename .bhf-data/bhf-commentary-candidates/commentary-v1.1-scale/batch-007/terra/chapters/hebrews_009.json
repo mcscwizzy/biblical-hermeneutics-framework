@@ -1,0 +1,101 @@
+{
+  "reference": "Hebrews 9",
+  "book": "Hebrews",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: The work describes an earthly tent and a greater heavenly sanctuary within its cultic comparison. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "heb-sanctuary"
+          ],
+          "verse_refs": [
+            "Hebrews 9:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Christ is presented as appearing once at the culmination to deal with sin and as offered once to bear sins. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "heb-once"
+          ],
+          "verse_refs": [
+            "Hebrews 9:24-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Conscience, cleansing, sanctification, and perfection describe cultic and relational access in context; later perfectionist psychologies require separate argument. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hebrews:interpretive_note:25"
+          ],
+          "verse_refs": [
+            "Hebrews 9:9-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_3",
+          "text": "A literary feature to notice is that Diathek\u0113 carries covenant usage and is developed with death and inheritance language in Hebrews 9:15-17. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "heb-diatheke"
+          ],
+          "verse_refs": [
+            "Hebrews 9:15-17"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_3",
+          "text": "For the chapter's sequence and setting, note that Narrative setting: Sinai and wilderness journey; date disputed This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "what-is-the-tabernacle:date_ranges:0"
+          ],
+          "verse_refs": [
+            "Hebrews 9:1-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f0154bf7dd79e448f97c8a6eaf532775e81c9cad3a10dae5543aa444648fbf2f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

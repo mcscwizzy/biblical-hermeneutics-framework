@@ -1,0 +1,101 @@
+{
+  "reference": "Isaiah 36",
+  "book": "Isaiah",
+  "chapter": 36,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_113",
+          "text": "Read the chapter with this setting in view: A six-sided baked-clay prism inscribed in Akkadian with Sennacherib's royal annals, including his campaign against fortified Judahite cities and his treatment of Hezekiah. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "taylor-prism-annals"
+          ],
+          "verse_refs": [
+            "Isaiah 36:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_114",
+          "text": "For its historical and cultural setting, note that Isaiah 1:1 presents the book as the vision of Isaiah son of Amoz concerning Judah and Jerusalem during four Judahite reigns, while other passages portray Isaiah in first person, third-person reports, sign actions, and royal narratives. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-superscription-prophet"
+          ],
+          "verse_refs": [
+            "Isaiah 36:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_115",
+          "text": "For its historical and cultural setting, note that The received book spans identifiable Assyrian, Babylonian, Persian, and postexilic horizons and is widely studied as a product of long collection and editorial development, though no detailed reconstruction commands consensus. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "isaiah-long-composition"
+          ],
+          "verse_refs": [
+            "Isaiah 36:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_114",
+          "text": "For its geographical or material setting, note that A palace relief cycle from Nineveh depicts Assyrian assault, captives, booty, and Sennacherib enthroned before Lachish. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "lachish-relief-royal-siege-rhetoric"
+          ],
+          "verse_refs": [
+            "Isaiah 36:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_114",
+          "text": "A literary feature to notice is that The divisions 1-12, 13-27, 28-35, 36-39, 40-55, and 56-66 provide a practical reading map, not a proof of six authors or one uncontested macrostructure. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-practical-outline"
+          ],
+          "verse_refs": [
+            "Isaiah 36:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fa96394b81e884a6f7da290c3f61f0a1158cf06947b30d86c42a5854f6bf0f67",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

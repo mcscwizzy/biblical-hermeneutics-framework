@@ -1,0 +1,2624 @@
+{
+  "passage_ref": "Acts 14",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "galatia",
+        "title": "Roman and Ethnic Galatia",
+        "type": "place",
+        "aliases": [
+          "Galatia in the Bible",
+          "Roman province of Galatia",
+          "ethnic Galatia",
+          "North Galatia",
+          "South Galatia",
+          "Galatian region"
+        ],
+        "metadata": {
+          "summary": "Galatia in early Christian texts can evoke both the central Anatolian homeland associated with Galatian peoples and a much larger Roman province that included culturally diverse southern districts; this distinction is essential for reading Acts 13-16 and the address to the assemblies of Galatia.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Roman road and milestone survey",
+            "Pisidian Antioch civic and cultic remains",
+            "Iconium inscriptions and coinage",
+            "Lystra colonial inscriptions",
+            "competing Derbe site identifications"
+          ],
+          "related_passages": [
+            "Acts 13:13-52",
+            "Acts 14:1-28",
+            "Acts 16:1-6",
+            "Acts 18:23",
+            "Galatians 1:2",
+            "Galatians 3:1",
+            "Galatians 4:13-15"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2tim-persecution",
+      "claim": "The letter recalls persecutions at Antioch, Iconium, and Lystra and credits the Lord with rescue.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:19-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "acts-and-galatians-distinct-itinerary-witnesses",
+      "claim": "Acts narrates named southern cities, regional traversals, and a Jerusalem council; Galatians narrates selective first-person movements, Jerusalem meetings, Antioch conflict, and an unnamed Galatian audience.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "galatians-geography-text",
+        "keener-galatians-destination"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 13:13-16:6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance",
+      "claim": "The comparison permits historical correlation while preventing Acts from filling every silence in Galatians or the letter from becoming a key to every Acts journey.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "galatians-geography-text",
+        "keener-galatians-destination"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 13:13-16:6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-and-galatians-distinct-itinerary-witnesses"
+        ]
+      }
+    },
+    {
+      "id": "acts-highland-sequence",
+      "claim": "Acts narrates movement from Perga to Pisidian Antioch and east through Iconium, Lystra, and Derbe but omits many route details.",
+      "category": "geography",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "biaa-french-roads",
+        "mitchell-via-sebaste"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 13:13-14:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 15
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-letter-chronology-control",
+      "claim": "Acts' later narrative portrait and Paul's earlier occasional letters are distinct witnesses; Acts' healings and custody stories cannot silently diagnose or harmonize every Pauline bodily reference.",
+      "category": "culture",
+      "source_ids": [
+        "acts-suffering-text",
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "philippians-prison-text",
+        "keener-acts-suffering",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:8-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "acts-lystra-stoning-recovery",
+      "claim": "After a healing and crowd conflict, opponents persuade the crowd, Paul is stoned and dragged outside as though dead, then rises and continues travel.",
+      "category": "culture",
+      "source_ids": [
+        "acts-suffering-text",
+        "second-corinthians-suffering-text",
+        "keener-acts-suffering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-lystra-stoning-recovery:passage-relevance",
+      "claim": "Names mob violence without using survival to minimize injury, demand immediate productivity, deny trauma, or promise identical recovery.",
+      "category": "culture",
+      "source_ids": [
+        "acts-suffering-text",
+        "second-corinthians-suffering-text",
+        "keener-acts-suffering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-lystra-stoning-recovery"
+        ]
+      }
+    },
+    {
+      "id": "acts-return-route-and-assembly-appointments",
+      "claim": "After Derbe, Acts reverses the city order through Lystra, Iconium, and Antioch, narrates strengthening, exhortation, prayer, fasting, and appointment of elders in each assembly.",
+      "category": "social",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "biaa-french-roads"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:21-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-return-route-and-assembly-appointments:passage-relevance",
+      "claim": "The item supports repeated contact and local leadership without turning the compact summary into a complete constitution or identified house-church network.",
+      "category": "social",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "biaa-french-roads"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:21-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-return-route-and-assembly-appointments"
+        ]
+      }
+    },
+    {
+      "id": "acts-revisit-local-elders",
+      "claim": "Barnabas and Paul return through Lystra, Iconium, and Antioch, strengthen disciples, and appoint elders in each assembly before returning to their sending community.",
+      "category": "social",
+      "source_ids": [
+        "acts-mission-text",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-revisit-local-elders:passage-relevance",
+      "claim": "Combines follow-up, local roles, return reporting, and dependence on a sending community rather than permanent founder possession.",
+      "category": "social",
+      "source_ids": [
+        "acts-mission-text",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:21-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-revisit-local-elders"
+        ]
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1300,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "derbe-name-and-site-identification-limits",
+      "claim": "Acts securely names Derbe as a Lycaonian mission destination, while ancient geographic notices and modern archaeological proposals do not yield a universally uncontested site and first-century civic profile.",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "pliny-natural-history-5",
+        "pleiades-south-galatia",
+        "mitchell-anatolia-galatia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:20-21"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "derbe-name-and-site-identification-limits:passage-relevance",
+      "claim": "The distinction lets Derbe remain a real endpoint without inventing excavated meeting places, civic institutions, or a detailed local conflict.",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "pliny-natural-history-5",
+        "pleiades-south-galatia",
+        "mitchell-anatolia-galatia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:20-21"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 90,
+        "supports_evidence_ids": [
+          "derbe-name-and-site-identification-limits"
+        ]
+      }
+    },
+    {
+      "id": "galatia-acts-sequence",
+      "claim": "Acts narrates a southern city sequence and return journey but does not identify those assemblies as the recipients of Galatians.",
+      "category": "history",
+      "source_ids": [
+        "galatia-acts-text",
+        "galatia-galatians-text",
+        "keener-galatians"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 13:13-14:28"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "galatia-city-differences",
+      "claim": "Pisidian Antioch, Iconium, Lystra, and Derbe occupied different regional and civic settings and cannot be treated as one uniform Galatian city type.",
+      "category": "culture",
+      "source_ids": [
+        "galatia-acts-text",
+        "pleiades-galatia-region",
+        "mitchell-anatolia",
+        "mitchell-via-sebaste"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 13:14-14:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "galatia-road-network",
+      "claim": "The Via Sebaste and related roads connected southern provincial centers, but surviving roads and milestones do not identify every stage or prove Paul's exact route.",
+      "category": "geography",
+      "source_ids": [
+        "galatia-acts-text",
+        "biaa-roman-roads-galatia",
+        "mitchell-via-sebaste"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:1-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 15
+      }
+    },
+    {
+      "id": "galatia:interpretive_note:2",
+      "claim": "Acts' city sequence can support a South-Galatian proposal but does not say that those congregations received Galatians or give a complete Pauline itinerary.",
+      "category": "culture",
+      "source_ids": [
+        "galatia-acts-text",
+        "galatia-galatians-text",
+        "keener-galatians"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 13:13-16:6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "iconium-regional-and-civic-ambiguity",
+      "claim": "Iconium appears within Lycaonian, Phrygian, and Roman provincial frames across sources, and its names and civic status changed over time.",
+      "category": "geography",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "strabo-geography-12",
+        "pliny-natural-history-5",
+        "pleiades-south-galatia",
+        "mitchell-anatolia-galatia",
+        "levick-roman-colonies"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "language_literary",
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "iconium-regional-and-civic-ambiguity:passage-relevance",
+      "claim": "The evidence explains why Acts can distinguish flight from Iconium into the Lycaonian cities while modern maps classify Iconium differently.",
+      "category": "geography",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "strabo-geography-12",
+        "pliny-natural-history-5",
+        "pleiades-south-galatia",
+        "mitchell-anatolia-galatia",
+        "levick-roman-colonies"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "iconium-regional-and-civic-ambiguity"
+        ]
+      }
+    },
+    {
+      "id": "lycaonian-language-and-multilingual-interaction",
+      "claim": "Acts marks the crowd's divine-identification cry as Lycaonian while narrating the episode in Greek and leaving the communication sequence only partially explained.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "mitchell-anatolia-galatia",
+        "hatcher-lystra-multilingualism"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:11-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "lycaonian-language-and-multilingual-interaction:passage-relevance",
+      "claim": "The language switch grants the crowd a local voice and explains delayed comprehension without turning Lycaonian speech into evidence of primitiveness.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "mitchell-anatolia-galatia",
+        "hatcher-lystra-multilingualism"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:11-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "lycaonian-language-and-multilingual-interaction"
+        ]
+      }
+    },
+    {
+      "id": "lystra-crowd-reversal-and-stoning-limits",
+      "claim": "Acts moves from a crowd restrained from sacrifice to persuasion by visitors from Antioch and Iconium, Paul's stoning, removal outside the city, survival, and departure.",
+      "category": "history",
+      "source_ids": [
+        "acts-galatia-cluster-text"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "lystra-crowd-reversal-and-stoning-limits:passage-relevance",
+      "claim": "The evidence preserves narrative reversal and intercity conflict without stereotyping Lycaonians as fickle or claiming a medically described resurrection.",
+      "category": "history",
+      "source_ids": [
+        "acts-galatia-cluster-text"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "lystra-crowd-reversal-and-stoning-limits"
+        ]
+      }
+    },
+    {
+      "id": "lystra-healing-disability-and-agency",
+      "claim": "Acts introduces a man unable to use his feet from birth who listens to Paul, is addressed, springs up, and walks, without assigning moral fault for his disability.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:8-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "lystra-healing-disability-and-agency:passage-relevance",
+      "claim": "The item centers the man as a listening and acting participant while preventing disability stigma or pressure for compulsory healing.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:8-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 110,
+        "supports_evidence_ids": [
+          "lystra-healing-disability-and-agency"
+        ]
+      }
+    },
+    {
+      "id": "lystra-roman-colony-and-local-diversity",
+      "claim": "Colonial titulature and Latin inscriptions identify Lystra as Colonia Iulia Felix Gemina, while Acts and regional evidence point to continuing Lycaonian language and culture.",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "pleiades-south-galatia",
+        "mitchell-via-sebaste",
+        "mitchell-anatolia-galatia",
+        "levick-roman-colonies"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:6-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "lystra-roman-colony-and-local-diversity:passage-relevance",
+      "claim": "The evidence holds Roman civic status and local Anatolian continuity together instead of treating colony as a synonym for Latin-only population.",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "pleiades-south-galatia",
+        "mitchell-via-sebaste",
+        "mitchell-anatolia-galatia",
+        "levick-roman-colonies"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:6-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "lystra-roman-colony-and-local-diversity"
+        ]
+      }
+    },
+    {
+      "id": "lystra-zeus-hermes-and-sacrifice-comparanda",
+      "claim": "Acts narrates the crowd identifying Barnabas as Zeus and Paul as Hermes, followed by a priest, oxen, garlands, and attempted sacrifice; regional texts and inscriptions provide nonidentical divine-pair and cult comparisons.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "mitchell-anatolia-galatia",
+        "cadwallader-zeus-hermes",
+        "hatcher-lystra-multilingualism"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:11-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "lystra-zeus-hermes-and-sacrifice-comparanda:passage-relevance",
+      "claim": "The evidence makes the crowd's interpretation culturally intelligible while resisting claims that one inscription or Ovid story proves the event.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "mitchell-anatolia-galatia",
+        "cadwallader-zeus-hermes",
+        "hatcher-lystra-multilingualism"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:11-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "lystra-zeus-hermes-and-sacrifice-comparanda"
+        ]
+      }
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+      "claim": "Build chronology first from the direct letters. Acts 13-20 is a later narrative witness whose sequence, speeches, travel compression, and emphases must not silently replace Galatians or the letters' own plans and absences.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-mission-text",
+        "acts-mission-text",
+        "campbell-framing-paul",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 13:1-20:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience:interpretive_note:0",
+      "claim": "A road documented by milestones establishes connectivity and state investment, not the exact path, pace, stops, or companions of Acts' travelers.",
+      "category": "culture",
+      "source_ids": [
+        "biaa-french-roads",
+        "mitchell-via-sebaste",
+        "acts-galatia-cluster-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:1-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience:interpretive_note:1",
+      "claim": "Pisidian Antioch, Iconium, Lystra, and Derbe must not be flattened into one civic or ethnic profile merely because all appear in the same Acts journey.",
+      "category": "culture",
+      "source_ids": [
+        "mitchell-anatolia-galatia",
+        "levick-roman-colonies",
+        "pleiades-south-galatia"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 13:14-14:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience:interpretive_note:2",
+      "claim": "The Lystra narrative gives the healed man agency through listening and attempted movement; disability is not explained as sin, ethnic deficiency, or a prop for shaming disabled people.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:8-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience:interpretive_note:3",
+      "claim": "Zeus-Hermes comparanda make the scene culturally intelligible but do not prove a uniquely Lycaonian cult pair, a direct use of Ovid, or the historical details of the narrated event.",
+      "category": "culture",
+      "source_ids": [
+        "acts-galatia-cluster-text",
+        "cadwallader-zeus-hermes",
+        "mitchell-anatolia-galatia"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 14:11-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "via-sebaste-material-road-network",
+      "claim": "Milestones and field survey attest an Augustan road system from Pamphylia into Pisidia and east toward Antioch, Iconium, and Lystra, completed in 6 BCE.",
+      "category": "archaeology",
+      "source_ids": [
+        "biaa-french-roads",
+        "mitchell-via-sebaste"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:1-7",
+        "Acts 14:20-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "via-sebaste-material-road-network:passage-relevance",
+      "claim": "The system explains regional connectivity and Roman strategy without proving that Paul followed every reconstructed branch or stopping point.",
+      "category": "archaeology",
+      "source_ids": [
+        "biaa-french-roads",
+        "mitchell-via-sebaste"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Acts 14:1-7",
+        "Acts 14:20-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.977,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "via-sebaste-material-road-network"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 2 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Timothy 1:1-4:22",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; variants require an apparatus.",
+        "id": "2tim-greek",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-highland-sequence",
+          "antioch-synagogue-audience",
+          "iconium-regional-setting",
+          "lystra-language",
+          "lystra-cult-interpretation",
+          "lystra-healing-agency",
+          "lystra-crowd-violence",
+          "derbe-location-limits",
+          "return-route-elders",
+          "timothy-origin-limits",
+          "acts-regional-wording",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Primary narrative witness; no modern translation is reproduced.",
+        "id": "acts-galatia-cluster-text",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 13:1-20:38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; it is not treated as a transcript of the letters.",
+        "id": "acts-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later primary narrative evidence; narrated events and composition horizon remain distinct.",
+        "id": "acts-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Roman Roads and Milestones of Asia Minor",
+        "author": "David H. French",
+        "publisher": "British Institute at Ankara",
+        "year": 2012,
+        "locator": "RRMAM 3.2, 3.7, 3.9 and project archive",
+        "url": "https://biaa.ac.uk/publication/open-access-electronic-publications/roman-roads/",
+        "source_type": "excavation-report",
+        "supports": [
+          "acts-highland-sequence",
+          "via-sebaste-network",
+          "return-route-elders"
+        ],
+        "notes": "Field-survey, milestone, road, and map corpus.",
+        "id": "biaa-french-roads",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Roman Roads and Milestones of Asia Minor",
+        "author": "David H. French",
+        "publisher": "British Institute at Ankara",
+        "year": 2012,
+        "locator": "RRMAM 3.2 Galatia; 3.7 Cilicia, Isauria et Lycaonia; 3.9 maps",
+        "url": "https://biaa.ac.uk/publication/open-access-electronic-publications/roman-roads/",
+        "source_type": "excavation-report",
+        "supports": [
+          "galatia-road-network"
+        ],
+        "notes": "Field survey, milestones, catalogues, and route maps.",
+        "id": "biaa-roman-roads-galatia",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Any Excuse for a Party: Zeus and Hermes and Human-Divine Interactions in Asia Minor and Acts 14:8-20",
+        "author": "Alan H. Cadwallader",
+        "publisher": "SBL Press",
+        "year": 2025,
+        "locator": "The First Urban Churches 8: Galatia and Lycaonia",
+        "url": "https://researchoutput.csu.edu.au/en/publications/any-excuse-for-a-party-zeus-and-hermes-and-human-divine-interacti/",
+        "source_type": "academic-book",
+        "supports": [
+          "lystra-cult-interpretation"
+        ],
+        "notes": "Reassesses the provenance and relevance of frequently repeated Zeus-Hermes comparanda.",
+        "id": "cadwallader-zeus-hermes",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Framing Paul: An Epistolary Biography",
+        "author": "Douglas A. Campbell",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "chapters on Galatians, Corinthians, Romans, and Philippians",
+        "url": "https://www.eerdmans.com/9780802871510/framing-paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Builds a chronology from the letters and explicitly weighs its relation to Acts.",
+        "id": "campbell-framing-paul",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 13:13-14:28; 16:1-6; 18:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatia-acts-sequence",
+          "galatia-regional-wording"
+        ],
+        "notes": "Primary narrative witness; no modern translation is reproduced.",
+        "id": "galatia-acts-text",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians 1:2; 3:1; 4:13-15",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 1:2; 3:1; 4:13-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-weakness-limits"
+        ],
+        "notes": "Primary letter witness under conventional Pauline authorship.",
+        "id": "galatia-galatians-text",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians 1:2; 3:1; 4:8-15",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 1:2; 3:1; 4:8-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatians-destination",
+          "galatian-audience-diversity",
+          "galatians-weakness-route",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Primary letter witness under conventional Pauline authorship.",
+        "id": "galatians-geography-text",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1:1-2:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for Paul's retrospective chronology and negotiated mission.",
+        "id": "galatians-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Galatians 4:12-20",
+        "author": "Paul and unnamed coworkers",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 4:12-20",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for unspecified bodily weakness and Galatian welcome.",
+        "id": "galatians-weakness-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Multilingualism in Lystra: A Sociolinguistic Reading of Acts 14:8-20",
+        "author": "Timothy Hatcher",
+        "publisher": "Missiology",
+        "year": 2026,
+        "locator": "54.2, pp. 159-173",
+        "url": "https://doi.org/10.1177/00918296251338556",
+        "source_type": "journal-article",
+        "supports": [
+          "lystra-language",
+          "lystra-cult-interpretation"
+        ],
+        "notes": "Recent sociolinguistic proposal; Acts remains the direct witness to Lycaonian speech.",
+        "id": "hatcher-lystra-multilingualism",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The First and Second Letters to Timothy",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 35A; 2 Timothy",
+        "url": "https://yalebooks.yale.edu/book/9780300139884/the-first-and-second-letters-to-timothy/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary; verify locators.",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts",
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "Volumes 1-4",
+            "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "archaeology"
+            ],
+            "notes": "Extensive historical, literary, and comparative commentary.",
+            "id": "keener-acts"
+          },
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "volumes 2-3, Acts 13-20",
+            "url": "https://bakeracademic.com/pages/keener-acts-esources",
+            "source_type": "reference-work",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Detailed literary and historical commentary on the later Acts mission narrative.",
+            "id": "keener-acts"
+          }
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Acts 9, 14, and 16, volumes 2-3",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-damascus-blindness-recovery",
+          "acts-lystra-stoning-recovery",
+          "acts-philippi-beating-custody-protest",
+          "acts-letter-chronology-control"
+        ],
+        "notes": "Extensive historical and narrative commentary; Acts' portrait remains distinct from Paul's letters.",
+        "id": "keener-acts-suffering",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Craig S. Keener",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Author, provenance, and date; north and south Galatia discussion",
+        "url": "https://doi.org/10.1017/9781108565875",
+        "source_type": "academic-book",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-acts-sequence"
+        ],
+        "notes": "Reviews competing destination arguments and Acts comparisons.",
+        "id": "keener-galatians",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Craig S. Keener",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Author, provenance, date, and destination",
+        "url": "https://doi.org/10.1017/9781108565875",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-regional-wording",
+          "galatians-destination",
+          "galatian-audience-diversity",
+          "galatians-weakness-route",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Reviews north and south arguments and their dependence on Acts.",
+        "id": "keener-galatians-destination",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Roman Colonies in Southern Asia Minor",
+        "author": "Barbara Levick",
+        "publisher": "Oxford University Press",
+        "year": 1967,
+        "locator": "Pisidian Antioch, Iconium, Lystra, and colonial network",
+        "url": "https://archive.org/details/romancoloniesins0000levi",
+        "source_type": "academic-book",
+        "supports": [
+          "antioch-colony-setting",
+          "iconium-regional-setting",
+          "lystra-colony-setting"
+        ],
+        "notes": "Foundational epigraphic and civic-status study; later revisions should be consulted.",
+        "id": "levick-roman-colonies",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Anatolia: Land, Men, and Gods in Asia Minor",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford University Press",
+        "year": 1993,
+        "locator": "Volumes 1-2; Galatia, Pisidia, Lycaonia, cities, roads, and cults",
+        "url": "https://global.oup.com/academic/product/anatolia-9780198150299",
+        "source_type": "academic-book",
+        "supports": [
+          "galatia-provincial-ethnic-distinction",
+          "galatia-city-differences"
+        ],
+        "notes": "Regional historical and epigraphic synthesis.",
+        "id": "mitchell-anatolia",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Anatolia: Land, Men, and Gods in Asia Minor",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford University Press",
+        "year": 1993,
+        "locator": "Volumes 1-2; Galatia, Pisidia, Lycaonia, colonies, cults, and roads",
+        "url": "https://global.oup.com/academic/product/anatolia-9780198150299",
+        "source_type": "academic-book",
+        "supports": [
+          "provincial-ethnic-geography",
+          "antioch-colony-setting",
+          "iconium-regional-setting",
+          "lystra-colony-setting",
+          "lystra-language",
+          "lystra-cult-interpretation",
+          "derbe-location-limits"
+        ],
+        "notes": "Regional historical and epigraphic synthesis.",
+        "id": "mitchell-anatolia-galatia",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Via Sebaste",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford Classical Dictionary",
+        "year": 2015,
+        "locator": "Via Sebaste reference article",
+        "url": "https://doi.org/10.1093/acrefore/9780199381135.013.6784",
+        "source_type": "reference-work",
+        "supports": [
+          "galatia-road-network",
+          "galatia-city-differences"
+        ],
+        "notes": "Dates and contextualizes the Augustan road and colonial network.",
+        "id": "mitchell-via-sebaste",
+        "canonical_object_ids": [
+          "galatia",
+          "roman-galatia-regions-roads-cities-and-audience"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Via Sebaste",
+            "author": "Stephen Mitchell",
+            "publisher": "Oxford Classical Dictionary",
+            "year": 2015,
+            "locator": "Via Sebaste reference article",
+            "url": "https://doi.org/10.1093/acrefore/9780199381135.013.6784",
+            "source_type": "reference-work",
+            "supports": [
+              "galatia-road-network",
+              "galatia-city-differences"
+            ],
+            "notes": "Dates and contextualizes the Augustan road and colonial network.",
+            "id": "mitchell-via-sebaste"
+          },
+          {
+            "title": "Via Sebaste",
+            "author": "Stephen Mitchell",
+            "publisher": "Oxford Classical Dictionary",
+            "year": 2015,
+            "locator": "Via Sebaste reference article",
+            "url": "https://doi.org/10.1093/acrefore/9780199381135.013.6784",
+            "source_type": "reference-work",
+            "supports": [
+              "acts-highland-sequence",
+              "via-sebaste-network",
+              "antioch-colony-setting",
+              "lystra-colony-setting"
+            ],
+            "notes": "Dates the system to 6 BCE and describes its road and colonial setting.",
+            "id": "mitchell-via-sebaste"
+          }
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Philippians 1:12-3:21",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1:12-3:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek prison-letter evidence for custody, possible death, suffering, illness, recovery, loss, and hope.",
+        "id": "philippians-prison-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Pleiades: A Gazetteer of Past Places",
+        "author": "Ancient World Mapping Center and Institute for the Study of the Ancient World",
+        "publisher": "Pleiades",
+        "year": null,
+        "locator": "Galatia, Pisidia, Lycaonia, Antiochia, Iconium, Lystra, and Derbe records",
+        "url": "https://pleiades.stoa.org/",
+        "source_type": "reference-work",
+        "supports": [
+          "galatia-provincial-ethnic-distinction",
+          "galatia-city-differences"
+        ],
+        "notes": "Stable ancient-place control; ancient boundaries and identifications remain evidence-dependent.",
+        "id": "pleiades-galatia-region",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Pleiades: A Gazetteer of Past Places",
+        "author": "Ancient World Mapping Center and Institute for the Study of the Ancient World",
+        "publisher": "Pleiades",
+        "year": null,
+        "locator": "Galatia, Antiochia/Colonia Caesarea, Iconium/Claudiconium, Lystra, and Derbe",
+        "url": "https://pleiades.stoa.org/",
+        "source_type": "reference-work",
+        "supports": [
+          "provincial-ethnic-geography",
+          "antioch-colony-setting",
+          "iconium-regional-setting",
+          "lystra-colony-setting",
+          "derbe-location-limits"
+        ],
+        "notes": "Linked ancient-place control; boundaries and site identifications remain qualified.",
+        "id": "pleiades-south-galatia",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Natural History",
+        "author": "Pliny the Elder",
+        "publisher": "Perseus Digital Library",
+        "year": 1855,
+        "locator": "Book 5, Anatolian peoples and cities; John Bostock edition and translation",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Plin.+Nat.+5",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "provincial-ethnic-geography",
+          "iconium-regional-setting",
+          "derbe-location-limits"
+        ],
+        "notes": "First-century geographic witness; categories are not a modern boundary map.",
+        "id": "pliny-natural-history-5",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "2 Corinthians 1:3-11; 4:7-6:13; 10:1-13:10",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1:3-11; 4:7-6:13; 10:1-13:10",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for affliction, comfort, weakness, boasting, visions, thorn, signs, and authority.",
+        "id": "second-corinthians-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: 2 Timothy",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": 350,
+        "locator": "2 Timothy",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=48&lid=en&side=r&zoomslider=0",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-century images and transcription; year approximate.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "2-timothy",
+          "acts"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Codex Sinaiticus: 2 Timothy",
+            "author": "",
+            "publisher": "Codex Sinaiticus Project",
+            "year": 350,
+            "locator": "2 Timothy",
+            "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=48&lid=en&side=r&zoomslider=0",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "timeline",
+              "archaeology",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Fourth-century images and transcription; year approximate.",
+            "id": "sinaiticus"
+          },
+          {
+            "title": "Codex Sinaiticus",
+            "author": "",
+            "publisher": "Codex Sinaiticus Project",
+            "year": null,
+            "locator": "Acts",
+            "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+            "source_type": "museum-collection",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "archaeology"
+            ],
+            "notes": "Fourth-century Greek manuscript witness.",
+            "id": "sinaiticus"
+          }
+        ]
+      },
+      {
+        "title": "A Disabled Apostle: Impairment and Disability in the Letters of Paul",
+        "author": "Isaac T. Soon",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "chapters 1-4 and epilogue; Pauline impairment and disability method",
+        "url": "https://doi.org/10.1093/oso/9780192885241.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "categories-remain-distinct",
+          "corinthian-presence-speech-contest",
+          "thorn-diagnosis-limit",
+          "galatians-illness-eyes-limit",
+          "acts-letter-chronology-control"
+        ],
+        "notes": "Disability-studies analysis that critiques assumed able-bodiedness while controlling retrospective diagnosis.",
+        "id": "soon-disabled-apostle",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Geography",
+        "author": "Strabo",
+        "publisher": "Perseus Digital Library",
+        "year": 1924,
+        "locator": "Book 12; H. L. Jones edition and translation",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=12",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "provincial-ethnic-geography",
+          "iconium-regional-setting"
+        ],
+        "notes": "Near-contemporary literary geography whose regional classifications require comparison with Roman administration.",
+        "id": "strabo-geography-12",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "2-timothy",
+          "acts"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Codex Vaticanus, Vat. gr. 1209",
+            "author": "",
+            "publisher": "Vatican Library",
+            "year": null,
+            "locator": "Acts",
+            "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+            "source_type": "museum-collection",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "archaeology"
+            ],
+            "notes": "Fourth-century Greek manuscript witness.",
+            "id": "vaticanus"
+          },
+          {
+            "title": "Codex Vaticanus",
+            "author": "",
+            "publisher": "Biblioteca Apostolica Vaticana",
+            "year": 350,
+            "locator": "Vat.gr.1209; surviving Pauline corpus ends before the Pastorals",
+            "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "timeline",
+              "archaeology",
+              "claims"
+            ],
+            "notes": "Negative control: it does not preserve 2 Timothy.",
+            "id": "vaticanus"
+          }
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-timothy",
+        "type": "book",
+        "title": "2 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "galatia",
+        "type": "place",
+        "title": "Roman and Ethnic Galatia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.829
+      },
+      {
+        "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "type": "cultural_background",
+        "title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "roman-galatia-regions-roads-cities-and-audience",
+        "type": "cultural_background",
+        "title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.977
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9fca804f1da62ced7be3405a315a1eb329e907c214836750b027ddbd9e2c33a0",
+  "evidence_hash_version": "2"
+}

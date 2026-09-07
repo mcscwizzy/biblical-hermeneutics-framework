@@ -1,0 +1,403 @@
+{
+  "passage_ref": "Lamentations 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "lam-acrostics",
+      "claim": "Chapters 1-4 use alphabetic structures, while chapter 5 has twenty-two lines without alphabetic progression.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "dobbs-allsopp",
+        "kotze"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "lam-catastrophe-horizon",
+      "claim": "Jerusalem's 587/586 BCE destruction is the most probable historical horizon, though exact poem dates are unstated.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "babylonian-chronicle",
+        "dobbs-allsopp"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 2:1-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "lam-children-famine",
+      "claim": "The poems make children's starvation and siege-driven maternal horror central accusations.",
+      "category": "history",
+      "source_ids": [
+        "lam-mt",
+        "o-connor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 2:11-12",
+        "Lamentations 2:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "lam-daughter-zion",
+      "claim": "Daughter Zion personifies Jerusalem as bereaved city, mother, sufferer, accused party, and speaking complainant.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "holt",
+        "mandolfo"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 2:1-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "lam-divine-enemy",
+      "claim": "Chapter 2 portrays the Lord as acting like an enemy while also naming human adversaries.",
+      "category": "history",
+      "source_ids": [
+        "lam-mt",
+        "fretheim",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 2:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "lam-five-poems",
+      "claim": "The received book contains five poems with distinct voices and formal profiles.",
+      "category": "culture",
+      "source_ids": [
+        "lam-mt",
+        "berlin"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Lamentations 1:1-5:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.948,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Nebuchadnezzar Chronicle",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; museum number 1896,0409.51",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "Neo-Babylonian chronicle recording the 597 BCE campaign against Jerusalem; it does not narrate the 587/586 destruction.",
+        "id": "babylonian-chronicle",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations: A Commentary",
+        "author": "Adele Berlin",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664229743-lamentations/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and historical commentary.",
+        "id": "berlin",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations",
+        "author": "F. W. Dobbs-Allsopp",
+        "publisher": "Westminster John Knox Press",
+        "year": 2011,
+        "locator": "Interpretation commentary",
+        "url": "https://www.wjkbooks.com/productcategories/bseint-interpretation-a-bible-commentary/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Poetic, historical, and comparative commentary.",
+        "id": "dobbs-allsopp",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Suffering of God: An Old Testament Perspective",
+        "author": "Terence E. Fretheim",
+        "publisher": "Fortress Press",
+        "year": 1984,
+        "locator": "Divine agency and suffering",
+        "url": "https://www.fortresspress.com/store/product/9780800618209/The-Suffering-of-God",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Theological resource representing one approach to divine pathos.",
+        "id": "fretheim",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion: Trauma, Cultural Memory and Gender in OT Poetics",
+        "author": "Else K. Holt",
+        "publisher": "Vandenhoeck & Ruprecht",
+        "year": 2014,
+        "locator": "Trauma and Traumatization in Individual and Collective Dimensions",
+        "url": "https://pure.au.dk/portal/en/publications/daughter-zion-trauma-cultural-memory-and-gender-in-ot-poetics/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Gender, trauma, and cultural-memory analysis.",
+        "id": "holt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "The Qumran Manuscripts of Lamentations: A Text-Critical Study",
+        "author": "Gideon R. Kotz\u00e9",
+        "publisher": "Brill",
+        "year": 2013,
+        "locator": "Studia Semitica Neerlandica 61",
+        "url": "https://brill.com/display/title/22977",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Detailed analysis of four Qumran witnesses.",
+        "id": "kotze",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Masoretic Lamentations",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Lamentations 1:1-5:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew text.",
+        "id": "lam-mt",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Daughter Zion Talks Back to the Prophets",
+        "author": "Carleen R. Mandolfo",
+        "publisher": "Society of Biblical Literature",
+        "year": 2007,
+        "locator": "Semeia Studies 58",
+        "url": "https://www.sbl-site.org/publications/Books_Semeia.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Dialogic and gender-critical study.",
+        "id": "mandolfo",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "Lamentations and the Tears of the World",
+        "author": "Kathleen M. O'Connor",
+        "publisher": "Orbis Books",
+        "year": 2002,
+        "locator": "Entire volume",
+        "url": "https://orbisbooks.com/products/lamentations-and-the-tears-of-the-world",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Trauma-aware theological and pastoral reading.",
+        "id": "o-connor",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "lamentations",
+        "type": "book",
+        "title": "Lamentations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.948
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "dfd6fd228e7bc926fd3ebf7762913e886e76ea6eb944fe222985e1b22b1388bd",
+  "evidence_hash_version": "2"
+}

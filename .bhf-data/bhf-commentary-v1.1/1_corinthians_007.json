@@ -1,0 +1,101 @@
+{
+  "reference": "1 Corinthians 7",
+  "book": "1 Corinthians",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_121",
+          "text": "Read the chapter with this setting in view: Chapter 7 addresses enslaved people within an accepted institution but does not morally validate slavery. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1cor-slavery"
+          ],
+          "verse_refs": [
+            "1 Corinthians 7:21-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_122",
+          "text": "For its historical and cultural setting, note that The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "household-slavery-status"
+          ],
+          "verse_refs": [
+            "1 Corinthians 7:17-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_123",
+          "text": "For its historical and cultural setting, note that First Corinthians tells circumcised persons not to seek reversal and uncircumcised persons not to seek circumcision, then relativizes both before God's commands. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "corinthians-circumcision-calling"
+          ],
+          "verse_refs": [
+            "1 Corinthians 7:17-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_122",
+          "text": "A literary feature to notice is that The identity of the parthenoi in 7:25-38 as virgins, betrothed women, or engaged couples remains disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1cor-virgins"
+          ],
+          "verse_refs": [
+            "1 Corinthians 7:25-38"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_122",
+          "text": "For the chapter's sequence and setting, note that First Corinthians 7:25-40 names a present distress and gives advice about people described with disputed virgin, betrothed, guardian, or partner language. This gives the reader a frame for the passage without deciding every larger reconstruction. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "corinthian-distress-virgins-advice"
+          ],
+          "verse_refs": [
+            "1 Corinthians 7:25-40"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3e01a5020e30cbba5874f2d6567cd314371d328ee5acebe4dff083a1022823a0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

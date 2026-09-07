@@ -1,0 +1,907 @@
+{
+  "passage_ref": "Habakkuk 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "habakkuk-agency",
+      "claim": "The book attributes the Chaldeans' rise to YHWH while also condemning their violence, arrogance, and self-deification, creating rather than eliminating a problem of agency.",
+      "category": "culture",
+      "source_ids": [
+        "habakkuk-masoretic",
+        "timmer-theology",
+        "ko-habakkuk"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:5-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "habakkuk-babylonian-sources",
+      "claim": "Nabopolassar's and Nebuchadnezzar II's inscriptions illuminate Neo-Babylonian royal piety, construction, fortification, labor, and claims to justice but are ideological self-representations.",
+      "category": "culture",
+      "source_ids": [
+        "oracc-nabopolassar",
+        "oracc-nebuchadnezzar"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:5-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "habakkuk-biography",
+      "claim": "No independent evidence securely establishes Habakkuk's biography, hometown, office, or membership in a temple-musician guild.",
+      "category": "culture",
+      "source_ids": [
+        "ko-habakkuk",
+        "andersen-habakkuk"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "habakkuk-chaldean-response",
+      "claim": "Habakkuk 1:5-11 announces the Chaldeans as swift conquerors using cavalry and siege ramps, then calls them guilty when their own power becomes their god.",
+      "category": "history",
+      "source_ids": [
+        "habakkuk-masoretic",
+        "andersen-habakkuk",
+        "ko-habakkuk"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:5-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "habakkuk-chronicles",
+      "claim": "BM 21901 and BM 21946 document stages of Neo-Babylonian expansion from Nineveh and Harran to Carchemish and Jerusalem, but neither fixes Habakkuk's composition and BM 21946 stops before 586.",
+      "category": "culture",
+      "source_ids": [
+        "bm-nineveh-chronicle",
+        "bm-jerusalem-chronicle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:5-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 83
+      }
+    },
+    {
+      "id": "habakkuk-composition",
+      "claim": "Scholars disagree over the unity of chapters 1-3, the original function of the Chaldean oracle, chapter 3's relation to the dialogue, and later shaping within the Twelve.",
+      "category": "culture",
+      "source_ids": [
+        "ko-habakkuk",
+        "andersen-habakkuk",
+        "oxford-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "habakkuk-date",
+      "claim": "The Chaldean reference makes a late seventh- or early sixth-century BCE horizon probable for substantial material, but does not settle the date or final form.",
+      "category": "culture",
+      "source_ids": [
+        "ko-habakkuk",
+        "andersen-habakkuk",
+        "bm-nineveh-chronicle",
+        "bm-jerusalem-chronicle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:5-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "habakkuk-ethical-reception",
+      "claim": "Modern interpretation responsibly joins Habakkuk's protest against empire with critique of divine violence, gendered humiliation, trauma exploitation, racialized enemy-mapping, quietism, and ecological harm.",
+      "category": "politics",
+      "source_ids": [
+        "gafney-habakkuk",
+        "oxford-trauma",
+        "oxford-postcolonial",
+        "timmer-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:2-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "habakkuk-first-complaint",
+      "claim": "Habakkuk 1:2-4 protests violence, wrongdoing, strife, numb Torah, failed justice, and the wicked surrounding the righteous.",
+      "category": "history",
+      "source_ids": [
+        "habakkuk-masoretic",
+        "gafney-habakkuk",
+        "timmer-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:2-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "habakkuk-fish-net",
+      "claim": "Habakkuk 1:14-17 compares conquered humans to leaderless fish swept up by hook and nets, exposing imperial domination and ritualized confidence in military means.",
+      "category": "politics",
+      "source_ids": [
+        "habakkuk-masoretic",
+        "andersen-habakkuk",
+        "oxford-metaphor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:14-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "habakkuk-pesher",
+      "claim": "1QpHab quotes and interprets Habakkuk 1-2 through the Teacher of Righteousness and the community's opponents, demonstrating contextual pesher rather than preserving the book's original referents.",
+      "category": "culture",
+      "source_ids": [
+        "israel-museum-1qphab",
+        "sbl-1qphab-text",
+        "cambridge-qumran"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "habakkuk-superscription",
+      "claim": "Habakkuk 1:1 identifies the work as an oracle or burden that Habakkuk the prophet saw.",
+      "category": "history",
+      "source_ids": [
+        "habakkuk-masoretic",
+        "ko-habakkuk",
+        "andersen-habakkuk"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "habakkuk-textual-witnesses",
+      "claim": "Masoretic Habakkuk, Old Greek Ambakoum, Judean Desert witnesses, and later versions attest textual plurality, especially in difficult lines and Habakkuk 2:4 and 3:13.",
+      "category": "history",
+      "source_ids": [
+        "sbl-bhs-habakkuk",
+        "catss-habakkuk",
+        "nets-twelve",
+        "israel-museum-1qphab",
+        "sbl-1qphab-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Habakkuk 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "habakkuk",
+        "parent_title": "Habakkuk",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.968,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 70
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Habakkuk: A New Translation with Introduction and Commentary",
+        "author": "Francis I. Andersen",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 25",
+        "url": "https://yalebooks.yale.edu/book/9780300139730/habakkuk/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "habakkuk-biography",
+          "habakkuk-watchpost",
+          "habakkuk-vision"
+        ],
+        "notes": "Detailed philological, literary, historical, and theological commentary.",
+        "id": "andersen-habakkuk",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Nebuchadnezzar Chronicle or Jerusalem Chronicle",
+        "author": "British Museum",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Museum number 21946; chronicle for 605-594 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "archaeology",
+          "habakkuk-date",
+          "habakkuk-chronicles"
+        ],
+        "notes": "Official object record covering Carchemish and Jerusalem's 597 capture, not the 586 destruction.",
+        "id": "bm-jerusalem-chronicle",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Fall of Nineveh Chronicle",
+        "author": "British Museum",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Museum number 21901; chronicle for 616-609 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-6",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "archaeology",
+          "habakkuk-date",
+          "habakkuk-chronicles"
+        ],
+        "notes": "Official object record for the tablet covering Nineveh and Harran.",
+        "id": "bm-nineveh-chronicle",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "The Commentaries",
+        "author": "Michael A. Knibb",
+        "publisher": "Cambridge University Press",
+        "year": 1987,
+        "locator": "The Qumran Community, pages 207-256, including 1QpHab",
+        "url": "https://www.cambridge.org/core/books/qumran-community/commentaries/540A3085C641F929B15A3FB6172B33CB",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "habakkuk-pesher"
+        ],
+        "notes": "Scholarly presentation of Qumran pesharim and their contextualizing method.",
+        "id": "cambridge-qumran",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Text and Textual Variants for the Old Greek Book of Habakkuk",
+        "author": "Center for Computer Analysis of Texts",
+        "publisher": "University of Pennsylvania",
+        "year": 2005,
+        "locator": "CATSS Old Greek Minor Prophets, Habakkuk",
+        "url": "https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/4Prophets/MinorProphets/08Habakkuk.html",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "habakkuk-two-four",
+          "habakkuk-textual-witnesses",
+          "habakkuk-new-testament"
+        ],
+        "notes": "Electronic Old Greek variant resource based on the G\u00f6ttingen Twelve edition.",
+        "id": "catss-habakkuk",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Wisdom Commentary: Nahum, Habakkuk, Zephaniah",
+        "author": "Wilda C. M. Gafney",
+        "publisher": "Liturgical Press",
+        "year": 2017,
+        "locator": "Habakkuk section",
+        "url": "https://litpress.org/Products/E8187/Wisdom-Commentary-Nahum-Habakkuk-Zephaniah",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-disputes",
+          "habakkuk-first-complaint",
+          "habakkuk-cup",
+          "habakkuk-ethical-reception"
+        ],
+        "notes": "Womanist and feminist commentary attentive to gender, power, translation, violence, embodiment, and reception.",
+        "id": "gafney-habakkuk",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Habakkuk",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Habakkuk 1:1-3:19",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "habakkuk-superscription",
+          "habakkuk-first-complaint",
+          "habakkuk-final-confession"
+        ],
+        "notes": "Primary Hebrew witness; translations and textual problems require review against a critical edition.",
+        "id": "habakkuk-masoretic",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "The Commentary on Habakkuk Scroll",
+        "author": "Israel Museum",
+        "publisher": "Digital Dead Sea Scrolls, Shrine of the Book",
+        "year": null,
+        "locator": "1QpHab; accession 95.57/28; thirteen columns",
+        "url": "https://dss.collections.imj.org.il/habakkuk",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "habakkuk-textual-witnesses",
+          "habakkuk-pesher"
+        ],
+        "notes": "Official museum presentation and images of the first-century BCE scroll interpreting Habakkuk 1-2.",
+        "id": "israel-museum-1qphab",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Habakkuk",
+        "author": "Grace Ko",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 36, pages 487-498",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373592",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "habakkuk-date",
+          "habakkuk-composition"
+        ],
+        "notes": "Recent overview of textual, redactional, historical, literary, theological, and Book-of-the-Twelve questions.",
+        "id": "ko-habakkuk",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "George E. Howard",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Ambakoum",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "habakkuk-two-four",
+          "habakkuk-textual-witnesses"
+        ],
+        "notes": "NETS translation and introduction for the Old Greek Twelve.",
+        "id": "nets-twelve",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Nabopolassar 01",
+        "author": "Royal Inscriptions of Babylonia online",
+        "publisher": "ORACC / University of Pennsylvania",
+        "year": null,
+        "locator": "RIBo Q005360; royal inscription, circa 625-605 BCE",
+        "url": "https://oracc.museum.upenn.edu/ribo/Q005360",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "habakkuk-babylonian-sources"
+        ],
+        "notes": "Annotated royal inscription presenting Nabopolassar's wall building, labor, and divine patronage.",
+        "id": "oracc-nabopolassar",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Nebuchadnezzar II 002",
+        "author": "Royal Inscriptions of Babylonia online",
+        "publisher": "ORACC / University of Pennsylvania",
+        "year": null,
+        "locator": "RIBo Q005473; palace and royal inscription",
+        "url": "https://oracc.museum.upenn.edu/ribo/babylon7/Q005473",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "habakkuk-babylonian-sources"
+        ],
+        "notes": "Annotated royal inscription presenting palace building, piety, and royal self-representation.",
+        "id": "oracc-nebuchadnezzar",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Metaphor in the Minor Prophets",
+        "author": "Carol J. Dempsey",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 7, pages 85-100",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334371542",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "habakkuk-fish-net",
+          "habakkuk-ecology"
+        ],
+        "notes": "Methodological resource for reading prophetic metaphor and its embodied effects.",
+        "id": "oxford-metaphor",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Postcolonial Approaches to the Minor Prophets",
+        "author": "Jeremiah W. Cataldo",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 25, pages 341-355",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372842",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-disputes",
+          "habakkuk-ethical-reception"
+        ],
+        "notes": "Postcolonial methodological resource for empire, power, resistance, and modern analogy.",
+        "id": "oxford-postcolonial",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Habakkuk as a Model for Posttraumatic Christian Prophetic Preaching",
+        "author": "Kimberly R. Wagner; Brady Alan Beard",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 27",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373012",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "habakkuk-ethical-reception"
+        ],
+        "notes": "Trauma-aware Christian reception; not a reconstruction of the ancient book's only meaning.",
+        "id": "oxford-trauma",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Minor Prophets",
+        "author": "Julia M. O'Brien, editor",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Historical, literary, reception, and book-specific essays",
+        "url": "https://academic.oup.com/edited-volume/38566",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "second-temple-context",
+          "later-christian-reception",
+          "habakkuk-composition"
+        ],
+        "notes": "Multi-perspective handbook on manuscripts, genres, the Twelve, reception, and contested issues.",
+        "id": "oxford-twelve",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "The Text of Habakkuk in the Ancient Commentary from Qumran",
+        "author": "William H. Brownlee",
+        "publisher": "Society of Biblical Literature",
+        "year": 1959,
+        "locator": "SBL Monograph Series 11",
+        "url": "https://cart.sbl-site.org/books/060011P",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "habakkuk-two-four",
+          "habakkuk-textual-witnesses",
+          "habakkuk-pesher"
+        ],
+        "notes": "Classic specialist study of the biblical text cited in 1QpHab; later research must also be consulted.",
+        "id": "sbl-1qphab-text",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "Biblia Hebraica Stuttgartensia: Habakkuk",
+        "author": "German Bible Society",
+        "publisher": "Society of Biblical Literature digital texts",
+        "year": null,
+        "locator": "Habakkuk Hebrew text",
+        "url": "https://www.sbl-site.org/resources/digital-texts/biblica-hebraica-stuttgartensia/",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "hebrew-words",
+          "habakkuk-two-four",
+          "habakkuk-textual-witnesses"
+        ],
+        "notes": "SBL-hosted BHS text without critical apparatus; specialist textual work requires a full critical edition.",
+        "id": "sbl-bhs-habakkuk",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      },
+      {
+        "title": "The Theology of the Books of Nahum, Habakkuk, and Zephaniah",
+        "author": "Daniel C. Timmer",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "Chapter 3, pages 104-172",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-books-of-nahum-habakkuk-and-zephaniah/4FD8871C1A8A5EA40AF14C38DC153391",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "covenantal-significance",
+          "canonical-role",
+          "habakkuk-agency",
+          "habakkuk-ecology"
+        ],
+        "notes": "Recent theological study engaging historical setting, injustice, ecology, nationalism, grace, and reception.",
+        "id": "timmer-theology",
+        "canonical_object_ids": [
+          "habakkuk"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "habakkuk",
+        "type": "book",
+        "title": "Habakkuk",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.968
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "1545c8e403250cc1caaf7e3a2c1519efac9eb45024425d48f20f24f3933f12ee",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Deuteronomy 30",
+  "book": "Deuteronomy",
+  "chapter": 30,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_27",
+          "text": "Read the chapter with this setting in view: Deuteronomy 30 sets life and death, blessing and curse before Israel and calls the people to choose life by loving, hearing, and holding fast to the LORD. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-choose-life"
+          ],
+          "verse_refs": [
+            "Deuteronomy 30:15-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_28",
+          "text": "For its historical and cultural setting, note that Romans adapts Deuteronomy's ascent, descent, and near-word language to Messiah, confession, trust, proclamation, and one Lord for Jew and Greek. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-near-word-confession"
+          ],
+          "verse_refs": [
+            "Deuteronomy 30:11-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_29",
+          "text": "For its historical and cultural setting, note that Treaty parallels are relevant to Deuteronomy's covenant form but do not produce an uncontested date because the comparison and history of treaty conventions are debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Deuteronomy 30:1-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_28",
+          "text": "A literary feature to notice is that Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 30:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_28",
+          "text": "For the chapter's sequence and setting, note that Temple and city rebuilding This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "exile-and-return-storyline:timeline:4"
+          ],
+          "verse_refs": [
+            "Deuteronomy 30:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "493946c2625abfe8e6ced71af27f031972fd77feb45cfd3a5cab05f2fc6d361f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

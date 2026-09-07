@@ -1,0 +1,65 @@
+{
+  "reference": "Hosea 4",
+  "book": "Hosea",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_100",
+          "text": "Read the chapter with this setting in view: Hosea 4 places special responsibility on priests for rejected knowledge, distorted instruction, exploitation, and cultic failure rather than assigning blame only to ordinary worshipers. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hosea-priestly-failure"
+          ],
+          "verse_refs": [
+            "Hosea 4:1-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_101",
+          "text": "For its historical and cultural setting, note that Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea-baal-fertility"
+          ],
+          "verse_refs": [
+            "Hosea 4:1-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_102",
+          "text": "For its historical and cultural setting, note that The land's mourning and agricultural metaphors invite ecological reflection while resisting the claim that environmental disaster proves a targeted group's guilt. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea:interpretive_note:24"
+          ],
+          "verse_refs": [
+            "Hosea 4:1-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "304ff79f8a627eb1bccc0df04e118311aabb3e90a6e1e7045b51f068912b3089",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

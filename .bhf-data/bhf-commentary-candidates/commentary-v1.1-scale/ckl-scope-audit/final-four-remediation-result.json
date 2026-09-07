@@ -1,0 +1,3018 @@
+{
+  "after": {
+    "candidate_pool_size": 257,
+    "chapters_evaluated": 257,
+    "chapters_passed": 257,
+    "chapters_quarantined": 0,
+    "disagreement_counts": {
+      "json_sqlite_evidence_id_disagreements": 0,
+      "json_sqlite_hash_disagreements": 0,
+      "json_sqlite_result_id_disagreements": 0,
+      "presentation_role_blockers": 0,
+      "semantic_leakage": 0,
+      "textual_routing_anomalies": 0
+    },
+    "presentation_role_blockers": 0,
+    "prose_included": false,
+    "terra_manifest_status": "READY_FOR_TERRA",
+    "terra_suppression_chapters": 0,
+    "textual_routing_anomalies": 0
+  },
+  "artifact": "final-four-remediation-result",
+  "batch_id": "batch-007",
+  "before": {
+    "presentation_role_blockers": 4,
+    "recoverable_historical_population": 253,
+    "still_quarantined": 4,
+    "terra_suppression_chapters": 4,
+    "textual_routing_anomalies": 4
+  },
+  "ckl_mutated": false,
+  "effort": "high",
+  "gates_weakened": false,
+  "model": "luna",
+  "policy_changed": false,
+  "protected_fingerprints": {
+    "1 Samuel 28": {
+      "anomalies": [
+        {
+          "ckl_parent_record": "1-samuel",
+          "code": "DISPUTED_OVERVIEW_CANDIDATE",
+          "evidence_id": "1-samuel:interpretive_note:3",
+          "explanation": "The selected overview remains disputed; no stronger non-disputed candidate was found.",
+          "severity": "review"
+        }
+      ],
+      "status": "PASS",
+      "summary": "THIN; two evidence items; apparition disputed"
+    },
+    "Genesis 1": {
+      "anomalies": [],
+      "status": "PASS",
+      "summary": "no archaeology entities/items; no word studies"
+    },
+    "Leviticus 1": {
+      "anomalies": [],
+      "status": "PASS",
+      "summary": "ritual context is historical_context"
+    },
+    "Luke 1": {
+      "anomalies": [
+        {
+          "ckl_parent_record": "luke",
+          "code": "DISPUTED_OVERVIEW_CANDIDATE",
+          "evidence_id": "luke-prologue",
+          "explanation": "The selected overview remains disputed; no stronger non-disputed candidate was found.",
+          "severity": "review"
+        }
+      ],
+      "status": "PASS",
+      "summary": "Luke-Acts relation is language_literary"
+    },
+    "Luke 22": {
+      "anomalies": [],
+      "status": "PASS",
+      "summary": "textual variant is language_literary; no textual routing blocker; no Terra textual suppression"
+    },
+    "Numbers 3": {
+      "anomalies": [],
+      "status": "PASS",
+      "summary": "DATA_GAP; zero evidence"
+    },
+    "Zephaniah 1": {
+      "anomalies": [
+        {
+          "ckl_parent_record": "zephaniah",
+          "code": "DISPUTED_OVERVIEW_CANDIDATE",
+          "evidence_id": "zephaniah-superscription",
+          "explanation": "The selected overview remains disputed; no stronger non-disputed candidate was found.",
+          "severity": "review"
+        }
+      ],
+      "status": "PASS",
+      "summary": "Josiah-era overview retained"
+    },
+    "batch_001_terra_artifacts": {
+      "after_fingerprint": "491abb07868b20fdc43f806045afb91cc6432abf3bde22cb378c00dfbaf05f20",
+      "artifact_count": 50,
+      "before_fingerprint": "491abb07868b20fdc43f806045afb91cc6432abf3bde22cb378c00dfbaf05f20",
+      "changed_paths": [],
+      "status": "PASS",
+      "summary": "50 Batch 001 Terra artifact fingerprints unchanged"
+    },
+    "batch_002_terra_artifacts": {
+      "after_fingerprint": "728abad6adc4cecd80141c5514ea66168225363dea342fb1244249cbf52d4ae1",
+      "artifact_count": 100,
+      "before_fingerprint": "728abad6adc4cecd80141c5514ea66168225363dea342fb1244249cbf52d4ae1",
+      "changed_paths": [],
+      "status": "PASS",
+      "summary": "100 Batch 002 Terra artifact fingerprints unchanged"
+    },
+    "batch_003_terra_artifacts": {
+      "after_fingerprint": "752a9f1b3db9b5cae99027b037eacca81e224f6ffd9a7d6eb93c00a542bb7f89",
+      "artifact_count": 150,
+      "before_fingerprint": "752a9f1b3db9b5cae99027b037eacca81e224f6ffd9a7d6eb93c00a542bb7f89",
+      "changed_paths": [],
+      "status": "PASS",
+      "summary": "150 Batch 003 Terra artifact fingerprints unchanged"
+    },
+    "canary_artifacts": {
+      "after_fingerprint": "e4304a46da2d4725018648239e098aeaa2b3fe5dda98470406c88c6cd6f02646",
+      "before_fingerprint": "e4304a46da2d4725018648239e098aeaa2b3fe5dda98470406c88c6cd6f02646",
+      "changed_paths": [],
+      "status": "PASS",
+      "summary": "26 prose-control artifact fingerprints unchanged"
+    }
+  },
+  "target_chapters": [
+    {
+      "affected_evidence": [
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "parent_object_id": "mount-ebal-altar-discovery",
+              "parent_title": "Mount Ebal Altar Discovery",
+              "parent_type": "archaeology"
+            },
+            "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": true,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Deuteronomy 32"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "qumran",
+                "settlement-cave-complex",
+                "isaiah-40",
+                "deuteronomy-32",
+                "excavation-report-and-stratigraphic-study"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": true,
+              "mentions_textual_witness": false,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "mount-ebal-altar-discovery",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "json_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "json_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        },
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "qumran-archaeological-site:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "parent_object_id": "qumran-archaeological-site",
+              "parent_title": "Qumran Archaeological Site",
+              "parent_type": "archaeology"
+            },
+            "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": true,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Deuteronomy 32"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "qumran",
+                "settlement-cave-complex",
+                "isaiah-40",
+                "deuteronomy-32",
+                "excavation-report-and-stratigraphic-study"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": true,
+              "mentions_textual_witness": false,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "qumran-archaeological-site",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "json_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "json_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "ancient-divine-assembly-imagery:interpretive_note:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "deuteronomy-32-8-manuscript-variant",
+                "deuteronomy-32-8-manuscript-variant:passage-relevance",
+                "deuteronomy-literary-movement",
+                "divine-justice:ancient_near_east_context:0",
+                "divine-justice:historical_context:0",
+                "justice-theme:ancient_near_east_context:0",
+                "justice-theme:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "philippians:interpretive_note:20",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "righteousness-theme:ancient_near_east_context:0",
+                "righteousness-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "ancient-divine-assembly-imagery",
+                "dead-sea-scrolls",
+                "deuteronomy",
+                "divine-justice",
+                "habakkuk",
+                "justice-theme",
+                "mishpat",
+                "mount-ebal-altar-discovery",
+                "philippians",
+                "qumran-archaeological-site",
+                "righteousness-theme",
+                "temple-mount-area-finds",
+                "tsedeq",
+                "wadi-murabbaat-scrolls"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        }
+      ],
+      "after_audits": {
+        "presentation_role": {
+          "errors": [],
+          "status": "PASS"
+        },
+        "terra_suppression": {
+          "suppressed_items": [],
+          "terra_textual_suppression_required": false
+        },
+        "textual_routing": {
+          "errors": [],
+          "items": [
+            {
+              "evidence_id": "deuteronomy-32-8-manuscript-variant",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "DIRECT_CONTEXT"
+            },
+            {
+              "evidence_id": "deuteronomy-32-8-manuscript-variant:passage-relevance",
+              "expected_role": "language_literary",
+              "presentation_role": "significance",
+              "semantic_relationship": "DIRECT_CONTEXT"
+            }
+          ],
+          "status": "PASS",
+          "textual_evidence_count": 2
+        }
+      },
+      "after_status": "PASS",
+      "before_audits": {
+        "presentation_role": {
+          "errors": [
+            "mount-ebal-altar-discovery:historical_context:0:expected-role:language_literary:actual-role:historical_context",
+            "qumran-archaeological-site:historical_context:0:expected-role:language_literary:actual-role:historical_context"
+          ],
+          "status": "FAIL"
+        },
+        "terra_suppression": {
+          "suppressed_items": [
+            {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            }
+          ],
+          "terra_textual_suppression_required": true
+        },
+        "textual_routing": {
+          "errors": [
+            "mount-ebal-altar-discovery:historical_context:0:textual-material-routed:historical_context",
+            "qumran-archaeological-site:historical_context:0:textual-material-routed:historical_context"
+          ],
+          "items": [
+            {
+              "evidence_id": "deuteronomy-32-8-manuscript-variant",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "DIRECT_CONTEXT"
+            },
+            {
+              "evidence_id": "deuteronomy-32-8-manuscript-variant:passage-relevance",
+              "expected_role": "language_literary",
+              "presentation_role": "significance",
+              "semantic_relationship": "DIRECT_CONTEXT"
+            },
+            {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            }
+          ],
+          "status": "FAIL",
+          "textual_evidence_count": 4
+        }
+      },
+      "before_status": "QUARANTINE",
+      "reference": "Deuteronomy 32"
+    },
+    {
+      "affected_evidence": [
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "language_literary",
+            "route": "language_literary",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "parent_object_id": "ketef-hinnom-silver-scrolls",
+              "parent_title": "Ketef Hinnom Silver Scrolls",
+              "parent_type": "archaeology"
+            },
+            "claim": "Among the oldest known Hebrew textual witnesses linked to the Bible.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": false,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Numbers 6:24-26"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "ketef-hinnom-silver-scrolls",
+                "israel-museum",
+                "israel-museum-jerusalem",
+                "silver-amulets",
+                "numbers-6-24-26"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Among the oldest known Hebrew textual witnesses linked to the Bible.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": false,
+              "mentions_textual_witness": true,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "ketef-hinnom-silver-scrolls",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "ketef-hinnom-silver-scrolls:ancient_near_east_context:0",
+                "ketef-hinnom-silver-scrolls:historical_context:0",
+                "peace-theme:ancient_near_east_context:0",
+                "peace-theme:historical_context:0",
+                "what-does-shalom-mean:ancient_near_east_context:0",
+                "what-does-shalom-mean:historical_context:0",
+                "what-is-the-role-of-priests:ancient_near_east_context:0",
+                "what-is-the-role-of-priests:historical_context:0"
+              ],
+              "json_result_ids": [
+                "ketef-hinnom-silver-scrolls",
+                "numbers",
+                "peace-theme",
+                "what-does-shalom-mean",
+                "what-is-the-role-of-priests"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "ketef-hinnom-silver-scrolls:ancient_near_east_context:0",
+                "ketef-hinnom-silver-scrolls:historical_context:0",
+                "peace-theme:ancient_near_east_context:0",
+                "peace-theme:historical_context:0",
+                "what-does-shalom-mean:ancient_near_east_context:0",
+                "what-does-shalom-mean:historical_context:0",
+                "what-is-the-role-of-priests:ancient_near_east_context:0",
+                "what-is-the-role-of-priests:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "ketef-hinnom-silver-scrolls",
+                "numbers",
+                "peace-theme",
+                "what-does-shalom-mean",
+                "what-is-the-role-of-priests"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "ketef-hinnom-silver-scrolls:ancient_near_east_context:0",
+                "ketef-hinnom-silver-scrolls:historical_context:0",
+                "peace-theme:ancient_near_east_context:0",
+                "peace-theme:historical_context:0",
+                "what-does-shalom-mean:ancient_near_east_context:0",
+                "what-does-shalom-mean:historical_context:0",
+                "what-is-the-role-of-priests:ancient_near_east_context:0",
+                "what-is-the-role-of-priests:historical_context:0"
+              ],
+              "json_result_ids": [
+                "ketef-hinnom-silver-scrolls",
+                "numbers",
+                "peace-theme",
+                "what-does-shalom-mean",
+                "what-is-the-role-of-priests"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "ketef-hinnom-silver-scrolls:ancient_near_east_context:0",
+                "ketef-hinnom-silver-scrolls:historical_context:0",
+                "peace-theme:ancient_near_east_context:0",
+                "peace-theme:historical_context:0",
+                "what-does-shalom-mean:ancient_near_east_context:0",
+                "what-does-shalom-mean:historical_context:0",
+                "what-is-the-role-of-priests:ancient_near_east_context:0",
+                "what-is-the-role-of-priests:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "ketef-hinnom-silver-scrolls",
+                "numbers",
+                "peace-theme",
+                "what-does-shalom-mean",
+                "what-is-the-role-of-priests"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        }
+      ],
+      "after_audits": {
+        "presentation_role": {
+          "errors": [],
+          "status": "PASS"
+        },
+        "terra_suppression": {
+          "suppressed_items": [],
+          "terra_textual_suppression_required": false
+        },
+        "textual_routing": {
+          "errors": [],
+          "items": [
+            {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            }
+          ],
+          "status": "PASS",
+          "textual_evidence_count": 1
+        }
+      },
+      "after_status": "PASS",
+      "before_audits": {
+        "presentation_role": {
+          "errors": [
+            "ketef-hinnom-silver-scrolls:historical_context:0:expected-role:language_literary:actual-role:historical_context"
+          ],
+          "status": "FAIL"
+        },
+        "terra_suppression": {
+          "suppressed_items": [
+            {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            }
+          ],
+          "terra_textual_suppression_required": true
+        },
+        "textual_routing": {
+          "errors": [
+            "ketef-hinnom-silver-scrolls:historical_context:0:textual-material-routed:historical_context"
+          ],
+          "items": [
+            {
+              "evidence_id": "ketef-hinnom-silver-scrolls:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            }
+          ],
+          "status": "FAIL",
+          "textual_evidence_count": 1
+        }
+      },
+      "before_status": "QUARANTINE",
+      "reference": "Numbers 6"
+    },
+    {
+      "affected_evidence": [
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "parent_object_id": "mount-ebal-altar-discovery",
+              "parent_title": "Mount Ebal Altar Discovery",
+              "parent_type": "archaeology"
+            },
+            "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": true,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Isaiah 40"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "qumran",
+                "settlement-cave-complex",
+                "isaiah-40",
+                "deuteronomy-32",
+                "excavation-report-and-stratigraphic-study"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": true,
+              "mentions_textual_witness": false,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "mount-ebal-altar-discovery",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "json_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "json_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        },
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "qumran-archaeological-site:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "parent_object_id": "qumran-archaeological-site",
+              "parent_title": "Qumran Archaeological Site",
+              "parent_type": "archaeology"
+            },
+            "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": true,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Isaiah 40"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "qumran",
+                "settlement-cave-complex",
+                "isaiah-40",
+                "deuteronomy-32",
+                "excavation-report-and-stratigraphic-study"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": true,
+              "mentions_textual_witness": false,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "qumran-archaeological-site",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "json_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "json_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "anna-the-prophetess:ancient_near_east_context:0",
+                "anna-the-prophetess:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "elijah:ancient_near_east_context:0",
+                "elijah:historical_context:0",
+                "elisha:ancient_near_east_context:0",
+                "elisha:historical_context:0",
+                "exile-and-return-storyline:ancient_near_east_context:0",
+                "exile-and-return-storyline:hebraic_worldview:0",
+                "exile-and-return-storyline:historical_context:0",
+                "exile-and-return-storyline:historical_setting:0",
+                "exile-and-return-storyline:key_places:0",
+                "exile-and-return-storyline:key_places:1",
+                "exile-and-return-storyline:key_places:2",
+                "exile-and-return-storyline:key_places:3",
+                "exile-and-return-storyline:key_places:4",
+                "exile-and-return-storyline:original_audience:0",
+                "exile-and-return-storyline:second_temple_context:0",
+                "exile-and-return-storyline:timeline:0",
+                "exile-and-return-storyline:timeline:1",
+                "exile-and-return-storyline:timeline:2",
+                "exile-and-return-storyline:timeline:3",
+                "exile-and-return-storyline:timeline:4",
+                "exile-and-return-storyline:timeline:5",
+                "exile-and-return-storyline:timeline:6",
+                "ezekiel-the-prophet:ancient_near_east_context:0",
+                "ezekiel-the-prophet:historical_context:0",
+                "hope-theme:ancient_near_east_context:0",
+                "hope-theme:historical_context:0",
+                "isaiah-comfort-new-exodus",
+                "isaiah-many-voices",
+                "isaiah-old-greek",
+                "isaiah-practical-outline",
+                "isaiah-qumran-witnesses",
+                "isaiah-reception-distinction",
+                "isaiah-the-prophet:ancient_near_east_context:0",
+                "isaiah-the-prophet:historical_context:0",
+                "jeremiah-the-prophet:ancient_near_east_context:0",
+                "jeremiah-the-prophet:historical_context:0",
+                "jonah-the-prophet:ancient_near_east_context:0",
+                "jonah-the-prophet:historical_context:0",
+                "land-theme:ancient_near_east_context:0",
+                "land-theme:historical_context:0",
+                "mark-opening-citation",
+                "messianic-hope:ancient_near_east_context:0",
+                "messianic-hope:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "nathan-the-prophet:ancient_near_east_context:0",
+                "nathan-the-prophet:historical_context:0",
+                "new-exodus-theme:ancient_near_east_context:0",
+                "new-exodus-theme:historical_context:0",
+                "new-jerusalem-theme:ancient_near_east_context:0",
+                "new-jerusalem-theme:historical_context:0",
+                "providence:ancient_near_east_context:0",
+                "providence:historical_context:0",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "qumran-caves:ancient_near_east_context:0",
+                "qumran-caves:historical_context:0",
+                "redemption-theme:ancient_near_east_context:0",
+                "redemption-theme:historical_context:0",
+                "remnant-theme:ancient_near_east_context:0",
+                "remnant-theme:historical_context:0",
+                "remnant:ancient_near_east_context:0",
+                "remnant:historical_context:0",
+                "repentance:ancient_near_east_context:0",
+                "repentance:historical_context:0",
+                "restoration-prophecy:ancient_near_east_context:0",
+                "restoration-prophecy:historical_context:0",
+                "restoration-theme:ancient_near_east_context:0",
+                "restoration-theme:historical_context:0",
+                "seed-theme:ancient_near_east_context:0",
+                "seed-theme:historical_context:0",
+                "shepherd-theme:ancient_near_east_context:0",
+                "shepherd-theme:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+                "why-does-the-bible-repeat-themes:historical_context:0",
+                "zechariah-the-prophet:ancient_near_east_context:0",
+                "zechariah-the-prophet:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "anna-the-prophetess",
+                "dead-sea-scrolls",
+                "elijah",
+                "elisha",
+                "exile-and-return-storyline",
+                "ezekiel-the-prophet",
+                "hope-theme",
+                "isaiah",
+                "isaiah-the-prophet",
+                "jeremiah-the-prophet",
+                "jonah-the-prophet",
+                "land-theme",
+                "luke",
+                "mark",
+                "matthew",
+                "messianic-hope",
+                "mount-ebal-altar-discovery",
+                "nathan-the-prophet",
+                "new-exodus-theme",
+                "new-jerusalem-theme",
+                "providence",
+                "qumran-archaeological-site",
+                "qumran-caves",
+                "redemption-theme",
+                "remnant",
+                "remnant-theme",
+                "repentance",
+                "restoration-prophecy",
+                "restoration-theme",
+                "seed-theme",
+                "shepherd-theme",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "why-does-the-bible-repeat-themes",
+                "zechariah-the-prophet"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        }
+      ],
+      "after_audits": {
+        "presentation_role": {
+          "errors": [],
+          "status": "PASS"
+        },
+        "terra_suppression": {
+          "suppressed_items": [],
+          "terra_textual_suppression_required": false
+        },
+        "textual_routing": {
+          "errors": [],
+          "items": [
+            {
+              "evidence_id": "isaiah-old-greek",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "DIRECT_CONTEXT"
+            },
+            {
+              "evidence_id": "isaiah-qumran-witnesses",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "BOOK_CONTEXT"
+            }
+          ],
+          "status": "PASS",
+          "textual_evidence_count": 2
+        }
+      },
+      "after_status": "PASS",
+      "before_audits": {
+        "presentation_role": {
+          "errors": [
+            "mount-ebal-altar-discovery:historical_context:0:expected-role:language_literary:actual-role:historical_context",
+            "qumran-archaeological-site:historical_context:0:expected-role:language_literary:actual-role:historical_context"
+          ],
+          "status": "FAIL"
+        },
+        "terra_suppression": {
+          "suppressed_items": [
+            {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            }
+          ],
+          "terra_textual_suppression_required": true
+        },
+        "textual_routing": {
+          "errors": [
+            "mount-ebal-altar-discovery:historical_context:0:textual-material-routed:historical_context",
+            "qumran-archaeological-site:historical_context:0:textual-material-routed:historical_context"
+          ],
+          "items": [
+            {
+              "evidence_id": "isaiah-old-greek",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "DIRECT_CONTEXT"
+            },
+            {
+              "evidence_id": "isaiah-qumran-witnesses",
+              "expected_role": "language_literary",
+              "presentation_role": "language_literary",
+              "semantic_relationship": "BOOK_CONTEXT"
+            },
+            {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            }
+          ],
+          "status": "FAIL",
+          "textual_evidence_count": 4
+        }
+      },
+      "before_status": "QUARANTINE",
+      "reference": "Isaiah 40"
+    },
+    {
+      "affected_evidence": [
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "parent_object_id": "mount-ebal-altar-discovery",
+              "parent_title": "Mount Ebal Altar Discovery",
+              "parent_type": "archaeology"
+            },
+            "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": true,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Psalms 119"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "qumran",
+                "settlement-cave-complex",
+                "isaiah-40",
+                "deuteronomy-32",
+                "excavation-report-and-stratigraphic-study"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": true,
+              "mentions_textual_witness": false,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "mount-ebal-altar-discovery",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "json_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "json_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        },
+        {
+          "after": {
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": null,
+            "terra_suppressed": false
+          },
+          "before": {
+            "exact_blocking_rules": {
+              "presentation_role": "_presentation_audit requires the stored presentation_role to equal presentation_role(item metadata plus authored claim semantics).",
+              "terra_suppression": "terra_textual_suppression_simulation suppresses textual-witness material when projected into historical_context/material sections.",
+              "textual_routing": "_textual_routing_audit blocks textual material routed outside language_literary."
+            },
+            "expected_route": "language_literary",
+            "presentation_role": "historical_context",
+            "route": "historical_context",
+            "suppression": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            "terra_suppressed": true,
+            "textual_witness": true
+          },
+          "current_reason_codes": [
+            "PRESENTATION_ROLE_AUDIT_FAILURE",
+            "PRESENTATION_ROLE_MISMATCH",
+            "TEXTUAL_ROUTING_AUDIT_FAILURE",
+            "TERRA_SUPPRESSION_REQUIRED"
+          ],
+          "evidence_id": "qumran-archaeological-site:historical_context:0",
+          "finding_kinds": [
+            "presentation_role",
+            "textual_routing",
+            "terra_suppression"
+          ],
+          "metadata": {
+            "canonical_identity": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "parent_object_id": "qumran-archaeological-site",
+              "parent_title": "Qumran Archaeological Site",
+              "parent_type": "archaeology"
+            },
+            "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+            "manuscript_material_indicators": {
+              "claim_mentions_physical_or_archaeological_context": true,
+              "is_archaeology_parent": true,
+              "parent_type": "archaeology"
+            },
+            "passage_anchors": [
+              "Psalms 119"
+            ],
+            "routing_metadata": {
+              "anchor_source": "parent",
+              "applicability_scope": "entity",
+              "assertion_type": "",
+              "category": "history",
+              "dispute_status": "",
+              "evidence_type": null,
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            "source_identity": {
+              "source_ids": [
+                "qumran",
+                "settlement-cave-complex",
+                "isaiah-40",
+                "deuteronomy-32",
+                "excavation-report-and-stratigraphic-study"
+              ],
+              "source_kind": "ckl_legacy_field"
+            },
+            "textual_witness_indicators": {
+              "claim": "Qumran connects archaeology, textual transmission, and Second Temple Judaism.",
+              "explicit_dispute_status": "",
+              "explicit_evidence_type": null,
+              "mentions_manuscript": false,
+              "mentions_textual_transmission": true,
+              "mentions_textual_witness": false,
+              "mentions_variant": false
+            }
+          },
+          "parent_id": "qumran-archaeological-site",
+          "parent_type": "archaeology",
+          "parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "json_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "post_remediation_parity": {
+            "json_evidence_present": true,
+            "json_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": "canonical JSON projection"
+            },
+            "json_sqlite_agreement": {
+              "bundle_hash_agree": true,
+              "evidence_ids_agree": true,
+              "json_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "json_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ],
+              "result_ids_agree": true,
+              "sqlite_evidence_ids": [
+                "bibliology:ancient_near_east_context:0",
+                "bibliology:historical_context:0",
+                "dead-sea-scrolls:ancient_near_east_context:0",
+                "dead-sea-scrolls:historical_context:0",
+                "inerrancy:ancient_near_east_context:0",
+                "inerrancy:historical_context:0",
+                "inspiration:ancient_near_east_context:0",
+                "inspiration:historical_context:0",
+                "mount-ebal-altar-discovery:ancient_near_east_context:0",
+                "mount-ebal-altar-discovery:historical_context:0",
+                "psalms-exile-restoration-pilgrimage",
+                "qumran-archaeological-site:ancient_near_east_context:0",
+                "qumran-archaeological-site:historical_context:0",
+                "temple-mount-area-finds:ancient_near_east_context:0",
+                "temple-mount-area-finds:historical_context:0",
+                "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+                "wadi-murabbaat-scrolls:historical_context:0",
+                "word-of-god-theme:ancient_near_east_context:0",
+                "word-of-god-theme:historical_context:0"
+              ],
+              "sqlite_result_ids": [
+                "bibliology",
+                "dabar",
+                "dead-sea-scrolls",
+                "inerrancy",
+                "inspiration",
+                "logos",
+                "martyria",
+                "mount-ebal-altar-discovery",
+                "nephesh",
+                "psalms",
+                "qumran-archaeological-site",
+                "ruach",
+                "shalom",
+                "temple-mount-area-finds",
+                "wadi-murabbaat-scrolls",
+                "word-of-god-theme"
+              ]
+            },
+            "sqlite_evidence_present": true,
+            "sqlite_representation": {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "source": ".bhf/ckl.sqlite",
+              "table": "canonical_evidence_items"
+            }
+          },
+          "root_cause_reason_codes": [
+            "LEGACY_CLAIM_DROPPED_BEFORE_ROLE_DERIVATION",
+            "INCIDENTAL_TEXTUAL_TRANSMISSION_MATCH"
+          ]
+        }
+      ],
+      "after_audits": {
+        "presentation_role": {
+          "errors": [],
+          "status": "PASS"
+        },
+        "terra_suppression": {
+          "suppressed_items": [],
+          "terra_textual_suppression_required": false
+        },
+        "textual_routing": {
+          "errors": [],
+          "items": [],
+          "status": "PASS",
+          "textual_evidence_count": 0
+        }
+      },
+      "after_status": "PASS",
+      "before_audits": {
+        "presentation_role": {
+          "errors": [
+            "mount-ebal-altar-discovery:historical_context:0:expected-role:language_literary:actual-role:historical_context",
+            "qumran-archaeological-site:historical_context:0:expected-role:language_literary:actual-role:historical_context"
+          ],
+          "status": "FAIL"
+        },
+        "terra_suppression": {
+          "suppressed_items": [
+            {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            },
+            {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "presentation_role": "historical_context",
+              "terra_section": "historical_context"
+            }
+          ],
+          "terra_textual_suppression_required": true
+        },
+        "textual_routing": {
+          "errors": [
+            "mount-ebal-altar-discovery:historical_context:0:textual-material-routed:historical_context",
+            "qumran-archaeological-site:historical_context:0:textual-material-routed:historical_context"
+          ],
+          "items": [
+            {
+              "evidence_id": "mount-ebal-altar-discovery:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            },
+            {
+              "evidence_id": "qumran-archaeological-site:historical_context:0",
+              "expected_role": "language_literary",
+              "presentation_role": "historical_context",
+              "semantic_relationship": "GENERIC_BACKGROUND"
+            }
+          ],
+          "status": "FAIL",
+          "textual_evidence_count": 2
+        }
+      },
+      "before_status": "QUARANTINE",
+      "reference": "Psalms 119"
+    }
+  ],
+  "terra_invoked": false,
+  "terra_prose_generated": false,
+  "version": 1
+}

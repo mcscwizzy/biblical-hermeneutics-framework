@@ -1,0 +1,53 @@
+{
+  "reference": "1 Chronicles 23",
+  "book": "1 Chronicles",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_64",
+          "text": "Read the chapter with this setting in view: David prepares materials, plans, leaders, priests, Levites, musicians, gatekeepers, treasurers, and public support for Solomon's temple work. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "first-chronicles-david-prepares"
+          ],
+          "verse_refs": [
+            "1 Chronicles 23:1-32"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_65",
+          "text": "For its historical and cultural setting, note that The detailed Levitical, musical, and administrative orders may preserve earlier traditions while also reflecting and authorizing later temple institutions; direct projection to one moment in David's reign is historically disputed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1-chronicles:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "1 Chronicles 23:1-32"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fd81085a37840cfa66632dbb802857c76838f12fcd2074f0345686f68b5cf240",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

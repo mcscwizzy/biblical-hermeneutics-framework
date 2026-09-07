@@ -1,0 +1,65 @@
+{
+  "reference": "Leviticus 26",
+  "book": "Leviticus",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_34",
+          "text": "Read the chapter with this setting in view: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 26:1-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_35",
+          "text": "For its historical and cultural setting, note that Post-exilic Jews lived in the shadow of return and incomplete restoration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "exile-theme:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Leviticus 26:33-39"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_36",
+          "text": "For its historical and cultural setting, note that Exile is the crisis of the northern kingdom and especially Judah, culminating in Jerusalem\u2019s fall and the people\u2019s deportation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "exile-theme:historical_context:0"
+          ],
+          "verse_refs": [
+            "Leviticus 26:33-39"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "265c2d439d84fd0493753c30f7a214f3a21b488068d9adde7942921e68d52f2d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

@@ -1,0 +1,659 @@
+{
+  "passage_ref": "John 9",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "synagogue",
+        "title": "Synagogue",
+        "type": "institution",
+        "aliases": [
+          "synagogue institution",
+          "synagogue in scripture",
+          "synagogue structure",
+          "synagogue role"
+        ],
+        "metadata": {
+          "summary": "A local Jewish assembly and institution used in varied pre-70 settings for Torah reading, instruction, communal affairs, hospitality, prayer, and debate.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 1:21-28",
+            "Luke 4:16-30",
+            "Acts 13:14-43",
+            "Acts 17:1-12",
+            "John 9:22",
+            "James 2:1-4"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-aposynagogos",
+      "claim": "John's aposynagogos notices have supported staged Johannine-community and synagogue-expulsion reconstructions, but a single late-first-century decree or uniform rupture is not established by the text.",
+      "category": "culture",
+      "source_ids": [
+        "cambridge-john-companion",
+        "oxford-johannine",
+        "vonwahlde-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-disability-sin",
+      "claim": "John 9 rejects a direct causal blame of the man's blindness on his or his parents' sin, but disability should not be reduced to an object lesson or cure narrative and medical care should never be withheld.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "disabled-body",
+        "negotiating-disabled-body"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 9:1-41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "synagogue-exclusion-caution",
+      "claim": "John's aposynagogos notices support historical inquiry but do not by themselves establish one late-first-century decree or a uniform rupture between synagogue and church.",
+      "category": "culture",
+      "source_ids": [
+        "synagogue-passages",
+        "oxford-johannine",
+        "vonwahlde-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "synagogue-life-and-exclusion",
+        "parent_title": "Synagogue Life and Exclusion",
+        "parent_type": "cultural_background",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "synagogue:ancient_near_east_context:0",
+      "claim": "The relevant evidence belongs to Hellenistic and Roman Jewish communities rather than generic Ancient Near Eastern village or sanctuary institutions.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "synagogue:hebraic_worldview:0",
+      "claim": "Synagogue gatherings expressed communal identity through Torah, instruction, prayer, hospitality, deliberation, and discipline alongside continued orientation toward Jerusalem's temple.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "synagogue:historical_context:0",
+      "claim": "Synagogues are epigraphically, archaeologically, and literarily attested before 70 CE in Judea and the diaspora, but their origin, architecture, leadership, and activities differed by place. An exilic origin is possible but not directly documented.",
+      "category": "history",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "synagogue:historical_setting:0",
+      "claim": "Hellenistic and Roman Jewish communities before and after 70 CE, with pre-70 evidence kept distinct from later standardized practice.",
+      "category": "history",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "synagogue:original_audience:0",
+      "claim": "Readers of the Gospels, Acts, and James encountering varied Jewish assembly settings in Judea and the diaspora.",
+      "category": "social",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "synagogue:second_temple_context:0",
+      "claim": "Theodotus attests a Jerusalem synagogue for Torah reading and teaching before 70 CE; the Gospels and Acts portray diverse local synagogue scenes in Galilee and the diaspora.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-19-24",
+        "deuteronomy-6",
+        "acts-2",
+        "1-corinthians-11-14",
+        "synagogue-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "synagogue"
+      ],
+      "passage_anchors": [
+        "John 9:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "synagogue",
+        "parent_title": "Synagogue",
+        "parent_type": "institution",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 11-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-11-14",
+        "canonical_object_ids": [
+          "synagogue"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "synagogue"
+        ]
+      },
+      {
+        "title": "The Gospel of John",
+        "author": "George Parsenios",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the New Testament, chapter 8",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/gospel-of-john/148BF75C92C615531EA1EF732393F0D1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Survey of date, historical value, Synoptic relation, Jewish characterization, and community theories.",
+        "id": "cambridge-john-companion",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Deuteronomy 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-6",
+        "canonical_object_ids": [
+          "synagogue"
+        ]
+      },
+      {
+        "title": "This Abled Body: Rethinking Disabilities in Biblical Studies",
+        "author": "Hector Avalos, Sarah J. Melcher, and Jeremy Schipper, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2007,
+        "locator": "Disability-critical methods",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Avalos.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Disability-focused biblical interpretation.",
+        "id": "disabled-body",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Exodus 19-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-19-24",
+        "canonical_object_ids": [
+          "synagogue"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Negotiating the Disabled Body: Representations of Disability in Early Christian Texts",
+        "author": "Anna Rebecca Solev\u00e5g",
+        "publisher": "SBL Press",
+        "year": 2018,
+        "locator": "Early Christian disability representation",
+        "url": "https://cart.sbl-site.org/books/064524P",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Disability and embodiment in early Christian texts.",
+        "id": "negotiating-disabled-body",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john",
+          "synagogue-life-and-exclusion"
+        ]
+      },
+      {
+        "title": "Invention of the First-Century Synagogue: A Critical Examination of the Archaeological Evidence",
+        "author": "Lidia D. Matassa",
+        "publisher": "Society of Biblical Literature Press",
+        "year": 2018,
+        "locator": "Ancient Near East Monographs 22; literary, epigraphic, and archaeological evidence",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/12/9780884143208_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Open-access critical reassessment of pre-70 synagogue evidence.",
+        "id": "synagogue-historical-orientation",
+        "canonical_object_ids": [
+          "synagogue"
+        ]
+      },
+      {
+        "title": "Luke 4; Acts 13; John 9, 12, and 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 4:16-30; Acts 13:14-43; John 9:22; 12:42-43; 16:1-4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "synagogue-textual-settings",
+          "synagogue-exclusion-caution"
+        ],
+        "notes": "Primary biblical texts.",
+        "id": "synagogue-passages",
+        "canonical_object_ids": [
+          "synagogue-life-and-exclusion"
+        ]
+      },
+      {
+        "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+        "author": "Urban C. von Wahlde",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2017,
+        "locator": "New Testament Studies 63",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Argues for context-sensitive differentiation among Jewish group labels.",
+        "id": "vonwahlde-jews",
+        "canonical_object_ids": [
+          "john",
+          "synagogue-life-and-exclusion"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "synagogue",
+        "type": "institution",
+        "title": "Synagogue",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "synagogue-life-and-exclusion",
+        "type": "cultural_background",
+        "title": "Synagogue Life and Exclusion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "68416e5ede4b7818491c9f91d072768126217454ccdaf1e8f550132e43d72914",
+  "evidence_hash_version": "2"
+}

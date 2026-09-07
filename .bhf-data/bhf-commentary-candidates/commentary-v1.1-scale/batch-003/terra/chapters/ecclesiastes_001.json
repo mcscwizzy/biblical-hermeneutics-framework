@@ -1,0 +1,91 @@
+{
+  "reference": "Ecclesiastes 1",
+  "book": "Ecclesiastes",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_104",
+          "text": "Read the chapter with this setting in view: Ecclesiastes calls its principal speaker Qohelet, son of David and king in Jerusalem, and presents a royal experiment, but it never names him Solomon. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ecclesiastes-royal-persona-not-named-solomon"
+          ],
+          "verse_refs": [
+            "Ecclesiastes 1:1",
+            "Ecclesiastes 1:12-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_105",
+          "text": "For its historical and cultural setting, note that The book's late Hebrew features and loanwords support a Persian- or early Hellenistic-period date in most critical scholarship, while 4QQoha demonstrates that a Hebrew form circulated by approximately 175-150 BCE. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ecclesiastes-date-language-qumran"
+          ],
+          "verse_refs": [
+            "Ecclesiastes 1:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_105",
+          "text": "A literary feature to notice is that The received book distinguishes a third-person frame, Qohelet's extended first-person discourse, a closing hebel refrain, and a third-person epilogue that evaluates Qohelet and concludes with fear of God and judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ecclesiastes-frame-qohelet-epilogue"
+          ],
+          "verse_refs": [
+            "Ecclesiastes 1:1-2",
+            "Ecclesiastes 1:12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_105",
+          "text": "For a later or comparative connection, note that Ecclesiastes is witnessed by the Masoretic Hebrew text, fragmentary Hebrew manuscripts 4QQoha and 4QQohb, and an exceptionally literal Greek form titled Ecclesiast. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ecclesiastes-hebrew-greek-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Ecclesiastes 1:10-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f25d1d2c74364683c4c2e20c14f43d5f57baa6fd4f33809e57e013d3a67b6df4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

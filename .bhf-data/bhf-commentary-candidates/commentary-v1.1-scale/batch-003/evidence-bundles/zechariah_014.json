@@ -1,0 +1,512 @@
+{
+  "passage_ref": "Zechariah 14",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos-earthquake",
+      "claim": "Amos 1:1 remembers an earthquake as a chronological marker, but the text gives no absolute year and proposed archaeological correlations remain uncertain.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "amos-earthquake-study"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 14:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "amos:interpretive_note:3",
+      "claim": "The remembered earthquake should not be assigned an exact year, magnitude, epicenter, or destruction layer as though the correlation were certain.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "amos-earthquake-study"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 14:5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "plausible",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "zechariah-day-mount",
+      "claim": "Zechariah 14 depicts a Day of YHWH involving siege, divine combat, a split Mount of Olives, escape, cosmic alteration, and a unique day.",
+      "category": "history",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "god-violence-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 14:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "zechariah-ethical-restraint",
+      "claim": "Responsible use of Zechariah must distinguish ancient vision and rhetoric from modern political programs and reject antisemitism, supersessionism, holy-site threats, ethnic targeting, and legitimation of collective violence.",
+      "category": "politics",
+      "source_ids": [
+        "postcolonial-minor-prophets",
+        "race-minor-prophets",
+        "god-violence-prophets",
+        "foster-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 14:16-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "zechariah-living-water-kingship",
+      "claim": "Zechariah 14:8-11 promises perennial living waters flowing east and west, universal kingship of YHWH, transformed land, inhabited Jerusalem, and security.",
+      "category": "politics",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "foster-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 14:8-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "zechariah-pilgrimage-holiness",
+      "claim": "The conclusion moves from plague and conflict to surviving nations keeping the Feast of Booths and holiness extending from bells to cooking pots.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-masoretic",
+        "redditt-zechariah",
+        "race-minor-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 14:12-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Amos's Earthquake: An Extraordinary Middle East Seismic Event of 750 B.C.",
+        "author": "Steven A. Austin, Gordon W. Franz, and Eric G. Frost",
+        "publisher": "International Geology Review",
+        "year": 2000,
+        "locator": "Volume 42, issue 7, pages 657-671",
+        "url": "https://www.researchgate.net/publication/298846141_Amos%27s_earthquake_An_extraordinary_Middle_East_seismic_event_of_750_BC",
+        "source_type": "journal-article",
+        "supports": [
+          "archaeology",
+          "amos-earthquake"
+        ],
+        "notes": "Influential regional correlation proposal; the record preserves its stated uncertainty rather than treating it as proof.",
+        "id": "amos-earthquake-study",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Amos 1-9 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-day-yhwh",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-altar-vision",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-composition-final-form"
+        ],
+        "notes": "Primary Hebrew textual tradition.",
+        "id": "amos-masoretic",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Book of Zechariah",
+        "author": "Mark J. Boda",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802823755/the-book-of-zechariah/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "zechariah-horse-patrol",
+          "zechariah-branch-stone",
+          "zechariah-lampstand",
+          "zechariah-crowning",
+          "zechariah-pierced-mourning"
+        ],
+        "notes": "Major historical, literary, theological, philological, and text-critical commentary.",
+        "id": "boda-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Theology of the Books of Haggai and Zechariah",
+        "author": "Robert L. Foster",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "Old Testament Theology",
+        "url": "https://www.cambridge.org/core/books/the-theology-of-the-books-of-haggai-and-zechariah/AD32181E6ADA835BF900CF0354E0A16F",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "covenantal-significance",
+          "zechariah-return",
+          "zechariah-spirit-zerubbabel",
+          "zechariah-justice",
+          "zechariah-restoration-fasts-nations",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Theological reading grounded in exegesis and contemporary ethical reflection.",
+        "id": "foster-theology",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "God and Violence in the Prophets",
+        "author": "L. Juliana Claassens",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 19, pages 334-350",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211812731",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "interpretive-notes",
+          "zechariah-covenant-prisoners",
+          "zechariah-jerusalem-conflict",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Trauma-aware and ethical framework for prophetic violence.",
+        "id": "god-violence-prophets",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Postcolonial Approaches to the Minor Prophets",
+        "author": "Jeremiah W. Cataldo",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 25, pages 341-355",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372842",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Postcolonial critique of empire, scholarly institutions, and appropriation.",
+        "id": "postcolonial-minor-prophets",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Race and Intersectionality in Study of the Minor Prophets",
+        "author": "Stacy Davis",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 23, pages 313-322",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372701",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "interpretive-notes",
+          "zechariah-pilgrimage-holiness",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Ethnicity, race, intersectionality, and ethnocentrism, with attention to Zechariah.",
+        "id": "race-minor-prophets",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Zechariah",
+        "author": "Paul L. Redditt",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 39, pages 524-534",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373790",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "zechariah-superscriptions",
+          "zechariah-dated-core",
+          "zechariah-later-oracles"
+        ],
+        "notes": "Zechariah-specific overview of origin, composition, location in the Twelve, and themes.",
+        "id": "redditt-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Zechariah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Zechariah 1:1-14:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "zechariah-superscriptions",
+          "zechariah-return",
+          "zechariah-horse-patrol",
+          "zechariah-joshua-cleansing",
+          "zechariah-lampstand",
+          "zechariah-fasting-question",
+          "zechariah-humble-king",
+          "zechariah-pierced-mourning",
+          "zechariah-day-mount"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "zechariah-masoretic",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.932
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "55087f13606a7a13571b4673af471d88ae303e6c64fadb5a754bfb95873b56ff",
+  "evidence_hash_version": "2"
+}

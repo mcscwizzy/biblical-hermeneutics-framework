@@ -1,0 +1,83 @@
+{
+  "reference": "Acts 24",
+  "book": "Acts",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_52",
+          "text": "Read the chapter with this setting in view: The selected passages distinguish physical death, enslaving powers, ritual participation, ethical agency, resurrection, transformation, grief, arrival, and judgment. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "death-life-categories-distinct"
+          ],
+          "verse_refs": [
+            "Acts 24:10-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_53",
+          "text": "For its historical and cultural setting, note that In Caesarean custody Paul is narrated defending resurrection of just and unjust, a clear conscience, and discourse about justice, self-control, and coming judgment before Felix. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-resurrection-judgment-conscience"
+          ],
+          "verse_refs": [
+            "Acts 24:10-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_54",
+          "text": "For its historical and cultural setting, note that Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 24:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_53",
+          "text": "A literary feature to notice is that First Corinthians is an earlier occasional letter transmitting and arguing resurrection, while Acts later composes speeches and trial scenes with different wording, settings, and aims. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-letter-chronology-resurrection"
+          ],
+          "verse_refs": [
+            "Acts 24:10-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f93532cb7cfcd0da49e66988731ce0bdb2880d4f6938a223080a73c762dc64cc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Galatians 2",
+  "book": "Galatians",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_103",
+          "text": "Read the chapter with this setting in view: Calling behavior hypocritical in the Antioch narrative must not become an excuse for anti-Jewish table-fellowship caricature, ethnic contempt, or public shaming of modern people. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "galatians:interpretive_note:11"
+          ],
+          "verse_refs": [
+            "Galatians 2:11-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_104",
+          "text": "For its historical and cultural setting, note that Paul presents Titus as an uncircumcised Greek whose status became a test case at Jerusalem, but textual syntax and reconstruction of pressure remain disputed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "gal-titus"
+          ],
+          "verse_refs": [
+            "Galatians 2:1-5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_105",
+          "text": "For its historical and cultural setting, note that Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gal-jerusalem"
+          ],
+          "verse_refs": [
+            "Galatians 2:1-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_104",
+          "text": "A literary feature to notice is that Works of Torah in Galatians concern practices required by Torah, prominently circumcision in the crisis, but whether the phrase denotes Torah-observance generally, identity practices, human performance, or overlapping categories is disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "gal-works-torah"
+          ],
+          "verse_refs": [
+            "Galatians 2:16"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_104",
+          "text": "For the chapter's sequence and setting, note that Galatians reports Antioch in first person, First Corinthians reasons through differentiated food cases, and Acts later narrates a Jerusalem decree with its own sequence and aims. This gives the reader a frame for the passage without deciding every larger reconstruction. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-pauline-letters-chronology"
+          ],
+          "verse_refs": [
+            "Galatians 2:11-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ca7f814fc819dedc60ff95292e76405ccec0ba01bb6f587f492aa4bf017920e4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:36Z"
+  }
+}

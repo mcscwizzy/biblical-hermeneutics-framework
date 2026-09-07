@@ -1,0 +1,35 @@
+{
+  "reference": "John 5",
+  "book": "John",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_83",
+          "text": "Read the chapter with this setting in view: John 5 joins Sabbath healing, divine work, Son-Father relation, life, judgment, and multiple witnesses; 'equal with God' first appears as the narrator's account of opponents' inference and is developed rather than left isolated. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-sabbath-son"
+          ],
+          "verse_refs": [
+            "John 5:1-47"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "863a06f7e9220a8e7900ae2f46b2ad3328a2831721133a590d8668aafe050f5d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

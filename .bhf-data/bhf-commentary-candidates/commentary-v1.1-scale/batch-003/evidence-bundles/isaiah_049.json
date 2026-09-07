@@ -1,0 +1,767 @@
+{
+  "passage_ref": "Isaiah 49",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2-corinthians:interpretive_note:35",
+      "claim": "Now is the day of salvation is an urgent appeal, not a warrant for manipulative altar calls, sleep deprivation, crisis pressure, threats, or bypassing informed consent.",
+      "category": "culture",
+      "source_ids": [
+        "2cor-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 49:8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-corinthians",
+        "parent_title": "2 Corinthians",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "isaiah-many-voices",
+      "claim": "Isaiah contains the named prophet, divine speech, sign children, royal and national addressees, servants, heralds, Zion and Babylon as personified women, communal voices, and third-person prose narration; speaker identity must be established passage by passage.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-1-39",
+        "blenkinsopp-isaiah-40-55",
+        "moughtin-feminist-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 49:14-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4800,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "isaiah-reception-distinction",
+      "claim": "Responsible interpretation distinguishes a passage's literary sense and historical referent from prediction claims, typology, quotation, allusion, canonical synthesis, Jewish reception, and later christological or ecclesial readings.",
+      "category": "culture",
+      "source_ids": [
+        "oxford-handbook-isaiah",
+        "moyise-isaiah-nt",
+        "sweeney-post-shoah-isaiah",
+        "greek-esaias-nets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 49:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "isaiah-servants-plural",
+      "claim": "Isaiah's servant language has multiple referents, explicitly including Jacob or Israel and a plural community, while several singular servant poems invite but do not settle individual, collective, prophetic, royal, or messianic identification.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-40-55",
+        "paul-isaiah-40-66",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 49:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "suffering-servant-prophecy:ancient_near_east_context:0",
+      "claim": "Ancient background for Suffering Servant Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 42:1-9, Isaiah 49:1-7, isaiah, and jesus without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-42",
+        "isaiah-49",
+        "isaiah-50",
+        "isaiah-52-53",
+        "acts-8",
+        "1-peter-2",
+        "suffering-servant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 49:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "suffering-servant-prophecy",
+        "parent_title": "Suffering Servant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "suffering-servant-prophecy:historical_context:0",
+      "claim": "The servant songs emerge from Isaiah's prophetic world and hold together Israel's vocation, suffering, and restoration.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-42",
+        "isaiah-49",
+        "isaiah-50",
+        "isaiah-52-53",
+        "acts-8",
+        "1-peter-2",
+        "suffering-servant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 49:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "suffering-servant-prophecy",
+        "parent_title": "Suffering Servant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Corinthians 1-13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text used with textual apparatus resources.",
+        "id": "2cor-greek",
+        "canonical_object_ids": [
+          "2-corinthians"
+        ]
+      },
+      {
+        "title": "Acts 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-8",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 1-39",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 19",
+        "url": "https://yalebooks.yale.edu/book/9780300139617/isaiah-1-39/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "isaiah-superscription-prophet",
+          "isaiah-long-composition",
+          "isaiah-assyria-trust",
+          "isaiah-immanuel-sign",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-death-new-creation"
+        ],
+        "notes": "Critical commentary addressing formation, eighth-century settings, major disputed texts, and final form.",
+        "id": "blenkinsopp-isaiah-1-39",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40-55",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible 19A",
+        "url": "https://yalebooks.yale.edu/book/9780300140545/isaiah-40-55/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Critical commentary on exilic context, Cyrus, servants, comfort, and return.",
+        "id": "blenkinsopp-isaiah-40-55",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Esaias",
+        "author": "Mois\u00e9s Silva",
+        "publisher": "Oxford University Press / International Organization for Septuagint and Cognate Studies",
+        "year": 2007,
+        "locator": "Translation and translation profile of Old Greek Esaias",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/33-esaias-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "greek-words",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-old-greek"
+        ],
+        "notes": "Scholarly English translation with an introduction to the Greek translation's profile.",
+        "id": "greek-esaias-nets",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-42",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 49",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-49",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 50",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-50",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 52-53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-52-53",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Feminist/Womanist Readings of Isaiah",
+        "author": "Sharon Moughtin-Mumby",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 32",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334632952",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "key-people",
+          "interpretive-disputes",
+          "isaiah-many-voices"
+        ],
+        "notes": "City personification, women as national synecdoche, female voices, divine female imagery, and womanist critique.",
+        "id": "moughtin-feminist-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 28",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334632502",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-suffering-servant",
+          "isaiah-death-new-creation",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "New Testament quotation and allusion, Gentile inclusion, new exodus, new creation, and New Jerusalem.",
+        "id": "moyise-isaiah-nt",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Exodus, Psalms, Isaiah, Jeremiah",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek scriptural comparanda.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "2-corinthians"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40-66: A Commentary",
+        "author": "Shalom M. Paul",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Eerdmans Critical Commentary",
+        "url": "https://www.eerdmans.com/9780802826039/isaiah-40-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus",
+          "isaiah-justice-fasting-inclusion"
+        ],
+        "notes": "Jewish critical commentary with detailed philological, textual, literary, historical, and ancient Near Eastern analysis.",
+        "id": "paul-isaiah-40-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Suffering Servant Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "suffering-servant-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Post-Shoah Readings of Isaiah",
+        "author": "Marvin A. Sweeney",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter/334632598",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Ethically critical Jewish reading of hardening, empire, covenant, blame, and failed national security after the Shoah.",
+        "id": "sweeney-post-shoah-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-corinthians",
+        "type": "book",
+        "title": "2 Corinthians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "suffering-servant-prophecy",
+        "type": "prophecy",
+        "title": "Suffering Servant Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a8d5a0f46de2cfdac6189e693d4c73a7e005a7ccdfcab6a9f9262a46d20349c2",
+  "evidence_hash_version": "2"
+}

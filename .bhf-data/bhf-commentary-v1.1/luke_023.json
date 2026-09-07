@@ -1,0 +1,83 @@
+{
+  "reference": "Luke 23",
+  "book": "Luke",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_43",
+          "text": "Read the chapter with this setting in view: Jesus promises the petitioning criminal, 'today you will be with me in paradise'; punctuation and afterlife models are later interpretive questions, while mercy within Roman execution is narratively explicit. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-criminal"
+          ],
+          "verse_refs": [
+            "Luke 23:39-43"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_44",
+          "text": "For its historical and cultural setting, note that Pilate governed Judea from 26 to 36 CE while Jerusalem's temple and local elite institutions continued under Roman supremacy. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "pilate-stone:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Luke 23:1-56"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_45",
+          "text": "For its historical and cultural setting, note that The inscription belongs to Roman provincial administration in the eastern Mediterranean rather than generalized ancient Near Eastern kingship. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "pilate-stone:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Luke 23:1-56"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_44",
+          "text": "A literary feature to notice is that Luke narrates darkness, a torn temple curtain, Jesus' Psalm 31 prayer, a centurion's declaration of innocence or righteousness, crowds, women witnesses, death, and burial; comparisons with other Gospels must preserve Luke's wording. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-death"
+          ],
+          "verse_refs": [
+            "Luke 23:44-56"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4f5e10f16cf5152530baafd626c4fc264fe30701a3136050b213fa8aea4c5e75",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

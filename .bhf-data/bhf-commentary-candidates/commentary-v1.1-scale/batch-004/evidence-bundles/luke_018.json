@@ -1,0 +1,191 @@
+{
+  "passage_ref": "Luke 18",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "luke-pharisee-tax",
+      "claim": "The Pharisee and tax collector critiques self-exalting comparison and commends humble appeal for mercy; it cannot authorize contempt for Pharisees, Jews, religious practice, or whole communities.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "jewish-annotated-nt",
+        "luke-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 18:9-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "luke-widow-judge",
+      "claim": "The persistent widow and unjust judge encourage prayer and name delayed justice; the contrast does not portray God as abusive or require survivors to endure endless institutional neglect.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "trauma-luke"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 18:1-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Luke and thematic essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive contexts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Luke's Jewish Eschatology",
+        "author": "Isaac W. Oliver",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The National Restoration of Israel in Luke-Acts",
+        "url": "https://academic.oup.com/book/39383",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish identity, Israel, Jerusalem, and anti-supersessionist interpretation.",
+        "id": "luke-jews",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Trauma and Forgiveness",
+        "author": "C. Fred Alford",
+        "publisher": "Cambridge University Press",
+        "year": 2013,
+        "locator": "Trauma testimony, mourning, justice, and the ethics of forgiveness",
+        "url": "https://www.cambridge.org/core/books/trauma-and-forgiveness/FC2C8DE6F3C6135372D824348F106C0E",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Non-biblical trauma study used to constrain coercive forgiveness and survivor-silencing applications.",
+        "id": "trauma-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8f2cce16ec1b03d43c306c7c794651b5907ca51dcbe1f7c90e35d68f7cf04d50",
+  "evidence_hash_version": "2"
+}

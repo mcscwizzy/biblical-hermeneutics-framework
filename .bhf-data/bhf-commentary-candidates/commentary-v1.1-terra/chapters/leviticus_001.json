@@ -1,0 +1,94 @@
+{
+  "reference": "Leviticus 1",
+  "book": "Leviticus",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Leviticus opens at Sinai, after the tabernacle has been completed and before the departure narrated in Numbers. The first words matter: the LORD calls Moses from the tent of meeting. Read the offerings that follow as instruction given from that sanctuary setting, not as a detached list of religious rules. The chapter's careful alternatives\u2014herd, flock, or bird\u2014form the opening part of a larger book concerned with sacrifice, priestly service, purity, holy life, sacred time, land, and vows.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:0",
+            "leviticus-called-from-tent",
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 1:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "Sacrificial practice was widespread in the ancient world, so comparisons can help explain that Leviticus is speaking in a recognizable ritual world. They cannot by themselves establish that Israel's rites meant the same thing as another people's rites or were directly borrowed. Within Leviticus, the offering is framed by the LORD's own instructions and by concerns such as holiness, access, atonement, fellowship, and thanksgiving.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:2",
+            "sacrifice-theme:ancient_near_east_context:0",
+            "sacrifice-theme:hebraic_worldview:0"
+          ],
+          "verse_refs": [
+            "Leviticus 1:1-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s3_b1",
+          "text": "This chapter is the entrance to a book with a deliberate movement. Leviticus begins with offerings and priestly inauguration, then moves through purity and the Day of Atonement toward instructions for a holy communal life, sacred time, land, covenant consequences, and vows. That wider shape helps explain why the first offering is described with such care: it starts a sustained account of ordered worship and communal life.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 1:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "things_easy_to_miss",
+      "title": "Things easy to miss",
+      "blocks": [
+        {
+          "id": "s4_b1",
+          "text": "The narrative places the dwelling at Sinai and in the wilderness, but questions about the historical form of the tabernacle and the development of its priestly descriptions remain debated. The text, comparative evidence, and later interpretation should therefore be kept distinct. That caution lets the chapter's sanctuary setting do its literary work without asking the description to settle every historical reconstruction.",
+          "evidence_ids": [
+            "tabernacle:historical_context:0",
+            "tabernacle:historical_setting:0"
+          ],
+          "verse_refs": [
+            "Leviticus 1:1-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0e6d16ca8ed5f0eef2828dbff0f3aec502e5bb7917a7d487531ef2e6c0449e34",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:39.004394+00:00"
+  }
+}

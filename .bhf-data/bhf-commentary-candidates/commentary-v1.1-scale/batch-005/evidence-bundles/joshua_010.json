@@ -1,0 +1,513 @@
+{
+  "passage_ref": "Joshua 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "gezer-excavations",
+        "title": "Gezer Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "gezer excavations artifact",
+          "gezer excavations discovery",
+          "gezer excavations excavation",
+          "gezer excavations find"
+        ],
+        "metadata": {
+          "summary": "A border city near the coastal plain and hill country with strong Bronze and Iron Age significance.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 10",
+            "1 Kings 9",
+            "1 Chronicles 7"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "gezer-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Gezer Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 10, 1 Kings 9, joshua, and 1-kings without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "gezer",
+        "tell-border-city",
+        "joshua-10",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "gezer-excavations"
+      ],
+      "passage_anchors": [
+        "Joshua 10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "gezer-excavations",
+        "parent_title": "Gezer Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "gezer-excavations:historical_context:0",
+      "claim": "Gezer helps illuminate border control, agricultural life, and royal building programs.",
+      "category": "history",
+      "source_ids": [
+        "gezer",
+        "tell-border-city",
+        "joshua-10",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "gezer-excavations"
+      ],
+      "passage_anchors": [
+        "Joshua 10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "gezer-excavations",
+        "parent_title": "Gezer Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "joshua-literary-movement",
+      "claim": "Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 900,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:0",
+      "claim": "Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 900,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:1",
+      "claim": "Campaign summaries of broad victory must be read together with explicit remaining-land and incomplete-possession notices.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 10:40-43"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 39,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:2",
+      "claim": "Archaeological evidence from Jericho, Ai, Hazor, the highlands, and Mount Ebal varies by site and chronology and does not yield one uncontested conquest reconstruction.",
+      "category": "culture",
+      "source_ids": [
+        "butler-joshua",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 6-12"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 400,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:3",
+      "claim": "Joshua's herem and warfare texts require historical, literary, ethical, and theological scrutiny and cannot authorize modern territorial or religious violence.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 6-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-9",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Joshua, 2-Volume Set, Volumes 7A and 7B",
+        "author": "Trent C. Butler",
+        "publisher": "Zondervan",
+        "year": 2014,
+        "locator": "Second edition, introduction and commentary on Joshua 1-24",
+        "url": "https://zondervanacademic.com/products/joshua-2-volume-set-7a-and-7b",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-fulfilled-and-remaining-land"
+        ],
+        "notes": "Critical commentary with translation, textual notes, updated bibliography, and historical-literary discussion.",
+        "id": "butler-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Excavation report and stratigraphic study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "excavation-report-and-stratigraphic-study",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Gezer",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "gezer",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Joshua 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 1:1-24:33",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-rahab-rescue",
+          "joshua-fulfilled-and-remaining-land",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "joshua-1-24",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Joshua 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-10",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Tell / border city",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "tell-border-city",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "The Book of Joshua",
+        "author": "Marten Woudstra",
+        "publisher": "Eerdmans",
+        "year": 1981,
+        "locator": "Introduction and commentary on Joshua 1-24",
+        "url": "https://www.eerdmans.com/9780802825254/the-book-of-joshua/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Technical and theological commentary in the NICOT series.",
+        "id": "woudstra-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+        "author": "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Joshua commentary and background notes",
+        "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-historical-books-backgrounds",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "gezer-excavations",
+        "type": "archaeology",
+        "title": "Gezer Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "joshua",
+        "type": "book",
+        "title": "Joshua",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c4df286bde2e326e77ed87aa0449be6d055f27e30459f69b0cfc3f3df26fda8a",
+  "evidence_hash_version": "2"
+}

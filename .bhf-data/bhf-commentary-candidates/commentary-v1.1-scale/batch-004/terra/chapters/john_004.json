@@ -1,0 +1,71 @@
+{
+  "reference": "John 4",
+  "book": "John",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_56",
+          "text": "Read the chapter with this setting in view: 'Salvation is from the Jews' locates Jesus and salvation history within Jewish people and Scripture; worship in Spirit and truth cannot responsibly mean Jewish erasure or Samaritan inferiority. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-4-22"
+          ],
+          "verse_refs": [
+            "John 4:19-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_57",
+          "text": "For its historical and cultural setting, note that The Samaritan woman becomes an extended theological interlocutor and witness; the five husbands should not be used to label her sexually immoral because the text does not state adultery or prostitution. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-samaritan-woman"
+          ],
+          "verse_refs": [
+            "John 4:4-42"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_57",
+          "text": "A literary feature to notice is that Hoi Ioudaioi has context-sensitive referents including Jewish people, Judeans, festival crowds, and particular authorities; rendering or treating every occurrence as one hostile ethnic bloc distorts the Gospel and intensifies antisemitic harm. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-ioudaioi"
+          ],
+          "verse_refs": [
+            "John 4:9-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1df2b3b4b0ec5a4b8e72e61f5968359257e53adc25b7b930fdc8fc60e7e223bf",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

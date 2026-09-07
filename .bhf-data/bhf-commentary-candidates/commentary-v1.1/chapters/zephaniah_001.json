@@ -1,0 +1,98 @@
+{
+  "reference": "Zephaniah 1",
+  "book": "Zephaniah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 17 source-addressable item(s). The strongest eligible contextual observation is: Zephaniah 1:1 dates the word to Josiah's reign and identifies Zephaniah through Cushi, Gedaliah, Amariah, and Hezekiah.",
+          "verse_refs": [
+            "Zephaniah 1:1"
+          ],
+          "evidence_ids": [
+            "zephaniah-superscription"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Day of the Lord Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+          "verse_refs": [
+            "Zephaniah 1:14-18"
+          ],
+          "evidence_ids": [
+            "day-of-the-lord-prophecy:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: These warnings address covenant breach and imperial pressure, then project judgment and deliverance into the future.",
+          "verse_refs": [
+            "Zephaniah 1:14-18"
+          ],
+          "evidence_ids": [
+            "day-of-the-lord-prophecy:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Scholars disagree about literary unity, the nation-oracle sequence, the relation of chapter 3 to chapters 1-2, later restoration material, and shaping within the Twelve.",
+          "verse_refs": [
+            "Zephaniah 1:1"
+          ],
+          "evidence_ids": [
+            "zephaniah-composition"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances.",
+          "verse_refs": [
+            "Zephaniah 1:2-3"
+          ],
+          "evidence_ids": [
+            "zephaniah-creation-reversal"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3f951799f9fdc5998e32f2cfc8ecb5030581ad6b9b80adcbfbcfe29f5bde7d3b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:57.546891+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

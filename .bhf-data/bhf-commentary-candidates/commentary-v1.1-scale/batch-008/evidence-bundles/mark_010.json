@@ -1,0 +1,854 @@
+{
+  "passage_ref": "Mark 10",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "judea-1",
+        "title": "Judea",
+        "type": "place",
+        "aliases": [
+          "where is judea",
+          "tell me about judea",
+          "why is judea important"
+        ],
+        "metadata": {
+          "summary": "The southern region centered on Jerusalem and its temple, governed directly by Rome after 6 CE and central to Gospel passion and Acts narratives.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 10:1-34",
+            "Luke 19:28-48",
+            "John 18:28-40",
+            "John 19:1-42",
+            "Acts 1:1-8"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "judea-1:ancient_near_east_context:0",
+      "claim": "The relevant setting is the Roman eastern Mediterranean and late Second Temple period rather than generalized ancient geography.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Mark 10:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:hebraic_worldview:0",
+      "claim": "Temple pilgrimage, purity, burial, land memory, and covenant identity persisted amid taxation, elite administration, and Roman coercion.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Mark 10:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:historical_context:0",
+      "claim": "Judea's political status changed from Herodian kingdom to Roman prefecture, with Jerusalem's priestly leadership operating under imperial authority. The region must be distinguished chronologically and administratively from Antipas's Galilee.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Mark 10:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:second_temple_context:0",
+      "claim": "Jerusalem concentrated sacrificial worship and festival pilgrimage while settlements and tomb landscapes extended across the Judean hills and wilderness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Mark 10:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "mark-christology",
+      "claim": "Mark portrays Jesus through Messiah, Son of God, Son of Man, teacher, healer, exorcist, servant, suffering figure, vindicated figure, and kingly categories without reducing them to one later doctrinal formula.",
+      "category": "culture",
+      "source_ids": [
+        "collins-mark",
+        "marcus-mark-8-16",
+        "mark-readers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:45"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 44,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-disability",
+      "claim": "Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure.",
+      "category": "culture",
+      "source_ids": [
+        "disabled-body",
+        "negotiating-disabled-body",
+        "oxford-synoptics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:46-52"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 45,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "mark-economic-world",
+      "claim": "Mark depicts hired labor, fishers, tolls, farms, tenants, debt, wealthy patrons, impoverished people, enslaved persons, widows, and elite extraction within unequal agrarian and imperial economies.",
+      "category": "politics",
+      "source_ids": [
+        "keddie-class-power",
+        "oxford-synoptics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:17-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-imperial-reception",
+      "claim": "Mark exposes Roman coercion and crucifixion while also using imperial language and patriarchal conventions; postcolonial interpretation must resist both imperial domination and romantic claims that the text stands outside its world.",
+      "category": "politics",
+      "source_ids": [
+        "postcolonial-mark",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:42-45"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "mark-passion-predictions",
+      "claim": "Three passion predictions are followed by disciple misunderstanding and teaching about self-denial, service, receptivity, and non-dominating leadership.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:32-45"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 31,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "mark-ransom",
+      "claim": "Mark 10:45 links the Son of Man's service and death with a ransom 'for many'; liberation, Isaiah-servant, martyr, covenant, and atonement readings remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:45"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 44,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-safety",
+      "claim": "No Markan text authorizes coercive conversion, colonial mission, religious violence, abuse, medical neglect, dangerous exorcism, snake handling, poison drinking, prosperity extraction, apocalyptic date-setting, or testing God.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "ntvmr-mark16",
+        "disabled-body",
+        "postcolonial-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:42-45"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "mark-structure",
+      "claim": "The plot turns near Mark 8:22-10:52 from partial sight and confession toward three passion predictions and the journey to Jerusalem.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 10:32-52"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 31,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 113
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Mark: A Commentary",
+        "author": "Adela Yarbro Collins",
+        "publisher": "Fortress Press",
+        "year": 2007,
+        "locator": "Hermeneia",
+        "url": "https://ms.fortresspress.com/downloads/9780800660789_The%20Catholic%20Biblical%20Quarterly_Review.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; linked scholarly review summarizes its major coverage.",
+        "id": "collins-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "This Abled Body: Rethinking Disabilities in Biblical Studies",
+        "author": "Hector Avalos, Sarah J. Melcher, and Jeremy Schipper, editors",
+        "publisher": "SBL Press",
+        "year": 2007,
+        "locator": "Disability studies essays including Mark 5",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Avalos.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Disability-critical biblical interpretation.",
+        "id": "disabled-body",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Judea 1",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "judea-1-historical-orientation",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "G. Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Whole volume",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of class, extraction, status, and power in Roman Palestine.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark and His Readers: The Son of God among Jews",
+        "author": "Adela Yarbro Collins",
+        "publisher": "Cambridge University Press",
+        "year": 1999,
+        "locator": "Harvard Theological Review",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/mark-and-his-readers-the-son-of-god-among-jews/765FC451556FBA90D6D0E95A2E2E1679",
+        "source_type": "journal-article",
+        "supports": [
+          "original-audience",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of sonship and Jewish hearers.",
+        "id": "mark-readers",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Negotiating the Disabled Body: Representations of Disability in Early Christian Texts",
+        "author": "Anna Rebecca Solev\u00e5g",
+        "publisher": "SBL Press",
+        "year": 2018,
+        "locator": "Whole volume",
+        "url": "https://cart.sbl-site.org/books/064524P",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Intersectional disability-studies approach to early Christian texts.",
+        "id": "negotiating-disabled-body",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "MARK16 Project resources",
+        "author": "",
+        "publisher": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "year": null,
+        "locator": "Mark 16 endings and manuscript transcriptions",
+        "url": "https://ntvmr.uni-muenster.de/web/Mark16",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Specialist manuscript research on Mark's endings.",
+        "id": "ntvmr-mark16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Synoptic Gospels",
+        "author": "Stephen P. Ahearne-Kroll, editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/45760",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative research on sources, manuscripts, bodies, power, healing, food, suffering, wealth, and gender.",
+        "id": "oxford-synoptics",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial feminist reading of Mark 14-16 and related essays",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Postcolonial, gender-aware, and embodied reception.",
+        "id": "postcolonial-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "judea-1",
+        "type": "place",
+        "title": "Judea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.935
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d82d7908216ceba10e792c4d09e6bff938f5e548bc4f2bdae60b7f4a61e319b4",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Ruth 1",
+  "book": "Ruth",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_147",
+          "text": "Read the chapter with this setting in view: Ruth pledges to accompany Naomi, share her people and God, and remain with her until death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ruth-loyal-pledge"
+          ],
+          "verse_refs": [
+            "Ruth 1:16-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_148",
+          "text": "For its historical and cultural setting, note that Ruth's narrated setting in the days of the judges and genealogy to David do not establish the date when the anonymous book reached its final form. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ruth:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Ruth 1:1"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_149",
+          "text": "For its historical and cultural setting, note that Ruth repeatedly retains the designation Moabite while pledging herself to Naomi, Israel's people, and Israel's God; proposals that the book directly answers a specific later intermarriage policy remain debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ruth:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "Ruth 1:16-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_148",
+          "text": "A literary feature to notice is that Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ruth-providence-through-action"
+          ],
+          "verse_refs": [
+            "Ruth 1:6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_148",
+          "text": "For a later or comparative connection, note that The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Ruth 1:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aff7e97bba5a2d8339d47863757e49c748cab69865315e61e4c926ef58905c72",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

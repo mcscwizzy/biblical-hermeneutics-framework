@@ -1,0 +1,65 @@
+{
+  "reference": "2 Chronicles 5",
+  "book": "2 Chronicles",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_47",
+          "text": "Read the chapter with this setting in view: Second Chronicles 1-7 portrays Solomon's wisdom and temple building as the completion of David's preparations, culminating in ark, glory, dedication prayer, fire, celebration, divine promise, and warning. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "verse_refs": [
+            "2 Chronicles 5:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_48",
+          "text": "For its historical and cultural setting, note that The event belongs to the rise and development of Israel's monarchy and its theological consequences. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "solomon-builds-the-temple:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Chronicles 5:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_49",
+          "text": "For its historical and cultural setting, note that Royal administration, dynastic succession, and state religion shape the background. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "solomon-builds-the-temple:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "2 Chronicles 5:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b5a312bc4e0b60dd6713cd556551ba339a885508c8a2dc7caaa6d384990ae5df",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

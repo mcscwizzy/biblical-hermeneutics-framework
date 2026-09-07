@@ -190,8 +190,8 @@ def test_provider_constraints_are_explicit_and_prompt_is_v5():
     requests = []
 
     class Adapter:
-        def supports_json_schema_response_format(self):
-            return False
+        def presentation_response_format_capability(self, model):
+            return None
 
         def chat(self, request):
             requests.append(request)

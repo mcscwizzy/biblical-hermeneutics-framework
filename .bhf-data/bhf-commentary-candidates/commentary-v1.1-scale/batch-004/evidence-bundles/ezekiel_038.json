@@ -1,0 +1,247 @@
+{
+  "passage_ref": "Ezekiel 38",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-gog",
+      "claim": "Ezekiel 38-39 depicts Gog of the land of Magog leading a latter-day coalition against restored Israel and being defeated by divine action.",
+      "category": "history",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "block-ezekiel-25-48",
+        "mein-gog-politics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 38:1-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "ezekiel-p967-order",
+      "claim": "Papyrus 967 places the material conventionally numbered Ezekiel 38-39 before chapter 37, showing an ancient order different from the familiar Masoretic sequence.",
+      "category": "history",
+      "source_ids": [
+        "papyrus-967-cologne",
+        "mackie-text-critical",
+        "ezekiel-old-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 38:1-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Ezekiel, Chapters 25-48",
+        "author": "Daniel I. Block",
+        "publisher": "Eerdmans",
+        "year": 1998,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9781467423717/the-book-of-ezekiel-chapters-2548/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "structure",
+          "ezekiel-practical-outline",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones",
+          "ezekiel-gog",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Extensive evangelical commentary on Ezekiel 25-48.",
+        "id": "block-ezekiel-25-48",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Old Greek Iezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Greek Ezekiel textual tradition",
+        "url": "",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "interpretive-notes",
+          "ezekiel-textual-witnesses",
+          "ezekiel-p967-order"
+        ],
+        "notes": "Ancient Greek witness whose relationship to Hebrew forms requires passage-level analysis.",
+        "id": "ezekiel-old-greek",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Text-Critical Issues in Ezekiel",
+        "author": "Timothy P. Mackie",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 7",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "authorship-positions",
+          "ezekiel-compositional-history",
+          "ezekiel-textual-witnesses",
+          "ezekiel-p967-order"
+        ],
+        "notes": "Survey of Masoretic, Greek, Qumran, and scribal-development questions.",
+        "id": "mackie-text-critical",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel in Christian Interpretation: Gog, Magog, and Apocalyptic Politics",
+        "author": "Andrew Mein",
+        "publisher": "Oxford University Press",
+        "year": 2022,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 17",
+        "url": "https://academic.oup.com/edited-volume/35418/chapter-abstract/371754589",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "ezekiel-gog",
+          "ezekiel-revelation-reuse"
+        ],
+        "notes": "Reception study documenting changing and politically charged Gog identifications.",
+        "id": "mein-gog-politics",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ein theologischer Papyrus-Kodex (P 967 Rahlfs)",
+        "author": "Cologne Papyrus Collection",
+        "publisher": "University of Cologne",
+        "year": null,
+        "locator": "Papyrus 967: Ezekiel, Daniel, and Esther codex holdings",
+        "url": "https://papyri.uni-koeln.de/features/rahlfs",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "primary-sources",
+          "ezekiel-textual-witnesses",
+          "ezekiel-p967-order"
+        ],
+        "notes": "Collection documentation for portions of the third-century Greek codex.",
+        "id": "papyrus-967-cologne",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8f4710b506551f75c53320ed8160bed293d2c21a478b5ea183335c37f52764ff",
+  "evidence_hash_version": "2"
+}

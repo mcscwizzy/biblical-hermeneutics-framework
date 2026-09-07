@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 78",
+  "book": "Psalms",
+  "chapter": 78,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_4",
+          "text": "Read the chapter with this setting in view: Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "why-does-the-bible-repeat-themes:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 78:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_5",
+          "text": "For its historical and cultural setting, note that Repetition was mnemonic and pedagogical in the ancient world; biblical repetition also signals theological significance. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-does-the-bible-repeat-themes:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 78:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5f4977074ca2775d7626d6817ac3c39f52b71eb077c01097e3e2147702b25a80",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

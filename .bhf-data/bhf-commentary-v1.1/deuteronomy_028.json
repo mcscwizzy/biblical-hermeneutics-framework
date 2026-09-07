@@ -1,0 +1,83 @@
+{
+  "reference": "Deuteronomy 28",
+  "book": "Deuteronomy",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_16",
+          "text": "Read the chapter with this setting in view: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 28:1-68"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_17",
+          "text": "For its historical and cultural setting, note that Treaty parallels are relevant to Deuteronomy's covenant form but do not produce an uncontested date because the comparison and history of treaty conventions are debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Deuteronomy 28:1-68"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_18",
+          "text": "For its historical and cultural setting, note that Post-exilic Jews lived in the shadow of return and incomplete restoration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "exile-theme:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 28:36-68"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_17",
+          "text": "For a later or comparative connection, note that Haggai 1:5-11 links sowing, food, drink, clothing, wages, harvest, and drought with neglect of the house through covenantal prophetic rhetoric. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "haggai-scarcity"
+          ],
+          "verse_refs": [
+            "Deuteronomy 28:22-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9fa5b2acc13fbcfa39f4f0d8cc80e75ebea11c039400e55db2d3d8377d73039a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

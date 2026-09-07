@@ -1,0 +1,53 @@
+{
+  "reference": "Matthew 11",
+  "book": "Matthew",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_20",
+          "text": "Read the chapter with this setting in view: Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-discourses"
+          ],
+          "verse_refs": [
+            "Matthew 11:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_21",
+          "text": "For a later or comparative connection, note that Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau language. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "malachi-new-testament"
+          ],
+          "verse_refs": [
+            "Matthew 11:10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e35cddeb854eac6a569807d499161075ca68fb27f09e6827a4948c29a13ad9b4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "reference": "2 Samuel 15",
+  "book": "2 Samuel",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_7",
+          "text": "Read the chapter with this setting in view: Absalom builds popular support, declares himself king, drives David from Jerusalem, and dies when Joab ignores David's command to deal gently with him. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-samuel-absalom-rebellion"
+          ],
+          "verse_refs": [
+            "2 Samuel 15:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_8",
+          "text": "A literary feature to notice is that Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "second-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Samuel 15:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "55422103e4cfffbe69de2fa8b080a5064c2cd9f80b6986ffb8943352f29b306a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

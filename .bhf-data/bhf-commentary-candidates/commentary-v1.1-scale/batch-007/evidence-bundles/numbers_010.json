@@ -1,0 +1,838 @@
+{
+  "passage_ref": "Numbers 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "wilderness-wandering",
+        "title": "Wilderness Wandering",
+        "type": "event",
+        "aliases": [
+          "Israel in the wilderness",
+          "Exodus wilderness journey",
+          "wilderness itinerary and water crises"
+        ],
+        "metadata": {
+          "summary": "Israel's extended journey between Egypt and the Transjordan, narrated through ordered stations, resource crises, covenant episodes, rebellions, and changes of generation.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 15:22-27",
+            "Exodus 16:1-36",
+            "Exodus 17:1-7",
+            "Exodus 19:1-6",
+            "Numbers 10:11-12",
+            "Numbers 20:1-13",
+            "Numbers 33:1-49"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "biblical-portable-sanctuary-description",
+      "claim": "Exodus and Numbers portray a sanctuary constructed from transportable components, dismantled and carried by assigned personnel, and re-erected within Israel's camp.",
+      "category": "history",
+      "source_ids": [
+        "exodus-numbers-portable-sanctuary-text",
+        "may-portable-sanctuaries-2015"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10:11-28"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.934,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 7
+      }
+    },
+    {
+      "id": "egyptian-processional-bark-shrine-contrast",
+      "claim": "New Kingdom Egyptian scenes depict a deity's enclosed shrine carried on a processional bark, showing that divine representation could leave restricted temple space in a protected mobile installation.",
+      "category": "archaeology",
+      "source_ids": [
+        "amenmose-amun-bark-met",
+        "met-bronze-thutmose-barks-1997",
+        "exodus-numbers-portable-sanctuary-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10:33-36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.934,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "artifact",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "egyptian-processional-bark-shrine-contrast:passage-relevance",
+      "claim": "The comparison clarifies mobile sacred equipment but also highlights differences: Egyptian barks transported cult images in festival processions, whereas Numbers describes covered sanctuary objects and an ark within Israel's journey.",
+      "category": "archaeology",
+      "source_ids": [
+        "amenmose-amun-bark-met",
+        "met-bronze-thutmose-barks-1997",
+        "exodus-numbers-portable-sanctuary-text"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10:33-36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.934,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "artifact",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "egyptian-processional-bark-shrine-contrast"
+        ]
+      }
+    },
+    {
+      "id": "leviticus:interpretive_note:0",
+      "claim": "Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "numbers-literary-journey",
+      "claim": "Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "numbers:interpretive_note:0",
+      "claim": "Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "numbers:interpretive_note:2",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "category": "geography",
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10-21"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "wilderness-wandering:ancient_near_east_context:0",
+      "claim": "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 10:11-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "wilderness-wandering:historical_context:0",
+      "claim": "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates.",
+      "category": "history",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 10:11-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Barque of Amun Arriving at the West Bank of Thebes",
+        "author": "Charles K. Wilkinson after the original in the tomb of Amenmose",
+        "publisher": "The Metropolitan Museum of Art",
+        "year": 1931,
+        "locator": "Accession 31.6.5; facsimile of TT19, original ca. 1295-1213 BCE",
+        "url": "https://www.metmuseum.org/art/collection/search/557797",
+        "source_type": "museum-collection",
+        "supports": [
+          "egyptian-processional-bark-contrast"
+        ],
+        "notes": "Museum record and facsimile documenting a New Kingdom scene in which Amun's shrine travels on a bark.",
+        "id": "amenmose-amun-bark-met",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ]
+      },
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+        "author": "G. I. Davies",
+        "publisher": "Cambridge University Press",
+        "year": 1979,
+        "locator": "Chapters 7-9: route points, Sinai routes, and identification",
+        "url": "https://www.cambridge.org/core/books/way-of-the-wilderness/19AE62B5E4C086F242F5C1F95BCC9CB1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical-geographic survey of itinerary interpretation and competing routes.",
+        "id": "davies-way-wilderness-1979",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Exodus 25-40 and Numbers 4, 9-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 25:1-40:38; Numbers 4:1-33; 9:15-23; 10:11-28",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "biblical-portable-sanctuary-description",
+          "mari-large-public-tent-comparison",
+          "qadesh-royal-tent-comparison",
+          "timna-tented-shrine-comparison",
+          "egyptian-processional-bark-contrast"
+        ],
+        "notes": "Primary biblical texts used as the control for every comparison.",
+        "id": "exodus-numbers-portable-sanctuary-text",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ]
+      },
+      {
+        "title": "Exodus 15-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 15:22-27; 16:1-36; 17:1-7; 19:1-6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative text; no modern translation is reproduced.",
+        "id": "exodus-wilderness-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Traditions",
+        "author": "James K. Hoffmeier",
+        "publisher": "Oxford University Press",
+        "year": 2005,
+        "locator": "Chapters 4-7: route, Sea, mountain, and wilderness travel",
+        "url": "https://academic.oup.com/book/36060",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "One detailed route reconstruction, retained as a scholarly model rather than CKL's settled map.",
+        "id": "hoffmeier-ancient-israel-sinai-2005",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Leviticus",
+        "author": "Baruch A. Levine",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "levine-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Leviticus 1-27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 1:1-27:34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "leviticus-1-27",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Portable Sanctuaries and Their Evolution: The Biblical Tabernacle and the Akkadian qersu",
+        "author": "Natalie N. May",
+        "publisher": "Penn State University Press",
+        "year": 2015,
+        "locator": "Marbeh Hokmah, pp. 369-388",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/9781575063614-028/html",
+        "source_type": "academic-book",
+        "supports": [
+          "mari-large-public-tent-comparison",
+          "biblical-portable-sanctuary-description"
+        ],
+        "notes": "Diachronic comparison of biblical tent terminology and Akkadian qersu installations.",
+        "id": "may-portable-sanctuaries-2015",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ]
+      },
+      {
+        "title": "A Bronze Statuette of Thutmose III",
+        "author": "Marsha Hill",
+        "publisher": "The Metropolitan Museum of Art",
+        "year": 1997,
+        "locator": "Metropolitan Museum Journal 32, discussion of portable barks and bark stations, pp. 17-29",
+        "url": "https://resources.metmuseum.org/resources/metpublications/pdf/A_Bronze_Statuette_of_Thutmose_III_The_Metropolitan_Museum_Journal_v_32_1997.pdf",
+        "source_type": "journal-article",
+        "supports": [
+          "egyptian-processional-bark-contrast"
+        ],
+        "notes": "Museum scholarship on Egyptian portable bark practices and their New Kingdom evidence.",
+        "id": "met-bronze-thutmose-barks-1997",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ]
+      },
+      {
+        "title": "Exodus",
+        "author": "Carol Meyers",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "New Cambridge Bible Commentary, Exodus 15-19",
+        "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Literary, social, and historical commentary on the initial wilderness episodes.",
+        "id": "meyers-exodus-2005",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Numbers",
+        "author": "Jacob Milgrom",
+        "publisher": "Jewish Publication Society",
+        "year": 1990,
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "milgrom-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 1:1-36:13",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "numbers-two-generations",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing",
+          "numbers-inheritance-preparation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "numbers-1-36",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 10, 20, and 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 10:11-12; 20:1-13; 33:1-49",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative and itinerary text.",
+        "id": "numbers-wilderness-itinerary-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "The Book of Leviticus",
+        "author": "Gordon J. Wenham",
+        "publisher": "Eerdmans",
+        "year": 1979,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "id": "wenham-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Leviticus commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Comparative textual, material, historical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "leviticus",
+          "numbers"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+            "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+            "publisher": "Zondervan",
+            "year": 2009,
+            "locator": "Leviticus commentary and background notes",
+            "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+            "source_type": "reference-work",
+            "supports": [
+              "ancient-near-east-context",
+              "archaeology",
+              "historical-context",
+              "interpretive-notes",
+              "leviticus-purity-distinctions"
+            ],
+            "notes": "Comparative textual, material, historical, and cultural background.",
+            "id": "zondervan-illustrated-pentateuch-backgrounds"
+          },
+          {
+            "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+            "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+            "publisher": "Zondervan",
+            "year": 2009,
+            "locator": "Numbers commentary and background notes",
+            "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+            "source_type": "reference-work",
+            "supports": [
+              "ancient-near-east-context",
+              "archaeology",
+              "historical-context",
+              "interpretive-notes",
+              "numbers-deir-alla-limits"
+            ],
+            "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+            "id": "zondervan-illustrated-pentateuch-backgrounds"
+          }
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "type": "cultural_background",
+        "title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.934
+      },
+      {
+        "id": "leviticus",
+        "type": "book",
+        "title": "Leviticus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "wilderness-wandering",
+        "type": "event",
+        "title": "Wilderness Wandering",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d846b99afc660d0f8a4777809aedf85e0e236838dbb05359a47ddfe1359ef40d",
+  "evidence_hash_version": "2"
+}

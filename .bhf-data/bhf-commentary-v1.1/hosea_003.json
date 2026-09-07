@@ -1,0 +1,65 @@
+{
+  "reference": "Hosea 3",
+  "book": "Hosea",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_123",
+          "text": "Read the chapter with this setting in view: Hosea 3 reports in first person the acquisition of an unnamed woman and a period of restricted relationship as an analogy for Israel's political and cultic deprivation. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-chapter-three-woman"
+          ],
+          "verse_refs": [
+            "Hosea 3:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_124",
+          "text": "For its historical and cultural setting, note that Hosea's marriage and stripping imagery must not be used to authorize intimate-partner violence, coercive marriage, sexual humiliation, surveillance, deprivation, or forced reconciliation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "hosea:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Hosea 3:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_125",
+          "text": "For its historical and cultural setting, note that Pastoral use of Hosea must center survivor safety, trauma-informed care, consent, and accountability; no reader should be told to remain with an abuser because Hosea loved a woman. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "hosea:interpretive_note:31"
+          ],
+          "verse_refs": [
+            "Hosea 3:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "29e48308eb890d16a7f6e28ec8b66f759fa29510f1933634155f61a64df63741",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

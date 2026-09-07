@@ -1,0 +1,83 @@
+{
+  "reference": "1 Samuel 1",
+  "book": "1 Samuel",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_111",
+          "text": "Read the chapter with this setting in view: Judges refers to the house of God at Shiloh and gives a precise route description for an annual festival of YHWH there; excavation documents occupation but does not identify the narrated installations or event. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "shiloh-sanctuary-and-festival"
+          ],
+          "verse_refs": [
+            "1 Samuel 1:1-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_112",
+          "text": "For its historical and cultural setting, note that Shiloh joins sacred presence, sacrifice, priestly responsibility, festival, and tribal assembly. Its later canonical use also insists that a revered sanctuary does not guarantee protection when covenant conduct is corrupt. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "shiloh:hebraic_worldview:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 1:1-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_113",
+          "text": "For its historical and cultural setting, note that Hannah's story is set at Shiloh in Israel's premonarchic period, where a household's fertility, inheritance, and worship life were socially consequential. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "hannah:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 1:1-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_112",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 1:1-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "079b1b16ea63cb93ccebc2424a3dc4f2058ec98eadeec3f6c974d5f4ede396fd",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

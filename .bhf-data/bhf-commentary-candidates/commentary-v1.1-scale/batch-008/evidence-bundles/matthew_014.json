@@ -1,0 +1,373 @@
+{
+  "passage_ref": "Matthew 14",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-roman-setting",
+      "claim": "Herodian client rule, Roman provincial authority, taxation, elite power, and crucifixion frame Matthew's remembered first-century setting.",
+      "category": "culture",
+      "source_ids": [
+        "josephus-herod",
+        "josephus-roman-judea",
+        "riches-roman-palestine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 14:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "who-was-peter:ancient_near_east_context:0",
+      "claim": "Fishermen and household networks were ordinary in Galilee, but Peter is drawn into public witness in Jerusalem and beyond.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-14",
+        "matthew-16",
+        "luke-22",
+        "john-21",
+        "acts-2",
+        "acts-10",
+        "galatians-2",
+        "1-peter-1",
+        "who-was-peter-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 14:22-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-peter",
+        "parent_title": "Who was Peter?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-peter:historical_context:0",
+      "claim": "A fisherman from Galilee, Peter becomes a leading witness in Jesus' ministry and the early church.",
+      "category": "history",
+      "source_ids": [
+        "matthew-14",
+        "matthew-16",
+        "luke-22",
+        "john-21",
+        "acts-2",
+        "acts-10",
+        "galatians-2",
+        "1-peter-1",
+        "who-was-peter-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 14:22-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-peter",
+        "parent_title": "Who was Peter?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-1",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "Acts 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-10",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "Galatians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-2",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "John 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-21",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities: Herod and succession",
+        "author": "Josephus, Flavius",
+        "publisher": "Loeb Classical Library",
+        "year": null,
+        "locator": "Antiquities 14-17",
+        "url": "https://www.loebclassics.com/view/LCL410/1963/volume.xml",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "matthew-herod-bethlehem"
+        ],
+        "notes": "Ancient literary witness for Herodian rule; it does not independently report Matthew's infancy events.",
+        "id": "josephus-herod",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities and Jewish War: Roman Judea",
+        "author": "Josephus, Flavius",
+        "publisher": "Loeb Classical Library",
+        "year": null,
+        "locator": "Pilate, priestly leadership, Jerusalem, temple, and war contexts",
+        "url": "https://www.loebclassics.com/view/LCL433/1965/volume.xml",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "matthew-passion-responsibility",
+          "matthew-roman-setting"
+        ],
+        "notes": "Ancient comparative evidence requiring source-critical evaluation.",
+        "id": "josephus-roman-judea",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Luke 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-22",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "Matthew 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-14",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "Matthew 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-16",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      },
+      {
+        "title": "The Political, Economic, Social, and Cultural Context of First-Century Palestinian Judaism",
+        "author": "Riches, John",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "The World of Jesus, chapter 1, pages 10-29",
+        "url": "https://www.cambridge.org/core/books/abs/world-of-jesus/political-economic-social-and-cultural-context-of-firstcentury-palestinian-judaism/78E9FC5FF52226BA04868426D9EDF481",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-roman-setting"
+        ],
+        "notes": "Broad political and socioeconomic context for Herodian and Roman Jewish life.",
+        "id": "riches-roman-palestine",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Who was Peter?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "who-was-peter-historical-orientation",
+        "canonical_object_ids": [
+          "who-was-peter"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "who-was-peter",
+        "type": "faq",
+        "title": "Who was Peter?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b6691573a9f3779051a283673cd95abbbaaca128b436918a68bb97a3bf0f444b",
+  "evidence_hash_version": "2"
+}

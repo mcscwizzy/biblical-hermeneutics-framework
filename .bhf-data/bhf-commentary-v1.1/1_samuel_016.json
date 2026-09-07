@@ -1,0 +1,83 @@
+{
+  "reference": "1 Samuel 16",
+  "book": "1 Samuel",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_124",
+          "text": "Read the chapter with this setting in view: The book explicitly attributes a harmful spirit affecting Saul to the LORD after the Spirit of the LORD departs; medical, psychological, spiritual, and theological explanations should not be collapsed into one diagnosis. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "1 Samuel 16:14-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_125",
+          "text": "For its historical and cultural setting, note that David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-david:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 16:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_126",
+          "text": "For its historical and cultural setting, note that Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-david:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 16:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_125",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 16:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f12b387e6bff7203448f062abae71612d76a82d6409f690ad3b684c0e902f2be",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

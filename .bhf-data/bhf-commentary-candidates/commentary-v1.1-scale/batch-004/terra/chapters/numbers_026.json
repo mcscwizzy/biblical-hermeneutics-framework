@@ -1,0 +1,53 @@
+{
+  "reference": "Numbers 26",
+  "book": "Numbers",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_137",
+          "text": "Read the chapter with this setting in view: The two census totals and the scale of Israel's wilderness population have major literary and historical interpretations; the record should not silently select one reconstruction. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "numbers:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Numbers 26:1-65"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_138",
+          "text": "A literary feature to notice is that The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "numbers-two-generations"
+          ],
+          "verse_refs": [
+            "Numbers 26:1-65"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9194908f1a70682604e0e59edc4aff183c656374d46ae0f5009213586bf85729",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

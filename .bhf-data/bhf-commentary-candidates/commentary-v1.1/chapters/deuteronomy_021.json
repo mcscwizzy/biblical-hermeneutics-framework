@@ -1,0 +1,74 @@
+{
+  "reference": "Deuteronomy 21",
+  "book": "Deuteronomy",
+  "chapter": 21,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence includes 3 source-addressable item(s). The strongest eligible contextual observation is: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+          "verse_refs": [
+            "Deuteronomy 21:1-23"
+          ],
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+          "verse_refs": [
+            "Deuteronomy 21:1-23"
+          ],
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Galatians juxtaposes Deuteronomic curse texts, Torah performance, and the Messiah's crucifixion; it does not say that Torah, Jews, or Jewish practice are themselves cursed.",
+          "verse_refs": [
+            "Deuteronomy 21:23"
+          ],
+          "evidence_ids": [
+            "gal-curse-law"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ccde95853a1b7d4bff7a923799a96f66ff43688d591c2a4dfea75415d9b648be",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T19:05:57.065007+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

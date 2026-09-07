@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 21",
+  "book": "Luke",
+  "chapter": 21,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_49",
+          "text": "Read the chapter with this setting in view: Luke places the widow's temple gift immediately after condemning scribes who consume widows' houses and before temple judgment; praise, lament, and institutional exposure remain debated, so the story cannot coerce poor people to surrender necessities. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-widow"
+          ],
+          "verse_refs": [
+            "Luke 21:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_50",
+          "text": "For its historical and cultural setting, note that Luke 21 combines temple destruction, conflict, witness, Jerusalem's siege, cosmic imagery, Son of Man expectation, and watchfulness; it cannot securely identify a current nation, conspiracy, date, party, or territorial entitlement. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-21"
+          ],
+          "verse_refs": [
+            "Luke 21:5-38"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_51",
+          "text": "For its historical and cultural setting, note that Dates around 70-100 CE are common, but proposed dates range from before 70 CE into the early second century and depend on Synoptic relations, temple language, Acts, and reception. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "luke-date"
+          ],
+          "verse_refs": [
+            "Luke 21:5-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "da2c792e7240317ec8d3ca0d61be6f0726b114c01df8564d600ca16c42d5c384",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

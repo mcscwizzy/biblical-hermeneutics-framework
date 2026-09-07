@@ -1,0 +1,65 @@
+{
+  "reference": "Amos 2",
+  "book": "Amos",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_129",
+          "text": "Read the chapter with this setting in view: Amos 1:3-2:16 moves through Damascus, Gaza, Tyre, Edom, Ammon, Moab, Judah, and climactically Israel, repeatedly using a three/four transgressions formula. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "amos-nations-sequence"
+          ],
+          "verse_refs": [
+            "Amos 2:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_130",
+          "text": "For its historical and cultural setting, note that Judgment, exile, and divine violence in Amos require lament and ethical scrutiny; readers are not authorized to enact vengeance, war, coercion, or punishment in the prophet's name. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "amos:interpretive_note:38"
+          ],
+          "verse_refs": [
+            "Amos 2:13-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_131",
+          "text": "For its historical and cultural setting, note that Amos 2:7's terse sexual accusation is textually difficult and should not be used to blame victims, conceal coercion, or excuse household and religious power. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "amos:interpretive_note:11"
+          ],
+          "verse_refs": [
+            "Amos 2:6-8"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a0d0ccbd7949d07b169aa96a26ef12fa9d4a27778f7ae4cd3244b1e344e2e3ec",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

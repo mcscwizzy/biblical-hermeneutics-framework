@@ -1,0 +1,3303 @@
+{
+  "passage_ref": "Acts 20",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "ephesus",
+        "title": "Ephesus",
+        "type": "place",
+        "aliases": [
+          "where is ephesus",
+          "tell me about ephesus",
+          "why is ephesus important"
+        ],
+        "metadata": {
+          "summary": "Ephesus was a major harbor city of Roman Asia and the explicit setting for mission, teaching, ritual conflict, civic assembly, and farewell traditions in Acts; it also anchors Revelation 2 and the narrated setting of 1 Timothy, while Ephesians' original destination remains textually disputed.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 18:18-28",
+            "Acts 19:1-20",
+            "Acts 19:21-41",
+            "Acts 20:1-38",
+            "Ephesians 1:1",
+            "1 Timothy 1:3-7",
+            "Revelation 2:1-7"
+          ]
+        }
+      },
+      {
+        "id": "philippi",
+        "title": "Philippi",
+        "type": "place",
+        "aliases": [
+          "where is Philippi",
+          "Roman Philippi",
+          "Philippi in Macedonia",
+          "Philippi colony",
+          "biblical Philippi"
+        ],
+        "metadata": {
+          "summary": "Philippi was a Roman colony in eastern Macedonia on the Via Egnatia and the securely named setting for Acts 16's mission, household, exploitation, custody, and citizenship scenes and for the recipients of Philippians.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Egnatia",
+            "Roman forum",
+            "theater",
+            "rock sanctuaries",
+            "inscriptions",
+            "funerary monuments",
+            "later basilicas and traditional prison"
+          ],
+          "related_passages": [
+            "Acts 16:11-15",
+            "Acts 16:16-24",
+            "Acts 16:25-40",
+            "Acts 20:1-6",
+            "Philippians 1:1",
+            "Philippians 1:27-30",
+            "Philippians 3:20-21",
+            "Philippians 4:2-3",
+            "Philippians 4:10-20",
+            "1 Thessalonians 2:1-2",
+            "2 Corinthians 8:1-5"
+          ]
+        }
+      },
+      {
+        "id": "macedonia",
+        "title": "Roman Macedonia",
+        "type": "place",
+        "aliases": [
+          "Macedonia in Acts",
+          "Roman province of Macedonia",
+          "Paul in Macedonia",
+          "Macedonian churches",
+          "Via Egnatia Macedonia"
+        ],
+        "metadata": {
+          "summary": "Roman Macedonia was the northern Greek province and travel region in which Acts locates Philippi, Thessalonica, and Beroea and which Paul's letters associate with specific assemblies, journeys, suffering, support, and the Jerusalem collection.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Egnatia road remains and milestones",
+            "Philippi colony, forum, and inscriptions",
+            "Thessalonian civic inscriptions and port-road setting",
+            "Beroean Roman roads, milestones, inscriptions, and urban remains"
+          ],
+          "related_passages": [
+            "Acts 16:9-15",
+            "Acts 16:16-40",
+            "Acts 17:1-15",
+            "Acts 18:1-5",
+            "Acts 19:21-22",
+            "Acts 20:1-6",
+            "Romans 15:25-29",
+            "1 Corinthians 16:5-6",
+            "2 Corinthians 7:5-16",
+            "2 Corinthians 8:1-24",
+            "2 Corinthians 9:1-5",
+            "Philippians 4:15-18",
+            "1 Thessalonians 1:7-8",
+            "1 Thessalonians 3:1-10"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-20-macedonian-return-party",
+      "claim": "Acts narrates a return through Macedonia and names Sopater of Beroea, Aristarchus and Secundus of Thessalonica, and companions from other regions.",
+      "category": "social",
+      "source_ids": [
+        "acts-macedonia-text"
+      ],
+      "related_entity_ids": [
+        "macedonia",
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-macedonia-road-network-and-city-diversity",
+        "parent_title": "Roman Macedonia: Road Network, Provincial Context, and City Diversity",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-20-macedonian-return-party:passage-relevance",
+      "claim": "The item shows that Acts 20's network is multi-city and multi-regional while preventing the named travelers from automatically becoming official financial delegates.",
+      "category": "social",
+      "source_ids": [
+        "acts-macedonia-text"
+      ],
+      "related_entity_ids": [
+        "macedonia",
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-macedonia-road-network-and-city-diversity",
+        "parent_title": "Roman Macedonia: Road Network, Provincial Context, and City Diversity",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-20-macedonian-return-party"
+        ]
+      }
+    },
+    {
+      "id": "acts-collection",
+      "claim": "Pauline letters identify a major collection for Jerusalem; Acts narrates the journey and delegates but does not foreground the money, creating a debated omission.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "paul-letters-sbl"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:1-21:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "acts-ephesian-farewell-hands-weak",
+      "claim": "In Acts' Ephesian farewell, Paul denies coveting silver, gold, or clothing, says his hands served his and companions' needs, urges work to help the weak, and cites an otherwise unattested Jesus saying about giving.",
+      "category": "history",
+      "source_ids": [
+        "acts-labor-text",
+        "keener-acts-labor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:17-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-ephesian-farewell-hands-weak:passage-relevance",
+      "claim": "Compares later narrative memory with direct-letter rights and nonuse while refusing overwork, compulsory unpaid labor, or a prosperity-antithesis test for legitimate pay.",
+      "category": "history",
+      "source_ids": [
+        "acts-labor-text",
+        "keener-acts-labor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:17-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-ephesian-farewell-hands-weak"
+        ]
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1900,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-miletus-farewell-later-witness",
+      "claim": "Acts presents Paul summoning Ephesian elders to Miletus and speaking of public and house-to-house teaching, tears, plots, self-support, care for the weak, and future danger.",
+      "category": "culture",
+      "source_ids": [
+        "acts-mission-text",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:17-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-miletus-farewell-later-witness:passage-relevance",
+      "claim": "Uses the speech as later narrative characterization, not a verbatim transcript or proof of founder immunity.",
+      "category": "culture",
+      "source_ids": [
+        "acts-mission-text",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:17-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-miletus-farewell-later-witness"
+        ]
+      }
+    },
+    {
+      "id": "acts-miletus-labor-support",
+      "claim": "Acts' farewell has Paul deny coveting, point to his hands serving needs, urge labor for the weak, and cite a Jesus saying absent from the canonical Gospels.",
+      "category": "culture",
+      "source_ids": [
+        "acts-economic",
+        "hock-tentmaking",
+        "briones-financial",
+        "longenecker-poor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:17-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-miletus-labor-support:passage-relevance",
+      "claim": "Shows Acts integrating self-support with care for vulnerable people rather than making work mere independence or austerity.",
+      "category": "culture",
+      "source_ids": [
+        "acts-economic",
+        "hock-tentmaking",
+        "briones-financial",
+        "longenecker-poor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:17-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-miletus-labor-support"
+        ]
+      }
+    },
+    {
+      "id": "acts-miletus-prayer-farewell-later",
+      "claim": "Acts narrates kneeling prayer, collective weeping, embrace, kissing, grief, and accompaniment after the Miletus speech.",
+      "category": "culture",
+      "source_ids": [
+        "acts-prayer-text",
+        "keener-acts-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:36-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 35,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-miletus-prayer-farewell-later:passage-relevance",
+      "claim": "Shows prayer and grief together while preventing an ancient narrated embrace from overriding modern consent or proving universal reconciliation.",
+      "category": "culture",
+      "source_ids": [
+        "acts-prayer-text",
+        "keener-acts-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:36-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 35,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-miletus-prayer-farewell-later"
+        ]
+      }
+    },
+    {
+      "id": "acts-neapolis-via-egnatia-route",
+      "claim": "Acts connects sea arrival at Neapolis with inland movement to Philippi; road remains, milestones, and route reconstruction establish the Via Egnatia corridor.",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi-texts",
+        "culture-egnatia-philippi",
+        "unesco-philippi",
+        "pauline-macedonia-texts"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "acts-neapolis-via-egnatia-route:passage-relevance",
+      "claim": "The evidence makes Acts' coastal-to-inland itinerary geographically coherent while separating route infrastructure from proof of the narrated travelers or travel dates.",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi-texts",
+        "culture-egnatia-philippi",
+        "unesco-philippi",
+        "pauline-macedonia-texts"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-philippi-colonial-civic-and-household-life",
+        "parent_title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 90,
+        "supports_evidence_ids": [
+          "acts-neapolis-via-egnatia-route"
+        ]
+      }
+    },
+    {
+      "id": "acts-return-party-collection-limit",
+      "claim": "Acts names companions on the return through Macedonia and toward Asia but does not identify them as collection carriers.",
+      "category": "culture",
+      "source_ids": [
+        "acts-economic",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "acts-return-party-collection-limit:passage-relevance",
+      "claim": "Keeps plausible collection logistics from becoming narrative fact through Acts-Paul harmonization.",
+      "category": "culture",
+      "source_ids": [
+        "acts-economic",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "acts-return-party-collection-limit"
+        ]
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1900,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "acts-we-passages",
+      "claim": "First-person plural sections occur in Acts 16, 20-21, and 27-28, but their source and implication for authorship remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "campbell-we-passages"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 20:5-21:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1900,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "ephesus:ancient_near_east_context:0",
+      "claim": "Not directly applicable; Ephesus belongs to the Greco-Roman eastern Mediterranean, with earlier Near Eastern contexts entering through Jewish Scripture and diaspora traditions.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:hebraic_worldview:0",
+      "claim": "Acts places Ephesian mission within diaspora synagogue and scriptural networks before narrating wider gentile reception. Jewish exorcists, synagogue hearers, and gentile ritual practitioners must remain differentiated rather than fused into a stereotype.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 20,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:historical_context:0",
+      "claim": "Roman Ephesus connected an engineered Aegean harbor with inland Anatolia. The city combined Greek civic institutions, Roman provincial power, the Artemision, imperial cults, associations, benefaction, craft and trade networks, households, slavery, and substantial migration. Surviving monuments span many centuries and require phase-specific use.",
+      "category": "history",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:second_temple_context:0",
+      "claim": "First-century diaspora Judaism, synagogue debate, scriptural instruction, and Jewish ritual specialists form part of Acts' Ephesian horizon. These settings do not identify the opponents in 1 Timothy or prove that every local Christ-follower shared one background.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "harbor-and-asian-travel-network",
+      "claim": "Geoarchaeology reconstructs a harbor basin, canal, customs and infrastructure linking Ephesus to the Aegean and inland Anatolia despite persistent silting.",
+      "category": "geography",
+      "source_ids": [
+        "oeai-harbor",
+        "oeai-ephesus",
+        "unesco-ephesus",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "harbor-and-asian-travel-network:passage-relevance",
+      "claim": "The harbor makes Acts' repeated arrival, departure, regional communication, and Miletus summons geographically concrete without inventing a ship, route, cargo, or travel duration.",
+      "category": "geography",
+      "source_ids": [
+        "oeai-harbor",
+        "oeai-ephesus",
+        "unesco-ephesus",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "harbor-and-asian-travel-network"
+        ]
+      }
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+      "claim": "Build chronology first from the direct letters. Acts 13-20 is a later narrative witness whose sequence, speeches, travel compression, and emphases must not silently replace Galatians or the letters' own plans and absences.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-mission-text",
+        "acts-mission-text",
+        "campbell-framing-paul",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 13:1-20:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "philippi:ancient_near_east_context:0",
+      "claim": "The Ancient Near East is not the controlling context; Roman Macedonian, Greek, Thracian, diaspora Jewish, and wider Greco-Roman evidence is nearer.",
+      "category": "culture",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:0",
+      "claim": "Via Egnatia",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:1",
+      "claim": "Roman forum",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:2",
+      "claim": "theater",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:3",
+      "claim": "rock sanctuaries",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:4",
+      "claim": "inscriptions",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:5",
+      "claim": "funerary monuments",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:6",
+      "claim": "later basilicas and traditional prison",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:hebraic_worldview:0",
+      "claim": "Acts' Sabbath prayer gathering and Lydia's worship of God place Israel's God and practices within the city's plural environment. The evidence does not establish a synagogue building, the gathering's complete membership, or a uniform Jewish identity.",
+      "category": "culture",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:historical_context:0",
+      "claim": "After the battle of 42 BCE, Roman veteran settlement reshaped Philippi as a colony; Augustus refounded it and colonial institutions remained prominent. The city linked the port at Neapolis with inland Macedonia through the Via Egnatia. Its mid-first-century forum, inscriptions, cults, households, slavery, agriculture, and status hierarchy illuminate Acts and Philippians, while later visible phases require chronological control.",
+      "category": "history",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:historical_setting:0",
+      "claim": "Eastern Macedonia on the Via Egnatia between Neapolis and Amphipolis, especially the early Roman imperial period.",
+      "category": "history",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:0",
+      "claim": "Neapolis",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:1",
+      "claim": "Via Egnatia",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:2",
+      "claim": "riverside prayer place",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:3",
+      "claim": "forum",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:4",
+      "claim": "Macedonia",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:original_audience:0",
+      "claim": "Readers seeking geographically and historically controlled context for Acts 16 and Philippians.",
+      "category": "social",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:second_temple_context:0",
+      "claim": "Acts 16 names a riverside place of prayer and women gathered on Sabbath. This supports a Jewish or Jewish-adjacent setting while leaving Philippi's Jewish population, institutions, and relation to a synagogue uncertain.",
+      "category": "culture",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:0",
+      "claim": "356 BCE: foundation or refoundation by Philip II",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:1",
+      "claim": "42 BCE: battle and subsequent Roman veteran colony",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:2",
+      "claim": "approximately 30 BCE: Augustan refoundation",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:3",
+      "claim": "mid-first century CE: Claudian forum phase and conventional Pauline horizon",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:4",
+      "claim": "fourth century CE and later: Christian monumental and pilgrimage landscape",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "Acts 20:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 18:1-4 and 20:1-38",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 18:1-4; 20:1-6, 17-38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; narrative setting, composition, and Pauline letters remain distinct.",
+        "id": "acts-economic",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary narrative witness.",
+        "id": "acts-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 18:1-5; 20:17-38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; narration and event horizon are kept distinct.",
+        "id": "acts-labor-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "Acts 16-20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 16:6-20:6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-macedonia-entry",
+          "acts-east-macedonia-route",
+          "city-status-diversity",
+          "beroea-branch-city",
+          "macedonian-hearer-variety",
+          "acts-pauline-itinerary-limits",
+          "acts-return-companions"
+        ],
+        "notes": "Primary narrative witness; event setting and composition horizon are distinguished.",
+        "id": "acts-macedonia-text",
+        "canonical_object_ids": [
+          "roman-macedonia-road-network-and-city-diversity"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 13:1-20:38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; it is not treated as a transcript of the letters.",
+        "id": "acts-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Acts 16:11-40 and 20:1-6",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Acts 16:11-40; 20:1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary narrative text.",
+        "id": "acts-philippi",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "Acts 16:11-40 and 20:1-6",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Acts 16:11-40; 20:1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "acts-neapolis-via-egnatia-route",
+          "philippi-roman-colony-and-forum",
+          "riverside-prayer-gathering",
+          "lydia-trade-household-hospitality",
+          "enslaved-diviner-profit-exploitation",
+          "magistrates-lictors-and-citizenship",
+          "custody-and-traditional-prison"
+        ],
+        "notes": "Primary narrative text; no modern translation is reproduced.",
+        "id": "acts-philippi-texts",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 16:13-15; 20:36-38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence, not a transcript of private prayer.",
+        "id": "acts-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Philippes, colonie romaine d'Orient",
+        "author": "C\u00e9dric Br\u00e9laz",
+        "publisher": "\u00c9cole fran\u00e7aise d'Ath\u00e8nes",
+        "year": 2018,
+        "locator": "Institutions, magistracies, elites, colony, and Acts reception",
+        "url": "https://books.openedition.org/efa/3137",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Epigraphic and institutional synthesis requiring item-level chronology.",
+        "id": "brelaz-philippi",
+        "canonical_object_ids": [
+          "philippi",
+          "roman-philippi-colonial-civic-and-household-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Philippes, colonie romaine d'Orient",
+            "author": "C\u00e9dric Br\u00e9laz",
+            "publisher": "\u00c9cole fran\u00e7aise d'Ath\u00e8nes",
+            "year": 2018,
+            "locator": "Institutions, magistracies, elites, colony, and Acts reception",
+            "url": "https://books.openedition.org/efa/3137",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "interpretive-notes"
+            ],
+            "notes": "Epigraphic and institutional synthesis requiring item-level chronology.",
+            "id": "brelaz-philippi"
+          },
+          {
+            "title": "Philippes, colonie romaine d'Orient: Recherches d'histoire institutionnelle et sociale",
+            "author": "C\u00e9dric Br\u00e9laz",
+            "publisher": "\u00c9cole fran\u00e7aise d'Ath\u00e8nes",
+            "year": 2018,
+            "locator": "Parts I-III; institutions, magistracies, elites, imperial family, and Acts reception",
+            "url": "https://books.openedition.org/efa/3137",
+            "source_type": "academic-book",
+            "supports": [
+              "philippi-roman-colony-and-forum",
+              "riverside-prayer-gathering",
+              "magistrates-lictors-and-citizenship",
+              "custody-and-traditional-prison",
+              "civic-honor-and-imperial-divine-honors",
+              "women-public-roles-and-coworkers"
+            ],
+            "notes": "Open epigraphic and institutional synthesis; evidence spans several centuries and must be dated item by item.",
+            "id": "brelaz-philippi"
+          }
+        ]
+      },
+      {
+        "title": "Paul's Financial Policy: A Socio-Theological Approach",
+        "author": "David E. Briones",
+        "publisher": "T&T Clark",
+        "year": 2013,
+        "locator": "Paul's support, work, reciprocity, and theological framing",
+        "url": "https://www.bloomsbury.com/au/pauls-financial-policy-9780567623782/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Argues for coherence across varied support practices; individual passage differences remain controlling.",
+        "id": "briones-financial",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Framing Paul: An Epistolary Biography",
+        "author": "Douglas A. Campbell",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "chapters on Galatians, Corinthians, Romans, and Philippians",
+        "url": "https://www.eerdmans.com/9780802871510/framing-paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Builds a chronology from the letters and explicitly weighs its relation to Acts.",
+        "id": "campbell-framing-paul",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The We Passages in the Acts of the Apostles",
+        "author": "William Sanger Campbell",
+        "publisher": "Society of Biblical Literature",
+        "year": 2007,
+        "locator": "Narrator and narrative",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/067109P-front.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Focused study of first-person plural narration.",
+        "id": "campbell-we-passages",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Philippoi: Via Egnatia Cultural Route",
+        "author": "Hellenic Ministry of Culture",
+        "publisher": "Hellenic Republic Ministry of Culture",
+        "year": null,
+        "locator": "History, Via Egnatia, Roman Forum, sanctuaries, and Christian monuments",
+        "url": "https://culturalegnatia.culture.gov.gr/en/route-stops/philippoi/",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Official archaeological orientation with phase data.",
+        "id": "culture-egnatia-philippi",
+        "canonical_object_ids": [
+          "philippi",
+          "roman-philippi-colonial-civic-and-household-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Philippoi: Via Egnatia Cultural Route",
+            "author": "Hellenic Ministry of Culture",
+            "publisher": "Hellenic Republic Ministry of Culture",
+            "year": null,
+            "locator": "History, Via Egnatia, Roman Forum, sanctuaries, and Christian monuments",
+            "url": "https://culturalegnatia.culture.gov.gr/en/route-stops/philippoi/",
+            "source_type": "excavation-report",
+            "supports": [
+              "historical-context",
+              "timeline",
+              "archaeology",
+              "interpretive-notes"
+            ],
+            "notes": "Official archaeological orientation with phase data.",
+            "id": "culture-egnatia-philippi"
+          },
+          {
+            "title": "Philippoi: Via Egnatia Cultural Route",
+            "author": "Hellenic Ministry of Culture",
+            "publisher": "Hellenic Republic Ministry of Culture",
+            "year": null,
+            "locator": "History; Via Egnatia; Roman Forum; rock sanctuaries; early Christian monuments",
+            "url": "https://culturalegnatia.culture.gov.gr/en/route-stops/philippoi/",
+            "source_type": "excavation-report",
+            "supports": [
+              "acts-neapolis-via-egnatia-route",
+              "philippi-roman-colony-and-forum",
+              "riverside-prayer-gathering",
+              "custody-and-traditional-prison",
+              "civic-honor-and-imperial-divine-honors"
+            ],
+            "notes": "Official archaeological orientation with explicit monument phases.",
+            "id": "culture-egnatia-philippi"
+          }
+        ]
+      },
+      {
+        "title": "The Offering of the Gentiles",
+        "author": "David J. Downs",
+        "publisher": "Mohr Siebeck",
+        "year": 2008,
+        "locator": "Paul's collection in chronological, cultural, and cultic contexts",
+        "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161515910/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Reconstructs collection chronology and compares associations, benefaction, common funds, poor relief, and translocal links.",
+        "id": "downs-offering",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Ephesians, First Timothy, and Revelation",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ephesians 1:1; 1 Timothy 1:3-7; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Distinct canonical witnesses with different destination and chronology questions.",
+        "id": "ephesian-letter-passages",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Ephesian narrative, letter, and apocalypse passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38; Ephesians 1:1; 5:21-6:20; 1 Timothy 1:3-7; 3:1-15; 5:3-6:19; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-apollos-teaching-network",
+          "acts-tyrannus-regional-teaching",
+          "acts-exorcism-and-book-burning",
+          "artemis-craft-economy",
+          "theater-civic-assembly-offices",
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "imperial-cult-and-civic-honor",
+          "ephesians-destination-variant",
+          "first-timothy-ephesian-setting",
+          "household-slavery-status-comparison",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "ephesus-biblical-texts",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "author": "Canonical Knowledge Library",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Companion cultural-background object",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "canonical-context",
+          "archaeology",
+          "interpretive-notes",
+          "related-objects"
+        ],
+        "notes": "Passage-bounded evidence, sources, chronology, and dispute controls.",
+        "id": "ephesus-evidence-cluster",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "1 Corinthians 9:1-18 and 16:1-4",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 9:1-18; 16:1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; the two passages have different rhetorical functions.",
+        "id": "first-corinthians-economic",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1:1-2:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for Paul's retrospective chronology and negotiated mission.",
+        "id": "galatians-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Social Context of Paul's Ministry: Tentmaking and Apostleship",
+        "author": "Ronald F. Hock",
+        "publisher": "Fortress Press",
+        "year": 1980,
+        "locator": "Chapters 2-4: workshop, trade, support, and apostolic labor",
+        "url": "https://books.google.com/books/about/The_Social_Context_of_Paul_s_Ministry.html?id=nWkRAQAAIAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "thessalonian-missionary-labor",
+          "thessalonian-community-work",
+          "acts-corinth-workshop",
+          "acts-miletus-labor-support"
+        ],
+        "notes": "Workshop reconstruction; Acts' trade term does not settle material, status, hours, or every mission setting.",
+        "id": "hock-tentmaking",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts",
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "Volumes 1-4",
+            "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "archaeology"
+            ],
+            "notes": "Extensive historical, literary, and comparative commentary.",
+            "id": "keener-acts"
+          },
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "volumes 2-3, Acts 13-20",
+            "url": "https://bakeracademic.com/pages/keener-acts-esources",
+            "source_type": "reference-work",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Detailed literary and historical commentary on the later Acts mission narrative.",
+            "id": "keener-acts"
+          }
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary, Volume 3",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "Acts 18:1-5; 20:17-38",
+        "url": "https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801048388.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Historical-exegetical commentary used without making Acts a transcript of Paul's letters.",
+        "id": "keener-acts-labor",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Acts 16 and 20",
+        "url": "https://bakeracademic.com/pages/keener-acts-esources",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed commentary used for Acts' later narrative scenes.",
+        "id": "keener-acts-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Remember the Poor: Paul, Poverty, and the Greco-Roman World",
+        "author": "Bruce W. Longenecker",
+        "publisher": "Eerdmans",
+        "year": 2010,
+        "locator": "Greco-Roman poverty, Pauline communities, and care for poor people",
+        "url": "https://www.eerdmans.com/9780802863737/remember-the-poor/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Economic reconstruction with explicit debate over poverty scales and Pauline concern for poor people.",
+        "id": "longenecker-poor",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Forschungen in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Open-access excavation monographs and monument studies",
+        "url": "https://www.oeaw.ac.at/en/oeai/publishing/series/forschungen-in-ephesos",
+        "source_type": "excavation-report",
+        "supports": [
+          "artemision-civic-cult",
+          "theater-civic-assembly-offices",
+          "harbor-and-asian-travel-network",
+          "imperial-cult-and-civic-honor"
+        ],
+        "notes": "Primary excavation publication gateway; individual monument phases must be checked.",
+        "id": "oeai-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Forschungen in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Open-access excavation monographs and monument studies",
+        "url": "https://www.oeaw.ac.at/en/oeai/publishing/series/forschungen-in-ephesos",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Monument phases and later rebuilding require publication-level control.",
+        "id": "oeai-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Ephesos: Periurban Research",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Roman harbor, channel, suburbs, hinterland, customs, and trade",
+        "url": "https://www.oeaw.ac.at/en/oeai/research/historical-archaeology/historical-archaeology-in-the-mediterranean/ephesos-periurban-research",
+        "source_type": "excavation-report",
+        "supports": [
+          "harbor-and-asian-travel-network"
+        ],
+        "notes": "Geoarchaeological and urban research; particular journeys and cargoes need separate evidence.",
+        "id": "oeai-harbor",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Pauline Letters in the SBL Greek New Testament",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians, Romans, Corinthians, Philippians",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Independent canonical primary texts for comparison with Acts' portrait and chronology.",
+        "id": "paul-letters-sbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Pauline Macedonia and Gift Texts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15; 1 Thessalonians 2:1-2; Philippians 4:10-20",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "acts-neapolis-via-egnatia-route",
+          "gift-partnership-and-economic-range"
+        ],
+        "notes": "Independent Pauline comparanda; they do not supply a complete Acts chronology.",
+        "id": "pauline-macedonia-texts",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Archaeological Site of Philippi",
+        "author": "UNESCO World Heritage Centre",
+        "publisher": "UNESCO",
+        "year": 2016,
+        "locator": "Brief synthesis; criteria iii-iv; integrity and authenticity",
+        "url": "https://whc.unesco.org/en/list/1517/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Official site synthesis; monuments span many phases.",
+        "id": "philippi-unesco",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "Philippians in the SBL Greek New Testament",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Philippians 1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "civic-honor-and-imperial-divine-honors",
+          "politeuesthe-politeuma-colonial-resonance",
+          "women-public-roles-and-coworkers",
+          "gift-partnership-and-economic-range",
+          "praetorium-caesars-household-provenance-limit"
+        ],
+        "notes": "Primary letter text; lexical and historical claims require comparison.",
+        "id": "philippians-greek",
+        "canonical_object_ids": [
+          "philippi",
+          "roman-philippi-colonial-civic-and-household-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Philippians in the SBL Greek New Testament",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Philippians 1-4",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "civic-honor-and-imperial-divine-honors",
+              "politeuesthe-politeuma-colonial-resonance",
+              "women-public-roles-and-coworkers",
+              "gift-partnership-and-economic-range",
+              "praetorium-caesars-household-provenance-limit"
+            ],
+            "notes": "Primary letter text; lexical and historical claims require comparison.",
+            "id": "philippians-greek"
+          },
+          {
+            "title": "Philippians in the SBL Greek New Testament",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Philippians 1-4",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "canonical-context",
+              "scripture-references",
+              "interpretive-notes"
+            ],
+            "notes": "Primary recipient and letter evidence.",
+            "id": "philippians-greek"
+          }
+        ]
+      },
+      {
+        "title": "2 Corinthians 8:1-9:15",
+        "author": "Paul, with Timothy named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; integrity and rhetorical situation remain disputed.",
+        "id": "second-corinthians-collection",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Ephesus World Heritage Site",
+        "author": "UNESCO World Heritage Centre",
+        "publisher": "UNESCO",
+        "year": 2015,
+        "locator": "World Heritage List 1018rev",
+        "url": "https://whc.unesco.org/en/list/1018/",
+        "source_type": "reference-work",
+        "supports": [
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "theater-civic-assembly-offices"
+        ],
+        "notes": "Site orientation only; standing monuments span many periods.",
+        "id": "unesco-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Archaeological Site of Philippi",
+        "author": "UNESCO World Heritage Centre",
+        "publisher": "UNESCO",
+        "year": 2016,
+        "locator": "Brief synthesis; criteria iii-iv; integrity and authenticity",
+        "url": "https://whc.unesco.org/en/list/1517/",
+        "source_type": "reference-work",
+        "supports": [
+          "acts-neapolis-via-egnatia-route",
+          "philippi-roman-colony-and-forum",
+          "custody-and-traditional-prison"
+        ],
+        "notes": "Official site synthesis; standing remains span Hellenistic, Roman, and Christian phases.",
+        "id": "unesco-philippi",
+        "canonical_object_ids": [
+          "roman-philippi-colonial-civic-and-household-life"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "ephesus",
+        "type": "place",
+        "title": "Ephesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "macedonia",
+        "type": "place",
+        "title": "Roman Macedonia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "patronage-hospitality-and-debt",
+        "type": "cultural_background",
+        "title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.829
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.829
+      },
+      {
+        "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "type": "cultural_background",
+        "title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "philippi",
+        "type": "place",
+        "title": "Philippi",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "roman-ephesus-civic-cultic-and-household-life",
+        "type": "cultural_background",
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "roman-macedonia-road-network-and-city-diversity",
+        "type": "cultural_background",
+        "title": "Roman Macedonia: Road Network, Provincial Context, and City Diversity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "roman-philippi-colonial-civic-and-household-life",
+        "type": "cultural_background",
+        "title": "Roman Philippi: Colonial, Civic, and Household Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.935
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ea1d29d6d241feb6d2da4bf74021535d6aa6230e6e08ae4d26e0130920a01540",
+  "evidence_hash_version": "2"
+}
