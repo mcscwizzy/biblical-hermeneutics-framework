@@ -1,0 +1,40 @@
+{
+  "artifact_version": "commentary-v1.3-genesis-experiment-manifest-v1",
+  "experiment_id": "genesis-1-prompt-1.3-consolidation",
+  "status": "READY_FOR_EXTERNAL_RENDERER",
+  "candidate_only": true,
+  "renderer_requirement": {
+    "status": "APPROVED_RENDERER_REQUIRED",
+    "renderer": "Luna",
+    "model": "Luna Medium",
+    "reasoning_effort": "medium",
+    "execution_path": "external_or_conversational"
+  },
+  "historical_v1_2": {
+    "packet_id": "commentary-v1.2-packet:3134e50ff11e5fb1a8eebf47a7da9dfa3ccbdd64a1175223a5bd5f969bf68b41",
+    "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/genesis_001.json",
+    "prompt_version": "1.2",
+    "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+    "synthesis_hash": "0c1f5f085d07eef107d641c89277ec23627aad1db83423956a860a383740a5df"
+  },
+  "experimental_v1_3": {
+    "packet_id": "commentary-v1.3-packet:f503b40c1b6ef47794470be022c9fa20b19074b95eda67e629880a61c162a58f",
+    "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.3-consolidation/prompt/genesis_001.json",
+    "prompt_version": "1.3",
+    "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+    "synthesis_hash": "0c1f5f085d07eef107d641c89277ec23627aad1db83423956a860a383740a5df",
+    "synthesis_unit_count": 49
+  },
+  "identity_checks": {
+    "evidence_hash_unchanged": true,
+    "synthesis_hash_unchanged": true,
+    "synthesis_unit_count_unchanged": true,
+    "schema_unchanged": true,
+    "packet_id_changed": true
+  },
+  "external_renderer_boundary": {
+    "status": "NOT_INVOKED",
+    "renderer_invoked": false,
+    "fallback_provider_used": false
+  }
+}

@@ -1,4 +1,4 @@
-"""Reader-facing Commentary v1.2 generation contract."""
+"""Reader-facing Commentary v1.3 generation contract."""
 
 from __future__ import annotations
 
@@ -17,11 +17,19 @@ CHAPTER_COMMENTARY_SYSTEM_PROMPT = """You write BHF reader commentary for an int
 
 Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
 
-Explain rather than merely list or restate facts. Connect facts only where a synthesis unit has already grouped them. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
 
 Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
 
-Evidence-rich chapters may be deep. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer coherent paragraphs over inventories.
+Evidence-rich chapters may be deep. When the chapter contains many synthesis units, prioritize the context that most directly helps the reader understand the chapter itself and use supporting and surrounding material selectively. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
 
 Grounding rules:
 - Use only the available chapter context and the canonical text.
@@ -38,7 +46,7 @@ Grounding rules:
 - Return JSON only.""".format(allowed_section_kinds=VALID_SECTION_KINDS_TEXT)
 
 
-CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF Commentary v1.2 for {reference}.
+CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF Commentary v1.3 for {reference}.
 
 EVIDENCE AVAILABILITY: {evidence_availability}
 {availability_instruction}
@@ -99,15 +107,37 @@ RULES:
    current-chapter anchors. Valid concrete examples include
    "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
    include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
-9. Use `why_it_matters` only when citing an available unit of that exact kind. Explain
-   the supported relationship; do not invent another significance claim.
-10. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
-11. `generated_metadata` is application-owned. Leave it null.
-12. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+12. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+13. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. Use supporting and
+    surrounding material selectively.
+14. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+15. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+16. `generated_metadata` is application-owned. Leave it null.
+17. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
     IDs and no synthesis units, return "sections": []. Do not write canonical
     observations or contextual prose. BHF will add a fixed application-owned
     availability notice; do not invent a fallback block or cite fake IDs.
-13. This contract is prompt {commentary_prompt_version}, commentary schema
+18. This contract is prompt {commentary_prompt_version}, commentary schema
     {commentary_schema_version}, synthesis schema {synthesis_schema_version}, and
     synthesis hash {synthesis_hash}.
 
@@ -163,11 +193,11 @@ def build_user_prompt(
     bundle=None,
     evidence_availability: str | None = None,
 ) -> str:
-    """Build the v1.2 prompt without truncating canonical chapter text."""
+    """Build the v1.3 prompt without truncating canonical chapter text."""
 
     # Preserve the public v1.1 helper shape for callers that supply a bundle as
     # the fifth positional argument. The resulting prompt still goes through
-    # the deterministic v1.2 compiler; raw evidence is never sent directly.
+    # the deterministic v1.3 compiler; raw evidence is never sent directly.
     if bundle is None:
         from .synthesis import compile_chapter_synthesis
 

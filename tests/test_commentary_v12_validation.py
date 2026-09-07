@@ -65,6 +65,20 @@ def test_valid_synthesis_ids_and_evidence_ancestry_are_accepted():
     assert validate_chapter_commentary(_raw(bundle, synthesis), bundle, synthesis=synthesis).valid
 
 
+def test_multiple_valid_synthesis_ids_can_share_one_traceable_block():
+    bundle = _bundle()
+    synthesis = compile_chapter_synthesis(bundle)
+    synthesis_ids = [unit.id for unit in synthesis.synthesis_units]
+    evidence_ids = sorted({evidence_id for unit in synthesis.synthesis_units for evidence_id in unit.evidence_ids})
+    assert len(synthesis_ids) >= 2
+    result = validate_chapter_commentary(
+        _raw(bundle, synthesis, synthesis_ids=synthesis_ids, evidence_ids=evidence_ids),
+        bundle,
+        synthesis=synthesis,
+    )
+    assert result.valid
+
+
 def test_unsupported_synthesis_id_is_rejected():
     bundle = _bundle()
     synthesis = compile_chapter_synthesis(bundle)
