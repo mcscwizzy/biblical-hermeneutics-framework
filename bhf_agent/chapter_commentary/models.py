@@ -86,7 +86,10 @@ class CommentaryBlock:
     interpretation_level: str = "inference"
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        value = asdict(self)
+        if not self.synthesis_ids:
+            value.pop("synthesis_ids")
+        return value
 
 
 @dataclass(frozen=True)
@@ -120,7 +123,15 @@ class GeneratedMetadata:
     synthesis_compiler_version: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        value = asdict(self)
+        for key in (
+            "synthesis_hash",
+            "synthesis_schema_version",
+            "synthesis_compiler_version",
+        ):
+            if value[key] is None:
+                value.pop(key)
+        return value
 
 
 @dataclass(frozen=True)

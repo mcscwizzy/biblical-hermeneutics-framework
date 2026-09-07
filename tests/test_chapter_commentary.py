@@ -194,6 +194,22 @@ def test_save_and_load_commentary():
         assert loaded.chapter == 1
 
 
+def test_v11_serialization_shape_does_not_gain_empty_synthesis_fields():
+    block = CommentaryBlock(
+        id="legacy", text="Legacy text.", verse_refs=["Genesis 1:1"], evidence_ids=["e1"]
+    )
+    metadata = GeneratedMetadata(
+        evidence_hash="e" * 64,
+        evidence_bundle_version="1.1",
+        commentary_schema_version="1.0",
+        commentary_prompt_version="1.1",
+        model="legacy",
+    )
+    assert "synthesis_ids" not in block.to_dict()
+    assert "synthesis_hash" not in metadata.to_dict()
+    assert "synthesis_schema_version" not in metadata.to_dict()
+
+
 def test_delete_commentary():
     """Test deleting a commentary file."""
     with tempfile.TemporaryDirectory() as tmpdir:
