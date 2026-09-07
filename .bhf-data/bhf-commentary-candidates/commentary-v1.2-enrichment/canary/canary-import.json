@@ -1,0 +1,30 @@
+{
+  "artifact_version": "commentary-v1.2-canary-import-v1",
+  "status": "BLOCKED_BEFORE_PROSE",
+  "required_response_count": 13,
+  "raw_response_count": 0,
+  "matched_response_count": 0,
+  "accepted_count": 0,
+  "rejected_count": 0,
+  "missing_references": [
+    "Genesis 1",
+    "Leviticus 16",
+    "Ruth 3",
+    "Psalms 1",
+    "1 Samuel 21",
+    "1 Samuel 28",
+    "2 Samuel 6",
+    "2 Samuel 24",
+    "1 Chronicles 8",
+    "John 1",
+    "Isaiah 6",
+    "Revelation 12",
+    "Numbers 3"
+  ],
+  "raw_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw",
+  "accepted_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted",
+  "rejected_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/rejected",
+  "v1_1_protected_fingerprints_verified": true,
+  "full_bible_generation_authorized": false,
+  "chapters": []
+}

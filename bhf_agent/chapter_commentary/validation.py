@@ -268,6 +268,9 @@ def _validate_generated_metadata(
         "synthesis_hash",
         "synthesis_schema_version",
         "synthesis_compiler_version",
+        "renderer_label",
+        "imported_timestamp",
+        "candidate_id",
     }
     _check_unknown_fields(raw, fields, "generated_metadata", errors)
 
@@ -276,6 +279,9 @@ def _validate_generated_metadata(
         "synthesis_hash",
         "synthesis_schema_version",
         "synthesis_compiler_version",
+        "renderer_label",
+        "imported_timestamp",
+        "candidate_id",
     }
     required_fields = fields - optional_fields
     values = {
@@ -290,6 +296,9 @@ def _validate_generated_metadata(
         "synthesis_hash",
         "synthesis_schema_version",
         "synthesis_compiler_version",
+        "renderer_label",
+        "imported_timestamp",
+        "candidate_id",
     ):
         raw_value = raw.get(field)
         if raw_value is not None and not isinstance(raw_value, str):

@@ -121,6 +121,9 @@ class GeneratedMetadata:
     synthesis_hash: str | None = None
     synthesis_schema_version: str | None = None
     synthesis_compiler_version: str | None = None
+    renderer_label: str | None = None
+    imported_timestamp: str | None = None
+    candidate_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)
@@ -128,10 +131,37 @@ class GeneratedMetadata:
             "synthesis_hash",
             "synthesis_schema_version",
             "synthesis_compiler_version",
+            "renderer_label",
+            "imported_timestamp",
+            "candidate_id",
         ):
             if value[key] is None:
                 value.pop(key)
         return value
+
+
+@dataclass(frozen=True)
+class ExternalCommentaryResponse:
+    """Untrusted renderer return envelope matched against a locked prompt packet."""
+
+    reference: str
+    packet_id: str
+    prompt_version: str
+    evidence_hash: str
+    synthesis_hash: str
+    renderer_label: str
+    response_payload: Mapping[str, Any]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "reference": self.reference,
+            "packet_id": self.packet_id,
+            "prompt_version": self.prompt_version,
+            "evidence_hash": self.evidence_hash,
+            "synthesis_hash": self.synthesis_hash,
+            "renderer_label": self.renderer_label,
+            "response_payload": dict(self.response_payload),
+        }
 
 
 @dataclass(frozen=True)

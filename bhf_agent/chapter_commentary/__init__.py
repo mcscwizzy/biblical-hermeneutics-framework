@@ -12,6 +12,7 @@ from .models import (
     CommentaryProgress,
     CommentarySectionKind,
     CommentaryStatus,
+    ExternalCommentaryResponse,
 )
 from .storage import (
     delete_commentary,
@@ -43,6 +44,7 @@ __all__ = [
     "CommentaryProgress",
     "CommentarySectionKind",
     "CommentaryStatus",
+    "ExternalCommentaryResponse",
     "CommentaryRejectionCode",
     "delete_commentary",
     "load_commentary",

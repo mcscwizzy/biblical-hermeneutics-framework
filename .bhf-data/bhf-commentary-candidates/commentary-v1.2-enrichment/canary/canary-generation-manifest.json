@@ -1,133 +1,143 @@
 {
-  "artifact_version": "commentary-v1.2-canary-generation-v1",
-  "status": "BLOCKED_BEFORE_PROSE",
-  "blocker": "APPROVED_RENDERER_REQUIRED",
+  "artifact_version": "commentary-v1.2-canary-generation-manifest-v1",
+  "status": "READY_FOR_RENDERER",
   "renderer_requirement": {
     "status": "APPROVED_RENDERER_REQUIRED",
     "execution_path": "external_or_conversational",
     "effort": "medium"
   },
-  "renderer_invoked": false,
-  "fallback_provider_used": false,
-  "requested_count": 13,
-  "completed_count": 0,
+  "renderer_is_repository_adapter": false,
+  "candidate_only": true,
   "chapters": [
     {
       "reference": "Genesis 1",
       "packet_id": "commentary-v1.2-packet:0959834aee3052eb2bcf2b4171ccd7f449b9f94f6354dd9159c9d092bba88e5a",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/genesis_001.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/genesis_001.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/genesis_001.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/genesis_001.json",
+      "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+      "synthesis_hash": "9bf21785c875c82fd9babd3b71c12b0ead1545d1d7e288e4d7aee989556fb5f9",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "Leviticus 16",
       "packet_id": "commentary-v1.2-packet:1ac60070e766ca71e445db9432c7935374ae97c7cb6a32771bcc90dcc9bbf5a9",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/leviticus_016.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/leviticus_016.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/leviticus_016.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/leviticus_016.json",
+      "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+      "synthesis_hash": "4401fbb0398da0e7be842978d4fadc45bf83635d3041c4282e243de949036004",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "Ruth 3",
       "packet_id": "commentary-v1.2-packet:891203b98c16ecd2b51d90c05a98ab159fbc96bbc0e8858ffd223643a7b46c63",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/ruth_003.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/ruth_003.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/ruth_003.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/ruth_003.json",
+      "evidence_hash": "46f678b6923b5313329b2af0af6af7bb53a305bdb1452e72b0c7c34f47dbd2de",
+      "synthesis_hash": "48c82ee3e4b916097d246428fa1a842b88280f099a306bfd64f32840ecb8e917",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "Psalms 1",
       "packet_id": "commentary-v1.2-packet:f91fe16e0b43ba350598c4cf0c06f23602d1f11aadcbda58400ed32b3bc7fce3",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/psalms_001.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/psalms_001.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/psalms_001.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/psalms_001.json",
+      "evidence_hash": "faf60db8a7de36c4d00e951e3171a6e49e875a4f98f9cba12be3cd2bca9465f8",
+      "synthesis_hash": "f9c9f9dcddd28d9ec4ff7737840fd550b807b526c4418e37b6ca18cdd19eec85",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "1 Samuel 21",
       "packet_id": "commentary-v1.2-packet:640014fec629f3a37dda00b2307fa483597fd89eef6bd96249662b8ebaeaabdd",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/1_samuel_021.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/1_samuel_021.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_samuel_021.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_samuel_021.json",
+      "evidence_hash": "79c360812b8778c4c20d63faf5bf320e0926407eaf21eee2fe34001c803b47b7",
+      "synthesis_hash": "e296b88a547efd512390201d0d50e6c5497eebb2d37b051df91f81c4c0c15abd",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "1 Samuel 28",
       "packet_id": "commentary-v1.2-packet:531c4a396476fb60d99f0eca3e1ca0a0178d90cf4f3a2ed5307f09a1c2f10330",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/1_samuel_028.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/1_samuel_028.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_samuel_028.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_samuel_028.json",
+      "evidence_hash": "d8962f9a3a73a02877b6da380436ede477591469ac29de954787b749a2ec0e69",
+      "synthesis_hash": "86bcccde5d6558166a81c46055fc0d43a3d276f87e8285d753e893a0847a3643",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "2 Samuel 6",
       "packet_id": "commentary-v1.2-packet:4a7f5db8dea44b893db5f8a0b84826a2d96b2360d235a347a652e63c2a91b05f",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/2_samuel_006.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/2_samuel_006.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/2_samuel_006.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/2_samuel_006.json",
+      "evidence_hash": "7a1440cab57fd2fcf5dfa968f72e9e30a38d1137f6a2d6a7320180ccb6fcea09",
+      "synthesis_hash": "4af4fb10ea4ca87277276a3ced14197565d0398d49a335794a02446b0260f0ac",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "2 Samuel 24",
       "packet_id": "commentary-v1.2-packet:875d97391666656bdd2f9a9fdbd25dda6126f5f3bb329894d32ba0e12d909503",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/2_samuel_024.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/2_samuel_024.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/2_samuel_024.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/2_samuel_024.json",
+      "evidence_hash": "bbe31ce9f67a01d10a7f33e8eb9110f3575dccc088e3fb2ae511fb7f44482f27",
+      "synthesis_hash": "4fe43f0dbb68e30f97d84bba337cc42f202eabb0033358d3205bf60ea6e81568",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "1 Chronicles 8",
       "packet_id": "commentary-v1.2-packet:eec3c5b3f72462c9c685b2b2ed7c3c7aa5901895239a9051668acef520c6adb4",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/1_chronicles_008.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/1_chronicles_008.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_chronicles_008.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_chronicles_008.json",
+      "evidence_hash": "88e9ee6044db61d4315477ad887c5a5bbd16499ba177fddd6a63bfd0f529f36f",
+      "synthesis_hash": "b3b12c824ebd5560419553db2439107bc966148d965ddf8b57583b5849ef47e9",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "John 1",
       "packet_id": "commentary-v1.2-packet:4be9b7f3274744f6630b4d79b0e97788608e2c18e08f8bcf94f3a1b162ad9e37",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/john_001.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/john_001.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/john_001.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/john_001.json",
+      "evidence_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+      "synthesis_hash": "7c8928dc9f41a7feb5f27fcbf5818c8e22f9364117be4bbee3a16a4690608aaa",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "Isaiah 6",
       "packet_id": "commentary-v1.2-packet:bb9d52dc7fadd28af2062b57244f3530be637b309ca343cf637db0091293c3bc",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/isaiah_006.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/isaiah_006.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/isaiah_006.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/isaiah_006.json",
+      "evidence_hash": "74034cea0c72ccebcad3c86155074bd9c11d5ecdad10ada1fc2f42f0e08fa6fd",
+      "synthesis_hash": "27d3dc396abfb2648cb445eae6ba461d4b346f50fe23f82c001e0617ceb983df",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "Revelation 12",
       "packet_id": "commentary-v1.2-packet:40d2bb011dd81d07e00c9ac0956c685cfad319c70c345d941a892c0ec7362b6b",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/revelation_012.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/revelation_012.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/revelation_012.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/revelation_012.json",
+      "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+      "synthesis_hash": "509bc8fb6a89285b9a333ae39dae66b8d1963546ea25bc0fa2bae8218d43ea81",
+      "commentary_prompt_version": "1.2"
     },
     {
       "reference": "Numbers 3",
       "packet_id": "commentary-v1.2-packet:b3e446908beb201c57a2549ecda147fc1629ea57e6e0b6b42db0a832a624fc85",
-      "status": "BLOCKED_BEFORE_PROSE",
-      "blocker": "APPROVED_RENDERER_REQUIRED",
       "packet_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/numbers_003.json",
       "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/numbers_003.json",
-      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/numbers_003.json"
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/numbers_003.json",
+      "evidence_hash": "69ac8c0aa8934f6bbded07634dcd931e724d9ef46a16488f10866ebc1f54b7c0",
+      "synthesis_hash": "b1b37c4b7716a5863b0c044a9f3c19301ea5d3bbd8ec22571850072dd9f0a912",
+      "commentary_prompt_version": "1.2"
     }
   ]
 }

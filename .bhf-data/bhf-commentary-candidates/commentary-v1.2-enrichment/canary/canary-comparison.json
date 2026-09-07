@@ -1,291 +1,975 @@
 {
   "artifact_version": "commentary-v1.2-canary-comparison-v1",
-  "status": "BLOCKED",
-  "scale_gate": false,
+  "status": "BLOCKED_BEFORE_PROSE",
+  "gate_state": "BLOCKED_BEFORE_PROSE",
+  "scale_gate_decision": "NOT_READY",
+  "bulk_generation_authorized": false,
   "gate_checks": {
-    "all_canaries_generated": false,
-    "all_validated": false,
-    "no_unsupported_claim_regressions": false,
-    "no_provenance_regressions": false,
-    "all_hash_locks_match": true,
-    "no_entity_or_chapter_leakage_regressions": false,
-    "available_chapters_materially_improve": false,
-    "data_gaps_remain_conservative": false,
-    "genealogy_remains_concise": false
+    "all_required_renderer_responses_present": false,
+    "all_required_responses_structurally_parse": false,
+    "all_responses_validated": false,
+    "no_provenance_or_hash_mismatch": false,
+    "no_cross_chapter_or_unsupported_ancestry": true,
+    "no_confidence_or_dispute_regression": true,
+    "no_protected_artifact_changes": true,
+    "available_synthesis_gaps_meaningfully_enriched": false,
+    "data_gap_controls_conservative": false,
+    "rich_enough_controls_not_regressed": false,
+    "genealogy_list_controls_concise": false,
+    "boilerplate_materially_reduced": false,
+    "no_validation_safety_regression": false
   },
   "chapters": [
     {
       "reference": "Genesis 1",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 3,
         "commentary_prose_char_count": 757,
         "commentary_prose_word_count": 112,
+        "evidence_ids_referenced": [
+          "genesis-ordered-worldview-observation",
+          "image-of-god-theme:hebraic_worldview:0"
+        ],
         "unique_evidence_ids_consumed": 2,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 47,
+        "evidence_ids_represented": [
+          "2-corinthians:interpretive_note:21",
+          "col-image",
+          "col-new-humanity",
+          "creation-doctrine-framework:ancient_near_east_context:0",
+          "creation-doctrine-framework:hebraic_worldview:0",
+          "creation-doctrine-framework:historical_context:0",
+          "creation-doctrine-framework:historical_setting:0",
+          "creation-doctrine-framework:original_audience:0",
+          "creation-doctrine-framework:second_temple_context:0",
+          "creation-doctrine-framework:timeline:0",
+          "creation-doctrine-framework:timeline:1",
+          "creation-doctrine-framework:timeline:2",
+          "creation-doctrine-framework:timeline:3",
+          "creation-doctrine-framework:timeline:4",
+          "creation-doctrine-framework:timeline:5",
+          "creation-doctrine:ancient_near_east_context:0",
+          "creation-doctrine:historical_context:0",
+          "creation-theme:ancient_near_east_context:0",
+          "creation-theme:historical_context:0",
+          "creation:ancient_near_east_context:0",
+          "creation:hebraic_worldview:0",
+          "creation:historical_context:0",
+          "enuma-elish-cosmic-ordering-comparison",
+          "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+          "genesis-ane-comparative-context",
+          "genesis-literary-movement",
+          "genesis-ordered-worldview-observation",
+          "genesis-ordered-worldview-observation:passage-relevance",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:1",
+          "genesis:interpretive_note:2",
+          "image-of-god-theme:ancient_near_east_context:0",
+          "image-of-god-theme:hebraic_worldview:0",
+          "image-of-god-theme:historical_context:0",
+          "image-of-god-theme:second_temple_context:0",
+          "john-logos",
+          "light-and-darkness-theme:ancient_near_east_context:0",
+          "light-and-darkness-theme:historical_context:0",
+          "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+          "new-creation-theme:ancient_near_east_context:0",
+          "new-creation-theme:historical_context:0",
+          "pneumatology:ancient_near_east_context:0",
+          "pneumatology:historical_context:0",
+          "spirit-theme:ancient_near_east_context:0",
+          "spirit-theme:historical_context:0",
+          "spiritual-gifts:ancient_near_east_context:0",
+          "spiritual-gifts:historical_context:0",
+          "water-and-spirit-theme:ancient_near_east_context:0",
+          "water-and-spirit-theme:historical_context:0",
+          "what-does-ruach-mean:ancient_near_east_context:0",
+          "what-does-ruach-mean:historical_context:0",
+          "what-is-the-holy-spirit:ancient_near_east_context:0",
+          "what-is-the-holy-spirit:historical_context:0",
+          "what-is-the-image-of-god:ancient_near_east_context:0",
+          "what-is-the-image-of-god:historical_context:0",
+          "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+          "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+          "zephaniah-creation-reversal"
+        ],
+        "categories_represented": [
+          "chronology",
+          "culture",
+          "geography",
+          "history",
+          "social"
+        ],
+        "synthesis_hash": "9bf21785c875c82fd9babd3b71c12b0ead1545d1d7e288e4d7aee989556fb5f9"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "9bf21785c875c82fd9babd3b71c12b0ead1545d1d7e288e4d7aee989556fb5f9",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "Leviticus 16",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1664,
         "commentary_prose_word_count": 251,
+        "evidence_ids_referenced": [
+          "leviticus-day-of-atonement",
+          "leviticus-literary-movement",
+          "leviticus:interpretive_note:2",
+          "tabernacle-graded-sacred-space",
+          "what-is-the-tabernacle:date_ranges:0"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 1.8
+      },
+      "synthesis": {
+        "synthesis_unit_count": 41,
+        "evidence_ids_represented": [
+          "atonement:ancient_near_east_context:0",
+          "atonement:historical_context:0",
+          "high-priesthood:ancient_near_east_context:0",
+          "high-priesthood:hebraic_worldview:0",
+          "high-priesthood:historical_context:0",
+          "high-priesthood:historical_setting:0",
+          "high-priesthood:original_audience:0",
+          "high-priesthood:second_temple_context:0",
+          "leviticus-day-of-atonement",
+          "leviticus-literary-movement",
+          "leviticus:interpretive_note:2",
+          "leviticus:interpretive_note:3",
+          "priesthood-of-believers:ancient_near_east_context:0",
+          "priesthood-of-believers:historical_context:0",
+          "priesthood:ancient_near_east_context:0",
+          "priesthood:hebraic_worldview:0",
+          "priesthood:historical_context:0",
+          "priesthood:second_temple_context:0",
+          "sacrifice-theme:ancient_near_east_context:0",
+          "sacrifice-theme:hebraic_worldview:0",
+          "sacrifice-theme:historical_context:0",
+          "sacrifice-theme:second_temple_context:0",
+          "sacrificial-system:ancient_near_east_context:0",
+          "sacrificial-system:historical_context:0",
+          "tabernacle-graded-sacred-space",
+          "tabernacle-graded-sacred-space:passage-relevance",
+          "tabernacle-presence-access-and-mobility:interpretive_note:1",
+          "tabernacle:ancient_near_east_context:0",
+          "tabernacle:archaeology:0",
+          "tabernacle:archaeology:1",
+          "tabernacle:date_ranges:0",
+          "tabernacle:date_ranges:1",
+          "tabernacle:hebraic_worldview:0",
+          "tabernacle:historical_context:0",
+          "tabernacle:historical_setting:0",
+          "tabernacle:original_audience:0",
+          "tabernacle:second_temple_context:0",
+          "tabernacle:timeline:0",
+          "tabernacle:timeline:1",
+          "tabernacle:timeline:2",
+          "tabernacle:timeline:3",
+          "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
+          "what-is-sacrifice-in-the-bible:historical_context:0",
+          "what-is-the-tabernacle:ancient_near_east_context:0",
+          "what-is-the-tabernacle:archaeology:0",
+          "what-is-the-tabernacle:archaeology:1",
+          "what-is-the-tabernacle:date_ranges:0",
+          "what-is-the-tabernacle:date_ranges:1",
+          "what-is-the-tabernacle:hebraic_worldview:0",
+          "what-is-the-tabernacle:historical_context:0",
+          "what-is-the-tabernacle:historical_setting:0",
+          "what-is-the-tabernacle:original_audience:0",
+          "what-is-the-tabernacle:second_temple_context:0"
+        ],
+        "categories_represented": [
+          "archaeology",
+          "chronology",
+          "culture",
+          "geography",
+          "history",
+          "social"
+        ],
+        "synthesis_hash": "4401fbb0398da0e7be842978d4fadc45bf83635d3041c4282e243de949036004"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "4401fbb0398da0e7be842978d4fadc45bf83635d3041c4282e243de949036004",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "Ruth 3",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1977,
         "commentary_prose_word_count": 303,
+        "evidence_ids_referenced": [
+          "boaz:historical_context:0",
+          "nehemiah:interpretive_note:7",
+          "ruth-literary-movement",
+          "ruth-providence-through-action",
+          "ruth:interpretive_note:2"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions",
+          "for a later or comparative connection, note that",
+          "it can be traced further without replacing the chapter's own setting"
+        ],
+        "boilerplate_ratio": 2.2
+      },
+      "synthesis": {
+        "synthesis_unit_count": 6,
+        "evidence_ids_represented": [
+          "boaz:ancient_near_east_context:0",
+          "boaz:historical_context:0",
+          "nehemiah:interpretive_note:7",
+          "ruth-literary-movement",
+          "ruth-providence-through-action",
+          "ruth:interpretive_note:2"
+        ],
+        "categories_represented": [
+          "culture",
+          "history"
+        ],
+        "synthesis_hash": "48c82ee3e4b916097d246428fa1a842b88280f099a306bfd64f32840ecb8e917"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "48c82ee3e4b916097d246428fa1a842b88280f099a306bfd64f32840ecb8e917",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "Psalms 1",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "RICH_ENOUGH",
         "section_count": 4,
         "commentary_block_count": 4,
         "commentary_prose_char_count": 1578,
         "commentary_prose_word_count": 274,
+        "evidence_ids_referenced": [
+          "makarios:ancient_near_east_context:0",
+          "makarios:historical_context:0",
+          "psalms-gateway-torah-king",
+          "torah:historical_context:0",
+          "what-does-torah-mean:historical_context:0",
+          "what-is-a-psalm:historical_context:0",
+          "what-is-biblical-wisdom:historical_context:0"
+        ],
         "unique_evidence_ids_consumed": 4,
-        "richness_status": "RICH_ENOUGH"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 7,
+        "evidence_ids_represented": [
+          "psalms-gateway-torah-king",
+          "what-does-torah-mean:ancient_near_east_context:0",
+          "what-does-torah-mean:historical_context:0",
+          "what-is-a-psalm:ancient_near_east_context:0",
+          "what-is-a-psalm:historical_context:0",
+          "what-is-biblical-wisdom:ancient_near_east_context:0",
+          "what-is-biblical-wisdom:historical_context:0"
+        ],
+        "categories_represented": [
+          "culture",
+          "history",
+          "politics"
+        ],
+        "synthesis_hash": "f9c9f9dcddd28d9ec4ff7737840fd550b807b526c4418e37b6ca18cdd19eec85"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "f9c9f9dcddd28d9ec4ff7737840fd550b807b526c4418e37b6ca18cdd19eec85",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "1 Samuel 21",
       "before": {
         "evidence_availability": "THIN",
+        "richness_status": "EVIDENCE_GAP",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 348,
         "commentary_prose_word_count": 54,
+        "evidence_ids_referenced": [
+          "first-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 1,
-        "richness_status": "EVIDENCE_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken"
+        ],
+        "boilerplate_ratio": 3.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 1,
+        "evidence_ids_represented": [
+          "first-samuel-literary-movement"
+        ],
+        "categories_represented": [
+          "politics"
+        ],
+        "synthesis_hash": "e296b88a547efd512390201d0d50e6c5497eebb2d37b051df91f81c4c0c15abd"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "e296b88a547efd512390201d0d50e6c5497eebb2d37b051df91f81c4c0c15abd",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "1 Samuel 28",
       "before": {
         "evidence_availability": "THIN",
+        "richness_status": "RICH_ENOUGH",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 363,
         "commentary_prose_word_count": 53,
+        "evidence_ids_referenced": [
+          "1-samuel:interpretive_note:3",
+          "first-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 2,
-        "richness_status": "RICH_ENOUGH"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 2,
+        "evidence_ids_represented": [
+          "1-samuel:interpretive_note:3",
+          "first-samuel-literary-movement"
+        ],
+        "categories_represented": [
+          "culture",
+          "politics"
+        ],
+        "synthesis_hash": "86bcccde5d6558166a81c46055fc0d43a3d276f87e8285d753e893a0847a3643"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "86bcccde5d6558166a81c46055fc0d43a3d276f87e8285d753e893a0847a3643",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "2 Samuel 6",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 4,
         "commentary_prose_char_count": 1290,
         "commentary_prose_word_count": 197,
+        "evidence_ids_referenced": [
+          "2-samuel:interpretive_note:4",
+          "david-anointed:historical_context:0",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 4,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 2.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 11,
+        "evidence_ids_represented": [
+          "2-samuel:interpretive_note:4",
+          "ark-brought-to-jerusalem:ancient_near_east_context:0",
+          "ark-brought-to-jerusalem:historical_context:0",
+          "conquest-of-jericho:ancient_near_east_context:0",
+          "conquest-of-jericho:historical_context:0",
+          "david-anointed:ancient_near_east_context:0",
+          "david-anointed:historical_context:0",
+          "rise-of-saul:ancient_near_east_context:0",
+          "rise-of-saul:historical_context:0",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-literary-movement"
+        ],
+        "categories_represented": [
+          "culture",
+          "history"
+        ],
+        "synthesis_hash": "4af4fb10ea4ca87277276a3ced14197565d0398d49a335794a02446b0260f0ac"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "4af4fb10ea4ca87277276a3ced14197565d0398d49a335794a02446b0260f0ac",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "2 Samuel 24",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 3,
         "commentary_prose_char_count": 1245,
         "commentary_prose_word_count": 182,
+        "evidence_ids_referenced": [
+          "1-chronicles:interpretive_note:3",
+          "2-samuel:interpretive_note:3",
+          "second-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 3,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "for a later or comparative connection, note that",
+          "it can be traced further without replacing the chapter's own setting"
+        ],
+        "boilerplate_ratio": 2.6667
+      },
+      "synthesis": {
+        "synthesis_unit_count": 3,
+        "evidence_ids_represented": [
+          "1-chronicles:interpretive_note:3",
+          "2-samuel:interpretive_note:3",
+          "second-samuel-literary-movement"
+        ],
+        "categories_represented": [
+          "culture"
+        ],
+        "synthesis_hash": "4fe43f0dbb68e30f97d84bba337cc42f202eabb0033358d3205bf60ea6e81568"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "4fe43f0dbb68e30f97d84bba337cc42f202eabb0033358d3205bf60ea6e81568",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "1 Chronicles 8",
       "before": {
         "evidence_availability": "THIN",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 441,
         "commentary_prose_word_count": 66,
+        "evidence_ids_referenced": [
+          "1-chronicles:interpretive_note:0"
+        ],
         "unique_evidence_ids_consumed": 1,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken"
+        ],
+        "boilerplate_ratio": 3.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 1,
+        "evidence_ids_represented": [
+          "1-chronicles:interpretive_note:0"
+        ],
+        "categories_represented": [
+          "culture"
+        ],
+        "synthesis_hash": "b3b12c824ebd5560419553db2439107bc966148d965ddf8b57583b5849ef47e9"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "b3b12c824ebd5560419553db2439107bc966148d965ddf8b57583b5849ef47e9",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "John 1",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1791,
         "commentary_prose_word_count": 277,
+        "evidence_ids_referenced": [
+          "creation-doctrine-framework:timeline:5",
+          "john-1-1",
+          "john-1-18",
+          "john-baptist-lamb",
+          "john-logos"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 1.8
+      },
+      "synthesis": {
+        "synthesis_unit_count": 47,
+        "evidence_ids_represented": [
+          "creation-doctrine-framework:ancient_near_east_context:0",
+          "creation-doctrine-framework:hebraic_worldview:0",
+          "creation-doctrine-framework:historical_context:0",
+          "creation-doctrine-framework:historical_setting:0",
+          "creation-doctrine-framework:original_audience:0",
+          "creation-doctrine-framework:second_temple_context:0",
+          "creation-doctrine-framework:timeline:0",
+          "creation-doctrine-framework:timeline:1",
+          "creation-doctrine-framework:timeline:2",
+          "creation-doctrine-framework:timeline:3",
+          "creation-doctrine-framework:timeline:4",
+          "creation-doctrine-framework:timeline:5",
+          "creation-doctrine:ancient_near_east_context:0",
+          "creation-doctrine:historical_context:0",
+          "creation-theme:ancient_near_east_context:0",
+          "creation-theme:historical_context:0",
+          "creation:ancient_near_east_context:0",
+          "creation:hebraic_worldview:0",
+          "creation:historical_context:0",
+          "divine-presence:ancient_near_east_context:0",
+          "divine-presence:historical_context:0",
+          "glory-theme:ancient_near_east_context:0",
+          "glory-theme:historical_context:0",
+          "jesus:ancient_near_east_context:0",
+          "jesus:hebraic_worldview:0",
+          "jesus:historical_context:0",
+          "jesus:key_places:0",
+          "jesus:key_places:1",
+          "jesus:key_places:2",
+          "jesus:key_places:3",
+          "jesus:key_places:4",
+          "jesus:second_temple_context:0",
+          "john-1-1",
+          "john-1-18",
+          "john-baptist-lamb",
+          "john-logos",
+          "light-and-darkness-theme:ancient_near_east_context:0",
+          "light-and-darkness-theme:historical_context:0",
+          "new-creation-theme:ancient_near_east_context:0",
+          "new-creation-theme:historical_context:0",
+          "new-temple-theme:ancient_near_east_context:0",
+          "new-temple-theme:historical_context:0",
+          "presence-theme:ancient_near_east_context:0",
+          "presence-theme:historical_context:0",
+          "sacrifice-theme:ancient_near_east_context:0",
+          "sacrifice-theme:hebraic_worldview:0",
+          "sacrifice-theme:historical_context:0",
+          "sacrifice-theme:second_temple_context:0",
+          "sanctuary-theme:ancient_near_east_context:0",
+          "sanctuary-theme:hebraic_worldview:0",
+          "sanctuary-theme:historical_context:0",
+          "sanctuary-theme:second_temple_context:0",
+          "trinity:ancient_near_east_context:0",
+          "trinity:historical_context:0",
+          "water-theme:ancient_near_east_context:0",
+          "water-theme:historical_context:0",
+          "what-is-intertextuality:ancient_near_east_context:0",
+          "what-is-intertextuality:historical_context:0",
+          "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+          "what-verses-show-identity-in-christ:historical_context:0"
+        ],
+        "categories_represented": [
+          "chronology",
+          "culture",
+          "geography",
+          "history",
+          "language",
+          "social"
+        ],
+        "synthesis_hash": "7c8928dc9f41a7feb5f27fcbf5818c8e22f9364117be4bbee3a16a4690608aaa"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "7c8928dc9f41a7feb5f27fcbf5818c8e22f9364117be4bbee3a16a4690608aaa",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "Isaiah 6",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 4,
         "commentary_prose_char_count": 1565,
         "commentary_prose_word_count": 239,
+        "evidence_ids_referenced": [
+          "isaiah-holiness-justice-worship",
+          "isaiah-many-voices",
+          "isaiah-superscription-prophet",
+          "what-is-holiness:historical_context:0"
+        ],
         "unique_evidence_ids_consumed": 4,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 2.25
+      },
+      "synthesis": {
+        "synthesis_unit_count": 16,
+        "evidence_ids_represented": [
+          "divine-holiness:ancient_near_east_context:0",
+          "divine-holiness:historical_context:0",
+          "holiness-theme:ancient_near_east_context:0",
+          "holiness-theme:historical_context:0",
+          "how-should-i-read-prophecy:ancient_near_east_context:0",
+          "how-should-i-read-prophecy:historical_context:0",
+          "isaiah-holiness-justice-worship",
+          "isaiah-many-voices",
+          "isaiah-qumran-witnesses",
+          "isaiah-superscription-prophet",
+          "temple-theme:ancient_near_east_context:0",
+          "temple-theme:hebraic_worldview:0",
+          "temple-theme:historical_context:0",
+          "temple-theme:second_temple_context:0",
+          "what-is-a-prophet:ancient_near_east_context:0",
+          "what-is-a-prophet:historical_context:0",
+          "what-is-holiness:ancient_near_east_context:0",
+          "what-is-holiness:historical_context:0"
+        ],
+        "categories_represented": [
+          "culture",
+          "history"
+        ],
+        "synthesis_hash": "27d3dc396abfb2648cb445eae6ba461d4b346f50fe23f82c001e0617ceb983df"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "27d3dc396abfb2648cb445eae6ba461d4b346f50fe23f82c001e0617ceb983df",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "Revelation 12",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1743,
         "commentary_prose_word_count": 265,
+        "evidence_ids_referenced": [
+          "isaiah-morning-star-taunt",
+          "rev-dragon",
+          "rev-not-violence-license",
+          "rev-scriptural-reuse",
+          "rev-septets"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions",
+          "for a later or comparative connection, note that",
+          "it can be traced further without replacing the chapter's own setting"
+        ],
+        "boilerplate_ratio": 2.2
+      },
+      "synthesis": {
+        "synthesis_unit_count": 4,
+        "evidence_ids_represented": [
+          "isaiah-morning-star-taunt",
+          "rev-dragon",
+          "rev-not-violence-license",
+          "rev-scriptural-reuse",
+          "rev-septets"
+        ],
+        "categories_represented": [
+          "culture",
+          "history"
+        ],
+        "synthesis_hash": "509bc8fb6a89285b9a333ae39dae66b8d1963546ea25bc0fa2bae8218d43ea81"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "509bc8fb6a89285b9a333ae39dae66b8d1963546ea25bc0fa2bae8218d43ea81",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     },
     {
       "reference": "Numbers 3",
       "before": {
         "evidence_availability": "DATA_GAP",
+        "richness_status": "EVIDENCE_GAP",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 295,
         "commentary_prose_word_count": 53,
+        "evidence_ids_referenced": [],
         "unique_evidence_ids_consumed": 0,
-        "richness_status": "EVIDENCE_GAP"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
+      },
+      "synthesis": {
+        "synthesis_unit_count": 0,
+        "evidence_ids_represented": [],
+        "categories_represented": [],
+        "synthesis_hash": "b1b37c4b7716a5863b0c044a9f3c19301ea5d3bbd8ec22571850072dd9f0a912"
       },
       "after": null,
-      "validation_outcome": "not_run",
+      "deltas": {
+        "section_delta": null,
+        "evidence_use_delta": null,
+        "synthesis_use_percentage": null,
+        "word_count_delta": null,
+        "boilerplate_removed": null,
+        "richness_classification_changed": null
+      },
+      "import_status": "missing",
+      "response_structurally_parsed": false,
+      "validation_status": "not_run",
       "evidence_and_synthesis_locks_match": true,
       "synthesis_validation_errors": [],
-      "synthesis_hash": "b1b37c4b7716a5863b0c044a9f3c19301ea5d3bbd8ec22571850072dd9f0a912",
       "commentary_prompt_version": null,
-      "unsupported_claim_count": 0,
       "provenance_complete": false,
-      "validation_errors": []
+      "rejection_codes": [],
+      "validation_errors": [],
+      "likely_failure_layer": "INFRASTRUCTURE_GAP"
     }
   ]
 }

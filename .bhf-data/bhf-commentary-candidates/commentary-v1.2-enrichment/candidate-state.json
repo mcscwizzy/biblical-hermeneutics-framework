@@ -1,10 +1,9 @@
 {
   "pipeline_version": "commentary-v1.2-enrichment",
-  "current_stage": "CANARY_BLOCKED_MODEL",
-  "required_model": "terra",
+  "current_stage": "CANARY_BLOCKED_BEFORE_PROSE",
+  "current_gate_state": "BLOCKED_BEFORE_PROSE",
+  "required_renderer": "approved_external_renderer",
   "required_effort": "medium",
-  "blocked_reason": "REQUIRED_MODEL_UNAVAILABLE",
-  "configured_model": "llama3.1:8b",
   "full_bible_generation_authorized": false,
   "v1_1_mutated": false,
   "ckl_mutated": false,

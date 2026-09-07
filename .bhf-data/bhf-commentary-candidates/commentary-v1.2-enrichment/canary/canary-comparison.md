@@ -1,6 +1,6 @@
 # Commentary v1.2 canary comparison
 
-Status: **BLOCKED**
+Status: **BLOCKED_BEFORE_PROSE**
 
 | Reference | Before | After | Validation |
 |---|---:|---:|---|
@@ -18,4 +18,4 @@ Status: **BLOCKED**
 | Revelation 12 | SYNTHESIS_GAP | not run | not_run |
 | Numbers 3 | EVIDENCE_GAP | not run | not_run |
 
-Scale generation remains disabled unless every machine-readable gate check passes.
+A CANARY_PASS means ready for human review; it does not authorize bulk generation.

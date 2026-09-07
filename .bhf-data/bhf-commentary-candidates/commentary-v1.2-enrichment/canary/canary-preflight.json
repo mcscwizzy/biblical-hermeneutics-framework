@@ -1,10 +1,12 @@
 {
   "artifact_version": "commentary-v1.2-canary-preflight-v1",
-  "status": "READY_FOR_TERRA",
-  "model_requirement": {
-    "owner": "terra",
+  "status": "READY_FOR_RENDERER",
+  "renderer_requirement": {
+    "status": "APPROVED_RENDERER_REQUIRED",
+    "execution_path": "external_or_conversational",
     "effort": "medium"
   },
+  "renderer_is_repository_adapter": false,
   "candidate_only": true,
   "v1_1_protected_fingerprints_verified": true,
   "evidence_locked": true,
@@ -85,14 +87,25 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/genesis_001.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 3,
         "commentary_prose_char_count": 757,
         "commentary_prose_word_count": 112,
+        "evidence_ids_referenced": [
+          "genesis-ordered-worldview-observation",
+          "image-of-god-theme:hebraic_worldview:0"
+        ],
         "unique_evidence_ids_consumed": 2,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:0959834aee3052eb2bcf2b4171ccd7f449b9f94f6354dd9159c9d092bba88e5a",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/genesis_001.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/genesis_001.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/genesis_001.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "Leviticus 16",
@@ -163,14 +176,38 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/leviticus_016.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1664,
         "commentary_prose_word_count": 251,
+        "evidence_ids_referenced": [
+          "leviticus-day-of-atonement",
+          "leviticus-literary-movement",
+          "leviticus:interpretive_note:2",
+          "tabernacle-graded-sacred-space",
+          "what-is-the-tabernacle:date_ranges:0"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 1.8
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:1ac60070e766ca71e445db9432c7935374ae97c7cb6a32771bcc90dcc9bbf5a9",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/leviticus_016.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/leviticus_016.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/leviticus_016.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "Ruth 3",
@@ -194,14 +231,40 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/ruth_003.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1977,
         "commentary_prose_word_count": 303,
+        "evidence_ids_referenced": [
+          "boaz:historical_context:0",
+          "nehemiah:interpretive_note:7",
+          "ruth-literary-movement",
+          "ruth-providence-through-action",
+          "ruth:interpretive_note:2"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions",
+          "for a later or comparative connection, note that",
+          "it can be traced further without replacing the chapter's own setting"
+        ],
+        "boilerplate_ratio": 2.2
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:891203b98c16ecd2b51d90c05a98ab159fbc96bbc0e8858ffd223643a7b46c63",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/ruth_003.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/ruth_003.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/ruth_003.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "Psalms 1",
@@ -226,14 +289,30 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/psalms_001.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "RICH_ENOUGH",
         "section_count": 4,
         "commentary_block_count": 4,
         "commentary_prose_char_count": 1578,
         "commentary_prose_word_count": 274,
+        "evidence_ids_referenced": [
+          "makarios:ancient_near_east_context:0",
+          "makarios:historical_context:0",
+          "psalms-gateway-torah-king",
+          "torah:historical_context:0",
+          "what-does-torah-mean:historical_context:0",
+          "what-is-a-psalm:historical_context:0",
+          "what-is-biblical-wisdom:historical_context:0"
+        ],
         "unique_evidence_ids_consumed": 4,
-        "richness_status": "RICH_ENOUGH"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:f91fe16e0b43ba350598c4cf0c06f23602d1f11aadcbda58400ed32b3bc7fce3",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/psalms_001.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/psalms_001.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/psalms_001.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "1 Samuel 21",
@@ -252,14 +331,28 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/1_samuel_021.json",
       "before": {
         "evidence_availability": "THIN",
+        "richness_status": "EVIDENCE_GAP",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 348,
         "commentary_prose_word_count": 54,
+        "evidence_ids_referenced": [
+          "first-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 1,
-        "richness_status": "EVIDENCE_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken"
+        ],
+        "boilerplate_ratio": 3.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:640014fec629f3a37dda00b2307fa483597fd89eef6bd96249662b8ebaeaabdd",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/1_samuel_021.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/1_samuel_021.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_samuel_021.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "1 Samuel 28",
@@ -279,14 +372,25 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/1_samuel_028.json",
       "before": {
         "evidence_availability": "THIN",
+        "richness_status": "RICH_ENOUGH",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 363,
         "commentary_prose_word_count": 53,
+        "evidence_ids_referenced": [
+          "1-samuel:interpretive_note:3",
+          "first-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 2,
-        "richness_status": "RICH_ENOUGH"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:531c4a396476fb60d99f0eca3e1ca0a0178d90cf4f3a2ed5307f09a1c2f10330",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/1_samuel_028.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/1_samuel_028.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_samuel_028.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "2 Samuel 6",
@@ -315,14 +419,36 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/2_samuel_006.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 4,
         "commentary_prose_char_count": 1290,
         "commentary_prose_word_count": 197,
+        "evidence_ids_referenced": [
+          "2-samuel:interpretive_note:4",
+          "david-anointed:historical_context:0",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 4,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 2.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:4a7f5db8dea44b893db5f8a0b84826a2d96b2360d235a347a652e63c2a91b05f",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/2_samuel_006.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/2_samuel_006.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/2_samuel_006.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "2 Samuel 24",
@@ -343,14 +469,35 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/2_samuel_024.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 3,
         "commentary_prose_char_count": 1245,
         "commentary_prose_word_count": 182,
+        "evidence_ids_referenced": [
+          "1-chronicles:interpretive_note:3",
+          "2-samuel:interpretive_note:3",
+          "second-samuel-literary-movement"
+        ],
         "unique_evidence_ids_consumed": 3,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "for a later or comparative connection, note that",
+          "it can be traced further without replacing the chapter's own setting"
+        ],
+        "boilerplate_ratio": 2.6667
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:875d97391666656bdd2f9a9fdbd25dda6126f5f3bb329894d32ba0e12d909503",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/2_samuel_024.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/2_samuel_024.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/2_samuel_024.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "1 Chronicles 8",
@@ -369,14 +516,28 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/1_chronicles_008.json",
       "before": {
         "evidence_availability": "THIN",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 441,
         "commentary_prose_word_count": 66,
+        "evidence_ids_referenced": [
+          "1-chronicles:interpretive_note:0"
+        ],
         "unique_evidence_ids_consumed": 1,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken"
+        ],
+        "boilerplate_ratio": 3.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:eec3c5b3f72462c9c685b2b2ed7c3c7aa5901895239a9051668acef520c6adb4",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/1_chronicles_008.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/1_chronicles_008.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/1_chronicles_008.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "John 1",
@@ -454,14 +615,38 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/john_001.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1791,
         "commentary_prose_word_count": 277,
+        "evidence_ids_referenced": [
+          "creation-doctrine-framework:timeline:5",
+          "john-1-1",
+          "john-1-18",
+          "john-baptist-lamb",
+          "john-logos"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 1.8
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:4be9b7f3274744f6630b4d79b0e97788608e2c18e08f8bcf94f3a1b162ad9e37",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/john_001.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/john_001.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/john_001.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "Isaiah 6",
@@ -497,14 +682,37 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/isaiah_006.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 3,
         "commentary_block_count": 4,
         "commentary_prose_char_count": 1565,
         "commentary_prose_word_count": 239,
+        "evidence_ids_referenced": [
+          "isaiah-holiness-justice-worship",
+          "isaiah-many-voices",
+          "isaiah-superscription-prophet",
+          "what-is-holiness:historical_context:0"
+        ],
         "unique_evidence_ids_consumed": 4,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions"
+        ],
+        "boilerplate_ratio": 2.25
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:bb9d52dc7fadd28af2062b57244f3530be637b309ca343cf637db0091293c3bc",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/isaiah_006.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/isaiah_006.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/isaiah_006.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "Revelation 12",
@@ -527,14 +735,40 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/revelation_012.json",
       "before": {
         "evidence_availability": "AVAILABLE",
+        "richness_status": "SYNTHESIS_GAP",
         "section_count": 4,
         "commentary_block_count": 5,
         "commentary_prose_char_count": 1743,
         "commentary_prose_word_count": 265,
+        "evidence_ids_referenced": [
+          "isaiah-morning-star-taunt",
+          "rev-dragon",
+          "rev-not-violence-license",
+          "rev-scriptural-reuse",
+          "rev-septets"
+        ],
         "unique_evidence_ids_consumed": 5,
-        "richness_status": "SYNTHESIS_GAP"
+        "boilerplate_detected": true,
+        "boilerplate_phrases": [
+          "read the chapter with this setting in view",
+          "it gives a starting point for following the chapter's own movement",
+          "the chapter itself should determine how far the point is taken",
+          "for its historical and cultural setting, note that",
+          "this background clarifies the setting assumed by the passage",
+          "it does not by itself settle every question raised by the chapter",
+          "a literary feature to notice is that",
+          "this form helps organize the chapter's claims",
+          "notice it before drawing broader conclusions",
+          "for a later or comparative connection, note that",
+          "it can be traced further without replacing the chapter's own setting"
+        ],
+        "boilerplate_ratio": 2.2
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:40d2bb011dd81d07e00c9ac0956c685cfad319c70c345d941a892c0ec7362b6b",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/revelation_012.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/revelation_012.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/revelation_012.json",
+      "status": "READY_FOR_RENDERER"
     },
     {
       "reference": "Numbers 3",
@@ -551,14 +785,22 @@
       "synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/synthesis/numbers_003.json",
       "before": {
         "evidence_availability": "DATA_GAP",
+        "richness_status": "EVIDENCE_GAP",
         "section_count": 1,
         "commentary_block_count": 1,
         "commentary_prose_char_count": 295,
         "commentary_prose_word_count": 53,
+        "evidence_ids_referenced": [],
         "unique_evidence_ids_consumed": 0,
-        "richness_status": "EVIDENCE_GAP"
+        "boilerplate_detected": false,
+        "boilerplate_phrases": [],
+        "boilerplate_ratio": 0.0
       },
-      "status": "READY_FOR_TERRA"
+      "packet_id": "commentary-v1.2-packet:b3e446908beb201c57a2549ecda147fc1629ea57e6e0b6b42db0a832a624fc85",
+      "prompt_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/prompts/numbers_003.json",
+      "expected_response_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/numbers_003.json",
+      "accepted_candidate_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/accepted/numbers_003.json",
+      "status": "READY_FOR_RENDERER"
     }
   ]
 }
