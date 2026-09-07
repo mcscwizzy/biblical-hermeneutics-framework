@@ -372,7 +372,7 @@ function normalizeReaderTab(value, index = 0) {
     id: String(tab.id || `reader-tab-${index + 1}`),
     book,
     chapter,
-    translation: String(tab.translation || "asv").trim().toLowerCase() || "asv",
+    translation: String(tab.translation || readerDefaultTranslationId()).trim().toLowerCase() || readerDefaultTranslationId(),
     verse: Number.isInteger(Number(tab.verse)) && Number(tab.verse) > 0 ? Number(tab.verse) : null,
     selection,
     data: null,
@@ -435,7 +435,7 @@ function persistReaderTabs() {
 
 function readerTabLabel(tab) {
   const abbreviation = String(
-    tab.data?.translation?.id || tab.translation || "asv",
+    tab.data?.translation?.id || tab.translation || readerDefaultTranslationId(),
   ).toUpperCase();
   return `${tab.book} ${tab.chapter} · ${abbreviation}`;
 }
@@ -461,7 +461,7 @@ function renderReaderTabs() {
     button.setAttribute("aria-selected", String(tab.id === activeReaderTabId));
     button.tabIndex = tab.id === activeReaderTabId ? 0 : -1;
     button.textContent = readerTabLabel(tab);
-    button.title = `Read ${tab.book} ${tab.chapter} in ${String(tab.translation || "asv").toUpperCase()}`;
+  button.title = `Read ${tab.book} ${tab.chapter} in ${String(tab.translation || readerDefaultTranslationId()).toUpperCase()}`;
 
     const close = document.createElement("button");
     close.type = "button";
@@ -491,7 +491,7 @@ function saveCurrentReaderTabState() {
   }
   tab.book = currentChapter.book;
   tab.chapter = Number(currentChapter.chapter);
-  tab.translation = String(currentChapter.translation?.id || selectedTranslationId() || "asv").toLowerCase();
+  tab.translation = String(currentChapter.translation?.id || selectedTranslationId() || readerDefaultTranslationId()).toLowerCase();
   tab.selection = currentSelection ? {...currentSelection} : null;
   tab.verse = getVisibleReaderVerse() || tab.verse || null;
   tab.updatedAt = new Date().toISOString();
@@ -915,7 +915,7 @@ async function initializeReader() {
       id: createReaderTabId(),
       book: bookSelect.value || defaultBook,
       chapter: reader.dataset.defaultChapter || 1,
-      translation: readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || "asv",
+      translation: readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || readerDefaultTranslationId(),
     });
     readerTabs = initialTab ? [initialTab] : [];
     activeReaderTabId = initialTab?.id || null;
@@ -1023,7 +1023,7 @@ async function initializeReader() {
   if (translationSelect) {
     translationSelect.addEventListener("change", async () => {
       const requestedTranslation = String(
-        translationSelect.value || "asv",
+        translationSelect.value || readerDefaultTranslationId(),
       ).toLowerCase();
       const previousTranslation = selectedTranslationId();
       try {
@@ -1080,9 +1080,6 @@ async function initializeReader() {
   const searchResultsBody = document.querySelector(
     "#reader-search-results-body",
   );
-  const commentarySearchResultsBody = document.querySelector(
-    "#commentary-search-results-body",
-  );
   if (searchForm) {
     searchForm.addEventListener("submit", submitBibleSearch);
     const queryInput = searchForm.querySelector("[name='query']");
@@ -1097,9 +1094,6 @@ async function initializeReader() {
   }
   if (searchResultsBody) {
     searchResultsBody.addEventListener("click", handleBibleSearchResultAction);
-  }
-  if (commentarySearchResultsBody) {
-    commentarySearchResultsBody.addEventListener("click", handleCommentarySearchResultAction);
   }
   const addNoteButton = document.querySelector("[data-add-note]");
   if (addNoteButton) {
@@ -2725,7 +2719,7 @@ async function loadReaderChapter(book, chapter, options = {}) {
   }
   const persistLocation = options.persistLocation !== false;
   const translationId = String(
-    options.translation || tab?.translation || selectedTranslationId() || "asv",
+    options.translation || tab?.translation || selectedTranslationId() || readerDefaultTranslationId(),
   ).toLowerCase();
   const requestToken = (readerLoadToken += 1);
   if (tab) {
@@ -2824,13 +2818,14 @@ async function loadReaderChapter(book, chapter, options = {}) {
       );
     }
   } catch (error) {
-    if (translationId !== "asv") {
+    const fallbackTranslation = readerDefaultTranslationId();
+    if (translationId !== fallbackTranslation) {
       if (tab) {
-        tab.translation = "asv";
+        tab.translation = fallbackTranslation;
         tab.data = null;
       }
-      setSelectedTranslationId("asv");
-      await loadReaderChapter(book, chapter, {...options, translation: "asv", useCache: false});
+      setSelectedTranslationId(fallbackTranslation);
+      await loadReaderChapter(book, chapter, {...options, translation: fallbackTranslation, useCache: false});
       return;
     }
     renderChapter(null);
@@ -2852,7 +2847,7 @@ function loadReaderTabData(tab) {
   if (tab.pendingLoad) {
     return tab.pendingLoad;
   }
-  const translationId = String(tab.translation || "asv").toLowerCase();
+  const translationId = String(tab.translation || readerDefaultTranslationId()).toLowerCase();
   const params = new URLSearchParams({translation: translationId});
   const request = requestJson(
     `/api/bible/${encodeURIComponent(tab.book)}/${encodeURIComponent(tab.chapter)}?${params.toString()}`,
@@ -3079,7 +3074,7 @@ function createReaderPane(data, tab) {
   heading.textContent = `${data.book} ${data.chapter}`;
 
   const translation = data.translation || {};
-  const abbreviation = translation.id || String(tab.translation || "asv").toUpperCase();
+  const abbreviation = translation.id || String(tab.translation || readerDefaultTranslationId()).toUpperCase();
   const translationBadge = document.createElement("button");
   translationBadge.type = "button";
   translationBadge.className = "reader-translation-badge";
@@ -3300,7 +3295,7 @@ async function mergeDeviceTranslations(state) {
   if (localIds.has(selected)) {
     merged.default_translation = selected;
   } else if (selected && !["asv", "kjv"].includes(selected)) {
-    writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, "asv");
+    writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, readerDefaultTranslationId());
   }
   return merged;
 }
@@ -3369,7 +3364,7 @@ function translationCatalogWithLocalState(state) {
 }
 
 function installedTranslationIds() {
-  const ids = new Set(["asv"]);
+  const ids = new Set(["asv", "kjv"]);
   if (
     translationCatalogState &&
     Array.isArray(translationCatalogState.sections?.installed)
@@ -3385,7 +3380,7 @@ function installedTranslationIds() {
 }
 
 function selectedTranslationId() {
-  const fallback = "asv";
+  const fallback = readerDefaultTranslationId();
   const tabTranslation = String(activeReaderTab()?.translation || "").toLowerCase();
   const stored = String(
     tabTranslation || readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || fallback,
@@ -3394,10 +3389,10 @@ function selectedTranslationId() {
 }
 
 function setSelectedTranslationId(id) {
-  const normalized = String(id || "asv").toLowerCase();
+  const normalized = String(id || readerDefaultTranslationId()).toLowerCase();
   const selected = installedTranslationIds().has(normalized)
     ? normalized
-    : "asv";
+    : readerDefaultTranslationId();
   const tab = activeReaderTab();
   if (tab) {
     tab.translation = selected;
@@ -3409,7 +3404,7 @@ function setSelectedTranslationId(id) {
 }
 
 async function persistReaderDefaultTranslation(id) {
-  const normalized = String(id || "asv").toLowerCase();
+  const normalized = String(id || readerDefaultTranslationId()).toLowerCase();
   if (isDeviceLocalTranslation(normalized)) {
     writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, normalized);
     updateTranslationCatalogDefault(normalized);
@@ -3434,7 +3429,7 @@ async function persistReaderDefaultTranslation(id) {
 }
 
 function updateTranslationCatalogDefault(id) {
-  const normalized = String(id || "asv").toLowerCase();
+  const normalized = String(id || readerDefaultTranslationId()).toLowerCase();
   if (!translationCatalogState) {
     return;
   }
@@ -3452,6 +3447,14 @@ function updateTranslationCatalogDefault(id) {
   for (const entries of Object.values(translationCatalogState.sections || {})) {
     markDefault(entries);
   }
+}
+
+function readerDefaultTranslationId() {
+  return String(
+    translationCatalogState?.default_translation
+      || document.querySelector("[data-reader-translation]")?.dataset.defaultTranslation
+      || "kjv",
+  ).toLowerCase();
 }
 
 function readLocalStorageValue(key) {
@@ -3532,7 +3535,7 @@ function installImportedTranslation(id) {
 
 async function removeInstalledTranslation(id) {
   const normalized = String(id || "").toLowerCase();
-  if (!normalized || normalized === "asv") {
+  if (!normalized || ["asv", "kjv"].includes(normalized)) {
     return;
   }
   if (isDeviceLocalTranslation(normalized)) {
@@ -3549,7 +3552,7 @@ async function removeInstalledTranslation(id) {
   );
   const selectedBeforeRemoval = selectedTranslationId();
   if (selectedBeforeRemoval === normalized) {
-    setSelectedTranslationId("asv");
+    setSelectedTranslationId(readerDefaultTranslationId());
   }
 }
 
@@ -3615,7 +3618,7 @@ function syncTranslationSelectOptions() {
     ? state.translations
     : [];
   const selectedId = String(
-    translationSelect.value || selectedTranslationId() || "asv",
+    translationSelect.value || selectedTranslationId() || readerDefaultTranslationId(),
   ).toLowerCase();
   translationSelect.replaceChildren();
   for (const entry of translations) {
@@ -3641,10 +3644,10 @@ function syncTranslationSelectOptions() {
     : selectedTranslationId();
   if (!translationSelect.options.length) {
     const fallbackOption = document.createElement("option");
-    fallbackOption.value = "asv";
-    fallbackOption.textContent = "ASV - American Standard Version";
+    fallbackOption.value = readerDefaultTranslationId();
+    fallbackOption.textContent = translationSelectOptionLabel(fallbackOption.value);
     translationSelect.appendChild(fallbackOption);
-    translationSelect.value = "asv";
+    translationSelect.value = fallbackOption.value;
   }
 }
 
@@ -3681,7 +3684,7 @@ async function removeDeviceTranslation(translationId) {
     `/api/translations/${encodeURIComponent(normalized)}/offline-data`,
   );
   if (selectedTranslationId() === normalized) {
-    setSelectedTranslationId("asv");
+    setSelectedTranslationId(readerDefaultTranslationId());
   }
 }
 

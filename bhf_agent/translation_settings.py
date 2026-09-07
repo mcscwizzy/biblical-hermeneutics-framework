@@ -11,7 +11,7 @@ from .translation_installer import get_translation_installation
 from .translation_registry import set_default_translation as set_registry_default_translation
 
 
-DEFAULT_READER_TRANSLATION_ID = "asv"
+DEFAULT_READER_TRANSLATION_ID = "kjv"
 SETTINGS_PATH = RUNTIME_DATA_PATHS.reader_settings_path
 
 

@@ -7,7 +7,8 @@ from dataclasses import dataclass
 from typing import Any, Callable
 
 
-DEFAULT_TRANSLATION_ID = "asv"
+DEFAULT_TRANSLATION_ID = "kjv"
+BUNDLED_TRANSLATION_IDS = ("asv", "kjv")
 PROTECTED_TRANSLATION_IDS = ("niv", "esv", "csb", "nasb", "lsb", "nlt")
 LICENSE_REQUIRED_EXPLANATION = (
     "This translation is copyrighted and is not currently available for direct "
@@ -496,7 +497,7 @@ def set_default_translation(
 ) -> str:
     requested = str(requested_translation_id or "").lower()
     installed = {str(item).lower() for item in installed_translation_ids}
-    installed.add(DEFAULT_TRANSLATION_ID)
+    installed.update(BUNDLED_TRANSLATION_IDS)
     if requested not in installed:
         raise ValueError("Only an installed translation can be selected or made default")
     return requested
@@ -507,7 +508,7 @@ def resolve_selectable_translation(
     installed_translation_ids: list[str] | tuple[str, ...],
 ) -> str:
     installed = {str(item).lower() for item in installed_translation_ids}
-    installed.add(DEFAULT_TRANSLATION_ID)
+    installed.update(BUNDLED_TRANSLATION_IDS)
     requested = str(requested_translation_id or DEFAULT_TRANSLATION_ID).lower()
     if requested in installed:
         return requested

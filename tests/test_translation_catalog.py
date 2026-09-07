@@ -122,8 +122,9 @@ class TranslationCatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Only an installed translation"):
             set_default_translation("esv", ["asv"])
 
-    def test_asv_remains_fallback_when_translation_unavailable(self):
-        self.assertEqual(resolve_selectable_translation("esv", ["asv"]), "asv")
+    def test_kjv_is_fallback_when_translation_unavailable(self):
+        self.assertEqual(resolve_selectable_translation("esv", ["asv"]), "kjv")
+        self.assertEqual(resolve_selectable_translation("asv", ["asv"]), "asv")
         self.assertEqual(resolve_selectable_translation("kjv", ["asv", "kjv"]), "kjv")
 
     def test_provider_capabilities_default_to_false(self):

@@ -183,14 +183,16 @@ class AISetupConfigurationTests(unittest.TestCase):
         )
         self.assertIn("settings.activeProvider = currentProvider(form)", model_settings)
 
-    def test_more_settings_exposes_plain_language_ai_passage_summary_control(self):
+    def test_more_settings_omits_optional_ai_passage_summary_control(self):
         template = (ROOT / "bhf_web" / "templates" / "index.html").read_text(
             encoding="utf-8"
         )
 
-        self.assertIn("data-ai-presentation-toggle", template)
-        self.assertIn("AI passage summaries", template)
-        self.assertIn("Source evidence remains available underneath.", template)
+        self.assertNotIn("Optional AI", template)
+        self.assertNotIn("Passage help", template)
+        self.assertNotIn("AI passage summaries", template)
+        self.assertNotIn("data-ai-presentation-toggle", template)
+        self.assertNotIn('data-testid="ai-presentation-toggle"', template)
         self.assertNotIn("BHF_PRESENTATION_ENABLED", template)
 
 

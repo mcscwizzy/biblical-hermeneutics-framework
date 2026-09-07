@@ -29,22 +29,22 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260901b">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260906a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
-  <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
-  {# static_asset('/style.css') }}?v=20260724c #}
-  {# static_asset('/htmx-lite.js') }}?v=20260729b #}
+  <!-- href="/static/style.css?v=20260906a" src="/static/htmx-lite.js?v=20260906a" -->
+  {# static_asset('/style.css') }}?v=20260906a #}
+  {# static_asset('/htmx-lite.js') }}?v=20260906a #}
   <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/study-vault.js') }}?v=20260809a" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260906a" defer></script>
   <script src="{{ static_asset('/api/backend-routing.js') }}?v=20260822a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260821a" defer></script>
   <script src="{{ static_asset('/api/job-flow.js') }}?v=20260901a" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}?v=20260820a" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260820a" defer></script>
-  <script src="{{ static_asset('/htmx-search.js') }}?v=20260822a" defer></script>
+  <script src="{{ static_asset('/htmx-search.js') }}?v=20260906a" defer></script>
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260822b" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260906a" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/companion-context.js') }}?v=20260901c" defer></script>
   <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260901b" defer></script>
@@ -157,36 +157,6 @@
               <button type="submit" data-testid="bible-search-button">Search</button>
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
-            <label class="reader-search-context-filter">
-              <span>Context</span>
-              <select name="commentary_availability" data-commentary-availability-filter aria-label="Filter BHF Context results">
-                <option value="">All BHF Context</option>
-                <option value="AVAILABLE">Context available</option>
-                <option value="THIN">Limited context</option>
-                <option value="DATA_GAP">Context not currently available</option>
-              </select>
-            </label>
-            <label class="reader-search-context-filter">
-              <span>Evidence type</span>
-              <select name="commentary_category" data-commentary-category-filter aria-label="Filter BHF Context evidence category">
-                <option value="">All evidence types</option>
-                <option value="history">History</option>
-                <option value="culture">Culture</option>
-                <option value="archaeology">Archaeology</option>
-                <option value="geography">Geography</option>
-                <option value="language">Language</option>
-                <option value="chronology">Chronology</option>
-                <option value="social">Social</option>
-              </select>
-            </label>
-            <label class="reader-search-context-filter">
-              <span>People or places</span>
-              <input type="search" name="commentary_entity" data-commentary-entity-filter placeholder="e.g. Abram" aria-label="Filter BHF Context by person or place">
-            </label>
-            <label class="reader-search-context-filter">
-              <span>Period</span>
-              <input type="search" name="commentary_period" data-commentary-period-filter placeholder="e.g. exile" aria-label="Filter BHF Context by period">
-            </label>
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
@@ -224,18 +194,6 @@
           <div id="reader-search-status" class="reader-search-status" hidden></div>
           <div id="reader-search-results-body"></div>
         </section>
-        <section id="commentary-search-results" class="reader-search-results commentary-search-results" hidden aria-live="polite">
-          <div class="reader-search-results-header">
-            <div>
-              <p class="reader-search-kicker">BHF Context</p>
-              <h3>Context results</h3>
-              <p id="commentary-search-summary" class="reader-search-summary"></p>
-            </div>
-          </div>
-          <div id="commentary-search-status" class="reader-search-status" hidden role="status"></div>
-          <div id="commentary-search-results-body"></div>
-        </section>
-
         <article
           id="chapter-reader"
           class="chapter-reader"
@@ -1026,20 +984,6 @@
           </span>
           <span class="reader-setting-value" data-control-label>Reader mode</span>
         </button>
-        </section>
-        <section class="reader-settings-group" aria-labelledby="settings-ai-title">
-          <div class="reader-settings-group-heading">
-            <p class="eyebrow">Optional AI</p>
-            <h3 id="settings-ai-title">Passage help</h3>
-            <p>Choose whether AI adds concise explanations after local study context is ready.</p>
-          </div>
-          <button type="button" class="reader-setting-action" data-ai-presentation-toggle data-testid="ai-presentation-toggle" aria-pressed="false">
-            <span class="reader-setting-copy">
-              <span class="reader-setting-title">AI passage summaries <span class="settings-help" tabindex="0" role="img" aria-label="Help: Use your selected AI provider to turn BHF evidence into concise Did You Know and Dig In explanations. Source evidence remains available underneath." data-tooltip="Use your selected AI provider to turn BHF evidence into concise Did You Know and Dig In explanations. Source evidence remains available underneath.">?</span></span>
-              <span class="reader-setting-status" data-control-status>Off · No AI summary requests</span>
-            </span>
-            <span class="reader-setting-value" data-control-label>Turn on</span>
-          </button>
         </section>
         <section class="reader-settings-group" aria-labelledby="settings-app-title">
           <div class="reader-settings-group-heading">
