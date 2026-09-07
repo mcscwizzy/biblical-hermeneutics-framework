@@ -1800,6 +1800,36 @@ def reconcile_recovery_blocker(repo_root: Path) -> dict[str, Any]:
 def status(repo_root: Path) -> dict[str, Any]:
     state = load_state(state_path(repo_root))
     errors = validate_state(repo_root, state)
+    # The state machine certifies the selected v1.1 upgrade population.  The
+    # runtime release has a separate canonical completeness gate and must not
+    # inherit the upgrade population's meaning of ``CORPUS_COMPLETE``.
+    try:
+        from framework.commentary.reconciliation import reconcile_release
+
+        reconciliation = reconcile_release(repo_root)
+        runtime_completion = {
+            "status": "RUNTIME_CANONICAL_COMPLETE"
+            if not reconciliation.missing
+            and not reconciliation.conflicts
+            and not reconciliation.invalid_source_records
+            and reconciliation.final_publishable_count == reconciliation.canonical_total
+            else "RUNTIME_CANONICAL_INCOMPLETE",
+            "canonical_total": reconciliation.canonical_total,
+            "publishable": reconciliation.final_publishable_count,
+            "missing": len(reconciliation.missing),
+            "conflicts": len(reconciliation.conflicts),
+            "invalid_sources": len(reconciliation.invalid_source_records),
+        }
+    except Exception as exc:  # repository may be a minimal orchestrator test fixture
+        runtime_completion = {
+            "status": "RUNTIME_CANONICAL_INCOMPLETE",
+            "canonical_total": None,
+            "publishable": None,
+            "missing": None,
+            "conflicts": None,
+            "invalid_sources": None,
+            "error": str(exc),
+        }
     decision = _remediation_decision(repo_root, state, persist=False)
     reported_blocker = decision["blocker"] if decision else state.get("blocked_reason")
     remediation = None
@@ -1829,6 +1859,15 @@ def status(repo_root: Path) -> dict[str, Any]:
     return {
         "pipeline": PIPELINE_VERSION,
         "status": state["status"],
+        "status_scope": "upgrade_population",
+        "upgrade_completion": {
+            "status": "UPGRADE_CORPUS_COMPLETE"
+            if state["status"] == CORPUS_COMPLETE
+            else "UPGRADE_CORPUS_INCOMPLETE",
+            "completed": state.get("eligible_finalized_chapters", state["finalized_chapters"]),
+            "total": state["eligible_corpus_total"],
+        },
+        "runtime_completion": runtime_completion,
         "batch": state["current_batch"],
         "stage": state["current_stage"],
         "stage_status": state["stage_status"],
@@ -1857,10 +1896,11 @@ def report(repo_root: Path) -> str:
     progress = data["progress"]
     lines = [
         "COMMENTARY V1.1 PIPELINE",
-        f"Status: {data['status']}",
+        f"Upgrade population status: {data['upgrade_completion']['status']} (pipeline state: {data['status']})",
         f"Batch: {data['batch']:03d}",
         f"Stage: {data['stage']}",
-        f"Progress: {progress['finalized']} finalized ({progress['eligible_finalized']} eligible) / {progress['eligible']} eligible ({progress['remaining']} remaining)",
+        f"Upgrade population: {progress['eligible_finalized']} / {progress['eligible']} complete ({progress['remaining']} remaining)",
+        f"Runtime canonical corpus: {data['runtime_completion']['publishable']} / {data['runtime_completion']['canonical_total']} publishable ({data['runtime_completion']['status']})",
         f"Required Model: {data['required_model']}",
         f"Effort: {data['required_effort']}",
         f"Last Certified Batch: {data['last_completed_batch']:03d}",

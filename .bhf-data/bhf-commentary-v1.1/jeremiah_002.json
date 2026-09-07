@@ -29,7 +29,7 @@
       "blocks": [
         {
           "id": "s2_b1",
-          "text": "A practical outline of the Masoretic form of Jeremiah places chapters 2\u201325 together after the opening chapter. The outline is a reading aid, not a decision about the book's composition. It can help a reader keep chapter 2 within the first broad movement of prophetic material without flattening its poetry into a simple chronological report.",
+          "text": "A practical outline of the Masoretic form of Jeremiah places chapters 2–25 together after the opening chapter. The outline is a reading aid, not a decision about the book's composition. It can help a reader keep chapter 2 within the first broad movement of prophetic material without flattening its poetry into a simple chronological report.",
           "evidence_ids": [
             "jeremiah-practical-mt-outline"
           ],
@@ -49,5 +49,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-canary",
     "generated_timestamp": "2026-09-05T19:36:38.243567+00:00"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/jeremiah_002.json"
   }
 }

@@ -1,10 +1,10 @@
 {
   "directories": [
     {
-      "bytes": 3264473,
+      "bytes": 4255616,
       "classification": "runtime_required",
       "exists": true,
-      "files": 936,
+      "files": 1190,
       "path": ".bhf-data/bhf-commentary-v1.1",
       "purpose": "certified v1.1 runtime corpus and manifest"
     },
@@ -25,7 +25,7 @@
       "purpose": "historical v1.0.1 candidate/release store"
     },
     {
-      "bytes": 3572568,
+      "bytes": 3572514,
       "classification": "audit_only",
       "exists": true,
       "files": 34,
@@ -33,7 +33,7 @@
       "purpose": "v1.1 canary and low-information evidence audit artifacts"
     },
     {
-      "bytes": 73280,
+      "bytes": 73226,
       "classification": "audit_only",
       "exists": true,
       "files": 29,
@@ -41,7 +41,7 @@
       "purpose": "canary Terra prose controls"
     },
     {
-      "bytes": 277421720,
+      "bytes": 277421504,
       "classification": "audit_only",
       "exists": true,
       "files": 2409,
@@ -49,7 +49,7 @@
       "purpose": "scaled preflight, evidence locks, certification, Terra output, remediation, and recovery history"
     }
   ],
-  "generated_at": "2026-09-06T22:59:45Z",
+  "generated_at": "2026-09-07T01:36:34Z",
   "report_version": "commentary-v1.1-storage-classification-v1",
   "runtime_reader": {
     "candidate_workspace_runtime_dependency": false,

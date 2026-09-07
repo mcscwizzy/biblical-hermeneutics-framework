@@ -29,7 +29,7 @@
       "blocks": [
         {
           "id": "s2_b1",
-          "text": "Haggai 2:11\u201313 later asks priests for Torah rulings about contact and impurity. Its question distinguishes holiness, which is not transferred by a second contact, from corpse impurity, which is transferred by contact. That later legal inquiry can sharpen a reader's attention to Numbers 19:11\u201322 without claiming to exhaust the chapter's ritual meaning.",
+          "text": "Haggai 2:11–13 later asks priests for Torah rulings about contact and impurity. Its question distinguishes holiness, which is not transferred by a second contact, from corpse impurity, which is transferred by contact. That later legal inquiry can sharpen a reader's attention to Numbers 19:11–22 without claiming to exhaust the chapter's ritual meaning.",
           "evidence_ids": [
             "haggai-torah-inquiry"
           ],
@@ -49,5 +49,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-canary",
     "generated_timestamp": "2026-09-05T19:36:38.384033+00:00"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/numbers_019.json"
   }
 }

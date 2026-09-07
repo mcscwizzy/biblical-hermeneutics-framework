@@ -11,7 +11,7 @@
       "blocks": [
         {
           "id": "s1_b1",
-          "text": "Deuteronomy 21 belongs within the covenant instruction of chapters 5\u201326. Its laws address several different situations, but the book's repeated teaching is presented as rhetorically adapted exposition for a successor generation, not as a simple verbatim duplication of earlier laws. That larger setting helps readers take the chapter's varied cases seriously while recognizing that they belong to a sustained covenant address.",
+          "text": "Deuteronomy 21 belongs within the covenant instruction of chapters 5–26. Its laws address several different situations, but the book's repeated teaching is presented as rhetorically adapted exposition for a successor generation, not as a simple verbatim duplication of earlier laws. That larger setting helps readers take the chapter's varied cases seriously while recognizing that they belong to a sustained covenant address.",
           "evidence_ids": [
             "deuteronomy:interpretive_note:1",
             "deuteronomy-literary-movement"
@@ -50,5 +50,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-canary",
     "generated_timestamp": "2026-09-05T19:36:38.757118+00:00"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/deuteronomy_021.json"
   }
 }

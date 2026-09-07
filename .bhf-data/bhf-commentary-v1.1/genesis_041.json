@@ -1,0 +1,43 @@
+{
+  "reference": "Genesis 41",
+  "book": "Genesis",
+  "chapter": 41,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Genesis 41 records Pharaoh’s dreams of cows and ears of grain, Joseph’s interpretation of seven years of abundance followed by seven years of famine, and Joseph’s elevation over Egypt. Joseph stores grain, marries Asenath, and names his sons Manasseh and Ephraim. When famine comes, Egypt and surrounding lands seek food from Joseph.",
+          "verse_refs": [
+            "Genesis 41:1-57"
+          ],
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f0673d0893d4b41d6b3cfc04aa1342ec7bf25d26758ad75af6bc49c2027a1cdf",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:58.202577+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE",
+  "release_provenance": {
+    "provenance": "validated baseline fallback",
+    "source_release": "commentary-v1.0.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1/genesis_041.json"
+  }
+}

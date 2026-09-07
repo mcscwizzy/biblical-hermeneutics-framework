@@ -32,13 +32,13 @@ The checkout is 873,668,608 bytes. Tracked source is 326,992,985 bytes. The larg
 | `framework` application/source tree | 16,144,027 | `REQUIRED_AT_RUNTIME` |
 | `bhf_agent` application/source tree | 16,550,947 | `REQUIRED_AT_RUNTIME` |
 | `bhf_web` application/source tree | 2,446,777 | `REQUIRED_AT_RUNTIME` |
-| Certified Commentary v1.1 runtime corpus | 3,264,473 | `REQUIRED_AT_RUNTIME` |
+| Certified Commentary v1.1 runtime corpus | 4,255,616 | `REQUIRED_AT_RUNTIME` |
 | Legacy commentary compatibility corpus | 1,566,726 | required for explicit legacy release override |
 | Tests | 9,507,043 | `TEST_ONLY` |
 | Documentation | 550,647 | `DOCUMENTATION_ONLY` |
 | Tooling used by the internal coverage route | 1,402,241 | `REQUIRED_AT_RUNTIME_FOR_INTERNAL_COVERAGE_ROUTE` |
 
-The full working-tree candidate directory is 282,689,536 bytes; the tracked portion is 277,421,720 bytes. The certified runtime corpus contains 936 JSON files: 935 chapters plus its manifest, totaling 3,264,473 bytes.
+The full working-tree candidate directory is 286,607,295 bytes. The certified runtime corpus contains 1,190 JSON files: 1,189 chapters plus its manifest, totaling 4,255,616 bytes.
 
 ## Root cause
 
@@ -58,7 +58,7 @@ The production entrypoint is `bhf_web/app.py`, exposing the FastAPI `app`. Runti
 
 | Path | Classification | Proof |
 | --- | --- | --- |
-| `.bhf-data/bhf-commentary-v1.1` | `REQUIRED_AT_RUNTIME` | Default `commentary-v1.1` package path; 935 chapter files and manifest remain present. |
+| `.bhf-data/bhf-commentary-v1.1` | `REQUIRED_AT_RUNTIME` | Default `commentary-v1.1` package path; 1,189 chapter files and manifest remain present. |
 | `.bhf-data/bhf-commentary` | `REQUIRED_AT_RUNTIME_FOR_LEGACY_RELEASE_OVERRIDE` | Explicit legacy release remains supported and is not ignored. |
 | `.bhf-data/bhf-commentary-candidates/**` | `CANDIDATE/AUDIT_ONLY` | Runtime resolver never selects it; generation/audit code only. |
 | `bhf_agent/data/asv_bible.json`, `kjv_bible.json` | `REQUIRED_AT_RUNTIME` | Bible loaders resolve these package-local datasets. |
@@ -112,7 +112,7 @@ optimized function sizes were not exposed in the available deployment logs.
 
 Focused packaging tests currently pass: 9 passed, including:
 
-- exact 935-chapter runtime count and certified fingerprint
+- exact 1,189-chapter canonical runtime count and release fingerprint
 - law/Torah, narrative, poetry, wisdom, prophecy, Gospel, epistle, and apocalyptic representative lookups
 - Deuteronomy 32, Numbers 6, Isaiah 40, and Psalms 119 lookups
 - CKL/Bible/runtime-path packaging guards
@@ -127,9 +127,9 @@ The completed focused release/API groups were 9 + 31 + 15 + 64 + 10 passing test
 
 - Pipeline: `CORPUS_COMPLETE`
 - Certified eligible chapters: 935
-- Runtime chapters: 935
-- Runtime fingerprint: `9df456a3a22003587347cc0a78a9de5ca292e1d9554c4af3fc591207dd87e5db`
-- Runtime corpus bytes: 3,264,473
+- Runtime chapters: 1,189
+- Runtime fingerprint: `fc905f3a095fd14bb5f557af624f3e40984bd67ee095477b5966eee3aea33b66`
+- Runtime corpus bytes: 4,255,616
 - CKL changes: none
 - Commentary prose regeneration: 0
 - Required runtime assets remain present in the staged tree

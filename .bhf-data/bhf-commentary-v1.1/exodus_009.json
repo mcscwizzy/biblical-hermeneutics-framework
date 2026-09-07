@@ -1,0 +1,43 @@
+{
+  "reference": "Exodus 9",
+  "book": "Exodus",
+  "chapter": 9,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Exodus 9 records disease on Egyptian livestock, boils on people and beasts, and destructive hail. Jehovah distinguishes Israel’s livestock and land, and the hail narrative notes that some Egyptians who feared the word brought servants and livestock inside. Pharaoh confesses sin during the hail but hardens his heart afterward.",
+          "verse_refs": [
+            "Exodus 9:1-35"
+          ],
+          "evidence_ids": [
+            "exodus-ane-context"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ba221f8cb6c6dfa1fd30e7a86633ee4805be91edd4ae0b71ec5d1a1e427cb42f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.618463+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE",
+  "release_provenance": {
+    "provenance": "validated baseline fallback",
+    "source_release": "commentary-v1.0.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1/exodus_009.json"
+  }
+}

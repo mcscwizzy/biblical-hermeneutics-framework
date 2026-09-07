@@ -67,7 +67,7 @@ def test_vercel_commentary_routes_read_packaged_corpus():
         "        chapter = await client.get('/api/bhf-commentary/1%20Corinthians/1')\n"
         "    assert diagnostics.status_code == 200\n"
         "    assert diagnostics.json()['available'] is True\n"
-        "    assert diagnostics.json()['total_files'] == 935\n"
+        "    assert diagnostics.json()['total_files'] == 1189\n"
         "    assert chapter.status_code == 200\n"
         "    assert chapter.json()['available'] is True\n"
         "    assert chapter.json()['book'] == '1 Corinthians'\n"

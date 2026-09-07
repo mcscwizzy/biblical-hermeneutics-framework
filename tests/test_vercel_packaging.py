@@ -10,7 +10,7 @@ from bhf_web.services.bhf_commentary import load_commentary_projection
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME_COMMENTARY = ROOT / ".bhf-data" / "bhf-commentary-v1.1"
-RUNTIME_FINGERPRINT = "9df456a3a22003587347cc0a78a9de5ca292e1d9554c4af3fc591207dd87e5db"
+RUNTIME_FINGERPRINT = "fc905f3a095fd14bb5f557af624f3e40984bd67ee095477b5966eee3aea33b66"
 
 
 def _vercelignore_entries() -> list[str]:
@@ -66,11 +66,11 @@ def test_vercel_ignore_preserves_required_runtime_paths():
 
 
 def test_certified_runtime_corpus_count_and_fingerprint_are_unchanged():
-    assert len(list_commentaries(RUNTIME_COMMENTARY)) == 935
+    assert len(list_commentaries(RUNTIME_COMMENTARY)) == 1189
     manifest = json.loads(
         (RUNTIME_COMMENTARY / "commentary-v1.1-manifest.json").read_text()
     )
-    assert manifest["chapter_count"] == 935
+    assert manifest["chapter_count"] == 1189
     assert manifest["corpus_fingerprint"] == RUNTIME_FINGERPRINT
 
 

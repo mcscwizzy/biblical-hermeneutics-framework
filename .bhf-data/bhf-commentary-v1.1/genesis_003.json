@@ -1,0 +1,62 @@
+{
+  "reference": "Genesis 3",
+  "book": "Genesis",
+  "chapter": 3,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Disobedience and expulsion",
+      "blocks": [
+        {
+          "id": "overview_1",
+          "text": "Genesis 3 narrates the serpent’s questioning, the woman’s and man’s eating, their changed awareness, God’s interrogation, judgments, clothing, and expulsion from Eden. The chapter ends with the way to the tree of life guarded by cherubim and a turning sword.",
+          "verse_refs": [
+            "Genesis 3:1-24"
+          ],
+          "evidence_ids": [
+            "the-fall:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "A root narrative of estrangement",
+      "blocks": [
+        {
+          "id": "questions_1",
+          "text": "The supplied BHF evidence reads Genesis 3 as a foundational account of human estrangement and death. That contextual reading fits the chapter’s movement from hiding and blame to painful consequences and separation from the garden, while it does not settle every later question about the serpent or the exact mechanics of the event.",
+          "verse_refs": [
+            "Genesis 3:7-24"
+          ],
+          "evidence_ids": [
+            "the-fall:historical_context:0",
+            "the-fall:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1ccc39fe3f887f4de6412650f5153724d6d4743c3a751242abb87edcbc939b6a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:10.862368+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE",
+  "release_provenance": {
+    "provenance": "validated baseline fallback",
+    "source_release": "commentary-v1.0.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1/genesis_003.json"
+  }
+}

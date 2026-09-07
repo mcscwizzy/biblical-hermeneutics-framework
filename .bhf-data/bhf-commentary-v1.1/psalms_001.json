@@ -69,7 +69,7 @@
       "blocks": [
         {
           "id": "s4_b1",
-          "text": "The word often translated \u201cblessed\u201d has a range of uses in Hebrew and Greek, so its force should be read in context rather than reduced to one English gloss. The comparison is useful as a prompt to attend to Psalm 1's poetry; it should not displace the poem's own contrast between two ways of life.",
+          "text": "The word often translated “blessed” has a range of uses in Hebrew and Greek, so its force should be read in context rather than reduced to one English gloss. The comparison is useful as a prompt to attend to Psalm 1's poetry; it should not displace the poem's own contrast between two ways of life.",
           "evidence_ids": [
             "makarios:historical_context:0",
             "makarios:ancient_near_east_context:0"
@@ -90,5 +90,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-canary",
     "generated_timestamp": "2026-09-05T19:36:39.117043+00:00"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/psalms_001.json"
   }
 }

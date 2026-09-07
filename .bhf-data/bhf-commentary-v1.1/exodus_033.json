@@ -1,0 +1,43 @@
+{
+  "reference": "Exodus 33",
+  "book": "Exodus",
+  "chapter": 33,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Exodus 33 records Jehovah’s command for Israel to leave Sinai and the tent of meeting outside the camp. Moses asks for Jehovah’s presence and favor, insisting that the people must be distinguished by that presence. Moses asks to see Jehovah’s glory and is placed in a cleft of the rock.",
+          "verse_refs": [
+            "Exodus 33:1-23"
+          ],
+          "evidence_ids": [
+            "exodus-ane-context"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "140a3e068cdd6bfb83f858f9131e47e32186def1d6e78d292226cdbf31ccadd2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:37.886230+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE",
+  "release_provenance": {
+    "provenance": "validated baseline fallback",
+    "source_release": "commentary-v1.0.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1/exodus_033.json"
+  }
+}

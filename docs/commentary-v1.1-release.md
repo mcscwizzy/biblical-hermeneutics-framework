@@ -1,25 +1,31 @@
 # Commentary v1.1 release engineering report
 
-Commentary v1.1 is certified and ready for application release hardening. The
-scaled pipeline finished at `CORPUS_COMPLETE` with 935 eligible chapters,
-935 eligible finalized chapters, 948 protected finalized artifacts, zero
-quarantines, zero data gaps, zero reader-unfriendly outputs, and clean CKL
-integrity. Protected fingerprints validate and CKL records were not changed.
+Commentary v1.1 is certified and its runtime corpus is canonically complete.
+The scaled pipeline finished with 935 eligible chapters, 935 eligible
+finalized chapters, and 948 protected finalized artifacts. That is the v1.1
+upgrade population, not the whole runtime corpus. The release overlay combines
+935 certified v1.1 replacements with 254 validated v1.0.1 baseline fallbacks
+for 1,189 unique canonical chapters. There are zero missing, conflicting, or
+invalid source records. Protected fingerprints validate and CKL records were
+not changed.
 
 The release population is derived from the evidence-supported low-information
-audit artifact; the runtime publisher consumes only protected certified
-artifacts. It rejects missing or changed fingerprints, duplicate chapter
-identities, invalid schemas, unsupported availability, and missing evidence
-hashes. Publication is atomic, deterministic, LLM-free, and does not mutate
-CKL or historical batch artifacts. Bounded remediation was limited to the
-certified per-chapter policy, and persistent quarantine recovery state remains
-in the audit workspace.
+audit artifact; the runtime publisher consumes protected certified artifacts
+and the immutable validated v1.0.1 baseline. It rejects missing or changed
+fingerprints, duplicate chapter identities, invalid schemas, invalid source
+status, missing evidence hashes, and any mismatch against the exact canonical
+reference set. Publication is atomic, deterministic, LLM-free, and does not
+mutate CKL or historical batch artifacts. Bounded remediation was limited to
+the certified per-chapter policy, and persistent quarantine recovery state
+remains in the audit workspace.
 
 The canonical packaged runtime root is
 `.bhf-data/bhf-commentary-v1.1`, with manifest
-`.bhf-data/bhf-commentary-v1.1/commentary-v1.1-manifest.json`. It contains 935
-chapter artifacts and corpus fingerprint
-`9df456a3a22003587347cc0a78a9de5ca292e1d9554c4af3fc591207dd87e5db`.
+`.bhf-data/bhf-commentary-v1.1/commentary-v1.1-manifest.json`. It contains
+1,189 chapter artifacts and corpus fingerprint
+`fc905f3a095fd14bb5f557af624f3e40984bd67ee095477b5966eee3aea33b66`.
+Each runtime artifact exposes whether it came from certified Commentary v1.1
+or a validated baseline fallback.
 The web reader resolves this root for local and Vercel execution. Candidate,
 Terra, preflight, remediation, and certification workspaces remain in Git for
 reproducibility but are not runtime dependencies.

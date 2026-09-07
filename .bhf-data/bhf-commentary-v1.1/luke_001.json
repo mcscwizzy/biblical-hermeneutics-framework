@@ -11,7 +11,7 @@
       "blocks": [
         {
           "id": "s1_b1",
-          "text": "Luke begins with a formal prologue. Verses 1\u20134 speak of earlier accounts, traditions traced to eyewitnesses and servants of the word, careful investigation, an orderly account, and assurance for Theophilus. The prologue does not say that its author personally witnessed Jesus' ministry, and it does not name the author. It prepares readers to receive the rest of the chapter\u2014annunciations, songs, births, and prophetic speech\u2014as a carefully arranged account, not merely a sequence of isolated scenes.",
+          "text": "Luke begins with a formal prologue. Verses 1–4 speak of earlier accounts, traditions traced to eyewitnesses and servants of the word, careful investigation, an orderly account, and assurance for Theophilus. The prologue does not say that its author personally witnessed Jesus' ministry, and it does not name the author. It prepares readers to receive the rest of the chapter—annunciations, songs, births, and prophetic speech—as a carefully arranged account, not merely a sequence of isolated scenes.",
           "evidence_ids": [
             "luke-prologue",
             "luke-anonymous"
@@ -50,7 +50,7 @@
       "blocks": [
         {
           "id": "s3_b1",
-          "text": "Luke 1\u20132 deliberately pairs John and Jesus through announcements, births, songs, Spirit-filled speech, temple scenes, and growth notices. Those scenes use language and patterns shaped by Israel's Scriptures. The prologue also has a wider literary connection: Luke and Acts share Theophilus, resumptions, language, characters, geography, and themes. This strongly supports common authorship or coordinated production, while questions about literary unity and publication history remain open.",
+          "text": "Luke 1–2 deliberately pairs John and Jesus through announcements, births, songs, Spirit-filled speech, temple scenes, and growth notices. Those scenes use language and patterns shaped by Israel's Scriptures. The prologue also has a wider literary connection: Luke and Acts share Theophilus, resumptions, language, characters, geography, and themes. This strongly supports common authorship or coordinated production, while questions about literary unity and publication history remain open.",
           "evidence_ids": [
             "luke-infancy",
             "luke-acts-relation"
@@ -111,5 +111,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-canary",
     "generated_timestamp": "2026-09-05T19:36:39.547100+00:00"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/luke_001.json"
   }
 }

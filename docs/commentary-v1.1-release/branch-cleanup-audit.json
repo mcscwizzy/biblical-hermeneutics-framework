@@ -2,7 +2,7 @@
   "branches": [
     {
       "ahead_of_master": 0,
-      "behind_master": 429,
+      "behind_master": 511,
       "fully_merged": true,
       "head": "61065fa2088b1697266a6c50238b0be23a34fc46",
       "name": "bhf-agent",
@@ -12,7 +12,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 114,
+      "behind_master": 196,
       "fully_merged": true,
       "head": "fb9f14af97b17c380cdf415974b4eea26e0a5037",
       "name": "feat/ai-rearchitecture",
@@ -22,7 +22,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 193,
+      "behind_master": 275,
       "fully_merged": true,
       "head": "d4a8c3ec8db8919bf8d1416e648e43ccd96d929f",
       "name": "feat/archaeology",
@@ -32,7 +32,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 388,
+      "behind_master": 470,
       "fully_merged": true,
       "head": "84dda436e72942b376cf48f457e1b62ff320f679",
       "name": "feat/canonical-library",
@@ -42,7 +42,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 164,
+      "behind_master": 246,
       "fully_merged": true,
       "head": "36428c12999189b3bb37faa5f7a9bd0465bd6732",
       "name": "feat/ckl-v2",
@@ -52,7 +52,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 23,
+      "behind_master": 105,
       "fully_merged": true,
       "head": "884b69684785459c89b1aa92bdce0d9cd3cf0402",
       "name": "feat/commentary",
@@ -62,7 +62,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 12,
+      "behind_master": 94,
       "fully_merged": true,
       "head": "e3ce6a3babe7dfb0a8c8777a0a5d76b1435bc487",
       "name": "feat/commentary-ui",
@@ -71,18 +71,8 @@
       "unique_commits": 0
     },
     {
-      "ahead_of_master": 71,
-      "behind_master": 0,
-      "fully_merged": false,
-      "head": "5c75868a1b10b13c8cf78c51c6449038702085f9",
-      "name": "feat/commentary-v1.1-expansion",
-      "ref": "refs/heads/feat/commentary-v1.1-expansion",
-      "safe_to_delete": false,
-      "unique_commits": 71
-    },
-    {
       "ahead_of_master": 0,
-      "behind_master": 412,
+      "behind_master": 494,
       "fully_merged": true,
       "head": "042946b3db657a6360206f3b491abc1fdc266bc2",
       "name": "feat/desktop-layout-polish",
@@ -92,7 +82,7 @@
     },
     {
       "ahead_of_master": 1,
-      "behind_master": 410,
+      "behind_master": 492,
       "fully_merged": false,
       "head": "d48c37633c76d922ba47a77af91ac581f6828efc",
       "name": "feat/native-mobile-app",
@@ -102,7 +92,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 197,
+      "behind_master": 279,
       "fully_merged": true,
       "head": "aae9e32e6dfebd16d4773b357821937b4c340ba3",
       "name": "feat/tyndale-notes",
@@ -112,7 +102,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 129,
+      "behind_master": 211,
       "fully_merged": true,
       "head": "f981d92ce77f61f2b6cc1422837ff68a9c8fd97b",
       "name": "feat/ui-rearchitecture",
@@ -122,7 +112,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 425,
+      "behind_master": 507,
       "fully_merged": true,
       "head": "76c999eff1469f56ceab7538fff0400f3c1ff61e",
       "name": "feature-3d-journey-mode-phase-1",
@@ -132,7 +122,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 1,
+      "behind_master": 83,
       "fully_merged": true,
       "head": "939406f88e0db56e8789908833a5ae9504778dfd",
       "name": "fix/1-samuel-28-context",
@@ -142,7 +132,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 110,
+      "behind_master": 192,
       "fully_merged": true,
       "head": "616978280f11905e33410c1cdfdbec00e89774a3",
       "name": "fix/async-ai-presentation",
@@ -152,7 +142,17 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 10,
+      "behind_master": 1,
+      "fully_merged": true,
+      "head": "48d93feda50b9cc12f23aaab67bd02c8c1508b89",
+      "name": "fix/commentary-v1.1-postrelease",
+      "ref": "refs/heads/fix/commentary-v1.1-postrelease",
+      "safe_to_delete": true,
+      "unique_commits": 0
+    },
+    {
+      "ahead_of_master": 0,
+      "behind_master": 92,
       "fully_merged": true,
       "head": "9c4791c40009fa77b88afa7b1f0118ee40ee8adc",
       "name": "fix/vercel-commentary-corpus",
@@ -164,7 +164,7 @@
       "ahead_of_master": 0,
       "behind_master": 0,
       "fully_merged": true,
-      "head": "58f93df1c1cc716c4e72c6787b774e0beb08a929",
+      "head": "b0bd82f48f55fdc5da8f946f24fb15bfa4c4b3cf",
       "name": "master",
       "ref": "refs/heads/master",
       "safe_to_delete": false,
@@ -172,7 +172,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 417,
+      "behind_master": 499,
       "fully_merged": true,
       "head": "da0ec4882632a9118edb24292109096d6275cdbf",
       "name": "mobile",
@@ -182,7 +182,7 @@
     },
     {
       "ahead_of_master": 0,
-      "behind_master": 414,
+      "behind_master": 496,
       "fully_merged": true,
       "head": "48d6fc6321524c89afe7c4b1d2baf934c7ffc619",
       "name": "mobile-reader-polish",

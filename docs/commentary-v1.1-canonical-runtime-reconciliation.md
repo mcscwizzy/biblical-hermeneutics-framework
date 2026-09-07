@@ -1,0 +1,1260 @@
+# Commentary v1.1 canonical runtime reconciliation
+
+## Result
+
+The v1.1 eligible population is an upgrade population, not the runtime corpus. The release overlay selects certified v1.1 artifacts first and otherwise selects validated v1.0.1 baseline artifacts by exact canonical chapter reference.
+
+- Canonical total: **1189**
+- Certified v1.1 replacements: **935**
+- Validated baseline fallbacks: **254**
+- Truly missing: **0**
+- Conflicts: **0**
+- Invalid source records: **0**
+- Final publishable: **1189**
+
+The release gate compares the exact runtime reference set with the authoritative canonical inventory; a matching count alone is insufficient.
+
+## Before and after terminology
+
+- Before: `935/935 corpus complete` (ambiguous; it described only the selected upgrade population).
+- After: `935/935 upgrade population complete`.
+- After: `1189/1189 canonical runtime chapters publishable`.
+
+## V1_1_CERTIFIED
+
+- `1 Chronicles 1`
+- `1 Corinthians 1`
+- `1 John 1`
+- `1 Kings 1`
+- `1 Peter 1`
+- `1 Samuel 1`
+- `1 Thessalonians 1`
+- `1 Timothy 1`
+- `2 Chronicles 1`
+- `2 Corinthians 1`
+- `2 John 1`
+- `2 Peter 1`
+- `2 Samuel 1`
+- `2 Thessalonians 1`
+- `2 Timothy 1`
+- `3 John 1`
+- `Acts 1`
+- `Amos 1`
+- `Colossians 1`
+- `Daniel 1`
+- `Deuteronomy 1`
+- `Ecclesiastes 1`
+- `Ephesians 1`
+- `Esther 1`
+- `Ezekiel 1`
+- `Ezra 1`
+- `Galatians 1`
+- `Habakkuk 1`
+- `Haggai 1`
+- `Hebrews 1`
+- `Hosea 1`
+- `Isaiah 1`
+- `James 1`
+- `Jeremiah 1`
+- `Job 1`
+- `Joel 1`
+- `John 1`
+- `Jonah 1`
+- `Joshua 1`
+- `Jude 1`
+- `Judges 1`
+- `Lamentations 1`
+- `Luke 1`
+- `Malachi 1`
+- `Mark 1`
+- `Matthew 1`
+- `Micah 1`
+- `Nahum 1`
+- `Nehemiah 1`
+- `Numbers 1`
+- `Obadiah 1`
+- `Philemon 1`
+- `Philippians 1`
+- `Proverbs 1`
+- `Psalms 1`
+- `Revelation 1`
+- `Romans 1`
+- `Ruth 1`
+- `Song of Songs 1`
+- `Titus 1`
+- `Zechariah 1`
+- `Zephaniah 1`
+- `1 Chronicles 2`
+- `1 Corinthians 2`
+- `1 John 2`
+- `1 Peter 2`
+- `1 Samuel 2`
+- `1 Thessalonians 2`
+- `1 Timothy 2`
+- `2 Corinthians 2`
+- `2 Kings 2`
+- `2 Peter 2`
+- `2 Samuel 2`
+- `2 Thessalonians 2`
+- `2 Timothy 2`
+- `Acts 2`
+- `Amos 2`
+- `Colossians 2`
+- `Daniel 2`
+- `Deuteronomy 2`
+- `Ecclesiastes 2`
+- `Ephesians 2`
+- `Esther 2`
+- `Ezekiel 2`
+- `Ezra 2`
+- `Galatians 2`
+- `Habakkuk 2`
+- `Haggai 2`
+- `Hebrews 2`
+- `Hosea 2`
+- `Isaiah 2`
+- `James 2`
+- `Jeremiah 2`
+- `Job 2`
+- `Joel 2`
+- `John 2`
+- `Jonah 2`
+- `Joshua 2`
+- `Judges 2`
+- `Lamentations 2`
+- `Luke 2`
+- `Malachi 2`
+- `Mark 2`
+- `Matthew 2`
+- `Micah 2`
+- `Nahum 2`
+- `Nehemiah 2`
+- `Numbers 2`
+- `Philippians 2`
+- `Psalms 2`
+- `Revelation 2`
+- `Romans 2`
+- `Ruth 2`
+- `Song of Songs 2`
+- `Titus 2`
+- `Zechariah 2`
+- `Zephaniah 2`
+- `1 Chronicles 3`
+- `1 Corinthians 3`
+- `1 John 3`
+- `1 Kings 3`
+- `1 Peter 3`
+- `1 Samuel 3`
+- `1 Thessalonians 3`
+- `1 Timothy 3`
+- `2 Chronicles 3`
+- `2 Corinthians 3`
+- `2 Kings 3`
+- `2 Peter 3`
+- `2 Samuel 3`
+- `2 Thessalonians 3`
+- `2 Timothy 3`
+- `Acts 3`
+- `Amos 3`
+- `Colossians 3`
+- `Daniel 3`
+- `Deuteronomy 3`
+- `Ecclesiastes 3`
+- `Ephesians 3`
+- `Esther 3`
+- `Ezekiel 3`
+- `Ezra 3`
+- `Galatians 3`
+- `Habakkuk 3`
+- `Hebrews 3`
+- `Hosea 3`
+- `Isaiah 3`
+- `James 3`
+- `Jeremiah 3`
+- `Job 3`
+- `Joel 3`
+- `John 3`
+- `Jonah 3`
+- `Joshua 3`
+- `Judges 3`
+- `Lamentations 3`
+- `Luke 3`
+- `Malachi 3`
+- `Mark 3`
+- `Matthew 3`
+- `Micah 3`
+- `Nahum 3`
+- `Nehemiah 3`
+- `Philippians 3`
+- `Proverbs 3`
+- `Psalms 3`
+- `Revelation 3`
+- `Romans 3`
+- `Ruth 3`
+- `Song of Songs 3`
+- `Titus 3`
+- `Zechariah 3`
+- `Zephaniah 3`
+- `1 Chronicles 4`
+- `1 Corinthians 4`
+- `1 John 4`
+- `1 Kings 4`
+- `1 Peter 4`
+- `1 Samuel 4`
+- `1 Thessalonians 4`
+- `1 Timothy 4`
+- `2 Corinthians 4`
+- `2 Kings 4`
+- `2 Samuel 4`
+- `2 Timothy 4`
+- `Acts 4`
+- `Amos 4`
+- `Colossians 4`
+- `Daniel 4`
+- `Deuteronomy 4`
+- `Ecclesiastes 4`
+- `Ephesians 4`
+- `Esther 4`
+- `Ezra 4`
+- `Galatians 4`
+- `Hebrews 4`
+- `Hosea 4`
+- `Isaiah 4`
+- `James 4`
+- `Jeremiah 4`
+- `Job 4`
+- `John 4`
+- `Jonah 4`
+- `Joshua 4`
+- `Judges 4`
+- `Lamentations 4`
+- `Luke 4`
+- `Malachi 4`
+- `Mark 4`
+- `Matthew 4`
+- `Micah 4`
+- `Nehemiah 4`
+- `Numbers 4`
+- `Philippians 4`
+- `Proverbs 4`
+- `Psalms 4`
+- `Revelation 4`
+- `Romans 4`
+- `Ruth 4`
+- `Song of Songs 4`
+- `Zechariah 4`
+- `1 Chronicles 5`
+- `1 Corinthians 5`
+- `1 John 5`
+- `1 Peter 5`
+- `1 Samuel 5`
+- `1 Thessalonians 5`
+- `1 Timothy 5`
+- `2 Chronicles 5`
+- `2 Corinthians 5`
+- `2 Kings 5`
+- `2 Samuel 5`
+- `Acts 5`
+- `Amos 5`
+- `Daniel 5`
+- `Deuteronomy 5`
+- `Ecclesiastes 5`
+- `Ephesians 5`
+- `Esther 5`
+- `Ezra 5`
+- `Galatians 5`
+- `Hebrews 5`
+- `Hosea 5`
+- `Isaiah 5`
+- `James 5`
+- `Jeremiah 5`
+- `Job 5`
+- `John 5`
+- `Joshua 5`
+- `Judges 5`
+- `Lamentations 5`
+- `Mark 5`
+- `Matthew 5`
+- `Micah 5`
+- `Nehemiah 5`
+- `Revelation 5`
+- `Romans 5`
+- `Song of Songs 5`
+- `Zechariah 5`
+- `1 Chronicles 6`
+- `1 Corinthians 6`
+- `1 Kings 6`
+- `1 Samuel 6`
+- `1 Timothy 6`
+- `2 Chronicles 6`
+- `2 Corinthians 6`
+- `2 Samuel 6`
+- `Acts 6`
+- `Amos 6`
+- `Daniel 6`
+- `Deuteronomy 6`
+- `Ecclesiastes 6`
+- `Ephesians 6`
+- `Esther 6`
+- `Ezra 6`
+- `Galatians 6`
+- `Hebrews 6`
+- `Hosea 6`
+- `Isaiah 6`
+- `Jeremiah 6`
+- `Job 6`
+- `John 6`
+- `Joshua 6`
+- `Judges 6`
+- `Luke 6`
+- `Mark 6`
+- `Matthew 6`
+- `Micah 6`
+- `Nehemiah 6`
+- `Numbers 6`
+- `Revelation 6`
+- `Romans 6`
+- `Song of Songs 6`
+- `Zechariah 6`
+- `1 Chronicles 7`
+- `1 Corinthians 7`
+- `1 Samuel 7`
+- `2 Chronicles 7`
+- `2 Corinthians 7`
+- `2 Samuel 7`
+- `Acts 7`
+- `Amos 7`
+- `Daniel 7`
+- `Deuteronomy 7`
+- `Ecclesiastes 7`
+- `Esther 7`
+- `Ezra 7`
+- `Hebrews 7`
+- `Hosea 7`
+- `Isaiah 7`
+- `Jeremiah 7`
+- `Job 7`
+- `John 7`
+- `Joshua 7`
+- `Judges 7`
+- `Luke 7`
+- `Mark 7`
+- `Matthew 7`
+- `Micah 7`
+- `Nehemiah 7`
+- `Proverbs 7`
+- `Revelation 7`
+- `Romans 7`
+- `Song of Songs 7`
+- `Zechariah 7`
+- `1 Chronicles 8`
+- `1 Corinthians 8`
+- `1 Kings 8`
+- `1 Samuel 8`
+- `2 Corinthians 8`
+- `2 Kings 8`
+- `2 Samuel 8`
+- `Acts 8`
+- `Amos 8`
+- `Daniel 8`
+- `Deuteronomy 8`
+- `Ecclesiastes 8`
+- `Esther 8`
+- `Ezekiel 8`
+- `Ezra 8`
+- `Hebrews 8`
+- `Hosea 8`
+- `Isaiah 8`
+- `Jeremiah 8`
+- `Job 8`
+- `John 8`
+- `Joshua 8`
+- `Judges 8`
+- `Mark 8`
+- `Matthew 8`
+- `Nehemiah 8`
+- `Proverbs 8`
+- `Psalms 8`
+- `Revelation 8`
+- `Romans 8`
+- `Song of Songs 8`
+- `Zechariah 8`
+- `1 Chronicles 9`
+- `1 Corinthians 9`
+- `1 Kings 9`
+- `1 Samuel 9`
+- `2 Corinthians 9`
+- `2 Kings 9`
+- `2 Samuel 9`
+- `Acts 9`
+- `Amos 9`
+- `Daniel 9`
+- `Deuteronomy 9`
+- `Ecclesiastes 9`
+- `Esther 9`
+- `Ezekiel 9`
+- `Ezra 9`
+- `Hebrews 9`
+- `Hosea 9`
+- `Isaiah 9`
+- `Jeremiah 9`
+- `Job 9`
+- `John 9`
+- `Joshua 9`
+- `Judges 9`
+- `Mark 9`
+- `Matthew 9`
+- `Nehemiah 9`
+- `Numbers 9`
+- `Proverbs 9`
+- `Psalms 9`
+- `Revelation 9`
+- `Romans 9`
+- `Zechariah 9`
+- `1 Chronicles 10`
+- `1 Corinthians 10`
+- `1 Samuel 10`
+- `2 Chronicles 10`
+- `2 Corinthians 10`
+- `2 Kings 10`
+- `2 Samuel 10`
+- `Acts 10`
+- `Daniel 10`
+- `Deuteronomy 10`
+- `Esther 10`
+- `Ezekiel 10`
+- `Ezra 10`
+- `Hebrews 10`
+- `Hosea 10`
+- `Isaiah 10`
+- `Jeremiah 10`
+- `Job 10`
+- `John 10`
+- `Joshua 10`
+- `Judges 10`
+- `Luke 10`
+- `Mark 10`
+- `Matthew 10`
+- `Nehemiah 10`
+- `Numbers 10`
+- `Proverbs 10`
+- `Psalms 10`
+- `Revelation 10`
+- `Romans 10`
+- `1 Chronicles 11`
+- `1 Corinthians 11`
+- `1 Kings 11`
+- `1 Samuel 11`
+- `2 Chronicles 11`
+- `2 Corinthians 11`
+- `2 Samuel 11`
+- `Acts 11`
+- `Daniel 11`
+- `Deuteronomy 11`
+- `Ecclesiastes 11`
+- `Ezekiel 11`
+- `Hebrews 11`
+- `Hosea 11`
+- `Isaiah 11`
+- `Jeremiah 11`
+- `Job 11`
+- `John 11`
+- `Joshua 11`
+- `Judges 11`
+- `Leviticus 11`
+- `Luke 11`
+- `Mark 11`
+- `Matthew 11`
+- `Nehemiah 11`
+- `Numbers 11`
+- `Proverbs 11`
+- `Revelation 11`
+- `Romans 11`
+- `Zechariah 11`
+- `1 Chronicles 12`
+- `1 Corinthians 12`
+- `1 Kings 12`
+- `1 Samuel 12`
+- `2 Chronicles 12`
+- `2 Corinthians 12`
+- `2 Samuel 12`
+- `Acts 12`
+- `Daniel 12`
+- `Deuteronomy 12`
+- `Ecclesiastes 12`
+- `Hebrews 12`
+- `Hosea 12`
+- `Isaiah 12`
+- `Jeremiah 12`
+- `Job 12`
+- `John 12`
+- `Joshua 12`
+- `Judges 12`
+- `Leviticus 12`
+- `Luke 12`
+- `Mark 12`
+- `Matthew 12`
+- `Nehemiah 12`
+- `Numbers 12`
+- `Revelation 12`
+- `Romans 12`
+- `Zechariah 12`
+- `1 Chronicles 13`
+- `1 Corinthians 13`
+- `1 Samuel 13`
+- `2 Chronicles 13`
+- `2 Corinthians 13`
+- `2 Samuel 13`
+- `Acts 13`
+- `Deuteronomy 13`
+- `Ezekiel 13`
+- `Hebrews 13`
+- `Hosea 13`
+- `Isaiah 13`
+- `Jeremiah 13`
+- `Job 13`
+- `John 13`
+- `Joshua 13`
+- `Judges 13`
+- `Leviticus 13`
+- `Mark 13`
+- `Matthew 13`
+- `Nehemiah 13`
+- `Numbers 13`
+- `Psalms 13`
+- `Revelation 13`
+- `Romans 13`
+- `Zechariah 13`
+- `1 Corinthians 14`
+- `1 Kings 14`
+- `1 Samuel 14`
+- `2 Kings 14`
+- `2 Samuel 14`
+- `Acts 14`
+- `Deuteronomy 14`
+- `Ezekiel 14`
+- `Hosea 14`
+- `Isaiah 14`
+- `Jeremiah 14`
+- `Job 14`
+- `John 14`
+- `Joshua 14`
+- `Judges 14`
+- `Leviticus 14`
+- `Luke 14`
+- `Mark 14`
+- `Matthew 14`
+- `Numbers 14`
+- `Proverbs 14`
+- `Revelation 14`
+- `Romans 14`
+- `Zechariah 14`
+- `1 Chronicles 15`
+- `1 Corinthians 15`
+- `1 Samuel 15`
+- `2 Chronicles 15`
+- `2 Kings 15`
+- `2 Samuel 15`
+- `Acts 15`
+- `Deuteronomy 15`
+- `Isaiah 15`
+- `Jeremiah 15`
+- `Job 15`
+- `John 15`
+- `Joshua 15`
+- `Judges 15`
+- `Leviticus 15`
+- `Luke 15`
+- `Mark 15`
+- `Matthew 15`
+- `Numbers 15`
+- `Revelation 15`
+- `Romans 15`
+- `1 Chronicles 16`
+- `1 Corinthians 16`
+- `1 Kings 16`
+- `1 Samuel 16`
+- `2 Kings 16`
+- `2 Samuel 16`
+- `Acts 16`
+- `Deuteronomy 16`
+- `Ezekiel 16`
+- `Isaiah 16`
+- `Jeremiah 16`
+- `Job 16`
+- `John 16`
+- `Joshua 16`
+- `Judges 16`
+- `Leviticus 16`
+- `Luke 16`
+- `Mark 16`
+- `Matthew 16`
+- `Numbers 16`
+- `Psalms 16`
+- `Revelation 16`
+- `Romans 16`
+- `1 Chronicles 17`
+- `1 Kings 17`
+- `1 Samuel 17`
+- `2 Kings 17`
+- `2 Samuel 17`
+- `Acts 17`
+- `Deuteronomy 17`
+- `Ezekiel 17`
+- `Isaiah 17`
+- `Jeremiah 17`
+- `Job 17`
+- `John 17`
+- `Joshua 17`
+- `Judges 17`
+- `Leviticus 17`
+- `Luke 17`
+- `Matthew 17`
+- `Numbers 17`
+- `Proverbs 17`
+- `Revelation 17`
+- `1 Kings 18`
+- `1 Samuel 18`
+- `2 Kings 18`
+- `2 Samuel 18`
+- `Acts 18`
+- `Deuteronomy 18`
+- `Ezekiel 18`
+- `Isaiah 18`
+- `Jeremiah 18`
+- `Job 18`
+- `John 18`
+- `Joshua 18`
+- `Judges 18`
+- `Leviticus 18`
+- `Luke 18`
+- `Matthew 18`
+- `Numbers 18`
+- `Psalms 18`
+- `Revelation 18`
+- `1 Kings 19`
+- `1 Samuel 19`
+- `2 Kings 19`
+- `2 Samuel 19`
+- `Acts 19`
+- `Deuteronomy 19`
+- `Isaiah 19`
+- `Jeremiah 19`
+- `Job 19`
+- `John 19`
+- `Joshua 19`
+- `Judges 19`
+- `Leviticus 19`
+- `Luke 19`
+- `Matthew 19`
+- `Numbers 19`
+- `Psalms 19`
+- `Revelation 19`
+- `1 Chronicles 20`
+- `1 Kings 20`
+- `1 Samuel 20`
+- `2 Chronicles 20`
+- `2 Kings 20`
+- `2 Samuel 20`
+- `Acts 20`
+- `Deuteronomy 20`
+- `Isaiah 20`
+- `Jeremiah 20`
+- `Job 20`
+- `John 20`
+- `Joshua 20`
+- `Judges 20`
+- `Leviticus 20`
+- `Luke 20`
+- `Matthew 20`
+- `Numbers 20`
+- `Revelation 20`
+- `1 Chronicles 21`
+- `1 Kings 21`
+- `1 Samuel 21`
+- `2 Samuel 21`
+- `Acts 21`
+- `Deuteronomy 21`
+- `Isaiah 21`
+- `Jeremiah 21`
+- `Job 21`
+- `John 21`
+- `Joshua 21`
+- `Judges 21`
+- `Leviticus 21`
+- `Luke 21`
+- `Matthew 21`
+- `Numbers 21`
+- `Revelation 21`
+- `1 Chronicles 22`
+- `1 Kings 22`
+- `1 Samuel 22`
+- `2 Kings 22`
+- `2 Samuel 22`
+- `Acts 22`
+- `Deuteronomy 22`
+- `Isaiah 22`
+- `Jeremiah 22`
+- `Job 22`
+- `Joshua 22`
+- `Leviticus 22`
+- `Luke 22`
+- `Matthew 22`
+- `Numbers 22`
+- `Proverbs 22`
+- `Psalms 22`
+- `Revelation 22`
+- `1 Chronicles 23`
+- `1 Samuel 23`
+- `2 Kings 23`
+- `2 Samuel 23`
+- `Acts 23`
+- `Deuteronomy 23`
+- `Ezekiel 23`
+- `Isaiah 23`
+- `Jeremiah 23`
+- `Job 23`
+- `Joshua 23`
+- `Leviticus 23`
+- `Luke 23`
+- `Matthew 23`
+- `Numbers 23`
+- `Proverbs 23`
+- `Psalms 23`
+- `1 Chronicles 24`
+- `1 Samuel 24`
+- `2 Chronicles 24`
+- `2 Kings 24`
+- `2 Samuel 24`
+- `Acts 24`
+- `Deuteronomy 24`
+- `Ezekiel 24`
+- `Isaiah 24`
+- `Jeremiah 24`
+- `Job 24`
+- `Joshua 24`
+- `Leviticus 24`
+- `Luke 24`
+- `Matthew 24`
+- `Numbers 24`
+- `Proverbs 24`
+- `1 Chronicles 25`
+- `1 Samuel 25`
+- `2 Kings 25`
+- `Acts 25`
+- `Deuteronomy 25`
+- `Ezekiel 25`
+- `Isaiah 25`
+- `Jeremiah 25`
+- `Job 25`
+- `Leviticus 25`
+- `Matthew 25`
+- `Proverbs 25`
+- `1 Chronicles 26`
+- `1 Samuel 26`
+- `2 Chronicles 26`
+- `Acts 26`
+- `Deuteronomy 26`
+- `Ezekiel 26`
+- `Isaiah 26`
+- `Jeremiah 26`
+- `Job 26`
+- `Leviticus 26`
+- `Matthew 26`
+- `Numbers 26`
+- `Proverbs 26`
+- `1 Chronicles 27`
+- `1 Samuel 27`
+- `Acts 27`
+- `Deuteronomy 27`
+- `Ezekiel 27`
+- `Isaiah 27`
+- `Jeremiah 27`
+- `Job 27`
+- `Leviticus 27`
+- `Matthew 27`
+- `Numbers 27`
+- `Proverbs 27`
+- `Psalms 27`
+- `1 Chronicles 28`
+- `2 Chronicles 28`
+- `Acts 28`
+- `Deuteronomy 28`
+- `Ezekiel 28`
+- `Isaiah 28`
+- `Jeremiah 28`
+- `Job 28`
+- `Matthew 28`
+- `Numbers 28`
+- `1 Chronicles 29`
+- `1 Samuel 29`
+- `2 Chronicles 29`
+- `Deuteronomy 29`
+- `Isaiah 29`
+- `Jeremiah 29`
+- `Job 29`
+- `Numbers 29`
+- `Proverbs 29`
+- `Psalms 29`
+- `1 Samuel 30`
+- `2 Chronicles 30`
+- `Deuteronomy 30`
+- `Isaiah 30`
+- `Jeremiah 30`
+- `Job 30`
+- `Numbers 30`
+- `Proverbs 30`
+- `1 Samuel 31`
+- `2 Chronicles 31`
+- `Deuteronomy 31`
+- `Isaiah 31`
+- `Jeremiah 31`
+- `Job 31`
+- `Numbers 31`
+- `Proverbs 31`
+- `2 Chronicles 32`
+- `Deuteronomy 32`
+- `Ezekiel 32`
+- `Isaiah 32`
+- `Jeremiah 32`
+- `Job 32`
+- `Numbers 32`
+- `Psalms 32`
+- `2 Chronicles 33`
+- `Deuteronomy 33`
+- `Ezekiel 33`
+- `Isaiah 33`
+- `Jeremiah 33`
+- `Job 33`
+- `Numbers 33`
+- `2 Chronicles 34`
+- `Deuteronomy 34`
+- `Ezekiel 34`
+- `Isaiah 34`
+- `Jeremiah 34`
+- `Job 34`
+- `Numbers 34`
+- `2 Chronicles 35`
+- `Isaiah 35`
+- `Jeremiah 35`
+- `Job 35`
+- `Numbers 35`
+- `2 Chronicles 36`
+- `Ezekiel 36`
+- `Isaiah 36`
+- `Jeremiah 36`
+- `Job 36`
+- `Numbers 36`
+- `Ezekiel 37`
+- `Isaiah 37`
+- `Jeremiah 37`
+- `Job 37`
+- `Ezekiel 38`
+- `Isaiah 38`
+- `Jeremiah 38`
+- `Job 38`
+- `Ezekiel 39`
+- `Isaiah 39`
+- `Jeremiah 39`
+- `Job 39`
+- `Ezekiel 40`
+- `Isaiah 40`
+- `Jeremiah 40`
+- `Job 40`
+- `Psalms 40`
+- `Isaiah 41`
+- `Jeremiah 41`
+- `Job 41`
+- `Psalms 41`
+- `Isaiah 42`
+- `Jeremiah 42`
+- `Job 42`
+- `Psalms 42`
+- `Ezekiel 43`
+- `Isaiah 43`
+- `Jeremiah 43`
+- `Isaiah 44`
+- `Jeremiah 44`
+- `Psalms 44`
+- `Isaiah 45`
+- `Jeremiah 45`
+- `Isaiah 46`
+- `Jeremiah 46`
+- `Ezekiel 47`
+- `Isaiah 47`
+- `Jeremiah 47`
+- `Ezekiel 48`
+- `Isaiah 48`
+- `Jeremiah 48`
+- `Isaiah 49`
+- `Jeremiah 49`
+- `Isaiah 50`
+- `Jeremiah 50`
+- `Psalms 50`
+- `Isaiah 51`
+- `Jeremiah 51`
+- `Psalms 51`
+- `Isaiah 52`
+- `Jeremiah 52`
+- `Isaiah 53`
+- `Isaiah 54`
+- `Isaiah 55`
+- `Isaiah 56`
+- `Isaiah 57`
+- `Isaiah 58`
+- `Isaiah 59`
+- `Isaiah 60`
+- `Isaiah 61`
+- `Isaiah 62`
+- `Isaiah 63`
+- `Isaiah 64`
+- `Isaiah 65`
+- `Isaiah 66`
+- `Psalms 72`
+- `Psalms 73`
+- `Psalms 74`
+- `Psalms 78`
+- `Psalms 79`
+- `Psalms 82`
+- `Psalms 84`
+- `Psalms 85`
+- `Psalms 88`
+- `Psalms 89`
+- `Psalms 90`
+- `Psalms 93`
+- `Psalms 95`
+- `Psalms 103`
+- `Psalms 104`
+- `Psalms 106`
+- `Psalms 107`
+- `Psalms 110`
+- `Psalms 113`
+- `Psalms 114`
+- `Psalms 115`
+- `Psalms 116`
+- `Psalms 117`
+- `Psalms 118`
+- `Psalms 119`
+- `Psalms 120`
+- `Psalms 121`
+- `Psalms 122`
+- `Psalms 123`
+- `Psalms 124`
+- `Psalms 125`
+- `Psalms 126`
+- `Psalms 127`
+- `Psalms 128`
+- `Psalms 129`
+- `Psalms 130`
+- `Psalms 131`
+- `Psalms 132`
+- `Psalms 133`
+- `Psalms 134`
+- `Psalms 136`
+- `Psalms 137`
+- `Psalms 146`
+- `Psalms 147`
+- `Psalms 148`
+- `Psalms 149`
+- `Psalms 150`
+
+## BASELINE_VALIDATED
+
+- `2 Kings 1`
+- `Exodus 1`
+- `Genesis 1`
+- `Leviticus 1`
+- `1 Kings 2`
+- `2 Chronicles 2`
+- `Exodus 2`
+- `Genesis 2`
+- `Leviticus 2`
+- `Proverbs 2`
+- `Exodus 3`
+- `Genesis 3`
+- `Leviticus 3`
+- `Numbers 3`
+- `2 Chronicles 4`
+- `Exodus 4`
+- `Ezekiel 4`
+- `Genesis 4`
+- `Leviticus 4`
+- `1 Kings 5`
+- `Exodus 5`
+- `Ezekiel 5`
+- `Genesis 5`
+- `Leviticus 5`
+- `Luke 5`
+- `Numbers 5`
+- `Proverbs 5`
+- `Psalms 5`
+- `2 Kings 6`
+- `Exodus 6`
+- `Ezekiel 6`
+- `Genesis 6`
+- `Leviticus 6`
+- `Proverbs 6`
+- `Psalms 6`
+- `1 Kings 7`
+- `2 Kings 7`
+- `Exodus 7`
+- `Ezekiel 7`
+- `Genesis 7`
+- `Leviticus 7`
+- `Numbers 7`
+- `Psalms 7`
+- `2 Chronicles 8`
+- `Exodus 8`
+- `Genesis 8`
+- `Leviticus 8`
+- `Luke 8`
+- `Numbers 8`
+- `2 Chronicles 9`
+- `Exodus 9`
+- `Genesis 9`
+- `Leviticus 9`
+- `Luke 9`
+- `1 Kings 10`
+- `Ecclesiastes 10`
+- `Exodus 10`
+- `Genesis 10`
+- `Leviticus 10`
+- `Zechariah 10`
+- `2 Kings 11`
+- `Exodus 11`
+- `Genesis 11`
+- `Psalms 11`
+- `2 Kings 12`
+- `Exodus 12`
+- `Ezekiel 12`
+- `Genesis 12`
+- `Proverbs 12`
+- `Psalms 12`
+- `1 Kings 13`
+- `2 Kings 13`
+- `Exodus 13`
+- `Genesis 13`
+- `Luke 13`
+- `Proverbs 13`
+- `1 Chronicles 14`
+- `2 Chronicles 14`
+- `Exodus 14`
+- `Genesis 14`
+- `Psalms 14`
+- `1 Kings 15`
+- `Exodus 15`
+- `Ezekiel 15`
+- `Genesis 15`
+- `Proverbs 15`
+- `Psalms 15`
+- `2 Chronicles 16`
+- `Exodus 16`
+- `Genesis 16`
+- `Proverbs 16`
+- `2 Chronicles 17`
+- `Exodus 17`
+- `Genesis 17`
+- `Psalms 17`
+- `1 Chronicles 18`
+- `2 Chronicles 18`
+- `Exodus 18`
+- `Genesis 18`
+- `Proverbs 18`
+- `1 Chronicles 19`
+- `2 Chronicles 19`
+- `Exodus 19`
+- `Ezekiel 19`
+- `Genesis 19`
+- `Proverbs 19`
+- `Exodus 20`
+- `Ezekiel 20`
+- `Genesis 20`
+- `Proverbs 20`
+- `Psalms 20`
+- `2 Chronicles 21`
+- `2 Kings 21`
+- `Exodus 21`
+- `Ezekiel 21`
+- `Genesis 21`
+- `Proverbs 21`
+- `Psalms 21`
+- `2 Chronicles 22`
+- `Exodus 22`
+- `Ezekiel 22`
+- `Genesis 22`
+- `2 Chronicles 23`
+- `Exodus 23`
+- `Genesis 23`
+- `Exodus 24`
+- `Genesis 24`
+- `Psalms 24`
+- `2 Chronicles 25`
+- `Exodus 25`
+- `Genesis 25`
+- `Numbers 25`
+- `Psalms 25`
+- `Exodus 26`
+- `Genesis 26`
+- `Psalms 26`
+- `2 Chronicles 27`
+- `Exodus 27`
+- `Genesis 27`
+- `1 Samuel 28`
+- `Exodus 28`
+- `Genesis 28`
+- `Proverbs 28`
+- `Psalms 28`
+- `Exodus 29`
+- `Ezekiel 29`
+- `Genesis 29`
+- `Exodus 30`
+- `Ezekiel 30`
+- `Genesis 30`
+- `Psalms 30`
+- `Exodus 31`
+- `Ezekiel 31`
+- `Genesis 31`
+- `Psalms 31`
+- `Exodus 32`
+- `Genesis 32`
+- `Exodus 33`
+- `Genesis 33`
+- `Psalms 33`
+- `Exodus 34`
+- `Genesis 34`
+- `Psalms 34`
+- `Exodus 35`
+- `Ezekiel 35`
+- `Genesis 35`
+- `Psalms 35`
+- `Exodus 36`
+- `Genesis 36`
+- `Psalms 36`
+- `Exodus 37`
+- `Genesis 37`
+- `Psalms 37`
+- `Exodus 38`
+- `Genesis 38`
+- `Psalms 38`
+- `Exodus 39`
+- `Genesis 39`
+- `Psalms 39`
+- `Exodus 40`
+- `Genesis 40`
+- `Ezekiel 41`
+- `Genesis 41`
+- `Ezekiel 42`
+- `Genesis 42`
+- `Genesis 43`
+- `Psalms 43`
+- `Ezekiel 44`
+- `Genesis 44`
+- `Ezekiel 45`
+- `Genesis 45`
+- `Psalms 45`
+- `Ezekiel 46`
+- `Genesis 46`
+- `Psalms 46`
+- `Genesis 47`
+- `Psalms 47`
+- `Genesis 48`
+- `Psalms 48`
+- `Genesis 49`
+- `Psalms 49`
+- `Genesis 50`
+- `Psalms 52`
+- `Psalms 53`
+- `Psalms 54`
+- `Psalms 55`
+- `Psalms 56`
+- `Psalms 57`
+- `Psalms 58`
+- `Psalms 59`
+- `Psalms 60`
+- `Psalms 61`
+- `Psalms 62`
+- `Psalms 63`
+- `Psalms 64`
+- `Psalms 65`
+- `Psalms 66`
+- `Psalms 67`
+- `Psalms 68`
+- `Psalms 69`
+- `Psalms 70`
+- `Psalms 71`
+- `Psalms 75`
+- `Psalms 76`
+- `Psalms 77`
+- `Psalms 80`
+- `Psalms 81`
+- `Psalms 83`
+- `Psalms 86`
+- `Psalms 87`
+- `Psalms 91`
+- `Psalms 92`
+- `Psalms 94`
+- `Psalms 96`
+- `Psalms 97`
+- `Psalms 98`
+- `Psalms 99`
+- `Psalms 100`
+- `Psalms 101`
+- `Psalms 102`
+- `Psalms 105`
+- `Psalms 108`
+- `Psalms 109`
+- `Psalms 111`
+- `Psalms 112`
+- `Psalms 135`
+- `Psalms 138`
+- `Psalms 139`
+- `Psalms 140`
+- `Psalms 141`
+- `Psalms 142`
+- `Psalms 143`
+- `Psalms 144`
+- `Psalms 145`
+
+## MISSING
+
+- None
+
+## CONFLICT
+
+- None
+
+## INVALID_SOURCE
+
+- None
+
+## Operational record
+
+### Root cause
+
+The v1.1 publisher interpreted the low-information/hardening upgrade population as the complete runtime corpus. The corrected publisher overlays that certified population on the immutable validated v1.0.1 baseline, keyed by exact canonical reference.
+
+### Release gate
+
+The normal full-release path now requires exact reference-set equality with the authoritative canonical inventory: no missing canonical references, no unexpected references, and no duplicates. A count-only check cannot pass. Partial publication requires an explicit partial mode in the validation API and is not used by the normal publisher.
+
+### Availability checks
+
+- Genesis 1: **AVAILABLE** through the application/API path, sourced from the validated baseline fallback.
+- Exodus 1: **AVAILABLE** through the application/API path, sourced from the validated baseline fallback.
+- Leviticus 1: **AVAILABLE** through the application/API path, sourced from the validated baseline fallback.
+- Leviticus 13: sourced from certified Commentary v1.1; untouched chapters remain available through the overlay.
+
+### Integrity and model guardrails
+
+- Terra/provider calls during this repair: **0**.
+- Luna model calls during this repair: **0**; no generation or evidence-preflight stage was invoked.
+- CKL changes: **0**.
+- Certified prose mutations: **0**; runtime provenance metadata is added only to derived package artifacts.
+- Protected fingerprint changes: **0** across all 948 protected source artifacts.
+- Historical baseline and v1.1 source artifacts were not mutated.
+
+### Tests and changed surfaces
+
+Focused Commentary tests cover canonical inventory, v1.1 precedence, baseline fallback, invalid/quarantined/stale source rejection, exact-set release gates, deterministic provenance, protected fingerprints, and Genesis/Exodus/Leviticus API availability. The runtime package contains 1,189 chapter artifacts and the release manifest records `UPGRADE_CORPUS_COMPLETE` separately from `RUNTIME_CANONICAL_COMPLETE`.
+
+The machine-readable exact lists are also available in [commentary-v1.1-canonical-runtime-reconciliation.json](commentary-v1.1-canonical-runtime-reconciliation.json).

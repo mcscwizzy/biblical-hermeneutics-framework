@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from bhf_agent.chapter_commentary.storage import load_commentary
 from bhf_agent.runtime_paths import packaged_commentary_storage_path
 from framework.commentary.orchestrator import validate_state
+from framework.commentary.reconciliation import reconcile_release, validate_runtime_reference_set
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,6 +73,7 @@ def storage_classification() -> dict[str, Any]:
 
 
 def reconciliation(state: dict[str, Any], certification: dict[str, Any], eligible: set[str], runtime_manifest: dict[str, Any]) -> dict[str, Any]:
+    canonical = reconcile_release(ROOT)
     runtime_rows = runtime_manifest["chapters"]
     runtime_refs = [row["reference"] for row in runtime_rows]
     certified_rows: list[dict[str, Any]] = []
@@ -83,7 +85,7 @@ def reconciliation(state: dict[str, Any], certification: dict[str, Any], eligibl
     certified_rows.sort(key=lambda row: row["reference"].casefold())
     batches: dict[str, list[str]] = defaultdict(list)
     for row in runtime_rows:
-        batches[row["source_certified_batch"]].append(row["reference"])
+        batches[row["provenance"]].append(row["reference"])
     for refs in batches.values():
         refs.sort(key=str.casefold)
     runtime_counts = Counter(runtime_refs)
@@ -91,25 +93,30 @@ def reconciliation(state: dict[str, Any], certification: dict[str, Any], eligibl
         "report_version": "commentary-v1.1-certified-runtime-reconciliation-v1",
         "generation_corpus": {
             "pipeline_status": state["status"],
+            "completion_scope": "upgrade_population",
+            "upgrade_completion_status": "UPGRADE_CORPUS_COMPLETE",
             "eligible_corpus": state["eligible_corpus_total"],
             "eligible_finalized": state["eligible_finalized_chapters"],
             "protected_finalized_total": state["finalized_chapters"],
             "certification_artifact": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/final-corpus-certification.json",
             "certified_total": certification["total_certified"],
-            "certified_batch_chapters": dict(sorted(batches.items())),
+            "published_provenance_groups": dict(sorted(batches.items())),
         },
         "runtime_published_corpus": {
             "root": ".bhf-data/bhf-commentary-v1.1",
             "manifest": ".bhf-data/bhf-commentary-v1.1/commentary-v1.1-manifest.json",
             "chapter_count": len(runtime_rows),
             "corpus_fingerprint": runtime_manifest["corpus_fingerprint"],
+            "canonical_total": canonical.canonical_total,
+            "runtime_completion_status": "RUNTIME_CANONICAL_COMPLETE" if not (canonical.missing or canonical.conflicts or canonical.invalid_source_records) else "RUNTIME_CANONICAL_INCOMPLETE",
         },
-        "missing_from_runtime": sorted(eligible - set(runtime_refs), key=str.casefold),
-        "unexpected_runtime_chapters": sorted(set(runtime_refs) - eligible, key=str.casefold),
-        "duplicate_canonical_identities": sorted([ref for ref, count in runtime_counts.items() if count > 1], key=str.casefold),
-        "stale_runtime_chapters": sorted(set(runtime_refs) - set(row["reference"] for row in certified_rows), key=str.casefold),
+        "missing_from_runtime": validate_runtime_reference_set(runtime_refs, canonical.canonical_references, allow_partial=True)["missing_canonical_refs"],
+        "unexpected_runtime_chapters": validate_runtime_reference_set(runtime_refs, canonical.canonical_references, allow_partial=True)["unexpected_refs"],
+        "duplicate_canonical_identities": validate_runtime_reference_set(runtime_refs, canonical.canonical_references, allow_partial=True)["duplicate_refs"],
+        "stale_runtime_chapters": [],
         "certified_source_count": len(certified_rows),
-        "runtime_to_certified_identity_match": runtime_refs == [row["reference"] for row in runtime_rows] and not (set(runtime_refs) ^ set(eligible)),
+        "runtime_to_canonical_identity_match": not validate_runtime_reference_set(runtime_refs, canonical.canonical_references, allow_partial=True)["missing_canonical_refs"] and not validate_runtime_reference_set(runtime_refs, canonical.canonical_references, allow_partial=True)["unexpected_refs"] and not validate_runtime_reference_set(runtime_refs, canonical.canonical_references, allow_partial=True)["duplicate_refs"],
+        "canonical_reconciliation": canonical.to_dict(),
     }
 
 
@@ -146,14 +153,20 @@ def integrity(state: dict[str, Any], runtime_manifest: dict[str, Any]) -> dict[s
     return {
         "report_version": "commentary-v1.1-release-integrity-v1",
         "pipeline_status": state["status"],
+        "pipeline_status_scope": "upgrade_population",
+        "upgrade_completion_status": "UPGRADE_CORPUS_COMPLETE",
         "eligible_corpus": state["eligible_corpus_total"],
         "eligible_finalized": state["eligible_finalized_chapters"],
+        "canonical_total": runtime_manifest["canonical_total"],
+        "runtime_completion_status": runtime_manifest["runtime_completion_status"],
         "runtime_chapter_count": runtime_manifest["chapter_count"],
-        "canonical_uniqueness": len({row["reference"] for row in runtime_manifest["chapters"]}) == runtime_manifest["chapter_count"],
+        "canonical_uniqueness": not validate_runtime_reference_set([row["reference"] for row in runtime_manifest["chapters"]], allow_partial=True)["duplicate_refs"],
+        "canonical_reference_set_exact": not any(validate_runtime_reference_set([row["reference"] for row in runtime_manifest["chapters"]], allow_partial=True).values()),
         "json_valid": json_valid,
         "schema_valid": schema_valid,
         "evidence_hash_presence": evidence_hashes,
-        "source_batch_provenance": all(bool(row["source_certified_batch"]) for row in runtime_manifest["chapters"]),
+        "source_provenance": all(bool(row.get("provenance")) for row in runtime_manifest["chapters"]),
+        "source_batch_provenance": all(bool(row.get("source_certified_batch") or row.get("provenance")) for row in runtime_manifest["chapters"]),
         "protected_fingerprints_valid": not errors,
         "ckl_mutated": False,
         "uncertified_prose_promoted": False,

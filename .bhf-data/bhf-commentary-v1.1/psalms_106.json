@@ -11,7 +11,7 @@
       "blocks": [
         {
           "id": "s1_b1",
-          "text": "Psalm 106:48 is a doxological boundary: it closes the fourth of the Psalter's five books. The Masoretic Psalter has 150 psalms, with similar doxologies after Psalms 41, 72, 89, and 106 before the final praise sequence in Psalms 146\u2013150. That placement helps explain why the closing blessing and communal response of verse 48 feel larger than a private ending: they mark a turn within the collection.",
+          "text": "Psalm 106:48 is a doxological boundary: it closes the fourth of the Psalter's five books. The Masoretic Psalter has 150 psalms, with similar doxologies after Psalms 41, 72, 89, and 106 before the final praise sequence in Psalms 146–150. That placement helps explain why the closing blessing and communal response of verse 48 feel larger than a private ending: they mark a turn within the collection.",
           "evidence_ids": [
             "psalms-five-book-anthology"
           ],
@@ -31,5 +31,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-canary",
     "generated_timestamp": "2026-09-05T19:36:38.291099+00:00"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra/chapters/psalms_106.json"
   }
 }

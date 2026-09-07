@@ -41,7 +41,7 @@
         },
         {
           "id": "historical_context_4",
-      "text": "For its historical and cultural setting, The canonical setting associated with Ruth the Moabite provides a comparative historical backdrop. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "text": "For its historical and cultural setting, The canonical setting associated with Ruth the Moabite provides a comparative historical backdrop. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
           "evidence_ids": [
             "ruth-the-moabite:historical_context:0"
           ],
@@ -97,5 +97,10 @@
     "commentary_prompt_version": "1.1",
     "model": "terra-codex-commentary-v1.1-batch-004-medium",
     "generated_timestamp": "2026-09-06T03:03:20Z"
+  },
+  "release_provenance": {
+    "provenance": "certified Commentary v1.1",
+    "source_release": "commentary-v1.1",
+    "source_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-004/terra/chapters/joshua_002.json"
   }
 }

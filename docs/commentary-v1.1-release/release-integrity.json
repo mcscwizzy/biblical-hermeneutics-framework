@@ -1,4 +1,6 @@
 {
+  "canonical_reference_set_exact": true,
+  "canonical_total": 1189,
   "canonical_uniqueness": true,
   "ckl_mutated": false,
   "commentary_prose_regeneration_count": 0,
@@ -7,12 +9,16 @@
   "evidence_hash_presence": true,
   "json_valid": true,
   "pipeline_status": "CORPUS_COMPLETE",
+  "pipeline_status_scope": "upgrade_population",
   "protected_fingerprints_valid": true,
   "report_version": "commentary-v1.1-release-integrity-v1",
-  "runtime_chapter_count": 935,
-  "runtime_corpus_fingerprint": "9df456a3a22003587347cc0a78a9de5ca292e1d9554c4af3fc591207dd87e5db",
-  "runtime_manifest_sha256": "eeeb52dd767f0c8bfd0d49f4875069f7128b0f0efcc06236a1ec1c6134b88b60",
+  "runtime_chapter_count": 1189,
+  "runtime_completion_status": "RUNTIME_CANONICAL_COMPLETE",
+  "runtime_corpus_fingerprint": "fc905f3a095fd14bb5f557af624f3e40984bd67ee095477b5966eee3aea33b66",
+  "runtime_manifest_sha256": "808e8851b815c2931bbc81fa471cc6851dd65048268a01039010d67aae3b9106",
   "schema_valid": true,
   "source_batch_provenance": true,
-  "uncertified_prose_promoted": false
+  "source_provenance": true,
+  "uncertified_prose_promoted": false,
+  "upgrade_completion_status": "UPGRADE_CORPUS_COMPLETE"
 }
