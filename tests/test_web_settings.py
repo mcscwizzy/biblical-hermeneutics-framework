@@ -1,6 +1,14 @@
+import json
+import os
+import subprocess
+import sys
+import tempfile
+import textwrap
 import unittest
 from pathlib import Path
 
+from bhf_agent.db.common import DEFAULT_DB_PATH
+from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 from bhf_web.settings import (
     packaged_commentary_storage_path,
     resolve_runtime_data_paths,
@@ -109,6 +117,62 @@ class RuntimeDataPathTests(unittest.TestCase):
             paths.public_cache_path,
             Path("/tmp/bhf-data/public-answer-cache.json"),
         )
+
+    def test_agent_db_default_matches_central_runtime_study_path(self):
+        self.assertEqual(DEFAULT_DB_PATH, RUNTIME_DATA_PATHS.study_db_path)
+        self.assertEqual(DEFAULT_DB_PATH, Path(".bhf-data/study.sqlite"))
+        self.assertNotEqual(DEFAULT_DB_PATH, Path(".bhf/study.sqlite"))
+
+    def test_vercel_agent_map_context_uses_runtime_db_without_explicit_path(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            environment = os.environ.copy()
+            environment["VERCEL"] = "1"
+            environment["BHF_DATA_DIR"] = tempdir
+            script = textwrap.dedent(
+                """
+                import json
+
+                from bhf_agent.db.common import DEFAULT_DB_PATH
+                from bhf_agent.map_tools import build_map_tool_context
+                from bhf_agent.models import QuestionContext, ReferenceContext
+                from bhf_agent.study_db import initialize_database
+
+                initialize_database()
+                reference = ReferenceContext(
+                    book="John",
+                    chapter=9,
+                    verse=7,
+                    testament="New Testament",
+                    is_reference_based=True,
+                    confidence=0.95,
+                )
+                context = build_map_tool_context(
+                    "What archaeology is connected with John 9?",
+                    reference_context=reference,
+                    question_context=QuestionContext(
+                        question_type="historical_context",
+                        confidence=0.8,
+                    ),
+                )
+                print(json.dumps({
+                    "default_db_path": str(DEFAULT_DB_PATH),
+                    "context_requested_tools": context["requested_tools"],
+                }))
+                """
+            )
+            completed = subprocess.run(
+                [sys.executable, "-c", script],
+                cwd=Path(__file__).resolve().parents[1],
+                env=environment,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+        result = json.loads(completed.stdout)
+        self.assertEqual(result["default_db_path"], str(Path(tempdir) / "study.sqlite"))
+        self.assertNotIn(".bhf/study.sqlite", result["default_db_path"])
+        self.assertIn("getPlacesForPassage", result["context_requested_tools"])
 
     def test_explicit_data_directory_beats_vercel_default(self):
         paths = resolve_runtime_data_paths(

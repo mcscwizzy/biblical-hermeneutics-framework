@@ -5,14 +5,16 @@ from __future__ import annotations
 import json
 import re
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Any
 
 from ..bible import BibleError, normalize_book_name
+from ..runtime_paths import RUNTIME_DATA_PATHS
 from framework.canonical_library.normalization import normalize_id
 
 
-DEFAULT_DB_PATH = Path(".bhf") / "study.sqlite"
+# Keep every study-db repository on the same deployment-aware runtime path as
+# the web application. In particular, Vercel resolves this beneath /tmp.
+DEFAULT_DB_PATH = RUNTIME_DATA_PATHS.study_db_path
 HIGHLIGHT_COLORS = {"yellow", "green", "blue", "pink"}
 DEFAULT_HIGHLIGHT_COLOR = "yellow"
 
