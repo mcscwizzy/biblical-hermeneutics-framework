@@ -1,0 +1,216 @@
+{
+  "reference": "Ruth 3",
+  "book": "Ruth",
+  "chapter": 3,
+  "evidence_hash": "46f678b6923b5313329b2af0af6af7bb53a305bdb1452e72b0c7c34f47dbd2de",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.0",
+  "synthesis_compiler_version": "1.0",
+  "synthesis_hash": "48c82ee3e4b916097d246428fa1a842b88280f099a306bfd64f32840ecb8e917",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_b98a489b484d",
+      "kind": "cultural_context",
+      "facts": [
+        "Boaz belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
+      ],
+      "verse_refs": [
+        "Ruth 3:1-18"
+      ],
+      "evidence_ids": [
+        "boaz:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "boaz"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a39766376e80",
+      "kind": "historical_context",
+      "facts": [
+        "Boaz's story is set in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate."
+      ],
+      "verse_refs": [
+        "Ruth 3:1-18"
+      ],
+      "evidence_ids": [
+        "boaz:historical_context:0"
+      ],
+      "entity_ids": [
+        "boaz"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_375a07bc3a5c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban."
+      ],
+      "verse_refs": [
+        "Ruth 1:1-4:22"
+      ],
+      "evidence_ids": [
+        "nehemiah:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_c2160148bc2f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
+        "The threshing-floor scene contains risk and suggestive language, but the narrator presents Ruth's request as a redemption appeal and Boaz praises her character; claims of a completed sexual encounter exceed the text."
+      ],
+      "verse_refs": [
+        "Ruth 3:1-18"
+      ],
+      "evidence_ids": [
+        "ruth-providence-through-action",
+        "ruth:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_language_literary_b234cd126faf",
+      "kind": "language_literary",
+      "facts": [
+        "Ruth moves from famine, bereavement, and Naomi's emptiness to harvest, kinship redemption, birth, communal blessing, and genealogy."
+      ],
+      "verse_refs": [
+        "Ruth 1-4"
+      ],
+      "evidence_ids": [
+        "ruth-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_039418a88d74",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
+        "The threshing-floor scene contains risk and suggestive language, but the narrator presents Ruth's request as a redemption appeal and Boaz praises her character; claims of a completed sexual encounter exceed the text."
+      ],
+      "verse_refs": [
+        "Ruth 3:1-18"
+      ],
+      "evidence_ids": [
+        "ruth-providence-through-action",
+        "ruth:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_c2160148bc2f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 6,
+    "used_evidence_ids": [
+      "boaz:ancient_near_east_context:0",
+      "boaz:historical_context:0",
+      "nehemiah:interpretive_note:7",
+      "ruth-literary-movement",
+      "ruth-providence-through-action",
+      "ruth:interpretive_note:2"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 5,
+      "history": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 6,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 1,
+      "historical_context": 1,
+      "interpretive_questions": 2,
+      "language_literary": 1,
+      "why_it_matters": 1
+    },
+    "relationship_unit_count": 1
+  }
+}

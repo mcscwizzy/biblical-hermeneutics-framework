@@ -1,0 +1,88 @@
+{
+  "reference": "1 Samuel 21",
+  "book": "1 Samuel",
+  "chapter": 21,
+  "evidence_hash": "79c360812b8778c4c20d63faf5bf320e0926407eaf21eee2fe34001c803b47b7",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.0",
+  "synthesis_compiler_version": "1.0",
+  "synthesis_hash": "e296b88a547efd512390201d0d50e6c5497eebb2d37b051df91f81c4c0c15abd",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_language_literary_cafcd87ddbbe",
+      "kind": "language_literary",
+      "facts": [
+        "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death."
+      ],
+      "verse_refs": [
+        "1 Samuel 1-31"
+      ],
+      "evidence_ids": [
+        "first-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "first-samuel-literary-movement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "politics": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 0,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "language_literary": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

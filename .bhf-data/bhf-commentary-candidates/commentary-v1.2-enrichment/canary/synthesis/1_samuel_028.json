@@ -1,0 +1,106 @@
+{
+  "reference": "1 Samuel 28",
+  "book": "1 Samuel",
+  "chapter": 28,
+  "evidence_hash": "d8962f9a3a73a02877b6da380436ede477591469ac29de954787b749a2ec0e69",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.0",
+  "synthesis_compiler_version": "1.0",
+  "synthesis_hash": "86bcccde5d6558166a81c46055fc0d43a3d276f87e8285d753e893a0847a3643",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_08a6a26fb253",
+      "kind": "interpretive_questions",
+      "facts": [
+        "At Endor the narrator calls the figure Samuel, yet interpretations differ over whether God exceptionally permits Samuel to appear, the medium produces an apparition, or the scene uses another literary-theological explanation."
+      ],
+      "verse_refs": [
+        "1 Samuel 28:3-25"
+      ],
+      "evidence_ids": [
+        "1-samuel:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_language_literary_cafcd87ddbbe",
+      "kind": "language_literary",
+      "facts": [
+        "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death."
+      ],
+      "verse_refs": [
+        "1 Samuel 1-31"
+      ],
+      "evidence_ids": [
+        "first-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "1-samuel:interpretive_note:3",
+      "first-samuel-literary-movement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1,
+      "politics": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1,
+      "language_literary": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "reference": "Revelation 12",
+  "book": "Revelation",
+  "chapter": 12,
+  "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.0",
+  "synthesis_compiler_version": "1.0",
+  "synthesis_hash": "509bc8fb6a89285b9a333ae39dae66b8d1963546ea25bc0fa2bae8218d43ea81",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_historical_context_70739f354d27",
+      "kind": "historical_context",
+      "facts": [
+        "The narrative identifies the dragon as the ancient serpent, Devil, and Satan."
+      ],
+      "verse_refs": [
+        "Revelation 12:9"
+      ],
+      "evidence_ids": [
+        "rev-dragon"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_69cb2f39a324",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Isaiah 14:4 frames the poem containing the morning star, son of dawn as a taunt against the king of Babylon; identification with Satan belongs to later Jewish and especially Christian reception rather than the explicit addressee."
+      ],
+      "verse_refs": [
+        "Revelation 12:7-12"
+      ],
+      "evidence_ids": [
+        "isaiah-morning-star-taunt"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_dfe21697ee29",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The book calls its hearers to endurance and witness, not to enact its divine judgment scenes through religious violence.",
+        "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+        "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."
+      ],
+      "verse_refs": [
+        "Revelation 12:11",
+        "Revelation 1:1-22:21",
+        "Revelation 6:1-16:21"
+      ],
+      "evidence_ids": [
+        "rev-not-violence-license",
+        "rev-scriptural-reuse",
+        "rev-septets"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_4e642a14ee39",
+      "kind": "why_it_matters",
+      "facts": [
+        "The book calls its hearers to endurance and witness, not to enact its divine judgment scenes through religious violence.",
+        "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+        "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."
+      ],
+      "verse_refs": [
+        "Revelation 12:11",
+        "Revelation 1:1-22:21",
+        "Revelation 6:1-16:21"
+      ],
+      "evidence_ids": [
+        "rev-not-violence-license",
+        "rev-scriptural-reuse",
+        "rev-septets"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_dfe21697ee29"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 5,
+    "used_evidence_ids": [
+      "isaiah-morning-star-taunt",
+      "rev-dragon",
+      "rev-not-violence-license",
+      "rev-scriptural-reuse",
+      "rev-septets"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 4,
+      "history": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 5,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "historical_context": 1,
+      "interpretive_questions": 2,
+      "why_it_matters": 1
+    },
+    "relationship_unit_count": 1
+  }
+}

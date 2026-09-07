@@ -1,0 +1,233 @@
+{
+  "reference": "Psalms 1",
+  "book": "Psalms",
+  "chapter": 1,
+  "evidence_hash": "faf60db8a7de36c4d00e951e3171a6e49e875a4f98f9cba12be3cd2bca9465f8",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.0",
+  "synthesis_compiler_version": "1.0",
+  "synthesis_hash": "f9c9f9dcddd28d9ec4ff7737840fd550b807b526c4418e37b6ca18cdd19eec85",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_0259312ebd84",
+      "kind": "cultural_context",
+      "facts": [
+        "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-6"
+      ],
+      "evidence_ids": [
+        "what-is-a-psalm:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4a88701db593",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-3"
+      ],
+      "evidence_ids": [
+        "what-does-torah-mean:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_77aa3418632d",
+      "kind": "cultural_context",
+      "facts": [
+        "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-6"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_1e655acb8a2d",
+      "kind": "historical_context",
+      "facts": [
+        "In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-3"
+      ],
+      "evidence_ids": [
+        "what-does-torah-mean:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_7032c29b4dd9",
+      "kind": "historical_context",
+      "facts": [
+        "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-6"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8efa15aec15e",
+      "kind": "historical_context",
+      "facts": [
+        "Psalms arise in Israel's worship life and are sung in both public and private devotion."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-6"
+      ],
+      "evidence_ids": [
+        "what-is-a-psalm:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_105c9da53b89",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-2:12"
+      ],
+      "evidence_ids": [
+        "psalms-gateway-torah-king"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 7,
+    "used_evidence_ids": [
+      "psalms-gateway-torah-king",
+      "what-does-torah-mean:ancient_near_east_context:0",
+      "what-does-torah-mean:historical_context:0",
+      "what-is-a-psalm:ancient_near_east_context:0",
+      "what-is-a-psalm:historical_context:0",
+      "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "what-is-biblical-wisdom:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 3,
+      "history": 3,
+      "politics": 1
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 7,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 3,
+      "historical_context": 3,
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

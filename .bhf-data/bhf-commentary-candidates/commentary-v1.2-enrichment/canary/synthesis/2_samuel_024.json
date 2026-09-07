@@ -1,0 +1,126 @@
+{
+  "reference": "2 Samuel 24",
+  "book": "2 Samuel",
+  "chapter": 24,
+  "evidence_hash": "bbe31ce9f67a01d10a7f33e8eb9110f3575dccc088e3fb2ae511fb7f44482f27",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.0",
+  "synthesis_compiler_version": "1.0",
+  "synthesis_hash": "4fe43f0dbb68e30f97d84bba337cc42f202eabb0033358d3205bf60ea6e81568",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_11c83448ea53",
+      "kind": "interpretive_questions",
+      "facts": [
+        "First Chronicles attributes the census incitement to an adversary or Satan, whereas 2 Samuel begins with the LORD's anger; source, agency, developmental, and harmonizing explanations remain debated."
+      ],
+      "verse_refs": [
+        "2 Samuel 24:1-25"
+      ],
+      "evidence_ids": [
+        "1-chronicles:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_eaf515735967",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Second Samuel attributes the census incitement to the LORD's anger, whereas First Chronicles attributes it to an adversary; harmonizing, developmental, and distinct-source explanations remain debated."
+      ],
+      "verse_refs": [
+        "2 Samuel 24:1"
+      ],
+      "evidence_ids": [
+        "2-samuel:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_language_literary_dbbbffd4f0a0",
+      "kind": "language_literary",
+      "facts": [
+        "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix."
+      ],
+      "verse_refs": [
+        "2 Samuel 1-24"
+      ],
+      "evidence_ids": [
+        "second-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 3,
+    "used_evidence_ids": [
+      "1-chronicles:interpretive_note:3",
+      "2-samuel:interpretive_note:3",
+      "second-samuel-literary-movement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 3
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 2,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 2,
+      "language_literary": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

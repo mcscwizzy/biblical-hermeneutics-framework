@@ -1,0 +1,10 @@
+{
+  "artifact_version": "commentary-v1.2-canary-generation-v1",
+  "status": "BLOCKED",
+  "blocker": "REQUIRED_MODEL_UNAVAILABLE",
+  "required_model": "terra",
+  "required_effort": "medium",
+  "configured_model": "llama3.1:8b",
+  "reason": "Canary prose requires Terra Medium; refusing configured model substitution (model='llama3.1:8b', owner='unset', effort='unset')",
+  "chapters": []
+}
