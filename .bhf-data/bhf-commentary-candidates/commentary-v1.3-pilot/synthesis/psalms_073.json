@@ -1,0 +1,115 @@
+{
+  "reference": "Psalms 73",
+  "book": "Psalms",
+  "chapter": 73,
+  "evidence_hash": "844938d15b36fe8792fed7fcc443af64adde5556d793c91638b57658c8bb7b13",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "e9e75ec59b161237102069592b4f52557210dd8be90d93b4b95bad9df3fe3252",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_0d6a9757f104",
+      "kind": "cultural_context",
+      "facts": [
+        "Job's setting reflects patriarchal clan life, wisdom disputation, sacrificial practice, and Edomite or Arabian geography rather than a generic ancient-world backdrop."
+      ],
+      "verse_refs": [
+        "Psalms 73:1-17"
+      ],
+      "evidence_ids": [
+        "job-the-sufferer:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "job-the-sufferer"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 73:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ae9d59c416fd",
+      "kind": "historical_context",
+      "facts": [
+        "This figure is associated with reflection on suffering, reverence, and practical wisdom within Israel's life."
+      ],
+      "verse_refs": [
+        "Psalms 73:1-17"
+      ],
+      "evidence_ids": [
+        "job-the-sufferer:historical_context:0"
+      ],
+      "entity_ids": [
+        "job-the-sufferer"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 73:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "job-the-sufferer:ancient_near_east_context:0",
+      "job-the-sufferer:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1,
+      "history": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 2,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 1,
+      "historical_context": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

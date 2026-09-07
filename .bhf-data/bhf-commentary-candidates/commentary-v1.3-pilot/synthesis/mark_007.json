@@ -1,0 +1,882 @@
+{
+  "reference": "Mark 7",
+  "book": "Mark",
+  "chapter": 7,
+  "evidence_hash": "a9dd7d9fea16d672cd2453bd4e782d6a7d6323bebedce484933b3a027c84d8a1",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "1c146daf99e7a252af6d02c300bdc7f1ce2eb3b0b20278cee87f39b38fdd7a0e",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_0ab4c9c16931",
+      "kind": "cultural_context",
+      "facts": [
+        "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+        "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+        "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+        "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "pharisees:ancient_near_east_context:0",
+        "pharisees:hebraic_worldview:0",
+        "pharisees:original_audience:0",
+        "pharisees:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_37e32299e89f",
+      "kind": "cultural_context",
+      "facts": [
+        "Mark's conflicts with particular Jewish leaders cannot authorize antisemitism, supersessionism, deicide accusations, collective Jewish guilt, or portraying Pharisees and Judaism as uniquely hypocritical, impure, or hard-hearted."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "mark-anti-judaism-safeguard"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a647b1c5a7a7",
+      "kind": "cultural_context",
+      "facts": [
+        "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+        "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+        "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+        "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "scribes:ancient_near_east_context:0",
+        "scribes:hebraic_worldview:0",
+        "scribes:original_audience:0",
+        "scribes:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "scribes"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_1f76521b9141",
+      "kind": "historical_context",
+      "facts": [
+        "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+        "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "pharisees:historical_context:0",
+        "pharisees:historical_setting:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_986074336bd4",
+      "kind": "historical_context",
+      "facts": [
+        "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+        "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "scribes:historical_context:0",
+        "scribes:historical_setting:0"
+      ],
+      "entity_ids": [
+        "scribes"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_341c31ad559a",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Must surface whenever the verse becomes simple proof that Jesus ended all Jewish food practice or that no dietary implication is possible.",
+        "Mark narrates some disciples eating bread with common, unwashed hands before expanding into command, tradition, ingestion, and defilement.",
+        "Prevents opening the passage as though the accusation concerned eating a prohibited animal.",
+        "Mark contrasts ingested material entering stomach rather than heart with harmful acts proceeding from within.",
+        "Preserves the moral movement without turning bodily impurity, Jewish food practice, or food itself into vice."
+      ],
+      "verse_refs": [
+        "Mark 7:1-13",
+        "Mark 7:14-23",
+        "Mark 7:18-19"
+      ],
+      "evidence_ids": [
+        "mark-7-19-syntax-dispute:passage-relevance",
+        "mark-handwashing-trigger",
+        "mark-handwashing-trigger:passage-relevance",
+        "mark-heart-and-moral-defilement",
+        "mark-heart-and-moral-defilement:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-13",
+        "Mark 7:14-23",
+        "Mark 7:18-19"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_46b9b5a90238",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Workshop caves and production debris at Reina, approximately three kilometers from Nazareth, attest regional manufacture of soft-limestone vessels used in Jewish settlements.",
+        "The workshops show that stone vessels associated with purity practice were locally available, contextualizing John 2 and purity disputes without identifying the Cana jars or Mark's opponents."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "reina-stone-vessel-production",
+        "reina-stone-vessel-production:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_5ed0b95cee89",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Six fragmentary Cave 4 manuscripts preserve portions of a reconstructed work addressing calendar and legal matters and explaining separation based on disputed practices.",
+        "4QMMT demonstrates that detailed Torah and purity disagreements could mark communal boundaries before the New Testament period without making its authors the unnamed background of any one Gospel or Acts dispute.",
+        "Josephus distinguishes three Jewish groups and assigns them different views or practices concerning law, providence, fate, afterlife, authority, and communal discipline.",
+        "His descriptions supply later-composed context for the Pharisee-Sadducee disagreement in Acts 23 while preserving the possibility that Luke and Josephus frame the groups differently."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "4qmmt-legal-disagreement",
+        "4qmmt-legal-disagreement:passage-relevance",
+        "josephus-jewish-group-descriptions",
+        "josephus-jewish-group-descriptions:passage-relevance"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "language",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_900262663215",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes.",
+        "Requires passage-level interpretation before any verse becomes a timeless diet rule or cancels another text.",
+        "Leviticus assigns different causes, durations, rites, access effects, and sanctions to bodily impurity and prohibited conduct.",
+        "Prevents later clean and unclean language from becoming personal guilt, dirtiness, or diminished human worth.",
+        "Katharizon panta ta bromata admits competing analyses with different implications for hand-defiled food and Torah food distinctions."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23",
+        "Mark 7:18-19"
+      ],
+      "evidence_ids": [
+        "cross-passage-diet-code-limit",
+        "cross-passage-diet-code-limit:passage-relevance",
+        "leviticus-ritual-moral-distinction",
+        "leviticus-ritual-moral-distinction:passage-relevance",
+        "mark-7-19-syntax-dispute"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23",
+        "Mark 7:18-19"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_9bf4ce4c753f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Mark preserves and translates several Semitic expressions, including Boanerges, Talitha koum, Corban, Ephphatha, Bartimaeus, Abba, Golgotha, and Eloi.",
+        "Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure.",
+        "The grammar and scope of Mark 7:19 remain disputed; readings range from an editorial declaration about all foods to an anatomical claim about digestion that does not repeal kashrut.",
+        "Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic.",
+        "Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23",
+        "Mark 7:18-23",
+        "Mark 7:3-4",
+        "Mark 7:31-37",
+        "Mark 7:34"
+      ],
+      "evidence_ids": [
+        "mark-aramaic",
+        "mark-disability",
+        "mark-food-purity",
+        "mark-jewish-debate",
+        "mark-provenance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23",
+        "Mark 7:18-23",
+        "Mark 7:3-4",
+        "Mark 7:31-37",
+        "Mark 7:34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "language"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_c75b9550824f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Syrophoenician woman answers Jesus' children-and-dogs saying and obtains her daughter's release; interpretations of testing, boundary, ethnicity, gender, and change remain disputed."
+      ],
+      "verse_refs": [
+        "Mark 7:24-30"
+      ],
+      "evidence_ids": [
+        "mark-syrophoenician"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:24-30"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_e528edc0892c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "4QMMT preserves disputed rulings, Galilean limestone workshops attest purity-oriented vessels, and Mishnah Yadayim later details hand purification.",
+        "Places Mark 7 and Acts 15 within real Jewish legal reasoning without constructing one monolithic Judaism."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "second-temple-purity-diversity",
+        "second-temple-purity-diversity:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0397f5b892ed",
+      "kind": "why_it_matters",
+      "facts": [
+        "Six fragmentary Cave 4 manuscripts preserve portions of a reconstructed work addressing calendar and legal matters and explaining separation based on disputed practices.",
+        "4QMMT demonstrates that detailed Torah and purity disagreements could mark communal boundaries before the New Testament period without making its authors the unnamed background of any one Gospel or Acts dispute.",
+        "Josephus distinguishes three Jewish groups and assigns them different views or practices concerning law, providence, fate, afterlife, authority, and communal discipline.",
+        "His descriptions supply later-composed context for the Pharisee-Sadducee disagreement in Acts 23 while preserving the possibility that Luke and Josephus frame the groups differently."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "4qmmt-legal-disagreement",
+        "4qmmt-legal-disagreement:passage-relevance",
+        "josephus-jewish-group-descriptions",
+        "josephus-jewish-group-descriptions:passage-relevance"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_5ed0b95cee89"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_228fdfafe077",
+      "kind": "why_it_matters",
+      "facts": [
+        "Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes.",
+        "Requires passage-level interpretation before any verse becomes a timeless diet rule or cancels another text.",
+        "Leviticus assigns different causes, durations, rites, access effects, and sanctions to bodily impurity and prohibited conduct.",
+        "Prevents later clean and unclean language from becoming personal guilt, dirtiness, or diminished human worth.",
+        "Katharizon panta ta bromata admits competing analyses with different implications for hand-defiled food and Torah food distinctions."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23",
+        "Mark 7:18-19"
+      ],
+      "evidence_ids": [
+        "cross-passage-diet-code-limit",
+        "cross-passage-diet-code-limit:passage-relevance",
+        "leviticus-ritual-moral-distinction",
+        "leviticus-ritual-moral-distinction:passage-relevance",
+        "mark-7-19-syntax-dispute"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_900262663215"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23",
+        "Mark 7:18-19"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_37cc470ef8f9",
+      "kind": "why_it_matters",
+      "facts": [
+        "4QMMT preserves disputed rulings, Galilean limestone workshops attest purity-oriented vessels, and Mishnah Yadayim later details hand purification.",
+        "Places Mark 7 and Acts 15 within real Jewish legal reasoning without constructing one monolithic Judaism."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "second-temple-purity-diversity",
+        "second-temple-purity-diversity:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_e528edc0892c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_56dccdc3d431",
+      "kind": "why_it_matters",
+      "facts": [
+        "Workshop caves and production debris at Reina, approximately three kilometers from Nazareth, attest regional manufacture of soft-limestone vessels used in Jewish settlements.",
+        "The workshops show that stone vessels associated with purity practice were locally available, contextualizing John 2 and purity disputes without identifying the Cana jars or Mark's opponents."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "reina-stone-vessel-production",
+        "reina-stone-vessel-production:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_46b9b5a90238"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_66a9295e3e93",
+      "kind": "why_it_matters",
+      "facts": [
+        "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+        "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "pharisees:historical_context:0",
+        "pharisees:historical_setting:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_1f76521b9141"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_817ae893505a",
+      "kind": "why_it_matters",
+      "facts": [
+        "Mark preserves and translates several Semitic expressions, including Boanerges, Talitha koum, Corban, Ephphatha, Bartimaeus, Abba, Golgotha, and Eloi.",
+        "Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure.",
+        "The grammar and scope of Mark 7:19 remain disputed; readings range from an editorial declaration about all foods to an anatomical claim about digestion that does not repeal kashrut.",
+        "Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic.",
+        "Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23",
+        "Mark 7:18-23",
+        "Mark 7:3-4",
+        "Mark 7:31-37",
+        "Mark 7:34"
+      ],
+      "evidence_ids": [
+        "mark-aramaic",
+        "mark-disability",
+        "mark-food-purity",
+        "mark-jewish-debate",
+        "mark-provenance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_9bf4ce4c753f"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23",
+        "Mark 7:18-23",
+        "Mark 7:3-4",
+        "Mark 7:31-37",
+        "Mark 7:34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c8effce8d3ed",
+      "kind": "why_it_matters",
+      "facts": [
+        "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+        "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "scribes:historical_context:0",
+        "scribes:historical_setting:0"
+      ],
+      "entity_ids": [
+        "scribes"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_986074336bd4"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_dda18985c588",
+      "kind": "why_it_matters",
+      "facts": [
+        "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+        "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+        "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+        "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "pharisees:ancient_near_east_context:0",
+        "pharisees:hebraic_worldview:0",
+        "pharisees:original_audience:0",
+        "pharisees:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_0ab4c9c16931"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e798925af778",
+      "kind": "why_it_matters",
+      "facts": [
+        "Must surface whenever the verse becomes simple proof that Jesus ended all Jewish food practice or that no dietary implication is possible.",
+        "Mark narrates some disciples eating bread with common, unwashed hands before expanding into command, tradition, ingestion, and defilement.",
+        "Prevents opening the passage as though the accusation concerned eating a prohibited animal.",
+        "Mark contrasts ingested material entering stomach rather than heart with harmful acts proceeding from within.",
+        "Preserves the moral movement without turning bodily impurity, Jewish food practice, or food itself into vice."
+      ],
+      "verse_refs": [
+        "Mark 7:1-13",
+        "Mark 7:14-23",
+        "Mark 7:18-19"
+      ],
+      "evidence_ids": [
+        "mark-7-19-syntax-dispute:passage-relevance",
+        "mark-handwashing-trigger",
+        "mark-handwashing-trigger:passage-relevance",
+        "mark-heart-and-moral-defilement",
+        "mark-heart-and-moral-defilement:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_341c31ad559a"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-13",
+        "Mark 7:14-23",
+        "Mark 7:18-19"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ffcd8ec8fcf0",
+      "kind": "why_it_matters",
+      "facts": [
+        "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+        "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+        "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+        "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate."
+      ],
+      "verse_refs": [
+        "Mark 7:1-23"
+      ],
+      "evidence_ids": [
+        "scribes:ancient_near_east_context:0",
+        "scribes:hebraic_worldview:0",
+        "scribes:original_audience:0",
+        "scribes:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "scribes"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_a647b1c5a7a7"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Mark 7:1-23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [],
+  "coverage": {
+    "evidence_item_count": 37,
+    "used_evidence_ids": [
+      "4qmmt-legal-disagreement",
+      "4qmmt-legal-disagreement:passage-relevance",
+      "cross-passage-diet-code-limit",
+      "cross-passage-diet-code-limit:passage-relevance",
+      "josephus-jewish-group-descriptions",
+      "josephus-jewish-group-descriptions:passage-relevance",
+      "leviticus-ritual-moral-distinction",
+      "leviticus-ritual-moral-distinction:passage-relevance",
+      "mark-7-19-syntax-dispute",
+      "mark-7-19-syntax-dispute:passage-relevance",
+      "mark-anti-judaism-safeguard",
+      "mark-aramaic",
+      "mark-disability",
+      "mark-food-purity",
+      "mark-handwashing-trigger",
+      "mark-handwashing-trigger:passage-relevance",
+      "mark-heart-and-moral-defilement",
+      "mark-heart-and-moral-defilement:passage-relevance",
+      "mark-jewish-debate",
+      "mark-provenance",
+      "mark-syrophoenician",
+      "pharisees:ancient_near_east_context:0",
+      "pharisees:hebraic_worldview:0",
+      "pharisees:historical_context:0",
+      "pharisees:historical_setting:0",
+      "pharisees:original_audience:0",
+      "pharisees:second_temple_context:0",
+      "reina-stone-vessel-production",
+      "reina-stone-vessel-production:passage-relevance",
+      "scribes:ancient_near_east_context:0",
+      "scribes:hebraic_worldview:0",
+      "scribes:historical_context:0",
+      "scribes:historical_setting:0",
+      "scribes:original_audience:0",
+      "scribes:second_temple_context:0",
+      "second-temple-purity-diversity",
+      "second-temple-purity-diversity:passage-relevance"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "archaeology": 4,
+      "culture": 21,
+      "history": 4,
+      "language": 4,
+      "social": 4
+    },
+    "category_diversity": 5,
+    "specific_evidence_count": 37,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 2,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 3,
+      "historical_context": 2,
+      "interpretive_questions": 7,
+      "why_it_matters": 10
+    },
+    "relationship_unit_count": 10
+  }
+}
