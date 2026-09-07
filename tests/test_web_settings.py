@@ -125,9 +125,14 @@ class RuntimeDataPathTests(unittest.TestCase):
 
     def test_vercel_agent_map_context_uses_runtime_db_without_explicit_path(self):
         with tempfile.TemporaryDirectory() as tempdir:
+            temp_root = Path(tempdir)
+            app_root = temp_root / "app"
+            runtime_root = temp_root / "runtime"
+            app_root.mkdir()
             environment = os.environ.copy()
             environment["VERCEL"] = "1"
-            environment["BHF_DATA_DIR"] = tempdir
+            environment["BHF_DATA_DIR"] = str(runtime_root)
+            environment["PYTHONPATH"] = str(Path(__file__).resolve().parents[1])
             script = textwrap.dedent(
                 """
                 import json
@@ -162,6 +167,46 @@ class RuntimeDataPathTests(unittest.TestCase):
             )
             completed = subprocess.run(
                 [sys.executable, "-c", script],
+                cwd=app_root,
+                env=environment,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+            result = json.loads(completed.stdout)
+            self.assertEqual(result["default_db_path"], str(runtime_root / "study.sqlite"))
+            self.assertNotIn(".bhf/study.sqlite", result["default_db_path"])
+            self.assertIn("getPlacesForPassage", result["context_requested_tools"])
+            self.assertTrue((runtime_root / "study.sqlite").is_file())
+            self.assertFalse((app_root / ".bhf").exists())
+
+    def test_connect_without_path_uses_central_runtime_database(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            environment = os.environ.copy()
+            environment["VERCEL"] = "1"
+            environment["BHF_DATA_DIR"] = tempdir
+            script = textwrap.dedent(
+                """
+                import json
+                from pathlib import Path
+
+                from bhf_agent.db.connection import connect
+                from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
+
+                with connect() as connection:
+                    connection.execute("CREATE TABLE runtime_probe (value TEXT)")
+                    connection.execute("INSERT INTO runtime_probe VALUES ('ok')")
+                    connection.commit()
+
+                print(json.dumps({
+                    "resolved_path": str(RUNTIME_DATA_PATHS.study_db_path),
+                    "database_exists": Path(RUNTIME_DATA_PATHS.study_db_path).is_file(),
+                }))
+                """
+            )
+            completed = subprocess.run(
+                [sys.executable, "-c", script],
                 cwd=Path(__file__).resolve().parents[1],
                 env=environment,
                 check=True,
@@ -170,9 +215,66 @@ class RuntimeDataPathTests(unittest.TestCase):
             )
 
         result = json.loads(completed.stdout)
-        self.assertEqual(result["default_db_path"], str(Path(tempdir) / "study.sqlite"))
-        self.assertNotIn(".bhf/study.sqlite", result["default_db_path"])
-        self.assertIn("getPlacesForPassage", result["context_requested_tools"])
+        self.assertEqual(result["resolved_path"], str(Path(tempdir) / "study.sqlite"))
+        self.assertTrue(result["database_exists"])
+        self.assertNotIn(".bhf/study.sqlite", result["resolved_path"])
+
+    def test_vercel_agent_lookup_local_knowledge_never_uses_app_root_bhf(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            temp_root = Path(tempdir)
+            app_root = temp_root / "app"
+            runtime_root = temp_root / "runtime"
+            app_root.mkdir()
+            environment = os.environ.copy()
+            environment["VERCEL"] = "1"
+            environment["BHF_DATA_DIR"] = str(runtime_root)
+            environment["PYTHONPATH"] = str(Path(__file__).resolve().parents[1])
+            script = textwrap.dedent(
+                """
+                import json
+                from pathlib import Path
+
+                from bhf_agent.config import AgentConfig, CanonicalLibraryConfig
+                from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
+                from bhf_agent.runner import BHFAgent
+
+                question = "What archaeology is connected with John 9?"
+                agent = BHFAgent(
+                    AgentConfig(
+                        base_url="http://localhost:1234/v1",
+                        model="test-model",
+                        canonical_library=CanonicalLibraryConfig(enabled=False),
+                    ),
+                    adapter=object(),
+                )
+                agent._lookup_lexical_engine = lambda context: context
+                context = agent._initialize_context(question)
+                context = agent._detect_reference(context)
+                context = agent._retrieve_scripture_context(context)
+                context = agent._classify_genre(context)
+                context = agent._classify_question_type(context)
+                context = agent._load_profile(context)
+                context = agent._lookup_local_knowledge(context)
+                print(json.dumps({
+                    "map_tool_keys": context.debug_metadata["map_tool_keys"],
+                    "runtime_db_exists": RUNTIME_DATA_PATHS.study_db_path.is_file(),
+                    "app_root_bhf_exists": Path(".bhf").exists(),
+                }))
+                """
+            )
+            completed = subprocess.run(
+                [sys.executable, "-c", script],
+                cwd=app_root,
+                env=environment,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+            result = json.loads(completed.stdout)
+            self.assertIn("getPlacesForPassage", result["map_tool_keys"])
+            self.assertTrue(result["runtime_db_exists"])
+            self.assertFalse(result["app_root_bhf_exists"])
 
     def test_explicit_data_directory_beats_vercel_default(self):
         paths = resolve_runtime_data_paths(

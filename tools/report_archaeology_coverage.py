@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 # Support direct ``python3 tools/report_archaeology_coverage.py`` execution.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 from bhf_agent.study_db import initialize_database
 
 
@@ -88,7 +89,11 @@ def build_report(database: str | Path) -> dict[str, object]:
     }
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--database", default=".bhf/study.sqlite", help="SQLite study database path")
+    parser.add_argument(
+        "--database",
+        default=str(RUNTIME_DATA_PATHS.study_db_path),
+        help="SQLite study database path",
+    )
     parser.add_argument("--json", action="store_true", help="emit JSON instead of a compact report")
     args = parser.parse_args()
     report = build_report(args.database)
