@@ -1,0 +1,3266 @@
+{
+  "artifact_version": "commentary-v1.2-dense-richness-audit-v1",
+  "cluster_audit_version": "commentary-richness-clusters-v1",
+  "proposed_policy_version": "commentary-richness-policy-v2-proposed",
+  "chapter_count": 1189,
+  "synthesis_unit_total": 11500,
+  "evidence_item_total": 14919,
+  "density_distribution": {
+    "0": 152,
+    "1-5": 569,
+    "6-10": 170,
+    "11-20": 140,
+    "21-40": 97,
+    "41+": 61
+  },
+  "availability_distribution": {
+    "AVAILABLE": 826,
+    "THIN": 211,
+    "DATA_GAP": 152
+  },
+  "unit_kind_totals": {
+    "archaeology_geography": 153,
+    "chronology": 100,
+    "cultural_context": 2613,
+    "historical_context": 2589,
+    "interpretive_questions": 1798,
+    "language_literary": 51,
+    "surrounding_passages": 2002,
+    "why_it_matters": 2194
+  },
+  "current_chapter_unit_total": 9543,
+  "surrounding_passage_unit_total": 1957,
+  "distinct_idea_cluster_total": 5320,
+  "raw_units_beyond_distinct_clusters_total": 6180,
+  "duplicate_reason_cluster_totals": {
+    "DISTINCT": 2495,
+    "EXACT_DUPLICATE": 2138,
+    "HIGH_FACT_OVERLAP": 517,
+    "PARENT_PARALLEL": 170
+  },
+  "densest_chapters": [
+    {
+      "reference": "Genesis 12",
+      "book": "Genesis",
+      "chapter": 12,
+      "synthesis_unit_count": 139,
+      "evidence_item_count": 154,
+      "unique_evidence_ids": 154,
+      "units_per_evidence_item": 0.9026,
+      "unit_kind_counts": {
+        "archaeology_geography": 4,
+        "chronology": 1,
+        "cultural_context": 56,
+        "historical_context": 57,
+        "interpretive_questions": 3,
+        "surrounding_passages": 3,
+        "why_it_matters": 15
+      },
+      "current_chapter_unit_count": 136,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 46,
+      "meaningful_idea_cluster_count": 46,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 17,
+        "HIGH_FACT_OVERLAP": 11,
+        "DISTINCT": 18
+      }
+    },
+    {
+      "reference": "Revelation 21",
+      "book": "Revelation",
+      "chapter": 21,
+      "synthesis_unit_count": 119,
+      "evidence_item_count": 145,
+      "unique_evidence_ids": 145,
+      "units_per_evidence_item": 0.8207,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 6,
+        "cultural_context": 43,
+        "historical_context": 43,
+        "interpretive_questions": 2,
+        "surrounding_passages": 3,
+        "why_it_matters": 19
+      },
+      "current_chapter_unit_count": 116,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 40,
+      "meaningful_idea_cluster_count": 40,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 21,
+        "DISTINCT": 14,
+        "HIGH_FACT_OVERLAP": 4,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Exodus 19",
+      "book": "Exodus",
+      "chapter": 19,
+      "synthesis_unit_count": 100,
+      "evidence_item_count": 116,
+      "unique_evidence_ids": 116,
+      "units_per_evidence_item": 0.8621,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 2,
+        "cultural_context": 38,
+        "historical_context": 39,
+        "interpretive_questions": 3,
+        "surrounding_passages": 3,
+        "why_it_matters": 12
+      },
+      "current_chapter_unit_count": 97,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 35,
+      "meaningful_idea_cluster_count": 35,
+      "duplicate_reason_counts": {
+        "DISTINCT": 17,
+        "HIGH_FACT_OVERLAP": 8,
+        "EXACT_DUPLICATE": 9,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Luke 24",
+      "book": "Luke",
+      "chapter": 24,
+      "synthesis_unit_count": 100,
+      "evidence_item_count": 100,
+      "unique_evidence_ids": 100,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 48,
+        "historical_context": 48,
+        "interpretive_questions": 2,
+        "language_literary": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 100,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 29,
+      "meaningful_idea_cluster_count": 29,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 10,
+        "DISTINCT": 18,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Acts 2",
+      "book": "Acts",
+      "chapter": 2,
+      "synthesis_unit_count": 95,
+      "evidence_item_count": 107,
+      "unique_evidence_ids": 107,
+      "units_per_evidence_item": 0.8879,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "cultural_context": 39,
+        "historical_context": 39,
+        "interpretive_questions": 5,
+        "surrounding_passages": 4,
+        "why_it_matters": 7
+      },
+      "current_chapter_unit_count": 92,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 43,
+      "meaningful_idea_cluster_count": 42,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 9,
+        "EXACT_DUPLICATE": 9,
+        "DISTINCT": 22,
+        "PARENT_PARALLEL": 3
+      }
+    },
+    {
+      "reference": "Romans 16",
+      "book": "Romans",
+      "chapter": 16,
+      "synthesis_unit_count": 92,
+      "evidence_item_count": 140,
+      "unique_evidence_ids": 140,
+      "units_per_evidence_item": 0.6571,
+      "unit_kind_counts": {
+        "cultural_context": 20,
+        "historical_context": 20,
+        "interpretive_questions": 20,
+        "surrounding_passages": 10,
+        "why_it_matters": 22
+      },
+      "current_chapter_unit_count": 82,
+      "surrounding_passage_unit_count": 10,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 19,
+      "meaningful_idea_cluster_count": 19,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 4,
+        "EXACT_DUPLICATE": 9,
+        "DISTINCT": 6
+      }
+    },
+    {
+      "reference": "Matthew 28",
+      "book": "Matthew",
+      "chapter": 28,
+      "synthesis_unit_count": 88,
+      "evidence_item_count": 93,
+      "unique_evidence_ids": 93,
+      "units_per_evidence_item": 0.9462,
+      "unit_kind_counts": {
+        "cultural_context": 41,
+        "historical_context": 41,
+        "interpretive_questions": 2,
+        "why_it_matters": 4
+      },
+      "current_chapter_unit_count": 88,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 17,
+      "meaningful_idea_cluster_count": 17,
+      "duplicate_reason_counts": {
+        "DISTINCT": 4,
+        "EXACT_DUPLICATE": 4,
+        "PARENT_PARALLEL": 2,
+        "HIGH_FACT_OVERLAP": 7
+      }
+    },
+    {
+      "reference": "2 Kings 25",
+      "book": "2 Kings",
+      "chapter": 25,
+      "synthesis_unit_count": 82,
+      "evidence_item_count": 98,
+      "unique_evidence_ids": 98,
+      "units_per_evidence_item": 0.8367,
+      "unit_kind_counts": {
+        "archaeology_geography": 2,
+        "chronology": 2,
+        "cultural_context": 31,
+        "historical_context": 32,
+        "interpretive_questions": 2,
+        "language_literary": 1,
+        "why_it_matters": 12
+      },
+      "current_chapter_unit_count": 82,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 33,
+      "meaningful_idea_cluster_count": 33,
+      "duplicate_reason_counts": {
+        "DISTINCT": 16,
+        "HIGH_FACT_OVERLAP": 6,
+        "EXACT_DUPLICATE": 11
+      }
+    },
+    {
+      "reference": "Romans 8",
+      "book": "Romans",
+      "chapter": 8,
+      "synthesis_unit_count": 82,
+      "evidence_item_count": 118,
+      "unique_evidence_ids": 118,
+      "units_per_evidence_item": 0.6949,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "cultural_context": 18,
+        "historical_context": 16,
+        "interpretive_questions": 15,
+        "surrounding_passages": 13,
+        "why_it_matters": 19
+      },
+      "current_chapter_unit_count": 70,
+      "surrounding_passage_unit_count": 12,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 29,
+      "meaningful_idea_cluster_count": 28,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 14,
+        "DISTINCT": 12,
+        "HIGH_FACT_OVERLAP": 3
+      }
+    },
+    {
+      "reference": "1 Kings 8",
+      "book": "1 Kings",
+      "chapter": 8,
+      "synthesis_unit_count": 80,
+      "evidence_item_count": 97,
+      "unique_evidence_ids": 97,
+      "units_per_evidence_item": 0.8247,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 4,
+        "cultural_context": 29,
+        "historical_context": 29,
+        "interpretive_questions": 2,
+        "why_it_matters": 13
+      },
+      "current_chapter_unit_count": 80,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 26,
+      "meaningful_idea_cluster_count": 26,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 15,
+        "HIGH_FACT_OVERLAP": 7,
+        "PARENT_PARALLEL": 1,
+        "DISTINCT": 3
+      }
+    },
+    {
+      "reference": "John 20",
+      "book": "John",
+      "chapter": 20,
+      "synthesis_unit_count": 78,
+      "evidence_item_count": 81,
+      "unique_evidence_ids": 81,
+      "units_per_evidence_item": 0.963,
+      "unit_kind_counts": {
+        "cultural_context": 37,
+        "historical_context": 38,
+        "interpretive_questions": 2,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 78,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 17,
+      "meaningful_idea_cluster_count": 17,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 7,
+        "DISTINCT": 9,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Romans 1",
+      "book": "Romans",
+      "chapter": 1,
+      "synthesis_unit_count": 77,
+      "evidence_item_count": 105,
+      "unique_evidence_ids": 105,
+      "units_per_evidence_item": 0.7333,
+      "unit_kind_counts": {
+        "archaeology_geography": 4,
+        "chronology": 2,
+        "cultural_context": 16,
+        "historical_context": 16,
+        "interpretive_questions": 10,
+        "surrounding_passages": 10,
+        "why_it_matters": 19
+      },
+      "current_chapter_unit_count": 67,
+      "surrounding_passage_unit_count": 10,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 25,
+      "meaningful_idea_cluster_count": 25,
+      "duplicate_reason_counts": {
+        "DISTINCT": 7,
+        "EXACT_DUPLICATE": 13,
+        "HIGH_FACT_OVERLAP": 5
+      }
+    },
+    {
+      "reference": "Isaiah 40",
+      "book": "Isaiah",
+      "chapter": 40,
+      "synthesis_unit_count": 75,
+      "evidence_item_count": 85,
+      "unique_evidence_ids": 85,
+      "units_per_evidence_item": 0.8824,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 2,
+        "cultural_context": 31,
+        "historical_context": 31,
+        "interpretive_questions": 3,
+        "surrounding_passages": 1,
+        "why_it_matters": 6
+      },
+      "current_chapter_unit_count": 74,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 19,
+      "meaningful_idea_cluster_count": 19,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 7,
+        "DISTINCT": 6,
+        "EXACT_DUPLICATE": 6
+      }
+    },
+    {
+      "reference": "1 Corinthians 15",
+      "book": "1 Corinthians",
+      "chapter": 15,
+      "synthesis_unit_count": 73,
+      "evidence_item_count": 109,
+      "unique_evidence_ids": 109,
+      "units_per_evidence_item": 0.6697,
+      "unit_kind_counts": {
+        "archaeology_geography": 2,
+        "cultural_context": 19,
+        "historical_context": 19,
+        "interpretive_questions": 12,
+        "surrounding_passages": 4,
+        "why_it_matters": 17
+      },
+      "current_chapter_unit_count": 69,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 26,
+      "meaningful_idea_cluster_count": 26,
+      "duplicate_reason_counts": {
+        "DISTINCT": 11,
+        "HIGH_FACT_OVERLAP": 4,
+        "EXACT_DUPLICATE": 9,
+        "PARENT_PARALLEL": 2
+      }
+    },
+    {
+      "reference": "Hebrews 8",
+      "book": "Hebrews",
+      "chapter": 8,
+      "synthesis_unit_count": 73,
+      "evidence_item_count": 79,
+      "unique_evidence_ids": 79,
+      "units_per_evidence_item": 0.9241,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 1,
+        "cultural_context": 28,
+        "historical_context": 28,
+        "interpretive_questions": 3,
+        "surrounding_passages": 5,
+        "why_it_matters": 7
+      },
+      "current_chapter_unit_count": 68,
+      "surrounding_passage_unit_count": 5,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 23,
+      "meaningful_idea_cluster_count": 23,
+      "duplicate_reason_counts": {
+        "DISTINCT": 10,
+        "EXACT_DUPLICATE": 7,
+        "HIGH_FACT_OVERLAP": 2,
+        "PARENT_PARALLEL": 4
+      }
+    },
+    {
+      "reference": "Jeremiah 31",
+      "book": "Jeremiah",
+      "chapter": 31,
+      "synthesis_unit_count": 71,
+      "evidence_item_count": 72,
+      "unique_evidence_ids": 72,
+      "units_per_evidence_item": 0.9861,
+      "unit_kind_counts": {
+        "cultural_context": 33,
+        "historical_context": 33,
+        "interpretive_questions": 1,
+        "surrounding_passages": 2,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 69,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 18,
+      "meaningful_idea_cluster_count": 18,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 8,
+        "PARENT_PARALLEL": 2,
+        "DISTINCT": 5,
+        "EXACT_DUPLICATE": 3
+      }
+    },
+    {
+      "reference": "Acts 17",
+      "book": "Acts",
+      "chapter": 17,
+      "synthesis_unit_count": 69,
+      "evidence_item_count": 129,
+      "unique_evidence_ids": 129,
+      "units_per_evidence_item": 0.5349,
+      "unit_kind_counts": {
+        "archaeology_geography": 2,
+        "chronology": 2,
+        "cultural_context": 5,
+        "historical_context": 6,
+        "interpretive_questions": 21,
+        "surrounding_passages": 6,
+        "why_it_matters": 27
+      },
+      "current_chapter_unit_count": 63,
+      "surrounding_passage_unit_count": 6,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 20,
+      "meaningful_idea_cluster_count": 20,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 13,
+        "DISTINCT": 6,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Mark 16",
+      "book": "Mark",
+      "chapter": 16,
+      "synthesis_unit_count": 69,
+      "evidence_item_count": 72,
+      "unique_evidence_ids": 72,
+      "units_per_evidence_item": 0.9583,
+      "unit_kind_counts": {
+        "cultural_context": 33,
+        "historical_context": 33,
+        "interpretive_questions": 1,
+        "language_literary": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 69,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 11,
+      "meaningful_idea_cluster_count": 11,
+      "duplicate_reason_counts": {
+        "DISTINCT": 5,
+        "HIGH_FACT_OVERLAP": 5,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Romans 15",
+      "book": "Romans",
+      "chapter": 15,
+      "synthesis_unit_count": 68,
+      "evidence_item_count": 102,
+      "unique_evidence_ids": 102,
+      "units_per_evidence_item": 0.6667,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 2,
+        "cultural_context": 7,
+        "historical_context": 6,
+        "interpretive_questions": 14,
+        "surrounding_passages": 17,
+        "why_it_matters": 19
+      },
+      "current_chapter_unit_count": 51,
+      "surrounding_passage_unit_count": 17,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 27,
+      "meaningful_idea_cluster_count": 27,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 17,
+        "DISTINCT": 8,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Acts 9",
+      "book": "Acts",
+      "chapter": 9,
+      "synthesis_unit_count": 67,
+      "evidence_item_count": 75,
+      "unique_evidence_ids": 75,
+      "units_per_evidence_item": 0.8933,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "cultural_context": 25,
+        "historical_context": 25,
+        "interpretive_questions": 6,
+        "surrounding_passages": 3,
+        "why_it_matters": 7
+      },
+      "current_chapter_unit_count": 64,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 18,
+      "meaningful_idea_cluster_count": 18,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 5,
+        "DISTINCT": 5,
+        "EXACT_DUPLICATE": 7,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Acts 13",
+      "book": "Acts",
+      "chapter": 13,
+      "synthesis_unit_count": 66,
+      "evidence_item_count": 85,
+      "unique_evidence_ids": 85,
+      "units_per_evidence_item": 0.7765,
+      "unit_kind_counts": {
+        "archaeology_geography": 2,
+        "cultural_context": 18,
+        "historical_context": 19,
+        "interpretive_questions": 8,
+        "surrounding_passages": 8,
+        "why_it_matters": 11
+      },
+      "current_chapter_unit_count": 58,
+      "surrounding_passage_unit_count": 8,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 24,
+      "meaningful_idea_cluster_count": 24,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "EXACT_DUPLICATE": 11,
+        "HIGH_FACT_OVERLAP": 4,
+        "DISTINCT": 8
+      }
+    },
+    {
+      "reference": "Galatians 3",
+      "book": "Galatians",
+      "chapter": 3,
+      "synthesis_unit_count": 66,
+      "evidence_item_count": 107,
+      "unique_evidence_ids": 107,
+      "units_per_evidence_item": 0.6168,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 1,
+        "cultural_context": 11,
+        "historical_context": 9,
+        "interpretive_questions": 14,
+        "surrounding_passages": 7,
+        "why_it_matters": 21
+      },
+      "current_chapter_unit_count": 60,
+      "surrounding_passage_unit_count": 6,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 31,
+      "meaningful_idea_cluster_count": 30,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 14,
+        "DISTINCT": 16,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Hebrews 11",
+      "book": "Hebrews",
+      "chapter": 11,
+      "synthesis_unit_count": 66,
+      "evidence_item_count": 70,
+      "unique_evidence_ids": 70,
+      "units_per_evidence_item": 0.9429,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "cultural_context": 27,
+        "historical_context": 27,
+        "interpretive_questions": 2,
+        "surrounding_passages": 4,
+        "why_it_matters": 5
+      },
+      "current_chapter_unit_count": 63,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 31,
+      "meaningful_idea_cluster_count": 30,
+      "duplicate_reason_counts": {
+        "DISTINCT": 17,
+        "EXACT_DUPLICATE": 8,
+        "HIGH_FACT_OVERLAP": 6
+      }
+    },
+    {
+      "reference": "Philippians 1",
+      "book": "Philippians",
+      "chapter": 1,
+      "synthesis_unit_count": 66,
+      "evidence_item_count": 102,
+      "unique_evidence_ids": 102,
+      "units_per_evidence_item": 0.6471,
+      "unit_kind_counts": {
+        "cultural_context": 17,
+        "historical_context": 17,
+        "interpretive_questions": 16,
+        "why_it_matters": 16
+      },
+      "current_chapter_unit_count": 66,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 13,
+      "meaningful_idea_cluster_count": 13,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 9,
+        "HIGH_FACT_OVERLAP": 4
+      }
+    },
+    {
+      "reference": "Exodus 3",
+      "book": "Exodus",
+      "chapter": 3,
+      "synthesis_unit_count": 64,
+      "evidence_item_count": 83,
+      "unique_evidence_ids": 83,
+      "units_per_evidence_item": 0.7711,
+      "unit_kind_counts": {
+        "archaeology_geography": 4,
+        "chronology": 2,
+        "cultural_context": 21,
+        "historical_context": 21,
+        "surrounding_passages": 4,
+        "why_it_matters": 12
+      },
+      "current_chapter_unit_count": 60,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 25,
+      "meaningful_idea_cluster_count": 25,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 7,
+        "EXACT_DUPLICATE": 10,
+        "DISTINCT": 8
+      }
+    },
+    {
+      "reference": "Luke 22",
+      "book": "Luke",
+      "chapter": 22,
+      "synthesis_unit_count": 63,
+      "evidence_item_count": 67,
+      "unique_evidence_ids": 67,
+      "units_per_evidence_item": 0.9403,
+      "unit_kind_counts": {
+        "cultural_context": 30,
+        "historical_context": 29,
+        "interpretive_questions": 1,
+        "why_it_matters": 3
+      },
+      "current_chapter_unit_count": 63,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 24,
+      "meaningful_idea_cluster_count": 24,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 2,
+        "HIGH_FACT_OVERLAP": 4,
+        "DISTINCT": 15,
+        "EXACT_DUPLICATE": 3
+      }
+    },
+    {
+      "reference": "Genesis 9",
+      "book": "Genesis",
+      "chapter": 9,
+      "synthesis_unit_count": 62,
+      "evidence_item_count": 69,
+      "unique_evidence_ids": 69,
+      "units_per_evidence_item": 0.8986,
+      "unit_kind_counts": {
+        "cultural_context": 26,
+        "historical_context": 26,
+        "surrounding_passages": 5,
+        "why_it_matters": 5
+      },
+      "current_chapter_unit_count": 57,
+      "surrounding_passage_unit_count": 5,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 20,
+      "meaningful_idea_cluster_count": 20,
+      "duplicate_reason_counts": {
+        "DISTINCT": 9,
+        "HIGH_FACT_OVERLAP": 4,
+        "EXACT_DUPLICATE": 7
+      }
+    },
+    {
+      "reference": "Joel 2",
+      "book": "Joel",
+      "chapter": 2,
+      "synthesis_unit_count": 61,
+      "evidence_item_count": 78,
+      "unique_evidence_ids": 78,
+      "units_per_evidence_item": 0.7821,
+      "unit_kind_counts": {
+        "cultural_context": 24,
+        "historical_context": 23,
+        "interpretive_questions": 7,
+        "why_it_matters": 7
+      },
+      "current_chapter_unit_count": 61,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 17,
+      "meaningful_idea_cluster_count": 17,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 3,
+        "DISTINCT": 11,
+        "EXACT_DUPLICATE": 3
+      }
+    },
+    {
+      "reference": "Philippians 4",
+      "book": "Philippians",
+      "chapter": 4,
+      "synthesis_unit_count": 60,
+      "evidence_item_count": 116,
+      "unique_evidence_ids": 116,
+      "units_per_evidence_item": 0.5172,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 1,
+        "cultural_context": 5,
+        "historical_context": 5,
+        "interpretive_questions": 22,
+        "why_it_matters": 24
+      },
+      "current_chapter_unit_count": 60,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 19,
+      "meaningful_idea_cluster_count": 19,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 15,
+        "DISTINCT": 2,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Hebrews 9",
+      "book": "Hebrews",
+      "chapter": 9,
+      "synthesis_unit_count": 58,
+      "evidence_item_count": 67,
+      "unique_evidence_ids": 67,
+      "units_per_evidence_item": 0.8657,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 1,
+        "cultural_context": 18,
+        "historical_context": 17,
+        "interpretive_questions": 3,
+        "surrounding_passages": 7,
+        "why_it_matters": 11
+      },
+      "current_chapter_unit_count": 51,
+      "surrounding_passage_unit_count": 7,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 32,
+      "meaningful_idea_cluster_count": 32,
+      "duplicate_reason_counts": {
+        "DISTINCT": 16,
+        "PARENT_PARALLEL": 3,
+        "EXACT_DUPLICATE": 11,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Genesis 15",
+      "book": "Genesis",
+      "chapter": 15,
+      "synthesis_unit_count": 57,
+      "evidence_item_count": 69,
+      "unique_evidence_ids": 69,
+      "units_per_evidence_item": 0.8261,
+      "unit_kind_counts": {
+        "archaeology_geography": 2,
+        "chronology": 1,
+        "cultural_context": 18,
+        "historical_context": 18,
+        "interpretive_questions": 4,
+        "surrounding_passages": 3,
+        "why_it_matters": 11
+      },
+      "current_chapter_unit_count": 54,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 31,
+      "meaningful_idea_cluster_count": 31,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 13,
+        "DISTINCT": 14,
+        "HIGH_FACT_OVERLAP": 4
+      }
+    },
+    {
+      "reference": "John 2",
+      "book": "John",
+      "chapter": 2,
+      "synthesis_unit_count": 57,
+      "evidence_item_count": 69,
+      "unique_evidence_ids": 69,
+      "units_per_evidence_item": 0.8261,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 2,
+        "cultural_context": 20,
+        "historical_context": 20,
+        "interpretive_questions": 4,
+        "why_it_matters": 10
+      },
+      "current_chapter_unit_count": 57,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 21,
+      "meaningful_idea_cluster_count": 21,
+      "duplicate_reason_counts": {
+        "DISTINCT": 6,
+        "EXACT_DUPLICATE": 11,
+        "HIGH_FACT_OVERLAP": 3,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Luke 4",
+      "book": "Luke",
+      "chapter": 4,
+      "synthesis_unit_count": 57,
+      "evidence_item_count": 77,
+      "unique_evidence_ids": 77,
+      "units_per_evidence_item": 0.7403,
+      "unit_kind_counts": {
+        "archaeology_geography": 2,
+        "chronology": 2,
+        "cultural_context": 18,
+        "historical_context": 19,
+        "interpretive_questions": 3,
+        "why_it_matters": 13
+      },
+      "current_chapter_unit_count": 57,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 26,
+      "meaningful_idea_cluster_count": 26,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 4,
+        "DISTINCT": 10,
+        "EXACT_DUPLICATE": 12
+      }
+    },
+    {
+      "reference": "Ezekiel 36",
+      "book": "Ezekiel",
+      "chapter": 36,
+      "synthesis_unit_count": 55,
+      "evidence_item_count": 56,
+      "unique_evidence_ids": 56,
+      "units_per_evidence_item": 0.9821,
+      "unit_kind_counts": {
+        "cultural_context": 26,
+        "historical_context": 26,
+        "interpretive_questions": 1,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 55,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 17,
+      "meaningful_idea_cluster_count": 17,
+      "duplicate_reason_counts": {
+        "DISTINCT": 9,
+        "HIGH_FACT_OVERLAP": 3,
+        "PARENT_PARALLEL": 2,
+        "EXACT_DUPLICATE": 3
+      }
+    },
+    {
+      "reference": "1 Corinthians 3",
+      "book": "1 Corinthians",
+      "chapter": 3,
+      "synthesis_unit_count": 54,
+      "evidence_item_count": 66,
+      "unique_evidence_ids": 66,
+      "units_per_evidence_item": 0.8182,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 2,
+        "cultural_context": 17,
+        "historical_context": 17,
+        "interpretive_questions": 5,
+        "surrounding_passages": 5,
+        "why_it_matters": 7
+      },
+      "current_chapter_unit_count": 49,
+      "surrounding_passage_unit_count": 5,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 13,
+      "meaningful_idea_cluster_count": 13,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 8,
+        "HIGH_FACT_OVERLAP": 4,
+        "DISTINCT": 1
+      }
+    },
+    {
+      "reference": "Genesis 10",
+      "book": "Genesis",
+      "chapter": 10,
+      "synthesis_unit_count": 54,
+      "evidence_item_count": 56,
+      "unique_evidence_ids": 56,
+      "units_per_evidence_item": 0.9643,
+      "unit_kind_counts": {
+        "cultural_context": 24,
+        "historical_context": 24,
+        "surrounding_passages": 3,
+        "why_it_matters": 3
+      },
+      "current_chapter_unit_count": 51,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 14,
+      "meaningful_idea_cluster_count": 14,
+      "duplicate_reason_counts": {
+        "DISTINCT": 5,
+        "HIGH_FACT_OVERLAP": 5,
+        "EXACT_DUPLICATE": 4
+      }
+    },
+    {
+      "reference": "Romans 14",
+      "book": "Romans",
+      "chapter": 14,
+      "synthesis_unit_count": 53,
+      "evidence_item_count": 84,
+      "unique_evidence_ids": 84,
+      "units_per_evidence_item": 0.631,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 2,
+        "cultural_context": 3,
+        "historical_context": 3,
+        "interpretive_questions": 12,
+        "surrounding_passages": 13,
+        "why_it_matters": 17
+      },
+      "current_chapter_unit_count": 40,
+      "surrounding_passage_unit_count": 13,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 16,
+      "meaningful_idea_cluster_count": 16,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 12,
+        "DISTINCT": 3,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Acts 16",
+      "book": "Acts",
+      "chapter": 16,
+      "synthesis_unit_count": 52,
+      "evidence_item_count": 89,
+      "unique_evidence_ids": 89,
+      "units_per_evidence_item": 0.5843,
+      "unit_kind_counts": {
+        "cultural_context": 1,
+        "historical_context": 1,
+        "interpretive_questions": 21,
+        "surrounding_passages": 9,
+        "why_it_matters": 20
+      },
+      "current_chapter_unit_count": 45,
+      "surrounding_passage_unit_count": 7,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 16,
+      "meaningful_idea_cluster_count": 14,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "EXACT_DUPLICATE": 9,
+        "DISTINCT": 6
+      }
+    },
+    {
+      "reference": "1 Corinthians 11",
+      "book": "1 Corinthians",
+      "chapter": 11,
+      "synthesis_unit_count": 51,
+      "evidence_item_count": 81,
+      "unique_evidence_ids": 81,
+      "units_per_evidence_item": 0.6296,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4,
+        "interpretive_questions": 15,
+        "surrounding_passages": 10,
+        "why_it_matters": 18
+      },
+      "current_chapter_unit_count": 41,
+      "surrounding_passage_unit_count": 10,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 16,
+      "meaningful_idea_cluster_count": 16,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 11,
+        "DISTINCT": 5
+      }
+    },
+    {
+      "reference": "Romans 13",
+      "book": "Romans",
+      "chapter": 13,
+      "synthesis_unit_count": 51,
+      "evidence_item_count": 83,
+      "unique_evidence_ids": 83,
+      "units_per_evidence_item": 0.6145,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 2,
+        "cultural_context": 3,
+        "historical_context": 3,
+        "interpretive_questions": 11,
+        "surrounding_passages": 11,
+        "why_it_matters": 18
+      },
+      "current_chapter_unit_count": 40,
+      "surrounding_passage_unit_count": 11,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 14,
+      "meaningful_idea_cluster_count": 14,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 10,
+        "DISTINCT": 4
+      }
+    },
+    {
+      "reference": "2 Corinthians 8",
+      "book": "2 Corinthians",
+      "chapter": 8,
+      "synthesis_unit_count": 50,
+      "evidence_item_count": 87,
+      "unique_evidence_ids": 87,
+      "units_per_evidence_item": 0.5747,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 1,
+        "cultural_context": 3,
+        "historical_context": 2,
+        "interpretive_questions": 13,
+        "surrounding_passages": 9,
+        "why_it_matters": 19
+      },
+      "current_chapter_unit_count": 41,
+      "surrounding_passage_unit_count": 9,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 16,
+      "meaningful_idea_cluster_count": 16,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 11,
+        "DISTINCT": 4,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Acts 1",
+      "book": "Acts",
+      "chapter": 1,
+      "synthesis_unit_count": 49,
+      "evidence_item_count": 59,
+      "unique_evidence_ids": 59,
+      "units_per_evidence_item": 0.8305,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "cultural_context": 16,
+        "historical_context": 17,
+        "interpretive_questions": 4,
+        "language_literary": 1,
+        "surrounding_passages": 4,
+        "why_it_matters": 6
+      },
+      "current_chapter_unit_count": 46,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 21,
+      "meaningful_idea_cluster_count": 20,
+      "duplicate_reason_counts": {
+        "DISTINCT": 8,
+        "EXACT_DUPLICATE": 6,
+        "HIGH_FACT_OVERLAP": 6,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Genesis 1",
+      "book": "Genesis",
+      "chapter": 1,
+      "synthesis_unit_count": 49,
+      "evidence_item_count": 58,
+      "unique_evidence_ids": 58,
+      "units_per_evidence_item": 0.8448,
+      "unit_kind_counts": {
+        "chronology": 2,
+        "cultural_context": 15,
+        "historical_context": 15,
+        "interpretive_questions": 4,
+        "surrounding_passages": 7,
+        "why_it_matters": 6
+      },
+      "current_chapter_unit_count": 42,
+      "surrounding_passage_unit_count": 7,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 25,
+      "meaningful_idea_cluster_count": 25,
+      "duplicate_reason_counts": {
+        "DISTINCT": 13,
+        "EXACT_DUPLICATE": 9,
+        "HIGH_FACT_OVERLAP": 3
+      }
+    },
+    {
+      "reference": "John 1",
+      "book": "John",
+      "chapter": 1,
+      "synthesis_unit_count": 47,
+      "evidence_item_count": 60,
+      "unique_evidence_ids": 60,
+      "units_per_evidence_item": 0.7833,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 2,
+        "cultural_context": 17,
+        "historical_context": 17,
+        "interpretive_questions": 1,
+        "why_it_matters": 9
+      },
+      "current_chapter_unit_count": 47,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 21,
+      "meaningful_idea_cluster_count": 21,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 9,
+        "HIGH_FACT_OVERLAP": 2,
+        "DISTINCT": 10
+      }
+    },
+    {
+      "reference": "1 Corinthians 10",
+      "book": "1 Corinthians",
+      "chapter": 10,
+      "synthesis_unit_count": 46,
+      "evidence_item_count": 66,
+      "unique_evidence_ids": 66,
+      "units_per_evidence_item": 0.697,
+      "unit_kind_counts": {
+        "cultural_context": 5,
+        "historical_context": 5,
+        "interpretive_questions": 14,
+        "surrounding_passages": 10,
+        "why_it_matters": 12
+      },
+      "current_chapter_unit_count": 36,
+      "surrounding_passage_unit_count": 10,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 16,
+      "meaningful_idea_cluster_count": 16,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 7,
+        "DISTINCT": 7,
+        "PARENT_PARALLEL": 2
+      }
+    },
+    {
+      "reference": "1 Corinthians 12",
+      "book": "1 Corinthians",
+      "chapter": 12,
+      "synthesis_unit_count": 46,
+      "evidence_item_count": 67,
+      "unique_evidence_ids": 67,
+      "units_per_evidence_item": 0.6866,
+      "unit_kind_counts": {
+        "cultural_context": 9,
+        "historical_context": 8,
+        "interpretive_questions": 11,
+        "surrounding_passages": 9,
+        "why_it_matters": 9
+      },
+      "current_chapter_unit_count": 37,
+      "surrounding_passage_unit_count": 9,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 13,
+      "meaningful_idea_cluster_count": 13,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 6,
+        "DISTINCT": 4,
+        "HIGH_FACT_OVERLAP": 3
+      }
+    },
+    {
+      "reference": "Exodus 12",
+      "book": "Exodus",
+      "chapter": 12,
+      "synthesis_unit_count": 46,
+      "evidence_item_count": 64,
+      "unique_evidence_ids": 64,
+      "units_per_evidence_item": 0.7188,
+      "unit_kind_counts": {
+        "archaeology_geography": 3,
+        "chronology": 2,
+        "cultural_context": 11,
+        "historical_context": 11,
+        "interpretive_questions": 1,
+        "surrounding_passages": 5,
+        "why_it_matters": 13
+      },
+      "current_chapter_unit_count": 42,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 28,
+      "meaningful_idea_cluster_count": 28,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 12,
+        "DISTINCT": 16
+      }
+    },
+    {
+      "reference": "Galatians 2",
+      "book": "Galatians",
+      "chapter": 2,
+      "synthesis_unit_count": 46,
+      "evidence_item_count": 72,
+      "unique_evidence_ids": 72,
+      "units_per_evidence_item": 0.6389,
+      "unit_kind_counts": {
+        "cultural_context": 5,
+        "historical_context": 4,
+        "interpretive_questions": 15,
+        "surrounding_passages": 8,
+        "why_it_matters": 14
+      },
+      "current_chapter_unit_count": 38,
+      "surrounding_passage_unit_count": 8,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 21,
+      "meaningful_idea_cluster_count": 21,
+      "duplicate_reason_counts": {
+        "DISTINCT": 11,
+        "EXACT_DUPLICATE": 9,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "1 Thessalonians 4",
+      "book": "1 Thessalonians",
+      "chapter": 4,
+      "synthesis_unit_count": 45,
+      "evidence_item_count": 64,
+      "unique_evidence_ids": 64,
+      "units_per_evidence_item": 0.7031,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 2,
+        "cultural_context": 11,
+        "historical_context": 10,
+        "interpretive_questions": 8,
+        "surrounding_passages": 2,
+        "why_it_matters": 11
+      },
+      "current_chapter_unit_count": 44,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 21,
+      "meaningful_idea_cluster_count": 20,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 10,
+        "HIGH_FACT_OVERLAP": 4,
+        "DISTINCT": 7
+      }
+    },
+    {
+      "reference": "Deuteronomy 30",
+      "book": "Deuteronomy",
+      "chapter": 30,
+      "synthesis_unit_count": 45,
+      "evidence_item_count": 54,
+      "unique_evidence_ids": 54,
+      "units_per_evidence_item": 0.8333,
+      "unit_kind_counts": {
+        "archaeology_geography": 1,
+        "chronology": 2,
+        "cultural_context": 15,
+        "historical_context": 16,
+        "interpretive_questions": 2,
+        "surrounding_passages": 2,
+        "why_it_matters": 7
+      },
+      "current_chapter_unit_count": 43,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 12,
+      "meaningful_idea_cluster_count": 12,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "DISTINCT": 3,
+        "HIGH_FACT_OVERLAP": 2,
+        "EXACT_DUPLICATE": 6
+      }
+    }
+  ],
+  "densest_chapters_by_units_per_evidence": [
+    {
+      "reference": "Luke 24",
+      "book": "Luke",
+      "chapter": 24,
+      "synthesis_unit_count": 100,
+      "evidence_item_count": 100,
+      "unique_evidence_ids": 100,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 48,
+        "historical_context": 48,
+        "interpretive_questions": 2,
+        "language_literary": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 100,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 29,
+      "meaningful_idea_cluster_count": 29,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 10,
+        "DISTINCT": 18,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Deuteronomy 10",
+      "book": "Deuteronomy",
+      "chapter": 10,
+      "synthesis_unit_count": 40,
+      "evidence_item_count": 40,
+      "unique_evidence_ids": 40,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 19,
+        "historical_context": 19,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 38,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 6,
+        "DISTINCT": 1,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Deuteronomy 6",
+      "book": "Deuteronomy",
+      "chapter": 6,
+      "synthesis_unit_count": 31,
+      "evidence_item_count": 31,
+      "unique_evidence_ids": 31,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 14,
+        "historical_context": 15,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 29,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 13,
+      "meaningful_idea_cluster_count": 13,
+      "duplicate_reason_counts": {
+        "DISTINCT": 7,
+        "HIGH_FACT_OVERLAP": 5,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Psalms 19",
+      "book": "Psalms",
+      "chapter": 19,
+      "synthesis_unit_count": 30,
+      "evidence_item_count": 30,
+      "unique_evidence_ids": 30,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 15,
+        "historical_context": 15
+      },
+      "current_chapter_unit_count": 30,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 6,
+        "DISTINCT": 2
+      }
+    },
+    {
+      "reference": "Isaiah 63",
+      "book": "Isaiah",
+      "chapter": 63,
+      "synthesis_unit_count": 28,
+      "evidence_item_count": 28,
+      "unique_evidence_ids": 28,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 13,
+        "historical_context": 13,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 26,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 5,
+      "meaningful_idea_cluster_count": 5,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 4,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Matthew 16",
+      "book": "Matthew",
+      "chapter": 16,
+      "synthesis_unit_count": 26,
+      "evidence_item_count": 26,
+      "unique_evidence_ids": 26,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 12,
+        "historical_context": 12,
+        "interpretive_questions": 2
+      },
+      "current_chapter_unit_count": 26,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 10,
+      "meaningful_idea_cluster_count": 10,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 6,
+        "DISTINCT": 4
+      }
+    },
+    {
+      "reference": "Luke 6",
+      "book": "Luke",
+      "chapter": 6,
+      "synthesis_unit_count": 22,
+      "evidence_item_count": 22,
+      "unique_evidence_ids": 22,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 11,
+        "historical_context": 10,
+        "interpretive_questions": 1
+      },
+      "current_chapter_unit_count": 22,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "DISTINCT": 4,
+        "HIGH_FACT_OVERLAP": 4
+      }
+    },
+    {
+      "reference": "Deuteronomy 16",
+      "book": "Deuteronomy",
+      "chapter": 16,
+      "synthesis_unit_count": 20,
+      "evidence_item_count": 20,
+      "unique_evidence_ids": 20,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 9,
+        "historical_context": 9,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 18,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "DISTINCT": 4,
+        "HIGH_FACT_OVERLAP": 3,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Joshua 1",
+      "book": "Joshua",
+      "chapter": 1,
+      "synthesis_unit_count": 19,
+      "evidence_item_count": 19,
+      "unique_evidence_ids": 19,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 8,
+        "historical_context": 9,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 17,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 13,
+      "meaningful_idea_cluster_count": 13,
+      "duplicate_reason_counts": {
+        "DISTINCT": 10,
+        "HIGH_FACT_OVERLAP": 1,
+        "PARENT_PARALLEL": 1,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Psalms 119",
+      "book": "Psalms",
+      "chapter": 119,
+      "synthesis_unit_count": 19,
+      "evidence_item_count": 19,
+      "unique_evidence_ids": 19,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 9,
+        "historical_context": 9,
+        "interpretive_questions": 1
+      },
+      "current_chapter_unit_count": 19,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 4,
+        "DISTINCT": 1,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "1 Samuel 8",
+      "book": "1 Samuel",
+      "chapter": 8,
+      "synthesis_unit_count": 18,
+      "evidence_item_count": 18,
+      "unique_evidence_ids": 18,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 7,
+        "historical_context": 7,
+        "interpretive_questions": 2,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 16,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "HIGH_FACT_OVERLAP": 3,
+        "DISTINCT": 2
+      }
+    },
+    {
+      "reference": "2 Kings 4",
+      "book": "2 Kings",
+      "chapter": 4,
+      "synthesis_unit_count": 18,
+      "evidence_item_count": 18,
+      "unique_evidence_ids": 18,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 9,
+        "historical_context": 9
+      },
+      "current_chapter_unit_count": 18,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 4
+      }
+    },
+    {
+      "reference": "Numbers 22",
+      "book": "Numbers",
+      "chapter": 22,
+      "synthesis_unit_count": 18,
+      "evidence_item_count": 18,
+      "unique_evidence_ids": 18,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 7,
+        "historical_context": 6,
+        "language_literary": 1,
+        "surrounding_passages": 4
+      },
+      "current_chapter_unit_count": 14,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "DISTINCT": 5,
+        "EXACT_DUPLICATE": 1,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Psalms 114",
+      "book": "Psalms",
+      "chapter": 114,
+      "synthesis_unit_count": 18,
+      "evidence_item_count": 18,
+      "unique_evidence_ids": 18,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 8,
+        "historical_context": 8,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 16,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 12,
+      "meaningful_idea_cluster_count": 12,
+      "duplicate_reason_counts": {
+        "DISTINCT": 9,
+        "HIGH_FACT_OVERLAP": 1,
+        "EXACT_DUPLICATE": 2
+      }
+    },
+    {
+      "reference": "Exodus 18",
+      "book": "Exodus",
+      "chapter": 18,
+      "synthesis_unit_count": 17,
+      "evidence_item_count": 17,
+      "unique_evidence_ids": 17,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 7,
+        "historical_context": 7,
+        "surrounding_passages": 3
+      },
+      "current_chapter_unit_count": 14,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 3,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Isaiah 65",
+      "book": "Isaiah",
+      "chapter": 65,
+      "synthesis_unit_count": 17,
+      "evidence_item_count": 17,
+      "unique_evidence_ids": 17,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 6,
+        "historical_context": 6,
+        "interpretive_questions": 3,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 15,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 10,
+      "meaningful_idea_cluster_count": 10,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 1,
+        "DISTINCT": 7,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Isaiah 11",
+      "book": "Isaiah",
+      "chapter": 11,
+      "synthesis_unit_count": 16,
+      "evidence_item_count": 16,
+      "unique_evidence_ids": 16,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 5,
+        "historical_context": 5,
+        "interpretive_questions": 4,
+        "surrounding_passages": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 15,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 12,
+      "meaningful_idea_cluster_count": 12,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 3,
+        "DISTINCT": 8,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Isaiah 43",
+      "book": "Isaiah",
+      "chapter": 43,
+      "synthesis_unit_count": 16,
+      "evidence_item_count": 16,
+      "unique_evidence_ids": 16,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 7,
+        "historical_context": 7,
+        "interpretive_questions": 1,
+        "surrounding_passages": 1
+      },
+      "current_chapter_unit_count": 15,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 11,
+      "meaningful_idea_cluster_count": 11,
+      "duplicate_reason_counts": {
+        "DISTINCT": 9,
+        "HIGH_FACT_OVERLAP": 1,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "2 Chronicles 30",
+      "book": "2 Chronicles",
+      "chapter": 30,
+      "synthesis_unit_count": 15,
+      "evidence_item_count": 15,
+      "unique_evidence_ids": 15,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 5,
+        "historical_context": 5,
+        "interpretive_questions": 2,
+        "why_it_matters": 3
+      },
+      "current_chapter_unit_count": 15,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 3,
+        "DISTINCT": 3,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Exodus 34",
+      "book": "Exodus",
+      "chapter": 34,
+      "synthesis_unit_count": 15,
+      "evidence_item_count": 15,
+      "unique_evidence_ids": 15,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4,
+        "interpretive_questions": 3,
+        "surrounding_passages": 3,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 12,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 8,
+      "duplicate_reason_counts": {
+        "DISTINCT": 4,
+        "HIGH_FACT_OVERLAP": 2,
+        "PARENT_PARALLEL": 1,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "Matthew 24",
+      "book": "Matthew",
+      "chapter": 24,
+      "synthesis_unit_count": 15,
+      "evidence_item_count": 15,
+      "unique_evidence_ids": 15,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 6,
+        "historical_context": 5,
+        "interpretive_questions": 2,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 15,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 7,
+      "meaningful_idea_cluster_count": 7,
+      "duplicate_reason_counts": {
+        "DISTINCT": 3,
+        "HIGH_FACT_OVERLAP": 2,
+        "EXACT_DUPLICATE": 2
+      }
+    },
+    {
+      "reference": "Joshua 3",
+      "book": "Joshua",
+      "chapter": 3,
+      "synthesis_unit_count": 14,
+      "evidence_item_count": 14,
+      "unique_evidence_ids": 14,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 6,
+        "historical_context": 6,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 12,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 9,
+      "meaningful_idea_cluster_count": 9,
+      "duplicate_reason_counts": {
+        "DISTINCT": 6,
+        "HIGH_FACT_OVERLAP": 2,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "1 Samuel 12",
+      "book": "1 Samuel",
+      "chapter": 12,
+      "synthesis_unit_count": 13,
+      "evidence_item_count": 13,
+      "unique_evidence_ids": 13,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 5,
+        "historical_context": 5,
+        "interpretive_questions": 1,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 11,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "HIGH_FACT_OVERLAP": 2,
+        "DISTINCT": 1
+      }
+    },
+    {
+      "reference": "Nehemiah 1",
+      "book": "Nehemiah",
+      "chapter": 1,
+      "synthesis_unit_count": 13,
+      "evidence_item_count": 13,
+      "unique_evidence_ids": 13,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 5,
+        "historical_context": 5,
+        "interpretive_questions": 1,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 11,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "HIGH_FACT_OVERLAP": 2,
+        "DISTINCT": 1
+      }
+    },
+    {
+      "reference": "Numbers 17",
+      "book": "Numbers",
+      "chapter": 17,
+      "synthesis_unit_count": 13,
+      "evidence_item_count": 13,
+      "unique_evidence_ids": 13,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 6,
+        "historical_context": 6,
+        "surrounding_passages": 1
+      },
+      "current_chapter_unit_count": 12,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 2,
+        "DISTINCT": 2
+      }
+    },
+    {
+      "reference": "1 Kings 12",
+      "book": "1 Kings",
+      "chapter": 12,
+      "synthesis_unit_count": 12,
+      "evidence_item_count": 12,
+      "unique_evidence_ids": 12,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 5,
+        "language_literary": 1,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 12,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 10,
+      "meaningful_idea_cluster_count": 10,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 2,
+        "DISTINCT": 8
+      }
+    },
+    {
+      "reference": "Acts 11",
+      "book": "Acts",
+      "chapter": 11,
+      "synthesis_unit_count": 12,
+      "evidence_item_count": 12,
+      "unique_evidence_ids": 12,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 1,
+        "historical_context": 1,
+        "interpretive_questions": 3,
+        "surrounding_passages": 4,
+        "why_it_matters": 3
+      },
+      "current_chapter_unit_count": 8,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 4,
+        "DISTINCT": 2
+      }
+    },
+    {
+      "reference": "Leviticus 19",
+      "book": "Leviticus",
+      "chapter": 19,
+      "synthesis_unit_count": 12,
+      "evidence_item_count": 12,
+      "unique_evidence_ids": 12,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 3,
+        "historical_context": 4,
+        "interpretive_questions": 1,
+        "surrounding_passages": 4
+      },
+      "current_chapter_unit_count": 9,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 8,
+      "meaningful_idea_cluster_count": 7,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 1,
+        "DISTINCT": 5,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "2 Samuel 6",
+      "book": "2 Samuel",
+      "chapter": 6,
+      "synthesis_unit_count": 11,
+      "evidence_item_count": 11,
+      "unique_evidence_ids": 11,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 5,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 9,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "DISTINCT": 3,
+        "PARENT_PARALLEL": 1,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Acts 22",
+      "book": "Acts",
+      "chapter": 22,
+      "synthesis_unit_count": 11,
+      "evidence_item_count": 11,
+      "unique_evidence_ids": 11,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "interpretive_questions": 4,
+        "surrounding_passages": 3,
+        "why_it_matters": 4
+      },
+      "current_chapter_unit_count": 8,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 5,
+      "meaningful_idea_cluster_count": 5,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 4,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Isaiah 10",
+      "book": "Isaiah",
+      "chapter": 10,
+      "synthesis_unit_count": 11,
+      "evidence_item_count": 11,
+      "unique_evidence_ids": 11,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 2,
+        "historical_context": 2,
+        "interpretive_questions": 2,
+        "surrounding_passages": 1,
+        "why_it_matters": 4
+      },
+      "current_chapter_unit_count": 10,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 7,
+      "meaningful_idea_cluster_count": 7,
+      "duplicate_reason_counts": {
+        "DISTINCT": 3,
+        "EXACT_DUPLICATE": 4
+      }
+    },
+    {
+      "reference": "Isaiah 9",
+      "book": "Isaiah",
+      "chapter": 9,
+      "synthesis_unit_count": 11,
+      "evidence_item_count": 11,
+      "unique_evidence_ids": 11,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4,
+        "interpretive_questions": 1,
+        "surrounding_passages": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 10,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 9,
+      "meaningful_idea_cluster_count": 9,
+      "duplicate_reason_counts": {
+        "DISTINCT": 7,
+        "EXACT_DUPLICATE": 1,
+        "HIGH_FACT_OVERLAP": 1
+      }
+    },
+    {
+      "reference": "Joshua 2",
+      "book": "Joshua",
+      "chapter": 2,
+      "synthesis_unit_count": 11,
+      "evidence_item_count": 11,
+      "unique_evidence_ids": 11,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 3,
+        "historical_context": 4,
+        "interpretive_questions": 1,
+        "surrounding_passages": 2,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 9,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 5,
+      "meaningful_idea_cluster_count": 5,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 1,
+        "PARENT_PARALLEL": 1,
+        "HIGH_FACT_OVERLAP": 2,
+        "DISTINCT": 1
+      }
+    },
+    {
+      "reference": "1 Samuel 4",
+      "book": "1 Samuel",
+      "chapter": 4,
+      "synthesis_unit_count": 10,
+      "evidence_item_count": 10,
+      "unique_evidence_ids": 10,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 8,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 5,
+      "meaningful_idea_cluster_count": 5,
+      "duplicate_reason_counts": {
+        "DISTINCT": 2,
+        "HIGH_FACT_OVERLAP": 2,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "2 Samuel 8",
+      "book": "2 Samuel",
+      "chapter": 8,
+      "synthesis_unit_count": 10,
+      "evidence_item_count": 10,
+      "unique_evidence_ids": 10,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 8,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 2,
+        "PARENT_PARALLEL": 1,
+        "DISTINCT": 1
+      }
+    },
+    {
+      "reference": "Exodus 23",
+      "book": "Exodus",
+      "chapter": 23,
+      "synthesis_unit_count": 10,
+      "evidence_item_count": 10,
+      "unique_evidence_ids": 10,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 3,
+        "historical_context": 3,
+        "interpretive_questions": 1,
+        "surrounding_passages": 3
+      },
+      "current_chapter_unit_count": 7,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "PARENT_PARALLEL": 1,
+        "DISTINCT": 1,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "2 Chronicles 32",
+      "book": "2 Chronicles",
+      "chapter": 32,
+      "synthesis_unit_count": 9,
+      "evidence_item_count": 9,
+      "unique_evidence_ids": 9,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4,
+        "interpretive_questions": 1
+      },
+      "current_chapter_unit_count": 9,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "DISTINCT": 2,
+        "HIGH_FACT_OVERLAP": 2
+      }
+    },
+    {
+      "reference": "Isaiah 66",
+      "book": "Isaiah",
+      "chapter": 66,
+      "synthesis_unit_count": 9,
+      "evidence_item_count": 9,
+      "unique_evidence_ids": 9,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 2,
+        "historical_context": 2,
+        "interpretive_questions": 2,
+        "surrounding_passages": 2,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 7,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 7,
+      "meaningful_idea_cluster_count": 7,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 2,
+        "DISTINCT": 5
+      }
+    },
+    {
+      "reference": "John 16",
+      "book": "John",
+      "chapter": 16,
+      "synthesis_unit_count": 9,
+      "evidence_item_count": 9,
+      "unique_evidence_ids": 9,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 3,
+        "historical_context": 3,
+        "interpretive_questions": 2,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 9,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 1,
+        "DISTINCT": 3,
+        "EXACT_DUPLICATE": 2
+      }
+    },
+    {
+      "reference": "Joshua 13",
+      "book": "Joshua",
+      "chapter": 13,
+      "synthesis_unit_count": 9,
+      "evidence_item_count": 9,
+      "unique_evidence_ids": 9,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 2,
+        "historical_context": 2,
+        "interpretive_questions": 1,
+        "surrounding_passages": 2,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 7,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "DISTINCT": 3,
+        "EXACT_DUPLICATE": 2,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Judges 4",
+      "book": "Judges",
+      "chapter": 4,
+      "synthesis_unit_count": 9,
+      "evidence_item_count": 9,
+      "unique_evidence_ids": 9,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 1,
+        "historical_context": 1,
+        "interpretive_questions": 1,
+        "surrounding_passages": 4,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 5,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "DISTINCT": 1,
+        "EXACT_DUPLICATE": 3
+      }
+    },
+    {
+      "reference": "Revelation 4",
+      "book": "Revelation",
+      "chapter": 4,
+      "synthesis_unit_count": 9,
+      "evidence_item_count": 9,
+      "unique_evidence_ids": 9,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 3,
+        "historical_context": 3,
+        "interpretive_questions": 1,
+        "surrounding_passages": 2
+      },
+      "current_chapter_unit_count": 7,
+      "surrounding_passage_unit_count": 2,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "DISTINCT": 3,
+        "HIGH_FACT_OVERLAP": 2,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "1 Kings 9",
+      "book": "1 Kings",
+      "chapter": 9,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 3,
+        "historical_context": 3,
+        "interpretive_questions": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 8,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 5,
+      "meaningful_idea_cluster_count": 5,
+      "duplicate_reason_counts": {
+        "DISTINCT": 3,
+        "HIGH_FACT_OVERLAP": 1,
+        "EXACT_DUPLICATE": 1
+      }
+    },
+    {
+      "reference": "1 Samuel 1",
+      "book": "1 Samuel",
+      "chapter": 1,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 2,
+        "historical_context": 2,
+        "interpretive_questions": 1,
+        "surrounding_passages": 1,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 7,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 2,
+        "DISTINCT": 4
+      }
+    },
+    {
+      "reference": "2 Kings 8",
+      "book": "2 Kings",
+      "chapter": 8,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 4,
+        "historical_context": 4
+      },
+      "current_chapter_unit_count": 8,
+      "surrounding_passage_unit_count": 0,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 3,
+      "meaningful_idea_cluster_count": 3,
+      "duplicate_reason_counts": {
+        "HIGH_FACT_OVERLAP": 2,
+        "DISTINCT": 1
+      }
+    },
+    {
+      "reference": "Acts 12",
+      "book": "Acts",
+      "chapter": 12,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 2,
+        "historical_context": 2,
+        "interpretive_questions": 1,
+        "surrounding_passages": 3
+      },
+      "current_chapter_unit_count": 5,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 1,
+        "HIGH_FACT_OVERLAP": 1,
+        "DISTINCT": 1,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Acts 25",
+      "book": "Acts",
+      "chapter": 25,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "interpretive_questions": 3,
+        "surrounding_passages": 3,
+        "why_it_matters": 2
+      },
+      "current_chapter_unit_count": 5,
+      "surrounding_passage_unit_count": 3,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 3,
+      "meaningful_idea_cluster_count": 3,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 2,
+        "PARENT_PARALLEL": 1
+      }
+    },
+    {
+      "reference": "Isaiah 54",
+      "book": "Isaiah",
+      "chapter": 54,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 2,
+        "historical_context": 2,
+        "interpretive_questions": 2,
+        "surrounding_passages": 1,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 7,
+      "surrounding_passage_unit_count": 1,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 7,
+      "meaningful_idea_cluster_count": 7,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 1,
+        "DISTINCT": 6
+      }
+    },
+    {
+      "reference": "Joshua 11",
+      "book": "Joshua",
+      "chapter": 11,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 1,
+        "historical_context": 1,
+        "interpretive_questions": 1,
+        "surrounding_passages": 4,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 4,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "DISTINCT": 2,
+        "EXACT_DUPLICATE": 2
+      }
+    },
+    {
+      "reference": "Judges 5",
+      "book": "Judges",
+      "chapter": 5,
+      "synthesis_unit_count": 8,
+      "evidence_item_count": 8,
+      "unique_evidence_ids": 8,
+      "units_per_evidence_item": 1.0,
+      "unit_kind_counts": {
+        "cultural_context": 1,
+        "historical_context": 1,
+        "interpretive_questions": 1,
+        "surrounding_passages": 4,
+        "why_it_matters": 1
+      },
+      "current_chapter_unit_count": 4,
+      "surrounding_passage_unit_count": 4,
+      "availability": "AVAILABLE",
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "duplicate_reason_counts": {
+        "EXACT_DUPLICATE": 2,
+        "DISTINCT": 2
+      }
+    }
+  ],
+  "samples": {
+    "high_density": [
+      "Genesis 1",
+      "Genesis 9",
+      "Genesis 10",
+      "Genesis 12",
+      "Genesis 15"
+    ],
+    "medium_density": [
+      "Genesis 4",
+      "Genesis 11",
+      "Exodus 1",
+      "Exodus 4",
+      "Exodus 5"
+    ],
+    "low_density": [
+      "Genesis 13",
+      "Genesis 14",
+      "Genesis 16",
+      "Genesis 19",
+      "Genesis 20"
+    ],
+    "thin": [
+      "Leviticus 2",
+      "Leviticus 3",
+      "Leviticus 5",
+      "Leviticus 6",
+      "Leviticus 7"
+    ],
+    "data_gap": [
+      "Numbers 3",
+      "Numbers 5",
+      "Numbers 7",
+      "Numbers 8",
+      "Numbers 25"
+    ],
+    "genealogy_or_list": [
+      "1 Chronicles 8",
+      "Numbers 3"
+    ]
+  },
+  "canaries": [
+    {
+      "reference": "Genesis 1",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 49,
+      "distinct_idea_cluster_count": 25,
+      "meaningful_idea_cluster_count": 25,
+      "core_cluster_count": 2,
+      "consumed_synthesis_count": 49,
+      "consumed_idea_cluster_count": 25,
+      "consumed_core_cluster_count": 2,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 49,
+      "words": 1627,
+      "evidence_ids": 58,
+      "consolidation_ratio": 0.4235,
+      "evidence_dump": {
+        "signals": [
+          "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+          "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS",
+          "REPEATED_BLOCK_TEXT"
+        ],
+        "block_count": 49,
+        "consumed_synthesis_count": 49,
+        "consumed_cluster_count": 25,
+        "mean_evidence_ids_per_block": 1.7347,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.4235,
+        "repeated_block_count": 10,
+        "signal_count": 3
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": false,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "Leviticus 16",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "SYNTHESIS_GAP",
+      "raw_synthesis_count": 41,
+      "distinct_idea_cluster_count": 20,
+      "meaningful_idea_cluster_count": 20,
+      "core_cluster_count": 10,
+      "consumed_synthesis_count": 13,
+      "consumed_idea_cluster_count": 11,
+      "consumed_core_cluster_count": 5,
+      "raw_synthesis_coverage": 0.3171,
+      "idea_cluster_coverage": 0.55,
+      "weighted_idea_coverage": 0.517,
+      "core_cluster_coverage": 0.5,
+      "category_coverage": 0.8571,
+      "blocks": 10,
+      "words": 700,
+      "evidence_ids": 16,
+      "consolidation_ratio": 0.4444,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 10,
+        "consumed_synthesis_count": 13,
+        "consumed_cluster_count": 11,
+        "mean_evidence_ids_per_block": 1.8,
+        "block_to_synthesis_ratio": 0.7692,
+        "consolidation_ratio": 0.4444,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": false,
+        "weighted_idea_coverage_adequate": false,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "Ruth 3",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 6,
+      "distinct_idea_cluster_count": 5,
+      "meaningful_idea_cluster_count": 5,
+      "core_cluster_count": 2,
+      "consumed_synthesis_count": 6,
+      "consumed_idea_cluster_count": 5,
+      "consumed_core_cluster_count": 2,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 6,
+      "words": 224,
+      "evidence_ids": 6,
+      "consolidation_ratio": 0.25,
+      "evidence_dump": {
+        "signals": [
+          "REPEATED_BLOCK_TEXT"
+        ],
+        "block_count": 6,
+        "consumed_synthesis_count": 6,
+        "consumed_cluster_count": 5,
+        "mean_evidence_ids_per_block": 1.3333,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.25,
+        "repeated_block_count": 1,
+        "signal_count": 1
+      },
+      "proposed_gate_pass": true,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "Psalms 1",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 7,
+      "distinct_idea_cluster_count": 7,
+      "meaningful_idea_cluster_count": 7,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 7,
+      "consumed_idea_cluster_count": 7,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 7,
+      "words": 146,
+      "evidence_ids": 7,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 7,
+        "consumed_synthesis_count": 7,
+        "consumed_cluster_count": 7,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": true,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "1 Samuel 21",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "EVIDENCE_GAP",
+      "raw_synthesis_count": 1,
+      "distinct_idea_cluster_count": 1,
+      "meaningful_idea_cluster_count": 1,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 1,
+      "consumed_idea_cluster_count": 1,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 1,
+      "words": 24,
+      "evidence_ids": 1,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 1,
+        "consumed_synthesis_count": 1,
+        "consumed_cluster_count": 1,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": false,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": false,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "1 Samuel 28",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 2,
+      "distinct_idea_cluster_count": 2,
+      "meaningful_idea_cluster_count": 2,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 2,
+      "consumed_idea_cluster_count": 2,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 2,
+      "words": 56,
+      "evidence_ids": 2,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 2,
+        "consumed_synthesis_count": 2,
+        "consumed_cluster_count": 2,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": false,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": false,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "2 Samuel 6",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 11,
+      "distinct_idea_cluster_count": 6,
+      "meaningful_idea_cluster_count": 6,
+      "core_cluster_count": 4,
+      "consumed_synthesis_count": 11,
+      "consumed_idea_cluster_count": 6,
+      "consumed_core_cluster_count": 4,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 11,
+      "words": 270,
+      "evidence_ids": 11,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [
+          "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+          "LOW_EVIDENCE_PER_BLOCK_CONSOLIDATION"
+        ],
+        "block_count": 11,
+        "consumed_synthesis_count": 11,
+        "consumed_cluster_count": 6,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 2
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": false,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "2 Samuel 24",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 3,
+      "distinct_idea_cluster_count": 2,
+      "meaningful_idea_cluster_count": 2,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 3,
+      "consumed_idea_cluster_count": 2,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 4,
+      "words": 183,
+      "evidence_ids": 3,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 4,
+        "consumed_synthesis_count": 3,
+        "consumed_cluster_count": 2,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.3333,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": false,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "1 Chronicles 8",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "SYNTHESIS_GAP",
+      "raw_synthesis_count": 1,
+      "distinct_idea_cluster_count": 1,
+      "meaningful_idea_cluster_count": 1,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 1,
+      "consumed_idea_cluster_count": 1,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 1,
+      "words": 31,
+      "evidence_ids": 1,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 1,
+        "consumed_synthesis_count": 1,
+        "consumed_cluster_count": 1,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": false,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": false,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "John 1",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 47,
+      "distinct_idea_cluster_count": 21,
+      "meaningful_idea_cluster_count": 21,
+      "core_cluster_count": 5,
+      "consumed_synthesis_count": 47,
+      "consumed_idea_cluster_count": 21,
+      "consumed_core_cluster_count": 5,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 47,
+      "words": 1790,
+      "evidence_ids": 60,
+      "consolidation_ratio": 0.4835,
+      "evidence_dump": {
+        "signals": [
+          "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+          "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS",
+          "REPEATED_BLOCK_TEXT"
+        ],
+        "block_count": 47,
+        "consumed_synthesis_count": 47,
+        "consumed_cluster_count": 21,
+        "mean_evidence_ids_per_block": 1.9362,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.4835,
+        "repeated_block_count": 9,
+        "signal_count": 3
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": false,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "Isaiah 6",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 17,
+      "distinct_idea_cluster_count": 13,
+      "meaningful_idea_cluster_count": 13,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 17,
+      "consumed_idea_cluster_count": 13,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 17,
+      "words": 538,
+      "evidence_ids": 18,
+      "consolidation_ratio": 0.2609,
+      "evidence_dump": {
+        "signals": [
+          "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+          "REPEATED_BLOCK_TEXT"
+        ],
+        "block_count": 17,
+        "consumed_synthesis_count": 17,
+        "consumed_cluster_count": 13,
+        "mean_evidence_ids_per_block": 1.3529,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.2609,
+        "repeated_block_count": 2,
+        "signal_count": 2
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": true,
+        "evidence_dump_below_limit": false,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "Revelation 12",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "RICH_ENOUGH",
+      "raw_synthesis_count": 5,
+      "distinct_idea_cluster_count": 4,
+      "meaningful_idea_cluster_count": 4,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 5,
+      "consumed_idea_cluster_count": 4,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 1.0,
+      "blocks": 5,
+      "words": 124,
+      "evidence_ids": 5,
+      "consolidation_ratio": 0.2857,
+      "evidence_dump": {
+        "signals": [
+          "REPEATED_BLOCK_TEXT"
+        ],
+        "block_count": 5,
+        "consumed_synthesis_count": 5,
+        "consumed_cluster_count": 4,
+        "mean_evidence_ids_per_block": 1.4,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.2857,
+        "repeated_block_count": 1,
+        "signal_count": 1
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": true,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "evidence_use_increased": false,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    },
+    {
+      "reference": "Numbers 3",
+      "current_gate_status": "QUALITY_GATE_FAILED",
+      "current_richness": "EVIDENCE_GAP",
+      "raw_synthesis_count": 0,
+      "distinct_idea_cluster_count": 0,
+      "meaningful_idea_cluster_count": 0,
+      "core_cluster_count": 0,
+      "consumed_synthesis_count": 0,
+      "consumed_idea_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "raw_synthesis_coverage": 0.0,
+      "idea_cluster_coverage": 0.0,
+      "weighted_idea_coverage": 0.0,
+      "core_cluster_coverage": 1.0,
+      "category_coverage": 0.0,
+      "blocks": 1,
+      "words": 11,
+      "evidence_ids": 0,
+      "consolidation_ratio": 0.0,
+      "evidence_dump": {
+        "signals": [],
+        "block_count": 1,
+        "consumed_synthesis_count": 0,
+        "consumed_cluster_count": 0,
+        "mean_evidence_ids_per_block": 0.0,
+        "block_to_synthesis_ratio": 0.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "signal_count": 0
+      },
+      "proposed_gate_pass": false,
+      "proposed_gate_checks": {
+        "evidence_available": false,
+        "validation_clean": true,
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_idea_coverage_adequate": false,
+        "category_coverage_adequate": false,
+        "evidence_use_increased": false,
+        "evidence_dump_below_limit": true,
+        "boundary_repetition_below_limit": true
+      }
+    }
+  ],
+  "proposed_thresholds": {
+    "weighted_idea_coverage_min": 0.55,
+    "core_cluster_coverage_min": 0.75,
+    "category_coverage_min": 0.6,
+    "evidence_use_delta_min": 1,
+    "max_dump_signals": 1,
+    "max_boundary_repetition_ratio": 0.65
+  }
+}
