@@ -160,6 +160,8 @@ class ProductionRunner:
             "chapter_count": len(manifest["chapters"]),
             "explicit_flag": "--authorized-run",
         }
+        run_manifest_path = production_root(self.repo_root) / "runs" / manifest["run_id"] / "manifest.json"
+        write_json(run_manifest_path, manifest, immutable=True)
         auth_path = production_root(self.repo_root) / "runs" / manifest["run_id"] / "authorization.json"
         write_json(auth_path, authorization, immutable=True)
         save_batch_manifests(manifest, self.repo_root)

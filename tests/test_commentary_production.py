@@ -95,6 +95,7 @@ def test_runner_resumes_without_regenerating_terminal_chapter(tmp_path):
     assert first["batches"][0]["chapters"][0]["state"] == COMPLETE
     assert second["batches"][0]["chapters"][0]["skipped"] is True
     assert harness.calls == 1
+    assert (tmp_path / ".bhf-data/bhf-commentary-production/v1/runs/run-resume/manifest.json").is_file()
 
 
 def test_runner_requires_explicit_authorization(tmp_path):

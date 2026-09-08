@@ -19,6 +19,7 @@ from framework.commentary.production.inputs import attach_ordinal, prepare_chapt
 from framework.commentary.production.ledger import rebuild_ledger
 from framework.commentary.production.manifests import build_manifest, save_manifest
 from framework.commentary.production.models import DEFAULT_CANARY_LIMIT, ManifestError, PRODUCTION_VERSION, production_root
+from framework.commentary.production.manifests import load_manifest
 from framework.commentary.production.runner import ProductionRunner
 from framework.commentary.production.sampling import sample_audit_records
 
@@ -128,7 +129,15 @@ def main(argv: list[str] | None = None) -> int:
             ledger = _read(ledger_path) if ledger_path.exists() else rebuild_ledger(ROOT)
             output = sample_audit_records(ledger.get("current", {}).values(), count=args.count, seed=args.seed)
         elif args.command == "drift":
-            output = {"artifact_version": "commentary-production-drift-report-v1", "status": "NO_PRODUCTION_RUNS" if not (production_root(ROOT) / "runs").exists() else "INSPECT_WITH_RESUME"}
+            manifests = sorted((production_root(ROOT) / "runs").glob("*/manifest.json"))
+            rows = []
+            for manifest_path in manifests:
+                manifest = load_manifest(manifest_path)
+                for locked in manifest.get("chapters", []):
+                    current = prepare_chapter(locked["book"], int(locked["chapter"]))
+                    if current.row.get("input_identity") != locked.get("input_identity"):
+                        rows.append({"reference": locked["reference"], "run_id": manifest["run_id"], "locked": locked.get("input_identity"), "current": current.row.get("input_identity"), "status": "STALE_INPUT"})
+            output = {"artifact_version": "commentary-production-drift-report-v1", "status": "NO_PRODUCTION_RUNS" if not manifests else "DRIFT_FOUND" if rows else "NO_DRIFT", "chapters": rows}
         elif args.command == "run":
             output = ProductionRunner(ROOT).run_manifest(args.manifest, authorized_run=args.authorized_run, enable_reader=args.enable_reader, new_attempt=args.new_attempt)
         else:
