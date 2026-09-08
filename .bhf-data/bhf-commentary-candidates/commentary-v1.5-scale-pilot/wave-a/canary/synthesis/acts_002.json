@@ -1,0 +1,3256 @@
+{
+  "reference": "Acts 2",
+  "book": "Acts",
+  "chapter": 2,
+  "evidence_hash": "d48cb5574608c80a53979ed9d737d8b7f94fa33d4e020fe9f74776459ef37af5",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "22c669a9f5885ba660cfc321614416cb76462a46db6154566eb53946d9237ac3",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_3cc538915e85",
+      "kind": "archaeology_geography",
+      "facts": [
+        "city-of-david",
+        "zion",
+        "mount-zion",
+        "bethlehem-1",
+        "judea-1"
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "jerusalem:key_places:0",
+        "jerusalem:key_places:1",
+        "jerusalem:key_places:2",
+        "jerusalem:key_places:3",
+        "jerusalem:key_places:4"
+      ],
+      "entity_ids": [
+        "jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_0e17e8590228",
+      "kind": "cultural_context",
+      "facts": [
+        "Second Missionary Journey unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "second-missionary-journey:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "second-missionary-journey"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_15ec7800c6a2",
+      "kind": "cultural_context",
+      "facts": [
+        "Messianic Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "messianic-prophecy:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1768aefa1dbf",
+      "kind": "cultural_context",
+      "facts": [
+        "Council of Jerusalem unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "council-of-jerusalem:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "council-of-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1ca4f9e06518",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Ecclesiology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Matthew 16:13-19, Acts 2:42-47, people-of-god-theme, and ekklesia without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:42-47"
+      ],
+      "evidence_ids": [
+        "ecclesiology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:42-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1d181fbb53c6",
+      "kind": "cultural_context",
+      "facts": [
+        "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-jerusalem:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1d6f1a3bb093",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Incarnation includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to 2 Samuel 7:8-16, Psalm 2:1-12, messiah-theme, and christology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "incarnation:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1de168b279a5",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Levites includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "levites:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "levites"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_29113b02f4db",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for People of God Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Matthew 16:13-19, Acts 2:42-47, ecclesiology, and ekklesia without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:42-47"
+      ],
+      "evidence_ids": [
+        "people-of-god-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:42-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_2e5797086d3e",
+      "kind": "cultural_context",
+      "facts": [
+        "The event is announced within a world where death was final, making the claim of bodily resurrection a startling theological and historical assertion."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "resurrection"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_2ea48a2c9af6",
+      "kind": "cultural_context",
+      "facts": [
+        "Apostleship is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "apostleship:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "apostleship"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_43243b0f893e",
+      "kind": "cultural_context",
+      "facts": [
+        "Diaconate is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "diaconate:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "diaconate"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4336eb3cb9f5",
+      "kind": "cultural_context",
+      "facts": [
+        "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith."
+      ],
+      "verse_refs": [
+        "Acts 2:25-36"
+      ],
+      "evidence_ids": [
+        "what-is-a-psalm:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:25-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4465a5cbc641",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical Spirit language is not impersonal force language; it expresses God’s living presence among his people."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21"
+      ],
+      "evidence_ids": [
+        "what-is-the-holy-spirit:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_56edc9109e74",
+      "kind": "cultural_context",
+      "facts": [
+        "First Missionary Journey unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "first-missionary-journey:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "first-missionary-journey"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5c2e40a5cb0a",
+      "kind": "cultural_context",
+      "facts": [
+        "Travel, hospitality, and table fellowship form the social setting, while Luke emphasizes scriptural interpretation."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "road-to-emmaus:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "road-to-emmaus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5d9f4cedb392",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-18"
+      ],
+      "evidence_ids": [
+        "water-and-spirit-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_6be241592cd1",
+      "kind": "cultural_context",
+      "facts": [
+        "Third Missionary Journey unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "third-missionary-journey:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "third-missionary-journey"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_7216d4ecb07b",
+      "kind": "cultural_context",
+      "facts": [
+        "The claim stands out in a world where death was treated as final, making bodily resurrection a startling theological and historical announcement."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-resurrection:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_73c8b590fae2",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Prophets includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "prophets:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "prophets"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_87dac9ddac07",
+      "kind": "cultural_context",
+      "facts": [
+        "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action."
+      ],
+      "verse_refs": [
+        "Acts 2:1-4"
+      ],
+      "evidence_ids": [
+        "what-does-ruach-mean:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_99cdabbad17d",
+      "kind": "cultural_context",
+      "facts": [
+        "Festival gatherings and harvest celebrations are familiar in the ancient world, but Pentecost becomes the sign of a new covenant people filled with the Spirit."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13",
+        "Acts 2:14-41",
+        "Acts 2:42-47"
+      ],
+      "evidence_ids": [
+        "pentecost:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "pentecost"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13",
+        "Acts 2:14-41",
+        "Acts 2:42-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a86eb3d33576",
+      "kind": "cultural_context",
+      "facts": [
+        "Covenant Assembly is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "covenant-assembly:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "covenant-assembly"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_abb42f277e50",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God’s promise, righteousness, and suffering victory."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "messiah-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b409e3ba9f90",
+      "kind": "cultural_context",
+      "facts": [
+        "Fishermen and household networks were ordinary in Galilee, but Peter is drawn into public witness in Jerusalem and beyond."
+      ],
+      "verse_refs": [
+        "Acts 2:14-41"
+      ],
+      "evidence_ids": [
+        "who-was-peter:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:14-41"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b5f185536724",
+      "kind": "cultural_context",
+      "facts": [
+        "The doctrine stands out in a world where death was usually viewed as final, and it insists on God’s power to defeat death itself."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection-doctrine:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_c43c98632bbe",
+      "kind": "cultural_context",
+      "facts": [
+        "Resurrection hope stands out in a world where death was usually treated as final."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "what-is-resurrection:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d614b522e9f6",
+      "kind": "cultural_context",
+      "facts": [
+        "Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD."
+      ],
+      "verse_refs": [
+        "Acts 2:25-36"
+      ],
+      "evidence_ids": [
+        "who-was-david:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:25-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d91c17b184ab",
+      "kind": "cultural_context",
+      "facts": [
+        "Ritual washing, meal fellowship, and covenant renewal provide the wider background.",
+        "Baptism belongs to purification, repentance, and new-identity language before later sacramental debates.",
+        "Purification washings, John the Baptist, and repentance shape the backdrop of baptism in the Gospels and Acts."
+      ],
+      "verse_refs": [
+        "Acts 2:37-41"
+      ],
+      "evidence_ids": [
+        "baptism:ancient_near_east_context:0",
+        "baptism:hebraic_worldview:0",
+        "baptism:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "baptism"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:37-41"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_ded7494fd8fb",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God’s power and faithfulness.",
+        "Resurrection hope affirms God's power over death and the renewal of his people.",
+        "Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection-theme:ancient_near_east_context:0",
+        "resurrection-theme:hebraic_worldview:0",
+        "resurrection-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e2bf3416a4ed",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-18"
+      ],
+      "evidence_ids": [
+        "spiritual-gifts:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e4bbee949089",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Christology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to 2 Samuel 7:8-16, Psalm 2:1-12, messiah-theme, and jesus without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "christology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e8be8a5f047d",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_eb19f95587c5",
+      "kind": "cultural_context",
+      "facts": [
+        "The Bible’s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21"
+      ],
+      "evidence_ids": [
+        "spirit-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_ee6a2ba89347",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God’s promise and righteous rule."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "what-is-the-messiah:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_efd61a973dfd",
+      "kind": "cultural_context",
+      "facts": [
+        "Household Codes is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "household-codes:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "household-codes"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f14d924bba11",
+      "kind": "cultural_context",
+      "facts": [
+        "Conversion of Paul unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "conversion-of-paul:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "conversion-of-paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f18ea246e555",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Public Reading of Scripture includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "public-reading-of-scripture:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "public-reading-of-scripture"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f7671252b7e1",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-18"
+      ],
+      "evidence_ids": [
+        "pneumatology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f78e61b6c90f",
+      "kind": "cultural_context",
+      "facts": [
+        "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+        "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+        "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "jerusalem:ancient_near_east_context:0",
+        "jerusalem:hebraic_worldview:0",
+        "jerusalem:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_02c35c422c5b",
+      "kind": "historical_context",
+      "facts": [
+        "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-18"
+      ],
+      "evidence_ids": [
+        "water-and-spirit-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_05b7eabdbeb9",
+      "kind": "historical_context",
+      "facts": [
+        "The biblical hope for resurrection develops from hints in the prophets into clear proclamation in the New Testament."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "what-is-resurrection:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_15739de69691",
+      "kind": "historical_context",
+      "facts": [
+        "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-18"
+      ],
+      "evidence_ids": [
+        "spiritual-gifts:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_24d073f2eb02",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Second Missionary Journey is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "second-missionary-journey:historical_context:0"
+      ],
+      "entity_ids": [
+        "second-missionary-journey"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_276ba28f81f4",
+      "kind": "historical_context",
+      "facts": [
+        "The resurrection is proclaimed in the earliest Christian preaching as the vindication of Jesus and the launch of new-creation hope."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection:historical_context:0"
+      ],
+      "entity_ids": [
+        "resurrection"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3fde192e0dc3",
+      "kind": "historical_context",
+      "facts": [
+        "Levites belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "levites:historical_context:0"
+      ],
+      "entity_ids": [
+        "levites"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4abd5380c515",
+      "kind": "historical_context",
+      "facts": [
+        "Psalms arise in Israel's worship life and are sung in both public and private devotion."
+      ],
+      "verse_refs": [
+        "Acts 2:25-36"
+      ],
+      "evidence_ids": [
+        "what-is-a-psalm:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:25-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4d1e76d5a434",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Third Missionary Journey is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "third-missionary-journey:historical_context:0"
+      ],
+      "entity_ids": [
+        "third-missionary-journey"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5074224937f1",
+      "kind": "historical_context",
+      "facts": [
+        "Apostleship belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "apostleship:historical_context:0"
+      ],
+      "entity_ids": [
+        "apostleship"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_573fb3e60470",
+      "kind": "historical_context",
+      "facts": [
+        "The resurrection is proclaimed in the earliest Christian witness as the vindication of Jesus and the beginning of new-creation hope."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-resurrection:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5743ca7df238",
+      "kind": "historical_context",
+      "facts": [
+        "Resurrection doctrine emerges from the church’s earliest proclamation and develops as a central Christian confession of hope, judgment, and new creation."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection-doctrine:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5a9507085131",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language appears from creation through prophecy, Jesus’ ministry, Pentecost, and the life of the church."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21"
+      ],
+      "evidence_ids": [
+        "spirit-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5de53035d17f",
+      "kind": "historical_context",
+      "facts": [
+        "Covenant Assembly belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "covenant-assembly:historical_context:0"
+      ],
+      "entity_ids": [
+        "covenant-assembly"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_674d7ece7580",
+      "kind": "historical_context",
+      "facts": [
+        "The word is used for physical wind and breath before it is used for divine and human life."
+      ],
+      "verse_refs": [
+        "Acts 2:1-4"
+      ],
+      "evidence_ids": [
+        "what-does-ruach-mean:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_68d0bb9515a9",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the resurrection day narratives, where confused disciples encounter the risen Jesus."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "road-to-emmaus:historical_context:0"
+      ],
+      "entity_ids": [
+        "road-to-emmaus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_730b52e4aba9",
+      "kind": "historical_context",
+      "facts": [
+        "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "jerusalem:historical_context:0"
+      ],
+      "entity_ids": [
+        "jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_7f1a1b5c06e1",
+      "kind": "historical_context",
+      "facts": [
+        "Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "what-is-the-messiah:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_878121e57471",
+      "kind": "historical_context",
+      "facts": [
+        "Incarnation is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "incarnation:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_87bdc842dcc2",
+      "kind": "historical_context",
+      "facts": [
+        "Acts 2 places Pentecost in Jerusalem during a major pilgrimage feast when Jews from many nations are present."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13",
+        "Acts 2:14-41",
+        "Acts 2:42-47"
+      ],
+      "evidence_ids": [
+        "pentecost:historical_context:0"
+      ],
+      "entity_ids": [
+        "pentecost"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13",
+        "Acts 2:14-41",
+        "Acts 2:42-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8811845b514e",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Conversion of Paul is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "conversion-of-paul:historical_context:0"
+      ],
+      "entity_ids": [
+        "conversion-of-paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8b839f5915a3",
+      "kind": "historical_context",
+      "facts": [
+        "Baptism appears in the New Testament as the church reflects on Jesus' saving work and the shape of the community."
+      ],
+      "verse_refs": [
+        "Acts 2:37-41"
+      ],
+      "evidence_ids": [
+        "baptism:historical_context:0"
+      ],
+      "entity_ids": [
+        "baptism"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:37-41"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_92a5d534ee28",
+      "kind": "historical_context",
+      "facts": [
+        "Household Codes belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "household-codes:historical_context:0"
+      ],
+      "entity_ids": [
+        "household-codes"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_9bb9a9fd26fd",
+      "kind": "historical_context",
+      "facts": [
+        "Messianic hope develops from the Davidic covenant and the prophetic search for a righteous king who will heal exile and injustice."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "messianic-prophecy:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_b72c57731134",
+      "kind": "historical_context",
+      "facts": [
+        "Prophets belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "prophets:historical_context:0"
+      ],
+      "entity_ids": [
+        "prophets"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_bac36385c048",
+      "kind": "historical_context",
+      "facts": [
+        "A fisherman from Galilee, Peter becomes a leading witness in Jesus' ministry and the early church."
+      ],
+      "verse_refs": [
+        "Acts 2:14-41"
+      ],
+      "evidence_ids": [
+        "who-was-peter:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:14-41"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_bb260179cb97",
+      "kind": "historical_context",
+      "facts": [
+        "Christology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "christology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c09c62c04103",
+      "kind": "historical_context",
+      "facts": [
+        "Public Reading of Scripture belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "public-reading-of-scripture:historical_context:0"
+      ],
+      "entity_ids": [
+        "public-reading-of-scripture"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c39894fceaa6",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21"
+      ],
+      "evidence_ids": [
+        "what-is-the-holy-spirit:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c5cc40470536",
+      "kind": "historical_context",
+      "facts": [
+        "Ecclesiology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:42-47"
+      ],
+      "evidence_ids": [
+        "ecclesiology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:42-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ca8e7b63b317",
+      "kind": "historical_context",
+      "facts": [
+        "David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house."
+      ],
+      "verse_refs": [
+        "Acts 2:25-36"
+      ],
+      "evidence_ids": [
+        "who-was-david:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:25-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_d22438a1018f",
+      "kind": "historical_context",
+      "facts": [
+        "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-jerusalem:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_da04fc15a437",
+      "kind": "historical_context",
+      "facts": [
+        "Diaconate belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "diaconate:historical_context:0"
+      ],
+      "entity_ids": [
+        "diaconate"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_dd527e10b01d",
+      "kind": "historical_context",
+      "facts": [
+        "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "messiah-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e51e8fa544ca",
+      "kind": "historical_context",
+      "facts": [
+        "People of God Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:42-47"
+      ],
+      "evidence_ids": [
+        "people-of-god-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:42-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e9ce81db0369",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_eaff3aad018e",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Council of Jerusalem is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "council-of-jerusalem:historical_context:0"
+      ],
+      "entity_ids": [
+        "council-of-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ee8fddfa21d8",
+      "kind": "historical_context",
+      "facts": [
+        "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-18"
+      ],
+      "evidence_ids": [
+        "pneumatology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f0299e26a7a1",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, First Missionary Journey is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "Acts 2:1-47"
+      ],
+      "evidence_ids": [
+        "first-missionary-journey:historical_context:0"
+      ],
+      "entity_ids": [
+        "first-missionary-journey"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-47"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f70f3fed8b3f",
+      "kind": "historical_context",
+      "facts": [
+        "Resurrection hope develops from scattered hints in the Old Testament into explicit proclamation in the New Testament."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_595e0e74650e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "New Testament authors quote and echo psalms in arguments about Jesus' suffering, resurrection, enthronement, priesthood, mission, worship, creation rule, and the life of believing communities."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "psalms-new-testament-reception"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_add0b93f1f1c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts 2 explicitly quotes and adapts Old Greek Joel to interpret Pentecost, while Romans 10:13 quotes Joel's calling-on-YHWH promise within Paul's argument about Israel and confession of Jesus as Lord.",
+        "Dreams, visions, and prophecy in Joel do not validate every modern claim of revelation; communities still require truthfulness, discernment, accountability, and protection from manipulation.",
+        "Acts 2's 'this is what was spoken' interprets Pentecost through Joel while changing wording and relocating the oracle within Luke's narrative; fulfillment need not mean exhaustion."
+      ],
+      "verse_refs": [
+        "Acts 2:16-21"
+      ],
+      "evidence_ids": [
+        "joel-acts-romans-reuse",
+        "joel:interpretive_note:20",
+        "joel:interpretive_note:29"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:16-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_ae7266583d25",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Prevents coercing one experiential sequence or treating absence of one sign as proof of exclusion."
+      ],
+      "verse_refs": [
+        "Acts 2:1-41"
+      ],
+      "evidence_ids": [
+        "acts-variable-reception-sequences:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-41"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_cbfb94e4f896",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Peter's Pentecost speech quotes the Greek Joel text with interpretive adaptations, including in the last days.",
+        "Acts depicts recognizable diaspora languages at Pentecost while the precise relation to other early Christian speech phenomena remains debated.",
+        "Acts presents voluntary selling and distribution as community ideals in particular summaries, not an explicit universal legal code abolishing all possession.",
+        "Acts' speeches are literary compositions within ancient narrative and cannot be treated as stenographic transcripts, though they may preserve traditions."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13",
+        "Acts 2:14-40",
+        "Acts 2:17-21",
+        "Acts 2:44-45"
+      ],
+      "evidence_ids": [
+        "acts-joel",
+        "acts-pentecost-languages",
+        "acts-property",
+        "acts-speeches"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13",
+        "Acts 2:14-40",
+        "Acts 2:17-21",
+        "Acts 2:44-45"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_e1aca2c5d587",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims.",
+        "Prevents Acts from becoming a verbatim Pauline manual while allowing bounded canonical comparison.",
+        "Acts narrates distributed fiery appearance, Spirit-filled other tongues, international hearers recognizing native languages or dialects, drunkenness accusation, and Peter's Joel citation.",
+        "Preserves Acts 2's intelligible multilingual scene without forcing Corinthian tongues into the same description.",
+        "Four prominent Acts scenes vary the ordering and presence of hearing, repentance or faith, water baptism, prayer, laying on hands, tongues, prophecy, and Spirit reception."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21",
+        "Acts 2:1-41"
+      ],
+      "evidence_ids": [
+        "acts-letters-chronology-spirit",
+        "acts-letters-chronology-spirit:passage-relevance",
+        "acts-pentecost-languages-joel",
+        "acts-pentecost-languages-joel:passage-relevance",
+        "acts-variable-reception-sequences"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21",
+        "Acts 2:1-41"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "chronology",
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_9364f9a59be9",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-text-witnesses"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_bb321f80eb29",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-historical-method"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_c5629d49afc9",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-western-text"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_d6b662d76a1c",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Christian reuse of Joel must not erase Israel, Jewish readers, or continuing Jewish interpretation; quotation, christological reading, and ecclesial application are later reception layers."
+      ],
+      "verse_refs": [
+        "Acts 2:16-21"
+      ],
+      "evidence_ids": [
+        "joel:interpretive_note:32"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:16-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_044f7e781cc8",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ritual washing, meal fellowship, and covenant renewal provide the wider background.",
+        "Baptism belongs to purification, repentance, and new-identity language before later sacramental debates.",
+        "Purification washings, John the Baptist, and repentance shape the backdrop of baptism in the Gospels and Acts."
+      ],
+      "verse_refs": [
+        "Acts 2:37-41"
+      ],
+      "evidence_ids": [
+        "baptism:ancient_near_east_context:0",
+        "baptism:hebraic_worldview:0",
+        "baptism:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "baptism"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_d91c17b184ab"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:37-41"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_15ee3481bbbd",
+      "kind": "why_it_matters",
+      "facts": [
+        "Peter's Pentecost speech quotes the Greek Joel text with interpretive adaptations, including in the last days.",
+        "Acts depicts recognizable diaspora languages at Pentecost while the precise relation to other early Christian speech phenomena remains debated.",
+        "Acts presents voluntary selling and distribution as community ideals in particular summaries, not an explicit universal legal code abolishing all possession.",
+        "Acts' speeches are literary compositions within ancient narrative and cannot be treated as stenographic transcripts, though they may preserve traditions."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13",
+        "Acts 2:14-40",
+        "Acts 2:17-21",
+        "Acts 2:44-45"
+      ],
+      "evidence_ids": [
+        "acts-joel",
+        "acts-pentecost-languages",
+        "acts-property",
+        "acts-speeches"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_cbfb94e4f896"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13",
+        "Acts 2:14-40",
+        "Acts 2:17-21",
+        "Acts 2:44-45"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_777e054bd228",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God’s power and faithfulness.",
+        "Resurrection hope affirms God's power over death and the renewal of his people.",
+        "Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive."
+      ],
+      "verse_refs": [
+        "Acts 2:22-36"
+      ],
+      "evidence_ids": [
+        "resurrection-theme:ancient_near_east_context:0",
+        "resurrection-theme:hebraic_worldview:0",
+        "resurrection-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_ded7494fd8fb"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_caf2d363e992",
+      "kind": "why_it_matters",
+      "facts": [
+        "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+        "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+        "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness."
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "jerusalem:ancient_near_east_context:0",
+        "jerusalem:hebraic_worldview:0",
+        "jerusalem:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "jerusalem"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_f78e61b6c90f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e57e74b64dc6",
+      "kind": "why_it_matters",
+      "facts": [
+        "city-of-david",
+        "zion",
+        "mount-zion",
+        "bethlehem-1",
+        "judea-1"
+      ],
+      "verse_refs": [
+        "Acts 2:1-13"
+      ],
+      "evidence_ids": [
+        "jerusalem:key_places:0",
+        "jerusalem:key_places:1",
+        "jerusalem:key_places:2",
+        "jerusalem:key_places:3",
+        "jerusalem:key_places:4"
+      ],
+      "entity_ids": [
+        "jerusalem"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_3cc538915e85"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_efbf05e8f6af",
+      "kind": "why_it_matters",
+      "facts": [
+        "The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims.",
+        "Prevents Acts from becoming a verbatim Pauline manual while allowing bounded canonical comparison.",
+        "Acts narrates distributed fiery appearance, Spirit-filled other tongues, international hearers recognizing native languages or dialects, drunkenness accusation, and Peter's Joel citation.",
+        "Preserves Acts 2's intelligible multilingual scene without forcing Corinthian tongues into the same description.",
+        "Four prominent Acts scenes vary the ordering and presence of hearing, repentance or faith, water baptism, prayer, laying on hands, tongues, prophecy, and Spirit reception."
+      ],
+      "verse_refs": [
+        "Acts 2:1-21",
+        "Acts 2:1-41"
+      ],
+      "evidence_ids": [
+        "acts-letters-chronology-spirit",
+        "acts-letters-chronology-spirit:passage-relevance",
+        "acts-pentecost-languages-joel",
+        "acts-pentecost-languages-joel:passage-relevance",
+        "acts-variable-reception-sequences"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_e1aca2c5d587"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:1-21",
+        "Acts 2:1-41"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f0860285b536",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts 2 explicitly quotes and adapts Old Greek Joel to interpret Pentecost, while Romans 10:13 quotes Joel's calling-on-YHWH promise within Paul's argument about Israel and confession of Jesus as Lord.",
+        "Dreams, visions, and prophecy in Joel do not validate every modern claim of revelation; communities still require truthfulness, discernment, accountability, and protection from manipulation.",
+        "Acts 2's 'this is what was spoken' interprets Pentecost through Joel while changing wording and relocating the oracle within Luke's narrative; fulfillment need not mean exhaustion."
+      ],
+      "verse_refs": [
+        "Acts 2:16-21"
+      ],
+      "evidence_ids": [
+        "joel-acts-romans-reuse",
+        "joel:interpretive_note:20",
+        "joel:interpretive_note:29"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_add0b93f1f1c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 2:16-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 107,
+    "used_evidence_ids": [
+      "acts-historical-method",
+      "acts-joel",
+      "acts-letters-chronology-spirit",
+      "acts-letters-chronology-spirit:passage-relevance",
+      "acts-pentecost-languages",
+      "acts-pentecost-languages-joel",
+      "acts-pentecost-languages-joel:passage-relevance",
+      "acts-property",
+      "acts-speeches",
+      "acts-text-witnesses",
+      "acts-variable-reception-sequences",
+      "acts-variable-reception-sequences:passage-relevance",
+      "acts-western-text",
+      "apostleship:ancient_near_east_context:0",
+      "apostleship:historical_context:0",
+      "baptism:ancient_near_east_context:0",
+      "baptism:hebraic_worldview:0",
+      "baptism:historical_context:0",
+      "baptism:second_temple_context:0",
+      "christology:ancient_near_east_context:0",
+      "christology:historical_context:0",
+      "conversion-of-paul:ancient_near_east_context:0",
+      "conversion-of-paul:historical_context:0",
+      "council-of-jerusalem:ancient_near_east_context:0",
+      "council-of-jerusalem:historical_context:0",
+      "covenant-assembly:ancient_near_east_context:0",
+      "covenant-assembly:historical_context:0",
+      "diaconate:ancient_near_east_context:0",
+      "diaconate:historical_context:0",
+      "ecclesiology:ancient_near_east_context:0",
+      "ecclesiology:historical_context:0",
+      "first-missionary-journey:ancient_near_east_context:0",
+      "first-missionary-journey:historical_context:0",
+      "household-codes:ancient_near_east_context:0",
+      "household-codes:historical_context:0",
+      "incarnation:ancient_near_east_context:0",
+      "incarnation:historical_context:0",
+      "jerusalem:ancient_near_east_context:0",
+      "jerusalem:hebraic_worldview:0",
+      "jerusalem:historical_context:0",
+      "jerusalem:key_places:0",
+      "jerusalem:key_places:1",
+      "jerusalem:key_places:2",
+      "jerusalem:key_places:3",
+      "jerusalem:key_places:4",
+      "jerusalem:second_temple_context:0",
+      "joel-acts-romans-reuse",
+      "joel:interpretive_note:20",
+      "joel:interpretive_note:29",
+      "joel:interpretive_note:32",
+      "levites:ancient_near_east_context:0",
+      "levites:historical_context:0",
+      "messiah-theme:ancient_near_east_context:0",
+      "messiah-theme:historical_context:0",
+      "messianic-prophecy:ancient_near_east_context:0",
+      "messianic-prophecy:historical_context:0",
+      "pentecost:ancient_near_east_context:0",
+      "pentecost:historical_context:0",
+      "people-of-god-theme:ancient_near_east_context:0",
+      "people-of-god-theme:historical_context:0",
+      "pneumatology:ancient_near_east_context:0",
+      "pneumatology:historical_context:0",
+      "prophets:ancient_near_east_context:0",
+      "prophets:historical_context:0",
+      "psalms-new-testament-reception",
+      "public-reading-of-scripture:ancient_near_east_context:0",
+      "public-reading-of-scripture:historical_context:0",
+      "resurrection-doctrine:ancient_near_east_context:0",
+      "resurrection-doctrine:historical_context:0",
+      "resurrection-theme:ancient_near_east_context:0",
+      "resurrection-theme:hebraic_worldview:0",
+      "resurrection-theme:historical_context:0",
+      "resurrection-theme:second_temple_context:0",
+      "resurrection:ancient_near_east_context:0",
+      "resurrection:historical_context:0",
+      "road-to-emmaus:ancient_near_east_context:0",
+      "road-to-emmaus:historical_context:0",
+      "second-missionary-journey:ancient_near_east_context:0",
+      "second-missionary-journey:historical_context:0",
+      "spirit-theme:ancient_near_east_context:0",
+      "spirit-theme:historical_context:0",
+      "spiritual-gifts:ancient_near_east_context:0",
+      "spiritual-gifts:historical_context:0",
+      "third-missionary-journey:ancient_near_east_context:0",
+      "third-missionary-journey:historical_context:0",
+      "water-and-spirit-theme:ancient_near_east_context:0",
+      "water-and-spirit-theme:historical_context:0",
+      "what-does-ruach-mean:ancient_near_east_context:0",
+      "what-does-ruach-mean:historical_context:0",
+      "what-is-a-psalm:ancient_near_east_context:0",
+      "what-is-a-psalm:historical_context:0",
+      "what-is-resurrection:ancient_near_east_context:0",
+      "what-is-resurrection:historical_context:0",
+      "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-holy-spirit:historical_context:0",
+      "what-is-the-messiah:ancient_near_east_context:0",
+      "what-is-the-messiah:historical_context:0",
+      "what-is-the-significance-of-jerusalem:ancient_near_east_context:0",
+      "what-is-the-significance-of-jerusalem:historical_context:0",
+      "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "what-is-the-significance-of-the-resurrection:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-resurrection:historical_context:0",
+      "who-was-david:ancient_near_east_context:0",
+      "who-was-david:historical_context:0",
+      "who-was-peter:ancient_near_east_context:0",
+      "who-was-peter:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "chronology": 2,
+      "culture": 59,
+      "geography": 6,
+      "history": 40
+    },
+    "category_diversity": 4,
+    "specific_evidence_count": 107,
+    "entity_counts": {
+      "people": 0,
+      "places": 1,
+      "groups": 8,
+      "events": 8,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "cultural_context": 39,
+      "historical_context": 39,
+      "interpretive_questions": 5,
+      "surrounding_passages": 4,
+      "why_it_matters": 7
+    },
+    "relationship_unit_count": 7
+  }
+}

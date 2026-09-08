@@ -1,0 +1,874 @@
+{
+  "reference": "Exodus 16",
+  "book": "Exodus",
+  "chapter": 16,
+  "evidence_hash": "fe31c05b03812750e36fee61f09cfbc2bcaadb9e4e88d84519c0ba9bf69fbda0",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "03752b54f77fb0db8ef64155cdcf77d9e26f51a2598be56f290efac409202125",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_e6f58de0a155",
+      "kind": "archaeology_geography",
+      "facts": [
+        "egypt",
+        "red-sea-1",
+        "mount-sinai",
+        "kadesh-barnea"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:key_places:0",
+        "exodus-to-sinai-timeline:key_places:1",
+        "exodus-to-sinai-timeline:key_places:2",
+        "exodus-to-sinai-timeline:key_places:3"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_9e89b4d6a674",
+      "kind": "chronology",
+      "facts": [
+        "Israel oppressed in Egypt",
+        "Moses called at the burning bush",
+        "Plagues confront Pharaoh",
+        "Passover marks deliverance",
+        "Israel leaves Egypt"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:timeline:0",
+        "exodus-to-sinai-timeline:timeline:1",
+        "exodus-to-sinai-timeline:timeline:2",
+        "exodus-to-sinai-timeline:timeline:3",
+        "exodus-to-sinai-timeline:timeline:4"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_ad8683583e01",
+      "kind": "chronology",
+      "facts": [
+        "Israel crosses the sea",
+        "Wilderness provision and testing begin",
+        "Israel arrives at Sinai",
+        "The covenant is given and ratified"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:timeline:5",
+        "exodus-to-sinai-timeline:timeline:6",
+        "exodus-to-sinai-timeline:timeline:7",
+        "exodus-to-sinai-timeline:timeline:8"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_abbc24a460b3",
+      "kind": "cultural_context",
+      "facts": [
+        "A distinct day of rest set Israel apart from surrounding cultures and signaled trust in the LORD rather than endless production."
+      ],
+      "verse_refs": [
+        "Exodus 16:22-30"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-sabbath:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:22-30"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b4f9f78caeda",
+      "kind": "cultural_context",
+      "facts": [
+        "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+        "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+        "Israel remembering the ordered story of deliverance and covenant formation",
+        "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus."
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:ancient_near_east_context:0",
+        "exodus-to-sinai-timeline:hebraic_worldview:0",
+        "exodus-to-sinai-timeline:original_audience:0",
+        "exodus-to-sinai-timeline:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f2633890b24f",
+      "kind": "cultural_context",
+      "facts": [
+        "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations."
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "wilderness-wandering:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "wilderness-wandering"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4af22e465925",
+      "kind": "historical_context",
+      "facts": [
+        "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+        "Exodus wilderness narrative"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:historical_context:0",
+        "exodus-to-sinai-timeline:historical_setting:0"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_6d508a9c1f6b",
+      "kind": "historical_context",
+      "facts": [
+        "Rooted in creation and Exodus, the Sabbath becomes a weekly rhythm that marks Israel's identity and dependence on God."
+      ],
+      "verse_refs": [
+        "Exodus 16:22-30"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-sabbath:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:22-30"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c5324526f3fa",
+      "kind": "historical_context",
+      "facts": [
+        "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates."
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "wilderness-wandering:historical_context:0"
+      ],
+      "entity_ids": [
+        "wilderness-wandering"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_6fa0499da825",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul invokes present reciprocity and Exodus manna so that another's relief does not produce the Corinthians' affliction and there may be equality."
+      ],
+      "verse_refs": [
+        "Exodus 16:18"
+      ],
+      "evidence_ids": [
+        "2cor-equality"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_a2bb66db09e5",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Second Corinthians connects present surplus and need to isotes and cites the manna statement that the one with much had no excess and the one with little no lack.",
+        "Places sufficiency and mutual need at the center without pretending the passage supplies a complete fiscal program."
+      ],
+      "verse_refs": [
+        "Exodus 16:18"
+      ],
+      "evidence_ids": [
+        "collection-equality-manna",
+        "collection-equality-manna:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_80345396ceb1",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 12:1-51",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus:interpretive_note:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_85bea17294ce",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 12:1-51",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_d70e6461092d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 12:1-51",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-ane-context"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_24a2417d5107",
+      "kind": "why_it_matters",
+      "facts": [
+        "Israel crosses the sea",
+        "Wilderness provision and testing begin",
+        "Israel arrives at Sinai",
+        "The covenant is given and ratified"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:timeline:5",
+        "exodus-to-sinai-timeline:timeline:6",
+        "exodus-to-sinai-timeline:timeline:7",
+        "exodus-to-sinai-timeline:timeline:8"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [
+        "syn_chronology_ad8683583e01"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_45d8cff41fc6",
+      "kind": "why_it_matters",
+      "facts": [
+        "Second Corinthians connects present surplus and need to isotes and cites the manna statement that the one with much had no excess and the one with little no lack.",
+        "Places sufficiency and mutual need at the center without pretending the passage supplies a complete fiscal program."
+      ],
+      "verse_refs": [
+        "Exodus 16:18"
+      ],
+      "evidence_ids": [
+        "collection-equality-manna",
+        "collection-equality-manna:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_a2bb66db09e5"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_49ee8d7b8a78",
+      "kind": "why_it_matters",
+      "facts": [
+        "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+        "Exodus wilderness narrative"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:historical_context:0",
+        "exodus-to-sinai-timeline:historical_setting:0"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_4af22e465925"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_4e939a85f230",
+      "kind": "why_it_matters",
+      "facts": [
+        "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+        "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+        "Israel remembering the ordered story of deliverance and covenant formation",
+        "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus."
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:ancient_near_east_context:0",
+        "exodus-to-sinai-timeline:hebraic_worldview:0",
+        "exodus-to-sinai-timeline:original_audience:0",
+        "exodus-to-sinai-timeline:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_b4f9f78caeda"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_bdd3b92190f8",
+      "kind": "why_it_matters",
+      "facts": [
+        "Israel oppressed in Egypt",
+        "Moses called at the burning bush",
+        "Plagues confront Pharaoh",
+        "Passover marks deliverance",
+        "Israel leaves Egypt"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:timeline:0",
+        "exodus-to-sinai-timeline:timeline:1",
+        "exodus-to-sinai-timeline:timeline:2",
+        "exodus-to-sinai-timeline:timeline:3",
+        "exodus-to-sinai-timeline:timeline:4"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [
+        "syn_chronology_9e89b4d6a674"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_bf40eebb61ac",
+      "kind": "why_it_matters",
+      "facts": [
+        "egypt",
+        "red-sea-1",
+        "mount-sinai",
+        "kadesh-barnea"
+      ],
+      "verse_refs": [
+        "Exodus 16:1-36"
+      ],
+      "evidence_ids": [
+        "exodus-to-sinai-timeline:key_places:0",
+        "exodus-to-sinai-timeline:key_places:1",
+        "exodus-to-sinai-timeline:key_places:2",
+        "exodus-to-sinai-timeline:key_places:3"
+      ],
+      "entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_e6f58de0a155"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 29,
+    "used_evidence_ids": [
+      "2cor-equality",
+      "collection-equality-manna",
+      "collection-equality-manna:passage-relevance",
+      "exodus-ane-context",
+      "exodus-literary-movement",
+      "exodus-to-sinai-timeline:ancient_near_east_context:0",
+      "exodus-to-sinai-timeline:hebraic_worldview:0",
+      "exodus-to-sinai-timeline:historical_context:0",
+      "exodus-to-sinai-timeline:historical_setting:0",
+      "exodus-to-sinai-timeline:key_places:0",
+      "exodus-to-sinai-timeline:key_places:1",
+      "exodus-to-sinai-timeline:key_places:2",
+      "exodus-to-sinai-timeline:key_places:3",
+      "exodus-to-sinai-timeline:original_audience:0",
+      "exodus-to-sinai-timeline:second_temple_context:0",
+      "exodus-to-sinai-timeline:timeline:0",
+      "exodus-to-sinai-timeline:timeline:1",
+      "exodus-to-sinai-timeline:timeline:2",
+      "exodus-to-sinai-timeline:timeline:3",
+      "exodus-to-sinai-timeline:timeline:4",
+      "exodus-to-sinai-timeline:timeline:5",
+      "exodus-to-sinai-timeline:timeline:6",
+      "exodus-to-sinai-timeline:timeline:7",
+      "exodus-to-sinai-timeline:timeline:8",
+      "exodus:interpretive_note:1",
+      "what-is-the-significance-of-the-sabbath:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-sabbath:historical_context:0",
+      "wilderness-wandering:ancient_near_east_context:0",
+      "wilderness-wandering:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "chronology": 9,
+      "culture": 10,
+      "geography": 5,
+      "history": 4,
+      "social": 1
+    },
+    "category_diversity": 5,
+    "specific_evidence_count": 29,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 2,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "chronology": 2,
+      "cultural_context": 3,
+      "historical_context": 3,
+      "interpretive_questions": 2,
+      "surrounding_passages": 3,
+      "why_it_matters": 6
+    },
+    "relationship_unit_count": 6
+  }
+}

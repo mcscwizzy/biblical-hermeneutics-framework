@@ -1,0 +1,718 @@
+{
+  "reference": "Jonah 2",
+  "book": "Jonah",
+  "chapter": 2,
+  "evidence_hash": "00bd0364f2a7896111d41cb429590224c0113f808370dc0ea5aec0fec45dfbfc",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "03ab780a7ce9a3ac513c44d870ea4a32fe23cee3e8b3b30b15d8bacf38708225",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_ab495950fb7e",
+      "kind": "cultural_context",
+      "facts": [
+        "The text identifies an appointed great fish but neither names a species nor says that Jonah dies inside it; whale, shark, and other identifications exceed the Hebrew wording."
+      ],
+      "verse_refs": [
+        "Jonah 2:10"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:11"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8b6a5bd13d8a",
+      "kind": "historical_context",
+      "facts": [
+        "YHWH appoints a great fish to swallow Jonah and later commands it to return him to dry land; no species, anatomical mechanism, or statement of Jonah's death is supplied."
+      ],
+      "verse_refs": [
+        "Jonah 2:10"
+      ],
+      "evidence_ids": [
+        "jonah-great-fish"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:10"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_0d66b212ef40",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The chapter 2 poem may have circulated independently or been adapted, yet the received form places it deliberately between descent and deliverance and makes Jonah's later conduct interact ironically or theologically with his prayer.",
+        "Sheol, engulfing waters, mountain roots, and the pit use poetic death imagery familiar from Psalms; they can portray mortal peril without proving literal death in the fish.",
+        "The prayer resembles a thanksgiving psalm more than an initial lament, and its vocabulary can be read sincerely, ironically, self-involvedly, or through several of those registers at once."
+      ],
+      "verse_refs": [
+        "Jonah 2:1-10",
+        "Jonah 2:1-9",
+        "Jonah 2:2-6"
+      ],
+      "evidence_ids": [
+        "jonah-prayer-composition",
+        "jonah:interpretive_note:12",
+        "jonah:interpretive_note:13"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:1-10",
+        "Jonah 2:1-9",
+        "Jonah 2:2-6"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_ef6ac6410467",
+      "kind": "interpretive_questions",
+      "facts": [
+        "A secondary origin for the chapter 2 prayer remains possible, but final-form interpretation must still explain why the received text places it between swallowing and release."
+      ],
+      "verse_refs": [
+        "Jonah 2:1-10"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:14"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:1-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_f3e523b6bcc3",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Jonah 2 contains an embedded poetic thanksgiving or prayer composed largely from psalmic language, and its origin and fit within the surrounding narrative remain debated."
+      ],
+      "verse_refs": [
+        "Jonah 2:1-9"
+      ],
+      "evidence_ids": [
+        "jonah-prayer"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_language_literary_7d585bec29d7",
+      "kind": "language_literary",
+      "facts": [
+        "Masoretic numbering begins Jonah chapter 2 with the fish appointment that common English Christian numbering labels 1:17 and ends the chapter at MT 2:11, common English 2:10.",
+        "Common English Christian and Masoretic or Jewish numbering divide the fish and prayer unit differently, so citations around Jonah 1:17 and 2:10 should identify the system used."
+      ],
+      "verse_refs": [
+        "Jonah 2:10"
+      ],
+      "evidence_ids": [
+        "jonah-numbering",
+        "jonah:interpretive_note:15"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_482806299098",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Masoretic Jonah, Old Greek Ionas, 4Q76, 4Q82, and other versional witnesses attest the book's transmission; the Greek is comparatively close to MT but still contains translation and textual differences.",
+        "Jonah is fifth in the Masoretic Twelve between Obadiah and Micah, and proposed collection-level links to Joel, Obadiah, Nahum, and other prophets supplement rather than erase its independent literary profile."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah-textual-witnesses",
+        "jonah-twelve-placement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_51335464a010",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Jonah must not be turned into an antisemitic caricature of Jews as uniquely disobedient, vengeful, or hostile to outsiders; the book is Jewish Scripture engaged in internal moral argument."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:34"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_637c244377e2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Jonah became the haftarah for the Minḥah service of Yom Kippur, making its questions of repentance, mercy, justice, and resistance prominent in later Jewish liturgical life.",
+        "Jonah's Yom Kippur Minḥah reading belongs to living Jewish liturgy and should be described through Jewish sources rather than appropriated as a Christian missionary prop."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah-yom-kippur-reception",
+        "jonah:interpretive_note:37"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_75f520048197",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Persian-period composition or final shaping is common in current scholarship, but late monarchic, exilic, and early Hellenistic proposals remain because the book supplies no date.",
+        "Labels such as historical narrative, novella, didactic tale, satire, parody, and fiction describe overlapping features but remain disputed and should not be presented as interchangeable certainties.",
+        "Quranic and Islamic Jonah or Yunus traditions are important reception histories but should not be homogenized with Jewish or Christian versions or retrojected into the Hebrew narrative.",
+        "The repeated commissions in chapters 1 and 3 and the parallel sea and city halves support a two-part design, while five-scene and other outlines remain useful alternatives."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:2",
+        "jonah:interpretive_note:3",
+        "jonah:interpretive_note:38",
+        "jonah:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_f6b676406b6b"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_7642190b13c2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Ecological readings should attend to sea, storm, fish, plant, worm, wind, and cattle as agents or valued creatures, while avoiding romantic claims that ignore animal suffering or justify exploitation.",
+        "Jonah's repeated downward movement toward Joppa, the ship, sleep, sea, and mountain roots in the prayer creates descent imagery that later reverses in rescue, but not every verb encodes a technical death-and-resurrection scheme."
+      ],
+      "verse_refs": [
+        "Jonah 1:3-17",
+        "Jonah 1:4-17"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:42",
+        "jonah:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:3-2:10",
+        "Jonah 1:4-2:10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_ac4d50be2aa8",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Persian-period composition or final shaping is a common critical proposal, with late monarchic, exilic, and early Hellenistic alternatives; linguistic and historical arguments do not yield a precise date.",
+        "The final form pairs two commissions with sea and city episodes, repeated questions, responsive outsiders, divinely appointed agents, and escalating confrontations between Jonah and YHWH.",
+        "Jonah is predominantly prose narrative about a commissioned figure and uses irony, hyperbole, repetition, reversal, and extraordinary nonhuman action; historical narrative, novella, didactic tale, satire, parody, and fiction remain debated labels.",
+        "Jonah has extensive Jewish, Christian, Islamic, visual, musical, literary, and popular afterlives; the Quranic Yunus and later Islamic exegesis are related reception traditions rather than witnesses to the Hebrew book's original meaning."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah-date-composition",
+        "jonah-double-structure",
+        "jonah-genre",
+        "jonah-multireligious-reception"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_bb21b583bba9",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Ecological readings should attend to sea, storm, fish, plant, worm, wind, and cattle as agents or valued creatures, while avoiding romantic claims that ignore animal suffering or justify exploitation.",
+        "Jonah's repeated downward movement toward Joppa, the ship, sleep, sea, and mountain roots in the prayer creates descent imagery that later reverses in rescue, but not every verb encodes a technical death-and-resurrection scheme."
+      ],
+      "verse_refs": [
+        "Jonah 1:3-17",
+        "Jonah 1:4-17"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:42",
+        "jonah:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_7642190b13c2"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:3-2:10",
+        "Jonah 1:4-2:10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_e827fb170fee",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Jonah became the haftarah for the Minḥah service of Yom Kippur, making its questions of repentance, mercy, justice, and resistance prominent in later Jewish liturgical life.",
+        "Jonah's Yom Kippur Minḥah reading belongs to living Jewish liturgy and should be described through Jewish sources rather than appropriated as a Christian missionary prop."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah-yom-kippur-reception",
+        "jonah:interpretive_note:37"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_637c244377e2"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_ed211b32f157",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Masoretic Jonah, Old Greek Ionas, 4Q76, 4Q82, and other versional witnesses attest the book's transmission; the Greek is comparatively close to MT but still contains translation and textual differences.",
+        "Jonah is fifth in the Masoretic Twelve between Obadiah and Micah, and proposed collection-level links to Joel, Obadiah, Nahum, and other prophets supplement rather than erase its independent literary profile."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah-textual-witnesses",
+        "jonah-twelve-placement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_482806299098"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_f6b676406b6b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Persian-period composition or final shaping is common in current scholarship, but late monarchic, exilic, and early Hellenistic proposals remain because the book supplies no date.",
+        "Labels such as historical narrative, novella, didactic tale, satire, parody, and fiction describe overlapping features but remain disputed and should not be presented as interchangeable certainties.",
+        "Quranic and Islamic Jonah or Yunus traditions are important reception histories but should not be homogenized with Jewish or Christian versions or retrojected into the Hebrew narrative.",
+        "The repeated commissions in chapters 1 and 3 and the parallel sea and city halves support a two-part design, while five-scene and other outlines remain useful alternatives."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah:interpretive_note:2",
+        "jonah:interpretive_note:3",
+        "jonah:interpretive_note:38",
+        "jonah:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_fc4faef7b694",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Persian-period composition or final shaping is a common critical proposal, with late monarchic, exilic, and early Hellenistic alternatives; linguistic and historical arguments do not yield a precise date.",
+        "The final form pairs two commissions with sea and city episodes, repeated questions, responsive outsiders, divinely appointed agents, and escalating confrontations between Jonah and YHWH.",
+        "Jonah is predominantly prose narrative about a commissioned figure and uses irony, hyperbole, repetition, reversal, and extraordinary nonhuman action; historical narrative, novella, didactic tale, satire, parody, and fiction remain debated labels.",
+        "Jonah has extensive Jewish, Christian, Islamic, visual, musical, literary, and popular afterlives; the Quranic Yunus and later Islamic exegesis are related reception traditions rather than witnesses to the Hebrew book's original meaning."
+      ],
+      "verse_refs": [
+        "Jonah 1:1-17",
+        "Jonah 3:1-10",
+        "Jonah 4:1-11"
+      ],
+      "evidence_ids": [
+        "jonah-date-composition",
+        "jonah-double-structure",
+        "jonah-genre",
+        "jonah-multireligious-reception"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_ac4d50be2aa8"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Jonah 1:1-4:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_793f98bb02d0",
+      "kind": "why_it_matters",
+      "facts": [
+        "Masoretic numbering begins Jonah chapter 2 with the fish appointment that common English Christian numbering labels 1:17 and ends the chapter at MT 2:11, common English 2:10.",
+        "Common English Christian and Masoretic or Jewish numbering divide the fish and prayer unit differently, so citations around Jonah 1:17 and 2:10 should identify the system used."
+      ],
+      "verse_refs": [
+        "Jonah 2:10"
+      ],
+      "evidence_ids": [
+        "jonah-numbering",
+        "jonah:interpretive_note:15"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_language_literary_7d585bec29d7"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b5d16339adc8",
+      "kind": "why_it_matters",
+      "facts": [
+        "The chapter 2 poem may have circulated independently or been adapted, yet the received form places it deliberately between descent and deliverance and makes Jonah's later conduct interact ironically or theologically with his prayer.",
+        "Sheol, engulfing waters, mountain roots, and the pit use poetic death imagery familiar from Psalms; they can portray mortal peril without proving literal death in the fish.",
+        "The prayer resembles a thanksgiving psalm more than an initial lament, and its vocabulary can be read sincerely, ironically, self-involvedly, or through several of those registers at once."
+      ],
+      "verse_refs": [
+        "Jonah 2:1-10",
+        "Jonah 2:1-9",
+        "Jonah 2:2-6"
+      ],
+      "evidence_ids": [
+        "jonah-prayer-composition",
+        "jonah:interpretive_note:12",
+        "jonah:interpretive_note:13"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_0d66b212ef40"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Jonah 2:1-10",
+        "Jonah 2:1-9",
+        "Jonah 2:2-6"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 24,
+    "used_evidence_ids": [
+      "jonah-date-composition",
+      "jonah-double-structure",
+      "jonah-genre",
+      "jonah-great-fish",
+      "jonah-multireligious-reception",
+      "jonah-numbering",
+      "jonah-prayer",
+      "jonah-prayer-composition",
+      "jonah-textual-witnesses",
+      "jonah-twelve-placement",
+      "jonah-yom-kippur-reception",
+      "jonah:interpretive_note:11",
+      "jonah:interpretive_note:12",
+      "jonah:interpretive_note:13",
+      "jonah:interpretive_note:14",
+      "jonah:interpretive_note:15",
+      "jonah:interpretive_note:2",
+      "jonah:interpretive_note:3",
+      "jonah:interpretive_note:34",
+      "jonah:interpretive_note:37",
+      "jonah:interpretive_note:38",
+      "jonah:interpretive_note:4",
+      "jonah:interpretive_note:42",
+      "jonah:interpretive_note:5"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 19,
+      "geography": 2,
+      "history": 3
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 24,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 1,
+      "historical_context": 1,
+      "interpretive_questions": 3,
+      "language_literary": 1,
+      "surrounding_passages": 11,
+      "why_it_matters": 2
+    },
+    "relationship_unit_count": 7
+  }
+}

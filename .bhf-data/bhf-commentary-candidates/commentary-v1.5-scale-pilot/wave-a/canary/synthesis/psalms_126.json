@@ -1,0 +1,96 @@
+{
+  "reference": "Psalms 126",
+  "book": "Psalms",
+  "chapter": 126,
+  "evidence_hash": "cc17287ce6413d0b7c5277a0f785a95c75a2f249a6748f22cc7c05e8a642b8a4",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "2818274d977abdcdeac8f8a24e24895ba3a6d14382ae2b10670d3ea9e237ea8e",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_be9dfed377d3",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship."
+      ],
+      "verse_refs": [
+        "Psalms 120:1-7",
+        "Psalms 121:1-8",
+        "Psalms 122:1-9",
+        "Psalms 123:1-4",
+        "Psalms 124:1-8",
+        "Psalms 125:1-5",
+        "Psalms 127:1-5",
+        "Psalms 128:1-6",
+        "Psalms 129:1-8",
+        "Psalms 130:1-8",
+        "Psalms 131:1-3",
+        "Psalms 132:1-18",
+        "Psalms 133:1-3",
+        "Psalms 134:1-3"
+      ],
+      "evidence_ids": [
+        "psalms-exile-restoration-pilgrimage"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Psalms 120:1-134:3"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "psalms-exile-restoration-pilgrimage"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

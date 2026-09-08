@@ -1,0 +1,1566 @@
+{
+  "reference": "Galatians 1",
+  "book": "Galatians",
+  "chapter": 1,
+  "evidence_hash": "f13166a6c0ed535921c57fae680ba865373df846a12a667ffd7c67bc9404bca5",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "6a256f8dd6cf6d798b800aadcb852422fe667d26e8fbf8845d3ecd10fef08cc9",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_0be8ae838ee9",
+      "kind": "archaeology_geography",
+      "facts": [
+        "damascus",
+        "jerusalem",
+        "corinth",
+        "ephesus",
+        "rome"
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_22efd3b1d204",
+      "kind": "cultural_context",
+      "facts": [
+        "The doubled curse is forceful boundary rhetoric, not permission for religious violence, forced conversion, public targeting, or authoritarian suppression of questions."
+      ],
+      "verse_refs": [
+        "Galatians 1:8-9"
+      ],
+      "evidence_ids": [
+        "galatians:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_7288471e5449",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Caiaphas Ossuary includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Acts 12, Galatians 1:19, jerusalem, and joshua without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Galatians 1:19"
+      ],
+      "evidence_ids": [
+        "caiaphas-ossuary:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "caiaphas-ossuary"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:19"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_986a631580d4",
+      "kind": "cultural_context",
+      "facts": [
+        "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church.",
+        "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+        "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d76396d9443e",
+      "kind": "cultural_context",
+      "facts": [
+        "Paul operates in diaspora synagogue and Greco-Roman city contexts, translating the gospel for mixed communities."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "who-was-paul:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e5d4bedc6041",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for James Ossuary includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Acts 12, Galatians 1:19, jerusalem, and joshua without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Galatians 1:19"
+      ],
+      "evidence_ids": [
+        "james-ossuary:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "james-ossuary"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:19"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_0d0961d8a3da",
+      "kind": "historical_context",
+      "facts": [
+        "Famous because of the inscription and the controversy around provenance and reading."
+      ],
+      "verse_refs": [
+        "Galatians 1:19"
+      ],
+      "evidence_ids": [
+        "james-ossuary:historical_context:0"
+      ],
+      "entity_ids": [
+        "james-ossuary"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:19"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3a4fc74743ce",
+      "kind": "historical_context",
+      "facts": [
+        "Galatians names Paul as sender to multiple assemblies of Galatia and does not name a co-sender."
+      ],
+      "verse_refs": [
+        "Galatians 1:1-2"
+      ],
+      "evidence_ids": [
+        "gal-sender"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_467c3f2c7cee",
+      "kind": "historical_context",
+      "facts": [
+        "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "paul:historical_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_6023c577f19e",
+      "kind": "historical_context",
+      "facts": [
+        "Famous because of the inscription and the controversy around provenance and reading."
+      ],
+      "verse_refs": [
+        "Galatians 1:19"
+      ],
+      "evidence_ids": [
+        "caiaphas-ossuary:historical_context:0"
+      ],
+      "entity_ids": [
+        "caiaphas-ossuary"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:19"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_fceecd5a96d2",
+      "kind": "historical_context",
+      "facts": [
+        "A former persecutor turned missionary, Paul travels across Roman cities and writes to churches in the Mediterranean world."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "who-was-paul:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_45c11340f458",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Supplies relative chronology and limited named contact without turning the account into a complete diary."
+      ],
+      "verse_refs": [
+        "Galatians 1:18-20"
+      ],
+      "evidence_ids": [
+        "galatians-three-years-jerusalem:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_541c4dc405fc",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Roman provincial Galatia and ethnic Galatia were overlapping but nonidentical geographic categories; neither should silently replace the other in every text.",
+        "The letter names no city, road, province boundary, or ethnic census; both North- and South-Galatian destinations remain scholarly hypotheses.",
+        "Acts' city sequence can support a South-Galatian proposal but does not say that those congregations received Galatians or give a complete Pauline itinerary.",
+        "The letter addresses multiple assemblies and implies substantial gentile participation, yet it gives no population proportions, city names, occupations, household lists, or uniform ethnic profile.",
+        "The evidence prevents either destination model from turning Galatians into a census of uniformly Celtic, Roman, Lycaonian, gentile, poor, elite, male, or urban recipients."
+      ],
+      "verse_refs": [
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "galatia:interpretive_note:0",
+        "galatia:interpretive_note:1",
+        "galatia:interpretive_note:2",
+        "galatians-plural-assemblies-and-demographic-limits",
+        "galatians-plural-assemblies-and-demographic-limits:passage-relevance"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_60adcc317bde",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Pauline authorship of Galatians is a strong critical consensus, while an unnamed secretary or scribal assistant remains possible.",
+        "A date between the late 40s and mid-50s CE is plausible, but Galatians supplies no absolute date or named provenance.",
+        "Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province.",
+        "Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain."
+      ],
+      "verse_refs": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:18-20",
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "gal-authorship",
+        "gal-date",
+        "gal-destination",
+        "gal-jerusalem"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:18-20",
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_6bea9764e589",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul says the disclosure of God's son led him not immediately to consult flesh and blood or go to Jerusalem, but to go to Arabia and return to Damascus.",
+        "Starts chronology with the earlier direct letter and does not silently harmonize its sequence to Acts.",
+        "Paul says he went into the regions of Syria and Cilicia and remained personally unknown to the Judean assemblies in Messiah, which heard reports about him.",
+        "Preserves uneven knowledge and mediated reports within the network.",
+        "Galatians says that after three years Paul went to Jerusalem to visit Cephas, remained fifteen days, saw no other apostle except James, and invokes God as witness."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-17",
+        "Galatians 1:18-20",
+        "Galatians 1:21-24"
+      ],
+      "evidence_ids": [
+        "galatians-call-independent-chronology",
+        "galatians-call-independent-chronology:passage-relevance",
+        "galatians-syria-cilicia-unknown",
+        "galatians-syria-cilicia-unknown:passage-relevance",
+        "galatians-three-years-jerusalem"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-17",
+        "Galatians 1:18-20",
+        "Galatians 1:21-24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography",
+          "history"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b01a2dc22bd1",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts narrates a southern city sequence and return journey but does not identify those assemblies as the recipients of Galatians.",
+        "Galatians names plural assemblies and addresses Galatians but supplies no city names, so North- and South-Galatian destination theories remain disputed.",
+        "Early imperial Galatia could denote a Roman province larger than the older north-central ethnic region, and the intended range must be argued text by text."
+      ],
+      "verse_refs": [
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "galatia-acts-sequence",
+        "galatia-letter-destination",
+        "galatia-provincial-ethnic-distinction"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "history",
+          "politics"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b4aa65f2046f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul expresses astonishment at desertion and twice pronounces a curse on anyone proclaiming a contrary gospel.",
+        "Marks perceived stakes without licensing threats, harassment, damnation campaigns, or treating disagreement itself as abuse.",
+        "Paul says he violently persecuted and tried to destroy God's assembly while advancing in ancestral traditions.",
+        "Prevents zeal, pedigree, dramatic conversion, or later office from erasing prior harm or the need for accountability."
+      ],
+      "verse_refs": [
+        "Galatians 1:13-24",
+        "Galatians 1:6-10"
+      ],
+      "evidence_ids": [
+        "galatian-curse-rhetoric-boundary",
+        "galatian-curse-rhetoric-boundary:passage-relevance",
+        "paul-former-violence-disclosure",
+        "paul-former-violence-disclosure:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:13-24",
+        "Galatians 1:6-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b83e5c0e2f29",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The letter indicates teachers pressing circumcision and Torah obligation, but their number, origin, self-description, motives, and full program cannot be recovered from Paul's polemic alone.",
+        "Paul is the sole named sender; possible scribal assistance should not be converted into a named coauthor or used to erase collaborative letter production.",
+        "North- and South-Galatian theories remain hypotheses; geography must not invent a city, route, audience ethnicity, or single assembly.",
+        "Dates in the late 40s through 50s depend on disputed Jerusalem and Acts synchronisms and should not be presented as an explicit colophon."
+      ],
+      "verse_refs": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:2",
+        "Galatians 1:7"
+      ],
+      "evidence_ids": [
+        "gal-opponents",
+        "galatians:interpretive_note:0",
+        "galatians:interpretive_note:1",
+        "galatians:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:2",
+        "Galatians 1:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_ca4f9e1a592e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Galatians addresses plural assemblies of Galatia and later says Galatians, but it names no city and never identifies the Acts 13-14 congregations as its recipients.",
+        "The item keeps both destination models visible and prevents a reconstructed city list from being inserted into the letter.",
+        "Neither a South-Galatian reconstruction nor a North-Galatian reconstruction permits treating the recipients as uniformly Celtic, gentile, urban, poor, elite, or attached to one city.",
+        "The province organized from 25 BCE included the north-central Galatian homeland and diverse southern districts with older Phrygian, Pisidian, and Lycaonian identities.",
+        "The distinction frames both Acts' compact regional language and the letter's Galatia address without deciding either one by definition."
+      ],
+      "verse_refs": [
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "north-south-galatia-destination-dispute",
+        "north-south-galatia-destination-dispute:passage-relevance",
+        "roman-galatia-regions-roads-cities-and-audience:interpretive_note:4",
+        "roman-province-and-ethnic-galatia",
+        "roman-province-and-ethnic-galatia:passage-relevance"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_d5cae602001b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul's opponents must be reconstructed through his adversarial rhetoric; calling them one settled Jewish-Christian party confuses a scholarly model with direct evidence.",
+        "Paul describes a divine disclosure and call through scriptural prophetic language; historical description should distinguish his autobiographical claim from later doctrine about revelation.",
+        "Paul's oath that he is not lying signals contested autobiography; it strengthens the claim that these are his assertions without independently verifying every itinerary detail."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-17",
+        "Galatians 1:20",
+        "Galatians 1:7"
+      ],
+      "evidence_ids": [
+        "galatians:interpretive_note:3",
+        "galatians:interpretive_note:5",
+        "galatians:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-17",
+        "Galatians 1:20",
+        "Galatians 1:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_fb7426204d40",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Galatians moves from grace-and-peace greeting and doxology directly to astonishment at the audience's movement toward another message.",
+        "Shows that blessing language need not suppress disagreement, warning, or truth-telling.",
+        "Unlike several Pauline letters, Galatians has no opening thanksgiving period, yet Paul continues appeal, kinship language, memory, and labor for the audience.",
+        "Prevents withholding gratitude from becoming humiliation or proof that conflicted people are worthless or beyond care."
+      ],
+      "verse_refs": [
+        "Galatians 1:1-10",
+        "Galatians 1:3-6"
+      ],
+      "evidence_ids": [
+        "galatians-greeting-to-rebuke",
+        "galatians-greeting-to-rebuke:passage-relevance",
+        "galatians-missing-thanksgiving",
+        "galatians-missing-thanksgiving:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1-10",
+        "Galatians 1:3-6"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_language_literary_0e64ba29590f",
+      "kind": "language_literary",
+      "facts": [
+        "The doubled curse in Galatians 1 targets proclamations that overturn Paul's gospel and functions as polemical rhetoric, not authorization for violence against dissenters."
+      ],
+      "verse_refs": [
+        "Galatians 1:8-9"
+      ],
+      "evidence_ids": [
+        "gal-curse"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0133eb64dd78",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts and Galatians differ in selection, emphasis, and sequence when narrating Paul's call and Jerusalem contacts; exact harmonizations remain disputed."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-14"
+      ],
+      "evidence_ids": [
+        "gal-acts"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_098bae42de7b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts narrates named southern cities, regional traversals, and a Jerusalem council; Galatians narrates selective first-person movements, Jerusalem meetings, Antioch conflict, and an unnamed Galatian audience.",
+        "The comparison permits historical correlation while preventing Acts from filling every silence in Galatians or the letter from becoming a key to every Acts journey."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-14"
+      ],
+      "evidence_ids": [
+        "acts-and-galatians-distinct-itinerary-witnesses",
+        "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [
+        "syn_surrounding_passages_705f8049c758"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0c60d1bec102",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Galatians combines letter conventions with rebuke, curse, autobiography, scriptural argument, allegory, exhortation, warning, and autograph; assignment to one classical rhetorical species is disputed."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-21",
+        "Galatians 3:1-29",
+        "Galatians 4:1-31",
+        "Galatians 5:1-26",
+        "Galatians 6:1-18"
+      ],
+      "evidence_ids": [
+        "gal-rhetoric"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:1-6:18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_705f8049c758",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts narrates named southern cities, regional traversals, and a Jerusalem council; Galatians narrates selective first-person movements, Jerusalem meetings, Antioch conflict, and an unnamed Galatian audience.",
+        "The comparison permits historical correlation while preventing Acts from filling every silence in Galatians or the letter from becoming a key to every Acts journey."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-14"
+      ],
+      "evidence_ids": [
+        "acts-and-galatians-distinct-itinerary-witnesses",
+        "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_9d2cec87b1f1",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts' sequence around Paul's call and Jerusalem visits differs in emphasis and detail from Galatians 1-2, and exact harmonization remains disputed."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-14"
+      ],
+      "evidence_ids": [
+        "acts-galatians"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_a5cecabd22c0",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Build chronology first from the direct letters. Acts 13-20 is a later narrative witness whose sequence, speeches, travel compression, and emphases must not silently replace Galatians or the letters' own plans and absences."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-14"
+      ],
+      "evidence_ids": [
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_c37945c0294c",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Galatians and Acts are independent rhetorical narratives; neither automatic harmonization nor automatic contradiction can replace passage-by-passage comparison."
+      ],
+      "verse_refs": [
+        "Galatians 2:1-14"
+      ],
+      "evidence_ids": [
+        "galatians:interpretive_note:6"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Galatians 1:11-2:14"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0fe982160243",
+      "kind": "why_it_matters",
+      "facts": [
+        "Roman provincial Galatia and ethnic Galatia were overlapping but nonidentical geographic categories; neither should silently replace the other in every text.",
+        "The letter names no city, road, province boundary, or ethnic census; both North- and South-Galatian destinations remain scholarly hypotheses.",
+        "Acts' city sequence can support a South-Galatian proposal but does not say that those congregations received Galatians or give a complete Pauline itinerary.",
+        "The letter addresses multiple assemblies and implies substantial gentile participation, yet it gives no population proportions, city names, occupations, household lists, or uniform ethnic profile.",
+        "The evidence prevents either destination model from turning Galatians into a census of uniformly Celtic, Roman, Lycaonian, gentile, poor, elite, male, or urban recipients."
+      ],
+      "verse_refs": [
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "galatia:interpretive_note:0",
+        "galatia:interpretive_note:1",
+        "galatia:interpretive_note:2",
+        "galatians-plural-assemblies-and-demographic-limits",
+        "galatians-plural-assemblies-and-demographic-limits:passage-relevance"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_541c4dc405fc"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_1b6250499fa7",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church.",
+        "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+        "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_986a631580d4"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_3aab94fc58d8",
+      "kind": "why_it_matters",
+      "facts": [
+        "Galatians addresses plural assemblies of Galatia and later says Galatians, but it names no city and never identifies the Acts 13-14 congregations as its recipients.",
+        "The item keeps both destination models visible and prevents a reconstructed city list from being inserted into the letter.",
+        "Neither a South-Galatian reconstruction nor a North-Galatian reconstruction permits treating the recipients as uniformly Celtic, gentile, urban, poor, elite, or attached to one city.",
+        "The province organized from 25 BCE included the north-central Galatian homeland and diverse southern districts with older Phrygian, Pisidian, and Lycaonian identities.",
+        "The distinction frames both Acts' compact regional language and the letter's Galatia address without deciding either one by definition."
+      ],
+      "verse_refs": [
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "north-south-galatia-destination-dispute",
+        "north-south-galatia-destination-dispute:passage-relevance",
+        "roman-galatia-regions-roads-cities-and-audience:interpretive_note:4",
+        "roman-province-and-ethnic-galatia",
+        "roman-province-and-ethnic-galatia:passage-relevance"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_ca4f9e1a592e"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_4668cbdcc2d8",
+      "kind": "why_it_matters",
+      "facts": [
+        "damascus",
+        "jerusalem",
+        "corinth",
+        "ephesus",
+        "rome"
+      ],
+      "verse_refs": [
+        "Galatians 1:11-24"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_0be8ae838ee9"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_755bab05dd5c",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul says the disclosure of God's son led him not immediately to consult flesh and blood or go to Jerusalem, but to go to Arabia and return to Damascus.",
+        "Starts chronology with the earlier direct letter and does not silently harmonize its sequence to Acts.",
+        "Paul says he went into the regions of Syria and Cilicia and remained personally unknown to the Judean assemblies in Messiah, which heard reports about him.",
+        "Preserves uneven knowledge and mediated reports within the network.",
+        "Galatians says that after three years Paul went to Jerusalem to visit Cephas, remained fifteen days, saw no other apostle except James, and invokes God as witness."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-17",
+        "Galatians 1:18-20",
+        "Galatians 1:21-24"
+      ],
+      "evidence_ids": [
+        "galatians-call-independent-chronology",
+        "galatians-call-independent-chronology:passage-relevance",
+        "galatians-syria-cilicia-unknown",
+        "galatians-syria-cilicia-unknown:passage-relevance",
+        "galatians-three-years-jerusalem"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_6bea9764e589"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-17",
+        "Galatians 1:18-20",
+        "Galatians 1:21-24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_9961d5d59aff",
+      "kind": "why_it_matters",
+      "facts": [
+        "The letter indicates teachers pressing circumcision and Torah obligation, but their number, origin, self-description, motives, and full program cannot be recovered from Paul's polemic alone.",
+        "Paul is the sole named sender; possible scribal assistance should not be converted into a named coauthor or used to erase collaborative letter production.",
+        "North- and South-Galatian theories remain hypotheses; geography must not invent a city, route, audience ethnicity, or single assembly.",
+        "Dates in the late 40s through 50s depend on disputed Jerusalem and Acts synchronisms and should not be presented as an explicit colophon."
+      ],
+      "verse_refs": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:2",
+        "Galatians 1:7"
+      ],
+      "evidence_ids": [
+        "gal-opponents",
+        "galatians:interpretive_note:0",
+        "galatians:interpretive_note:1",
+        "galatians:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b83e5c0e2f29"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:2",
+        "Galatians 1:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_abb892c79b49",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul's opponents must be reconstructed through his adversarial rhetoric; calling them one settled Jewish-Christian party confuses a scholarly model with direct evidence.",
+        "Paul describes a divine disclosure and call through scriptural prophetic language; historical description should distinguish his autobiographical claim from later doctrine about revelation.",
+        "Paul's oath that he is not lying signals contested autobiography; it strengthens the claim that these are his assertions without independently verifying every itinerary detail."
+      ],
+      "verse_refs": [
+        "Galatians 1:11-17",
+        "Galatians 1:20",
+        "Galatians 1:7"
+      ],
+      "evidence_ids": [
+        "galatians:interpretive_note:3",
+        "galatians:interpretive_note:5",
+        "galatians:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_d5cae602001b"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:11-17",
+        "Galatians 1:20",
+        "Galatians 1:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ada69c00e40b",
+      "kind": "why_it_matters",
+      "facts": [
+        "Pauline authorship of Galatians is a strong critical consensus, while an unnamed secretary or scribal assistant remains possible.",
+        "A date between the late 40s and mid-50s CE is plausible, but Galatians supplies no absolute date or named provenance.",
+        "Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province.",
+        "Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain."
+      ],
+      "verse_refs": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:18-20",
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "gal-authorship",
+        "gal-date",
+        "gal-destination",
+        "gal-jerusalem"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_60adcc317bde"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1",
+        "Galatians 1:18",
+        "Galatians 1:18-20",
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b733efb60a73",
+      "kind": "why_it_matters",
+      "facts": [
+        "Galatians moves from grace-and-peace greeting and doxology directly to astonishment at the audience's movement toward another message.",
+        "Shows that blessing language need not suppress disagreement, warning, or truth-telling.",
+        "Unlike several Pauline letters, Galatians has no opening thanksgiving period, yet Paul continues appeal, kinship language, memory, and labor for the audience.",
+        "Prevents withholding gratitude from becoming humiliation or proof that conflicted people are worthless or beyond care."
+      ],
+      "verse_refs": [
+        "Galatians 1:1-10",
+        "Galatians 1:3-6"
+      ],
+      "evidence_ids": [
+        "galatians-greeting-to-rebuke",
+        "galatians-greeting-to-rebuke:passage-relevance",
+        "galatians-missing-thanksgiving",
+        "galatians-missing-thanksgiving:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_fb7426204d40"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:1-10",
+        "Galatians 1:3-6"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c220efb572b0",
+      "kind": "why_it_matters",
+      "facts": [
+        "Supplies relative chronology and limited named contact without turning the account into a complete diary."
+      ],
+      "verse_refs": [
+        "Galatians 1:18-20"
+      ],
+      "evidence_ids": [
+        "galatians-three-years-jerusalem:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_45c11340f458"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 1,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_df88ac0e034b",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul expresses astonishment at desertion and twice pronounces a curse on anyone proclaiming a contrary gospel.",
+        "Marks perceived stakes without licensing threats, harassment, damnation campaigns, or treating disagreement itself as abuse.",
+        "Paul says he violently persecuted and tried to destroy God's assembly while advancing in ancestral traditions.",
+        "Prevents zeal, pedigree, dramatic conversion, or later office from erasing prior harm or the need for accountability."
+      ],
+      "verse_refs": [
+        "Galatians 1:13-24",
+        "Galatians 1:6-10"
+      ],
+      "evidence_ids": [
+        "galatian-curse-rhetoric-boundary",
+        "galatian-curse-rhetoric-boundary:passage-relevance",
+        "paul-former-violence-disclosure",
+        "paul-former-violence-disclosure:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b4aa65f2046f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:13-24",
+        "Galatians 1:6-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f13c2346fbf3",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts narrates a southern city sequence and return journey but does not identify those assemblies as the recipients of Galatians.",
+        "Galatians names plural assemblies and addresses Galatians but supplies no city names, so North- and South-Galatian destination theories remain disputed.",
+        "Early imperial Galatia could denote a Roman province larger than the older north-central ethnic region, and the intended range must be argued text by text."
+      ],
+      "verse_refs": [
+        "Galatians 1:2"
+      ],
+      "evidence_ids": [
+        "galatia-acts-sequence",
+        "galatia-letter-destination",
+        "galatia-provincial-ethnic-distinction"
+      ],
+      "entity_ids": [
+        "galatia"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b01a2dc22bd1"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Galatians 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 63,
+    "used_evidence_ids": [
+      "acts-and-galatians-distinct-itinerary-witnesses",
+      "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance",
+      "acts-galatians",
+      "caiaphas-ossuary:ancient_near_east_context:0",
+      "caiaphas-ossuary:historical_context:0",
+      "gal-acts",
+      "gal-authorship",
+      "gal-curse",
+      "gal-date",
+      "gal-destination",
+      "gal-jerusalem",
+      "gal-opponents",
+      "gal-rhetoric",
+      "gal-sender",
+      "galatia-acts-sequence",
+      "galatia-letter-destination",
+      "galatia-provincial-ethnic-distinction",
+      "galatia:interpretive_note:0",
+      "galatia:interpretive_note:1",
+      "galatia:interpretive_note:2",
+      "galatian-curse-rhetoric-boundary",
+      "galatian-curse-rhetoric-boundary:passage-relevance",
+      "galatians-call-independent-chronology",
+      "galatians-call-independent-chronology:passage-relevance",
+      "galatians-greeting-to-rebuke",
+      "galatians-greeting-to-rebuke:passage-relevance",
+      "galatians-missing-thanksgiving",
+      "galatians-missing-thanksgiving:passage-relevance",
+      "galatians-plural-assemblies-and-demographic-limits",
+      "galatians-plural-assemblies-and-demographic-limits:passage-relevance",
+      "galatians-syria-cilicia-unknown",
+      "galatians-syria-cilicia-unknown:passage-relevance",
+      "galatians-three-years-jerusalem",
+      "galatians-three-years-jerusalem:passage-relevance",
+      "galatians:interpretive_note:0",
+      "galatians:interpretive_note:1",
+      "galatians:interpretive_note:2",
+      "galatians:interpretive_note:3",
+      "galatians:interpretive_note:4",
+      "galatians:interpretive_note:5",
+      "galatians:interpretive_note:6",
+      "galatians:interpretive_note:7",
+      "james-ossuary:ancient_near_east_context:0",
+      "james-ossuary:historical_context:0",
+      "north-south-galatia-destination-dispute",
+      "north-south-galatia-destination-dispute:passage-relevance",
+      "paul-former-violence-disclosure",
+      "paul-former-violence-disclosure:passage-relevance",
+      "paul:ancient_near_east_context:0",
+      "paul:hebraic_worldview:0",
+      "paul:historical_context:0",
+      "paul:key_places:0",
+      "paul:key_places:1",
+      "paul:key_places:2",
+      "paul:key_places:3",
+      "paul:key_places:4",
+      "paul:second_temple_context:0",
+      "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+      "roman-galatia-regions-roads-cities-and-audience:interpretive_note:4",
+      "roman-province-and-ethnic-galatia",
+      "roman-province-and-ethnic-galatia:passage-relevance",
+      "who-was-paul:ancient_near_east_context:0",
+      "who-was-paul:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 37,
+      "geography": 10,
+      "history": 13,
+      "politics": 1,
+      "social": 2
+    },
+    "category_diversity": 5,
+    "specific_evidence_count": 63,
+    "entity_counts": {
+      "people": 1,
+      "places": 1,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 2
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "cultural_context": 5,
+      "historical_context": 5,
+      "interpretive_questions": 10,
+      "language_literary": 1,
+      "surrounding_passages": 7,
+      "why_it_matters": 12
+    },
+    "relationship_unit_count": 13
+  }
+}

@@ -1,0 +1,1161 @@
+{
+  "reference": "Genesis 22",
+  "book": "Genesis",
+  "chapter": 22,
+  "evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "b48ea530c17823d519855a5c99b781c65f2d944509f7fc981b26cf4dff830bea",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_2b3041655fac",
+      "kind": "archaeology_geography",
+      "facts": [
+        "canaan",
+        "shechem",
+        "hebron"
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:key_places:0",
+        "abrahamic-covenant-framework:key_places:1",
+        "abrahamic-covenant-framework:key_places:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_archaeology_geography_c5e5db9c7d09",
+      "kind": "archaeology_geography",
+      "facts": [
+        "canaan",
+        "shechem",
+        "hebron",
+        "egypt"
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "abraham:key_places:0",
+        "abraham:key_places:1",
+        "abraham:key_places:2",
+        "abraham:key_places:3"
+      ],
+      "entity_ids": [
+        "abraham"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_0c9f2bdbee58",
+      "kind": "chronology",
+      "facts": [
+        "Abraham called from his kinship setting",
+        "Promise ratified by covenant ceremony",
+        "Circumcision given as covenant sign",
+        "Isaac born as child of promise",
+        "Promise reaffirmed after the binding of Isaac"
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:timeline:0",
+        "abrahamic-covenant-framework:timeline:1",
+        "abrahamic-covenant-framework:timeline:2",
+        "abrahamic-covenant-framework:timeline:3",
+        "abrahamic-covenant-framework:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_0cd1b50ceca3",
+      "kind": "cultural_context",
+      "facts": [
+        "The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East.",
+        "Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance.",
+        "Second Temple Jewish and early Christian writers regularly appeal to Abraham as ancestor, model of faith, covenant recipient, and witness to God's promises."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "abraham:ancient_near_east_context:0",
+        "abraham:hebraic_worldview:0",
+        "abraham:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "abraham"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_31afd5cff350",
+      "kind": "cultural_context",
+      "facts": [
+        "Migration, kinship, and treaty language frame Abraham's world, but God's promise drives the narrative."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "who-was-abraham:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4312f7065fe4",
+      "kind": "cultural_context",
+      "facts": [
+        "Clans, inheritance, and covenant-making form the background."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "binding-of-isaac:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "binding-of-isaac"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_98da88f87778",
+      "kind": "cultural_context",
+      "facts": [
+        "Clans, inheritance, and covenant-making form the background."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "joseph-sold-into-egypt:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "joseph-sold-into-egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b4a12820a0ca",
+      "kind": "cultural_context",
+      "facts": [
+        "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
+        "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+        "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d015b823587d",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient covenant and oath practices provide a comparative backdrop, but Genesis emphasizes God's unilateral promise and covenant faithfulness rather than a merely human treaty.",
+        "The covenant frames identity as received promise: Abraham's household lives as sojourners who trust God's word before possessing the inheritance.",
+        "Israel remembering its identity as a people formed by divine promise",
+        "Second Temple Jewish and early Christian writers appeal to Abraham as ancestor, promise recipient, and model for debates about covenant membership and Gentile inclusion."
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:ancient_near_east_context:0",
+        "abrahamic-covenant-framework:hebraic_worldview:0",
+        "abrahamic-covenant-framework:original_audience:0",
+        "abrahamic-covenant-framework:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d54ba3bae1b5",
+      "kind": "cultural_context",
+      "facts": [
+        "Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-14"
+      ],
+      "evidence_ids": [
+        "what-is-sacrifice-in-the-bible:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-14"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_2704661cdb07",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the patriarchal world of movement, household life, and land promise."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "joseph-sold-into-egypt:historical_context:0"
+      ],
+      "entity_ids": [
+        "joseph-sold-into-egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_50147261ef23",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the patriarchal world of movement, household life, and land promise."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "binding-of-isaac:historical_context:0"
+      ],
+      "entity_ids": [
+        "binding-of-isaac"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_94d08a18a1ba",
+      "kind": "historical_context",
+      "facts": [
+        "Abraham stands in the ancestral narratives of Genesis as the father of the covenant line. His story reflects clan migration, land promise, and divine promise in an early biblical setting rather than a fixed modern chronology."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "abraham:historical_context:0"
+      ],
+      "entity_ids": [
+        "abraham"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ac182d155012",
+      "kind": "historical_context",
+      "facts": [
+        "From the patriarchs to the temple, sacrifice organizes worship around sin, gratitude, and restored access to God."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-14"
+      ],
+      "evidence_ids": [
+        "what-is-sacrifice-in-the-bible:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-14"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_adcf42faae26",
+      "kind": "historical_context",
+      "facts": [
+        "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "sacrifice-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c4e879f25a5e",
+      "kind": "historical_context",
+      "facts": [
+        "Genesis presents Abraham as the ancestor through whom Israel traces its identity, land promise, and blessing to the nations."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "who-was-abraham:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_d22ea16d82e0",
+      "kind": "historical_context",
+      "facts": [
+        "The Abrahamic covenant belongs to the patriarchal narratives of Genesis, where divine promise shapes family migration, land expectation, and the identity of Abraham's descendants.",
+        "Patriarchal narratives in Genesis"
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:historical_context:0",
+        "abrahamic-covenant-framework:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_7edc2ef09b1a",
+      "kind": "interpretive_questions",
+      "facts": [
+        "James pairs Abraham and Rahab as examples in which deeds enact or complete faith."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-19"
+      ],
+      "evidence_ids": [
+        "jas-abraham-rahab"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-19"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_14ee16a6806f",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+        "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 11:27-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_217e081e6fd0"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 11:27-50:26",
+        "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_217e081e6fd0",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+        "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 11:27-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 11:27-50:26",
+        "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_a0f7e8e05ef6",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_1b1c7fc9d937",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient covenant and oath practices provide a comparative backdrop, but Genesis emphasizes God's unilateral promise and covenant faithfulness rather than a merely human treaty.",
+        "The covenant frames identity as received promise: Abraham's household lives as sojourners who trust God's word before possessing the inheritance.",
+        "Israel remembering its identity as a people formed by divine promise",
+        "Second Temple Jewish and early Christian writers appeal to Abraham as ancestor, promise recipient, and model for debates about covenant membership and Gentile inclusion."
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:ancient_near_east_context:0",
+        "abrahamic-covenant-framework:hebraic_worldview:0",
+        "abrahamic-covenant-framework:original_audience:0",
+        "abrahamic-covenant-framework:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_d015b823587d"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5a34fa92ee29",
+      "kind": "why_it_matters",
+      "facts": [
+        "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
+        "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+        "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_b4a12820a0ca"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6accb574e926",
+      "kind": "why_it_matters",
+      "facts": [
+        "canaan",
+        "shechem",
+        "hebron",
+        "egypt"
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "abraham:key_places:0",
+        "abraham:key_places:1",
+        "abraham:key_places:2",
+        "abraham:key_places:3"
+      ],
+      "entity_ids": [
+        "abraham"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_c5e5db9c7d09"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8e72705643e0",
+      "kind": "why_it_matters",
+      "facts": [
+        "Abraham called from his kinship setting",
+        "Promise ratified by covenant ceremony",
+        "Circumcision given as covenant sign",
+        "Isaac born as child of promise",
+        "Promise reaffirmed after the binding of Isaac"
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:timeline:0",
+        "abrahamic-covenant-framework:timeline:1",
+        "abrahamic-covenant-framework:timeline:2",
+        "abrahamic-covenant-framework:timeline:3",
+        "abrahamic-covenant-framework:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_chronology_0c9f2bdbee58"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ba8dde12078c",
+      "kind": "why_it_matters",
+      "facts": [
+        "The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East.",
+        "Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance.",
+        "Second Temple Jewish and early Christian writers regularly appeal to Abraham as ancestor, model of faith, covenant recipient, and witness to God's promises."
+      ],
+      "verse_refs": [
+        "Genesis 22:1-18"
+      ],
+      "evidence_ids": [
+        "abraham:ancient_near_east_context:0",
+        "abraham:hebraic_worldview:0",
+        "abraham:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "abraham"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_0cd1b50ceca3"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c717de193b4b",
+      "kind": "why_it_matters",
+      "facts": [
+        "The Abrahamic covenant belongs to the patriarchal narratives of Genesis, where divine promise shapes family migration, land expectation, and the identity of Abraham's descendants.",
+        "Patriarchal narratives in Genesis"
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:historical_context:0",
+        "abrahamic-covenant-framework:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_historical_context_d22ea16d82e0"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f1290bf71d02",
+      "kind": "why_it_matters",
+      "facts": [
+        "canaan",
+        "shechem",
+        "hebron"
+      ],
+      "verse_refs": [
+        "Genesis 22:15-18"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:key_places:0",
+        "abrahamic-covenant-framework:key_places:1",
+        "abrahamic-covenant-framework:key_places:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_archaeology_geography_2b3041655fac"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 38,
+    "used_evidence_ids": [
+      "abraham:ancient_near_east_context:0",
+      "abraham:hebraic_worldview:0",
+      "abraham:historical_context:0",
+      "abraham:key_places:0",
+      "abraham:key_places:1",
+      "abraham:key_places:2",
+      "abraham:key_places:3",
+      "abraham:second_temple_context:0",
+      "abrahamic-covenant-framework:ancient_near_east_context:0",
+      "abrahamic-covenant-framework:hebraic_worldview:0",
+      "abrahamic-covenant-framework:historical_context:0",
+      "abrahamic-covenant-framework:historical_setting:0",
+      "abrahamic-covenant-framework:key_places:0",
+      "abrahamic-covenant-framework:key_places:1",
+      "abrahamic-covenant-framework:key_places:2",
+      "abrahamic-covenant-framework:original_audience:0",
+      "abrahamic-covenant-framework:second_temple_context:0",
+      "abrahamic-covenant-framework:timeline:0",
+      "abrahamic-covenant-framework:timeline:1",
+      "abrahamic-covenant-framework:timeline:2",
+      "abrahamic-covenant-framework:timeline:3",
+      "abrahamic-covenant-framework:timeline:4",
+      "binding-of-isaac:ancient_near_east_context:0",
+      "binding-of-isaac:historical_context:0",
+      "genesis-literary-movement",
+      "genesis:interpretive_note:0",
+      "genesis:interpretive_note:3",
+      "jas-abraham-rahab",
+      "joseph-sold-into-egypt:ancient_near_east_context:0",
+      "joseph-sold-into-egypt:historical_context:0",
+      "sacrifice-theme:ancient_near_east_context:0",
+      "sacrifice-theme:hebraic_worldview:0",
+      "sacrifice-theme:historical_context:0",
+      "sacrifice-theme:second_temple_context:0",
+      "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
+      "what-is-sacrifice-in-the-bible:historical_context:0",
+      "who-was-abraham:ancient_near_east_context:0",
+      "who-was-abraham:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "chronology": 5,
+      "culture": 17,
+      "geography": 7,
+      "history": 8,
+      "social": 1
+    },
+    "category_diversity": 5,
+    "specific_evidence_count": 38,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 2,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 2,
+      "chronology": 1,
+      "cultural_context": 7,
+      "historical_context": 7,
+      "interpretive_questions": 1,
+      "surrounding_passages": 3,
+      "why_it_matters": 7
+    },
+    "relationship_unit_count": 8
+  }
+}

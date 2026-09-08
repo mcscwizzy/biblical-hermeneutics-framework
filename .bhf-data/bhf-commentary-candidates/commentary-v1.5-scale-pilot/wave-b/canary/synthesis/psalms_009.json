@@ -1,0 +1,88 @@
+{
+  "reference": "Psalms 9",
+  "book": "Psalms",
+  "chapter": 9,
+  "evidence_hash": "57bab9eabc6969680020bd1dda03bf44c0ab861ce3623f48e43bdee52b4b995e",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "2f41f1d8b19a52142424d5bac86f2b26bc99424b3ee800dbf7b4bf2d410d27f6",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_ca98a7c9ae5d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count."
+      ],
+      "verse_refs": [
+        "Psalms 10:1-18"
+      ],
+      "evidence_ids": [
+        "psalms-numbering-witnesses"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Psalms 9:1-10:18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "psalms-numbering-witnesses"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

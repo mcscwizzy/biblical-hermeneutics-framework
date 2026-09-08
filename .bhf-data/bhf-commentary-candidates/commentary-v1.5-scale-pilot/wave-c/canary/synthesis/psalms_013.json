@@ -1,0 +1,83 @@
+{
+  "reference": "Psalms 13",
+  "book": "Psalms",
+  "chapter": 13,
+  "evidence_hash": "4ae66945db6dedc894a9a02562a6d0afd0aac1f4a9fead6363256f04a0ab7215",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "3a37d07d6d7b8c6edfaa24aa91e79e4bcc7d91bfa2c010616b3a7b4015e02677",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_fce35616a805",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Psalter authorizes individuals and communities to address YHWH through lament, protest, confession, petition, trust, thanksgiving, and praise rather than presenting praise as its only faithful emotional register."
+      ],
+      "verse_refs": [
+        "Psalms 13:1-6"
+      ],
+      "evidence_ids": [
+        "psalms-lament-praise-range"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 13:1-6"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "psalms-lament-praise-range"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

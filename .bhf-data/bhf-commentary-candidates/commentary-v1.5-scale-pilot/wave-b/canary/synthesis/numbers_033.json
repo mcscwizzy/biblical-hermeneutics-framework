@@ -1,0 +1,590 @@
+{
+  "reference": "Numbers 33",
+  "book": "Numbers",
+  "chapter": 33,
+  "evidence_hash": "262cb381a319e610cb3bca089ed63a8b8cd7f9ad08e4c90dabf4ebafef6413d1",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "4483f5c9285f1761fdc5ca5d88c2882b3193f614c596cb04cfed22ddafedfd00",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_4198535616e9",
+      "kind": "archaeology_geography",
+      "facts": [
+        "Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order.",
+        "The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery."
+      ],
+      "verse_refs": [
+        "Numbers 33:8-10"
+      ],
+      "evidence_ids": [
+        "marah-elim-water-stations",
+        "marah-elim-water-stations:passage-relevance"
+      ],
+      "entity_ids": [
+        "wilderness-wandering"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:8-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_cultural_context_32ddd1029836",
+      "kind": "cultural_context",
+      "facts": [
+        "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations."
+      ],
+      "verse_refs": [
+        "Numbers 33:1-49"
+      ],
+      "evidence_ids": [
+        "wilderness-wandering:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "wilderness-wandering"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:1-49"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_67533b1675d2",
+      "kind": "cultural_context",
+      "facts": [
+        "The episode is narrated against Egypt's eastern frontier, chariot pursuit, water, wind, and wilderness movement. Geographic comparison must remain separate from claims that a specific modern landform or alleged artifact proves the event."
+      ],
+      "verse_refs": [
+        "Numbers 33:5-8"
+      ],
+      "evidence_ids": [
+        "red-sea-crossing:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "red-sea-crossing"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b7bbab8a7190",
+      "kind": "cultural_context",
+      "facts": [
+        "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+        "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH."
+      ],
+      "verse_refs": [
+        "Numbers 33:3-4"
+      ],
+      "evidence_ids": [
+        "plagues-of-egypt:ancient_near_east_context:0",
+        "plagues-of-egypt:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_66ea2fd1bcd1",
+      "kind": "historical_context",
+      "facts": [
+        "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates."
+      ],
+      "verse_refs": [
+        "Numbers 33:1-49"
+      ],
+      "evidence_ids": [
+        "wilderness-wandering:historical_context:0"
+      ],
+      "entity_ids": [
+        "wilderness-wandering"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:1-49"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_84ae57f9ccda",
+      "kind": "historical_context",
+      "facts": [
+        "Exodus names route decisions and camps around the crossing but does not provide modern coordinates. Proposed identifications range across eastern Egyptian lakes, lagoons, and gulfs, so CKL preserves the route markers without selecting a crossing site."
+      ],
+      "verse_refs": [
+        "Numbers 33:5-8"
+      ],
+      "evidence_ids": [
+        "red-sea-crossing:historical_context:0"
+      ],
+      "entity_ids": [
+        "red-sea-crossing"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8ff4d9e5313f",
+      "kind": "historical_context",
+      "facts": [
+        "The narrative is set in Egypt under an unnamed Pharaoh and moves between royal audience scenes and disasters affecting land, animals, households, and cult. The record does not assign the episode to a dynasty or claim that an Egyptian artifact independently verifies the sequence."
+      ],
+      "verse_refs": [
+        "Numbers 33:3-4"
+      ],
+      "evidence_ids": [
+        "plagues-of-egypt:historical_context:0"
+      ],
+      "entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_990b81c50bf9",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.",
+        "The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain.",
+        "This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage.",
+        "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.",
+        "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage."
+      ],
+      "verse_refs": [
+        "Numbers 33:11-16",
+        "Numbers 33:5-16",
+        "Numbers 33:5-8"
+      ],
+      "evidence_ids": [
+        "exodus-wilderness-routes-and-water:interpretive_note:0",
+        "sinai-itinerary-models",
+        "sinai-itinerary-models:passage-relevance",
+        "yam-suf-route-identification",
+        "yam-suf-route-identification:passage-relevance"
+      ],
+      "entity_ids": [
+        "red-sea-crossing"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:11-16",
+        "Numbers 33:5-16",
+        "Numbers 33:5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_9a0d5acd444a",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established."
+      ],
+      "verse_refs": [
+        "Numbers 33"
+      ],
+      "evidence_ids": [
+        "numbers:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_c6f310263618",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+        "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+        "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."
+      ],
+      "verse_refs": [
+        "Numbers 33:3-4"
+      ],
+      "evidence_ids": [
+        "egyptian-kingship-and-divine-order:interpretive_note:0",
+        "judgment-on-egypts-gods",
+        "judgment-on-egypts-gods:passage-relevance"
+      ],
+      "entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_2ef49e432e30",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards."
+      ],
+      "verse_refs": [
+        "Numbers 26",
+        "Numbers 27:1-23",
+        "Numbers 28:1-31",
+        "Numbers 29:1-40",
+        "Numbers 30:1-16",
+        "Numbers 31:1-54",
+        "Numbers 32:1-42",
+        "Numbers 34:1-29",
+        "Numbers 35:1-34",
+        "Numbers 36:1-13"
+      ],
+      "evidence_ids": [
+        "numbers-inheritance-preparation"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Numbers 26-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_268d6f6c97d1",
+      "kind": "why_it_matters",
+      "facts": [
+        "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+        "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH."
+      ],
+      "verse_refs": [
+        "Numbers 33:3-4"
+      ],
+      "evidence_ids": [
+        "plagues-of-egypt:ancient_near_east_context:0",
+        "plagues-of-egypt:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_b7bbab8a7190"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_3cb33506460e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order.",
+        "The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery."
+      ],
+      "verse_refs": [
+        "Numbers 33:8-10"
+      ],
+      "evidence_ids": [
+        "marah-elim-water-stations",
+        "marah-elim-water-stations:passage-relevance"
+      ],
+      "entity_ids": [
+        "wilderness-wandering"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_4198535616e9"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:8-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_668bb829840a",
+      "kind": "why_it_matters",
+      "facts": [
+        "The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.",
+        "The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain.",
+        "This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage.",
+        "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.",
+        "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage."
+      ],
+      "verse_refs": [
+        "Numbers 33:11-16",
+        "Numbers 33:5-16",
+        "Numbers 33:5-8"
+      ],
+      "evidence_ids": [
+        "exodus-wilderness-routes-and-water:interpretive_note:0",
+        "sinai-itinerary-models",
+        "sinai-itinerary-models:passage-relevance",
+        "yam-suf-route-identification",
+        "yam-suf-route-identification:passage-relevance"
+      ],
+      "entity_ids": [
+        "red-sea-crossing"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_990b81c50bf9"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:11-16",
+        "Numbers 33:5-16",
+        "Numbers 33:5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b46c32715f34",
+      "kind": "why_it_matters",
+      "facts": [
+        "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+        "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+        "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."
+      ],
+      "verse_refs": [
+        "Numbers 33:3-4"
+      ],
+      "evidence_ids": [
+        "egyptian-kingship-and-divine-order:interpretive_note:0",
+        "judgment-on-egypts-gods",
+        "judgment-on-egypts-gods:passage-relevance"
+      ],
+      "entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_c6f310263618"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 19,
+    "used_evidence_ids": [
+      "egyptian-kingship-and-divine-order:interpretive_note:0",
+      "exodus-wilderness-routes-and-water:interpretive_note:0",
+      "judgment-on-egypts-gods",
+      "judgment-on-egypts-gods:passage-relevance",
+      "marah-elim-water-stations",
+      "marah-elim-water-stations:passage-relevance",
+      "numbers-inheritance-preparation",
+      "numbers:interpretive_note:2",
+      "plagues-of-egypt:ancient_near_east_context:0",
+      "plagues-of-egypt:hebraic_worldview:0",
+      "plagues-of-egypt:historical_context:0",
+      "red-sea-crossing:ancient_near_east_context:0",
+      "red-sea-crossing:historical_context:0",
+      "sinai-itinerary-models",
+      "sinai-itinerary-models:passage-relevance",
+      "wilderness-wandering:ancient_near_east_context:0",
+      "wilderness-wandering:historical_context:0",
+      "yam-suf-route-identification",
+      "yam-suf-route-identification:passage-relevance"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 9,
+      "geography": 7,
+      "history": 3
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 19,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 3,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "cultural_context": 3,
+      "historical_context": 3,
+      "interpretive_questions": 3,
+      "surrounding_passages": 1,
+      "why_it_matters": 4
+    },
+    "relationship_unit_count": 4
+  }
+}

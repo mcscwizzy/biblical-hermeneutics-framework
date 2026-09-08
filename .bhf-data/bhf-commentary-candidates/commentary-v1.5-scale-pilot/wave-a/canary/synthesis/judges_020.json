@@ -1,0 +1,134 @@
+{
+  "reference": "Judges 20",
+  "book": "Judges",
+  "chapter": 20,
+  "evidence_hash": "96f737fed1db2e5347af242223ccb9f6c2c423bfda2fd67960067f44ac67afc8",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "754659ce818d59c37dd78e35018a9980ebcf2e902e904417f5907ef607c8f0b0",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_38a8d572b91d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social collapse, not supplied as moral templates for imitation."
+      ],
+      "verse_refs": [
+        "Judges 19",
+        "Judges 21:1-25"
+      ],
+      "evidence_ids": [
+        "judges:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Judges 19-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_8d50cdb54176",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war."
+      ],
+      "verse_refs": [
+        "Judges 1",
+        "Judges 10:1-18",
+        "Judges 11:1-40",
+        "Judges 12:1-15",
+        "Judges 13:1-25",
+        "Judges 14:1-20",
+        "Judges 15:1-20",
+        "Judges 16:1-31",
+        "Judges 17:1-13",
+        "Judges 18:1-31",
+        "Judges 19:1-30",
+        "Judges 21:1-25",
+        "Judges 2:1-23",
+        "Judges 3:1-31",
+        "Judges 4:1-24",
+        "Judges 5:1-31",
+        "Judges 6:1-40",
+        "Judges 7:1-25",
+        "Judges 8:1-35",
+        "Judges 9:1-57"
+      ],
+      "evidence_ids": [
+        "judges-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Judges 1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "judges-literary-movement",
+      "judges:interpretive_note:4"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 2
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 2
+    },
+    "relationship_unit_count": 0
+  }
+}

@@ -1,0 +1,824 @@
+{
+  "passage_ref": "Genesis 33",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "shechem",
+        "title": "Shechem",
+        "type": "place",
+        "aliases": [
+          "where is shechem",
+          "tell me about shechem",
+          "why is shechem important"
+        ],
+        "metadata": {
+          "summary": "A central hill-country city that becomes a covenant landmark in the patriarchal and Joshua narratives and the burial place of Joseph's bones.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:6-7",
+            "Genesis 33:18-20",
+            "Genesis 35:1-4",
+            "Joshua 8:30-35",
+            "Joshua 24:1-28",
+            "Joshua 24:32"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [
+      {
+        "id": "jacob-wrestles-at-peniel",
+        "title": "Jacob Wrestles at Peniel",
+        "type": "event",
+        "aliases": [
+          "jacob wrestles",
+          "jacob renamed israel",
+          "peniel",
+          "genesis 32 jacob"
+        ],
+        "metadata": {
+          "summary": "Jacob wrestles through the night, receives a blessing, and is renamed Israel before meeting Esau.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 32:22-32",
+            "Genesis 33:1-11",
+            "Hosea 12:3-6"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "genesis-literary-movement",
+      "claim": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
+      "category": "culture",
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "hamilton-genesis-18-50"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3200,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "genesis:interpretive_note:0",
+      "claim": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+      "category": "culture",
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3200,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 27
+      }
+    },
+    {
+      "id": "genesis:interpretive_note:3",
+      "claim": "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions.",
+      "category": "culture",
+      "source_ids": [
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 11:27-50:26"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2200,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "jacob-wrestles-at-peniel:ancient_near_east_context:0",
+      "claim": "Name changes and blessings could mark vocation and status, but Genesis roots Jacob's new name in a mysterious divine encounter.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-32-22-32",
+        "genesis-33-1-11",
+        "hosea-12-3-6",
+        "jacob-wrestles-at-peniel-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "passage_anchors": [
+        "Genesis 33:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jacob-wrestles-at-peniel",
+        "parent_title": "Jacob Wrestles at Peniel",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jacob-wrestles-at-peniel:historical_context:0",
+      "claim": "The event belongs to the ancestral narratives, where family conflict, blessing, and identity shape the beginnings of Israel.",
+      "category": "history",
+      "source_ids": [
+        "genesis-32-22-32",
+        "genesis-33-1-11",
+        "hosea-12-3-6",
+        "jacob-wrestles-at-peniel-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "passage_anchors": [
+        "Genesis 33:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jacob-wrestles-at-peniel",
+        "parent_title": "Jacob Wrestles at Peniel",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:ancient_near_east_context:0",
+      "claim": "Cities like Shechem sat on key trade and travel routes in the southern Levant, making them strategic and symbolically important.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:hebraic_worldview:0",
+      "claim": "Shechem functions as remembered geography where covenant promise, household allegiance, burial, and public renewal are tied to a concrete place in the land.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:historical_context:0",
+      "claim": "Shechem appears as a long-lived Canaanite and Israelite place in the central hill country. In Genesis and Joshua it functions as a memory site for promise, burial, Joseph's bones, and covenant renewal.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:key_places:0",
+      "claim": "canaan",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:key_places:1",
+      "claim": "bethel-1",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:key_places:2",
+      "claim": "jordan",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "shechem:second_temple_context:0",
+      "claim": "By the Second Temple period, the Shechem region stood near Samaritan-Jewish boundary memories, with Mount Gerizim and central hill-country identity shaping later disputes.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-33-35",
+        "joshua-8-24",
+        "judges-9",
+        "shechem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "shechem"
+      ],
+      "passage_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shechem",
+        "parent_title": "Shechem",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Genesis 12, 33, 35",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12-33-35",
+        "canonical_object_ids": [
+          "shechem"
+        ]
+      },
+      {
+        "title": "Genesis 32:22-32",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "wrestling and renaming",
+        "id": "genesis-32-22-32",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Genesis 33:1-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "meeting Esau after the encounter",
+        "id": "genesis-33-1-11",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "The Book of Genesis, Chapters 1-17",
+        "author": "Victor P. Hamilton",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "Introduction and Genesis 1-17",
+        "url": "https://www.eerdmans.com/9780802825216/the-book-of-genesis-chapters-1-17/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "canonical-context",
+          "genesis-literary-movement",
+          "genesis-blessing-for-families"
+        ],
+        "notes": "NICOT commentary representing a conservative evangelical scholarly perspective.",
+        "id": "hamilton-genesis-1-17",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      },
+      {
+        "title": "The Book of Genesis, Chapters 18-50",
+        "author": "Victor P. Hamilton",
+        "publisher": "Eerdmans",
+        "year": 1995,
+        "locator": "Genesis 18-50",
+        "url": "https://www.eerdmans.com/9780802823090/the-book-of-genesis-chapters-18-50/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "genesis-literary-movement",
+          "genesis-ends-in-egypt"
+        ],
+        "notes": "NICOT commentary with literary, linguistic, theological, and reception-focused discussion.",
+        "id": "hamilton-genesis-18-50",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      },
+      {
+        "title": "Hosea 12:3-6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "prophetic reflection on Jacob",
+        "id": "hosea-12-3-6",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jacob Wrestles at Peniel",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jacob-wrestles-at-peniel-historical-orientation",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Joshua 8, 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-8-24",
+        "canonical_object_ids": [
+          "shechem"
+        ]
+      },
+      {
+        "title": "Judges 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "judges-9",
+        "canonical_object_ids": [
+          "shechem"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Genesis",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary throughout",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "genesis-literary-movement",
+          "genesis-ane-comparative-context"
+        ],
+        "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "sarna-genesis",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Shechem",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "shechem-historical-orientation",
+        "canonical_object_ids": [
+          "shechem"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Bruce Wells and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Genesis",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "genesis-ane-comparative-context"
+        ],
+        "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "genesis",
+        "type": "book",
+        "title": "Genesis",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.939
+      },
+      {
+        "id": "jacob-wrestles-at-peniel",
+        "type": "event",
+        "title": "Jacob Wrestles at Peniel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "shechem",
+        "type": "place",
+        "title": "Shechem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4294805a799e4621f42e729a7d19068de01dbd797fb4866f14709e4325a7c6ac",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,379 @@
+{
+  "reference": "Acts 25",
+  "book": "Acts",
+  "chapter": 25,
+  "evidence_hash": "8354acbcd7044ade53111cef0e4a6d9f84f5908baa35fb4d7ee5246edcda2453",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "742457dc268cb7387520d9d543b1711a8c1885247c50009f167dc5e7dede374d",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_50fabb2e893b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts narrates seizure, military rescue, hearings, a citizenship exchange, a beating threat halted, transfers, plots, governors, an appeal to Caesar, voyage, custody, and rented lodging.",
+        "Supplies later narrative evidence for strategic legal claims and constrained mobility without treating every procedure as exact precedent or imperial justice as reliably benevolent."
+      ],
+      "verse_refs": [
+        "Acts 25:1-12"
+      ],
+      "evidence_ids": [
+        "acts-citizenship-hearings-appeal-custody",
+        "acts-citizenship-hearings-appeal-custody:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 25:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_97e8403e3936",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts repeatedly portrays Paul as a Roman citizen, but independent confirmation of that personal status is unavailable."
+      ],
+      "verse_refs": [
+        "Acts 25:10-12"
+      ],
+      "evidence_ids": [
+        "acts-roman-citizenship"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 25:10-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_e7174355f3e6",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts repeatedly portrays Paul as a Roman citizen, but independent confirmation of that personal status is unavailable.",
+        "Acts narrates Paul's citizenship as affecting threatened flogging, the Philippian magistrates' response, custody and hearings, and his appeal to Caesar, though these scenes do not define every citizen's rights in every province."
+      ],
+      "verse_refs": [
+        "Acts 25:10-12"
+      ],
+      "evidence_ids": [
+        "roman-citizenship-portrayal",
+        "roman-procedural-effects"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 25:10-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_3f93bec5e870",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-western-text"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_a8d0c9d58280",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-historical-method"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_e4592e3b6c16",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-text-witnesses"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_70a05b250cea",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts repeatedly portrays Paul as a Roman citizen, but independent confirmation of that personal status is unavailable.",
+        "Acts narrates Paul's citizenship as affecting threatened flogging, the Philippian magistrates' response, custody and hearings, and his appeal to Caesar, though these scenes do not define every citizen's rights in every province."
+      ],
+      "verse_refs": [
+        "Acts 25:10-12"
+      ],
+      "evidence_ids": [
+        "roman-citizenship-portrayal",
+        "roman-procedural-effects"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_e7174355f3e6"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 25:10-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8af72e8c3622",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts narrates seizure, military rescue, hearings, a citizenship exchange, a beating threat halted, transfers, plots, governors, an appeal to Caesar, voyage, custody, and rented lodging.",
+        "Supplies later narrative evidence for strategic legal claims and constrained mobility without treating every procedure as exact precedent or imperial justice as reliably benevolent."
+      ],
+      "verse_refs": [
+        "Acts 25:1-12"
+      ],
+      "evidence_ids": [
+        "acts-citizenship-hearings-appeal-custody",
+        "acts-citizenship-hearings-appeal-custody:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_50fabb2e893b"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 25:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 8,
+    "used_evidence_ids": [
+      "acts-citizenship-hearings-appeal-custody",
+      "acts-citizenship-hearings-appeal-custody:passage-relevance",
+      "acts-historical-method",
+      "acts-roman-citizenship",
+      "acts-text-witnesses",
+      "acts-western-text",
+      "roman-citizenship-portrayal",
+      "roman-procedural-effects"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 4,
+      "geography": 1,
+      "history": 3
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 8,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 3,
+      "surrounding_passages": 3,
+      "why_it_matters": 2
+    },
+    "relationship_unit_count": 2
+  }
+}

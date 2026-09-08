@@ -1,0 +1,539 @@
+{
+  "reference": "Genesis 33",
+  "book": "Genesis",
+  "chapter": 33,
+  "evidence_hash": "4294805a799e4621f42e729a7d19068de01dbd797fb4866f14709e4325a7c6ac",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "35d0230de4953883125e2cc4c90d9711fb61b220ccf50978cbfa586e535bef24",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_efd02195f1f3",
+      "kind": "archaeology_geography",
+      "facts": [
+        "canaan",
+        "bethel-1",
+        "jordan"
+      ],
+      "verse_refs": [
+        "Genesis 33:18-20"
+      ],
+      "evidence_ids": [
+        "shechem:key_places:0",
+        "shechem:key_places:1",
+        "shechem:key_places:2"
+      ],
+      "entity_ids": [
+        "shechem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_572bd233687b",
+      "kind": "cultural_context",
+      "facts": [
+        "Name changes and blessings could mark vocation and status, but Genesis roots Jacob's new name in a mysterious divine encounter."
+      ],
+      "verse_refs": [
+        "Genesis 33:1-11"
+      ],
+      "evidence_ids": [
+        "jacob-wrestles-at-peniel:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:1-11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_aaa61110f458",
+      "kind": "cultural_context",
+      "facts": [
+        "Cities like Shechem sat on key trade and travel routes in the southern Levant, making them strategic and symbolically important.",
+        "Shechem functions as remembered geography where covenant promise, household allegiance, burial, and public renewal are tied to a concrete place in the land.",
+        "By the Second Temple period, the Shechem region stood near Samaritan-Jewish boundary memories, with Mount Gerizim and central hill-country identity shaping later disputes."
+      ],
+      "verse_refs": [
+        "Genesis 33:18-20"
+      ],
+      "evidence_ids": [
+        "shechem:ancient_near_east_context:0",
+        "shechem:hebraic_worldview:0",
+        "shechem:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "shechem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_195b926179b6",
+      "kind": "historical_context",
+      "facts": [
+        "Shechem appears as a long-lived Canaanite and Israelite place in the central hill country. In Genesis and Joshua it functions as a memory site for promise, burial, Joseph's bones, and covenant renewal."
+      ],
+      "verse_refs": [
+        "Genesis 33:18-20"
+      ],
+      "evidence_ids": [
+        "shechem:historical_context:0"
+      ],
+      "entity_ids": [
+        "shechem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_834dcb041dfd",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the ancestral narratives, where family conflict, blessing, and identity shape the beginnings of Israel."
+      ],
+      "verse_refs": [
+        "Genesis 33:1-11"
+      ],
+      "evidence_ids": [
+        "jacob-wrestles-at-peniel:historical_context:0"
+      ],
+      "entity_ids": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:1-11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_257a5c5fb5c7",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+        "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 11:27-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_bd8dc3fff7c2"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 11:27-50:26",
+        "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_84e308be81bd",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_bd8dc3fff7c2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+        "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 11:27-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 11:27-50:26",
+        "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6b8136d22921",
+      "kind": "why_it_matters",
+      "facts": [
+        "canaan",
+        "bethel-1",
+        "jordan"
+      ],
+      "verse_refs": [
+        "Genesis 33:18-20"
+      ],
+      "evidence_ids": [
+        "shechem:key_places:0",
+        "shechem:key_places:1",
+        "shechem:key_places:2"
+      ],
+      "entity_ids": [
+        "shechem"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_efd02195f1f3"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e6e7402c01e6",
+      "kind": "why_it_matters",
+      "facts": [
+        "Cities like Shechem sat on key trade and travel routes in the southern Levant, making them strategic and symbolically important.",
+        "Shechem functions as remembered geography where covenant promise, household allegiance, burial, and public renewal are tied to a concrete place in the land.",
+        "By the Second Temple period, the Shechem region stood near Samaritan-Jewish boundary memories, with Mount Gerizim and central hill-country identity shaping later disputes."
+      ],
+      "verse_refs": [
+        "Genesis 33:18-20"
+      ],
+      "evidence_ids": [
+        "shechem:ancient_near_east_context:0",
+        "shechem:hebraic_worldview:0",
+        "shechem:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "shechem"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_aaa61110f458"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 33:18-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 12,
+    "used_evidence_ids": [
+      "genesis-literary-movement",
+      "genesis:interpretive_note:0",
+      "genesis:interpretive_note:3",
+      "jacob-wrestles-at-peniel:ancient_near_east_context:0",
+      "jacob-wrestles-at-peniel:historical_context:0",
+      "shechem:ancient_near_east_context:0",
+      "shechem:hebraic_worldview:0",
+      "shechem:historical_context:0",
+      "shechem:key_places:0",
+      "shechem:key_places:1",
+      "shechem:key_places:2",
+      "shechem:second_temple_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 7,
+      "geography": 3,
+      "history": 2
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 12,
+    "entity_counts": {
+      "people": 0,
+      "places": 1,
+      "groups": 0,
+      "events": 1,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "cultural_context": 2,
+      "historical_context": 2,
+      "surrounding_passages": 3,
+      "why_it_matters": 2
+    },
+    "relationship_unit_count": 3
+  }
+}

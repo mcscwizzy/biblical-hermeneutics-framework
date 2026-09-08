@@ -1,0 +1,435 @@
+{
+  "reference": "John 3",
+  "book": "John",
+  "chapter": 3,
+  "evidence_hash": "b95bc27afdfcce7aafef918e97f93aaf4db770911d197c1dd3ac2a386954d81c",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "d12e259772bb7df5ff274c2b5e3ce76d884904e8aa81ec86af6f32bea008d589",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_1293977a7ca7",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Bronze Snake includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Numbers 21:4-9, 2 Kings 18:1-4, jerusalem, and joshua without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 3:14-15"
+      ],
+      "evidence_ids": [
+        "bronze-snake:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "bronze-snake"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:14-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_37ecaa6b6f7c",
+      "kind": "cultural_context",
+      "facts": [
+        "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+        "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+        "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+        "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope."
+      ],
+      "verse_refs": [
+        "John 3:1-21"
+      ],
+      "evidence_ids": [
+        "pharisees:ancient_near_east_context:0",
+        "pharisees:hebraic_worldview:0",
+        "pharisees:original_audience:0",
+        "pharisees:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_8790b7dd9266",
+      "kind": "cultural_context",
+      "facts": [
+        "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action."
+      ],
+      "verse_refs": [
+        "John 3:5-8"
+      ],
+      "evidence_ids": [
+        "what-does-ruach-mean:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_2d95fe5fa66b",
+      "kind": "historical_context",
+      "facts": [
+        "The word is used for physical wind and breath before it is used for divine and human life."
+      ],
+      "verse_refs": [
+        "John 3:5-8"
+      ],
+      "evidence_ids": [
+        "what-does-ruach-mean:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4836fe660acf",
+      "kind": "historical_context",
+      "facts": [
+        "A key Egyptian witness to the historical memory of Israel in the late 13th century BCE."
+      ],
+      "verse_refs": [
+        "John 3:14-15"
+      ],
+      "evidence_ids": [
+        "bronze-snake:historical_context:0"
+      ],
+      "entity_ids": [
+        "bronze-snake"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:14-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ee847976497f",
+      "kind": "historical_context",
+      "facts": [
+        "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+        "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction."
+      ],
+      "verse_refs": [
+        "John 3:1-21"
+      ],
+      "evidence_ids": [
+        "pharisees:historical_context:0",
+        "pharisees:historical_setting:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_7afcd4751d59",
+      "kind": "interpretive_questions",
+      "facts": [
+        "John 3:16 announces God's love for the world and life through the Son, but Greek manuscripts do not mark where Jesus' speech ends and the narrator's exposition begins.",
+        "In John 3, anothen can mean 'from above' or 'again'; Nicodemus hears repetition while the discourse develops heavenly origin and Spirit birth.",
+        "John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery."
+      ],
+      "verse_refs": [
+        "John 3:1-15",
+        "John 3:16-21",
+        "John 3:22-36"
+      ],
+      "evidence_ids": [
+        "john-3-16-speaker",
+        "john-anothen",
+        "john-baptist-lamb"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:1-15",
+        "John 3:16-21",
+        "John 3:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "language"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_d815e26cd23b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "New Testament use of the wilderness generation, bronze serpent, and Balaam is later canonical reception and should be identified separately from interpretation of Numbers in its Torah context."
+      ],
+      "verse_refs": [
+        "John 3:14-15"
+      ],
+      "evidence_ids": [
+        "numbers:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:14-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_450f43fc997a",
+      "kind": "why_it_matters",
+      "facts": [
+        "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+        "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+        "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+        "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope."
+      ],
+      "verse_refs": [
+        "John 3:1-21"
+      ],
+      "evidence_ids": [
+        "pharisees:ancient_near_east_context:0",
+        "pharisees:hebraic_worldview:0",
+        "pharisees:original_audience:0",
+        "pharisees:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_37ecaa6b6f7c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5d668e759c61",
+      "kind": "why_it_matters",
+      "facts": [
+        "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+        "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction."
+      ],
+      "verse_refs": [
+        "John 3:1-21"
+      ],
+      "evidence_ids": [
+        "pharisees:historical_context:0",
+        "pharisees:historical_setting:0"
+      ],
+      "entity_ids": [
+        "pharisees"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_ee847976497f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_7503cb1b9417",
+      "kind": "why_it_matters",
+      "facts": [
+        "John 3:16 announces God's love for the world and life through the Son, but Greek manuscripts do not mark where Jesus' speech ends and the narrator's exposition begins.",
+        "In John 3, anothen can mean 'from above' or 'again'; Nicodemus hears repetition while the discourse develops heavenly origin and Spirit birth.",
+        "John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery."
+      ],
+      "verse_refs": [
+        "John 3:1-15",
+        "John 3:16-21",
+        "John 3:22-36"
+      ],
+      "evidence_ids": [
+        "john-3-16-speaker",
+        "john-anothen",
+        "john-baptist-lamb"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_7afcd4751d59"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 3:1-15",
+        "John 3:16-21",
+        "John 3:22-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 14,
+    "used_evidence_ids": [
+      "bronze-snake:ancient_near_east_context:0",
+      "bronze-snake:historical_context:0",
+      "john-3-16-speaker",
+      "john-anothen",
+      "john-baptist-lamb",
+      "numbers:interpretive_note:4",
+      "pharisees:ancient_near_east_context:0",
+      "pharisees:hebraic_worldview:0",
+      "pharisees:historical_context:0",
+      "pharisees:historical_setting:0",
+      "pharisees:original_audience:0",
+      "pharisees:second_temple_context:0",
+      "what-does-ruach-mean:ancient_near_east_context:0",
+      "what-does-ruach-mean:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 8,
+      "history": 4,
+      "language": 1,
+      "social": 1
+    },
+    "category_diversity": 4,
+    "specific_evidence_count": 14,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 1,
+      "events": 0,
+      "artifacts": 1
+    },
+    "unit_kind_counts": {
+      "cultural_context": 3,
+      "historical_context": 3,
+      "interpretive_questions": 2,
+      "why_it_matters": 3
+    },
+    "relationship_unit_count": 3
+  }
+}

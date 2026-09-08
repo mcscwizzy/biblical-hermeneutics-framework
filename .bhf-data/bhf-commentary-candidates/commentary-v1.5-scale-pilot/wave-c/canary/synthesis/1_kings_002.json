@@ -1,0 +1,56 @@
+{
+  "reference": "1 Kings 2",
+  "book": "1 Kings",
+  "chapter": 2,
+  "evidence_hash": "760b3cb14465ad8c16df28420c04421f1cd34606ed1db0716e62f0786365c3b1",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "2d901f1f0d4ecb77ae1754408b4443a37ec57ddc4803945d4ce679580cf0ec9f",
+  "evidence_availability": "DATA_GAP",
+  "synthesis_units": [],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "No passage-scoped contextual evidence is available.",
+      "severity": "substantial"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 0,
+    "used_evidence_ids": [],
+    "unused_evidence_ids": [],
+    "evidence_categories": {},
+    "category_diversity": 0,
+    "specific_evidence_count": 0,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {},
+    "relationship_unit_count": 0
+  }
+}

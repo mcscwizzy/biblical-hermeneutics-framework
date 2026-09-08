@@ -1,0 +1,88 @@
+{
+  "reference": "1 Chronicles 11",
+  "book": "1 Chronicles",
+  "chapter": 11,
+  "evidence_hash": "4234e928e0609fae9fbd35d5629c76e6fa0f1570238dbe1a9bab97c99116552b",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "bc352761b1ca1f785446e5296b43b9c194d0be210c2652ee0371a39d4b17441e",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_historical_context_46e45fac12fd",
+      "kind": "historical_context",
+      "facts": [
+        "All Israel gathers at Hebron to recognize David as king, and David captures Jerusalem as the shared royal center."
+      ],
+      "verse_refs": [
+        "1 Chronicles 11:1-9"
+      ],
+      "evidence_ids": [
+        "first-chronicles-all-israel-david"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Chronicles 11:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "first-chronicles-all-israel-david"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "historical_context": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "reference": "Zechariah 2",
+  "book": "Zechariah",
+  "chapter": 2,
+  "evidence_hash": "2c4ac82dde123b6ebecf3ba4f62aff4b945737956acaf7ab42777029485cf0b5",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "811c820f68d61efff4276d135aa2e61ec9bff85e19f8dd4745771c9a5931009e",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_12b7a7058fdb",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The measuring vision promises a populous, unwalled Jerusalem protected by divine fire and presence and summons escape from the north or Babylon."
+      ],
+      "verse_refs": [
+        "Zechariah 2:1-13"
+      ],
+      "evidence_ids": [
+        "zechariah-measurement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Zechariah 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "zechariah-measurement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}
