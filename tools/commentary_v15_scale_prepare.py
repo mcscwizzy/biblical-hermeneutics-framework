@@ -362,6 +362,7 @@ def prepare() -> dict[str, Any]:
             "packet_id": packet["packet_id"],
             "packet_path": packet_path.relative_to(ROOT).as_posix(),
             "expected_raw_response_path": raw_path.relative_to(ROOT).as_posix(),
+            "expected_response_path": raw_path.relative_to(ROOT).as_posix(),
             "synthesis_path": synthesis_path.relative_to(ROOT).as_posix(),
             "evidence_bundle_path": bundle_path.relative_to(ROOT).as_posix(),
             "status": "READY_FOR_CONVERSATIONAL_RENDER",
