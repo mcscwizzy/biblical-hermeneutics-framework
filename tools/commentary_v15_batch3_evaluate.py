@@ -22,6 +22,7 @@ from bhf_agent.chapter_commentary.storage import _from_dict, load_commentary
 from bhf_agent.chapter_commentary.synthesis import load_synthesis
 from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
 from tools.commentary_v14_calibration import _ckl_snapshot, _protected_v11_errors
+from tools.commentary_v13_pilot import density_bucket
 
 
 TARGET_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.5-batch-3"
@@ -89,8 +90,11 @@ def _metric_row(reference: str, packet: dict[str, Any], synthesis, commentary, *
         "literary_category": _literary_category(reference, packet),
         "evidence_availability": availability,
         "evidence_count": packet.get("evidence_count", 0),
-        "density_bucket": packet.get("synthesis_density_bucket", "0"),
         "synthesis_units": len(synthesis.synthesis_units),
+        # Synthesis is locked and is the source of truth.  Packet metadata
+        # changed names between historical and newer formats, so trusting it
+        # can silently turn nonzero chapters into the zero-density bucket.
+        "density_bucket": density_bucket(len(synthesis.synthesis_units)),
         "meaningful_clusters": score.meaningful_cluster_count if score else packet.get("idea_cluster_count", 0),
         "refined_core_clusters": score.core_cluster_count if score else packet.get("refined_core_count", 0),
         "source": source,

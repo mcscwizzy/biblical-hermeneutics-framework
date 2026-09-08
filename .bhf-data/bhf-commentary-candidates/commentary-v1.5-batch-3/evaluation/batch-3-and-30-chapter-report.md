@@ -26,7 +26,7 @@ Judges 12 was rejected for malformed verse reference `Judges 1`; the raw respons
 Validated 29; rejected 1; safety failures 0; Gate outcomes: {'PASS': 29}.
 
 Availability: {'AVAILABLE': 17, 'DATA_GAP': 6, 'THIN': 7}
-Density: {'0': 19, '1-5': 6, '6-10': 2, '11-20': 3}
+Density: {'1-5': 12, '11-20': 4, '41+': 2, '6-10': 3, '0': 6, '21-40': 3}
 Literary categories: {'Genealogy/list/administrative': 2, 'Historical narrative': 5, 'Pentateuch': 5, 'Prophets': 5, 'Gospels/Acts': 4, 'Poetry/Wisdom': 4, 'Apocalyptic / highly symbolic': 1, 'Epistles': 4}
 
 Aggregate mean/median:
