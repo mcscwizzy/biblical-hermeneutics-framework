@@ -1,7 +1,7 @@
 # Commentary 1.5 scale-pilot evaluation
 
-Status: **IN_PROGRESS**
-Classification: **INCOMPLETE_SCALE_PILOT**
+Status: **COMPLETE**
+Classification: **COMMENTARY_1_5_SCALE_PILOT_COMPLETE**
 
 Prompt 1.5, schema 1.2, synthesis compiler 1.1, and Gate v2.1 remained frozen. ReaderSynthesisPlan: NOT IMPLEMENTED / NOT REQUIRED.
 
