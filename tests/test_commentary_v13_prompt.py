@@ -1,4 +1,4 @@
-"""Focused Commentary 1.4 selectivity-calibration contract tests."""
+"""Focused Commentary 1.5 within-family breadth contract tests."""
 
 from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION
 from bhf_agent.chapter_commentary.prompts import CHAPTER_COMMENTARY_SYSTEM_PROMPT, build_user_prompt
@@ -27,12 +27,12 @@ def _synthesis():
     return bundle, compile_chapter_synthesis(bundle, book="1 Samuel", chapter=21)
 
 
-def test_commentary_14_version_changes_without_schema_change():
-    assert COMMENTARY_PROMPT_VERSION == "1.4"
+def test_commentary_15_version_changes_without_schema_change():
+    assert COMMENTARY_PROMPT_VERSION == "1.5"
     assert COMMENTARY_SCHEMA_VERSION == "1.2"
 
 
-def test_commentary_14_preserves_consolidation_and_adds_sufficient_breadth():
+def test_commentary_15_preserves_consolidation_and_adds_within_family_breadth():
     bundle, synthesis = _synthesis()
     prompt = build_user_prompt(
         "1 Samuel 21", "1 Samuel", 21, "canonical text", synthesis, bundle, "AVAILABLE"
@@ -52,6 +52,10 @@ def test_commentary_14_preserves_consolidation_and_adds_sufficient_breadth():
         "selective use does not mean minimal use",
         "materially distinct current-chapter context",
         "do not omit genuinely distinct useful chapter context merely because the packet is large",
+        "contextual breadth applies to distinct ideas within a family as well as across families",
+        "mentioning one as sufficient",
+        "preserve distinct reader-relevant ideas even when they share a family",
+        "explicit significance or direct passage-specific context central to understanding the passage",
         "Consolidate or omit duplicate records",
         "do not require every category mechanically",
         "no hard output quotas",

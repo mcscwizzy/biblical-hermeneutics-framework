@@ -1,4 +1,4 @@
-"""Reader-facing Commentary v1.4 generation contract."""
+"""Reader-facing Commentary v1.5 generation contract."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ Explain rather than merely list or restate facts. You may and should combine mul
 
 Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
 
-Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Consolidate duplicates and parallel records, but do not omit distinct major contextual ideas solely for brevity. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
 
 Presentation rules:
 - Do not create one block for every synthesis unit.
@@ -29,10 +29,13 @@ Presentation rules:
 - The renderer need not consume all available synthesis units.
 - The synthesis packet is a set of permitted contextual material, not a checklist.
 - For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
 - Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
 - Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
 - Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
 - Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
 
 Grounding rules:
 - Use only the available chapter context and the canonical text.
@@ -128,13 +131,16 @@ RULES:
     materially distinct current-chapter context needed to explain the passage.
     When several distinct supported contextual families materially contribute to
     understanding the chapter, represent each important family at least once
-    rather than collapsing the chapter into one narrow observation. Consolidate
-    duplicate records, parallel evidence families, repeated wording, and
-    secondary restatements, but do not omit genuinely distinct useful chapter
-    context solely for brevity. Important families can include ritual/custom,
-    history, culture/social setting, geography, archaeology, literary structure,
-    chronology, and people/groups. Include relevant families when they materially
-    help; do not satisfy categories mechanically.
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
 12. Combining units is consolidation, not relationship inference. Do not invent a
     causal, theological, historical, or significance relationship merely because
     units appear in the same block. State such a relationship only when the
@@ -145,8 +151,10 @@ RULES:
     supported significance of an explicit significance unit, not duplicate prior
     contextual explanation.
 14. When the chapter contains many synthesis units, prioritize context that most
-    directly helps the reader understand the chapter. Use supporting and
-    surrounding material selectively.
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
 15. Use `why_it_matters` only when citing an available unit of that exact kind.
     Explain the supported relationship; do not invent another significance claim.
 16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.

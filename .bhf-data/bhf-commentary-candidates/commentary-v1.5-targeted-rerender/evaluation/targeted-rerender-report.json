@@ -1,0 +1,873 @@
+{
+  "artifact_version": "commentary-v1.5-targeted-rerender-evaluation-v1",
+  "starting_head": "c4ee6a293e72c4cd4516b6e9da1f7575d29bf3c0",
+  "final_head_at_evaluation": "c4ee6a293e72c4cd4516b6e9da1f7575d29bf3c0",
+  "prompt_version": "1.5",
+  "schema_version": "1.2",
+  "gate_version": "commentary-richness-gate-v2.1",
+  "gate_changed": false,
+  "renderer_identity": {
+    "renderer_label": "GPT-5 Codex",
+    "reasoning_effort": "NOT_EXPOSED"
+  },
+  "source_responses_preserved": true,
+  "batch_3_processed": false,
+  "bulk_authorization": false,
+  "v1_1_integrity": {
+    "protected_fingerprint_errors": [],
+    "pass": true
+  },
+  "ckl_integrity": {
+    "current_snapshot": {
+      "json_object_count": 665,
+      "json_objects_digest": "eac42aa17b932f8f8c0fb59e009014f2df5b9f81504ccc92f8cf0584f1393370",
+      "inventory_fingerprint": "4110222ae77df2e35c91cdd59af4312ba4e3710accf349bf030aefe9d3b1e9bc"
+    },
+    "preserved_batch_integrity_claim": true,
+    "pass": true
+  },
+  "import_summary": {
+    "required_response_count": 4,
+    "raw_response_count": 4,
+    "accepted_count": 4,
+    "rejected_count": 0,
+    "missing_references": []
+  },
+  "chapters": [
+    {
+      "reference": "Amos 5",
+      "prompt_change": "1.4 -> 1.5",
+      "packet_id": "commentary-v1.5-packet:93e406561b91d12f31e993f8b283a477068b035041aac5c3693e5008a4f892a1",
+      "source_packet_id": "commentary-v1.4-packet:37602230af11e1daf04b7eac0c8dd9d3fac3249701d932d9f52aa5ddb085b473",
+      "evidence_hash": "677d33e36464f157dfba78571427d276697b29ea2d4e4cc80a4fd5cd2acd5116",
+      "synthesis_hash": "f4188bdb7485c8b198228b0bd9cafb78dcdc87cbfcb7ef6f491a9a0e11864ef3",
+      "schema_version": "1.2",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "raw_response_sha256": "ebad70579e6721c4ada4bcbfde78f51ecfd622cbd34ebea2f58c78e6f1c8dd9c",
+      "old_1_4": {
+        "reference": "Amos 5",
+        "literary_category": "Prophets",
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 29,
+        "synthesis_units": 21,
+        "meaningful_clusters": 14,
+        "refined_core_clusters": 0,
+        "density_bucket": "21-40",
+        "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+        "validation_status": "validated",
+        "rejection_codes": [],
+        "sections": 3,
+        "blocks": 3,
+        "words": 134,
+        "synthesis_ids_consumed": [
+          "syn_interpretive_questions_0af53b92615b",
+          "syn_cultural_context_86bdb1995d7c",
+          "syn_historical_context_58d718b76ce6",
+          "syn_historical_context_2ab75d75e47d",
+          "syn_interpretive_questions_1ca589e32c28"
+        ],
+        "synthesis_utilization": 0.2381,
+        "evidence_ids_consumed": 14,
+        "multi_synthesis_blocks": 2,
+        "mean_synthesis_units_per_block": 1.6667,
+        "idea_cluster_coverage": 0.2857,
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.2766,
+        "category_coverage": 1.0,
+        "consolidation_ratio": 0.7857,
+        "redundant_block_ratio": 0.0,
+        "redundant_cluster_count": 3,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "gate_class": "ENRICHMENT_TARGET",
+        "gate_outcome": "QUALITY_FAIL",
+        "gate_quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": false,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "diagnostic_classification": "UNDER_EXPLANATION",
+        "routing_contract_clean": true,
+        "gate": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "QUALITY_FAIL",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": false,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "one or more class-specific quality checks failed"
+          ],
+          "dump_severity": "NONE"
+        },
+        "evidence_ids_consumed_list": [
+          "amos-acts7-reuse",
+          "amos-day-yhwh",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos:interpretive_note:12",
+          "amos:interpretive_note:13",
+          "amos:interpretive_note:14",
+          "amos:interpretive_note:15",
+          "amos:interpretive_note:16",
+          "amos:interpretive_note:17",
+          "fall-of-samaria:historical_context:0",
+          "fall-of-samaria:historical_setting:0",
+          "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+          "what-is-the-kingdom-of-israel:historical_context:0"
+        ]
+      },
+      "new_1_5": {
+        "validation_status": "validated",
+        "raw_units": 21,
+        "meaningful_clusters": 14,
+        "consumed_clusters": 13,
+        "consumed_units": 15,
+        "synthesis_utilization": 0.7143,
+        "weighted_coverage": 0.9255,
+        "core_clusters": 0,
+        "consumed_core_clusters": 0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 4,
+        "sections": 4,
+        "words": 278,
+        "unique_evidence_ids": 27,
+        "consolidation_ratio": 0.8519,
+        "redundant_cluster_count": 3,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "category_families": [
+          "culture",
+          "history",
+          "interpretive_questions"
+        ],
+        "consumed_category_families": [
+          "culture",
+          "history",
+          "interpretive_questions"
+        ],
+        "safety": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "gate_v2_1": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      "validation": {
+        "import_status": "accepted",
+        "rejection_codes": [],
+        "validation_errors": []
+      }
+    },
+    {
+      "reference": "Mark 7",
+      "prompt_change": "1.4 -> 1.5",
+      "packet_id": "commentary-v1.5-packet:d038decbd1bca9288f9760d03ffdea0aca24b30e4dbe9eb986c53af5db5cc310",
+      "source_packet_id": "commentary-v1.4-packet:33ee5427ce79a0b97af45127f88b5a3c6b43c606e930d04f8d588827dec8e4ee",
+      "evidence_hash": "a9dd7d9fea16d672cd2453bd4e782d6a7d6323bebedce484933b3a027c84d8a1",
+      "synthesis_hash": "1c146daf99e7a252af6d02c300bdc7f1ce2eb3b0b20278cee87f39b38fdd7a0e",
+      "schema_version": "1.2",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "raw_response_sha256": "34639a5ea016b009a71f60f059d40c13069be37209b0755ef4173d6a2e6e5160",
+      "old_1_4": {
+        "reference": "Mark 7",
+        "literary_category": "Gospels/Acts",
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 37,
+        "synthesis_units": 22,
+        "meaningful_clusters": 9,
+        "refined_core_clusters": 1,
+        "density_bucket": "21-40",
+        "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+        "validation_status": "validated",
+        "rejection_codes": [],
+        "sections": 4,
+        "blocks": 5,
+        "words": 194,
+        "synthesis_ids_consumed": [
+          "syn_interpretive_questions_341c31ad559a",
+          "syn_interpretive_questions_900262663215",
+          "syn_cultural_context_0ab4c9c16931",
+          "syn_cultural_context_a647b1c5a7a7",
+          "syn_historical_context_1f76521b9141",
+          "syn_historical_context_986074336bd4",
+          "syn_interpretive_questions_9bf4ce4c753f",
+          "syn_interpretive_questions_c75b9550824f"
+        ],
+        "synthesis_utilization": 0.3636,
+        "evidence_ids_consumed": 28,
+        "multi_synthesis_blocks": 3,
+        "mean_synthesis_units_per_block": 1.6,
+        "idea_cluster_coverage": 0.6667,
+        "core_coverage": 0.0,
+        "weighted_coverage": 0.6552,
+        "category_coverage": 1.0,
+        "consolidation_ratio": 0.8214,
+        "redundant_block_ratio": 0.0,
+        "redundant_cluster_count": 8,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "gate_class": "ENRICHMENT_TARGET",
+        "gate_outcome": "QUALITY_FAIL",
+        "gate_quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": false,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "diagnostic_classification": "UNDER_EXPLANATION",
+        "routing_contract_clean": true,
+        "gate": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "QUALITY_FAIL",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": false,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "one or more class-specific quality checks failed"
+          ],
+          "dump_severity": "NONE"
+        },
+        "evidence_ids_consumed_list": [
+          "cross-passage-diet-code-limit",
+          "cross-passage-diet-code-limit:passage-relevance",
+          "leviticus-ritual-moral-distinction",
+          "leviticus-ritual-moral-distinction:passage-relevance",
+          "mark-7-19-syntax-dispute",
+          "mark-7-19-syntax-dispute:passage-relevance",
+          "mark-aramaic",
+          "mark-disability",
+          "mark-food-purity",
+          "mark-handwashing-trigger",
+          "mark-handwashing-trigger:passage-relevance",
+          "mark-heart-and-moral-defilement",
+          "mark-heart-and-moral-defilement:passage-relevance",
+          "mark-jewish-debate",
+          "mark-provenance",
+          "mark-syrophoenician",
+          "pharisees:ancient_near_east_context:0",
+          "pharisees:hebraic_worldview:0",
+          "pharisees:historical_context:0",
+          "pharisees:historical_setting:0",
+          "pharisees:original_audience:0",
+          "pharisees:second_temple_context:0",
+          "scribes:ancient_near_east_context:0",
+          "scribes:hebraic_worldview:0",
+          "scribes:historical_context:0",
+          "scribes:historical_setting:0",
+          "scribes:original_audience:0",
+          "scribes:second_temple_context:0"
+        ]
+      },
+      "new_1_5": {
+        "validation_status": "validated",
+        "raw_units": 22,
+        "meaningful_clusters": 9,
+        "consumed_clusters": 9,
+        "consumed_units": 11,
+        "synthesis_utilization": 0.5,
+        "weighted_coverage": 1.0,
+        "core_clusters": 1,
+        "consumed_core_clusters": 1,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 5,
+        "sections": 5,
+        "words": 306,
+        "unique_evidence_ids": 35,
+        "consolidation_ratio": 0.8571,
+        "redundant_cluster_count": 8,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "category_families": [
+          "archaeology",
+          "culture",
+          "history",
+          "interpretive_questions",
+          "language_literary"
+        ],
+        "consumed_category_families": [
+          "archaeology",
+          "culture",
+          "history",
+          "interpretive_questions",
+          "language_literary"
+        ],
+        "safety": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "gate_v2_1": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      "validation": {
+        "import_status": "accepted",
+        "rejection_codes": [],
+        "validation_errors": []
+      }
+    },
+    {
+      "reference": "1 Corinthians 11",
+      "prompt_change": "1.4 -> 1.5",
+      "packet_id": "commentary-v1.5-packet:43778b9ae04ad200f729ebf3e833cd757b0dc603e2fa4350a06f8d23714b1575",
+      "source_packet_id": "commentary-v1.4-packet:28f707418ecdccf44af2985bdbbe21abd0fe5373ce5a8b64637d0ac62c512da0",
+      "evidence_hash": "b8ba0c52c4be838fae51c6b77de4037047558002dc0fc489cfbbe464b64098ed",
+      "synthesis_hash": "4418b57de53e90c7bd9d6a1dc62f9cd76bb5538212c0367e7c24a148d483bf86",
+      "schema_version": "1.2",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "raw_response_sha256": "aee4e6fddfcfa3cb825917a5518aa3bf43793d43418770a7db3488c17c024256",
+      "old_1_4": {
+        "reference": "1 Corinthians 11",
+        "literary_category": "Epistles",
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 81,
+        "synthesis_units": 51,
+        "meaningful_clusters": 16,
+        "refined_core_clusters": 0,
+        "density_bucket": "41+",
+        "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+        "validation_status": "validated",
+        "rejection_codes": [],
+        "sections": 5,
+        "blocks": 5,
+        "words": 222,
+        "synthesis_ids_consumed": [
+          "syn_cultural_context_6b3b1633b2d2",
+          "syn_historical_context_affe38c27447",
+          "syn_interpretive_questions_9f388511fe08",
+          "syn_cultural_context_6b3b1633b2d2",
+          "syn_interpretive_questions_3ab811b3e83f",
+          "syn_interpretive_questions_4f80fbed5826",
+          "syn_interpretive_questions_f62bab4f610a",
+          "syn_interpretive_questions_d4a51d350042",
+          "syn_why_it_matters_0506bee32d3c",
+          "syn_surrounding_passages_21ee906fedfe"
+        ],
+        "synthesis_utilization": 0.1765,
+        "evidence_ids_consumed": 32,
+        "multi_synthesis_blocks": 3,
+        "mean_synthesis_units_per_block": 1.8,
+        "idea_cluster_coverage": 0.4375,
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.4062,
+        "category_coverage": 0.8571,
+        "consolidation_ratio": 0.8571,
+        "redundant_block_ratio": 0.0,
+        "redundant_cluster_count": 11,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "gate_class": "ENRICHMENT_TARGET",
+        "gate_outcome": "QUALITY_FAIL",
+        "gate_quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": false,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "diagnostic_classification": "UNDER_EXPLANATION",
+        "routing_contract_clean": true,
+        "gate": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "QUALITY_FAIL",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": false,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "one or more class-specific quality checks failed"
+          ],
+          "dump_severity": "NONE"
+        },
+        "evidence_ids_consumed_list": [
+          "1-corinthians:interpretive_note:44",
+          "1-corinthians:interpretive_note:45",
+          "1-corinthians:interpretive_note:46",
+          "1-corinthians:interpretive_note:47",
+          "1-corinthians:interpretive_note:48",
+          "1-corinthians:interpretive_note:49",
+          "1-corinthians:interpretive_note:50",
+          "1-corinthians:interpretive_note:51",
+          "1-corinthians:interpretive_note:52",
+          "1-corinthians:interpretive_note:53",
+          "1-corinthians:interpretive_note:63",
+          "1cor-coverings",
+          "association-meal-status",
+          "association-meal-status:passage-relevance",
+          "corinth-own-meal-hunger-intoxication",
+          "corinth-own-meal-hunger-intoxication:passage-relevance",
+          "corinth-received-supper-tradition",
+          "corinth-received-supper-tradition:passage-relevance",
+          "corinth-sickness-death-causation-limit",
+          "corinthian-mutuality-in-lord",
+          "corinthian-mutuality-in-lord:passage-relevance",
+          "corinthian-women-pray-prophesy",
+          "corinthian-women-pray-prophesy:passage-relevance",
+          "household-slavery-status",
+          "household-slavery-status:passage-relevance",
+          "lords-supper:ancient_near_east_context:0",
+          "lords-supper:hebraic_worldview:0",
+          "lords-supper:historical_context:0",
+          "lords-supper:second_temple_context:0",
+          "pauline-distinct-meal-settings",
+          "pauline-distinct-meal-settings:passage-relevance",
+          "role-categories-not-synonyms"
+        ]
+      },
+      "new_1_5": {
+        "validation_status": "validated",
+        "raw_units": 51,
+        "meaningful_clusters": 16,
+        "consumed_clusters": 13,
+        "consumed_units": 15,
+        "synthesis_utilization": 0.2941,
+        "weighted_coverage": 0.8229,
+        "core_clusters": 0,
+        "consumed_core_clusters": 0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.8571,
+        "blocks": 7,
+        "sections": 7,
+        "words": 415,
+        "unique_evidence_ids": 40,
+        "consolidation_ratio": 0.825,
+        "redundant_cluster_count": 11,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "category_families": [
+          "archaeology",
+          "chronology",
+          "culture",
+          "history",
+          "interpretive_questions",
+          "language_literary",
+          "surrounding_passages"
+        ],
+        "consumed_category_families": [
+          "archaeology",
+          "chronology",
+          "culture",
+          "history",
+          "interpretive_questions",
+          "surrounding_passages"
+        ],
+        "safety": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "gate_v2_1": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      "validation": {
+        "import_status": "accepted",
+        "rejection_codes": [],
+        "validation_errors": []
+      }
+    },
+    {
+      "reference": "Hebrews 4",
+      "prompt_change": "1.4 -> 1.5",
+      "packet_id": "commentary-v1.5-packet:ac6832c3d999038ae72b574a0601984d968848d986c15fc0a797ed46c507314e",
+      "source_packet_id": "commentary-v1.4-packet:040327d649cc707345fc820aa8a9970cb5b06be174140b89c995111747aab728",
+      "evidence_hash": "ef96da5cbfc7ebbe8fccdf9f36cc9335c2694887c539b1c447232c953d833160",
+      "synthesis_hash": "3a2e6146c73c8a387ce632a70d999a4fa175ed590d8e4efbcb6585ed8254fffd",
+      "schema_version": "1.2",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "raw_response_sha256": "ec7a26276557e31fd3bef1f947e645d5be5130cbbc5aa2e5e1110f60828d32bd",
+      "old_1_4": {
+        "reference": "Hebrews 4",
+        "literary_category": "Epistles",
+        "evidence_availability": "AVAILABLE",
+        "evidence_count": 32,
+        "synthesis_units": 26,
+        "meaningful_clusters": 19,
+        "refined_core_clusters": 2,
+        "density_bucket": "21-40",
+        "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+        "validation_status": "validated",
+        "rejection_codes": [],
+        "sections": 4,
+        "blocks": 5,
+        "words": 194,
+        "synthesis_ids_consumed": [
+          "syn_cultural_context_b2aad1addbf7",
+          "syn_cultural_context_ef2b1a02585d",
+          "syn_language_literary_c7b369414e9b",
+          "syn_historical_context_5a6e6de36252",
+          "syn_historical_context_444a445b3299",
+          "syn_interpretive_questions_cdd9272b8317",
+          "syn_surrounding_passages_047f24dce45a",
+          "syn_surrounding_passages_5c0a7cbebecd"
+        ],
+        "synthesis_utilization": 0.3077,
+        "evidence_ids_consumed": 14,
+        "multi_synthesis_blocks": 2,
+        "mean_synthesis_units_per_block": 1.6,
+        "idea_cluster_coverage": 0.4211,
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.4341,
+        "category_coverage": 1.0,
+        "consolidation_ratio": 0.6429,
+        "redundant_block_ratio": 0.0,
+        "redundant_cluster_count": 5,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "gate_class": "ENRICHMENT_TARGET",
+        "gate_outcome": "QUALITY_FAIL",
+        "gate_quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": false,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "diagnostic_classification": "UNDER_EXPLANATION",
+        "routing_contract_clean": true,
+        "gate": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "QUALITY_FAIL",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": false,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "one or more class-specific quality checks failed"
+          ],
+          "dump_severity": "NONE"
+        },
+        "evidence_ids_consumed_list": [
+          "exodus:interpretive_note:3",
+          "heb-access",
+          "heb-p46",
+          "heb-rest",
+          "heb-sinaiticus",
+          "heb-word",
+          "hebrews:interpretive_note:10",
+          "hebrews:interpretive_note:11",
+          "high-priesthood:historical_context:0",
+          "high-priesthood:historical_setting:0",
+          "sabbath-theme:ancient_near_east_context:0",
+          "sabbath-theme:hebraic_worldview:0",
+          "sabbath-theme:historical_context:0",
+          "sabbath-theme:second_temple_context:0"
+        ]
+      },
+      "new_1_5": {
+        "validation_status": "validated",
+        "raw_units": 26,
+        "meaningful_clusters": 19,
+        "consumed_clusters": 17,
+        "consumed_units": 17,
+        "synthesis_utilization": 0.6538,
+        "weighted_coverage": 0.907,
+        "core_clusters": 2,
+        "consumed_core_clusters": 2,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 7,
+        "sections": 7,
+        "words": 377,
+        "unique_evidence_ids": 28,
+        "consolidation_ratio": 0.75,
+        "redundant_cluster_count": 5,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "richness_status": "RICH_ENOUGH",
+        "category_families": [
+          "archaeology",
+          "culture",
+          "history",
+          "interpretive_questions",
+          "surrounding_passages"
+        ],
+        "consumed_category_families": [
+          "archaeology",
+          "culture",
+          "history",
+          "interpretive_questions",
+          "surrounding_passages"
+        ],
+        "safety": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "gate_v2_1": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      "validation": {
+        "import_status": "accepted",
+        "rejection_codes": [],
+        "validation_errors": []
+      }
+    }
+  ],
+  "outcome_distribution": {
+    "PASS": 4
+  },
+  "dump_severity_distribution": {
+    "NONE": 4
+  },
+  "classification": "DENSE_AVAILABLE_CALIBRATION_SUCCESS",
+  "reader_synthesis_plan_status": "NOT_NEEDED",
+  "recommendation": "PROCEED_TO_BATCH_3"
+}
