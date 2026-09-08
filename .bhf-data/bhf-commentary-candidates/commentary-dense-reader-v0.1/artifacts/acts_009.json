@@ -1,0 +1,602 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "Acts 9",
+  "book": "Acts",
+  "chapter": 9,
+  "status": "validated",
+  "source_commentary": {
+    "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/responses/accepted/acts_009.json",
+    "artifact_sha256": "304c087847b4fabd750143adb07859b0c1397bf070b04f9287fd0432141e5cb7",
+    "artifact_identity": "sha256:304c087847b4fabd750143adb07859b0c1397bf070b04f9287fd0432141e5cb7",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "304c087847b4fabd750143adb07859b0c1397bf070b04f9287fd0432141e5cb7",
+    "generation_identity": "commentary-dense-reader-v0.1:304c087847b4fabd750143adb07859b0c1397bf070b04f9287fd0432141e5cb7"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": true,
+      "signal": "multi_signal_stress",
+      "signals": [
+        "dump_severity",
+        "high_block_count",
+        "high_word_count"
+      ]
+    },
+    "source_word_count": 2250,
+    "source_block_count": 21,
+    "omitted_source_block_ids": [
+      "block_002"
+    ],
+    "omission_reasons": {
+      "block_002": "low_value_repetitive_background"
+    },
+    "reader_word_count": 847,
+    "reader_unit_count": 17,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "archaeology_geography",
+      "section_title": "Archaeology Geography",
+      "text": "damascus jerusalem corinth ephesus rome",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "source_block_ids": [
+        "block_001"
+      ],
+      "source_synthesis_ids": [
+        "syn_archaeology_geography_63c612ff54b3",
+        "syn_why_it_matters_def362dae051"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_1f7bb6bbdaa1"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_002",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Apollos belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "apollos:ancient_near_east_context:0",
+        "barnabas:ancient_near_east_context:0",
+        "dorcas:ancient_near_east_context:0",
+        "epaphroditus:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_003"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_4a6619ccc7fb",
+        "syn_cultural_context_8897c69f092f",
+        "syn_cultural_context_ad31537241a2",
+        "syn_cultural_context_ea4f8d60c43a"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_2571d5299693"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_003",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Ancient background for Eunice includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for John the Baptist includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Ro",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "eunice:ancient_near_east_context:0",
+        "james-brother-of-jesus:ancient_near_east_context:0",
+        "john-the-baptist:ancient_near_east_context:0",
+        "jude-of-jerusalem:ancient_near_east_context:0",
+        "lois:ancient_near_east_context:0",
+        "luke-the-physician:ancient_near_east_context:0",
+        "mark-the-evangelist:ancient_near_east_context:0",
+        "onesimus:ancient_near_east_context:0",
+        "philemon-of-colossae:ancient_near_east_context:0",
+        "philip-the-evangelist:ancient_near_east_context:0",
+        "phoebe:ancient_near_east_context:0",
+        "zechariah-father-of-john:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_004"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_0daca6fd3c82",
+        "syn_cultural_context_0ea9e112ae67",
+        "syn_cultural_context_18ceea6beb16",
+        "syn_cultural_context_370a8df682bc",
+        "syn_cultural_context_5887a3a91f6c",
+        "syn_cultural_context_6f8254e4e5cd",
+        "syn_cultural_context_aad9a55b798e",
+        "syn_cultural_context_b273c3e3353b",
+        "syn_cultural_context_d850aa92e6e5",
+        "syn_cultural_context_da44aceec36d",
+        "syn_cultural_context_e03266a62d3a",
+        "syn_cultural_context_ea806a2f53d1"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_8b5b94cd1ef3"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_004",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Damascus is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "damascus:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_005"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_83ad0c822c05"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_a89a7dfd3559"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_005",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Paul operates in diaspora synagogue and Greco-Roman city contexts, translating the gospel for mixed communities.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "who-was-paul:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_006"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_9fc20550100c"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_cbff7ff550bc"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_006",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church. Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ. Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_007"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_3eb8e979f6db",
+        "syn_why_it_matters_0ecb6795c837"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_e3e337f766b9"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_007",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Conversion of Paul unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage. Third Missionary Journey unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage. Second Missionary Journey unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage. Council of Jerusalem unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage. First Missionary Journey unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "conversion-of-paul:ancient_near_east_context:0",
+        "council-of-jerusalem:ancient_near_east_context:0",
+        "first-missionary-journey:ancient_near_east_context:0",
+        "second-missionary-journey:ancient_near_east_context:0",
+        "third-missionary-journey:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_008"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_10c8caf1b2e8",
+        "syn_cultural_context_3116e857ac0d",
+        "syn_cultural_context_a693f499cba2",
+        "syn_cultural_context_a7d189ba697d",
+        "syn_cultural_context_d41f7d28690c"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_f2fc27d27201"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_008",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Historically, First Missionary Journey is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval. Historically, Damascus is located by its canonical setting; this entry connects that setting with jesus, acts, paul and related CKL objects for contextual retrieval.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "apollos:historical_context:0",
+        "barnabas:historical_context:0",
+        "conversion-of-paul:historical_context:0",
+        "council-of-jerusalem:historical_context:0",
+        "damascus:historical_context:0",
+        "dorcas:historical_context:0",
+        "epaphroditus:historical_context:0",
+        "first-missionary-journey:historical_context:0",
+        "second-missionary-journey:historical_context:0",
+        "third-missionary-journey:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_009"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_074aac3223a3",
+        "syn_historical_context_189332387729",
+        "syn_historical_context_24b4301bc8f9",
+        "syn_historical_context_26cdfad87c34",
+        "syn_historical_context_2cb4697adaa3",
+        "syn_historical_context_50fe9907cf83",
+        "syn_historical_context_6602c55ef8da",
+        "syn_historical_context_aa75677fcfe8",
+        "syn_historical_context_c13ac9ca5a21",
+        "syn_historical_context_c5806dbc8828"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_02e3c8db016e"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_009",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "A former persecutor turned missionary, Paul travels across Roman cities and writes to churches in the Mediterranean world.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "who-was-paul:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_010"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_03f0f9223db7"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_7d234d8ae010"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_010",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "paul:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_011"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_a7e1347add2d"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_ac9b8b3d3001"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_011",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Historically, Luke the Physician belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "eunice:historical_context:0",
+        "james-brother-of-jesus:historical_context:0",
+        "john-the-baptist:historical_context:0",
+        "jude-of-jerusalem:historical_context:0",
+        "lois:historical_context:0",
+        "luke-the-physician:historical_context:0",
+        "mark-the-evangelist:historical_context:0",
+        "onesimus:historical_context:0",
+        "philemon-of-colossae:historical_context:0",
+        "philip-the-evangelist:historical_context:0",
+        "phoebe:historical_context:0",
+        "samaria-1:historical_context:0",
+        "zechariah-father-of-john:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_012"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_0af7ffb919e9",
+        "syn_historical_context_68d1682b1b80",
+        "syn_historical_context_8b40b6728f81",
+        "syn_historical_context_95bdb1bccf71",
+        "syn_historical_context_965ef0ad7ec2",
+        "syn_historical_context_a01807d9bc19",
+        "syn_historical_context_c65a4fcb2341",
+        "syn_historical_context_ce1441fb2048",
+        "syn_historical_context_cffcc7ab6637",
+        "syn_historical_context_da6a2ba29d0b",
+        "syn_historical_context_e6b30b8839ef",
+        "syn_historical_context_eb596975a36d",
+        "syn_historical_context_ffb04a067b0a"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_c9a2cabd5b38"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_012",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Acts and Galatians differ in selection, emphasis, and sequence when narrating Paul's call and Jerusalem contacts; exact harmonizations remain disputed. Galatians and Acts are independent rhetorical narratives; neither automatic harmonization nor automatic contradiction can replace passage-by-passage comparison.",
+      "verse_refs": [
+        "Acts 9:1-30"
+      ],
+      "evidence_ids": [
+        "gal-acts",
+        "galatians:interpretive_note:6"
+      ],
+      "source_block_ids": [
+        "block_013"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_5b91917cc4cb",
+        "syn_why_it_matters_967a8b5c618b"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_450ccb603a22"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_013",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Prevents generic suffering praise from erasing causes, agency, consent, disability, treatment, economics, and accountability in each passage. Acts portrays Paul unable to see, led by others, fasting three days, visited and touched by Ananias, regaining sight, receiving baptism and food, and entering mission. Treats dependency and care as part of the call narrative without requiring cure before vocation or identifying the event as Paul's thorn. Acts narrates earlier mission events from a later composition horizon, while Corinthians, Galatians, and Philippians are earlier occasional self-reports with different selections and aims. Prevents Acts' blindness, recovery, stoning, or prison scenes from diagnosing the thorn, Galatian weakness, or every Pauline hardship. The selected texts distinguish low status, bodily incapacity, illness, injury, violence, deprivation, custody, rhetorical evaluation, and cross-shaped power.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "categories-remain-distinct:passage-relevance",
+        "acts-damascus-blindness-recovery",
+        "acts-damascus-blindness-recovery:passage-relevance",
+        "acts-letter-chronology-control",
+        "acts-letter-chronology-control:passage-relevance",
+        "categories-remain-distinct"
+      ],
+      "source_block_ids": [
+        "block_014",
+        "block_016"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_fa168511b55d",
+        "syn_interpretive_questions_10f895f937ad",
+        "syn_why_it_matters_3a2871ea6228"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_4a5833441e24"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_014",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "First Corinthians 15 transmits a death-burial-resurrection-appearance sequence and a list culminating in Paul's own appearance claim. Grounds the chapter's future-resurrection argument while keeping Paul's letter distinct from later Gospel and Acts narratives.",
+      "verse_refs": [
+        "Acts 9:1-19"
+      ],
+      "evidence_ids": [
+        "corinthian-received-proclamation",
+        "corinthian-received-proclamation:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_015"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_60fc9ba080da",
+        "syn_why_it_matters_1a84065e4772"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_75ecc19880e2"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_015",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Acts' sequence around Paul's call and Jerusalem visits differs in emphasis and detail from Galatians 1-2, and exact harmonization remains disputed. Acts narrates Paul's encounter three times with rhetorical differences; conversion, prophetic call, and commissioning are overlapping but debated descriptions. Acts presents women as disciples, prophets, patrons, hosts, household leaders, teachers, workers, converts, and sufferers, though narration remains selective and patriarchal constraints persist.",
+      "verse_refs": [
+        "Acts 9:1-30",
+        "Acts 9:19-30",
+        "Acts 9:36-42"
+      ],
+      "evidence_ids": [
+        "acts-galatians",
+        "acts-paul-call",
+        "acts-women"
+      ],
+      "source_block_ids": [
+        "block_017"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_3f0a2f5ce18c",
+        "syn_why_it_matters_3f205afdd730"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_f431ffbc0ca6"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_016",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Acts narrates Paul's call and several Jerusalem visits in a later continuous story, while Galatians gives its own selective first-person intervals and purposes. Requires comparison without treating Acts as a verbatim transcript or forcing every visit into certainty.",
+      "verse_refs": [
+        "Acts 9:1-30"
+      ],
+      "evidence_ids": [
+        "acts-galatians-chronology-control",
+        "acts-galatians-chronology-control:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_018"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_b05a4427fe5b",
+        "syn_why_it_matters_9033b9f4bb9a"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_f66be00f7d89"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_017",
+      "section_kind": "surrounding_passages",
+      "section_title": "Surrounding Passages",
+      "text": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 17:1-34",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40"
+      ],
+      "evidence_ids": [
+        "acts-western-text",
+        "acts-historical-method",
+        "acts-text-witnesses"
+      ],
+      "source_block_ids": [
+        "block_019",
+        "block_020",
+        "block_021"
+      ],
+      "source_synthesis_ids": [
+        "syn_surrounding_passages_c027b14bc222",
+        "syn_surrounding_passages_61381bf859a7",
+        "syn_surrounding_passages_5727cbb046bf"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_26a29ad81b3b"
+      ],
+      "source_quality_classes": [
+        "CORE"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "validated",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "6dfc6eb10d629baa99211cc7af33461f1597c2c2654aa17761317b278c79398f"
+}

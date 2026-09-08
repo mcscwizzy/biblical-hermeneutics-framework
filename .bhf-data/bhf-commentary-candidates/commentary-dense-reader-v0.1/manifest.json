@@ -1,0 +1,103 @@
+{
+  "artifact_version": "dense-reader-experiment-manifest-v0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "source_experiment": "commentary-v1.5-scale-pilot",
+  "candidate_only": true,
+  "chapters": [
+    {
+      "reference": "Philippians 1",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/philippians_001.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/responses/accepted/philippians_001.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/synthesis/philippians_001.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/evidence-bundles/philippians_001.json",
+      "artifact_identity": "82ee2eb5570941d560fc4b2022549884f25d3cfbf5959cdd8ab02b8753a9d71e",
+      "status": "validated"
+    },
+    {
+      "reference": "Acts 9",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/acts_009.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/responses/accepted/acts_009.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/synthesis/acts_009.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/evidence-bundles/acts_009.json",
+      "artifact_identity": "6dfc6eb10d629baa99211cc7af33461f1597c2c2654aa17761317b278c79398f",
+      "status": "validated"
+    },
+    {
+      "reference": "Hebrews 11",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/hebrews_011.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/responses/accepted/hebrews_011.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/synthesis/hebrews_011.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/evidence-bundles/hebrews_011.json",
+      "artifact_identity": "5220a7f206a37f999dd4b024805696af7e8f37a515a49fa559f4f51f6d69363a",
+      "status": "validated"
+    },
+    {
+      "reference": "Genesis 15",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/genesis_015.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-a/canary/responses/accepted/genesis_015.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/wave-a/canary/synthesis/genesis_015.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/wave-a/canary/evidence-bundles/genesis_015.json",
+      "artifact_identity": "5e34de444e74b62e8422a6585409af4aa2886382f3477248f1823a6898d44faf",
+      "status": "validated"
+    },
+    {
+      "reference": "Acts 16",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/acts_016.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/responses/accepted/acts_016.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/synthesis/acts_016.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/evidence-bundles/acts_016.json",
+      "artifact_identity": "f33d16779c189528a6f93c24b669c91be4d3dd327723d7f8a36ef6e921090d53",
+      "status": "validated"
+    },
+    {
+      "reference": "Genesis 12",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/genesis_012.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/responses/accepted/genesis_012.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/synthesis/genesis_012.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/evidence-bundles/genesis_012.json",
+      "artifact_identity": "307225b2f37d4d43bd53cb5bf86b1f824a2c0f2f55fd14f1d6284458a24dd578",
+      "status": "validated"
+    },
+    {
+      "reference": "Romans 8",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/romans_008.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/responses/accepted/romans_008.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/synthesis/romans_008.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/evidence-bundles/romans_008.json",
+      "artifact_identity": "57eb88b0985728a30502559cefac77658df6e116a5262af65054e5973c397ae4",
+      "status": "validated"
+    },
+    {
+      "reference": "Hebrews 10",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/hebrews_010.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/responses/accepted/hebrews_010.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/synthesis/hebrews_010.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/evidence-bundles/hebrews_010.json",
+      "artifact_identity": "4df18504e72ac84b0e8828e709af840d981d90f72d746c0ba9b93da1a07680d1",
+      "status": "validated"
+    },
+    {
+      "reference": "1 Corinthians 12",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/1_corinthians_012.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/responses/accepted/1_corinthians_012.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/synthesis/1_corinthians_012.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/evidence-bundles/1_corinthians_012.json",
+      "artifact_identity": "a1f5ae0b3cb9d238879eb349e381641cf1552eea45710aca3e9c4872df9c53c0",
+      "status": "validated"
+    },
+    {
+      "reference": "Acts 1",
+      "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1/artifacts/acts_001.json",
+      "source_commentary_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/responses/accepted/acts_001.json",
+      "source_synthesis_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/synthesis/acts_001.json",
+      "source_evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-b/canary/evidence-bundles/acts_001.json",
+      "artifact_identity": "63d815c81a9c4801fa5921fdd6ec44074575518d9bb32366bd14089a2d600765",
+      "status": "validated"
+    }
+  ],
+  "chapter_count": 10,
+  "full_bible_generation": false,
+  "commentary_1_5_sources_modified": false,
+  "ckl_modified": false,
+  "synthesis_rebuilt": false
+}

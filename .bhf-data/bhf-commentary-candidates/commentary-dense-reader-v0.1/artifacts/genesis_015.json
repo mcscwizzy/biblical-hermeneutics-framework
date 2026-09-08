@@ -1,0 +1,708 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "Genesis 15",
+  "book": "Genesis",
+  "chapter": 15,
+  "status": "validated",
+  "source_commentary": {
+    "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-a/canary/responses/accepted/genesis_015.json",
+    "artifact_sha256": "8e057d584c72582a50aa9def6f9cba267b62466457908dd9269577ac71672dcb",
+    "artifact_identity": "sha256:8e057d584c72582a50aa9def6f9cba267b62466457908dd9269577ac71672dcb",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "8e057d584c72582a50aa9def6f9cba267b62466457908dd9269577ac71672dcb",
+    "generation_identity": "commentary-dense-reader-v0.1:8e057d584c72582a50aa9def6f9cba267b62466457908dd9269577ac71672dcb"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": true,
+      "signal": "multi_signal_stress",
+      "signals": [
+        "dump_severity",
+        "high_block_count"
+      ]
+    },
+    "source_word_count": 1755,
+    "source_block_count": 24,
+    "omitted_source_block_ids": [
+      "block_003"
+    ],
+    "omission_reasons": {
+      "block_003": "low_value_repetitive_background"
+    },
+    "reader_word_count": 888,
+    "reader_unit_count": 23,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "chronology",
+      "section_title": "Chronology",
+      "text": "The chapter's sequence and setting can be framed this way: Abraham called from his kinship setting Promise ratified by covenant ceremony Circumcision given as covenant sign Isaac born as child of promise Promise reaffirmed after the binding of Isaac Abraham called from his kinship setting Promise ratified by covenant ceremony Circumcision given as covenant sign Isaac born as child of promise Promise reaffirmed after the binding of Isaac",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:timeline:0",
+        "abrahamic-covenant-framework:timeline:1",
+        "abrahamic-covenant-framework:timeline:2",
+        "abrahamic-covenant-framework:timeline:3",
+        "abrahamic-covenant-framework:timeline:4"
+      ],
+      "source_block_ids": [
+        "block_001"
+      ],
+      "source_synthesis_ids": [
+        "syn_chronology_89304507e6f2",
+        "syn_why_it_matters_b7a54ddfcf47"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_6fbcbbcca813"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_002",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Clans, inheritance, and covenant-making form the background.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "binding-of-isaac:ancient_near_east_context:0",
+        "joseph-sold-into-egypt:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_002"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_5b70495e30c6",
+        "syn_cultural_context_8cc44aa2fed2"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_29a92f136055"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_003",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Ancient covenant and oath practices provide a comparative backdrop, but Genesis emphasizes God's unilateral promise and covenant faithfulness rather than a merely human treaty. The covenant frames identity as received promise: Abraham's household lives as sojourners who trust God's word before possessing the inheritance. Israel remembering its identity as a people formed by divine promise Second Temple Jewish and early Christian writers appeal to Abraham as ancestor, promise recipient, and model for debates about covenant membership and Gentile inclusion.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:ancient_near_east_context:0",
+        "abrahamic-covenant-framework:hebraic_worldview:0",
+        "abrahamic-covenant-framework:original_audience:0",
+        "abrahamic-covenant-framework:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_004"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_1b38a133fce2",
+        "syn_why_it_matters_cbd43d523199"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_4514444a2a15"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_004",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Ancient courts issued verdicts that established status, and Scripture uses that legal language for God's saving declaration.",
+      "verse_refs": [
+        "Genesis 15:6"
+      ],
+      "evidence_ids": [
+        "what-is-justification:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_005"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_3c8967073714"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_50295a98b2a7"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_005",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Biblical covenants converse with treaty and grant patterns in the ancient Near East while keeping divine grace and holiness at the center. Covenant is a corporate relationship of oath, loyalty, blessing, memory, and responsibility before God. After the exile, covenant identity became central to debates about purity, law, and hope.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "covenant-theme:ancient_near_east_context:0",
+        "covenant-theme:hebraic_worldview:0",
+        "covenant-theme:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_006"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_c873687e14dc",
+        "syn_why_it_matters_d3f6994918d1"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_56ca2622a363"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_006",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "The covenant ceremony uses oath and sign patterns that belong to the wider world of ancient treaty-making and household inheritance.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_007"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_bf23e56edf60"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_5729b3ab23c9"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_007",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Ancient background for Sarah includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Genesis 12:1-3, Genesis 15:1-21, abraham, and covenant-theme without letting comparison replace the biblical witness.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "joseph:ancient_near_east_context:0",
+        "rebekah:ancient_near_east_context:0",
+        "sarah:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_008"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_62ff281bf3fc",
+        "syn_cultural_context_785465a0741b",
+        "syn_cultural_context_f89bcf8e024e"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_5835fc7963a1"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_008",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Migration and kinship were ordinary in the ancient world, but Abraham's journey is driven by a spoken divine promise rather than royal patronage or settlement pressure.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "call-of-abraham:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_009"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_ac495167aa47"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_8e1c0c35bcb0"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_009",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Covenant theology draws on biblical covenant forms that intersect with Hittite suzerain treaties, Neo-Assyrian loyalty oaths, kinship obligations, and royal grants.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "covenant-theology:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_010"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_bdd7f142ba1d"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_975ffa186ef8"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_010",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East. Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance. Second Temple Jewish and early Christian writers regularly appeal to Abraham as ancestor, model of faith, covenant recipient, and witness to God's promises.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "abraham:ancient_near_east_context:0",
+        "abraham:hebraic_worldview:0",
+        "abraham:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_011"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_ca3748a099ce",
+        "syn_why_it_matters_2f9b460baa5b"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_9b7b72049904"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_011",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Isaac belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "bathsheba:ancient_near_east_context:0",
+        "isaac:ancient_near_east_context:0",
+        "jacob:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_012"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_b8938b188ebb",
+        "syn_cultural_context_c5fec96d786c",
+        "syn_cultural_context_e68c0bafbbcc"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_bac3c047d5a1"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_012",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Migration, kinship, and treaty language frame Abraham's world, but God's promise drives the narrative.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "who-was-abraham:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_013"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_df7c9a6a6d60"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_c503e9925826"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_013",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "The Abrahamic covenant belongs to the patriarchal narratives of Genesis, where divine promise shapes family migration, land expectation, and the identity of Abraham's descendants. Patriarchal narratives in Genesis",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "abrahamic-covenant-framework:historical_context:0",
+        "abrahamic-covenant-framework:historical_setting:0"
+      ],
+      "source_block_ids": [
+        "block_014"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_bbdf046af677",
+        "syn_why_it_matters_98c63166ac84"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_035959765d8f"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_014",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Jacob belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Rebekah belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Sarah belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Bathsheba belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Isaac belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Joseph belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "bathsheba:historical_context:0",
+        "isaac:historical_context:0",
+        "jacob:historical_context:0",
+        "joseph:historical_context:0",
+        "rebekah:historical_context:0",
+        "sarah:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_015"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_764afe044bbc",
+        "syn_historical_context_8621691b25f0",
+        "syn_historical_context_88376a54b7b0",
+        "syn_historical_context_a4f1605af32c",
+        "syn_historical_context_b123b81751b3",
+        "syn_historical_context_e32d91e97e1d"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_5e5f417314e1"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_015",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Covenant theology developed as a way of reading the Bible’s storyline, especially within Reformed and confessional traditions, but it is rooted in the biblical text itself.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "covenant-theology:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_016"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_fc1a294978b3"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_845d46b50644"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_016",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Covenant language organizes the story of Noah, Abraham, Israel, David, and the new covenant in Christ.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "covenant-theme:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_017"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_ed6e727d672e"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_8c1bcaf96124"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_017",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "The event belongs to the patriarchal world of movement, household life, and land promise.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "binding-of-isaac:historical_context:0",
+        "joseph-sold-into-egypt:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_018"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_3d3db2d83009",
+        "syn_historical_context_63a2a12b8ccb"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_c780be8c0a09"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_018",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Genesis 12 marks the turning point from primeval history to patriarchal promise, anchoring Israel's identity in divine initiative.",
+      "verse_refs": [
+        "Genesis 15:1-21"
+      ],
+      "evidence_ids": [
+        "call-of-abraham:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_019"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_333e3ae86ff6"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_c791d2bd8ef4"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_019",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Galatians reads Abraham's faith and the blessing of the nations as scriptural grounds for gentile reception of the Spirit and inclusion in the promised family. Genesis 15:6 is quoted within a new gentile-inclusion argument; Jewish readings of Abraham are not invalidated merely because Paul's reading is canonical for Christians.",
+      "verse_refs": [
+        "Genesis 15:6"
+      ],
+      "evidence_ids": [
+        "gal-abraham",
+        "galatians:interpretive_note:19"
+      ],
+      "source_block_ids": [
+        "block_020"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_79ee083800cb",
+        "syn_why_it_matters_ee3f9c2574b1"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_42a9e4742c6d"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_020",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Galatians concludes that those belonging to Messiah are Abraham's seed and heirs according to promise, drawing inheritance into its sustained rereading of Genesis. The scriptural evidence prevents Roman household law from becoming the sole source of the heir and kinship language.",
+      "verse_refs": [
+        "Genesis 15:1-6"
+      ],
+      "evidence_ids": [
+        "abrahamic-seed-and-inheritance",
+        "abrahamic-seed-and-inheritance:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_021"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_06ed0681ad54",
+        "syn_why_it_matters_25935e181f73"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_b790e568006e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_021",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Galatians cites Abraham's reckoned trust and blessing of nations, contrasts promise and Torah chronology, and focuses seed language on Messiah. Supports gentile inclusion without permitting appropriation that makes Jews strangers to Abraham or their scriptures. Romans coordinates Genesis 15 and 17 so Abraham's trust is reckoned before the later circumcision sign. Grounds gentile inclusion without recasting Jewish circumcision as worthless or shameful.",
+      "verse_refs": [
+        "Genesis 15:6"
+      ],
+      "evidence_ids": [
+        "galatians-abraham-promise-seed",
+        "galatians-abraham-promise-seed:passage-relevance",
+        "romans-abraham-before-circumcision",
+        "romans-abraham-before-circumcision:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_022"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_9d4efa69e665",
+        "syn_why_it_matters_c2a51cc47576"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_ba1594a9ad7a"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_022",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Romans 4 presents uncircumcised Abraham as ancestor of trusting Jews and gentiles while maintaining a scriptural promise narrative. Romans 4 reads Abraham through Genesis in an argument about uncircumcision, promise, and life from death; later faith-versus-works slogans can obscure those features.",
+      "verse_refs": [
+        "Genesis 15:6"
+      ],
+      "evidence_ids": [
+        "romans-abraham",
+        "romans:interpretive_note:26"
+      ],
+      "source_block_ids": [
+        "block_023"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_2fd851283722",
+        "syn_why_it_matters_d8d96dfcab13"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_fb02884d85de"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_023",
+      "section_kind": "surrounding_passages",
+      "section_title": "Surrounding Passages",
+      "text": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation. Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions.",
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 11:27-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 1:1-31",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:3"
+      ],
+      "source_block_ids": [
+        "block_024"
+      ],
+      "source_synthesis_ids": [
+        "syn_surrounding_passages_06bc2b045e9f",
+        "syn_surrounding_passages_f8620e408369"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_fb89e6fb614c"
+      ],
+      "source_quality_classes": [
+        "CORE"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "validated",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "5e34de444e74b62e8422a6585409af4aa2886382f3477248f1823a6898d44faf"
+}
