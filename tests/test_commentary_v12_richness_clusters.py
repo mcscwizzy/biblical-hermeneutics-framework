@@ -358,6 +358,70 @@ def test_limited_and_data_gap_controls_pass_without_forced_richness():
     assert numbers.outcome == GateOutcome.PASS.value
 
 
+def test_thin_safe_restraint_passes_when_post_render_richness_is_rich_enough():
+    unit = _unit(
+        "thin-context",
+        kind="surrounding_passages",
+        facts=("A bounded contextual fact.",),
+        evidence_ids=("e1",),
+        passage_scope="SURROUNDING_PASSAGE",
+    )
+    evidence = [_evidence("e1", category="culture")]
+    score = score_synthesis_richness(
+        [unit],
+        evidence_items=evidence,
+        consumed_synthesis_ids=[unit.id],
+        blocks=[SimpleNamespace(text="A proportionate note.", evidence_ids=["e1"], synthesis_ids=[unit.id])],
+    )
+    result = _safe_v2(
+        score,
+        "THIN",
+        "SYNTHESIS_GAP",
+        "RICH_ENOUGH",
+        evidence_use_delta=0,
+    )
+    assert result.gate_class == GateClass.EVIDENCE_LIMITED_CONTROL.value
+    assert result.outcome == GateOutcome.PASS.value
+    assert result.quality_checks["supported_evidence_represented"] is True
+
+
+def test_evidence_limited_filler_still_fails_gate_v21():
+    unit = _unit("thin-context", evidence_ids=("e1",))
+    score = score_synthesis_richness(
+        [unit],
+        evidence_items=[_evidence("e1")],
+        consumed_synthesis_ids=[unit.id],
+        blocks=[SimpleNamespace(text="Read this chapter with this setting in view.", evidence_ids=["e1"], synthesis_ids=[unit.id])],
+    )
+    result = _safe_v2(
+        score,
+        "THIN",
+        "SYNTHESIS_GAP",
+        "RICH_ENOUGH",
+        boilerplate_detected=True,
+    )
+    assert result.outcome == GateOutcome.QUALITY_FAIL.value
+
+
+def test_evidence_limited_overlong_prose_fails_as_disproportionate():
+    unit = _unit("thin-context", evidence_ids=("e1",))
+    score = score_synthesis_richness(
+        [unit],
+        evidence_items=[_evidence("e1")],
+        consumed_synthesis_ids=[unit.id],
+        blocks=[SimpleNamespace(text="A bounded note.", evidence_ids=["e1"], synthesis_ids=[unit.id])],
+    )
+    result = _safe_v2(
+        score,
+        "THIN",
+        "SYNTHESIS_GAP",
+        "RICH_ENOUGH",
+        commentary_word_count=251,
+    )
+    assert result.outcome == GateOutcome.QUALITY_FAIL.value
+    assert result.quality_checks["proportionate_to_evidence"] is False
+
+
 def test_gate_v2_keeps_safety_as_a_hard_blocker():
     score = _actual_canary("Ruth", 3)
     result = _safe_v2(score, "AVAILABLE", "SYNTHESIS_GAP", "RICH_ENOUGH", validation_clean=False)

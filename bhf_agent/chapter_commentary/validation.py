@@ -662,6 +662,15 @@ def _validate_block(
             reason_codes.append(
                 CommentaryRejectionCode.OUT_OF_CHAPTER_SYNTHESIS_REFERENCE.value
             )
+        scopes = {unit.passage_scope for unit in supplied_units}
+        if {"CURRENT_CHAPTER", "SURROUNDING_PASSAGE"}.issubset(scopes):
+            errors.append(
+                f"{CommentaryRejectionCode.OUT_OF_CHAPTER_SYNTHESIS_REFERENCE.value}: "
+                f"{label} mixes current-chapter and surrounding-passage synthesis in one block"
+            )
+            reason_codes.append(
+                CommentaryRejectionCode.OUT_OF_CHAPTER_SYNTHESIS_REFERENCE.value
+            )
         if section_kind == "why_it_matters" and not any(
             unit.kind == "why_it_matters" and unit.metadata.get("safe_for_significance")
             for unit in supplied_units

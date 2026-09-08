@@ -1,0 +1,432 @@
+{
+  "artifact_version": "commentary-v1.4-calibration-evaluation-v1",
+  "prompt_version": "1.4",
+  "gate_version": "commentary-richness-gate-v2.1",
+  "renderer_identity": {
+    "renderer_label": "GPT-5 Codex",
+    "reasoning_effort": "NOT_EXPOSED"
+  },
+  "source_pilot_preserved": true,
+  "rerendered_chapters": [
+    "Exodus 12",
+    "Esther 4",
+    "Jeremiah 7",
+    "1 Chronicles 9"
+  ],
+  "revelation_3_rerendered": false,
+  "outcome_distribution": {
+    "PASS": 5
+  },
+  "chapters": [
+    {
+      "reference": "Exodus 12",
+      "prompt_change": "1.3 -> 1.4",
+      "old_1_3": {
+        "validation_status": "validated",
+        "core_coverage": 0.5,
+        "weighted_coverage": 0.46,
+        "category_coverage": 0.8571,
+        "raw_units": 46,
+        "meaningful_clusters": 28,
+        "consumed_units": 13,
+        "consumed_clusters": 13,
+        "blocks": 4,
+        "words": 222,
+        "sections": 4,
+        "unit_utilization": 0.2826,
+        "consolidation_ratio": 0.8261,
+        "block_to_cluster_ratio": 0.1429,
+        "redundant_cluster_count": 12,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 23,
+        "richness_status": "SYNTHESIS_GAP"
+      },
+      "new_1_4": {
+        "validation_status": "validated",
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.615,
+        "category_coverage": 1.0,
+        "raw_units": 46,
+        "meaningful_clusters": 28,
+        "consumed_units": 19,
+        "consumed_clusters": 17,
+        "blocks": 9,
+        "words": 513,
+        "sections": 8,
+        "unit_utilization": 0.413,
+        "consolidation_ratio": 0.8043,
+        "block_to_cluster_ratio": 0.3214,
+        "redundant_cluster_count": 12,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 40,
+        "richness_status": "RICH_ENOUGH"
+      },
+      "gate_v2_1": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+        ],
+        "dump_severity": "NONE"
+      },
+      "validation": {
+        "old": false,
+        "new": true,
+        "new_errors": []
+      }
+    },
+    {
+      "reference": "Esther 4",
+      "prompt_change": "1.3 -> 1.4",
+      "old_1_3": {
+        "validation_status": "validated",
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.2083,
+        "category_coverage": 0.75,
+        "raw_units": 14,
+        "meaningful_clusters": 4,
+        "consumed_units": 1,
+        "consumed_clusters": 1,
+        "blocks": 1,
+        "words": 114,
+        "sections": 1,
+        "unit_utilization": 0.0714,
+        "consolidation_ratio": 0.6667,
+        "block_to_cluster_ratio": 0.25,
+        "redundant_cluster_count": 4,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 3,
+        "richness_status": "SYNTHESIS_GAP"
+      },
+      "new_1_4": {
+        "validation_status": "validated",
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.7083,
+        "category_coverage": 1.0,
+        "raw_units": 14,
+        "meaningful_clusters": 4,
+        "consumed_units": 4,
+        "consumed_clusters": 3,
+        "blocks": 3,
+        "words": 207,
+        "sections": 3,
+        "unit_utilization": 0.2857,
+        "consolidation_ratio": 0.5714,
+        "block_to_cluster_ratio": 0.75,
+        "redundant_cluster_count": 4,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 7,
+        "richness_status": "RICH_ENOUGH"
+      },
+      "gate_v2_1": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+        ],
+        "dump_severity": "NONE"
+      },
+      "validation": {
+        "old": false,
+        "new": true,
+        "new_errors": []
+      }
+    },
+    {
+      "reference": "Jeremiah 7",
+      "prompt_change": "1.3 -> 1.4",
+      "old_1_3": {
+        "validation_status": "validated",
+        "core_coverage": 1.0,
+        "weighted_coverage": 0.7059,
+        "category_coverage": 0.5,
+        "raw_units": 7,
+        "meaningful_clusters": 5,
+        "consumed_units": 3,
+        "consumed_clusters": 3,
+        "blocks": 2,
+        "words": 131,
+        "sections": 2,
+        "unit_utilization": 0.4286,
+        "consolidation_ratio": 0.5,
+        "block_to_cluster_ratio": 0.4,
+        "redundant_cluster_count": 2,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 4,
+        "richness_status": "SYNTHESIS_GAP"
+      },
+      "new_1_4": {
+        "validation_status": "validated",
+        "core_coverage": 1.0,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "raw_units": 7,
+        "meaningful_clusters": 5,
+        "consumed_units": 5,
+        "consumed_clusters": 5,
+        "blocks": 5,
+        "words": 262,
+        "sections": 5,
+        "unit_utilization": 0.7143,
+        "consolidation_ratio": 0.2857,
+        "block_to_cluster_ratio": 1.0,
+        "redundant_cluster_count": 2,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 7,
+        "richness_status": "RICH_ENOUGH"
+      },
+      "gate_v2_1": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+        ],
+        "dump_severity": "NONE"
+      },
+      "validation": {
+        "old": false,
+        "new": true,
+        "new_errors": []
+      }
+    },
+    {
+      "reference": "1 Chronicles 9",
+      "prompt_change": "1.3 -> 1.4",
+      "old_1_3": {
+        "validation_status": "rejected",
+        "core_coverage": 1.0,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "raw_units": 3,
+        "meaningful_clusters": 2,
+        "consumed_units": 2,
+        "consumed_clusters": 2,
+        "blocks": 1,
+        "words": 89,
+        "sections": 1,
+        "unit_utilization": 0.6667,
+        "consolidation_ratio": 0.6667,
+        "block_to_cluster_ratio": 0.5,
+        "redundant_cluster_count": 1,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 3,
+        "richness_status": "VALIDATION_FAILED"
+      },
+      "new_1_4": {
+        "validation_status": "validated",
+        "core_coverage": 1.0,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "raw_units": 3,
+        "meaningful_clusters": 2,
+        "consumed_units": 3,
+        "consumed_clusters": 2,
+        "blocks": 3,
+        "words": 151,
+        "sections": 3,
+        "unit_utilization": 1.0,
+        "consolidation_ratio": 0.4,
+        "block_to_cluster_ratio": 1.5,
+        "redundant_cluster_count": 1,
+        "repeated_block_count": 0,
+        "dump_severity": "NONE",
+        "dump_signals": [],
+        "unique_evidence_ids": 3,
+        "richness_status": "RICH_ENOUGH"
+      },
+      "gate_v2_1": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+        ],
+        "dump_severity": "NONE"
+      },
+      "validation": {
+        "old": false,
+        "new": true,
+        "new_errors": []
+      }
+    }
+  ],
+  "revelation_3": {
+    "reference": "Revelation 3",
+    "response_version": "1.3 preserved; not rerendered",
+    "metrics": {
+      "validation_status": "pending",
+      "core_coverage": 1.0,
+      "weighted_coverage": 1.0,
+      "category_coverage": 1.0,
+      "raw_units": 2,
+      "meaningful_clusters": 1,
+      "consumed_units": 1,
+      "consumed_clusters": 1,
+      "blocks": 1,
+      "words": 52,
+      "sections": 1,
+      "unit_utilization": 0.5,
+      "consolidation_ratio": 0.5,
+      "block_to_cluster_ratio": 1.0,
+      "redundant_cluster_count": 1,
+      "repeated_block_count": 0,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "unique_evidence_ids": 2,
+      "richness_status": "RICH_ENOUGH"
+    },
+    "old_gate_v2": {
+      "outcome": "QUALITY_FAIL",
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "failed_check": "remains_evidence_limited",
+      "reason": "Gate v2 treated RICH_ENOUGH post-render classification as incompatible with THIN safe restraint."
+    },
+    "gate_v2_1": {
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "post_render_classification_valid": true,
+        "supported_evidence_represented": true,
+        "no_unsupported_enrichment": true,
+        "no_forced_filler": true,
+        "proportionate_to_evidence": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "idea_cluster_coverage"
+      ],
+      "reasons": [
+        "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+      ],
+      "dump_severity": "NONE"
+    },
+    "validation": "valid preserved response"
+  },
+  "classification": "CALIBRATION_SUCCESS",
+  "reader_synthesis_plan_needed": false,
+  "bulk_authorization": false,
+  "gate_v2_1_state": "CANDIDATE_ONLY; not activated globally"
+}

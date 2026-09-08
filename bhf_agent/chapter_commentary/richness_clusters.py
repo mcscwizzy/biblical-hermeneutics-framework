@@ -20,7 +20,7 @@ from .availability import evidence_contribution
 
 RICHNESS_CLUSTER_AUDIT_VERSION = "commentary-richness-clusters-v1"
 RICHNESS_POLICY_VERSION = "commentary-richness-policy-v2-proposed"
-RICHNESS_GATE_V2_VERSION = "commentary-richness-gate-v2"
+RICHNESS_GATE_V2_VERSION = "commentary-richness-gate-v2.1"
 CORE_CLASSIFIER_V1 = "current-chapter-context-v1"
 CORE_CLASSIFIER_V2 = "essential-passage-context-v2"
 
@@ -603,7 +603,7 @@ def assess_gate_v2(
     unique_evidence_ids_consumed: int | None = None,
     thresholds: GateV2Thresholds = GateV2Thresholds(),
 ) -> GateV2Assessment:
-    """Apply class-specific v2 quality after mandatory safety assessment.
+    """Apply class-specific v2.1 quality after mandatory safety assessment.
 
     ``safety_checks`` is deliberately explicit so callers cannot accidentally
     turn a quality score into a substitute for validation/provenance gates.
@@ -655,12 +655,20 @@ def assess_gate_v2(
         reasons.append("baseline RICH_ENOUGH requires non-regression only")
     elif gate_class == GateClass.EVIDENCE_LIMITED_CONTROL.value:
         quality = {
-            "remains_evidence_limited": after_richness in {"EVIDENCE_GAP", "SYNTHESIS_GAP"},
+            "post_render_classification_valid": after_richness in {"EVIDENCE_GAP", "SYNTHESIS_GAP", "RICH_ENOUGH"},
+            "supported_evidence_represented": (
+                score.meaningful_cluster_count == 0
+                or score.consumed_cluster_count > 0
+            ),
             "no_unsupported_enrichment": evidence_use_delta >= 0,
             "no_forced_filler": not boilerplate_detected,
+            "proportionate_to_evidence": (
+                commentary_word_count is None
+                or commentary_word_count <= thresholds.control_word_max
+            ),
             "not_high_dump": dump_severity != DumpSeverity.HIGH.value,
         }
-        reasons.append("THIN or EVIDENCE_GAP is judged for conservative accuracy, not richness")
+        reasons.append("THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds")
     else:
         quality = {
             "remains_evidence_gap": after_richness == "EVIDENCE_GAP",

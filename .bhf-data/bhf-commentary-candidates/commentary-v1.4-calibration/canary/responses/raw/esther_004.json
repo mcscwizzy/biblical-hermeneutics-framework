@@ -1,0 +1,20 @@
+{
+  "reference": "Esther 4",
+  "packet_id": "commentary-v1.4-packet:8004e5cf8e372b73d92532326f99f7b07d0f415fe39c955986544798ad0da092",
+  "prompt_version": "1.4",
+  "evidence_hash": "1c02cc520c5bb155ccda59a445711c1cfe2b9ecdad34e9954923442185d8951c",
+  "synthesis_hash": "cbf4fa49d7ce0771a6aeb88d02c84fffef6778f44de5a7825ee01ed7968dfa75",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Esther 4",
+    "book": "Esther",
+    "chapter": 4,
+    "status": "pending",
+    "sections": [
+      {"kind": "chapter_overview", "title": "Mourning, risk, and uncertain courage", "blocks": [{"id": "block_1", "text": "Esther 4 moves from public mourning over the decree against the Jews to a private exchange about whether Esther will approach the king. Mordecai warns that silence will not secure her safety, while Esther answers with a three-day fast and a decision to enter the king's presence without being summoned. The chapter frames courage as a costly response to danger, not as certainty about the outcome.", "verse_refs": ["Esther 4:1-17"], "evidence_ids": ["esther-fast-risk-appeal", "esther:interpretive_note:3", "esther:interpretive_note:6"], "synthesis_ids": ["syn_interpretive_questions_a8c7a7e5ed11"], "confidence": "high", "interpretation_level": "disputed"}]},
+      {"kind": "cultural_context", "title": "Kinship inside the royal court", "blocks": [{"id": "block_2", "text": "The chapter's crisis is carried through kinship and court access. Mordecai's relation to Esther gives him a channel for warning her, but Esther's position as queen does not mean she can freely enter the king's presence. The available social context places both figures within a world of household obligation, imperial administration, and royal-court hierarchy, which makes the request for collective fasting and Esther's uninvited approach socially and politically significant.", "verse_refs": ["Esther 4:4-16"], "evidence_ids": ["esther-the-queen:ancient_near_east_context:0", "mordecai:ancient_near_east_context:0"], "synthesis_ids": ["syn_cultural_context_a8995fcbbc1e", "syn_cultural_context_4e5ea2946b01"], "confidence": "medium", "interpretation_level": "fact"}]},
+      {"kind": "surrounding_passages", "title": "A deliberately stylized story", "blocks": [{"id": "block_3", "text": "The supplied literary context describes Esther as combining Persian color with stylization, satire, symmetry, and dramatic reversal. It also notes that Greek Esther expands and interprets the Hebrew narrative through dreams, prayers, divine naming, and fuller documents. Those distinctions matter here because the Hebrew chapter leaves God's name and direct prayer absent, so a reading of hidden providence remains a qualified interpretation rather than an explicit statement of the narrator.", "verse_refs": [], "evidence_ids": ["esther:interpretive_note:1", "esther:interpretive_note:10"], "synthesis_ids": ["syn_surrounding_passages_ae2625cb5411"], "confidence": "high", "interpretation_level": "disputed"}]}
+    ],
+    "generated_metadata": null
+  }
+}

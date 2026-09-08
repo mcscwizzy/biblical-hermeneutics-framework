@@ -8,7 +8,7 @@ from typing import Any, Mapping
 
 
 COMMENTARY_SCHEMA_VERSION = "1.2"
-COMMENTARY_PROMPT_VERSION = "1.3"
+COMMENTARY_PROMPT_VERSION = "1.4"
 DATA_GAP_FALLBACK_TEXT = (
     "Passage-specific contextual evidence is not currently available for this chapter."
 )

@@ -26,7 +26,6 @@ if str(ROOT) not in sys.path:
 from bhf_agent import bible
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from bhf_agent.chapter_commentary.models import (
-    COMMENTARY_PROMPT_VERSION,
     COMMENTARY_SCHEMA_VERSION,
 )
 from bhf_agent.chapter_commentary.prompts import (
@@ -35,7 +34,6 @@ from bhf_agent.chapter_commentary.prompts import (
 )
 from bhf_agent.chapter_commentary.richness_clusters import (
     CORE_CLASSIFIER_V2,
-    RICHNESS_GATE_V2_VERSION,
     cluster_synthesis_units,
 )
 from bhf_agent.chapter_commentary.synthesis import (
@@ -49,6 +47,8 @@ from bhf_agent.ckl import load_canonical_library
 
 
 PILOT_VERSION = "commentary-v1.3-real-world-stratified-pilot-v1"
+PILOT_PROMPT_VERSION = "1.3"
+PILOT_GATE_VERSION = "commentary-richness-gate-v2"
 PILOT_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.3-pilot"
 PACKET_ROOT = PILOT_ROOT / "packets"
 SYNTHESIS_ROOT = PILOT_ROOT / "synthesis"
@@ -173,16 +173,25 @@ def prepare() -> dict[str, Any]:
             canonical_text = bible.passage_text(chapter_data.get("verses", []))
         except bible.BibleError as exc:
             raise RuntimeError(f"unable to load canonical text for {reference}: {exc}") from exc
-        user_prompt = build_user_prompt(
-            reference,
-            book,
-            chapter,
-            canonical_text,
-            synthesis,
-            bundle,
-            synthesis.evidence_availability,
-        )
         expected_response = RESPONSE_ROOT / f"{_slug(book)}_{chapter:03d}.json"
+        packet_path = PACKET_ROOT / f"{_slug(book)}_{chapter:03d}.json"
+        existing_packet = _read_json(packet_path) if packet_path.is_file() else None
+        if existing_packet is not None:
+            if existing_packet.get("commentary_prompt_version") != PILOT_PROMPT_VERSION:
+                raise RuntimeError(f"existing v1.3 packet was changed: {packet_path}")
+            system_prompt = existing_packet["system_prompt"]
+            user_prompt = existing_packet["user_prompt"]
+        else:
+            system_prompt = CHAPTER_COMMENTARY_SYSTEM_PROMPT
+            user_prompt = build_user_prompt(
+                reference,
+                book,
+                chapter,
+                canonical_text,
+                synthesis,
+                bundle,
+                synthesis.evidence_availability,
+            )
         packet = {
             "artifact_version": "commentary-v1.3-generation-packet-v1",
             "pilot_version": PILOT_VERSION,
@@ -193,7 +202,7 @@ def prepare() -> dict[str, Any]:
             "execution_path": "external_or_conversational",
             "expected_external_response_path": expected_response.relative_to(ROOT).as_posix(),
             "candidate_only": True,
-            "commentary_prompt_version": COMMENTARY_PROMPT_VERSION,
+            "commentary_prompt_version": PILOT_PROMPT_VERSION,
             "commentary_schema_version": COMMENTARY_SCHEMA_VERSION,
             "evidence_bundle_version": bundle.version,
             "evidence_availability": synthesis.evidence_availability,
@@ -209,15 +218,16 @@ def prepare() -> dict[str, Any]:
             "gate_v2": {
                 "status": "CANDIDATE_ONLY",
                 "activated_globally": False,
-                "version": RICHNESS_GATE_V2_VERSION,
+                "version": PILOT_GATE_VERSION,
                 "core_classifier": CORE_CLASSIFIER_V2,
                 "evaluation_deferred_until": "EXTERNAL_PROSE_IMPORTED",
             },
-            "system_prompt": CHAPTER_COMMENTARY_SYSTEM_PROMPT,
+            "system_prompt": system_prompt,
             "user_prompt": user_prompt,
         }
         packet["packet_id"] = calculate_packet_id(packet)
-        packet_path = PACKET_ROOT / f"{_slug(book)}_{chapter:03d}.json"
+        if existing_packet is not None:
+            packet["artifact_version"] = existing_packet["artifact_version"]
         _write_json(packet_path, packet)
         synthesis_path = save_synthesis(synthesis, SYNTHESIS_ROOT)
         rows.append(
@@ -265,7 +275,7 @@ def prepare() -> dict[str, Any]:
         "status": "PILOT_PACKETS_READY",
         "candidate_only": True,
         "chapter_count": len(rows),
-        "commentary_prompt_version": COMMENTARY_PROMPT_VERSION,
+        "commentary_prompt_version": PILOT_PROMPT_VERSION,
         "commentary_schema_version": COMMENTARY_SCHEMA_VERSION,
         "stratification_summary": {
             "literary_category_distribution": dict(sorted(Counter(row["literary_category"] for row in rows).items())),
@@ -275,7 +285,7 @@ def prepare() -> dict[str, Any]:
         "gate_v2": {
             "status": "CANDIDATE_ONLY",
             "activated_globally": False,
-            "version": RICHNESS_GATE_V2_VERSION,
+            "version": PILOT_GATE_VERSION,
             "evaluation_boundary": "BHF deterministic packet -> external prose -> BHF importer -> validator -> Gate v2",
         },
         "external_renderer_boundary": {

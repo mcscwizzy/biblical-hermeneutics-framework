@@ -1,4 +1,4 @@
-"""Focused Commentary 1.3 consolidation-contract tests."""
+"""Focused Commentary 1.4 selectivity-calibration contract tests."""
 
 from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION
 from bhf_agent.chapter_commentary.prompts import CHAPTER_COMMENTARY_SYSTEM_PROMPT, build_user_prompt
@@ -27,12 +27,12 @@ def _synthesis():
     return bundle, compile_chapter_synthesis(bundle, book="1 Samuel", chapter=21)
 
 
-def test_commentary_13_version_changes_without_schema_change():
-    assert COMMENTARY_PROMPT_VERSION == "1.3"
+def test_commentary_14_version_changes_without_schema_change():
+    assert COMMENTARY_PROMPT_VERSION == "1.4"
     assert COMMENTARY_SCHEMA_VERSION == "1.2"
 
 
-def test_commentary_13_explicitly_contracts_consolidation_and_selectivity():
+def test_commentary_14_preserves_consolidation_and_adds_sufficient_breadth():
     bundle, synthesis = _synthesis()
     prompt = build_user_prompt(
         "1 Samuel 21", "1 Samuel", 21, "canonical text", synthesis, bundle, "AVAILABLE"
@@ -49,12 +49,18 @@ def test_commentary_13_explicitly_contracts_consolidation_and_selectivity():
         "Do not repeat substantially the same explanation in multiple sections",
         "prioritize context that most directly helps the reader understand the chapter",
         "`why_it_matters` should add the supported significance",
+        "selective use does not mean minimal use",
+        "materially distinct current-chapter context",
+        "do not omit genuinely distinct useful chapter context merely because the packet is large",
+        "Consolidate or omit duplicate records",
+        "do not require every category mechanically",
+        "no hard output quotas",
     ):
         assert phrase in contract
     assert "Connect facts only where a synthesis unit has already grouped them" not in contract
 
 
-def test_commentary_13_preserves_existing_safety_contracts():
+def test_commentary_14_preserves_existing_safety_contracts_and_routing():
     bundle, synthesis = _synthesis()
     prompt = build_user_prompt(
         "1 Samuel 21", "1 Samuel", 21, "canonical text", synthesis, bundle, "AVAILABLE"
@@ -62,7 +68,11 @@ def test_commentary_13_preserves_existing_safety_contracts():
     assert "Never cross a chapter boundary" in prompt
     assert "Disputed synthesis cannot become `fact`." in prompt
     assert "Never expose implementation vocabulary in reader prose" in CHAPTER_COMMENTARY_SYSTEM_PROMPT
+    assert "may only be cited in `surrounding_passages`" in prompt
+    assert "Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block" in prompt
     gap_prompt = build_user_prompt(
         "Numbers 3", "Numbers", 3, "", synthesis, bundle, "DATA_GAP"
     )
     assert 'return "sections": []' in gap_prompt
+    assert "confidence" in gap_prompt
+    assert "evidence ancestry" in CHAPTER_COMMENTARY_SYSTEM_PROMPT

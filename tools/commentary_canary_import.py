@@ -295,7 +295,14 @@ def _verify_packet_file(packet: Mapping[str, Any], repo_root: Path, codes: list[
     except (OSError, RuntimeError, json.JSONDecodeError) as exc:
         _reject(codes, errors, ExternalResponseRejectionCode.INFRASTRUCTURE_ERROR, f"cannot read locked prompt packet: {exc}")
         return
-    if value.get("packet_id") != packet.get("packet_id") or calculate_packet_id(value) != packet.get("packet_id"):
+    calculated_packet_id = calculate_packet_id(value)
+    expected_packet_id = str(packet.get("packet_id"))
+    # v1.4 calibration packets use a distinct identity prefix while retaining
+    # the same canonical content hash.  Keep the historical v1.2 calculator
+    # and compare its hash component so packet tampering remains rejected.
+    calculated_hash = calculated_packet_id.split(":", 1)[-1]
+    expected_hash = expected_packet_id.split(":", 1)[-1]
+    if value.get("packet_id") != expected_packet_id or calculated_hash != expected_hash:
         _reject(codes, errors, ExternalResponseRejectionCode.PACKET_CONTENT_MISMATCH, "prompt packet content no longer matches packet_id")
 
 

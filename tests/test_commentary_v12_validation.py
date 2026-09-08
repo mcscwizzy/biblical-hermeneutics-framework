@@ -79,6 +79,36 @@ def test_multiple_valid_synthesis_ids_can_share_one_traceable_block():
     assert result.valid
 
 
+def test_mixed_current_and_surrounding_synthesis_in_one_block_is_rejected():
+    bundle = _bundle()
+    synthesis = compile_chapter_synthesis(bundle)
+    first, second = synthesis.synthesis_units[:2]
+    mixed_synthesis = replace(
+        synthesis,
+        synthesis_units=[
+            replace(first, passage_scope="CURRENT_CHAPTER"),
+            replace(second, passage_scope="SURROUNDING_PASSAGE"),
+            *synthesis.synthesis_units[2:],
+        ],
+    )
+    evidence_ids = sorted(set(first.evidence_ids + second.evidence_ids))
+    result = validate_chapter_commentary(
+        _raw(
+            bundle,
+            mixed_synthesis,
+            kind="surrounding_passages",
+            synthesis_ids=[first.id, second.id],
+            evidence_ids=evidence_ids,
+        ),
+        bundle,
+        synthesis=mixed_synthesis,
+    )
+    assert not result.valid
+    assert CommentaryRejectionCode.OUT_OF_CHAPTER_SYNTHESIS_REFERENCE.value in (
+        result.section_results[0].block_results[0].reason_codes
+    )
+
+
 def test_unsupported_synthesis_id_is_rejected():
     bundle = _bundle()
     synthesis = compile_chapter_synthesis(bundle)

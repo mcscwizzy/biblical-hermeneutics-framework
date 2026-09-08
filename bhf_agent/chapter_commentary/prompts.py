@@ -1,4 +1,4 @@
-"""Reader-facing Commentary v1.3 generation contract."""
+"""Reader-facing Commentary v1.4 generation contract."""
 
 from __future__ import annotations
 
@@ -21,13 +21,16 @@ Explain rather than merely list or restate facts. You may and should combine mul
 
 Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
 
-Evidence-rich chapters may be deep. When the chapter contains many synthesis units, prioritize the context that most directly helps the reader understand the chapter itself and use supporting and surrounding material selectively. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Consolidate duplicates and parallel records, but do not omit distinct major contextual ideas solely for brevity. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
 
 Presentation rules:
 - Do not create one block for every synthesis unit.
 - Do not attempt to mention every available synthesis unit.
 - The renderer need not consume all available synthesis units.
 - The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
 - Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
 - Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
 
@@ -40,13 +43,14 @@ Grounding rules:
 - Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
 - A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
 - Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
-- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be used only in a `surrounding_passages` section. Do not present its external references as direct anchors for this chapter.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
 - The only permitted section kinds are: {allowed_section_kinds}
 - Include only useful supported sections. Do not force every kind to appear.
 - Return JSON only.""".format(allowed_section_kinds=VALID_SECTION_KINDS_TEXT)
 
 
-CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF Commentary v1.3 for {reference}.
+CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF Commentary v{commentary_prompt_version} for {reference}.
 
 EVIDENCE AVAILABILITY: {evidence_availability}
 {availability_instruction}
@@ -103,8 +107,11 @@ RULES:
    ["{book} {chapter}:1", "{book} {chapter}:4-6"]. Never cross a chapter boundary
    in an ordinary block. Historical, cultural, surrounding-passage, and
    archaeology/geography blocks may omit verse refs only when verse anchoring
-   genuinely does not apply; surrounding-passage blocks must not masquerade as
-   current-chapter anchors. Valid concrete examples include
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
    "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
    include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
 9. Multiple compatible synthesis units may share one commentary block when they
@@ -117,27 +124,41 @@ RULES:
     substantial explanatory blocks that combine compatible context over many
     atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
     omitted when it would not materially improve reader understanding.
-11. Combining units is consolidation, not relationship inference. Do not invent a
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. Consolidate
+    duplicate records, parallel evidence families, repeated wording, and
+    secondary restatements, but do not omit genuinely distinct useful chapter
+    context solely for brevity. Important families can include ritual/custom,
+    history, culture/social setting, geography, archaeology, literary structure,
+    chronology, and people/groups. Include relevant families when they materially
+    help; do not satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
     causal, theological, historical, or significance relationship merely because
     units appear in the same block. State such a relationship only when the
     supplied synthesis explicitly supports it, including through `why_it_matters`
     or another authored relationship.
-12. Do not repeat substantially the same explanation in multiple sections merely
+13. Do not repeat substantially the same explanation in multiple sections merely
     because related units have different kinds. `why_it_matters` should add the
     supported significance of an explicit significance unit, not duplicate prior
     contextual explanation.
-13. When the chapter contains many synthesis units, prioritize context that most
+14. When the chapter contains many synthesis units, prioritize context that most
     directly helps the reader understand the chapter. Use supporting and
     surrounding material selectively.
-14. Use `why_it_matters` only when citing an available unit of that exact kind.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
     Explain the supported relationship; do not invent another significance claim.
-15. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
-16. `generated_metadata` is application-owned. Leave it null.
-17. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. `generated_metadata` is application-owned. Leave it null.
+19. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
     IDs and no synthesis units, return "sections": []. Do not write canonical
     observations or contextual prose. BHF will add a fixed application-owned
     availability notice; do not invent a fallback block or cite fake IDs.
-18. This contract is prompt {commentary_prompt_version}, commentary schema
+20. This contract is prompt {commentary_prompt_version}, commentary schema
     {commentary_schema_version}, synthesis schema {synthesis_schema_version}, and
     synthesis hash {synthesis_hash}.
 
@@ -193,11 +214,11 @@ def build_user_prompt(
     bundle=None,
     evidence_availability: str | None = None,
 ) -> str:
-    """Build the v1.3 prompt without truncating canonical chapter text."""
+    """Build the current Commentary prompt without truncating canonical text."""
 
     # Preserve the public v1.1 helper shape for callers that supply a bundle as
     # the fifth positional argument. The resulting prompt still goes through
-    # the deterministic v1.3 compiler; raw evidence is never sent directly.
+    # the deterministic compiler; raw evidence is never sent directly.
     if bundle is None:
         from .synthesis import compile_chapter_synthesis
 

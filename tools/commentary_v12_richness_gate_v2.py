@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Simulate the scoring-only Commentary Richness Gate v2.
+"""Simulate the scoring-only Commentary Richness Gate v2.1.
 
 This tool reads the locked v1.2 canary and the existing v1.1 runtime corpus.
 It never regenerates prose, changes CKL/evidence, invokes a model, or updates
@@ -27,6 +27,7 @@ from bhf_agent.chapter_commentary.richness_clusters import (
     CORE_CLASSIFIER_V2,
     GateOutcome,
     GateV2Thresholds,
+    RICHNESS_GATE_V2_VERSION,
     assess_gate_v2,
     classify_gate_class,
     proposed_gate_passes,
@@ -42,7 +43,7 @@ CANDIDATE_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enr
 CANARY_ROOT = CANDIDATE_ROOT / "canary"
 BASELINE_AUDIT = CANDIDATE_ROOT / "audit/commentary-richness-audit.json"
 RUNTIME_V11 = ROOT / ".bhf-data/bhf-commentary-v1.1"
-DEFAULT_OUTPUT = CANDIDATE_ROOT / "audit/commentary-richness-gate-v2.json"
+DEFAULT_OUTPUT = CANDIDATE_ROOT / "audit/commentary-richness-gate-v2.1.json"
 CANARY_REFERENCES = (
     ("Genesis", 1), ("Leviticus", 16), ("Ruth", 3), ("Psalms", 1),
     ("1 Samuel", 21), ("1 Samuel", 28), ("2 Samuel", 6), ("2 Samuel", 24),
@@ -144,8 +145,8 @@ def canary_report() -> dict[str, Any]:
             "gate_v2": v2.to_dict(),
         })
     return {
-        "artifact_version": "commentary-v1.2-richness-gate-v2-canary-v1",
-        "gate_version": "commentary-richness-gate-v2",
+        "artifact_version": "commentary-v1.2-richness-gate-v2.1-canary-v1",
+        "gate_version": RICHNESS_GATE_V2_VERSION,
         "core_classifier_v1": CORE_CLASSIFIER_V1,
         "core_classifier_v2": CORE_CLASSIFIER_V2,
         "chapters": rows,
@@ -279,8 +280,8 @@ def corpus_simulation() -> dict[str, Any]:
 def build_report() -> dict[str, Any]:
     canaries = canary_report()
     return {
-        "artifact_version": "commentary-v1.2-richness-gate-v2-report-v1",
-        "gate_version": "commentary-richness-gate-v2",
+        "artifact_version": "commentary-v1.2-richness-gate-v2.1-report-v1",
+        "gate_version": RICHNESS_GATE_V2_VERSION,
         "scoring_only": True,
         "authoritative": False,
         "bulk_generation_authorized": False,

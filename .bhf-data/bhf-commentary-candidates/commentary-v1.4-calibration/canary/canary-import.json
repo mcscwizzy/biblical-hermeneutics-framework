@@ -1,0 +1,69 @@
+{
+  "artifact_version": "commentary-v1.2-canary-import-v1",
+  "status": "RESPONSES_IMPORTED",
+  "required_response_count": 4,
+  "raw_response_count": 4,
+  "matched_response_count": 4,
+  "accepted_count": 4,
+  "rejected_count": 0,
+  "missing_references": [],
+  "raw_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/raw",
+  "accepted_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/accepted",
+  "rejected_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/rejected",
+  "v1_1_protected_fingerprints_verified": true,
+  "full_bible_generation_authorized": false,
+  "chapters": [
+    {
+      "reference": "1 Chronicles 9",
+      "packet_id": "commentary-v1.4-packet:97569df18cded19eabe5140cc00932dac961f38d142e0ad995536c928009ce18",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/raw/1_chronicles_009.json",
+      "raw_sha256": "da352fdf4f02a31b17b4e06f15905915cdd1158c61f36da66fe5e0e1a2759183",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:e74d337804db0328ba4cf62528bfa64579bd180654f41b59a1857345e09ba50a",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/accepted/1_chronicles_009.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    },
+    {
+      "reference": "Esther 4",
+      "packet_id": "commentary-v1.4-packet:8004e5cf8e372b73d92532326f99f7b07d0f415fe39c955986544798ad0da092",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/raw/esther_004.json",
+      "raw_sha256": "9ad83842692669dc3a858941ba7f24538614650fb2f4fe4e5bdb279cc81160fa",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:2b3fe2de2f30f1538012c478e697054f5d167fbe87724996c1955cc662148c30",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/accepted/esther_004.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    },
+    {
+      "reference": "Exodus 12",
+      "packet_id": "commentary-v1.4-packet:076c4bb29b5548c8481b7acd235ee30e2e06ea53ce1b8232aa84b9553d952981",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/raw/exodus_012.json",
+      "raw_sha256": "3d975ea11de593fefc0d7f65e73918b6ee8664848c52d647fa8d5397dac5534d",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:3480a6da9e034bc2eef34671be54a0a57a6faae89bd05a138a35f2886cc39f2e",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/accepted/exodus_012.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    },
+    {
+      "reference": "Jeremiah 7",
+      "packet_id": "commentary-v1.4-packet:f1bf15cccaaddc36312e217b43ff5d6312310996bfc3659c9cee43692dd8de8f",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/raw/jeremiah_007.json",
+      "raw_sha256": "10803de38ed827faeddaf605b3e373aa90376084e14bd6d5c6d3aa08a1d4729b",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:c3da07e24321ef9e9e2dbd22e160017b38a23cf8798243704ff79103ce76d7d6",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/canary/responses/accepted/jeremiah_007.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    }
+  ]
+}

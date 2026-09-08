@@ -1,0 +1,22 @@
+{
+  "reference": "Jeremiah 7",
+  "packet_id": "commentary-v1.4-packet:f1bf15cccaaddc36312e217b43ff5d6312310996bfc3659c9cee43692dd8de8f",
+  "prompt_version": "1.4",
+  "evidence_hash": "24d1e0ab2bfef08f1131b6fe4a4875c09d15475397bdd297fb7ff7c697767abc",
+  "synthesis_hash": "1373609f949ec38237b289f79c6ae7c358ad9499b4688d19d1ad93b4e1f8d360",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Jeremiah 7",
+    "book": "Jeremiah",
+    "chapter": 7,
+    "status": "pending",
+    "sections": [
+      {"kind": "chapter_overview", "title": "Temple, justice, and false security", "blocks": [{"id": "block_1", "text": "Jeremiah 7 rejects treating the temple as a guarantee of safety. The speech joins that rejection to demands for justice toward vulnerable persons and condemnation of violence, theft, idolatry, and Topheth. The target is therefore not sacred space by itself, but confidence in sanctuary while covenant conduct is corrupt.", "verse_refs": ["Jeremiah 7:1-15"], "evidence_ids": ["jeremiah-temple-justice"], "synthesis_ids": ["syn_historical_context_2521ec47a15d"], "confidence": "high", "interpretation_level": "fact"}]},
+      {"kind": "cultural_context", "title": "Why Shiloh is invoked", "blocks": [{"id": "block_2", "text": "Shiloh is presented in the available context as a recognizable central-highland gathering place associated with sacred presence, sacrifice, priestly responsibility, festival, and tribal assembly. Its role in Jeremiah's argument is especially important: a revered sanctuary can be abandoned when covenant conduct is corrupt, so the temple's presence cannot be used to excuse injustice.", "verse_refs": ["Jeremiah 7:12-14"], "evidence_ids": ["shiloh:ancient_near_east_context:0", "shiloh:hebraic_worldview:0"], "synthesis_ids": ["syn_cultural_context_1525a973caf7"], "confidence": "medium", "interpretation_level": "fact"}]},
+      {"kind": "archaeology_geography", "title": "A site with limits to what archaeology can prove", "blocks": [{"id": "block_3", "text": "Shiloh is commonly identified with Khirbet Seilun north of Bethel. Excavation documents a long occupation sequence, including Iron I remains, but no excavated feature securely proves the location of the tent of meeting or any particular event narrated in Judges or Samuel. The archaeological context therefore makes the place more concrete while preserving the limits of the evidence.", "verse_refs": ["Jeremiah 7:12"], "evidence_ids": ["shiloh:historical_context:0"], "synthesis_ids": ["syn_historical_context_ed8b91b91491"], "confidence": "medium", "interpretation_level": "fact"}]},
+      {"kind": "interpretive_questions", "title": "Judgment without contempt for sacred places", "blocks": [{"id": "block_4", "text": "The supplied interpretive context connects Jeremiah's temple action and judgment language with questions of fruit, prayer, nations, commerce, and leadership. It does not authorize contempt for Judaism or sacred places. The chapter's force is a critique of false security and corrupt practice, not a dismissal of worship as such.", "verse_refs": ["Jeremiah 7:8-11"], "evidence_ids": ["mark-temple-action"], "synthesis_ids": ["syn_interpretive_questions_1a2521db57a0"], "confidence": "high", "interpretation_level": "disputed"}]},
+      {"kind": "surrounding_passages", "title": "A book with layered form", "blocks": [{"id": "block_5", "text": "The received book of Jeremiah combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix through a long compositional and textual history. That larger shape helps locate chapter 7 among the book's sermons and narratives without settling every question about how the final form was assembled.", "verse_refs": [], "evidence_ids": ["jeremiah-long-composition", "jeremiah-practical-mt-outline"], "synthesis_ids": ["syn_surrounding_passages_9c020adb829e"], "confidence": "medium", "interpretation_level": "disputed"}]}
+    ],
+    "generated_metadata": null
+  }
+}
