@@ -1,9 +1,13 @@
 """Synthesis-aware Commentary v1.2 validation tests."""
 
+import copy
+import json
 from dataclasses import replace
+from pathlib import Path
 
 from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION
 from bhf_agent.chapter_commentary.builder import CommentaryBuilder
+from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from bhf_agent.chapter_commentary.models import ChapterCommentary, GeneratedMetadata
 from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
 from bhf_agent.chapter_commentary.synthesis import validate_synthesis
@@ -188,6 +192,111 @@ def test_normalized_contiguous_range_is_accepted():
     raw = _raw(bundle, synthesis)
     raw["sections"][0]["blocks"][0]["verse_refs"] = ["1 Samuel 21:10-11"]
     assert validate_chapter_commentary(raw, bundle, synthesis=synthesis).valid
+
+
+def test_chapter_only_reference_is_accepted_in_contextual_section():
+    bundle = _bundle()
+    synthesis = compile_chapter_synthesis(bundle)
+    raw = _raw(bundle, synthesis, kind="historical_context")
+    raw["sections"][0]["blocks"][0]["verse_refs"] = ["1 Samuel 21"]
+    assert validate_chapter_commentary(raw, bundle, synthesis=synthesis).valid
+
+
+def test_surrounding_context_accepts_external_chapter_and_cross_chapter_refs():
+    bundle = EvidenceBundle(
+        passage_ref="Judges 20",
+        entities={"people": [], "places": [], "groups": [], "events": [], "artifacts": []},
+        evidence_items=[EvidenceItem(
+            id="e1", claim="The closing chapters frame the civil war.", category="culture",
+            source_ids=["s"], related_entity_ids=[], passage_anchors=["Judges 19-21"],
+            confidence="high", relevance_metadata={"presentation_role": "dig_deeper"},
+        )],
+        geography={}, provenance={}, version="1.1", evidence_hash="e" * 64,
+    )
+    synthesis = compile_chapter_synthesis(bundle, book="Judges", chapter=20)
+    unit = synthesis.synthesis_units[0]
+    assert unit.kind == "surrounding_passages"
+    raw = _raw(bundle, synthesis, kind="surrounding_passages")
+    raw.update({"reference": "Judges 20", "book": "Judges", "chapter": 20})
+    raw["sections"][0]["blocks"][0].update({
+        "verse_refs": ["Judges 19", "Judges 21:1-25"],
+        "evidence_ids": ["e1"],
+        "synthesis_ids": [unit.id],
+    })
+    assert validate_chapter_commentary(raw, bundle, synthesis=synthesis).valid
+
+    raw["sections"][0]["blocks"][0]["verse_refs"] = ["Judges 19-21"]
+    assert validate_chapter_commentary(raw, bundle, synthesis=synthesis).valid
+
+
+def test_chapter_only_reference_remains_rejected_in_ordinary_section():
+    bundle = _bundle()
+    synthesis = compile_chapter_synthesis(bundle)
+    raw = _raw(bundle, synthesis)
+    raw["sections"][0]["blocks"][0]["verse_refs"] = ["1 Samuel 21"]
+    result = validate_chapter_commentary(raw, bundle, synthesis=synthesis)
+    assert not result.valid
+    assert CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value in (
+        result.section_results[0].block_results[0].reason_codes
+    )
+
+
+def test_reference_parser_rejects_malformed_and_impossible_context_refs():
+    bundle = _bundle()
+    synthesis = compile_chapter_synthesis(bundle)
+    for verse_ref, code in (
+        ("NotABook 21:1", CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value),
+        ("1 Samuel 21:x", CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value),
+        ("1 Samuel 21:10-5", CommentaryRejectionCode.OUT_OF_CHAPTER_VERSE_REFERENCE.value),
+        ("Genesis 1:1", CommentaryRejectionCode.OUT_OF_CHAPTER_VERSE_REFERENCE.value),
+        ("1 Samuel 21:1, 3", CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value),
+        ("", CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value),
+    ):
+        raw = _raw(bundle, synthesis)
+        raw["sections"][0]["blocks"][0]["verse_refs"] = [verse_ref]
+        result = validate_chapter_commentary(raw, bundle, synthesis=synthesis)
+        assert code in result.section_results[0].block_results[0].reason_codes, verse_ref
+
+
+def test_malformed_section_is_reported_independently_of_reference_parsing():
+    bundle = _bundle()
+    synthesis = compile_chapter_synthesis(bundle)
+    raw = _raw(bundle, synthesis)
+    raw["sections"] = [{"kind": "chapter_overview", "blocks": []}]
+    result = validate_chapter_commentary(raw, bundle, synthesis=synthesis)
+    assert not result.valid
+    assert CommentaryRejectionCode.MALFORMED_SECTION.value in result.section_results[0].reason_codes
+
+
+def test_wave_a_daniel_9_malformed_section_was_secondary_to_reference_parsing():
+    root = Path(__file__).resolve().parents[1]
+    response = json.loads(
+        (root / ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/"
+         "wave-a/canary/responses/raw/daniel_009.json").read_text(encoding="utf-8")
+    )
+    bundle = get_chapter_evidence_bundle("Daniel", 9)
+    assert bundle is not None
+    synthesis = compile_chapter_synthesis(bundle, book="Daniel", chapter=9)
+    payload = copy.deepcopy(response["response_payload"])
+    payload["generated_metadata"] = {
+        "evidence_hash": bundle.evidence_hash,
+        "evidence_bundle_version": bundle.version,
+        "commentary_schema_version": COMMENTARY_SCHEMA_VERSION,
+        "commentary_prompt_version": COMMENTARY_PROMPT_VERSION,
+        "model": "test",
+        "synthesis_hash": synthesis.synthesis_hash,
+        "synthesis_schema_version": synthesis.synthesis_schema_version,
+        "synthesis_compiler_version": synthesis.synthesis_compiler_version,
+    }
+    result = validate_chapter_commentary(
+        payload, bundle, expected_reference="Daniel 9", expected_book="Daniel",
+        expected_chapter=9, synthesis=synthesis,
+    )
+    assert result.valid
+    assert all(
+        CommentaryRejectionCode.MALFORMED_SECTION.value not in section.reason_codes
+        for section in result.section_results
+    )
 
 
 def test_non_contiguous_ranges_are_separate_array_entries():

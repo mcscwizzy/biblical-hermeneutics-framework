@@ -15,6 +15,8 @@ from enum import Enum
 from typing import Any, Mapping
 
 from bhf_agent import bible
+from bhf_agent.presentation.references import _BOOK_ALIASES
+from framework.canonical_library.scripture import parse_scripture_reference
 
 from .models import (
     COMMENTARY_SCHEMA_VERSION,
@@ -36,6 +38,13 @@ _DATE_RE = re.compile(
     r"(?:(?:AD|CE|BC|BCE)\s+[1-9]\d{0,3}|[1-9]\d{0,3}\s*(?:AD|CE|BC|BCE))(?!\w)",
     re.IGNORECASE,
 )
+# The canonical parser intentionally normalizes punctuation to whitespace.
+# Keep this small lexical guard so malformed punctuation such as a trailing
+# range hyphen cannot normalize into a different valid reference.
+_CANONICAL_REFERENCE_SHAPE_RE = re.compile(
+    r"^\s*.+?\s+\d+"
+    r"(?:\s*-\s*\d+|\s*:\s*\d+(?:\s*-\s*(?:\d+|\d+\s*:\s*\d+))?)?\s*$"
+)
 _CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
 _IMPLEMENTATION_LANGUAGE = (
     "supplied synthesis",
@@ -45,10 +54,6 @@ _IMPLEMENTATION_LANGUAGE = (
     "metadata",
     "provided evidence",
     "input context",
-)
-_VERSE_REF_RE = re.compile(
-    r"^(?P<book>.+?)\s+(?P<chapter>\d+):(?P<start>\d+)"
-    r"(?:-(?:(?P<end_chapter>\d+):)?(?P<end>\d+))?$"
 )
 _DEFERRED_REJECTION_CODES = frozenset(
     {
@@ -927,45 +932,75 @@ def _validate_verse_refs(
         return errors, codes
 
     for verse_ref in verse_refs:
-        match = _VERSE_REF_RE.match(" ".join(verse_ref.split()))
-        if not match:
+        normalized_ref = " ".join(verse_ref.split())
+        if not _CANONICAL_REFERENCE_SHAPE_RE.fullmatch(normalized_ref):
             errors.append(
                 f"{CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value}: "
                 f"{label} has malformed verse reference {verse_ref!r}"
             )
             codes.append(CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value)
             continue
-        ref_book = match.group("book")
-        ref_chapter = int(match.group("chapter"))
-        end_chapter = int(match.group("end_chapter") or ref_chapter)
-        start_verse = int(match.group("start"))
-        end_verse = int(match.group("end") or start_verse)
+        span = parse_scripture_reference(
+            normalized_ref, book_alias_lookup=_BOOK_ALIASES
+        )
+        if span is None or span.start_chapter is None:
+            errors.append(
+                f"{CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value}: "
+                f"{label} has malformed verse reference {verse_ref!r}"
+            )
+            codes.append(CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value)
+            continue
+        # Commentary schema 1.2 keeps references as strings, so use the
+        # canonical Scripture parser here rather than a second, narrower
+        # regex grammar.  Chapter-only references are meaningful contextual
+        # anchors, but ordinary blocks still require verse-level anchors.
+        chapter_only = span.start_verse is None
+        if chapter_only and not optional:
+            errors.append(
+                f"{CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value}: "
+                f"{label} requires a verse-level reference: {verse_ref!r}"
+            )
+            codes.append(CommentaryRejectionCode.MALFORMED_VERSE_REFERENCE.value)
+            continue
+
+        start_chapter = span.start_chapter
+        end_chapter = span.end_chapter or start_chapter
+        start_verse = span.start_verse
+        end_verse = span.end_verse or start_verse
+        canonical_ref_book = ""
+        invalid = False
         try:
-            canonical_ref_book = bible.resolve_chapter(ref_book, ref_chapter)["book"]
-            chapter_data = bible.resolve_chapter(ref_book, ref_chapter)
-            max_verse = max(int(item["verse"]) for item in chapter_data.get("verses", []))
+            first_chapter = bible.resolve_chapter(span.book, start_chapter)
+            canonical_ref_book = first_chapter["book"]
+            first_max_verse = max(
+                int(item["verse"]) for item in first_chapter.get("verses", [])
+            )
+            last_chapter = bible.resolve_chapter(span.book, end_chapter)
+            last_max_verse = max(
+                int(item["verse"]) for item in last_chapter.get("verses", [])
+            )
         except (bible.BibleError, KeyError, TypeError, ValueError):
-            canonical_ref_book = ""
-            max_verse = 0
+            first_max_verse = 0
+            last_max_verse = 0
+
+        # A chapter range or cross-chapter verse range is contextual only.
+        # Ordinary blocks must remain wholly within the requested chapter.
         outside_current = (
             canonical_ref_book != expected_book
-            or ref_chapter != expected_chapter
+            or start_chapter != expected_chapter
             or end_chapter != expected_chapter
         )
-        if allow_surrounding:
+        if start_verse is not None:
             invalid = (
-                not canonical_ref_book
-                or start_verse <= 0
+                start_verse <= 0
+                or end_verse is None
                 or end_verse < start_verse
-                or end_verse > max_verse
+                or start_verse > first_max_verse
+                or end_verse > (last_max_verse if end_chapter != start_chapter else first_max_verse)
             )
-        else:
-            invalid = (
-                outside_current
-                or start_verse <= 0
-                or end_verse < start_verse
-                or end_verse > max_verse
-            )
+        invalid = invalid or not canonical_ref_book or end_chapter < start_chapter
+        if not allow_surrounding:
+            invalid = invalid or outside_current
         if invalid:
             errors.append(
                 f"{CommentaryRejectionCode.OUT_OF_CHAPTER_VERSE_REFERENCE.value}: "
