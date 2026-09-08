@@ -1,0 +1,66 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "Ezekiel 12",
+  "book": "Ezekiel",
+  "chapter": 12,
+  "status": "pending_validation",
+  "source_commentary": {
+    "artifact_path": "runs/run-04109d5ff664ed80/batches/batch-001/accepted/attempt-001/ezekiel_012.json",
+    "artifact_sha256": "7ad57f3fb092944efeba385e2bce05dbbe746ecfa80df63e66a61dbe9245e127",
+    "artifact_identity": "sha256:7ad57f3fb092944efeba385e2bce05dbbe746ecfa80df63e66a61dbe9245e127",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "7ad57f3fb092944efeba385e2bce05dbbe746ecfa80df63e66a61dbe9245e127",
+    "generation_identity": "commentary-dense-reader-v0.1:7ad57f3fb092944efeba385e2bce05dbbe746ecfa80df63e66a61dbe9245e127"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": true,
+      "signal": "multi_signal_stress",
+      "signals": [
+        "low_weighted_coverage",
+        "low_utilization"
+      ]
+    },
+    "source_word_count": 11,
+    "source_block_count": 1,
+    "omitted_source_block_ids": [],
+    "omission_reasons": {},
+    "reader_word_count": 11,
+    "reader_unit_count": 1,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "chapter_overview",
+      "section_title": "Context availability",
+      "text": "Passage-specific contextual evidence is not currently available for this chapter.",
+      "verse_refs": [],
+      "evidence_ids": [],
+      "source_block_ids": [
+        "data_gap_notice"
+      ],
+      "source_synthesis_ids": [],
+      "source_cluster_ids": [],
+      "source_quality_classes": []
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "941267ed4735580ed5ba40be092ef1981c33c1b712f552e17e127fda164e647d"
+}

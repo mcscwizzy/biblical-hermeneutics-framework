@@ -1,0 +1,167 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "1 Corinthians 14",
+  "book": "1 Corinthians",
+  "chapter": 14,
+  "status": "pending_validation",
+  "source_commentary": {
+    "artifact_path": "runs/run-04109d5ff664ed80/batches/batch-001/accepted/attempt-001/1_corinthians_014.json",
+    "artifact_sha256": "867ad25a6dc12d96d06982c8672ce15e26bf6f941f200f71e75904c3910ef9f9",
+    "artifact_identity": "sha256:867ad25a6dc12d96d06982c8672ce15e26bf6f941f200f71e75904c3910ef9f9",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "867ad25a6dc12d96d06982c8672ce15e26bf6f941f200f71e75904c3910ef9f9",
+    "generation_identity": "commentary-dense-reader-v0.1:867ad25a6dc12d96d06982c8672ce15e26bf6f941f200f71e75904c3910ef9f9"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": true,
+      "signal": "multi_signal_stress",
+      "signals": [
+        "low_weighted_coverage",
+        "low_utilization"
+      ]
+    },
+    "source_word_count": 233,
+    "source_block_count": 4,
+    "omitted_source_block_ids": [],
+    "omission_reasons": {},
+    "reader_word_count": 233,
+    "reader_unit_count": 4,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "chapter_overview",
+      "section_title": "Gifts ordered for the gathered church",
+      "text": "1 Corinthians 14 compares tongues and prophecy by asking what happens in the gathered assembly. Tongues without interpretation are not understood by others, while prophecy is described as building up, encouraging, and consoling the church. Paul therefore regulates turn-taking, number, interpretation, evaluation, silence, and the participation of the gathered community, closing with the instruction that all things be done decently and in order.",
+      "verse_refs": [
+        "1 Corinthians 14:1-40"
+      ],
+      "evidence_ids": [
+        "corinthian-prophecy-upbuilding",
+        "corinthian-participatory-order",
+        "corinthian-interpretation-required"
+      ],
+      "source_block_ids": [
+        "overview_1"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_b12f9a795d61",
+        "syn_interpretive_questions_48738fe0e7f8",
+        "syn_interpretive_questions_d2f573076d8d"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_5b79903d041c"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_002",
+      "section_kind": "interpretive_questions",
+      "section_title": "Intelligibility, discernment, and silence",
+      "text": "The chapter repeatedly treats intelligibility, edification, learning, encouragement, self-control, peace, and communal evaluation as relevant to worship. Tongues are limited and require interpretation; prophets speak in turn and are weighed by others. The commands about women or wives in verses 34–35 are difficult within the chapter's wider pattern and remain disputed, especially because the same letter assumes women pray and prophesy and because some Western witnesses place the verses after verse 40.",
+      "verse_refs": [
+        "1 Corinthians 14:26-40"
+      ],
+      "evidence_ids": [
+        "corinthian-peace-order-not-suppression",
+        "prophecy-plural-weighing",
+        "corinthian-three-contextual-silences",
+        "corinthian-silence-textual-displacement",
+        "corinthian-chapters-eleven-fourteen-control"
+      ],
+      "source_block_ids": [
+        "question_1"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_48738fe0e7f8",
+        "syn_interpretive_questions_a895f0af9a89",
+        "syn_interpretive_questions_2b58756fa889",
+        "syn_interpretive_questions_8942b89fd4eb",
+        "syn_interpretive_questions_dbeacffc6c41"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_5b79903d041c",
+        "idea_cluster_621a6a3ced67",
+        "idea_cluster_118df255769d"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_003",
+      "section_kind": "why_it_matters",
+      "section_title": "Order serves participation",
+      "text": "In this chapter, order is directed toward intelligible participation and peace rather than leader convenience or the suppression of necessary questions. The gathered assembly may contain many contributions, but each is governed by the shared aim of building up the church. That makes interpretation, turn-taking, and discernment part of spiritual practice rather than obstacles to it.",
+      "verse_refs": [
+        "1 Corinthians 14:12-19",
+        "1 Corinthians 14:26-33",
+        "1 Corinthians 14:39-40"
+      ],
+      "evidence_ids": [
+        "corinthian-outsider-intelligibility:passage-relevance",
+        "corinthian-participatory-order",
+        "corinthian-peace-order-not-suppression:passage-relevance",
+        "order-peace-purpose"
+      ],
+      "source_block_ids": [
+        "matters_1"
+      ],
+      "source_synthesis_ids": [
+        "syn_why_it_matters_80afec65926b",
+        "syn_why_it_matters_dab9bd0680f8"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_5b79903d041c",
+        "idea_cluster_621a6a3ced67"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_004",
+      "section_kind": "surrounding_passages",
+      "section_title": "Love within the gifts discussion",
+      "text": "The preceding chapter places love within Paul's correction of gift competition rather than isolating it as romantic sentiment. Chapter 14 continues that setting by asking how speech and spiritual gifts serve—or fail to serve—the gathered community.",
+      "verse_refs": [],
+      "evidence_ids": [
+        "1cor-love"
+      ],
+      "source_block_ids": [
+        "surrounding_1"
+      ],
+      "source_synthesis_ids": [
+        "syn_surrounding_passages_3653e0317088"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_6ae289a10247"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "fc4498716a3743a96fcdc54e5d729a7e3fa32ef3f42d64c7f289b1649a6dba48"
+}
