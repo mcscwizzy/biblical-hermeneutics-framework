@@ -1,0 +1,41 @@
+{
+  "reference": "Zechariah 5",
+  "packet_id": "commentary-v1.5-packet:2ff8a95f321c5d18d5761abdf16e366658d89007ad8727c11b61bd68ca72aa52",
+  "prompt_version": "1.5",
+  "evidence_hash": "bb871ac6de27dde023c4f9351795d11ca437c44ca06b320deab178730fbd10f9",
+  "synthesis_hash": "ad90ca3192e552558a12025afdeefa99a1a2e5e406f4a4d3f0a1bb800c13c54f",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Zechariah 5",
+    "book": "Zechariah",
+    "chapter": 5,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "Wrongdoing exposed and removed",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Zechariah 5 presents two visions of judgment. The flying scroll carries a land-wide curse into the houses of thieves and false swearers, while the ephah confines Wickedness under a lead weight and carries her to a prepared house in Shinar. The images communicate the reach and removal of wrongdoing, but their symbolic details should not be forced into one exhaustive decoding.",
+            "verse_refs": [
+              "Zechariah 5:1-4",
+              "Zechariah 5:5-11"
+            ],
+            "evidence_ids": [
+              "zechariah-ephah",
+              "zechariah-flying-scroll"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_0577cf01def6",
+              "syn_why_it_matters_e22376f306e8"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

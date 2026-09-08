@@ -1,0 +1,56 @@
+{
+  "reference": "Luke 5",
+  "book": "Luke",
+  "chapter": 5,
+  "evidence_hash": "226a5a3687e635d9249bdbbf8266b1fa64cda63fd9ede88093d793f490c306fb",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "157cba43c43f0819a66a34bb3d087a441b2a49c73bd1eac2753cd4e2b94e5c21",
+  "evidence_availability": "DATA_GAP",
+  "synthesis_units": [],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "No passage-scoped contextual evidence is available.",
+      "severity": "substantial"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 0,
+    "used_evidence_ids": [],
+    "unused_evidence_ids": [],
+    "evidence_categories": {},
+    "category_diversity": 0,
+    "specific_evidence_count": 0,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {},
+    "relationship_unit_count": 0
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "reference": "Judges 12",
+  "book": "Judges",
+  "chapter": 12,
+  "evidence_hash": "6bebf831d680074a2f8074e433347704b67ae9273bd493f8c12759e775f56caa",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "da04e7fa1a498d6af885395f9708542585e3e5a97e984308f7254c61da3c9985",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_422ceb9f63bb",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The programmatic pattern in Judges 2 guides the central narratives, but the individual episodes do not all contain every stage or follow a mechanically identical cycle.",
+        "Archaeology and settlement studies do not produce one uncontested chronology or historical model for all episodes in Judges."
+      ],
+      "verse_refs": [
+        "Judges 1",
+        "Judges 10:1-18",
+        "Judges 11:1-40",
+        "Judges 13:1-25",
+        "Judges 14:1-20",
+        "Judges 15:1-20",
+        "Judges 16:1-31",
+        "Judges 2:1-23",
+        "Judges 3:1-31",
+        "Judges 3:7-31",
+        "Judges 4:1-24",
+        "Judges 5:1-31",
+        "Judges 6:1-40",
+        "Judges 7:1-25",
+        "Judges 8:1-35",
+        "Judges 9:1-57"
+      ],
+      "evidence_ids": [
+        "judges:interpretive_note:0",
+        "judges:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Judges 1-16",
+        "Judges 3:7-16:31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_4c1af90ce2ad",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war."
+      ],
+      "verse_refs": [
+        "Judges 1",
+        "Judges 10:1-18",
+        "Judges 11:1-40",
+        "Judges 13:1-25",
+        "Judges 14:1-20",
+        "Judges 15:1-20",
+        "Judges 16:1-31",
+        "Judges 17:1-13",
+        "Judges 18:1-31",
+        "Judges 19:1-30",
+        "Judges 20:1-48",
+        "Judges 21:1-25",
+        "Judges 2:1-23",
+        "Judges 3:1-31",
+        "Judges 4:1-24",
+        "Judges 5:1-31",
+        "Judges 6:1-40",
+        "Judges 7:1-25",
+        "Judges 8:1-35",
+        "Judges 9:1-57"
+      ],
+      "evidence_ids": [
+        "judges-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Judges 1-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_b05977ce45b4",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The programmatic pattern in Judges 2 guides the central narratives, but the individual episodes do not all contain every stage or follow a mechanically identical cycle.",
+        "Archaeology and settlement studies do not produce one uncontested chronology or historical model for all episodes in Judges."
+      ],
+      "verse_refs": [
+        "Judges 1",
+        "Judges 10:1-18",
+        "Judges 11:1-40",
+        "Judges 13:1-25",
+        "Judges 14:1-20",
+        "Judges 15:1-20",
+        "Judges 16:1-31",
+        "Judges 2:1-23",
+        "Judges 3:1-31",
+        "Judges 3:7-31",
+        "Judges 4:1-24",
+        "Judges 5:1-31",
+        "Judges 6:1-40",
+        "Judges 7:1-25",
+        "Judges 8:1-35",
+        "Judges 9:1-57"
+      ],
+      "evidence_ids": [
+        "judges:interpretive_note:0",
+        "judges:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_422ceb9f63bb"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Judges 1-16",
+        "Judges 3:7-16:31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 3,
+    "used_evidence_ids": [
+      "judges-literary-movement",
+      "judges:interpretive_note:0",
+      "judges:interpretive_note:3"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 3
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 3
+    },
+    "relationship_unit_count": 1
+  }
+}

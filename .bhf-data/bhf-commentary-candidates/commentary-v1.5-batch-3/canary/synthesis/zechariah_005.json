@@ -1,0 +1,122 @@
+{
+  "reference": "Zechariah 5",
+  "book": "Zechariah",
+  "chapter": 5,
+  "evidence_hash": "bb871ac6de27dde023c4f9351795d11ca437c44ca06b320deab178730fbd10f9",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "ad90ca3192e552558a12025afdeefa99a1a2e5e406f4a4d3f0a1bb800c13c54f",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_0577cf01def6",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The ephah vision personifies Wickedness as a woman confined under a lead weight and carried by two winged women to a prepared house in Shinar.",
+        "The flying scroll vision portrays a land-wide curse entering the houses of thieves and false swearers and consuming their materials."
+      ],
+      "verse_refs": [
+        "Zechariah 5:1-4",
+        "Zechariah 5:5-11"
+      ],
+      "evidence_ids": [
+        "zechariah-ephah",
+        "zechariah-flying-scroll"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Zechariah 5:1-4",
+        "Zechariah 5:5-11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e22376f306e8",
+      "kind": "why_it_matters",
+      "facts": [
+        "The ephah vision personifies Wickedness as a woman confined under a lead weight and carried by two winged women to a prepared house in Shinar.",
+        "The flying scroll vision portrays a land-wide curse entering the houses of thieves and false swearers and consuming their materials."
+      ],
+      "verse_refs": [
+        "Zechariah 5:1-4",
+        "Zechariah 5:5-11"
+      ],
+      "evidence_ids": [
+        "zechariah-ephah",
+        "zechariah-flying-scroll"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_0577cf01def6"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Zechariah 5:1-4",
+        "Zechariah 5:5-11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "zechariah-ephah",
+      "zechariah-flying-scroll"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 2
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 2,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1,
+      "why_it_matters": 1
+    },
+    "relationship_unit_count": 1
+  }
+}
