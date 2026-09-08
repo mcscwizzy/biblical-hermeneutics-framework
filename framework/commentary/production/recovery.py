@@ -52,15 +52,23 @@ def reconcile_chapter(repo_root: Path, chapter: dict[str, Any], record: dict[str
             record["attempt"] = 1
         if state in {PENDING, "READY", GENERATING}:
             state = RAW_CAPTURED
-    if quarantine.is_file():
-        record["state"] = QUARANTINED
-        return record
     if accepted.is_file() and gate.is_file():
         gate_value = read_json(gate)
         outcome = str(gate_value.get("assessment", {}).get("outcome", ""))
         state = {"PASS": GATE_PASS, "PASS_WITH_WARNING": GATE_WARNING, "QUALITY_FAIL": GATE_QUALITY_FAIL}.get(outcome, state)
+        # QUALITY_FAIL is intentionally both structurally accepted and
+        # production-quarantined.  Its quarantine receipt must not erase the
+        # richer state during crash recovery or ledger reconstruction.
+        if state == GATE_QUALITY_FAIL:
+            record["state"] = state
+            record["production_disposition"] = "PRODUCTION_QUARANTINED_QUALITY"
+            return record
         if state in {GATE_PASS, GATE_WARNING}:
             state = COMPLETE
+    if quarantine.is_file():
+        record["state"] = QUARANTINED
+        record["production_disposition"] = "PRODUCTION_QUARANTINED_CONTENT"
+        return record
     elif accepted.is_file() and state not in {COMPLETE, GATE_QUALITY_FAIL}:
         # An accepted artifact without its Gate receipt is recoverable only
         # through the still-required raw/import path.  If raw disappeared,

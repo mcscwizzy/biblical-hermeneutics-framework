@@ -207,6 +207,10 @@ def main(argv: list[str] | None = None) -> int:
     rec = sub.add_parser("reconcile", help="reconcile externally written handoff raw artifacts")
     rec.add_argument("--run", required=True)
     rec.add_argument("--renderer")
+    rp = sub.add_parser("reprocess-derived", aliases=["revalidate-existing", "adjudicate-run"], help="re-adjudicate explicit DATA_GAP quarantines from immutable raw")
+    rp.add_argument("--run", required=True)
+    rp.add_argument("--chapter", action="append", required=True)
+    rp.add_argument("--renderer")
     led = sub.add_parser("ledger")
     led.add_argument("--json", action="store_true")
     drift = sub.add_parser("drift")
@@ -242,6 +246,9 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command in {"handoff-resume", "reconcile"}:
             runner = HandoffRunner(ROOT, renderer_identity=_handoff_renderer(args.run, args.renderer))
             output = runner.reconcile_run(args.run)
+        elif args.command in {"reprocess-derived", "revalidate-existing", "adjudicate-run"}:
+            runner = HandoffRunner(ROOT, renderer_identity=_handoff_renderer(args.run, args.renderer))
+            output = runner.reprocess_derived(args.run, args.chapter)
         elif args.command == "drift":
             manifests = sorted((production_root(ROOT) / "runs").glob("*/manifest.json"))
             rows = []

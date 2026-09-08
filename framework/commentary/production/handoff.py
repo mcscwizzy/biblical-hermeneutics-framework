@@ -40,6 +40,7 @@ from .models import (
 from .recovery import reconcile_batch
 from .ledger import rebuild_ledger
 from .runner import ProductionRunner, _relative
+from .runner import _parse_response
 from .runtime import (
     EXTERNAL_HANDOFF_MODE,
     handoff_generation_receipt,
@@ -370,6 +371,96 @@ class HandoffRunner(ProductionRunner):
             self._finish_batch_state(state)
         ledger = rebuild_ledger(self.repo_root)
         return {"status": "RECONCILED", "run_id": run_id, "generation_mode": EXTERNAL_HANDOFF_MODE, "renderer_identity": self.renderer_identity, "provider_calls": 0, "chapters": outcomes, "ledger_counts": ledger["counts"]}
+
+    def reprocess_derived(self, run_id: str, references: list[str]) -> dict[str, Any]:
+        """Re-evaluate explicit terminal DATA_GAP cases from immutable raw.
+
+        This is adjudication, never a retry: it cannot call a provider, write a
+        new raw path, or increment an attempt.  The original quarantine receipt
+        remains immutable and is linked from a second adjudication receipt.
+        """
+
+        if not references:
+            raise ManifestError("REPROCESS_REFERENCE_REQUIRED: specify one or more chapters")
+        manifest, handoff, authorization = self._load_handoff(run_id)
+        outcomes: list[dict[str, Any]] = []
+        for reference in references:
+            item = self._find_item(handoff, reference)
+            batch = batch_manifest(manifest, item["batch_id"])
+            chapter = next(row for row in batch["chapters"] if row["reference"] == reference)
+            state = self._load_state(manifest, item["batch_id"])
+            record = state["chapters"][reference]
+            raw_path = _rooted(self.repo_root, item["expected_raw_path"])
+            quarantine_path = _rooted(self.repo_root, chapter["expected_artifacts"]["quarantine"])
+            if record.get("state") != QUARANTINED or not quarantine_path.is_file():
+                if record.get("adjudication_receipt_path") and raw_path.is_file():
+                    raw_sha = sha256_bytes(raw_path.read_bytes())
+                    if raw_sha == record.get("raw_sha256"):
+                        outcomes.append({"reference": reference, "status": "SKIPPED_ALREADY_ADJUDICATED", "raw_sha256": raw_sha, "state": record.get("state"), "adjudication_receipt_path": record["adjudication_receipt_path"]})
+                        continue
+                raise ProductionError(f"REPROCESS_NOT_QUARANTINED: {reference} is not an auditable terminal quarantine")
+            original = read_json(quarantine_path)
+            if "DATA_GAP_FALLBACK_REQUIRED" not in original.get("rejection_codes", []):
+                raise ProductionError(f"REPROCESS_NOT_DATA_GAP_FALLBACK: {reference} was not quarantined for DATA_GAP fallback")
+            if not raw_path.is_file():
+                raise ProductionError(f"REPROCESS_RAW_MISSING: {reference}")
+            raw_sha = sha256_bytes(raw_path.read_bytes())
+            if raw_sha != record.get("raw_sha256"):
+                raise ProductionError(f"REPROCESS_RAW_HASH_MISMATCH: {reference}")
+            raw_payload = _parse_response(raw_path.read_text(encoding="utf-8"))
+            if raw_payload is None:
+                raise ProductionError(f"REPROCESS_RAW_NOT_JSON_OBJECT: {reference}")
+            prepared = self._prepare_locked(manifest, chapter)
+            # Preview through the exact shared path before reopening state.
+            from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+            from .normalization import normalize_data_gap_fallback
+            from bhf_agent.chapter_commentary.models import GeneratedMetadata
+            payload, normalization = normalize_data_gap_fallback(
+                dict(raw_payload), expected_evidence_availability=prepared.synthesis.evidence_availability,
+                evidence_item_count=len(prepared.bundle.evidence_items), synthesis_unit_count=len(prepared.synthesis.synthesis_units),
+            )
+            payload["generated_metadata"] = GeneratedMetadata(
+                evidence_hash=prepared.bundle.evidence_hash, evidence_bundle_version=prepared.bundle.version,
+                commentary_schema_version=chapter["input_identity"]["commentary_schema_version"], commentary_prompt_version=chapter["input_identity"]["prompt_version"],
+                model="external_handoff", generated_timestamp=None, synthesis_hash=prepared.synthesis.synthesis_hash,
+                synthesis_schema_version=prepared.synthesis.synthesis_schema_version, synthesis_compiler_version=prepared.synthesis.synthesis_compiler_version,
+                renderer_label=self.renderer_identity,
+            ).to_dict()
+            payload["evidence_availability"] = prepared.synthesis.evidence_availability
+            payload["status"] = "pending"
+            preview = validate_chapter_commentary(payload, prepared.bundle, expected_evidence_hash=prepared.bundle.evidence_hash, expected_prompt_version=chapter["input_identity"]["prompt_version"], expected_reference=reference, expected_book=chapter["book"], expected_chapter=int(chapter["chapter"]), synthesis=prepared.synthesis, expected_synthesis_hash=prepared.synthesis.synthesis_hash)
+            if not normalization["applied"] or not preview.valid:
+                outcomes.append({"reference": reference, "status": "NOT_REOPENED", "raw_sha256": raw_sha, "normalization": normalization, "validator_messages": list(preview.errors)})
+                continue
+            # This explicit, hash-checked transition is the only reopening
+            # operation. It preserves attempt=1 and leaves the old receipt in
+            # place while moving its reference into durable history.
+            record.setdefault("historical_quarantines", []).append({
+                "path": _relative(self.repo_root, quarantine_path), "raw_sha256": raw_sha,
+                "rejection_codes": original.get("rejection_codes", []),
+            })
+            record["historical_quarantine_path"] = record.pop("quarantine_path", _relative(self.repo_root, quarantine_path))
+            record.pop("rejection_codes", None)
+            record["state"] = RAW_CAPTURED
+            self._save_state(state)
+            outcome = self._import_and_evaluate(manifest, batch, chapter, prepared, record, state, authorization.get("generation", {}).get("reader_enabled", False))
+            receipt_path = production_root(self.repo_root) / "runs" / run_id / "batches" / item["batch_id"] / "adjudications" / "attempt-001" / f"{slug(chapter['book'], chapter['chapter'])}.json"
+            receipt = {
+                "artifact_version": "commentary-production-derived-adjudication-v1",
+                "reference": reference, "attempt": record["attempt"], "provider_calls": 0,
+                "raw_path": record.get("raw_path"), "raw_sha256_before": raw_sha, "raw_sha256_after": record.get("raw_sha256"),
+                "original_quarantine_path": _relative(self.repo_root, quarantine_path),
+                "original_rejection_codes": original.get("rejection_codes", []),
+                "application_normalization": normalization,
+                "derived_status_before": QUARANTINED, "derived_status_after": record.get("state"),
+                "outcome": outcome,
+            }
+            write_json(receipt_path, receipt, immutable=True)
+            record["adjudication_receipt_path"] = _relative(self.repo_root, receipt_path)
+            self._save_state(state)
+            outcomes.append({"reference": reference, "status": "READJUDICATED", "raw_sha256": raw_sha, "state": record.get("state"), "adjudication_receipt_path": record["adjudication_receipt_path"]})
+        ledger = rebuild_ledger(self.repo_root)
+        return {"status": "DERIVED_REPROCESS_COMPLETE", "run_id": run_id, "provider_calls": 0, "chapters": outcomes, "ledger_counts": ledger["counts"]}
 
     def next_work(self, run_id: str) -> dict[str, Any]:
         manifest, handoff, _ = self._load_handoff(run_id)

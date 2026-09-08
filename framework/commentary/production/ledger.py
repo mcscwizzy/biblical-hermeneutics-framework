@@ -29,8 +29,22 @@ def rebuild_ledger(repo_root: Path, output: Path | None = None) -> dict[str, Any
             })
     current: dict[str, dict[str, Any]] = {}
     for reference, records in occurrences.items():
-        current[reference] = sorted(records, key=lambda row: (str(row.get("run_id")), str(row.get("batch_id"))))[-1]
+        row = dict(sorted(records, key=lambda row: (str(row.get("run_id")), str(row.get("batch_id"))))[-1])
+        # Older recovery wrote a generic QUARANTINED state whenever it saw a
+        # quarantine receipt.  A QUALITY_FAIL has both an accepted artifact
+        # and that receipt by policy, so retain its distinct derived state in
+        # reporting even before a later recovery pass updates state.json.
+        if row.get("state") == "QUARANTINED" and row.get("gate_status") == "QUALITY_FAIL" and row.get("accepted_path"):
+            row["state"] = "GATE_QUALITY_FAIL"
+            row["production_disposition"] = "PRODUCTION_QUARANTINED_QUALITY"
+        current[reference] = row
     counts = Counter(row.get("state", "PENDING") for row in current.values())
+    quality_quarantined = [row for row in current.values() if row.get("state") == "GATE_QUALITY_FAIL"]
+    content_quarantined = [row for row in current.values() if row.get("state") == "QUARANTINED"]
+    structurally_accepted = [
+        row for row in current.values()
+        if row.get("accepted_path") and row.get("state") in {"COMPLETE", "GATE_QUALITY_FAIL"}
+    ]
     all_chapters = canonical_chapters()
     known = {row["reference"] for row in all_chapters}
     counts["PENDING"] += len(known - set(current))
@@ -43,6 +57,11 @@ def rebuild_ledger(repo_root: Path, output: Path | None = None) -> dict[str, Any
         "production_version": PRODUCTION_VERSION,
         "canonical_chapter_count": len(all_chapters),
         "counts": dict(sorted(counts.items())),
+        "dispositions": {
+            "structurally_accepted": len(structurally_accepted),
+            "production_quarantined_quality": len(quality_quarantined),
+            "production_quarantined_content": len(content_quarantined),
+        },
         "next_chapter": next_rows[0] if next_rows else None,
         "next_batch_id": f"batch-{(max(batch_numbers) + 1 if batch_numbers else 1):03d}",
         "current": {key: current[key] for key in sorted(current)},

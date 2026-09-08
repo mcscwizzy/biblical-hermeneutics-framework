@@ -23,6 +23,7 @@ from bhf_agent.config import AgentConfig
 
 from .inputs import prepare_chapter
 from .ledger import rebuild_ledger
+from .normalization import normalize_data_gap_fallback
 from .manifests import batch_manifest, load_manifest, save_batch_manifests
 from .models import (
     ACCEPTED,
@@ -356,7 +357,12 @@ class ProductionRunner:
             messages = ["CONTENT_MALFORMED_JSON: model response was not a JSON object"]
             self._reject(manifest, batch, chapter, record, state, messages, generation_failure=False)
             return {"reference": reference, "state": QUARANTINED, "failure_kind": "CONTENT_FAILURE", "rejection_codes": ["CONTENT_MALFORMED_JSON"]}
-        payload = dict(payload)
+        payload, normalization = normalize_data_gap_fallback(
+            dict(payload),
+            expected_evidence_availability=prepared.synthesis.evidence_availability,
+            evidence_item_count=len(prepared.bundle.evidence_items),
+            synthesis_unit_count=len(prepared.synthesis.synthesis_units),
+        )
         payload["generated_metadata"] = GeneratedMetadata(
             evidence_hash=prepared.bundle.evidence_hash,
             evidence_bundle_version=prepared.bundle.version,
@@ -373,6 +379,12 @@ class ProductionRunner:
         payload["status"] = "pending"
         from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
         validation = validate_chapter_commentary(payload, prepared.bundle, expected_evidence_hash=prepared.bundle.evidence_hash, expected_prompt_version=chapter["input_identity"]["prompt_version"], expected_reference=reference, expected_book=chapter["book"], expected_chapter=int(chapter["chapter"]), synthesis=prepared.synthesis, expected_synthesis_hash=prepared.synthesis.synthesis_hash)
+        derived_path = self._write_derived_validation_receipt(
+            manifest, batch, chapter, record, payload, normalization, validation
+        )
+        record["derived_validation_path"] = _relative(self.repo_root, derived_path)
+        if normalization["applied"]:
+            record["application_normalization"] = normalization
         if not validation.valid:
             messages = list(validation.errors)
             self._reject(manifest, batch, chapter, record, state, messages, generation_failure=False)
@@ -437,6 +449,25 @@ class ProductionRunner:
         self._set_record(state, reference, COMPLETE)
         self._save_state(state)
         return {"reference": reference, "state": COMPLETE, "gate_status": assessment.outcome, "reader_status": record["reader_status"]}
+
+    def _write_derived_validation_receipt(self, manifest: dict[str, Any], batch: dict[str, Any], chapter: dict[str, Any], record: dict[str, Any], payload: dict[str, Any], normalization: dict[str, Any], validation: Any) -> Path:
+        """Persist the non-raw validation view without implying it was rendered."""
+
+        root = production_root(self.repo_root) / "runs" / manifest["run_id"] / "batches" / batch["batch_id"]
+        path = root / "derived-validation" / f"attempt-{int(record['attempt']):03d}" / f"{slug(chapter['book'], chapter['chapter'])}.json"
+        value = {
+            "artifact_version": "commentary-production-derived-validation-v1",
+            "reference": chapter["reference"],
+            "attempt": record["attempt"],
+            "raw_path": record.get("raw_path"),
+            "raw_sha256": record.get("raw_sha256"),
+            "application_normalization": normalization,
+            "validation_payload_sha256": sha256_bytes(json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")),
+            "validation_valid": bool(validation.valid),
+            "validator_messages": list(validation.errors),
+        }
+        write_json(path, value, immutable=True)
+        return path
 
     def _reject(self, manifest: dict[str, Any], batch: dict[str, Any], chapter: dict[str, Any], record: dict[str, Any], state: dict[str, Any], messages: list[str], *, generation_failure: bool) -> None:
         self._set_record(state, chapter["reference"], REJECTED)
