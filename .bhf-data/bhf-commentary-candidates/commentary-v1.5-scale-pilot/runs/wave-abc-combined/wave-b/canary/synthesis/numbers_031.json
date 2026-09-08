@@ -1,0 +1,92 @@
+{
+  "reference": "Numbers 31",
+  "book": "Numbers",
+  "chapter": 31,
+  "evidence_hash": "868fea6bfa6d56e47370795799371a83f1827758e8de7c5003d07d98258311d8",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "36b9149e44d0712788e4310cf0137a0a319a29b24b5e87332477c45078947288",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_7cb39c12177b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards."
+      ],
+      "verse_refs": [
+        "Numbers 26",
+        "Numbers 27:1-23",
+        "Numbers 28:1-31",
+        "Numbers 29:1-40",
+        "Numbers 30:1-16",
+        "Numbers 32:1-42",
+        "Numbers 33:1-56",
+        "Numbers 34:1-29",
+        "Numbers 35:1-34",
+        "Numbers 36:1-13"
+      ],
+      "evidence_ids": [
+        "numbers-inheritance-preparation"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Numbers 26-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "numbers-inheritance-preparation"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

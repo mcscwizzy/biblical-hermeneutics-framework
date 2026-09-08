@@ -1,0 +1,178 @@
+{
+  "reference": "Daniel 11",
+  "packet_id": "commentary-v1.5-packet:3fd5e027f5c8e40d7f72f0797b3952a20304a81160bda672884b0c14ed8a4a62",
+  "prompt_version": "1.5",
+  "evidence_hash": "e006ccae8cbdcf2de29366105e2dd840e805540b1bfcafc6971ee1d826e35419",
+  "synthesis_hash": "5c31a018e291a27e8758dc45f82a72d21a7b7d12cdc8b2feb26aa84f5d1cb91f",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Daniel 11",
+    "book": "Daniel",
+    "chapter": 11,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "A cultural detail that clarifies the passage is this: Ammon is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative. Chaldea is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative. Edom is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
+            "verse_refs": [
+              "Daniel 11:40-45"
+            ],
+            "evidence_ids": [
+              "ammon:ancient_near_east_context:0",
+              "chaldea:ancient_near_east_context:0",
+              "edom:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_5b3918ccc432",
+              "syn_cultural_context_670e77e29baf",
+              "syn_cultural_context_b777bb27b60a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Dead Sea Scrolls includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and qumran-caves without letting comparison replace the biblical witness. Ancient background for Temple Mount Area Finds includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and jerusalem without letting comparison replace the biblical witness. Ancient background for Wadi Murabba'at Scrolls includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and jerusalem without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Daniel 11"
+            ],
+            "evidence_ids": [
+              "dead-sea-scrolls:ancient_near_east_context:0",
+              "temple-mount-area-finds:ancient_near_east_context:0",
+              "wadi-murabbaat-scrolls:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_138ec7eaa22c",
+              "syn_cultural_context_26b5b736c4e1",
+              "syn_cultural_context_dc9e0abf9b67"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_003",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Syria 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Exodus 3:1-15, babylonian-exile, and fall-of-jerusalem without letting comparison replace the biblical witness. Ancient background for Moab 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Exodus 3:1-15, babylonian-exile, and fall-of-jerusalem without letting comparison replace the biblical witness. Ancient background for Philistia includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Exodus 3:1-15, babylonian-exile, and fall-of-jerusalem without letting comparison replace the biblical witness. Ancient background for Midian includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Exodus 3:1-15, babylonian-exile, and fall-of-jerusalem without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Daniel 11:40-45"
+            ],
+            "evidence_ids": [
+              "midian:ancient_near_east_context:0",
+              "moab-1:ancient_near_east_context:0",
+              "philistia:ancient_near_east_context:0",
+              "syria-1:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_2e637815ec58",
+              "syn_cultural_context_9734939df0d7",
+              "syn_cultural_context_98556a3eb9a8",
+              "syn_cultural_context_e698c191ac6e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_004",
+            "text": "Historically, this chapter is read within the following setting: Midian appears in conquest, monarchy, exile, or diaspora settings where power and identity collide. Chaldea appears in conquest, monarchy, exile, or diaspora settings where power and identity collide. Syria appears in conquest, monarchy, exile, or diaspora settings where power and identity collide. Philistia appears in conquest, monarchy, exile, or diaspora settings where power and identity collide. Ammon appears in conquest, monarchy, exile, or diaspora settings where power and identity collide. Edom appears in conquest, monarchy, exile, or diaspora settings where power and identity collide. Moab appears in conquest, monarchy, exile, or diaspora settings where power and identity collide.",
+            "verse_refs": [
+              "Daniel 11:40-45"
+            ],
+            "evidence_ids": [
+              "ammon:historical_context:0",
+              "chaldea:historical_context:0",
+              "edom:historical_context:0",
+              "midian:historical_context:0",
+              "moab-1:historical_context:0",
+              "philistia:historical_context:0",
+              "syria-1:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_794722851792",
+              "syn_historical_context_95f5e06de825",
+              "syn_historical_context_c788abf5d5aa",
+              "syn_historical_context_e166e096739b",
+              "syn_historical_context_ed6b3fb14e6e",
+              "syn_historical_context_ee0ffbf510d4",
+              "syn_historical_context_f8639d305732"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_005",
+            "text": "Historically, this chapter is read within the following setting: Historically, Temple Mount Area Finds is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. Historically, Wadi Murabba'at Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. Historically, Dead Sea Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, qumran-caves, isaiah and related CKL objects for contextual retrieval.",
+            "verse_refs": [
+              "Daniel 11"
+            ],
+            "evidence_ids": [
+              "dead-sea-scrolls:historical_context:0",
+              "temple-mount-area-finds:historical_context:0",
+              "wadi-murabbaat-scrolls:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_1e6123d7b508",
+              "syn_historical_context_8a77782f3957",
+              "syn_historical_context_93b90ca4376d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_006",
+            "text": "This helps frame an interpretive question raised by the passage: Daniel's received form combines a sixth-century narrative setting with traditions and literary stages that many scholars locate across Persian and Hellenistic periods, reaching final form during the Antiochene crisis. Daniel's tales and visions offer multiple practices of endurance and resistance under imperial domination rather than a single rule that faithful people must always comply, flee, revolt, or expect miraculous rescue. Daniel 11 symbolically reviews Persian and Hellenistic conflicts with increasingly close correspondence through Antiochus IV, then diverges from his known death in its final description. Daniel's sixth-century narrative setting must be distinguished from the dates proposed for its tales, visions, collection, and final form. The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed. Daniel's received form combines a sixth-century narrative setting with traditions and literary stages that many scholars locate across Persian and Hellenistic periods, reaching final form during the Antiochene crisis. Daniel's tales and visions offer multiple practices of endurance and resistance under imperial domination rather than a single rule that faithful people must always comply, flee, revolt, or expect miraculous rescue. Daniel 11 symbolically reviews Persian and Hellenistic conflicts with increasingly close correspondence through Antiochus IV, then diverges from his known death in its final description. Daniel's sixth-century narrative setting must be distinguished from the dates proposed for its tales, visions, collection, and final form. The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed.",
+            "verse_refs": [
+              "Daniel 11:1-45",
+              "Daniel 11:31"
+            ],
+            "evidence_ids": [
+              "daniel-compositional-horizons",
+              "daniel-imperial-resistance",
+              "daniel-kingdom-review",
+              "daniel:interpretive_note:0",
+              "daniel:interpretive_note:19"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_72e3007f49c5",
+              "syn_why_it_matters_b39a74e123c1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_007",
+            "text": "This helps frame an interpretive question raised by the passage: Daniel 11's close historical correspondences and its divergence near Antiochus IV's death should be reported openly rather than hidden by forced harmonization. Apocalyptic hope may resist empire, but readings that intensify conspiracy, end-times fear, authoritarian control, nationalism, war, or genocide contradict responsible pastoral safeguards. Daniel 11's close historical correspondences and its divergence near Antiochus IV's death should be reported openly rather than hidden by forced harmonization. Apocalyptic hope may resist empire, but readings that intensify conspiracy, end-times fear, authoritarian control, nationalism, war, or genocide contradict responsible pastoral safeguards.",
+            "verse_refs": [
+              "Daniel 11:1-45"
+            ],
+            "evidence_ids": [
+              "daniel:interpretive_note:22",
+              "daniel:interpretive_note:28"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_406c7b0ca9b9",
+              "syn_why_it_matters_2a11d9677c78"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

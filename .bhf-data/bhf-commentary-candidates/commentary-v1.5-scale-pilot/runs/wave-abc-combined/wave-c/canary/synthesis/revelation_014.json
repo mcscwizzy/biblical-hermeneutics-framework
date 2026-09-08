@@ -1,0 +1,394 @@
+{
+  "reference": "Revelation 14",
+  "book": "Revelation",
+  "chapter": 14,
+  "evidence_hash": "7f77318fd65bf607c2643b6c46348c519892cc230dc0e09d6b36cf9ee2e6e8bd",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "c6e5a196a2ff314a741a447aaa632a96cd817379e48b149d36cd0ed933070af1",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_df7495482043",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient cultures knew rest and festival calendars, but Israel's Sabbath uniquely ties rest to creation, redemption from slavery, and covenant holiness.",
+        "Creation rhythm, memory, trust, holiness, household rest, and freedom from oppression.",
+        "By the Second Temple period Sabbath observance marked covenant fidelity and shaped synagogue and household rhythms."
+      ],
+      "verse_refs": [
+        "Revelation 14:13"
+      ],
+      "evidence_ids": [
+        "sabbath-theme:ancient_near_east_context:0",
+        "sabbath-theme:hebraic_worldview:0",
+        "sabbath-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4a3812a51e7a",
+      "kind": "historical_context",
+      "facts": [
+        "Sabbath emerges in creation theology and then in Israel's covenant life as a weekly sign of trust, liberation, and ordered time."
+      ],
+      "verse_refs": [
+        "Revelation 14:13"
+      ],
+      "evidence_ids": [
+        "sabbath-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b0dfa54e7377",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The 144,000 are numbered and sealed from Israel's tribes and later stand with the Lamb; relation to the multitude is disputed.",
+        "The book calls its hearers to endurance and witness, not to enact its divine judgment scenes through religious violence."
+      ],
+      "verse_refs": [
+        "Revelation 14:1-5",
+        "Revelation 14:12"
+      ],
+      "evidence_ids": [
+        "rev-144000",
+        "rev-not-violence-license"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:1-5",
+        "Revelation 14:12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b905cd6cab9f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Revelation plausibly reuses Joel's cosmic, trumpet, locust-army, harvest, winepress, and nations-judgment imagery, but these are cumulative allusions rather than an explicit quotation.",
+        "Revelation's harvest and winepress imagery plausibly recalls Joel but combines multiple prophetic sources; allusion should not be mislabeled direct quotation."
+      ],
+      "verse_refs": [
+        "Revelation 14:14-20"
+      ],
+      "evidence_ids": [
+        "joel-revelation-reuse",
+        "joel:interpretive_note:31"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:14-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_53e5bcf01550",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+        "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."
+      ],
+      "verse_refs": [
+        "Revelation 10:1-11",
+        "Revelation 11:1-19",
+        "Revelation 12:1-17",
+        "Revelation 13:1-18",
+        "Revelation 15:1-8",
+        "Revelation 16:1-21",
+        "Revelation 17:1-18",
+        "Revelation 18:1-24",
+        "Revelation 19:1-21",
+        "Revelation 1:1-20",
+        "Revelation 20:1-15",
+        "Revelation 21:1-27",
+        "Revelation 22:1-21",
+        "Revelation 2:1-29",
+        "Revelation 3:1-22",
+        "Revelation 4:1-11",
+        "Revelation 5:1-14",
+        "Revelation 6:1-17",
+        "Revelation 7:1-17",
+        "Revelation 8:1-13",
+        "Revelation 9:1-21"
+      ],
+      "evidence_ids": [
+        "rev-scriptural-reuse",
+        "rev-septets"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Revelation 1:1-22:21",
+        "Revelation 6:1-16:21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_b07e4c88cb48",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+        "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."
+      ],
+      "verse_refs": [
+        "Revelation 10:1-11",
+        "Revelation 11:1-19",
+        "Revelation 12:1-17",
+        "Revelation 13:1-18",
+        "Revelation 15:1-8",
+        "Revelation 16:1-21",
+        "Revelation 17:1-18",
+        "Revelation 18:1-24",
+        "Revelation 19:1-21",
+        "Revelation 1:1-20",
+        "Revelation 20:1-15",
+        "Revelation 21:1-27",
+        "Revelation 22:1-21",
+        "Revelation 2:1-29",
+        "Revelation 3:1-22",
+        "Revelation 4:1-11",
+        "Revelation 5:1-14",
+        "Revelation 6:1-17",
+        "Revelation 7:1-17",
+        "Revelation 8:1-13",
+        "Revelation 9:1-21"
+      ],
+      "evidence_ids": [
+        "rev-scriptural-reuse",
+        "rev-septets"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_53e5bcf01550"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Revelation 1:1-22:21",
+        "Revelation 6:1-16:21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_7e290fea03c2",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient cultures knew rest and festival calendars, but Israel's Sabbath uniquely ties rest to creation, redemption from slavery, and covenant holiness.",
+        "Creation rhythm, memory, trust, holiness, household rest, and freedom from oppression.",
+        "By the Second Temple period Sabbath observance marked covenant fidelity and shaped synagogue and household rhythms."
+      ],
+      "verse_refs": [
+        "Revelation 14:13"
+      ],
+      "evidence_ids": [
+        "sabbath-theme:ancient_near_east_context:0",
+        "sabbath-theme:hebraic_worldview:0",
+        "sabbath-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_df7495482043"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8a4cfe9ab6ad",
+      "kind": "why_it_matters",
+      "facts": [
+        "The 144,000 are numbered and sealed from Israel's tribes and later stand with the Lamb; relation to the multitude is disputed.",
+        "The book calls its hearers to endurance and witness, not to enact its divine judgment scenes through religious violence."
+      ],
+      "verse_refs": [
+        "Revelation 14:1-5",
+        "Revelation 14:12"
+      ],
+      "evidence_ids": [
+        "rev-144000",
+        "rev-not-violence-license"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b0dfa54e7377"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:1-5",
+        "Revelation 14:12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b5d02440b8f6",
+      "kind": "why_it_matters",
+      "facts": [
+        "Revelation plausibly reuses Joel's cosmic, trumpet, locust-army, harvest, winepress, and nations-judgment imagery, but these are cumulative allusions rather than an explicit quotation.",
+        "Revelation's harvest and winepress imagery plausibly recalls Joel but combines multiple prophetic sources; allusion should not be mislabeled direct quotation."
+      ],
+      "verse_refs": [
+        "Revelation 14:14-20"
+      ],
+      "evidence_ids": [
+        "joel-revelation-reuse",
+        "joel:interpretive_note:31"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b905cd6cab9f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Revelation 14:14-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 10,
+    "used_evidence_ids": [
+      "joel-revelation-reuse",
+      "joel:interpretive_note:31",
+      "rev-144000",
+      "rev-not-violence-license",
+      "rev-scriptural-reuse",
+      "rev-septets",
+      "sabbath-theme:ancient_near_east_context:0",
+      "sabbath-theme:hebraic_worldview:0",
+      "sabbath-theme:historical_context:0",
+      "sabbath-theme:second_temple_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 9,
+      "history": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 10,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 1,
+      "historical_context": 1,
+      "interpretive_questions": 2,
+      "surrounding_passages": 2,
+      "why_it_matters": 3
+    },
+    "relationship_unit_count": 4
+  }
+}

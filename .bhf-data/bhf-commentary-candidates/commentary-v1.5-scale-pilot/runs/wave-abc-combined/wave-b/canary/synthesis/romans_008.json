@@ -1,0 +1,3102 @@
+{
+  "reference": "Romans 8",
+  "book": "Romans",
+  "chapter": 8,
+  "evidence_hash": "9d7ef44430bed462d81e622abf2b5d0aaf2a2cd6a66a31452bc9a0731f28fa76",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "fe0fe211783bbb1b7bf7bb6018a23d3ffcb51e672b7221cdbe214aa303f22985",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_7a57ca9e68d0",
+      "kind": "archaeology_geography",
+      "facts": [
+        "damascus",
+        "jerusalem",
+        "corinth",
+        "ephesus",
+        "rome"
+      ],
+      "verse_refs": [
+        "Romans 8:1-39"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_08b1a8ce5baf",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Sonship Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Romans 8:14-17, Galatians 4:4-7, adoption, and adoption-theme without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "sonship-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_0fc109224f3a",
+      "kind": "cultural_context",
+      "facts": [
+        "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church.",
+        "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+        "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging."
+      ],
+      "verse_refs": [
+        "Romans 8:1-39"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1d1e4bd496d8",
+      "kind": "cultural_context",
+      "facts": [
+        "The Bible’s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "spirit-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_2bc93e146e1a",
+      "kind": "cultural_context",
+      "facts": [
+        "Romans' body, flesh, weakness, and groaning language must not stigmatize disability or mental-health conditions; spiritual interpretation cannot replace appropriate medical and psychological care."
+      ],
+      "verse_refs": [
+        "Romans 8:18-27"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:73"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4605934f0e82",
+      "kind": "cultural_context",
+      "facts": [
+        "Family, household, citizenship, and patronage language shaped ancient identity, but the New Testament grounds Christian identity in God's gracious action in Christ rather than social rank or ethnicity."
+      ],
+      "verse_refs": [
+        "Romans 8:1",
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "what-verses-show-identity-in-christ:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1",
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_48e13d0ec2dc",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+      ],
+      "verse_refs": [
+        "Romans 8:28-30"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:28-30"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_651197f55749",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."
+      ],
+      "verse_refs": [
+        "Romans 8:29"
+      ],
+      "evidence_ids": [
+        "what-is-the-image-of-god:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:29"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_964ae6e01608",
+      "kind": "cultural_context",
+      "facts": [
+        "For Adoption Theme, comparison draws from Israelite covenant practice, temple worship, royal ideology, wisdom instruction, prophetic speech, Second Temple Judaism, and Roman-period community life as context requires."
+      ],
+      "verse_refs": [
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "adoption-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_9b7de07abf14",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:1-17"
+      ],
+      "evidence_ids": [
+        "pneumatology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_9fa9f0a58361",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:1-17"
+      ],
+      "evidence_ids": [
+        "water-and-spirit-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a2a6e7a4024c",
+      "kind": "cultural_context",
+      "facts": [
+        "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "creation-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a4839331fd82",
+      "kind": "cultural_context",
+      "facts": [
+        "Romans' slavery metaphors cannot justify chattel slavery, trafficking, coerced labor, worker exploitation, or spiritualized enslavement; metaphorical force depends on a violent institution that requires moral critique.",
+        "All things work together for good must not be invoked to name abuse, disease, disaster, suicide, or oppression good or to silence grief and lament.",
+        "The Spirit's groaning prayer validates speechless distress; it cannot justify dismissing mental-health care, crisis intervention, medication, or survivor testimony.",
+        "Romans' suffering and perseverance language cannot justify victim blaming, trauma glorification, denial of pain, forced reconciliation, mental-health stigma, medical neglect, or keeping people in danger."
+      ],
+      "verse_refs": [
+        "Romans 8:15",
+        "Romans 8:18-39",
+        "Romans 8:22-27"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:31",
+        "romans:interpretive_note:37",
+        "romans:interpretive_note:38",
+        "romans:interpretive_note:72"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15",
+        "Romans 8:18-39",
+        "Romans 8:22-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_c1302ebbec0c",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical Spirit language is not impersonal force language; it expresses God’s living presence among his people."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "what-is-the-holy-spirit:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_cbfa77dde357",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_dd659188f25c",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:1-17"
+      ],
+      "evidence_ids": [
+        "spiritual-gifts:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e0b1cf0d07d1",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "new-creation-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e481bc1b8c8e",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "creation-doctrine:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f247ae0aa3dc",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Adoption includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Romans 8:14-17, Galatians 4:4-7, adoption-theme, and romans without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "adoption:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_1cf8c99a97a2",
+      "kind": "historical_context",
+      "facts": [
+        "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:1-17"
+      ],
+      "evidence_ids": [
+        "pneumatology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_2cd4f4c74744",
+      "kind": "historical_context",
+      "facts": [
+        "Adoption is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "adoption:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_47c2f8834b5c",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language appears from creation through prophecy, Jesus’ ministry, Pentecost, and the life of the church."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "spirit-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_55490fbc14e0",
+      "kind": "historical_context",
+      "facts": [
+        "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:1-17"
+      ],
+      "evidence_ids": [
+        "water-and-spirit-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_6c1b7b64829f",
+      "kind": "historical_context",
+      "facts": [
+        "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation."
+      ],
+      "verse_refs": [
+        "Romans 8:1-39"
+      ],
+      "evidence_ids": [
+        "paul:historical_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-39"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8aa30ff95146",
+      "kind": "historical_context",
+      "facts": [
+        "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "creation-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8b1388b61f29",
+      "kind": "historical_context",
+      "facts": [
+        "These texts come mainly from Pauline and Johannine letters written to churches learning to understand their status, belonging, and conduct in light of Christ's death and resurrection."
+      ],
+      "verse_refs": [
+        "Romans 8:1",
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "what-verses-show-identity-in-christ:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1",
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_9655d41402f1",
+      "kind": "historical_context",
+      "facts": [
+        "Sonship Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "sonship-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_aa10f20ccef7",
+      "kind": "historical_context",
+      "facts": [
+        "Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ."
+      ],
+      "verse_refs": [
+        "Romans 8:29"
+      ],
+      "evidence_ids": [
+        "what-is-the-image-of-god:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:29"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_b003dc1795b7",
+      "kind": "historical_context",
+      "facts": [
+        "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "creation-doctrine:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_dd2d12cee1f4",
+      "kind": "historical_context",
+      "facts": [
+        "Adoption Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:14-17"
+      ],
+      "evidence_ids": [
+        "adoption-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:14-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ddcd3ddb753f",
+      "kind": "historical_context",
+      "facts": [
+        "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:1-17"
+      ],
+      "evidence_ids": [
+        "spiritual-gifts:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e10c68565cf7",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "what-is-the-holy-spirit:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e9e9ebd39417",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_ece8790a3482",
+      "kind": "historical_context",
+      "facts": [
+        "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "new-creation-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f05455ddeac0",
+      "kind": "historical_context",
+      "facts": [
+        "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred."
+      ],
+      "verse_refs": [
+        "Romans 8:28-30"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:28-30"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_1a3868a8b088",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul promises divine life, imperishability, glory, power, and transformation but does not describe a normalized morphology or exclude disability, intersex traits, scars, aging, or medical alteration.",
+        "Protects disabled and intersex people from resurrection-based stigma, cure pressure, forced normalization, and exclusion from community hope.",
+        "Romans 8 presents creation's bondage and groaning, believers' groaning for adoption and bodily redemption, and the Spirit's inarticulate intercession."
+      ],
+      "verse_refs": [
+        "Romans 8:11-25",
+        "Romans 8:18-27"
+      ],
+      "evidence_ids": [
+        "embodied-identity-no-exclusion",
+        "embodied-identity-no-exclusion:passage-relevance",
+        "romans-groaning-bodily-redemption"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:11-25",
+        "Romans 8:18-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_1c5004e9d3eb",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Validates lament, bodily need, ecological concern, and patient hope without praising present harm or blaming disability.",
+        "Romans 8 acknowledges unseen hope, weakness in prayer, hardship, danger, and death before affirming that none severs divine love.",
+        "Rejects grief suppression, prayer shaming, and claims that trauma, doubt, or death proves abandonment.",
+        "Romans 8 contrasts flesh and Spirit orientations while explicitly naming mortal bodies and divine life-giving through the indwelling Spirit.",
+        "Supports embodied resurrection hope without treating material bodies, disability, or bodily care as inferior to spiritual life."
+      ],
+      "verse_refs": [
+        "Romans 8:1-13",
+        "Romans 8:18-27",
+        "Romans 8:24-39"
+      ],
+      "evidence_ids": [
+        "romans-groaning-bodily-redemption:passage-relevance",
+        "romans-hope-prayer-love",
+        "romans-hope-prayer-love:passage-relevance",
+        "romans-spirit-mortal-bodies",
+        "romans-spirit-mortal-bodies:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-13",
+        "Romans 8:18-27",
+        "Romans 8:24-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_20f8f4ddb01c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Nero's post-fire violence in 64 CE is later than Romans' probable date and cannot be assumed as the letter's original persecution setting."
+      ],
+      "verse_refs": [
+        "Romans 8:17-39"
+      ],
+      "evidence_ids": [
+        "rome:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:17-39"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_3169ee6cd53a",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Rejects fear-based prayer compliance and protects people for whom father language is unsafe, inaccessible, or traumatic.",
+        "The Spirit intercedes with inexpressible groans while the heart-searching God knows the Spirit's intention.",
+        "Prevents one prayer style, vocalization, language, or emotional display from becoming mandatory proof of the Spirit."
+      ],
+      "verse_refs": [
+        "Romans 8:15-17",
+        "Romans 8:26-27"
+      ],
+      "evidence_ids": [
+        "romans-abba-adoption:passage-relevance",
+        "spirit-inexpressible-groans",
+        "spirit-inexpressible-groans:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15-17",
+        "Romans 8:26-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_49348b32932f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Romans describes Torah as holy, just, good, spiritual, and fulfilled through love even while arguing that sin exploits commandment and Torah cannot defeat sin and death.",
+        "Justification in Romans belongs with grace, faith, Messiah, resurrection, union, Spirit, Israel, gentiles, and embodied community; one later confessional formula cannot silently replace the letter's whole argument.",
+        "Life in the Spirit in Romans 8 includes embodied adoption, suffering, prayer, hope, and future resurrection; it is not disembodied triumphalism."
+      ],
+      "verse_refs": [
+        "Romans 8:1-30",
+        "Romans 8:1-39",
+        "Romans 8:1-4"
+      ],
+      "evidence_ids": [
+        "romans-torah",
+        "romans:interpretive_note:25",
+        "romans:interpretive_note:35"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-30",
+        "Romans 8:1-39",
+        "Romans 8:1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_50759ace72d7",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The passage makes Pauline adoption embodied and creation-related, resisting both disembodied escape and a purely private family-status reading.",
+        "Galatians and Romans share slavery, Spirit, child, adoption, and heir terminology but arrange those words in different sequences shaped by different occasions, audiences, scriptural arguments, and eschatological emphases.",
+        "The comparison permits canonical connection without producing one universal Roman family-law system or making either letter fill every silence in the other.",
+        "Adoption language cannot make one elite Roman male succession model universal or erase ancient and modern adoptees, daughters, enslaved people, or varied family forms.",
+        "Abba is an Aramaic kinship address preserved beside Greek Father; it does not lexically require Daddy and cannot sanctify unsafe submission to a human father or authority figure."
+      ],
+      "verse_refs": [
+        "Romans 8:12-25",
+        "Romans 8:14-23",
+        "Romans 8:15",
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "creation-groaning-and-bodily-adoption:passage-relevance",
+        "distinct-pauline-metaphor-networks",
+        "distinct-pauline-metaphor-networks:passage-relevance",
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:2",
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:12-25",
+        "Romans 8:14-23",
+        "Romans 8:15",
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_765c46f68fdc",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Romans 8:28 stands inside a sequence of suffering, groaning, uncertainty, intercession, calling, and future conformity.",
+        "Rejects telling harmed people that abuse, violence, illness, or neglect was good or divinely required.",
+        "Those with the Spirit's firstfruits groan inwardly while awaiting adoption characterized as the redemption of the body.",
+        "Rejects the idea that spiritual maturity removes bodily distress, disability, grief, or need for care.",
+        "Romans personifies creation as subjected, hoping, and groaning together in labor pains for liberation."
+      ],
+      "verse_refs": [
+        "Romans 8:18-22",
+        "Romans 8:18-30",
+        "Romans 8:23"
+      ],
+      "evidence_ids": [
+        "all-things-not-called-good",
+        "all-things-not-called-good:passage-relevance",
+        "believers-groan-bodied-redemption",
+        "believers-groan-bodied-redemption:passage-relevance",
+        "creation-groans-labor"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-22",
+        "Romans 8:18-30",
+        "Romans 8:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_78fc4fd1c19c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Trauma-aware prayer care permits grief, anger, numbness, silence, uncertainty, fragmented speech, assisted communication, and changing participation without diagnosis by religious leaders.",
+        "Rejects compulsory positivity, coerced forgiveness, public catharsis, testimony deadlines, repeated retelling, and treating lament as rebellion.",
+        "Romans says believers do not know what they ought to pray and locates help in the Spirit.",
+        "Validates silence, uncertainty, assisted communication, and declining extemporaneous or public prayer.",
+        "Romans joins Spirit-enabled Abba address, adoption, witness, inheritance, and suffering in contrast to a spirit of slavery leading back to fear."
+      ],
+      "verse_refs": [
+        "Romans 8:15-17",
+        "Romans 8:22-27",
+        "Romans 8:26"
+      ],
+      "evidence_ids": [
+        "modern-lament-grief-trauma-care",
+        "modern-lament-grief-trauma-care:passage-relevance",
+        "not-knowing-how-to-pray",
+        "not-knowing-how-to-pray:passage-relevance",
+        "romans-abba-adoption"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15-17",
+        "Romans 8:22-27",
+        "Romans 8:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_7b9d9ed9b556",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Indwelling, adoption, fruit, gifts, services, activities, roles, tongues, interpretation, prophecy, discernment, and healings must remain differentiated.",
+        "Romans 8 moves through no condemnation, Spirit and mortal bodies, belonging, adoption, witness, suffering and hope, creation's groaning, and Spirit-assisted prayer.",
+        "Broadens Spirit participation beyond public manifestations and protects fearful, grieving, or wordless people from exclusion.",
+        "Across the letters, Spirit language includes belonging, life, adoption, prayer, wisdom, character, gifts, service, speech, discernment, and healing without making them interchangeable.",
+        "Prevents fruit, office, tongues, prophecy, healing, and indwelling from becoming one compulsory hierarchy."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:0",
+        "romans-indwelling-adoption-prayer",
+        "romans-indwelling-adoption-prayer:passage-relevance",
+        "spirit-categories-distinct",
+        "spirit-categories-distinct:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_7f28fb846d49",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Mark, Galatians, and Romans preserve the Aramaic address Abba followed by Greek Father in prayer, with Galatians attributing the cry to the Son's Spirit and Romans to Spirit-enabled believers.",
+        "The textual corpus supports filial intimacy and dependence while blocking the unsupported claim that Abba simply means Daddy.",
+        "Romans 8:16-18 moves from Spirit witness and children of God to heirs, co-heirs with Messiah, co-suffering, and future glory before expanding into creation's groaning.",
+        "The literary movement prevents heirship from becoming prosperity entitlement and suffering from becoming approval of abuse or suppression of lament.",
+        "Romans 8 personifies creation as subjected, expectant, groaning, and laboring while Spirit-bearing people also groan awaiting adoption, explicitly glossed as redemption of the body."
+      ],
+      "verse_refs": [
+        "Romans 8:15",
+        "Romans 8:16-18",
+        "Romans 8:18-25",
+        "Romans 8:19-25"
+      ],
+      "evidence_ids": [
+        "abba-bilingual-prayer",
+        "abba-bilingual-prayer:passage-relevance",
+        "coheirs-suffering-and-safeguarding",
+        "coheirs-suffering-and-safeguarding:passage-relevance",
+        "creation-groaning-and-bodily-adoption"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15",
+        "Romans 8:16-18",
+        "Romans 8:18-25",
+        "Romans 8:19-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_899b18da1640",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Tacitus, writing decades later, reports that Nero blamed and brutally punished people called Christians after Rome's fire in 64 CE.",
+        "The evidence belongs after Romans' probable composition, so it may inform later Roman history and reception but should not be treated as the original crisis behind Romans 8, 12, or 13."
+      ],
+      "verse_refs": [
+        "Romans 8:17-39"
+      ],
+      "evidence_ids": [
+        "neronian-violence-after-romans",
+        "neronian-violence-after-romans:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:17-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_9be6b820a81d",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Roman adoptio and adrogatio could transfer people into paternal power and reorganize family membership, names, property, and succession, but procedures differed by prior status, place, period, and case.",
+        "The comparison explains why adoption could signal status and inheritance while preventing elite male succession from becoming Paul's only background or a model for every modern adoption.",
+        "Romans 8:12-16 moves from obligation and Spirit-led action to children of God, contrasts slavery returning to fear with received adoption, and adds the Spirit's witness to the addressees' spirit.",
+        "The paragraph controls adoption through Spirit, prayer, ethical agency, and witness rather than through Roman legal status alone."
+      ],
+      "verse_refs": [
+        "Romans 8:12-16",
+        "Romans 8:15",
+        "Romans 8:23"
+      ],
+      "evidence_ids": [
+        "roman-adoption-bounded-comparison",
+        "roman-adoption-bounded-comparison:passage-relevance",
+        "romans-spirit-adoption-and-fear",
+        "romans-spirit-adoption-and-fear:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:12-16",
+        "Romans 8:15",
+        "Romans 8:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_bc94b7d02637",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Creation's groaning and liberation in Romans 8 resists ecological neglect, though specific modern environmental policies require evidence beyond direct textual command.",
+        "Predestination in Romans 8-9 cannot responsibly be turned into fatalism, despair, suicide encouragement, passivity before abuse, or claims that harmed people were individually destined for suffering."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25",
+        "Romans 8:28-39"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:36",
+        "romans:interpretive_note:39"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25",
+        "Romans 8:28-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_da8dbcc935b8",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Romans 8:28 speaks within suffering, groaning, prayer, conformity to Messiah, and hope; it does not name every harmful event good.",
+        "Romans 8 depicts creation, believers, and Spirit groaning toward liberation, making nonhuman creation part of eschatological hope rather than disposable scenery.",
+        "Romans 8-9 speaks of divine purpose, foreknowledge, predestination, election, hardening, and mercy in corporate-historical and personal language; deterministic systems remain contested.",
+        "Romans employs slavery metaphors for sin, righteousness, Torah, and God within a slaveholding world; metaphorical deployment neither erases enslaved readers nor morally endorses enslavement."
+      ],
+      "verse_refs": [
+        "Romans 8:15",
+        "Romans 8:18-27",
+        "Romans 8:18-39",
+        "Romans 8:28-30"
+      ],
+      "evidence_ids": [
+        "romans-all-things",
+        "romans-creation-groaning",
+        "romans-predestination",
+        "romans-slavery-metaphors"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15",
+        "Romans 8:18-27",
+        "Romans 8:18-39",
+        "Romans 8:28-30"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_df9c3c03f8d6",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Keeps hope beside ecological and bodily anguish rather than requiring denial of present suffering.",
+        "Romans reasons that hope directed to what is seen is no longer hope and joins unseen hope to patient waiting.",
+        "Blocks cure promises, deadlines for recovery, and claims that confident speech guarantees an outcome.",
+        "Accessible care offers communication formats and support persons chosen by the individual, physical and sensory access, material assistance, qualified referral, treatment choice, and an unpenalized right to pause or decline prayer.",
+        "Makes hope compatible with medicine, therapy, mobility and communication support, financial help, uncertain prognosis, and permanent disability."
+      ],
+      "verse_refs": [
+        "Romans 8:18-22",
+        "Romans 8:23-27",
+        "Romans 8:24-25"
+      ],
+      "evidence_ids": [
+        "creation-groans-labor:passage-relevance",
+        "hope-unseen-patient-waiting",
+        "hope-unseen-patient-waiting:passage-relevance",
+        "modern-access-referral-material-aid",
+        "modern-access-referral-material-aid:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-22",
+        "Romans 8:23-27",
+        "Romans 8:24-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_09d6452ef478",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The selected passages distinguish physical death, enslaving powers, ritual participation, ethical agency, resurrection, transformation, grief, arrival, and judgment.",
+        "Prevents one death-and-life formula from suppressing grief, devaluing bodies, or transferring conclusions between unlike passages."
+      ],
+      "verse_refs": [
+        "Romans 6:1-23",
+        "Romans 7:1-25"
+      ],
+      "evidence_ids": [
+        "death-life-categories-distinct",
+        "death-life-categories-distinct:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_9320bfdfed10"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 6:1-8:39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0b53ad1565d6",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Do not infer that every historical analogy in Romans maps directly onto a modern nation, ethnic group, party, economic system, sexual identity, or church institution.",
+        "P10, P26, P27, P31, P40, P46, and P61 preserve different Romans portions; their Gregory-Aland labels must not imply equal date, extent, or textual weight."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:75",
+        "romans:interpretive_note:8"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_f0653b865a19"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_22956fa9592b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans-papyri"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_56dcb89c29b8",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Claims about Paul, Rome, Corinth, Cenchreae, households, slavery, gender, sexuality, empire, and manuscripts should distinguish direct text, external evidence, inference, analogy, and later reception.",
+        "No automated validation, retrieval score, confessional popularity, or manuscript count constitutes human approval of this Romans record.",
+        "P46 is an early, extensive Pauline codex, but it is not the autograph and its readings require comparison with other Greek and versional witnesses."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 5:17-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:76",
+        "romans:interpretive_note:77",
+        "romans:interpretive_note:9"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_570c9fe02ff8"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27",
+        "Romans 5:17-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_570c9fe02ff8",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Claims about Paul, Rome, Corinth, Cenchreae, households, slavery, gender, sexuality, empire, and manuscripts should distinguish direct text, external evidence, inference, analogy, and later reception.",
+        "No automated validation, retrieval score, confessional popularity, or manuscript count constitutes human approval of this Romans record.",
+        "P46 is an early, extensive Pauline codex, but it is not the autograph and its readings require comparison with other Greek and versional witnesses."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 5:17-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:76",
+        "romans:interpretive_note:77",
+        "romans:interpretive_note:9"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27",
+        "Romans 5:17-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "politics"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_658f96ec7ed3",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Romans is an occasional letter and should not be converted into a contextless systematic-theology outline, even though later systems legitimately engage it."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_7dc9ac81590d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Slavery metaphors derive force from real domination; they cannot excuse chattel slavery, trafficking, worker exploitation, caste hierarchy, sexual violence, or demands that people remain in abuse.",
+        "Co-suffering with Messiah cannot be used to glorify trauma, silence lament, block safeguarding, or demand endurance of violence; Romans 8 names groaning and future bodily liberation."
+      ],
+      "verse_refs": [
+        "Romans 8:12-17",
+        "Romans 8:17-25"
+      ],
+      "evidence_ids": [
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:3",
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:12-17",
+        "Romans 8:17-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_9320bfdfed10",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The selected passages distinguish physical death, enslaving powers, ritual participation, ethical agency, resurrection, transformation, grief, arrival, and judgment.",
+        "Prevents one death-and-life formula from suppressing grief, devaluing bodies, or transferring conclusions between unlike passages."
+      ],
+      "verse_refs": [
+        "Romans 6:1-23",
+        "Romans 7:1-25"
+      ],
+      "evidence_ids": [
+        "death-life-categories-distinct",
+        "death-life-categories-distinct:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 6:1-8:39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_aff218bd3556",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus provide distinct textual witnesses; majority, antiquity, and manuscript prestige do not mechanically decide a reading.",
+        "Flesh in Romans is context-sensitive and cannot be equated with the physical body, sexuality, disability, or matter as inherently evil."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 7:5-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:10",
+        "romans:interpretive_note:34"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_de34401e58c9"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27",
+        "Romans 7:5-8:17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_cac13e56a1ff",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus are major Greek witnesses to Romans with distinct omissions, corrections, and textual profiles."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans-codices"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_d235379d0065",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Sarx and pneuma in Romans are context-sensitive and cannot be reduced to a bad physical body opposed to a good immaterial soul."
+      ],
+      "verse_refs": [
+        "Romans 7:5-25"
+      ],
+      "evidence_ids": [
+        "romans-flesh-spirit"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 7:5-8:17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "language"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_de34401e58c9",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus provide distinct textual witnesses; majority, antiquity, and manuscript prestige do not mechanically decide a reading.",
+        "Flesh in Romans is context-sensitive and cannot be equated with the physical body, sexuality, disability, or matter as inherently evil."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 7:5-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:10",
+        "romans:interpretive_note:34"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27",
+        "Romans 7:5-8:17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_f0653b865a19",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Do not infer that every historical analogy in Romans maps directly onto a modern nation, ethnic group, party, economic system, sexual identity, or church institution.",
+        "P10, P26, P27, P31, P40, P46, and P61 preserve different Romans portions; their Gregory-Aland labels must not imply equal date, extent, or textual weight."
+      ],
+      "verse_refs": [
+        "Romans 10:1-21",
+        "Romans 11:1-36",
+        "Romans 12:1-21",
+        "Romans 13:1-14",
+        "Romans 14:1-23",
+        "Romans 15:1-33",
+        "Romans 16:1-27",
+        "Romans 1:1-32",
+        "Romans 2:1-29",
+        "Romans 3:1-31",
+        "Romans 4:1-25",
+        "Romans 5:1-21",
+        "Romans 6:1-23",
+        "Romans 7:1-25",
+        "Romans 9:1-33"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:75",
+        "romans:interpretive_note:8"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "economics"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0e3b2d75f961",
+      "kind": "why_it_matters",
+      "facts": [
+        "Keeps hope beside ecological and bodily anguish rather than requiring denial of present suffering.",
+        "Romans reasons that hope directed to what is seen is no longer hope and joins unseen hope to patient waiting.",
+        "Blocks cure promises, deadlines for recovery, and claims that confident speech guarantees an outcome.",
+        "Accessible care offers communication formats and support persons chosen by the individual, physical and sensory access, material assistance, qualified referral, treatment choice, and an unpenalized right to pause or decline prayer.",
+        "Makes hope compatible with medicine, therapy, mobility and communication support, financial help, uncertain prognosis, and permanent disability."
+      ],
+      "verse_refs": [
+        "Romans 8:18-22",
+        "Romans 8:23-27",
+        "Romans 8:24-25"
+      ],
+      "evidence_ids": [
+        "creation-groans-labor:passage-relevance",
+        "hope-unseen-patient-waiting",
+        "hope-unseen-patient-waiting:passage-relevance",
+        "modern-access-referral-material-aid",
+        "modern-access-referral-material-aid:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_df9c3c03f8d6"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-22",
+        "Romans 8:23-27",
+        "Romans 8:24-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_1a5d44dd204d",
+      "kind": "why_it_matters",
+      "facts": [
+        "Romans describes Torah as holy, just, good, spiritual, and fulfilled through love even while arguing that sin exploits commandment and Torah cannot defeat sin and death.",
+        "Justification in Romans belongs with grace, faith, Messiah, resurrection, union, Spirit, Israel, gentiles, and embodied community; one later confessional formula cannot silently replace the letter's whole argument.",
+        "Life in the Spirit in Romans 8 includes embodied adoption, suffering, prayer, hope, and future resurrection; it is not disembodied triumphalism."
+      ],
+      "verse_refs": [
+        "Romans 8:1-30",
+        "Romans 8:1-39",
+        "Romans 8:1-4"
+      ],
+      "evidence_ids": [
+        "romans-torah",
+        "romans:interpretive_note:25",
+        "romans:interpretive_note:35"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_49348b32932f"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-30",
+        "Romans 8:1-39",
+        "Romans 8:1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_38f7339521a7",
+      "kind": "why_it_matters",
+      "facts": [
+        "damascus",
+        "jerusalem",
+        "corinth",
+        "ephesus",
+        "rome"
+      ],
+      "verse_refs": [
+        "Romans 8:1-39"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_7a57ca9e68d0"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_4b7030b03bfb",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul promises divine life, imperishability, glory, power, and transformation but does not describe a normalized morphology or exclude disability, intersex traits, scars, aging, or medical alteration.",
+        "Protects disabled and intersex people from resurrection-based stigma, cure pressure, forced normalization, and exclusion from community hope.",
+        "Romans 8 presents creation's bondage and groaning, believers' groaning for adoption and bodily redemption, and the Spirit's inarticulate intercession."
+      ],
+      "verse_refs": [
+        "Romans 8:11-25",
+        "Romans 8:18-27"
+      ],
+      "evidence_ids": [
+        "embodied-identity-no-exclusion",
+        "embodied-identity-no-exclusion:passage-relevance",
+        "romans-groaning-bodily-redemption"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_1a3868a8b088"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:11-25",
+        "Romans 8:18-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_533137a41824",
+      "kind": "why_it_matters",
+      "facts": [
+        "Indwelling, adoption, fruit, gifts, services, activities, roles, tongues, interpretation, prophecy, discernment, and healings must remain differentiated.",
+        "Romans 8 moves through no condemnation, Spirit and mortal bodies, belonging, adoption, witness, suffering and hope, creation's groaning, and Spirit-assisted prayer.",
+        "Broadens Spirit participation beyond public manifestations and protects fearful, grieving, or wordless people from exclusion.",
+        "Across the letters, Spirit language includes belonging, life, adoption, prayer, wisdom, character, gifts, service, speech, discernment, and healing without making them interchangeable.",
+        "Prevents fruit, office, tongues, prophecy, healing, and indwelling from becoming one compulsory hierarchy."
+      ],
+      "verse_refs": [
+        "Romans 8:1-27"
+      ],
+      "evidence_ids": [
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:0",
+        "romans-indwelling-adoption-prayer",
+        "romans-indwelling-adoption-prayer:passage-relevance",
+        "spirit-categories-distinct",
+        "spirit-categories-distinct:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_7b9d9ed9b556"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_550554649243",
+      "kind": "why_it_matters",
+      "facts": [
+        "The passage makes Pauline adoption embodied and creation-related, resisting both disembodied escape and a purely private family-status reading.",
+        "Galatians and Romans share slavery, Spirit, child, adoption, and heir terminology but arrange those words in different sequences shaped by different occasions, audiences, scriptural arguments, and eschatological emphases.",
+        "The comparison permits canonical connection without producing one universal Roman family-law system or making either letter fill every silence in the other.",
+        "Adoption language cannot make one elite Roman male succession model universal or erase ancient and modern adoptees, daughters, enslaved people, or varied family forms.",
+        "Abba is an Aramaic kinship address preserved beside Greek Father; it does not lexically require Daddy and cannot sanctify unsafe submission to a human father or authority figure."
+      ],
+      "verse_refs": [
+        "Romans 8:12-25",
+        "Romans 8:14-23",
+        "Romans 8:15",
+        "Romans 8:18-25"
+      ],
+      "evidence_ids": [
+        "creation-groaning-and-bodily-adoption:passage-relevance",
+        "distinct-pauline-metaphor-networks",
+        "distinct-pauline-metaphor-networks:passage-relevance",
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:2",
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_50759ace72d7"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:12-25",
+        "Romans 8:14-23",
+        "Romans 8:15",
+        "Romans 8:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_559449531883",
+      "kind": "why_it_matters",
+      "facts": [
+        "Roman adoptio and adrogatio could transfer people into paternal power and reorganize family membership, names, property, and succession, but procedures differed by prior status, place, period, and case.",
+        "The comparison explains why adoption could signal status and inheritance while preventing elite male succession from becoming Paul's only background or a model for every modern adoption.",
+        "Romans 8:12-16 moves from obligation and Spirit-led action to children of God, contrasts slavery returning to fear with received adoption, and adds the Spirit's witness to the addressees' spirit.",
+        "The paragraph controls adoption through Spirit, prayer, ethical agency, and witness rather than through Roman legal status alone."
+      ],
+      "verse_refs": [
+        "Romans 8:12-16",
+        "Romans 8:15",
+        "Romans 8:23"
+      ],
+      "evidence_ids": [
+        "roman-adoption-bounded-comparison",
+        "roman-adoption-bounded-comparison:passage-relevance",
+        "romans-spirit-adoption-and-fear",
+        "romans-spirit-adoption-and-fear:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_9be6b820a81d"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:12-16",
+        "Romans 8:15",
+        "Romans 8:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_863ed1ee5665",
+      "kind": "why_it_matters",
+      "facts": [
+        "Romans 8:28 stands inside a sequence of suffering, groaning, uncertainty, intercession, calling, and future conformity.",
+        "Rejects telling harmed people that abuse, violence, illness, or neglect was good or divinely required.",
+        "Those with the Spirit's firstfruits groan inwardly while awaiting adoption characterized as the redemption of the body.",
+        "Rejects the idea that spiritual maturity removes bodily distress, disability, grief, or need for care.",
+        "Romans personifies creation as subjected, hoping, and groaning together in labor pains for liberation."
+      ],
+      "verse_refs": [
+        "Romans 8:18-22",
+        "Romans 8:18-30",
+        "Romans 8:23"
+      ],
+      "evidence_ids": [
+        "all-things-not-called-good",
+        "all-things-not-called-good:passage-relevance",
+        "believers-groan-bodied-redemption",
+        "believers-groan-bodied-redemption:passage-relevance",
+        "creation-groans-labor"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_765c46f68fdc"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-22",
+        "Romans 8:18-30",
+        "Romans 8:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_891e3aad252f",
+      "kind": "why_it_matters",
+      "facts": [
+        "Slavery metaphors derive force from real domination; they cannot excuse chattel slavery, trafficking, worker exploitation, caste hierarchy, sexual violence, or demands that people remain in abuse.",
+        "Co-suffering with Messiah cannot be used to glorify trauma, silence lament, block safeguarding, or demand endurance of violence; Romans 8 names groaning and future bodily liberation."
+      ],
+      "verse_refs": [
+        "Romans 8:12-17",
+        "Romans 8:17-25"
+      ],
+      "evidence_ids": [
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:3",
+        "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_7dc9ac81590d"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:12-17",
+        "Romans 8:17-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8fc6fb1b6af9",
+      "kind": "why_it_matters",
+      "facts": [
+        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+      ],
+      "verse_refs": [
+        "Romans 8:28-30"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_48e13d0ec2dc"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:28-30"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_97dbc6b1ea9e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Mark, Galatians, and Romans preserve the Aramaic address Abba followed by Greek Father in prayer, with Galatians attributing the cry to the Son's Spirit and Romans to Spirit-enabled believers.",
+        "The textual corpus supports filial intimacy and dependence while blocking the unsupported claim that Abba simply means Daddy.",
+        "Romans 8:16-18 moves from Spirit witness and children of God to heirs, co-heirs with Messiah, co-suffering, and future glory before expanding into creation's groaning.",
+        "The literary movement prevents heirship from becoming prosperity entitlement and suffering from becoming approval of abuse or suppression of lament.",
+        "Romans 8 personifies creation as subjected, expectant, groaning, and laboring while Spirit-bearing people also groan awaiting adoption, explicitly glossed as redemption of the body."
+      ],
+      "verse_refs": [
+        "Romans 8:15",
+        "Romans 8:16-18",
+        "Romans 8:18-25",
+        "Romans 8:19-25"
+      ],
+      "evidence_ids": [
+        "abba-bilingual-prayer",
+        "abba-bilingual-prayer:passage-relevance",
+        "coheirs-suffering-and-safeguarding",
+        "coheirs-suffering-and-safeguarding:passage-relevance",
+        "creation-groaning-and-bodily-adoption"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_7f28fb846d49"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15",
+        "Romans 8:16-18",
+        "Romans 8:18-25",
+        "Romans 8:19-25"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a0f93f58a7c3",
+      "kind": "why_it_matters",
+      "facts": [
+        "Rejects fear-based prayer compliance and protects people for whom father language is unsafe, inaccessible, or traumatic.",
+        "The Spirit intercedes with inexpressible groans while the heart-searching God knows the Spirit's intention.",
+        "Prevents one prayer style, vocalization, language, or emotional display from becoming mandatory proof of the Spirit."
+      ],
+      "verse_refs": [
+        "Romans 8:15-17",
+        "Romans 8:26-27"
+      ],
+      "evidence_ids": [
+        "romans-abba-adoption:passage-relevance",
+        "spirit-inexpressible-groans",
+        "spirit-inexpressible-groans:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_3169ee6cd53a"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15-17",
+        "Romans 8:26-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a5a886ef75db",
+      "kind": "why_it_matters",
+      "facts": [
+        "Trauma-aware prayer care permits grief, anger, numbness, silence, uncertainty, fragmented speech, assisted communication, and changing participation without diagnosis by religious leaders.",
+        "Rejects compulsory positivity, coerced forgiveness, public catharsis, testimony deadlines, repeated retelling, and treating lament as rebellion.",
+        "Romans says believers do not know what they ought to pray and locates help in the Spirit.",
+        "Validates silence, uncertainty, assisted communication, and declining extemporaneous or public prayer.",
+        "Romans joins Spirit-enabled Abba address, adoption, witness, inheritance, and suffering in contrast to a spirit of slavery leading back to fear."
+      ],
+      "verse_refs": [
+        "Romans 8:15-17",
+        "Romans 8:22-27",
+        "Romans 8:26"
+      ],
+      "evidence_ids": [
+        "modern-lament-grief-trauma-care",
+        "modern-lament-grief-trauma-care:passage-relevance",
+        "not-knowing-how-to-pray",
+        "not-knowing-how-to-pray:passage-relevance",
+        "romans-abba-adoption"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_78fc4fd1c19c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15-17",
+        "Romans 8:22-27",
+        "Romans 8:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a63b11a29d3f",
+      "kind": "why_it_matters",
+      "facts": [
+        "Creation's groaning and liberation in Romans 8 resists ecological neglect, though specific modern environmental policies require evidence beyond direct textual command.",
+        "Predestination in Romans 8-9 cannot responsibly be turned into fatalism, despair, suicide encouragement, passivity before abuse, or claims that harmed people were individually destined for suffering."
+      ],
+      "verse_refs": [
+        "Romans 8:18-25",
+        "Romans 8:28-39"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:36",
+        "romans:interpretive_note:39"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_bc94b7d02637"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:18-25",
+        "Romans 8:28-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_acc3e2224c55",
+      "kind": "why_it_matters",
+      "facts": [
+        "Romans' slavery metaphors cannot justify chattel slavery, trafficking, coerced labor, worker exploitation, or spiritualized enslavement; metaphorical force depends on a violent institution that requires moral critique.",
+        "All things work together for good must not be invoked to name abuse, disease, disaster, suicide, or oppression good or to silence grief and lament.",
+        "The Spirit's groaning prayer validates speechless distress; it cannot justify dismissing mental-health care, crisis intervention, medication, or survivor testimony.",
+        "Romans' suffering and perseverance language cannot justify victim blaming, trauma glorification, denial of pain, forced reconciliation, mental-health stigma, medical neglect, or keeping people in danger."
+      ],
+      "verse_refs": [
+        "Romans 8:15",
+        "Romans 8:18-39",
+        "Romans 8:22-27"
+      ],
+      "evidence_ids": [
+        "romans:interpretive_note:31",
+        "romans:interpretive_note:37",
+        "romans:interpretive_note:38",
+        "romans:interpretive_note:72"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_a4839331fd82"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15",
+        "Romans 8:18-39",
+        "Romans 8:22-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b58c946972dd",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church.",
+        "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+        "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging."
+      ],
+      "verse_refs": [
+        "Romans 8:1-39"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_0fc109224f3a"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b81c3069bce1",
+      "kind": "why_it_matters",
+      "facts": [
+        "Tacitus, writing decades later, reports that Nero blamed and brutally punished people called Christians after Rome's fire in 64 CE.",
+        "The evidence belongs after Romans' probable composition, so it may inform later Roman history and reception but should not be treated as the original crisis behind Romans 8, 12, or 13."
+      ],
+      "verse_refs": [
+        "Romans 8:17-39"
+      ],
+      "evidence_ids": [
+        "neronian-violence-after-romans",
+        "neronian-violence-after-romans:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_899b18da1640"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:17-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c990ba23de67",
+      "kind": "why_it_matters",
+      "facts": [
+        "Romans 8:28 speaks within suffering, groaning, prayer, conformity to Messiah, and hope; it does not name every harmful event good.",
+        "Romans 8 depicts creation, believers, and Spirit groaning toward liberation, making nonhuman creation part of eschatological hope rather than disposable scenery.",
+        "Romans 8-9 speaks of divine purpose, foreknowledge, predestination, election, hardening, and mercy in corporate-historical and personal language; deterministic systems remain contested.",
+        "Romans employs slavery metaphors for sin, righteousness, Torah, and God within a slaveholding world; metaphorical deployment neither erases enslaved readers nor morally endorses enslavement."
+      ],
+      "verse_refs": [
+        "Romans 8:15",
+        "Romans 8:18-27",
+        "Romans 8:18-39",
+        "Romans 8:28-30"
+      ],
+      "evidence_ids": [
+        "romans-all-things",
+        "romans-creation-groaning",
+        "romans-predestination",
+        "romans-slavery-metaphors"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_da8dbcc935b8"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:15",
+        "Romans 8:18-27",
+        "Romans 8:18-39",
+        "Romans 8:28-30"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e1fce68fb54e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Validates lament, bodily need, ecological concern, and patient hope without praising present harm or blaming disability.",
+        "Romans 8 acknowledges unseen hope, weakness in prayer, hardship, danger, and death before affirming that none severs divine love.",
+        "Rejects grief suppression, prayer shaming, and claims that trauma, doubt, or death proves abandonment.",
+        "Romans 8 contrasts flesh and Spirit orientations while explicitly naming mortal bodies and divine life-giving through the indwelling Spirit.",
+        "Supports embodied resurrection hope without treating material bodies, disability, or bodily care as inferior to spiritual life."
+      ],
+      "verse_refs": [
+        "Romans 8:1-13",
+        "Romans 8:18-27",
+        "Romans 8:24-39"
+      ],
+      "evidence_ids": [
+        "romans-groaning-bodily-redemption:passage-relevance",
+        "romans-hope-prayer-love",
+        "romans-hope-prayer-love:passage-relevance",
+        "romans-spirit-mortal-bodies",
+        "romans-spirit-mortal-bodies:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_1c5004e9d3eb"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Romans 8:1-13",
+        "Romans 8:18-27",
+        "Romans 8:24-39"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [],
+  "coverage": {
+    "evidence_item_count": 118,
+    "used_evidence_ids": [
+      "abba-bilingual-prayer",
+      "abba-bilingual-prayer:passage-relevance",
+      "adoption-theme:ancient_near_east_context:0",
+      "adoption-theme:historical_context:0",
+      "adoption:ancient_near_east_context:0",
+      "adoption:historical_context:0",
+      "all-things-not-called-good",
+      "all-things-not-called-good:passage-relevance",
+      "believers-groan-bodied-redemption",
+      "believers-groan-bodied-redemption:passage-relevance",
+      "coheirs-suffering-and-safeguarding",
+      "coheirs-suffering-and-safeguarding:passage-relevance",
+      "creation-doctrine:ancient_near_east_context:0",
+      "creation-doctrine:historical_context:0",
+      "creation-groaning-and-bodily-adoption",
+      "creation-groaning-and-bodily-adoption:passage-relevance",
+      "creation-groans-labor",
+      "creation-groans-labor:passage-relevance",
+      "creation-theme:ancient_near_east_context:0",
+      "creation-theme:historical_context:0",
+      "death-life-categories-distinct",
+      "death-life-categories-distinct:passage-relevance",
+      "distinct-pauline-metaphor-networks",
+      "distinct-pauline-metaphor-networks:passage-relevance",
+      "embodied-identity-no-exclusion",
+      "embodied-identity-no-exclusion:passage-relevance",
+      "hope-unseen-patient-waiting",
+      "hope-unseen-patient-waiting:passage-relevance",
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0",
+      "modern-access-referral-material-aid",
+      "modern-access-referral-material-aid:passage-relevance",
+      "modern-lament-grief-trauma-care",
+      "modern-lament-grief-trauma-care:passage-relevance",
+      "neronian-violence-after-romans",
+      "neronian-violence-after-romans:passage-relevance",
+      "new-creation-theme:ancient_near_east_context:0",
+      "new-creation-theme:historical_context:0",
+      "not-knowing-how-to-pray",
+      "not-knowing-how-to-pray:passage-relevance",
+      "paul:ancient_near_east_context:0",
+      "paul:hebraic_worldview:0",
+      "paul:historical_context:0",
+      "paul:key_places:0",
+      "paul:key_places:1",
+      "paul:key_places:2",
+      "paul:key_places:3",
+      "paul:key_places:4",
+      "paul:second_temple_context:0",
+      "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:2",
+      "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:3",
+      "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:4",
+      "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:5",
+      "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:0",
+      "pneumatology:ancient_near_east_context:0",
+      "pneumatology:historical_context:0",
+      "roman-adoption-bounded-comparison",
+      "roman-adoption-bounded-comparison:passage-relevance",
+      "romans-abba-adoption",
+      "romans-abba-adoption:passage-relevance",
+      "romans-all-things",
+      "romans-codices",
+      "romans-creation-groaning",
+      "romans-flesh-spirit",
+      "romans-groaning-bodily-redemption",
+      "romans-groaning-bodily-redemption:passage-relevance",
+      "romans-hope-prayer-love",
+      "romans-hope-prayer-love:passage-relevance",
+      "romans-indwelling-adoption-prayer",
+      "romans-indwelling-adoption-prayer:passage-relevance",
+      "romans-papyri",
+      "romans-predestination",
+      "romans-slavery-metaphors",
+      "romans-spirit-adoption-and-fear",
+      "romans-spirit-adoption-and-fear:passage-relevance",
+      "romans-spirit-mortal-bodies",
+      "romans-spirit-mortal-bodies:passage-relevance",
+      "romans-torah",
+      "romans:interpretive_note:10",
+      "romans:interpretive_note:25",
+      "romans:interpretive_note:31",
+      "romans:interpretive_note:34",
+      "romans:interpretive_note:35",
+      "romans:interpretive_note:36",
+      "romans:interpretive_note:37",
+      "romans:interpretive_note:38",
+      "romans:interpretive_note:39",
+      "romans:interpretive_note:7",
+      "romans:interpretive_note:72",
+      "romans:interpretive_note:73",
+      "romans:interpretive_note:75",
+      "romans:interpretive_note:76",
+      "romans:interpretive_note:77",
+      "romans:interpretive_note:8",
+      "romans:interpretive_note:9",
+      "rome:interpretive_note:2",
+      "sonship-theme:ancient_near_east_context:0",
+      "sonship-theme:historical_context:0",
+      "spirit-categories-distinct",
+      "spirit-categories-distinct:passage-relevance",
+      "spirit-inexpressible-groans",
+      "spirit-inexpressible-groans:passage-relevance",
+      "spirit-theme:ancient_near_east_context:0",
+      "spirit-theme:historical_context:0",
+      "spiritual-gifts:ancient_near_east_context:0",
+      "spiritual-gifts:historical_context:0",
+      "water-and-spirit-theme:ancient_near_east_context:0",
+      "water-and-spirit-theme:historical_context:0",
+      "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-holy-spirit:historical_context:0",
+      "what-is-the-image-of-god:ancient_near_east_context:0",
+      "what-is-the-image-of-god:historical_context:0",
+      "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+      "what-verses-show-identity-in-christ:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "archaeology": 2,
+      "culture": 84,
+      "economics": 1,
+      "geography": 5,
+      "history": 20,
+      "language": 1,
+      "politics": 1,
+      "social": 4
+    },
+    "category_diversity": 8,
+    "specific_evidence_count": 118,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "cultural_context": 18,
+      "historical_context": 16,
+      "interpretive_questions": 15,
+      "surrounding_passages": 13,
+      "why_it_matters": 19
+    },
+    "relationship_unit_count": 23
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "reference": "Ezra 2",
+  "packet_id": "commentary-v1.5-packet:3279a63fcdbf2910f0e75621664445c1056797596494bbbc62d1ae7c77a0493e",
+  "prompt_version": "1.5",
+  "evidence_hash": "cb828dbc61eaaf55d9bbd1883f2829968ff1a7a11c7d2a874fcef6284ef1c572",
+  "synthesis_hash": "a6943c47c9d20a3f5b4ab1fb3d3877421a6d13de4af5c11a95d92449475b13e0",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Ezra 2",
+    "book": "Ezra",
+    "chapter": 2,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "A cultural detail that clarifies the passage is this: Return occurred within Achaemenid imperial government through royal authorization, provincial officials, temple patronage, taxation, written decrees, and travel across imperial routes. The Cyrus Cylinder offers Babylonian comparative restoration rhetoric but does not name Judah. Ezra portrays return as the LORD stirring rulers and people, preserving a remnant, restoring vessels and sacrifice, and calling the community to covenant faithfulness. Imperial permission is a means within that presentation, not its theological source. Return established and enlarged an early Second Temple community concerned with worship, genealogy, land, Torah, taxation, and boundaries while many Judeans continued living throughout the empire. Return occurred within Achaemenid imperial government through royal authorization, provincial officials, temple patronage, taxation, written decrees, and travel across imperial routes. The Cyrus Cylinder offers Babylonian comparative restoration rhetoric but does not name Judah. Ezra portrays return as the LORD stirring rulers and people, preserving a remnant, restoring vessels and sacrifice, and calling the community to covenant faithfulness. Imperial permission is a means within that presentation, not its theological source. Return established and enlarged an early Second Temple community concerned with worship, genealogy, land, Torah, taxation, and boundaries while many Judeans continued living throughout the empire.",
+            "verse_refs": [
+              "Ezra 2:1-70"
+            ],
+            "evidence_ids": [
+              "return-from-exile:ancient_near_east_context:0",
+              "return-from-exile:hebraic_worldview:0",
+              "return-from-exile:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_9f4b597304c4",
+              "syn_why_it_matters_1f62a9a53570"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence.",
+            "verse_refs": [
+              "Ezra 2:1-70"
+            ],
+            "evidence_ids": [
+              "why-are-genealogies-included:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_13fe4011c6dc"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_003",
+            "text": "Historically, this chapter is read within the following setting: After Cyrus captured Babylon in 539 BCE, Ezra presents authorization and support for return toward Jerusalem. The narrative distinguishes an early return and temple community from Ezra's later Artaxerxes-era journey; dates, group sizes, and the historical form of the decrees remain debated.",
+            "verse_refs": [
+              "Ezra 2:1-70"
+            ],
+            "evidence_ids": [
+              "return-from-exile:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_feb580d8acf3"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_004",
+            "text": "Historically, this chapter is read within the following setting: Ancient families preserved lineages to mark belonging, rights, and memory.",
+            "verse_refs": [
+              "Ezra 2:1-70"
+            ],
+            "evidence_ids": [
+              "why-are-genealogies-included:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_72568f511cd1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_005",
+            "text": "This helps frame an interpretive question raised by the passage: Ezra presents return, restored temple vessels, altar worship, and temple completion as a multi-reign process involving Cyrus, Darius I, local leaders, prophets, and imperial correspondence.",
+            "verse_refs": [
+              "Ezra 2:1-70"
+            ],
+            "evidence_ids": [
+              "ezra-persian-return-and-temple-sequence"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4d6c050409fd"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_006",
+            "text": "This helps frame an interpretive question raised by the passage: The totals, family groups, priestly tests, servants, singers, animals, and gifts in Ezra 2 make a theological and administrative claim to continuity. Differences from the parallel Nehemiah 7 list and uncertainty about ancient counting prevent using the totals as a precise modern census without qualification.",
+            "verse_refs": [
+              "Ezra 2:1-70"
+            ],
+            "evidence_ids": [
+              "ezra:interpretive_note:3"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_980fd8677fad"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}
