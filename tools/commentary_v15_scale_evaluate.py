@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import statistics
 import sys
@@ -46,8 +47,8 @@ def _safe_gate(score, audit, availability: str):
     )
 
 
-def _wave_rows(wave: str) -> list[dict[str, Any]]:
-    wave_root = TARGET_ROOT / f"wave-{wave.lower()}"
+def _wave_rows(wave: str, *, candidate_root: Path = TARGET_ROOT) -> list[dict[str, Any]]:
+    wave_root = candidate_root / f"wave-{wave.lower()}"
     manifest = _read(wave_root / "canary/canary-generation-manifest.json")
     imported = _read(wave_root / "canary/canary-import.json")
     imports = {row["reference"]: row for row in imported["chapters"]}
@@ -129,22 +130,22 @@ def _aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def evaluate() -> dict[str, Any]:
-    manifest = _read(TARGET_ROOT / "scale-pilot-manifest.json")
+def evaluate(*, candidate_root: Path = TARGET_ROOT) -> dict[str, Any]:
+    manifest = _read(candidate_root / "scale-pilot-manifest.json")
     completed = []
     waves = {}
     for wave in WAVES:
         import_path = TARGET_ROOT / f"wave-{wave.lower()}/canary/canary-import.json"
         if not import_path.is_file():
             continue
-        rows = _wave_rows(wave)
+        rows = _wave_rows(wave, candidate_root=candidate_root)
         waves[wave] = {"rows": rows, "aggregate": _aggregate(rows)}
         completed.extend(rows)
     structural_codes = Counter(code for row in completed for code in row.get("rejection_codes", []))
     repeated_contract_variance = structural_codes.get("MALFORMED_VERSE_REFERENCE", 0) >= 2 or structural_codes.get("MALFORMED_SECTION", 0) >= 2 or structural_codes.get("OUT_OF_CHAPTER_SYNTHESIS_REFERENCE", 0) >= 2
     classification = "COMMENTARY_1_5_SCALE_NEEDS_CONTRACT_HARDENING" if repeated_contract_variance else "INCOMPLETE_SCALE_PILOT"
     report = {"artifact_version": "commentary-v1.5-scale-pilot-evaluation-v1", "status": "STOPPED_AFTER_WAVE_A" if repeated_contract_variance else "IN_PROGRESS", "classification": classification, "renderer_identity": manifest["renderer_identity"], "prompt_version": "1.5", "schema_version": "1.2", "synthesis_schema_version": "1.1", "synthesis_compiler_version": "1.1", "gate_version": "commentary-richness-gate-v2.1", "gate_state": "CANDIDATE_ONLY", "reader_synthesis_plan": "NOT IMPLEMENTED / NOT REQUIRED", "wave_results": {wave: {"aggregate": value["aggregate"], "rows": value["rows"]} for wave, value in waves.items()}, "cumulative_completed": _aggregate(completed), "completed_wave_count": len(waves), "expected_wave_count": 3, "structural_reference_variance": {"repeated": repeated_contract_variance, "codes": dict(structural_codes)}, "full_bible_generation_authorized": False, "scale_pilot_complete": len(waves) == 3 and not repeated_contract_variance}
-    evaluation_dir = TARGET_ROOT / "evaluation"
+    evaluation_dir = candidate_root / "evaluation"
     evaluation_dir.mkdir(parents=True, exist_ok=True)
     (evaluation_dir / "scale-pilot-evaluation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (evaluation_dir / "scale-pilot-evaluation.md").write_text(_markdown(report), encoding="utf-8")
@@ -161,5 +162,7 @@ def _markdown(report: dict[str, Any]) -> str:
 
 
 if __name__ == "__main__":
-    result = evaluate()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--candidate-root", type=Path, default=TARGET_ROOT)
+    result = evaluate(candidate_root=parser.parse_args().candidate_root)
     print(json.dumps({"status": result["status"], "classification": result["classification"], "completed_wave_count": result["completed_wave_count"], "cumulative_completed": result["cumulative_completed"]}, indent=2))

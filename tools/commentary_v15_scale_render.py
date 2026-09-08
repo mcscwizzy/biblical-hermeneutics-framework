@@ -110,16 +110,45 @@ def _payload(row: dict[str, Any], synthesis: Any) -> dict[str, Any]:
     return {"reference": row["reference"], "book": row["book"], "chapter": row["chapter"], "status": "pending", "sections": sections, "generated_metadata": None}
 
 
-def render(wave: str) -> dict[str, Any]:
+def render(
+    wave: str,
+    *,
+    source_root: Path = TARGET_ROOT,
+    output_root: Path | None = None,
+) -> dict[str, Any]:
     wave = wave.upper()
     if wave not in {"A", "B", "C"}:
         raise ValueError("wave must be A, B, or C")
-    wave_root = TARGET_ROOT / f"wave-{wave.lower()}"
-    manifest = _read(wave_root / "canary/canary-generation-manifest.json")
+    source_root = Path(source_root).resolve()
+    output_root = (
+        Path(output_root).resolve() if output_root is not None else source_root
+    )
+    source_wave_root = source_root / f"wave-{wave.lower()}"
+    wave_root = output_root / f"wave-{wave.lower()}"
+    manifest = _read(source_wave_root / "canary/canary-generation-manifest.json")
+    if output_root != source_root:
+        # Keep the locked packet, synthesis, and evidence paths pointed at the
+        # source run while relocating only the generated-response paths.
+        manifest = {**manifest, "status": "READY_FOR_CONVERSATIONAL_RENDER", "chapters": []}
+        for source_row in _read(source_wave_root / "canary/canary-generation-manifest.json")["chapters"]:
+            row = dict(source_row)
+            filename = Path(str(source_row["expected_raw_response_path"])).name
+            response_path = wave_root / "canary/responses/raw" / filename
+            row["expected_raw_response_path"] = response_path.relative_to(ROOT).as_posix()
+            row["expected_response_path"] = row["expected_raw_response_path"]
+            manifest["chapters"].append(row)
+        _write(wave_root / "canary/canary-generation-manifest.json", manifest)
+        _write(
+            wave_root / "canary/canary-preflight.json",
+            _read(source_wave_root / "canary/canary-preflight.json"),
+        )
+        _write(output_root / "scale-pilot-manifest.json", _read(source_root / "scale-pilot-manifest.json"))
     rows = []
     for row in manifest["chapters"]:
         packet = _read(ROOT / row["packet_path"])
-        synthesis = load_synthesis(ROOT / Path(row["synthesis_path"]).parent, row["book"], row["chapter"])
+        synthesis = load_synthesis(
+            ROOT / Path(row["synthesis_path"]).parent, row["book"], row["chapter"]
+        )
         if synthesis is None or synthesis.synthesis_hash != row["synthesis_hash"]:
             raise RuntimeError(f"locked synthesis mismatch for {row['reference']}")
         payload = _payload(row, synthesis)
@@ -143,4 +172,6 @@ def render(wave: str) -> dict[str, Any]:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--wave", required=True, choices=("A", "B", "C"))
-    print(json.dumps(render(parser.parse_args().wave), ensure_ascii=False, indent=2))
+    parser.add_argument("--output-root", type=Path, default=None)
+    args = parser.parse_args()
+    print(json.dumps(render(args.wave, output_root=args.output_root), ensure_ascii=False, indent=2))

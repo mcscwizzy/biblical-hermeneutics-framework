@@ -21,6 +21,8 @@ TARGET_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--wave", required=True, choices=("A", "B", "C"))
-    wave_root = TARGET_ROOT / f"wave-{parser.parse_args().wave.lower()}"
+    parser.add_argument("--candidate-root", type=Path, default=TARGET_ROOT)
+    args = parser.parse_args()
+    wave_root = args.candidate_root / f"wave-{args.wave.lower()}"
     result = import_responses(candidate_root=wave_root, input_dir=wave_root / "canary/responses/raw", repo_root=ROOT)
     print(json.dumps(result, ensure_ascii=False, indent=2))
