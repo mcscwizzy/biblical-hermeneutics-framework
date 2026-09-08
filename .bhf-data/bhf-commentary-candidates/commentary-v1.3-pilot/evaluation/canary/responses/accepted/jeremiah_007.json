@@ -1,0 +1,72 @@
+{
+  "reference": "Jeremiah 7",
+  "book": "Jeremiah",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Temple, justice, and false security",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Jeremiah 7 rejects treating the temple as a guarantee of safety. The speech joins that rejection to demands for justice toward vulnerable persons and condemnation of violence, theft, idolatry, and Topheth. The chapter's target is therefore not sacred space by itself, but confidence in sanctuary while covenant conduct remains corrupt.",
+          "verse_refs": [
+            "Jeremiah 7:1-11",
+            "Jeremiah 7:30-34"
+          ],
+          "evidence_ids": [
+            "jeremiah-temple-justice"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_2521ec47a15d"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "cultural_context",
+      "title": "Why Shiloh matters",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Shiloh is presented in the available context as a recognizable regional gathering place associated with sacred presence, sacrifice, priestly responsibility, festival, and tribal assembly. It is commonly identified with Khirbet Seilun, where excavation documents a long occupation sequence including Iron I remains; no excavated feature securely proves the location of the tent of meeting or an event narrated in Judges or Samuel. Jeremiah's appeal to Shiloh therefore uses a remembered sanctuary as a warning that revered status does not guarantee protection.",
+          "verse_refs": [
+            "Jeremiah 7:12-14"
+          ],
+          "evidence_ids": [
+            "shiloh:ancient_near_east_context:0",
+            "shiloh:hebraic_worldview:0",
+            "shiloh:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_1525a973caf7",
+            "syn_historical_context_ed8b91b91491"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "24d1e0ab2bfef08f1131b6fe4a4875c09d15475397bdd297fb7ff7c697767abc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.3",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T00:00:00Z",
+    "synthesis_hash": "1373609f949ec38237b289f79c6ae7c358ad9499b4688d19d1ad93b4e1f8d360",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-07T00:00:00Z",
+    "candidate_id": "commentary-v1.2-candidate:b5d212f73f8bbb59bc0b5da4c93198ad32c65e04075cd039739e2cf3f5615bbc"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

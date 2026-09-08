@@ -1,0 +1,49 @@
+{
+  "reference": "Psalms 73",
+  "book": "Psalms",
+  "chapter": 73,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "Wisdom reflection on suffering",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter's reflection on suffering belongs to the available context's wider concern with reverence and practical wisdom. That context describes Job's setting as one of patriarchal clan life, wisdom disputation, sacrificial practice, and associated regional geography rather than as a generic ancient-world backdrop. This supplies a bounded wisdom setting for reading the psalm's perplexity without resolving its questions for the reader.",
+          "verse_refs": [
+            "Psalms 73:1-17"
+          ],
+          "evidence_ids": [
+            "job-the-sufferer:ancient_near_east_context:0",
+            "job-the-sufferer:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_0d6a9757f104",
+            "syn_historical_context_ae9d59c416fd"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "844938d15b36fe8792fed7fcc443af64adde5556d793c91638b57658c8bb7b13",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.3",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T00:00:00Z",
+    "synthesis_hash": "e9e75ec59b161237102069592b4f52557210dd8be90d93b4b95bad9df3fe3252",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-07T00:00:00Z",
+    "candidate_id": "commentary-v1.2-candidate:cb273072f698c1bca49ee8e0e349f95268e04528fbeef8800587b6dd25d30d19"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,32 @@
+{
+  "reference": "Esther 4",
+  "packet_id": "commentary-v1.3-packet:7b85d0bb7ca71c344ad4e76feabfddbf1a9ef2d1a90b5a982aef4c21601263d9",
+  "prompt_version": "1.3",
+  "evidence_hash": "1c02cc520c5bb155ccda59a445711c1cfe2b9ecdad34e9954923442185d8951c",
+  "synthesis_hash": "cbf4fa49d7ce0771a6aeb88d02c84fffef6778f44de5a7825ee01ed7968dfa75",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Esther 4",
+    "book": "Esther",
+    "chapter": 4,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Mourning, risk, and uncertain courage",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Esther 4 moves from public mourning over the decree against the Jews to a private exchange about whether Esther will approach the king. Mordecai warns that silence will not secure her safety, while Esther answers with a three-day fast and a decision to enter the king's presence without being summoned. The chapter's language leaves the source of promised relief unstated: 'for such a time as this' presents a question about her position, not a revealed oracle. The Hebrew narration also does not explicitly name God, prayer, or a direct miracle. A reading of hidden providence is possible, but the chapter does not authorize certainty that God caused every action or endorses every tactic.",
+            "verse_refs": ["Esther 4:1-17"],
+            "evidence_ids": ["esther-fast-risk-appeal", "esther:interpretive_note:3", "esther:interpretive_note:6"],
+            "synthesis_ids": ["syn_interpretive_questions_a8c7a7e5ed11"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

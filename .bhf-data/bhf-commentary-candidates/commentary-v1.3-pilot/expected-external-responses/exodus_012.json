@@ -1,0 +1,77 @@
+{
+  "reference": "Exodus 12",
+  "packet_id": "commentary-v1.3-packet:f7a7e8786bd83a16ee20af5c302ccf9db5ae060e0a0ec858ce51836450ab590d",
+  "prompt_version": "1.3",
+  "evidence_hash": "bb256e42ef226edfab3aec2814d103b6b5e910e73e0656caf77bdc8a87ae462b",
+  "synthesis_hash": "815303be57ab8d9d49d61dcb0e5a73c8971a5cb2bd2651a4ac027346c083ee94",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Exodus 12",
+    "book": "Exodus",
+    "chapter": 12,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Passover and deliverance",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Exodus 12 presents Passover as the meal through which the LORD's deliverance is remembered and household identity is marked. The chapter joins the meal to the judgment in Egypt, the departure from slavery, and the beginning of Israel's life as a redeemed people. Its instructions therefore make an event of deliverance into a recurring practice of memory and belonging.",
+            "verse_refs": ["Exodus 12:1-14", "Exodus 12:21-28", "Exodus 12:43-51"],
+            "evidence_ids": ["passover:ancient_near_east_context:0", "passover:historical_context:0", "what-is-the-significance-of-passover:ancient_near_east_context:0", "what-is-the-significance-of-passover:historical_context:0"],
+            "synthesis_ids": ["syn_cultural_context_9cd13332cb2c", "syn_historical_context_10900e9b136a", "syn_cultural_context_eba240a0215b", "syn_historical_context_c4a2a025571e"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Egypt and royal power",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The chapter's setting is Egypt, described in the available context as a powerful Nile-based empire associated with political might, agricultural abundance, oppression, and deliverance. Against that setting, the exodus is framed as the LORD's victory over human power and death. Egyptian royal representation also included cultic interaction with deities, which helps bound the political-religious setting without proving a one-to-one correspondence between each plague and a particular deity.",
+            "verse_refs": ["Exodus 12:12", "Exodus 12:29-33"],
+            "evidence_ids": ["egypt:ancient_near_east_context:0", "egypt:hebraic_worldview:0", "egypt:historical_context:0", "egyptian-kingship-and-divine-order:interpretive_note:0", "the-exodus:ancient_near_east_context:0", "plagues-of-egypt:ancient_near_east_context:0", "plagues-of-egypt:hebraic_worldview:0"],
+            "synthesis_ids": ["syn_cultural_context_7ce0a8e16843", "syn_historical_context_a1bd9df8e4f6", "syn_cultural_context_c34da6e7c35d", "syn_cultural_context_7e3f69571c3c", "syn_interpretive_questions_2e9e6f51a7bc"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The book's larger movement",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Within Exodus, this departure is not the book's endpoint. The book moves from oppression and deliverance toward covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory. Reading chapter 12 within that movement keeps Passover connected to the people and worship that follow.",
+            "verse_refs": [],
+            "evidence_ids": ["exodus-literary-movement"],
+            "synthesis_ids": ["syn_surrounding_passages_a2029988cb61"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "A remembered beginning",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The chapter makes deliverance the beginning point for Israel's calendar, worship, and identity before the covenant instruction at Sinai. The route from oppression through Passover and departure is thus remembered as an ordered story of redemption and covenant formation, not merely as an escape from Egypt.",
+            "verse_refs": ["Exodus 12:1-14", "Exodus 12:37-42"],
+            "evidence_ids": ["exodus-to-sinai-timeline:ancient_near_east_context:0", "exodus-to-sinai-timeline:hebraic_worldview:0", "exodus-to-sinai-timeline:original_audience:0", "exodus-to-sinai-timeline:second_temple_context:0", "exodus-to-sinai-timeline:historical_context:0", "exodus-to-sinai-timeline:historical_setting:0", "exodus-to-sinai-timeline:timeline:0", "exodus-to-sinai-timeline:timeline:1", "exodus-to-sinai-timeline:timeline:2", "exodus-to-sinai-timeline:timeline:3", "exodus-to-sinai-timeline:timeline:4"],
+            "synthesis_ids": ["syn_why_it_matters_5e2d81a01a7e", "syn_why_it_matters_7c67eeb7c72d", "syn_why_it_matters_a00cab98e724"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

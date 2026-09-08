@@ -1,0 +1,77 @@
+{
+  "reference": "John 4",
+  "book": "John",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "An encounter that becomes witness",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The encounter at the well develops into a discussion of worship, salvation, and witness. The available context treats the Samaritan woman as an extended theological interlocutor and witness, so the reference to her five husbands should not be turned into a claim that she was sexually immoral: the text does not state adultery or prostitution. Likewise, 'salvation is from the Jews' locates Jesus and salvation history within Jewish people and Scripture; it does not authorize Jewish erasure or Samaritan inferiority.",
+          "verse_refs": [
+            "John 4:9-26",
+            "John 4:28-42"
+          ],
+          "evidence_ids": [
+            "john-4-22",
+            "john-ioudaioi",
+            "john-samaritan-woman"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_cbe4836fa5d8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "cultural_context",
+      "title": "Worship in its wider scriptural setting",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The available context places the chapter's worship discussion within a wider scriptural world of covenant practice, temple worship, kingship, wisdom instruction, and prophetic critique. It also describes worship as a theme developed across Scripture from Israel's story into the New Testament witness. These connections provide context for the conversation without replacing the Gospel's own account of what Jesus says.",
+          "verse_refs": [
+            "John 4:19-24"
+          ],
+          "evidence_ids": [
+            "worship-theme:ancient_near_east_context:0",
+            "theology-of-worship:ancient_near_east_context:0",
+            "worship-theme:historical_context:0",
+            "theology-of-worship:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_35232e238fed",
+            "syn_cultural_context_3f1149ba1002",
+            "syn_historical_context_47fe5151327f",
+            "syn_historical_context_ebdd268bf79f"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5754dce09b19398db16f631917a2604c5ce5596e6cde0fe1f3331e2baa7dba0f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.3",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T00:00:00Z",
+    "synthesis_hash": "e75cbf88cd978dd7a232ff1048b4b55317ee7faeabc56c2e12e2adf1d0cde99c",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-07T00:00:00Z",
+    "candidate_id": "commentary-v1.2-candidate:c1f8a6f53055129c5236db6731f897df682614412301afb038196ab854cc768b"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

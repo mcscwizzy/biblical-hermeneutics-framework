@@ -1,0 +1,21 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "1 Chronicles 9",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.3-pilot/expected-external-responses/1_chronicles_009.json",
+  "raw_sha256": "096c3b9de4a93590961173b633596d5cbbda31c61ea1d34dea92472be2229462",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "OUT_OF_CHAPTER_SYNTHESIS_REFERENCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "OUT_OF_CHAPTER_SYNTHESIS_REFERENCE: section[0].block[0] uses surrounding-passage synthesis in an ordinary section"
+  ]
+}

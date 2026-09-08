@@ -1,0 +1,77 @@
+{
+  "reference": "Romans 7",
+  "packet_id": "commentary-v1.3-packet:ff0ca3de0f01a2d7198adad3df0087c4aab06ecbb401ad666e693b8e34a62b07",
+  "prompt_version": "1.3",
+  "evidence_hash": "dda5e9145a962ecce1ead52ba83160e4db35defaa6660bbcb8b0ad01981aa863",
+  "synthesis_hash": "45c5b77ff7aa0a3d7216312510845f0c3c4aac25492b44d178575eae036a4e35",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Romans 7",
+    "book": "Romans",
+    "chapter": 7,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Torah and the power of sin",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Romans 7 describes Torah as holy, just, good, and spiritual while portraying sin as exploiting commandment. Torah is not identified as sin; the available context distinguishes it from a generic legal code by describing it as the covenant LORD's instruction and the way the redeemed people are to live before God.",
+            "verse_refs": ["Romans 7:7-14"],
+            "evidence_ids": ["romans:interpretive_note:33", "what-does-torah-mean:ancient_near_east_context:0", "what-does-torah-mean:historical_context:0"],
+            "synthesis_ids": ["syn_cultural_context_975727020098", "syn_cultural_context_fc00bfda481f", "syn_historical_context_64a57326b5a4"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Who is the speaking 'I'?",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The identity and temporal standpoint of Romans 7's first-person speaker remain unresolved. Autobiographical, Adamic, Israelite, rhetorical, pre-Messianic, Christian, and composite readings compete. The chapter should therefore not be presented as though one speaker-identification settles the passage's meaning.",
+            "verse_refs": ["Romans 7:7-25"],
+            "evidence_ids": ["romans-seven", "romans-torah", "romans:interpretive_note:32"],
+            "synthesis_ids": ["syn_interpretive_questions_235619982474"],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Sin as an active power",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Romans 7 uses active language for sin: it seizes opportunity, deceives, kills, inhabits, wages war, and takes captive within the disputed first-person discourse. This language should not be collapsed into a simple account of physical death or used as a psychiatric diagnosis; the passage's personification and its claims about human agency need to remain distinct.",
+            "verse_refs": ["Romans 7:8-23"],
+            "evidence_ids": ["romans-sin-death-personification", "romans-sin-death-personification:passage-relevance"],
+            "synthesis_ids": ["syn_interpretive_questions_b285ac69e457"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Context-sensitive language in Romans",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Across Romans, flesh and spirit are context-sensitive terms and cannot be reduced to a bad physical body opposed to a good immaterial soul. Romans is also an occasional letter, so later readers may engage its theology without turning chapter 7 into a contextless systematic-theology outline.",
+            "verse_refs": [],
+            "evidence_ids": ["romans-flesh-spirit", "romans:interpretive_note:10", "romans:interpretive_note:7", "romans:interpretive_note:75", "romans:interpretive_note:8"],
+            "synthesis_ids": ["syn_surrounding_passages_6f6a3d92e1f2", "syn_surrounding_passages_2dafd1bb5f73"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}
