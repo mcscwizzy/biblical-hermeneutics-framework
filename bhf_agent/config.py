@@ -198,6 +198,11 @@ class AgentConfig:
     api_key: Optional[str] = None
     temperature: float = 0.3
     max_tokens: int = 8192
+    # Commentary has a separate output ceiling from the general agent limit.
+    # ``None`` preserves the historical environment/default resolution for
+    # non-production callers; production resolves and records the effective
+    # value before constructing its runner.
+    commentary_max_tokens: Optional[int] = None
     context_window: int = 12288
     show_method_notes: bool = True
     timeout_seconds: Optional[float] = 600
@@ -339,6 +344,8 @@ class AgentConfig:
             raise ConfigError("temperature must be between 0 and 2")
         if int(self.max_tokens) <= 0:
             raise ConfigError("max_tokens must be greater than 0")
+        if self.commentary_max_tokens is not None and int(self.commentary_max_tokens) <= 0:
+            raise ConfigError("commentary_max_tokens must be greater than 0")
         if int(self.context_window) <= 0:
             raise ConfigError("context_window must be greater than 0")
         if self.timeout_seconds is not None and float(self.timeout_seconds) <= 0:

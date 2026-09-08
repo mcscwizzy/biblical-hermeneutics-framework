@@ -35,6 +35,7 @@ ENV_CONFIG_FIELDS = {
     "BHF_ANSWER_MODE": "answer_mode",
     "BHF_TEMPERATURE": "temperature",
     "BHF_MAX_TOKENS": "max_tokens",
+    "BHF_COMMENTARY_MAX_TOKENS": "commentary_max_tokens",
     "BHF_CONTEXT_WINDOW": "context_window",
     "BHF_RESPONSE_FORMAT_POLICY": "response_format_policy",
     "BHF_TIMEOUT_SECONDS": "timeout_seconds",

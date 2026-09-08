@@ -21,6 +21,12 @@ from framework.commentary.production.manifests import build_manifest, save_manif
 from framework.commentary.production.models import DEFAULT_CANARY_LIMIT, ManifestError, PRODUCTION_VERSION, production_root
 from framework.commentary.production.manifests import load_manifest
 from framework.commentary.production.runner import ProductionRunner
+from framework.commentary.production.runtime import (
+    build_runtime_adapter,
+    redacted_preflight_report,
+    resolve_runtime_config,
+    validate_manifest_for_preflight,
+)
 from framework.commentary.production.sampling import sample_audit_records
 
 
@@ -89,6 +95,38 @@ def plan(args: argparse.Namespace) -> dict:
     return {"manifest_path": str(output.relative_to(ROOT)), "status": manifest["status"], "run_id": manifest["run_id"], "chapter_count": len(selected), "chapters": [{key: row[key] for key in ("reference", "book", "chapter", "canonical_ordinal", "literary_category", "evidence_availability", "evidence_count", "synthesis_unit_count", "density_bucket", "input_identity", "expected_artifacts")} for row in manifest["chapters"]]}
 
 
+def preflight(args: argparse.Namespace) -> dict:
+    """Validate a planned manifest and runtime without making a provider call."""
+
+    config = resolve_runtime_config(args.config)
+    manifest = load_manifest(args.manifest)
+    errors = validate_manifest_for_preflight(
+        manifest, canary_limit=DEFAULT_CANARY_LIMIT
+    )
+    if errors:
+        raise ManifestError("PRODUCTION_PREFLIGHT_FAILED: " + "; ".join(errors))
+
+    mismatches: list[str] = []
+    for locked in manifest["chapters"]:
+        current = prepare_chapter(locked["book"], int(locked["chapter"]))
+        if current.row.get("input_identity") != locked.get("input_identity"):
+            mismatches.append(locked["reference"])
+    if mismatches:
+        raise ManifestError(
+            "PRODUCTION_PREFLIGHT_FAILED: input identity mismatch for "
+            + ", ".join(mismatches)
+        )
+
+    build_runtime_adapter(config)
+    return redacted_preflight_report(
+        manifest,
+        config,
+        reader_enabled=args.enable_reader,
+        input_identities_match=True,
+        adapter_constructed=True,
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Commentary production planner and guarded runner")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -104,13 +142,19 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--allow-full-corpus-plan", action="store_true")
     run = sub.add_parser("run")
     run.add_argument("--manifest", type=Path, required=True)
+    run.add_argument("--config", type=Path)
     run.add_argument("--authorized-run", action="store_true")
     run.add_argument("--enable-reader", action="store_true")
     run.add_argument("--new-attempt", action="store_true")
     resume = sub.add_parser("resume")
     resume.add_argument("--run", required=True)
+    resume.add_argument("--config", type=Path)
     resume.add_argument("--authorized-run", action="store_true")
     resume.add_argument("--enable-reader", action="store_true")
+    pre = sub.add_parser("preflight")
+    pre.add_argument("--manifest", type=Path, required=True)
+    pre.add_argument("--config", type=Path)
+    pre.add_argument("--enable-reader", action="store_true")
     led = sub.add_parser("ledger")
     led.add_argument("--json", action="store_true")
     drift = sub.add_parser("drift")
@@ -131,6 +175,8 @@ def main(argv: list[str] | None = None) -> int:
             ledger_path = production_root(ROOT) / "ledger.json"
             ledger = _read(ledger_path) if ledger_path.exists() else rebuild_ledger(ROOT)
             output = sample_audit_records(ledger.get("current", {}).values(), count=args.count, seed=args.seed)
+        elif args.command == "preflight":
+            output = preflight(args)
         elif args.command == "drift":
             manifests = sorted((production_root(ROOT) / "runs").glob("*/manifest.json"))
             rows = []
@@ -142,10 +188,12 @@ def main(argv: list[str] | None = None) -> int:
                         rows.append({"reference": locked["reference"], "run_id": manifest["run_id"], "locked": locked.get("input_identity"), "current": current.row.get("input_identity"), "status": "STALE_INPUT"})
             output = {"artifact_version": "commentary-production-drift-report-v1", "status": "NO_PRODUCTION_RUNS" if not manifests else "DRIFT_FOUND" if rows else "NO_DRIFT", "chapters": rows}
         elif args.command == "run":
-            output = ProductionRunner(ROOT).run_manifest(args.manifest, authorized_run=args.authorized_run, enable_reader=args.enable_reader, new_attempt=args.new_attempt)
+            config = resolve_runtime_config(args.config)
+            output = ProductionRunner(ROOT, config=config).run_manifest(args.manifest, authorized_run=args.authorized_run, enable_reader=args.enable_reader, new_attempt=args.new_attempt)
         else:
             manifest_path = production_root(ROOT) / "runs" / args.run / "manifest.json"
-            output = ProductionRunner(ROOT).run_manifest(manifest_path, authorized_run=args.authorized_run, enable_reader=args.enable_reader)
+            config = resolve_runtime_config(args.config)
+            output = ProductionRunner(ROOT, config=config).run_manifest(manifest_path, authorized_run=args.authorized_run, enable_reader=args.enable_reader)
         print(json.dumps(output, ensure_ascii=False, indent=2, sort_keys=True))
         return 0
     except Exception as exc:

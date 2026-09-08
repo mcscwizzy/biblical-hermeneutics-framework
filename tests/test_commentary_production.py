@@ -26,6 +26,7 @@ from framework.commentary.production.recovery import reconcile_batch
 from framework.commentary.production.runner import ProviderFailure, ProductionRunner, RawResponse
 from framework.commentary.production.sampling import sample_audit_records
 from bhf_agent.chapter_commentary.dense_reader import _activation_decision
+from bhf_agent.config import AgentConfig
 
 
 def _prepared(reference: str = "Genesis 1", ordinal: int = 1, *, identity: str = "e") -> PreparedChapter:
@@ -34,6 +35,18 @@ def _prepared(reference: str = "Genesis 1", ordinal: int = 1, *, identity: str =
     input_identity = InputIdentity(identity, "s" + identity, "1.5", "1.2", "1.1", "1.1", "commentary-richness-gate-v2.1", "validator", "p" + identity, "packet:" + identity)
     row = {"reference": reference, "book": book, "chapter": chapter, "canonical_ordinal": ordinal, "literary_category": "Pentateuch", "evidence_availability": "AVAILABLE", "evidence_count": 1, "synthesis_unit_count": 1, "density_bucket": "1-5", "input_identity": input_identity.to_dict()}
     return PreparedChapter(row=row, packet={"packet_id": "packet:" + identity, "packet_hash": "p" + identity, "user_prompt": "fixture"})
+
+
+def _config(**overrides) -> AgentConfig:
+    values = {
+        "adapter": "openai_compatible",
+        "base_url": "http://127.0.0.1:1234/v1",
+        "model": "fixture-model",
+        "api_key": "fixture-secret",
+        "commentary_max_tokens": 4500,
+    }
+    values.update(overrides)
+    return AgentConfig(**values)
 
 
 def test_census_is_canonical_and_does_not_promote_historical_artifacts(tmp_path):
@@ -88,7 +101,7 @@ def test_runner_resumes_without_regenerating_terminal_chapter(tmp_path):
             harness.calls += 1
             return RawResponse(text='{"fixture": true}')
 
-    harness = Harness(tmp_path, renderer=None, input_loader=lambda book, chapter: prepared)
+    harness = Harness(tmp_path, config=_config(), renderer=None, input_loader=lambda book, chapter: prepared)
     harness.renderer = Renderer()
     first = harness.run_manifest(manifest_path, authorized_run=True)
     second = harness.run_manifest(manifest_path, authorized_run=True)
@@ -104,7 +117,7 @@ def test_runner_requires_explicit_authorization(tmp_path):
     path = tmp_path / "manifest.json"
     save_manifest(manifest, path)
     with pytest.raises(ManifestError, match="--authorized-run"):
-        ProductionRunner(tmp_path, input_loader=lambda book, chapter: prepared).run_manifest(path)
+        ProductionRunner(tmp_path, config=_config(), input_loader=lambda book, chapter: prepared).run_manifest(path)
 
 
 def test_crash_reconciliation_promotes_written_raw_and_preserves_hash(tmp_path):
@@ -133,7 +146,7 @@ def test_provider_failure_is_quarantined_and_separated(tmp_path):
         def render(self, chapter, prepared):
             raise ProviderFailure("timeout", "PROVIDER_TIMEOUT")
 
-    runner = ProductionRunner(tmp_path, renderer=Renderer(), input_loader=lambda book, chapter: prepared)
+    runner = ProductionRunner(tmp_path, config=_config(), renderer=Renderer(), input_loader=lambda book, chapter: prepared)
     result = runner.run_manifest(manifest_path, authorized_run=True)
     assert result["batches"][0]["chapters"][0]["failure_kind"] == "PROVIDER_FAILURE"
     quarantine = tmp_path / ".bhf-data/bhf-commentary-production/v1/runs/run-provider/batches/batch-001/quarantine/attempt-001/genesis_001.json"
@@ -148,7 +161,7 @@ def test_input_drift_becomes_stale_instead_of_rerendering(tmp_path):
     manifest = build_manifest([locked], batch_size=1, run_id="run-drift")
     path = tmp_path / "manifest.json"
     save_manifest(manifest, path)
-    runner = ProductionRunner(tmp_path, renderer=None, input_loader=lambda book, chapter: current)
+    runner = ProductionRunner(tmp_path, config=_config(), renderer=None, input_loader=lambda book, chapter: current)
     result = runner.run_manifest(path, authorized_run=True)
     assert result["batches"][0]["chapters"][0]["state"] == STALE_INPUT
 
@@ -172,7 +185,7 @@ def test_ledger_rebuild_is_deterministic_and_counts_pending(tmp_path):
         def render(self, chapter, prepared):
             return RawResponse(text="{}")
 
-    Harness(tmp_path, renderer=Renderer(), input_loader=lambda book, chapter: prepared).run_manifest(path, authorized_run=True)
+    Harness(tmp_path, config=_config(), renderer=Renderer(), input_loader=lambda book, chapter: prepared).run_manifest(path, authorized_run=True)
     first = rebuild_ledger(tmp_path)
     second = rebuild_ledger(tmp_path)
     assert first == second

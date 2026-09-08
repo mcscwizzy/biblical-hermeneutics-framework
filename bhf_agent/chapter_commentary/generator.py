@@ -306,6 +306,8 @@ class CommentaryGenerator:
 
     def _commentary_max_tokens(self) -> int:
         """Return the configurable output ceiling for commentary generation."""
+        if self.config.commentary_max_tokens is not None:
+            return int(self.config.commentary_max_tokens)
         configured = os.environ.get("BHF_COMMENTARY_MAX_TOKENS")
         if configured:
             try:

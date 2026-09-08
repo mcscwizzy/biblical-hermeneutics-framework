@@ -57,6 +57,11 @@ from .models import (
     slug,
 )
 from .recovery import reconcile_batch
+from .runtime import (
+    build_runtime_adapter,
+    resolve_runtime_config_from_object,
+    runtime_receipt,
+)
 
 
 class ProviderFailure(RuntimeError):
@@ -81,8 +86,8 @@ class Renderer(Protocol):
 class DefaultRenderer:
     """Adapter to the mature CommentaryGenerator call path, without its storage."""
 
-    def __init__(self, config: AgentConfig | None = None):
-        self.config = config or AgentConfig()
+    def __init__(self, config: AgentConfig):
+        self.config = config
         self.generator = CommentaryGenerator(self.config)
 
     def render(self, chapter: dict[str, Any], prepared: PreparedChapter) -> RawResponse:
@@ -132,8 +137,8 @@ class ProductionRunner:
         systemic_provider_failure_threshold: int = DEFAULT_SYSTEMIC_PROVIDER_FAILURE_THRESHOLD,
     ):
         self.repo_root = Path(repo_root)
-        self.config = config or AgentConfig()
-        self.renderer = renderer or DefaultRenderer(self.config)
+        self.config = config
+        self.renderer = renderer
         self.input_loader = input_loader
         self.systemic_provider_failure_threshold = systemic_provider_failure_threshold
 
@@ -145,7 +150,21 @@ class ProductionRunner:
         enable_reader: bool | None = None,
         new_attempt: bool = False,
     ) -> dict[str, Any]:
+        if self.config is None:
+            raise ProductionError(
+                "PRODUCTION_RUNTIME_CONFIG_REQUIRED: production execution requires --config PATH"
+            )
+        # Construction is an intentional local validation step. No adapter
+        # method that can issue a provider request is called here.
+        self.config = resolve_runtime_config_from_object(self.config)
+        build_runtime_adapter(self.config)
+        reader_enabled = bool(enable_reader)
+        runtime = runtime_receipt(self.config, reader_enabled=reader_enabled)
         manifest = load_manifest(Path(manifest_path))
+        if manifest.get("status") != "PLANNED_NOT_AUTHORIZED":
+            raise ManifestError(
+                "production execution requires a PLANNED_NOT_AUTHORIZED manifest"
+            )
         if not authorized_run:
             raise ManifestError("production execution requires explicit --authorized-run")
         if new_attempt:
@@ -157,19 +176,36 @@ class ProductionRunner:
             "status": "AUTHORIZED",
             "run_id": manifest["run_id"],
             "manifest_identity": manifest["manifest_identity"],
+            "runtime_config_identity": runtime["runtime_config_identity"],
+            "runtime": runtime["parameters"],
             "chapter_count": len(manifest["chapters"]),
             "explicit_flag": "--authorized-run",
         }
         run_manifest_path = production_root(self.repo_root) / "runs" / manifest["run_id"] / "manifest.json"
         write_json(run_manifest_path, manifest, immutable=True)
         auth_path = production_root(self.repo_root) / "runs" / manifest["run_id"] / "authorization.json"
-        write_json(auth_path, authorization, immutable=True)
+        if auth_path.exists():
+            existing_authorization = read_json(auth_path)
+            if (
+                existing_authorization.get("manifest_identity") != manifest["manifest_identity"]
+                or existing_authorization.get("runtime_config_identity")
+                != runtime["runtime_config_identity"]
+                or existing_authorization.get("runtime", {}).get("reader_enabled")
+                != reader_enabled
+            ):
+                raise ProductionError(
+                    "RUNTIME_CONFIG_MISMATCH: resume configuration differs from the original run"
+                )
+        else:
+            write_json(auth_path, authorization, immutable=True)
         save_batch_manifests(manifest, self.repo_root)
+        if self.renderer is None:
+            self.renderer = DefaultRenderer(self.config)
         results: list[dict[str, Any]] = []
         provider_failures = 0
         for batch in manifest["batches"]:
             try:
-                result = self._run_batch(manifest, batch["batch_id"], enable_reader=enable_reader)
+                result = self._run_batch(manifest, batch["batch_id"], enable_reader=reader_enabled)
                 results.append(result)
                 provider_failures += int(result.get("provider_failures", 0))
             except SystemicBatchFailure as exc:

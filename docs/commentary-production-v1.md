@@ -39,8 +39,9 @@ The guarded CLI is:
 python tools/commentary_production.py status
 python tools/commentary_production.py census
 python tools/commentary_production.py plan --batch-size 25 --count 25
-python tools/commentary_production.py run --manifest PATH --authorized-run
-python tools/commentary_production.py resume --run RUN_ID --authorized-run
+python tools/commentary_production.py preflight --manifest PATH --config PATH
+python tools/commentary_production.py run --manifest PATH --config PATH --authorized-run
+python tools/commentary_production.py resume --run RUN_ID --config PATH --authorized-run
 python tools/commentary_production.py ledger
 python tools/commentary_production.py drift
 python tools/commentary_production.py audit-sample --count 25 --seed 20260908
@@ -162,18 +163,79 @@ the remaining chapters. It is deterministic and does not perform an audit.
 
 `plan` is dry-run only and writes `planned/...` with
 `PLANNED_NOT_AUTHORIZED`. It creates no raw model response and never calls a
-renderer. `run` requires an explicit `--manifest` and `--authorized-run`; it
-does not accept an unrestricted `--all`. Runs over 50 chapters are rejected
-unless the manifest carries a separate full-corpus authorization, so a normal
-flag typo cannot launch the corpus. Reader execution also requires the
-explicit `--enable-reader` flag.
+renderer. `run` requires an explicit `--manifest`, `--config PATH`, and
+`--authorized-run`; it does not accept an unrestricted
+`--all`. Runs over 50 chapters are rejected unless the manifest carries a
+separate full-corpus authorization, so a normal flag typo cannot launch the
+corpus. Reader execution also requires the explicit `--enable-reader` flag.
 
-For a canary, review the planned manifest, authorize that exact manifest in a
-separately approved operation, then run it with the required explicit flag.
-Use `resume` for interruption. A completed batch is skipped; a new attempt is
-not created implicitly. Full-corpus generation requires a separately created,
-deliberately authorized manifest and should proceed batch by batch after the
-canary is accepted.
+## Runtime configuration and preflight
+
+Production runtime configuration is supplied through the existing
+`AgentConfig.from_json_file()` convention. The file may live outside the
+repository and must intentionally select a non-empty `adapter`, `model`, and
+the provider-specific endpoint/credential. The production CLI does not call
+`AgentConfig()` as a fallback. Missing or invalid `--config` fails with
+`PRODUCTION_RUNTIME_CONFIG_REQUIRED` or
+`PRODUCTION_RUNTIME_CONFIG_INVALID` before authorization is written.
+
+The existing `BHF_API_KEY` environment convention remains available when the
+JSON config intentionally omits `api_key`. The value is used in memory only;
+it is never printed, copied into a manifest, written to authorization, or
+included in the runtime configuration identity. OpenRouter and Anthropic
+require a credential. OpenAI-compatible endpoints and Ollama follow their
+existing optional-credential semantics. Claude CLI uses its existing external
+authentication and executable lookup; preflight does not probe that account
+because doing so would be a provider call.
+
+`preflight` validates the immutable manifest identity, planned status, chapter
+limit, frozen contract versions, current evidence/synthesis input identities,
+and the loaded AgentConfig. It validates numeric generation limits, constructs
+the configured adapter, and calls no adapter `chat()` method. Its JSON report
+is redacted and includes `credential_present` and `provider_called: false`,
+never the credential itself.
+
+The deterministic `runtime_config_identity` includes adapter, model, base URL,
+temperature, general token limit, effective Commentary output-token limit,
+context window, timeout, response-format policy, runner version, and reader
+enablement. It excludes API keys, tokens, timestamps, and machine-specific
+paths. `BHF_COMMENTARY_MAX_TOKENS` remains supported for existing local
+callers; production resolves that value into `commentary_max_tokens` and
+records the effective limit before execution.
+
+The authorization receipt records the run ID, immutable manifest identity,
+runtime configuration identity, redacted generation parameters, reader state,
+and `credential_present`. On resume, the receipt must match the supplied
+runtime identity and reader state. Changing provider, model, endpoint,
+temperature, token limits, context, timeout, response-format policy, or
+reader enablement fails with `RUNTIME_CONFIG_MISMATCH`.
+
+For the current canary, the exact future command sequence is:
+
+```text
+python tools/commentary_production.py status
+python tools/commentary_production.py preflight \
+  --manifest .bhf-data/bhf-commentary-production/v1/planned/canary-001-manifest.json \
+  --config /secure/path/bhf-commentary-production.json
+# separately review and authorize this exact manifest
+python tools/commentary_production.py run \
+  --manifest .bhf-data/bhf-commentary-production/v1/planned/canary-001-manifest.json \
+  --config /secure/path/bhf-commentary-production.json \
+  --authorized-run --enable-reader
+python tools/commentary_production.py status
+python tools/commentary_production.py ledger
+python tools/commentary_production.py resume \
+  --run RUN_ID \
+  --config /secure/path/bhf-commentary-production.json \
+  --authorized-run --enable-reader
+python tools/commentary_production.py audit-sample --count 25 --seed 20260908
+```
+
+`resume` is only used if the run is interrupted; the matching config and
+reader flag are still required. A completed batch is skipped and a new
+attempt is not created implicitly. Full-corpus generation requires a
+separately created, deliberately authorized manifest and should proceed batch
+by batch after the canary is accepted.
 
 This implementation task creates a planned canary only. It does not run
 generation, Dense Reader on new chapters, or full-Bible processing.
