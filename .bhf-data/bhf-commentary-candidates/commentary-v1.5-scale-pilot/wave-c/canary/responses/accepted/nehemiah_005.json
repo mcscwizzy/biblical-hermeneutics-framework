@@ -1,0 +1,118 @@
+{
+  "reference": "Nehemiah 5",
+  "book": "Nehemiah",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "Cultural Context",
+      "blocks": [
+        {
+          "id": "block_001",
+          "text": "A cultural detail that clarifies the passage is this: The book's final relapse means the wall dedication and covenant ceremony are not a simple success formula. Nehemiah repeatedly asks God to remember him because institutional reform remains vulnerable and the restored community still needs mercy.",
+          "verse_refs": [
+            "Nehemiah 5:19"
+          ],
+          "evidence_ids": [
+            "nehemiah:interpretive_note:9"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_b038d550d3ce"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpretive Questions",
+      "blocks": [
+        {
+          "id": "block_002",
+          "text": "This helps frame an interpretive question raised by the passage: Papyrus Berlin P. 13495 is an Imperial Aramaic copy of a 407 BCE petition from Judeans at Elephantine to Bagohi, governor of Judah, concerning reconstruction of their damaged YHW temple. The letter provides later comparative evidence for a Persian governor of Judah, Jerusalem priestly authority, written interprovincial appeals, and connections with Samaria relevant to Ezra-Nehemiah's administrative world. Hundreds of inscribed stamp impressions on jars from Persian and early Hellenistic Judah, concentrated especially at Ramat Rahel and Jerusalem, preserve the provincial name Yehud and an evolving administrative system. The stamped-jar system provides material context for the provincial taxation, provisioning, officials, and economic pressures assumed in Ezra-Nehemiah without verifying a specific decree or debt complaint. Papyrus Berlin P. 13495 is an Imperial Aramaic copy of a 407 BCE petition from Judeans at Elephantine to Bagohi, governor of Judah, concerning reconstruction of their damaged YHW temple. The letter provides later comparative evidence for a Persian governor of Judah, Jerusalem priestly authority, written interprovincial appeals, and connections with Samaria relevant to Ezra-Nehemiah's administrative world. Hundreds of inscribed stamp impressions on jars from Persian and early Hellenistic Judah, concentrated especially at Ramat Rahel and Jerusalem, preserve the provincial name Yehud and an evolving administrative system. The stamped-jar system provides material context for the provincial taxation, provisioning, officials, and economic pressures assumed in Ezra-Nehemiah without verifying a specific decree or debt complaint.",
+          "verse_refs": [
+            "Nehemiah 5:1-19",
+            "Nehemiah 5:14-19"
+          ],
+          "evidence_ids": [
+            "elephantine-judah-governor-correspondence",
+            "elephantine-judah-governor-correspondence:passage-relevance",
+            "yehud-stamp-administration",
+            "yehud-stamp-administration:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_c82fc23d639f",
+            "syn_why_it_matters_1d5ded1eac78"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_003",
+          "text": "This helps frame an interpretive question raised by the passage: Nehemiah confronts nobles and officials over debt, interest, land loss, taxes, and the enslavement of Judeans, requiring restitution and presenting his own refusal of the governor's food allowance as accountable leadership. Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432 BCE, but exact dates vary with accession-year and calendar reckoning. Nehemiah 5 interrupts the external-conflict story to expose exploitation within the community. The chapter condemns debt pressure, loss of fields, tax burdens, and enslavement and requires restitution, so wall completion cannot be separated from economic justice. Nehemiah confronts nobles and officials over debt, interest, land loss, taxes, and the enslavement of Judeans, requiring restitution and presenting his own refusal of the governor's food allowance as accountable leadership. Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432 BCE, but exact dates vary with accession-year and calendar reckoning. Nehemiah 5 interrupts the external-conflict story to expose exploitation within the community. The chapter condemns debt pressure, loss of fields, tax burdens, and enslavement and requires restitution, so wall completion cannot be separated from economic justice.",
+          "verse_refs": [
+            "Nehemiah 5:1-19",
+            "Nehemiah 5:14"
+          ],
+          "evidence_ids": [
+            "nehemiah-economic-justice",
+            "nehemiah:interpretive_note:0",
+            "nehemiah:interpretive_note:4"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_407fc0138568",
+            "syn_why_it_matters_96a3667fbf62"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Surrounding Passages",
+      "blocks": [
+        {
+          "id": "block_004",
+          "text": "The surrounding passage context adds this comparison: The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence.",
+          "verse_refs": [
+            "Nehemiah 1:1-11",
+            "Nehemiah 2:1-20",
+            "Nehemiah 3:1-32",
+            "Nehemiah 4:1-23",
+            "Nehemiah 6:1-19",
+            "Nehemiah 7:1-5"
+          ],
+          "evidence_ids": [
+            "nehemiah:interpretive_note:1"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_5209a4fd9714"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4719ac9ce8ef428f74b03def09003b1d4627200d42ea3d316b0604470016adbc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.5",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-08T15:26:01.674129+00:00",
+    "synthesis_hash": "55a2bf21d569915e4086f8253abae49605703ddd138e3e27b87e3dc5579cb231",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-08T15:26:01.674129+00:00",
+    "candidate_id": "commentary-v1.2-candidate:2e2cbfc77f6933c090d29be3ac2ab606fa34071d0fbfce348c8dbb2489fcfb7c"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

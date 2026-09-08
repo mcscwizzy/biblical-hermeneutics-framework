@@ -1,0 +1,38 @@
+{
+  "reference": "1 Chronicles 10",
+  "packet_id": "commentary-v1.5-packet:7c77304bda57db347b9bcc856d0d8e10f2b4ab4566703719e1559f0b15dd5653",
+  "prompt_version": "1.5",
+  "evidence_hash": "a4af90f674ada827af7602b699a42f701e2405c64b15d29f01e25caff1c5909f",
+  "synthesis_hash": "c3596ab6964625d19739fae8f38e32b404990ba809dd5e07ec88c51fb2f13b75",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "1 Chronicles 10",
+    "book": "1 Chronicles",
+    "chapter": 10,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "Historically, this chapter is read within the following setting: The Chronicler interprets Saul's death as the result of unfaithfulness, failure to keep the LORD's word, consulting a medium, and failure to seek the LORD.",
+            "verse_refs": [
+              "1 Chronicles 10:13-14"
+            ],
+            "evidence_ids": [
+              "first-chronicles-saul-unfaithful"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_c68d430b0543"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}
