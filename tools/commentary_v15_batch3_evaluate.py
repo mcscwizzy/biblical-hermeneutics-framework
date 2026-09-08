@@ -91,7 +91,7 @@ def _metric_row(reference: str, packet: dict[str, Any], synthesis, commentary, *
         "evidence_count": packet.get("evidence_count", 0),
         "density_bucket": packet.get("synthesis_density_bucket", "0"),
         "synthesis_units": len(synthesis.synthesis_units),
-        "meaningful_clusters": score.meaningful_cluster_count if score else len(packet.get("idea_cluster_ids", [])),
+        "meaningful_clusters": score.meaningful_cluster_count if score else packet.get("idea_cluster_count", 0),
         "refined_core_clusters": score.core_cluster_count if score else packet.get("refined_core_count", 0),
         "source": source,
         "validation_status": validation_status or (commentary.status if commentary else "rejected"),
