@@ -4,6 +4,22 @@ This document describes the production orchestration layer around the frozen
 Commentary 1.5 contracts. It is a workflow contract, not a new commentary
 schema. The production version is `commentary-production-v1`.
 
+## Supported generation modes
+
+Production has two deliberately exclusive generation modes:
+
+* `DIRECT_PROVIDER`: the existing `--config PATH` path. ProductionRunner
+  constructs the configured API/CLI adapter and owns the direct generation
+  call. Preflight constructs but never calls the adapter.
+* `EXTERNAL_HANDOFF`: a provider-free path for a trusted external execution
+  environment such as Codex/Terra. Production creates the run, packet, prompt,
+  and task identities; the external renderer creates only raw Commentary JSON.
+  `renderer_identity` (for example `terra-medium`) is audit metadata, not an
+  API model name. No endpoint, credential, or provider adapter is involved.
+
+A run cannot change modes or renderer identities during resume/import. A new
+run and explicit authorization are required for a different generation policy.
+
 ## Existing architecture and boundary
 
 The repository already owns the content contracts:
@@ -42,6 +58,12 @@ python tools/commentary_production.py plan --batch-size 25 --count 25
 python tools/commentary_production.py preflight --manifest PATH --config PATH
 python tools/commentary_production.py run --manifest PATH --config PATH --authorized-run
 python tools/commentary_production.py resume --run RUN_ID --config PATH --authorized-run
+python tools/commentary_production.py handoff-preflight --manifest PATH --renderer terra-medium
+python tools/commentary_production.py handoff-prepare --manifest PATH --renderer terra-medium --authorized-run
+python tools/commentary_production.py handoff-next --run RUN_ID
+python tools/commentary_production.py handoff-import --run RUN_ID --chapter "Exodus 14" --response PATH
+python tools/commentary_production.py reconcile --run RUN_ID
+python tools/commentary_production.py handoff-resume --run RUN_ID
 python tools/commentary_production.py ledger
 python tools/commentary_production.py drift
 python tools/commentary_production.py audit-sample --count 25 --seed 20260908
@@ -65,6 +87,7 @@ Production is isolated at:
       gate/attempt-001/<chapter>.json
       reader/attempt-001/<chapter>.json
       quarantine/attempt-001/<chapter>.json
+    handoff/manifest.json          # immutable external-render task manifest
 ```
 
 Raw output is written before import, validation, Gate, or reader work. A raw
@@ -236,6 +259,40 @@ reader flag are still required. A completed batch is skipped and a new
 attempt is not created implicitly. Full-corpus generation requires a
 separately created, deliberately authorized manifest and should proceed batch
 by batch after the canary is accepted.
+
+For external handoff, the corresponding resumable workflow is:
+
+```text
+python tools/commentary_production.py handoff-preflight \
+  --manifest .bhf-data/bhf-commentary-production/v1/planned/canary-001-manifest.json \
+  --renderer terra-medium
+python tools/commentary_production.py handoff-prepare \
+  --manifest .bhf-data/bhf-commentary-production/v1/planned/canary-001-manifest.json \
+  --renderer terra-medium --authorized-run
+python tools/commentary_production.py handoff-next --run RUN_ID
+# The external Terra/Codex environment renders the exact immutable packet.
+python tools/commentary_production.py handoff-import \
+  --run RUN_ID --chapter "Exodus 14" --response /secure/response.json
+python tools/commentary_production.py handoff-next --run RUN_ID
+python tools/commentary_production.py handoff-resume --run RUN_ID
+python tools/commentary_production.py ledger
+```
+
+`handoff-prepare` writes one immutable packet and one immutable handoff item
+per selected chapter. Each item records the run, batch, chapter, packet ID and
+hash, Prompt 1.5/schema identities, evidence and synthesis hashes, expected
+attempt, renderer label, and authoritative raw path. The packet itself is the
+source of the exact system and user prompts; no prompt is rebuilt or
+paraphrased for the renderer.
+
+An imported response is tied to its run/chapter/packet/attempt and is written
+to the expected raw path with SHA-256 collision protection. Import immediately
+continues through validation, Gate v2.1, optional Dense Reader, state, and
+ledger updates. A malformed response is retained and quarantined; there is no
+content repair. `reconcile` processes raw artifacts safely written directly to
+their expected paths. `handoff-next` reports `NEXT_HANDOFF_WORK`, including
+captured raw that needs validation; completed and quarantined chapters are
+skipped without creating another attempt.
 
 This implementation task creates a planned canary only. It does not run
 generation, Dense Reader on new chapters, or full-Bible processing.

@@ -114,7 +114,20 @@ def _parse_response(text: str) -> dict[str, Any] | None:
         value = json.loads(candidate.strip())
     except (json.JSONDecodeError, ValueError):
         return None
-    return value if isinstance(value, dict) else None
+    if not isinstance(value, dict):
+        return None
+    # External handoff responses may carry an auditable envelope around the
+    # renderer payload.  The envelope is retained as the immutable raw bytes;
+    # only its payload enters the existing Commentary validator.
+    payload = value.get("response_payload")
+    if isinstance(payload, dict) and {
+        "packet_id",
+        "reference",
+    }.issubset(value) and (
+        "renderer_identity" in value or "renderer_label" in value
+    ):
+        return payload
+    return value
 
 
 def _codes(messages: list[str] | tuple[str, ...]) -> list[str]:
@@ -134,12 +147,16 @@ class ProductionRunner:
         renderer: Renderer | None = None,
         input_loader: Callable[[str, int], PreparedChapter] = prepare_chapter,
         config: AgentConfig | None = None,
+        generation_mode: str = "direct_provider",
+        renderer_identity: str | None = None,
         systemic_provider_failure_threshold: int = DEFAULT_SYSTEMIC_PROVIDER_FAILURE_THRESHOLD,
     ):
         self.repo_root = Path(repo_root)
         self.config = config
         self.renderer = renderer
         self.input_loader = input_loader
+        self.generation_mode = generation_mode
+        self.renderer_identity = renderer_identity
         self.systemic_provider_failure_threshold = systemic_provider_failure_threshold
 
     def run_manifest(
@@ -161,6 +178,13 @@ class ProductionRunner:
         reader_enabled = bool(enable_reader)
         runtime = runtime_receipt(self.config, reader_enabled=reader_enabled)
         manifest = load_manifest(Path(manifest_path))
+        existing_auth_path = production_root(self.repo_root) / "runs" / manifest["run_id"] / "authorization.json"
+        if existing_auth_path.exists():
+            existing_mode = read_json(existing_auth_path).get("generation_mode", "direct_provider")
+            if existing_mode != "direct_provider":
+                raise ProductionError(
+                    "GENERATION_MODE_MISMATCH: run was authorized for external handoff mode"
+                )
         if manifest.get("status") != "PLANNED_NOT_AUTHORIZED":
             raise ManifestError(
                 "production execution requires a PLANNED_NOT_AUTHORIZED manifest"
@@ -176,6 +200,7 @@ class ProductionRunner:
             "status": "AUTHORIZED",
             "run_id": manifest["run_id"],
             "manifest_identity": manifest["manifest_identity"],
+            "generation_mode": "direct_provider",
             "runtime_config_identity": runtime["runtime_config_identity"],
             "runtime": runtime["parameters"],
             "chapter_count": len(manifest["chapters"]),
@@ -337,11 +362,12 @@ class ProductionRunner:
             evidence_bundle_version=prepared.bundle.version,
             commentary_schema_version=chapter["input_identity"]["commentary_schema_version"],
             commentary_prompt_version=chapter["input_identity"]["prompt_version"],
-            model=self.config.model or "unknown",
+            model=(self.config.model if self.config is not None else "external_handoff"),
             generated_timestamp=None,
             synthesis_hash=prepared.synthesis.synthesis_hash,
             synthesis_schema_version=prepared.synthesis.synthesis_schema_version,
             synthesis_compiler_version=prepared.synthesis.synthesis_compiler_version,
+            renderer_label=self.renderer_identity,
         ).to_dict()
         payload["evidence_availability"] = prepared.synthesis.evidence_availability
         payload["status"] = "pending"

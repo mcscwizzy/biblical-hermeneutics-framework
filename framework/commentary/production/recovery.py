@@ -45,6 +45,11 @@ def reconcile_chapter(repo_root: Path, chapter: dict[str, Any], record: dict[str
             record["recovery_error"] = "raw artifact hash disagrees with state"
             return record
         record["raw_sha256"] = digest
+        record["raw_path"] = expected["raw"]
+        if not int(record.get("attempt", 0)):
+            # The expected raw directory is attempt-001 in production v1.
+            # Recovering a written artifact must not create a new attempt.
+            record["attempt"] = 1
         if state in {PENDING, "READY", GENERATING}:
             state = RAW_CAPTURED
     if quarantine.is_file():

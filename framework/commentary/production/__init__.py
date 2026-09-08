@@ -4,10 +4,12 @@ from .models import PRODUCTION_VERSION
 from .census import build_census, canonical_chapters
 from .manifests import build_manifest, load_manifest, save_manifest
 from .runner import ProductionRunner
+from .handoff import HandoffRunner
 
 __all__ = [
     "PRODUCTION_VERSION",
     "ProductionRunner",
+    "HandoffRunner",
     "build_census",
     "canonical_chapters",
     "build_manifest",

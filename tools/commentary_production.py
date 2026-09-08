@@ -21,6 +21,7 @@ from framework.commentary.production.manifests import build_manifest, save_manif
 from framework.commentary.production.models import DEFAULT_CANARY_LIMIT, ManifestError, PRODUCTION_VERSION, production_root
 from framework.commentary.production.manifests import load_manifest
 from framework.commentary.production.runner import ProductionRunner
+from framework.commentary.production.handoff import HandoffRunner
 from framework.commentary.production.runtime import (
     build_runtime_adapter,
     redacted_preflight_report,
@@ -127,6 +128,31 @@ def preflight(args: argparse.Namespace) -> dict:
     )
 
 
+def _handoff_renderer(run_id: str, renderer: str | None) -> str:
+    if renderer:
+        return renderer
+    path = production_root(ROOT) / "runs" / run_id / "authorization.json"
+    if not path.exists():
+        raise ManifestError("external handoff authorization is missing; supply --renderer LABEL")
+    value = _read(path)
+    label = value.get("renderer_identity")
+    if not label:
+        raise ManifestError("run is not authorized for external handoff mode")
+    return str(label)
+
+
+def handoff_preflight(args: argparse.Namespace) -> dict:
+    return HandoffRunner(ROOT, renderer_identity=args.renderer).handoff_preflight(
+        args.manifest, enable_reader=args.enable_reader, authorized_full_corpus=args.authorized_full_corpus
+    )
+
+
+def handoff_prepare(args: argparse.Namespace) -> dict:
+    return HandoffRunner(ROOT, renderer_identity=args.renderer).prepare(
+        args.manifest, authorized_run=args.authorized_run, enable_reader=args.enable_reader, authorized_full_corpus=args.authorized_full_corpus
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Commentary production planner and guarded runner")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -155,6 +181,32 @@ def main(argv: list[str] | None = None) -> int:
     pre.add_argument("--manifest", type=Path, required=True)
     pre.add_argument("--config", type=Path)
     pre.add_argument("--enable-reader", action="store_true")
+    hp = sub.add_parser("handoff-preflight", help="validate an external handoff without model/API configuration")
+    hp.add_argument("--manifest", type=Path, required=True)
+    hp.add_argument("--renderer", required=True)
+    hp.add_argument("--enable-reader", action="store_true")
+    hp.add_argument("--authorized-full-corpus", action="store_true")
+    hprep = sub.add_parser("handoff-prepare", help="authorize and export immutable external-render tasks")
+    hprep.add_argument("--manifest", type=Path, required=True)
+    hprep.add_argument("--renderer", required=True)
+    hprep.add_argument("--authorized-run", action="store_true")
+    hprep.add_argument("--enable-reader", action="store_true")
+    hprep.add_argument("--authorized-full-corpus", action="store_true")
+    hi = sub.add_parser("handoff-import", help="immutably import one response tied to a handoff task")
+    hi.add_argument("--run", required=True)
+    hi.add_argument("--chapter", required=True)
+    hi.add_argument("--batch")
+    hi.add_argument("--renderer")
+    hi.add_argument("--response", type=Path, required=True)
+    hn = sub.add_parser("handoff-next", aliases=["next-handoff-work"], help="report the next external handoff task")
+    hn.add_argument("--run", required=True)
+    hn.add_argument("--renderer")
+    hr = sub.add_parser("handoff-resume", help="reconcile captured handoff raw and report next work")
+    hr.add_argument("--run", required=True)
+    hr.add_argument("--renderer")
+    rec = sub.add_parser("reconcile", help="reconcile externally written handoff raw artifacts")
+    rec.add_argument("--run", required=True)
+    rec.add_argument("--renderer")
     led = sub.add_parser("ledger")
     led.add_argument("--json", action="store_true")
     drift = sub.add_parser("drift")
@@ -177,6 +229,19 @@ def main(argv: list[str] | None = None) -> int:
             output = sample_audit_records(ledger.get("current", {}).values(), count=args.count, seed=args.seed)
         elif args.command == "preflight":
             output = preflight(args)
+        elif args.command == "handoff-preflight":
+            output = handoff_preflight(args)
+        elif args.command == "handoff-prepare":
+            output = handoff_prepare(args)
+        elif args.command == "handoff-import":
+            runner = HandoffRunner(ROOT, renderer_identity=_handoff_renderer(args.run, args.renderer))
+            output = runner.import_response(args.run, args.chapter, args.response, batch_id=args.batch)
+        elif args.command in {"handoff-next", "next-handoff-work"}:
+            runner = HandoffRunner(ROOT, renderer_identity=_handoff_renderer(args.run, args.renderer))
+            output = runner.next_work(args.run)
+        elif args.command in {"handoff-resume", "reconcile"}:
+            runner = HandoffRunner(ROOT, renderer_identity=_handoff_renderer(args.run, args.renderer))
+            output = runner.reconcile_run(args.run)
         elif args.command == "drift":
             manifests = sorted((production_root(ROOT) / "runs").glob("*/manifest.json"))
             rows = []

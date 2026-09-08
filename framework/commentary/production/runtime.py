@@ -25,6 +25,59 @@ _REQUIRED_MANIFEST_CONTRACTS = {
     "dense_reader_version": "commentary-dense-reader-v0.1",
 }
 
+EXTERNAL_HANDOFF_MODE = "external_handoff"
+DIRECT_PROVIDER_MODE = "direct_provider"
+
+
+def handoff_generation_receipt(
+    renderer_identity: str,
+    *,
+    reader_enabled: bool,
+    contract_versions: dict[str, str] | None = None,
+) -> dict[str, Any]:
+    """Build the deterministic identity for a renderer outside ProductionRunner.
+
+    This deliberately contains no endpoint, credential, or API model field.
+    ``renderer_identity`` is an audit label for the external execution
+    environment, not a provider identifier.
+    """
+
+    label = str(renderer_identity or "").strip()
+    if not label:
+        raise _runtime_error(
+            "EXTERNAL_RENDERER_IDENTITY_REQUIRED",
+            "handoff mode requires a non-empty renderer identity",
+        )
+    contracts = dict(contract_versions or _REQUIRED_MANIFEST_CONTRACTS)
+    values = {
+        "generation_mode": EXTERNAL_HANDOFF_MODE,
+        "renderer_identity": label,
+        "commentary_prompt_version": contracts.get("commentary_prompt_version"),
+        "commentary_schema_version": contracts.get("commentary_schema_version"),
+        "synthesis_schema_version": contracts.get("synthesis_schema_version"),
+        "synthesis_compiler_version": contracts.get("synthesis_compiler_version"),
+        "gate_version": contracts.get("gate_version"),
+        "reader_enabled": bool(reader_enabled),
+        "runner_version": PRODUCTION_VERSION,
+    }
+    return {
+        "artifact_version": "commentary-production-handoff-generation-v1",
+        "generation_mode": EXTERNAL_HANDOFF_MODE,
+        "renderer_identity": label,
+        "parameters": values,
+        "generation_identity": sha256_json(values),
+    }
+
+
+def validate_handoff_renderer(renderer_identity: str) -> str:
+    label = str(renderer_identity or "").strip()
+    if not label:
+        raise _runtime_error(
+            "EXTERNAL_RENDERER_IDENTITY_REQUIRED",
+            "handoff mode requires --renderer LABEL",
+        )
+    return label
+
 
 def _runtime_error(code: str, message: str) -> ProductionError:
     return ProductionError(f"{code}: {message}")
@@ -185,6 +238,29 @@ def validate_manifest_for_preflight(manifest: dict[str, Any], *, canary_limit: i
         errors.append("manifest generation_config.provider_adapter must remain configured-at-run")
     if generation_config.get("model") != "configured-at-run":
         errors.append("manifest generation_config.model must remain configured-at-run")
+    return errors
+
+
+def validate_manifest_for_handoff(
+    manifest: dict[str, Any],
+    *,
+    canary_limit: int,
+    allow_full_corpus: bool = False,
+) -> list[str]:
+    """Validate a planned manifest without imposing API runtime placeholders."""
+
+    errors = validate_manifest_for_preflight(manifest, canary_limit=canary_limit)
+    errors = [
+        error for error in errors
+        if not error.startswith("manifest generation_config.provider_adapter must remain configured-at-run")
+        and not error.startswith("manifest generation_config.model must remain configured-at-run")
+        and not (allow_full_corpus and error == "preflight does not authorize a full corpus")
+    ]
+    generation_config = manifest.get("generation_config") or {}
+    if generation_config.get("provider_adapter") not in (None, "configured-at-run"):
+        errors.append("handoff manifest must not select an API provider adapter")
+    if generation_config.get("model") not in (None, "configured-at-run"):
+        errors.append("handoff manifest must not select an API model")
     return errors
 
 
