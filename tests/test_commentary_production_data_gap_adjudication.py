@@ -9,15 +9,37 @@ from pathlib import Path
 
 from framework.commentary.production.handoff import HandoffRunner
 from framework.commentary.production.ledger import rebuild_ledger
+from framework.commentary.production.manifests import build_manifest, save_manifest
 from framework.commentary.production.normalization import normalize_data_gap_fallback
-from framework.commentary.production.runner import _parse_response
+from framework.commentary.production.runner import ProductionRunner, _parse_response
 from framework.commentary.production.inputs import prepare_chapter
+from framework.commentary.production.models import PreparedChapter
+from framework.commentary.production.census import canonical_chapters
 from bhf_agent.chapter_commentary.models import GeneratedMetadata
 from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+from bhf_agent.config import AgentConfig
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 RUN_ID = "run-04109d5ff664ed80"
+
+
+def _true_data_gap_prepared() -> PreparedChapter:
+    prepared = prepare_chapter("2 Kings", 11)
+    ordinal = next(row["canonical_ordinal"] for row in canonical_chapters() if row["reference"] == "2 Kings 11")
+    return PreparedChapter(
+        row={**prepared.row, "canonical_ordinal": ordinal},
+        bundle=prepared.bundle,
+        synthesis=prepared.synthesis,
+        packet=prepared.packet,
+    )
+
+
+def _direct_config() -> AgentConfig:
+    return AgentConfig(
+        adapter="openai_compatible", base_url="http://127.0.0.1:1234/v1",
+        model="fixture-model", api_key="fixture-secret", commentary_max_tokens=4500,
+    )
 
 
 def test_true_data_gap_empty_sections_receive_only_application_fallback():
@@ -61,6 +83,79 @@ def test_data_gap_renderer_prose_and_nonempty_authorities_cannot_be_normalized()
     assert not synthesis_audit["applied"]
 
 
+def test_direct_provider_true_data_gap_bypasses_renderer_without_fabricating_raw(tmp_path):
+    prepared = _true_data_gap_prepared()
+    manifest_path = tmp_path / "manifest.json"
+    save_manifest(build_manifest([prepared], batch_size=1, run_id="run-direct-data-gap"), manifest_path)
+
+    class Renderer:
+        calls = 0
+
+        def render(self, chapter, prepared):
+            self.calls += 1
+            raise AssertionError("true DATA_GAP must not invoke a renderer")
+
+    renderer = Renderer()
+    result = ProductionRunner(
+        tmp_path, config=_direct_config(), renderer=renderer,
+        input_loader=lambda book, chapter: prepared,
+    ).run_manifest(manifest_path, authorized_run=True, enable_reader=True)
+    record = json.loads((tmp_path / ".bhf-data/bhf-commentary-production/v1/runs/run-direct-data-gap/batches/batch-001/state.json").read_text())["chapters"]["2 Kings 11"]
+    assert result["batches"][0]["chapters"][0]["state"] == "COMPLETE"
+    assert renderer.calls == 0
+    assert record["attempt"] == 0
+    assert record["production_disposition"] == "APPLICATION_GENERATED_FALLBACK"
+    assert record["raw_response_disposition"] == "NO_MODEL_RAW"
+    assert record["reader_status"] == "NOT_ELIGIBLE"
+    assert record["reader_activation"]["signal"] == "DATA_GAP_APPLICATION_FALLBACK"
+    raw_dir = tmp_path / ".bhf-data/bhf-commentary-production/v1/runs/run-direct-data-gap/batches/batch-001/raw"
+    assert not raw_dir.exists()
+
+
+def test_external_handoff_true_data_gap_is_completed_not_queued_for_rendering(tmp_path):
+    prepared = _true_data_gap_prepared()
+    manifest_path = tmp_path / "manifest.json"
+    save_manifest(build_manifest([prepared], batch_size=1, run_id="run-handoff-data-gap"), manifest_path)
+    runner = HandoffRunner(tmp_path, renderer_identity="verified-other-renderer", input_loader=lambda book, chapter: prepared)
+    prepared_result = runner.prepare(manifest_path, authorized_run=True, enable_reader=True)
+    next_work = runner.next_work("run-handoff-data-gap")
+    state = json.loads((tmp_path / ".bhf-data/bhf-commentary-production/v1/runs/run-handoff-data-gap/batches/batch-001/state.json").read_text())
+    record = state["chapters"]["2 Kings 11"]
+    assert prepared_result["task_count"] == 0
+    assert prepared_result["provider_calls"] == 0
+    assert next_work["status"] == "HANDOFF_COMPLETE"
+    assert next_work["next"] is None
+    assert record["production_disposition"] == "APPLICATION_GENERATED_FALLBACK"
+    assert record["raw_response_disposition"] == "NO_MODEL_RAW"
+    assert record["attempt"] == 0
+
+
+def test_existing_data_gap_reader_artifacts_remain_historical_and_controls_remain_current(tmp_path):
+    run_root = _copied_run(tmp_path)
+    state_path = run_root / "batches/batch-001/state.json"
+    before = json.loads(state_path.read_text())
+    raw_before = (run_root / "batches/batch-001/raw/attempt-001/2_kings_011.json").read_bytes()
+    reader_before = run_root / "batches/batch-001/reader/attempt-001/2_kings_011.json"
+    assert reader_before.is_file()
+
+    result = HandoffRunner(tmp_path, renderer_identity="codex-gpt-5").reconcile_data_gap_reader_state(RUN_ID)
+    after = json.loads(state_path.read_text())
+    for reference in ("2 Kings 11", "Psalms 30", "Psalms 105", "Ezekiel 12"):
+        record = after["chapters"][reference]
+        assert record["attempt"] == before["chapters"][reference]["attempt"] == 1
+        assert record["reader_status"] == "NOT_ELIGIBLE"
+        assert record["reader_activation"]["signal"] == "DATA_GAP_APPLICATION_FALLBACK"
+        assert record["historical_reader_artifacts"][0]["status"] == "HISTORICAL_NON_CURRENT"
+        assert "reader_path" not in record
+        assert (tmp_path / record["reader_adjudication_receipt_path"]).is_file()
+    assert set(result["references"]) == {"2 Kings 11", "Psalms 30", "Psalms 105", "Ezekiel 12"}
+    assert reader_before.is_file()
+    assert (run_root / "batches/batch-001/raw/attempt-001/2_kings_011.json").read_bytes() == raw_before
+    for reference in ("Nehemiah 7", "1 Corinthians 14"):
+        assert after["chapters"][reference]["reader_status"] == "GENERATED"
+        assert after["chapters"][reference]["reader_activation"] == before["chapters"][reference]["reader_activation"]
+
+
 def _copied_run(tmp_path: Path) -> Path:
     source = REPO_ROOT / ".bhf-data/bhf-commentary-production/v1/runs" / RUN_ID
     target = tmp_path / ".bhf-data/bhf-commentary-production/v1/runs" / RUN_ID
@@ -76,7 +171,7 @@ def test_reprocess_existing_raw_preserves_raw_and_original_quarantine_history(tm
     copied_state = json.loads(state_path.read_text())
     copied_record = copied_state["chapters"]["2 Kings 11"]
     copied_record["state"] = "QUARANTINED"
-    for key in ("accepted_path", "gate_path", "gate_status", "reader_activation", "reader_path", "reader_status", "adjudication_receipt_path", "application_normalization", "derived_validation_path", "historical_quarantine_path", "historical_quarantines"):
+    for key in ("accepted_path", "gate_path", "gate_status", "reader_activation", "reader_path", "reader_status", "adjudication_receipt_path", "application_normalization", "derived_validation_path", "historical_quarantine_path", "historical_quarantines", "production_disposition", "raw_response_disposition", "historical_reader_artifacts", "reader_adjudication_receipt_path"):
         copied_record.pop(key, None)
     state_path.write_text(json.dumps(copied_state), encoding="utf-8")
     raw_path = run_root / "batches/batch-001/raw/attempt-001/2_kings_011.json"

@@ -16,17 +16,18 @@ from bhf_agent.chapter_commentary.dense_reader import (
     validate_reader_artifact,
 )
 from bhf_agent.chapter_commentary.generator import CommentaryGenerator
-from bhf_agent.chapter_commentary.models import GeneratedMetadata
+from bhf_agent.chapter_commentary.models import GeneratedMetadata, data_gap_fallback_payload
 from bhf_agent.chapter_commentary.richness import audit_chapter
 from bhf_agent.chapter_commentary.richness_clusters import assess_gate_v2, score_synthesis_richness
 from bhf_agent.config import AgentConfig
 
 from .inputs import prepare_chapter
 from .ledger import rebuild_ledger
-from .normalization import normalize_data_gap_fallback
+from .normalization import is_true_data_gap, normalize_data_gap_fallback
 from .manifests import batch_manifest, load_manifest, save_batch_manifests
 from .models import (
     ACCEPTED,
+    APPLICATION_FALLBACK,
     BLOCKED,
     COMPLETE,
     DEFAULT_CANARY_LIMIT,
@@ -288,6 +289,13 @@ class ProductionRunner:
             prepared = PreparedChapter(row={**prepared.row, "canonical_ordinal": chapter["canonical_ordinal"]}, bundle=prepared.bundle, synthesis=prepared.synthesis, packet={**prepared.packet, "run_id": manifest["run_id"], "batch_id": batch_id})
             packet_path = self.repo_root / ".bhf-data" / "bhf-commentary-production" / "v1" / chapter["expected_artifacts"]["packet"]
             write_json(packet_path, prepared.packet, immutable=True)
+            if self._is_true_data_gap(prepared):
+                outcomes.append(
+                    self._complete_application_fallback(
+                        manifest, batch, chapter, prepared, record, state, enable_reader
+                    )
+                )
+                continue
             raw_path = self.repo_root / ".bhf-data" / "bhf-commentary-production" / "v1" / chapter["expected_artifacts"]["raw"]
             if raw_path.is_file() and record.get("state") == RAW_CAPTURED:
                 outcome = self._import_and_evaluate(manifest, batch, chapter, prepared, record, state, enable_reader)
@@ -377,6 +385,85 @@ class ProductionRunner:
         ).to_dict()
         payload["evidence_availability"] = prepared.synthesis.evidence_availability
         payload["status"] = "pending"
+        record["raw_response_disposition"] = "MODEL_GENERATED_RAW"
+        return self._evaluate_payload(
+            manifest, batch, chapter, prepared, record, state, enable_reader,
+            payload=payload, normalization=normalization,
+        )
+
+    def _is_true_data_gap(self, prepared: PreparedChapter) -> bool:
+        if prepared.synthesis is None or prepared.bundle is None:
+            # The deterministic disposition is authorized only by the loaded
+            # evidence and synthesis objects, never manifest claims alone.
+            return False
+        return is_true_data_gap(
+            expected_evidence_availability=prepared.synthesis.evidence_availability,
+            evidence_item_count=len(prepared.bundle.evidence_items),
+            synthesis_unit_count=len(prepared.synthesis.synthesis_units),
+        )
+
+    def _complete_application_fallback(
+        self,
+        manifest: dict[str, Any],
+        batch: dict[str, Any],
+        chapter: dict[str, Any],
+        prepared: PreparedChapter,
+        record: dict[str, Any],
+        state: dict[str, Any],
+        enable_reader: bool | None,
+    ) -> dict[str, Any]:
+        """Complete a source-empty DATA_GAP without fabricating model raw."""
+
+        reference = chapter["reference"]
+        self._set_record(state, reference, APPLICATION_FALLBACK)
+        record["production_disposition"] = "APPLICATION_GENERATED_FALLBACK"
+        record["raw_response_disposition"] = "NO_MODEL_RAW"
+        record["application_normalization"] = {
+            "normalization_version": "commentary-production-data-gap-normalization-v1",
+            "kind": "APPLICATION_OWNED_DATA_GAP_FALLBACK",
+            "applied": True,
+            "source": "DETERMINISTIC_PRE_RENDER_BYPASS",
+            "authoritative_conditions": {
+                "expected_evidence_availability": prepared.synthesis.evidence_availability,
+                "evidence_item_count": len(prepared.bundle.evidence_items),
+                "synthesis_unit_count": len(prepared.synthesis.synthesis_units),
+            },
+        }
+        payload = data_gap_fallback_payload(reference, chapter["book"], int(chapter["chapter"]))
+        payload["generated_metadata"] = GeneratedMetadata(
+            evidence_hash=prepared.bundle.evidence_hash,
+            evidence_bundle_version=prepared.bundle.version,
+            commentary_schema_version=chapter["input_identity"]["commentary_schema_version"],
+            commentary_prompt_version=chapter["input_identity"]["prompt_version"],
+            model="application-owned-data-gap-fallback",
+            generated_timestamp=None,
+            synthesis_hash=prepared.synthesis.synthesis_hash,
+            synthesis_schema_version=prepared.synthesis.synthesis_schema_version,
+            synthesis_compiler_version=prepared.synthesis.synthesis_compiler_version,
+            renderer_label="application-owned-data-gap-fallback",
+        ).to_dict()
+        payload["evidence_availability"] = prepared.synthesis.evidence_availability
+        return self._evaluate_payload(
+            manifest, batch, chapter, prepared, record, state, enable_reader,
+            payload=payload, normalization=record["application_normalization"],
+        )
+
+    def _evaluate_payload(
+        self,
+        manifest: dict[str, Any],
+        batch: dict[str, Any],
+        chapter: dict[str, Any],
+        prepared: PreparedChapter,
+        record: dict[str, Any],
+        state: dict[str, Any],
+        enable_reader: bool | None,
+        *,
+        payload: dict[str, Any],
+        normalization: dict[str, Any],
+    ) -> dict[str, Any]:
+        reference = chapter["reference"]
+        self._set_record(state, reference, VALIDATING)
+        self._save_state(state)
         from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
         validation = validate_chapter_commentary(payload, prepared.bundle, expected_evidence_hash=prepared.bundle.evidence_hash, expected_prompt_version=chapter["input_identity"]["prompt_version"], expected_reference=reference, expected_book=chapter["book"], expected_chapter=int(chapter["chapter"]), synthesis=prepared.synthesis, expected_synthesis_hash=prepared.synthesis.synthesis_hash)
         derived_path = self._write_derived_validation_receipt(
@@ -417,7 +504,18 @@ class ProductionRunner:
             return {"reference": reference, "state": QUARANTINED, "gate_status": assessment.outcome}
         gate_state = GATE_WARNING if assessment.outcome == "PASS_WITH_WARNING" else GATE_PASS
         self._set_record(state, reference, gate_state)
-        reader_decision = _activation_decision(source_words=audit["commentary_prose_word_count"], source_block_count=audit["commentary_block_count"], source_dump_severity=assessment.dump_severity, source_quality_metrics={"weighted_coverage": score.weighted_idea_coverage, "synthesis_utilization": audit["evidence_consumption_ratio"]}, force_consolidation=False)
+        if (
+            record.get("production_disposition") == "APPLICATION_GENERATED_FALLBACK"
+            and self._is_true_data_gap(prepared)
+            and accepted_payload.get("data_gap_fallback") is True
+        ):
+            reader_decision = {
+                "active": False,
+                "signal": "DATA_GAP_APPLICATION_FALLBACK",
+                "signals": ["data_gap_application_fallback"],
+            }
+        else:
+            reader_decision = _activation_decision(source_words=audit["commentary_prose_word_count"], source_block_count=audit["commentary_block_count"], source_dump_severity=assessment.dump_severity, source_quality_metrics={"weighted_coverage": score.weighted_idea_coverage, "synthesis_utilization": audit["evidence_consumption_ratio"]}, force_consolidation=False)
         record["reader_activation"] = reader_decision
         if not reader_decision["active"]:
             record["reader_status"] = "NOT_ELIGIBLE"

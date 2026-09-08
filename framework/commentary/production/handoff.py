@@ -202,6 +202,24 @@ class HandoffRunner(ProductionRunner):
         items: list[dict[str, Any]] = []
         for chapter in manifest["chapters"]:
             prepared = self._prepare_locked(manifest, chapter)
+            state = self._load_state(manifest, chapter["batch_id"])
+            state["generation_mode"] = EXTERNAL_HANDOFF_MODE
+            state["renderer_identity"] = self.renderer_identity
+            state["generation_identity"] = receipt["generation_identity"]
+            record = state["chapters"][chapter["reference"]]
+            if self._is_true_data_gap(prepared) and record.get("state") not in TERMINAL_STATES:
+                batch = batch_manifest(manifest, chapter["batch_id"])
+                self._complete_application_fallback(
+                    manifest, batch, chapter, prepared, record, state, enable_reader
+                )
+                record["handoff_status"] = "APPLICATION_FALLBACK_COMPLETE"
+                self._save_state(state)
+            if record.get("state") in TERMINAL_STATES:
+                # A true source-empty DATA_GAP has no renderer work and no
+                # raw response.  It is completed through the same validator
+                # and Gate path as a rendered chapter, but never enters the
+                # handoff queue.
+                continue
             packet_path = _rooted(self.repo_root, chapter["expected_artifacts"]["packet"])
             packet = read_json(packet_path)
             prompt_identity = {
@@ -230,12 +248,7 @@ class HandoffRunner(ProductionRunner):
                 "status": "READY",
             }
             items.append(item)
-            state = self._load_state(manifest, chapter["batch_id"])
-            state["generation_mode"] = EXTERNAL_HANDOFF_MODE
-            state["renderer_identity"] = self.renderer_identity
-            state["generation_identity"] = receipt["generation_identity"]
-            record = state["chapters"][chapter["reference"]]
-            if record.get("state") not in TERMINAL_STATES and not record.get("raw_path"):
+            if not record.get("raw_path"):
                 record["handoff_status"] = "AWAITING_GENERATION"
             self._save_state(state)
 
@@ -357,6 +370,19 @@ class HandoffRunner(ProductionRunner):
             for chapter in batch["chapters"]:
                 reference = chapter["reference"]
                 record = state["chapters"][reference]
+                prepared = self._prepare_locked(manifest, chapter)
+                if self._is_true_data_gap(prepared):
+                    if record.get("state") not in TERMINAL_STATES:
+                        outcome = self._complete_application_fallback(
+                            manifest, batch, chapter, prepared, record, state,
+                            authorization.get("generation", {}).get("reader_enabled", False),
+                        )
+                        record["handoff_status"] = "APPLICATION_FALLBACK_COMPLETE"
+                        outcomes.append(outcome)
+                    self._reconcile_data_gap_reader_record(
+                        manifest, batch, chapter, prepared, record, state
+                    )
+                    continue
                 if record.get("state") in TERMINAL_STATES:
                     outcomes.append({"reference": reference, "state": record["state"], "skipped": True})
                     continue
@@ -365,12 +391,86 @@ class HandoffRunner(ProductionRunner):
                     continue
                 item = self._find_item(handoff, reference)
                 self._verify_response_envelope(raw_path.read_bytes(), item, batch_id=batch_info["batch_id"])
-                prepared = self._prepare_locked(manifest, chapter)
                 outcome = self._import_and_evaluate(manifest, batch, chapter, prepared, record, state, authorization.get("generation", {}).get("reader_enabled", False))
                 outcomes.append(outcome)
             self._finish_batch_state(state)
         ledger = rebuild_ledger(self.repo_root)
         return {"status": "RECONCILED", "run_id": run_id, "generation_mode": EXTERNAL_HANDOFF_MODE, "renderer_identity": self.renderer_identity, "provider_calls": 0, "chapters": outcomes, "ledger_counts": ledger["counts"]}
+
+    def _reconcile_data_gap_reader_record(
+        self,
+        manifest: dict[str, Any],
+        batch: dict[str, Any],
+        chapter: dict[str, Any],
+        prepared: PreparedChapter,
+        record: dict[str, Any],
+        state: dict[str, Any],
+    ) -> bool:
+        """Retire an obsolete Reader sidecar without deleting audit history."""
+
+        if not self._is_true_data_gap(prepared):
+            return False
+        accepted_path = self.repo_root / str(record.get("accepted_path", ""))
+        if not accepted_path.is_file():
+            return False
+        accepted = read_json(accepted_path)
+        if accepted.get("data_gap_fallback") is not True:
+            return False
+        reader_path = str(record.get("reader_path") or "")
+        if reader_path:
+            history = record.setdefault("historical_reader_artifacts", [])
+            if not any(item.get("path") == reader_path for item in history):
+                history.append({
+                    "path": reader_path,
+                    "status": "HISTORICAL_NON_CURRENT",
+                    "reason": "DATA_GAP_APPLICATION_FALLBACK",
+                })
+            record.pop("reader_path", None)
+        record["production_disposition"] = "APPLICATION_GENERATED_FALLBACK"
+        record["raw_response_disposition"] = "MODEL_GENERATED_RAW" if record.get("raw_path") else "NO_MODEL_RAW"
+        record["reader_activation"] = {
+            "active": False,
+            "signal": "DATA_GAP_APPLICATION_FALLBACK",
+            "signals": ["data_gap_application_fallback"],
+        }
+        record["reader_status"] = "NOT_ELIGIBLE"
+        receipt_path = (
+            production_root(self.repo_root) / "runs" / manifest["run_id"] / "batches" / batch["batch_id"]
+            / "reader-adjudications" / f"attempt-{int(record.get('attempt', 0)):03d}"
+            / f"{slug(chapter['book'], chapter['chapter'])}.json"
+        )
+        receipt = {
+            "artifact_version": "commentary-production-data-gap-reader-adjudication-v1",
+            "reference": chapter["reference"],
+            "attempt": record.get("attempt", 0),
+            "reason": "DATA_GAP_APPLICATION_FALLBACK",
+            "reader_status": "NOT_ELIGIBLE",
+            "historical_reader_artifacts": record.get("historical_reader_artifacts", []),
+            "raw_response_disposition": record["raw_response_disposition"],
+            "production_disposition": record["production_disposition"],
+        }
+        write_json(receipt_path, receipt, immutable=True)
+        record["reader_adjudication_receipt_path"] = _relative(self.repo_root, receipt_path)
+        self._save_state(state)
+        return True
+
+    def reconcile_data_gap_reader_state(self, run_id: str) -> dict[str, Any]:
+        """Explicitly apply the no-Reader derived-state correction to a run."""
+
+        manifest, _, _ = self._load_handoff(run_id)
+        corrected: list[str] = []
+        for batch_info in manifest["batches"]:
+            batch = batch_manifest(manifest, batch_info["batch_id"])
+            state = self._load_state(manifest, batch_info["batch_id"])
+            for chapter in batch["chapters"]:
+                prepared = self._prepare_locked(manifest, chapter)
+                if self._reconcile_data_gap_reader_record(
+                    manifest, batch, chapter, prepared,
+                    state["chapters"][chapter["reference"]], state,
+                ):
+                    corrected.append(chapter["reference"])
+        ledger = rebuild_ledger(self.repo_root)
+        return {"status": "DATA_GAP_READER_RECONCILED", "run_id": run_id, "references": corrected, "provider_calls": 0, "ledger_counts": ledger["counts"]}
 
     def reprocess_derived(self, run_id: str, references: list[str]) -> dict[str, Any]:
         """Re-evaluate explicit terminal DATA_GAP cases from immutable raw.

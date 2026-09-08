@@ -16,6 +16,27 @@ from bhf_agent.chapter_commentary.models import data_gap_fallback_payload
 DATA_GAP_NORMALIZATION_VERSION = "commentary-production-data-gap-normalization-v1"
 
 
+def is_true_data_gap(
+    *,
+    expected_evidence_availability: str,
+    evidence_item_count: int,
+    synthesis_unit_count: int,
+) -> bool:
+    """Return whether Commentary has no source material to render.
+
+    This is deliberately narrower than availability alone.  A chapter marked
+    ``DATA_GAP`` still belongs on the renderer path if its frozen packet has
+    either evidence or synthesis material, because that contradicts the
+    deterministic fallback contract and needs explicit review.
+    """
+
+    return (
+        expected_evidence_availability == "DATA_GAP"
+        and evidence_item_count == 0
+        and synthesis_unit_count == 0
+    )
+
+
 def normalize_data_gap_fallback(
     payload: dict[str, Any],
     *,
@@ -33,10 +54,10 @@ def normalize_data_gap_fallback(
 
     normalized = dict(payload)
     renderer_sections = payload.get("sections")
-    true_data_gap = (
-        expected_evidence_availability == "DATA_GAP"
-        and evidence_item_count == 0
-        and synthesis_unit_count == 0
+    true_data_gap = is_true_data_gap(
+        expected_evidence_availability=expected_evidence_availability,
+        evidence_item_count=evidence_item_count,
+        synthesis_unit_count=synthesis_unit_count,
     )
     empty_renderer_sections = renderer_sections == []
     applied = true_data_gap and empty_renderer_sections
@@ -60,4 +81,3 @@ def normalize_data_gap_fallback(
         "raw_renderer_data_gap_fallback": payload.get("data_gap_fallback"),
     }
     return normalized, audit
-
