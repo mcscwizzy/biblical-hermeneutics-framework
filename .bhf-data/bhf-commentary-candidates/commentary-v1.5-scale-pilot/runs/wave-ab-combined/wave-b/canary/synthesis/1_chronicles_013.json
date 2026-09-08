@@ -1,0 +1,88 @@
+{
+  "reference": "1 Chronicles 13",
+  "book": "1 Chronicles",
+  "chapter": 13,
+  "evidence_hash": "fc7aad58c2f83ccbce9743c3502d1c184e6d84cb13cd5296790a5b20feb687e3",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "f5a8c1a3836123009eb2c0e53e65d85855ba1d6c290a06bbcc23d8da2d50689e",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_historical_context_c8175097e5ed",
+      "kind": "historical_context",
+      "facts": [
+        "After the failed first procession, David assigns priests and Levites to carry the ark according to prescribed order and establishes continuing worship before it."
+      ],
+      "verse_refs": [
+        "1 Chronicles 13:1-14"
+      ],
+      "evidence_ids": [
+        "first-chronicles-ark-ordered"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Chronicles 13:1-14"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "first-chronicles-ark-ordered"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "historical_context": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

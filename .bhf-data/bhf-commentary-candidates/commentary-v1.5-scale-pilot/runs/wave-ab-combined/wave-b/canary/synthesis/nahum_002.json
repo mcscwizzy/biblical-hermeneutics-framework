@@ -1,0 +1,342 @@
+{
+  "reference": "Nahum 2",
+  "book": "Nahum",
+  "chapter": 2,
+  "evidence_hash": "be158516823da1ac69288b0ccd0c199449af5c56c04eeda55faa5f8bb786ec32",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "84a93ff90459fee0d35674eb893b2e2ad15d338c78c1d8608a880b9460e684ca",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_6b1d0e0fa455",
+      "kind": "cultural_context",
+      "facts": [
+        "Babylonian Chronicle BM 21901 records Babylonian and Median campaigns culminating in Nineveh's capture and destruction in 612 BCE."
+      ],
+      "verse_refs": [
+        "Nahum 2:1-13"
+      ],
+      "evidence_ids": [
+        "nahum-chronicle"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_8e9101bebf0c",
+      "kind": "cultural_context",
+      "facts": [
+        "Assyria was not only a place but an imperial network of capitals, provinces, roads, governors, armies, scribes, tribute, resettlement, temples, and royal media. Inscriptions and reliefs voice elite imperial ideology rather than every inhabitant's experience.",
+        "Biblical texts can portray Assyria as a historical instrument of judgment, an arrogant power accountable to YHWH, an object of lament or oracle, and in Isaiah 19 even a participant in an eschatological blessing."
+      ],
+      "verse_refs": [
+        "Nahum 2:1-13"
+      ],
+      "evidence_ids": [
+        "assyria:ancient_near_east_context:0",
+        "assyria:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "assyria"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_58f17417cc60",
+      "kind": "historical_context",
+      "facts": [
+        "Assyrian inscriptions and palace reliefs illuminate imperial ideology, conquest, deportation, tribute, violence, lion symbolism, and Thebes, but are royal representations rather than neutral reports."
+      ],
+      "verse_refs": [
+        "Nahum 2:1-13"
+      ],
+      "evidence_ids": [
+        "nahum-assyrian-sources"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_9a88bd8f0ab8",
+      "kind": "historical_context",
+      "facts": [
+        "Neo-Assyrian expansion under Tiglath-pileser III, Shalmaneser V, Sargon II, and Sennacherib transformed Israel and Judah through tribute, annexation, deportation, provincial rule, siege, and destruction. Nineveh fell in 612 BCE and the last Assyrian resistance ended soon afterward.",
+        "Northern Mesopotamia and the Neo-Assyrian imperial system, especially its Levantine expansion from the ninth to seventh centuries BCE."
+      ],
+      "verse_refs": [
+        "Nahum 2:1-13"
+      ],
+      "evidence_ids": [
+        "assyria:historical_context:0",
+        "assyria:historical_setting:0"
+      ],
+      "entity_ids": [
+        "assyria"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_c92dbcddc2ae",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Nahum 2:11-13 turns Assyrian royal lion imagery into a taunt over an emptied den and ends with YHWH's declaration against Nineveh.",
+        "Pesher Nahum (4Q169) cites and reapplies Nahum to Second Temple political and sectarian figures through pesher interpretation.",
+        "Nahum 2:1 addresses Nineveh as a scatterer or shatterer advances, probably the forces attacking the city, although precise identification is disputed.",
+        "Nahum 2:1-10 uses rapid, sensory battle poetry to portray preparation, chariots, gates, palace collapse, flight, and plunder.",
+        "Nineveh's river gates, palace, and pool imagery can be read against its hydraulic setting, but the text does not prove that a literal flood caused the city's breach."
+      ],
+      "verse_refs": [
+        "Nahum 2:1",
+        "Nahum 2:1-10",
+        "Nahum 2:11-13",
+        "Nahum 2:6-8"
+      ],
+      "evidence_ids": [
+        "nahum-lions",
+        "nahum-pesher",
+        "nahum-scatterer",
+        "nahum-siege-poem",
+        "nahum-water"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1",
+        "Nahum 2:1-10",
+        "Nahum 2:11-13",
+        "Nahum 2:6-8"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography",
+          "politics"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8bc5153b70b8",
+      "kind": "why_it_matters",
+      "facts": [
+        "Nahum 2:11-13 turns Assyrian royal lion imagery into a taunt over an emptied den and ends with YHWH's declaration against Nineveh.",
+        "Pesher Nahum (4Q169) cites and reapplies Nahum to Second Temple political and sectarian figures through pesher interpretation.",
+        "Nahum 2:1 addresses Nineveh as a scatterer or shatterer advances, probably the forces attacking the city, although precise identification is disputed.",
+        "Nahum 2:1-10 uses rapid, sensory battle poetry to portray preparation, chariots, gates, palace collapse, flight, and plunder.",
+        "Nineveh's river gates, palace, and pool imagery can be read against its hydraulic setting, but the text does not prove that a literal flood caused the city's breach."
+      ],
+      "verse_refs": [
+        "Nahum 2:1",
+        "Nahum 2:1-10",
+        "Nahum 2:11-13",
+        "Nahum 2:6-8"
+      ],
+      "evidence_ids": [
+        "nahum-lions",
+        "nahum-pesher",
+        "nahum-scatterer",
+        "nahum-siege-poem",
+        "nahum-water"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_c92dbcddc2ae"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1",
+        "Nahum 2:1-10",
+        "Nahum 2:11-13",
+        "Nahum 2:6-8"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ad58e2a61f36",
+      "kind": "why_it_matters",
+      "facts": [
+        "Assyria was not only a place but an imperial network of capitals, provinces, roads, governors, armies, scribes, tribute, resettlement, temples, and royal media. Inscriptions and reliefs voice elite imperial ideology rather than every inhabitant's experience.",
+        "Biblical texts can portray Assyria as a historical instrument of judgment, an arrogant power accountable to YHWH, an object of lament or oracle, and in Isaiah 19 even a participant in an eschatological blessing."
+      ],
+      "verse_refs": [
+        "Nahum 2:1-13"
+      ],
+      "evidence_ids": [
+        "assyria:ancient_near_east_context:0",
+        "assyria:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "assyria"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_8e9101bebf0c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_fdec354f689a",
+      "kind": "why_it_matters",
+      "facts": [
+        "Neo-Assyrian expansion under Tiglath-pileser III, Shalmaneser V, Sargon II, and Sennacherib transformed Israel and Judah through tribute, annexation, deportation, provincial rule, siege, and destruction. Nineveh fell in 612 BCE and the last Assyrian resistance ended soon afterward.",
+        "Northern Mesopotamia and the Neo-Assyrian imperial system, especially its Levantine expansion from the ninth to seventh centuries BCE."
+      ],
+      "verse_refs": [
+        "Nahum 2:1-13"
+      ],
+      "evidence_ids": [
+        "assyria:historical_context:0",
+        "assyria:historical_setting:0"
+      ],
+      "entity_ids": [
+        "assyria"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_9a88bd8f0ab8"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 11,
+    "used_evidence_ids": [
+      "assyria:ancient_near_east_context:0",
+      "assyria:hebraic_worldview:0",
+      "assyria:historical_context:0",
+      "assyria:historical_setting:0",
+      "nahum-assyrian-sources",
+      "nahum-chronicle",
+      "nahum-lions",
+      "nahum-pesher",
+      "nahum-scatterer",
+      "nahum-siege-poem",
+      "nahum-water"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 6,
+      "geography": 1,
+      "history": 2,
+      "politics": 2
+    },
+    "category_diversity": 4,
+    "specific_evidence_count": 11,
+    "entity_counts": {
+      "people": 0,
+      "places": 1,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 2,
+      "historical_context": 2,
+      "interpretive_questions": 1,
+      "why_it_matters": 3
+    },
+    "relationship_unit_count": 3
+  }
+}

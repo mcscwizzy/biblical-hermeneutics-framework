@@ -1,0 +1,38 @@
+{
+  "reference": "Psalms 9",
+  "packet_id": "commentary-v1.5-packet:25f53c2c30847ddc37d7ee688387fa5369169fa6594a2777380b3c6f9b9e1fb2",
+  "prompt_version": "1.5",
+  "evidence_hash": "57bab9eabc6969680020bd1dda03bf44c0ab861ce3623f48e43bdee52b4b995e",
+  "synthesis_hash": "2f41f1d8b19a52142424d5bac86f2b26bc99424b3ee800dbf7b4bf2d410d27f6",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Psalms 9",
+    "book": "Psalms",
+    "chapter": 9,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "The surrounding passage context adds this comparison: Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count.",
+            "verse_refs": [
+              "Psalms 10:1-18"
+            ],
+            "evidence_ids": [
+              "psalms-numbering-witnesses"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ca98a7c9ae5d"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}
