@@ -1,0 +1,79 @@
+{
+  "reference": "Joshua 17",
+  "book": "Joshua",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "An allotment that is not yet complete",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Joshua 17 records territorial allotment while also acknowledging that possession is incomplete. The broad language of victory must therefore be read with the chapter\u2019s explicit notice that some land remains to be taken.",
+          "verse_refs": [
+            "Joshua 17:12-13"
+          ],
+          "evidence_ids": [
+            "joshua:interpretive_note:1"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_b71d469d5dc4"
+          ],
+          "confidence": "low",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "From campaigns to covenant renewal",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter stands in Joshua\u2019s movement from succession and entry, through campaigns and land allotment, toward tribal unity, farewell, and covenant renewal.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "joshua-literary-movement"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_65097763ab09"
+          ],
+          "confidence": "low",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_3",
+          "text": "Joshua\u2019s larger setting is the transition from entry and campaigns to allotment. The supplied context does not make David, Solomon, the monarchy, exile, Jerusalem, or Samaria the setting of this chapter.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_b4ad6a16f643"
+          ],
+          "confidence": "low",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dfa8455ef1af4a8eccd0412659c3aa60d3233aa3b10c5d4ea0b73219cb79aca5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.4",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T00:00:00+00:00",
+    "synthesis_hash": "5d112a976fbf587254fdd207198483ad3347dba0cc0af36a32df33618c520d9d",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-07T00:00:00+00:00",
+    "candidate_id": "commentary-v1.2-candidate:6b48f7486d16bf7014b0836e04340066f15bed2166f1a0bf1118090b78fca4bf"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

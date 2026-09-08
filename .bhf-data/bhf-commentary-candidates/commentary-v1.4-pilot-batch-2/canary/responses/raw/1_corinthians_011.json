@@ -1,0 +1,155 @@
+{
+  "reference": "1 Corinthians 11",
+  "packet_id": "commentary-v1.4-packet:28f707418ecdccf44af2985bdbbe21abd0fe5373ce5a8b64637d0ac62c512da0",
+  "prompt_version": "1.4",
+  "evidence_hash": "b8ba0c52c4be838fae51c6b77de4037047558002dc0fc489cfbbe464b64098ed",
+  "synthesis_hash": "4418b57de53e90c7bd9d6a1dc62f9cd76bb5538212c0367e7c24a148d483bf86",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "1 Corinthians 11",
+    "book": "1 Corinthians",
+    "chapter": 11,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "A meal judged by communal treatment",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The meal conflict is not only about correct words or ritual form. Paul describes some people eating their own supper while others remain hungry or are humiliated, then places the received tradition about bread, cup, remembrance, and the new covenant inside that correction.",
+            "verse_refs": [
+              "1 Corinthians 11:17-34"
+            ],
+            "evidence_ids": [
+              "corinth-own-meal-hunger-intoxication",
+              "corinth-own-meal-hunger-intoxication:passage-relevance",
+              "corinth-received-supper-tradition",
+              "corinth-received-supper-tradition:passage-relevance",
+              "corinth-sickness-death-causation-limit",
+              "lords-supper:ancient_near_east_context:0",
+              "lords-supper:hebraic_worldview:0",
+              "lords-supper:historical_context:0",
+              "lords-supper:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_6b3b1633b2d2",
+              "syn_historical_context_affe38c27447",
+              "syn_interpretive_questions_9f388511fe08"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Gathered meals and social difference",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Jewish festival traditions and Greco-Roman communal dining form the immediate setting. Association and banquet comparisons can clarify how arrival time, food quantity, honor, leadership, and humiliation shaped a meal, but they do not prove a particular dining room or erase the chapter’s distinctive claims.",
+            "verse_refs": [
+              "1 Corinthians 11:17-34"
+            ],
+            "evidence_ids": [
+              "association-meal-status",
+              "association-meal-status:passage-relevance",
+              "household-slavery-status",
+              "household-slavery-status:passage-relevance",
+              "lords-supper:ancient_near_east_context:0",
+              "lords-supper:hebraic_worldview:0",
+              "lords-supper:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_6b3b1633b2d2",
+              "syn_interpretive_questions_3ab811b3e83f"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Head, coverings, and mutuality",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The chapter assumes that women pray and prophesy while it discusses head presentation, hair, shame, glory, nature, and custom. The force of kephale remains disputed, and the argument also states that woman and man are not independent in the Lord. These features caution against turning one uncertain reconstruction into a total speech ban or a universal dress mandate.",
+            "verse_refs": [
+              "1 Corinthians 11:2-16"
+            ],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:44",
+              "1-corinthians:interpretive_note:45",
+              "1-corinthians:interpretive_note:46",
+              "1-corinthians:interpretive_note:47",
+              "1-corinthians:interpretive_note:48",
+              "1-corinthians:interpretive_note:63",
+              "1cor-coverings",
+              "corinthian-mutuality-in-lord",
+              "corinthian-mutuality-in-lord:passage-relevance",
+              "corinthian-women-pray-prophesy",
+              "corinthian-women-pray-prophesy:passage-relevance",
+              "role-categories-not-synonyms"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4f80fbed5826",
+              "syn_interpretive_questions_f62bab4f610a",
+              "syn_interpretive_questions_d4a51d350042"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Discernment includes the assembly",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The chapter’s significance is that remembrance of the Lord’s supper cannot be detached from material regard for other participants. “Unworthy” describes the manner of eating and drinking in this context; it should not become a category used to shame poor, disabled, sick, doubting, or hungry people.",
+            "verse_refs": [
+              "1 Corinthians 11:17-34"
+            ],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:49",
+              "1-corinthians:interpretive_note:50",
+              "1-corinthians:interpretive_note:51",
+              "1-corinthians:interpretive_note:52",
+              "1-corinthians:interpretive_note:53"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_0506bee32d3c"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Different meals require different readings",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The surrounding chapters distinguish household practice, cultic dining, market food, private hospitality, assembly supper, and table withdrawal. A rule drawn from one case should not silently flatten all the others.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "pauline-distinct-meal-settings",
+              "pauline-distinct-meal-settings:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_21ee906fedfe"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

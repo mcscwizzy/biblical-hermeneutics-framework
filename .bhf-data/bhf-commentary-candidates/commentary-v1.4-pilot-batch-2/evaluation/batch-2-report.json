@@ -1,0 +1,1272 @@
+{
+  "artifact_version": "commentary-v1.4-pilot-batch-2-evaluation-v1",
+  "batch": "2",
+  "prompt_version": "1.4",
+  "schema_version": "1.2",
+  "gate_version": "commentary-richness-gate-v2.1",
+  "gate_state": "CANDIDATE_ONLY",
+  "renderer_identity": {
+    "renderer_label": "GPT-5 Codex",
+    "reasoning_effort": "NOT_EXPOSED"
+  },
+  "exact_chapters": [
+    "Leviticus 2",
+    "Deuteronomy 24",
+    "Joshua 17",
+    "1 Kings 7",
+    "Job 3",
+    "Isaiah 24",
+    "Amos 5",
+    "Mark 7",
+    "1 Corinthians 11",
+    "Hebrews 4"
+  ],
+  "responses_generated": 10,
+  "accepted": 10,
+  "rejected": 0,
+  "rejection_codes": {},
+  "outcome_distribution": {
+    "PASS": 6,
+    "QUALITY_FAIL": 4
+  },
+  "safety_failures": [],
+  "chapters": [
+    {
+      "reference": "Leviticus 2",
+      "literary_category": "Pentateuch",
+      "evidence_availability": "THIN",
+      "evidence_count": 2,
+      "synthesis_units": 2,
+      "meaningful_clusters": 1,
+      "refined_core_clusters": 1,
+      "density_bucket": "1-5",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 1,
+      "blocks": 1,
+      "words": 37,
+      "synthesis_ids_consumed": [
+        "syn_surrounding_passages_00f90190d83d"
+      ],
+      "synthesis_utilization": 0.5,
+      "evidence_ids_consumed": 1,
+      "multi_synthesis_blocks": 0,
+      "mean_synthesis_units_per_block": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "core_coverage": 1.0,
+      "weighted_coverage": 1.0,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.0,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 1,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "SYNTHESIS_GAP",
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "gate_outcome": "PASS",
+      "gate_quality_checks": {
+        "post_render_classification_valid": true,
+        "supported_evidence_represented": true,
+        "no_unsupported_enrichment": true,
+        "no_forced_filler": true,
+        "proportionate_to_evidence": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "EVIDENCE_LIMITED_CONTROL",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "post_render_classification_valid": true,
+          "supported_evidence_represented": true,
+          "no_unsupported_enrichment": true,
+          "no_forced_filler": true,
+          "proportionate_to_evidence": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "leviticus-literary-movement"
+      ]
+    },
+    {
+      "reference": "Deuteronomy 24",
+      "literary_category": "Pentateuch",
+      "evidence_availability": "THIN",
+      "evidence_count": 2,
+      "synthesis_units": 2,
+      "meaningful_clusters": 1,
+      "refined_core_clusters": 1,
+      "density_bucket": "1-5",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 1,
+      "blocks": 2,
+      "words": 56,
+      "synthesis_ids_consumed": [
+        "syn_surrounding_passages_cfae3caea775",
+        "syn_surrounding_passages_99b8bcfae9a5"
+      ],
+      "synthesis_utilization": 1.0,
+      "evidence_ids_consumed": 2,
+      "multi_synthesis_blocks": 0,
+      "mean_synthesis_units_per_block": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "core_coverage": 1.0,
+      "weighted_coverage": 1.0,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.0,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 1,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "RICH_ENOUGH",
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "gate_outcome": "PASS",
+      "gate_quality_checks": {
+        "post_render_classification_valid": true,
+        "supported_evidence_represented": true,
+        "no_unsupported_enrichment": true,
+        "no_forced_filler": true,
+        "proportionate_to_evidence": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "EVIDENCE_LIMITED_CONTROL",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "post_render_classification_valid": true,
+          "supported_evidence_represented": true,
+          "no_unsupported_enrichment": true,
+          "no_forced_filler": true,
+          "proportionate_to_evidence": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "deuteronomy-literary-movement",
+        "deuteronomy:interpretive_note:1"
+      ]
+    },
+    {
+      "reference": "Joshua 17",
+      "literary_category": "Historical narrative",
+      "evidence_availability": "THIN",
+      "evidence_count": 3,
+      "synthesis_units": 3,
+      "meaningful_clusters": 2,
+      "refined_core_clusters": 1,
+      "density_bucket": "1-5",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 2,
+      "blocks": 3,
+      "words": 86,
+      "synthesis_ids_consumed": [
+        "syn_interpretive_questions_b71d469d5dc4",
+        "syn_surrounding_passages_65097763ab09",
+        "syn_surrounding_passages_b4ad6a16f643"
+      ],
+      "synthesis_utilization": 1.0,
+      "evidence_ids_consumed": 3,
+      "multi_synthesis_blocks": 0,
+      "mean_synthesis_units_per_block": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "core_coverage": 1.0,
+      "weighted_coverage": 1.0,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.0,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 1,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "SYNTHESIS_GAP",
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "gate_outcome": "PASS",
+      "gate_quality_checks": {
+        "post_render_classification_valid": true,
+        "supported_evidence_represented": true,
+        "no_unsupported_enrichment": true,
+        "no_forced_filler": true,
+        "proportionate_to_evidence": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "EVIDENCE_LIMITED_CONTROL",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "post_render_classification_valid": true,
+          "supported_evidence_represented": true,
+          "no_unsupported_enrichment": true,
+          "no_forced_filler": true,
+          "proportionate_to_evidence": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "joshua-literary-movement",
+        "joshua:interpretive_note:0",
+        "joshua:interpretive_note:1"
+      ]
+    },
+    {
+      "reference": "1 Kings 7",
+      "literary_category": "Historical narrative",
+      "evidence_availability": "DATA_GAP",
+      "evidence_count": 0,
+      "synthesis_units": 0,
+      "meaningful_clusters": 0,
+      "refined_core_clusters": 0,
+      "density_bucket": "0",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 1,
+      "blocks": 1,
+      "words": 11,
+      "synthesis_ids_consumed": [],
+      "synthesis_utilization": 0.0,
+      "evidence_ids_consumed": 0,
+      "multi_synthesis_blocks": 0,
+      "mean_synthesis_units_per_block": 0.0,
+      "idea_cluster_coverage": 0.0,
+      "core_coverage": 1.0,
+      "weighted_coverage": 0.0,
+      "category_coverage": 0.0,
+      "consolidation_ratio": 0.0,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 0,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "EVIDENCE_GAP",
+      "gate_class": "DATA_GAP_CONTROL",
+      "gate_outcome": "PASS",
+      "gate_quality_checks": {
+        "remains_evidence_gap": true,
+        "zero_evidence_consumed": true,
+        "concise": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "DATA_GAP_SAFE_RESTRAINT",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "DATA_GAP_CONTROL",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "remains_evidence_gap": true,
+          "zero_evidence_consumed": true,
+          "concise": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "useful_sections"
+        ],
+        "reasons": [
+          "DATA_GAP is judged for safe restraint, not enrichment"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": []
+    },
+    {
+      "reference": "Job 3",
+      "literary_category": "Poetry/Wisdom",
+      "evidence_availability": "AVAILABLE",
+      "evidence_count": 5,
+      "synthesis_units": 5,
+      "meaningful_clusters": 3,
+      "refined_core_clusters": 0,
+      "density_bucket": "1-5",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 2,
+      "blocks": 3,
+      "words": 98,
+      "synthesis_ids_consumed": [
+        "syn_interpretive_questions_ff968a964641",
+        "syn_surrounding_passages_28d9ac647cd5",
+        "syn_surrounding_passages_45fd2cd8f2c9"
+      ],
+      "synthesis_utilization": 0.6,
+      "evidence_ids_consumed": 5,
+      "multi_synthesis_blocks": 0,
+      "mean_synthesis_units_per_block": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "core_coverage": 1.0,
+      "weighted_coverage": 1.0,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.4,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 2,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "RICH_ENOUGH",
+      "gate_class": "ENRICHMENT_TARGET",
+      "gate_outcome": "PASS",
+      "gate_quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "GOOD_CONSOLIDATED_ENRICHMENT",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "james:interpretive_note:31",
+        "jas-job",
+        "job-lament-dialogues",
+        "job:interpretive_note:11",
+        "job:interpretive_note:13"
+      ]
+    },
+    {
+      "reference": "Isaiah 24",
+      "literary_category": "Prophets",
+      "evidence_availability": "THIN",
+      "evidence_count": 1,
+      "synthesis_units": 1,
+      "meaningful_clusters": 1,
+      "refined_core_clusters": 0,
+      "density_bucket": "1-5",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 1,
+      "blocks": 1,
+      "words": 41,
+      "synthesis_ids_consumed": [
+        "syn_surrounding_passages_ba4170438989"
+      ],
+      "synthesis_utilization": 1.0,
+      "evidence_ids_consumed": 1,
+      "multi_synthesis_blocks": 0,
+      "mean_synthesis_units_per_block": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "core_coverage": 1.0,
+      "weighted_coverage": 1.0,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.0,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 0,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "SYNTHESIS_GAP",
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "gate_outcome": "PASS",
+      "gate_quality_checks": {
+        "post_render_classification_valid": true,
+        "supported_evidence_represented": true,
+        "no_unsupported_enrichment": true,
+        "no_forced_filler": true,
+        "proportionate_to_evidence": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "EVIDENCE_LIMITED_CONTROL",
+        "outcome": "PASS",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "post_render_classification_valid": true,
+          "supported_evidence_represented": true,
+          "no_unsupported_enrichment": true,
+          "no_forced_filler": true,
+          "proportionate_to_evidence": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "isaiah-qumran-witnesses"
+      ]
+    },
+    {
+      "reference": "Amos 5",
+      "literary_category": "Prophets",
+      "evidence_availability": "AVAILABLE",
+      "evidence_count": 29,
+      "synthesis_units": 21,
+      "meaningful_clusters": 14,
+      "refined_core_clusters": 0,
+      "density_bucket": "21-40",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 3,
+      "blocks": 3,
+      "words": 134,
+      "synthesis_ids_consumed": [
+        "syn_interpretive_questions_0af53b92615b",
+        "syn_cultural_context_86bdb1995d7c",
+        "syn_historical_context_58d718b76ce6",
+        "syn_historical_context_2ab75d75e47d",
+        "syn_interpretive_questions_1ca589e32c28"
+      ],
+      "synthesis_utilization": 0.2381,
+      "evidence_ids_consumed": 14,
+      "multi_synthesis_blocks": 2,
+      "mean_synthesis_units_per_block": 1.6667,
+      "idea_cluster_coverage": 0.2857,
+      "core_coverage": 1.0,
+      "weighted_coverage": 0.2766,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.7857,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 3,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "RICH_ENOUGH",
+      "gate_class": "ENRICHMENT_TARGET",
+      "gate_outcome": "QUALITY_FAIL",
+      "gate_quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": false,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "UNDER_EXPLANATION",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "QUALITY_FAIL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": false,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+          "one or more class-specific quality checks failed"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "amos-acts7-reuse",
+        "amos-day-yhwh",
+        "amos-economic-exploitation",
+        "amos-worship-justice",
+        "amos:interpretive_note:12",
+        "amos:interpretive_note:13",
+        "amos:interpretive_note:14",
+        "amos:interpretive_note:15",
+        "amos:interpretive_note:16",
+        "amos:interpretive_note:17",
+        "fall-of-samaria:historical_context:0",
+        "fall-of-samaria:historical_setting:0",
+        "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+        "what-is-the-kingdom-of-israel:historical_context:0"
+      ]
+    },
+    {
+      "reference": "Mark 7",
+      "literary_category": "Gospels/Acts",
+      "evidence_availability": "AVAILABLE",
+      "evidence_count": 37,
+      "synthesis_units": 22,
+      "meaningful_clusters": 9,
+      "refined_core_clusters": 1,
+      "density_bucket": "21-40",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 4,
+      "blocks": 5,
+      "words": 194,
+      "synthesis_ids_consumed": [
+        "syn_interpretive_questions_341c31ad559a",
+        "syn_interpretive_questions_900262663215",
+        "syn_cultural_context_0ab4c9c16931",
+        "syn_cultural_context_a647b1c5a7a7",
+        "syn_historical_context_1f76521b9141",
+        "syn_historical_context_986074336bd4",
+        "syn_interpretive_questions_9bf4ce4c753f",
+        "syn_interpretive_questions_c75b9550824f"
+      ],
+      "synthesis_utilization": 0.3636,
+      "evidence_ids_consumed": 28,
+      "multi_synthesis_blocks": 3,
+      "mean_synthesis_units_per_block": 1.6,
+      "idea_cluster_coverage": 0.6667,
+      "core_coverage": 0.0,
+      "weighted_coverage": 0.6552,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.8214,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 8,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "RICH_ENOUGH",
+      "gate_class": "ENRICHMENT_TARGET",
+      "gate_outcome": "QUALITY_FAIL",
+      "gate_quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": false,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "UNDER_EXPLANATION",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "QUALITY_FAIL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": false,
+          "weighted_coverage_adequate": true,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+          "one or more class-specific quality checks failed"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "cross-passage-diet-code-limit",
+        "cross-passage-diet-code-limit:passage-relevance",
+        "leviticus-ritual-moral-distinction",
+        "leviticus-ritual-moral-distinction:passage-relevance",
+        "mark-7-19-syntax-dispute",
+        "mark-7-19-syntax-dispute:passage-relevance",
+        "mark-aramaic",
+        "mark-disability",
+        "mark-food-purity",
+        "mark-handwashing-trigger",
+        "mark-handwashing-trigger:passage-relevance",
+        "mark-heart-and-moral-defilement",
+        "mark-heart-and-moral-defilement:passage-relevance",
+        "mark-jewish-debate",
+        "mark-provenance",
+        "mark-syrophoenician",
+        "pharisees:ancient_near_east_context:0",
+        "pharisees:hebraic_worldview:0",
+        "pharisees:historical_context:0",
+        "pharisees:historical_setting:0",
+        "pharisees:original_audience:0",
+        "pharisees:second_temple_context:0",
+        "scribes:ancient_near_east_context:0",
+        "scribes:hebraic_worldview:0",
+        "scribes:historical_context:0",
+        "scribes:historical_setting:0",
+        "scribes:original_audience:0",
+        "scribes:second_temple_context:0"
+      ]
+    },
+    {
+      "reference": "1 Corinthians 11",
+      "literary_category": "Epistles",
+      "evidence_availability": "AVAILABLE",
+      "evidence_count": 81,
+      "synthesis_units": 51,
+      "meaningful_clusters": 16,
+      "refined_core_clusters": 0,
+      "density_bucket": "41+",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 5,
+      "blocks": 5,
+      "words": 222,
+      "synthesis_ids_consumed": [
+        "syn_cultural_context_6b3b1633b2d2",
+        "syn_historical_context_affe38c27447",
+        "syn_interpretive_questions_9f388511fe08",
+        "syn_cultural_context_6b3b1633b2d2",
+        "syn_interpretive_questions_3ab811b3e83f",
+        "syn_interpretive_questions_4f80fbed5826",
+        "syn_interpretive_questions_f62bab4f610a",
+        "syn_interpretive_questions_d4a51d350042",
+        "syn_why_it_matters_0506bee32d3c",
+        "syn_surrounding_passages_21ee906fedfe"
+      ],
+      "synthesis_utilization": 0.1765,
+      "evidence_ids_consumed": 32,
+      "multi_synthesis_blocks": 3,
+      "mean_synthesis_units_per_block": 1.8,
+      "idea_cluster_coverage": 0.4375,
+      "core_coverage": 1.0,
+      "weighted_coverage": 0.4062,
+      "category_coverage": 0.8571,
+      "consolidation_ratio": 0.8571,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 11,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "RICH_ENOUGH",
+      "gate_class": "ENRICHMENT_TARGET",
+      "gate_outcome": "QUALITY_FAIL",
+      "gate_quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": false,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "UNDER_EXPLANATION",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "QUALITY_FAIL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": false,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+          "one or more class-specific quality checks failed"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "1-corinthians:interpretive_note:44",
+        "1-corinthians:interpretive_note:45",
+        "1-corinthians:interpretive_note:46",
+        "1-corinthians:interpretive_note:47",
+        "1-corinthians:interpretive_note:48",
+        "1-corinthians:interpretive_note:49",
+        "1-corinthians:interpretive_note:50",
+        "1-corinthians:interpretive_note:51",
+        "1-corinthians:interpretive_note:52",
+        "1-corinthians:interpretive_note:53",
+        "1-corinthians:interpretive_note:63",
+        "1cor-coverings",
+        "association-meal-status",
+        "association-meal-status:passage-relevance",
+        "corinth-own-meal-hunger-intoxication",
+        "corinth-own-meal-hunger-intoxication:passage-relevance",
+        "corinth-received-supper-tradition",
+        "corinth-received-supper-tradition:passage-relevance",
+        "corinth-sickness-death-causation-limit",
+        "corinthian-mutuality-in-lord",
+        "corinthian-mutuality-in-lord:passage-relevance",
+        "corinthian-women-pray-prophesy",
+        "corinthian-women-pray-prophesy:passage-relevance",
+        "household-slavery-status",
+        "household-slavery-status:passage-relevance",
+        "lords-supper:ancient_near_east_context:0",
+        "lords-supper:hebraic_worldview:0",
+        "lords-supper:historical_context:0",
+        "lords-supper:second_temple_context:0",
+        "pauline-distinct-meal-settings",
+        "pauline-distinct-meal-settings:passage-relevance",
+        "role-categories-not-synonyms"
+      ]
+    },
+    {
+      "reference": "Hebrews 4",
+      "literary_category": "Epistles",
+      "evidence_availability": "AVAILABLE",
+      "evidence_count": 32,
+      "synthesis_units": 26,
+      "meaningful_clusters": 19,
+      "refined_core_clusters": 2,
+      "density_bucket": "21-40",
+      "historical_1_3_response": "NOT_GENERATED_IN_PRESERVED_PILOT_SET",
+      "validation_status": "validated",
+      "rejection_codes": [],
+      "sections": 4,
+      "blocks": 5,
+      "words": 194,
+      "synthesis_ids_consumed": [
+        "syn_cultural_context_b2aad1addbf7",
+        "syn_cultural_context_ef2b1a02585d",
+        "syn_language_literary_c7b369414e9b",
+        "syn_historical_context_5a6e6de36252",
+        "syn_historical_context_444a445b3299",
+        "syn_interpretive_questions_cdd9272b8317",
+        "syn_surrounding_passages_047f24dce45a",
+        "syn_surrounding_passages_5c0a7cbebecd"
+      ],
+      "synthesis_utilization": 0.3077,
+      "evidence_ids_consumed": 14,
+      "multi_synthesis_blocks": 2,
+      "mean_synthesis_units_per_block": 1.6,
+      "idea_cluster_coverage": 0.4211,
+      "core_coverage": 1.0,
+      "weighted_coverage": 0.4341,
+      "category_coverage": 1.0,
+      "consolidation_ratio": 0.6429,
+      "redundant_block_ratio": 0.0,
+      "redundant_cluster_count": 5,
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "richness_status": "RICH_ENOUGH",
+      "gate_class": "ENRICHMENT_TARGET",
+      "gate_outcome": "QUALITY_FAIL",
+      "gate_quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": false,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "diagnostic_classification": "UNDER_EXPLANATION",
+      "routing_contract_clean": true,
+      "gate": {
+        "gate_class": "ENRICHMENT_TARGET",
+        "outcome": "QUALITY_FAIL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "quality_checks": {
+          "boilerplate_absent": true,
+          "core_coverage_adequate": true,
+          "weighted_coverage_adequate": false,
+          "category_coverage_adequate": true,
+          "material_improvement": true,
+          "boundary_repetition_below_limit": true,
+          "not_high_dump": true
+        },
+        "material_improvement_signals": [
+          "coherent_consolidation",
+          "evidence_utilization",
+          "idea_cluster_coverage",
+          "useful_sections"
+        ],
+        "reasons": [
+          "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+          "one or more class-specific quality checks failed"
+        ],
+        "dump_severity": "NONE"
+      },
+      "evidence_ids_consumed_list": [
+        "exodus:interpretive_note:3",
+        "heb-access",
+        "heb-p46",
+        "heb-rest",
+        "heb-sinaiticus",
+        "heb-word",
+        "hebrews:interpretive_note:10",
+        "hebrews:interpretive_note:11",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "sabbath-theme:ancient_near_east_context:0",
+        "sabbath-theme:hebraic_worldview:0",
+        "sabbath-theme:historical_context:0",
+        "sabbath-theme:second_temple_context:0"
+      ]
+    }
+  ],
+  "batch_statistics_denominator": "all 10 accepted chapters; DATA_GAP empty output is included as zero for count/utilization metrics",
+  "batch_statistics": {
+    "words": {
+      "mean": 107.3,
+      "median": 92.0,
+      "n": 10
+    },
+    "blocks": {
+      "mean": 2.9,
+      "median": 3.0,
+      "n": 10
+    },
+    "synthesis_utilization": {
+      "mean": 0.5186,
+      "median": 0.4318,
+      "n": 10
+    },
+    "mean_synthesis_units_per_block": {
+      "mean": 1.1667,
+      "median": 1.0,
+      "n": 10
+    },
+    "weighted_coverage": {
+      "mean": 0.6772,
+      "median": 0.8276,
+      "n": 10
+    },
+    "core_coverage": {
+      "mean": 0.9,
+      "median": 1.0,
+      "n": 10
+    },
+    "category_coverage": {
+      "mean": 0.8857,
+      "median": 1.0,
+      "n": 10
+    },
+    "consolidation_ratio": {
+      "mean": 0.3507,
+      "median": 0.2,
+      "n": 10
+    },
+    "redundant_block_ratio": {
+      "mean": 0.0,
+      "median": 0.0,
+      "n": 10
+    }
+  },
+  "availability_distribution": {
+    "THIN": {
+      "chapters": [
+        "Leviticus 2",
+        "Deuteronomy 24",
+        "Joshua 17",
+        "Isaiah 24"
+      ],
+      "outcomes": {
+        "PASS": 4
+      },
+      "diagnostics": {
+        "EVIDENCE_LIMITED_SAFE_RESTRAINT": 4
+      },
+      "accepted": 4
+    },
+    "DATA_GAP": {
+      "chapters": [
+        "1 Kings 7"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "diagnostics": {
+        "DATA_GAP_SAFE_RESTRAINT": 1
+      },
+      "accepted": 1
+    },
+    "AVAILABLE": {
+      "chapters": [
+        "Job 3",
+        "Amos 5",
+        "Mark 7",
+        "1 Corinthians 11",
+        "Hebrews 4"
+      ],
+      "outcomes": {
+        "PASS": 1,
+        "QUALITY_FAIL": 4
+      },
+      "diagnostics": {
+        "GOOD_CONSOLIDATED_ENRICHMENT": 1,
+        "UNDER_EXPLANATION": 4
+      },
+      "accepted": 5
+    }
+  },
+  "density_distribution": {
+    "1-5": {
+      "chapters": [
+        "Leviticus 2",
+        "Deuteronomy 24",
+        "Joshua 17",
+        "Job 3",
+        "Isaiah 24"
+      ],
+      "outcomes": {
+        "PASS": 5
+      },
+      "diagnostics": {
+        "EVIDENCE_LIMITED_SAFE_RESTRAINT": 4,
+        "GOOD_CONSOLIDATED_ENRICHMENT": 1
+      },
+      "accepted": 5
+    },
+    "0": {
+      "chapters": [
+        "1 Kings 7"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "diagnostics": {
+        "DATA_GAP_SAFE_RESTRAINT": 1
+      },
+      "accepted": 1
+    },
+    "21-40": {
+      "chapters": [
+        "Amos 5",
+        "Mark 7",
+        "Hebrews 4"
+      ],
+      "outcomes": {
+        "QUALITY_FAIL": 3
+      },
+      "diagnostics": {
+        "UNDER_EXPLANATION": 3
+      },
+      "accepted": 3
+    },
+    "41+": {
+      "chapters": [
+        "1 Corinthians 11"
+      ],
+      "outcomes": {
+        "QUALITY_FAIL": 1
+      },
+      "diagnostics": {
+        "UNDER_EXPLANATION": 1
+      },
+      "accepted": 1
+    }
+  },
+  "pattern_findings": {
+    "under_explanation": [
+      "Amos 5",
+      "Mark 7",
+      "1 Corinthians 11",
+      "Hebrews 4"
+    ],
+    "over_generation": [],
+    "routing_variance": [],
+    "gate_classification_variance": []
+  },
+  "overall_classification": "SYSTEMATIC_UNDER_EXPLANATION",
+  "reader_synthesis_plan": "NOT_REQUIRED",
+  "recommendation": "DO_NOT_PROCEED_TO_PILOT_BATCH_3_PENDING_ARCHITECTURE_REVIEW",
+  "bulk_authorization": false,
+  "prompt_status": "FROZEN 1.4; unchanged during Batch 2",
+  "gate_status": "FROZEN commentary-richness-gate-v2.1; candidate-only, not globally activated",
+  "historical_1_3_comparison_note": "Preserved 1.3 packets exist for all ten chapters, but no historical 1.3 prose responses were present for these ten; 1.3-vs-1.4 prose deltas are therefore not asserted.",
+  "diagnostic_summary": {
+    "EVIDENCE_LIMITED_SAFE_RESTRAINT": 4,
+    "DATA_GAP_SAFE_RESTRAINT": 1,
+    "GOOD_CONSOLIDATED_ENRICHMENT": 1,
+    "UNDER_EXPLANATION": 4
+  },
+  "known_1_4_calibration_comparison": {
+    "chapters": [
+      "Exodus 12",
+      "Esther 4",
+      "Jeremiah 7",
+      "1 Chronicles 9",
+      "Revelation 3"
+    ],
+    "outcomes": {
+      "PASS": 5,
+      "PASS_WITH_WARNING": 0,
+      "QUALITY_FAIL": 0,
+      "SAFETY_FAIL": 0
+    },
+    "properties": [
+      "sufficient breadth",
+      "no evidence dumping",
+      "no redundant prose",
+      "correct passage_scope routing",
+      "THIN safe restraint passes",
+      "provenance/safety preserved"
+    ],
+    "source_report": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration/evaluation/gate-v2.1-calibration-report.json"
+  },
+  "identity_verification": {
+    "all_ten_evidence_hashes_match_historical_1_3": true,
+    "all_ten_synthesis_hashes_match_historical_1_3": true,
+    "all_ten_synthesis_compiler_versions_match": "1.1",
+    "all_ten_commentary_schema_versions_match": "1.2",
+    "all_ten_prompt_versions": "1.4",
+    "packet_ids_are_new": true
+  },
+  "validation_results": {
+    "raw_responses_saved_before_import": true,
+    "responses_generated": 10,
+    "accepted": 10,
+    "rejected": 0,
+    "validator": "unchanged Commentary v1.2 validator",
+    "routing_violations": [],
+    "manual_repairs": 0
+  },
+  "historical_packet_comparison": [
+    {
+      "reference": "Leviticus 2",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Deuteronomy 24",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Joshua 17",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "1 Kings 7",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Job 3",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Isaiah 24",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Amos 5",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Mark 7",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "1 Corinthians 11",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    },
+    {
+      "reference": "Hebrews 4",
+      "historical_prompt_version": "1.3",
+      "new_prompt_version": "1.4",
+      "historical_response": "NOT_PRESENT_IN_PRESERVED_PILOT_ARTIFACTS",
+      "evidence_hash_unchanged": true,
+      "synthesis_hash_unchanged": true
+    }
+  ],
+  "gate_v2_1_state": "CANDIDATE_ONLY; scoring-only and not activated globally",
+  "reader_synthesis_plan_status": "NOT_REQUIRED_BY_ARCHITECTURE; current failures are coverage/selection observations, not a ReaderSynthesisPlan implementation",
+  "integrity": {
+    "starting_head": "81252c44093fd0f0285ef70536a18e4079d47de3",
+    "v1_1_pipeline_status": "CORPUS_COMPLETE",
+    "v1_1_protected_fingerprints_unchanged": true,
+    "ckl_object_count": 665,
+    "ckl_digest": "eac42aa17b932f8f8c0fb59e009014f2df5b9f81504ccc92f8cf0584f1393370",
+    "ckl_inventory_fingerprint": "4110222ae77df2e35c91cdd59af4312ba4e3710accf349bf030aefe9d3b1e9bc",
+    "synthesis_compiler_unchanged": "1.1",
+    "historical_batch_1_and_calibration_artifacts_preserved": true,
+    "ckl_modified": false,
+    "prompt_contract": "1.4",
+    "gate_contract": "commentary-richness-gate-v2.1",
+    "report_exact_evidence_id_lists": true
+  }
+}

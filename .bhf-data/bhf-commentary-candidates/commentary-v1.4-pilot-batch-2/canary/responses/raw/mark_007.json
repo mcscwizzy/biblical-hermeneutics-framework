@@ -1,0 +1,143 @@
+{
+  "reference": "Mark 7",
+  "packet_id": "commentary-v1.4-packet:33ee5427ce79a0b97af45127f88b5a3c6b43c606e930d04f8d588827dec8e4ee",
+  "prompt_version": "1.4",
+  "evidence_hash": "a9dd7d9fea16d672cd2453bd4e782d6a7d6323bebedce484933b3a027c84d8a1",
+  "synthesis_hash": "1c146daf99e7a252af6d02c300bdc7f1ce2eb3b0b20278cee87f39b38fdd7a0e",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Mark 7",
+    "book": "Mark",
+    "chapter": 7,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Purity, tradition, and the heart",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The opening dispute concerns disciples eating with unwashed hands, not simply eating a prohibited animal. Mark moves from the practice and its traditional rationale to a discussion of what defiles, so the passage needs to be read at the level of this particular dispute before it is made a universal diet rule.",
+            "verse_refs": [
+              "Mark 7:1-23"
+            ],
+            "evidence_ids": [
+              "cross-passage-diet-code-limit",
+              "cross-passage-diet-code-limit:passage-relevance",
+              "leviticus-ritual-moral-distinction",
+              "leviticus-ritual-moral-distinction:passage-relevance",
+              "mark-7-19-syntax-dispute",
+              "mark-7-19-syntax-dispute:passage-relevance",
+              "mark-handwashing-trigger",
+              "mark-handwashing-trigger:passage-relevance",
+              "mark-heart-and-moral-defilement",
+              "mark-heart-and-moral-defilement:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_341c31ad559a",
+              "syn_interpretive_questions_900262663215"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "A diverse Jewish setting",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The Pharisees and scribes appear within Hellenistic and Roman-period Judaism, where Torah interpretation, purity, transmitted instruction, and communal practice mattered. The evidence does not support treating Judaism as a single monolithic system or Mark’s polemic as a neutral institutional census.",
+            "verse_refs": [
+              "Mark 7:1-23"
+            ],
+            "evidence_ids": [
+              "pharisees:ancient_near_east_context:0",
+              "pharisees:hebraic_worldview:0",
+              "pharisees:original_audience:0",
+              "pharisees:second_temple_context:0",
+              "scribes:ancient_near_east_context:0",
+              "scribes:hebraic_worldview:0",
+              "scribes:original_audience:0",
+              "scribes:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0ab4c9c16931",
+              "syn_cultural_context_a647b1c5a7a7"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Names that require historical care",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Pharisees are attested in Hasmonean and Roman-period sources, but their organization and relationship to later rabbis remain debated. “Scribe” is likewise not one unchanging profession; its meaning must be considered in the period and setting of this Gospel.",
+            "verse_refs": [
+              "Mark 7:1-23"
+            ],
+            "evidence_ids": [
+              "pharisees:historical_context:0",
+              "pharisees:historical_setting:0",
+              "scribes:historical_context:0",
+              "scribes:historical_setting:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_1f76521b9141",
+              "syn_historical_context_986074336bd4"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "The chapter’s distinct scenes",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Mark preserves Semitic expressions while portraying embodied need and restored participation in the healing scenes. Those scenes should not be used to equate disability with sin, weak faith, or spiritual failure.",
+            "verse_refs": [
+              "Mark 7:3-4",
+              "Mark 7:31-37"
+            ],
+            "evidence_ids": [
+              "mark-aramaic",
+              "mark-disability",
+              "mark-food-purity",
+              "mark-jewish-debate",
+              "mark-provenance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9bf4ce4c753f"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_5",
+            "text": "The Syrophoenician woman answers Jesus’s children-and-dogs saying and obtains her daughter’s release. Interpretations involving testing, boundary, ethnicity, gender, and change remain disputed rather than resolved by a single formula.",
+            "verse_refs": [
+              "Mark 7:24-30"
+            ],
+            "evidence_ids": [
+              "mark-syrophoenician"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_c75b9550824f"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}
