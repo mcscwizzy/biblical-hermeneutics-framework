@@ -130,6 +130,15 @@ def _aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _report_state(*, completed_wave_count: int, expected_wave_count: int, repeated_contract_variance: bool) -> tuple[str, str, bool]:
+    scale_pilot_complete = completed_wave_count == expected_wave_count and not repeated_contract_variance
+    if repeated_contract_variance:
+        return "STOPPED_AFTER_WAVE_A", "COMMENTARY_1_5_SCALE_NEEDS_CONTRACT_HARDENING", scale_pilot_complete
+    if scale_pilot_complete:
+        return "COMPLETE", "COMMENTARY_1_5_SCALE_PILOT_COMPLETE", scale_pilot_complete
+    return "IN_PROGRESS", "INCOMPLETE_SCALE_PILOT", scale_pilot_complete
+
+
 def evaluate(*, candidate_root: Path = TARGET_ROOT) -> dict[str, Any]:
     manifest = _read(candidate_root / "scale-pilot-manifest.json")
     completed = []
@@ -143,8 +152,8 @@ def evaluate(*, candidate_root: Path = TARGET_ROOT) -> dict[str, Any]:
         completed.extend(rows)
     structural_codes = Counter(code for row in completed for code in row.get("rejection_codes", []))
     repeated_contract_variance = structural_codes.get("MALFORMED_VERSE_REFERENCE", 0) >= 2 or structural_codes.get("MALFORMED_SECTION", 0) >= 2 or structural_codes.get("OUT_OF_CHAPTER_SYNTHESIS_REFERENCE", 0) >= 2
-    classification = "COMMENTARY_1_5_SCALE_NEEDS_CONTRACT_HARDENING" if repeated_contract_variance else "INCOMPLETE_SCALE_PILOT"
-    report = {"artifact_version": "commentary-v1.5-scale-pilot-evaluation-v1", "status": "STOPPED_AFTER_WAVE_A" if repeated_contract_variance else "IN_PROGRESS", "classification": classification, "renderer_identity": manifest["renderer_identity"], "prompt_version": "1.5", "schema_version": "1.2", "synthesis_schema_version": "1.1", "synthesis_compiler_version": "1.1", "gate_version": "commentary-richness-gate-v2.1", "gate_state": "CANDIDATE_ONLY", "reader_synthesis_plan": "NOT IMPLEMENTED / NOT REQUIRED", "wave_results": {wave: {"aggregate": value["aggregate"], "rows": value["rows"]} for wave, value in waves.items()}, "cumulative_completed": _aggregate(completed), "completed_wave_count": len(waves), "expected_wave_count": 3, "structural_reference_variance": {"repeated": repeated_contract_variance, "codes": dict(structural_codes)}, "full_bible_generation_authorized": False, "scale_pilot_complete": len(waves) == 3 and not repeated_contract_variance}
+    status, classification, scale_pilot_complete = _report_state(completed_wave_count=len(waves), expected_wave_count=3, repeated_contract_variance=repeated_contract_variance)
+    report = {"artifact_version": "commentary-v1.5-scale-pilot-evaluation-v1", "status": status, "classification": classification, "renderer_identity": manifest["renderer_identity"], "prompt_version": "1.5", "schema_version": "1.2", "synthesis_schema_version": "1.1", "synthesis_compiler_version": "1.1", "gate_version": "commentary-richness-gate-v2.1", "gate_state": "CANDIDATE_ONLY", "reader_synthesis_plan": "NOT IMPLEMENTED / NOT REQUIRED", "wave_results": {wave: {"aggregate": value["aggregate"], "rows": value["rows"]} for wave, value in waves.items()}, "cumulative_completed": _aggregate(completed), "completed_wave_count": len(waves), "expected_wave_count": 3, "structural_reference_variance": {"repeated": repeated_contract_variance, "codes": dict(structural_codes)}, "full_bible_generation_authorized": False, "scale_pilot_complete": scale_pilot_complete}
     evaluation_dir = candidate_root / "evaluation"
     evaluation_dir.mkdir(parents=True, exist_ok=True)
     (evaluation_dir / "scale-pilot-evaluation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
