@@ -29,7 +29,10 @@ def _read(path: Path) -> dict:
 
 
 def _parse_start(value: str) -> tuple[str, int]:
-    book, chapter = value.rsplit(" ", 1)
+    if ":" in value:
+        book, chapter = value.rsplit(":", 1)
+    else:
+        book, chapter = value.rsplit(" ", 1)
     return bible.normalize_book_name(book), int(chapter)
 
 
