@@ -157,7 +157,14 @@ def _markdown(report: dict[str, Any]) -> str:
     for wave, result in report["wave_results"].items():
         aggregate = result["aggregate"]
         lines += [f"## Wave {wave}", "", f"Generated {aggregate['generated']}; validated {aggregate['validated']}; rejected {aggregate['rejected']}; safety failures {aggregate['safety_failures']}.", f"Gate distribution: {aggregate['gate_distribution']}", f"Availability: {aggregate['availability_distribution']}", f"Density: {aggregate['density_distribution']}", f"Literary: {aggregate['literary_distribution']}", f"Structural rejection codes: {aggregate['structural_rejection_codes']}", f"Dump distribution: {aggregate['dump_distribution']}", ""]
-    lines += ["## Stop decision", "", f"Structural-reference variance: {report['structural_reference_variance']}. The pilot stopped before the next wave because unrelated repeated malformed verse/section references indicate contract variance. No malformed response was repaired or rerendered.", "", "Full-Bible generation remains unauthorized.", ""]
+    variance = report["structural_reference_variance"]
+    if variance["repeated"]:
+        stop_explanation = "The pilot stopped before the next wave because repeated structural-reference variance indicates contract variance. No malformed response was repaired or rerendered."
+    elif report["scale_pilot_complete"]:
+        stop_explanation = "All planned waves completed without repeated structural-reference variance. No malformed response was repaired or rerendered."
+    else:
+        stop_explanation = "The next wave remains pending execution and human authorization; no repeated structural-reference variance was observed. No malformed response was repaired or rerendered."
+    lines += ["## Stop decision", "", f"Structural-reference variance: {variance}. {stop_explanation}", "", "Full-Bible generation remains unauthorized.", ""]
     return "\n".join(lines)
 
 
