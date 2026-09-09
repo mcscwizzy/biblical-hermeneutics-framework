@@ -1,0 +1,131 @@
+TASK: Generate BHF Commentary v1.6 for Amos 2.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+CANONICAL TEXT:
+1. Thus saith Jehovah: For three transgressions of Moab, yea, for four, I will not turn away the punishment thereof; because he burned the bones of the king of Edom into lime: 2. but I will send a fire upon Moab, and it shall devour the palaces of Kerioth; and Moab shall die with tumult, with shouting, and with the sound of the trumpet; 3. and I will cut off the judge from the midst thereof, and will slay all the princes thereof with him, saith Jehovah. 4. Thus saith Jehovah: For three transgressions of Judah, yea, for four, I will not turn away the punishment thereof; because they have rejected the law of Jehovah, and have not kept his statutes, and their lies have caused them to err, after which their fathers did walk: 5. but I will send a fire upon Judah, and it shall devour the palaces of Jerusalem. 6. Thus saith Jehovah: For three transgressions of Israel, yea, for four, I will not turn away the punishment thereof; because they have sold the righteous for silver, and the needy for a pair of shoes- 7. they that pant after the dust of the earth on the head of the poor, and turn aside the way of the meek: and a man and his father go unto the `same' maiden, to profane my holy name: 8. and they lay themselves down beside every altar upon clothes taken in pledge; and in the house of their God they drink the wine of such as have been fined. 9. Yet destroyed I the Amorite before them, whose height was like the height of the cedars, and he was strong as the oaks; yet I destroyed his fruit from above, and his roots from beneath. 10. Also I brought you up out of the land of Egypt, and led you forty years in the wilderness, to possess the land of the Amorite. 11. And I raised up of your sons for prophets, and of your young men for Nazirites. Is it not even thus, O ye children of Israel? saith Jehovah. 12. But ye gave the Nazirites wine to drink, and commanded the prophets, saying, Prophesy not. 13. Behold, I will press `you' in your place, as a cart presseth that is full of sheaves. 14. And flight shall perish from the swift; and the strong shall not strengthen his force; neither shall the mighty deliver himself; 15. neither shall he stand that handleth the bow; and he that is swift of foot shall not deliver `himself'; neither shall he that rideth the horse deliver himself; 16. and he that is courageous among the mighty shall flee away naked in that day, saith Jehovah.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 6, "economics": 2, "history": 1}, "evidence_item_count": 9, "relationship_unit_count": 2, "specific_evidence_count": 9, "unit_kind_counts": {"interpretive_questions": 2, "why_it_matters": 2}, "unused_evidence_ids": [], "used_evidence_ids": ["amos-economic-exploitation", "amos-nations-sequence", "amos:interpretive_note:11", "amos:interpretive_note:38", "amos:interpretive_note:4", "amos:interpretive_note:5", "amos:interpretive_note:6", "amos:interpretive_note:7", "amos:interpretive_note:9"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "14e467d3ddd199f89821faf056f61875bdbfa69a222ecb683ef2a2a0a29b9a11", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["amos:interpretive_note:5", "amos:interpretive_note:6", "amos:interpretive_note:7", "amos:interpretive_note:9"], "facts": ["The nations sequence draws hearers toward Israel's climactic indictment, but claims about an original oral audience cheering the earlier oracles remain rhetorical reconstruction.", "The three-transgressions-and-four formula signals accumulated offense and rhetorical fullness; it should not be turned into a literal count of four crimes.", "The accusations against nations condemn wartime atrocity, trafficking, violated kinship, and desecration; they do not authorize modern readers to assign collective ethnic guilt.", "Amos's economic accusations must not romanticize poverty, blame poor people, shame wealth apart from exploitative practice, or reduce structural debt and labor abuse to private generosity."], "id": "syn_interpretive_questions_302d9053341c", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "economics"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Amos 2:1-16", "Amos 2:1-3", "Amos 2:6-8"], "verse_refs": ["Amos 2:1-16", "Amos 2:1-3", "Amos 2:6-8"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["amos-economic-exploitation", "amos-nations-sequence", "amos:interpretive_note:11", "amos:interpretive_note:38", "amos:interpretive_note:4"], "facts": ["Amos accuses powerful Israelites of selling the righteous and needy, trampling poor people, taking grain levies, corrupting the gate, seizing pledged garments, and using dishonest measures.", "Amos 1:3-2:16 moves through Damascus, Gaza, Tyre, Edom, Ammon, Moab, Judah, and climactically Israel, repeatedly using a three/four transgressions formula.", "Amos 2:7's terse sexual accusation is textually difficult and should not be used to blame victims, conceal coercion, or excuse household and religious power.", "Judgment, exile, and divine violence in Amos require lament and ethical scrutiny; readers are not authorized to enact vengeance, war, coercion, or punishment in the prophet's name.", "Prosperity under Jeroboam II and the book's accusations of inequality provide a plausible social horizon, but prophetic rhetoric is not a census or complete economic archive."], "id": "syn_interpretive_questions_a5b465a2961b", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "economics", "history"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Amos 2:1-16", "Amos 2:13-16", "Amos 2:6-8"], "verse_refs": ["Amos 2:1-16", "Amos 2:13-16", "Amos 2:6-8"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["amos:interpretive_note:5", "amos:interpretive_note:6", "amos:interpretive_note:7", "amos:interpretive_note:9"], "facts": ["The nations sequence draws hearers toward Israel's climactic indictment, but claims about an original oral audience cheering the earlier oracles remain rhetorical reconstruction.", "The three-transgressions-and-four formula signals accumulated offense and rhetorical fullness; it should not be turned into a literal count of four crimes.", "The accusations against nations condemn wartime atrocity, trafficking, violated kinship, and desecration; they do not authorize modern readers to assign collective ethnic guilt.", "Amos's economic accusations must not romanticize poverty, blame poor people, shame wealth apart from exploitative practice, or reduce structural debt and labor abuse to private generosity."], "id": "syn_why_it_matters_290f43a811a9", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_302d9053341c"], "source_anchors": ["Amos 2:1-16", "Amos 2:1-3", "Amos 2:6-8"], "verse_refs": ["Amos 2:1-16", "Amos 2:1-3", "Amos 2:6-8"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["amos-economic-exploitation", "amos-nations-sequence", "amos:interpretive_note:11", "amos:interpretive_note:38", "amos:interpretive_note:4"], "facts": ["Amos accuses powerful Israelites of selling the righteous and needy, trampling poor people, taking grain levies, corrupting the gate, seizing pledged garments, and using dishonest measures.", "Amos 1:3-2:16 moves through Damascus, Gaza, Tyre, Edom, Ammon, Moab, Judah, and climactically Israel, repeatedly using a three/four transgressions formula.", "Amos 2:7's terse sexual accusation is textually difficult and should not be used to blame victims, conceal coercion, or excuse household and religious power.", "Judgment, exile, and divine violence in Amos require lament and ethical scrutiny; readers are not authorized to enact vengeance, war, coercion, or punishment in the prophet's name.", "Prosperity under Jeroboam II and the book's accusations of inequality provide a plausible social horizon, but prophetic rhetoric is not a census or complete economic archive."], "id": "syn_why_it_matters_ff2d42af0bde", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_a5b465a2961b"], "source_anchors": ["Amos 2:1-16", "Amos 2:13-16", "Amos 2:6-8"], "verse_refs": ["Amos 2:1-16", "Amos 2:13-16", "Amos 2:6-8"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "amos-economic-exploitation", "passage_anchors": ["Amos 2:6-8"], "source_ids": ["amos-masoretic", "carroll-amos", "oxford-justice-twelve"]}, {"confidence": "high", "id": "amos-nations-sequence", "passage_anchors": ["Amos 2:1-16"], "source_ids": ["amos-masoretic", "carroll-amos", "hamborg-amos"]}, {"confidence": "low", "id": "amos:interpretive_note:11", "passage_anchors": ["Amos 2:6-8"], "source_ids": ["amos-masoretic", "eidevall-amos", "oxford-minor-prophets-overview"]}, {"confidence": "medium", "id": "amos:interpretive_note:38", "passage_anchors": ["Amos 2:13-16"], "source_ids": ["amos-masoretic", "couey-amos", "oxford-violence"]}, {"confidence": "medium", "id": "amos:interpretive_note:4", "passage_anchors": ["Amos 2:6-8"], "source_ids": ["carroll-amos", "oxford-amos-bibliography"]}, {"confidence": "medium", "id": "amos:interpretive_note:5", "passage_anchors": ["Amos 2:1-16"], "source_ids": ["amos-masoretic", "barton-theology-amos", "hamborg-amos"]}, {"confidence": "high", "id": "amos:interpretive_note:6", "passage_anchors": ["Amos 2:1-16"], "source_ids": ["amos-masoretic", "carroll-amos"]}, {"confidence": "high", "id": "amos:interpretive_note:7", "passage_anchors": ["Amos 2:1-3"], "source_ids": ["amos-masoretic", "barton-theology-amos", "oxford-violence"]}, {"confidence": "high", "id": "amos:interpretive_note:9", "passage_anchors": ["Amos 2:6-8"], "source_ids": ["amos-masoretic", "carroll-amos", "oxford-justice-twelve"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Amos 2",
+  "book": "Amos",
+  "chapter": 2,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Amos 2:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Amos 2:
+   for example `Amos 2:1` or `Amos 2:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Amos 2:1", "Amos 2:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. `generated_metadata` is application-owned. Leave it null.
+21. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+22. This contract is prompt 1.6, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 14e467d3ddd199f89821faf056f61875bdbfa69a222ecb683ef2a2a0a29b9a11.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.

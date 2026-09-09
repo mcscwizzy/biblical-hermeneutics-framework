@@ -1,0 +1,131 @@
+TASK: Generate BHF Commentary v1.6 for Matthew 20.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+CANONICAL TEXT:
+1. For the kingdom of heaven is like unto a man that was a householder, who went out early in the morning to hire laborers into his vineyard. 2. And when he had agreed with the laborers for a shilling a day, he sent them into his vineyard. 3. And he went out about the third hour, and saw others standing in the marketplace idle; 4. and to them he said, Go ye also into the vineyard, and whatsoever is right I will give you. And they went their way. 5. Again he went out about the sixth and the ninth hour, and did likewise. 6. And about the eleventh `hour' he went out, and found others standing; and he saith unto them, Why stand ye here all the day idle? 7. They say unto him, Because no man hath hired us. He saith unto them, Go ye also into the vineyard. 8. And when even was come, the lord of the vineyard saith unto his steward, Call the laborers, and pay them their hire, beginning from the last unto the first. 9. And when they came that `were hired' about the eleventh hour, they received every man a shilling. 10. And when the first came, they supposed that they would receive more; and they likewise received every man a shilling. 11. And when they received it, they murmured against the householder, 12. saying, These last have spent `but' one hour, and thou hast made them equal unto us, who have borne the burden of the day and the scorching heat. 13. But he answered and said to one of them, Friend, I do thee no wrong: didst not thou agree with me for a shilling? 14. Take up that which is thine, and go thy way; it is my will to give unto this last, even as unto thee. 15. Is it not lawful for me to do what I will with mine own? or is thine eye evil, because I am good? 16. So the last shall be first, and the first last. 17. And as Jesus was going up to Jerusalem, he took the twelve disciples apart, and on the way he said unto them, 18. Behold, we go up to Jerusalem; and the Son of man shall be delivered unto the chief priests and scribes; and they shall condemn him to death, 19. and shall deliver him unto the Gentiles to mock, and to scourge, and to crucify: and the third day he shall be raised up. 20. Then came to him the mother of the sons of Zebedee with her sons, worshipping `him', and asking a certain thing of him. 21. And he said unto her, What wouldest thou? She saith unto him, Command that these my two sons may sit, one on thy right hand, and one on thy left hand, in thy kingdom. 22. But Jesus answered and said, Ye know not what ye ask. Are ye able to drink the cup that I am about to drink? They say unto him, We are able. 23. He saith unto them, My cup indeed ye shall drink: but to sit on my right hand, and on `my' left hand, is not mine to give; but `it is for them' for whom it hath been prepared of my Father. 24. And when the ten heard it, they were moved with indignation concerning the two brethren. 25. But Jesus called them unto him, and said, Ye know that the rulers of the Gentiles lord it over them, and their great ones exercise authority over them. 26. Not so shall it be among you: but whosoever would become great among you shall be your minister; 27. and whosoever would be first among you shall be your servant: 28. even as the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many. 29. And as they went out from Jericho, a great multitude followed him. 30. And behold, two blind men sitting by the way side, when they heard that Jesus was passing by, cried out, saying, Lord, have mercy on us, thou son of David. 31. And the multitude rebuked them, that they should hold their peace: but they cried out the more, saying, Lord, have mercy on us, thou son of David. 32. And Jesus stood still, and called them, and said, What will ye that I should do unto you? 33. They say unto him, Lord, that our eyes may be opened. 34. And Jesus, being moved with compassion, touched their eyes; and straightway they received their sight, and followed him.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 1, "economics": 1}, "evidence_item_count": 2, "relationship_unit_count": 1, "specific_evidence_count": 2, "unit_kind_counts": {"interpretive_questions": 1, "why_it_matters": 1}, "unused_evidence_ids": [], "used_evidence_ids": ["matthew-ransom-service", "matthew-rural-economy"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "6405c746eeaa894a7eeb0a6540388610fe28dcde48942217e622a7d5f9bc4a5f", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["matthew-ransom-service", "matthew-rural-economy"], "facts": ["Matthew 20:28 connects Son of Man service, giving life, and ransom for many.", "Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy."], "id": "syn_interpretive_questions_4874357e8fe3", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "economics"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Matthew 20:1-16", "Matthew 20:20-28"], "verse_refs": ["Matthew 20:1-16", "Matthew 20:20-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["matthew-ransom-service", "matthew-rural-economy"], "facts": ["Matthew 20:28 connects Son of Man service, giving life, and ransom for many.", "Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy."], "id": "syn_why_it_matters_6bf718b0e542", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_4874357e8fe3"], "source_anchors": ["Matthew 20:1-16", "Matthew 20:20-28"], "verse_refs": ["Matthew 20:1-16", "Matthew 20:20-28"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "matthew-ransom-service", "passage_anchors": ["Matthew 20:20-28"], "source_ids": ["deines-matthew", "france-matthew", "matthew-greek"]}, {"confidence": "high", "id": "matthew-rural-economy", "passage_anchors": ["Matthew 20:1-16"], "source_ids": ["early-roman-archaeology", "keddie-class-power", "riches-roman-palestine"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Matthew 20",
+  "book": "Matthew",
+  "chapter": 20,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Matthew 20:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Matthew 20:
+   for example `Matthew 20:1` or `Matthew 20:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Matthew 20:1", "Matthew 20:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. `generated_metadata` is application-owned. Leave it null.
+21. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+22. This contract is prompt 1.6, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 6405c746eeaa894a7eeb0a6540388610fe28dcde48942217e622a7d5f9bc4a5f.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
