@@ -1,0 +1,156 @@
+{
+  "artifact_version": "reader-level-idea-projection-renderer-final-v1",
+  "baseline_metrics": {
+    "category_coverage": 1.0,
+    "core_coverage": 1.0,
+    "dump_severity": "NONE",
+    "eligible_idea_utilization": 0.5,
+    "hard_provenance_errors": 0,
+    "high_dumps": 0,
+    "quality_gate_outcome": "QUALITY_FAIL",
+    "structural_validity": "valid",
+    "weighted_coverage": 0.4615
+  },
+  "candidate_evaluation": {
+    "audit": {
+      "commentary_block_count": 7,
+      "commentary_prose_char_count": 3064,
+      "commentary_prose_word_count": 457,
+      "richness_status": "SYNTHESIS_GAP",
+      "section_count": 7,
+      "unique_evidence_ids_consumed": 32
+    },
+    "block_count": 7,
+    "category_coverage": 1.0,
+    "core_coverage": 1.0,
+    "covered_eligible_clusters": [
+      "idea_cluster_0eab3d8c1fbd",
+      "idea_cluster_20992f8315ab",
+      "idea_cluster_243e0cbb763d",
+      "idea_cluster_3729f716ef6f",
+      "idea_cluster_440d7c941173",
+      "idea_cluster_4e3d8895d7fe",
+      "idea_cluster_568f3b9a8d27",
+      "idea_cluster_842f9f3cf63c",
+      "idea_cluster_919fb0668c76",
+      "idea_cluster_a3997c8def39",
+      "idea_cluster_b4f1b03ed9c8",
+      "idea_cluster_b9f92a2e8940",
+      "idea_cluster_c4b6236fce0e",
+      "idea_cluster_e29624b106d8",
+      "idea_cluster_e56f67d45e11",
+      "idea_cluster_ebe19d7ddf91"
+    ],
+    "dump_severity": "NONE",
+    "eligible_idea_utilization": 1.0,
+    "gate_v2_1": {
+      "dump_severity": "NONE",
+      "gate_class": "ENRICHMENT_TARGET",
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "outcome": "PASS",
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "boundary_repetition_below_limit": true,
+        "category_coverage_adequate": true,
+        "core_coverage_adequate": true,
+        "material_improvement": true,
+        "not_high_dump": true,
+        "weighted_coverage_adequate": true
+      },
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "safety_checks": {
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "hashes_valid": true,
+        "provenance_complete": true,
+        "unsupported_significance_absent": true,
+        "validation_clean": true
+      },
+      "safety_pass": true
+    },
+    "hard_provenance_errors": [],
+    "quality_gate_outcome": "PASS",
+    "reference": "Revelation 21",
+    "rejection_codes": [],
+    "score": {
+      "available_category_count": 6,
+      "category_coverage": 1.0,
+      "consumed_category_count": 6,
+      "consumed_cluster_count": 16,
+      "consumed_core_cluster_count": 0,
+      "consumed_eligible_synthesis_count": 17,
+      "consumed_synthesis_count": 17,
+      "core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "eligible_synthesis_count": 33,
+      "eligible_synthesis_coverage": 0.5152,
+      "idea_cluster_coverage": 1.0,
+      "meaningful_cluster_count": 16,
+      "synthesis_unit_count": 119,
+      "weighted_idea_coverage": 1.0
+    },
+    "structural_result": "ACCEPTED",
+    "validation_status": "validated",
+    "weighted_coverage": 1.0,
+    "word_count": 457
+  },
+  "candidate_id": "reader-level-idea-projection-v1-candidate:6ef87cb24cd3bec64653019ccbe8f4ac47e9320b6b8e0614c252c66caef88080",
+  "candidate_metrics": {
+    "category_coverage": 1.0,
+    "core_coverage": 1.0,
+    "dump_severity": "NONE",
+    "eligible_idea_utilization": 1.0,
+    "hard_provenance_errors": 0,
+    "high_dumps": 0,
+    "quality_gate_outcome": "PASS",
+    "structural_validity": "valid",
+    "weighted_coverage": 1.0
+  },
+  "candidate_response_sha256": "6ef87cb24cd3bec64653019ccbe8f4ac47e9320b6b8e0614c252c66caef88080",
+  "deltas": {
+    "category_coverage": 0.0,
+    "core_coverage": 0.0,
+    "eligible_idea_utilization": 0.5,
+    "weighted_coverage": 0.5385
+  },
+  "frozen_scorer": {
+    "essential_passage_context": "essential-passage-context-v2",
+    "gate": "commentary-richness-gate-v2.1",
+    "reader_relevance_eligibility": "reader-relevance-eligibility-v1",
+    "richness_clusters": "commentary-richness-clusters-v2",
+    "richness_policy": "commentary-richness-policy-v3-reader-relevance"
+  },
+  "namespace": ".bhf-data/bhf-commentary-candidates/reader-level-idea-projection-v1-1d7761ad8f69c739e395",
+  "outcome": "READER_IDEA_PROJECTION_PROMISING",
+  "projected_idea_utilization": {
+    "meaningfully_absent": 0,
+    "projected_idea_count": 8,
+    "redundantly_repeated": false,
+    "substantially_represented": 8
+  },
+  "projection_hash": "dae49408405a149c5ceb1712391307b33dbe53721bf116421783eec94fd5b5a2",
+  "projection_version": "reader-level-idea-projection-v1",
+  "prompt_version": "1.7",
+  "qualitative_review": {
+    "block_count": 7,
+    "checklist_like": false,
+    "material_redundancy": false,
+    "natural_and_readable": true,
+    "notes": "Ideas recur only where complementary cultural, historical, or surrounding-passage context adds new reader value.",
+    "prose_char_count": 3064,
+    "prose_word_count": 457
+  },
+  "recommended_next_action": "Test prompt 1.7 + reader-level-idea-projection-v1 on the existing seven-chapter diagnostic corpus; do not generate that corpus in this experiment.",
+  "reference": "Revelation 21",
+  "renderer": "gpt-5.6-sol",
+  "renderer_effort": "medium"
+}
+

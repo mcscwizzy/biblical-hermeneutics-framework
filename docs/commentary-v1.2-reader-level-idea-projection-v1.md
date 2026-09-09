@@ -87,3 +87,52 @@ The prepared immutable diagnostic namespace is
 `.bhf-data/bhf-commentary-candidates/reader-level-idea-projection-v1-1d7761ad8f69c739e395/`.
 Its Revelation 21 handoff is marked `AWAITING_EXTERNAL_RENDERER`; no candidate
 response was generated.
+
+## Revelation 21 renderer experiment
+
+The continuation started at `623b49d7a803990d4977195ddd267c37ed900fb5` on
+`feat/commentary-v1.2-enrichment`. The earlier prepared-state audit trail above
+is preserved; this section records the one authorized renderer response.
+
+The candidate used the existing handoff exactly as prepared:
+
+- Renderer: `gpt-5.6-sol`
+- Effort: `medium`
+- Prompt: `1.7`
+- Projection: `reader-level-idea-projection-v1`
+- Projection hash: `dae49408405a149c5ceb1712391307b33dbe53721bf116421783eec94fd5b5a2`
+- Candidate identity: `reader-level-idea-projection-v1-candidate:6ef87cb24cd3bec64653019ccbe8f4ac47e9320b6b8e0614c252c66caef88080`
+- Candidate response SHA-256: `6ef87cb24cd3bec64653019ccbe8f4ac47e9320b6b8e0614c252c66caef88080`
+- Generation count: `1`
+
+The frozen scorer and gate contracts were unchanged: `essential-passage-context-v2`,
+`reader-relevance-eligibility-v1`, `commentary-richness-clusters-v2`,
+`commentary-richness-policy-v3-reader-relevance`, and
+`commentary-richness-gate-v2.1`.
+
+| Metric | Baseline | Candidate | Delta |
+| --- | ---: | ---: | ---: |
+| Structural validity | valid | valid | — |
+| Hard provenance errors | 0 | 0 | 0 |
+| Weighted coverage | .4615 | 1.0000 | +.5385 |
+| Core coverage | 1.0000 | 1.0000 | +.0000 |
+| Eligible idea utilization | .5000 | 1.0000 | +.5000 |
+| Category coverage | 1.0000 | 1.0000 | +.0000 |
+| HIGH dumps | 0 | 0 | 0 |
+| Gate | QUALITY_FAIL | PASS | — |
+
+The response was 457 prose words across 7 blocks. All 8 projected ideas were
+substantially represented; 0 remained meaningfully absent. The output was not
+checklist-like, had no materially redundant repetition, and remained natural
+and readable. Repeated temple/New Jerusalem references were complementary
+cultural, historical, and surrounding-passage explanations rather than repeated
+claims.
+
+## Experiment outcome
+
+`READER_IDEA_PROJECTION_PROMISING`
+
+Recommended next action: test `prompt 1.7 + reader-level-idea-projection-v1`
+on the existing seven-chapter diagnostic corpus (Isaiah 13, Romans 3,
+1 Corinthians 14, Revelation 20, Revelation 21, Exodus 14, and Deuteronomy
+10). That corpus was not generated in this experiment.
