@@ -1,0 +1,418 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Ruth 2",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 6,
+    "eligible_weighted_denominator": 4.4,
+    "weighted_coverage": 0.8864,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.8571,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 5,
+    "eligible_weighted_denominator": 3.7,
+    "weighted_coverage": 0.8649,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.8,
+    "raw_synthesis_utilization": 0.8571,
+    "eligible_unit_utilization": 0.8333,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 5,
+    "eligible_weighted_denominator": 3.7,
+    "weighted_coverage": 0.8649,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.8,
+    "eligible_unit_utilization": 0.8333,
+    "raw_synthesis_utilization": 0.8571,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 368,
+    "block_count": 5,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "Ruth 2",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 5,
+    "eligible_weighted_denominator": 3.7,
+    "weighted_coverage": 0.8649,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.8,
+    "eligible_unit_utilization": 0.8333,
+    "raw_synthesis_utilization": 0.8571,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 368,
+    "block_count": 5,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 7,
+      "meaningful_cluster_count": 5,
+      "consumed_synthesis_count": 6,
+      "consumed_cluster_count": 4,
+      "raw_synthesis_coverage": 0.8571,
+      "idea_cluster_coverage": 0.8,
+      "weighted_idea_coverage": 0.8649,
+      "core_cluster_count": 2,
+      "consumed_core_cluster_count": 2,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 4,
+      "consumed_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.1667,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 5,
+        "consumed_synthesis_count": 6,
+        "consumed_cluster_count": 5,
+        "mean_evidence_ids_per_block": 1.2,
+        "block_to_synthesis_ratio": 0.8333,
+        "consolidation_ratio": 0.1667,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 6,
+        "block_to_cluster_ratio": 0.8333,
+        "consumed_unit_ratio": 0.8571,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 61.1667,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_08d0b9d8d5be",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_39745bd88a57"
+          ],
+          "evidence_ids": [
+            "nehemiah:interpretive_note:7"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=nehemiah|facts=ammonite moabite assembly exclusion nehemiah 13 cites deuteronomy 23 applied amid tobiah's temple access canonical reading must also reckon ruth moabite texts welcoming faithful foreigners rather than turning episode into universal ethnic ban",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_7884c777eea9",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_94aeeab52d14"
+          ],
+          "evidence_ids": [
+            "boaz:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=boaz|facts=boaz belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_9056a0fc5cb4",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_bca2e4e9b9d0"
+          ],
+          "evidence_ids": [
+            "ruth-literary-movement"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=ruth|facts=ruth moves famine bereavement naomi's emptiness harvest kinship redemption birth communal blessing genealogy",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_9e29ab899741",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_50fb582910df",
+            "syn_why_it_matters_b4c3586f3770"
+          ],
+          "evidence_ids": [
+            "ruth-providence-through-action",
+            "ruth:interpretive_note:3"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=ruth|facts=ruth explicitly attributes food conception lord while most plot advances through naomi's ruth's boaz's workers elders women's actions;ruth repeatedly retains designation moabite while pledging herself naomi israel's people israel's god proposals book directly answers specific later intermarriage policy remain debated",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_cfd76168c2e1",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_aee44f0aa033"
+          ],
+          "evidence_ids": [
+            "boaz:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=boaz|facts=boaz's story set judges era world harvest labor kinship obligations land continuity public negotiation town gate",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_d4ef09c8d604",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_03fbde819094"
+          ],
+          "evidence_ids": [
+            "ruth-gleaning-protection"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=ruth|facts=ruth 2 portrays gleaning survival labor boaz's provision protection exceeds mere permission gather leftover grain",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 3.7,
+      "consumed_eligible_weight": 3.2,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 1,
+        "RELEVANT": 3,
+        "REQUIRED": 2
+      },
+      "eligible_synthesis_count": 6,
+      "consumed_eligible_synthesis_count": 5,
+      "eligible_synthesis_coverage": 0.8333
+    },
+    "audit": {
+      "reference": "Ruth 2",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 7,
+      "specific_evidence_count": 7,
+      "evidence_score": 5.6,
+      "evidence_category_diversity": 3,
+      "evidence_categories": {
+        "culture": 5,
+        "economics": 1,
+        "history": 1
+      },
+      "entity_counts": {
+        "people": 1,
+        "places": 0,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 1,
+      "places_count": 0,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 5,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 2321,
+      "commentary_prose_word_count": 368,
+      "verse_anchor_count": 22,
+      "verse_anchor_coverage": 0.9565,
+      "evidence_ids_referenced": [
+        "boaz:ancient_near_east_context:0",
+        "boaz:historical_context:0",
+        "ruth-gleaning-protection",
+        "ruth-literary-movement",
+        "ruth-providence-through-action",
+        "ruth:interpretive_note:3"
+      ],
+      "unique_evidence_ids_consumed": 6,
+      "evidence_consumption_ratio": 0.8571,
+      "unused_evidence_ids": [
+        "nehemiah:interpretive_note:7"
+      ],
+      "unused_evidence_count": 1,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0415,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:7b3f0c80e64557cbd483a124e4dbe2b1f478eb1e41cd794f76305f2205ccc26a",
+    "packet_hash": "7b3f0c80e64557cbd483a124e4dbe2b1f478eb1e41cd794f76305f2205ccc26a",
+    "raw_sha256": "bbdded10f6bd17e7576d351cee07d9de26560c21952862a6dae90e4b8273eb4c"
+  }
+}

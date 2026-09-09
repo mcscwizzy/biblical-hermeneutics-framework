@@ -1,0 +1,122 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Nehemiah 7",
+  "raw_sha256": "688efae0d54206e0560fffc94867bb0401d5dcd2f093db4d36723e99f80d999b",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Nehemiah 7",
+    "book": "Nehemiah",
+    "chapter": 7,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "How Should the List Be Read?",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The long register is more than a sequence of names and totals. Its family groups, priestly eligibility tests, servants, singers, animals, and gifts make both an administrative and a theological claim: the returned community understands itself as continuing the people who had been carried away. At the same time, differences between this register and the parallel list in Ezra 2, together with uncertainty about ancient counting, mean that its figures should not be treated as a precise modern census without qualification.",
+            "verse_refs": [
+              "Nehemiah 7:5-73"
+            ],
+            "evidence_ids": [
+              "ezra:interpretive_note:3"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_169f113443a5"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The List within Nehemiah's Larger Story",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The change from Nehemiah's first-person account to an extended register reflects the varied literary form of the larger book. Earlier passages present vivid first-person testimony about prayer, court life, construction, opposition, and reform, while the completed book also includes third-person narration, lists, material associated with Ezra, and editorial transitions. This mixture cautions against treating the whole book either as an uninterrupted autobiography or as entirely fictional.",
+            "evidence_ids": [
+              "nehemiah:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_8877056e17d0"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Nehemiah 7",
+    "book": "Nehemiah",
+    "chapter": 7,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "How Should the List Be Read?",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The long register is more than a sequence of names and totals. Its family groups, priestly eligibility tests, servants, singers, animals, and gifts make both an administrative and a theological claim: the returned community understands itself as continuing the people who had been carried away. At the same time, differences between this register and the parallel list in Ezra 2, together with uncertainty about ancient counting, mean that its figures should not be treated as a precise modern census without qualification.",
+            "verse_refs": [
+              "Nehemiah 7:5-73"
+            ],
+            "evidence_ids": [
+              "ezra:interpretive_note:3"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_169f113443a5"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The List within Nehemiah's Larger Story",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The change from Nehemiah's first-person account to an extended register reflects the varied literary form of the larger book. Earlier passages present vivid first-person testimony about prayer, court life, construction, opposition, and reform, while the completed book also includes third-person narration, lists, material associated with Ezra, and editorial transitions. This mixture cautions against treating the whole book either as an uninterrupted autobiography or as entirely fictional.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "nehemiah:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_8877056e17d0"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "678bebc78f2774cb9986a731839974500aff28a8b486afc151a7b1fcb1a6bca6",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "d3f89456ece16976043609f01f18420820962d468e5fd0e2f0508d1a366fcf15",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:2c61cd6f23ba07d8685dc1d3240ce8980a5ccb697ea714c89b04e7e432b28058",
+  "packet_hash": "2c61cd6f23ba07d8685dc1d3240ce8980a5ccb697ea714c89b04e7e432b28058"
+}

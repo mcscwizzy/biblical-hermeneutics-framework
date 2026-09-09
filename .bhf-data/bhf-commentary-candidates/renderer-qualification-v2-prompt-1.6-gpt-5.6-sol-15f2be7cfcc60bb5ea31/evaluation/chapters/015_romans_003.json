@@ -1,0 +1,627 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Romans 3",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 10,
+    "eligible_weighted_denominator": 6.7,
+    "weighted_coverage": 0.9254,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.44,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 4,
+    "eligible_weighted_denominator": 2.5,
+    "weighted_coverage": 0.8,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.75,
+    "raw_synthesis_utilization": 0.44,
+    "eligible_unit_utilization": 0.2941,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 4,
+    "eligible_weighted_denominator": 2.5,
+    "weighted_coverage": 0.4,
+    "core_coverage": 0.0,
+    "eligible_idea_utilization": 0.5,
+    "eligible_unit_utilization": 0.2941,
+    "raw_synthesis_utilization": 0.44,
+    "category_coverage": 0.5,
+    "dump_severity": "NONE",
+    "word_count": 550,
+    "block_count": 7,
+    "quality_gate_outcome": "QUALITY_FAIL",
+    "renderer_qualification_result": "BELOW_TARGET"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": -0.4,
+    "core_coverage": -1.0,
+    "category_coverage": -0.5
+  },
+  "diagnostic_classification": "CORE_REGRESSION",
+  "full_result": {
+    "reference": "Romans 3",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 4,
+    "eligible_weighted_denominator": 2.5,
+    "weighted_coverage": 0.4,
+    "core_coverage": 0.0,
+    "eligible_idea_utilization": 0.5,
+    "eligible_unit_utilization": 0.2941,
+    "raw_synthesis_utilization": 0.44,
+    "category_coverage": 0.5,
+    "dump_severity": "NONE",
+    "word_count": 550,
+    "block_count": 7,
+    "quality_gate_outcome": "QUALITY_FAIL",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "QUALITY_FAIL",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": false,
+        "weighted_coverage_adequate": false,
+        "category_coverage_adequate": false,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+        "one or more class-specific quality checks failed"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "BELOW_TARGET",
+    "score": {
+      "synthesis_unit_count": 25,
+      "meaningful_cluster_count": 4,
+      "consumed_synthesis_count": 11,
+      "consumed_cluster_count": 2,
+      "raw_synthesis_coverage": 0.44,
+      "idea_cluster_coverage": 0.5,
+      "weighted_idea_coverage": 0.4,
+      "core_cluster_count": 1,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 0.0,
+      "available_category_count": 6,
+      "consumed_category_count": 3,
+      "category_coverage": 0.5,
+      "category_families": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "language_literary",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "consolidation_ratio": 0.72,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 7,
+        "consumed_synthesis_count": 11,
+        "consumed_cluster_count": 8,
+        "mean_evidence_ids_per_block": 3.5714,
+        "block_to_synthesis_ratio": 0.6364,
+        "consolidation_ratio": 0.72,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 10,
+        "block_to_cluster_ratio": 0.7,
+        "consumed_unit_ratio": 0.44,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 55.0,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_16048d6f83a3",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_483de655d61f"
+          ],
+          "evidence_ids": [
+            "crucifixion:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=crucifixion|facts=crucifixion occurs first century judea under roman authority amid jewish expectations redemption deliverance",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_643b69d1eb8d",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_fb8be01f878c"
+          ],
+          "evidence_ids": [
+            "what-is-justification:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=justification|facts=paul frames justification courtroom covenant language especially through abraham law",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_6f011d78b116",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_03c01bc87013",
+            "syn_surrounding_passages_0da6851e7dcf",
+            "syn_surrounding_passages_3acf3f65b3f2",
+            "syn_surrounding_passages_4cb4b9460670",
+            "syn_surrounding_passages_7cb0a90fbb13",
+            "syn_surrounding_passages_ca1fa946bd8f",
+            "syn_surrounding_passages_cc11d04bcd6a",
+            "syn_surrounding_passages_fa0868ad3fbe"
+          ],
+          "evidence_ids": [
+            "romans-codices",
+            "romans-justification",
+            "romans-papyri",
+            "romans:interpretive_note:10",
+            "romans:interpretive_note:25",
+            "romans:interpretive_note:47",
+            "romans:interpretive_note:7",
+            "romans:interpretive_note:71",
+            "romans:interpretive_note:75",
+            "romans:interpretive_note:76",
+            "romans:interpretive_note:77",
+            "romans:interpretive_note:8"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=romans|facts=claims about paul rome corinth cenchreae households slavery gender sexuality empire manuscripts should distinguish direct text external evidence inference analogy later reception;justification romans belongs grace faith messiah resurrection union spirit israel gentiles embodied community one later confessional formula cannot silently replace letter's whole argument;no automated validation retrieval score confessional popularity manuscript count constitutes human approval romans record;romans cannot make torah judaism uniquely legalistic paul identifies sin boasting across peoples repeatedly honors israel's scriptures gifts;do not infer every historical analogy romans maps directly onto modern nation ethnic group party economic system sexual identity church institution;p10 p26 p27 p31 p40 p46 p61 preserve different romans portions gregory aland labels must not imply equal date extent textual weight;romans occasional letter should not converted into contextless systematic theology outline even though later systems legitimately engage;universal sin language cannot justify racism caste xenophobia misogyny disability stigma treating any group especially depraved;p10 p26 p27 p31 p40 p46 p61 preserve different portions romans p46 far most extensive early papyrus witness;romans frames justification god's action relation faith grace messiah resurrection boasting abraham torah jew gentile not isolated abstract formula;sinaiticus vaticanus alexandrinus claromontanus major greek witnesses romans distinct omissions corrections textual profiles;sinaiticus vaticanus alexandrinus claromontanus provide distinct textual witnesses majority antiquity manuscript prestige do not mechanically decide reading",
+          "importance_weight": 1.0,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "archaeology",
+            "culture",
+            "history",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_78db49ab8bbf",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_2b750d1e862a"
+          ],
+          "evidence_ids": [
+            "sacrifice-theme:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=sacrifice-theme|facts=sacrifice runs early genesis through levitical worship remains central later prophetic new testament reflection",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_8d6dbafbd8ab",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_78ac0ec80b5a",
+            "syn_why_it_matters_4dc0bf04228d"
+          ],
+          "evidence_ids": [
+            "sacrifice-theme:ancient_near_east_context:0",
+            "sacrifice-theme:hebraic_worldview:0",
+            "sacrifice-theme:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=sacrifice-theme|facts=sacrifice joins holiness atonement fellowship thanksgiving;sacrifice widespread ancient world scripture ties holiness covenant access god’s redemptive purpose rather than mere appeasement;temple sacrifice remained living institution second temple period frames new testament's sacrificial language",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_92d5765872ae",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_ca63e816b839",
+            "syn_why_it_matters_744614a0103a"
+          ],
+          "evidence_ids": [
+            "crucifixion:ancient_near_east_context:0",
+            "crucifixion:hebraic_worldview:0",
+            "crucifixion:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=crucifixion|facts=crucifixion displayed roman coercive power judea yehohanan remains show least one crucified person later received jerusalem tomb ossuary burial no single find defines every execution;execution belongs specifically roman imperial punishment while gospels interpret through israel's scriptural covenantal categories;narratives connect death shame kingship lament covenant burial duty scriptural interpretation without making roman execution jewish institution",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_9828ced92442",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_09e4bdb9c363",
+            "syn_interpretive_questions_96eb7f62caf2",
+            "syn_why_it_matters_da699cecd85f"
+          ],
+          "evidence_ids": [
+            "romans-boasting-law-faith",
+            "romans-boasting-law-faith:passage-relevance",
+            "romans-jewish-advantage-oracles",
+            "romans-jewish-advantage-oracles:passage-relevance",
+            "romans-justification-pistis-christou",
+            "romans-justification-pistis-christou:passage-relevance"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel|facts=prevents one translation being presented greek text's only possible wording licensing law versus grace caricature;prevents universal accountability erasing jewish scriptural vocation advantage becoming ethnic supremacy;rejects both jewish christian ethnic triumphalism while preserving one god's relation differentiated peoples;romans 3 joins god's righteousness redemption atoning mercy seat imagery pistis christou believing justification;romans affirms much jewish advantage first entrusted oracles then argues jews greeks alike under sin;romans excludes boasting contrasts works faith language asks whether god god jews only affirms one god circumcision uncircumcision",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_9d804dfa9ace",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_10c109369ce2"
+          ],
+          "evidence_ids": [
+            "james:interpretive_note:17"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=james|facts=faith works james addresses claim faith without material aid obedient action paul addresses different rhetorical questions even where vocabulary overlaps",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_d1c093f02237",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_8c1669577161"
+          ],
+          "evidence_ids": [
+            "what-is-justification:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=justification|facts=ancient courts issued verdicts established status scripture uses legal language god's saving declaration",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_eb88d55b587b",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_2ed5753a8993",
+            "syn_interpretive_questions_9489d624c71e",
+            "syn_interpretive_questions_fef1c161fa0a",
+            "syn_why_it_matters_0e2c0068d0d6",
+            "syn_why_it_matters_bee215f783c4"
+          ],
+          "evidence_ids": [
+            "romans-hilasterion",
+            "romans-pistis-christou",
+            "romans-righteousness",
+            "romans-works-law",
+            "romans:interpretive_note:13",
+            "romans:interpretive_note:14",
+            "romans:interpretive_note:22",
+            "romans:interpretive_note:23",
+            "romans:interpretive_note:24"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=romans|facts=dikaiosyne theou can denote god's saving justice covenant faithfulness divine status giving righteousness related dimensions no single english gloss settles every occurrence;erga nomou means works law torah debate concerns whether emphasizes boundary practices all commanded deeds identity performance broader posture;hilasterion romans 3 25 may evoke means atonement sacrificial expiation propitiation mercy seat translation should preserve uncertainty;pistis christou grammatically compatible faith christ christ's faithfulness readings contextual theological arguments dividing interpreters;hilasterion romans 3 25 may evoke sacrifice expiation propitiation mercy seat translations should disclose rather than conceal lexical uncertainty;phrase pistis christou can construed faith christ christ's faithfulness deliberately dense relation grammar alone cannot settle debate;righteousness justice god can integrate god's saving action covenant faithfulness rectitude status giving verdict interpreters should state sense evidence privilege;romans 3's universal sin statement levels jew gentile under sin within rhetorical argument must not turned into individualized victim blame harms suffered;works torah should not paraphrased jewish legalism paul debates practices boasting judgment gentile incorporation limits torah under sin",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions",
+            "language_literary"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 2.5,
+      "consumed_eligible_weight": 1.0,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 6,
+        "RELEVANT": 3,
+        "REQUIRED": 1
+      },
+      "eligible_synthesis_count": 17,
+      "consumed_eligible_synthesis_count": 5,
+      "eligible_synthesis_coverage": 0.2941
+    },
+    "audit": {
+      "reference": "Romans 3",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 38,
+      "specific_evidence_count": 38,
+      "evidence_score": 29.1625,
+      "evidence_category_diversity": 6,
+      "evidence_categories": {
+        "archaeology": 2,
+        "culture": 27,
+        "economics": 1,
+        "history": 3,
+        "language": 4,
+        "politics": 1
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 1,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 1,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 2,
+      "section_count": 5,
+      "commentary_block_count": 7,
+      "commentary_prose_char_count": 3743,
+      "commentary_prose_word_count": 550,
+      "verse_anchor_count": 22,
+      "verse_anchor_coverage": 0.7097,
+      "evidence_ids_referenced": [
+        "crucifixion:ancient_near_east_context:0",
+        "crucifixion:hebraic_worldview:0",
+        "crucifixion:historical_context:0",
+        "crucifixion:second_temple_context:0",
+        "romans-boasting-law-faith",
+        "romans-boasting-law-faith:passage-relevance",
+        "romans-hilasterion",
+        "romans-jewish-advantage-oracles",
+        "romans-jewish-advantage-oracles:passage-relevance",
+        "romans-justification-pistis-christou",
+        "romans-pistis-christou",
+        "romans-righteousness",
+        "romans-works-law",
+        "romans:interpretive_note:22",
+        "romans:interpretive_note:23",
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:historical_context:0",
+        "sacrifice-theme:second_temple_context:0",
+        "what-is-justification:ancient_near_east_context:0",
+        "what-is-justification:historical_context:0"
+      ],
+      "unique_evidence_ids_consumed": 21,
+      "evidence_consumption_ratio": 0.5526,
+      "unused_evidence_ids": [
+        "james:interpretive_note:17",
+        "romans-codices",
+        "romans-justification",
+        "romans-justification-pistis-christou:passage-relevance",
+        "romans-papyri",
+        "romans:interpretive_note:10",
+        "romans:interpretive_note:13",
+        "romans:interpretive_note:14",
+        "romans:interpretive_note:24",
+        "romans:interpretive_note:25",
+        "romans:interpretive_note:47",
+        "romans:interpretive_note:7",
+        "romans:interpretive_note:71",
+        "romans:interpretive_note:75",
+        "romans:interpretive_note:76",
+        "romans:interpretive_note:77",
+        "romans:interpretive_note:8"
+      ],
+      "unused_evidence_count": 17,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0248,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:ca36f4dc6343017e6094343e18985d34d1ef9ecebef34606a87b30e19f61297a",
+    "packet_hash": "ca36f4dc6343017e6094343e18985d34d1ef9ecebef34606a87b30e19f61297a",
+    "raw_sha256": "d973bde1cd24a390a93db76df83d6576cf56fcedfc588227ece096e6e0629d39"
+  }
+}

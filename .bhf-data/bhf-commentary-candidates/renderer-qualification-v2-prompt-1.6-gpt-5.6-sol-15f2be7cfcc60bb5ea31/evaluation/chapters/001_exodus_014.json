@@ -1,0 +1,924 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Exodus 14",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 19,
+    "eligible_weighted_denominator": 13.4,
+    "weighted_coverage": 0.4254,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.3235,
+    "dump_severity": "NONE",
+    "gate_result": "QUALITY_FAIL"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 2,
+    "eligible_weighted_denominator": 1.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 0.3235,
+    "eligible_unit_utilization": 0.5,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 2,
+    "eligible_weighted_denominator": 1.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 0.3235,
+    "eligible_unit_utilization": 0.5,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 2,
+    "eligible_weighted_denominator": 1.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 0.5,
+    "raw_synthesis_utilization": 0.2941,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 390,
+    "block_count": 6,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "Exodus 14",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 2,
+    "eligible_weighted_denominator": 1.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 0.5,
+    "raw_synthesis_utilization": 0.2941,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 390,
+    "block_count": 6,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 34,
+      "meaningful_cluster_count": 2,
+      "consumed_synthesis_count": 10,
+      "consumed_cluster_count": 2,
+      "raw_synthesis_coverage": 0.2941,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_count": 1,
+      "consumed_core_cluster_count": 1,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 4,
+      "consumed_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.7273,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 6,
+        "consumed_synthesis_count": 10,
+        "consumed_cluster_count": 7,
+        "mean_evidence_ids_per_block": 3.6667,
+        "block_to_synthesis_ratio": 0.6,
+        "consolidation_ratio": 0.7273,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 19,
+        "block_to_cluster_ratio": 0.3158,
+        "consumed_unit_ratio": 0.2941,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 20.5263,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_290e1afb17ca",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_6b1bfe3623f9",
+            "syn_historical_context_abf808c1f47e"
+          ],
+          "evidence_ids": [
+            "red-sea-1:historical_context:0",
+            "salt-sea:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=red-sea-1,salt-sea|facts=feature belongs landscapes through israel travels settles remembers god's acts",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_304529f2e7f4",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_026e4d2c9743",
+            "syn_surrounding_passages_0a7d9030662a",
+            "syn_surrounding_passages_112542770c73",
+            "syn_surrounding_passages_eb64949c19df"
+          ],
+          "evidence_ids": [
+            "exodus-ane-context",
+            "exodus-literary-movement",
+            "exodus:interpretive_note:0",
+            "exodus:interpretive_note:1",
+            "exodus:interpretive_note:2"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=exodus|facts=ancient egyptian broader ancient near eastern evidence provides cultural context not produced inscription names moses narrates biblical exodus;egyptian royal ideology ancient near eastern covenant law traditions comparative sanctuary evidence form relevant background interpreting exodus;present proposed exodus dates routes population estimates pharaoh identifications reconstructions rather than facts explicitly supplied exodus;exodus moves oppression deliverance covenant covenant breach renewal tabernacle construction arrival divine glory;read deliverance covenant covenant breach renewal tabernacle presence connected movements book rather than treating departure egypt endpoint",
+          "importance_weight": 1.0,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "geography",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_45fc5813aae3",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_994f9ef8c7a5"
+          ],
+          "evidence_ids": [
+            "mount-seir-1:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=mount-seir-1|facts=mount seir belongs edomite highland geography south dead sea shaping kinship memory travel routes conflict israel judah",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_4b128ee5c2f4",
+          "kind": "archaeology_geography",
+          "synthesis_ids": [
+            "syn_archaeology_geography_95f0d27c58c3",
+            "syn_why_it_matters_fb6bf1b5ef52"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:key_places:0",
+            "exodus-to-sinai-timeline:key_places:1",
+            "exodus-to-sinai-timeline:key_places:2",
+            "exodus-to-sinai-timeline:key_places:3"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=exodus-to-sinai-timeline|facts=egypt;kadesh barnea;mount sinai;red sea 1",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "archaeology_geography",
+            "why_it_matters"
+          ],
+          "categories": [
+            "geography"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "raw_entity_inventory"
+          ]
+        },
+        {
+          "id": "idea_cluster_4d5bd78a6c50",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_285373a82b38"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=red-sea-crossing|facts=episode narrated against egypt's eastern frontier chariot pursuit water wind wilderness movement geographic comparison must remain separate claims specific modern landform alleged artifact proves event",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_548f611bb6a5",
+          "kind": "chronology",
+          "synthesis_ids": [
+            "syn_chronology_1325e181a6aa",
+            "syn_chronology_f7f043e05474",
+            "syn_why_it_matters_24abfaa5cd26",
+            "syn_why_it_matters_d20f1fee3d50"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:timeline:0",
+            "exodus-to-sinai-timeline:timeline:1",
+            "exodus-to-sinai-timeline:timeline:2",
+            "exodus-to-sinai-timeline:timeline:3",
+            "exodus-to-sinai-timeline:timeline:4",
+            "exodus-to-sinai-timeline:timeline:5",
+            "exodus-to-sinai-timeline:timeline:6",
+            "exodus-to-sinai-timeline:timeline:7",
+            "exodus-to-sinai-timeline:timeline:8"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=chronology,why_it_matters|parents=exodus-to-sinai-timeline|facts=covenant given ratified;israel arrives sinai;israel crosses sea;wilderness provision testing begin;israel leaves egypt;israel oppressed egypt;moses called burning bush;passover marks deliverance;plagues confront pharaoh",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "chronology",
+            "why_it_matters"
+          ],
+          "categories": [
+            "chronology"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_67ca5d101ce8",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_582fc6c0b7bb"
+          ],
+          "evidence_ids": [
+            "euphrates:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=euphrates|facts=euphrates belongs mesopotamian river geography imperial boundaries irrigation systems trade routes shaped assyrian babylonian persian power",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_80828302e651",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_250efb57cf6a",
+            "syn_historical_context_2819fc9aa85b",
+            "syn_historical_context_641a82178876",
+            "syn_historical_context_9256a346e32b",
+            "syn_historical_context_99a722557766"
+          ],
+          "evidence_ids": [
+            "euphrates:historical_context:0",
+            "great-sea:historical_context:0",
+            "jordan:historical_context:0",
+            "mount-seir-1:historical_context:0",
+            "nile:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=euphrates,great-sea,jordan,mount-seir-1,nile|facts=historically euphrates located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically great sea located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically jordan located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically mount seir 1 located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically nile located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_8afcdacee3ba",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_4fbbf0d932c4",
+            "syn_why_it_matters_4429fee6510f"
+          ],
+          "evidence_ids": [
+            "exodus-wilderness-routes-and-water:interpretive_note:0",
+            "yam-suf-route-identification",
+            "yam-suf-route-identification:passage-relevance"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=exodus-wilderness-routes-and-water|facts=evidence keeps narrative's actual geographic vocabulary view prevents familiar modern map being treated only route allowed passage;exodus numbers preserve ordered set route choices camp names around sea crossing while modern geographic identifications remain contested;text's sequence named stations evidence matching every name modern location separate disputed reconstruction",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_920b51ad2548",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_d65da9e602d0"
+          ],
+          "evidence_ids": [
+            "salt-sea:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=salt-sea|facts=salt sea belongs dead sea basin geography wilderness routes mineral landscape boundary descriptions israel's land traditions",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_9cddc4a1d9a3",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_8fd7dacc5eae"
+          ],
+          "evidence_ids": [
+            "red-sea-1:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=red-sea-1|facts=red sea belongs egypt sinai wilderness geography desert routes coastal travel exodus memory israel's movement away egyptian imperial power",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_a35f1331ae18",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_44c57f4b3942"
+          ],
+          "evidence_ids": [
+            "the-exodus:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=the-exodus|facts=exodus becomes defining act redemption israel's memory starting point covenant nationhood",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_cc59a85f47b2",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_dcabc485aee8",
+            "syn_why_it_matters_456cf3961efc"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:historical_context:0",
+            "exodus-to-sinai-timeline:historical_setting:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context,why_it_matters|parents=exodus-to-sinai-timeline|facts=exodus wilderness narrative;sequence belongs exodus wilderness narrative where israel moves slavery under pharaoh covenant assembly before lord sinai",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_d750e632f9af",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_b216944e1680"
+          ],
+          "evidence_ids": [
+            "the-exodus:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=the-exodus|facts=story confronts imperial egypt recasts deliverance lord's victory over human power death",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_df0766bcaa31",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_006f4c056add"
+          ],
+          "evidence_ids": [
+            "great-sea:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=great-sea|facts=great sea refers mediterranean maritime world phoenician trade coastal routes imperial movement israel's western geographic boundary",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_f45f2270a11c",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_0e4e3d2e7e36"
+          ],
+          "evidence_ids": [
+            "nile:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=nile|facts=nile belongs egyptian river civilization agricultural cycles royal ideology imperial power frame israel's memory bondage deliverance",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_f936a2d131a8",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_1a747fbb0c44"
+          ],
+          "evidence_ids": [
+            "jordan:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=jordan|facts=jordan belongs levantine river valley geography boundary crossing irrigation settlement patterns central israel's movement into land",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_f9460316772b",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_8688146f2433"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=red-sea-crossing|facts=exodus names route decisions camps around crossing does not provide modern coordinates proposed identifications range across eastern egyptian lakes lagoons gulfs so ckl preserves route markers without selecting crossing site",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_fc3d47d4b867",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_372de05475fd",
+            "syn_why_it_matters_ea5fdaf42f94"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:ancient_near_east_context:0",
+            "exodus-to-sinai-timeline:hebraic_worldview:0",
+            "exodus-to-sinai-timeline:original_audience:0",
+            "exodus-to-sinai-timeline:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=exodus-to-sinai-timeline|facts=israel remembering ordered story deliverance covenant formation;route narrative set against egyptian imperial power desert travel water food scarcity formation people outside normal settled life;second temple jewish remembrance exodus sinai shaped passover covenant identity liberation hope later readings new exodus;timeline frames time remembered redemption israel's calendar worship identity begin god's deliverance before covenant instruction",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 1.5,
+      "consumed_eligible_weight": 1.5,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 17,
+        "RELEVANT": 1,
+        "REQUIRED": 1
+      },
+      "eligible_synthesis_count": 6,
+      "consumed_eligible_synthesis_count": 3,
+      "eligible_synthesis_coverage": 0.5
+    },
+    "audit": {
+      "reference": "Exodus 14",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 45,
+      "specific_evidence_count": 45,
+      "evidence_score": 37.0125,
+      "evidence_category_diversity": 5,
+      "evidence_categories": {
+        "chronology": 9,
+        "culture": 15,
+        "geography": 9,
+        "history": 11,
+        "social": 1
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 7,
+        "groups": 0,
+        "events": 3,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 7,
+      "events_groups_artifacts_count": 3,
+      "geography_evidence_count": 9,
+      "archaeology_evidence_count": 0,
+      "section_count": 6,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2547,
+      "commentary_prose_word_count": 390,
+      "verse_anchor_count": 31,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "exodus-literary-movement",
+        "exodus-to-sinai-timeline:ancient_near_east_context:0",
+        "exodus-to-sinai-timeline:hebraic_worldview:0",
+        "exodus-to-sinai-timeline:original_audience:0",
+        "exodus-to-sinai-timeline:second_temple_context:0",
+        "exodus-to-sinai-timeline:timeline:0",
+        "exodus-to-sinai-timeline:timeline:1",
+        "exodus-to-sinai-timeline:timeline:2",
+        "exodus-to-sinai-timeline:timeline:3",
+        "exodus-to-sinai-timeline:timeline:4",
+        "exodus-to-sinai-timeline:timeline:5",
+        "exodus-to-sinai-timeline:timeline:6",
+        "exodus-to-sinai-timeline:timeline:7",
+        "exodus-to-sinai-timeline:timeline:8",
+        "exodus-wilderness-routes-and-water:interpretive_note:0",
+        "exodus:interpretive_note:1",
+        "red-sea-crossing:ancient_near_east_context:0",
+        "red-sea-crossing:historical_context:0",
+        "the-exodus:historical_context:0",
+        "yam-suf-route-identification",
+        "yam-suf-route-identification:passage-relevance"
+      ],
+      "unique_evidence_ids_consumed": 21,
+      "evidence_consumption_ratio": 0.4667,
+      "unused_evidence_ids": [
+        "euphrates:ancient_near_east_context:0",
+        "euphrates:historical_context:0",
+        "exodus-ane-context",
+        "exodus-to-sinai-timeline:historical_context:0",
+        "exodus-to-sinai-timeline:historical_setting:0",
+        "exodus-to-sinai-timeline:key_places:0",
+        "exodus-to-sinai-timeline:key_places:1",
+        "exodus-to-sinai-timeline:key_places:2",
+        "exodus-to-sinai-timeline:key_places:3",
+        "exodus:interpretive_note:0",
+        "exodus:interpretive_note:2",
+        "great-sea:ancient_near_east_context:0",
+        "great-sea:historical_context:0",
+        "jordan:ancient_near_east_context:0",
+        "jordan:historical_context:0",
+        "mount-seir-1:ancient_near_east_context:0",
+        "mount-seir-1:historical_context:0",
+        "nile:ancient_near_east_context:0",
+        "nile:historical_context:0",
+        "red-sea-1:ancient_near_east_context:0",
+        "red-sea-1:historical_context:0",
+        "salt-sea:ancient_near_east_context:0",
+        "salt-sea:historical_context:0",
+        "the-exodus:ancient_near_east_context:0"
+      ],
+      "unused_evidence_count": 24,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0203,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:bf88b9d3091af3a75d38ee1a24e71e722e6fa21d340a2260bf266db845d9b802",
+    "packet_hash": "bf88b9d3091af3a75d38ee1a24e71e722e6fa21d340a2260bf266db845d9b802",
+    "raw_sha256": "1a1ec64e8c7ec147cd5c0c74b029c784a0b904491e981c42cd1de345e062a60f"
+  }
+}

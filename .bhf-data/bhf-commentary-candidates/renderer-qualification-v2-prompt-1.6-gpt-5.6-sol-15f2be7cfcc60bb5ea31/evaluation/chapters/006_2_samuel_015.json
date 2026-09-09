@@ -1,0 +1,279 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "2 Samuel 15",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 2,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 2,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 2,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 122,
+    "block_count": 2,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "2 Samuel 15",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 2,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 122,
+    "block_count": 2,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "EVIDENCE_LIMITED_CONTROL",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "post_render_classification_valid": true,
+        "supported_evidence_represented": true,
+        "no_unsupported_enrichment": true,
+        "no_forced_filler": true,
+        "proportionate_to_evidence": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 2,
+      "meaningful_cluster_count": 2,
+      "consumed_synthesis_count": 2,
+      "consumed_cluster_count": 2,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_count": 2,
+      "consumed_core_cluster_count": 2,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 3,
+      "consumed_category_count": 3,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "history",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.0,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 2,
+        "consumed_synthesis_count": 2,
+        "consumed_cluster_count": 2,
+        "mean_evidence_ids_per_block": 1.0,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.0,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 2,
+        "block_to_cluster_ratio": 1.0,
+        "consumed_unit_ratio": 1.0,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 61.0,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_5c05b7eed689",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_5ac4a58e8113"
+          ],
+          "evidence_ids": [
+            "second-samuel-absalom-rebellion"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=2-samuel|facts=absalom builds popular support declares himself king drives david jerusalem dies when joab ignores david's command deal gently him",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_e8a1a4ada2b6",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_8e9057d69b95"
+          ],
+          "evidence_ids": [
+            "second-samuel-literary-movement"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=2-samuel|facts=second samuel moves david's accession kingdom consolidation through ark dynasty promise royal abuse household violence rebellion grief four part closing appendix",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 2.0,
+      "consumed_eligible_weight": 2.0,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "REQUIRED": 2
+      },
+      "eligible_synthesis_count": 2,
+      "consumed_eligible_synthesis_count": 2,
+      "eligible_synthesis_coverage": 1.0
+    },
+    "audit": {
+      "reference": "2 Samuel 15",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "THIN",
+      "evidence_item_count": 2,
+      "specific_evidence_count": 1,
+      "evidence_score": 1.25,
+      "evidence_category_diversity": 2,
+      "evidence_categories": {
+        "culture": 1,
+        "history": 1
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 2,
+      "commentary_block_count": 2,
+      "commentary_prose_char_count": 812,
+      "commentary_prose_word_count": 122,
+      "verse_anchor_count": 36,
+      "verse_anchor_coverage": 0.973,
+      "evidence_ids_referenced": [
+        "second-samuel-absalom-rebellion",
+        "second-samuel-literary-movement"
+      ],
+      "unique_evidence_ids_consumed": 2,
+      "evidence_consumption_ratio": 1.0,
+      "unused_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0423,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "THIN",
+    "packet_id": "commentary-renderer-qualification-v2-packet:bfad482149420b3456cc1ce25aa44b75460a18ff093e3da7a578a95b8914b190",
+    "packet_hash": "bfad482149420b3456cc1ce25aa44b75460a18ff093e3da7a578a95b8914b190",
+    "raw_sha256": "f1b2c7c86013467745cb7acacc0a2474505639572980c8965d4990aabb060a8b"
+  }
+}

@@ -1,0 +1,1134 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Hebrews 8",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 23,
+    "eligible_weighted_denominator": 15.1,
+    "weighted_coverage": 0.6424,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.2603,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 14,
+    "eligible_weighted_denominator": 8.8,
+    "weighted_coverage": 0.8636,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.8571,
+    "raw_synthesis_utilization": 0.2603,
+    "eligible_unit_utilization": 0.5926,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 14,
+    "eligible_weighted_denominator": 8.8,
+    "weighted_coverage": 0.75,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.7143,
+    "eligible_unit_utilization": 0.4074,
+    "raw_synthesis_utilization": 0.1918,
+    "category_coverage": 0.8333,
+    "dump_severity": "NONE",
+    "word_count": 622,
+    "block_count": 8,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": -0.1136,
+    "core_coverage": 0.0,
+    "category_coverage": -0.1667
+  },
+  "diagnostic_classification": "CATEGORY_REGRESSION",
+  "full_result": {
+    "reference": "Hebrews 8",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 14,
+    "eligible_weighted_denominator": 8.8,
+    "weighted_coverage": 0.75,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.7143,
+    "eligible_unit_utilization": 0.4074,
+    "raw_synthesis_utilization": 0.1918,
+    "category_coverage": 0.8333,
+    "dump_severity": "NONE",
+    "word_count": 622,
+    "block_count": 8,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 73,
+      "meaningful_cluster_count": 14,
+      "consumed_synthesis_count": 14,
+      "consumed_cluster_count": 10,
+      "raw_synthesis_coverage": 0.1918,
+      "idea_cluster_coverage": 0.7143,
+      "weighted_idea_coverage": 0.75,
+      "core_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 6,
+      "consumed_category_count": 5,
+      "category_coverage": 0.8333,
+      "category_families": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "consolidation_ratio": 0.6522,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 8,
+        "consumed_synthesis_count": 14,
+        "consumed_cluster_count": 13,
+        "mean_evidence_ids_per_block": 2.875,
+        "block_to_synthesis_ratio": 0.5714,
+        "consolidation_ratio": 0.6522,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 23,
+        "block_to_cluster_ratio": 0.3478,
+        "consumed_unit_ratio": 0.1918,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 27.0,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_0378a30faf3f",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_a28829d267e6"
+          ],
+          "evidence_ids": [
+            "tabernacle:interpretive_note:2"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=tabernacle|facts=hebrews later scriptural interpretation own rhetorical argument should not make israelite sanctuary meaningless justify supersessionist contempt jewish worship",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_04a1033e6267",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_7802f370f490"
+          ],
+          "evidence_ids": [
+            "temple:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=temple|facts=ancient temples often royal cultic centers israel’s temple distinct because foregrounds covenant holiness atonement under one god",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_1150fd16c875",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_d28582175e6a",
+            "syn_interpretive_questions_f5143a2388b4",
+            "syn_why_it_matters_6bee80ac2adb",
+            "syn_why_it_matters_e38075d330ae"
+          ],
+          "evidence_ids": [
+            "heb-covenant",
+            "hebrews:interpretive_note:1",
+            "hebrews:interpretive_note:17",
+            "hebrews:interpretive_note:18",
+            "hebrews:interpretive_note:19",
+            "hebrews:interpretive_note:20"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=hebrews|facts=date destination proposals before after 70 ce destinations including rome jerusalem remain disputed present tense cultic language does not date temple;hebrews quotes jeremiah's new covenant promise calls jesus mediator better covenant enacted better promises;diathek may carry covenant testament associations especially 9 15 17 local argument septuagint usage govern translation;earthly heavenly sanctuary relation rhetorical typological cannot reconstructed complete celestial floor plan;new covenant exposition quotes jeremiah 31 within jewish scripture christian fulfillment claims must not become replacement jews erasure israel;supersessionism not safe shortcut hebrews covenant contrast must read without contempt judaism denigration torah erasure living jewish communities",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_214295675d51",
+          "kind": "archaeology_geography",
+          "synthesis_ids": [
+            "syn_archaeology_geography_5d6c28fbd81e",
+            "syn_why_it_matters_e035c8c9353b"
+          ],
+          "evidence_ids": [
+            "what-is-the-tabernacle:archaeology:0",
+            "what-is-the-tabernacle:archaeology:1"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=tabernacle|facts=no excavated object site securely identified wilderness tabernacle;timna site 200 remains bounded disputed shrine comparison",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "archaeology_geography",
+            "why_it_matters"
+          ],
+          "categories": [
+            "archaeology"
+          ],
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "specific_contextual_contribution"
+          ]
+        },
+        {
+          "id": "idea_cluster_2cd0649b1da4",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_51ae1d934373",
+            "syn_cultural_context_54a9ec0708cc",
+            "syn_cultural_context_599b032611fc"
+          ],
+          "evidence_ids": [
+            "blessing-and-curse-theme:ancient_near_east_context:0",
+            "exodus-pattern-theme:ancient_near_east_context:0",
+            "fire-theme:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=blessing-and-curse-theme,exodus-pattern-theme,fire-theme|facts=blessing curse theme comparison draws israelite covenant practice temple worship royal ideology wisdom instruction prophetic speech second temple judaism roman period community life context requires;exodus pattern theme comparison draws israelite covenant practice temple worship royal ideology wisdom instruction prophetic speech second temple judaism roman period community life context requires;fire theme comparison draws israelite covenant practice temple worship royal ideology wisdom instruction prophetic speech second temple judaism roman period community life context requires",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_42794428abc3",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_01d07cf6de7c",
+            "syn_historical_context_033a10380e6c",
+            "syn_historical_context_04316b4bc07e",
+            "syn_historical_context_138f1e4f165c",
+            "syn_historical_context_27739d4ead6d",
+            "syn_historical_context_2a651b06642b",
+            "syn_historical_context_2af2e74d85b1",
+            "syn_historical_context_2edb8be48f10",
+            "syn_historical_context_448f6d3cc5c3",
+            "syn_historical_context_482ea617117a",
+            "syn_historical_context_504cad4a8e33",
+            "syn_historical_context_5d00ef31706e",
+            "syn_historical_context_7b281985222b",
+            "syn_historical_context_82c82ddae425",
+            "syn_historical_context_88e0a17c3c7c",
+            "syn_historical_context_8f6d6a75ef7b",
+            "syn_historical_context_aafbcfd6704b",
+            "syn_historical_context_d1be97cfcdee",
+            "syn_historical_context_d97cc2e0505e",
+            "syn_historical_context_fd5de4fc442b"
+          ],
+          "evidence_ids": [
+            "blessing-and-curse-theme:historical_context:0",
+            "covenant-faithfulness:historical_context:0",
+            "divine-wrath:historical_context:0",
+            "election:historical_context:0",
+            "exodus-pattern-theme:historical_context:0",
+            "fire-theme:historical_context:0",
+            "hamartiology:historical_context:0",
+            "imago-dei:historical_context:0",
+            "judgment:historical_context:0",
+            "justification:historical_context:0",
+            "law-and-gospel:historical_context:0",
+            "mountain-theme:historical_context:0",
+            "new-covenant-theme:historical_context:0",
+            "priestly-mediation-theme:historical_context:0",
+            "promise-theme:historical_context:0",
+            "sacramental-theology:historical_context:0",
+            "typology:historical_context:0",
+            "wedding-theme:historical_context:0",
+            "what-is-typology:historical_context:0",
+            "wisdom-theme:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=blessing-and-curse-theme,covenant-faithfulness,divine-wrath,election,exodus-pattern-theme,fire-theme,hamartiology,imago-dei,judgment,justification,law-and-gospel,mountain-theme,new-covenant-theme,priestly-mediation-theme,promise-theme,sacramental-theology,typology,wedding-theme,wisdom-theme|facts=blessing curse theme read across canon scripture develops theme israel's story into new testament witness;covenant faithfulness read across canon scripture develops theme israel's story into new testament witness;divine wrath read across canon scripture develops theme israel's story into new testament witness;election read across canon scripture develops theme israel's story into new testament witness;exodus pattern theme read across canon scripture develops theme israel's story into new testament witness;fire theme read across canon scripture develops theme israel's story into new testament witness;hamartiology read across canon scripture develops theme israel's story into new testament witness;imago dei read across canon scripture develops theme israel's story into new testament witness;israel's story repeatedly reuses earlier patterns new testament identifies those patterns divinely intended preparations;judgment read across canon scripture develops theme israel's story into new testament witness;justification read across canon scripture develops theme israel's story into new testament witness;law gospel read across canon scripture develops theme israel's story into new testament witness;mountain theme read across canon scripture develops theme israel's story into new testament witness;new covenant theme read across canon scripture develops theme israel's story into new testament witness;priestly mediation theme read across canon scripture develops theme israel's story into new testament witness;promise theme read across canon scripture develops theme israel's story into new testament witness;sacramental theology read across canon scripture develops theme israel's story into new testament witness;typology read across canon scripture develops theme israel's story into new testament witness;wedding theme read across canon scripture develops theme israel's story into new testament witness;wisdom theme read across canon scripture develops theme israel's story into new testament witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "PARENT_PARALLEL",
+          "confidence": "medium",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_430a1160b6ff",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_db5bca5ccaaf"
+          ],
+          "evidence_ids": [
+            "jeremiah-reception-distinction"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions|parents=jeremiah|facts=later reuse jeremiah includes inner biblical reinterpretation jewish textual liturgical reception new testament quotation allusion christological reading ecclesial theology these modes should not collapsed into direct prediction",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_61089492db8b",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_ac83f60249c6"
+          ],
+          "evidence_ids": [
+            "what-is-covenant:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=covenant|facts=biblical covenant language intersects hittite neo assyrian treaty practices kinship obligations oaths signs royal grant patterns",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_6f5951faff99",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_6e54331956d8",
+            "syn_cultural_context_d2f0a2b49a8e"
+          ],
+          "evidence_ids": [
+            "new-covenant:ancient_near_east_context:0",
+            "what-is-the-new-covenant:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=new-covenant|facts=covenant renewal patterns familiar ancient world new covenant distinct because god himself provides inward renewal lasting forgiveness;treaty language ancient world often depended external compliance new covenant promises internalized obedience divine help",
+          "importance_weight": 0.7,
+          "duplicate_reason": "PARENT_PARALLEL",
+          "confidence": "medium",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_717ae8300b11",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_a3cd16cf39b1",
+            "syn_why_it_matters_186cb373fbe1"
+          ],
+          "evidence_ids": [
+            "what-is-the-tabernacle:historical_context:0",
+            "what-is-the-tabernacle:historical_setting:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context,why_it_matters|parents=tabernacle|facts=pentateuch places dwelling wilderness generation scholars debate historical form date composition detailed priestly texts so biblical description should not equated museum reconstruction single archaeological analogy;sinai subsequent wilderness travel story",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_795f8e9c5bc2",
+          "kind": "chronology",
+          "synthesis_ids": [
+            "syn_chronology_d121ca69a2c2",
+            "syn_why_it_matters_7e067a4a56a2"
+          ],
+          "evidence_ids": [
+            "what-is-the-tabernacle:date_ranges:0",
+            "what-is-the-tabernacle:date_ranges:1"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=chronology,why_it_matters|parents=tabernacle|facts=composition development priestly sanctuary texts disputed;narrative setting sinai wilderness journey date disputed",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "chronology",
+            "why_it_matters"
+          ],
+          "categories": [
+            "chronology"
+          ],
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "specific_contextual_contribution"
+          ]
+        },
+        {
+          "id": "idea_cluster_a1acd4398b53",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_509135f51c6b"
+          ],
+          "evidence_ids": [
+            "leviticus:interpretive_note:3"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=leviticus|facts=christian readings leviticus through hebrews later canonical reception should distinguished book's own instructions israel",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_b1d4ad5e1210",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_c5637d1b1906"
+          ],
+          "evidence_ids": [
+            "new-covenant-prophecy:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=new-covenant-prophecy|facts=promise rises exile need heart change forgiveness covenant renewal",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_c3a5d20d8ad3",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_bf106c533cf0"
+          ],
+          "evidence_ids": [
+            "covenant-theology:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=covenant-theology|facts=covenant theology developed way reading bible’s storyline especially within reformed confessional traditions rooted biblical text itself",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_cb154904906c",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_a4b8f8d56071",
+            "syn_historical_context_ffa21746356b"
+          ],
+          "evidence_ids": [
+            "new-covenant:historical_context:0",
+            "what-is-the-new-covenant:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=new-covenant|facts=jeremiah ezekiel announce future covenant people failed under old order need inward renewal;new covenant promise emerges prophetic hope after covenant failure exile proclaimed fulfilled jesus death resurrection",
+          "importance_weight": 0.7,
+          "duplicate_reason": "PARENT_PARALLEL",
+          "confidence": "medium",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_cec8b1d122a8",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_e6d511b27527"
+          ],
+          "evidence_ids": [
+            "new-covenant-prophecy:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=new-covenant-prophecy|facts=ancient background new covenant prophecy includes royal courts sanctuary worship covenant lawsuits exile restoration hope entry ties world jeremiah 31 31 34 ezekiel 36 24 28 new covenant theme covenant theme without letting comparison replace biblical witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_d124060e0612",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_b9339566fbd5"
+          ],
+          "evidence_ids": [
+            "covenant-theology:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=covenant-theology|facts=covenant theology draws biblical covenant forms intersect hittite suzerain treaties neo assyrian loyalty oaths kinship obligations royal grants",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_d32c78ab4de7",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_76146a4f85c9",
+            "syn_why_it_matters_51e7aa6df1d1"
+          ],
+          "evidence_ids": [
+            "what-is-the-tabernacle:ancient_near_east_context:0",
+            "what-is-the-tabernacle:hebraic_worldview:0",
+            "what-is-the-tabernacle:original_audience:0",
+            "what-is-the-tabernacle:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=tabernacle|facts=later jewish sanctuary traditions developed meaning tabernacle heavenly pattern varied ways hebrews belongs within jewish scriptural world while advancing distinct christological argument;mari's large public tent ramesside royal campaign tents timna's debated tented shrine phase egyptian processional bark shrines provide limited comparisons scale mobility protected sacred objects none biblical tabernacle proves direct copying;readers hearers pentateuch addressed through israel's sanctuary memory more specific source level audiences remain reconstructed;tabernacle holds together divine nearness holy boundaries yhwh dwells among israel yet space service washing sacrifice entry ordered rather than unrestricted",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_d5bc0cf8a15e",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_594db4a3059c",
+            "syn_surrounding_passages_c51a52b229bc",
+            "syn_surrounding_passages_faaec8b64a23"
+          ],
+          "evidence_ids": [
+            "heb-p46",
+            "heb-sanctuary",
+            "heb-sinaiticus",
+            "hebrews:interpretive_note:39"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=hebrews|facts=application must reject antisemitism supersessionism misogyny anti lgbtq coercion forced conversion colonial mission nationalism religious violence prosperity extraction ecological neglect;codex sinaiticus preserves hebrews new testament sequence after 2 thessalonians;papyrus 46 early substantial witness hebrews though lacunae paleographic date remains approximate;work describes earthly tent greater heavenly sanctuary within cultic comparison",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "archaeology",
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_e20209a1ef24",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_611bbff7163f",
+            "syn_why_it_matters_a88a393517aa"
+          ],
+          "evidence_ids": [
+            "covenant-theme:ancient_near_east_context:0",
+            "covenant-theme:hebraic_worldview:0",
+            "covenant-theme:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=covenant-theme|facts=after exile covenant identity became central debates about purity law hope;biblical covenants converse treaty grant patterns ancient near east while keeping divine grace holiness center;covenant corporate relationship oath loyalty blessing memory responsibility before god",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_e24c0d3856ab",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_726f1501424f",
+            "syn_historical_context_7a724a67e95e"
+          ],
+          "evidence_ids": [
+            "covenant-theme:historical_context:0",
+            "what-is-covenant:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=covenant,covenant-theme|facts=biblical covenants revealed across story noah abraham israel david new covenant christ;covenant language organizes story noah abraham israel david new covenant christ",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_e78d855eaf11",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_117f901b4037"
+          ],
+          "evidence_ids": [
+            "temple:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=temple|facts=temple develops tabernacle patterns into solomon’s temple survives exilic memory rebuilt second temple period",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_f458e27dcf4e",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_1aa9c1b32318",
+            "syn_cultural_context_2d507257758e",
+            "syn_cultural_context_417838b26060",
+            "syn_cultural_context_46a9821351b5",
+            "syn_cultural_context_4c90a62a6382",
+            "syn_cultural_context_4e2f103b1e0a",
+            "syn_cultural_context_5254954f847d",
+            "syn_cultural_context_5b7a59af84ee",
+            "syn_cultural_context_7b1b87e44470",
+            "syn_cultural_context_82987c3216ed",
+            "syn_cultural_context_8cab5a1f3bc0",
+            "syn_cultural_context_b8736f3a9e63",
+            "syn_cultural_context_de8419074387",
+            "syn_cultural_context_e1787a6bee82",
+            "syn_cultural_context_e22a9fe68a6f",
+            "syn_cultural_context_eb16376ab7e8",
+            "syn_cultural_context_f2ee23ebc5ea"
+          ],
+          "evidence_ids": [
+            "covenant-faithfulness:ancient_near_east_context:0",
+            "divine-wrath:ancient_near_east_context:0",
+            "election:ancient_near_east_context:0",
+            "hamartiology:ancient_near_east_context:0",
+            "imago-dei:ancient_near_east_context:0",
+            "judgment:ancient_near_east_context:0",
+            "justification:ancient_near_east_context:0",
+            "law-and-gospel:ancient_near_east_context:0",
+            "mountain-theme:ancient_near_east_context:0",
+            "new-covenant-theme:ancient_near_east_context:0",
+            "priestly-mediation-theme:ancient_near_east_context:0",
+            "promise-theme:ancient_near_east_context:0",
+            "sacramental-theology:ancient_near_east_context:0",
+            "typology:ancient_near_east_context:0",
+            "wedding-theme:ancient_near_east_context:0",
+            "what-is-typology:ancient_near_east_context:0",
+            "wisdom-theme:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=covenant-faithfulness,divine-wrath,election,hamartiology,imago-dei,judgment,justification,law-and-gospel,mountain-theme,new-covenant-theme,priestly-mediation-theme,promise-theme,sacramental-theology,typology,wedding-theme,wisdom-theme|facts=ancient background covenant faithfulness includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background divine wrath includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background election includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background hamartiology includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background imago dei includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background judgment includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background justification includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background law gospel includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background mountain theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background new covenant theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background priestly mediation theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background promise theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background sacramental theology includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background typology includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world exodus 12 1 14 numbers 21 4 9 what typology hebrews without letting comparison replace biblical witness;ancient background wedding theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient background wisdom theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 9 8 17 genesis 12 1 3 covenant theme covenant theology without letting comparison replace biblical witness;ancient readers expected stories echo recur biblical typology gives recurrence theological direction toward christ",
+          "importance_weight": 0.7,
+          "duplicate_reason": "PARENT_PARALLEL",
+          "confidence": "medium",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 8.8,
+      "consumed_eligible_weight": 6.6,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 9,
+        "RELEVANT": 14
+      },
+      "eligible_synthesis_count": 27,
+      "consumed_eligible_synthesis_count": 11,
+      "eligible_synthesis_coverage": 0.4074
+    },
+    "audit": {
+      "reference": "Hebrews 8",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "SYNTHESIS_GAP",
+      "richness_reasons": [
+        "meaningful evidence exists but reader commentary underuses or weakly explains it"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 79,
+      "specific_evidence_count": 79,
+      "evidence_score": 64.875,
+      "evidence_category_diversity": 5,
+      "evidence_categories": {
+        "archaeology": 4,
+        "chronology": 2,
+        "culture": 43,
+        "history": 29,
+        "social": 1
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 2,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 2,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 4,
+      "section_count": 5,
+      "commentary_block_count": 8,
+      "commentary_prose_char_count": 4153,
+      "commentary_prose_word_count": 622,
+      "verse_anchor_count": 13,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "covenant-theme:ancient_near_east_context:0",
+        "covenant-theme:hebraic_worldview:0",
+        "hebrews:interpretive_note:18",
+        "hebrews:interpretive_note:19",
+        "hebrews:interpretive_note:20",
+        "jeremiah-reception-distinction",
+        "new-covenant-prophecy:historical_context:0",
+        "new-covenant:ancient_near_east_context:0",
+        "temple:historical_context:0",
+        "what-is-covenant:ancient_near_east_context:0",
+        "what-is-the-new-covenant:ancient_near_east_context:0",
+        "what-is-the-new-covenant:historical_context:0",
+        "what-is-the-tabernacle:ancient_near_east_context:0",
+        "what-is-the-tabernacle:archaeology:0",
+        "what-is-the-tabernacle:archaeology:1",
+        "what-is-the-tabernacle:date_ranges:0",
+        "what-is-the-tabernacle:date_ranges:1",
+        "what-is-the-tabernacle:hebraic_worldview:0",
+        "what-is-the-tabernacle:historical_context:0",
+        "what-is-the-tabernacle:historical_setting:0",
+        "what-is-the-tabernacle:second_temple_context:0",
+        "what-is-typology:ancient_near_east_context:0"
+      ],
+      "unique_evidence_ids_consumed": 22,
+      "evidence_consumption_ratio": 0.2785,
+      "unused_evidence_ids": [
+        "blessing-and-curse-theme:ancient_near_east_context:0",
+        "blessing-and-curse-theme:historical_context:0",
+        "covenant-faithfulness:ancient_near_east_context:0",
+        "covenant-faithfulness:historical_context:0",
+        "covenant-theme:historical_context:0",
+        "covenant-theme:second_temple_context:0",
+        "covenant-theology:ancient_near_east_context:0",
+        "covenant-theology:historical_context:0",
+        "divine-wrath:ancient_near_east_context:0",
+        "divine-wrath:historical_context:0",
+        "election:ancient_near_east_context:0",
+        "election:historical_context:0",
+        "exodus-pattern-theme:ancient_near_east_context:0",
+        "exodus-pattern-theme:historical_context:0",
+        "fire-theme:ancient_near_east_context:0",
+        "fire-theme:historical_context:0",
+        "hamartiology:ancient_near_east_context:0",
+        "hamartiology:historical_context:0",
+        "heb-covenant",
+        "heb-p46",
+        "heb-sanctuary",
+        "heb-sinaiticus",
+        "hebrews:interpretive_note:1",
+        "hebrews:interpretive_note:17",
+        "hebrews:interpretive_note:39",
+        "imago-dei:ancient_near_east_context:0",
+        "imago-dei:historical_context:0",
+        "judgment:ancient_near_east_context:0",
+        "judgment:historical_context:0",
+        "justification:ancient_near_east_context:0",
+        "justification:historical_context:0",
+        "law-and-gospel:ancient_near_east_context:0",
+        "law-and-gospel:historical_context:0",
+        "leviticus:interpretive_note:3",
+        "mountain-theme:ancient_near_east_context:0",
+        "mountain-theme:historical_context:0",
+        "new-covenant-prophecy:ancient_near_east_context:0",
+        "new-covenant-theme:ancient_near_east_context:0",
+        "new-covenant-theme:historical_context:0",
+        "new-covenant:historical_context:0",
+        "priestly-mediation-theme:ancient_near_east_context:0",
+        "priestly-mediation-theme:historical_context:0",
+        "promise-theme:ancient_near_east_context:0",
+        "promise-theme:historical_context:0",
+        "sacramental-theology:ancient_near_east_context:0",
+        "sacramental-theology:historical_context:0",
+        "tabernacle:interpretive_note:2",
+        "temple:ancient_near_east_context:0",
+        "typology:ancient_near_east_context:0",
+        "typology:historical_context:0",
+        "wedding-theme:ancient_near_east_context:0",
+        "wedding-theme:historical_context:0",
+        "what-is-covenant:historical_context:0",
+        "what-is-the-tabernacle:original_audience:0",
+        "what-is-typology:historical_context:0",
+        "wisdom-theme:ancient_near_east_context:0",
+        "wisdom-theme:historical_context:0"
+      ],
+      "unused_evidence_count": 57,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0171,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:cb76042c11875fe8edba4261cb5faddf4b8110e4fea1227b6bb2752da0ec6afc",
+    "packet_hash": "cb76042c11875fe8edba4261cb5faddf4b8110e4fea1227b6bb2752da0ec6afc",
+    "raw_sha256": "87719a79deb5a03933f83e3f0ea03a5fecec80c54cdfb9f1dd95cdad980ccc93"
+  }
+}

@@ -1,10 +1,112 @@
 # Commentary v1.2 renderer qualification v2
 
-Status: `AWAITING_EXTERNAL_RESPONSE_BUNDLE`
+Status: `RENDERER_QUALIFICATION_NOT_QUALIFIED`
 
-This is a clean qualification handoff for renderer prompt `1.6`. No fresh
-renderer response was available in the repository at handoff time, so this
-document does not claim a qualification pass or evaluate placeholder output.
+This document preserves the clean qualification handoff for renderer prompt
+`1.6` and records the completed frozen 21-chapter experiment. The imported
+responses are fresh GPT-5.6 Sol outputs at medium effort. No response was
+retried or edited after evaluation, and no prompt, CKL, evidence, clustering,
+eligibility, scoring, threshold, or Gate behavior was changed.
+
+## Completed qualification
+
+- Qualification execution starting SHA: `b82073766430e4a8bf6f2e28c34e0c4c67186f9e`
+- Renderer: `gpt-5.6-sol`
+- Reasoning effort: `medium`
+- Renderer prompt: `1.6`
+- Prompt-1.6 system prompt SHA-256: `befaadae050b039ee61d475fa7c8ddd2dfc4e3fc22bf85f93bb5efd571e2f52b`
+- Response bundle: `renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-responses.zip`
+- Response bundle SHA-256: `ee0127c1523f6b524c015d93c05ca627f4f7d2d6f2bc4ab94c92397581e2362d`
+- Response manifest SHA-256: `c397715f8a6d30e63af5e82159caa10fc97da908f44e4c4a500d83bacad7fee8`
+- Import result: `IMPORTED`, 21 responses, immutable raw bytes
+- Final result: `RENDERER_QUALIFICATION_NOT_QUALIFIED`
+
+The first import attempt correctly rejected an explicit `responses/` directory
+member as an extra ZIP member. The archive was repackaged without changing any
+response or manifest content, reverified at 22 exact members, and then imported
+successfully.
+
+## Aggregate result
+
+- Total renderer chapters: `21`
+- Structurally valid: `21`
+- Structurally rejected: `0`
+- Structural rejection reasons: none
+- Evidence-bearing valid chapters: `19`
+- Reader-relevance weighted coverage: `.8478`
+- Core coverage: `.9474`
+- Eligible idea utilization: `.8498`
+- Eligible unit utilization: `.6579`
+- Raw synthesis utilization: `.5860`
+- Category coverage: `.9325`
+- HIGH dump count: `0`
+- Gate v2.1 PASS count: `19`
+- Gate quality-fail count: `2`
+- Qualification-target passes: `14`
+- Qualification-target shortfalls: `5`
+- Chapters below the per-chapter category target: `5`
+- Outcome transitions from historical prompt 1.5: `18 PASS->PASS`,
+  `2 PASS->QUALITY_FAIL`, and `1 REJECTED->PASS`
+
+The aggregate reader-relevance and eligible-utilization means clear their
+thresholds, and all responses are structurally valid with no dump behavior.
+Qualification nevertheless fails because the frozen contract also applies
+core and relevant coverage expectations at chapter level. The five target
+shortfalls are Isaiah 13, Romans 3, 1 Corinthians 14, Revelation 20, and
+Revelation 21. Romans 3 omitted a core idea; the other failures are primarily
+eligible-idea/category richness omissions.
+
+## Per-chapter result
+
+`Hist.` is the historical prompt-1.5 corrected-v3 weighted coverage. `Delta`
+is the new prompt-1.6 weighted-coverage change from that value. All chapters
+were structurally accepted, so every structural-failure entry is `none`.
+
+| Reference | Structural / failure | Weighted | Core | Eligible ideas | Category | Dump | Gate v2.1 | Qualification | Hist. / delta | Diagnostic |
+|---|---|---:|---:|---:|---:|---|---|---|---|---|
+| Exodus 14 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS; concise scoring-noise control remained complete |
+| Leviticus 8 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Numbers 36 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Deuteronomy 10 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS; concise scoring-noise control remained complete |
+| Ruth 2 | accepted / none | .8649 | 1.0000 | .8000 | 1.0000 | NONE | PASS | PASS | .8649 / +.0000 | STABLE_PASS |
+| 2 Samuel 15 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Ezra 8 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Nehemiah 7 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Job 1 | accepted / none | .7500 | 1.0000 | .7500 | 1.0000 | NONE | PASS | PASS | .7500 / +.0000 | STABLE_PASS; disputed/contextual material stayed calibrated at the threshold |
+| Isaiah 13 | accepted / none | .5000 | 1.0000 | .5000 | .7500 | NONE | PASS | BELOW_TARGET | 1.0000 / -.5000 | CATEGORY_REGRESSION; eligible context and one category were omitted |
+| Amos 2 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Matthew 4 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | .7879 / +.2121 | IMPROVED_RENDERER |
+| Matthew 19 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Matthew 20 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Romans 3 | accepted / none | .4000 | .0000 | .5000 | .5000 | NONE | QUALITY_FAIL | BELOW_TARGET | .8000 / -.4000 | CORE_REGRESSION; core and category material were omitted |
+| 1 Corinthians 14 | accepted / none | .7143 | 1.0000 | .7143 | .8333 | NONE | PASS | BELOW_TARGET | historical response rejected / n.a. | RICHNESS_SHORTFALL; ancestry recovered but reader-facing/category breadth remained low |
+| Hebrews 8 | accepted / none | .7500 | 1.0000 | .7143 | .8333 | NONE | PASS | PASS | .8636 / -.1136 | CATEGORY_REGRESSION at the accepted boundary |
+| Revelation 4 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Revelation 19 | accepted / none | 1.0000 | 1.0000 | 1.0000 | 1.0000 | NONE | PASS | PASS | 1.0000 / +.0000 | STABLE_PASS |
+| Revelation 20 | accepted / none | .6667 | 1.0000 | .6667 | .8000 | NONE | PASS | BELOW_TARGET | .8056 / -.1389 | CATEGORY_REGRESSION; eligible breadth remained below target |
+| Revelation 21 | accepted / none | .4615 | 1.0000 | .5000 | 1.0000 | NONE | QUALITY_FAIL | BELOW_TARGET | .6635 / -.2020 | RICHNESS_SHORTFALL; no dump, but the main stress response omitted too many eligible ideas |
+
+## Priority diagnostics
+
+- **1 Corinthians 14:** The fresh response is structurally accepted with no
+  `SYNTHESIS_ANCESTRY_MISMATCH`, confirming prompt 1.6's ancestry recovery in
+  the full qualification. Its `.7143` weighted coverage is below `.75`, and
+  category coverage is `.8333`, so it remains below the qualification target
+  for richness rather than provenance.
+- **Revelation 21:** Structural validity, core coverage, and full category
+  representation were preserved with no dump. Weighted coverage `.4615` and
+  eligible idea utilization `.5000` are below both the prior prompt-1.6
+  diagnostic (`.5288`) and the historical prompt-1.5 v3 counterfactual
+  (`.6635`). This is a reader-facing richness omission, not encyclopedic dump
+  behavior.
+- **Job 1:** Passed exactly at `.7500` weighted coverage, with `1.0000` core and
+  category coverage, `.7500` eligible idea utilization, and no dump. The mixed
+  contextual/disputed material remained calibrated.
+- **Exodus 14:** Passed at `1.0000` across weighted, core, eligible-idea, and
+  category coverage with no dump. The corrected denominator did not induce
+  generic entity expansion.
+- **Deuteronomy 10:** Also passed at `1.0000` across all four coverage measures
+  with no dump, preserving concise reader relevance.
 
 ## Starting point
 
@@ -155,29 +257,30 @@ plus the aggregate comparison report under the immutable namespace.
 
 ## Tests
 
-The new qualification-harness contract suite passed `4` tests. The complete
-focused commentary/scoring/renderer suite, including that harness, passed `78`
-tests with one expected duplicate-ZIP warning. No response import has occurred
-at this boundary.
+After immutable import and evaluation, the qualification-harness contract suite
+passed `4 / 4` tests. A broader focused commentary/scoring/renderer suite passed
+`82 / 82` tests:
+
+- `tests/test_commentary_renderer_qualification_v2.py`
+- `tests/test_commentary_renderer_remediation.py`
+- `tests/test_commentary_v12_richness.py`
+- `tests/test_commentary_v12_richness_clusters.py`
+- `tests/test_commentary_v12_validation.py`
+- `tests/test_commentary_v12_external_import.py`
 
 The separate existing canary module reported `3 passed, 1 failed`. Its failure
 is outside this qualification: the pre-existing dirty canary packets carry
 renderer prompt `1.5`, while `tests/test_commentary_v12_canary.py` still asserts
 prompt `1.2`. The canary files and test were not changed.
 
-## Priority diagnostics after import
-
-The final evaluation must explicitly inspect Revelation 21 as the richness
-stress test, Job 1 as the mixed-evidence case, 1 Corinthians 14 for
-`SYNTHESIS_ANCESTRY_MISMATCH`, and Exodus 14/Deuteronomy 10 as scoring-noise
-controls. The evaluator records historical-vs-new metrics, deltas, category
-coverage, eligible idea utilization, dump severity, Gate v2.1 outcome, and a
-short diagnostic classification for all 21 chapters.
-
 ## Recommended next step
 
-Run the exact external GPT-5.6 Sol generation against the prepared request
-bundle. Import only the verified complete response bundle, then run evaluation.
-Do not remediate renderer behavior, alter scoring, regenerate CKL, or begin
-scale expansion until the resulting 21-chapter qualification report gives a
-clear `RENDERER_QUALIFICATION_PASS` or `RENDERER_QUALIFICATION_NOT_QUALIFIED`.
+Do not freeze prompt 1.6 as the Commentary v1.2 renderer contract and do not
+begin the 60–100 chapter scale qualification. The smallest remaining defect is
+renderer selection breadth: structurally valid prose omits eligible
+reader-relevant ideas and, in Romans 3, a core idea. The next bounded remediation
+should be a prompt-only five-chapter diagnostic over Isaiah 13, Romans 3,
+1 Corinthians 14, Revelation 20, and Revelation 21 using the same frozen
+evidence and scoring contract. It should target representative eligible/category
+breadth without increasing dump behavior. That remediation is not implemented
+as part of this qualification.

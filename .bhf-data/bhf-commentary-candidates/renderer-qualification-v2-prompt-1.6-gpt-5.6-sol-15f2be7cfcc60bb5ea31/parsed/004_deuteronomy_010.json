@@ -1,0 +1,153 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Deuteronomy 10",
+  "raw_sha256": "be48f175b77a42db2868f9e81d0715736bb1b99ab64282040d7d13451f0f3884",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Deuteronomy 10",
+    "book": "Deuteronomy",
+    "chapter": 10,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Aaron and the Wilderness Generation",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The brief account of Aaron’s death and Eleazar’s succession belongs to the Exodus and wilderness period in which Israel was being formed as a covenant people. The chapter presents the change in concrete terms: Aaron is buried, his son assumes the priestly office, and the tribe of Levi continues its appointed service. Aaron’s wider social setting included both kinship obligations and organized religious life, and this passage brings those dimensions together by identifying his successor as his son while describing the continuing duties associated with priestly ministry.",
+            "verse_refs": [
+              "Deuteronomy 10:6-9"
+            ],
+            "evidence_ids": [
+              "aaron:historical_context:0",
+              "aaron:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_8b187f7e200c",
+              "syn_cultural_context_07f4d409c047"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The Chapter within Deuteronomy",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Deuteronomy as a whole moves from recollection of the wilderness years into covenant instruction, then onward to covenant consequences, renewal, succession, song, blessing, and Moses’s death. Chapter 10 stands near the transition between the first two movements: Moses recalls the renewed stone tablets, his intercession, Israel’s journeys, and the continuation of priestly service before turning to what Jehovah requires of Israel. The chapter’s shift from remembered events to commands therefore reflects the broader movement of the book.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_946135095225"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "One influential but disputed reading understands the repeated instruction in Deuteronomy 5–26 as covenant teaching rhetorically adapted for a successor generation, rather than as a simple word-for-word duplication of earlier laws. On that reading, the recollection of the tablets and commandments in this chapter functions as renewed exposition addressed to the generation preparing to possess the land.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_b55b3bea6540"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Deuteronomy 10",
+    "book": "Deuteronomy",
+    "chapter": 10,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Aaron and the Wilderness Generation",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The brief account of Aaron’s death and Eleazar’s succession belongs to the Exodus and wilderness period in which Israel was being formed as a covenant people. The chapter presents the change in concrete terms: Aaron is buried, his son assumes the priestly office, and the tribe of Levi continues its appointed service. Aaron’s wider social setting included both kinship obligations and organized religious life, and this passage brings those dimensions together by identifying his successor as his son while describing the continuing duties associated with priestly ministry.",
+            "verse_refs": [
+              "Deuteronomy 10:6-9"
+            ],
+            "evidence_ids": [
+              "aaron:historical_context:0",
+              "aaron:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_8b187f7e200c",
+              "syn_cultural_context_07f4d409c047"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The Chapter within Deuteronomy",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Deuteronomy as a whole moves from recollection of the wilderness years into covenant instruction, then onward to covenant consequences, renewal, succession, song, blessing, and Moses’s death. Chapter 10 stands near the transition between the first two movements: Moses recalls the renewed stone tablets, his intercession, Israel’s journeys, and the continuation of priestly service before turning to what Jehovah requires of Israel. The chapter’s shift from remembered events to commands therefore reflects the broader movement of the book.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_946135095225"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "One influential but disputed reading understands the repeated instruction in Deuteronomy 5–26 as covenant teaching rhetorically adapted for a successor generation, rather than as a simple word-for-word duplication of earlier laws. On that reading, the recollection of the tablets and commandments in this chapter functions as renewed exposition addressed to the generation preparing to possess the land.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_b55b3bea6540"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "636456e61202cd754c581f21caa93986fb638ef3f102e1a051de3c3cb8842a74",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "b5c4daff54f89458f8d5c1be717edf05df013ff4515f2d7fec65b569978a1399",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:167dc91aa2f492527b3363713072bf77cf7886244b56710ba5288484d60777b8",
+  "packet_hash": "167dc91aa2f492527b3363713072bf77cf7886244b56710ba5288484d60777b8"
+}

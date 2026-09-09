@@ -1,0 +1,369 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Romans 3",
+  "raw_sha256": "d973bde1cd24a390a93db76df83d6576cf56fcedfc588227ece096e6e0629d39",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Romans 3",
+    "book": "Romans",
+    "chapter": 3,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The chapter holds together truths that might otherwise be separated. Israel's privilege is real: the Jews were entrusted with God's oracles. Yet this vocation does not place Jews above Greeks, because both are under sin. Paul then describes God's righteousness, redemption, atonement, faith, and justification before excluding boasting and affirming that the one God justifies both the circumcised and the uncircumcised through faith. Universal accountability therefore neither erases Israel's scriptural vocation nor turns that vocation into ethnic supremacy.",
+            "verse_refs": [
+              "Romans 3:1-9",
+              "Romans 3:19-31"
+            ],
+            "evidence_ids": [
+              "romans-boasting-law-faith",
+              "romans-boasting-law-faith:passage-relevance",
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance",
+              "romans-justification-pistis-christou"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_96eb7f62caf2"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Courtroom and Sacrificial Language",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "To be “justified” draws on the language of a court's verdict. Ancient courts issued decisions that established a person's status, and Scripture uses this legal language for God's saving declaration. In Paul's argument, this courtroom picture is also connected with covenant language, particularly Abraham and the law. Thus “justified freely” in verse 24 describes an act and verdict of God, not merely a person's claim to have behaved correctly.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "what-is-justification:ancient_near_east_context:0",
+              "what-is-justification:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_8c1669577161",
+              "syn_historical_context_fb8be01f878c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "Sacrifice was widespread in the ancient world, but Scripture associates it with holiness, atonement, covenant access, fellowship, and thanksgiving rather than treating it as mere appeasement. Temple sacrifice was still a living institution in the Second Temple period, so Paul's references to Christ's blood and atoning imagery belonged to a recognizable sacrificial world. The scriptural theme itself extends from early Genesis through Levitical worship and into later prophetic and New Testament reflection.",
+            "verse_refs": [
+              "Romans 3:24-26"
+            ],
+            "evidence_ids": [
+              "sacrifice-theme:ancient_near_east_context:0",
+              "sacrifice-theme:hebraic_worldview:0",
+              "sacrifice-theme:historical_context:0",
+              "sacrifice-theme:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_78ac0ec80b5a",
+              "syn_historical_context_2b750d1e862a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "The Death Behind the Language",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The crucifixion presupposed by the reference to Christ's blood occurred in first-century Judea under Roman authority. Crucifixion was specifically a form of Roman imperial punishment and displayed Roman coercive power; it was not a Jewish institution. The Gospel narratives interpret that Roman execution through Israel's scriptural and covenantal categories, connecting death and shame with such themes as kingship, lament, covenant, burial duty, and Scripture.",
+            "verse_refs": [
+              "Romans 3:24-26"
+            ],
+            "evidence_ids": [
+              "crucifixion:ancient_near_east_context:0",
+              "crucifixion:hebraic_worldview:0",
+              "crucifixion:historical_context:0",
+              "crucifixion:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ca63e816b839",
+              "syn_historical_context_483de655d61f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "Important Translation Questions",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "Several central expressions carry more than one possible emphasis. “The righteousness of God” can refer to God's saving justice, covenant faithfulness, rectitude, or status-giving verdict. The Greek phrase pistis Christou in verse 22 can be understood as faith in Christ, Christ's faithfulness, or a deliberately dense relationship involving both ideas. Grammar alone does not settle that debate, so one English rendering should not be treated as though it exhausts the wording.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "romans-pistis-christou",
+              "romans-righteousness"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9489d624c71e"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_6",
+            "text": "The word translated “propitiation” in verse 25 is hilasterion. It may evoke a means of atonement, sacrificial expiation or propitiation, or the mercy seat; the Greek does not force interpreters to choose one of these possibilities without further argument. Likewise, “works of the law” means works of Torah. Debate continues over whether the expression emphasizes particular boundary practices, all commanded deeds, identity performance, or a broader posture. It should not simply be paraphrased as “Jewish legalism,” since the chapter discusses practices, boasting, judgment, gentile inclusion, and the law's limits under sin.",
+            "verse_refs": [
+              "Romans 3:20",
+              "Romans 3:25",
+              "Romans 3:27-31"
+            ],
+            "evidence_ids": [
+              "romans-hilasterion",
+              "romans-works-law",
+              "romans:interpretive_note:22"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9489d624c71e",
+              "syn_interpretive_questions_2ed5753a8993"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the Chapter's Comparisons Matter",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Paul's sequence guards against opposing forms of ethnic triumphalism. Jewish advantage is affirmed through the entrusted oracles, but it does not become supremacy; the shared condition of sin places Jews and Greeks under accountability, but it does not erase Israel's scriptural vocation. The exclusion of boasting and the appeal to one God continue this argument across the distinction between circumcision and uncircumcision. At the same time, the claim that all are under sin describes the groups within Paul's argument; it must not be used to portray any race or social group as especially depraved or to blame individuals for harms they have suffered.",
+            "verse_refs": [
+              "Romans 3:1-9",
+              "Romans 3:19-20",
+              "Romans 3:27-31"
+            ],
+            "evidence_ids": [
+              "romans-boasting-law-faith",
+              "romans-boasting-law-faith:passage-relevance",
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance",
+              "romans:interpretive_note:23"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_da699cecd85f",
+              "syn_why_it_matters_0e2c0068d0d6"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Romans 3",
+    "book": "Romans",
+    "chapter": 3,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The chapter holds together truths that might otherwise be separated. Israel's privilege is real: the Jews were entrusted with God's oracles. Yet this vocation does not place Jews above Greeks, because both are under sin. Paul then describes God's righteousness, redemption, atonement, faith, and justification before excluding boasting and affirming that the one God justifies both the circumcised and the uncircumcised through faith. Universal accountability therefore neither erases Israel's scriptural vocation nor turns that vocation into ethnic supremacy.",
+            "verse_refs": [
+              "Romans 3:1-9",
+              "Romans 3:19-31"
+            ],
+            "evidence_ids": [
+              "romans-boasting-law-faith",
+              "romans-boasting-law-faith:passage-relevance",
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance",
+              "romans-justification-pistis-christou"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_96eb7f62caf2"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Courtroom and Sacrificial Language",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "To be “justified” draws on the language of a court's verdict. Ancient courts issued decisions that established a person's status, and Scripture uses this legal language for God's saving declaration. In Paul's argument, this courtroom picture is also connected with covenant language, particularly Abraham and the law. Thus “justified freely” in verse 24 describes an act and verdict of God, not merely a person's claim to have behaved correctly.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "what-is-justification:ancient_near_east_context:0",
+              "what-is-justification:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_8c1669577161",
+              "syn_historical_context_fb8be01f878c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "Sacrifice was widespread in the ancient world, but Scripture associates it with holiness, atonement, covenant access, fellowship, and thanksgiving rather than treating it as mere appeasement. Temple sacrifice was still a living institution in the Second Temple period, so Paul's references to Christ's blood and atoning imagery belonged to a recognizable sacrificial world. The scriptural theme itself extends from early Genesis through Levitical worship and into later prophetic and New Testament reflection.",
+            "verse_refs": [
+              "Romans 3:24-26"
+            ],
+            "evidence_ids": [
+              "sacrifice-theme:ancient_near_east_context:0",
+              "sacrifice-theme:hebraic_worldview:0",
+              "sacrifice-theme:historical_context:0",
+              "sacrifice-theme:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_78ac0ec80b5a",
+              "syn_historical_context_2b750d1e862a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "The Death Behind the Language",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The crucifixion presupposed by the reference to Christ's blood occurred in first-century Judea under Roman authority. Crucifixion was specifically a form of Roman imperial punishment and displayed Roman coercive power; it was not a Jewish institution. The Gospel narratives interpret that Roman execution through Israel's scriptural and covenantal categories, connecting death and shame with such themes as kingship, lament, covenant, burial duty, and Scripture.",
+            "verse_refs": [
+              "Romans 3:24-26"
+            ],
+            "evidence_ids": [
+              "crucifixion:ancient_near_east_context:0",
+              "crucifixion:hebraic_worldview:0",
+              "crucifixion:historical_context:0",
+              "crucifixion:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ca63e816b839",
+              "syn_historical_context_483de655d61f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "Important Translation Questions",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "Several central expressions carry more than one possible emphasis. “The righteousness of God” can refer to God's saving justice, covenant faithfulness, rectitude, or status-giving verdict. The Greek phrase pistis Christou in verse 22 can be understood as faith in Christ, Christ's faithfulness, or a deliberately dense relationship involving both ideas. Grammar alone does not settle that debate, so one English rendering should not be treated as though it exhausts the wording.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "romans-pistis-christou",
+              "romans-righteousness"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9489d624c71e"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_6",
+            "text": "The word translated “propitiation” in verse 25 is hilasterion. It may evoke a means of atonement, sacrificial expiation or propitiation, or the mercy seat; the Greek does not force interpreters to choose one of these possibilities without further argument. Likewise, “works of the law” means works of Torah. Debate continues over whether the expression emphasizes particular boundary practices, all commanded deeds, identity performance, or a broader posture. It should not simply be paraphrased as “Jewish legalism,” since the chapter discusses practices, boasting, judgment, gentile inclusion, and the law's limits under sin.",
+            "verse_refs": [
+              "Romans 3:20",
+              "Romans 3:25",
+              "Romans 3:27-31"
+            ],
+            "evidence_ids": [
+              "romans-hilasterion",
+              "romans-works-law",
+              "romans:interpretive_note:22"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9489d624c71e",
+              "syn_interpretive_questions_2ed5753a8993"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the Chapter's Comparisons Matter",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Paul's sequence guards against opposing forms of ethnic triumphalism. Jewish advantage is affirmed through the entrusted oracles, but it does not become supremacy; the shared condition of sin places Jews and Greeks under accountability, but it does not erase Israel's scriptural vocation. The exclusion of boasting and the appeal to one God continue this argument across the distinction between circumcision and uncircumcision. At the same time, the claim that all are under sin describes the groups within Paul's argument; it must not be used to portray any race or social group as especially depraved or to blame individuals for harms they have suffered.",
+            "verse_refs": [
+              "Romans 3:1-9",
+              "Romans 3:19-20",
+              "Romans 3:27-31"
+            ],
+            "evidence_ids": [
+              "romans-boasting-law-faith",
+              "romans-boasting-law-faith:passage-relevance",
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance",
+              "romans:interpretive_note:23"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_da699cecd85f",
+              "syn_why_it_matters_0e2c0068d0d6"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "29ad454129fc29b21f2d080357b5a98920bc3925353ccb1714682e6755316332",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "cabe3ffbc864a311d6fba144d0ab5872c45de24779c7ed986dd6e454dea489bc",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:ca36f4dc6343017e6094343e18985d34d1ef9ecebef34606a87b30e19f61297a",
+  "packet_hash": "ca36f4dc6343017e6094343e18985d34d1ef9ecebef34606a87b30e19f61297a"
+}

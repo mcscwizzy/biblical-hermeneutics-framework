@@ -1,0 +1,127 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Matthew 19",
+  "raw_sha256": "ed91ac2d05d165ebb79485f723a1420f3a3591dc041ed7fb5f863112fcc9367d",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Matthew 19",
+    "book": "Matthew",
+    "chapter": 19,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "language_literary",
+        "title": "A Literary Transition",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The opening words, “when Jesus had finished these words,” belong to a formula repeated five times in Matthew to close major collections of teaching. Here the formula marks the movement from the preceding discourse into Jesus’ journey and the encounters that follow. This repeated pattern helps readers recognize the book’s broad organization, but it does not establish one universally accepted symbolic outline.",
+            "verse_refs": [
+              "Matthew 19:1"
+            ],
+            "evidence_ids": [
+              "matthew-discourses"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_7ceda3f42428"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Marriage and the Eunuch Saying",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The teaching in verses 3–12 should be read as a connected exchange: a disputed question about divorce leads to Jesus’ appeal to creation, the disciples’ reaction, and the threefold saying about eunuchs. The chapter distinguishes those born eunuchs, those made eunuchs by others, and those who adopt such a condition for the kingdom of heaven. The precise interpretation of the divorce exception and its relationship to the eunuch saying remain disputed, so the text’s distinctions should be preserved without forcing them into a single uncontested rule.",
+            "verse_refs": [
+              "Matthew 19:3-12"
+            ],
+            "evidence_ids": [
+              "matthew-divorce-eunuchs"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_7ceda3f42428"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Matthew 19",
+    "book": "Matthew",
+    "chapter": 19,
+    "status": "pending",
+    "evidence_availability": "THIN",
+    "sections": [
+      {
+        "kind": "language_literary",
+        "title": "A Literary Transition",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The opening words, “when Jesus had finished these words,” belong to a formula repeated five times in Matthew to close major collections of teaching. Here the formula marks the movement from the preceding discourse into Jesus’ journey and the encounters that follow. This repeated pattern helps readers recognize the book’s broad organization, but it does not establish one universally accepted symbolic outline.",
+            "verse_refs": [
+              "Matthew 19:1"
+            ],
+            "evidence_ids": [
+              "matthew-discourses"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_7ceda3f42428"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Marriage and the Eunuch Saying",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The teaching in verses 3–12 should be read as a connected exchange: a disputed question about divorce leads to Jesus’ appeal to creation, the disciples’ reaction, and the threefold saying about eunuchs. The chapter distinguishes those born eunuchs, those made eunuchs by others, and those who adopt such a condition for the kingdom of heaven. The precise interpretation of the divorce exception and its relationship to the eunuch saying remain disputed, so the text’s distinctions should be preserved without forcing them into a single uncontested rule.",
+            "verse_refs": [
+              "Matthew 19:3-12"
+            ],
+            "evidence_ids": [
+              "matthew-divorce-eunuchs"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_7ceda3f42428"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "4b6711c9b2aac978f402b74b468a56dc423cc3432d8393ae6410d79f688172db",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "56d3b0a68e33afa0181c805a80538f9927535f8c46f4b3f79a317177668a1c8f",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:e44b6d45e85969d46c67f9377f56edc882a0569cdbb20a2115a03958299ecc3b",
+  "packet_hash": "e44b6d45e85969d46c67f9377f56edc882a0569cdbb20a2115a03958299ecc3b"
+}

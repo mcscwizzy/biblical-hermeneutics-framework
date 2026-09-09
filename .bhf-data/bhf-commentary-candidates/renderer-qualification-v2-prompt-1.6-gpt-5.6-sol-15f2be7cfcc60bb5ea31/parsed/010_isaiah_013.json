@@ -1,0 +1,172 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Isaiah 13",
+  "raw_sha256": "136d4d5a6298cc44d7c8947144ca673a8652efb8eb9702564937e75c9138ba50",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Isaiah 13",
+    "book": "Isaiah",
+    "chapter": 13,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The heading identifies this as an oracle concerning Babylon. The chapter moves from the mustering of distant kingdoms to the terror of the day of the LORD and finally to Babylon's violent defeat and desolation. This kind of judgment oracle addresses imperial aggression and the moral accountability of nations. Its force comes through poetic prophetic speech shaped by settings that include covenant accusation, royal courts, temple worship, and the pressure exerted by Assyrian and Babylonian power.",
+            "verse_refs": [
+              "Isaiah 13:1-22"
+            ],
+            "evidence_ids": [
+              "judgment-against-the-nations:ancient_near_east_context:0",
+              "judgment-against-the-nations:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ac46004685c7",
+              "syn_historical_context_b7e0ba614e8c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "The Day of the LORD",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "In verses 6-13, the \"day of the LORD\" is not merely a date on a calendar. Prophets use this expression amid national crisis to warn of covenant judgment and to promise future vindication. Imagery associated with a royal \"day of the king\" helps explain the metaphor: it depicts a decisive occasion when authority is exercised. Here, however, the LORD himself acts as judge and deliverer. The chapter expands that judgment to cosmic scale—the darkened lights and shaking heavens and earth portray the overwhelming character of his action.",
+            "verse_refs": [
+              "Isaiah 13:6-13"
+            ],
+            "evidence_ids": [
+              "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+              "what-is-the-day-of-the-lord:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_b1404d5f188e",
+              "syn_historical_context_7cb3fb8dffed"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Isaiah's Wider Treatment of Nations and Empires",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Across Isaiah, judgment is directed not only toward foreign nations but also toward Judah and Israel. The book can portray empires as instruments while still holding those empires accountable. It also contains a different vision for the nations: they may learn, worship, and participate in restoration. Isaiah's treatment of the nations is therefore broader than a simple division between one favored people and uniformly condemned outsiders.",
+            "evidence_ids": [
+              "isaiah-nations-empire"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_85ad53daa5ea"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Isaiah 13",
+    "book": "Isaiah",
+    "chapter": 13,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The heading identifies this as an oracle concerning Babylon. The chapter moves from the mustering of distant kingdoms to the terror of the day of the LORD and finally to Babylon's violent defeat and desolation. This kind of judgment oracle addresses imperial aggression and the moral accountability of nations. Its force comes through poetic prophetic speech shaped by settings that include covenant accusation, royal courts, temple worship, and the pressure exerted by Assyrian and Babylonian power.",
+            "verse_refs": [
+              "Isaiah 13:1-22"
+            ],
+            "evidence_ids": [
+              "judgment-against-the-nations:ancient_near_east_context:0",
+              "judgment-against-the-nations:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ac46004685c7",
+              "syn_historical_context_b7e0ba614e8c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "The Day of the LORD",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "In verses 6-13, the \"day of the LORD\" is not merely a date on a calendar. Prophets use this expression amid national crisis to warn of covenant judgment and to promise future vindication. Imagery associated with a royal \"day of the king\" helps explain the metaphor: it depicts a decisive occasion when authority is exercised. Here, however, the LORD himself acts as judge and deliverer. The chapter expands that judgment to cosmic scale—the darkened lights and shaking heavens and earth portray the overwhelming character of his action.",
+            "verse_refs": [
+              "Isaiah 13:6-13"
+            ],
+            "evidence_ids": [
+              "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+              "what-is-the-day-of-the-lord:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_b1404d5f188e",
+              "syn_historical_context_7cb3fb8dffed"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Isaiah's Wider Treatment of Nations and Empires",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Across Isaiah, judgment is directed not only toward foreign nations but also toward Judah and Israel. The book can portray empires as instruments while still holding those empires accountable. It also contains a different vision for the nations: they may learn, worship, and participate in restoration. Isaiah's treatment of the nations is therefore broader than a simple division between one favored people and uniformly condemned outsiders.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "isaiah-nations-empire"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_85ad53daa5ea"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "061f1fe36f68dc82ce2550b7b29931d7b84a996d7b63700c9495d68048921c59",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "bb7648b2d91162e19811879ed371365afd573bd168e7a24da769be1452e7f5cd",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:042dbf2773d62461f73655cbf3535f8ce704f7b084b9787ab0552c701ef41043",
+  "packet_hash": "042dbf2773d62461f73655cbf3535f8ce704f7b084b9787ab0552c701ef41043"
+}

@@ -1,0 +1,646 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Matthew 4",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 11,
+    "eligible_weighted_denominator": 7.5,
+    "weighted_coverage": 0.5333,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.3,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 5,
+    "eligible_weighted_denominator": 3.3,
+    "weighted_coverage": 0.7879,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.8,
+    "raw_synthesis_utilization": 0.3,
+    "eligible_unit_utilization": 0.625,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 5,
+    "eligible_weighted_denominator": 3.3,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 0.625,
+    "raw_synthesis_utilization": 0.3,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 446,
+    "block_count": 6,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.2121,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "IMPROVED_RENDERER",
+  "full_result": {
+    "reference": "Matthew 4",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 5,
+    "eligible_weighted_denominator": 3.3,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 0.625,
+    "raw_synthesis_utilization": 0.3,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 446,
+    "block_count": 6,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 30,
+      "meaningful_cluster_count": 5,
+      "consumed_synthesis_count": 9,
+      "consumed_cluster_count": 5,
+      "raw_synthesis_coverage": 0.3,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 3,
+      "consumed_category_count": 3,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "consolidation_ratio": 0.6842,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 6,
+        "consumed_synthesis_count": 9,
+        "consumed_cluster_count": 7,
+        "mean_evidence_ids_per_block": 3.1667,
+        "block_to_synthesis_ratio": 0.6667,
+        "consolidation_ratio": 0.6842,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 11,
+        "block_to_cluster_ratio": 0.5455,
+        "consumed_unit_ratio": 0.3,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 40.5455,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_396559300a97",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_53f2d3b9d13a",
+            "syn_why_it_matters_2f340c6b5852"
+          ],
+          "evidence_ids": [
+            "matthew-baptism-temptation",
+            "matthew-healing-disability",
+            "matthew-kingdom",
+            "matthew-scripture-use"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=matthew|facts=jesus public proclamation begins repentance because kingdom heaven drawn near;matthew presents baptism wilderness testing spirit marked sonship interpreted through scriptural voices deuteronomy;matthew repeatedly frames events citations fulfillment formulas drawing varied hebrew greek scriptural forms;matthew's summaries stories present jesus teaching proclaiming healing exorcising amid ancient understandings bodies spirits",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_5dc63cde1149",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_83059d979f10"
+          ],
+          "evidence_ids": [
+            "capernaum:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=capernaum|facts=early roman capernaum consisted basalt built domestic compounds beside lake near regional routes archaeology supplies settlement context cannot identify particular excavated room house mark 2",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_6ac24a80732f",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_bb3988db7929"
+          ],
+          "evidence_ids": [
+            "galilee-1:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=galilee-1|facts=during most jesus's ministry galilee governed herod antipas not roman prefect judea villages combined farming fishing craft production local markets movement along lake land routes",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_6c2b356f8b0e",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_0778efa256d8",
+            "syn_historical_context_1a0e69827d42",
+            "syn_historical_context_7ce9582ae6ce",
+            "syn_historical_context_7fa0afb17a52",
+            "syn_historical_context_a81eba653c35"
+          ],
+          "evidence_ids": [
+            "andrew:historical_context:0",
+            "bartholomew:historical_context:0",
+            "james-son-of-alphaeus:historical_context:0",
+            "james-son-of-zebedee:historical_context:0",
+            "john-son-of-zebedee:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=andrew,bartholomew,james-son-of-alphaeus,james-son-of-zebedee,john-son-of-zebedee|facts=historically andrew located canonical setting entry connects setting jesus kingdom theme new covenant related ckl objects contextual retrieval;historically bartholomew located canonical setting entry connects setting jesus kingdom theme new covenant related ckl objects contextual retrieval;historically james son alphaeus located canonical setting entry connects setting jesus kingdom theme new covenant related ckl objects contextual retrieval;historically james son zebedee located canonical setting entry connects setting jesus kingdom theme new covenant related ckl objects contextual retrieval;historically john son zebedee located canonical setting entry connects setting jesus kingdom theme new covenant related ckl objects contextual retrieval",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_8985bd2987e4",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_5d9e86cf4eac",
+            "syn_why_it_matters_9b6c2d1071e7"
+          ],
+          "evidence_ids": [
+            "galilee-1:ancient_near_east_context:0",
+            "galilee-1:hebraic_worldview:0",
+            "galilee-1:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=galilee-1|facts=archaeology texts indicate substantial jewish practice alongside local variation galilee should neither isolated judaism nor flattened into jerusalem's institutions;jewish village household synagogue purity festival subsistence practices shaped life while communities also participated wider regional exchange;relevant comparative setting early roman galilee within southern levant roman eastern mediterranean",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_8dfed7d242e6",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_29316ed98429",
+            "syn_why_it_matters_40dd3c18547e"
+          ],
+          "evidence_ids": [
+            "capernaum:ancient_near_east_context:0",
+            "capernaum:hebraic_worldview:0",
+            "capernaum:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=capernaum|facts=capernaum belongs roman period galilean lake economy rather than generalized ancient near eastern setting;homes sabbath assembly healing hospitality communal reputation overlap gospel episodes located here;village jewish settlement territory herod antipas during jesus's ministry later monumental synagogue must not treated standing building mark 1",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_933815bc7c34",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_cde811f6e336",
+            "syn_historical_context_f47702ae0f1a"
+          ],
+          "evidence_ids": [
+            "kingdom-theology:historical_context:0",
+            "theology-of-the-kingdom:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=kingdom-theology,theology-of-the-kingdom|facts=kingdom theology read across canon scripture develops theme israel's story into new testament witness;theology kingdom read across canon scripture develops theme israel's story into new testament witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_c2d8605346fc",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_143a3573933a",
+            "syn_cultural_context_3e2ad4857431",
+            "syn_cultural_context_6ced7f1d3f27",
+            "syn_cultural_context_9f0bcba376a5",
+            "syn_cultural_context_a86a01b1635b"
+          ],
+          "evidence_ids": [
+            "andrew:ancient_near_east_context:0",
+            "bartholomew:ancient_near_east_context:0",
+            "james-son-of-alphaeus:ancient_near_east_context:0",
+            "james-son-of-zebedee:ancient_near_east_context:0",
+            "john-son-of-zebedee:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=andrew,bartholomew,james-son-of-alphaeus,james-son-of-zebedee,john-son-of-zebedee|facts=andrew belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;bartholomew belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;james son alphaeus belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;james son zebedee belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;john son zebedee belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_c4e1a633e2a6",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_3083d4c56fcb",
+            "syn_historical_context_64b29650dca3",
+            "syn_historical_context_69fdee7a4aef",
+            "syn_historical_context_b92f069a3542"
+          ],
+          "evidence_ids": [
+            "matthew-the-tax-collector:historical_context:0",
+            "matthias:historical_context:0",
+            "peter:historical_context:0",
+            "philip-the-apostle:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=matthew-the-tax-collector,matthias,peter,philip-the-apostle|facts=historically matthew tax collector belongs within scriptural setting around matthew 4 18 22 where matthew 4 18 22 matthew 16 13 20 jesus kingdom theme help locate biblical figure bible's people places events;historically matthias belongs within scriptural setting around matthew 4 18 22 where matthew 4 18 22 matthew 16 13 20 jesus kingdom theme help locate biblical figure bible's people places events;historically peter belongs within scriptural setting around matthew 4 18 22 where matthew 4 18 22 matthew 16 13 20 jesus kingdom theme help locate biblical figure bible's people places events;historically philip apostle belongs within scriptural setting around matthew 4 18 22 where matthew 4 18 22 matthew 16 13 20 jesus kingdom theme help locate biblical figure bible's people places events",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_da0467b00230",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_4ec8f9debb1e",
+            "syn_cultural_context_73581e808fb7",
+            "syn_cultural_context_881ce5241087",
+            "syn_cultural_context_ea5db7f4630e"
+          ],
+          "evidence_ids": [
+            "matthew-the-tax-collector:ancient_near_east_context:0",
+            "matthias:ancient_near_east_context:0",
+            "peter:ancient_near_east_context:0",
+            "philip-the-apostle:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=matthew-the-tax-collector,matthias,peter,philip-the-apostle|facts=ancient background matthew tax collector includes family networks vocation local authority travel public reputation entry ties world matthew 4 18 22 matthew 16 13 20 jesus kingdom theme without letting comparison replace biblical witness;ancient background matthias includes family networks vocation local authority travel public reputation entry ties world matthew 4 18 22 matthew 16 13 20 jesus kingdom theme without letting comparison replace biblical witness;ancient background peter includes family networks vocation local authority travel public reputation entry ties world matthew 4 18 22 matthew 16 13 20 jesus kingdom theme without letting comparison replace biblical witness;ancient background philip apostle includes family networks vocation local authority travel public reputation entry ties world matthew 4 18 22 matthew 16 13 20 jesus kingdom theme without letting comparison replace biblical witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_e3f786289e19",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_759264ca645c",
+            "syn_cultural_context_bb98fe9b77ef"
+          ],
+          "evidence_ids": [
+            "kingdom-theology:ancient_near_east_context:0",
+            "theology-of-the-kingdom:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=kingdom-theology,theology-of-the-kingdom|facts=ancient background kingdom theology includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world psalm 2 1 12 daniel 2 31 45 kingdom theme theology kingdom without letting comparison replace biblical witness;ancient background theology kingdom includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world psalm 2 1 12 daniel 2 31 45 kingdom theme matthew without letting comparison replace biblical witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 3.3,
+      "consumed_eligible_weight": 3.3,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 6,
+        "RELEVANT": 5
+      },
+      "eligible_synthesis_count": 8,
+      "consumed_eligible_synthesis_count": 5,
+      "eligible_synthesis_coverage": 0.625
+    },
+    "audit": {
+      "reference": "Matthew 4",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 34,
+      "specific_evidence_count": 34,
+      "evidence_score": 28.5,
+      "evidence_category_diversity": 2,
+      "evidence_categories": {
+        "culture": 20,
+        "history": 14
+      },
+      "entity_counts": {
+        "people": 9,
+        "places": 2,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 9,
+      "places_count": 2,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 5,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2998,
+      "commentary_prose_word_count": 446,
+      "verse_anchor_count": 25,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "andrew:ancient_near_east_context:0",
+        "capernaum:ancient_near_east_context:0",
+        "capernaum:hebraic_worldview:0",
+        "capernaum:historical_context:0",
+        "capernaum:second_temple_context:0",
+        "galilee-1:ancient_near_east_context:0",
+        "galilee-1:hebraic_worldview:0",
+        "galilee-1:historical_context:0",
+        "galilee-1:second_temple_context:0",
+        "james-son-of-zebedee:ancient_near_east_context:0",
+        "john-son-of-zebedee:ancient_near_east_context:0",
+        "matthew-baptism-temptation",
+        "matthew-healing-disability",
+        "matthew-kingdom",
+        "matthew-scripture-use",
+        "peter:ancient_near_east_context:0"
+      ],
+      "unique_evidence_ids_consumed": 16,
+      "evidence_consumption_ratio": 0.4706,
+      "unused_evidence_ids": [
+        "andrew:historical_context:0",
+        "bartholomew:ancient_near_east_context:0",
+        "bartholomew:historical_context:0",
+        "james-son-of-alphaeus:ancient_near_east_context:0",
+        "james-son-of-alphaeus:historical_context:0",
+        "james-son-of-zebedee:historical_context:0",
+        "john-son-of-zebedee:historical_context:0",
+        "kingdom-theology:ancient_near_east_context:0",
+        "kingdom-theology:historical_context:0",
+        "matthew-the-tax-collector:ancient_near_east_context:0",
+        "matthew-the-tax-collector:historical_context:0",
+        "matthias:ancient_near_east_context:0",
+        "matthias:historical_context:0",
+        "peter:historical_context:0",
+        "philip-the-apostle:ancient_near_east_context:0",
+        "philip-the-apostle:historical_context:0",
+        "theology-of-the-kingdom:ancient_near_east_context:0",
+        "theology-of-the-kingdom:historical_context:0"
+      ],
+      "unused_evidence_count": 18,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0265,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:3a8161be91c666e58e4af840c62f72037e3c124e7f213c5c1772f556d7fa0579",
+    "packet_hash": "3a8161be91c666e58e4af840c62f72037e3c124e7f213c5c1772f556d7fa0579",
+    "raw_sha256": "10f4870c92832a275165d2e438131b7f3d8813dd8e7caba8921d3ccc6e9d6d4c"
+  }
+}

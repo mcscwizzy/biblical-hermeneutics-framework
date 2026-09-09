@@ -1,0 +1,205 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Leviticus 8",
+  "raw_sha256": "5c307196690acf8f1cb77c4b38b905fba1809b720ef506263ed611387a879d6b",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Leviticus 8",
+    "book": "Leviticus",
+    "chapter": 8,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "The Priestly Office",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The washing, special garments, anointing, sacrifices, and seven-day consecration install Aaron and his sons into an office concerned with holiness and Israel's worship. In this setting, priests mediate access to sacred worship, perform sacrificial service, teach holiness, bless the people, and guard sacred space. The public ceremony therefore marks more than a change of clothing or occupation: the congregation witnesses particular people being set apart for responsibilities that affect the worship and purity of the community.",
+            "verse_refs": [
+              "Leviticus 8:1-13",
+              "Leviticus 8:22-36"
+            ],
+            "evidence_ids": [
+              "priesthood:ancient_near_east_context:0",
+              "priesthood:hebraic_worldview:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_9e5caf6b0500",
+              "syn_why_it_matters_17d0e3fb2dd7"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_2",
+            "text": "Priestly service remained central in the later Second Temple world, where worship centered on the temple and the legitimacy of priests became a live issue. That later setting does not describe the ceremony in this chapter, but it shows the continuing importance attached to the identity and authorization of those who performed priestly service.",
+            "verse_refs": [
+              "Leviticus 8:1-5",
+              "Leviticus 8:35-36"
+            ],
+            "evidence_ids": [
+              "priesthood:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_9e5caf6b0500"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Priesthood in Israel's Worship",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The priesthood presented here belongs first to Israel's wilderness and tabernacle setting: the ceremony takes place at the tent of meeting, with the congregation assembled there. Priestly service later appears in Israel's temple setting, reappears in the Second Temple world, and becomes a subject of New Testament reflection. Leviticus 8 thus stands near the beginning of a priestly institution that continues across several later settings.",
+            "verse_refs": [
+              "Leviticus 8:1-5",
+              "Leviticus 8:31-36"
+            ],
+            "evidence_ids": [
+              "priesthood:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_11d40aa739d4"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Leviticus 8 in the Movement of the Book",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Leviticus first gives instructions about sacrifices and then turns to the inauguration of the priests who will perform sacred service. After this inauguration, the book proceeds through purity regulations and the Day of Atonement before expanding into holy communal life, sacred time, land, covenant consequences, and vows. The ceremony in chapter 8 therefore occupies the priestly-inauguration stage of the book's larger movement.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "leviticus-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ffd4a5d16e91"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Leviticus 8",
+    "book": "Leviticus",
+    "chapter": 8,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "The Priestly Office",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The washing, special garments, anointing, sacrifices, and seven-day consecration install Aaron and his sons into an office concerned with holiness and Israel's worship. In this setting, priests mediate access to sacred worship, perform sacrificial service, teach holiness, bless the people, and guard sacred space. The public ceremony therefore marks more than a change of clothing or occupation: the congregation witnesses particular people being set apart for responsibilities that affect the worship and purity of the community.",
+            "verse_refs": [
+              "Leviticus 8:1-13",
+              "Leviticus 8:22-36"
+            ],
+            "evidence_ids": [
+              "priesthood:ancient_near_east_context:0",
+              "priesthood:hebraic_worldview:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_9e5caf6b0500",
+              "syn_why_it_matters_17d0e3fb2dd7"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_2",
+            "text": "Priestly service remained central in the later Second Temple world, where worship centered on the temple and the legitimacy of priests became a live issue. That later setting does not describe the ceremony in this chapter, but it shows the continuing importance attached to the identity and authorization of those who performed priestly service.",
+            "verse_refs": [
+              "Leviticus 8:1-5",
+              "Leviticus 8:35-36"
+            ],
+            "evidence_ids": [
+              "priesthood:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_9e5caf6b0500"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Priesthood in Israel's Worship",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The priesthood presented here belongs first to Israel's wilderness and tabernacle setting: the ceremony takes place at the tent of meeting, with the congregation assembled there. Priestly service later appears in Israel's temple setting, reappears in the Second Temple world, and becomes a subject of New Testament reflection. Leviticus 8 thus stands near the beginning of a priestly institution that continues across several later settings.",
+            "verse_refs": [
+              "Leviticus 8:1-5",
+              "Leviticus 8:31-36"
+            ],
+            "evidence_ids": [
+              "priesthood:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_11d40aa739d4"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Leviticus 8 in the Movement of the Book",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Leviticus first gives instructions about sacrifices and then turns to the inauguration of the priests who will perform sacred service. After this inauguration, the book proceeds through purity regulations and the Day of Atonement before expanding into holy communal life, sacred time, land, covenant consequences, and vows. The ceremony in chapter 8 therefore occupies the priestly-inauguration stage of the book's larger movement.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "leviticus-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ffd4a5d16e91"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "7b10b3cda926d00625a5bc4e7b29ba487f6faf4e62f3563d307388cfd2bf6e8f",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "acc5215e2938add67dfc81bba201a8682eddd0920615d1efa62b082ce620b99d",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:8e75d0a426a4d5869f5ac98dbd2c5a8f643ea694ef305b377b5436cf8d68d819",
+  "packet_hash": "8e75d0a426a4d5869f5ac98dbd2c5a8f643ea694ef305b377b5436cf8d68d819"
+}

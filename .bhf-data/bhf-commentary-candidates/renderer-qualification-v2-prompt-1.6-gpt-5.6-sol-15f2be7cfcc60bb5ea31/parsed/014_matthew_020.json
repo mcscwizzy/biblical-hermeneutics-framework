@@ -1,0 +1,127 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Matthew 20",
+  "raw_sha256": "ab60bd46656666b19b12114781e12a8119a95e69bf1d9dad3558865323fb6caf",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Matthew 20",
+    "book": "Matthew",
+    "chapter": 20,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Labor and Economic Setting",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The vineyard scene belongs to the broader economic world reflected throughout Matthew: fields, wages, debts, taxes, estates, slaves, patrons, and laborers within an unequal agrarian Roman-Palestinian economy. This context makes the parable's attention to hiring, payment, and unequal hours of work especially concrete. The workers' complaint arises from the difference between the full day's burden and the final workers' single hour, even though the householder pays the amount originally agreed upon.",
+            "verse_refs": [
+              "Matthew 20:1-16"
+            ],
+            "evidence_ids": [
+              "matthew-rural-economy"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4874357e8fe3"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Service, Greatness, and Ransom",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Jesus answers the disciples' dispute about status by contrasting rulers who exercise authority with greatness expressed through service. Verse 28 gathers the explanation around the Son of Man: his service includes giving his life and is described as a ransom for many. The saying therefore places Jesus' own self-giving at the center of his answer about what it means to be first, though interpretations of the full significance of “ransom” remain disputed.",
+            "verse_refs": [
+              "Matthew 20:20-28"
+            ],
+            "evidence_ids": [
+              "matthew-ransom-service"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4874357e8fe3"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Matthew 20",
+    "book": "Matthew",
+    "chapter": 20,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Labor and Economic Setting",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The vineyard scene belongs to the broader economic world reflected throughout Matthew: fields, wages, debts, taxes, estates, slaves, patrons, and laborers within an unequal agrarian Roman-Palestinian economy. This context makes the parable's attention to hiring, payment, and unequal hours of work especially concrete. The workers' complaint arises from the difference between the full day's burden and the final workers' single hour, even though the householder pays the amount originally agreed upon.",
+            "verse_refs": [
+              "Matthew 20:1-16"
+            ],
+            "evidence_ids": [
+              "matthew-rural-economy"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4874357e8fe3"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Service, Greatness, and Ransom",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Jesus answers the disciples' dispute about status by contrasting rulers who exercise authority with greatness expressed through service. Verse 28 gathers the explanation around the Son of Man: his service includes giving his life and is described as a ransom for many. The saying therefore places Jesus' own self-giving at the center of his answer about what it means to be first, though interpretations of the full significance of “ransom” remain disputed.",
+            "verse_refs": [
+              "Matthew 20:20-28"
+            ],
+            "evidence_ids": [
+              "matthew-ransom-service"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4874357e8fe3"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "eafc5d0d96af43b036807e191fcaad3c237e3a79632a67f67374dbb69e8aa2df",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "6405c746eeaa894a7eeb0a6540388610fe28dcde48942217e622a7d5f9bc4a5f",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:99d939e30f49f125ec9ed3ffb2f68d1f200cca03b76220b346a066ad6ff54c13",
+  "packet_hash": "99d939e30f49f125ec9ed3ffb2f68d1f200cca03b76220b346a066ad6ff54c13"
+}
