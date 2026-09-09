@@ -4,6 +4,8 @@ from .builder import CommentaryBuilder
 from .generator import CommentaryGenerator
 from .models import (
     COMMENTARY_PROMPT_VERSION,
+    COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION,
+    COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION,
     COMMENTARY_SCHEMA_VERSION,
     ChapterCommentary,
     CommentaryBlock,
@@ -34,6 +36,8 @@ from .synthesis import (
 
 __all__ = [
     "COMMENTARY_PROMPT_VERSION",
+    "COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION",
+    "COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION",
     "COMMENTARY_SCHEMA_VERSION",
     "ChapterCommentary",
     "CommentaryBlock",

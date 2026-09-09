@@ -9,6 +9,11 @@ from typing import Any, Mapping
 
 COMMENTARY_SCHEMA_VERSION = "1.2"
 COMMENTARY_PROMPT_VERSION = "1.5"
+# Candidate renderer contract.  Production remains on v1.5 until the bounded
+# remediation and a new full qualification have passed.
+COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION = "1.6"
+# Candidate renderer contract for the bounded selection-breadth diagnostic.
+COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION = "1.7"
 DATA_GAP_FALLBACK_TEXT = (
     "Passage-specific contextual evidence is not currently available for this chapter."
 )

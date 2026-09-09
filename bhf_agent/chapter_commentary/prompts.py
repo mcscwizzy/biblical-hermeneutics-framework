@@ -6,6 +6,8 @@ import json
 
 from .models import (
     COMMENTARY_PROMPT_VERSION,
+    COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION,
+    COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION,
     COMMENTARY_SCHEMA_VERSION,
     CommentarySectionKind,
 )
@@ -51,6 +53,20 @@ Grounding rules:
 - The only permitted section kinds are: {allowed_section_kinds}
 - Include only useful supported sections. Do not force every kind to appear.
 - Return JSON only.""".format(allowed_section_kinds=VALID_SECTION_KINDS_TEXT)
+
+
+_V16_FINAL_CHECKS = """Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility."""
+
+
+# Keep the active production v1.5 prompt byte-for-byte stable.  This candidate
+# is used only by the isolated renderer remediation harness.
+CHAPTER_COMMENTARY_SYSTEM_PROMPT_V16 = CHAPTER_COMMENTARY_SYSTEM_PROMPT.replace(
+    "\nPresentation rules:",
+    f"\n\n{_V16_FINAL_CHECKS}\n\nPresentation rules:",
+    1,
+)
 
 
 CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF Commentary v{commentary_prompt_version} for {reference}.
@@ -173,6 +189,76 @@ RULES:
 DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY."""
 
 
+_V16_USER_FINAL_CHECKS = """18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility."""
+
+
+CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V16 = CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE.replace(
+    "18. `generated_metadata` is application-owned. Leave it null.\n19. If EVIDENCE AVAILABILITY",
+    f"{_V16_USER_FINAL_CHECKS}\n20. `generated_metadata` is application-owned. Leave it null.\n21. If EVIDENCE AVAILABILITY",
+    1,
+).replace(
+    "20. This contract is prompt",
+    "22. This contract is prompt",
+    1,
+)
+
+
+_V17_FINAL_CHECKS = """Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks."""
+
+
+# Prompt 1.7 is an isolated candidate.  Prompt 1.6 above is intentionally not
+# edited so its historical qualification remains reproducible.
+CHAPTER_COMMENTARY_SYSTEM_PROMPT_V17 = CHAPTER_COMMENTARY_SYSTEM_PROMPT_V16.replace(
+    "\n\nPresentation rules:",
+    f"\n\n{_V17_FINAL_CHECKS}\n\nPresentation rules:",
+    1,
+)
+
+
+_V17_USER_FINAL_CHECKS = """20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior."""
+
+
+CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V17 = CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V16.replace(
+    "20. `generated_metadata` is application-owned. Leave it null.\n21. If EVIDENCE AVAILABILITY",
+    f"{_V17_USER_FINAL_CHECKS}\n23. `generated_metadata` is application-owned. Leave it null.\n24. If EVIDENCE AVAILABILITY",
+    1,
+).replace(
+    "22. This contract is prompt",
+    "25. This contract is prompt",
+    1,
+)
+
+
+def system_prompt_for_version(prompt_version: str) -> str:
+    """Return an explicit prompt contract without changing the production default."""
+
+    if prompt_version == COMMENTARY_PROMPT_VERSION:
+        return CHAPTER_COMMENTARY_SYSTEM_PROMPT
+    if prompt_version == COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION:
+        return CHAPTER_COMMENTARY_SYSTEM_PROMPT_V16
+    if prompt_version == COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION:
+        return CHAPTER_COMMENTARY_SYSTEM_PROMPT_V17
+    raise ValueError(f"unsupported commentary prompt version: {prompt_version}")
+
+
 def generate_synthesis_summary(synthesis) -> str:
     """Serialize only deterministic understanding units for prose generation."""
 
@@ -221,6 +307,7 @@ def build_user_prompt(
     synthesis,
     bundle=None,
     evidence_availability: str | None = None,
+    prompt_version: str | None = None,
 ) -> str:
     """Build the current Commentary prompt without truncating canonical text."""
 
@@ -233,12 +320,21 @@ def build_user_prompt(
         bundle = synthesis
         synthesis = compile_chapter_synthesis(bundle, book=book, chapter=chapter)
     availability = evidence_availability or synthesis.evidence_availability
+    selected_prompt_version = prompt_version or COMMENTARY_PROMPT_VERSION
+    system_prompt_for_version(selected_prompt_version)
+    template = (
+        CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V16
+        if selected_prompt_version == COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION
+        else CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V17
+        if selected_prompt_version == COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION
+        else CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE
+    )
     instruction = {
         "AVAILABLE": "Use the available chapter context adaptively and explain supported relationships.",
         "THIN": "Be concise and conservative. Explain what is supported without manufacturing depth.",
         "DATA_GAP": "Return an empty sections array. Do not make canonical-text observations, contextual claims, or evidence-free prose; BHF will add the fixed application-owned availability notice.",
     }.get(availability, "Use the available chapter context conservatively.")
-    return CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE.format(
+    return template.format(
         reference=reference,
         book=book,
         chapter=chapter,
@@ -249,7 +345,7 @@ def build_user_prompt(
         availability_instruction=instruction,
         allowed_section_kinds=VALID_SECTION_KINDS_TEXT,
         commentary_schema_version=COMMENTARY_SCHEMA_VERSION,
-        commentary_prompt_version=COMMENTARY_PROMPT_VERSION,
+        commentary_prompt_version=selected_prompt_version,
         synthesis_schema_version=synthesis.synthesis_schema_version,
         synthesis_hash=synthesis.synthesis_hash,
     )

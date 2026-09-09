@@ -1,0 +1,590 @@
+{
+  "artifact_version": "commentary-renderer-selection-breadth-diagnostic-v1-evaluation-v1",
+  "reference": "Revelation 20",
+  "old_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "weighted_coverage": 0.6667,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.6667,
+    "category_coverage": 0.8,
+    "dump_severity": "NONE",
+    "quality_gate_outcome": "PASS"
+  },
+  "new_prompt_1_7": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "weighted_coverage": 0.8056,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.8333,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "quality_gate_outcome": "PASS"
+  },
+  "delta": {
+    "weighted_coverage": 0.1389,
+    "core_coverage": 0.0,
+    "eligible_idea_utilization": 0.1666,
+    "category_coverage": 0.2
+  },
+  "diagnostic_interpretation": "RESOLVED",
+  "gate_result": "PASS",
+  "full_result": {
+    "reference": "Revelation 20",
+    "renderer_prompt_version": "1.7",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "weighted_coverage": 0.8056,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.8333,
+    "eligible_unit_utilization": 0.5,
+    "raw_synthesis_utilization": 0.2857,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 329,
+    "block_count": 6,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 21,
+      "meaningful_cluster_count": 6,
+      "consumed_synthesis_count": 6,
+      "consumed_cluster_count": 5,
+      "raw_synthesis_coverage": 0.2857,
+      "idea_cluster_coverage": 0.8333,
+      "weighted_idea_coverage": 0.8056,
+      "core_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 5,
+      "consumed_category_count": 5,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.4,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 6,
+        "consumed_synthesis_count": 6,
+        "consumed_cluster_count": 6,
+        "mean_evidence_ids_per_block": 1.6667,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.4,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 11,
+        "block_to_cluster_ratio": 0.5455,
+        "consumed_unit_ratio": 0.2857,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 29.9091,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_419b60d54f9e",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_7f99e9ec89e9"
+          ],
+          "evidence_ids": [
+            "resurrection-doctrine:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=resurrection-doctrine|facts=resurrection doctrine emerges church’s earliest proclamation develops central christian confession hope judgment new creation",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_4b815ae4670f",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_deba877b27b0"
+          ],
+          "evidence_ids": [
+            "ezekiel-revelation-reuse"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions|parents=ezekiel|facts=revelation repeatedly recomposes ezekielian throne creature scroll measuring witness plague gog battle city river tree imagery own literary sequence",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions"
+          ],
+          "categories": [
+            "geography",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_9ee903919cdf",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_817c8e2e940f"
+          ],
+          "evidence_ids": [
+            "the-fall:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=the-fall|facts=genesis 3 functions interpretive root human estrangement death need redemption",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_b24f58ae4766",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_beaa1657a0f1",
+            "syn_historical_context_cc1a8be60a89"
+          ],
+          "evidence_ids": [
+            "resurrection-theme:historical_context:0",
+            "what-is-resurrection:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=resurrection,resurrection-theme|facts=biblical hope resurrection develops hints prophets into clear proclamation new testament;resurrection hope develops scattered hints old testament into explicit proclamation new testament",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_b5ace37a29da",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_2a20eb8d4963",
+            "syn_why_it_matters_9ca11a09eee2"
+          ],
+          "evidence_ids": [
+            "rev-first-resurrection",
+            "rev-millennium",
+            "rev-second-death"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=revelation|facts=lake fire named second death receives death hades hostile powers those absent book life;revelation 20 describes thousand year binding reign followed satan's release chronological symbolic interpretations diverge;text calls martyrs life reign first resurrection without settling all later doctrinal questions",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "geography",
+            "history",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_cf64b6904257",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_784627a8fcce",
+            "syn_cultural_context_859b4191fa1e",
+            "syn_cultural_context_bf5ab50d8f15",
+            "syn_cultural_context_de2e2600c958"
+          ],
+          "evidence_ids": [
+            "great-white-throne-judgment:ancient_near_east_context:0",
+            "letters-to-the-seven-churches:ancient_near_east_context:0",
+            "marriage-supper-of-the-lamb:ancient_near_east_context:0",
+            "writing-of-revelation:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=great-white-throne-judgment,letters-to-the-seven-churches,marriage-supper-of-the-lamb,writing-of-revelation|facts=great white throne judgment unfolds within concrete settings such israelite kinship life temple worship royal courts wilderness travel roman administration imperial conflict depending passage;letters seven churches unfolds within concrete settings such israelite kinship life temple worship royal courts wilderness travel roman administration imperial conflict depending passage;marriage supper lamb unfolds within concrete settings such israelite kinship life temple worship royal courts wilderness travel roman administration imperial conflict depending passage;writing revelation unfolds within concrete settings such israelite kinship life temple worship royal courts wilderness travel roman administration imperial conflict depending passage",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_d205a19b89da",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_2baf91e7feec",
+            "syn_cultural_context_fb0d90513771"
+          ],
+          "evidence_ids": [
+            "resurrection-doctrine:ancient_near_east_context:0",
+            "what-is-resurrection:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=resurrection,resurrection-doctrine|facts=doctrine stands out world where death usually viewed final insists god’s power defeat death itself;resurrection hope stands out world where death usually treated final",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_e44d88edd37e",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_2beef915f994"
+          ],
+          "evidence_ids": [
+            "rev-scriptural-reuse"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=revelation|facts=revelation repeatedly reworks israel's scriptures especially daniel ezekiel isaiah exodus zechariah genesis psalms",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_f1b46a24a433",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_e4ce97e797d6"
+          ],
+          "evidence_ids": [
+            "the-fall:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=the-fall|facts=garden narrative uses familiar imagery sacred space guarded boundaries moral order insists one sovereign god rather than pantheon",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_f7556a5563b3",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_d903681d2bfe",
+            "syn_why_it_matters_25061151ce16"
+          ],
+          "evidence_ids": [
+            "resurrection-theme:ancient_near_east_context:0",
+            "resurrection-theme:hebraic_worldview:0",
+            "resurrection-theme:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=resurrection-theme|facts=ancient cultures knew death final makes biblical resurrection striking claim about god’s power faithfulness;resurrection hope affirms god's power over death renewal people;second temple judaism debated bodily resurrection making new testament proclamation both rooted disruptive",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "majority_parent_concepts_named_in_canonical_chapter",
+            "non_template_explanatory_facts"
+          ]
+        },
+        {
+          "id": "idea_cluster_ffb2d6216981",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_52d1339e0c02",
+            "syn_historical_context_6ccc80e5c425",
+            "syn_historical_context_b6a881346986",
+            "syn_historical_context_b78e636e28ed"
+          ],
+          "evidence_ids": [
+            "great-white-throne-judgment:historical_context:0",
+            "letters-to-the-seven-churches:historical_context:0",
+            "marriage-supper-of-the-lamb:historical_context:0",
+            "writing-of-revelation:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=great-white-throne-judgment,letters-to-the-seven-churches,marriage-supper-of-the-lamb,writing-of-revelation|facts=historically great white throne judgment located canonical setting entry connects setting revelation new jerusalem new creation theme related ckl objects contextual retrieval;historically letters seven churches located canonical setting entry connects setting revelation new jerusalem new creation theme related ckl objects contextual retrieval;historically marriage supper lamb located canonical setting entry connects setting revelation new jerusalem new creation theme related ckl objects contextual retrieval;historically writing revelation located canonical setting entry connects setting revelation new jerusalem new creation theme related ckl objects contextual retrieval",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 3.6,
+      "consumed_eligible_weight": 2.9,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 5,
+        "RELEVANT": 6
+      },
+      "eligible_synthesis_count": 10,
+      "consumed_eligible_synthesis_count": 5,
+      "eligible_synthesis_coverage": 0.5
+    },
+    "audit": {
+      "reference": "Revelation 20",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 23,
+      "specific_evidence_count": 23,
+      "evidence_score": 19.05,
+      "evidence_category_diversity": 3,
+      "evidence_categories": {
+        "culture": 12,
+        "geography": 2,
+        "history": 9
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 5,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 5,
+      "geography_evidence_count": 2,
+      "archaeology_evidence_count": 0,
+      "section_count": 5,
+      "commentary_block_count": 6,
+      "commentary_prose_char_count": 2172,
+      "commentary_prose_word_count": 329,
+      "verse_anchor_count": 15,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "ezekiel-revelation-reuse",
+        "resurrection-doctrine:historical_context:0",
+        "resurrection-theme:ancient_near_east_context:0",
+        "resurrection-theme:hebraic_worldview:0",
+        "resurrection-theme:historical_context:0",
+        "resurrection-theme:second_temple_context:0",
+        "rev-first-resurrection",
+        "rev-millennium",
+        "rev-scriptural-reuse",
+        "rev-second-death"
+      ],
+      "unique_evidence_ids_consumed": 10,
+      "evidence_consumption_ratio": 0.4348,
+      "unused_evidence_ids": [
+        "great-white-throne-judgment:ancient_near_east_context:0",
+        "great-white-throne-judgment:historical_context:0",
+        "letters-to-the-seven-churches:ancient_near_east_context:0",
+        "letters-to-the-seven-churches:historical_context:0",
+        "marriage-supper-of-the-lamb:ancient_near_east_context:0",
+        "marriage-supper-of-the-lamb:historical_context:0",
+        "resurrection-doctrine:ancient_near_east_context:0",
+        "the-fall:ancient_near_east_context:0",
+        "the-fall:historical_context:0",
+        "what-is-resurrection:ancient_near_east_context:0",
+        "what-is-resurrection:historical_context:0",
+        "writing-of-revelation:ancient_near_east_context:0",
+        "writing-of-revelation:historical_context:0"
+      ],
+      "unused_evidence_count": 13,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0351,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-selection-breadth-diagnostic-v1-packet:cce455e4fcbd222bb5120669ed0bf08dcba19176af91775e4e2c334bd29360b9",
+    "packet_hash": "cce455e4fcbd222bb5120669ed0bf08dcba19176af91775e4e2c334bd29360b9",
+    "raw_sha256": "9cb4d67d3ab8b445edcde3e1dcb1e0b3784fdceed335cf05bcd47fa7eeb25566"
+  }
+}
