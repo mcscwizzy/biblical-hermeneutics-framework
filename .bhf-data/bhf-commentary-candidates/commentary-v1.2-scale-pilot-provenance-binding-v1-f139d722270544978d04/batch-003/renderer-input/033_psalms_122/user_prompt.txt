@@ -1,0 +1,208 @@
+TASK: Generate BHF Commentary v1.7 for Psalms 122.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_0483495b7b4c38f3: Jerusalem (categories: culture, history)
+- reader_idea_84686c1385746c20: Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise… (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_0483495b7b4c38f3: Jerusalem (importance: RELEVANT; categories: culture, history)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": false, "evidence_ids": ["jerusalem:ancient_near_east_context:0", "jerusalem:hebraic_worldview:0", "jerusalem:second_temple_context:0"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_2a9c1e6c92a6"}
+- path_2: {"confidence": "medium", "disputed": false, "evidence_ids": ["what-is-the-significance-of-jerusalem:ancient_near_east_context:0"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_3e52743e70c1"}
+- path_3: {"confidence": "medium", "disputed": false, "evidence_ids": ["jerusalem:historical_context:0"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_3ae5e972c153"}
+- path_4: {"confidence": "medium", "disputed": false, "evidence_ids": ["what-is-the-significance-of-jerusalem:historical_context:0"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_a4d61719bb26"}
+- path_5: {"confidence": "medium", "disputed": false, "evidence_ids": ["jerusalem:ancient_near_east_context:0", "jerusalem:hebraic_worldview:0", "jerusalem:second_temple_context:0"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_1f668cc2cda5"}
+
+IDEA reader_idea_84686c1385746c20: Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise… (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["psalms-exile-restoration-pilgrimage"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f4c9e38182de"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. I was glad when they said unto me, Let us go unto the house of Jehovah. 2. Our feet are standing Within thy gates, O Jerusalem, 3. Jerusalem, that art builded As a city that is compact together; 4. Whither the tribes go up, even the tribes of Jehovah, `For' an ordinance for Israel, To give thanks unto the name of Jehovah. 5. For there are set thrones for judgment, The thrones of the house of David. 6. Pray for the peace of Jerusalem: They shall prosper that love thee. 7. Peace be within thy walls, And prosperity within thy palaces. 8. For my brethren and companions' sakes, I will now say, Peace be within thee. 9. For the sake of the house of Jehovah our God I will seek thy good. Psalm 123 A Song of Ascents.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 1, "events": 0, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 9, "geography": 5, "history": 4}, "evidence_item_count": 18, "relationship_unit_count": 3, "specific_evidence_count": 18, "unit_kind_counts": {"archaeology_geography": 1, "cultural_context": 4, "historical_context": 4, "surrounding_passages": 1, "why_it_matters": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["city-of-david-excavations:ancient_near_east_context:0", "city-of-david-excavations:historical_context:0", "jerusalem:ancient_near_east_context:0", "jerusalem:hebraic_worldview:0", "jerusalem:historical_context:0", "jerusalem:key_places:0", "jerusalem:key_places:1", "jerusalem:key_places:2", "jerusalem:key_places:3", "jerusalem:key_places:4", "jerusalem:second_temple_context:0", "psalms-exile-restoration-pilgrimage", "temple-theme:ancient_near_east_context:0", "temple-theme:hebraic_worldview:0", "temple-theme:historical_context:0", "temple-theme:second_temple_context:0", "what-is-the-significance-of-jerusalem:ancient_near_east_context:0", "what-is-the-significance-of-jerusalem:historical_context:0"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "b7196bb43169d3e0054bfcd8f881062ae80cc73a9d685a0b6b15e211310cfecb", "units": [{"confidence": "medium", "entity_ids": ["jerusalem"], "evidence_ids": ["jerusalem:key_places:0", "jerusalem:key_places:1", "jerusalem:key_places:2", "jerusalem:key_places:3", "jerusalem:key_places:4"], "facts": ["city-of-david", "zion", "mount-zion", "bethlehem-1", "judea-1"], "id": "syn_archaeology_geography_77a04ddc77e9", "interpretation_level": "fact", "kind": "archaeology_geography", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["geography"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": ["jerusalem"], "evidence_ids": ["jerusalem:ancient_near_east_context:0", "jerusalem:hebraic_worldview:0", "jerusalem:second_temple_context:0"], "facts": ["As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.", "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.", "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness."], "id": "syn_cultural_context_2a9c1e6c92a6", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": ["city-of-david-excavations"], "evidence_ids": ["city-of-david-excavations:ancient_near_east_context:0"], "facts": ["Ancient background for City of David Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Samuel 5:1-12, 2 Kings 25:8-17, jerusalem, and hezekiahs-tunnel-inscription-context without letting comparison replace the biblical witness."], "id": "syn_cultural_context_2ea53320b0a3", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-significance-of-jerusalem:ancient_near_east_context:0"], "facts": ["As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure."], "id": "syn_cultural_context_3e52743e70c1", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["temple-theme:ancient_near_east_context:0", "temple-theme:hebraic_worldview:0", "temple-theme:second_temple_context:0"], "facts": ["Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.", "Temple represents holy space, presence, purity, mediation, and pilgrimage.", "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."], "id": "syn_cultural_context_c0129650ea38", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": ["jerusalem"], "evidence_ids": ["jerusalem:historical_context:0"], "facts": ["Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation."], "id": "syn_historical_context_3ae5e972c153", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["temple-theme:historical_context:0"], "facts": ["Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."], "id": "syn_historical_context_4a45c562221c", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": ["city-of-david-excavations"], "evidence_ids": ["city-of-david-excavations:historical_context:0"], "facts": ["City of David Excavations helps anchor the biblical world in physical evidence and archaeological context."], "id": "syn_historical_context_66d48e109a1a", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-significance-of-jerusalem:historical_context:0"], "facts": ["Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation."], "id": "syn_historical_context_a4d61719bb26", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalms-exile-restoration-pilgrimage"], "facts": ["Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship."], "id": "syn_surrounding_passages_f4c9e38182de", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Psalms 120:1-134:3"], "verse_refs": ["Psalms 120:1-7", "Psalms 121:1-8", "Psalms 123:1-4", "Psalms 124:1-8", "Psalms 125:1-5", "Psalms 126:1-6", "Psalms 127:1-5", "Psalms 128:1-6", "Psalms 129:1-8", "Psalms 130:1-8", "Psalms 131:1-3", "Psalms 132:1-18", "Psalms 133:1-3", "Psalms 134:1-3"]}, {"confidence": "medium", "entity_ids": ["jerusalem"], "evidence_ids": ["jerusalem:key_places:0", "jerusalem:key_places:1", "jerusalem:key_places:2", "jerusalem:key_places:3", "jerusalem:key_places:4"], "facts": ["city-of-david", "zion", "mount-zion", "bethlehem-1", "judea-1"], "id": "syn_why_it_matters_00f9b701ba6c", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_archaeology_geography_77a04ddc77e9"], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": ["jerusalem"], "evidence_ids": ["jerusalem:ancient_near_east_context:0", "jerusalem:hebraic_worldview:0", "jerusalem:second_temple_context:0"], "facts": ["As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.", "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.", "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness."], "id": "syn_why_it_matters_1f668cc2cda5", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_2a9c1e6c92a6"], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["temple-theme:ancient_near_east_context:0", "temple-theme:hebraic_worldview:0", "temple-theme:second_temple_context:0"], "facts": ["Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.", "Temple represents holy space, presence, purity, mediation, and pilgrimage.", "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."], "id": "syn_why_it_matters_acc048b1da6a", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_c0129650ea38"], "source_anchors": ["Psalms 122:1-9"], "verse_refs": ["Psalms 122:1-9"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "city-of-david-excavations:ancient_near_east_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["2-kings-25-8-17", "2-samuel-5-1-12", "city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study"]}, {"confidence": "medium", "id": "city-of-david-excavations:historical_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["2-kings-25-8-17", "2-samuel-5-1-12", "city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study"]}, {"confidence": "medium", "id": "jerusalem:ancient_near_east_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:hebraic_worldview:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:historical_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:key_places:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:key_places:1", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:key_places:2", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:key_places:3", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:key_places:4", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "jerusalem:second_temple_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "high", "id": "psalms-exile-restoration-pilgrimage", "passage_anchors": ["Psalms 120:1-134:3"], "source_ids": ["declaisse-walford-jacobson-tanner", "hossfeld-zenger-psalms", "psalms-masoretic"]}, {"confidence": "medium", "id": "temple-theme:ancient_near_east_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "exodus-25", "hebrews-9-10", "john-2", "psalm-84", "revelation-21", "temple-theme-historical-orientation"]}, {"confidence": "medium", "id": "temple-theme:hebraic_worldview:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "exodus-25", "hebrews-9-10", "john-2", "psalm-84", "revelation-21", "temple-theme-historical-orientation"]}, {"confidence": "medium", "id": "temple-theme:historical_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "exodus-25", "hebrews-9-10", "john-2", "psalm-84", "revelation-21", "temple-theme-historical-orientation"]}, {"confidence": "medium", "id": "temple-theme:second_temple_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "exodus-25", "hebrews-9-10", "john-2", "psalm-84", "revelation-21", "temple-theme-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-significance-of-jerusalem:ancient_near_east_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "acts-1-2", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}, {"confidence": "medium", "id": "what-is-the-significance-of-jerusalem:historical_context:0", "passage_anchors": ["Psalms 122:1-9"], "source_ids": ["1-kings-8", "2-samuel-5", "acts-1-2", "isaiah-2", "luke-19", "psalm-122", "revelation-21-22"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Psalms 122",
+  "book": "Psalms",
+  "chapter": 122,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Psalms 122:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Psalms 122:
+   for example `Psalms 122:1` or `Psalms 122:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Psalms 122:1", "Psalms 122:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash b7196bb43169d3e0054bfcd8f881062ae80cc73a9d685a0b6b15e211310cfecb.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v1
+Choose one or more complete provenance_refs for each prose block.
+A provenance reference selects one precomputed reader-idea ancestry path.
+BHF will resolve each selected path to the canonical synthesis and evidence
+fields after generation. Do not choose or emit synthesis_ids or evidence_ids
+manually, and do not combine evidence from different paths.
+Only path IDs listed below are valid for this chapter.
+
+IDEA reader_idea_0483495b7b4c38f3: Jerusalem
+- {"evidence_count": 3, "kind": "cultural_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_122_d7ac1668b90d2c98b94c8e64", "synthesis_unit": "syn_cultural_context_2a9c1e6c92a6", "verse_refs": ["Psalms 122:1-9"]}
+- {"evidence_count": 1, "kind": "cultural_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_122_2074d9e11597d91768ebdb0b", "synthesis_unit": "syn_cultural_context_3e52743e70c1", "verse_refs": ["Psalms 122:1-9"]}
+- {"evidence_count": 1, "kind": "historical_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_122_f353696d1bd85cb321a88f17", "synthesis_unit": "syn_historical_context_3ae5e972c153", "verse_refs": ["Psalms 122:1-9"]}
+- {"evidence_count": 1, "kind": "historical_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_122_f65d9359815b6f2d44f64bd6", "synthesis_unit": "syn_historical_context_a4d61719bb26", "verse_refs": ["Psalms 122:1-9"]}
+- {"evidence_count": 3, "kind": "why_it_matters", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_122_a3411daf9957371537ebc401", "synthesis_unit": "syn_why_it_matters_1f668cc2cda5", "verse_refs": ["Psalms 122:1-9"]}
+
+IDEA reader_idea_84686c1385746c20: Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise…
+- {"evidence_count": 1, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_psalms_122_db12dc02ae7855fb70b9953d", "synthesis_unit": "syn_surrounding_passages_f4c9e38182de", "verse_refs": ["Psalms 120:1-7", "Psalms 121:1-8", "Psalms 123:1-4", "Psalms 124:1-8", "Psalms 125:1-5", "Psalms 126:1-6", "Psalms 127:1-5", "Psalms 128:1-6", "Psalms 129:1-8", "Psalms 130:1-8", "Psalms 131:1-3", "Psalms 132:1-18", "Psalms 133:1-3", "Psalms 134:1-3"]}
+
+PROVENANCE OUTPUT ADAPTER:
+In every block, replace the example synthesis_ids/evidence_ids fields
+with exactly this field:
+  "provenance_refs": ["reader_path_..."]
+Use one or more listed path IDs when a block combines distinct supported
+ideas. Do not emit any path ID from another chapter or invent one.
+This adapter changes only machine-readable provenance selection; keep
+the prompt 1.7 prose, breadth, uncertainty, and reader-facing rules.
