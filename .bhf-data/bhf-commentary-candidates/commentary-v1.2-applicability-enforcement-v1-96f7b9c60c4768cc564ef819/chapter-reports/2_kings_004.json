@@ -1,0 +1,305 @@
+{
+  "after": {
+    "availability": "THIN",
+    "current_chapter_eligible_evidence_count": 0,
+    "current_chapter_synthesis_count": 0,
+    "evidence_count": 18,
+    "evidence_hash_changed": true,
+    "excluded_from_commentary_count": 18,
+    "reason_breakdown": {
+      "legacy_parent_inheritance_is_background_only": 18
+    },
+    "surrounding_passage_count": 0,
+    "synthesis_coverage": {
+      "chapter_verse_count": 44,
+      "spans": [
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "2 Kings 4:1-7"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "2 Kings 4:8-17"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "2 Kings 4:18-37"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "2 Kings 4:38-41"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "2 Kings 4:42-44"
+        }
+      ],
+      "useful_verse_ancestry_coverage": [],
+      "useful_verse_ancestry_coverage_count": 0,
+      "useful_verse_ancestry_coverage_percentage": 0.0
+    },
+    "synthesis_hash_changed": true,
+    "synthesis_unit_count": 0
+  },
+  "before": {
+    "availability": "AVAILABLE",
+    "bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_kings_004.json",
+    "current_chapter_synthesis_count": 18,
+    "evidence_count": 18,
+    "evidence_hash": "28890abd7899dc6e87dbeaf6a17fa4005eddf561f3a3731626815ede211ed993",
+    "surrounding_passage_count": 0,
+    "synthesis_hash": "580fcc4685d08e2fb52bacd74303d3fbedc3ff39daf5fdc5a05a1351684c1aab",
+    "synthesis_unit_count": 18
+  },
+  "controls": {
+    "numbers_1_or_2": false
+  },
+  "evidence_diagnostics": [
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "anna-the-prophetess:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "anna-the-prophetess:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "elijah:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "elijah:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "elisha:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "elisha:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "ezekiel-the-prophet:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "ezekiel-the-prophet:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "isaiah-the-prophet:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "isaiah-the-prophet:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "jeremiah-the-prophet:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "jeremiah-the-prophet:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "jonah-the-prophet:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "jonah-the-prophet:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "nathan-the-prophet:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "nathan-the-prophet:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "zechariah-the-prophet:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "entity",
+      "evidence_id": "zechariah-the-prophet:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    }
+  ],
+  "reference": "2 Kings 4",
+  "source": {
+    "fresh_bundle_version": "1.0",
+    "fresh_evidence_hash": "aa31fa1ffc2213c40ed42a601de7a991cc0c9d736d78bddb86e44cda429dbf7c",
+    "fresh_synthesis_hash": "b1afd3cc2ecddae8aba48fccb37efd8671ae316c1bf234ab2f198b0571a0aec8",
+    "retrieved_ckl_object_count": 9
+  }
+}

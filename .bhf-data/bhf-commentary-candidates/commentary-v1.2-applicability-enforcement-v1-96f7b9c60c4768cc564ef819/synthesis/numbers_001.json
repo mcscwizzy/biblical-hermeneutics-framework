@@ -1,0 +1,213 @@
+{
+  "book": "Numbers",
+  "chapter": 1,
+  "coverage": {
+    "category_diversity": 1,
+    "entity_counts": {
+      "artifacts": 0,
+      "events": 0,
+      "groups": 0,
+      "people": 0,
+      "places": 0
+    },
+    "evidence_categories": {
+      "culture": 5
+    },
+    "evidence_item_count": 5,
+    "relationship_unit_count": 1,
+    "specific_evidence_count": 5,
+    "unit_kind_counts": {
+      "cultural_context": 1,
+      "interpretive_questions": 1,
+      "language_literary": 1,
+      "surrounding_passages": 1,
+      "why_it_matters": 1
+    },
+    "unused_evidence_ids": [],
+    "used_evidence_ids": [
+      "leviticus:interpretive_note:0",
+      "numbers-literary-journey",
+      "numbers-two-generations",
+      "numbers:interpretive_note:0",
+      "numbers:interpretive_note:1"
+    ]
+  },
+  "evidence_availability": "AVAILABLE",
+  "evidence_bundle_version": "1.0",
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "evidence_hash": "f006d421c9438bcc7683f444cba10e692c389cacd8cf42caf07d8f8b5d81b33c",
+  "reference": "Numbers 1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "681673b4ca93df2c0e5b0aaaf2a2090b7ec5337cc2892301e1ee321a589b5151",
+  "synthesis_schema_version": "1.1",
+  "synthesis_units": [
+    {
+      "confidence": "high",
+      "entity_ids": [],
+      "evidence_ids": [
+        "numbers:interpretive_note:0"
+      ],
+      "facts": [
+        "Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location."
+      ],
+      "id": "syn_cultural_context_43f4db5657f9",
+      "interpretation_level": "inference",
+      "kind": "cultural_context",
+      "metadata": {
+        "explicit_significance": false,
+        "passage_scope": "CURRENT_CHAPTER",
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [],
+      "source_anchors": [
+        "Numbers 1:1"
+      ],
+      "verse_refs": [
+        "Numbers 1:1"
+      ]
+    },
+    {
+      "confidence": "low",
+      "entity_ids": [],
+      "evidence_ids": [
+        "numbers:interpretive_note:1"
+      ],
+      "facts": [
+        "The two census totals and the scale of Israel's wilderness population have major literary and historical interpretations; the record should not silently select one reconstruction."
+      ],
+      "id": "syn_interpretive_questions_ac529624339f",
+      "interpretation_level": "disputed",
+      "kind": "interpretive_questions",
+      "metadata": {
+        "explicit_significance": false,
+        "passage_scope": "CURRENT_CHAPTER",
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [],
+      "source_anchors": [
+        "Numbers 1"
+      ],
+      "verse_refs": [
+        "Numbers 1"
+      ]
+    },
+    {
+      "confidence": "high",
+      "entity_ids": [],
+      "evidence_ids": [
+        "numbers-literary-journey",
+        "numbers-two-generations"
+      ],
+      "facts": [
+        "Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+        "The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab."
+      ],
+      "id": "syn_language_literary_1ce482ed90f4",
+      "interpretation_level": "fact",
+      "kind": "language_literary",
+      "metadata": {
+        "explicit_significance": false,
+        "passage_scope": "CURRENT_CHAPTER",
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [],
+      "source_anchors": [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ],
+      "verse_refs": [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ]
+    },
+    {
+      "confidence": "high",
+      "entity_ids": [],
+      "evidence_ids": [
+        "leviticus:interpretive_note:0"
+      ],
+      "facts": [
+        "Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings."
+      ],
+      "id": "syn_surrounding_passages_91e303c3467c",
+      "interpretation_level": "inference",
+      "kind": "surrounding_passages",
+      "metadata": {
+        "explicit_significance": false,
+        "passage_scope": "CURRENT_CHAPTER",
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [],
+      "source_anchors": [
+        "Numbers 1:1"
+      ],
+      "verse_refs": [
+        "Numbers 1:1"
+      ]
+    },
+    {
+      "confidence": "high",
+      "entity_ids": [],
+      "evidence_ids": [
+        "numbers-literary-journey",
+        "numbers-two-generations"
+      ],
+      "facts": [
+        "Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+        "The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab."
+      ],
+      "id": "syn_why_it_matters_dd7137349c08",
+      "interpretation_level": "inference",
+      "kind": "why_it_matters",
+      "metadata": {
+        "explicit_significance": false,
+        "relationship_basis": "shared_parent_object",
+        "safe_for_significance": true,
+        "support_count": 2
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [
+        "syn_language_literary_1ce482ed90f4"
+      ],
+      "source_anchors": [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ],
+      "verse_refs": [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ]
+    }
+  ]
+}

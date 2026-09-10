@@ -1,0 +1,159 @@
+{
+  "entities": {
+    "artifacts": [],
+    "events": [],
+    "groups": [],
+    "people": [],
+    "places": []
+  },
+  "evidence_hash": "12c43f7b0c128ab931a5f9e046c9ce82d03f3263a1e9368d01f01c3ce8a1735c",
+  "evidence_hash_version": "1",
+  "evidence_items": [
+    {
+      "category": "archaeology",
+      "claim": "Ramesside Qadesh relief compositions depict the royal campaign tent at the center of a bounded military camp; scholars have compared aspects of its plan and centrality with the tabernacle and Israelite camp.",
+      "confidence": "medium",
+      "id": "qadesh-royal-tent-comparison",
+      "passage_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "scholarly-reconstruction",
+        "broad_tag_only": false,
+        "certainty": "plausible",
+        "claim_type": "",
+        "dispute_status": "interpretive_uncertainty",
+        "evidence_type": "material-culture",
+        "exploration_potential": 1.0,
+        "field": "",
+        "note_type": "",
+        "object_importance": 94,
+        "overview_priority": 0,
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "comparative",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.914,
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "qadesh-camp-reliefs",
+        "homan-to-your-tents-2002"
+      ]
+    },
+    {
+      "category": "archaeology",
+      "claim": "The reliefs show mobile royal architecture and camp centrality in New Kingdom Egypt but cannot identify the royal tent as a sanctuary or blueprint for Exodus.",
+      "confidence": "medium",
+      "id": "qadesh-royal-tent-comparison:passage-relevance",
+      "passage_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "scholarly-reconstruction",
+        "broad_tag_only": false,
+        "certainty": "plausible",
+        "claim_type": "",
+        "dispute_status": "interpretive_uncertainty",
+        "evidence_type": "material-culture",
+        "exploration_potential": 1.0,
+        "field": "",
+        "note_type": "",
+        "object_importance": 94,
+        "overview_priority": 0,
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "comparative",
+        "presentation_role": "significance",
+        "retrieval_score": 0.914,
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "supports_evidence_ids": [
+          "qadesh-royal-tent-comparison"
+        ],
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "qadesh-camp-reliefs",
+        "homan-to-your-tents-2002"
+      ]
+    }
+  ],
+  "geography": {
+    "map_location_refs": [],
+    "map_route_refs": [],
+    "places": [],
+    "political_territories": [],
+    "regions": [],
+    "routes": []
+  },
+  "passage_ref": "Numbers 2",
+  "provenance": {
+    "canonical_objects": [
+      {
+        "id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "object_version": "1",
+        "retrieval_score": 0.914,
+        "review_status": "in_review",
+        "title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "type": "cultural_background"
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ],
+    "sources": [
+      {
+        "author": "Michael M. Homan",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ],
+        "id": "homan-to-your-tents-2002",
+        "locator": "Chapter 7, pp. 89-128: Tabernacle parallels",
+        "notes": "Comparative study of tent terminology, form, function, and symbolism across the ancient Near East.",
+        "publisher": "Brill",
+        "source_type": "academic-book",
+        "supports": [
+          "mari-large-public-tent-comparison",
+          "qadesh-royal-tent-comparison",
+          "timna-tented-shrine-comparison"
+        ],
+        "title": "To Your Tents, O Israel! The Terminology, Function, Form, and Symbolism of Tents in the Hebrew Bible and the Ancient Near East",
+        "url": "https://brill.com/display/title/8060",
+        "year": 2002
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ],
+        "id": "qadesh-camp-reliefs",
+        "locator": "Camp scenes in the Qadesh relief compositions at Abu Simbel, Luxor, Karnak, the Ramesseum, and Abydos",
+        "notes": "Pictorial royal source; the relief's ideological and commemorative genre requires source criticism.",
+        "publisher": "Ancient Egyptian temple relief programs",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "qadesh-royal-tent-comparison"
+        ],
+        "title": "Ramesses II Qadesh campaign relief compositions",
+        "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ramsesii.html",
+        "year": -1274
+      }
+    ]
+  },
+  "version": "1.0"
+}
