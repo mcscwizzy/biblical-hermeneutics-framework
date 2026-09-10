@@ -1,0 +1,185 @@
+TASK: Generate BHF Commentary v1.7 for Psalms 103.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Bless Jehovah, O my soul; And all that is within me, `bless' his holy name. 2. Bless Jehovah, O my soul, And forget not all his benefits: 3. Who forgiveth all thine iniquities; Who healeth all thy diseases; 4. Who redeemeth thy life from destruction; Who crowneth thee with lovingkindness and tender mercies; 5. Who satisfieth thy desire with good things, `So that' thy youth is renewed like the eagle. 6. Jehovah executeth righteous acts, And judgments for all that are oppressed. 7. He made known his ways unto Moses, His doings unto the children of Israel. 8. Jehovah is merciful and gracious, Slow to anger, and abundant in lovingkindness. 9. He will not always chide; Neither will he keep `his anger' for ever. 10. He hath not dealt with us after our sins, Nor rewarded us after our iniquities. 11. For as the heavens are high above the earth, So great is his lovingkindness toward them that fear him. 12. As far as the east is from the west, So far hath he removed our transgressions from us. 13. Like as a father pitieth his children, So Jehovah pitieth them that fear him. 14. For he knoweth our frame; He remembereth that we are dust. 15. As for man, his days are as grass; As a flower of the field, so he flourisheth. 16. For the wind passeth over it, and it is gone; And the place thereof shall know it no more. 17. But the lovingkindness of Jehovah is from everlasting to everlasting upon them that fear him, And his righteousness unto children's children; 18. To such as keep his covenant, And to those that remember his precepts to do them. 19. Jehovah hath established his throne in the heavens; And his kingdom ruleth over all. 20. Bless Jehovah, ye his angels, That are mighty in strength, that fulfil his word, Hearkening unto the voice of his word. 21. Bless Jehovah, all ye his hosts, Ye ministers of his, that do his pleasure. 22. Bless Jehovah, all ye his works, In all places of his dominion: Bless Jehovah, O my soul.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 3, "history": 3}, "evidence_item_count": 6, "relationship_unit_count": 0, "specific_evidence_count": 6, "unit_kind_counts": {"cultural_context": 3, "historical_context": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["divine-mercy:ancient_near_east_context:0", "divine-mercy:historical_context:0", "grace:ancient_near_east_context:0", "grace:historical_context:0", "mercy-theme:ancient_near_east_context:0", "mercy-theme:historical_context:0"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "6dfaefee8cdd52317084d91d44bccbd24fe8876b51bc4ecce6dd0faa6f2e76f0", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["mercy-theme:ancient_near_east_context:0"], "facts": ["Ancient background for Mercy Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, divine-mercy, and grace without letting comparison replace the biblical witness."], "id": "syn_cultural_context_2bd1024693df", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 103:8-13"], "verse_refs": ["Psalms 103:8-13"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["divine-mercy:ancient_near_east_context:0"], "facts": ["Ancient background for Divine Mercy includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, mercy-theme, and grace without letting comparison replace the biblical witness."], "id": "syn_cultural_context_2d7d0868059e", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 103:8-13"], "verse_refs": ["Psalms 103:8-13"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["grace:ancient_near_east_context:0"], "facts": ["Ancient background for Grace includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, mercy-theme, and divine-mercy without letting comparison replace the biblical witness."], "id": "syn_cultural_context_790a17f2861c", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 103:8-13"], "verse_refs": ["Psalms 103:8-13"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["mercy-theme:historical_context:0"], "facts": ["Mercy Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."], "id": "syn_historical_context_4f3c806e0d12", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 103:8-13"], "verse_refs": ["Psalms 103:8-13"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["divine-mercy:historical_context:0"], "facts": ["Divine Mercy is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."], "id": "syn_historical_context_549b2798bcc7", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 103:8-13"], "verse_refs": ["Psalms 103:8-13"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["grace:historical_context:0"], "facts": ["Grace is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."], "id": "syn_historical_context_e459fd41f428", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 103:8-13"], "verse_refs": ["Psalms 103:8-13"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "divine-mercy:ancient_near_east_context:0", "passage_anchors": ["Psalms 103:8-13"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "divine-mercy:historical_context:0", "passage_anchors": ["Psalms 103:8-13"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "grace:ancient_near_east_context:0", "passage_anchors": ["Psalms 103:8-13"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "grace:historical_context:0", "passage_anchors": ["Psalms 103:8-13"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "mercy-theme:ancient_near_east_context:0", "passage_anchors": ["Psalms 103:8-13"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "mercy-theme:historical_context:0", "passage_anchors": ["Psalms 103:8-13"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Psalms 103",
+  "book": "Psalms",
+  "chapter": 103,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Psalms 103:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Psalms 103:
+   for example `Psalms 103:1` or `Psalms 103:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Psalms 103:1", "Psalms 103:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 6dfaefee8cdd52317084d91d44bccbd24fe8876b51bc4ecce6dd0faa6f2e76f0.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v1
+Choose one or more complete provenance_refs for each prose block.
+A provenance reference selects one precomputed reader-idea ancestry path.
+BHF will resolve each selected path to the canonical synthesis and evidence
+fields after generation. Do not choose or emit synthesis_ids or evidence_ids
+manually, and do not combine evidence from different paths.
+Only path IDs listed below are valid for this chapter.
+
+PROVENANCE OUTPUT ADAPTER:
+In every block, replace the example synthesis_ids/evidence_ids fields
+with exactly this field:
+  "provenance_refs": ["reader_path_..."]
+Use one or more listed path IDs when a block combines distinct supported
+ideas. Do not emit any path ID from another chapter or invent one.
+This adapter changes only machine-readable provenance selection; keep
+the prompt 1.7 prose, breadth, uncertainty, and reader-facing rules.
