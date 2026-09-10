@@ -1,0 +1,181 @@
+TASK: Generate BHF Commentary v1.7 for Isaiah 52.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_ae9e2ce46e256586: Romans 10:15 most directly cites Isaiah 52:7; Nahum 1:15 is a related good-news messenger parallel rather than Paul's direct source. (categories: culture, interpretive_questions)
+- reader_idea_b4671b0cc5950b01: Isaiah 40-55 announces comfort and return from Babylon through creation and exodus imagery, presenting a new homecoming without… (categories: culture, interpretive_questions)
+- reader_idea_8956585dafa09ca8: Old Greek Esaias is an ancient Jewish translation and interpretation whose wording sometimes reflects a different Hebrew Vorlage and… (categories: culture, history, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_ae9e2ce46e256586: Romans 10:15 most directly cites Isaiah 52:7; Nahum 1:15 is a related good-news messenger parallel rather than Paul's direct source. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["nahum-new-testament"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_205727aee3b3"}
+
+IDEA reader_idea_b4671b0cc5950b01: Isaiah 40-55 announces comfort and return from Babylon through creation and exodus imagery, presenting a new homecoming without… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["isaiah-comfort-new-exodus"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_48e359ac4b72"}
+
+IDEA reader_idea_8956585dafa09ca8: Old Greek Esaias is an ancient Jewish translation and interpretation whose wording sometimes reflects a different Hebrew Vorlage and… (importance: RELEVANT; categories: culture, history, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["isaiah-old-greek", "isaiah-qumran-witnesses", "isaiah-reception-distinction", "isaiah-suffering-servant"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_61d7b7255a5e"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["isaiah-old-greek", "isaiah-qumran-witnesses", "isaiah-reception-distinction", "isaiah-suffering-servant"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_c9dcb974c977"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Awake, awake, put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean. 2. Shake thyself from the dust; arise, sit `on thy throne', O Jerusalem: loose thyself from the bonds of thy neck, O captive daughter of Zion. 3. For thus saith Jehovah, Ye were sold for nought; and ye shall be redeemed without money. 4. For thus saith the Lord Jehovah, My people went down at the first into Egypt to sojourn there: and the Assyrian hath oppressed them without cause. 5. Now therefore, what do I here, saith Jehovah, seeing that my people is taken away for nought? they that rule over them do howl, saith Jehovah, and my name continually all the day is blasphemed. 6. Therefore my people shall know my name: therefore `they shall know' in that day that I am he that doth speak; behold, it is I. 7. How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace, that bringeth good tidings of good, that publisheth salvation, that saith unto Zion, Thy God reigneth! 8. The voice of thy watchmen! they lift up the voice, together do they sing; for they shall see eye to eye, when Jehovah returneth to Zion. 9. Break forth into joy, sing together, ye waste places of Jerusalem; for Jehovah hath comforted his people, he hath redeemed Jerusalem. 10. Jehovah hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth have seen the salvation of our God. 11. Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; cleanse yourselves, ye that bear the vessels of Jehovah. 12. For ye shall not go out in haste, neither shall ye go by flight: for Jehovah will go before you; and the God of Israel will be your rearward. 13. Behold, my servant shall deal wisely, he shall be exalted and lifted up, and shall be very high. 14. Like as many were astonished at thee (his visage was so marred more than any man, and his form more than the sons of men), 15. so shall he sprinkle many nations; kings shall shut their mouths at him: for that which had not been told them shall they see; and that which they had not heard shall they understand.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 6, "history": 6}, "evidence_item_count": 12, "relationship_unit_count": 1, "specific_evidence_count": 12, "unit_kind_counts": {"cultural_context": 3, "historical_context": 3, "interpretive_questions": 2, "surrounding_passages": 2}, "unused_evidence_ids": [], "used_evidence_ids": ["isaiah-comfort-new-exodus", "isaiah-old-greek", "isaiah-qumran-witnesses", "isaiah-reception-distinction", "isaiah-suffering-servant", "messiah-theme:ancient_near_east_context:0", "messiah-theme:historical_context:0", "nahum-new-testament", "suffering-servant-prophecy:ancient_near_east_context:0", "suffering-servant-prophecy:historical_context:0", "what-is-the-messiah:ancient_near_east_context:0", "what-is-the-messiah:historical_context:0"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "03c9c3b4641fbee25166b9540d6a4d3e30dfc3ee1aa314f95cdb53fc03da89d4", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["suffering-servant-prophecy:ancient_near_east_context:0"], "facts": ["Ancient background for Suffering Servant Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 42:1-9, Isaiah 49:1-7, isaiah, and jesus without letting comparison replace the biblical witness."], "id": "syn_cultural_context_04dc7fc05efe", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:13-15"], "verse_refs": ["Isaiah 52:13-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-messiah:ancient_near_east_context:0"], "facts": ["Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God’s promise and righteous rule."], "id": "syn_cultural_context_465bea182d98", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:13-15"], "verse_refs": ["Isaiah 52:13-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["messiah-theme:ancient_near_east_context:0"], "facts": ["Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God’s promise, righteousness, and suffering victory."], "id": "syn_cultural_context_bf839f6c2c45", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:13-15"], "verse_refs": ["Isaiah 52:13-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-messiah:historical_context:0"], "facts": ["Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return."], "id": "syn_historical_context_1615e4a809e3", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:13-15"], "verse_refs": ["Isaiah 52:13-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["suffering-servant-prophecy:historical_context:0"], "facts": ["The servant songs emerge from Isaiah's prophetic world and hold together Israel's vocation, suffering, and restoration."], "id": "syn_historical_context_6afa08bed36f", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:13-15"], "verse_refs": ["Isaiah 52:13-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["messiah-theme:historical_context:0"], "facts": ["Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope."], "id": "syn_historical_context_a45c5e0b285a", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:13-15"], "verse_refs": ["Isaiah 52:13-15"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["nahum-new-testament"], "facts": ["Romans 10:15 most directly cites Isaiah 52:7; Nahum 1:15 is a related good-news messenger parallel rather than Paul's direct source."], "id": "syn_interpretive_questions_205727aee3b3", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:7"], "verse_refs": ["Isaiah 52:7"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["isaiah-comfort-new-exodus"], "facts": ["Isaiah 40-55 announces comfort and return from Babylon through creation and exodus imagery, presenting a new homecoming without implying that displacement trauma or postreturn conflict simply vanished."], "id": "syn_interpretive_questions_48e359ac4b72", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Isaiah 52:7-12"], "verse_refs": ["Isaiah 52:7-12"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["isaiah-old-greek", "isaiah-qumran-witnesses", "isaiah-reception-distinction", "isaiah-suffering-servant"], "facts": ["Old Greek Esaias is an ancient Jewish translation and interpretation whose wording sometimes reflects a different Hebrew Vorlage and sometimes the translator's linguistic or theological decisions; New Testament quotations often interact with this Greek tradition.", "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.", "Responsible interpretation distinguishes a passage's literary sense and historical referent from prediction claims, typology, quotation, allusion, canonical synthesis, Jewish reception, and later christological or ecclesial readings.", "Isaiah 52:13-53:12 narrates a servant's humiliation, suffering, death, representative bearing, vindication, and benefit to others, but does not explicitly name the servant; collective, individual, prophetic, messianic, and christological readings have long histories."], "id": "syn_surrounding_passages_61d7b7255a5e", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_c9dcb974c977"], "source_anchors": ["Isaiah 1:1-66:24", "Isaiah 52:13-53:12"], "verse_refs": ["Isaiah 10:1-34", "Isaiah 11:1-16", "Isaiah 12:1-6", "Isaiah 13:1-22", "Isaiah 14:1-32", "Isaiah 15:1-9", "Isaiah 16:1-14", "Isaiah 17:1-14", "Isaiah 18:1-7", "Isaiah 19:1-25", "Isaiah 1:1-31", "Isaiah 20:1-6", "Isaiah 21:1-17", "Isaiah 22:1-25", "Isaiah 23:1-18", "Isaiah 24:1-23", "Isaiah 25:1-12", "Isaiah 26:1-21", "Isaiah 27:1-13", "Isaiah 28:1-29", "Isaiah 29:1-24", "Isaiah 2:1-22", "Isaiah 30:1-33", "Isaiah 31:1-9", "Isaiah 32:1-20", "Isaiah 33:1-24", "Isaiah 34:1-17", "Isaiah 35:1-10", "Isaiah 36:1-22", "Isaiah 37:1-38", "Isaiah 38:1-22", "Isaiah 39:1-8", "Isaiah 3:1-26", "Isaiah 40:1-31", "Isaiah 41:1-29", "Isaiah 42:1-25", "Isaiah 43:1-28", "Isaiah 44:1-28", "Isaiah 45:1-25", "Isaiah 46:1-13", "Isaiah 47:1-15", "Isaiah 48:1-22", "Isaiah 49:1-26", "Isaiah 4:1-6", "Isaiah 50:1-11", "Isaiah 51:1-23", "Isaiah 53:1-12", "Isaiah 54:1-17", "Isaiah 55:1-13", "Isaiah 56:1-12", "Isaiah 57:1-21", "Isaiah 58:1-14", "Isaiah 59:1-21", "Isaiah 5:1-30", "Isaiah 60:1-22", "Isaiah 61:1-11", "Isaiah 62:1-12", "Isaiah 63:1-19", "Isaiah 64:1-12", "Isaiah 65:1-25", "Isaiah 66:1-24", "Isaiah 6:1-13", "Isaiah 7:1-25", "Isaiah 8:1-22", "Isaiah 9:1-21"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["isaiah-old-greek", "isaiah-qumran-witnesses", "isaiah-reception-distinction", "isaiah-suffering-servant"], "facts": ["Old Greek Esaias is an ancient Jewish translation and interpretation whose wording sometimes reflects a different Hebrew Vorlage and sometimes the translator's linguistic or theological decisions; New Testament quotations often interact with this Greek tradition.", "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.", "Responsible interpretation distinguishes a passage's literary sense and historical referent from prediction claims, typology, quotation, allusion, canonical synthesis, Jewish reception, and later christological or ecclesial readings.", "Isaiah 52:13-53:12 narrates a servant's humiliation, suffering, death, representative bearing, vindication, and benefit to others, but does not explicitly name the servant; collective, individual, prophetic, messianic, and christological readings have long histories."], "id": "syn_surrounding_passages_c9dcb974c977", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 4}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Isaiah 1:1-66:24", "Isaiah 52:13-53:12"], "verse_refs": ["Isaiah 10:1-34", "Isaiah 11:1-16", "Isaiah 12:1-6", "Isaiah 13:1-22", "Isaiah 14:1-32", "Isaiah 15:1-9", "Isaiah 16:1-14", "Isaiah 17:1-14", "Isaiah 18:1-7", "Isaiah 19:1-25", "Isaiah 1:1-31", "Isaiah 20:1-6", "Isaiah 21:1-17", "Isaiah 22:1-25", "Isaiah 23:1-18", "Isaiah 24:1-23", "Isaiah 25:1-12", "Isaiah 26:1-21", "Isaiah 27:1-13", "Isaiah 28:1-29", "Isaiah 29:1-24", "Isaiah 2:1-22", "Isaiah 30:1-33", "Isaiah 31:1-9", "Isaiah 32:1-20", "Isaiah 33:1-24", "Isaiah 34:1-17", "Isaiah 35:1-10", "Isaiah 36:1-22", "Isaiah 37:1-38", "Isaiah 38:1-22", "Isaiah 39:1-8", "Isaiah 3:1-26", "Isaiah 40:1-31", "Isaiah 41:1-29", "Isaiah 42:1-25", "Isaiah 43:1-28", "Isaiah 44:1-28", "Isaiah 45:1-25", "Isaiah 46:1-13", "Isaiah 47:1-15", "Isaiah 48:1-22", "Isaiah 49:1-26", "Isaiah 4:1-6", "Isaiah 50:1-11", "Isaiah 51:1-23", "Isaiah 53:1-12", "Isaiah 54:1-17", "Isaiah 55:1-13", "Isaiah 56:1-12", "Isaiah 57:1-21", "Isaiah 58:1-14", "Isaiah 59:1-21", "Isaiah 5:1-30", "Isaiah 60:1-22", "Isaiah 61:1-11", "Isaiah 62:1-12", "Isaiah 63:1-19", "Isaiah 64:1-12", "Isaiah 65:1-25", "Isaiah 66:1-24", "Isaiah 6:1-13", "Isaiah 7:1-25", "Isaiah 8:1-22", "Isaiah 9:1-21"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "isaiah-comfort-new-exodus", "passage_anchors": ["Isaiah 52:7-12"], "source_ids": ["blenkinsopp-isaiah-40-55", "cambridge-migration-isaiah", "isaiah-masoretic", "paul-isaiah-40-66"]}, {"confidence": "high", "id": "isaiah-old-greek", "passage_anchors": ["Isaiah 52:13-53:12"], "source_ids": ["greek-esaias-nets", "moyise-isaiah-nt", "ngunga-greek-isaiah", "oxford-handbook-isaiah"]}, {"confidence": "high", "id": "isaiah-qumran-witnesses", "passage_anchors": ["Isaiah 1:1-66:24"], "source_ids": ["brooke-qumran-isaiah", "hogenhaven-qumran-isaiah", "israel-museum-great-isaiah", "oxford-handbook-isaiah"]}, {"confidence": "medium", "id": "isaiah-reception-distinction", "passage_anchors": ["Isaiah 52:13-53:12"], "source_ids": ["greek-esaias-nets", "moyise-isaiah-nt", "oxford-handbook-isaiah", "sweeney-post-shoah-isaiah"]}, {"confidence": "high", "id": "isaiah-suffering-servant", "passage_anchors": ["Isaiah 52:13-53:12"], "source_ids": ["blenkinsopp-isaiah-40-55", "isaiah-masoretic", "moyise-isaiah-nt", "oxford-handbook-isaiah", "paul-isaiah-40-66"]}, {"confidence": "medium", "id": "messiah-theme:ancient_near_east_context:0", "passage_anchors": ["Isaiah 52:13-15"], "source_ids": ["2-samuel-7", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "medium", "id": "messiah-theme:historical_context:0", "passage_anchors": ["Isaiah 52:13-15"], "source_ids": ["2-samuel-7", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "high", "id": "nahum-new-testament", "passage_anchors": ["Isaiah 52:7"], "source_ids": ["nahum-canonical-comparanda", "nahum-new-testament"]}, {"confidence": "medium", "id": "suffering-servant-prophecy:ancient_near_east_context:0", "passage_anchors": ["Isaiah 52:13-15"], "source_ids": ["1-peter-2", "acts-8", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-52-53", "suffering-servant-prophecy-historical-orientation"]}, {"confidence": "medium", "id": "suffering-servant-prophecy:historical_context:0", "passage_anchors": ["Isaiah 52:13-15"], "source_ids": ["1-peter-2", "acts-8", "isaiah-42", "isaiah-49", "isaiah-50", "isaiah-52-53", "suffering-servant-prophecy-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-messiah:ancient_near_east_context:0", "passage_anchors": ["Isaiah 52:13-15"], "source_ids": ["2-samuel-7", "hebrews-1", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "medium", "id": "what-is-the-messiah:historical_context:0", "passage_anchors": ["Isaiah 52:13-15"], "source_ids": ["2-samuel-7", "hebrews-1", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Isaiah 52",
+  "book": "Isaiah",
+  "chapter": 52,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Isaiah 52:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Isaiah 52:
+   for example `Isaiah 52:1` or `Isaiah 52:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Isaiah 52:1", "Isaiah 52:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 03c9c3b4641fbee25166b9540d6a4d3e30dfc3ee1aa314f95cdb53fc03da89d4.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.

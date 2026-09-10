@@ -1,0 +1,177 @@
+TASK: Generate BHF Commentary v1.7 for 1 Timothy 2.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_1935a805166aec2b: 1 Timothy (categories: culture, history, interpretive_questions, language_literary)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_1935a805166aec2b: 1 Timothy (importance: CORE; categories: culture, history, interpretive_questions, language_literary)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["1tim-prayer"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_8e8a0a7b401b"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:10", "1-timothy:interpretive_note:11", "1-timothy:interpretive_note:12", "1-timothy:interpretive_note:13"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_23567e78dc09"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["1tim-authentein", "1tim-childbearing", "1tim-creation", "1tim-dress", "1tim-mediator"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_4d3f0588fe2d"}
+- path_4: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:14", "1-timothy:interpretive_note:15", "1-timothy:interpretive_note:42", "1-timothy:interpretive_note:8", "1-timothy:interpretive_note:9"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_c9da2c90b13c"}
+- path_5: {"confidence": "high", "disputed": true, "evidence_ids": ["1tim-women-learn"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_cdca6a83cb1e"}
+- path_6: {"confidence": "low", "disputed": true, "evidence_ids": ["1tim-authentein", "1tim-childbearing", "1tim-creation", "1tim-dress", "1tim-mediator"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_1f0f0df1f683"}
+- path_7: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:10", "1-timothy:interpretive_note:11", "1-timothy:interpretive_note:12", "1-timothy:interpretive_note:13"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_287373028b13"}
+- path_8: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:14", "1-timothy:interpretive_note:15", "1-timothy:interpretive_note:42", "1-timothy:interpretive_note:8", "1-timothy:interpretive_note:9"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_4f11478a1f2e"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. I exhort therefore, first of all, that supplications, prayers, intercessions, thanksgivings, be made for all men; 2. for kings and all that are in high place; that we may lead a tranquil and quiet life in all godliness and gravity. 3. This is good and acceptable in the sight of God our Saviour; 4. who would have all men to be saved, and come to the knowledge of the truth. 5. For there is one God, one mediator also between God and men, `himself' man, Christ Jesus, 6. who gave himself a ransom for all; the testimony `to be borne' in its own times; 7. whereunto I was appointed a preacher and an apostle (I speak the truth, I lie not), a teacher of the Gentiles in faith and truth. 8. I desire therefore that the men pray in every place, lifting up holy hands, without wrath and disputing. 9. In like manner, that women adorn themselves in modest apparel, with shamefastness and sobriety; not with braided hair, and gold or pearls or costly raiment; 10. but (which becometh women professing godliness) through good works. 11. Let a woman learn in quietness with all subjection. 12. But I permit not a woman to teach, nor to have dominion over a man, but to be in quietness. 13. For Adam was first formed, then Eve; 14. and Adam was not beguiled, but the woman being beguiled hath fallen into transgression: 15. but she shall be saved through her child-bearing, if they continue in faith and love and sanctification with sobriety.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 13, "economics": 1, "history": 2, "language": 1}, "evidence_item_count": 17, "relationship_unit_count": 3, "specific_evidence_count": 17, "unit_kind_counts": {"historical_context": 1, "interpretive_questions": 4, "why_it_matters": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:10", "1-timothy:interpretive_note:11", "1-timothy:interpretive_note:12", "1-timothy:interpretive_note:13", "1-timothy:interpretive_note:14", "1-timothy:interpretive_note:15", "1-timothy:interpretive_note:42", "1-timothy:interpretive_note:8", "1-timothy:interpretive_note:9", "1tim-authentein", "1tim-childbearing", "1tim-creation", "1tim-dress", "1tim-mediator", "1tim-prayer", "1tim-women-learn"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}], "synthesis_hash": "a329bbebcdc17bf51e65b89298ba64eeaf44e8b5feffe017a162dcdbf74722d9", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["1tim-prayer"], "facts": ["The letter calls for varied prayer for all people, including rulers, toward peaceful and dignified life."], "id": "syn_historical_context_8e8a0a7b401b", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 2:1-4"], "verse_refs": ["1 Timothy 2:1-4"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:10", "1-timothy:interpretive_note:11", "1-timothy:interpretive_note:12", "1-timothy:interpretive_note:13"], "facts": ["Authorship: the text names Paul, but vocabulary, style, theology, biography, and institutional setting sustain major disagreement among qualified scholars.", "Mission: ransom and herald language cannot legitimate forced conversion, colonial mission, cultural erasure, or religious violence.", "Dress: the contrast targets costly display and commends good works; it should not support body shame, purity surveillance, class contempt, or control of women's bodies.", "Gender: the command that a woman learn is explicit, but the scope and duration of restrictions on teaching and authentein are disputed; silencing women through misogyny is not a neutral reading.", "Authority: authentein occurs only here in the New Testament; its force cannot be settled by etymology alone, and it cannot authorize authoritarian leadership by men."], "id": "syn_interpretive_questions_23567e78dc09", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 2:11-12", "1 Timothy 2:12", "1 Timothy 2:5-7", "1 Timothy 2:7", "1 Timothy 2:9-10"], "verse_refs": ["1 Timothy 2:11-12", "1 Timothy 2:12", "1 Timothy 2:5-7", "1 Timothy 2:7", "1 Timothy 2:9-10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1tim-authentein", "1tim-childbearing", "1tim-creation", "1tim-dress", "1tim-mediator"], "facts": ["Authentein is a rare verb linked with teaching in 2:12, and proposals range from neutral exercise of authority to domineering or unauthorized action.", "The statement that she or women will be saved through childbearing if they remain in faith, love, holiness, and self-control has no undisputed interpretation.", "The rationale invokes Adam's prior formation and Eve's deception, but interpreters dispute how the Genesis reading supports the command.", "Women are urged toward respectable dress, modesty, self-control, and good works rather than costly status display.", "The text joins one God, one mediator Christ Jesus, his self-giving ransom for all, and the desire that all be saved."], "id": "syn_interpretive_questions_4d3f0588fe2d", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "language"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 2:12", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-7", "1 Timothy 2:9-10"], "verse_refs": ["1 Timothy 2:12", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-7", "1 Timothy 2:9-10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:14", "1-timothy:interpretive_note:15", "1-timothy:interpretive_note:42", "1-timothy:interpretive_note:8", "1-timothy:interpretive_note:9"], "facts": ["Creation argument: Adam's formation and Eve's deception are invoked by the epistolary voice, but how this grounds a local or universal rule remains disputed.", "Childbearing: saved through childbearing has major lexical and theological uncertainty and must not imply that pregnancy is required, medically safe, or a cure for sin.", "Application: leadership, prayer, mission, wealth, and household teaching must resist nationalism, militarism, colonial domination, public shaming, and ecological neglect while protecting vulnerable people.", "Prayer: intercession for kings seeks a quiet, dignified life and must not be turned into sacral nationalism, militarism, ruler worship, or partisan loyalty.", "Salvation: God's desire that all be saved and the one-mediator claim are explicit, while universalist, exclusivist, and other systematic conclusions remain contested."], "id": "syn_interpretive_questions_c9da2c90b13c", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "economics"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 2:1-4", "1 Timothy 2:1-7", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-6"], "verse_refs": ["1 Timothy 2:1-4", "1 Timothy 2:1-7", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-6"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1tim-women-learn"], "facts": ["A woman is commanded to learn in quietness and full submission before the prohibition involving teaching and authentein."], "id": "syn_interpretive_questions_cdca6a83cb1e", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 2:11-12"], "verse_refs": ["1 Timothy 2:11-12"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1tim-authentein", "1tim-childbearing", "1tim-creation", "1tim-dress", "1tim-mediator"], "facts": ["Authentein is a rare verb linked with teaching in 2:12, and proposals range from neutral exercise of authority to domineering or unauthorized action.", "The statement that she or women will be saved through childbearing if they remain in faith, love, holiness, and self-control has no undisputed interpretation.", "The rationale invokes Adam's prior formation and Eve's deception, but interpreters dispute how the Genesis reading supports the command.", "Women are urged toward respectable dress, modesty, self-control, and good works rather than costly status display.", "The text joins one God, one mediator Christ Jesus, his self-giving ransom for all, and the desire that all be saved."], "id": "syn_why_it_matters_1f0f0df1f683", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_4d3f0588fe2d"], "source_anchors": ["1 Timothy 2:12", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-7", "1 Timothy 2:9-10"], "verse_refs": ["1 Timothy 2:12", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-7", "1 Timothy 2:9-10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:10", "1-timothy:interpretive_note:11", "1-timothy:interpretive_note:12", "1-timothy:interpretive_note:13"], "facts": ["Authorship: the text names Paul, but vocabulary, style, theology, biography, and institutional setting sustain major disagreement among qualified scholars.", "Mission: ransom and herald language cannot legitimate forced conversion, colonial mission, cultural erasure, or religious violence.", "Dress: the contrast targets costly display and commends good works; it should not support body shame, purity surveillance, class contempt, or control of women's bodies.", "Gender: the command that a woman learn is explicit, but the scope and duration of restrictions on teaching and authentein are disputed; silencing women through misogyny is not a neutral reading.", "Authority: authentein occurs only here in the New Testament; its force cannot be settled by etymology alone, and it cannot authorize authoritarian leadership by men."], "id": "syn_why_it_matters_287373028b13", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_23567e78dc09"], "source_anchors": ["1 Timothy 2:11-12", "1 Timothy 2:12", "1 Timothy 2:5-7", "1 Timothy 2:7", "1 Timothy 2:9-10"], "verse_refs": ["1 Timothy 2:11-12", "1 Timothy 2:12", "1 Timothy 2:5-7", "1 Timothy 2:7", "1 Timothy 2:9-10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:14", "1-timothy:interpretive_note:15", "1-timothy:interpretive_note:42", "1-timothy:interpretive_note:8", "1-timothy:interpretive_note:9"], "facts": ["Creation argument: Adam's formation and Eve's deception are invoked by the epistolary voice, but how this grounds a local or universal rule remains disputed.", "Childbearing: saved through childbearing has major lexical and theological uncertainty and must not imply that pregnancy is required, medically safe, or a cure for sin.", "Application: leadership, prayer, mission, wealth, and household teaching must resist nationalism, militarism, colonial domination, public shaming, and ecological neglect while protecting vulnerable people.", "Prayer: intercession for kings seeks a quiet, dignified life and must not be turned into sacral nationalism, militarism, ruler worship, or partisan loyalty.", "Salvation: God's desire that all be saved and the one-mediator claim are explicit, while universalist, exclusivist, and other systematic conclusions remain contested."], "id": "syn_why_it_matters_4f11478a1f2e", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_c9da2c90b13c"], "source_anchors": ["1 Timothy 2:1-4", "1 Timothy 2:1-7", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-6"], "verse_refs": ["1 Timothy 2:1-4", "1 Timothy 2:1-7", "1 Timothy 2:13-14", "1 Timothy 2:15", "1 Timothy 2:3-6"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "low", "id": "1-timothy:interpretive_note:0", "passage_anchors": ["1 Timothy 2:7"], "source_ids": ["1tim-greek", "collins", "johnson", "marshall", "towner"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:10", "passage_anchors": ["1 Timothy 2:5-7"], "source_ids": ["1tim-greek", "ehrensperger", "huizenga"]}, {"confidence": "medium", "id": "1-timothy:interpretive_note:11", "passage_anchors": ["1 Timothy 2:9-10"], "source_ids": ["1tim-greek", "huizenga", "osiek-macdonald", "winter"]}, {"confidence": "low", "id": "1-timothy:interpretive_note:12", "passage_anchors": ["1 Timothy 2:11-12"], "source_ids": ["1tim-greek", "bdag", "huizenga", "westfall", "winter"]}, {"confidence": "low", "id": "1-timothy:interpretive_note:13", "passage_anchors": ["1 Timothy 2:12"], "source_ids": ["1tim-greek", "bdag", "westfall"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:14", "passage_anchors": ["1 Timothy 2:13-14"], "source_ids": ["1tim-greek", "huizenga", "nets-lxx", "westfall"]}, {"confidence": "low", "id": "1-timothy:interpretive_note:15", "passage_anchors": ["1 Timothy 2:15"], "source_ids": ["1tim-greek", "huizenga", "marshall", "westfall"]}, {"confidence": "medium", "id": "1-timothy:interpretive_note:42", "passage_anchors": ["1 Timothy 2:1-7"], "source_ids": ["1tim-greek", "ehrensperger", "huizenga"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:8", "passage_anchors": ["1 Timothy 2:1-4"], "source_ids": ["1tim-greek", "aune-literary", "johnson"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:9", "passage_anchors": ["1 Timothy 2:3-6"], "source_ids": ["1tim-greek", "johnson", "marshall"]}, {"confidence": "low", "id": "1tim-authentein", "passage_anchors": ["1 Timothy 2:12"], "source_ids": ["1tim-greek", "bdag", "marshall", "westfall"]}, {"confidence": "low", "id": "1tim-childbearing", "passage_anchors": ["1 Timothy 2:15"], "source_ids": ["1tim-greek", "huizenga", "marshall", "westfall"]}, {"confidence": "high", "id": "1tim-creation", "passage_anchors": ["1 Timothy 2:13-14"], "source_ids": ["1tim-greek", "huizenga", "nets-lxx", "westfall"]}, {"confidence": "medium", "id": "1tim-dress", "passage_anchors": ["1 Timothy 2:9-10"], "source_ids": ["1tim-greek", "osiek-macdonald", "winter"]}, {"confidence": "high", "id": "1tim-mediator", "passage_anchors": ["1 Timothy 2:3-7"], "source_ids": ["1tim-greek", "johnson", "marshall"]}, {"confidence": "high", "id": "1tim-prayer", "passage_anchors": ["1 Timothy 2:1-4"], "source_ids": ["1tim-greek", "johnson"]}, {"confidence": "high", "id": "1tim-women-learn", "passage_anchors": ["1 Timothy 2:11-12"], "source_ids": ["1tim-greek", "huizenga", "westfall"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "1 Timothy 2",
+  "book": "1 Timothy",
+  "chapter": 2,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["1 Timothy 2:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in 1 Timothy 2:
+   for example `1 Timothy 2:1` or `1 Timothy 2:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["1 Timothy 2:1", "1 Timothy 2:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash a329bbebcdc17bf51e65b89298ba64eeaf44e8b5feffe017a162dcdbf74722d9.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.

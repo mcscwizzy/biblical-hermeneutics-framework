@@ -1,0 +1,175 @@
+TASK: Generate BHF Commentary v1.7 for Hosea 4.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_28aaf99a218286a3: Hosea (categories: culture, history, interpretive_questions)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_28aaf99a218286a3: Hosea (importance: CORE; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["hosea:interpretive_note:8", "hosea:interpretive_note:9"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_532bd66df464"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["hosea:interpretive_note:13", "hosea:interpretive_note:24"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_504526dc4b0f"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["hosea-baal-fertility", "hosea-land-lawsuit", "hosea-priestly-failure", "hosea:interpretive_note:10", "hosea:interpretive_note:11"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_a7fb47f4fd99"}
+- path_4: {"confidence": "low", "disputed": true, "evidence_ids": ["hosea:interpretive_note:13", "hosea:interpretive_note:24"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_3e8b97f09b07"}
+- path_5: {"confidence": "high", "disputed": false, "evidence_ids": ["hosea:interpretive_note:8", "hosea:interpretive_note:9"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_5b1468c22c4e"}
+- path_6: {"confidence": "medium", "disputed": true, "evidence_ids": ["hosea-baal-fertility", "hosea-land-lawsuit", "hosea-priestly-failure", "hosea:interpretive_note:10", "hosea:interpretive_note:11"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_de394976e1b9"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Hear the word of Jehovah, ye children of Israel; for Jehovah hath a controversy with the inhabitants of the land, because there is no truth, nor goodness, nor knowledge of God in the land. 2. There is nought but swearing and breaking faith, and killing, and stealing, and committing adultery; they break out, and blood toucheth blood. 3. Therefore shall the land mourn, and every one that dwelleth therein shall languish, with the beasts of the field and the birds of the heavens; yea, the fishes of the sea also shall be taken away. 4. Yet let no man strive, neither let any man reprove; for thy people are as they that strive with the priest. 5. And thou shalt stumble in the day, and the prophet also shall stumble with thee in the night; and I will destroy thy mother. 6. My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I also will forget thy children. 7. As they were multiplied, so they sinned against me: I will change their glory into shame. 8. They feed on the sin of my people, and set their heart on their iniquity. 9. And it shall be, like people, like priest; and I will punish them for their ways, and will requite them their doings. 10. And they shall eat, and not have enough; they shall play the harlot, and shall not increase; because they have left off taking heed to Jehovah. 11. Whoredom and wine and new wine take away the understanding. 12. My people ask counsel at their stock, and their staff declareth unto them; for the spirit of whoredom hath caused them to err, and they have played the harlot, `departing' from under their God. 13. They sacrifice upon the tops of the mountains, and burn incense upon the hills, under oaks and poplars and terebinths, because the shadow thereof is good: therefore your daughters play the harlot, and your brides commit adultery. 14. I will not punish your daughters when they play the harlot, nor your brides when they commit adultery; for `the men' themselves go apart with harlots, and they sacrifice with the prostitutes; and the people that doth not understand shall be overthrown. 15. Though thou, Israel, play the harlot, yet let not Judah offend; and come not ye unto Gilgal, neither go ye up to Beth-aven, nor swear, As Jehovah liveth. 16. For Israel hath behaved himself stubbornly, like a stubborn heifer: now will Jehovah feed them as a lamb in a large place. 17. Ephraim is joined to idols; let him alone. 18. Their drink is become sour; they play the harlot continually; her rulers dearly love shame. 19. The wind hath wrapped her up in its wings; and they shall be put to shame because of their sacrifices.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 7, "history": 1, "politics": 1}, "evidence_item_count": 9, "relationship_unit_count": 3, "specific_evidence_count": 9, "unit_kind_counts": {"cultural_context": 1, "interpretive_questions": 2, "why_it_matters": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["hosea-baal-fertility", "hosea-land-lawsuit", "hosea-priestly-failure", "hosea:interpretive_note:10", "hosea:interpretive_note:11", "hosea:interpretive_note:13", "hosea:interpretive_note:24", "hosea:interpretive_note:8", "hosea:interpretive_note:9"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "e152b5772cebcd19d71469614fb19aa703668ec5566a458e895139b025661f58", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:8", "hosea:interpretive_note:9"], "facts": ["Infidelity accusations in Hosea do not authorize clergy, spouses, or communities to accuse victims, demand disclosure, stigmatize divorce, or police sexuality.", "Hosea does not support stereotypes that sex workers or trafficked people are inherently faithless; distinguish prostitution rhetoric from the lives and agency of real people."], "id": "syn_cultural_context_532bd66df464", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 4:1-19"], "verse_refs": ["Hosea 4:1-19"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:13", "hosea:interpretive_note:24"], "facts": ["Claims about sacred prostitution in Hosea are historically uncertain and must not be repeated as established descriptions of Israelite or Canaanite religion.", "The land's mourning and agricultural metaphors invite ecological reflection while resisting the claim that environmental disaster proves a targeted group's guilt."], "id": "syn_interpretive_questions_504526dc4b0f", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 4:1-19"], "verse_refs": ["Hosea 4:1-19"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["hosea-baal-fertility", "hosea-land-lawsuit", "hosea-priestly-failure", "hosea:interpretive_note:10", "hosea:interpretive_note:11"], "facts": ["Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult.", "Hosea 4 opens a lawsuit against inhabitants of the land for lack of faithfulness, hesed, and knowledge of God and connects human violence with the land's mourning and creaturely loss.", "Hosea 4 places special responsibility on priests for rejected knowledge, distorted instruction, exploitation, and cultic failure rather than assigning blame only to ordinary worshipers.", "The phrase 'covenant lawsuit' is a useful literary model for Hosea 4 and related units, not proof that the book reproduces one formal ancient trial transcript.", "Knowledge of God in Hosea includes ethical, relational, political, and cultic fidelity; it is not merely doctrinal information or private experience."], "id": "syn_interpretive_questions_a7fb47f4fd99", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history", "politics"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 4:1-19"], "verse_refs": ["Hosea 4:1-19"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:13", "hosea:interpretive_note:24"], "facts": ["Claims about sacred prostitution in Hosea are historically uncertain and must not be repeated as established descriptions of Israelite or Canaanite religion.", "The land's mourning and agricultural metaphors invite ecological reflection while resisting the claim that environmental disaster proves a targeted group's guilt."], "id": "syn_why_it_matters_3e8b97f09b07", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_504526dc4b0f"], "source_anchors": ["Hosea 4:1-19"], "verse_refs": ["Hosea 4:1-19"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:8", "hosea:interpretive_note:9"], "facts": ["Infidelity accusations in Hosea do not authorize clergy, spouses, or communities to accuse victims, demand disclosure, stigmatize divorce, or police sexuality.", "Hosea does not support stereotypes that sex workers or trafficked people are inherently faithless; distinguish prostitution rhetoric from the lives and agency of real people."], "id": "syn_why_it_matters_5b1468c22c4e", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_532bd66df464"], "source_anchors": ["Hosea 4:1-19"], "verse_refs": ["Hosea 4:1-19"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["hosea-baal-fertility", "hosea-land-lawsuit", "hosea-priestly-failure", "hosea:interpretive_note:10", "hosea:interpretive_note:11"], "facts": ["Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult.", "Hosea 4 opens a lawsuit against inhabitants of the land for lack of faithfulness, hesed, and knowledge of God and connects human violence with the land's mourning and creaturely loss.", "Hosea 4 places special responsibility on priests for rejected knowledge, distorted instruction, exploitation, and cultic failure rather than assigning blame only to ordinary worshipers.", "The phrase 'covenant lawsuit' is a useful literary model for Hosea 4 and related units, not proof that the book reproduces one formal ancient trial transcript.", "Knowledge of God in Hosea includes ethical, relational, political, and cultic fidelity; it is not merely doctrinal information or private experience."], "id": "syn_why_it_matters_de394976e1b9", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_a7fb47f4fd99"], "source_anchors": ["Hosea 4:1-19"], "verse_refs": ["Hosea 4:1-19"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "hosea-baal-fertility", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["hosea-masoretic", "irvine-hosea", "kelle-hosea-overview", "oxford-handbook-hosea"]}, {"confidence": "high", "id": "hosea-land-lawsuit", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["dearman-hosea", "hankins-hosea-economy", "hosea-masoretic", "oxford-handbook-hosea"]}, {"confidence": "high", "id": "hosea-priestly-failure", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["dearman-hosea", "hosea-masoretic", "irvine-hosea"]}, {"confidence": "medium", "id": "hosea:interpretive_note:10", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["dearman-hosea", "irvine-hosea"]}, {"confidence": "high", "id": "hosea:interpretive_note:11", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["dearman-hosea", "hosea-masoretic", "irvine-hosea"]}, {"confidence": "low", "id": "hosea:interpretive_note:13", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["irvine-hosea", "kelle-hosea-overview", "lovelace-feminist-womanist"]}, {"confidence": "medium", "id": "hosea:interpretive_note:24", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["hankins-hosea-economy", "hosea-masoretic", "oxford-handbook-hosea"]}, {"confidence": "high", "id": "hosea:interpretive_note:8", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["cobb-gender-violence", "lovelace-feminist-womanist"]}, {"confidence": "high", "id": "hosea:interpretive_note:9", "passage_anchors": ["Hosea 4:1-19"], "source_ids": ["lovelace-feminist-womanist", "sherwood-prostitute-prophet"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Hosea 4",
+  "book": "Hosea",
+  "chapter": 4,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Hosea 4:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Hosea 4:
+   for example `Hosea 4:1` or `Hosea 4:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Hosea 4:1", "Hosea 4:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash e152b5772cebcd19d71469614fb19aa703668ec5566a458e895139b025661f58.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
