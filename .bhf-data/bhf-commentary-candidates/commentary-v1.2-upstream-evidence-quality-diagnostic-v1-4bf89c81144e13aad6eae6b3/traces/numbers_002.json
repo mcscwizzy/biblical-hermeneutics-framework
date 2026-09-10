@@ -1,0 +1,327 @@
+[
+  {
+    "ckl_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+    "ckl_object_type": "cultural_background",
+    "ckl_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/cultural_background/ancient-portable-sanctuaries-and-tabernacle-comparisons.json",
+      "sha256": "20643ca946c086ee8ed8861fd072a33ac2d88d185839d62ac8de944b118e5d23",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 25:1-9",
+        "relationship": "primary",
+        "notes": "Materials, sanctuary purpose, and pattern."
+      },
+      {
+        "reference": "Exodus 26:1-37",
+        "relationship": "primary",
+        "notes": "Curtains, coverings, frames, veil, and screen."
+      },
+      {
+        "reference": "Exodus 27:9-19",
+        "relationship": "primary",
+        "notes": "Courtyard enclosure and entrance."
+      },
+      {
+        "reference": "Numbers 4:1-33",
+        "relationship": "primary",
+        "notes": "Covering and transport responsibilities."
+      },
+      {
+        "reference": "Numbers 10:11-28",
+        "relationship": "supporting",
+        "notes": "Departure order and transport of the dwelling."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [
+      {
+        "location": "evidence_items[1].scripture_references",
+        "value": {
+          "reference": "Numbers 2:1-34",
+          "relationship": "comparative",
+          "temporal_relation": "earlier-comparative",
+          "relevance_rationale": "The relief's central royal tent can be compared cautiously with the textual centrality of the dwelling in Israel's camp.",
+          "weight": 6
+        }
+      }
+    ],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.914,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 2",
+    "exact_matched_reference": [
+      "Numbers 2:1-34"
+    ],
+    "canonical_result_identity": {
+      "object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "object_json_sha256": "160addcf865d07e43c76184c5781a8f6a3ca24773b4912bab901abc66cae468c"
+    },
+    "evidence_item_id": "qadesh-royal-tent-comparison",
+    "evidence_category": "archaeology",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Numbers 2:1-34"
+    ],
+    "source_ids": [
+      "qadesh-camp-reliefs",
+      "homan-to-your-tents-2002"
+    ],
+    "claim": "Ramesside Qadesh relief compositions depict the royal campaign tent at the center of a bounded military camp; scholars have compared aspects of its plan and centrality with the tabernacle and Israelite camp.",
+    "synthesis_ids": [
+      "syn_interpretive_questions_ede50de2e4f9",
+      "syn_why_it_matters_10105ef9796e"
+    ],
+    "synthesis_kind": [
+      "interpretive_questions",
+      "why_it_matters"
+    ],
+    "synthesis_confidence": [
+      "medium",
+      "medium"
+    ],
+    "interpretation_level": [
+      "disputed",
+      "disputed"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER",
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 2:1-34"
+      ],
+      [
+        "Numbers 2:1-34"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 2:1-34"
+      ],
+      [
+        "Numbers 2:1-34"
+      ]
+    ],
+    "explicit_significance": [
+      true,
+      true
+    ],
+    "support_count": [
+      2,
+      2
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_numbers_002_7061c95c42a4eff42ee07e19",
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_1",
+        "section_kind": "why_it_matters",
+        "section_title": "Why the Camp’s Center Matters",
+        "final_block": "The arrangement of Israel around the tent of meeting has been compared with Ramesside Qadesh reliefs depicting a royal campaign tent at the center of a bounded military camp. This comparison can help readers picture mobile architecture occupying a camp’s organizing center, but it remains disputed and does not establish that the royal tent was a sanctuary or that it supplied a blueprint for Israel’s camp."
+      }
+    ],
+    "relevance_classification": "DEFENSIBLE_CONTEXT",
+    "relevance_rationale": "The disputed sanctuary comparison is a specific contextual claim for the chapter-wide camp arrangement.",
+    "relevance_metadata": {
+      "source_kind": "ckl_evidence_item",
+      "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+      "parent_type": "cultural_background",
+      "object_importance": 94,
+      "retrieval_score": 0.914,
+      "passage_relationship": "comparative",
+      "anchor_specificity": "verse",
+      "verse_distance": 0,
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "assertion_type": "scholarly-reconstruction",
+      "exploration_potential": 1.0,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "evidence_type": "material-culture",
+      "field": "",
+      "applicability_scope": "passage",
+      "anchor_source": "child",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
+      "presentation_role": "dig_deeper",
+      "overview_priority": 0
+    }
+  },
+  {
+    "ckl_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+    "ckl_object_type": "cultural_background",
+    "ckl_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/cultural_background/ancient-portable-sanctuaries-and-tabernacle-comparisons.json",
+      "sha256": "20643ca946c086ee8ed8861fd072a33ac2d88d185839d62ac8de944b118e5d23",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 25:1-9",
+        "relationship": "primary",
+        "notes": "Materials, sanctuary purpose, and pattern."
+      },
+      {
+        "reference": "Exodus 26:1-37",
+        "relationship": "primary",
+        "notes": "Curtains, coverings, frames, veil, and screen."
+      },
+      {
+        "reference": "Exodus 27:9-19",
+        "relationship": "primary",
+        "notes": "Courtyard enclosure and entrance."
+      },
+      {
+        "reference": "Numbers 4:1-33",
+        "relationship": "primary",
+        "notes": "Covering and transport responsibilities."
+      },
+      {
+        "reference": "Numbers 10:11-28",
+        "relationship": "supporting",
+        "notes": "Departure order and transport of the dwelling."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [
+      {
+        "location": "evidence_items[1].scripture_references",
+        "value": {
+          "reference": "Numbers 2:1-34",
+          "relationship": "comparative",
+          "temporal_relation": "earlier-comparative",
+          "relevance_rationale": "The relief's central royal tent can be compared cautiously with the textual centrality of the dwelling in Israel's camp.",
+          "weight": 6
+        }
+      }
+    ],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.914,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 2",
+    "exact_matched_reference": [
+      "Numbers 2:1-34"
+    ],
+    "canonical_result_identity": {
+      "object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "object_json_sha256": "160addcf865d07e43c76184c5781a8f6a3ca24773b4912bab901abc66cae468c"
+    },
+    "evidence_item_id": "qadesh-royal-tent-comparison:passage-relevance",
+    "evidence_category": "archaeology",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Numbers 2:1-34"
+    ],
+    "source_ids": [
+      "qadesh-camp-reliefs",
+      "homan-to-your-tents-2002"
+    ],
+    "claim": "The reliefs show mobile royal architecture and camp centrality in New Kingdom Egypt but cannot identify the royal tent as a sanctuary or blueprint for Exodus.",
+    "synthesis_ids": [
+      "syn_interpretive_questions_ede50de2e4f9",
+      "syn_why_it_matters_10105ef9796e"
+    ],
+    "synthesis_kind": [
+      "interpretive_questions",
+      "why_it_matters"
+    ],
+    "synthesis_confidence": [
+      "medium",
+      "medium"
+    ],
+    "interpretation_level": [
+      "disputed",
+      "disputed"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER",
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 2:1-34"
+      ],
+      [
+        "Numbers 2:1-34"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 2:1-34"
+      ],
+      [
+        "Numbers 2:1-34"
+      ]
+    ],
+    "explicit_significance": [
+      true,
+      true
+    ],
+    "support_count": [
+      2,
+      2
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_numbers_002_7061c95c42a4eff42ee07e19",
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_1",
+        "section_kind": "why_it_matters",
+        "section_title": "Why the Camp’s Center Matters",
+        "final_block": "The arrangement of Israel around the tent of meeting has been compared with Ramesside Qadesh reliefs depicting a royal campaign tent at the center of a bounded military camp. This comparison can help readers picture mobile architecture occupying a camp’s organizing center, but it remains disputed and does not establish that the royal tent was a sanctuary or that it supplied a blueprint for Israel’s camp."
+      }
+    ],
+    "relevance_classification": "DEFENSIBLE_CONTEXT",
+    "relevance_rationale": "The disputed sanctuary comparison is a specific contextual claim for the chapter-wide camp arrangement.",
+    "relevance_metadata": {
+      "source_kind": "ckl_evidence_item",
+      "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+      "parent_type": "cultural_background",
+      "object_importance": 94,
+      "retrieval_score": 0.914,
+      "passage_relationship": "comparative",
+      "anchor_specificity": "verse",
+      "verse_distance": 0,
+      "certainty": "plausible",
+      "dispute_status": "interpretive_uncertainty",
+      "assertion_type": "scholarly-reconstruction",
+      "exploration_potential": 1.0,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "evidence_type": "material-culture",
+      "field": "",
+      "applicability_scope": "passage",
+      "anchor_source": "child",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
+      "presentation_role": "significance",
+      "overview_priority": 0,
+      "supports_evidence_ids": [
+        "qadesh-royal-tent-comparison"
+      ]
+    }
+  }
+]

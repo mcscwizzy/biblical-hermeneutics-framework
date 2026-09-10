@@ -1,0 +1,836 @@
+[
+  {
+    "ckl_object_id": "divine-mercy",
+    "ckl_object_type": "theology",
+    "ckl_title": "Divine Mercy",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/theology/divine-mercy.json",
+      "sha256": "b98157c9be01bc91c3aebbcfdc8a31378458d90a43e392a8c233fcc74de61d6d",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 34:6-7",
+        "relationship": "primary",
+        "notes": ""
+      },
+      {
+        "reference": "Psalm 103:8-13",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Micah 7:18-20",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Ephesians 2:4-10",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Titus 2:11-14",
+        "relationship": "supporting",
+        "notes": ""
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.913,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Psalms 103",
+    "exact_matched_reference": [
+      "Psalms 103:8-13"
+    ],
+    "canonical_result_identity": {
+      "object_id": "divine-mercy",
+      "object_json_sha256": "474a2d588108ccc581f317385b262d1bcd1fe7b9a1d20cabadda2b2c82a34c60"
+    },
+    "evidence_item_id": "divine-mercy:ancient_near_east_context:0",
+    "evidence_category": "culture",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Psalms 103:8-13"
+    ],
+    "source_ids": [
+      "exodus-34",
+      "psalm-103",
+      "micah-7",
+      "ephesians-2",
+      "titus-2"
+    ],
+    "claim": "Ancient background for Divine Mercy includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, mercy-theme, and grace without letting comparison replace the biblical witness.",
+    "synthesis_ids": [
+      "syn_cultural_context_2d7d0868059e"
+    ],
+    "synthesis_kind": [
+      "cultural_context"
+    ],
+    "synthesis_confidence": [
+      "medium"
+    ],
+    "interpretation_level": [
+      "fact"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_psalms_103_469f8b8664aa254d4c2c0d13"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_psalms_103_469f8b8664aa254d4c2c0d13"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_1",
+        "section_kind": "cultural_context",
+        "section_title": "Mercy and Grace",
+        "final_block": "The portrait of Jehovah as merciful, gracious, patient, forgiving, and compassionate belongs to a wider setting of covenant life, worship, kingship, and wisdom teaching. These backgrounds frame mercy and grace as realities expressed within the life of God’s people, while the psalm’s own description in verses 8–13 remains the controlling witness."
+      }
+    ],
+    "relevance_classification": "GENERIC_CONTEXT",
+    "relevance_rationale": "The mercy/grace legacy field is a broad thematic statement; it does not add a distinct, passage-specific claim or chapter-span coverage.",
+    "relevance_metadata": {
+      "source_kind": "ckl_legacy_field",
+      "parent_object_id": "divine-mercy",
+      "parent_title": "Divine Mercy",
+      "parent_type": "theology",
+      "object_importance": 93,
+      "retrieval_score": 0.913,
+      "passage_relationship": "contextual",
+      "anchor_specificity": "verse",
+      "verse_distance": 7,
+      "certainty": "",
+      "dispute_status": "",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "field": "ancient_near_east_context",
+      "applicability_scope": "global",
+      "anchor_source": "parent",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "presentation_role": "historical_context",
+      "overview_priority": 55,
+      "inherited_from_parent": true
+    }
+  },
+  {
+    "ckl_object_id": "divine-mercy",
+    "ckl_object_type": "theology",
+    "ckl_title": "Divine Mercy",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/theology/divine-mercy.json",
+      "sha256": "b98157c9be01bc91c3aebbcfdc8a31378458d90a43e392a8c233fcc74de61d6d",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 34:6-7",
+        "relationship": "primary",
+        "notes": ""
+      },
+      {
+        "reference": "Psalm 103:8-13",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Micah 7:18-20",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Ephesians 2:4-10",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Titus 2:11-14",
+        "relationship": "supporting",
+        "notes": ""
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.913,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Psalms 103",
+    "exact_matched_reference": [
+      "Psalms 103:8-13"
+    ],
+    "canonical_result_identity": {
+      "object_id": "divine-mercy",
+      "object_json_sha256": "474a2d588108ccc581f317385b262d1bcd1fe7b9a1d20cabadda2b2c82a34c60"
+    },
+    "evidence_item_id": "divine-mercy:historical_context:0",
+    "evidence_category": "history",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Psalms 103:8-13"
+    ],
+    "source_ids": [
+      "exodus-34",
+      "psalm-103",
+      "micah-7",
+      "ephesians-2",
+      "titus-2"
+    ],
+    "claim": "Divine Mercy is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+    "synthesis_ids": [
+      "syn_historical_context_549b2798bcc7"
+    ],
+    "synthesis_kind": [
+      "historical_context"
+    ],
+    "synthesis_confidence": [
+      "medium"
+    ],
+    "interpretation_level": [
+      "fact"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_psalms_103_d7157bd1e51aba34f90ca1c7"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_psalms_103_d7157bd1e51aba34f90ca1c7"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_2",
+        "section_kind": "historical_context",
+        "section_title": "A Theme Across Scripture",
+        "final_block": "The mercy and grace celebrated here are read as themes that continue across Scripture, developing from Israel’s story into the New Testament witness. Psalm 103:8–13 therefore stands within that broader scriptural testimony while speaking in its own images of restrained anger, removed transgressions, and a father’s compassion."
+      }
+    ],
+    "relevance_classification": "GENERIC_CONTEXT",
+    "relevance_rationale": "The mercy/grace legacy field is a broad thematic statement; it does not add a distinct, passage-specific claim or chapter-span coverage.",
+    "relevance_metadata": {
+      "source_kind": "ckl_legacy_field",
+      "parent_object_id": "divine-mercy",
+      "parent_title": "Divine Mercy",
+      "parent_type": "theology",
+      "object_importance": 93,
+      "retrieval_score": 0.913,
+      "passage_relationship": "contextual",
+      "anchor_specificity": "verse",
+      "verse_distance": 7,
+      "certainty": "",
+      "dispute_status": "",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "field": "historical_context",
+      "applicability_scope": "global",
+      "anchor_source": "parent",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "presentation_role": "historical_context",
+      "overview_priority": 40,
+      "inherited_from_parent": true
+    }
+  },
+  {
+    "ckl_object_id": "grace",
+    "ckl_object_type": "theology",
+    "ckl_title": "Grace",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/theology/grace.json",
+      "sha256": "3d742ad51583bbd6c7aa154d077ff94693eea7b267cf1602ba5c9d1bc3397f8b",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 34:6-7",
+        "relationship": "primary",
+        "notes": ""
+      },
+      {
+        "reference": "Psalm 103:8-13",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Micah 7:18-20",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Ephesians 2:4-10",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Titus 2:11-14",
+        "relationship": "supporting",
+        "notes": ""
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.913,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Psalms 103",
+    "exact_matched_reference": [
+      "Psalms 103:8-13"
+    ],
+    "canonical_result_identity": {
+      "object_id": "grace",
+      "object_json_sha256": "e8a89cf982ac732b9a3e21933492621f1c8a6e874edebcdee3469b861c1b1ab4"
+    },
+    "evidence_item_id": "grace:ancient_near_east_context:0",
+    "evidence_category": "culture",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Psalms 103:8-13"
+    ],
+    "source_ids": [
+      "exodus-34",
+      "psalm-103",
+      "micah-7",
+      "ephesians-2",
+      "titus-2"
+    ],
+    "claim": "Ancient background for Grace includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, mercy-theme, and divine-mercy without letting comparison replace the biblical witness.",
+    "synthesis_ids": [
+      "syn_cultural_context_790a17f2861c"
+    ],
+    "synthesis_kind": [
+      "cultural_context"
+    ],
+    "synthesis_confidence": [
+      "medium"
+    ],
+    "interpretation_level": [
+      "fact"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_psalms_103_967e985ec2e1ea1a270b3ef4"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_psalms_103_967e985ec2e1ea1a270b3ef4"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_1",
+        "section_kind": "cultural_context",
+        "section_title": "Mercy and Grace",
+        "final_block": "The portrait of Jehovah as merciful, gracious, patient, forgiving, and compassionate belongs to a wider setting of covenant life, worship, kingship, and wisdom teaching. These backgrounds frame mercy and grace as realities expressed within the life of God’s people, while the psalm’s own description in verses 8–13 remains the controlling witness."
+      }
+    ],
+    "relevance_classification": "GENERIC_CONTEXT",
+    "relevance_rationale": "The mercy/grace legacy field is a broad thematic statement; it does not add a distinct, passage-specific claim or chapter-span coverage.",
+    "relevance_metadata": {
+      "source_kind": "ckl_legacy_field",
+      "parent_object_id": "grace",
+      "parent_title": "Grace",
+      "parent_type": "theology",
+      "object_importance": 93,
+      "retrieval_score": 0.913,
+      "passage_relationship": "contextual",
+      "anchor_specificity": "verse",
+      "verse_distance": 7,
+      "certainty": "",
+      "dispute_status": "",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "field": "ancient_near_east_context",
+      "applicability_scope": "global",
+      "anchor_source": "parent",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "presentation_role": "historical_context",
+      "overview_priority": 55,
+      "inherited_from_parent": true
+    }
+  },
+  {
+    "ckl_object_id": "grace",
+    "ckl_object_type": "theology",
+    "ckl_title": "Grace",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/theology/grace.json",
+      "sha256": "3d742ad51583bbd6c7aa154d077ff94693eea7b267cf1602ba5c9d1bc3397f8b",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 34:6-7",
+        "relationship": "primary",
+        "notes": ""
+      },
+      {
+        "reference": "Psalm 103:8-13",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Micah 7:18-20",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Ephesians 2:4-10",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Titus 2:11-14",
+        "relationship": "supporting",
+        "notes": ""
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.913,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Psalms 103",
+    "exact_matched_reference": [
+      "Psalms 103:8-13"
+    ],
+    "canonical_result_identity": {
+      "object_id": "grace",
+      "object_json_sha256": "e8a89cf982ac732b9a3e21933492621f1c8a6e874edebcdee3469b861c1b1ab4"
+    },
+    "evidence_item_id": "grace:historical_context:0",
+    "evidence_category": "history",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Psalms 103:8-13"
+    ],
+    "source_ids": [
+      "exodus-34",
+      "psalm-103",
+      "micah-7",
+      "ephesians-2",
+      "titus-2"
+    ],
+    "claim": "Grace is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+    "synthesis_ids": [
+      "syn_historical_context_e459fd41f428"
+    ],
+    "synthesis_kind": [
+      "historical_context"
+    ],
+    "synthesis_confidence": [
+      "medium"
+    ],
+    "interpretation_level": [
+      "fact"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_psalms_103_85533789bd129de91e56f339"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_psalms_103_85533789bd129de91e56f339"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_2",
+        "section_kind": "historical_context",
+        "section_title": "A Theme Across Scripture",
+        "final_block": "The mercy and grace celebrated here are read as themes that continue across Scripture, developing from Israel’s story into the New Testament witness. Psalm 103:8–13 therefore stands within that broader scriptural testimony while speaking in its own images of restrained anger, removed transgressions, and a father’s compassion."
+      }
+    ],
+    "relevance_classification": "GENERIC_CONTEXT",
+    "relevance_rationale": "The mercy/grace legacy field is a broad thematic statement; it does not add a distinct, passage-specific claim or chapter-span coverage.",
+    "relevance_metadata": {
+      "source_kind": "ckl_legacy_field",
+      "parent_object_id": "grace",
+      "parent_title": "Grace",
+      "parent_type": "theology",
+      "object_importance": 93,
+      "retrieval_score": 0.913,
+      "passage_relationship": "contextual",
+      "anchor_specificity": "verse",
+      "verse_distance": 7,
+      "certainty": "",
+      "dispute_status": "",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "field": "historical_context",
+      "applicability_scope": "global",
+      "anchor_source": "parent",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "presentation_role": "historical_context",
+      "overview_priority": 40,
+      "inherited_from_parent": true
+    }
+  },
+  {
+    "ckl_object_id": "mercy-theme",
+    "ckl_object_type": "theme",
+    "ckl_title": "Mercy Theme",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/themes/mercy-theme.json",
+      "sha256": "3d4a86427925ac6c7215ce50d568a108b20234661e974d25575609f3820f7ac6",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 34:6-7",
+        "relationship": "primary",
+        "notes": ""
+      },
+      {
+        "reference": "Psalm 103:8-13",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Micah 7:18-20",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Ephesians 2:4-10",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Titus 2:11-14",
+        "relationship": "supporting",
+        "notes": ""
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.913,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Psalms 103",
+    "exact_matched_reference": [
+      "Psalms 103:8-13"
+    ],
+    "canonical_result_identity": {
+      "object_id": "mercy-theme",
+      "object_json_sha256": "e76ee17d80154ca2b3c956486b475e46cb1d42de972ca221b1ee34773db086c9"
+    },
+    "evidence_item_id": "mercy-theme:ancient_near_east_context:0",
+    "evidence_category": "culture",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Psalms 103:8-13"
+    ],
+    "source_ids": [
+      "exodus-34",
+      "psalm-103",
+      "micah-7",
+      "ephesians-2",
+      "titus-2"
+    ],
+    "claim": "Ancient background for Mercy Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, divine-mercy, and grace without letting comparison replace the biblical witness.",
+    "synthesis_ids": [
+      "syn_cultural_context_2bd1024693df"
+    ],
+    "synthesis_kind": [
+      "cultural_context"
+    ],
+    "synthesis_confidence": [
+      "medium"
+    ],
+    "interpretation_level": [
+      "fact"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_psalms_103_3f44d6ef207e29c373aee257"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_psalms_103_3f44d6ef207e29c373aee257"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_1",
+        "section_kind": "cultural_context",
+        "section_title": "Mercy and Grace",
+        "final_block": "The portrait of Jehovah as merciful, gracious, patient, forgiving, and compassionate belongs to a wider setting of covenant life, worship, kingship, and wisdom teaching. These backgrounds frame mercy and grace as realities expressed within the life of God’s people, while the psalm’s own description in verses 8–13 remains the controlling witness."
+      }
+    ],
+    "relevance_classification": "GENERIC_CONTEXT",
+    "relevance_rationale": "The mercy/grace legacy field is a broad thematic statement; it does not add a distinct, passage-specific claim or chapter-span coverage.",
+    "relevance_metadata": {
+      "source_kind": "ckl_legacy_field",
+      "parent_object_id": "mercy-theme",
+      "parent_title": "Mercy Theme",
+      "parent_type": "theme",
+      "object_importance": 93,
+      "retrieval_score": 0.913,
+      "passage_relationship": "contextual",
+      "anchor_specificity": "verse",
+      "verse_distance": 7,
+      "certainty": "",
+      "dispute_status": "",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "field": "ancient_near_east_context",
+      "applicability_scope": "global",
+      "anchor_source": "parent",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "presentation_role": "historical_context",
+      "overview_priority": 55,
+      "inherited_from_parent": true
+    }
+  },
+  {
+    "ckl_object_id": "mercy-theme",
+    "ckl_object_type": "theme",
+    "ckl_title": "Mercy Theme",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/themes/mercy-theme.json",
+      "sha256": "3d4a86427925ac6c7215ce50d568a108b20234661e974d25575609f3820f7ac6",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Exodus 34:6-7",
+        "relationship": "primary",
+        "notes": ""
+      },
+      {
+        "reference": "Psalm 103:8-13",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Micah 7:18-20",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Ephesians 2:4-10",
+        "relationship": "supporting",
+        "notes": ""
+      },
+      {
+        "reference": "Titus 2:11-14",
+        "relationship": "supporting",
+        "notes": ""
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.913,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Psalms 103",
+    "exact_matched_reference": [
+      "Psalms 103:8-13"
+    ],
+    "canonical_result_identity": {
+      "object_id": "mercy-theme",
+      "object_json_sha256": "e76ee17d80154ca2b3c956486b475e46cb1d42de972ca221b1ee34773db086c9"
+    },
+    "evidence_item_id": "mercy-theme:historical_context:0",
+    "evidence_category": "history",
+    "evidence_confidence": "medium",
+    "passage_anchors": [
+      "Psalms 103:8-13"
+    ],
+    "source_ids": [
+      "exodus-34",
+      "psalm-103",
+      "micah-7",
+      "ephesians-2",
+      "titus-2"
+    ],
+    "claim": "Mercy Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+    "synthesis_ids": [
+      "syn_historical_context_4f3c806e0d12"
+    ],
+    "synthesis_kind": [
+      "historical_context"
+    ],
+    "synthesis_confidence": [
+      "medium"
+    ],
+    "interpretation_level": [
+      "fact"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Psalms 103:8-13"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "render_path_psalms_103_2aab462473f926e776b061c8"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "render_path_psalms_103_2aab462473f926e776b061c8"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_2",
+        "section_kind": "historical_context",
+        "section_title": "A Theme Across Scripture",
+        "final_block": "The mercy and grace celebrated here are read as themes that continue across Scripture, developing from Israel’s story into the New Testament witness. Psalm 103:8–13 therefore stands within that broader scriptural testimony while speaking in its own images of restrained anger, removed transgressions, and a father’s compassion."
+      }
+    ],
+    "relevance_classification": "GENERIC_CONTEXT",
+    "relevance_rationale": "The mercy/grace legacy field is a broad thematic statement; it does not add a distinct, passage-specific claim or chapter-span coverage.",
+    "relevance_metadata": {
+      "source_kind": "ckl_legacy_field",
+      "parent_object_id": "mercy-theme",
+      "parent_title": "Mercy Theme",
+      "parent_type": "theme",
+      "object_importance": 93,
+      "retrieval_score": 0.913,
+      "passage_relationship": "contextual",
+      "anchor_specificity": "verse",
+      "verse_distance": 7,
+      "certainty": "",
+      "dispute_status": "",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "",
+      "field": "historical_context",
+      "applicability_scope": "global",
+      "anchor_source": "parent",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "presentation_role": "historical_context",
+      "overview_priority": 40,
+      "inherited_from_parent": true
+    }
+  }
+]

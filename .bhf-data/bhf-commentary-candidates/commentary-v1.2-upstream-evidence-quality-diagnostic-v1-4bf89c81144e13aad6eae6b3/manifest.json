@@ -1,0 +1,39 @@
+{
+  "artifact_version": "commentary-v1.2-upstream-evidence-quality-diagnostic-v1",
+  "branch": "feat/commentary-v1.2-enrichment",
+  "contracts_unchanged": [
+    "Prompt 1.8",
+    "reader-provenance-binding-v2",
+    "reader-provenance-renderer-reference-presentation-v1",
+    "commentary-output-conformance-v1",
+    "GPT-5.6 Sol",
+    "medium effort"
+  ],
+  "controls": [
+    "numbers_002",
+    "numbers_001"
+  ],
+  "failing_cases": [
+    "2_kings_004",
+    "psalms_103",
+    "psalms_019"
+  ],
+  "files": {
+    "bundles": {
+      "2_kings_004": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_kings_004.json",
+      "numbers_001": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-008/evidence-bundles/numbers_001.json",
+      "numbers_002": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/wave-a/canary/evidence-bundles/numbers_002.json",
+      "psalms_019": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_019.json",
+      "psalms_103": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_103.json"
+    },
+    "canonical_data": "bhf_agent/data/asv_bible.json",
+    "presentation_namespace": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-reader-provenance-renderer-reference-presentation-v1-bounded-validation-v1-ce695db52b3ad2d0e6f8"
+  },
+  "identity": "4bf89c81144e13aad6eae6b3",
+  "model_calls_performed": 0,
+  "production_behavior_changed": false,
+  "repository": "mcscwizzy/biblical-hermeneutics-framework",
+  "source_inputs_are_immutable_references": true,
+  "source_trace_method": "exact renderer input identities plus immutable evidence bundles and deterministic synthesis recompilation; current CKL queried read-only for retrieval explanation",
+  "starting_sha": "3ce072f1b2c4dc702748c1d9260e4a50e72da829"
+}
