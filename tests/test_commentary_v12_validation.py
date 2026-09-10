@@ -21,7 +21,14 @@ from bhf_agent.config import AgentConfig
 
 
 def _bundle(*, disputed=False, confidence="high"):
-    metadata = {"dispute_status": "disputed"} if disputed else {}
+    metadata = {
+        "source_kind": "ckl_evidence_item",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "passage_relationship": "direct",
+        "dispute_status": "disputed" if disputed else "not_disputed",
+    }
     items = [
         EvidenceItem(
             id="e1", claim="Gath was a Philistine city.", category="geography",
@@ -206,10 +213,17 @@ def test_surrounding_context_accepts_external_chapter_and_cross_chapter_refs():
     bundle = EvidenceBundle(
         passage_ref="Judges 20",
         entities={"people": [], "places": [], "groups": [], "events": [], "artifacts": []},
-        evidence_items=[EvidenceItem(
-            id="e1", claim="The closing chapters frame the civil war.", category="culture",
-            source_ids=["s"], related_entity_ids=[], passage_anchors=["Judges 19-21"],
-            confidence="high", relevance_metadata={"presentation_role": "dig_deeper"},
+            evidence_items=[EvidenceItem(
+                id="e1", claim="The closing chapters frame the civil war.", category="culture",
+                source_ids=["s"], related_entity_ids=[], passage_anchors=["Judges 19-21"],
+                confidence="high", relevance_metadata={
+                    "source_kind": "ckl_evidence_item",
+                    "applicability_scope": "section",
+                    "anchor_source": "child",
+                    "anchor_specificity": "chapter",
+                    "passage_relationship": "direct",
+                    "presentation_role": "dig_deeper",
+                },
         )],
         geography={}, provenance={}, version="1.1", evidence_hash="e" * 64,
     )
@@ -268,7 +282,7 @@ def test_malformed_section_is_reported_independently_of_reference_parsing():
     assert CommentaryRejectionCode.MALFORMED_SECTION.value in result.section_results[0].reason_codes
 
 
-def test_wave_a_daniel_9_malformed_section_was_secondary_to_reference_parsing():
+def test_wave_a_daniel_9_old_legacy_ancestry_is_rejected_after_applicability_enforcement():
     root = Path(__file__).resolve().parents[1]
     response = json.loads(
         (root / ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/"
@@ -292,11 +306,8 @@ def test_wave_a_daniel_9_malformed_section_was_secondary_to_reference_parsing():
         payload, bundle, expected_reference="Daniel 9", expected_book="Daniel",
         expected_chapter=9, synthesis=synthesis,
     )
-    assert result.valid
-    assert all(
-        CommentaryRejectionCode.MALFORMED_SECTION.value not in section.reason_codes
-        for section in result.section_results
-    )
+    assert not result.valid
+    assert any("UNKNOWN_SYNTHESIS_ID" in error for error in result.errors)
 
 
 def test_non_contiguous_ranges_are_separate_array_entries():

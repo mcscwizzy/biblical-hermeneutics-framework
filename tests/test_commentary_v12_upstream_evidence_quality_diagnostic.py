@@ -40,13 +40,14 @@ def test_duplicate_grouping_is_reproducible_and_explainable() -> None:
     assert first[0]["evidence_item_ids"] == ["a", "b"]
 
 
-def test_source_to_synthesis_ancestry_identity_is_preserved() -> None:
+def test_inherited_source_items_remain_bundle_provenance_but_not_synthesis() -> None:
     raw = read_json(CASES["psalms_103"]["bundle"])
     bundle = bundle_from_dict(raw)
     synthesis = compile_chapter_synthesis(bundle, book="Psalms", chapter=103)
     evidence_ids = {item["id"] for item in raw["evidence_items"]}
     used_ids = {eid for unit in synthesis.synthesis_units for eid in unit.evidence_ids}
-    assert used_ids == evidence_ids
+    assert used_ids == set()
+    assert synthesis.coverage.unused_evidence_ids == sorted(evidence_ids)
     assert synthesis.evidence_hash == raw["evidence_hash"]
 
 

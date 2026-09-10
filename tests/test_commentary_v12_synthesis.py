@@ -27,7 +27,13 @@ def _item(
         related_entity_ids=[entity] if entity else [],
         passage_anchors=[anchor],
         confidence=confidence,
-        relevance_metadata=dict(metadata or {}),
+        relevance_metadata={
+            "source_kind": "ckl_evidence_item",
+            "applicability_scope": "passage",
+            "anchor_source": "child",
+            "anchor_specificity": "verse",
+            **dict(metadata or {}),
+        },
     )
 
 

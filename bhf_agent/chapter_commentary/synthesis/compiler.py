@@ -14,6 +14,7 @@ from bhf_agent.chapter_commentary.availability import (
     classify_evidence_availability,
     evidence_contribution,
 )
+from bhf_agent.chapter_commentary.evidence_applicability import commentary_eligible_evidence
 from bhf_agent.presentation.models import EvidenceBundle, EvidenceItem
 from bhf_agent.presentation.references import _BOOK_ALIASES
 from framework.canonical_library.scripture import (
@@ -82,8 +83,11 @@ def compile_chapter_synthesis(
         raise ValueError(f"cannot derive chapter identity from {bundle.passage_ref!r}")
 
     availability = classify_evidence_availability(bundle).value
+    eligible_items = commentary_eligible_evidence(
+        bundle.evidence_items, bundle.passage_ref
+    )
     groups = _project_groups(
-        _compatible_groups(bundle.evidence_items),
+        _compatible_groups(eligible_items),
         book=canonical_book,
         chapter=canonical_chapter,
     )
@@ -103,7 +107,7 @@ def compile_chapter_synthesis(
     unit_counts = Counter(unit.kind for unit in all_units)
     specific_count = sum(
         evidence_contribution(item, bundle.passage_ref).specific
-        for item in bundle.evidence_items
+        for item in eligible_items
     )
     gaps = _evidence_gaps(availability, category_counts, specific_count)
     coverage = SynthesisCoverage(

@@ -26,6 +26,12 @@ from .validation import (
     CommentaryRejectionCode,
     validate_chapter_commentary,
 )
+from .evidence_applicability import (
+    COMMENTARY_EVIDENCE_APPLICABILITY_VERSION,
+    EvidenceApplicability,
+    commentary_eligible_evidence,
+    evaluate_evidence_applicability,
+)
 from .synthesis import (
     SYNTHESIS_COMPILER_VERSION,
     SYNTHESIS_SCHEMA_VERSION,
@@ -56,6 +62,10 @@ __all__ = [
     "load_commentary",
     "save_commentary",
     "validate_chapter_commentary",
+    "COMMENTARY_EVIDENCE_APPLICABILITY_VERSION",
+    "EvidenceApplicability",
+    "commentary_eligible_evidence",
+    "evaluate_evidence_applicability",
     "SYNTHESIS_COMPILER_VERSION",
     "SYNTHESIS_SCHEMA_VERSION",
     "CompiledChapterSynthesis",
