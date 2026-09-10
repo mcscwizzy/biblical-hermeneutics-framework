@@ -7,6 +7,7 @@ import json
 from .models import (
     COMMENTARY_PROMPT_VERSION,
     COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION,
+    COMMENTARY_RENDERER_RENDERABILITY_PROMPT_VERSION,
     COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION,
     COMMENTARY_SCHEMA_VERSION,
     CommentarySectionKind,
@@ -247,6 +248,39 @@ CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V17 = CHAPTER_COMMENTARY_USER_PROMPT_TEM
 )
 
 
+_V18_RENDERABILITY_RULES = """Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT."""
+
+
+# Prompt 1.8 is a bounded candidate. Prompt 1.7 above remains frozen for
+# reproducibility and is not mutated by this remediation.
+CHAPTER_COMMENTARY_SYSTEM_PROMPT_V18 = CHAPTER_COMMENTARY_SYSTEM_PROMPT_V17.replace(
+    "\n\nPresentation rules:",
+    f"\n\n{_V18_RENDERABILITY_RULES}\n\nPresentation rules:",
+    1,
+)
+
+
+_V18_USER_FINAL_CHECKS = """23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist."""
+
+
+CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V18 = CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V17.replace(
+    f"{_V17_USER_FINAL_CHECKS}\n23. `generated_metadata` is application-owned. Leave it null.\n24. If EVIDENCE AVAILABILITY",
+    f"{_V17_USER_FINAL_CHECKS}\n{_V18_USER_FINAL_CHECKS}\n27. `generated_metadata` is application-owned. Leave it null.\n28. If EVIDENCE AVAILABILITY",
+    1,
+).replace(
+    "25. This contract is prompt",
+    "29. This contract is prompt",
+    1,
+)
+
+
 def system_prompt_for_version(prompt_version: str) -> str:
     """Return an explicit prompt contract without changing the production default."""
 
@@ -256,6 +290,8 @@ def system_prompt_for_version(prompt_version: str) -> str:
         return CHAPTER_COMMENTARY_SYSTEM_PROMPT_V16
     if prompt_version == COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION:
         return CHAPTER_COMMENTARY_SYSTEM_PROMPT_V17
+    if prompt_version == COMMENTARY_RENDERER_RENDERABILITY_PROMPT_VERSION:
+        return CHAPTER_COMMENTARY_SYSTEM_PROMPT_V18
     raise ValueError(f"unsupported commentary prompt version: {prompt_version}")
 
 
@@ -327,6 +363,8 @@ def build_user_prompt(
         if selected_prompt_version == COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION
         else CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V17
         if selected_prompt_version == COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION
+        else CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE_V18
+        if selected_prompt_version == COMMENTARY_RENDERER_RENDERABILITY_PROMPT_VERSION
         else CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE
     )
     instruction = {

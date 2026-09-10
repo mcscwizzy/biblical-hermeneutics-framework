@@ -14,6 +14,8 @@ COMMENTARY_PROMPT_VERSION = "1.5"
 COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION = "1.6"
 # Candidate renderer contract for the bounded selection-breadth diagnostic.
 COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION = "1.7"
+# Candidate renderer contract for the bounded renderability remediation.
+COMMENTARY_RENDERER_RENDERABILITY_PROMPT_VERSION = "1.8"
 DATA_GAP_FALLBACK_TEXT = (
     "Passage-specific contextual evidence is not currently available for this chapter."
 )
