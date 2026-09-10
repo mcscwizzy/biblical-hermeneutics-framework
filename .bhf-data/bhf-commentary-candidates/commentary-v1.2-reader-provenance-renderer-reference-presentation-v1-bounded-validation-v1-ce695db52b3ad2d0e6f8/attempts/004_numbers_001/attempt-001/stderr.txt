@@ -1,0 +1,363 @@
+OpenAI Codex v0.154.0
+--------
+workdir: /tmp/bhf-v12-renderer-reference-p1ibout7
+model: gpt-5.6-sol
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a08c26-74ce-7041-a73e-d75780749366
+--------
+user
+You are the selected GPT-5.6 Sol prose renderer at medium effort. Do not call tools, inspect files, browse, or add explanation. Treat the exact SYSTEM PROMPT and USER PROMPT below as the complete generation contract. Return the requested raw JSON object only, with no Markdown fence or preamble.
+
+SYSTEM PROMPT
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Numbers 1.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_f73692bfe866432c: Numbers (categories: culture, interpretive_questions)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_f73692bfe866432c: Numbers (importance: CORE; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["numbers:interpretive_note:0"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_43f4db5657f9"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["numbers:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_ac529624339f"}
+- path_3: {"confidence": "high", "disputed": false, "evidence_ids": ["numbers-literary-journey", "numbers-two-generations"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_language_literary_1ce482ed90f4"}
+- path_4: {"confidence": "high", "disputed": false, "evidence_ids": ["numbers-literary-journey", "numbers-two-generations"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_dd7137349c08"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And Jehovah spake unto Moses in the wilderness of Sinai, in the tent of meeting, on the first day of the second month, in the second year after they were come out of the land of Egypt, saying, 2. Take ye the sum of all the congregation of the children of Israel, by their families, by their fathers' houses, according to the number of the names, every male, by their polls; 3. from twenty years old and upward, all that are able to go forth to war in Israel, thou and Aaron shall number them by their hosts. 4. And with you there shall be a man of every tribe; every one head of his fathers' house. 5. And these are the names of the men that shall stand with you. Of Reuben: Elizur the son of Shedeur. 6. Of Simeon: Shelumiel the son of Zurishaddai. 7. Of Judah: Nahshon the son of Amminadab. 8. Of Issachar: Nethanel the son of Zuar. 9. Of Zebulun: Eliab the son of Helon. 10. Of the children of Joseph: Of Ephraim: Elishama the son of Ammihud. Of Manasseh: Gamaliel the son of Pedahzur. 11. Of Benjamin: Abidan the son of Gideoni. 12. Of Dan: Ahiezer the son of Ammishaddai. 13. Of Asher: Pagiel the son of Ochran. 14. Of Gad: Eliasaph the son of Deuel. 15. Of Naphtali: Ahira the son of Enan. 16. These are they that were called of the congregation, the princes of the tribes of their fathers; they were the heads of the thousands of Israel. 17. And Moses and Aaron took these men that are mentioned by name: 18. And they assembled all the congregation together on the first day of the second month; and they declared their pedigrees after their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, by their polls. 19. As Jehovah commanded Moses, so he numbered them in the wilderness of Sinai. 20. And the children of Reuben, Israel's first-born, their generations, by their families, by their fathers' houses, according to the number of the names, by their polls, every male from twenty years old and upward, all that were able to go forth to war; 21. those that were numbered of them, of the tribe of Reuben, were forty and six thousand and five hundred. 22. Of the children of Simeon, their generations, by their families, by their fathers' houses, those that were numbered thereof, according to the number of the names, by their polls, every male from twenty years old and upward, all that were able to go forth to war; 23. those that were numbered of them, of the tribe of Simeon, were fifty and nine thousand and three hundred. 24. Of the children of Gad, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 25. those that were numbered of them, of the tribe of Gad, were forty and five thousand six hundred and fifty. 26. Of the children of Judah, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 27. those that were numbered of them, of the tribe of Judah, were threescore and fourteen thousand and six hundred. 28. Of the children of Issachar, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 29. those that were numbered of them, of the tribe of Issachar, were fifty and four thousand and four hundred. 30. Of the children of Zebulun, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 31. those that were numbered of them, of the tribe of Zebulun, were fifty and seven thousand and four hundred. 32. Of the children of Joseph, `namely', of the children of Ephraim, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 33. those that were numbered of them, of the tribe of Ephraim, were forty thousand and five hundred. 34. Of the children of Manasseh, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 35. those that were numbered of them, of the tribe of Manasseh, were thirty and two thousand and two hundred. 36. Of the children of Benjamin, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 37. those that were numbered of them, of the tribe of Benjamin, were thirty and five thousand and four hundred. 38. Of the children of Dan, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 39. those that were numbered of them, of the tribe of Dan, were threescore and two thousand and seven hundred. 40. Of the children of Asher, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 41. those that were numbered of them, of the tribe of Asher, were forty and one thousand and five hundred. 42. Of the children of Naphtali, their generations, by their families, by their fathers' houses, according to the number of the names, from twenty years old and upward, all that were able to go forth to war; 43. those that were numbered of them, of the tribe of Naphtali, were fifty and three thousand and four hundred. 44. These are they that were numbered, whom Moses and Aaron numbered, and the princes of Israel, being twelve men: they were each one for his fathers' house. 45. So all they that were numbered of the children of Israel by their fathers' houses, from twenty years old and upward, all that were able to go forth to war in Israel; 46. even all they that were numbered were six hundred thousand and three thousand and five hundred and fifty. 47. But the Levites after the tribe of their fathers were not numbered among them. 48. For Jehovah spake unto Moses, saying, 49. Only the tribe of Levi thou shalt not number, neither shalt thou take the sum of them among the children of Israel; 50. but appoint thou the Levites over the tabernacle of the testimony, and over all the furniture thereof, and over all that belongeth to it: they shall bear the tabernacle, and all the furniture thereof; and they shall minister unto it, and shall encamp round about the tabernacle. 51. And when the tabernacle setteth forward, the Levites shall take it down; and when the tabernacle is to be pitched, the Levites shall set it up: and the stranger that cometh nigh shall be put to death. 52. And the children of Israel shall pitch their tents, every man by his own camp, and every man by his own standard, according to their hosts. 53. But the Levites shall encamp round about the tabernacle of the testimony, that there be no wrath upon the congregation of the children of Israel: and the Levites shall keep the charge of the tabernacle of the testimony. 54. Thus did the children of Israel; according to all that Jehovah commanded Moses, so did they.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 1, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 5}, "evidence_item_count": 5, "relationship_unit_count": 1, "specific_evidence_count": 5, "unit_kind_counts": {"cultural_context": 1, "interpretive_questions": 1, "language_literary": 1, "surrounding_passages": 1, "why_it_matters": 1}, "unused_evidence_ids": [], "used_evidence_ids": ["leviticus:interpretive_note:0", "numbers-literary-journey", "numbers-two-generations", "numbers:interpretive_note:0", "numbers:interpretive_note:1"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "e740df8fe0e0ca147835b96f21521945a72c9f4e7ebc1483bdb633719f75ea38", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["numbers:interpretive_note:0"], "facts": ["Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location."], "id": "syn_cultural_context_43f4db5657f9", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 1:1"], "verse_refs": ["Numbers 1:1"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["numbers:interpretive_note:1"], "facts": ["The two census totals and the scale of Israel's wilderness population have major literary and historical interpretations; the record should not silently select one reconstruction."], "id": "syn_interpretive_questions_ac529624339f", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 1"], "verse_refs": ["Numbers 1"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["numbers-literary-journey", "numbers-two-generations"], "facts": ["Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.", "The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab."], "id": "syn_language_literary_1ce482ed90f4", "interpretation_level": "fact", "kind": "language_literary", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 1:1", "Numbers 1:1-54"], "verse_refs": ["Numbers 1:1", "Numbers 1:1-54"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["leviticus:interpretive_note:0"], "facts": ["Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings."], "id": "syn_surrounding_passages_91e303c3467c", "interpretation_level": "inference", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 1:1"], "verse_refs": ["Numbers 1:1"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["numbers-literary-journey", "numbers-two-generations"], "facts": ["Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.", "The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab."], "id": "syn_why_it_matters_dd7137349c08", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_language_literary_1ce482ed90f4"], "source_anchors": ["Numbers 1:1", "Numbers 1:1-54"], "verse_refs": ["Numbers 1:1", "Numbers 1:1-54"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "leviticus:interpretive_note:0", "passage_anchors": ["Numbers 1:1"], "source_ids": ["levine-leviticus", "leviticus-1-27", "wenham-leviticus"]}, {"confidence": "high", "id": "numbers-literary-journey", "passage_anchors": ["Numbers 1:1"], "source_ids": ["ashley-numbers", "milgrom-numbers", "numbers-1-36"]}, {"confidence": "high", "id": "numbers-two-generations", "passage_anchors": ["Numbers 1:1-54"], "source_ids": ["milgrom-numbers", "numbers-1-36"]}, {"confidence": "high", "id": "numbers:interpretive_note:0", "passage_anchors": ["Numbers 1:1"], "source_ids": ["ashley-numbers", "milgrom-numbers", "numbers-1-36"]}, {"confidence": "low", "id": "numbers:interpretive_note:1", "passage_anchors": ["Numbers 1"], "source_ids": ["ashley-numbers", "milgrom-numbers", "numbers-1-36", "zondervan-illustrated-pentateuch-backgrounds"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Numbers 1",
+  "book": "Numbers",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Numbers 1:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Numbers 1:
+   for example `Numbers 1:1` or `Numbers 1:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Numbers 1:1", "Numbers 1:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash e740df8fe0e0ca147835b96f21521945a72c9f4e7ebc1483bdb633719f75ea38.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_001_14a11b3f39ed3ab2f74e67a4", "renderer_verse_refs": ["Numbers 1:1"], "source_verse_refs": ["Numbers 1:1"], "synthesis_unit": "syn_cultural_context_43f4db5657f9"}
+- {"canonicalization": "SAFE_FULL_CHAPTER_SCOPE", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_001_4b56e1acc9b3f47af93f395b", "renderer_verse_refs": ["Numbers 1:1-54"], "source_verse_refs": ["Numbers 1"], "synthesis_unit": "syn_interpretive_questions_ac529624339f"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_001_2dfeccd5d6ee4e0581ccdb83", "renderer_verse_refs": ["Numbers 1:1", "Numbers 1:1-54"], "source_verse_refs": ["Numbers 1:1", "Numbers 1:1-54"], "synthesis_unit": "syn_language_literary_1ce482ed90f4"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_001_a4bdc19f7694761cb4fa34cc", "renderer_verse_refs": ["Numbers 1:1", "Numbers 1:1-54"], "source_verse_refs": ["Numbers 1:1", "Numbers 1:1-54"], "synthesis_unit": "syn_why_it_matters_dd7137349c08"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
+
+codex
+{
+  "reference": "Numbers 1",
+  "book": "Numbers",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "The Setting at Sinai",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Numbers begins at Sinai, where Israel is organized after leaving Egypt. Although Egypt remains the place from which the people came, it is not the book’s principal setting: the larger movement runs from Sinai toward the plains of Moab.",
+          "verse_refs": [
+            "Numbers 1:1"
+          ],
+          "provenance_refs": [
+            "reader_path_numbers_001_14a11b3f39ed3ab2f74e67a4"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "The Opening Census",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "This census belongs to the book’s larger geographical and generational structure. Numbers moves from preparation at Sinai through Kadesh and the Transjordan to renewed preparation on the plains of Moab. The census here and the later census in Numbers 26 frame that journey by counting first the generation at Sinai and then the generation prepared for inheritance near Moab.",
+          "verse_refs": [
+            "Numbers 1:1",
+            "Numbers 1:1-54"
+          ],
+          "provenance_refs": [
+            "reader_path_numbers_001_2dfeccd5d6ee4e0581ccdb83"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "why_it_matters",
+      "title": "Why the Census Matters",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The long enumeration is therefore more than an isolated administrative record. Together with the later census, it marks the transition between two generations and helps give the book its shape as a journey from preparation at Sinai to preparation near Moab.",
+          "verse_refs": [
+            "Numbers 1:1",
+            "Numbers 1:1-54"
+          ],
+          "provenance_refs": [
+            "reader_path_numbers_001_a4bdc19f7694761cb4fa34cc"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpreting the Numbers",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The census total of 603,550, together with the scale of Israel’s wilderness population, has received differing literary and historical interpretations. The chapter clearly presents the total, but choosing among proposed reconstructions remains disputed and should not be treated as settled.",
+          "verse_refs": [
+            "Numbers 1:1-54"
+          ],
+          "provenance_refs": [
+            "reader_path_numbers_001_4b56e1acc9b3f47af93f395b"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+tokens used
+24,277
