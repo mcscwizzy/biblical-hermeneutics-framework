@@ -1,0 +1,196 @@
+TASK: Generate BHF Commentary v1.7 for Genesis 5.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_c5a51d965d5c9eea: Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building… (categories: culture, geography, surrounding_passages)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_c5a51d965d5c9eea: Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building… (importance: CORE; categories: culture, geography, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["genesis-ane-comparative-context", "genesis:interpretive_note:0", "genesis:interpretive_note:1", "genesis:interpretive_note:2"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_20aed11f4418"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["genesis-literary-movement"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_7b40a731c38d"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["genesis-ane-comparative-context", "genesis:interpretive_note:0", "genesis:interpretive_note:1", "genesis:interpretive_note:2"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f65e58d68f5b"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. This is the book of the generations of Adam. In the day that God created man, in the likeness of God made he him; 2. male and female created he them, and blessed them, and called their name Adam, in the day when they were created. 3. And Adam lived a hundred and thirty years, and begat `a son' in his own likeness, after his image; and called his name Seth: 4. and the days of Adam after he begat Seth were eight hundred years: and he begat sons and daughters. 5. And all the days that Adam lived were nine hundred and thirty years: and he died. 6. And Seth lived a hundred and five years, and begat Enosh: 7. and Seth lived after he begat Enosh eight hundred and seven years, and begat sons and daughters: 8. and all the days of Seth were nine hundred and twelve years: and he died. 9. And Enosh lived ninety years, and begat Kenan. 10. and Enosh lived after he begat Kenan eight hundred and fifteen years, and begat sons and daughters: 11. and all the days of Enosh were nine hundred and five years: and he died. 12. And Kenan lived seventy years, and begat Mahalalel: 13. and Kenan lived after he begat Mahalalel eight hundred and forty years, and begat sons and daughters: 14. and all the days of Kenan were nine hundred and ten years: and he died. 15. And Mahalalel lived sixty and five years, and begat Jared: 16. And Mahalalel lived after he begat Jared eight hundred and thirty years, and begat sons and daughters: 17. and all the days of Mahalalel were eight hundred ninety and five years: and he died. 18. And Jared lived a hundred sixty and two years, and begat Enoch: 19. and Jared lived after he begat Enoch eight hundred years, and begat sons and daughters: 20. And all the days of Jared were nine hundred sixty and two years: and he died. 21. And Enoch lived sixty and five years, and begat Methuselah: 22. and Enoch walked with God after he begat Methuselah three hundred years, and begat sons and daughters: 23. and all the days of Enoch were three hundred sixty and five years: 24. and Enoch walked with God: and he was not; for God took him. 25. And Methuselah lived a hundred eighty and seven years, and begat Lamech: 26. and Methuselah lived after he begat Lamech seven hundred eighty and two years, and begat sons and daughters. 27. And all the days of Methuselah were nine hundred sixty and nine years: and he died. 28. And Lamech lived a hundred eighty and two years, and begat a son: 29. and he called his name Noah, saying, This same shall comfort us in our work and in the toil of our hands, `which cometh' because of the ground which Jehovah hath cursed. 30. And Lamech lived after he begat Noah five hundred ninety and five years, and begat sons and daughters: 31. And all the days of Lamech were seven hundred seventy and seven years: and he died. 32. And Noah was five hundred years old: And Noah begat Shem, Ham, and Japheth.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 8, "geography": 2, "history": 3}, "evidence_item_count": 13, "relationship_unit_count": 2, "specific_evidence_count": 13, "unit_kind_counts": {"cultural_context": 3, "historical_context": 3, "surrounding_passages": 3, "why_it_matters": 1}, "unused_evidence_ids": [], "used_evidence_ids": ["genesis-ane-comparative-context", "genesis-literary-movement", "genesis:interpretive_note:0", "genesis:interpretive_note:1", "genesis:interpretive_note:2", "image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:historical_context:0", "image-of-god-theme:second_temple_context:0", "what-is-the-image-of-god:ancient_near_east_context:0", "what-is-the-image-of-god:historical_context:0", "why-are-genealogies-included:ancient_near_east_context:0", "why-are-genealogies-included:historical_context:0"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "e3b594fdf61b59bbc340259dcb09552d27d33a4d72d44ff66954e8e90af886c7", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["why-are-genealogies-included:ancient_near_east_context:0"], "facts": ["Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence."], "id": "syn_cultural_context_6f86312d094a", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 5:1-32"], "verse_refs": ["Genesis 5:1-32"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:second_temple_context:0"], "facts": ["Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.", "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.", "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."], "id": "syn_cultural_context_8eef7c51735f", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 5:1-3"], "verse_refs": ["Genesis 5:1-3"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-image-of-god:ancient_near_east_context:0"], "facts": ["Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."], "id": "syn_cultural_context_b1fe6650e473", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 5:1-3"], "verse_refs": ["Genesis 5:1-3"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["why-are-genealogies-included:historical_context:0"], "facts": ["Ancient families preserved lineages to mark belonging, rights, and memory."], "id": "syn_historical_context_089897c1316e", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 5:1-32"], "verse_refs": ["Genesis 5:1-32"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-image-of-god:historical_context:0"], "facts": ["Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ."], "id": "syn_historical_context_27c1d8fa23f8", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 5:1-3"], "verse_refs": ["Genesis 5:1-3"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["image-of-god-theme:historical_context:0"], "facts": ["Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred."], "id": "syn_historical_context_96ed179e29c4", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Genesis 5:1-3"], "verse_refs": ["Genesis 5:1-3"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["genesis-ane-comparative-context", "genesis:interpretive_note:0", "genesis:interpretive_note:1", "genesis:interpretive_note:2"], "facts": ["Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.", "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.", "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.", "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."], "id": "syn_surrounding_passages_20aed11f4418", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_f65e58d68f5b"], "source_anchors": ["Genesis 1:1-11:26", "Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-26", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["genesis-literary-movement"], "facts": ["Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."], "id": "syn_surrounding_passages_7b40a731c38d", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["genesis-ane-comparative-context", "genesis:interpretive_note:0", "genesis:interpretive_note:1", "genesis:interpretive_note:2"], "facts": ["Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.", "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.", "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.", "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."], "id": "syn_surrounding_passages_f65e58d68f5b", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 4}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Genesis 1:1-11:26", "Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-26", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:second_temple_context:0"], "facts": ["Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.", "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.", "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."], "id": "syn_why_it_matters_c746441e9d14", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_8eef7c51735f"], "source_anchors": ["Genesis 5:1-3"], "verse_refs": ["Genesis 5:1-3"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "genesis-ane-comparative-context", "passage_anchors": ["Genesis 1:1-11:26"], "source_ids": ["sarna-genesis", "zondervan-illustrated-pentateuch-backgrounds"]}, {"confidence": "high", "id": "genesis-literary-movement", "passage_anchors": ["Genesis 1:1-50:26"], "source_ids": ["hamilton-genesis-1-17", "hamilton-genesis-18-50", "sarna-genesis"]}, {"confidence": "low", "id": "genesis:interpretive_note:0", "passage_anchors": ["Genesis 1:1-50:26"], "source_ids": ["hamilton-genesis-1-17", "sarna-genesis"]}, {"confidence": "medium", "id": "genesis:interpretive_note:1", "passage_anchors": ["Genesis 1:1-11:26"], "source_ids": ["hamilton-genesis-1-17", "sarna-genesis", "zondervan-illustrated-pentateuch-backgrounds"]}, {"confidence": "high", "id": "genesis:interpretive_note:2", "passage_anchors": ["Genesis 1:1-11:26"], "source_ids": ["sarna-genesis", "zondervan-illustrated-pentateuch-backgrounds"]}, {"confidence": "medium", "id": "image-of-god-theme:ancient_near_east_context:0", "passage_anchors": ["Genesis 5:1-3"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:hebraic_worldview:0", "passage_anchors": ["Genesis 5:1-3"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:historical_context:0", "passage_anchors": ["Genesis 5:1-3"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:second_temple_context:0", "passage_anchors": ["Genesis 5:1-3"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "what-is-the-image-of-god:ancient_near_east_context:0", "passage_anchors": ["Genesis 5:1-3"], "source_ids": ["1-corinthians-11", "colossians-3", "genesis-1", "genesis-5", "genesis-9", "james-3", "psalm-8", "romans-8"]}, {"confidence": "medium", "id": "what-is-the-image-of-god:historical_context:0", "passage_anchors": ["Genesis 5:1-3"], "source_ids": ["1-corinthians-11", "colossians-3", "genesis-1", "genesis-5", "genesis-9", "james-3", "psalm-8", "romans-8"]}, {"confidence": "medium", "id": "why-are-genealogies-included:ancient_near_east_context:0", "passage_anchors": ["Genesis 5:1-32"], "source_ids": ["1-chronicles-1", "ezra-2", "genesis-10", "genesis-11", "genesis-5", "luke-3", "matthew-1", "ruth-4", "why-are-genealogies-included-historical-orientation"]}, {"confidence": "medium", "id": "why-are-genealogies-included:historical_context:0", "passage_anchors": ["Genesis 5:1-32"], "source_ids": ["1-chronicles-1", "ezra-2", "genesis-10", "genesis-11", "genesis-5", "luke-3", "matthew-1", "ruth-4", "why-are-genealogies-included-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Genesis 5",
+  "book": "Genesis",
+  "chapter": 5,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Genesis 5:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Genesis 5:
+   for example `Genesis 5:1` or `Genesis 5:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Genesis 5:1", "Genesis 5:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash e3b594fdf61b59bbc340259dcb09552d27d33a4d72d44ff66954e8e90af886c7.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v1
+Choose one or more complete provenance_refs for each prose block.
+A provenance reference selects one precomputed reader-idea ancestry path.
+BHF will resolve each selected path to the canonical synthesis and evidence
+fields after generation. Do not choose or emit synthesis_ids or evidence_ids
+manually, and do not combine evidence from different paths.
+Only path IDs listed below are valid for this chapter.
+
+IDEA reader_idea_c5a51d965d5c9eea: Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building…
+- {"evidence_count": 4, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_genesis_005_8d198559b5068a003b23e9ee", "synthesis_unit": "syn_surrounding_passages_20aed11f4418", "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-26", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}
+- {"evidence_count": 1, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_genesis_005_9f1c1478c788e34dc5af77a1", "synthesis_unit": "syn_surrounding_passages_7b40a731c38d", "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}
+- {"evidence_count": 4, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_genesis_005_8f1deaa9117acdaddd169ee1", "synthesis_unit": "syn_surrounding_passages_f65e58d68f5b", "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-26", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 40:1-23", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}
+
+PROVENANCE OUTPUT ADAPTER:
+In every block, replace the example synthesis_ids/evidence_ids fields
+with exactly this field:
+  "provenance_refs": ["reader_path_..."]
+Use one or more listed path IDs when a block combines distinct supported
+ideas. Do not emit any path ID from another chapter or invent one.
+This adapter changes only machine-readable provenance selection; keep
+the prompt 1.7 prose, breadth, uncertainty, and reader-facing rules.
