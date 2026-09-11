@@ -347,6 +347,11 @@
   ],
   "scripture_references": [
     {
+      "reference": "2 Kings 4:1-44",
+      "relationship": "primary",
+      "notes": "Passage-specific structured commentary evidence for the five narrative units in 2 Kings 4."
+    },
+    {
       "reference": "2 Kings 2:1-25",
       "relationship": "primary",
       "notes": "Elijah's ascent, Elisha's succession, and the Bethel episode."
@@ -571,6 +576,66 @@
     "Babylonian chronicles and destruction layers relevant to Judah's fall"
   ],
   "claims": [
+    {
+      "id": "second-kings-4-widow-oil-debt",
+      "claim": "In 2 Kings 4:1-7 a prophet's widow faces a creditor who would take her two sons; Elisha's instructions use her remaining oil and borrowed jars to turn a household crisis into saleable provision and debt payment.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["2 Kings 4:1-7"],
+      "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"],
+      "traditions": [],
+      "rationale": "The creditor, sons, oil, jars, sale, and debt payment are all narrated in the episode.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-4-shunammite-hospitality-promise",
+      "claim": "In 2 Kings 4:8-17 a socially established Shunammite woman repeatedly offers hospitality to the man of God, receives a dedicated room, and is promised a son after Gehazi identifies her childlessness.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["2 Kings 4:8-17"],
+      "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"],
+      "traditions": [],
+      "rationale": "The woman's status, hospitality, room, Gehazi's role, and promise are explicit narrative details.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-4-shunem-child-carmel",
+      "claim": "In 2 Kings 4:18-37 the promised child dies, the mother seeks Elisha at Carmel, and Elisha's staff, prayer, bodily action, and return to the child form the episode's sequence of prophetic response; the text names both Shunem and Carmel rather than leaving the setting generic.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["2 Kings 4:18-37"],
+      "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings", "zondervan-kings-chronicles-backgrounds"],
+      "traditions": [],
+      "rationale": "The sequence and named locations are explicit; the claim does not infer a precise route or distance.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-4-prophetic-community-famine",
+      "claim": "In 2 Kings 4:38-41 Elisha returns to the prophetic community during famine; a communal stew made dangerous by unidentified gourds is made safe through prophetic action, and the repeated cry of 'death in the pot' makes the danger part of the scene's dialogue.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["2 Kings 4:38-41"],
+      "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"],
+      "traditions": [],
+      "rationale": "Famine, the prophetic community, the stew, the gourds, and the repeated cry structure the short unit.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-4-firstfruits-feeding",
+      "claim": "In 2 Kings 4:42-44 a man brings firstfruits and barley loaves to Elisha, who commands that the food be distributed to a hundred people; the narrated surplus fulfills the prophetic word that they will eat and have some left.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["2 Kings 4:42-44"],
+      "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings", "lamb-first-second-kings"],
+      "traditions": [],
+      "rationale": "The firstfruits, barley, number fed, command, and surplus are stated in the closing unit.",
+      "notes": ""
+    },
     {
       "id": "second-kings-literary-movement",
       "claim": "Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile.",
