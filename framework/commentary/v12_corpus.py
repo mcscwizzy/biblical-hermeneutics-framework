@@ -9,10 +9,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Protocol
 
+from bhf_agent import bible
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from bhf_agent.chapter_commentary.generator import CommentaryGenerator
 from bhf_agent.chapter_commentary.models import (
@@ -25,9 +28,26 @@ from bhf_agent.chapter_commentary.release import (
     release_diagnostics,
 )
 from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
+from bhf_agent.chapter_commentary.models import (
+    COMMENTARY_SCHEMA_VERSION,
+    ChapterCommentary,
+    GeneratedMetadata,
+)
+from bhf_agent.chapter_commentary.prompts import build_user_prompt, system_prompt_for_version
+from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+from bhf_agent.chapter_commentary.output_conformance import parse_renderer_json
+from bhf_agent.chapter_commentary.reader_level_projection import project_reader_level_ideas, add_projection_to_prompt
+from bhf_agent.chapter_commentary.reader_idea_ancestry_envelope import build_ancestry_envelope, add_ancestry_envelope_to_prompt, audit_ancestry_envelope
+from bhf_agent.chapter_commentary.reader_provenance_binding_v2 import build_provenance_binding_v2, normalize_renderer_payload_v2, add_provenance_binding_to_prompt_v2, audit_provenance_binding_v2, response_ancestry_audit_v2
+from bhf_agent.chapter_commentary.renderer_reference_presentation_v1 import present_binding, add_presentation_to_prompt, normalize_selected_chapter_scope_refs
+from bhf_agent.chapter_commentary.richness_clusters import CORE_CLASSIFIER_V2, RICHNESS_POLICY_VERSION_V3, cluster_synthesis_units, score_synthesis_richness
+from bhf_agent.chapter_commentary.richness import audit_chapter
+from framework.commentary.production.inputs import prepare_chapter
 from bhf_agent.config import AgentConfig
 from framework.commentary.production.census import canonical_chapters
 from framework.commentary.production.models import canonical_json, sha256_bytes, write_json
+from framework.commentary.production.models import write_immutable
+from framework.commentary.v12_config import V12_PIPELINE_VERSION
 
 
 V12_CANDIDATE_ROOT = Path(".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment")
@@ -49,7 +69,7 @@ TERMINAL_RESULT_STATES = frozenset(
     {"validated", "partial", "needs_review", "failed", "stale"}
 )
 NONTERMINAL_RESULT_STATES = frozenset(
-    {"pending", "generating"}
+    {"pending", "generating", "awaiting_render", "ready"}
 )
 
 
@@ -116,6 +136,142 @@ class ExistingV12ChapterPipeline:
         )
 
 
+CODEX_CLI = Path("/home/johnwalker/.local/bin/codex")
+CODEX_TERRA_MODEL = "gpt-5.6-terra"
+CODEX_TERRA_EFFORT = "high"
+CODEX_PROMPT_VERSION = "1.8"
+
+
+class CodexCliV12ChapterPipeline:
+    """Render one chapter through an isolated, Codex-native CLI exchange."""
+
+    def __init__(self, *, codex_path: str | Path = CODEX_CLI,
+                 model: str = CODEX_TERRA_MODEL, effort: str = CODEX_TERRA_EFFORT,
+                 timeout_seconds: int = 600, runner: Callable[..., subprocess.CompletedProcess[str]] | None = None):
+        self.codex_path = str(codex_path)
+        self.model = model
+        self.effort = effort
+        self.timeout_seconds = timeout_seconds
+        self._runner = runner or subprocess.run
+
+    def command(self, temp_dir: str | Path, output: str | Path) -> list[str]:
+        """Build the hermetic Codex invocation used for every chapter."""
+
+        return [
+            self.codex_path, "exec", "--ephemeral", "--ignore-user-config",
+            "-m", self.model, "-c", f'model_reasoning_effort="{self.effort}"',
+            "-s", "read-only", "-C", str(temp_dir), "--skip-git-repo-check",
+            "--output-last-message", str(output), "-",
+        ]
+
+    def _prepared(self, book: str, chapter: int):
+        prepared = prepare_chapter(book, chapter)
+        chapter_data = bible.resolve_chapter(book, chapter)
+        passage_text = bible.passage_text(chapter_data.get("verses", []))
+        clusters = cluster_synthesis_units(
+            prepared.synthesis.synthesis_units, prepared.bundle.evidence_items,
+            core_classifier=CORE_CLASSIFIER_V2,
+            coverage_policy=RICHNESS_POLICY_VERSION_V3,
+            passage_text=passage_text,
+        )
+        projection = project_reader_level_ideas(prepared.synthesis, clusters, prepared.bundle.evidence_items)
+        envelope = build_ancestry_envelope(projection, prepared.synthesis, prepared.bundle.evidence_items)
+        binding = build_provenance_binding_v2(envelope, prepared.synthesis, prepared.bundle.evidence_items)
+        presentation = present_binding(binding, prepared.synthesis, prepared.bundle.evidence_items)
+        prompt = build_user_prompt(
+            prepared.packet["reference"], book, chapter, passage_text,
+            prepared.synthesis, prepared.bundle, prepared.synthesis.evidence_availability,
+            prompt_version=CODEX_PROMPT_VERSION,
+        )
+        prompt = add_projection_to_prompt(prompt, projection)
+        prompt = add_ancestry_envelope_to_prompt(prompt, envelope)
+        prompt = add_provenance_binding_to_prompt_v2(prompt, envelope, binding)
+        prompt, _ = add_presentation_to_prompt(prompt, envelope, binding, prepared.synthesis, prepared.bundle.evidence_items)
+        return prepared, binding, presentation, prompt
+
+    def _failure(self, request: CommentaryGenerationRequest, prepared, reason: str, raw: bytes | None):
+        bundle = prepared.bundle if prepared is not None else None
+        metadata = GeneratedMetadata(
+            evidence_hash=bundle.evidence_hash if bundle else request.evidence_hash,
+            evidence_bundle_version=bundle.version if bundle else "1.0",
+            commentary_schema_version=COMMENTARY_SCHEMA_VERSION,
+            commentary_prompt_version=CODEX_PROMPT_VERSION,
+            model=self.model,
+            synthesis_hash=prepared.synthesis.synthesis_hash if prepared else request.synthesis_hash,
+            synthesis_schema_version=prepared.synthesis.synthesis_schema_version if prepared else None,
+            synthesis_compiler_version=prepared.synthesis.synthesis_compiler_version if prepared else None,
+            renderer_label="commentary-v1.2-codex-cli",
+        )
+        commentary = ChapterCommentary(
+            reference=request.reference, book=request.book, chapter=request.chapter,
+            status="needs_review", sections=[], generated_metadata=metadata,
+            failure_reason=reason, validation_errors=[reason],
+        )
+        return CommentaryGenerationResult(request.reference, "needs_review", commentary, reason, raw)
+
+    def generate(self, book: str, chapter: int) -> CommentaryGenerationResult:
+        request = CommentaryGenerationRequest(book=book, chapter=chapter, reference=f"{book} {chapter}", evidence_hash="")
+        prepared = None
+        raw: bytes | None = None
+        try:
+            prepared, binding, presentation, prompt = self._prepared(book, chapter)
+            request = CommentaryGenerationRequest(book=book, chapter=chapter, reference=prepared.packet["reference"], evidence_hash=prepared.bundle.evidence_hash, synthesis_hash=prepared.synthesis.synthesis_hash)
+            exchange = (
+                "You are the selected GPT-5.6 Terra prose renderer at high reasoning effort. "
+                "Use only the exact prompts below. Do not call tools, inspect files, browse, or use outside knowledge. "
+                "Return only the requested raw JSON object.\n\nSYSTEM PROMPT\n" +
+                system_prompt_for_version(CODEX_PROMPT_VERSION) + "\n\nUSER PROMPT\n" + prompt
+            )
+            with tempfile.TemporaryDirectory(prefix="bhf-v12-codex-") as temp_dir:
+                output = Path(temp_dir) / "response.json"
+                completed = self._runner(
+                    self.command(temp_dir, output),
+                    input=exchange, text=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
+                    check=False, timeout=self.timeout_seconds,
+                )
+                if not output.is_file():
+                    raise RuntimeError(f"Codex CLI produced no response (exit {completed.returncode}): {completed.stderr[-1000:]}")
+                raw = output.read_bytes()
+            payload, parse_status, parse_errors = parse_renderer_json(raw)
+            if payload is None:
+                return self._failure(request, prepared, "; ".join(parse_errors) or parse_status, raw)
+            normalized, _ = normalize_renderer_payload_v2(payload, binding)
+            normalized, _ = normalize_selected_chapter_scope_refs(normalized, binding, presentation)
+            normalized["status"] = "pending"
+            normalized["evidence_availability"] = prepared.synthesis.evidence_availability
+            normalized["generated_metadata"] = GeneratedMetadata(
+                evidence_hash=prepared.bundle.evidence_hash,
+                evidence_bundle_version=prepared.bundle.version,
+                commentary_schema_version=COMMENTARY_SCHEMA_VERSION,
+                commentary_prompt_version=CODEX_PROMPT_VERSION,
+                model=self.model, synthesis_hash=prepared.synthesis.synthesis_hash,
+                synthesis_schema_version=prepared.synthesis.synthesis_schema_version,
+                synthesis_compiler_version=prepared.synthesis.synthesis_compiler_version,
+                renderer_label="commentary-v1.2-codex-cli",
+            ).to_dict()
+            validation = validate_chapter_commentary(
+                normalized, prepared.bundle, expected_evidence_hash=prepared.bundle.evidence_hash,
+                expected_prompt_version=CODEX_PROMPT_VERSION, expected_reference=request.reference,
+                expected_book=book, expected_chapter=chapter, synthesis=prepared.synthesis,
+                expected_synthesis_hash=prepared.synthesis.synthesis_hash,
+            )
+            status = "validated" if validation.valid else "partial" if validation.partial else "needs_review"
+            commentary = validation.commentary
+            if commentary is not None:
+                commentary = ChapterCommentary(
+                    reference=commentary.reference, book=commentary.book, chapter=commentary.chapter,
+                    status=status, evidence_availability=commentary.evidence_availability,
+                    sections=list(validation.accepted_sections), generated_metadata=commentary.generated_metadata,
+                    failure_reason=None if validation.valid else "Some generated material was rejected",
+                    validation_errors=list(validation.errors),
+                )
+            else:
+                return self._failure(request, prepared, "; ".join(validation.errors) or "validation failed", raw)
+            return CommentaryGenerationResult(request.reference, status, commentary, None if validation.valid else "; ".join(validation.errors), raw)
+        except Exception as exc:
+            return self._failure(request, prepared, f"Generation failed: {exc}", raw)
+
+
 def _slug(book: str, chapter: int) -> str:
     return f"{book.lower().replace(' ', '_')}_{int(chapter):03d}"
 
@@ -142,6 +298,7 @@ class V12CorpusRunner:
         release_root: str | Path = V12_RELEASE_ROOT,
         canonical_loader: Callable[[], list[dict[str, Any]]] = canonical_chapters,
         pipeline: ChapterPipeline | None = None,
+        generation_metadata: dict[str, Any] | None = None,
     ):
         self.repo_root = Path(repo_root)
         self.candidate_root = self._rooted(candidate_root)
@@ -149,6 +306,7 @@ class V12CorpusRunner:
         self.runner_root = self.candidate_root / "corpus-runner"
         self.canonical_loader = canonical_loader
         self.pipeline = pipeline
+        self.generation_metadata = dict(generation_metadata or {})
 
     def _rooted(self, path: str | Path) -> Path:
         candidate = Path(path)
@@ -255,8 +413,8 @@ class V12CorpusRunner:
                     conflicts.append(f"runner state has invalid chapter identity: {state_path}")
                     continue
                 status = record.get("status")
-                if status in NONTERMINAL_RESULT_STATES or status == "ready":
-                    if status == "generating":
+                if status in NONTERMINAL_RESULT_STATES:
+                    if status == "generating" and state.get("artifact_version") != "commentary-v1.2-corpus-runner-state-v1":
                         conflicts.append(f"runner chapter is in-flight: {reference}")
                     continue
                 if status not in TERMINAL_RESULT_STATES:
@@ -306,6 +464,325 @@ class V12CorpusRunner:
 
         return {"status": "DRY_RUN", **self.discover(batch_size).to_dict()}
 
+    def _selected_manifest(self, discovery: Discovery, *, run_id: str) -> dict[str, Any]:
+        rows, _, conflicts = self._state()
+        if conflicts:
+            raise V12IntegrityError("; ".join(conflicts))
+        selected_refs = set(discovery.next_chapters)
+        selected = [row for row in rows if _reference(row) in selected_refs]
+        prior_session_runs = {
+            path.parent.name
+            for path in self.runner_root.glob("runs/*/manifest.json")
+            if _load_json(path).get("workflow") == "prepare -> codex_session_render -> finalize"
+        }
+        manifest: dict[str, Any] = {
+            "artifact_version": "commentary-v1.2-corpus-session-manifest-v1",
+            "pipeline_version": V12_PIPELINE_VERSION,
+            "workflow": "prepare -> codex_session_render -> finalize",
+            "run_id": run_id,
+            "batch_number": len(prior_session_runs - {run_id}) + 1,
+            "batch_size": discovery.requested_batch_size,
+            "ordering": "canonical Bible order",
+            "renderer_mode": "codex_session",
+            "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT,
+            "one_generation_per_chapter": True,
+            "chapters": [
+                {
+                    "reference": _reference(row), "book": row["book"],
+                    "chapter": int(row["chapter"]),
+                    "canonical_ordinal": row["canonical_ordinal"],
+                }
+                for row in selected
+            ],
+        }
+        if self.generation_metadata:
+            manifest["generation"] = dict(self.generation_metadata)
+        return manifest
+
+    @staticmethod
+    def _session_run_id(next_chapters: tuple[str, ...]) -> str:
+        seed = canonical_json({"workflow": "codex_session", "chapters": next_chapters}).encode("utf-8")
+        return "session-batch-" + hashlib.sha256(seed).hexdigest()[:16]
+
+    def _renderer_context(self, entry: dict[str, Any]):
+        """Build the exact v1.2 contract once, with no renderer invocation."""
+
+        pipeline = CodexCliV12ChapterPipeline(
+            model=CODEX_TERRA_MODEL, effort=CODEX_TERRA_EFFORT
+        )
+        prepared, binding, presentation, user_prompt = pipeline._prepared(
+            entry["book"], int(entry["chapter"])
+        )
+        chapter_data = bible.resolve_chapter(entry["book"], int(entry["chapter"]))
+        clusters = cluster_synthesis_units(
+            prepared.synthesis.synthesis_units, prepared.bundle.evidence_items,
+            core_classifier=CORE_CLASSIFIER_V2, coverage_policy=RICHNESS_POLICY_VERSION_V3,
+            passage_text=bible.passage_text(chapter_data.get("verses", [])),
+        )
+        projection = project_reader_level_ideas(prepared.synthesis, clusters, prepared.bundle.evidence_items)
+        envelope = build_ancestry_envelope(projection, prepared.synthesis, prepared.bundle.evidence_items)
+        system_prompt = system_prompt_for_version(CODEX_PROMPT_VERSION)
+        return prepared, projection, envelope, binding, presentation, system_prompt, user_prompt
+
+    def _write_renderer_input(
+        self, run_root: Path, entry: dict[str, Any], *, run_id: str,
+    ) -> dict[str, Any]:
+        prepared, projection, envelope, binding, presentation, system_prompt, user_prompt = self._renderer_context(entry)
+        input_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "renderer-input"
+        system_bytes = system_prompt.encode("utf-8")
+        user_bytes = user_prompt.encode("utf-8")
+        contract = {
+            "artifact_version": "commentary-v1.2-renderer-input-v1",
+            "run_id": run_id,
+            "reference": entry["reference"], "book": entry["book"],
+            "chapter": int(entry["chapter"]),
+            "canonical_ordinal": entry["canonical_ordinal"],
+            "renderer_mode": "codex_session",
+            "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT,
+            "commentary_prompt_version": CODEX_PROMPT_VERSION,
+            "system_prompt_sha256": sha256_bytes(system_bytes),
+            "user_prompt_sha256": sha256_bytes(user_bytes),
+            "renderer_input_sha256": sha256_bytes(system_bytes + b"\n\nUSER PROMPT\n" + user_bytes),
+            "evidence_hash": prepared.bundle.evidence_hash,
+            "synthesis_hash": prepared.synthesis.synthesis_hash,
+            "source_packet_id": prepared.row["input_identity"]["packet_id"],
+            "source_packet_hash": prepared.row["input_identity"]["packet_hash"],
+            "projection_hash": projection.projection_hash,
+            "ancestry_envelope_hash": envelope.get("envelope_hash"),
+            "binding_hash": binding.get("binding_hash"),
+            "response_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/raw-response.bin",
+            "generation_count": 0,
+        }
+        write_immutable(input_root / "system_prompt.txt", system_bytes)
+        write_immutable(input_root / "user_prompt.txt", user_bytes)
+        write_json(input_root / "metadata.json", contract, immutable=True)
+        return contract
+
+    def prepare(self, batch_size: int = DEFAULT_BATCH_SIZE) -> dict[str, Any]:
+        """Freeze one bounded batch for direct rendering in this Codex session."""
+
+        discovery = self.discover(batch_size)
+        if discovery.conflicts:
+            raise V12IntegrityError("; ".join(discovery.conflicts))
+        if not discovery.full_bible_generation_authorized:
+            raise V12AuthorizationError(
+                f"{AUTHORIZATION_FIELD} is false; preparation requires explicit v1.2 authorization"
+            )
+        if not discovery.next_chapters:
+            return {"status": "CORPUS_COMPLETE", **discovery.to_dict(), "chapters": []}
+        run_id = self._session_run_id(discovery.next_chapters)
+        run_root = self.runner_root / "runs" / run_id
+        manifest = self._selected_manifest(discovery, run_id=run_id)
+        manifest_path = run_root / "manifest.json"
+        write_json(manifest_path, manifest, immutable=True)
+        manifest_hash = sha256_bytes(manifest_path.read_bytes())
+        state_path = run_root / "state.json"
+        if state_path.is_file():
+            state = _load_json(state_path)
+            if state.get("manifest_sha256") != manifest_hash:
+                raise V12IntegrityError(f"runner state belongs to a different manifest: {state_path}")
+            if any(record.get("status") == "generating" for record in state.get("chapters", {}).values() if isinstance(record, dict)):
+                # A prior nested transport can leave only its checkpoint behind.
+                # It is recoverable only when no raw response exists yet.
+                for entry in manifest["chapters"]:
+                    chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+                    if (chapter_root / "raw-response.bin").exists():
+                        raise V12IntegrityError(f"in-flight chapter already has a response: {entry['reference']}")
+                state["chapters"] = {entry["reference"]: {"status": "awaiting_render", "attempt": 0} for entry in manifest["chapters"]}
+        else:
+            state = {
+                "artifact_version": "commentary-v1.2-corpus-session-state-v1",
+                "run_id": run_id, "manifest_sha256": manifest_hash,
+                "renderer_mode": "codex_session", "requested_model": CODEX_TERRA_MODEL,
+                "requested_effort": CODEX_TERRA_EFFORT,
+                "chapters": {entry["reference"]: {"status": "awaiting_render", "attempt": 0} for entry in manifest["chapters"]},
+            }
+        for entry in manifest["chapters"]:
+            record = state["chapters"].get(entry["reference"])
+            if not isinstance(record, dict) or record.get("status") not in {"awaiting_render", *TERMINAL_RESULT_STATES}:
+                raise V12IntegrityError(f"runner chapter state is not safely resumable: {entry['reference']}")
+            if record.get("status") == "awaiting_render":
+                contract = self._write_renderer_input(run_root, entry, run_id=run_id)
+                record["renderer_input_path"] = f"chapters/{_slug(entry['book'], int(entry['chapter']))}/renderer-input"
+                record["renderer_input_sha256"] = contract["renderer_input_sha256"]
+        write_json(state_path, state)
+        return {
+            "status": "PREPARED", "run_id": run_id,
+            "renderer_mode": "codex_session", "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT,
+            "chapter_count": len(manifest["chapters"]),
+            "chapters": [entry["reference"] for entry in manifest["chapters"]],
+            "manifest_path": manifest_path.relative_to(self.repo_root).as_posix(),
+        }
+
+    def _prepared_for_finalize(self, entry: dict[str, Any], run_root: Path):
+        prepared, projection, envelope, binding, presentation, system_prompt, user_prompt = self._renderer_context(entry)
+        input_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "renderer-input"
+        metadata = _load_json(input_root / "metadata.json")
+        checks = {
+            "system_prompt_sha256": sha256_bytes(system_prompt.encode("utf-8")),
+            "user_prompt_sha256": sha256_bytes(user_prompt.encode("utf-8")),
+            "evidence_hash": prepared.bundle.evidence_hash,
+            "synthesis_hash": prepared.synthesis.synthesis_hash,
+            "source_packet_id": prepared.row["input_identity"]["packet_id"],
+            "source_packet_hash": prepared.row["input_identity"]["packet_hash"],
+            "binding_hash": binding.get("binding_hash"),
+            "projection_hash": projection.projection_hash,
+            "ancestry_envelope_hash": envelope.get("envelope_hash"),
+        }
+        for key, expected in checks.items():
+            # The first resumable prepare checkpoint predates recording the
+            # two derived-view hashes. Its exact prompt bytes plus source
+            # packet/evidence/synthesis identities remain frozen and are the
+            # authoritative compatibility proof for that checkpoint.
+            if key in {"projection_hash", "ancestry_envelope_hash"} and metadata.get(key) is None:
+                continue
+            if metadata.get(key) != expected:
+                raise V12IntegrityError(f"frozen renderer identity changed for {entry['reference']}: {key}")
+        return prepared, projection, envelope, binding, presentation
+
+    def _finalize_one(self, run_root: Path, entry: dict[str, Any]) -> dict[str, Any]:
+        chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+        raw_path = chapter_root / "raw-response.bin"
+        response_candidates = list(chapter_root.glob("raw-response*"))
+        if len(response_candidates) > 1:
+            raise V12IntegrityError(f"duplicate/conflicting responses for {entry['reference']}")
+        if not raw_path.is_file():
+            raise V12CorpusError(f"missing raw response for {entry['reference']}: {raw_path}")
+        raw = raw_path.read_bytes()
+        prepared, projection, envelope, binding, presentation = self._prepared_for_finalize(entry, run_root)
+        payload, parse_status, parse_errors = parse_renderer_json(raw)
+        chapter_dir = chapter_root
+        if payload is None:
+            receipt = {"artifact_version": "commentary-v1.2-corpus-result-v1", "reference": entry["reference"], "book": entry["book"], "chapter": int(entry["chapter"]), "status": "failed", "classification": "malformed", "error": "; ".join(parse_errors) or parse_status, "raw_response_sha256": sha256_bytes(raw), "raw_response_path": raw_path.relative_to(self.repo_root).as_posix()}
+            write_json(chapter_dir / "result.json", receipt, immutable=True)
+            return receipt
+        normalized, binding_metadata = normalize_renderer_payload_v2(payload, binding)
+        normalized, conformance_metadata = normalize_selected_chapter_scope_refs(normalized, binding, presentation)
+        normalized["status"] = "pending"
+        normalized["evidence_availability"] = prepared.synthesis.evidence_availability
+        normalized["generated_metadata"] = GeneratedMetadata(
+            evidence_hash=prepared.bundle.evidence_hash, evidence_bundle_version=prepared.bundle.version,
+            commentary_schema_version=COMMENTARY_SCHEMA_VERSION, commentary_prompt_version=CODEX_PROMPT_VERSION,
+            model=CODEX_TERRA_MODEL, synthesis_hash=prepared.synthesis.synthesis_hash,
+            synthesis_schema_version=prepared.synthesis.synthesis_schema_version,
+            synthesis_compiler_version=prepared.synthesis.synthesis_compiler_version,
+            renderer_label="commentary-v1.2-codex-session",
+        ).to_dict()
+        validation = validate_chapter_commentary(
+            normalized, prepared.bundle, expected_evidence_hash=prepared.bundle.evidence_hash,
+            expected_prompt_version=CODEX_PROMPT_VERSION, expected_reference=entry["reference"],
+            expected_book=entry["book"], expected_chapter=int(entry["chapter"]),
+            synthesis=prepared.synthesis, expected_synthesis_hash=prepared.synthesis.synthesis_hash,
+        )
+        status = "validated" if validation.valid else "partial" if validation.partial else "needs_review"
+        commentary = validation.commentary
+        accepted_blocks = [block for section in validation.accepted_sections for block in section.blocks]
+        ancestry_audit = response_ancestry_audit_v2(normalized, binding)
+        binding_audit = audit_provenance_binding_v2(binding, envelope, prepared.synthesis, prepared.bundle.evidence_items)
+        envelope_audit = audit_ancestry_envelope(envelope, projection, prepared.synthesis)
+        quality_audit = audit_chapter(entry["book"], int(entry["chapter"]), commentary, prepared.bundle) if commentary is not None else {"richness_status": "missing"}
+        richness_score = score_synthesis_richness(
+            prepared.synthesis.synthesis_units, evidence_items=prepared.bundle.evidence_items,
+            consumed_synthesis_ids=[sid for block in accepted_blocks for sid in getattr(block, "synthesis_ids", [])],
+            blocks=accepted_blocks, passage_ref=prepared.bundle.passage_ref,
+            core_classifier=CORE_CLASSIFIER_V2, coverage_policy=RICHNESS_POLICY_VERSION_V3,
+            passage_text=bible.passage_text(bible.resolve_chapter(entry["book"], int(entry["chapter"])).get("verses", [])),
+        )
+        audits = {
+            "ancestry": ancestry_audit,
+            "provenance_binding": binding_audit,
+            "envelope": envelope_audit,
+            "quality": quality_audit,
+            "richness": richness_score.to_dict(),
+        }
+        if validation.valid and not (ancestry_audit.get("valid") and binding_audit.get("valid") and envelope_audit.get("valid")):
+            status = "needs_review"
+        if commentary is not None:
+            commentary = ChapterCommentary(
+                reference=commentary.reference, book=commentary.book, chapter=commentary.chapter,
+                status=status, evidence_availability=commentary.evidence_availability,
+                sections=list(validation.accepted_sections), generated_metadata=commentary.generated_metadata,
+                failure_reason=None if validation.valid else "Some generated material was rejected",
+                validation_errors=list(validation.errors),
+            )
+            write_json(chapter_dir / "commentary.json", commentary.to_dict(), immutable=True)
+        receipt = {"artifact_version": "commentary-v1.2-corpus-result-v1", "reference": entry["reference"], "book": entry["book"], "chapter": int(entry["chapter"]), "status": status, "classification": "published" if status == "validated" else "quality-review" if status == "partial" else "model-rejected", "error": None if validation.valid else "; ".join(validation.errors), "commentary_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/commentary.json" if commentary is not None else None, "raw_response_sha256": sha256_bytes(raw), "raw_response_path": raw_path.relative_to(self.repo_root).as_posix(), "binding_metadata": binding_metadata, "normalization_metadata": conformance_metadata, "audits": audits}
+        result_path = chapter_dir / "result.json"
+        if result_path.is_file():
+            existing = _load_json(result_path)
+            if existing.get("raw_response_sha256") != receipt["raw_response_sha256"] or existing.get("reference") != receipt["reference"]:
+                raise V12IntegrityError(f"conflicting existing result for {entry['reference']}")
+            receipt = {**existing, "audits": audits}
+            # The original result receipt is immutable.  Preserve it and
+            # carry newly added deterministic audits in a sidecar.
+            write_json(chapter_dir / "finalize-audit.json", audits, immutable=True)
+        else:
+            write_json(result_path, receipt, immutable=True)
+        return receipt
+
+    @staticmethod
+    def _batch_classification(manifest: dict[str, Any], outcomes: list[dict[str, Any]]) -> str:
+        batch_number = int(manifest.get("batch_number", 1))
+        prefix = f"V1_2_CORPUS_BATCH_{batch_number:02d}"
+        if any(item.get("status") in {"failed", "needs_review", "partial", "stale"} for item in outcomes):
+            return f"{prefix}_REVIEW_REQUIRED"
+        has_quality_warnings = any(
+            item.get("audits", {}).get("quality", {}).get("richness_status") != "RICH_ENOUGH"
+            for item in outcomes
+        )
+        return f"{prefix}_VALIDATED_WITH_WARNINGS" if has_quality_warnings else f"{prefix}_VALIDATED"
+
+    def finalize(self) -> dict[str, Any]:
+        """Validate frozen session responses without invoking any model."""
+
+        runs = sorted(self.runner_root.glob("runs/*/manifest.json"), key=lambda path: path.stat().st_mtime, reverse=True)
+        if not runs:
+            raise V12CorpusError("no prepared v1.2 session run found")
+        manifest_path = next((path for path in runs if _load_json(path).get("workflow") == "prepare -> codex_session_render -> finalize"), None)
+        if manifest_path is None:
+            raise V12CorpusError("no prepared codex_session run found")
+        run_root = manifest_path.parent
+        manifest = _load_json(manifest_path)
+        state_path = run_root / "state.json"
+        state = _load_json(state_path)
+        if state.get("manifest_sha256") != sha256_bytes(manifest_path.read_bytes()):
+            raise V12IntegrityError("prepared manifest identity changed")
+        entries = manifest.get("chapters")
+        if not isinstance(entries, list) or not entries or len(entries) > MAX_BATCH_SIZE:
+            raise V12IntegrityError("prepared session manifest has invalid bounded chapter list")
+        # Preflight all responses before writing any terminal result, so a
+        # missing response cannot leave a deceptively partial batch.
+        missing = []
+        for entry in entries:
+            raw_path = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "raw-response.bin"
+            if not raw_path.is_file():
+                missing.append(entry["reference"])
+        if missing:
+            raise V12CorpusError("missing raw responses: " + ", ".join(missing))
+        outcomes = [self._finalize_one(run_root, entry) for entry in entries]
+        for outcome in outcomes:
+            record = state["chapters"].get(outcome["reference"])
+            if not isinstance(record, dict):
+                raise V12IntegrityError(f"missing runner state for {outcome['reference']}")
+            record["status"] = outcome["status"]
+            record["result_path"] = f"chapters/{_slug(outcome['book'], int(outcome['chapter']))}/result.json"
+        state["finalized"] = True
+        classification = self._batch_classification(manifest, outcomes)
+        state["classification"] = classification
+        write_json(state_path, state)
+        report = {"status": "FINALIZED", "classification": classification, "run_id": manifest["run_id"], "chapters": outcomes, "counts": {status: sum(item["status"] == status for item in outcomes) for status in sorted(TERMINAL_RESULT_STATES)}}
+        report_path = run_root / "finalize.json"
+        if report_path.is_file() and _load_json(report_path) != report:
+            version = 2
+            while (run_root / f"finalize-v{version}.json").is_file() and _load_json(run_root / f"finalize-v{version}.json") != report:
+                version += 1
+            report_path = run_root / f"finalize-v{version}.json"
+        write_json(report_path, report, immutable=True)
+        return report
+
     def run(self, batch_size: int = DEFAULT_BATCH_SIZE) -> dict[str, Any]:
         """Execute one bounded batch through the existing chapter pipeline."""
 
@@ -335,6 +812,15 @@ class V12CorpusRunner:
                 for row in selected
             ],
         }
+        if self.generation_metadata:
+            manifest["generation"] = {
+                "pipeline": self.generation_metadata.get("pipeline", V12_PIPELINE_VERSION),
+                "model": self.generation_metadata.get("model"),
+                "effort": self.generation_metadata.get("effort"),
+                "prose_model": self.generation_metadata.get("prose_model"),
+                "prose_effort": self.generation_metadata.get("prose_effort"),
+                "config_path": self.generation_metadata.get("config_path"),
+            }
         manifest_path = run_root / "manifest.json"
         write_json(manifest_path, manifest, immutable=True)
         state_path = run_root / "state.json"
@@ -409,6 +895,20 @@ class V12CorpusRunner:
             "error": result.error,
             "commentary_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/commentary.json" if commentary is not None else None,
         }
+        raw_response = getattr(result, "raw_response", None)
+        if raw_response is not None:
+            raw_path = chapter_root / "raw-response.bin"
+            from framework.commentary.production.models import write_immutable
+            write_immutable(raw_path, raw_response)
+            receipt["raw_response_path"] = raw_path.relative_to(self.repo_root).as_posix()
+        if self.generation_metadata:
+            receipt["generation"] = {
+                "pipeline": self.generation_metadata.get("pipeline", V12_PIPELINE_VERSION),
+                "model": self.generation_metadata.get("model"),
+                "effort": self.generation_metadata.get("effort"),
+                "prose_model": self.generation_metadata.get("prose_model"),
+                "prose_effort": self.generation_metadata.get("prose_effort"),
+            }
         result_path = chapter_root / "result.json"
         write_json(result_path, receipt, immutable=True)
         return {"reference": reference, "status": result.status, "result_path": result_path.relative_to(self.repo_root).as_posix()}

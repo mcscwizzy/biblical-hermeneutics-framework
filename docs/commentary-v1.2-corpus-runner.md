@@ -2,9 +2,9 @@
 
 The bounded runner discovers canonical Scripture in BHF order, treats the
 packaged v1.2 release and its own immutable result receipts as terminal state,
-and selects at most 25 chapters by default (50 maximum). It delegates each
-selected chapter to the existing CommentaryGenerator path and preserves the
-returned classification without changing v1.2 validation or publication code.
+and selects at most 25 chapters by default (50 maximum). The default workflow
+freezes each selected chapter for direct rendering in the current Codex
+session, then finalizes the preserved responses without a provider call.
 
 The persisted v1.2 candidate state contains the explicit
 `full_bible_generation_authorized` guard. Dry runs are allowed regardless of
@@ -12,8 +12,31 @@ the guard; generation fails closed while it is false.
 
 ```bash
 .venv/bin/python tools/commentary_v12_corpus.py dry-run --batch-size 25
-.venv/bin/python tools/commentary_v12_corpus.py generate --batch-size 25 --config PATH
+.venv/bin/python tools/commentary_v12_corpus.py prepare --batch-size 25
+# Render each frozen chapter packet in the current Codex session.
+.venv/bin/python tools/commentary_v12_corpus.py finalize
 ```
+
+`prepare` creates an immutable, content-addressed session manifest and one
+renderer-input directory per selected chapter. It performs no model calls and
+records `awaiting_render` until the current Codex session writes exactly one
+`raw-response.bin` for each chapter. `finalize` refuses a missing or duplicate
+response, preserves malformed bytes, verifies the frozen source and prompt
+identities, then runs normalization, structural, ancestry, provenance,
+richness, and quality checks without invoking a model. Session metadata is
+truthfully recorded as `renderer_mode: codex_session`, requested model
+`gpt-5.6-terra`, and requested effort `high`.
+
+The legacy nested Codex CLI transport remains available only through the
+explicit `generate` command for environments that permit it; it is not the
+default session workflow.
+
+The batch report includes a deterministic classification such as
+`V1_2_CORPUS_BATCH_01_VALIDATED` or
+`V1_2_CORPUS_BATCH_01_VALIDATED_WITH_WARNINGS`; the latter records quality-audit
+warnings while retaining per-chapter validation results. The session metadata
+records the required Terra model and high effort without claiming that a
+provider was invoked by `prepare` or `finalize`.
 
 Each generation invocation creates an immutable manifest and per-chapter
 result receipt under
