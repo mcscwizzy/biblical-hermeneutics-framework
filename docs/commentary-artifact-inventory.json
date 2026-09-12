@@ -1,0 +1,2018 @@
+{
+  "generated_from": "working-tree",
+  "granularity": "directory aggregates plus repository references; release manifests enumerate payload files",
+  "inventory_version": "commentary-artifact-inventory-v1",
+  "records": [
+    {
+      "bytes": 1575836,
+      "classification": "ACTIVE_RUNTIME_RELEASE",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/chapter-commentary.md",
+          "docs/ckl-parent-scope-integrity-audit.md",
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-dense-reader-v0.1.md",
+          "docs/commentary-production-v1.md",
+          "docs/commentary-ui.md",
+          "docs/commentary-v1.0.1-correctness.md",
+          "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
+          "docs/commentary-v1.1-canary-report.md",
+          "docs/commentary-v1.1-expansion-plan.md",
+          "docs/commentary-v1.1-pipeline-orchestrator.md",
+          "docs/commentary-v1.1-premerge-audit.md",
+          "docs/commentary-v1.1-release.md",
+          "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/commentary-v1.1-release/vercel-packaging-audit.json",
+          "docs/commentary-v1.1-semantic-relevance-audit.md",
+          "docs/commentary-v1.2-architecture-baseline.md",
+          "docs/commentary-v1.2-evidence-applicability-contract-freeze-v1.json",
+          "docs/commentary-v1.2-evidence-applicability-enforcement-v1.md",
+          "docs/commentary-v1.2-external-renderer.md",
+          "docs/commentary-v1.2-five-chapter-structured-enrichment-v1.md",
+          "docs/commentary-v1.2-output-conformance-v1.md",
+          "docs/commentary-v1.2-post-applicability-coverage-census-v1.md",
+          "docs/commentary-v1.2-prompt-1.7-selection-breadth.md",
+          "docs/commentary-v1.2-prompt-1.8-renderability-remediation.md",
+          "docs/commentary-v1.2-reader-enrichment.md",
+          "docs/commentary-v1.2-reader-idea-ancestry-envelope-v1.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-v1.md",
+          "docs/commentary-v1.2-reader-provenance-binding-v1.md",
+          "docs/commentary-v1.2-reader-provenance-reference-presentation.md",
+          "docs/commentary-v1.2-renderer-qualification-v2.md",
+          "docs/commentary-v1.2-renderer-transport-diagnostic-v1.md",
+          "docs/commentary-v1.2-richness-scoring-remediation.md",
+          "docs/commentary-v1.2-scale-pilot-provenance-binding-v1.md",
+          "docs/commentary-v1.2-scale-pilot.md",
+          "docs/commentary-v1.2-terra-75-scale-validation-v1.md",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md",
+          "docs/commentary-v1.2-unified-reader-projection-seven-chapter.md",
+          "docs/commentary-v1.2-upstream-evidence-quality-diagnostic-v1.md",
+          "docs/deployment-routing.md",
+          "docs/vercel-function-bundle-audit.json",
+          "docs/vercel-function-bundle-audit.md"
+        ],
+        "python": [
+          "bhf_agent/chapter_commentary/__main__.py",
+          "bhf_agent/chapter_commentary/builder.py",
+          "bhf_agent/chapter_commentary/release.py",
+          "bhf_agent/runtime_paths.py",
+          "bhf_web/offline.py",
+          "bhf_web/routes/bhf_commentary.py",
+          "bhf_web/routes/commentary_coverage.py",
+          "bhf_web/static/api/http.js",
+          "bhf_web/static/bhf-commentary-card.js",
+          "bhf_web/static/commentary-coverage.js",
+          "bhf_web/static/styles/companion.css",
+          "bhf_web/static/sw.js",
+          "bhf_web/templates/commentary_coverage.html",
+          "bhf_web/templates/index.html",
+          "framework/commentary/orchestrator.py",
+          "framework/commentary/production/census.py",
+          "framework/commentary/production/models.py",
+          "framework/commentary/production/recovery.py",
+          "framework/commentary/production/runner.py",
+          "framework/commentary/publish.py",
+          "framework/commentary/reconciliation.py",
+          "framework/commentary/recovery.py",
+          "tools/build_final_four_audit_artifacts.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_renderer_qualification.py",
+          "tools/commentary_renderer_qualification_v2.py",
+          "tools/commentary_renderer_remediation.py",
+          "tools/commentary_renderer_selection_breadth_diagnostic.py",
+          "tools/commentary_richness_audit.py",
+          "tools/commentary_richness_scoring_remediation.py",
+          "tools/commentary_v11_canary.py",
+          "tools/commentary_v11_expansion.py",
+          "tools/commentary_v11_low_information.py",
+          "tools/commentary_v11_post_generation.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/commentary_v11_semantic.py",
+          "tools/commentary_v11_semantic_pass2.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_five_chapter_structured_enrichment.py",
+          "tools/commentary_v12_output_conformance.py",
+          "tools/commentary_v12_post_applicability_coverage_census.py",
+          "tools/commentary_v12_prompt_18_bounded_validation.py",
+          "tools/commentary_v12_reader_idea_ancestry_envelope.py",
+          "tools/commentary_v12_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_reader_provenance_binding.py",
+          "tools/commentary_v12_reader_provenance_binding_v2_bounded_validation.py",
+          "tools/commentary_v12_reader_provenance_reference_presentation_v1_bounded_validation.py",
+          "tools/commentary_v12_release_promotion.py",
+          "tools/commentary_v12_richness_audit.py",
+          "tools/commentary_v12_richness_gate_v2.py",
+          "tools/commentary_v12_scale_pilot.py",
+          "tools/commentary_v12_scale_pilot_provenance_binding.py",
+          "tools/commentary_v12_terra_75_scale_validation.py",
+          "tools/commentary_v12_terra_scale_pilot.py",
+          "tools/commentary_v12_two_chapter_omission_audit.py",
+          "tools/commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tools/commentary_v13_genesis.py",
+          "tools/commentary_v13_pilot.py",
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v14_calibration_evaluate.py",
+          "tools/commentary_v14_within_family_audit.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py",
+          "tools/commentary_v15_batch3_render.py",
+          "tools/commentary_v15_scale_evaluate.py",
+          "tools/commentary_v15_scale_import.py",
+          "tools/commentary_v15_scale_prepare.py",
+          "tools/commentary_v15_scale_render.py",
+          "tools/commentary_v15_targeted_evaluate.py",
+          "tools/commentary_v15_targeted_rerender.py",
+          "tools/dense_reader_experiment.py",
+          "tools/diagnose_commentary_consolidation.py",
+          "tools/luna_commentary_batch.py",
+          "tools/luna_commentary_canary.py",
+          "tools/luna_commentary_spotcheck.py",
+          "tools/reader_level_idea_projection.py",
+          "tools/terra_commentary_canary.py",
+          "tools/terra_commentary_scaled_batch.py",
+          "tools/terra_commentary_supplemental_control.py"
+        ],
+        "runtime_configuration": [
+          ".github/workflows/export-sol-qualification-artifact.yml",
+          ".vercelignore",
+          "Dockerfile",
+          "vercel.json"
+        ],
+        "tests": [
+          "tests/frontend/bhf-commentary-card.test.js",
+          "tests/frontend/bhf-commentary-offline.test.js",
+          "tests/frontend/commentary-search.test.js",
+          "tests/test_bhf_commentary_projection.py",
+          "tests/test_commentary_canonical_runtime.py",
+          "tests/test_commentary_consolidation.py",
+          "tests/test_commentary_coverage.py",
+          "tests/test_commentary_evidence_applicability.py",
+          "tests/test_commentary_output_conformance.py",
+          "tests/test_commentary_pipeline_orchestrator.py",
+          "tests/test_commentary_production.py",
+          "tests/test_commentary_production_data_gap_adjudication.py",
+          "tests/test_commentary_production_handoff.py",
+          "tests/test_commentary_production_runtime.py",
+          "tests/test_commentary_publish.py",
+          "tests/test_commentary_quarantine_recovery.py",
+          "tests/test_commentary_remediation.py",
+          "tests/test_commentary_remediation_groups.py",
+          "tests/test_commentary_renderer_qualification.py",
+          "tests/test_commentary_renderer_qualification_v2.py",
+          "tests/test_commentary_v11_semantic_pass2.py",
+          "tests/test_commentary_v12_reader_idea_ancestry_envelope.py",
+          "tests/test_commentary_v12_reader_provenance_binding.py",
+          "tests/test_commentary_v12_release_promotion.py",
+          "tests/test_commentary_v12_richness_clusters.py",
+          "tests/test_commentary_v12_terra_75_scale_validation.py",
+          "tests/test_commentary_v12_terra_scale_pilot.py",
+          "tests/test_commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tests/test_commentary_v12_validation.py",
+          "tests/test_reader_level_idea_projection.py",
+          "tests/test_renderer_reference_presentation_v1.py",
+          "tests/test_terra_commentary_scaled_batch.py",
+          "tests/test_vercel_packaging.py",
+          "tests/test_vercel_startup.py",
+          "tests/test_web_app.py",
+          "tests/test_web_settings.py"
+        ]
+      },
+      "directory_count": 1,
+      "file_count": 1192,
+      "first_identifiable_version": "legacy",
+      "path": ".bhf-data/bhf-commentary",
+      "proposed_action": "KEEP",
+      "reason": "Aggregate directory inventory; individual release payloads are verified by their manifests/checksum indexes.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": true,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 4255616,
+      "classification": "ACTIVE_RUNTIME_RELEASE",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.1-premerge-audit.md",
+          "docs/commentary-v1.1-release.md",
+          "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/commentary-v1.2-architecture-baseline.md",
+          "docs/vercel-function-bundle-audit.json",
+          "docs/vercel-function-bundle-audit.md"
+        ],
+        "python": [
+          "bhf_agent/runtime_paths.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_richness_gate_v2.py"
+        ],
+        "tests": [
+          "tests/test_vercel_packaging.py",
+          "tests/test_vercel_startup.py",
+          "tests/test_web_settings.py"
+        ]
+      },
+      "directory_count": 1,
+      "file_count": 1190,
+      "first_identifiable_version": "v1.1",
+      "path": ".bhf-data/bhf-commentary-v1.1",
+      "proposed_action": "KEEP",
+      "reason": "Aggregate directory inventory; individual release payloads are verified by their manifests/checksum indexes.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": true,
+      "required_for_v1_1": true,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 320656,
+      "classification": "ACTIVE_RUNTIME_RELEASE",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "bhf_agent/runtime_paths.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_v12_release_promotion.py"
+        ],
+        "tests": [
+          "tests/test_commentary_v12_release_promotion.py"
+        ]
+      },
+      "directory_count": 1,
+      "file_count": 64,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-v1.2",
+      "proposed_action": "KEEP",
+      "reason": "Aggregate directory inventory; individual release payloads are verified by their manifests/checksum indexes.",
+      "required_for_current_release_promotion": true,
+      "required_for_reproducibility": true,
+      "required_for_v1_1": false,
+      "required_for_v1_2": true,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1796203,
+      "classification": "HISTORICAL_AUDIT_ONLY",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-production-v1.md"
+        ],
+        "python": [
+          "framework/commentary/production/models.py",
+          "framework/commentary/production/recovery.py",
+          "framework/commentary/production/runner.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_renderer_qualification.py"
+        ],
+        "tests": [
+          "tests/test_commentary_production.py",
+          "tests/test_commentary_production_data_gap_adjudication.py",
+          "tests/test_commentary_production_handoff.py",
+          "tests/test_commentary_production_runtime.py",
+          "tests/test_commentary_renderer_qualification.py"
+        ]
+      },
+      "directory_count": 28,
+      "file_count": 141,
+      "first_identifiable_version": "legacy",
+      "path": ".bhf-data/bhf-commentary-production",
+      "proposed_action": "KEEP",
+      "reason": "Aggregate directory inventory; individual release payloads are verified by their manifests/checksum indexes.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": true,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1796203,
+      "classification": "ABANDONED_RUNTIME_LAYOUT",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/chapter-commentary.md",
+          "docs/ckl-parent-scope-integrity-audit.md",
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-next-steps.md",
+          "docs/commentary-production-v1.md",
+          "docs/commentary-ui.md",
+          "docs/commentary-v1.0.1-correctness.md",
+          "docs/commentary-v1.0.1-release-notes.md",
+          "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
+          "docs/commentary-v1.1-canary-report.md",
+          "docs/commentary-v1.1-canonical-runtime-reconciliation.json",
+          "docs/commentary-v1.1-canonical-runtime-reconciliation.md",
+          "docs/commentary-v1.1-expansion-plan.md",
+          "docs/commentary-v1.1-final-corpus-certification.md",
+          "docs/commentary-v1.1-low-information-audit.md",
+          "docs/commentary-v1.1-pipeline-orchestrator.md",
+          "docs/commentary-v1.1-postrelease-audit.md",
+          "docs/commentary-v1.1-premerge-audit.md",
+          "docs/commentary-v1.1-release.md",
+          "docs/commentary-v1.1-release/branch-cleanup-audit.json",
+          "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
+          "docs/commentary-v1.1-release/release-integrity.json",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/commentary-v1.1-release/vercel-packaging-audit.json",
+          "docs/commentary-v1.1-scaled-batch-001-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-001-terra.md",
+          "docs/commentary-v1.1-scaled-batch-002-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-002-terra.md",
+          "docs/commentary-v1.1-scaled-batch-003-post-generation.md",
+          "docs/commentary-v1.1-scaled-batch-003-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-003-terra.md",
+          "docs/commentary-v1.1-scaled-batch-004-post-generation.md",
+          "docs/commentary-v1.1-scaled-batch-004-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-004-terra.md",
+          "docs/commentary-v1.1-scaled-batch-005-post-generation.md",
+          "docs/commentary-v1.1-scaled-batch-005-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-005-terra.md",
+          "docs/commentary-v1.1-scaled-batch-006-post-generation.md",
+          "docs/commentary-v1.1-scaled-batch-006-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-006-terra.md",
+          "docs/commentary-v1.1-scaled-batch-007-post-generation.md",
+          "docs/commentary-v1.1-scaled-batch-007-preflight.md",
+          "docs/commentary-v1.1-scaled-batch-007-remediation.md",
+          "docs/commentary-v1.1-scaled-batch-007-terra.md",
+          "docs/commentary-v1.1-scaled-batch-008-post-generation.md",
+          "docs/commentary-v1.1-scaled-batch-008-preflight.md",
+          "docs/commentary-v1.1-semantic-relevance-audit-2.md",
+          "docs/commentary-v1.1-semantic-relevance-audit.md",
+          "docs/commentary-v1.1-terra-canary-report.md",
+          "docs/commentary-v1.2-architecture-baseline.md",
+          "docs/commentary-v1.2-evidence-applicability-contract-freeze-v1.json",
+          "docs/commentary-v1.2-evidence-applicability-enforcement-v1.md",
+          "docs/commentary-v1.2-external-renderer.md",
+          "docs/commentary-v1.2-five-chapter-structured-enrichment-v1.md",
+          "docs/commentary-v1.2-genesis-1-root-cause.md",
+          "docs/commentary-v1.2-output-conformance-v1.md",
+          "docs/commentary-v1.2-post-applicability-coverage-census-v1.md",
+          "docs/commentary-v1.2-prompt-1.7-selection-breadth.md",
+          "docs/commentary-v1.2-prompt-1.8-renderability-remediation.md",
+          "docs/commentary-v1.2-reader-enrichment.md",
+          "docs/commentary-v1.2-reader-idea-ancestry-envelope-v1.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-v1.md",
+          "docs/commentary-v1.2-reader-provenance-binding-v1.md",
+          "docs/commentary-v1.2-reader-provenance-binding-v2-renderability-bridge.md",
+          "docs/commentary-v1.2-reader-provenance-reference-presentation.md",
+          "docs/commentary-v1.2-renderer-qualification-v2.md",
+          "docs/commentary-v1.2-renderer-transport-diagnostic-v1.md",
+          "docs/commentary-v1.2-richness-scoring-remediation.md",
+          "docs/commentary-v1.2-scale-pilot-provenance-binding-v1.md",
+          "docs/commentary-v1.2-scale-pilot.md",
+          "docs/commentary-v1.2-sol-renderer-remediation.md",
+          "docs/commentary-v1.2-terra-75-scale-validation-v1.md",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md",
+          "docs/commentary-v1.2-unified-reader-projection-seven-chapter.md",
+          "docs/commentary-v1.2-upstream-evidence-quality-diagnostic-v1.md",
+          "docs/commentary-v1.5-wave-a-reference-contract.md",
+          "docs/deployment-routing.md",
+          "docs/docker.md",
+          "docs/local-development.md",
+          "docs/vercel-function-bundle-audit.json",
+          "docs/vercel-function-bundle-audit.md"
+        ],
+        "python": [
+          "bhf_agent/adapters/openai_compatible.py",
+          "bhf_agent/adapters/openrouter.py",
+          "bhf_agent/archaeology_import.py",
+          "bhf_agent/chapter_commentary/availability.py",
+          "bhf_agent/chapter_commentary/consolidation.py",
+          "bhf_agent/chapter_commentary/evidence_applicability.py",
+          "bhf_agent/chapter_commentary/models.py",
+          "bhf_agent/chapter_commentary/output_conformance.py",
+          "bhf_agent/chapter_commentary/prompts.py",
+          "bhf_agent/chapter_commentary/reader_idea_ancestry_envelope.py",
+          "bhf_agent/chapter_commentary/reader_level_projection.py",
+          "bhf_agent/chapter_commentary/reader_provenance_binding.py",
+          "bhf_agent/chapter_commentary/reader_provenance_binding_v2.py",
+          "bhf_agent/chapter_commentary/renderer_reference_presentation_v1.py",
+          "bhf_agent/chapter_commentary/richness.py",
+          "bhf_agent/chapter_commentary/richness_clusters.py",
+          "bhf_agent/chapter_commentary/synthesis/__init__.py",
+          "bhf_agent/presentation/evidence_hash.py",
+          "bhf_agent/presentation/providers.py",
+          "bhf_agent/presentation/relevance.py",
+          "bhf_agent/providers/openrouter_config.py",
+          "bhf_agent/runtime_paths.py",
+          "bhf_agent/study_db.py",
+          "bhf_web/forms.py",
+          "bhf_web/static/api/http.js",
+          "bhf_web/static/bhf-commentary-card.js",
+          "bhf_web/static/icons/icon.svg",
+          "bhf_web/static/icons/maskable.svg",
+          "bhf_web/static/model-settings.js",
+          "bhf_web/static/pwa.js",
+          "bhf_web/static/study-vault.js",
+          "bhf_web/static/vendor/leaflet/leaflet.js",
+          "bhf_web/static/vendor/leaflet/leaflet.js.map",
+          "bhf_web/templates/index.html",
+          "framework/canonical_library/objects/books/1-corinthians.json",
+          "framework/canonical_library/objects/books/1-thessalonians.json",
+          "framework/canonical_library/objects/books/2-corinthians.json",
+          "framework/canonical_library/objects/books/2-thessalonians.json",
+          "framework/canonical_library/objects/books/2-timothy.json",
+          "framework/canonical_library/objects/books/acts.json",
+          "framework/canonical_library/objects/books/colossians.json",
+          "framework/canonical_library/objects/books/galatians.json",
+          "framework/canonical_library/objects/books/philippians.json",
+          "framework/canonical_library/objects/books/romans.json",
+          "framework/canonical_library/objects/books/zechariah.json",
+          "framework/canonical_library/objects/cultural_background/mesopotamian-creation-and-flood-comparisons.json",
+          "framework/canonical_library/objects/cultural_background/pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status.json",
+          "framework/canonical_library/objects/cultural_background/pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel.json",
+          "framework/canonical_library/objects/cultural_background/pauline-kinship-guardianship-slavery-and-inheritance.json",
+          "framework/canonical_library/objects/cultural_background/pauline-women-coworkers-prophecy-and-assembly-authority.json",
+          "framework/canonical_library/objects/cultural_background/persian-restoration-and-yehud-administration.json",
+          "framework/canonical_library/objects/cultural_background/roman-rome-jewish-civic-household-and-imperial-life.json",
+          "framework/commentary/orchestrator.py",
+          "framework/commentary/production/census.py",
+          "framework/commentary/production/handoff.py",
+          "framework/commentary/production/inputs.py",
+          "framework/commentary/production/ledger.py",
+          "framework/commentary/production/manifests.py",
+          "framework/commentary/production/models.py",
+          "framework/commentary/production/normalization.py",
+          "framework/commentary/production/recovery.py",
+          "framework/commentary/production/runner.py",
+          "framework/commentary/production/runtime.py",
+          "framework/commentary/production/sampling.py",
+          "framework/commentary/publish.py",
+          "framework/commentary/reconciliation.py",
+          "framework/commentary/recovery.py",
+          "tools/build_final_four_audit_artifacts.py",
+          "tools/ckl_scope_audit.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_canary_import.py",
+          "tools/commentary_production.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_renderer_qualification.py",
+          "tools/commentary_renderer_qualification_v2.py",
+          "tools/commentary_renderer_remediation.py",
+          "tools/commentary_renderer_selection_breadth_diagnostic.py",
+          "tools/commentary_richness_audit.py",
+          "tools/commentary_richness_scoring_remediation.py",
+          "tools/commentary_v11_canary.py",
+          "tools/commentary_v11_expansion.py",
+          "tools/commentary_v11_low_information.py",
+          "tools/commentary_v11_post_generation.py",
+          "tools/commentary_v11_quarantine_recovery.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/commentary_v11_semantic.py",
+          "tools/commentary_v11_semantic_pass2.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_five_chapter_structured_enrichment.py",
+          "tools/commentary_v12_five_chapter_structured_enrichment_validate.py",
+          "tools/commentary_v12_output_conformance.py",
+          "tools/commentary_v12_post_applicability_coverage_census.py",
+          "tools/commentary_v12_prompt_18_bounded_validation.py",
+          "tools/commentary_v12_reader_idea_ancestry_envelope.py",
+          "tools/commentary_v12_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_reader_provenance_binding.py",
+          "tools/commentary_v12_reader_provenance_binding_v2_bounded_validation.py",
+          "tools/commentary_v12_reader_provenance_reference_presentation_v1_bounded_validation.py",
+          "tools/commentary_v12_release_promotion.py",
+          "tools/commentary_v12_richness_audit.py",
+          "tools/commentary_v12_richness_gate_v2.py",
+          "tools/commentary_v12_scale_pilot.py",
+          "tools/commentary_v12_scale_pilot_provenance_binding.py",
+          "tools/commentary_v12_scale_render.py",
+          "tools/commentary_v12_terra_75_scale_validation.py",
+          "tools/commentary_v12_terra_scale_pilot.py",
+          "tools/commentary_v12_two_chapter_omission_audit.py",
+          "tools/commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tools/commentary_v13_genesis.py",
+          "tools/commentary_v13_pilot.py",
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v14_calibration_evaluate.py",
+          "tools/commentary_v14_within_family_audit.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py",
+          "tools/commentary_v15_batch3_render.py",
+          "tools/commentary_v15_scale_evaluate.py",
+          "tools/commentary_v15_scale_import.py",
+          "tools/commentary_v15_scale_prepare.py",
+          "tools/commentary_v15_scale_render.py",
+          "tools/commentary_v15_targeted_evaluate.py",
+          "tools/commentary_v15_targeted_rerender.py",
+          "tools/dense_reader_experiment.py",
+          "tools/diagnose_commentary_consolidation.py",
+          "tools/reader_level_idea_projection.py",
+          "tools/terra_commentary_canary.py",
+          "tools/terra_commentary_remediation.py",
+          "tools/terra_commentary_scaled_batch.py",
+          "tools/terra_commentary_supplemental_control.py"
+        ],
+        "runtime_configuration": [
+          ".github/workflows/export-sol-qualification-artifact.yml"
+        ],
+        "tests": [
+          "tests/canonical_library/test_runtime_cache.py",
+          "tests/frontend/bhf-commentary-card.test.js",
+          "tests/frontend/bhf-commentary-offline.test.js",
+          "tests/frontend/companion-context-controller.test.js",
+          "tests/frontend/companion-context.test.js",
+          "tests/test_agent_config.py",
+          "tests/test_ai_setup.py",
+          "tests/test_asv_passage_boundary.py",
+          "tests/test_bhf_commentary_projection.py",
+          "tests/test_chapter_commentary.py",
+          "tests/test_ckl_commentary_v12_structured_claims.py",
+          "tests/test_ckl_scope_audit.py",
+          "tests/test_cli.py",
+          "tests/test_commentary_canonical_runtime.py",
+          "tests/test_commentary_consolidation.py",
+          "tests/test_commentary_coverage.py",
+          "tests/test_commentary_evidence_applicability.py",
+          "tests/test_commentary_output_conformance.py",
+          "tests/test_commentary_pipeline_orchestrator.py",
+          "tests/test_commentary_production.py",
+          "tests/test_commentary_production_data_gap_adjudication.py",
+          "tests/test_commentary_production_handoff.py",
+          "tests/test_commentary_production_runtime.py",
+          "tests/test_commentary_publish.py",
+          "tests/test_commentary_quarantine_recovery.py",
+          "tests/test_commentary_remediation.py",
+          "tests/test_commentary_remediation_groups.py",
+          "tests/test_commentary_renderer_qualification.py",
+          "tests/test_commentary_renderer_qualification_v2.py",
+          "tests/test_commentary_renderer_remediation.py",
+          "tests/test_commentary_v11_expansion.py",
+          "tests/test_commentary_v11_low_information.py",
+          "tests/test_commentary_v11_scaled_preflight.py",
+          "tests/test_commentary_v11_semantic.py",
+          "tests/test_commentary_v11_semantic_pass2.py",
+          "tests/test_commentary_v12_canary.py",
+          "tests/test_commentary_v12_external_import.py",
+          "tests/test_commentary_v12_five_chapter_structured_enrichment.py",
+          "tests/test_commentary_v12_post_applicability_coverage_census.py",
+          "tests/test_commentary_v12_reader_idea_ancestry_envelope.py",
+          "tests/test_commentary_v12_reader_projection_seven_chapter.py",
+          "tests/test_commentary_v12_reader_provenance_binding.py",
+          "tests/test_commentary_v12_release_promotion.py",
+          "tests/test_commentary_v12_richness_clusters.py",
+          "tests/test_commentary_v12_scale_pilot.py",
+          "tests/test_commentary_v12_scale_pilot_provenance_binding.py",
+          "tests/test_commentary_v12_synthesis.py",
+          "tests/test_commentary_v12_terra_75_scale_validation.py",
+          "tests/test_commentary_v12_terra_scale_pilot.py",
+          "tests/test_commentary_v12_two_chapter_omission_audit.py",
+          "tests/test_commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tests/test_commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tests/test_commentary_v12_validation.py",
+          "tests/test_commentary_v13_pilot.py",
+          "tests/test_commentary_v15_batch3_evaluate.py",
+          "tests/test_commentary_v15_scale_evaluate.py",
+          "tests/test_docker_compose.py",
+          "tests/test_eval_local.py",
+          "tests/test_eval_suite.py",
+          "tests/test_memory.py",
+          "tests/test_notes.py",
+          "tests/test_openai_compatible_adapter.py",
+          "tests/test_presentation_jobs.py",
+          "tests/test_presentation_pipeline.py",
+          "tests/test_presentation_runtime.py",
+          "tests/test_presentation_structured_output.py",
+          "tests/test_reader_level_idea_projection.py",
+          "tests/test_reader_provenance_binding_v2.py",
+          "tests/test_renderer_reference_presentation_v1.py",
+          "tests/test_repair.py",
+          "tests/test_runner.py",
+          "tests/test_terra_commentary_scaled_batch.py",
+          "tests/test_terra_commentary_supplemental_control.py",
+          "tests/test_tyndale_evidence.py",
+          "tests/test_vercel_packaging.py",
+          "tests/test_vercel_startup.py",
+          "tests/test_web_app.py",
+          "tests/test_web_settings.py"
+        ]
+      },
+      "directory_count": 27,
+      "file_count": 141,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-production/v1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Aggregate directory inventory; individual release payloads are verified by their manifests/checksum indexes.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": true,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 400517308,
+      "classification": "ACTIVE_VALIDATION_ARTIFACT",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/ckl-parent-scope-integrity-audit.md",
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-dense-reader-v0.1.md",
+          "docs/commentary-v1.0.1-correctness.md",
+          "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
+          "docs/commentary-v1.1-canary-report.md",
+          "docs/commentary-v1.1-expansion-plan.md",
+          "docs/commentary-v1.1-pipeline-orchestrator.md",
+          "docs/commentary-v1.1-release.md",
+          "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/commentary-v1.1-release/vercel-packaging-audit.json",
+          "docs/commentary-v1.1-semantic-relevance-audit.md",
+          "docs/commentary-v1.2-architecture-baseline.md",
+          "docs/commentary-v1.2-evidence-applicability-contract-freeze-v1.json",
+          "docs/commentary-v1.2-evidence-applicability-enforcement-v1.md",
+          "docs/commentary-v1.2-external-renderer.md",
+          "docs/commentary-v1.2-five-chapter-structured-enrichment-v1.md",
+          "docs/commentary-v1.2-output-conformance-v1.md",
+          "docs/commentary-v1.2-post-applicability-coverage-census-v1.md",
+          "docs/commentary-v1.2-prompt-1.7-selection-breadth.md",
+          "docs/commentary-v1.2-prompt-1.8-renderability-remediation.md",
+          "docs/commentary-v1.2-reader-enrichment.md",
+          "docs/commentary-v1.2-reader-idea-ancestry-envelope-v1.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-v1.md",
+          "docs/commentary-v1.2-reader-provenance-binding-v1.md",
+          "docs/commentary-v1.2-reader-provenance-reference-presentation.md",
+          "docs/commentary-v1.2-renderer-qualification-v2.md",
+          "docs/commentary-v1.2-renderer-transport-diagnostic-v1.md",
+          "docs/commentary-v1.2-richness-scoring-remediation.md",
+          "docs/commentary-v1.2-scale-pilot-provenance-binding-v1.md",
+          "docs/commentary-v1.2-scale-pilot.md",
+          "docs/commentary-v1.2-terra-75-scale-validation-v1.md",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md",
+          "docs/commentary-v1.2-unified-reader-projection-seven-chapter.md",
+          "docs/commentary-v1.2-upstream-evidence-quality-diagnostic-v1.md",
+          "docs/vercel-function-bundle-audit.json",
+          "docs/vercel-function-bundle-audit.md"
+        ],
+        "python": [
+          "bhf_agent/runtime_paths.py",
+          "framework/commentary/orchestrator.py",
+          "framework/commentary/production/census.py",
+          "framework/commentary/publish.py",
+          "framework/commentary/reconciliation.py",
+          "framework/commentary/recovery.py",
+          "tools/build_final_four_audit_artifacts.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_renderer_qualification.py",
+          "tools/commentary_renderer_qualification_v2.py",
+          "tools/commentary_renderer_remediation.py",
+          "tools/commentary_renderer_selection_breadth_diagnostic.py",
+          "tools/commentary_richness_audit.py",
+          "tools/commentary_richness_scoring_remediation.py",
+          "tools/commentary_v11_canary.py",
+          "tools/commentary_v11_expansion.py",
+          "tools/commentary_v11_low_information.py",
+          "tools/commentary_v11_post_generation.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/commentary_v11_semantic.py",
+          "tools/commentary_v11_semantic_pass2.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_five_chapter_structured_enrichment.py",
+          "tools/commentary_v12_output_conformance.py",
+          "tools/commentary_v12_post_applicability_coverage_census.py",
+          "tools/commentary_v12_prompt_18_bounded_validation.py",
+          "tools/commentary_v12_reader_idea_ancestry_envelope.py",
+          "tools/commentary_v12_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_reader_provenance_binding.py",
+          "tools/commentary_v12_reader_provenance_binding_v2_bounded_validation.py",
+          "tools/commentary_v12_reader_provenance_reference_presentation_v1_bounded_validation.py",
+          "tools/commentary_v12_release_promotion.py",
+          "tools/commentary_v12_richness_audit.py",
+          "tools/commentary_v12_richness_gate_v2.py",
+          "tools/commentary_v12_scale_pilot.py",
+          "tools/commentary_v12_scale_pilot_provenance_binding.py",
+          "tools/commentary_v12_terra_75_scale_validation.py",
+          "tools/commentary_v12_terra_scale_pilot.py",
+          "tools/commentary_v12_two_chapter_omission_audit.py",
+          "tools/commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tools/commentary_v13_genesis.py",
+          "tools/commentary_v13_pilot.py",
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v14_calibration_evaluate.py",
+          "tools/commentary_v14_within_family_audit.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py",
+          "tools/commentary_v15_batch3_render.py",
+          "tools/commentary_v15_scale_evaluate.py",
+          "tools/commentary_v15_scale_import.py",
+          "tools/commentary_v15_scale_prepare.py",
+          "tools/commentary_v15_scale_render.py",
+          "tools/commentary_v15_targeted_evaluate.py",
+          "tools/commentary_v15_targeted_rerender.py",
+          "tools/dense_reader_experiment.py",
+          "tools/diagnose_commentary_consolidation.py",
+          "tools/reader_level_idea_projection.py",
+          "tools/terra_commentary_canary.py",
+          "tools/terra_commentary_scaled_batch.py",
+          "tools/terra_commentary_supplemental_control.py"
+        ],
+        "runtime_configuration": [
+          ".github/workflows/export-sol-qualification-artifact.yml",
+          ".vercelignore",
+          "vercel.json"
+        ],
+        "tests": [
+          "tests/test_commentary_canonical_runtime.py",
+          "tests/test_commentary_consolidation.py",
+          "tests/test_commentary_evidence_applicability.py",
+          "tests/test_commentary_output_conformance.py",
+          "tests/test_commentary_pipeline_orchestrator.py",
+          "tests/test_commentary_publish.py",
+          "tests/test_commentary_quarantine_recovery.py",
+          "tests/test_commentary_remediation.py",
+          "tests/test_commentary_remediation_groups.py",
+          "tests/test_commentary_renderer_qualification_v2.py",
+          "tests/test_commentary_v11_semantic_pass2.py",
+          "tests/test_commentary_v12_reader_idea_ancestry_envelope.py",
+          "tests/test_commentary_v12_reader_provenance_binding.py",
+          "tests/test_commentary_v12_release_promotion.py",
+          "tests/test_commentary_v12_richness_clusters.py",
+          "tests/test_commentary_v12_terra_75_scale_validation.py",
+          "tests/test_commentary_v12_terra_scale_pilot.py",
+          "tests/test_commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tests/test_commentary_v12_validation.py",
+          "tests/test_reader_level_idea_projection.py",
+          "tests/test_renderer_reference_presentation_v1.py",
+          "tests/test_terra_commentary_scaled_batch.py",
+          "tests/test_vercel_packaging.py",
+          "tests/test_vercel_startup.py",
+          "tests/test_web_settings.py"
+        ]
+      },
+      "directory_count": 1073,
+      "file_count": 8861,
+      "first_identifiable_version": "legacy",
+      "path": ".bhf-data/bhf-commentary-candidates",
+      "proposed_action": "KEEP",
+      "reason": "Aggregate directory inventory; individual release payloads are verified by their manifests/checksum indexes.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 308794,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-dense-reader-v0.1.md"
+        ],
+        "python": [
+          "bhf_agent/chapter_commentary/dense_reader.py",
+          "framework/commentary/production/census.py",
+          "framework/commentary/production/manifests.py",
+          "framework/commentary/production/runtime.py",
+          "tools/dense_reader_experiment.py"
+        ]
+      },
+      "directory_count": 3,
+      "file_count": 13,
+      "first_identifiable_version": "v0.1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-dense-reader-v0.1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 280074,
+      "classification": "ACTIVE_VALIDATION_ARTIFACT",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-output-conformance-v1.md"
+        ],
+        "python": [
+          "tools/commentary_artifact_inventory.py"
+        ],
+        "tests": [
+          "tests/test_commentary_output_conformance.py"
+        ]
+      },
+      "directory_count": 27,
+      "file_count": 75,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-output-conformance-v1-d278cba2d2151d1b4242",
+      "proposed_action": "KEEP",
+      "reason": "Current conformance regression coverage still reads this frozen artifact.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 272561,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ]
+      },
+      "directory_count": 27,
+      "file_count": 74,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-output-conformance-v1-d66bea1878bb6c198b08",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 5540051,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.0.1-correctness.md",
+          "docs/commentary-v1.0.1-release-notes.md",
+          "docs/commentary-v1.1-canary-report.md",
+          "docs/commentary-v1.1-expansion-plan.md",
+          "docs/commentary-v1.1-low-information-audit.md",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/commentary-v1.1-semantic-relevance-audit-2.md",
+          "docs/commentary-v1.1-semantic-relevance-audit.md",
+          "docs/commentary-v1.2-architecture-baseline.md"
+        ],
+        "python": [
+          "framework/commentary/reconciliation.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_v11_expansion.py",
+          "tools/commentary_v11_low_information.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/commentary_v11_semantic_pass2.py",
+          "tools/terra_commentary_canary.py"
+        ],
+        "tests": [
+          "tests/frontend/bhf-commentary-offline.test.js",
+          "tests/test_commentary_canonical_runtime.py",
+          "tests/test_web_settings.py"
+        ]
+      },
+      "directory_count": 1,
+      "file_count": 1194,
+      "first_identifiable_version": "v1.0.1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 3572514,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/ckl-parent-scope-integrity-audit.md",
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
+          "docs/commentary-v1.1-canary-report.md",
+          "docs/commentary-v1.1-canonical-runtime-reconciliation.md",
+          "docs/commentary-v1.1-expansion-plan.md",
+          "docs/commentary-v1.1-final-corpus-certification.md",
+          "docs/commentary-v1.1-pipeline-orchestrator.md",
+          "docs/commentary-v1.1-postrelease-audit.md",
+          "docs/commentary-v1.1-premerge-audit.md",
+          "docs/commentary-v1.1-release.md",
+          "docs/commentary-v1.1-release/branch-cleanup-audit.json",
+          "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
+          "docs/commentary-v1.1-release/release-integrity.json",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/commentary-v1.1-release/vercel-packaging-audit.json",
+          "docs/commentary-v1.1-semantic-relevance-audit-2.md",
+          "docs/commentary-v1.1-semantic-relevance-audit.md",
+          "docs/commentary-v1.2-architecture-baseline.md",
+          "docs/commentary-v1.2-reader-enrichment.md",
+          "docs/vercel-function-bundle-audit.json",
+          "docs/vercel-function-bundle-audit.md"
+        ],
+        "python": [
+          "bhf_agent/runtime_paths.py",
+          "bhf_web/static/api/http.js",
+          "framework/commentary/orchestrator.py",
+          "framework/commentary/publish.py",
+          "framework/commentary/reconciliation.py",
+          "framework/commentary/recovery.py",
+          "tools/build_final_four_audit_artifacts.py",
+          "tools/ckl_scope_audit.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_v11_canary.py",
+          "tools/commentary_v11_expansion.py",
+          "tools/commentary_v11_low_information.py",
+          "tools/commentary_v11_post_generation.py",
+          "tools/commentary_v11_quarantine_recovery.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/commentary_v11_semantic.py",
+          "tools/commentary_v11_semantic_pass2.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_richness_gate_v2.py",
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tools/commentary_v13_pilot.py",
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py",
+          "tools/terra_commentary_canary.py",
+          "tools/terra_commentary_remediation.py",
+          "tools/terra_commentary_scaled_batch.py",
+          "tools/terra_commentary_supplemental_control.py"
+        ],
+        "tests": [
+          "tests/frontend/bhf-commentary-offline.test.js",
+          "tests/test_bhf_commentary_projection.py",
+          "tests/test_ckl_scope_audit.py",
+          "tests/test_commentary_canonical_runtime.py",
+          "tests/test_commentary_coverage.py",
+          "tests/test_commentary_evidence_applicability.py",
+          "tests/test_commentary_pipeline_orchestrator.py",
+          "tests/test_commentary_publish.py",
+          "tests/test_commentary_quarantine_recovery.py",
+          "tests/test_commentary_remediation.py",
+          "tests/test_commentary_remediation_groups.py",
+          "tests/test_commentary_v11_semantic_pass2.py",
+          "tests/test_commentary_v12_canary.py",
+          "tests/test_commentary_v12_release_promotion.py",
+          "tests/test_terra_commentary_scaled_batch.py",
+          "tests/test_terra_commentary_supplemental_control.py",
+          "tests/test_vercel_packaging.py",
+          "tests/test_vercel_startup.py",
+          "tests/test_web_app.py",
+          "tests/test_web_settings.py"
+        ]
+      },
+      "directory_count": 2,
+      "file_count": 34,
+      "first_identifiable_version": "v1.1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 277421504,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/ckl-parent-scope-integrity-audit.md",
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
+          "docs/commentary-v1.1-pipeline-orchestrator.md",
+          "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
+          "docs/commentary-v1.1-release/storage-classification.json",
+          "docs/vercel-function-bundle-audit.json"
+        ],
+        "python": [
+          "framework/commentary/orchestrator.py",
+          "framework/commentary/publish.py",
+          "framework/commentary/reconciliation.py",
+          "framework/commentary/recovery.py",
+          "tools/build_final_four_audit_artifacts.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_v11_post_generation.py",
+          "tools/commentary_v11_quarantine_recovery.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tools/commentary_v13_pilot.py",
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py",
+          "tools/terra_commentary_scaled_batch.py"
+        ],
+        "tests": [
+          "tests/test_commentary_canonical_runtime.py",
+          "tests/test_commentary_evidence_applicability.py",
+          "tests/test_commentary_pipeline_orchestrator.py",
+          "tests/test_commentary_quarantine_recovery.py",
+          "tests/test_commentary_remediation.py",
+          "tests/test_commentary_remediation_groups.py",
+          "tests/test_terra_commentary_scaled_batch.py",
+          "tests/test_vercel_packaging.py"
+        ]
+      },
+      "directory_count": 60,
+      "file_count": 2409,
+      "first_identifiable_version": "v1.1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": true,
+      "required_for_v1_1": true,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 73226,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.1-release/storage-classification.json"
+        ],
+        "python": [
+          "framework/commentary/orchestrator.py",
+          "framework/commentary/reconciliation.py",
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_release_audit.py",
+          "tools/commentary_v11_post_generation.py",
+          "tools/commentary_v11_scaled_preflight.py",
+          "tools/terra_commentary_canary.py",
+          "tools/terra_commentary_scaled_batch.py",
+          "tools/terra_commentary_supplemental_control.py"
+        ],
+        "tests": [
+          "tests/test_commentary_pipeline_orchestrator.py",
+          "tests/test_terra_commentary_supplemental_control.py"
+        ]
+      },
+      "directory_count": 4,
+      "file_count": 29,
+      "first_identifiable_version": "v1.1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": true,
+      "required_for_v1_1": true,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 3424488,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-evidence-applicability-enforcement-v1.md"
+        ],
+        "python": [
+          "tools/commentary_v12_post_applicability_coverage_census.py"
+        ]
+      },
+      "directory_count": 5,
+      "file_count": 26,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-applicability-enforcement-v1-96f7b9c60c4768cc564ef819",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 5032885,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-architecture-baseline.md",
+          "docs/commentary-v1.2-evidence-applicability-contract-freeze-v1.json",
+          "docs/commentary-v1.2-external-renderer.md",
+          "docs/commentary-v1.2-prompt-1.7-selection-breadth.md",
+          "docs/commentary-v1.2-prompt-1.8-renderability-remediation.md",
+          "docs/commentary-v1.2-reader-enrichment.md",
+          "docs/commentary-v1.2-reader-idea-ancestry-envelope-v1.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-v1.md",
+          "docs/commentary-v1.2-reader-provenance-binding-v1.md",
+          "docs/commentary-v1.2-renderer-qualification-v2.md",
+          "docs/commentary-v1.2-richness-scoring-remediation.md",
+          "docs/commentary-v1.2-scale-pilot.md",
+          "docs/commentary-v1.2-terra-75-scale-validation-v1.md",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md",
+          "docs/commentary-v1.2-unified-reader-projection-seven-chapter.md"
+        ],
+        "python": [
+          "tools/commentary_canary_import.py",
+          "tools/commentary_richness_audit.py",
+          "tools/commentary_richness_scoring_remediation.py",
+          "tools/commentary_v12_canary.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_five_chapter_structured_enrichment.py",
+          "tools/commentary_v12_post_applicability_coverage_census.py",
+          "tools/commentary_v12_reader_idea_ancestry_envelope.py",
+          "tools/commentary_v12_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_reader_provenance_reference_presentation_v1_bounded_validation.py",
+          "tools/commentary_v12_richness_audit.py",
+          "tools/commentary_v12_richness_gate_v2.py",
+          "tools/commentary_v12_scale_pilot.py",
+          "tools/commentary_v12_terra_75_scale_validation.py",
+          "tools/commentary_v12_terra_scale_pilot.py",
+          "tools/commentary_v12_two_chapter_omission_audit.py",
+          "tools/commentary_v12_unified_reader_projection_seven_chapter.py",
+          "tools/commentary_v13_genesis.py",
+          "tools/diagnose_commentary_consolidation.py",
+          "tools/reader_level_idea_projection.py"
+        ],
+        "runtime_configuration": [
+          ".github/workflows/export-sol-qualification-artifact.yml"
+        ],
+        "tests": [
+          "tests/test_commentary_consolidation.py",
+          "tests/test_commentary_v12_richness_clusters.py"
+        ]
+      },
+      "directory_count": 28,
+      "file_count": 198,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 1295434,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-five-chapter-structured-enrichment-v1.md"
+        ]
+      },
+      "directory_count": 29,
+      "file_count": 106,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-five-chapter-structured-enrichment-v1-22e32598",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 3007515,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-post-applicability-coverage-census-v1.md"
+        ],
+        "python": [
+          "tools/commentary_v12_five_chapter_structured_enrichment.py",
+          "tools/commentary_v12_terra_scale_pilot.py"
+        ]
+      },
+      "directory_count": 2,
+      "file_count": 91,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-post-applicability-coverage-census-v1-5cd6a3e32d5b4dcb03e5ecf0",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 259462,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-evidence-applicability-contract-freeze-v1.json",
+          "docs/commentary-v1.2-prompt-1.8-renderability-remediation.md"
+        ],
+        "python": [
+          "tools/commentary_v12_terra_scale_pilot.py"
+        ]
+      },
+      "directory_count": 14,
+      "file_count": 33,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-prompt-1.8-bounded-validation-v1-c1b33885962b7361c1ed",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 938524,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "tests": [
+          "tests/test_renderer_reference_presentation_v1.py"
+        ]
+      },
+      "directory_count": 31,
+      "file_count": 119,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-reader-provenance-binding-v2-bounded-validation-v1-023f67f998ec3f853936",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1150366,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-reader-provenance-reference-presentation.md"
+        ],
+        "python": [
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py"
+        ]
+      },
+      "directory_count": 29,
+      "file_count": 109,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-reader-provenance-renderer-reference-presentation-v1-bounded-validation-v1-ce695db52b3ad2d0e6f8",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 6005860,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-post-applicability-coverage-census-v1.md",
+          "docs/commentary-v1.2-scale-pilot-provenance-binding-v1.md",
+          "docs/commentary-v1.2-scale-pilot.md"
+        ],
+        "python": [
+          "tools/commentary_v12_post_applicability_coverage_census.py",
+          "tools/commentary_v12_reader_provenance_binding.py",
+          "tools/commentary_v12_scale_pilot_provenance_binding.py"
+        ]
+      },
+      "directory_count": 95,
+      "file_count": 508,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-scale-pilot-922472547555015a3ced",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 10119354,
+      "classification": "ACTIVE_VALIDATION_ARTIFACT",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-output-conformance-v1.md",
+          "docs/commentary-v1.2-scale-pilot-provenance-binding-v1.md"
+        ],
+        "python": [
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_v12_output_conformance.py"
+        ]
+      },
+      "directory_count": 123,
+      "file_count": 928,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-scale-pilot-provenance-binding-v1-f139d722270544978d04",
+      "proposed_action": "KEEP",
+      "reason": "The frozen v1.2 validation chain retains its source identity and audit bindings.",
+      "required_for_current_release_promotion": true,
+      "required_for_reproducibility": true,
+      "required_for_v1_1": false,
+      "required_for_v1_2": true,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 11412978,
+      "classification": "ACTIVE_RELEASE_AUDIT",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-terra-75-scale-validation-v1.md"
+        ],
+        "python": [
+          "tools/commentary_artifact_inventory.py",
+          "tools/commentary_v12_release_promotion.py"
+        ],
+        "tests": [
+          "tests/test_commentary_v12_terra_75_scale_validation.py"
+        ]
+      },
+      "directory_count": 89,
+      "file_count": 410,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-terra-75-scale-validation-v1-e8af58131e066def98a2",
+      "proposed_action": "KEEP",
+      "reason": "The v1.2 promotion tool consumes this immutable validation source.",
+      "required_for_current_release_promotion": true,
+      "required_for_reproducibility": true,
+      "required_for_v1_1": false,
+      "required_for_v1_2": true,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 4064799,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_v12_terra_75_scale_validation.py"
+        ]
+      },
+      "directory_count": 107,
+      "file_count": 252,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-terra-scale-pilot-v1-27c7ed5c4afa644e05ed",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 3172598,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ]
+      },
+      "directory_count": 53,
+      "file_count": 133,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-terra-scale-pilot-v1-ffc97bb8db5ad0d1a461",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 1630164,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-upstream-evidence-quality-diagnostic-v1.md"
+        ],
+        "python": [
+          "tools/commentary_v12_evidence_applicability_enforcement.py"
+        ]
+      },
+      "directory_count": 4,
+      "file_count": 19,
+      "first_identifiable_version": "v1.2",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-upstream-evidence-quality-diagnostic-v1-4bf89c81144e13aad6eae6b3",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 80840,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_v13_genesis.py",
+          "tools/commentary_v13_pilot.py"
+        ]
+      },
+      "directory_count": 2,
+      "file_count": 2,
+      "first_identifiable_version": "v1.3",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.3-consolidation",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1278768,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_v13_pilot.py",
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v14_calibration_evaluate.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py"
+        ]
+      },
+      "directory_count": 9,
+      "file_count": 83,
+      "first_identifiable_version": "v1.3",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.3-pilot",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 355331,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_v14_calibration.py",
+          "tools/commentary_v14_calibration_evaluate.py",
+          "tools/commentary_v14_within_family_audit.py",
+          "tools/commentary_v15_batch3_evaluate.py"
+        ]
+      },
+      "directory_count": 9,
+      "file_count": 22,
+      "first_identifiable_version": "v1.4",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-calibration",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1036980,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_v14_within_family_audit.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_targeted_evaluate.py",
+          "tools/commentary_v15_targeted_rerender.py"
+        ]
+      },
+      "directory_count": 9,
+      "file_count": 49,
+      "first_identifiable_version": "v1.4",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-pilot-batch-2",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 514570,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_richness_scoring_remediation.py",
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_batch3_prepare.py",
+          "tools/commentary_v15_batch3_render.py"
+        ]
+      },
+      "directory_count": 9,
+      "file_count": 48,
+      "first_identifiable_version": "v1.5",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-batch-3",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 40240300,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "framework/commentary/production/census.py",
+          "tools/commentary_v12_evidence_applicability_enforcement.py",
+          "tools/commentary_v12_scale_pilot.py",
+          "tools/commentary_v12_upstream_evidence_quality_diagnostic.py",
+          "tools/commentary_v15_scale_evaluate.py",
+          "tools/commentary_v15_scale_import.py",
+          "tools/commentary_v15_scale_prepare.py",
+          "tools/commentary_v15_scale_render.py",
+          "tools/dense_reader_experiment.py"
+        ],
+        "tests": [
+          "tests/test_commentary_evidence_applicability.py",
+          "tests/test_commentary_v12_validation.py"
+        ]
+      },
+      "directory_count": 81,
+      "file_count": 1139,
+      "first_identifiable_version": "v1.5",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 554816,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_v15_batch3_evaluate.py",
+          "tools/commentary_v15_targeted_evaluate.py",
+          "tools/commentary_v15_targeted_rerender.py"
+        ]
+      },
+      "directory_count": 9,
+      "file_count": 23,
+      "first_identifiable_version": "v1.5",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 287184,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md"
+        ],
+        "tests": [
+          "tests/test_commentary_v12_two_chapter_omission_audit.py"
+        ]
+      },
+      "directory_count": 1,
+      "file_count": 1,
+      "first_identifiable_version": "legacy",
+      "path": ".bhf-data/bhf-commentary-candidates/prompt-1.7-omission-audit-5166b2b6065bee070ee7",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 201701,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-reader-idea-ancestry-envelope-v1.md"
+        ],
+        "tests": [
+          "tests/test_commentary_v12_reader_idea_ancestry_envelope.py"
+        ]
+      },
+      "directory_count": 9,
+      "file_count": 16,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-idea-ancestry-envelope-v1-b970c53e1dc561f23530",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 299621,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-reader-level-idea-projection-v1.md"
+        ],
+        "python": [
+          "tools/commentary_v12_reader_projection_seven_chapter.py"
+        ]
+      },
+      "directory_count": 12,
+      "file_count": 26,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-level-idea-projection-v1-1d7761ad8f69c739e395",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 274244,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ]
+      },
+      "directory_count": 8,
+      "file_count": 19,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-level-idea-projection-v1-2c6ef478492fe18246a5",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 272731,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ]
+      },
+      "directory_count": 8,
+      "file_count": 19,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-level-idea-projection-v1-aba25de1f5f5a665a8d4",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 1657888,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md"
+        ],
+        "python": [
+          "tools/commentary_v12_reader_idea_ancestry_envelope.py",
+          "tools/commentary_v12_unified_reader_projection_seven_chapter.py"
+        ]
+      },
+      "directory_count": 18,
+      "file_count": 71,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-level-idea-projection-v1-seven-chapter-e01fcbe6fe39ba6949fc",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 1597936,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-unified-reader-projection-seven-chapter.md"
+        ],
+        "tests": [
+          "tests/test_commentary_v12_unified_reader_projection_seven_chapter.py"
+        ]
+      },
+      "directory_count": 18,
+      "file_count": 87,
+      "first_identifiable_version": "legacy",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-projection-ancestry-envelope-seven-chapter-ee44d0e3507b66a10aab",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 403937,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-reader-provenance-binding-v1.md"
+        ],
+        "tests": [
+          "tests/test_commentary_v12_reader_provenance_binding.py"
+        ]
+      },
+      "directory_count": 14,
+      "file_count": 45,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/reader-provenance-binding-v1-6bceab0758ee36f2c176",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1073083,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json"
+        ],
+        "python": [
+          "tools/commentary_renderer_remediation.py",
+          "tools/commentary_richness_scoring_remediation.py"
+        ]
+      },
+      "directory_count": 13,
+      "file_count": 29,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 3781277,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-renderer-qualification-v2.md",
+          "docs/commentary-v1.2-richness-scoring-remediation.md",
+          "docs/commentary-v1.2-sol-renderer-remediation.md"
+        ],
+        "python": [
+          "tools/commentary_renderer_qualification.py",
+          "tools/commentary_renderer_qualification_v2.py",
+          "tools/commentary_renderer_remediation.py",
+          "tools/commentary_richness_scoring_remediation.py"
+        ],
+        "runtime_configuration": [
+          ".github/workflows/export-sol-qualification-artifact.yml"
+        ],
+        "tests": [
+          "tests/test_commentary_renderer_qualification_v2.py"
+        ]
+      },
+      "directory_count": 61,
+      "file_count": 201,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 3758457,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-prompt-1.7-selection-breadth.md",
+          "docs/commentary-v1.2-renderer-qualification-v2.md",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md"
+        ],
+        "python": [
+          "tools/commentary_renderer_selection_breadth_diagnostic.py",
+          "tools/commentary_v12_two_chapter_omission_audit.py"
+        ]
+      },
+      "directory_count": 29,
+      "file_count": 158,
+      "first_identifiable_version": "v2",
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 1829711,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-prompt-1.7-selection-breadth.md",
+          "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md",
+          "docs/commentary-v1.2-two-chapter-omission-audit.md"
+        ],
+        "python": [
+          "tools/commentary_v12_reader_projection_seven_chapter.py",
+          "tools/commentary_v12_two_chapter_omission_audit.py",
+          "tools/reader_level_idea_projection.py"
+        ],
+        "tests": [
+          "tests/test_reader_level_idea_projection.py"
+        ]
+      },
+      "directory_count": 15,
+      "file_count": 55,
+      "first_identifiable_version": "legacy",
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-remediation-prompt-1.7-selection-breadth-7e1f844705a27ef5d2a1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    },
+    {
+      "bytes": 2034782,
+      "classification": "UNKNOWN_REQUIRES_REVIEW",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-v1.2-richness-scoring-remediation.md"
+        ],
+        "python": [
+          "tools/commentary_renderer_qualification_v2.py",
+          "tools/commentary_richness_scoring_remediation.py"
+        ]
+      },
+      "directory_count": 5,
+      "file_count": 8,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/richness-scoring-remediation-v1",
+      "proposed_action": "REVIEW_ONLY",
+      "reason": "Locally present artifact requires explicit review before removal.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": true
+    },
+    {
+      "bytes": 74715,
+      "classification": "TEMPORARY_DIAGNOSTIC",
+      "current_consumer_or_reference": {
+        "docs": [
+          "docs/commentary-v1.2-renderer-transport-diagnostic-v1.md"
+        ],
+        "git_source_commit": "5a3cb3329a3671f81db187f85478b770f068f233"
+      },
+      "directory_count": 1,
+      "file_count": 17,
+      "first_identifiable_version": "v1",
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-renderer-transport-diagnostic-v1",
+      "present": false,
+      "proposed_action": "REMOVED_FROM_HEAD",
+      "reason": "Transport diagnosis is resolved; the immutable audit report remains in docs and Git history preserves raw evidence.",
+      "required_for_current_release_promotion": false,
+      "required_for_reproducibility": false,
+      "required_for_v1_1": false,
+      "required_for_v1_2": false,
+      "type": "directory",
+      "worktree_modified": false
+    }
+  ]
+}
