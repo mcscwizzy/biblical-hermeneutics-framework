@@ -1,0 +1,72 @@
+{
+  "reference": "2 Kings 4",
+  "book": "2 Kings",
+  "chapter": 4,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "Debt and Provision",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The widow\u2019s crisis is concrete and economic: a creditor is coming to take her two sons, while the only resource in her house is a small amount of oil. Elisha has her gather empty jars, and the oil becomes enough to sell, pay the debt, and support the household. The episode therefore turns an immediate household emergency into provision that addresses both the debt and the family\u2019s continuing needs.",
+          "verse_refs": [
+            "2 Kings 4:1-7"
+          ],
+          "evidence_ids": [
+            "second-kings-4-widow-oil-debt"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_96c96932ebdb"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Elisha among Households and Communities",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter places Elisha in several settings rather than a single public scene. A socially established woman in Shunem repeatedly gives him hospitality and prepares a small room for him; after she is promised and bears a son, the child dies and she seeks Elisha at Carmel. The account carefully traces Elisha\u2019s response through the staff sent with Gehazi, his prayer, and his return to the child. Later, during famine, Elisha\u2019s prophetic community faces a dangerous communal stew, which is made safe, and a gift of firstfruits\u2014twenty barley loaves and fresh grain\u2014is distributed among a hundred people with food left over. These scenes show the chapter\u2019s attention to households, a prophetic community, scarcity, and shared food.",
+          "verse_refs": [
+            "2 Kings 4:18-37",
+            "2 Kings 4:38-41",
+            "2 Kings 4:42-44",
+            "2 Kings 4:8-17"
+          ],
+          "evidence_ids": [
+            "second-kings-4-firstfruits-feeding",
+            "second-kings-4-prophetic-community-famine",
+            "second-kings-4-shunammite-hospitality-promise",
+            "second-kings-4-shunem-child-carmel"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_bf0988075d7f"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8de80faf2fed3fc93bc666c8d506da7261d4294b9ad8dc92317c8c8d9bda0a55",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "4f00805a542cb29fa4f05cecf6a6780b6fc83b11be72a9d178f894129653bab8",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

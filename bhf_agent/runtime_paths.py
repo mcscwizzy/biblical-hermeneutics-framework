@@ -15,6 +15,7 @@ _COMMENTARY_RELEASE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 _PACKAGED_COMMENTARY_DIRS = {
     DEFAULT_COMMENTARY_RELEASE: ".bhf-data/bhf-commentary-v1.1",
     LEGACY_COMMENTARY_RELEASE: ".bhf-data/bhf-commentary",
+    "commentary-v1.2": ".bhf-data/bhf-commentary-v1.2",
 }
 
 

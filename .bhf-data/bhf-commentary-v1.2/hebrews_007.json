@@ -1,0 +1,118 @@
+{
+  "reference": "Hebrews 7",
+  "book": "Hebrews",
+  "chapter": 7,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "Priesthood and Law",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Verses 11\u201319 argue that a change in priesthood entails a change in law. The point is not that the law is worthless or that Torah has no continuing Jewish meaning; the chapter contrasts priestly arrangements in order to describe a \u201cbetter hope\u201d through which people approach God.",
+          "verse_refs": [
+            "Hebrews 7:11-19"
+          ],
+          "evidence_ids": [
+            "heb-priesthood-change",
+            "hebrews:interpretive_note:26"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_7e97def47d97",
+            "syn_interpretive_questions_498fc45e532a"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Melchizedek in the Argument",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Hebrews reads the brief portrayal of Melchizedek alongside Psalm 110 as a literary analogy for Jesus\u2019 enduring priesthood. Thus the statements that Melchizedek is \u201cwithout father, without mother,\u201d and without an end of life describe how he functions in this textual argument; they do not require the conclusion that the Genesis figure literally lacked parents or was Jesus.",
+          "verse_refs": [
+            "Hebrews 7:1-28",
+            "Hebrews 7:11-28"
+          ],
+          "evidence_ids": [
+            "heb-melchizedek",
+            "hebrews:interpretive_note:13",
+            "hebrews:interpretive_note:19"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_ddddfc6a6c35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "why_it_matters",
+      "title": "Reading the Contrast Carefully",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The chapter\u2019s contrast between priesthoods and covenants should not be treated as grounds for contempt toward Judaism, denigration of Torah, or erasure of living Jewish communities. Keeping Melchizedek\u2019s role within Hebrews\u2019 literary argument helps readers avoid turning the passage into a claim of Jewish inferiority.",
+          "verse_refs": [
+            "Hebrews 7:1-28",
+            "Hebrews 7:11-28"
+          ],
+          "evidence_ids": [
+            "heb-melchizedek",
+            "hebrews:interpretive_note:13",
+            "hebrews:interpretive_note:19"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_01c5639da866"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Reading Hebrews Alongside Leviticus",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Christian readings that connect Leviticus with Hebrews are later canonical reception. They should be distinguished from Leviticus itself and its own instructions to Israel.",
+          "verse_refs": [
+            "Hebrews 10:1-39",
+            "Hebrews 8:1-13",
+            "Hebrews 9:1-28"
+          ],
+          "evidence_ids": [
+            "leviticus:interpretive_note:3"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_699244a044f3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4122addd66cb0423ed34304130e17a05f2391bb7b29ae0c914a2da3562459696",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "2099e3a1cfac9e107b68b421070e279d8c9eda7be664b30412fd3b4c0fee9f97",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

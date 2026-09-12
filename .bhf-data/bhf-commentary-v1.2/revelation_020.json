@@ -1,0 +1,83 @@
+{
+  "reference": "Revelation 20",
+  "book": "Revelation",
+  "chapter": 20,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "Questions Raised by the Thousand Years",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter describes Satan\u2019s binding, the martyrs\u2019 life and reign with Christ for a thousand years, Satan\u2019s later release, and final judgment. It calls the martyrs\u2019 life and reign \u201cthe first resurrection\u201d and identifies the lake of fire as \u201cthe second death.\u201d The text itself does not settle the later questions readers ask about whether the thousand years and its sequence should be read chronologically or symbolically; interpretations differ.",
+          "verse_refs": [
+            "Revelation 20:1-10",
+            "Revelation 20:10-15",
+            "Revelation 20:4-6"
+          ],
+          "evidence_ids": [
+            "rev-first-resurrection",
+            "rev-millennium",
+            "rev-second-death"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_2a20eb8d4963"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_2",
+          "text": "The gathering of Gog and Magog and the final battle belong to Revelation\u2019s wider reworking of Ezekielian imagery. Rather than treating these scenes as isolated details, readers can recognize them as part of Revelation\u2019s own sequence of throne, plague, battle, city, river, and tree imagery.",
+          "verse_refs": [
+            "Revelation 20:7-10"
+          ],
+          "evidence_ids": [
+            "ezekiel-revelation-reuse"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_deba877b27b0"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Revelation\u2019s Scriptural Imagery",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Across Revelation, the visions repeatedly rework Israel\u2019s Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. This broader pattern helps explain why the chapter\u2019s images are densely connected with the book\u2019s larger symbolic world.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "rev-scriptural-reuse"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_2beef915f994"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "10bdd6520946a94624785538b521141e16dc31be7fc21d4076188d456c1018a0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "7a2027201221d400c7977cdb200c89f23d0480db934200e591ea5355b0dfc81e",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

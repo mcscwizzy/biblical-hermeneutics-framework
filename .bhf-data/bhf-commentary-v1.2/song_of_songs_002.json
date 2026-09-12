@@ -1,0 +1,69 @@
+{
+  "reference": "Song of Songs 2",
+  "book": "Song of Songs",
+  "chapter": 2,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "Voices and the refrain",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Verse 7 addresses the \u201cdaughters of Jerusalem\u201d and uses a refrain about not stirring up or awakening love before it pleases. Its precise syntax and force remain debated, so it should not be treated as a universal modern timetable for relationships. Across verses 8\u201317, the poetry gives both the woman and the man speech, initiative, desire, praise, and longing; although the gendered language and group address distinguish voices, not every individual speech assignment is certain.",
+          "verse_refs": [
+            "Song of Songs 2:7",
+            "Song of Songs 2:8-17"
+          ],
+          "evidence_ids": [
+            "song-awakening-refrains",
+            "song-embodied-mutual-desire",
+            "song-gendered-voices-uncertain-speakers"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_11e96748412f"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Reading the Song as poetry",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The Song as a whole is preserved in four fragmentary Hebrew manuscripts from the Judean Desert and in a highly literal Old Greek translation called Asma asmaton. Its recurring refrains, descriptions, images, and phrases create poetic coherence, but they do not establish one uncontested plot, wedding sequence, dream narrative, or biography. Jewish and Christian allegorical readings have been influential, yet the speakers themselves do not explicitly identify their love as an allegory.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "song-greek-qumran-witnesses",
+            "song-literal-allegorical-reception",
+            "song-lyric-coherence-no-fixed-plot"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_1f0e6f2e0a7b"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a4140c7bc0918b04c5db76d6865c04ea0a9902eff00fabf6794166d7b5216551",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "52e70298ba0d7780e427c7dc7b0794f6d3c8679a33fff7f5f759dcc2ddb8e0a8",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

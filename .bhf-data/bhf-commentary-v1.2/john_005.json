@@ -1,0 +1,70 @@
+{
+  "reference": "John 5",
+  "book": "John",
+  "chapter": 5,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "John 5 moves from a Sabbath healing to Jesus\u2019 response about the Father\u2019s continuing work. The chapter then develops the relation of Son and Father through themes of life, judgment, and testimony. The statement that Jesus was \u201cmaking himself equal with God\u201d first appears as the narrator\u2019s account of his opponents\u2019 inference; the following speech develops the issue rather than leaving that phrase to stand alone.",
+          "verse_refs": [
+            "John 5:1-47",
+            "John 5:1-9"
+          ],
+          "evidence_ids": [
+            "john-5-variant",
+            "john-sabbath-son"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_f189ba5cc497"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "A Textual Question",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Many Bibles include an explanation in John 5:3b\u20134 that an angel stirred the pool\u2019s water and that the first person entering was healed. Important early witnesses do not contain this explanation, and it is widely regarded as a later addition that explains why the sick man speaks of the water being stirred in verse 7. This means the wording should be read with awareness that its place in the earliest form of the passage is disputed.",
+          "verse_refs": [
+            "John 5:1-47",
+            "John 5:1-9"
+          ],
+          "evidence_ids": [
+            "john-5-variant",
+            "john-sabbath-son"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_f189ba5cc497"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d3fa0de785da3075222b13e711f3fe52cd94995cdb04b3c79e2a1c11b9ecffde",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "6e8e2c521f23702fdaec410a6293cf7c306a58d515d5b540d2390355de89cb5b",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
