@@ -1,0 +1,278 @@
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Hebrews 1.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_bce0363e74fcf5f3: Hebrews (categories: culture, interpretive_questions)
+- reader_idea_9e7cef220fbd9fbe: Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. (categories: archaeology, culture, surrounding_passages)
+
+RELEVANT:
+- reader_idea_127bcb134ffc9f32: New Testament authors quote and echo psalms in arguments about Jesus' suffering, resurrection, enthronement, priesthood, mission… (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_bce0363e74fcf5f3: Hebrews (importance: CORE; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["heb-son"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_0bac1776336b"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["heb-anonymous", "hebrews:interpretive_note:0"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_717547a5ad6c"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["hebrews:interpretive_note:4", "hebrews:interpretive_note:5"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_95fa35e89dda"}
+- path_4: {"confidence": "high", "disputed": true, "evidence_ids": ["heb-anonymous", "hebrews:interpretive_note:0"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_05ea3451634f"}
+- path_5: {"confidence": "medium", "disputed": true, "evidence_ids": ["hebrews:interpretive_note:4", "hebrews:interpretive_note:5"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_e010d011be94"}
+
+IDEA reader_idea_127bcb134ffc9f32: New Testament authors quote and echo psalms in arguments about Jesus' suffering, resurrection, enthronement, priesthood, mission… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["psalms-new-testament-reception"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_8479da0e3b6c"}
+
+IDEA reader_idea_9e7cef220fbd9fbe: Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. (importance: CORE; categories: archaeology, culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["heb-p46", "heb-sinaiticus", "hebrews:interpretive_note:39"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_0ca8e6e94760"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["heb-angels"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_0fecfe783c3c"}
+- path_3: {"confidence": "high", "disputed": true, "evidence_ids": ["heb-p46", "heb-sinaiticus", "hebrews:interpretive_note:39"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_a43549bbcd63"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. God, having of old time spoken unto the fathers in the prophets by divers portions and in divers manners, 2. hath at the end of these days spoken unto us in `his' Son, whom he appointed heir of all things, through whom also he made the worlds; 3. who being the effulgence of his glory, and the very image of his substance, and upholding all things by the word of his power, when he had made purification of sins, sat down on the right hand of the Majesty on high; 4. having become by so much better than the angels, as he hath inherited a more excellent name than they. 5. For unto which of the angels said he at any time, Thou art my Son, This day have I begotten thee? and again, I will be to him a Father, And he shall be to me a Son? 6. And when he again bringeth in the firstborn into the world he saith, And let all the angels of God worship him. 7. And of the angels he saith, Who maketh his angels winds, And his ministers a flame a fire: 8. but of the Son `he saith,' Thy throne, O God, is for ever and ever; And the sceptre of uprightness is the sceptre of thy kingdom. 9. Thou hast loved righteousness, and hated iniquity; Therefore God, thy God, hath anointed thee With the oil of gladness above thy fellows. 10. And, Thou, Lord, in the beginning didst lay the foundation of the earth, And the heavens are the works of thy hands: 11. They shall perish; but thou continuest: And they all shall wax old as doth a garment; 12. And as a mantle shalt thou roll them up, As a garment, and they shall be changed: But thou art the same, And thy years shall not fail. 13. But of which of the angels hath he said at any time, Sit thou on my right hand, Till I make thine enemies the footstool of thy feet? 14. Are they not all ministering spirits, sent forth to do service for the sake of them that shall inherit salvation?
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 1, "places": 0}, "evidence_categories": {"archaeology": 2, "culture": 22, "geography": 5, "history": 12}, "evidence_item_count": 41, "relationship_unit_count": 3, "specific_evidence_count": 10, "unit_kind_counts": {"cultural_context": 1, "interpretive_questions": 3, "surrounding_passages": 3, "why_it_matters": 2}, "unused_evidence_ids": ["bibliology:ancient_near_east_context:0", "bibliology:historical_context:0", "how-do-the-old-and-new-testaments-connect:ancient_near_east_context:0", "how-do-the-old-and-new-testaments-connect:historical_context:0", "inerrancy:ancient_near_east_context:0", "inerrancy:historical_context:0", "inspiration:ancient_near_east_context:0", "inspiration:historical_context:0", "jesus:ancient_near_east_context:0", "jesus:hebraic_worldview:0", "jesus:historical_context:0", "jesus:key_places:0", "jesus:key_places:1", "jesus:key_places:2", "jesus:key_places:3", "jesus:key_places:4", "jesus:second_temple_context:0", "messiah-theme:ancient_near_east_context:0", "messiah-theme:historical_context:0", "what-is-a-psalm:ancient_near_east_context:0", "what-is-a-psalm:historical_context:0", "what-is-canonical-theology:ancient_near_east_context:0", "what-is-canonical-theology:historical_context:0", "what-is-intertextuality:ancient_near_east_context:0", "what-is-intertextuality:historical_context:0", "what-is-the-messiah:ancient_near_east_context:0", "what-is-the-messiah:historical_context:0", "why-does-the-bible-repeat-themes:ancient_near_east_context:0", "why-does-the-bible-repeat-themes:historical_context:0", "word-of-god-theme:ancient_near_east_context:0", "word-of-god-theme:historical_context:0"], "used_evidence_ids": ["heb-angels", "heb-anonymous", "heb-p46", "heb-sinaiticus", "heb-son", "hebrews:interpretive_note:0", "hebrews:interpretive_note:39", "hebrews:interpretive_note:4", "hebrews:interpretive_note:5", "psalms-new-testament-reception"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "e29bb24a5d023264afbb0b18d956498231c4cc3edff40b8d4a666ab727224583", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-son"], "facts": ["The opening presents divine speech in a Son who is heir, creator-agent, radiance, exact imprint, sustainer, purifier, and enthroned."], "id": "syn_cultural_context_0bac1776336b", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 1:1-4"], "verse_refs": ["Hebrews 1:1-4"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-anonymous", "hebrews:interpretive_note:0"], "facts": ["The work does not name its author in its opening or closing.", "Authorship: Hebrews is internally anonymous; Pauline, Barnabas, Apollos, Priscilla, Luke, and other proposals belong to reception or reconstruction, not explicit wording."], "id": "syn_interpretive_questions_717547a5ad6c", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 1:1", "Hebrews 1:1-4"], "verse_refs": ["Hebrews 1:1", "Hebrews 1:1-4"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalms-new-testament-reception"], "facts": ["New Testament authors quote and echo psalms in arguments about Jesus' suffering, resurrection, enthronement, priesthood, mission, worship, creation rule, and the life of believing communities."], "id": "syn_interpretive_questions_8479da0e3b6c", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 1:5-13"], "verse_refs": ["Hebrews 1:5-13"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["hebrews:interpretive_note:4", "hebrews:interpretive_note:5"], "facts": ["Son language draws on Psalms, wisdom, royal, creation, and agency traditions; later creedal synthesis should be named as reception rather than inserted into every clause.", "Angels: the comparison exalts the Son through a scriptural catena and does not license contempt for Jewish angel traditions or speculative hierarchies."], "id": "syn_interpretive_questions_95fa35e89dda", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 1:1-14", "Hebrews 1:5-14"], "verse_refs": ["Hebrews 1:1-14", "Hebrews 1:5-14"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-p46", "heb-sinaiticus", "hebrews:interpretive_note:39"], "facts": ["Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.", "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.", "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect."], "id": "syn_surrounding_passages_0ca8e6e94760", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_a43549bbcd63"], "source_anchors": ["Hebrews 1:1-13:25"], "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 7:1-28", "Hebrews 8:1-13", "Hebrews 9:1-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-angels"], "facts": ["A catena of scriptural quotations distinguishes the Son from angels and leads into a warning to attend to what was heard."], "id": "syn_surrounding_passages_0fecfe783c3c", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Hebrews 1:5-2:4"], "verse_refs": ["Hebrews 2:1-4"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-p46", "heb-sinaiticus", "hebrews:interpretive_note:39"], "facts": ["Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.", "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.", "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect."], "id": "syn_surrounding_passages_a43549bbcd63", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["archaeology", "culture"], "support_count": 3}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Hebrews 1:1-13:25"], "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 7:1-28", "Hebrews 8:1-13", "Hebrews 9:1-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-anonymous", "hebrews:interpretive_note:0"], "facts": ["The work does not name its author in its opening or closing.", "Authorship: Hebrews is internally anonymous; Pauline, Barnabas, Apollos, Priscilla, Luke, and other proposals belong to reception or reconstruction, not explicit wording."], "id": "syn_why_it_matters_05ea3451634f", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_717547a5ad6c"], "source_anchors": ["Hebrews 1:1", "Hebrews 1:1-4"], "verse_refs": ["Hebrews 1:1", "Hebrews 1:1-4"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["hebrews:interpretive_note:4", "hebrews:interpretive_note:5"], "facts": ["Son language draws on Psalms, wisdom, royal, creation, and agency traditions; later creedal synthesis should be named as reception rather than inserted into every clause.", "Angels: the comparison exalts the Son through a scriptural catena and does not license contempt for Jewish angel traditions or speculative hierarchies."], "id": "syn_why_it_matters_e010d011be94", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_95fa35e89dda"], "source_anchors": ["Hebrews 1:1-14", "Hebrews 1:5-14"], "verse_refs": ["Hebrews 1:1-14", "Hebrews 1:5-14"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "bibliology:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "bibliology:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "high", "id": "heb-angels", "passage_anchors": ["Hebrews 1:5-2:4"], "source_ids": ["heb-greek", "nets-lxx", "stuckenbruck"]}, {"confidence": "high", "id": "heb-anonymous", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["attridge", "heb-greek"]}, {"confidence": "high", "id": "heb-p46", "passage_anchors": ["Hebrews 1:1-13:25"], "source_ids": ["ntvmr", "p46"]}, {"confidence": "high", "id": "heb-sinaiticus", "passage_anchors": ["Hebrews 1:1-13:25"], "source_ids": ["ntvmr", "sinaiticus"]}, {"confidence": "high", "id": "heb-son", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["heb-greek", "johnson"]}, {"confidence": "high", "id": "hebrews:interpretive_note:0", "passage_anchors": ["Hebrews 1:1"], "source_ids": ["attridge", "heb-greek", "koester"]}, {"confidence": "high", "id": "hebrews:interpretive_note:39", "passage_anchors": ["Hebrews 1:1-13:25"], "source_ids": ["carter", "levine-jant", "mitzi-smith"]}, {"confidence": "medium", "id": "hebrews:interpretive_note:4", "passage_anchors": ["Hebrews 1:1-14"], "source_ids": ["heb-greek", "johnson", "nets-lxx"]}, {"confidence": "high", "id": "hebrews:interpretive_note:5", "passage_anchors": ["Hebrews 1:5-14"], "source_ids": ["heb-greek", "nets-lxx", "stuckenbruck"]}, {"confidence": "medium", "id": "how-do-the-old-and-new-testaments-connect:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-peter-1", "2-corinthians-1", "hebrews-1", "how-do-the-old-and-new-testaments-connect-historical-orientation", "luke-24", "matthew-5", "romans-15"]}, {"confidence": "medium", "id": "how-do-the-old-and-new-testaments-connect:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-peter-1", "2-corinthians-1", "hebrews-1", "how-do-the-old-and-new-testaments-connect-historical-orientation", "luke-24", "matthew-5", "romans-15"]}, {"confidence": "medium", "id": "inerrancy:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "inerrancy:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "inspiration:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "inspiration:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "jesus:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:hebraic_worldview:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:key_places:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:key_places:1", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:key_places:2", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:key_places:3", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:key_places:4", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "jesus:second_temple_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-15", "acts-2", "colossians-1", "hebrews-1", "jesus-historical-orientation", "john-1-21", "luke-1-24", "mark-1-16", "matthew-1-28", "philippians-2"]}, {"confidence": "medium", "id": "messiah-theme:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-14"], "source_ids": ["2-samuel-7", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "medium", "id": "messiah-theme:historical_context:0", "passage_anchors": ["Hebrews 1:1-14"], "source_ids": ["2-samuel-7", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "high", "id": "psalms-new-testament-reception", "passage_anchors": ["Hebrews 1:5-13"], "source_ids": ["declaisse-walford-jacobson-tanner", "goldingay-psalms", "psalms-new-testament-reception"]}, {"confidence": "medium", "id": "what-is-a-psalm:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:5-14"], "source_ids": ["acts-2", "hebrews-1", "luke-24", "psalm-1", "psalm-110", "psalm-118", "psalm-22", "psalm-23"]}, {"confidence": "medium", "id": "what-is-a-psalm:historical_context:0", "passage_anchors": ["Hebrews 1:5-14"], "source_ids": ["acts-2", "hebrews-1", "luke-24", "psalm-1", "psalm-110", "psalm-118", "psalm-22", "psalm-23"]}, {"confidence": "medium", "id": "what-is-canonical-theology:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-peter-1", "2-timothy-3", "hebrews-1", "luke-24", "matthew-5", "romans-15", "what-is-canonical-theology-historical-orientation"]}, {"confidence": "medium", "id": "what-is-canonical-theology:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-peter-1", "2-timothy-3", "hebrews-1", "luke-24", "matthew-5", "romans-15", "what-is-canonical-theology-historical-orientation"]}, {"confidence": "medium", "id": "what-is-intertextuality:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-10", "hebrews-1", "john-1", "luke-24", "matthew-1", "revelation-5", "romans-15", "what-is-intertextuality-historical-orientation"]}, {"confidence": "medium", "id": "what-is-intertextuality:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["1-corinthians-10", "hebrews-1", "john-1", "luke-24", "matthew-1", "revelation-5", "romans-15", "what-is-intertextuality-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-messiah:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-14"], "source_ids": ["2-samuel-7", "hebrews-1", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "medium", "id": "what-is-the-messiah:historical_context:0", "passage_anchors": ["Hebrews 1:1-14"], "source_ids": ["2-samuel-7", "hebrews-1", "isaiah-11", "isaiah-53", "isaiah-9", "luke-24", "philippians-2", "psalm-110", "psalm-2", "romans-1"]}, {"confidence": "medium", "id": "why-does-the-bible-repeat-themes:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["deuteronomy-6", "exodus-15", "genesis-12", "hebrews-1", "isaiah-40", "matthew-13", "psalm-78", "revelation-21"]}, {"confidence": "medium", "id": "why-does-the-bible-repeat-themes:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["deuteronomy-6", "exodus-15", "genesis-12", "hebrews-1", "isaiah-40", "matthew-13", "psalm-78", "revelation-21"]}, {"confidence": "medium", "id": "word-of-god-theme:ancient_near_east_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "word-of-god-theme:historical_context:0", "passage_anchors": ["Hebrews 1:1-4"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Hebrews 1",
+  "book": "Hebrews",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Hebrews 1:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Hebrews 1:
+   for example `Hebrews 1:1` or `Hebrews 1:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Hebrews 1:1", "Hebrews 1:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash e29bb24a5d023264afbb0b18d956498231c4cc3edff40b8d4a666ab727224583.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_5cbda1d31983a1c241d31488", "renderer_verse_refs": ["Hebrews 1:1-4"], "source_verse_refs": ["Hebrews 1:1-4"], "synthesis_unit": "syn_cultural_context_0bac1776336b"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_d80d343e21d928d54019c589", "renderer_verse_refs": ["Hebrews 1:1", "Hebrews 1:1-4"], "source_verse_refs": ["Hebrews 1:1", "Hebrews 1:1-4"], "synthesis_unit": "syn_interpretive_questions_717547a5ad6c"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_0756f2c373fab651da00faaf", "renderer_verse_refs": ["Hebrews 1:1-14", "Hebrews 1:5-14"], "source_verse_refs": ["Hebrews 1:1-14", "Hebrews 1:5-14"], "synthesis_unit": "syn_interpretive_questions_95fa35e89dda"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_284b517e0930c2403fa0915d", "renderer_verse_refs": ["Hebrews 1:1", "Hebrews 1:1-4"], "source_verse_refs": ["Hebrews 1:1", "Hebrews 1:1-4"], "synthesis_unit": "syn_why_it_matters_05ea3451634f"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_ce989b726792311cc042046d", "renderer_verse_refs": ["Hebrews 1:1-14", "Hebrews 1:5-14"], "source_verse_refs": ["Hebrews 1:1-14", "Hebrews 1:5-14"], "synthesis_unit": "syn_why_it_matters_e010d011be94"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_e96fb8dc9de4af36c671f783", "renderer_verse_refs": ["Hebrews 1:5-13"], "source_verse_refs": ["Hebrews 1:5-13"], "synthesis_unit": "syn_interpretive_questions_8479da0e3b6c"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_0052910f225271535c5a620d", "renderer_verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 7:1-28", "Hebrews 8:1-13", "Hebrews 9:1-28"], "source_verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 7:1-28", "Hebrews 8:1-13", "Hebrews 9:1-28"], "synthesis_unit": "syn_surrounding_passages_0ca8e6e94760"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_fbb0c55e691261a5ff2c4411", "renderer_verse_refs": ["Hebrews 2:1-4"], "source_verse_refs": ["Hebrews 2:1-4"], "synthesis_unit": "syn_surrounding_passages_0fecfe783c3c"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_hebrews_001_692e0a82b96ebcdfd81611ec", "renderer_verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 7:1-28", "Hebrews 8:1-13", "Hebrews 9:1-28"], "source_verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 7:1-28", "Hebrews 8:1-13", "Hebrews 9:1-28"], "synthesis_unit": "syn_surrounding_passages_a43549bbcd63"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

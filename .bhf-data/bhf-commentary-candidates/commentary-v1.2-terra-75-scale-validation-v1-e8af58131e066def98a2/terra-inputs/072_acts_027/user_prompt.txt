@@ -1,0 +1,209 @@
+TASK: Generate BHF Commentary v1.8 for Acts 27.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_c2cadb4ade249fdb: Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing… (categories: culture, geography, surrounding_passages)
+
+RELEVANT:
+- reader_idea_ecd970e7cccaf6b6: Acts 27 displays detailed ancient Mediterranean sailing knowledge, yet the precise wreck location and degree of eyewitness… (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_ecd970e7cccaf6b6: Acts 27 displays detailed ancient Mediterranean sailing knowledge, yet the precise wreck location and degree of eyewitness… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["acts-voyage"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_fa624a2528a7"}
+
+IDEA reader_idea_c2cadb4ade249fdb: Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing… (importance: CORE; categories: culture, geography, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["acts-text-witnesses"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_0b37fc4cbe5b"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["acts-historical-method"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_13ad2234db97"}
+- path_3: {"confidence": "high", "disputed": true, "evidence_ids": ["acts-we-passages", "acts-western-text"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_2bd81b3faf8d"}
+- path_4: {"confidence": "high", "disputed": true, "evidence_ids": ["acts-we-passages", "acts-western-text"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_d73e1458f6e5"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And when it was determined that we should sail for Italy, they delivered Paul and certain other prisoners to a centurion named Julius, of the Augustan band. 2. And embarking in a ship of Adramyttium, which was about to sail unto the places on the coast of Asia, we put to sea, Aristarchus, a Macedonian of Thessalonica, being with us. 3. And the next day we touched at Sidon: and Julius treated Paul kindly, and gave him leave to go unto his friends and refresh himself. 4. And putting to sea from thence, we sailed under the lee of Cyprus, because the winds were contrary. 5. And when we had sailed across the sea which is off Cilicia and Pamphylia, we came to Myra, `a city' of Lycia. 6. And there the centurion found a ship of Alexandria sailing for Italy; and he put us therein. 7. And when we had sailed slowly many days, and were come with difficulty over against Cnidus, the wind not further suffering us, we sailed under the lee of Crete, over against Salmone; 8. and with difficulty coasting along it we came unto a certain place called Fair Havens; nigh whereunto was the city of Lasea. 9. And when much time was spent, and the voyage was now dangerous, because the Fast was now already gone by, Paul admonished them, 10. and said unto them, Sirs, I perceive that the voyage will be with injury and much loss, not only of the lading and the ship, but also of our lives. 11. But the centurion gave more heed to the master and to the owner of the ship, than to those things which were spoken by Paul. 12. And because the haven was not commodious to winter in, the more part advised to put to sea from thence, if by any means they could reach Phoenix, and winter `there; which is' a haven of Crete, looking northeast and south-east. 13. And when the south wind blew softly, supposing that they had obtained their purpose, they weighed anchor and sailed along Crete, close in shore. 14. But after no long time there beat down from it a tempestuous wind, which is called Euraquilo: 15. and when the ship was caught, and could not face the wind, we gave way `to it,' and were driven. 16. And running under the lee of a small island called Cauda, we were able, with difficulty, to secure the boat: 17. and when they had hoisted it up, they used helps, under-girding the ship; and, fearing lest they should be cast upon the Syrtis, they lowered the gear, and so were driven. 18. And as we labored exceedingly with the storm, the next day they began to throw the `the freight' overboard; 19. and the third day they cast out with their own hands the tackling of the ship. 20. And when neither sun nor stars shone upon `us' for many days, and no small tempest lay on `us,' all hope that we should be saved was now taken away. 21. And when they had been long without food, then Paul stood forth in the midst of them, and said, Sirs, ye should have hearkened unto me, and not have set sail from Crete, and have gotten this injury and loss. 22. And now I exhort you to be of good cheer; for there shall be no loss of life among you, but `only' of the ship. 23. For there stood by me this night an angel of the God whose I am, whom also I serve, 24. saying, Fear not, Paul; thou must stand before Caesar: and lo, God hath granted thee all them that sail with thee. 25. Wherefore, sirs, be of good cheer: for I believe God, that it shall be even so as it hath been spoken unto me. 26. But we must be cast upon a certain island. 27. But when the fourteenth night was come, as we were driven to and fro in the `sea of' Adria, about midnight the sailors surmised that they were drawing near to some country: 28. and they sounded, and found twenty fathoms; and after a little space, they sounded again, and found fifteen fathoms. 29. And fearing lest haply we should be cast ashore on rocky ground, they let go four anchors from the stern, and wished for the day. 30. And as the sailors were seeking to flee out of the ship, and had lowered the boat into the sea, under color as though they would lay out anchors from the foreship, 31. Paul said to the centurion and to the soldiers, Except these abide in the ship, ye cannot be saved. 32. Then the soldiers cut away the ropes of the boat, and let her fall off. 33. And while the day was coming on, Paul besought them all to take some food, saying, This day is the fourteenth day that ye wait and continue fasting, having taken nothing. 34. Wherefore I beseech you to take some food: for this is for your safety: for there shall not a hair perish from the head of any of you. 35. And when he had said this, and had taken bread, he gave thanks to God in the presence of all; and he brake it, and began to eat. 36. Then were they all of good cheer, and themselves also took food. 37. And we were in all in the ship two hundred threescore and sixteen souls. 38. And when they had eaten enough, they lightened the ship, throwing out the wheat into the sea. 39. And when it was day, they knew not the land: but they perceived a certain bay with a beach, and they took counsel whether they could drive the ship upon it. 40. And casting off the anchors, they left them in the sea, at the same time loosing the bands of the rudders; and hoisting up the foresail to the wind, they made for the beach. 41. But lighting upon a place where two seas met, they ran the vessel aground; and the foreship struck and remained unmoveable, but the stern began to break up by the violence `of the waves'. 42. And the soldiers' counsel was to kill the prisoners, lest any `of them' should swim out, and escape. 43. But the centurion, desiring to save Paul, stayed them from their purpose; and commanded that they who could swim should cast themselves overboard, and get first to the land; 44. and the rest, some on planks, and some on `other' things from the ship. And so it came to pass, that they all escaped safe to the land.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 4, "geography": 1}, "evidence_item_count": 5, "relationship_unit_count": 1, "specific_evidence_count": 5, "unit_kind_counts": {"interpretive_questions": 1, "surrounding_passages": 4}, "unused_evidence_ids": [], "used_evidence_ids": ["acts-historical-method", "acts-text-witnesses", "acts-voyage", "acts-we-passages", "acts-western-text"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "62bade47f701b4a49eee5cc595723774ead0772970780af5a4b74bcec3075a9d", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["acts-voyage"], "facts": ["Acts 27 displays detailed ancient Mediterranean sailing knowledge, yet the precise wreck location and degree of eyewitness dependence remain uncertain."], "id": "syn_interpretive_questions_fa624a2528a7", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Acts 27:1-44"], "verse_refs": ["Acts 27:1-44"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-text-witnesses"], "facts": ["Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."], "id": "syn_surrounding_passages_0b37fc4cbe5b", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Acts 1:1-28:31"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-historical-method"], "facts": ["Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability."], "id": "syn_surrounding_passages_13ad2234db97", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Acts 1:1-28:31"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-we-passages", "acts-western-text"], "facts": ["First-person plural sections occur in Acts 16, 20-21, and 27-28, but their source and implication for authorship remain disputed.", "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."], "id": "syn_surrounding_passages_2bd81b3faf8d", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Acts 1:1-28:31", "Acts 27:1-28:16"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-16", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-we-passages", "acts-western-text"], "facts": ["First-person plural sections occur in Acts 16, 20-21, and 27-28, but their source and implication for authorship remain disputed.", "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."], "id": "syn_surrounding_passages_d73e1458f6e5", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_2bd81b3faf8d"], "source_anchors": ["Acts 1:1-28:31", "Acts 27:1-28:16"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-16", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "acts-historical-method", "passage_anchors": ["Acts 1:1-28:31"], "source_ids": ["keener-acts", "marguerat-historian"]}, {"confidence": "high", "id": "acts-text-witnesses", "passage_anchors": ["Acts 1:1-28:31"], "source_ids": ["bezae-cambridge", "p45-cbl", "p53-michigan", "p74-vatican", "sinaiticus", "vaticanus"]}, {"confidence": "medium", "id": "acts-voyage", "passage_anchors": ["Acts 27:1-44"], "source_ids": ["acts-greek", "casson-ships", "malta-heritage"]}, {"confidence": "high", "id": "acts-we-passages", "passage_anchors": ["Acts 27:1-28:16"], "source_ids": ["acts-greek", "campbell-we-passages"]}, {"confidence": "high", "id": "acts-western-text", "passage_anchors": ["Acts 1:1-28:31"], "source_ids": ["bezae-cambridge", "parker-bezae"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Acts 27",
+  "book": "Acts",
+  "chapter": 27,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Acts 27:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Acts 27:
+   for example `Acts 27:1` or `Acts 27:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Acts 27:1", "Acts 27:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 62bade47f701b4a49eee5cc595723774ead0772970780af5a4b74bcec3075a9d.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_acts_027_535456e0af012d77057ba249", "renderer_verse_refs": ["Acts 27:1-44"], "source_verse_refs": ["Acts 27:1-44"], "synthesis_unit": "syn_interpretive_questions_fa624a2528a7"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_027_d10ab2f5814ec7f60bfd6519", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_0b37fc4cbe5b"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_027_54f6ffae7fb13830c87f88ff", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_13ad2234db97"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_027_3d750c2f5677fb0e6cb93d84", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-16", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-16", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_2bd81b3faf8d"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_027_2d208cf8e8956d7f593b2b7f", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-16", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 28:1-16", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 5:1-42", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_d73e1458f6e5"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

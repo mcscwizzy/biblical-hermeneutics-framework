@@ -1,0 +1,265 @@
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Psalms 19.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_b978be6361a8eeb9: Psalms (categories: culture, history, interpretive_questions)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_b978be6361a8eeb9: Psalms (importance: CORE; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["psalm-19-creation-proclamation", "psalm-19-torah-gold-honey-value"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_01a7fd7cc9cb"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["psalm-19-creation-to-torah-movement", "psalm-19-hidden-and-presumptuous-faults"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_42b91501f301"}
+- path_3: {"confidence": "high", "disputed": false, "evidence_ids": ["psalm-19-closing-prayer-rock-redeemer", "psalm-19-sun-bridegroom-runner"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_language_literary_15e12278f789"}
+- path_4: {"confidence": "high", "disputed": true, "evidence_ids": ["psalm-19-creation-to-torah-movement", "psalm-19-hidden-and-presumptuous-faults"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_36da3ccdd9c3"}
+- path_5: {"confidence": "high", "disputed": false, "evidence_ids": ["psalm-19-creation-proclamation", "psalm-19-torah-gold-honey-value"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_a5535f3e5ddb"}
+- path_6: {"confidence": "high", "disputed": false, "evidence_ids": ["psalm-19-closing-prayer-rock-redeemer", "psalm-19-sun-bridegroom-runner"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_bb0023a22fa5"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. The heavens declare the glory of God; And the firmament showeth his handiwork. 2. Day unto day uttereth speech, And night unto night showeth knowledge. 3. There is no speech nor language; Their voice is not heard. 4. Their line is gone out through all the earth, And their words to the end of the world. In them hath he set a tabernacle for the sun, 5. Which is as a bridegroom coming out of his chamber, And rejoiceth as a strong man to run his course. 6. His going forth is from the end of the heavens, And his circuit unto the ends of it; And there is nothing hid from the heat thereof. 7. The law of Jehovah is perfect, restoring the soul: The testimony of Jehovah is sure, making wise the simple. 8. The precepts of Jehovah are right, rejoicing the heart: The commandment of Jehovah is pure, enlightening the eyes. 9. The fear of Jehovah is clean, enduring for ever: The ordinances of Jehovah are true, `and' righteous altogether. 10. More to be desired are they than gold, yea, than much fine gold; Sweeter also than honey and the droppings of the honeycomb. 11. Moreover by them is thy servant warned: In keeping them there is great reward. 12. Who can discern `his' errors? Clear thou me from hidden `faults'. 13. Keep back thy servant also from presumptuous `sins'; Let them not have dominion over me: Then shall I be upright, And I shall be clear from great transgression. 14. Let the words of my mouth and the meditation of my heart Be acceptable in thy sight, O Jehovah, my rock, and my redeemer.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 10, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 18, "history": 18}, "evidence_item_count": 36, "relationship_unit_count": 3, "specific_evidence_count": 6, "unit_kind_counts": {"historical_context": 1, "interpretive_questions": 1, "language_literary": 1, "why_it_matters": 3}, "unused_evidence_ids": ["arad-ostraca:ancient_near_east_context:0", "arad-ostraca:historical_context:0", "bibliology:ancient_near_east_context:0", "bibliology:historical_context:0", "caesarea-maritima-excavations:ancient_near_east_context:0", "caesarea-maritima-excavations:historical_context:0", "ein-gedi-scroll:ancient_near_east_context:0", "ein-gedi-scroll:historical_context:0", "herodium-excavations:ancient_near_east_context:0", "herodium-excavations:historical_context:0", "inerrancy:ancient_near_east_context:0", "inerrancy:historical_context:0", "inspiration:ancient_near_east_context:0", "inspiration:historical_context:0", "kurkh-monolith:ancient_near_east_context:0", "kurkh-monolith:historical_context:0", "masada-excavations:ancient_near_east_context:0", "masada-excavations:historical_context:0", "pool-of-bethesda-excavation:ancient_near_east_context:0", "pool-of-bethesda-excavation:historical_context:0", "samaria-ostraca:ancient_near_east_context:0", "samaria-ostraca:historical_context:0", "samaria-palace:ancient_near_east_context:0", "samaria-palace:historical_context:0", "shiloh-excavations:ancient_near_east_context:0", "shiloh-excavations:historical_context:0", "what-does-torah-mean:ancient_near_east_context:0", "what-does-torah-mean:historical_context:0", "word-of-god-theme:ancient_near_east_context:0", "word-of-god-theme:historical_context:0"], "used_evidence_ids": ["psalm-19-closing-prayer-rock-redeemer", "psalm-19-creation-proclamation", "psalm-19-creation-to-torah-movement", "psalm-19-hidden-and-presumptuous-faults", "psalm-19-sun-bridegroom-runner", "psalm-19-torah-gold-honey-value"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "c22d381bea2c3fde37929091c8413787b6cb30a5b9eed89b70aa486f749ead8c", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["psalm-19-creation-proclamation", "psalm-19-torah-gold-honey-value"], "facts": ["Psalm 19:1-6 portrays the heavens and firmament as declaring God's glory while day and night pass on knowledge without ordinary speech; the communication is poetic and continuous rather than a literal spoken conversation.", "Psalm 19:10-11 evaluates the LORD's judgments as more desirable than fine gold and sweeter than honey, joining moral instruction to images of worth, delight, and warning."], "id": "syn_historical_context_01a7fd7cc9cb", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 19:1-6", "Psalms 19:10-11"], "verse_refs": ["Psalms 19:1-6", "Psalms 19:10-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalm-19-creation-to-torah-movement", "psalm-19-hidden-and-presumptuous-faults"], "facts": ["Psalm 19 turns in verses 7-11 from the testimony of creation to a series of names for the LORD's instruction—law, testimony, precepts, commandment, fear, and judgments—so the poem moves from the ordered heavens to covenant instruction.", "In Psalm 19:12-13 the speaker asks to be cleared from hidden faults and restrained from presumptuous sins, distinguishing unknown failure from deliberate, self-asserting transgression."], "id": "syn_interpretive_questions_42b91501f301", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 19:12-13", "Psalms 19:7-11"], "verse_refs": ["Psalms 19:12-13", "Psalms 19:7-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalm-19-closing-prayer-rock-redeemer", "psalm-19-sun-bridegroom-runner"], "facts": ["Psalm 19:14 closes by asking that the speaker's words and meditation be acceptable before the LORD, addressed as the speaker's rock and redeemer; the prayer brings the cosmic and instructional movements into worshiper's speech.", "The sun imagery in Psalm 19:4-6 uses two similes—a bridegroom leaving his chamber and a runner completing a course—to emphasize joy, strength, and the sun's comprehensive reach within the poem."], "id": "syn_language_literary_15e12278f789", "interpretation_level": "fact", "kind": "language_literary", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 19:14", "Psalms 19:4-6"], "verse_refs": ["Psalms 19:14", "Psalms 19:4-6"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalm-19-creation-to-torah-movement", "psalm-19-hidden-and-presumptuous-faults"], "facts": ["Psalm 19 turns in verses 7-11 from the testimony of creation to a series of names for the LORD's instruction—law, testimony, precepts, commandment, fear, and judgments—so the poem moves from the ordered heavens to covenant instruction.", "In Psalm 19:12-13 the speaker asks to be cleared from hidden faults and restrained from presumptuous sins, distinguishing unknown failure from deliberate, self-asserting transgression."], "id": "syn_why_it_matters_36da3ccdd9c3", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_42b91501f301"], "source_anchors": ["Psalms 19:12-13", "Psalms 19:7-11"], "verse_refs": ["Psalms 19:12-13", "Psalms 19:7-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalm-19-creation-proclamation", "psalm-19-torah-gold-honey-value"], "facts": ["Psalm 19:1-6 portrays the heavens and firmament as declaring God's glory while day and night pass on knowledge without ordinary speech; the communication is poetic and continuous rather than a literal spoken conversation.", "Psalm 19:10-11 evaluates the LORD's judgments as more desirable than fine gold and sweeter than honey, joining moral instruction to images of worth, delight, and warning."], "id": "syn_why_it_matters_a5535f3e5ddb", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_historical_context_01a7fd7cc9cb"], "source_anchors": ["Psalms 19:1-6", "Psalms 19:10-11"], "verse_refs": ["Psalms 19:1-6", "Psalms 19:10-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["psalm-19-closing-prayer-rock-redeemer", "psalm-19-sun-bridegroom-runner"], "facts": ["Psalm 19:14 closes by asking that the speaker's words and meditation be acceptable before the LORD, addressed as the speaker's rock and redeemer; the prayer brings the cosmic and instructional movements into worshiper's speech.", "The sun imagery in Psalm 19:4-6 uses two similes—a bridegroom leaving his chamber and a runner completing a course—to emphasize joy, strength, and the sun's comprehensive reach within the poem."], "id": "syn_why_it_matters_bb0023a22fa5", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_language_literary_15e12278f789"], "source_anchors": ["Psalms 19:14", "Psalms 19:4-6"], "verse_refs": ["Psalms 19:14", "Psalms 19:4-6"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "arad-ostraca:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["archaeological-survey-and-historical-background", "genesis-1-1-2", "lachish-siege-and-destruction-horizon", "psalm-19-1-6"]}, {"confidence": "medium", "id": "arad-ostraca:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["archaeological-survey-and-historical-background", "genesis-1-1-2", "lachish-siege-and-destruction-horizon", "psalm-19-1-6"]}, {"confidence": "medium", "id": "bibliology:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "bibliology:historical_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "caesarea-maritima-excavations:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["caesarea-harbor-and-administrative-city", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "caesarea-maritima-excavations:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["caesarea-harbor-and-administrative-city", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "ein-gedi-scroll:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["ein-gedi-scroll-archaeological-literature", "genesis-1-1-2", "manuscript-study-and-textual-criticism", "psalm-19-1-6"]}, {"confidence": "medium", "id": "ein-gedi-scroll:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["ein-gedi-scroll-archaeological-literature", "genesis-1-1-2", "manuscript-study-and-textual-criticism", "psalm-19-1-6"]}, {"confidence": "medium", "id": "herodium-excavations:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "herodium-excavations:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "inerrancy:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "inerrancy:historical_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "inspiration:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "inspiration:historical_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "kurkh-monolith:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["genesis-1-1-2", "imperial-inscription-and-historical-comparison", "kurkh-monolith-archaeological-literature", "psalm-19-1-6"]}, {"confidence": "medium", "id": "kurkh-monolith:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["genesis-1-1-2", "imperial-inscription-and-historical-comparison", "kurkh-monolith-archaeological-literature", "psalm-19-1-6"]}, {"confidence": "medium", "id": "masada-excavations:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "masada-excavations:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "pool-of-bethesda-excavation:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "pool-of-bethesda-excavation:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "high", "id": "psalm-19-closing-prayer-rock-redeemer", "passage_anchors": ["Psalms 19:14"], "source_ids": ["dahood-psalms", "psalms-masoretic"]}, {"confidence": "high", "id": "psalm-19-creation-proclamation", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["psalms-masoretic"]}, {"confidence": "high", "id": "psalm-19-creation-to-torah-movement", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["declaisse-walford-jacobson-tanner", "goldingay-psalms", "psalms-masoretic"]}, {"confidence": "high", "id": "psalm-19-hidden-and-presumptuous-faults", "passage_anchors": ["Psalms 19:12-13"], "source_ids": ["goldingay-psalms", "psalms-masoretic"]}, {"confidence": "high", "id": "psalm-19-sun-bridegroom-runner", "passage_anchors": ["Psalms 19:4-6"], "source_ids": ["goldingay-psalms", "psalms-masoretic"]}, {"confidence": "high", "id": "psalm-19-torah-gold-honey-value", "passage_anchors": ["Psalms 19:10-11"], "source_ids": ["goldingay-psalms", "psalms-masoretic"]}, {"confidence": "medium", "id": "samaria-ostraca:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["archaeological-survey-and-historical-background", "genesis-1-1-2", "lachish-siege-and-destruction-horizon", "psalm-19-1-6"]}, {"confidence": "medium", "id": "samaria-ostraca:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["archaeological-survey-and-historical-background", "genesis-1-1-2", "lachish-siege-and-destruction-horizon", "psalm-19-1-6"]}, {"confidence": "medium", "id": "samaria-palace:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["archaeological-survey-and-historical-background", "genesis-1-1-2", "nineveh-palace-and-library-excavations", "psalm-19-1-6"]}, {"confidence": "medium", "id": "samaria-palace:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["archaeological-survey-and-historical-background", "genesis-1-1-2", "nineveh-palace-and-library-excavations", "psalm-19-1-6"]}, {"confidence": "medium", "id": "shiloh-excavations:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "shiloh-excavations:historical_context:0", "passage_anchors": ["Psalms 19:1-6"], "source_ids": ["city-of-david-and-southern-ridge-excavations", "excavation-report-and-stratigraphic-study", "genesis-1-1-2", "psalm-19-1-6"]}, {"confidence": "medium", "id": "what-does-torah-mean:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["deuteronomy-4", "deuteronomy-6", "galatians-3", "matthew-5", "psalm-1", "psalm-19", "romans-7"]}, {"confidence": "medium", "id": "what-does-torah-mean:historical_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["deuteronomy-4", "deuteronomy-6", "galatians-3", "matthew-5", "psalm-1", "psalm-19", "romans-7"]}, {"confidence": "medium", "id": "word-of-god-theme:ancient_near_east_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}, {"confidence": "medium", "id": "word-of-god-theme:historical_context:0", "passage_anchors": ["Psalms 19:7-11"], "source_ids": ["2-timothy-3", "deuteronomy-6", "hebrews-1", "luke-24", "psalm-119", "psalm-19"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Psalms 19",
+  "book": "Psalms",
+  "chapter": 19,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Psalms 19:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Psalms 19:
+   for example `Psalms 19:1` or `Psalms 19:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Psalms 19:1", "Psalms 19:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash c22d381bea2c3fde37929091c8413787b6cb30a5b9eed89b70aa486f749ead8c.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_psalms_019_d1346d5e1fe495be01dca7ff", "renderer_verse_refs": ["Psalms 19:1-6", "Psalms 19:10-11"], "source_verse_refs": ["Psalms 19:1-6", "Psalms 19:10-11"], "synthesis_unit": "syn_historical_context_01a7fd7cc9cb"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_psalms_019_b684249d8751996b8711f557", "renderer_verse_refs": ["Psalms 19:12-13", "Psalms 19:7-11"], "source_verse_refs": ["Psalms 19:12-13", "Psalms 19:7-11"], "synthesis_unit": "syn_interpretive_questions_42b91501f301"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_psalms_019_b4843d8b5195be43e279b1eb", "renderer_verse_refs": ["Psalms 19:14", "Psalms 19:4-6"], "source_verse_refs": ["Psalms 19:14", "Psalms 19:4-6"], "synthesis_unit": "syn_language_literary_15e12278f789"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_psalms_019_151bf0b98395cfc1abc3497d", "renderer_verse_refs": ["Psalms 19:12-13", "Psalms 19:7-11"], "source_verse_refs": ["Psalms 19:12-13", "Psalms 19:7-11"], "synthesis_unit": "syn_why_it_matters_36da3ccdd9c3"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_psalms_019_4d8d08f88263d416b42ee1c5", "renderer_verse_refs": ["Psalms 19:1-6", "Psalms 19:10-11"], "source_verse_refs": ["Psalms 19:1-6", "Psalms 19:10-11"], "synthesis_unit": "syn_why_it_matters_a5535f3e5ddb"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_psalms_019_27c225c178327c5724baa149", "renderer_verse_refs": ["Psalms 19:14", "Psalms 19:4-6"], "source_verse_refs": ["Psalms 19:14", "Psalms 19:4-6"], "synthesis_unit": "syn_why_it_matters_bb0023a22fa5"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
