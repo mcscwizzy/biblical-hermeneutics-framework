@@ -18,14 +18,21 @@ the guard; generation fails closed while it is false.
 ```
 
 `prepare` creates an immutable, content-addressed session manifest and one
-renderer-input directory per selected chapter. It performs no model calls and
-records `awaiting_render` until the current Codex session writes exactly one
-`raw-response.bin` for each chapter. `finalize` refuses a missing or duplicate
-response, preserves malformed bytes, verifies the frozen source and prompt
-identities, then runs normalization, structural, ancestry, provenance,
-richness, and quality checks without invoking a model. Session metadata is
-truthfully recorded as `renderer_mode: codex_session`, requested model
-`gpt-5.6-terra`, and requested effort `high`.
+renderer-input directory per renderable selected chapter. It performs no model
+calls and records `awaiting_render` until the current Codex session writes
+exactly one `raw-response.bin` for each renderable chapter. Before projection,
+ancestry, provenance, or prompt construction, it applies the existing
+evidence-applicability rules to the compiled synthesis. A chapter with zero
+current-chapter-eligible evidence and zero synthesis units becomes a terminal
+`NOT_RENDERABLE_SOURCE_LIMITED` receipt containing its source packet, evidence,
+and synthesis identities; it receives no renderer input or raw response. An
+empty synthesis with eligible evidence fails closed as a compiler regression.
+`finalize` requires responses only for renderable chapters, preserves malformed
+bytes, verifies the frozen source and prompt identities, then runs
+normalization, structural, ancestry, provenance, richness, and quality checks
+without invoking a model. Session metadata is truthfully recorded as
+`renderer_mode: codex_session`, requested model `gpt-5.6-terra`, and requested
+effort `high`.
 
 The legacy nested Codex CLI transport remains available only through the
 explicit `generate` command for environments that permit it; it is not the
@@ -44,3 +51,9 @@ result receipt under
 The next invocation rescans those receipts and skips terminal results. Duplicate
 or conflicting identities, invalid package checksums, non-terminal persisted
 results, and pipeline status mismatches stop the run without guessing.
+
+Preparation checkpoints after every chapter. Re-running a partial session
+rebuilds the deterministic contract and reuses existing immutable prompt files
+only when every byte matches; an immutable collision stops the run. Canary
+authorization tests provide a temporary candidate-state path so testing both
+authorization outcomes cannot mutate the operational candidate state.

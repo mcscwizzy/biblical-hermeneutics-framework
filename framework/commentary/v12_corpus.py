@@ -36,6 +36,7 @@ from bhf_agent.chapter_commentary.models import (
 from bhf_agent.chapter_commentary.prompts import build_user_prompt, system_prompt_for_version
 from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
 from bhf_agent.chapter_commentary.output_conformance import parse_renderer_json
+from bhf_agent.chapter_commentary.evidence_applicability import commentary_eligible_evidence
 from bhf_agent.chapter_commentary.reader_level_projection import project_reader_level_ideas, add_projection_to_prompt
 from bhf_agent.chapter_commentary.reader_idea_ancestry_envelope import build_ancestry_envelope, add_ancestry_envelope_to_prompt, audit_ancestry_envelope
 from bhf_agent.chapter_commentary.reader_provenance_binding_v2 import build_provenance_binding_v2, normalize_renderer_payload_v2, add_provenance_binding_to_prompt_v2, audit_provenance_binding_v2, response_ancestry_audit_v2
@@ -111,6 +112,78 @@ class Discovery:
         }
 
 
+@dataclass(frozen=True)
+class ChapterRenderability:
+    """The evidence-owned decision about whether Terra may receive a chapter."""
+
+    renderable: bool
+    reason: str | None
+    evidence_availability: str
+    evidence_item_count: int
+    synthesis_unit_count: int
+    eligible_evidence_item_count: int
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "renderable": self.renderable,
+            "reason": self.reason,
+            "evidence_availability": self.evidence_availability,
+            "evidence_item_count": self.evidence_item_count,
+            "synthesis_unit_count": self.synthesis_unit_count,
+            "eligible_evidence_item_count": self.eligible_evidence_item_count,
+        }
+
+
+def assess_chapter_renderability(prepared: Any) -> ChapterRenderability:
+    """Decide renderability before any projection or ancestry is constructed.
+
+    The synthesis compiler is the authority for whether evidence can support
+    reader prose.  An empty synthesis is source-limited only when the existing
+    applicability rules also found no current-chapter-eligible evidence.  If
+    eligible evidence exists, an empty synthesis is an unexplained compiler
+    regression and must stop the run rather than being hidden as a source gap.
+    """
+
+    evidence_items = list(prepared.bundle.evidence_items)
+    synthesis = prepared.synthesis
+    eligible_items = commentary_eligible_evidence(
+        evidence_items, prepared.bundle.passage_ref
+    )
+    if synthesis.synthesis_units:
+        return ChapterRenderability(
+            renderable=True,
+            reason=None,
+            evidence_availability=synthesis.evidence_availability,
+            evidence_item_count=len(evidence_items),
+            synthesis_unit_count=len(synthesis.synthesis_units),
+            eligible_evidence_item_count=len(eligible_items),
+        )
+    if eligible_items:
+        raise V12IntegrityError(
+            "synthesis compiler regression: empty synthesis despite "
+            f"{len(eligible_items)} current-chapter-eligible evidence items "
+            f"for {synthesis.reference}"
+        )
+    if synthesis.evidence_availability == "DATA_GAP" and not evidence_items:
+        reason = (
+            "existing evidence pipeline classified the chapter as DATA_GAP "
+            "with zero evidence items and zero synthesis units"
+        )
+    else:
+        reason = (
+            "existing evidence applicability rules produced zero "
+            "current-chapter-eligible evidence and zero synthesis units"
+        )
+    return ChapterRenderability(
+        renderable=False,
+        reason=reason,
+        evidence_availability=synthesis.evidence_availability,
+        evidence_item_count=len(evidence_items),
+        synthesis_unit_count=0,
+        eligible_evidence_item_count=0,
+    )
+
+
 class ExistingV12ChapterPipeline:
     """Adapter around the existing evidence/synthesis/commentary generator."""
 
@@ -164,8 +237,9 @@ class CodexCliV12ChapterPipeline:
             "--output-last-message", str(output), "-",
         ]
 
-    def _prepared(self, book: str, chapter: int):
-        prepared = prepare_chapter(book, chapter)
+    def _prepared(self, book: str, chapter: int, *, prepared: Any | None = None):
+        prepared = prepared or prepare_chapter(book, chapter)
+        assess_chapter_renderability(prepared)
         chapter_data = bible.resolve_chapter(book, chapter)
         passage_text = bible.passage_text(chapter_data.get("verses", []))
         clusters = cluster_synthesis_units(
@@ -500,19 +574,50 @@ class V12CorpusRunner:
             manifest["generation"] = dict(self.generation_metadata)
         return manifest
 
+    def _resumable_session(self) -> tuple[Path, dict[str, Any]] | None:
+        """Return the earliest incomplete session, before fresh discovery."""
+
+        candidates: list[tuple[int, str, Path, dict[str, Any]]] = []
+        for manifest_path in self.runner_root.glob("runs/*/manifest.json"):
+            manifest = _load_json(manifest_path)
+            if manifest.get("workflow") != "prepare -> codex_session_render -> finalize":
+                continue
+            state_path = manifest_path.parent / "state.json"
+            if not state_path.is_file():
+                continue
+            state = _load_json(state_path)
+            if state.get("finalized") is True:
+                continue
+            chapters = state.get("chapters")
+            if not isinstance(chapters, dict) or not any(
+                isinstance(record, dict) and record.get("status") == "awaiting_render"
+                for record in chapters.values()
+            ):
+                continue
+            candidates.append((
+                int(manifest.get("batch_number", 0)),
+                str(manifest.get("run_id", manifest_path.parent.name)),
+                manifest_path,
+                manifest,
+            ))
+        if not candidates:
+            return None
+        _, _, manifest_path, manifest = min(candidates)
+        return manifest_path, manifest
+
     @staticmethod
     def _session_run_id(next_chapters: tuple[str, ...]) -> str:
         seed = canonical_json({"workflow": "codex_session", "chapters": next_chapters}).encode("utf-8")
         return "session-batch-" + hashlib.sha256(seed).hexdigest()[:16]
 
-    def _renderer_context(self, entry: dict[str, Any]):
+    def _renderer_context(self, entry: dict[str, Any], *, prepared: Any | None = None):
         """Build the exact v1.2 contract once, with no renderer invocation."""
 
         pipeline = CodexCliV12ChapterPipeline(
             model=CODEX_TERRA_MODEL, effort=CODEX_TERRA_EFFORT
         )
         prepared, binding, presentation, user_prompt = pipeline._prepared(
-            entry["book"], int(entry["chapter"])
+            entry["book"], int(entry["chapter"]), prepared=prepared
         )
         chapter_data = bible.resolve_chapter(entry["book"], int(entry["chapter"]))
         clusters = cluster_synthesis_units(
@@ -527,8 +632,9 @@ class V12CorpusRunner:
 
     def _write_renderer_input(
         self, run_root: Path, entry: dict[str, Any], *, run_id: str,
+        prepared: Any | None = None,
     ) -> dict[str, Any]:
-        prepared, projection, envelope, binding, presentation, system_prompt, user_prompt = self._renderer_context(entry)
+        prepared, projection, envelope, binding, presentation, system_prompt, user_prompt = self._renderer_context(entry, prepared=prepared)
         input_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "renderer-input"
         system_bytes = system_prompt.encode("utf-8")
         user_bytes = user_prompt.encode("utf-8")
@@ -560,6 +666,54 @@ class V12CorpusRunner:
         write_json(input_root / "metadata.json", contract, immutable=True)
         return contract
 
+    @staticmethod
+    def _source_limited_receipt(
+        run_root: Path,
+        entry: dict[str, Any],
+        prepared: Any,
+        assessment: ChapterRenderability,
+    ) -> dict[str, Any]:
+        """Persist a terminal evidence receipt without renderer artifacts."""
+
+        chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+        receipt = {
+            "artifact_version": "commentary-v1.2-corpus-result-v1",
+            "reference": entry["reference"],
+            "book": entry["book"],
+            "chapter": int(entry["chapter"]),
+            "canonical_ordinal": entry["canonical_ordinal"],
+            "status": "validated",
+            "classification": "source-limited",
+            "release_state": "NOT_RENDERABLE_SOURCE_LIMITED",
+            "reason": "commentary_source_limited",
+            "source_limited_reason": assessment.reason,
+            "evidence_availability": assessment.evidence_availability,
+            "evidence_item_count": assessment.evidence_item_count,
+            "synthesis_unit_count": assessment.synthesis_unit_count,
+            "eligible_evidence_item_count": assessment.eligible_evidence_item_count,
+            "evidence_hash": prepared.bundle.evidence_hash,
+            "synthesis_hash": prepared.synthesis.synthesis_hash,
+            "source_packet_id": prepared.row["input_identity"]["packet_id"],
+            "source_packet_hash": prepared.row["input_identity"]["packet_hash"],
+            "commentary_path": None,
+            "raw_response_path": None,
+        }
+        write_json(chapter_root / "result.json", receipt, immutable=True)
+        return receipt
+
+    @staticmethod
+    def _is_source_limited_receipt(receipt: Any) -> bool:
+        return (
+            isinstance(receipt, dict)
+            and receipt.get("release_state") == "NOT_RENDERABLE_SOURCE_LIMITED"
+            and receipt.get("classification") == "source-limited"
+            and receipt.get("status") == "validated"
+        )
+
+    def _prepared_for_session(self, entry: dict[str, Any]):
+        prepared = prepare_chapter(entry["book"], int(entry["chapter"]))
+        return prepared, assess_chapter_renderability(prepared)
+
     def prepare(self, batch_size: int = DEFAULT_BATCH_SIZE) -> dict[str, Any]:
         """Freeze one bounded batch for direct rendering in this Codex session."""
 
@@ -572,9 +726,14 @@ class V12CorpusRunner:
             )
         if not discovery.next_chapters:
             return {"status": "CORPUS_COMPLETE", **discovery.to_dict(), "chapters": []}
-        run_id = self._session_run_id(discovery.next_chapters)
+        resumable = self._resumable_session()
+        if resumable is None:
+            run_id = self._session_run_id(discovery.next_chapters)
+            manifest = self._selected_manifest(discovery, run_id=run_id)
+        else:
+            manifest_path, manifest = resumable
+            run_id = str(manifest.get("run_id") or manifest_path.parent.name)
         run_root = self.runner_root / "runs" / run_id
-        manifest = self._selected_manifest(discovery, run_id=run_id)
         manifest_path = run_root / "manifest.json"
         write_json(manifest_path, manifest, immutable=True)
         manifest_hash = sha256_bytes(manifest_path.read_bytes())
@@ -599,20 +758,54 @@ class V12CorpusRunner:
                 "requested_effort": CODEX_TERRA_EFFORT,
                 "chapters": {entry["reference"]: {"status": "awaiting_render", "attempt": 0} for entry in manifest["chapters"]},
             }
+        renderable: list[str] = []
+        source_limited: list[dict[str, Any]] = []
         for entry in manifest["chapters"]:
             record = state["chapters"].get(entry["reference"])
             if not isinstance(record, dict) or record.get("status") not in {"awaiting_render", *TERMINAL_RESULT_STATES}:
                 raise V12IntegrityError(f"runner chapter state is not safely resumable: {entry['reference']}")
             if record.get("status") == "awaiting_render":
-                contract = self._write_renderer_input(run_root, entry, run_id=run_id)
-                record["renderer_input_path"] = f"chapters/{_slug(entry['book'], int(entry['chapter']))}/renderer-input"
-                record["renderer_input_sha256"] = contract["renderer_input_sha256"]
+                prepared, assessment = self._prepared_for_session(entry)
+                if not assessment.renderable:
+                    receipt = self._source_limited_receipt(run_root, entry, prepared, assessment)
+                    record.update({
+                        "status": "validated",
+                        "classification": "source-limited",
+                        "release_state": receipt["release_state"],
+                        "result_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/result.json",
+                    })
+                    source_limited.append({
+                        "reference": entry["reference"],
+                        **assessment.to_dict(),
+                    })
+                else:
+                    contract = self._write_renderer_input(
+                        run_root, entry, run_id=run_id, prepared=prepared
+                    )
+                    record["renderer_input_path"] = f"chapters/{_slug(entry['book'], int(entry['chapter']))}/renderer-input"
+                    record["renderer_input_sha256"] = contract["renderer_input_sha256"]
+                    renderable.append(entry["reference"])
+                # Checkpoint after every chapter so an interrupted preparation
+                # can resume without losing the immutable identity proof.
+                write_json(state_path, state)
+            elif self._is_source_limited_receipt(
+                _load_json(run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "result.json")
+                if (run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "result.json").is_file()
+                else None
+            ):
+                source_limited.append({"reference": entry["reference"], "status": "already_terminal"})
+            elif record.get("status") == "awaiting_render":
+                raise V12IntegrityError(f"runner chapter state is not safely resumable: {entry['reference']}")
         write_json(state_path, state)
         return {
             "status": "PREPARED", "run_id": run_id,
             "renderer_mode": "codex_session", "requested_model": CODEX_TERRA_MODEL,
             "requested_effort": CODEX_TERRA_EFFORT,
             "chapter_count": len(manifest["chapters"]),
+            "renderable_count": len(renderable),
+            "source_limited_count": len(source_limited),
+            "renderable": renderable,
+            "source_limited": source_limited,
             "chapters": [entry["reference"] for entry in manifest["chapters"]],
             "manifest_path": manifest_path.relative_to(self.repo_root).as_posix(),
         }
@@ -727,11 +920,14 @@ class V12CorpusRunner:
     def _batch_classification(manifest: dict[str, Any], outcomes: list[dict[str, Any]]) -> str:
         batch_number = int(manifest.get("batch_number", 1))
         prefix = f"V1_2_CORPUS_BATCH_{batch_number:02d}"
-        if any(item.get("status") in {"failed", "needs_review", "partial", "stale"} for item in outcomes):
+        renderable_outcomes = [
+            item for item in outcomes if not V12CorpusRunner._is_source_limited_receipt(item)
+        ]
+        if any(item.get("status") in {"failed", "needs_review", "partial", "stale"} for item in renderable_outcomes):
             return f"{prefix}_REVIEW_REQUIRED"
         has_quality_warnings = any(
             item.get("audits", {}).get("quality", {}).get("richness_status") != "RICH_ENOUGH"
-            for item in outcomes
+            for item in renderable_outcomes
         )
         return f"{prefix}_VALIDATED_WITH_WARNINGS" if has_quality_warnings else f"{prefix}_VALIDATED"
 
@@ -755,14 +951,27 @@ class V12CorpusRunner:
             raise V12IntegrityError("prepared session manifest has invalid bounded chapter list")
         # Preflight all responses before writing any terminal result, so a
         # missing response cannot leave a deceptively partial batch.
+        source_limited_outcomes: dict[str, dict[str, Any]] = {}
         missing = []
         for entry in entries:
-            raw_path = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "raw-response.bin"
+            chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+            result_path = chapter_root / "result.json"
+            if result_path.is_file():
+                receipt = _load_json(result_path)
+                if self._is_source_limited_receipt(receipt):
+                    source_limited_outcomes[entry["reference"]] = receipt
+                    continue
+            raw_path = chapter_root / "raw-response.bin"
             if not raw_path.is_file():
                 missing.append(entry["reference"])
         if missing:
             raise V12CorpusError("missing raw responses: " + ", ".join(missing))
-        outcomes = [self._finalize_one(run_root, entry) for entry in entries]
+        outcomes = [
+            source_limited_outcomes[entry["reference"]]
+            if entry["reference"] in source_limited_outcomes
+            else self._finalize_one(run_root, entry)
+            for entry in entries
+        ]
         for outcome in outcomes:
             record = state["chapters"].get(outcome["reference"])
             if not isinstance(record, dict):
@@ -773,7 +982,19 @@ class V12CorpusRunner:
         classification = self._batch_classification(manifest, outcomes)
         state["classification"] = classification
         write_json(state_path, state)
-        report = {"status": "FINALIZED", "classification": classification, "run_id": manifest["run_id"], "chapters": outcomes, "counts": {status: sum(item["status"] == status for item in outcomes) for status in sorted(TERMINAL_RESULT_STATES)}}
+        report = {
+            "status": "FINALIZED",
+            "classification": classification,
+            "run_id": manifest["run_id"],
+            "chapters": outcomes,
+            "counts": {
+                status: sum(item["status"] == status for item in outcomes)
+                for status in sorted(TERMINAL_RESULT_STATES)
+            },
+            "source_limited": sum(
+                self._is_source_limited_receipt(item) for item in outcomes
+            ),
+        }
         report_path = run_root / "finalize.json"
         if report_path.is_file() and _load_json(report_path) != report:
             version = 2
@@ -915,8 +1136,10 @@ class V12CorpusRunner:
 
 
 __all__ = [
+    "ChapterRenderability",
     "DEFAULT_BATCH_SIZE",
     "MAX_BATCH_SIZE",
+    "assess_chapter_renderability",
     "ExistingV12ChapterPipeline",
     "V12AuthorizationError",
     "V12CorpusError",

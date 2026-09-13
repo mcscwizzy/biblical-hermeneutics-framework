@@ -1,13 +1,16 @@
 import json
 import hashlib
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
 from framework.commentary.v12_corpus import (
+    V12CorpusError,
     V12AuthorizationError,
     V12CorpusRunner,
     V12IntegrityError,
+    assess_chapter_renderability,
 )
 from framework.commentary.v12_config import (
     DEFAULT_V12_PROSE_MODEL,
@@ -38,9 +41,9 @@ class FakePipeline:
         return CommentaryGenerationResult(reference=reference, status=self.statuses.get(reference, "validated"))
 
 
-def _runner(tmp_path, *, authorized=True, pipeline=None):
+def _runner(tmp_path, *, authorized=True, pipeline=None, canonical_loader=_canonical):
     candidate = tmp_path / "candidate"
-    candidate.mkdir()
+    candidate.mkdir(parents=True)
     (candidate / "candidate-state.json").write_text(json.dumps({
         "pipeline_version": "commentary-v1.2-enrichment",
         "full_bible_generation_authorized": authorized,
@@ -49,8 +52,42 @@ def _runner(tmp_path, *, authorized=True, pipeline=None):
         tmp_path,
         candidate_root=candidate,
         release_root=tmp_path / "release",
-        canonical_loader=_canonical,
+        canonical_loader=canonical_loader,
         pipeline=pipeline,
+    )
+
+
+def _prepared(reference, *, availability="AVAILABLE", evidence_items=None, unit_count=1):
+    items = list(evidence_items or [])
+    units = [SimpleNamespace(id=f"unit-{index}") for index in range(unit_count)]
+    book, chapter = reference.rsplit(" ", 1)
+    return SimpleNamespace(
+        bundle=SimpleNamespace(
+            passage_ref=reference,
+            evidence_items=items,
+            evidence_hash=f"evidence-{reference}",
+            version="1.1",
+        ),
+        synthesis=SimpleNamespace(
+            reference=reference,
+            evidence_availability=availability,
+            synthesis_units=units,
+            synthesis_hash=f"synthesis-{reference}",
+        ),
+        row={"input_identity": {
+            "packet_id": f"packet-{reference}",
+            "packet_hash": f"packet-hash-{reference}",
+        }},
+    )
+
+
+def _ineligible_evidence(reference):
+    from bhf_agent.presentation.models import EvidenceItem
+
+    return EvidenceItem(
+        id=f"evidence-{reference}", claim="background", category="history",
+        source_ids=[], related_entity_ids=[], passage_anchors=[reference + ":1"],
+        confidence="medium", relevance_metadata={"source_kind": "unknown"},
     )
 
 
@@ -111,6 +148,48 @@ def test_canonical_traversal_and_batch_limit(tmp_path):
     assert discovery.chapters_remaining == 4
 
 
+def test_renderability_classifies_true_data_gap_without_renderer_work():
+    assessment = assess_chapter_renderability(
+        _prepared("Numbers 3", availability="DATA_GAP", unit_count=0)
+    )
+    assert assessment.renderable is False
+    assert assessment.evidence_item_count == 0
+    assert "DATA_GAP" in assessment.reason
+
+
+def test_renderability_classifies_empty_thin_synthesis_as_source_limited():
+    prepared = _prepared(
+        "Numbers 6", availability="THIN",
+        evidence_items=[_ineligible_evidence("Numbers 6")], unit_count=0,
+    )
+    assessment = assess_chapter_renderability(prepared)
+    assert assessment.renderable is False
+    assert assessment.evidence_item_count == 1
+    assert assessment.eligible_evidence_item_count == 0
+    assert "applicability" in assessment.reason
+
+
+def test_empty_synthesis_with_eligible_evidence_fails_as_compiler_regression():
+    from bhf_agent.presentation.models import EvidenceItem
+
+    prepared = _prepared(
+        "Genesis 1", availability="AVAILABLE",
+        evidence_items=[EvidenceItem(
+            id="e1", claim="current", category="history", source_ids=[],
+            related_entity_ids=[], passage_anchors=["Genesis 1:1"], confidence="high",
+            relevance_metadata={"source_kind": "archaeology_resolver", "anchor_source": "resolver", "inherited_from_parent": False, "applicability_scope": "passage"},
+        )], unit_count=0,
+    )
+    with pytest.raises(V12IntegrityError, match="synthesis compiler regression"):
+        assess_chapter_renderability(prepared)
+
+
+def test_normal_chapter_is_renderable_and_never_source_limited():
+    assessment = assess_chapter_renderability(_prepared("Genesis 1", unit_count=1))
+    assert assessment.renderable is True
+    assert assessment.reason is None
+
+
 def test_terminal_runner_results_are_skipped_and_resume_selects_next(tmp_path):
     pipeline = FakePipeline()
     runner = _runner(tmp_path, pipeline=pipeline)
@@ -159,6 +238,123 @@ def test_authorization_guard_blocks_generation(tmp_path):
     assert pipeline.calls == []
 
 
+def test_authorization_true_and_false_use_only_the_runner_candidate_root(tmp_path):
+    true_runner = _runner(tmp_path / "true", authorized=True, pipeline=FakePipeline())
+    false_runner = _runner(tmp_path / "false", authorized=False, pipeline=FakePipeline())
+    assert true_runner.discover(1).full_bible_generation_authorized is True
+    assert false_runner.discover(1).full_bible_generation_authorized is False
+    assert json.loads((tmp_path / "true" / "candidate" / "candidate-state.json").read_text())["full_bible_generation_authorized"] is True
+    assert json.loads((tmp_path / "false" / "candidate" / "candidate-state.json").read_text())["full_bible_generation_authorized"] is False
+
+
+def test_source_limited_chapter_is_terminal_without_raw_and_skipped_by_discovery(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    prepared = _prepared("Genesis 1", availability="DATA_GAP", unit_count=0)
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        prepared, assess_chapter_renderability(prepared)
+    ))
+    prepared_result = runner.prepare(1)
+    chapter_root = tmp_path / "candidate" / "corpus-runner" / "runs" / prepared_result["run_id"] / "chapters" / "genesis_001"
+    receipt = json.loads((chapter_root / "result.json").read_text())
+    assert receipt["release_state"] == "NOT_RENDERABLE_SOURCE_LIMITED"
+    assert receipt["reason"] == "commentary_source_limited"
+    assert not (chapter_root / "raw-response.bin").exists()
+    assert runner.discover(1).next_chapters == ("Genesis 2",)
+    finalized = runner.finalize()
+    assert finalized["source_limited"] == 1
+
+
+def test_source_limited_prepare_never_calls_ancestry_or_creates_renderer_input(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    prepared = _prepared("Genesis 1", availability="THIN", unit_count=0)
+    calls = []
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        prepared, assess_chapter_renderability(prepared)
+    ))
+    monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: calls.append(args) or {})
+    monkeypatch.setattr("framework.commentary.v12_corpus.build_ancestry_envelope", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("ancestry must not run")))
+    result = runner.prepare(1)
+    assert result["source_limited_count"] == 1
+    assert calls == []
+    assert not list((tmp_path / "candidate" / "corpus-runner").rglob("renderer-input"))
+
+
+def test_mixed_fifty_chapter_prepare_terminalizes_only_source_limited_rows(tmp_path, monkeypatch):
+    canonical = [
+        {"reference": f"Genesis {index}", "book": "Genesis", "chapter": index, "canonical_ordinal": index}
+        for index in range(1, 51)
+    ]
+    runner = _runner(tmp_path, canonical_loader=lambda: canonical)
+    source_refs = {f"Genesis {index}" for index in range(1, 7)}
+
+    def fake_prepared(entry):
+        availability = "DATA_GAP" if entry["reference"] in source_refs else "AVAILABLE"
+        item_count = 0 if entry["reference"] in source_refs else 0
+        prepared = _prepared(entry["reference"], availability=availability, unit_count=0 if item_count == 0 and entry["reference"] in source_refs else 1)
+        return prepared, assess_chapter_renderability(prepared)
+
+    monkeypatch.setattr(runner, "_prepared_for_session", fake_prepared)
+    monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: {"renderer_input_sha256": "frozen"})
+    result = runner.prepare(50)
+    assert result["chapter_count"] == 50
+    assert result["renderable_count"] == 44
+    assert result["source_limited_count"] == 6
+    assert runner.discover(50).terminal_v1_2_chapters == 6
+    assert runner.discover(50).chapters_remaining == 44
+
+
+def test_partial_prepare_reuses_matching_immutable_inputs_and_rejects_mismatch(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    prepared = _prepared("Genesis 1", unit_count=1)
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        prepared, assess_chapter_renderability(prepared)
+    ))
+
+    def freeze(run_root, entry, *, run_id, prepared):
+        from framework.commentary.production.models import write_immutable, write_json
+        input_root = run_root / "chapters" / "genesis_001" / "renderer-input"
+        write_immutable(input_root / "system_prompt.txt", b"system")
+        write_immutable(input_root / "user_prompt.txt", b"user")
+        write_json(input_root / "metadata.json", {"renderer_input_sha256": "frozen"}, immutable=True)
+        return {"renderer_input_sha256": "frozen"}
+
+    monkeypatch.setattr(runner, "_write_renderer_input", freeze)
+    first = runner.prepare(1)
+    second = runner.prepare(1)
+    assert second["run_id"] == first["run_id"]
+    input_root = tmp_path / "candidate" / "corpus-runner" / "runs" / first["run_id"] / "chapters" / "genesis_001" / "renderer-input"
+    (input_root / "user_prompt.txt").write_text("tampered")
+    with pytest.raises(Exception, match="immutable artifact collision"):
+        runner.prepare(1)
+
+
+def test_prepare_resumes_incomplete_batch_before_selecting_after_source_limited_rows(tmp_path, monkeypatch):
+    canonical = [
+        {"reference": f"Genesis {index}", "book": "Genesis", "chapter": index, "canonical_ordinal": index}
+        for index in range(1, 4)
+    ]
+    runner = _runner(tmp_path, canonical_loader=lambda: canonical)
+    source = _prepared("Genesis 1", availability="DATA_GAP", unit_count=0)
+    renderable = _prepared("Genesis 2", unit_count=1)
+    renderable_three = _prepared("Genesis 3", unit_count=1)
+    prepared_by_reference = {
+        "Genesis 1": source,
+        "Genesis 2": renderable,
+        "Genesis 3": renderable_three,
+    }
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        prepared_by_reference[entry["reference"]],
+        assess_chapter_renderability(prepared_by_reference[entry["reference"]]),
+    ))
+    monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: {"renderer_input_sha256": "frozen"})
+    first = runner.prepare(3)
+    second = runner.prepare(3)
+    assert second["run_id"] == first["run_id"]
+    assert second["chapter_count"] == 3
+    assert second["source_limited_count"] == 1
+    assert runner.discover(3).next_chapters == ("Genesis 2", "Genesis 3")
+
+
 def test_result_classification_passes_through_unchanged(tmp_path):
     pipeline = FakePipeline({"Genesis 1": "needs_review"})
     runner = _runner(tmp_path, pipeline=pipeline)
@@ -196,7 +392,7 @@ def test_prepare_is_session_only_and_resumable_without_pipeline(tmp_path, monkey
     runner = _runner(tmp_path)
     writes = []
 
-    def freeze(run_root, entry, *, run_id):
+    def freeze(run_root, entry, *, run_id, prepared):
         writes.append(entry["reference"])
         return {"renderer_input_sha256": "frozen"}
 

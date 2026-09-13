@@ -74,7 +74,7 @@ REQUIRED_PROVENANCE = (
 )
 
 
-def prepare() -> dict[str, Any]:
+def prepare(*, candidate_state_path: Path | None = None) -> dict[str, Any]:
     """Lock live evidence/synthesis identities and baseline audit rows."""
 
     baseline = _read_json(AUDIT_PATH)
@@ -158,7 +158,7 @@ def prepare() -> dict[str, Any]:
         },
     )
     _write_json(
-        CANDIDATE_ROOT / "candidate-state.json",
+        candidate_state_path or CANDIDATE_ROOT / "candidate-state.json",
         {
             "pipeline_version": "commentary-v1.2-enrichment",
             "current_stage": "CANARY_READY_FOR_RENDERER",
@@ -173,7 +173,11 @@ def prepare() -> dict[str, Any]:
     return artifact
 
 
-def generate(reference: str | None = None) -> dict[str, Any]:
+def generate(
+    reference: str | None = None,
+    *,
+    candidate_state_path: Path | None = None,
+) -> dict[str, Any]:
     """Record the external-renderer boundary without invoking a repository adapter."""
 
     preflight = _read_json(CANARY_ROOT / "canary-preflight.json")
@@ -206,7 +210,7 @@ def generate(reference: str | None = None) -> dict[str, Any]:
     }
     _write_json(CANARY_ROOT / "canary-generation.json", artifact)
     _write_json(
-        CANDIDATE_ROOT / "candidate-state.json",
+        candidate_state_path or CANDIDATE_ROOT / "candidate-state.json",
         {
             "pipeline_version": "commentary-v1.2-enrichment",
             "current_stage": "CANARY_BLOCKED_BEFORE_PROSE",
@@ -315,7 +319,7 @@ def compare() -> dict[str, Any]:
     return artifact
 
 
-def gate() -> dict[str, Any]:
+def gate(*, candidate_state_path: Path | None = None) -> dict[str, Any]:
     """Evaluate and persist the canary scale gate without authorizing generation."""
 
     comparison = compare()
@@ -328,13 +332,14 @@ def gate() -> dict[str, Any]:
         "human_review_required": comparison["gate_state"] == "CANARY_PASS",
     }
     _write_json(CANARY_ROOT / "canary-gate.json", artifact)
-    state = _read_json(CANDIDATE_ROOT / "candidate-state.json")
+    state_path = candidate_state_path or CANDIDATE_ROOT / "candidate-state.json"
+    state = _read_json(state_path)
     state.update({
         "current_stage": f"CANARY_{artifact['status']}",
         "current_gate_state": artifact["status"],
         "full_bible_generation_authorized": False,
     })
-    _write_json(CANDIDATE_ROOT / "candidate-state.json", state)
+    _write_json(state_path, state)
     return artifact
 
 
