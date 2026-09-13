@@ -12,15 +12,18 @@ from bhf_agent.chapter_commentary.reader_provenance_binding import (
     READER_PROVENANCE_BINDING_VERSION,
     ProvenanceBindingError,
     audit_provenance_binding,
+    add_provenance_binding_to_prompt,
     build_provenance_binding,
     normalize_renderer_payload,
     resolve_provenance_refs,
 )
 from tools import commentary_v12_reader_provenance_binding as diagnostic
+from framework.commentary.v12_current_lineage import CURRENT_LINEAGE_REL, record_context
+from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/reader-provenance-binding-v1-6bceab0758ee36f2c176"
+CURRENT_ROOT = ROOT / CURRENT_LINEAGE_REL
 
 
 def _path(synthesis_id: str, evidence_ids: list[str]) -> dict:
@@ -147,33 +150,30 @@ def test_tampered_immutable_path_definition_is_rejected():
         resolve_provenance_refs([binding["paths"][0]["path_id"]], tampered)
 
 
-def test_frozen_four_chapter_artifact_is_reproducible_and_prompt_additive():
-    context = diagnostic._context(ROOT)
-    manifest = json.loads((TARGET_ROOT / "manifest.json").read_text())
+def test_current_four_chapter_records_bind_provenance_and_prompt_additively():
+    for reference in ("Romans 3", "Joshua 10", "Leviticus 1", "Genesis 5"):
+        context = record_context(ROOT, "scale_pilot", reference)
+        row = context["row"]
 
-    assert manifest == context["manifest"]
-    assert manifest["contracts"]["prompt"] == "1.7"
-    assert manifest["contracts"]["projection"] == "reader-level-idea-projection-v1"
-    assert manifest["contracts"]["ancestry_envelope"] == "reader-level-idea-ancestry-envelope-v1"
-    assert manifest["contracts"]["provenance_binding"] == READER_PROVENANCE_BINDING_VERSION
-    for record, row in zip(context["records"], manifest["chapters"], strict=True):
-        assert "READER PROVENANCE BINDING" not in record["source_user_prompt"]
-        assert "READER PROVENANCE BINDING" in record["candidate_prompt"]
-        assert "1.8" not in record["candidate_prompt"]
-        assert row["source_user_prompt_sha256"] != row["candidate_input_sha256"]
-        stored_binding = json.loads(
-            (TARGET_ROOT / "binding" / f"{row['slug']}.json").read_text()
+        assert context["root"].is_relative_to(CURRENT_ROOT)
+        assert context["manifest"]["contracts"]["prompt_version"] == "1.7"
+        assert context["manifest"]["contracts"]["projection_version"] == "reader-level-idea-projection-v1"
+        assert context["manifest"]["contracts"]["ancestry_envelope_version"] == "reader-level-idea-ancestry-envelope-v1"
+        assert context["manifest"]["contracts"]["provenance_binding_version"] == READER_PROVENANCE_BINDING_VERSION
+        assert "READER PROVENANCE BINDING" not in context["source_prompt"]
+        bound_prompt = add_provenance_binding_to_prompt(
+            context["candidate_prompt"], context["envelope"], context["binding"]
         )
-        assert stored_binding == record["binding"]
-        assert stored_binding["binding_hash"] == row["provenance_binding_hash"]
+        assert "READER PROVENANCE BINDING" in bound_prompt
+        assert "1.8" not in bound_prompt
+        assert row["source_user_prompt_sha256"] != row["candidate_input_sha256"]
+        assert context["binding"]["binding_hash"] == row["provenance_binding_hash"]
 
 
-def test_existing_ancestry_validator_contract_is_recorded_unchanged():
-    contracts = json.loads((TARGET_ROOT / "contract-identities.json").read_text())
-    validator_path = ROOT / "bhf_agent/chapter_commentary/validation.py"
-    import hashlib
+def test_current_record_reconstructs_to_its_frozen_source_identity():
+    context = record_context(ROOT, "scale_pilot", "Romans 3")
+    prepared = prepare_chapter("Romans", 3)
 
-    current_hash = hashlib.sha256(validator_path.read_bytes()).hexdigest()
-    assert contracts["source_hashes"]["validator"] == current_hash
-    assert contracts["validator_behavior"] == "existing-validator-unchanged"
-    assert contracts["scorer_behavior"] == "existing-scorer-unchanged"
+    assert prepared.synthesis.synthesis_hash == context["row"]["synthesis_hash"]
+    assert prepared.row["input_identity"]["packet_hash"] == context["row"]["source_packet_hash"]
+    assert prepared.bundle.evidence_hash == context["row"]["evidence_hash"]

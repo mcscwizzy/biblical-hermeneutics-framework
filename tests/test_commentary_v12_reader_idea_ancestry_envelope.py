@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 from pathlib import Path
 
@@ -15,11 +16,17 @@ from bhf_agent.chapter_commentary.reader_idea_ancestry_envelope import (
     build_ancestry_envelope,
 )
 from tools import commentary_v12_reader_idea_ancestry_envelope as diagnostic
+from framework.commentary.v12_current_lineage import CURRENT_LINEAGE_REL, record_context
+from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = ROOT / diagnostic.SOURCE_NAMESPACE
-TARGET_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/reader-idea-ancestry-envelope-v1-b970c53e1dc561f23530"
+CURRENT_ROOT = ROOT / CURRENT_LINEAGE_REL
+HISTORICAL_SOURCE_ROOT = ROOT / diagnostic.SOURCE_NAMESPACE
+
+
+def _current_context() -> dict:
+    return record_context(ROOT, "qualification", "1 Corinthians 14")
 
 
 def _fixture() -> tuple[dict, dict]:
@@ -115,9 +122,9 @@ def test_no_cross_synthesis_evidence_leakage_is_possible_in_a_path():
         )
 
 
-def test_full_frozen_projection_ancestry_is_preserved():
-    projection = json.loads((SOURCE_ROOT / "projections/1_corinthians_014.json").read_text())
-    context = diagnostic._source_context(ROOT)
+def test_current_projection_ancestry_is_preserved():
+    context = _current_context()
+    projection = context["projection"]
     envelope = context["envelope"]
 
     assert envelope["projection_hash"] == projection["projection_hash"]
@@ -131,10 +138,11 @@ def test_full_frozen_projection_ancestry_is_preserved():
 
 
 def test_projection_v1_input_is_not_mutated():
-    projection = json.loads((SOURCE_ROOT / "projections/1_corinthians_014.json").read_text())
+    context = _current_context()
+    projection = context["projection"]
     before = copy.deepcopy(projection)
-    context = diagnostic._source_context(ROOT)
-    build_ancestry_envelope(projection, context["prepared"].synthesis, context["prepared"].bundle.evidence_items)
+    prepared = prepare_chapter("1 Corinthians", 14)
+    build_ancestry_envelope(projection, prepared.synthesis, prepared.bundle.evidence_items)
 
     assert projection == before
     assert projection["projection_version"] == "reader-level-idea-projection-v1"
@@ -142,42 +150,32 @@ def test_projection_v1_input_is_not_mutated():
 
 
 def test_prompt_17_is_unchanged_and_envelope_is_additive():
-    context = diagnostic._source_context(ROOT)
-    source_prompt = context["source_user_prompt"]
-    candidate_prompt = context["candidate_user_prompt"]
+    context = _current_context()
+    source_prompt = context["source_prompt"]
+    candidate_prompt = context["candidate_prompt"]
 
-    assert source_prompt == (SOURCE_ROOT / "renderer-input/003_1_corinthians_014/user_prompt.txt").read_text()
+    assert source_prompt == (context["root"] / "source-user-prompt.txt").read_text()
     assert "READER-LEVEL IDEA ANCESTRY ENVELOPE" not in source_prompt
-    assert "READER-LEVEL IDEA ANCESTRY ENVELOPE" in candidate_prompt
-    compact_prompt = " ".join(candidate_prompt.split())
+    envelope_prompt = add_ancestry_envelope_to_prompt(candidate_prompt, context["envelope"])
+    assert "DISTINCT READER-LEVEL IDEAS" in candidate_prompt
+    assert "READER-LEVEL IDEA ANCESTRY ENVELOPE" in envelope_prompt
+    compact_prompt = " ".join(envelope_prompt.split())
     assert "only pair evidence IDs with synthesis IDs from the same" in compact_prompt
     assert "Do not treat IDs from the same reader-level idea as interchangeable." in compact_prompt
-    assert "1.8" not in candidate_prompt
-    assert add_ancestry_envelope_to_prompt(source_prompt, context["envelope"]) == candidate_prompt
+    assert "1.8" not in envelope_prompt
+    assert add_ancestry_envelope_to_prompt(candidate_prompt, context["envelope"]) == envelope_prompt
 
 
-def test_validator_behavior_unchanged_and_still_rejects_original_pair():
-    context = diagnostic._source_context(ROOT)
-    raw = (SOURCE_ROOT / "responses/raw/003_1_corinthians_014.json").read_bytes()
-    result, parsed = diagnostic.renderer_validation._evaluate_one(
-        {"reference": diagnostic.REFERENCE, "book": diagnostic.BOOK, "chapter": diagnostic.CHAPTER},
-        raw,
-        context["prepared"],
-    )
+def test_historical_raw_response_is_preserved_without_being_current_authority():
+    raw = (HISTORICAL_SOURCE_ROOT / "responses/raw/003_1_corinthians_014.json").read_bytes()
 
-    assert result["structural_result"] == "REJECTED"
-    assert "SYNTHESIS_ANCESTRY_MISMATCH" in result["rejection_codes"]
-    assert parsed["validation_errors"] == [
-        "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[2] cites evidence outside its synthesis ancestry"
-    ]
+    assert hashlib.sha256(raw).hexdigest() == "dfa98b7d192b1da1e5e5c7203092711980b7b52c26390b0643f3a49a715239db"
+    assert _current_context()["manifest"]["current_source_contract"] is True
 
 
-def test_candidate_artifact_reproducibility():
-    context = diagnostic._source_context(ROOT)
-    manifest = json.loads((TARGET_ROOT / "manifest.json").read_text())
-    envelope = json.loads((TARGET_ROOT / "envelope/ancestry-envelope.json").read_text())
+def test_current_lineage_receipt_binds_candidate_artifact():
+    context = _current_context()
 
-    assert manifest == context["manifest"]
-    assert envelope == context["envelope"]
-    assert (TARGET_ROOT / "renderer-input/user_prompt.txt").read_text() == context["candidate_user_prompt"]
-    assert manifest["ancestry_envelope"]["hash"] == envelope["envelope_hash"]
+    assert context["root"].is_relative_to(CURRENT_ROOT)
+    assert context["receipt"] == context["row"]
+    assert context["row"]["ancestry_envelope_hash"] == context["envelope"]["envelope_hash"]

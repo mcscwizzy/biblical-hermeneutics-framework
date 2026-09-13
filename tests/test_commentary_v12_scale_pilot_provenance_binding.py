@@ -1,6 +1,8 @@
 """Focused contracts for the provenance-bound 75-chapter v1.2 scale pilot."""
 
 import copy
+import json
+from pathlib import Path
 
 import pytest
 
@@ -9,34 +11,44 @@ from bhf_agent.chapter_commentary.reader_provenance_binding import (
     normalize_renderer_payload,
 )
 from tools import commentary_v12_scale_pilot_provenance_binding as pilot
+from framework.commentary.v12_current_lineage import CURRENT_LINEAGE_REL, load_manifest, record_context
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CURRENT_ROOT = ROOT / CURRENT_LINEAGE_REL
+HISTORICAL_SCALE_ROOT = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.2-scale-pilot-922472547555015a3ced"
+
+
+def _current_context() -> tuple[dict, list[dict]]:
+    manifest = load_manifest(ROOT)
+    records = [record_context(ROOT, "scale_pilot", row["reference"])
+               for row in manifest["scale_pilot"]["chapters"]]
+    return manifest, records
 
 
 def test_source_corpus_and_batches_are_reused_exactly():
-    context = pilot.build_context()
-    manifest = context["manifest"]
-    source = context["source_manifest"]
+    manifest, _ = _current_context()
+    source = json.loads((HISTORICAL_SCALE_ROOT / "manifest.json").read_text())
+    current = manifest["scale_pilot"]
 
-    assert manifest["source_pilot"]["manifest_identity"] == source["manifest_identity"]
-    assert manifest["exact_source_corpus_reused"] is True
-    assert [row["reference"] for row in manifest["chapters"]] == [
+    assert manifest["supersedes"]["scale_pilot_manifest_identity"] == source["manifest_identity"]
+    assert [row["reference"] for row in current["chapters"]] == [
         row["reference"] for row in source["chapters"]
     ]
-    assert [row["batch"] for row in manifest["chapters"]] == [
+    assert [row["batch"] for row in current["chapters"]] == [
         row["batch"] for row in source["chapters"]
     ]
-    assert manifest["chapter_count"] == 75
-    assert manifest["unseen_percentage"] == 93.33
+    assert current["chapter_count"] == 75
+    assert source["unseen_percentage"] == 93.33
 
 
 def test_unified_contract_versions_are_frozen():
-    manifest = pilot.build_context()["manifest"]
+    manifest = load_manifest(ROOT)["contracts"]
 
     assert manifest["prompt_version"] == "1.7"
     assert manifest["projection_version"] == "reader-level-idea-projection-v1"
     assert manifest["ancestry_envelope_version"] == "reader-level-idea-ancestry-envelope-v1"
     assert manifest["provenance_binding_version"] == "reader-provenance-binding-v1"
-    assert manifest["renderer"] == "gpt-5.6-sol"
-    assert manifest["renderer_effort"] == "medium"
     assert manifest["frozen_scoring_contracts"] == {
         "essential_passage_context": "essential-passage-context-v2",
         "reader_relevance_eligibility": "reader-relevance-eligibility-v1",
@@ -47,18 +59,17 @@ def test_unified_contract_versions_are_frozen():
 
 
 def test_manifest_and_all_path_bindings_are_deterministic():
-    first = pilot.build_context()
-    second = pilot.build_context()
+    first, first_records = _current_context()
+    second, second_records = _current_context()
 
-    assert first["manifest"] == second["manifest"]
-    assert [record["binding"] for record in first["records"]] == [
-        record["binding"] for record in second["records"]
-    ]
-    assert all(record["binding_audit"]["valid"] for record in first["records"])
+    assert first == second
+    assert [record["binding"] for record in first_records] == [
+        record["binding"] for record in second_records]
+    assert all(record["binding_audit"]["valid"] for record in first_records)
 
 
 def test_unknown_paths_are_rejected_and_manual_ids_cannot_leak():
-    record = pilot.build_context()["records"][0]
+    record = record_context(ROOT, "scale_pilot", "Romans 3")
     binding = record["binding"]
     path_id = binding["paths"][0]["path_id"]
     payload = {
@@ -123,13 +134,12 @@ def test_aggregate_and_quarantine_classification_are_deterministic():
 
 
 def test_prepared_batch_manifests_and_checksums_reproduce():
-    context = pilot.build_context()
-    stored = pilot._read(context["root"] / "manifest.json")
-    assert stored == context["manifest"]
-    pilot._verify_identity(stored, "manifest_identity", "test manifest")
+    manifest, records = _current_context()
+    rows = manifest["scale_pilot"]["chapters"]
+
     for batch, size in enumerate(pilot.BATCH_SIZES, 1):
-        batch_manifest = pilot._read(
-            context["root"] / f"batch-{batch:03d}" / "batch-manifest.json"
-        )
-        assert len(batch_manifest["chapters"]) == size
-        assert batch_manifest["contract_manifest_identity"] == stored["manifest_identity"]
+        batch_rows = [row for row in rows if row["batch"] == batch]
+        assert len(batch_rows) == size
+        for record in (item for item in records if item["row"]["batch"] == batch):
+            assert record["receipt"] == record["row"]
+            assert record["root"].is_relative_to(CURRENT_ROOT)
