@@ -1,0 +1,200 @@
+TASK: Generate BHF Commentary v1.8 for Joshua 3.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_ea356efcececdecb: Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. (categories: culture, surrounding_passages)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_ea356efcececdecb: Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. (importance: CORE; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["joshua-literary-movement"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_781026c51a04"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["joshua:interpretive_note:0"], "interpretation_level": "inference", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_ce3564a39a7b"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And Joshua rose up early in the morning; and they removed from Shittim, and came to the Jordan, he and all the children of Israel; and they lodged there before they passed over. 2. And it came to pass after three days, that the officers went through the midst of the camp; 3. and they commanded the people, saying, When ye see the ark of the covenant of Jehovah your God, and the priests the Levites bearing it, then ye shall remove from your place, and go after it. 4. Yet there shall be a space between you and it, about two thousand cubits by measure: come not near unto it, that ye may know the way by which ye must go; for ye have not passed this way heretofore. 5. And Joshua said unto the people, Sanctify yourselves; for tomorrow Jehovah will do wonders among you. 6. And Joshua spake unto the priests, saying, Take up the ark of the covenant, and pass over before the people. And they took up the ark of the covenant, and went before the people. 7. And Jehovah said unto Joshua, This day will I begin to magnify thee in the sight of all Israel, that they may know that, as I was with Moses, so I will be with thee. 8. And thou shalt command the priests that bear the ark of the covenant, saying, When ye are come to the brink of the waters of the Jordan, ye shall stand still in the Jordan. 9. And Joshua said unto the children of Israel, Come hither, and hear the words of Jehovah your God. 10. And Joshua said, Hereby ye shall know that the living God is among you, and that he will without fail drive out from before you the Canaanite, and the Hittite, and the Hivite, and the Perizzite, and the Girgashite, and the Amorite, and the Jebusite. 11. Behold, the ark of the covenant of the Lord of all the earth passeth over before you into the Jordan. 12. Now therefore take you twelve men out of the tribes of Israel, for every tribe a man. 13. And it shall come to pass, when the soles of the feet of the priests that bear the ark of Jehovah, the Lord of all the earth, shall rest in the waters of the Jordan, that the waters of the Jordan shall be cut off, even the waters that come down from above; and they shall stand in one heap. 14. And it came to pass, when the people removed from their tents, to pass over the Jordan, the priests that bare the ark of the covenant being before the people; 15. and when they that bare the ark were come unto the Jordan, and the feet of the priests that bare the ark were dipped in the brink of the water (for the Jordan overfloweth all its banks all the time of harvest,) 16. that the waters which came down from above stood, and rose up in one heap, a great way off, at Adam, the city that is beside Zarethan; and those that went down toward the sea of the Arabah, even the Salt Sea, were wholly cut off: and the people passed over right against Jericho. 17. And the priests that bare the ark of the covenant of Jehovah stood firm on dry ground in the midst of the Jordan; and all Israel passed over on dry ground, until all the nation were passed clean over the Jordan.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 5, "groups": 0, "people": 1, "places": 0}, "evidence_categories": {"culture": 8, "history": 6}, "evidence_item_count": 14, "relationship_unit_count": 0, "specific_evidence_count": 2, "unit_kind_counts": {"surrounding_passages": 2}, "unused_evidence_ids": ["ark-brought-to-jerusalem:ancient_near_east_context:0", "ark-brought-to-jerusalem:historical_context:0", "conquest-of-jericho:ancient_near_east_context:0", "conquest-of-jericho:historical_context:0", "crossing-the-jordan:ancient_near_east_context:0", "crossing-the-jordan:historical_context:0", "david-anointed:ancient_near_east_context:0", "david-anointed:historical_context:0", "joshua-son-of-nun:ancient_near_east_context:0", "joshua-son-of-nun:historical_context:0", "rise-of-saul:ancient_near_east_context:0", "rise-of-saul:historical_context:0"], "used_evidence_ids": ["joshua-literary-movement", "joshua:interpretive_note:0"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "8aed619211cd67eb76a8846fba7e8a86acedd7f5a32d286d3d3cd416e000d566", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["joshua-literary-movement"], "facts": ["Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal."], "id": "syn_surrounding_passages_781026c51a04", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Joshua 1-24"], "verse_refs": ["Joshua 1", "Joshua 10:1-43", "Joshua 11:1-23", "Joshua 12:1-24", "Joshua 13:1-33", "Joshua 14:1-15", "Joshua 15:1-63", "Joshua 16:1-10", "Joshua 17:1-18", "Joshua 18:1-28", "Joshua 19:1-51", "Joshua 20:1-9", "Joshua 21:1-45", "Joshua 22:1-34", "Joshua 23:1-16", "Joshua 24:1-33", "Joshua 2:1-24", "Joshua 4:1-24", "Joshua 5:1-15", "Joshua 6:1-27", "Joshua 7:1-26", "Joshua 8:1-35", "Joshua 9:1-27"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["joshua:interpretive_note:0"], "facts": ["Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings."], "id": "syn_surrounding_passages_ce3564a39a7b", "interpretation_level": "inference", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Joshua 1-24"], "verse_refs": ["Joshua 1", "Joshua 10:1-43", "Joshua 11:1-23", "Joshua 12:1-24", "Joshua 13:1-33", "Joshua 14:1-15", "Joshua 15:1-63", "Joshua 16:1-10", "Joshua 17:1-18", "Joshua 18:1-28", "Joshua 19:1-51", "Joshua 20:1-9", "Joshua 21:1-45", "Joshua 22:1-34", "Joshua 23:1-16", "Joshua 24:1-33", "Joshua 2:1-24", "Joshua 4:1-24", "Joshua 5:1-15", "Joshua 6:1-27", "Joshua 7:1-26", "Joshua 8:1-35", "Joshua 9:1-27"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "ark-brought-to-jerusalem:ancient_near_east_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "ark-brought-to-jerusalem-historical-orientation", "joshua-1-24", "judges-1-21"]}, {"confidence": "medium", "id": "ark-brought-to-jerusalem:historical_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "ark-brought-to-jerusalem-historical-orientation", "joshua-1-24", "judges-1-21"]}, {"confidence": "medium", "id": "conquest-of-jericho:ancient_near_east_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "conquest-of-jericho-historical-orientation", "joshua-1-24", "judges-1-21"]}, {"confidence": "medium", "id": "conquest-of-jericho:historical_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "conquest-of-jericho-historical-orientation", "joshua-1-24", "judges-1-21"]}, {"confidence": "medium", "id": "crossing-the-jordan:ancient_near_east_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["crossing-the-jordan-historical-orientation", "joshua-3-1-17", "joshua-4-1-24", "psalm-114-1-8"]}, {"confidence": "medium", "id": "crossing-the-jordan:historical_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["crossing-the-jordan-historical-orientation", "joshua-3-1-17", "joshua-4-1-24", "psalm-114-1-8"]}, {"confidence": "medium", "id": "david-anointed:ancient_near_east_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "david-anointed-historical-orientation", "joshua-1-24", "judges-1-21"]}, {"confidence": "medium", "id": "david-anointed:historical_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "david-anointed-historical-orientation", "joshua-1-24", "judges-1-21"]}, {"confidence": "high", "id": "joshua-literary-movement", "passage_anchors": ["Joshua 1-24"], "source_ids": ["butler-joshua", "joshua-1-24", "woudstra-joshua"]}, {"confidence": "medium", "id": "joshua-son-of-nun:ancient_near_east_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["deuteronomy-31", "hebrews-4", "joshua-1-24", "joshua-son-of-nun-historical-orientation", "numbers-27"]}, {"confidence": "medium", "id": "joshua-son-of-nun:historical_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["deuteronomy-31", "hebrews-4", "joshua-1-24", "joshua-son-of-nun-historical-orientation", "numbers-27"]}, {"confidence": "high", "id": "joshua:interpretive_note:0", "passage_anchors": ["Joshua 1-24"], "source_ids": ["butler-joshua", "joshua-1-24", "woudstra-joshua"]}, {"confidence": "medium", "id": "rise-of-saul:ancient_near_east_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "joshua-1-24", "judges-1-21", "rise-of-saul-historical-orientation"]}, {"confidence": "medium", "id": "rise-of-saul:historical_context:0", "passage_anchors": ["Joshua 3:1-17"], "source_ids": ["1-samuel", "2-samuel-6-7", "joshua-1-24", "judges-1-21", "rise-of-saul-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Joshua 3",
+  "book": "Joshua",
+  "chapter": 3,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Joshua 3:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Joshua 3:
+   for example `Joshua 3:1` or `Joshua 3:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Joshua 3:1", "Joshua 3:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 8aed619211cd67eb76a8846fba7e8a86acedd7f5a32d286d3d3cd416e000d566.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_joshua_003_f522e91e5f95001b36b57b6e", "renderer_verse_refs": ["Joshua 1", "Joshua 10:1-43", "Joshua 11:1-23", "Joshua 12:1-24", "Joshua 13:1-33", "Joshua 14:1-15", "Joshua 15:1-63", "Joshua 16:1-10", "Joshua 17:1-18", "Joshua 18:1-28", "Joshua 19:1-51", "Joshua 20:1-9", "Joshua 21:1-45", "Joshua 22:1-34", "Joshua 23:1-16", "Joshua 24:1-33", "Joshua 2:1-24", "Joshua 4:1-24", "Joshua 5:1-15", "Joshua 6:1-27", "Joshua 7:1-26", "Joshua 8:1-35", "Joshua 9:1-27"], "source_verse_refs": ["Joshua 1", "Joshua 10:1-43", "Joshua 11:1-23", "Joshua 12:1-24", "Joshua 13:1-33", "Joshua 14:1-15", "Joshua 15:1-63", "Joshua 16:1-10", "Joshua 17:1-18", "Joshua 18:1-28", "Joshua 19:1-51", "Joshua 20:1-9", "Joshua 21:1-45", "Joshua 22:1-34", "Joshua 23:1-16", "Joshua 24:1-33", "Joshua 2:1-24", "Joshua 4:1-24", "Joshua 5:1-15", "Joshua 6:1-27", "Joshua 7:1-26", "Joshua 8:1-35", "Joshua 9:1-27"], "synthesis_unit": "syn_surrounding_passages_781026c51a04"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_joshua_003_7378524c6b2927b95d11370e", "renderer_verse_refs": ["Joshua 1", "Joshua 10:1-43", "Joshua 11:1-23", "Joshua 12:1-24", "Joshua 13:1-33", "Joshua 14:1-15", "Joshua 15:1-63", "Joshua 16:1-10", "Joshua 17:1-18", "Joshua 18:1-28", "Joshua 19:1-51", "Joshua 20:1-9", "Joshua 21:1-45", "Joshua 22:1-34", "Joshua 23:1-16", "Joshua 24:1-33", "Joshua 2:1-24", "Joshua 4:1-24", "Joshua 5:1-15", "Joshua 6:1-27", "Joshua 7:1-26", "Joshua 8:1-35", "Joshua 9:1-27"], "source_verse_refs": ["Joshua 1", "Joshua 10:1-43", "Joshua 11:1-23", "Joshua 12:1-24", "Joshua 13:1-33", "Joshua 14:1-15", "Joshua 15:1-63", "Joshua 16:1-10", "Joshua 17:1-18", "Joshua 18:1-28", "Joshua 19:1-51", "Joshua 20:1-9", "Joshua 21:1-45", "Joshua 22:1-34", "Joshua 23:1-16", "Joshua 24:1-33", "Joshua 2:1-24", "Joshua 4:1-24", "Joshua 5:1-15", "Joshua 6:1-27", "Joshua 7:1-26", "Joshua 8:1-35", "Joshua 9:1-27"], "synthesis_unit": "syn_surrounding_passages_ce3564a39a7b"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
