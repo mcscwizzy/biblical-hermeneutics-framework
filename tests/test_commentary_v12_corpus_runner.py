@@ -5,6 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 
+import framework.commentary.v12_corpus as corpus_module
 from framework.commentary.v12_corpus import (
     DEFAULT_BATCH_SIZE,
     MAX_BATCH_SIZE,
@@ -14,6 +15,7 @@ from framework.commentary.v12_corpus import (
     V12IntegrityError,
     assess_chapter_renderability,
 )
+from bhf_agent.chapter_commentary.reader_provenance_binding_v2 import ProvenanceBindingV2Error
 from framework.commentary.v12_config import (
     DEFAULT_V12_PROSE_MODEL,
     V12ProseConfigurationError,
@@ -453,6 +455,165 @@ def test_finalize_refuses_missing_raw_responses_before_validation(tmp_path, monk
     assert not (tmp_path / "candidate" / "corpus-runner" / "runs" / prepared["run_id"] / "chapters" / "genesis_001" / "result.json").exists()
 
 
+def _frozen_finalize_session(runner, references, raw_by_reference=None):
+    """Create a small receipt-backed Codex session for finalizer tests."""
+
+    run_id = "session-batch-finalizer-test"
+    run_root = runner.runner_root / "runs" / run_id
+    entries = []
+    for ordinal, reference in enumerate(references, 1):
+        book, chapter = reference.rsplit(" ", 1)
+        entries.append({
+            "reference": reference,
+            "book": book,
+            "chapter": int(chapter),
+            "canonical_ordinal": ordinal,
+        })
+    run_root.mkdir(parents=True)
+    manifest = {
+        "artifact_version": "commentary-v1.2-corpus-session-manifest-v1",
+        "workflow": "prepare -> codex_session_render -> finalize",
+        "run_id": run_id,
+        "batch_number": 6,
+        "chapters": entries,
+    }
+    manifest_path = run_root / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest))
+    (run_root / "state.json").write_text(json.dumps({
+        "artifact_version": "commentary-v1.2-corpus-session-state-v1",
+        "run_id": run_id,
+        "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+        "chapters": {reference: {"status": "awaiting_render"} for reference in references},
+    }))
+    for entry in entries:
+        chapter_root = run_root / "chapters" / f"{entry['book'].lower().replace(' ', '_')}_{entry['chapter']:03d}"
+        chapter_root.mkdir(parents=True)
+        raw = (raw_by_reference or {}).get(
+            entry["reference"],
+            json.dumps({"reference": entry["reference"]}).encode(),
+        )
+        (chapter_root / "raw-response.bin").write_bytes(raw)
+        (chapter_root / "renderer-receipt.json").write_text(json.dumps({
+            "artifact_version": "commentary-v1.2-host-local-render-receipt-v1",
+            "run_id": run_id,
+            "reference": entry["reference"],
+            "book": entry["book"],
+            "chapter": entry["chapter"],
+            "renderer_mode": "codex_cli_local",
+            "transport": "local_codex_cli",
+            "requested_model": "gpt-5.6-terra",
+            "requested_effort": "high",
+            "raw_response_sha256": hashlib.sha256(raw).hexdigest(),
+        }))
+    return run_id, run_root, entries
+
+
+def _patch_finalize_dependencies(
+    monkeypatch, invalid_references=(), failure_code="MALFORMED_PROVENANCE_REFERENCE"
+):
+    def prepared(self, entry, run_root):
+        value = _prepared(entry["reference"], unit_count=1)
+        value.synthesis.synthesis_schema_version = "synthesis-v1"
+        value.synthesis.synthesis_compiler_version = "compiler-v1"
+        value.synthesis.book = entry["book"]
+        value.synthesis.chapter = entry["chapter"]
+        return value, {}, {}, {}, {}
+
+    def normalize(payload, binding):
+        reference = payload.get("reference")
+        if reference in invalid_references:
+            raise ProvenanceBindingV2Error(
+                failure_code,
+                "invalid provenance path format: reader_path_genesis_002_123456789012345678901234",
+            )
+        return dict(payload), {"block_count": 0, "blocks": []}
+
+    monkeypatch.setattr(V12CorpusRunner, "_prepared_for_finalize", prepared)
+    monkeypatch.setattr(corpus_module, "normalize_renderer_payload_v2", normalize)
+    monkeypatch.setattr(corpus_module, "normalize_selected_chapter_scope_refs", lambda payload, binding, presentation: (dict(payload), []))
+    monkeypatch.setattr(corpus_module, "validate_chapter_commentary", lambda *args, **kwargs: type("Validation", (), {
+        "valid": True, "partial": False, "commentary": None, "accepted_sections": (), "errors": (),
+    })())
+    monkeypatch.setattr(corpus_module, "response_ancestry_audit_v2", lambda *args: {"valid": True})
+    monkeypatch.setattr(corpus_module, "audit_provenance_binding_v2", lambda *args: {"valid": True})
+    monkeypatch.setattr(corpus_module, "audit_ancestry_envelope", lambda *args: {"valid": True})
+    monkeypatch.setattr(corpus_module, "audit_chapter", lambda *args: {"richness_status": "RICH_ENOUGH"})
+    monkeypatch.setattr(corpus_module, "score_synthesis_richness", lambda *args, **kwargs: type("Score", (), {"to_dict": lambda self: {"richness_status": "RICH_ENOUGH"}})())
+
+
+def test_finalize_quarantines_one_invalid_model_output_and_continues(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    refs = ("Genesis 1", "Genesis 2", "Genesis 3")
+    run_id, run_root, _ = _frozen_finalize_session(runner, refs)
+    _patch_finalize_dependencies(monkeypatch, invalid_references={"Genesis 2"})
+
+    report = runner.finalize(run_id=run_id)
+    results = {
+        row["reference"]: row
+        for row in report["chapters"]
+    }
+    assert results["Genesis 1"]["classification"] == "published"
+    assert results["Genesis 2"]["classification"] == "model-rejected"
+    assert results["Genesis 2"]["release_state"] == "MODEL_OUTPUT_REJECTED"
+    assert results["Genesis 2"]["model_output_diagnostic"]["offending_provenance_ref"].startswith("reader_path_")
+    assert results["Genesis 2"]["model_output_diagnostic"]["run_id"] == run_id
+    assert results["Genesis 3"]["classification"] == "published"
+    assert json.loads((run_root / "state.json").read_text())["finalized"] is True
+
+
+def test_finalize_quarantines_malformed_json_and_continues(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    refs = ("Genesis 1", "Genesis 2", "Genesis 3")
+    run_id, run_root, _ = _frozen_finalize_session(
+        runner, refs, {"Genesis 2": b"{not json"}
+    )
+    _patch_finalize_dependencies(monkeypatch)
+
+    report = runner.finalize(run_id=run_id)
+    rejected = next(row for row in report["chapters"] if row["reference"] == "Genesis 2")
+    assert rejected["classification"] == "malformed"
+    assert rejected["release_state"] == "MODEL_OUTPUT_REJECTED"
+    assert "MALFORMED_RESPONSE_JSON" in rejected["error"]
+    assert json.loads((run_root / "chapters/genesis_003/result.json").read_text())["classification"] == "published"
+
+
+def test_finalize_ancestry_model_failure_uses_model_rejection_taxonomy(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    run_id, _, _ = _frozen_finalize_session(runner, ("Genesis 1", "Genesis 2"))
+    _patch_finalize_dependencies(
+        monkeypatch,
+        invalid_references={"Genesis 2"},
+        failure_code="PROVENANCE_PATH_IDENTITY_MISMATCH",
+    )
+
+    report = runner.finalize(run_id=run_id)
+    rejected = next(row for row in report["chapters"] if row["reference"] == "Genesis 2")
+    assert rejected["classification"] == "model-rejected"
+    assert rejected["release_state"] == "MODEL_OUTPUT_REJECTED"
+
+
+def test_finalize_sha_mismatch_aborts_before_writing_results(tmp_path):
+    runner = _runner(tmp_path)
+    run_id, run_root, _ = _frozen_finalize_session(runner, ("Genesis 1",))
+    (run_root / "chapters/genesis_001/raw-response.bin").write_bytes(b"tampered")
+    with pytest.raises(V12IntegrityError, match="existing response identity conflicts"):
+        runner.finalize(run_id=run_id)
+    assert not (run_root / "chapters/genesis_001/result.json").exists()
+
+
+def test_finalize_prepared_identity_mismatch_aborts_before_writing_results(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    run_id, run_root, _ = _frozen_finalize_session(runner, ("Genesis 1",))
+    monkeypatch.setattr(
+        runner,
+        "_prepared_for_finalize",
+        lambda entry, root: (_ for _ in ()).throw(V12IntegrityError("frozen renderer identity changed")),
+    )
+    with pytest.raises(V12IntegrityError, match="frozen renderer identity changed"):
+        runner.finalize(run_id=run_id)
+    assert not (run_root / "chapters/genesis_001/result.json").exists()
+
+
 def test_finalize_resumes_the_earliest_incomplete_session(tmp_path, monkeypatch):
     runner = _runner(tmp_path)
     runs = tmp_path / "candidate" / "corpus-runner" / "runs"
@@ -485,6 +646,8 @@ def test_finalize_resumes_the_earliest_incomplete_session(tmp_path, monkeypatch)
         "reference": entry["reference"], "book": entry["book"], "chapter": entry["chapter"],
         "status": "validated", "audits": {},
     })
+    monkeypatch.setattr(runner, "_existing_local_response", lambda run_root, entry: True)
+    monkeypatch.setattr(runner, "_prepared_for_finalize", lambda entry, run_root: None)
     runner.finalize()
     assert finalized == ["session-batch-four"]
 

@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -41,7 +42,14 @@ from bhf_agent.chapter_commentary.output_conformance import parse_renderer_json
 from bhf_agent.chapter_commentary.evidence_applicability import commentary_eligible_evidence
 from bhf_agent.chapter_commentary.reader_level_projection import project_reader_level_ideas, add_projection_to_prompt
 from bhf_agent.chapter_commentary.reader_idea_ancestry_envelope import build_ancestry_envelope, add_ancestry_envelope_to_prompt, audit_ancestry_envelope
-from bhf_agent.chapter_commentary.reader_provenance_binding_v2 import build_provenance_binding_v2, normalize_renderer_payload_v2, add_provenance_binding_to_prompt_v2, audit_provenance_binding_v2, response_ancestry_audit_v2
+from bhf_agent.chapter_commentary.reader_provenance_binding_v2 import (
+    ProvenanceBindingV2Error,
+    build_provenance_binding_v2,
+    normalize_renderer_payload_v2,
+    add_provenance_binding_to_prompt_v2,
+    audit_provenance_binding_v2,
+    response_ancestry_audit_v2,
+)
 from bhf_agent.chapter_commentary.renderer_reference_presentation_v1 import present_binding, add_presentation_to_prompt, normalize_selected_chapter_scope_refs
 from bhf_agent.chapter_commentary.richness_clusters import CORE_CLASSIFIER_V2, RICHNESS_POLICY_VERSION_V3, cluster_synthesis_units, score_synthesis_richness
 from bhf_agent.chapter_commentary.richness import audit_chapter
@@ -86,6 +94,9 @@ class V12AuthorizationError(V12CorpusError):
 
 class V12IntegrityError(V12CorpusError):
     """Persisted corpus state is inconsistent or ambiguous."""
+
+
+_PROVENANCE_REF_RE = re.compile(r"(?:reader_path|render_path)_[a-z0-9_]+")
 
 
 class ChapterPipeline(Protocol):
@@ -1141,6 +1152,77 @@ class V12CorpusRunner:
                 raise V12IntegrityError(f"frozen renderer identity changed for {entry['reference']}: {key}")
         return prepared, projection, envelope, binding, presentation
 
+    @staticmethod
+    def _offending_provenance_ref(error: str) -> str | None:
+        match = _PROVENANCE_REF_RE.search(error)
+        return match.group(0) if match else None
+
+    def _model_rejected_receipt(
+        self,
+        run_root: Path,
+        entry: dict[str, Any],
+        raw: bytes,
+        *,
+        error: str,
+        validator: str,
+        classification: str = "model-rejected",
+        reason: str = "renderer output failed validation",
+        failure_codes: list[str] | None = None,
+    ) -> dict[str, Any]:
+        """Persist an immutable, diagnostic terminal receipt for one bad output.
+
+        This helper is intentionally limited to failures observed while
+        interpreting the chapter's already-receipted raw response.  Frozen
+        input, receipt, and run-integrity failures remain exceptions handled by
+        finalization preflight.
+        """
+
+        chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+        raw_path = chapter_root / "raw-response.bin"
+        raw_sha256 = sha256_bytes(raw)
+        receipt_path = chapter_root / "renderer-receipt.json"
+        renderer_receipt = _load_json(receipt_path) if receipt_path.is_file() else None
+        diagnostic = {
+            "artifact_version": "commentary-v1.2-model-output-diagnostic-v1",
+            "reference": entry["reference"],
+            "run_id": run_root.name,
+            "validator": validator,
+            "validator_error": error,
+            "failure_codes": list(failure_codes or []),
+            "offending_provenance_ref": self._offending_provenance_ref(error),
+            "raw_response_sha256": raw_sha256,
+            "raw_response_path": raw_path.relative_to(self.repo_root).as_posix(),
+            "renderer_receipt": renderer_receipt,
+        }
+        result = {
+            "artifact_version": "commentary-v1.2-corpus-result-v1",
+            "reference": entry["reference"],
+            "book": entry["book"],
+            "chapter": int(entry["chapter"]),
+            "status": "failed",
+            "classification": classification,
+            "release_state": "MODEL_OUTPUT_REJECTED",
+            "reason": reason,
+            "error": error,
+            "commentary_path": None,
+            "raw_response_sha256": raw_sha256,
+            "raw_response_path": raw_path.relative_to(self.repo_root).as_posix(),
+            "model_output_diagnostic": diagnostic,
+        }
+        result_path = chapter_root / "result.json"
+        if result_path.is_file():
+            existing = _load_json(result_path)
+            if (
+                existing.get("raw_response_sha256") != raw_sha256
+                or existing.get("reference") != entry["reference"]
+            ):
+                raise V12IntegrityError(
+                    f"conflicting existing result for {entry['reference']}"
+                )
+            return existing
+        write_json(result_path, result, immutable=True)
+        return result
+
     def _finalize_one(self, run_root: Path, entry: dict[str, Any]) -> dict[str, Any]:
         chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
         raw_path = chapter_root / "raw-response.bin"
@@ -1154,11 +1236,35 @@ class V12CorpusRunner:
         payload, parse_status, parse_errors = parse_renderer_json(raw)
         chapter_dir = chapter_root
         if payload is None:
-            receipt = {"artifact_version": "commentary-v1.2-corpus-result-v1", "reference": entry["reference"], "book": entry["book"], "chapter": int(entry["chapter"]), "status": "failed", "classification": "malformed", "error": "; ".join(parse_errors) or parse_status, "raw_response_sha256": sha256_bytes(raw), "raw_response_path": raw_path.relative_to(self.repo_root).as_posix()}
-            write_json(chapter_dir / "result.json", receipt, immutable=True)
-            return receipt
-        normalized, binding_metadata = normalize_renderer_payload_v2(payload, binding)
-        normalized, conformance_metadata = normalize_selected_chapter_scope_refs(normalized, binding, presentation)
+            return self._model_rejected_receipt(
+                run_root,
+                entry,
+                raw,
+                error="; ".join(parse_errors) or parse_status,
+                validator="parse_renderer_json",
+                classification="malformed",
+                reason="malformed renderer JSON",
+                failure_codes=[parse_status],
+            )
+        try:
+            normalized, binding_metadata = normalize_renderer_payload_v2(payload, binding)
+            normalized, conformance_metadata = normalize_selected_chapter_scope_refs(normalized, binding, presentation)
+        except ProvenanceBindingV2Error as exc:
+            code = getattr(exc, "code", "PROVENANCE_VALIDATION_FAILED")
+            reason = (
+                "invalid provenance reference"
+                if "PROVENANCE" in code
+                else "renderer output failed validation"
+            )
+            return self._model_rejected_receipt(
+                run_root,
+                entry,
+                raw,
+                error=str(exc),
+                validator="normalize_renderer_payload_v2",
+                reason=reason,
+                failure_codes=[code],
+            )
         normalized["status"] = "pending"
         normalized["evidence_availability"] = prepared.synthesis.evidence_availability
         normalized["generated_metadata"] = GeneratedMetadata(
@@ -1207,7 +1313,24 @@ class V12CorpusRunner:
                 validation_errors=list(validation.errors),
             )
             write_json(chapter_dir / "commentary.json", commentary.to_dict(), immutable=True)
-        receipt = {"artifact_version": "commentary-v1.2-corpus-result-v1", "reference": entry["reference"], "book": entry["book"], "chapter": int(entry["chapter"]), "status": status, "classification": "published" if status == "validated" else "quality-review" if status == "partial" else "model-rejected", "error": None if validation.valid else "; ".join(validation.errors), "commentary_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/commentary.json" if commentary is not None else None, "raw_response_sha256": sha256_bytes(raw), "raw_response_path": raw_path.relative_to(self.repo_root).as_posix(), "binding_metadata": binding_metadata, "normalization_metadata": conformance_metadata, "audits": audits}
+        classification = "published" if status == "validated" else "quality-review" if status == "partial" else "model-rejected"
+        receipt = {"artifact_version": "commentary-v1.2-corpus-result-v1", "reference": entry["reference"], "book": entry["book"], "chapter": int(entry["chapter"]), "status": status, "classification": classification, "error": None if validation.valid else "; ".join(validation.errors), "commentary_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/commentary.json" if commentary is not None else None, "raw_response_sha256": sha256_bytes(raw), "raw_response_path": raw_path.relative_to(self.repo_root).as_posix(), "binding_metadata": binding_metadata, "normalization_metadata": conformance_metadata, "audits": audits}
+        if classification == "model-rejected":
+            receipt["release_state"] = "MODEL_OUTPUT_REJECTED"
+            receipt["reason"] = "renderer output failed validation"
+        if classification == "model-rejected":
+            receipt["model_output_diagnostic"] = {
+                "artifact_version": "commentary-v1.2-model-output-diagnostic-v1",
+                "reference": entry["reference"],
+                "run_id": run_root.name,
+                "validator": "validate_chapter_commentary",
+                "validator_error": receipt["error"],
+                "failure_codes": sorted({error.split(":", 1)[0] for error in validation.errors}),
+                "offending_provenance_ref": None,
+                "raw_response_sha256": receipt["raw_response_sha256"],
+                "raw_response_path": receipt["raw_response_path"],
+                "renderer_receipt": _load_json(chapter_root / "renderer-receipt.json"),
+            }
         result_path = chapter_dir / "result.json"
         if result_path.is_file():
             existing = _load_json(result_path)
@@ -1228,6 +1351,8 @@ class V12CorpusRunner:
         renderable_outcomes = [
             item for item in outcomes if not V12CorpusRunner._is_source_limited_receipt(item)
         ]
+        if any(item.get("classification") == "model-rejected" for item in renderable_outcomes):
+            return f"V1_2_BATCH{batch_number:02d}_FINALIZED_WITH_MODEL_REJECTIONS"
         if any(item.get("status") in {"failed", "needs_review", "partial", "stale"} for item in renderable_outcomes):
             return f"{prefix}_REVIEW_REQUIRED"
         has_quality_warnings = any(
@@ -1255,8 +1380,9 @@ class V12CorpusRunner:
         entries = manifest.get("chapters")
         if not isinstance(entries, list) or not entries or len(entries) > MAX_BATCH_SIZE:
             raise V12IntegrityError("prepared session manifest has invalid bounded chapter list")
-        # Preflight all responses before writing any terminal result, so a
-        # missing response cannot leave a deceptively partial batch.
+        # Preflight all corpus/run identities before writing any terminal
+        # result.  A model payload is allowed to fail later, but a missing or
+        # tampered artifact must leave the whole finalization untouched.
         source_limited_outcomes: dict[str, dict[str, Any]] = {}
         missing = []
         for entry in entries:
@@ -1272,6 +1398,16 @@ class V12CorpusRunner:
                 missing.append(entry["reference"])
         if missing:
             raise V12CorpusError("missing raw responses: " + ", ".join(missing))
+        for entry in entries:
+            if entry["reference"] in source_limited_outcomes:
+                continue
+            chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+            if len(list(chapter_root.glob("raw-response*"))) > 1:
+                raise V12IntegrityError(
+                    f"duplicate/conflicting responses for {entry['reference']}"
+                )
+            self._existing_local_response(run_root, entry)
+            self._prepared_for_finalize(entry, run_root)
         outcomes = [
             source_limited_outcomes[entry["reference"]]
             if entry["reference"] in source_limited_outcomes
@@ -1296,6 +1432,14 @@ class V12CorpusRunner:
             "counts": {
                 status: sum(item["status"] == status for item in outcomes)
                 for status in sorted(TERMINAL_RESULT_STATES)
+            },
+            "classification_counts": {
+                classification: sum(
+                    item.get("classification") == classification for item in outcomes
+                )
+                for classification in sorted(
+                    {str(item.get("classification")) for item in outcomes}
+                )
             },
             "source_limited": sum(
                 self._is_source_limited_receipt(item) for item in outcomes
