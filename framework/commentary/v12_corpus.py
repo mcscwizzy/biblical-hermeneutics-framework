@@ -54,8 +54,8 @@ from framework.commentary.v12_config import V12_PIPELINE_VERSION
 V12_CANDIDATE_ROOT = Path(".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment")
 V12_RELEASE_ROOT = Path(".bhf-data/bhf-commentary-v1.2")
 CORPUS_RUNNER_ROOT = V12_CANDIDATE_ROOT / "corpus-runner"
-DEFAULT_BATCH_SIZE = 25
-MAX_BATCH_SIZE = 50
+DEFAULT_BATCH_SIZE = 100
+MAX_BATCH_SIZE = 100
 AUTHORIZATION_FIELD = "full_bible_generation_authorized"
 
 TERMINAL_RELEASE_STATES = frozenset(

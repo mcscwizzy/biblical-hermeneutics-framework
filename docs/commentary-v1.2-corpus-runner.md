@@ -2,7 +2,8 @@
 
 The bounded runner discovers canonical Scripture in BHF order, treats the
 packaged v1.2 release and its own immutable result receipts as terminal state,
-and selects at most 25 chapters by default (50 maximum). The default workflow
+and selects at most 100 chapters by default (100 maximum). This remains a
+bounded corpus unit. The default workflow
 freezes each selected chapter for direct rendering in the current Codex
 session, then finalizes the preserved responses without a provider call.
 
@@ -11,8 +12,8 @@ The persisted v1.2 candidate state contains the explicit
 the guard; generation fails closed while it is false.
 
 ```bash
-.venv/bin/python tools/commentary_v12_corpus.py dry-run --batch-size 25
-.venv/bin/python tools/commentary_v12_corpus.py prepare --batch-size 25
+.venv/bin/python tools/commentary_v12_corpus.py dry-run --batch-size 100
+.venv/bin/python tools/commentary_v12_corpus.py prepare --batch-size 100
 # Render each frozen chapter packet in the current Codex session.
 .venv/bin/python tools/commentary_v12_corpus.py finalize
 ```
@@ -52,8 +53,10 @@ The next invocation rescans those receipts and skips terminal results. Duplicate
 or conflicting identities, invalid package checksums, non-terminal persisted
 results, and pipeline status mismatches stop the run without guessing.
 
-Preparation checkpoints after every chapter. Re-running a partial session
+Preparation checkpoints after every chapter, so session rendering remains
+resumable. Re-running a partial session
 rebuilds the deterministic contract and reuses existing immutable prompt files
 only when every byte matches; an immutable collision stops the run. Canary
 authorization tests provide a temporary candidate-state path so testing both
 authorization outcomes cannot mutate the operational candidate state.
+Failure in a later chapter never justifies overwriting earlier immutable work.

@@ -6,6 +6,8 @@ from types import SimpleNamespace
 import pytest
 
 from framework.commentary.v12_corpus import (
+    DEFAULT_BATCH_SIZE,
+    MAX_BATCH_SIZE,
     V12CorpusError,
     V12AuthorizationError,
     V12CorpusRunner,
@@ -148,6 +150,30 @@ def test_canonical_traversal_and_batch_limit(tmp_path):
     assert discovery.chapters_remaining == 4
 
 
+def test_hundred_chapter_batch_policy_is_bounded_and_deterministic(tmp_path):
+    canonical = [
+        {
+            "reference": f"Genesis {index}",
+            "book": "Genesis",
+            "chapter": index,
+            "canonical_ordinal": index,
+        }
+        for index in range(1, 102)
+    ]
+    runner = _runner(tmp_path, canonical_loader=lambda: canonical)
+
+    assert DEFAULT_BATCH_SIZE == 100
+    assert MAX_BATCH_SIZE == 100
+    assert runner.dry_run()["next_chapters"] == [
+        f"Genesis {index}" for index in range(1, 101)
+    ]
+    assert runner.discover(100).next_chapters == tuple(
+        f"Genesis {index}" for index in range(1, 101)
+    )
+    with pytest.raises(V12CorpusError, match="between 1 and 100"):
+        runner.discover(101)
+
+
 def test_renderability_classifies_true_data_gap_without_renderer_work():
     assessment = assess_chapter_renderability(
         _prepared("Numbers 3", availability="DATA_GAP", unit_count=0)
@@ -279,10 +305,10 @@ def test_source_limited_prepare_never_calls_ancestry_or_creates_renderer_input(t
     assert not list((tmp_path / "candidate" / "corpus-runner").rglob("renderer-input"))
 
 
-def test_mixed_fifty_chapter_prepare_terminalizes_only_source_limited_rows(tmp_path, monkeypatch):
+def test_mixed_hundred_chapter_prepare_terminalizes_only_source_limited_rows(tmp_path, monkeypatch):
     canonical = [
         {"reference": f"Genesis {index}", "book": "Genesis", "chapter": index, "canonical_ordinal": index}
-        for index in range(1, 51)
+        for index in range(1, 101)
     ]
     runner = _runner(tmp_path, canonical_loader=lambda: canonical)
     source_refs = {f"Genesis {index}" for index in range(1, 7)}
@@ -295,12 +321,12 @@ def test_mixed_fifty_chapter_prepare_terminalizes_only_source_limited_rows(tmp_p
 
     monkeypatch.setattr(runner, "_prepared_for_session", fake_prepared)
     monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: {"renderer_input_sha256": "frozen"})
-    result = runner.prepare(50)
-    assert result["chapter_count"] == 50
-    assert result["renderable_count"] == 44
+    result = runner.prepare(100)
+    assert result["chapter_count"] == 100
+    assert result["renderable_count"] == 94
     assert result["source_limited_count"] == 6
-    assert runner.discover(50).terminal_v1_2_chapters == 6
-    assert runner.discover(50).chapters_remaining == 44
+    assert runner.discover(100).terminal_v1_2_chapters == 6
+    assert runner.discover(100).chapters_remaining == 94
 
 
 def test_partial_prepare_reuses_matching_immutable_inputs_and_rejects_mismatch(tmp_path, monkeypatch):
