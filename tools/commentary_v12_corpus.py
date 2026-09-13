@@ -22,12 +22,15 @@ from framework.commentary.v12_config import load_v12_prose_configuration
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("dry-run", "prepare", "finalize", "generate"):
+    for name in ("dry-run", "prepare", "finalize", "retire", "generate"):
         command = sub.add_parser(name)
         if name in {"dry-run", "prepare", "generate"}:
             command.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
         if name in {"dry-run", "generate"}:
             command.add_argument("--config", type=Path, help="approved model configuration JSON")
+        if name == "retire":
+            command.add_argument("--run-id", required=True, help="unrendered invalid session run id")
+            command.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
     args = parser.parse_args(argv)
     try:
         if args.command == "dry-run":
@@ -48,6 +51,10 @@ def main(argv: list[str] | None = None) -> int:
             ).prepare(args.batch_size)
         elif args.command == "finalize":
             result = V12CorpusRunner(ROOT).finalize()
+        elif args.command == "retire":
+            result = V12CorpusRunner(ROOT).retire_invalid_session(
+                args.run_id, batch_size=args.batch_size
+            )
         else:
             configuration = load_v12_prose_configuration(ROOT, args.config)
             # Retain the legacy CLI transport behind the explicit generate

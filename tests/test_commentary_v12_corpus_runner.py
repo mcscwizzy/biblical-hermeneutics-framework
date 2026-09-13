@@ -416,6 +416,10 @@ def test_prepare_is_session_only_and_resumable_without_pipeline(tmp_path, monkey
 
 def test_finalize_refuses_missing_raw_responses_before_validation(tmp_path, monkeypatch):
     runner = _runner(tmp_path)
+    rendered = _prepared("Genesis 1", unit_count=1)
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        rendered, assess_chapter_renderability(rendered)
+    ))
     monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: {"renderer_input_sha256": "frozen"})
     prepared = runner.prepare(1)
     with pytest.raises(Exception, match="missing raw responses"):
@@ -459,8 +463,64 @@ def test_finalize_resumes_the_earliest_incomplete_session(tmp_path, monkeypatch)
     assert finalized == ["session-batch-four"]
 
 
+def test_retire_invalid_unrendered_session_preserves_inputs_and_unblocks_prepare(tmp_path, monkeypatch):
+    runner = _runner(tmp_path, pipeline=FakePipeline())
+    runner.run(1)
+    run_id = "session-batch-invalid"
+    run_root = tmp_path / "candidate" / "corpus-runner" / "runs" / run_id
+    run_root.mkdir(parents=True)
+    manifest = {
+        "workflow": "prepare -> codex_session_render -> finalize",
+        "run_id": run_id,
+        "batch_number": 2,
+        "chapters": [
+            {"reference": "Genesis 1", "book": "Genesis", "chapter": 1},
+            {"reference": "Genesis 2", "book": "Genesis", "chapter": 2},
+        ],
+    }
+    manifest_path = run_root / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest))
+    (run_root / "state.json").write_text(json.dumps({
+        "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+        "chapters": {
+            "Genesis 1": {"status": "awaiting_render", "attempt": 0},
+            "Genesis 2": {"status": "awaiting_render", "attempt": 0},
+        },
+    }))
+    frozen_input = run_root / "chapters" / "genesis_001" / "renderer-input"
+    frozen_input.mkdir(parents=True)
+    (frozen_input / "user_prompt.txt").write_text("frozen")
+
+    receipt = runner.retire_invalid_session(run_id, batch_size=2)
+    state = json.loads((run_root / "state.json").read_text())
+    assert receipt["status"] == "RETIRED"
+    assert receipt["duplicate_terminal_chapters"] == ["Genesis 1"]
+    assert state["retired"] is True
+    assert (frozen_input / "user_prompt.txt").read_text() == "frozen"
+    assert runner._resumable_session() is None
+    assert runner._incomplete_session() is None
+
+    prepared_by_reference = {
+        reference: _prepared(reference, unit_count=1)
+        for reference in ("Genesis 2", "Genesis 3")
+    }
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        prepared_by_reference[entry["reference"]],
+        assess_chapter_renderability(prepared_by_reference[entry["reference"]]),
+    ))
+    monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: {"renderer_input_sha256": "frozen"})
+    prepared = runner.prepare(2)
+    assert prepared["chapters"] == ["Genesis 2", "Genesis 3"]
+    assert prepared["run_id"] != run_id
+    assert json.loads((run_root / "retirement.json").read_text())["status"] == "RETIRED"
+
+
 def test_finalize_rejects_duplicate_response_artifacts(tmp_path, monkeypatch):
     runner = _runner(tmp_path)
+    rendered = _prepared("Genesis 1", unit_count=1)
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        rendered, assess_chapter_renderability(rendered)
+    ))
     monkeypatch.setattr(runner, "_write_renderer_input", lambda *args, **kwargs: {"renderer_input_sha256": "frozen"})
     prepared = runner.prepare(1)
     chapter = tmp_path / "candidate" / "corpus-runner" / "runs" / prepared["run_id"] / "chapters" / "genesis_001"

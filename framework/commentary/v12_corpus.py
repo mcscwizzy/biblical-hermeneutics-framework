@@ -544,17 +544,19 @@ class V12CorpusRunner:
             raise V12IntegrityError("; ".join(conflicts))
         selected_refs = set(discovery.next_chapters)
         selected = [row for row in rows if _reference(row) in selected_refs]
-        prior_session_runs = {
-            path.parent.name
+        finalized_batch_numbers = {
+            int(manifest.get("batch_number", 0))
             for path in self.runner_root.glob("runs/*/manifest.json")
-            if _load_json(path).get("workflow") == "prepare -> codex_session_render -> finalize"
+            if (manifest := _load_json(path)).get("workflow") == "prepare -> codex_session_render -> finalize"
+            and (path.parent / "state.json").is_file()
+            and _load_json(path.parent / "state.json").get("finalized") is True
         }
         manifest: dict[str, Any] = {
             "artifact_version": "commentary-v1.2-corpus-session-manifest-v1",
             "pipeline_version": V12_PIPELINE_VERSION,
             "workflow": "prepare -> codex_session_render -> finalize",
             "run_id": run_id,
-            "batch_number": len(prior_session_runs - {run_id}) + 1,
+            "batch_number": max(finalized_batch_numbers, default=0) + 1,
             "batch_size": discovery.requested_batch_size,
             "ordering": "canonical Bible order",
             "renderer_mode": "codex_session",
@@ -586,7 +588,7 @@ class V12CorpusRunner:
             if not state_path.is_file():
                 continue
             state = _load_json(state_path)
-            if state.get("finalized") is True:
+            if state.get("finalized") is True or state.get("retired") is True:
                 continue
             chapters = state.get("chapters")
             if not isinstance(chapters, dict) or not any(
@@ -614,7 +616,10 @@ class V12CorpusRunner:
             if manifest.get("workflow") != "prepare -> codex_session_render -> finalize":
                 continue
             state_path = manifest_path.parent / "state.json"
-            if not state_path.is_file() or _load_json(state_path).get("finalized") is True:
+            if not state_path.is_file():
+                continue
+            state = _load_json(state_path)
+            if state.get("finalized") is True or state.get("retired") is True:
                 continue
             candidates.append((
                 int(manifest.get("batch_number", 0)),
@@ -626,6 +631,74 @@ class V12CorpusRunner:
             return None
         _, _, manifest_path, manifest = min(candidates)
         return manifest_path, manifest
+
+    def retire_invalid_session(self, run_id: str, *, batch_size: int = MAX_BATCH_SIZE) -> dict[str, Any]:
+        """Retire an unrendered, noncanonical frozen session without deleting it."""
+
+        if not isinstance(run_id, str) or not run_id.startswith("session-batch-"):
+            raise V12IntegrityError("retirement requires a concrete codex-session run id")
+        run_root = self.runner_root / "runs" / run_id
+        manifest_path = run_root / "manifest.json"
+        state_path = run_root / "state.json"
+        if not manifest_path.is_file() or not state_path.is_file():
+            raise V12CorpusError(f"prepared session does not exist: {run_id}")
+        manifest = _load_json(manifest_path)
+        state = _load_json(state_path)
+        if manifest.get("workflow") != "prepare -> codex_session_render -> finalize":
+            raise V12IntegrityError(f"run is not a codex-session manifest: {run_id}")
+        if state.get("finalized") is True:
+            raise V12IntegrityError(f"cannot retire a finalized session: {run_id}")
+        if state.get("retired") is True:
+            raise V12IntegrityError(f"session is already retired: {run_id}")
+        if state.get("manifest_sha256") != sha256_bytes(manifest_path.read_bytes()):
+            raise V12IntegrityError(f"prepared manifest identity changed: {run_id}")
+        entries = manifest.get("chapters")
+        if not isinstance(entries, list) or not entries:
+            raise V12IntegrityError(f"invalid prepared session chapter list: {run_id}")
+        manifest_refs = tuple(entry.get("reference") for entry in entries)
+        if any(not isinstance(reference, str) for reference in manifest_refs):
+            raise V12IntegrityError(f"invalid prepared session chapter identity: {run_id}")
+        chapter_states = state.get("chapters")
+        if not isinstance(chapter_states, dict) or set(chapter_states) != set(manifest_refs):
+            raise V12IntegrityError(f"prepared session state/manifest disagreement: {run_id}")
+        if any(record.get("status") != "awaiting_render" for record in chapter_states.values() if isinstance(record, dict)):
+            raise V12IntegrityError(f"only wholly unrendered sessions may be retired: {run_id}")
+        if any(not isinstance(record, dict) for record in chapter_states.values()):
+            raise V12IntegrityError(f"invalid prepared session state: {run_id}")
+        if list(run_root.glob("chapters/*/raw-response.bin")) or list(run_root.glob("chapters/*/result.json")):
+            raise V12IntegrityError(f"cannot retire a session with responses or results: {run_id}")
+        discovery = self.discover(batch_size)
+        if discovery.conflicts:
+            raise V12IntegrityError("; ".join(discovery.conflicts))
+        expected = discovery.next_chapters
+        if manifest_refs == expected:
+            raise V12IntegrityError(f"session matches the current canonical batch and must be resumed: {run_id}")
+        rows, terminal, conflicts = self._state()
+        if conflicts:
+            raise V12IntegrityError("; ".join(conflicts))
+        duplicate_terminal_refs = tuple(reference for reference in manifest_refs if reference in terminal)
+        if not duplicate_terminal_refs:
+            raise V12IntegrityError(f"session is not demonstrably superseded by terminal work: {run_id}")
+        receipt = {
+            "artifact_version": "commentary-v1.2-corpus-session-retirement-v1",
+            "run_id": run_id,
+            "batch_number": manifest.get("batch_number"),
+            "status": "RETIRED",
+            "reason": "superseded_duplicate_preparation_after_prior_batch_finalization",
+            "manifest_sha256": sha256_bytes(manifest_path.read_bytes()),
+            "manifest_chapters": list(manifest_refs),
+            "canonical_next_chapters": list(expected),
+            "duplicate_terminal_chapters": list(duplicate_terminal_refs),
+            "raw_response_count": 0,
+            "result_count": 0,
+        }
+        receipt_path = run_root / "retirement.json"
+        write_json(receipt_path, receipt, immutable=True)
+        state["retired"] = True
+        state["retirement_path"] = receipt_path.relative_to(self.repo_root).as_posix()
+        state["retirement_sha256"] = sha256_bytes(receipt_path.read_bytes())
+        write_json(state_path, state)
+        return receipt
 
     @staticmethod
     def _session_run_id(next_chapters: tuple[str, ...]) -> str:
