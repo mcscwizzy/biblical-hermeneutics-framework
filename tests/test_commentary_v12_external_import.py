@@ -26,7 +26,11 @@ FIXED_TIME = "2026-09-07T12:00:00+00:00"
 
 
 def _workspace(tmp_path: Path):
-    prepare()
+    candidate_state = tmp_path / "candidate-state.json"
+    candidate_state.write_bytes(
+        (ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/candidate-state.json").read_bytes()
+    )
+    prepare(candidate_state_path=candidate_state)
     candidate = tmp_path / "candidate"
     canary = candidate / "canary"
     canary.mkdir(parents=True)
@@ -296,10 +300,15 @@ def test_complete_successful_canary_gate_is_review_only():
     assert all(checks.values())
 
 
-def test_comparison_output_is_deterministic_without_responses():
-    prepare()
+def test_comparison_output_is_deterministic_without_responses(tmp_path):
+    candidate_state = tmp_path / "candidate-state.json"
+    real_state = ROOT / ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/candidate-state.json"
+    candidate_state.write_bytes(real_state.read_bytes())
+    before = real_state.read_bytes()
+    prepare(candidate_state_path=candidate_state)
     first = compare()
     first_bytes = (CANARY_ROOT / "canary-comparison.json").read_bytes()
     second = compare()
     assert first == second
     assert first_bytes == (CANARY_ROOT / "canary-comparison.json").read_bytes()
+    assert real_state.read_bytes() == before
