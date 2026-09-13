@@ -1,0 +1,198 @@
+TASK: Generate BHF Commentary v1.8 for 2 Chronicles 15.
+
+EVIDENCE AVAILABILITY: THIN
+Be concise and conservative. Explain what is supported without manufacturing depth.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_f89b01de044795a0: Seeking the LORD, humbling oneself, praying, turning, receiving prophetic instruction, and abandoning the LORD form a recurring… (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_f89b01de044795a0: Seeking the LORD, humbling oneself, praying, turning, receiving prophetic instruction, and abandoning the LORD form a recurring… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["second-chronicles-seek-humble-pattern"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_259f0b603037"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And the Spirit of God came upon Azariah the son of Oded: 2. and he went out to meet Asa, and said unto him, Hear ye me, Asa, and all Judah and Benjamin: Jehovah is with you, while ye are with him; and if ye seek him, he will be found of you; but if ye forsake him, he will forsake you. 3. Now for a long season Israel was without the true God, and without a teaching priest, and without law: 4. But when in their distress they turned unto Jehovah, the God of Israel, and sought him, he was found of them. 5. And in those times there was no peace to him that went out, nor to him that came in; but great vexations were upon all the inhabitants of the lands. 6. And they were broken in pieces, nation against nation, and city against city; for God did vex them with all adversity. 7. But be ye strong, and let not your hands be slack; for your work shall be rewarded. 8. And when Asa heard these words, and the prophecy of Oded the prophet, he took courage, and put away the abominations out of all the land of Judah and Benjamin, and out of the cities which he had taken from the hill-country of Ephraim; and he renewed the altar of Jehovah, that was before the porch of Jehovah. 9. And he gathered all Judah and Benjamin, and them that sojourned with them out of Ephraim and Manasseh, and out of Simeon: for they fell to him out of Israel in abundance, when they saw that Jehovah his God was with him. 10. So they gathered themselves together at Jerusalem in the third month, in the fifteenth year of the reign of Asa. 11. And they sacrificed unto Jehovah in that day, of the spoil which they had brought, seven hundred oxen and seven thousand sheep. 12. And they entered into the covenant to seek Jehovah, the God of their fathers, with all their heart and with all their soul; 13. and that whosoever would not seek Jehovah, the God of Israel, should be put to death, whether small or great, whether man or woman. 14. And they sware unto Jehovah with a loud voice, and with shouting, and with trumpets, and with cornets. 15. And all Judah rejoiced at the oath; for they had sworn with all their heart, and sought him with their whole desire; and he was found of them: and Jehovah gave them rest round about. 16. And also Maacah, the mother of Asa the king, he removed from being queen, because she had made an abominable image for an Asherah; and Asa cut down her image, and made dust of it, and burnt it at the brook Kidron. 17. But the high places were not taken away out of Israel: nevertheless the heart of Asa was perfect all his days. 18. And he brought into the house of God the things that his father had dedicated, and that he himself had dedicated, silver, and gold, and vessels. 19. And there was no more war unto the five and thirtieth year of the reign of Asa.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 1, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 1}, "evidence_item_count": 1, "relationship_unit_count": 0, "specific_evidence_count": 1, "unit_kind_counts": {"interpretive_questions": 1}, "unused_evidence_ids": [], "used_evidence_ids": ["second-chronicles-seek-humble-pattern"]}, "evidence_gaps": [{"category": "context", "reason": "Passage-scoped contextual evidence is thin.", "severity": "material"}, {"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "e5f2d824331c19b43893da318fe08742584c96b15ef3b9bb60be15a6a1916c4d", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["second-chronicles-seek-humble-pattern"], "facts": ["Seeking the LORD, humbling oneself, praying, turning, receiving prophetic instruction, and abandoning the LORD form a recurring theological and narrative pattern across Judah's reigns."], "id": "syn_interpretive_questions_259f0b603037", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["2 Chronicles 15:1-15"], "verse_refs": ["2 Chronicles 15:1-15"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "second-chronicles-seek-humble-pattern", "passage_anchors": ["2 Chronicles 15:1-15"], "source_ids": ["2-chronicles-1-36", "klein-second-chronicles", "selman-second-chronicles"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "2 Chronicles 15",
+  "book": "2 Chronicles",
+  "chapter": 15,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["2 Chronicles 15:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in 2 Chronicles 15:
+   for example `2 Chronicles 15:1` or `2 Chronicles 15:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["2 Chronicles 15:1", "2 Chronicles 15:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash e5f2d824331c19b43893da318fe08742584c96b15ef3b9bb60be15a6a1916c4d.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_2_chronicles_015_0fd60a405f6b52fc0ff9d584", "renderer_verse_refs": ["2 Chronicles 15:1-15"], "source_verse_refs": ["2 Chronicles 15:1-15"], "synthesis_unit": "syn_interpretive_questions_259f0b603037"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

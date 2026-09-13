@@ -1,0 +1,214 @@
+TASK: Generate BHF Commentary v1.8 for Ezra 5.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_209966808041c87a: Ezra 1-6 narrates return support, temple vessels, altar restoration, opposition, prophetic encouragement, Persian inquiries, and… (categories: archaeology, history, interpretive_questions)
+- reader_idea_700cc323c9041b0d: The dated prose and visions of chapters 1-8 substantially fit the early Persian Yehud setting of temple rebuilding under Darius I. (categories: culture, interpretive_questions)
+- reader_idea_ca7460932306d492: Haggai and Zechariah encourage Zerubbabel and Jeshua to resume temple construction, and Darius's inquiry results in confirmation and… (categories: history, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_209966808041c87a: Ezra 1-6 narrates return support, temple vessels, altar restoration, opposition, prophetic encouragement, Persian inquiries, and… (importance: RELEVANT; categories: archaeology, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["ezra-persian-return-and-temple-sequence", "ezra-persian-return-and-temple-sequence:passage-relevance", "yehud-stamp-administration", "yehud-stamp-administration:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_282669dce496"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["ezra-persian-return-and-temple-sequence", "ezra-persian-return-and-temple-sequence:passage-relevance", "yehud-stamp-administration", "yehud-stamp-administration:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_8808d6f96bfc"}
+
+IDEA reader_idea_700cc323c9041b0d: The dated prose and visions of chapters 1-8 substantially fit the early Persian Yehud setting of temple rebuilding under Darius I. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["zechariah-dated-core"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_9b393c22f29d"}
+
+IDEA reader_idea_ca7460932306d492: Haggai and Zechariah encourage Zerubbabel and Jeshua to resume temple construction, and Darius's inquiry results in confirmation and… (importance: RELEVANT; categories: history, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["ezra-opposition-darius", "ezra:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_c44df19bdbc5"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["ezra-opposition-darius", "ezra:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_de1063d5344a"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Now the prophets, Haggai the prophet, and Zechariah the son of Iddo, prophesied unto the Jews that were in Judah and Jerusalem; in the name of the God of Israel `prophesied they' unto them. 2. Then rose up Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and began to build the house of God which is at Jerusalem; and with them were the prophets of God, helping them. 3. At the same time came to them Tattenai, the governor beyond the River, and Shethar-bozenai, and their companions, and said thus unto them, Who gave you a decree to build this house, and to finish this wall? 4. Then we told them after this manner, what the names of the men were that were making this building. 5. But the eye of their God was upon the elders of the Jews, and they did not make them cease, till the matter should come to Darius, and then answer should be returned by letter concerning it. 6. The copy of the letter that Tattenai, the governor beyond the River, and Shethar-bozenai, and his companions the Apharsachites, who were beyond the River, sent unto Darius the king; 7. they sent a letter unto him, wherein was written thus: Unto Darius the king, all peace. 8. Be it known unto the king, that we went into the province of Judah, to the house of the great God, which is builded with great stones, and timber is laid in the walls; and this work goeth on with diligence and prospereth in their hands. 9. Then asked we those elders, and said unto them thus, Who gave you a decree to build this house, and to finish this wall? 10. We asked them their names also, to certify thee, that we might write the names of the men that were at the head of them. 11. And thus they returned us answer, saying, We are the servants of the God of heaven and earth, and are building the house that was builded these many years ago, which a great king of Israel builded and finished. 12. But after that our fathers had provoked the God of heaven unto wrath, he gave them into the hand of Nebuchadnezzar king of Babylon, the Chaldean, who destroyed this house, and carried the people away into Babylon. 13. But in the first year of Cyrus king of Babylon, Cyrus the king made a decree to build this house of God. 14. And the gold and silver vessels also of the house of God, which Nebuchadnezzar took out of the temple that was in Jerusalem, and brought into the temple of Babylon, those did Cyrus the king take out of the temple of Babylon, and they were delivered unto one whose name was Sheshbazzar, whom he had made governor; 15. and he said unto him, Take these vessels, go, put them in the temple that is in Jerusalem, and let the house of God be builded in its place. 16. Then came the same Sheshbazzar, and laid the foundations of the house of God which is in Jerusalem: and since that time even until now hath it been in building, and yet it is not completed. 17. Now therefore, if it seem good to the king, let there be search made in the king's treasure-house, which is there at Babylon, whether it be so, that a decree was made of Cyrus the king to build this house of God at Jerusalem; and let the king send his pleasure to us concerning this matter.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 1, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"archaeology": 2, "culture": 7, "history": 4, "politics": 2}, "evidence_item_count": 15, "relationship_unit_count": 2, "specific_evidence_count": 7, "unit_kind_counts": {"interpretive_questions": 2, "surrounding_passages": 2, "why_it_matters": 1}, "unused_evidence_ids": ["persia:ancient_near_east_context:0", "persia:hebraic_worldview:0", "persia:historical_context:0", "persia:second_temple_context:0", "rebuilding-the-temple:ancient_near_east_context:0", "rebuilding-the-temple:hebraic_worldview:0", "rebuilding-the-temple:historical_context:0", "rebuilding-the-temple:second_temple_context:0"], "used_evidence_ids": ["ezra-opposition-darius", "ezra-persian-return-and-temple-sequence", "ezra-persian-return-and-temple-sequence:passage-relevance", "ezra:interpretive_note:1", "yehud-stamp-administration", "yehud-stamp-administration:passage-relevance", "zechariah-dated-core"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "267eacd81376355286a74c2c513b6e83460bc40c755c25a7ccad6ad284c73210", "units": [{"confidence": "medium", "entity_ids": ["persia", "rebuilding-the-temple"], "evidence_ids": ["ezra-persian-return-and-temple-sequence", "ezra-persian-return-and-temple-sequence:passage-relevance", "yehud-stamp-administration", "yehud-stamp-administration:passage-relevance"], "facts": ["Ezra 1-6 narrates return support, temple vessels, altar restoration, opposition, prophetic encouragement, Persian inquiries, and completion under successive kings rather than one instantaneous restoration.", "This sequence controls interpretation of Ezra 1 by locating Cyrus's authorization at the beginning of a longer, contested restoration that reaches completion under Darius.", "Hundreds of inscribed stamp impressions on jars from Persian and early Hellenistic Judah, concentrated especially at Ramat Rahel and Jerusalem, preserve the provincial name Yehud and an evolving administrative system.", "The stamped-jar system provides material context for the provincial taxation, provisioning, officials, and economic pressures assumed in Ezra-Nehemiah without verifying a specific decree or debt complaint."], "id": "syn_interpretive_questions_282669dce496", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["archaeology", "history"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ezra 5:1-17"], "verse_refs": ["Ezra 5:1-17"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["zechariah-dated-core"], "facts": ["The dated prose and visions of chapters 1-8 substantially fit the early Persian Yehud setting of temple rebuilding under Darius I."], "id": "syn_interpretive_questions_9b393c22f29d", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ezra 5:1-2"], "verse_refs": ["Ezra 5:1-2"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["ezra-opposition-darius", "ezra:interpretive_note:1"], "facts": ["Haggai and Zechariah encourage Zerubbabel and Jeshua to resume temple construction, and Darius's inquiry results in confirmation and imperial support rather than suppression.", "The Aramaic blocks in Ezra 4:8-6:18 and 7:12-26 fit the imperial and regional lingua franca and contain letters or decrees, but language alone does not prove that every document survives unchanged from a royal archive."], "id": "syn_surrounding_passages_c44df19bdbc5", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["politics"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Ezra 4:8-6:18", "Ezra 5:1-6:12"], "verse_refs": ["Ezra 4:8-24", "Ezra 6:1-12", "Ezra 6:1-18"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["ezra-opposition-darius", "ezra:interpretive_note:1"], "facts": ["Haggai and Zechariah encourage Zerubbabel and Jeshua to resume temple construction, and Darius's inquiry results in confirmation and imperial support rather than suppression.", "The Aramaic blocks in Ezra 4:8-6:18 and 7:12-26 fit the imperial and regional lingua franca and contain letters or decrees, but language alone does not prove that every document survives unchanged from a royal archive."], "id": "syn_surrounding_passages_de1063d5344a", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_c44df19bdbc5"], "source_anchors": ["Ezra 4:8-6:18", "Ezra 5:1-6:12"], "verse_refs": ["Ezra 4:8-24", "Ezra 6:1-12", "Ezra 6:1-18"]}, {"confidence": "medium", "entity_ids": ["persia", "rebuilding-the-temple"], "evidence_ids": ["ezra-persian-return-and-temple-sequence", "ezra-persian-return-and-temple-sequence:passage-relevance", "yehud-stamp-administration", "yehud-stamp-administration:passage-relevance"], "facts": ["Ezra 1-6 narrates return support, temple vessels, altar restoration, opposition, prophetic encouragement, Persian inquiries, and completion under successive kings rather than one instantaneous restoration.", "This sequence controls interpretation of Ezra 1 by locating Cyrus's authorization at the beginning of a longer, contested restoration that reaches completion under Darius.", "Hundreds of inscribed stamp impressions on jars from Persian and early Hellenistic Judah, concentrated especially at Ramat Rahel and Jerusalem, preserve the provincial name Yehud and an evolving administrative system.", "The stamped-jar system provides material context for the provincial taxation, provisioning, officials, and economic pressures assumed in Ezra-Nehemiah without verifying a specific decree or debt complaint."], "id": "syn_why_it_matters_8808d6f96bfc", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_282669dce496"], "source_anchors": ["Ezra 5:1-17"], "verse_refs": ["Ezra 5:1-17"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "ezra-opposition-darius", "passage_anchors": ["Ezra 5:1-6:12"], "source_ids": ["ezra-1-10", "fensham-ezra-nehemiah"]}, {"confidence": "medium", "id": "ezra-persian-return-and-temple-sequence", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-chronicles-restoration-text", "grabbe-persian-period", "williamson-ezra-nehemiah-persia"]}, {"confidence": "medium", "id": "ezra-persian-return-and-temple-sequence:passage-relevance", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-chronicles-restoration-text", "grabbe-persian-period", "williamson-ezra-nehemiah-persia"]}, {"confidence": "high", "id": "ezra:interpretive_note:1", "passage_anchors": ["Ezra 4:8-6:18"], "source_ids": ["ezra-1-10", "fensham-ezra-nehemiah", "myers-ezra-nehemiah", "williamson-ezra-nehemiah"]}, {"confidence": "medium", "id": "persia:ancient_near_east_context:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:hebraic_worldview:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:historical_context:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:second_temple_context:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "rebuilding-the-temple:ancient_near_east_context:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "rebuilding-the-temple:hebraic_worldview:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "rebuilding-the-temple:historical_context:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "rebuilding-the-temple:second_temple_context:0", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "yehud-stamp-administration", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-chronicles-restoration-text", "grabbe-persian-period", "lipschits-vanderhooft-yehud-corpus", "lipschits-vanderhooft-yehud-stamps-2020"]}, {"confidence": "medium", "id": "yehud-stamp-administration:passage-relevance", "passage_anchors": ["Ezra 5:1-17"], "source_ids": ["ezra-chronicles-restoration-text", "grabbe-persian-period", "lipschits-vanderhooft-yehud-corpus", "lipschits-vanderhooft-yehud-stamps-2020"]}, {"confidence": "high", "id": "zechariah-dated-core", "passage_anchors": ["Ezra 5:1-2"], "source_ids": ["berquist-yehud", "iranica-bible-achaemenid", "meyers-zechariah", "redditt-zechariah"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Ezra 5",
+  "book": "Ezra",
+  "chapter": 5,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Ezra 5:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Ezra 5:
+   for example `Ezra 5:1` or `Ezra 5:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Ezra 5:1", "Ezra 5:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 267eacd81376355286a74c2c513b6e83460bc40c755c25a7ccad6ad284c73210.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ezra_005_723bb83403c6bdc5d7955de7", "renderer_verse_refs": ["Ezra 5:1-17"], "source_verse_refs": ["Ezra 5:1-17"], "synthesis_unit": "syn_interpretive_questions_282669dce496"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ezra_005_25002ef441ef7374ff4d54e7", "renderer_verse_refs": ["Ezra 5:1-17"], "source_verse_refs": ["Ezra 5:1-17"], "synthesis_unit": "syn_why_it_matters_8808d6f96bfc"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ezra_005_c819779e867ac35306ad08e7", "renderer_verse_refs": ["Ezra 5:1-2"], "source_verse_refs": ["Ezra 5:1-2"], "synthesis_unit": "syn_interpretive_questions_9b393c22f29d"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_ezra_005_c70142f8cb5bf47dbd7adb0b", "renderer_verse_refs": ["Ezra 4:8-24", "Ezra 6:1-12", "Ezra 6:1-18"], "source_verse_refs": ["Ezra 4:8-24", "Ezra 6:1-12", "Ezra 6:1-18"], "synthesis_unit": "syn_surrounding_passages_c44df19bdbc5"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_ezra_005_bea59dda0e4ad4a12fcc0593", "renderer_verse_refs": ["Ezra 4:8-24", "Ezra 6:1-12", "Ezra 6:1-18"], "source_verse_refs": ["Ezra 4:8-24", "Ezra 6:1-12", "Ezra 6:1-18"], "synthesis_unit": "syn_surrounding_passages_de1063d5344a"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

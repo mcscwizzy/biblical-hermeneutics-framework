@@ -1,0 +1,215 @@
+TASK: Generate BHF Commentary v1.8 for Nehemiah 2.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_ec10943db8b25cb8: Jerusalem's wall is rebuilt by diverse households, priests, craftspeople, officials, and regional workers while Sanballat, Tobiah… (categories: culture, history, surrounding_passages)
+
+RELEVANT:
+- reader_idea_b12d9b14b3e46da5: Ezra's seventh-year Artaxerxes is most commonly identified as Artaxerxes I, placing the mission in 458/457 BCE before Nehemiah, but… (categories: culture, interpretive_questions)
+- reader_idea_441ee177568c50b0: Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432… (categories: culture, geography, history, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_b12d9b14b3e46da5: Ezra's seventh-year Artaxerxes is most commonly identified as Artaxerxes I, placing the mission in 458/457 BCE before Nehemiah, but… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["ezra:interpretive_note:5"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_0fc1a3693c2d"}
+
+IDEA reader_idea_441ee177568c50b0: Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432… (importance: RELEVANT; categories: culture, geography, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["nehemiah:interpretive_note:0", "nehemiah:interpretive_note:2", "nehemiah:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_12e92b41d6eb"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["nehemiah:interpretive_note:0", "nehemiah:interpretive_note:2", "nehemiah:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_1eafea6a4a50"}
+
+IDEA reader_idea_ec10943db8b25cb8: Jerusalem's wall is rebuilt by diverse households, priests, craftspeople, officials, and regional workers while Sanballat, Tobiah… (importance: CORE; categories: culture, history, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["nehemiah-wall-opposition", "nehemiah:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_10e71e1aac49"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["nehemiah-wall-opposition", "nehemiah:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_95b4750a742d"}
+- path_3: {"confidence": "high", "disputed": false, "evidence_ids": ["nehemiah-prayer-authorization"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_9c701b16fd57"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And it came to pass in the month Nisan, in the twentieth year of Artaxerxes the king, when wine was before him, that I took up the wine, and gave it unto the king. Now I had not been `beforetime' sad in his presence. 2. And the king said unto me, Why is thy countenance sad, seeing thou art not sick? this is nothing else but sorrow of heart. Then I was very sore afraid. 3. And I said unto the king, Let the king live for ever: why should not my countenance be sad, when the city, the place of my fathers' sepulchres, lieth waste, and the gates thereof are consumed with fire? 4. Then the king said unto me, For what dost thou make request? So I prayed to the God of heaven. 5. And I said unto the king, If it please the king, and if thy servant have found favor in thy sight, that thou wouldest send me unto Judah, unto the city of my fathers' sepulchres, that I may build it. 6. And the king said unto me (the queen also sitting by him,) For how long shall thy journey be? and when wilt thou return? So it pleased the king to send me; and I set him a time. 7. Moreover I said unto the king, If it please the king, let letters be given me to the governors beyond the River, that they may let me pass through till I come unto Judah; 8. and a letter unto Asaph the keeper of the king's forest, that he may give me timber to make beams for the gates of the castle which appertaineth to the house, and for the wall of the city, and for the house that I shall enter into. And the king granted me, according to the good hand of my God upon me. 9. Then I came to the governors beyond the River, and gave them the king's letters. Now the king had sent with me captains of the army and horsemen. 10. And when Sanballat the Horonite, and Tobiah the servant, the Ammonite, heard of it, it grieved them exceedingly, for that there was come a man to seek the welfare of the children of Israel. 11. So I came to Jerusalem, and was there three days. 12. And I arose in the night, I and some few men with me; neither told I any man what my God put into my heart to do for Jerusalem; neither was there any beast with me, save the beast that I rode upon. 13. And I went out by night by the valley gate, even toward the jackal's well, and to the dung gate, and viewed the walls of Jerusalem, which were broken down, and the gates thereof were consumed with fire. 14. Then I went on to the fountain gate and to the king's pool: but there was no place for the beast that was under me to pass. 15. Then went I up in the night by the brook, and viewed the wall; and I turned back, and entered by the valley gate, and so returned. 16. And the rulers knew not whither I went, or what I did; neither had I as yet told it to the Jews, nor to the priests, nor to the nobles, nor to the rulers, nor to the rest that did the work. 17. Then said I unto them, Ye see the evil case that we are in, how Jerusalem lieth waste, and the gates thereof are burned with fire: come, and let us build up the wall of Jerusalem, that we be no more a reproach. 18. And I told them of the hand of my God which was good upon me, as also of the king's words that he had spoken unto me. And they said, Let us rise up and build. So they strengthened their hands for the good `work'. 19. But when Sanballat the Horonite, and Tobiah the servant, the Ammonite, and Geshem the Arabian, heard it, they laughed us to scorn, and despised us, and said, What is this thing that ye do? will ye rebel against the king? 20. Then answered I them, and said unto them, The God of heaven, he will prosper us; therefore we his servants will arise and build: but ye have no portion, nor right, nor memorial, in Jerusalem.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 6, "geography": 1, "history": 3, "politics": 3}, "evidence_item_count": 13, "relationship_unit_count": 3, "specific_evidence_count": 9, "unit_kind_counts": {"interpretive_questions": 3, "surrounding_passages": 3, "why_it_matters": 2}, "unused_evidence_ids": ["persia:ancient_near_east_context:0", "persia:hebraic_worldview:0", "persia:historical_context:0", "persia:second_temple_context:0"], "used_evidence_ids": ["elephantine-judah-governor-correspondence", "elephantine-judah-governor-correspondence:passage-relevance", "ezra:interpretive_note:5", "nehemiah-prayer-authorization", "nehemiah-wall-opposition", "nehemiah:interpretive_note:0", "nehemiah:interpretive_note:1", "nehemiah:interpretive_note:2", "nehemiah:interpretive_note:3"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "c80f1ae04bb6d8c726b0f17fdb709505289d29cc252329a174d80ed0c38858ba", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["ezra:interpretive_note:5"], "facts": ["Ezra's seventh-year Artaxerxes is most commonly identified as Artaxerxes I, placing the mission in 458/457 BCE before Nehemiah, but proposals for Artaxerxes II or a reordered Ezra-Nehemiah chronology remain debated."], "id": "syn_interpretive_questions_0fc1a3693c2d", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Nehemiah 2:1"], "verse_refs": ["Nehemiah 2:1"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["nehemiah:interpretive_note:0", "nehemiah:interpretive_note:2", "nehemiah:interpretive_note:3"], "facts": ["Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432 BCE, but exact dates vary with accession-year and calendar reckoning.", "Archaeology confirms Persian-period occupation and administration in Jerusalem and Yehud but does not yield an uncontested route, height, or full circuit for Nehemiah's wall. Proposed identifications of gates and the night inspection must remain provisional.", "Sanballat, Tobiah, and Geshem represent regional political and kinship interests affected by Jerusalem's fortification. The narrative's polemic should not be flattened into a timeless ethnic feud or used to vilify modern Samaritans, Ammonites, Arabs, or neighboring peoples."], "id": "syn_interpretive_questions_12e92b41d6eb", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography", "politics"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"], "verse_refs": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"]}, {"confidence": "medium", "entity_ids": ["persia"], "evidence_ids": ["elephantine-judah-governor-correspondence", "elephantine-judah-governor-correspondence:passage-relevance"], "facts": ["Papyrus Berlin P. 13495 is an Imperial Aramaic copy of a 407 BCE petition from Judeans at Elephantine to Bagohi, governor of Judah, concerning reconstruction of their damaged YHW temple.", "The letter provides later comparative evidence for a Persian governor of Judah, Jerusalem priestly authority, written interprovincial appeals, and connections with Samaria relevant to Ezra-Nehemiah's administrative world."], "id": "syn_interpretive_questions_b9d74d0a9b7d", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["politics"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Nehemiah 2:1-20"], "verse_refs": ["Nehemiah 2:1-20"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["nehemiah-wall-opposition", "nehemiah:interpretive_note:1"], "facts": ["Jerusalem's wall is rebuilt by diverse households, priests, craftspeople, officials, and regional workers while Sanballat, Tobiah, Geshem, and allies use ridicule, threat, accusation, and intimidation.", "The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence."], "id": "syn_surrounding_passages_10e71e1aac49", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Nehemiah 1:1-7:5", "Nehemiah 2:11-4:23"], "verse_refs": ["Nehemiah 1:1-11", "Nehemiah 3:1-32", "Nehemiah 4:1-23", "Nehemiah 5:1-19", "Nehemiah 6:1-19", "Nehemiah 7:1-5"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["nehemiah-wall-opposition", "nehemiah:interpretive_note:1"], "facts": ["Jerusalem's wall is rebuilt by diverse households, priests, craftspeople, officials, and regional workers while Sanballat, Tobiah, Geshem, and allies use ridicule, threat, accusation, and intimidation.", "The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence."], "id": "syn_surrounding_passages_95b4750a742d", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_10e71e1aac49"], "source_anchors": ["Nehemiah 1:1-7:5", "Nehemiah 2:11-4:23"], "verse_refs": ["Nehemiah 1:1-11", "Nehemiah 3:1-32", "Nehemiah 4:1-23", "Nehemiah 5:1-19", "Nehemiah 6:1-19", "Nehemiah 7:1-5"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["nehemiah-prayer-authorization"], "facts": ["Nehemiah responds to Jerusalem's distress with mourning, fasting, covenant confession, planning, and a request that Artaxerxes authorizes with letters and timber access."], "id": "syn_surrounding_passages_9c701b16fd57", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Nehemiah 1:1-2:10"], "verse_refs": ["Nehemiah 1:1-11"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["nehemiah:interpretive_note:0", "nehemiah:interpretive_note:2", "nehemiah:interpretive_note:3"], "facts": ["Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432 BCE, but exact dates vary with accession-year and calendar reckoning.", "Archaeology confirms Persian-period occupation and administration in Jerusalem and Yehud but does not yield an uncontested route, height, or full circuit for Nehemiah's wall. Proposed identifications of gates and the night inspection must remain provisional.", "Sanballat, Tobiah, and Geshem represent regional political and kinship interests affected by Jerusalem's fortification. The narrative's polemic should not be flattened into a timeless ethnic feud or used to vilify modern Samaritans, Ammonites, Arabs, or neighboring peoples."], "id": "syn_why_it_matters_1eafea6a4a50", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_12e92b41d6eb"], "source_anchors": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"], "verse_refs": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"]}, {"confidence": "medium", "entity_ids": ["persia"], "evidence_ids": ["elephantine-judah-governor-correspondence", "elephantine-judah-governor-correspondence:passage-relevance"], "facts": ["Papyrus Berlin P. 13495 is an Imperial Aramaic copy of a 407 BCE petition from Judeans at Elephantine to Bagohi, governor of Judah, concerning reconstruction of their damaged YHW temple.", "The letter provides later comparative evidence for a Persian governor of Judah, Jerusalem priestly authority, written interprovincial appeals, and connections with Samaria relevant to Ezra-Nehemiah's administrative world."], "id": "syn_why_it_matters_242ec049c26d", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_b9d74d0a9b7d"], "source_anchors": ["Nehemiah 2:1-20"], "verse_refs": ["Nehemiah 2:1-20"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "elephantine-judah-governor-correspondence", "passage_anchors": ["Nehemiah 2:1-20"], "source_ids": ["elephantine-p13495", "grabbe-persian-period", "porten-yardeni-tad-a47", "williamson-ezra-nehemiah-persia"]}, {"confidence": "medium", "id": "elephantine-judah-governor-correspondence:passage-relevance", "passage_anchors": ["Nehemiah 2:1-20"], "source_ids": ["elephantine-p13495", "grabbe-persian-period", "porten-yardeni-tad-a47", "williamson-ezra-nehemiah-persia"]}, {"confidence": "medium", "id": "ezra:interpretive_note:5", "passage_anchors": ["Nehemiah 2:1"], "source_ids": ["ezra-1-10", "grabbe-ezra-nehemiah", "myers-ezra-nehemiah", "nehemiah-1-13", "williamson-ezra-nehemiah"]}, {"confidence": "high", "id": "nehemiah-prayer-authorization", "passage_anchors": ["Nehemiah 1:1-2:10"], "source_ids": ["fensham-ezra-nehemiah", "nehemiah-1-13"]}, {"confidence": "high", "id": "nehemiah-wall-opposition", "passage_anchors": ["Nehemiah 2:11-4:23"], "source_ids": ["nehemiah-1-13", "williamson-ezra-nehemiah"]}, {"confidence": "medium", "id": "nehemiah:interpretive_note:0", "passage_anchors": ["Nehemiah 2:1"], "source_ids": ["fensham-ezra-nehemiah", "grabbe-ezra-nehemiah", "nehemiah-1-13", "williamson-ezra-nehemiah"]}, {"confidence": "high", "id": "nehemiah:interpretive_note:1", "passage_anchors": ["Nehemiah 1:1-7:5"], "source_ids": ["myers-ezra-nehemiah", "nehemiah-1-13", "williamson-ezra-nehemiah"]}, {"confidence": "low", "id": "nehemiah:interpretive_note:2", "passage_anchors": ["Nehemiah 2:11-20"], "source_ids": ["fensham-ezra-nehemiah", "nehemiah-1-13", "williamson-ezra-nehemiah", "zondervan-kings-chronicles-ezra-backgrounds"]}, {"confidence": "medium", "id": "nehemiah:interpretive_note:3", "passage_anchors": ["Nehemiah 2:10-20"], "source_ids": ["fensham-ezra-nehemiah", "nehemiah-1-13", "zondervan-kings-chronicles-ezra-backgrounds"]}, {"confidence": "medium", "id": "persia:ancient_near_east_context:0", "passage_anchors": ["Nehemiah 2:1-20"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:hebraic_worldview:0", "passage_anchors": ["Nehemiah 2:1-20"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:historical_context:0", "passage_anchors": ["Nehemiah 2:1-20"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:second_temple_context:0", "passage_anchors": ["Nehemiah 2:1-20"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Nehemiah 2",
+  "book": "Nehemiah",
+  "chapter": 2,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Nehemiah 2:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Nehemiah 2:
+   for example `Nehemiah 2:1` or `Nehemiah 2:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Nehemiah 2:1", "Nehemiah 2:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash c80f1ae04bb6d8c726b0f17fdb709505289d29cc252329a174d80ed0c38858ba.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_nehemiah_002_a92e06995989b3aaf9d5aa0c", "renderer_verse_refs": ["Nehemiah 2:1"], "source_verse_refs": ["Nehemiah 2:1"], "synthesis_unit": "syn_interpretive_questions_0fc1a3693c2d"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_nehemiah_002_f4fe262c31f04ee2f0798baf", "renderer_verse_refs": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"], "source_verse_refs": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"], "synthesis_unit": "syn_interpretive_questions_12e92b41d6eb"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_nehemiah_002_78fb5881a095c3bfddfbc078", "renderer_verse_refs": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"], "source_verse_refs": ["Nehemiah 2:1", "Nehemiah 2:10-20", "Nehemiah 2:11-20"], "synthesis_unit": "syn_why_it_matters_1eafea6a4a50"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_nehemiah_002_6dfca7f0a6f04c747caf1ab4", "renderer_verse_refs": ["Nehemiah 1:1-11", "Nehemiah 3:1-32", "Nehemiah 4:1-23", "Nehemiah 5:1-19", "Nehemiah 6:1-19", "Nehemiah 7:1-5"], "source_verse_refs": ["Nehemiah 1:1-11", "Nehemiah 3:1-32", "Nehemiah 4:1-23", "Nehemiah 5:1-19", "Nehemiah 6:1-19", "Nehemiah 7:1-5"], "synthesis_unit": "syn_surrounding_passages_10e71e1aac49"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_nehemiah_002_40a9d682d1afe1b65913634a", "renderer_verse_refs": ["Nehemiah 1:1-11", "Nehemiah 3:1-32", "Nehemiah 4:1-23", "Nehemiah 5:1-19", "Nehemiah 6:1-19", "Nehemiah 7:1-5"], "source_verse_refs": ["Nehemiah 1:1-11", "Nehemiah 3:1-32", "Nehemiah 4:1-23", "Nehemiah 5:1-19", "Nehemiah 6:1-19", "Nehemiah 7:1-5"], "synthesis_unit": "syn_surrounding_passages_95b4750a742d"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_nehemiah_002_48861030f31c1143ff99fbb9", "renderer_verse_refs": ["Nehemiah 1:1-11"], "source_verse_refs": ["Nehemiah 1:1-11"], "synthesis_unit": "syn_surrounding_passages_9c701b16fd57"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

@@ -1,0 +1,205 @@
+TASK: Generate BHF Commentary v1.8 for Ezra 3.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_1a59af8dc84ddfcc: The returned community rebuilds the altar and resumes offerings before the temple is completed, then lays the foundation amid… (categories: history)
+
+RELEVANT:
+- reader_idea_97810c9bd03a893f: Haggai 2 addresses those who saw the house in its former glory or knew that comparison and acknowledges that the present work… (categories: culture, history, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_1a59af8dc84ddfcc: The returned community rebuilds the altar and resumes offerings before the temple is completed, then lays the foundation amid… (importance: CORE; categories: history)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["ezra-altar-temple"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_337b6f95081f"}
+
+IDEA reader_idea_97810c9bd03a893f: Haggai 2 addresses those who saw the house in its former glory or knew that comparison and acknowledges that the present work… (importance: RELEVANT; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["haggai-former-house", "haggai-foundation"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_9402921d3630"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["haggai-former-house", "haggai-foundation"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_e0ea858b0e9e"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And when the seventh month was come, and the children of Israel were in the cities, the people gathered themselves together as one man to Jerusalem. 2. Then stood up Jeshua the son of Jozadak, and his brethren the priests, and Zerubbabel the son of Shealtiel, and his brethren, and builded the altar of the God of Israel, to offer burnt-offerings thereon, as it is written in the law of Moses the man of God. 3. And they set the altar upon its base; for fear was upon them because of the peoples of the countries: and they offered burnt-offerings thereon unto Jehovah, even burnt-offerings morning and evening. 4. And they kept the feast of tabernacles, as it is written, and `offered' the daily burnt-offerings by number, according to the ordinance, as the duty of every day required; 5. and afterward the continual burnt-offering, and `the offerings' of the new moons, and of all the set feasts of Jehovah that were consecrated, and of every one that willingly offered a freewill-offering unto Jehovah. 6. From the first day of the seventh month began they to offer burnt-offerings unto Jehovah: but the foundation of the temple of Jehovah was not yet laid. 7. They gave money also unto the masons, and to the carpenters; and food, and drink, and oil, unto them of Sidon, and to them of Tyre, to bring cedar-trees from Lebanon to the sea, unto Joppa, according to the grant that they had of Cyrus king of Persia. 8. Now in the second year of their coming unto the house of God at Jerusalem, in the second month, began Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and the rest of their brethren the priests and the Levites, and all they that were come out of the captivity unto Jerusalem, and appointed the Levites, from twenty years old and upward, to have the oversight of the work of the house of Jehovah. 9. Then stood Jeshua with his sons and his brethren, Kadmiel and his sons, the sons of Judah, together, to have the oversight of the workmen in the house of God: the sons of Henadad, with their sons and their brethren the Levites. 10. And when the builders laid the foundation of the temple of Jehovah, they set the priests in their apparel with trumpets, and the Levites the sons of Asaph with cymbals, to praise Jehovah, after the order of David king of Israel. 11. And they sang one to another in praising and giving thanks unto Jehovah, `saying', For he is good, for his lovingkindness `endureth' for ever toward Israel. And all the people shouted with a great shout, when they praised Jehovah, because the foundation of the house of Jehovah was laid. 12. But many of the priests and Levites and heads of fathers' `houses', the old men that had seen the first house, when the foundation of this house was laid before their eyes, wept with a loud voice; and many shouted aloud for joy: 13. so that the people could not discern the noise of the shout of joy from the noise of the weeping of the people; for the people shouted with a loud shout, and the noise was heard afar off.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 1, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 4, "history": 3, "politics": 1}, "evidence_item_count": 8, "relationship_unit_count": 1, "specific_evidence_count": 4, "unit_kind_counts": {"historical_context": 1, "interpretive_questions": 2, "why_it_matters": 1}, "unused_evidence_ids": ["rebuilding-the-temple:ancient_near_east_context:0", "rebuilding-the-temple:hebraic_worldview:0", "rebuilding-the-temple:historical_context:0", "rebuilding-the-temple:second_temple_context:0"], "used_evidence_ids": ["ezra-altar-temple", "ezra-persian-return-and-temple-sequence", "haggai-former-house", "haggai-foundation"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "551eaf158723a5433fc5311fd79c44738a86d8cbb7d64d45c408db7b22e1f19b", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["ezra-altar-temple"], "facts": ["The returned community rebuilds the altar and resumes offerings before the temple is completed, then lays the foundation amid simultaneous praise, shouting, and weeping."], "id": "syn_historical_context_337b6f95081f", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ezra 3:1-13"], "verse_refs": ["Ezra 3:1-13"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["haggai-former-house", "haggai-foundation"], "facts": ["Haggai 2 addresses those who saw the house in its former glory or knew that comparison and acknowledges that the present work appeared insignificant.", "The command to consider from the day the temple was founded has been related to 520 BCE work, earlier return-era foundation traditions, or a rhetorical resetting of the project's beginning."], "id": "syn_interpretive_questions_9402921d3630", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ezra 3:12-13", "Ezra 3:8-13"], "verse_refs": ["Ezra 3:12-13", "Ezra 3:8-13"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["ezra-persian-return-and-temple-sequence"], "facts": ["Ezra presents return, restored temple vessels, altar worship, and temple completion as a multi-reign process involving Cyrus, Darius I, local leaders, prophets, and imperial correspondence."], "id": "syn_interpretive_questions_b0233d4e0ca6", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["politics"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ezra 3:1-13"], "verse_refs": ["Ezra 3:1-13"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["haggai-former-house", "haggai-foundation"], "facts": ["Haggai 2 addresses those who saw the house in its former glory or knew that comparison and acknowledges that the present work appeared insignificant.", "The command to consider from the day the temple was founded has been related to 520 BCE work, earlier return-era foundation traditions, or a rhetorical resetting of the project's beginning."], "id": "syn_why_it_matters_e0ea858b0e9e", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_9402921d3630"], "source_anchors": ["Ezra 3:12-13", "Ezra 3:8-13"], "verse_refs": ["Ezra 3:12-13", "Ezra 3:8-13"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "ezra-altar-temple", "passage_anchors": ["Ezra 3:1-13"], "source_ids": ["ezra-1-10", "williamson-ezra-nehemiah"]}, {"confidence": "high", "id": "ezra-persian-return-and-temple-sequence", "passage_anchors": ["Ezra 3:1-13"], "source_ids": ["ezra-chronicles-restoration-text", "grabbe-persian-period", "williamson-ezra-nehemiah-persia"]}, {"confidence": "medium", "id": "haggai-former-house", "passage_anchors": ["Ezra 3:12-13"], "source_ids": ["barker-haggai", "haggai-comparanda", "haggai-masoretic", "kessler-haggai"]}, {"confidence": "low", "id": "haggai-foundation", "passage_anchors": ["Ezra 3:8-13"], "source_ids": ["barker-haggai", "haggai-comparanda", "haggai-masoretic", "kessler-haggai"]}, {"confidence": "medium", "id": "rebuilding-the-temple:ancient_near_east_context:0", "passage_anchors": ["Ezra 3:1-13"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "rebuilding-the-temple:hebraic_worldview:0", "passage_anchors": ["Ezra 3:1-13"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "rebuilding-the-temple:historical_context:0", "passage_anchors": ["Ezra 3:1-13"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}, {"confidence": "medium", "id": "rebuilding-the-temple:second_temple_context:0", "passage_anchors": ["Ezra 3:1-13"], "source_ids": ["ezra-haggai-temple-text", "grabbe-temple-persia", "williamson-temple"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Ezra 3",
+  "book": "Ezra",
+  "chapter": 3,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Ezra 3:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Ezra 3:
+   for example `Ezra 3:1` or `Ezra 3:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Ezra 3:1", "Ezra 3:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 551eaf158723a5433fc5311fd79c44738a86d8cbb7d64d45c408db7b22e1f19b.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ezra_003_6f34d30db71ff5a2281a4554", "renderer_verse_refs": ["Ezra 3:1-13"], "source_verse_refs": ["Ezra 3:1-13"], "synthesis_unit": "syn_historical_context_337b6f95081f"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ezra_003_704d91322ecda7ddc81ac6e8", "renderer_verse_refs": ["Ezra 3:12-13", "Ezra 3:8-13"], "source_verse_refs": ["Ezra 3:12-13", "Ezra 3:8-13"], "synthesis_unit": "syn_interpretive_questions_9402921d3630"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ezra_003_cb7d716d8784cea62940d426", "renderer_verse_refs": ["Ezra 3:12-13", "Ezra 3:8-13"], "source_verse_refs": ["Ezra 3:12-13", "Ezra 3:8-13"], "synthesis_unit": "syn_why_it_matters_e0ea858b0e9e"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
