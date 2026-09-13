@@ -1,0 +1,202 @@
+TASK: Generate BHF Commentary v1.8 for Genesis 40.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_4158502b9df7d444: Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary… (categories: culture, surrounding_passages)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_4158502b9df7d444: Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary… (importance: CORE; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_999f864f75fc"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["genesis-literary-movement"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_bf38f037feb1"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_cb5c07591c39"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And it came to pass after these things, that the butler of the king of Egypt and his baker offended their lord the king of Egypt. 2. And Pharaoh was wroth against his two officers, against the chief of the butlers, and against the chief of the bakers. 3. And he put them in ward in the house of the captain of the guard, into the prison, the place where Joseph was bound. 4. And the captain of the guard charged Joseph with them, and he ministered unto them: and they continued a season in ward. 5. And they dreamed a dream both of them, each man his dream, in one night, each man according to the interpretation of his dream, the butler and the baker of the king of Egypt, who were bound in the prison. 6. And Joseph came in unto them in the morning, and saw them, and, behold, they were sad. 7. And he asked Pharaoh's officers that were with him in ward in his master's house, saying, Wherefore look ye so sad to-day? 8. And they said unto him, We have dreamed a dream, and there is none that can interpret it. And Joseph said unto them, Do not interpretations belong to God? tell it me, I pray you. 9. And the chief butler told his dream to Joseph, and said to him, In my dream, behold, a vine was before me; 10. and in the vine were three branches: and it was as though it budded, `and' its blossoms shot forth; `and' the clusters thereof brought forth ripe grapes: 11. and Pharaoh's cup was in my hand; and I took the grapes, and pressed them into Pharaoh's cup, and I gave the cup into Pharaoh's hand. 12. And Joseph said unto him, This is the interpretation of it: the three branches are three days; 13. within yet three days shall Pharaoh lift up thy head, and restore thee unto thine office: and thou shalt give Pharaoh's cup into his hand, after the former manner when thou wast his butler. 14. But have me in thy remembrance when it shall be well with thee, and show kindness, I pray thee, unto me, and make mention of me unto Pharaoh, and bring me out of this house: 15. for indeed I was stolen away out of the land of the Hebrews: and here also have I done nothing that they should put me into the dungeon. 16. When the chief baker saw that the interpretation was good, he said unto Joseph, I also was in my dream, and, behold, three baskets of white bread were on my head: 17. and in the uppermost basket there was of all manner of baked food for Pharaoh; and the birds did eat them out of the basket upon my head. 18. And Joseph answered and said, This is the interpretation thereof: the three baskets are three days; 19. within yet three days shall Pharaoh lift up thy head from off thee, and shall hang thee on a tree; and the birds shall eat thy flesh from off thee. 20. And it came to pass the third day, which was Pharaoh's birthday, that he made a feast unto all his servants: and he lifted up the head of the chief butler and the head of the chief baker among his servants. 21. And he restored the chief butler unto his butlership again; and he gave the cup into Pharaoh's hand: 22. but he hanged the chief baker: as Joseph had interpreted to them. 23. Yet did not the chief butler remember Joseph, but forgat him.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 1, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 3}, "evidence_item_count": 3, "relationship_unit_count": 1, "specific_evidence_count": 3, "unit_kind_counts": {"surrounding_passages": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["genesis-literary-movement", "genesis:interpretive_note:0", "genesis:interpretive_note:3"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "824bb762b7f154c51a93fadbda19e56507774bbdefb9d4bf685472a14ab3c9f0", "units": [{"confidence": "low", "entity_ids": [], "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "facts": ["Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.", "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."], "id": "syn_surrounding_passages_999f864f75fc", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_cb5c07591c39"], "source_anchors": ["Genesis 11:27-50:26", "Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["genesis-literary-movement"], "facts": ["Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."], "id": "syn_surrounding_passages_bf38f037feb1", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["genesis:interpretive_note:0", "genesis:interpretive_note:3"], "facts": ["Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.", "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions."], "id": "syn_surrounding_passages_cb5c07591c39", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Genesis 11:27-50:26", "Genesis 1:1-50:26"], "verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "genesis-literary-movement", "passage_anchors": ["Genesis 1:1-50:26"], "source_ids": ["hamilton-genesis-1-17", "hamilton-genesis-18-50", "sarna-genesis"]}, {"confidence": "low", "id": "genesis:interpretive_note:0", "passage_anchors": ["Genesis 1:1-50:26"], "source_ids": ["hamilton-genesis-1-17", "sarna-genesis"]}, {"confidence": "low", "id": "genesis:interpretive_note:3", "passage_anchors": ["Genesis 11:27-50:26"], "source_ids": ["zondervan-illustrated-pentateuch-backgrounds"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Genesis 40",
+  "book": "Genesis",
+  "chapter": 40,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Genesis 40:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Genesis 40:
+   for example `Genesis 40:1` or `Genesis 40:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Genesis 40:1", "Genesis 40:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 824bb762b7f154c51a93fadbda19e56507774bbdefb9d4bf685472a14ab3c9f0.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_genesis_040_92e0cafb8bb0bd74cf27508a", "renderer_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "source_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "synthesis_unit": "syn_surrounding_passages_999f864f75fc"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_genesis_040_f7cecc1455bf70f0d4d16e2f", "renderer_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "source_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "synthesis_unit": "syn_surrounding_passages_bf38f037feb1"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_genesis_040_bfeeddae09a97c7c948575a9", "renderer_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "source_verse_refs": ["Genesis 10:1-32", "Genesis 11:1-32", "Genesis 11:27-32", "Genesis 12:1-20", "Genesis 13:1-18", "Genesis 14:1-24", "Genesis 15:1-21", "Genesis 16:1-16", "Genesis 17:1-27", "Genesis 18:1-33", "Genesis 19:1-38", "Genesis 1:1-31", "Genesis 20:1-18", "Genesis 21:1-34", "Genesis 22:1-24", "Genesis 23:1-20", "Genesis 24:1-67", "Genesis 25:1-34", "Genesis 26:1-35", "Genesis 27:1-46", "Genesis 28:1-22", "Genesis 29:1-35", "Genesis 2:1-25", "Genesis 30:1-43", "Genesis 31:1-55", "Genesis 32:1-32", "Genesis 33:1-20", "Genesis 34:1-31", "Genesis 35:1-29", "Genesis 36:1-43", "Genesis 37:1-36", "Genesis 38:1-30", "Genesis 39:1-23", "Genesis 3:1-24", "Genesis 41:1-57", "Genesis 42:1-38", "Genesis 43:1-34", "Genesis 44:1-34", "Genesis 45:1-28", "Genesis 46:1-34", "Genesis 47:1-31", "Genesis 48:1-22", "Genesis 49:1-33", "Genesis 4:1-26", "Genesis 50:1-26", "Genesis 5:1-32", "Genesis 6:1-22", "Genesis 7:1-24", "Genesis 8:1-22", "Genesis 9:1-29"], "synthesis_unit": "syn_surrounding_passages_cb5c07591c39"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
