@@ -391,6 +391,14 @@ def test_awaiting_render_state_is_nonterminal_but_not_corrupt(tmp_path):
 def test_prepare_is_session_only_and_resumable_without_pipeline(tmp_path, monkeypatch):
     runner = _runner(tmp_path)
     writes = []
+    prepared_by_reference = {
+        reference: _prepared(reference, unit_count=1)
+        for reference in ("Genesis 1", "Genesis 2")
+    }
+    monkeypatch.setattr(runner, "_prepared_for_session", lambda entry: (
+        prepared_by_reference[entry["reference"]],
+        assess_chapter_renderability(prepared_by_reference[entry["reference"]]),
+    ))
 
     def freeze(run_root, entry, *, run_id, prepared):
         writes.append(entry["reference"])
@@ -413,6 +421,42 @@ def test_finalize_refuses_missing_raw_responses_before_validation(tmp_path, monk
     with pytest.raises(Exception, match="missing raw responses"):
         runner.finalize()
     assert not (tmp_path / "candidate" / "corpus-runner" / "runs" / prepared["run_id"] / "chapters" / "genesis_001" / "result.json").exists()
+
+
+def test_finalize_resumes_the_earliest_incomplete_session(tmp_path, monkeypatch):
+    runner = _runner(tmp_path)
+    runs = tmp_path / "candidate" / "corpus-runner" / "runs"
+
+    for batch_number, run_id, reference in (
+        (4, "session-batch-four", "Genesis 1"),
+        (5, "session-batch-five", "Genesis 2"),
+    ):
+        run_root = runs / run_id
+        run_root.mkdir(parents=True)
+        book, chapter = reference.rsplit(" ", 1)
+        manifest = {
+            "workflow": "prepare -> codex_session_render -> finalize",
+            "run_id": run_id,
+            "batch_number": batch_number,
+            "chapters": [{"reference": reference, "book": book, "chapter": int(chapter)}],
+        }
+        manifest_path = run_root / "manifest.json"
+        manifest_path.write_text(json.dumps(manifest))
+        (run_root / "state.json").write_text(json.dumps({
+            "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+            "chapters": {reference: {"status": "awaiting_render", "attempt": 0}},
+        }))
+        chapter_root = run_root / "chapters" / f"genesis_00{chapter}"
+        chapter_root.mkdir(parents=True)
+        (chapter_root / "raw-response.bin").write_bytes(b"{}")
+
+    finalized = []
+    monkeypatch.setattr(runner, "_finalize_one", lambda run_root, entry: finalized.append(run_root.name) or {
+        "reference": entry["reference"], "book": entry["book"], "chapter": entry["chapter"],
+        "status": "validated", "audits": {},
+    })
+    runner.finalize()
+    assert finalized == ["session-batch-four"]
 
 
 def test_finalize_rejects_duplicate_response_artifacts(tmp_path, monkeypatch):

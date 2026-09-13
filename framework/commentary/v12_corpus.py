@@ -605,6 +605,28 @@ class V12CorpusRunner:
         _, _, manifest_path, manifest = min(candidates)
         return manifest_path, manifest
 
+    def _incomplete_session(self) -> tuple[Path, dict[str, Any]] | None:
+        """Return the oldest unfinalized session, including all-source batches."""
+
+        candidates: list[tuple[int, str, Path, dict[str, Any]]] = []
+        for manifest_path in self.runner_root.glob("runs/*/manifest.json"):
+            manifest = _load_json(manifest_path)
+            if manifest.get("workflow") != "prepare -> codex_session_render -> finalize":
+                continue
+            state_path = manifest_path.parent / "state.json"
+            if not state_path.is_file() or _load_json(state_path).get("finalized") is True:
+                continue
+            candidates.append((
+                int(manifest.get("batch_number", 0)),
+                str(manifest.get("run_id", manifest_path.parent.name)),
+                manifest_path,
+                manifest,
+            ))
+        if not candidates:
+            return None
+        _, _, manifest_path, manifest = min(candidates)
+        return manifest_path, manifest
+
     @staticmethod
     def _session_run_id(next_chapters: tuple[str, ...]) -> str:
         seed = canonical_json({"workflow": "codex_session", "chapters": next_chapters}).encode("utf-8")
@@ -934,14 +956,11 @@ class V12CorpusRunner:
     def finalize(self) -> dict[str, Any]:
         """Validate frozen session responses without invoking any model."""
 
-        runs = sorted(self.runner_root.glob("runs/*/manifest.json"), key=lambda path: path.stat().st_mtime, reverse=True)
-        if not runs:
-            raise V12CorpusError("no prepared v1.2 session run found")
-        manifest_path = next((path for path in runs if _load_json(path).get("workflow") == "prepare -> codex_session_render -> finalize"), None)
-        if manifest_path is None:
-            raise V12CorpusError("no prepared codex_session run found")
+        incomplete = self._incomplete_session()
+        if incomplete is None:
+            raise V12CorpusError("no incomplete prepared codex_session run found")
+        manifest_path, manifest = incomplete
         run_root = manifest_path.parent
-        manifest = _load_json(manifest_path)
         state_path = run_root / "state.json"
         state = _load_json(state_path)
         if state.get("manifest_sha256") != sha256_bytes(manifest_path.read_bytes()):
