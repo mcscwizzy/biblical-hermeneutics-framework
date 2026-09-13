@@ -22,7 +22,7 @@ from framework.commentary.v12_config import load_v12_prose_configuration
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("dry-run", "prepare", "finalize", "retire", "generate"):
+    for name in ("dry-run", "prepare", "render-local", "finalize", "retire", "generate"):
         command = sub.add_parser(name)
         if name in {"dry-run", "prepare", "generate"}:
             command.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
@@ -31,6 +31,9 @@ def main(argv: list[str] | None = None) -> int:
         if name == "retire":
             command.add_argument("--run-id", required=True, help="unrendered invalid session run id")
             command.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
+        if name == "render-local":
+            command.add_argument("--run", required=True, help="existing prepared codex-session run id")
+            command.add_argument("--finalize", action="store_true", help="finalize this run only after every renderable response exists")
     args = parser.parse_args(argv)
     try:
         if args.command == "dry-run":
@@ -51,6 +54,8 @@ def main(argv: list[str] | None = None) -> int:
             ).prepare(args.batch_size)
         elif args.command == "finalize":
             result = V12CorpusRunner(ROOT).finalize()
+        elif args.command == "render-local":
+            result = V12CorpusRunner(ROOT).render_local(args.run, finalize=args.finalize)
         elif args.command == "retire":
             result = V12CorpusRunner(ROOT).retire_invalid_session(
                 args.run_id, batch_size=args.batch_size

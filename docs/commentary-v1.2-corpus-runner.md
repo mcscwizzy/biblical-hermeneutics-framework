@@ -14,7 +14,8 @@ the guard; generation fails closed while it is false.
 ```bash
 .venv/bin/python tools/commentary_v12_corpus.py dry-run --batch-size 100
 .venv/bin/python tools/commentary_v12_corpus.py prepare --batch-size 100
-# Render each frozen chapter packet in the current Codex session.
+# Either render each frozen chapter packet in the current Codex session, or use
+# the host-local transport below.
 .venv/bin/python tools/commentary_v12_corpus.py finalize
 ```
 
@@ -38,6 +39,35 @@ effort `high`.
 The legacy nested Codex CLI transport remains available only through the
 explicit `generate` command for environments that permit it; it is not the
 default session workflow.
+
+## Host-local Codex rendering
+
+`render-local` is the scalable transport for an already-prepared session. Run
+it from a normal host terminal, where the user's locally authenticated Codex
+CLI is available—not from inside a Codex-agent sandbox. It performs no
+discovery and never creates or re-prepares a batch.
+
+```bash
+.venv/bin/python tools/commentary_v12_corpus.py render-local \
+  --run session-batch-f4179fd9eef5a7bd \
+  --finalize
+```
+
+The command resolves `/home/johnwalker/.local/bin/codex` first, then `codex`
+on `PATH`. It uses isolated `codex exec` exchanges with model
+`gpt-5.6-terra` and `model_reasoning_effort="high"`; it does not require an
+`OPENAI_API_KEY` or any OpenAI-compatible, OpenRouter, Ollama, or LM Studio
+provider configuration.
+
+Each `awaiting_render` chapter is independently rendered from its immutable
+input only, atomically written as `raw-response.bin`, given an immutable
+host-local renderer receipt, and checkpointed immediately. Source-limited
+chapters are ignored. On resume, a response is skipped only when its receipt,
+run, chapter identity, renderer contract, and SHA-256 all agree. Any conflict
+fails closed. A transport failure leaves previous response files intact and
+records its stdout/stderr diagnostic separately; rerunning resumes the missing
+chapter. `--finalize` invokes the existing deterministic finalizer only after
+every expected raw response exists, then reports the next dry run.
 
 The batch report includes a deterministic classification such as
 `V1_2_CORPUS_BATCH_01_VALIDATED` or

@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import shutil
 import subprocess
 import tempfile
 from dataclasses import dataclass
@@ -359,6 +361,20 @@ def _load_json(path: Path) -> Any:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise V12IntegrityError(f"invalid JSON artifact: {path}") from exc
+
+
+def resolve_codex_cli(path: str | Path | None = None) -> Path:
+    """Resolve the authenticated host-local Codex executable, never an API provider."""
+
+    candidate = Path(path) if path is not None else CODEX_CLI
+    if candidate.is_file() and os.access(candidate, os.X_OK):
+        return candidate
+    discovered = shutil.which("codex")
+    if discovered:
+        return Path(discovered)
+    raise V12CorpusError(
+        "host-local Codex executable is unavailable; install or expose the authenticated codex CLI"
+    )
 
 
 class V12CorpusRunner:
@@ -905,6 +921,200 @@ class V12CorpusRunner:
             "manifest_path": manifest_path.relative_to(self.repo_root).as_posix(),
         }
 
+    def _prepared_run(self, run_id: str) -> tuple[Path, dict[str, Any], Path, dict[str, Any]]:
+        """Load exactly one non-finalized prepared session, without discovery."""
+
+        if not run_id or Path(run_id).name != run_id:
+            raise V12CorpusError("render-local requires a concrete prepared session run id")
+        run_root = self.runner_root / "runs" / run_id
+        manifest_path = run_root / "manifest.json"
+        state_path = run_root / "state.json"
+        if not manifest_path.is_file() or not state_path.is_file():
+            raise V12CorpusError(f"unknown prepared session run: {run_id}")
+        manifest, state = _load_json(manifest_path), _load_json(state_path)
+        if manifest.get("workflow") != "prepare -> codex_session_render -> finalize":
+            raise V12IntegrityError(f"run is not a prepared Codex session: {run_id}")
+        if manifest.get("run_id") != run_id or state.get("run_id") != run_id:
+            raise V12IntegrityError(f"prepared run identity mismatch: {run_id}")
+        if state.get("finalized") is True or state.get("retired") is True:
+            raise V12IntegrityError(f"prepared run is not renderable: {run_id}")
+        if state.get("manifest_sha256") != sha256_bytes(manifest_path.read_bytes()):
+            raise V12IntegrityError(f"prepared manifest identity changed: {run_id}")
+        entries = manifest.get("chapters")
+        chapters = state.get("chapters")
+        if not isinstance(entries, list) or not entries or not isinstance(chapters, dict):
+            raise V12IntegrityError(f"prepared run is structurally invalid: {run_id}")
+        references = {entry.get("reference") for entry in entries if isinstance(entry, dict)}
+        if len(references) != len(entries) or set(chapters) != references:
+            raise V12IntegrityError(f"prepared run manifest/state chapter disagreement: {run_id}")
+        return run_root, manifest, state_path, state
+
+    def _local_renderer_input(self, run_root: Path, entry: dict[str, Any]) -> tuple[str, str, dict[str, Any]]:
+        input_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "renderer-input"
+        metadata = _load_json(input_root / "metadata.json")
+        system_prompt = (input_root / "system_prompt.txt").read_text(encoding="utf-8")
+        user_prompt = (input_root / "user_prompt.txt").read_text(encoding="utf-8")
+        expected = sha256_bytes(
+            system_prompt.encode("utf-8") + b"\n\nUSER PROMPT\n" + user_prompt.encode("utf-8")
+        )
+        if metadata.get("renderer_input_sha256") != expected:
+            raise V12IntegrityError(f"frozen renderer-input identity changed for {entry['reference']}")
+        checks = {
+            "run_id": metadata.get("run_id"),
+            "reference": metadata.get("reference"),
+            "book": metadata.get("book"),
+            "chapter": metadata.get("chapter"),
+            "requested_model": metadata.get("requested_model"),
+            "requested_effort": metadata.get("requested_effort"),
+        }
+        expected_contract = {
+            "run_id": run_root.name,
+            "reference": entry["reference"],
+            "book": entry["book"],
+            "chapter": int(entry["chapter"]),
+            "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT,
+        }
+        if checks != expected_contract:
+            raise V12IntegrityError(f"frozen renderer contract disagrees for {entry['reference']}")
+        return system_prompt, user_prompt, metadata
+
+    @staticmethod
+    def _local_exchange(system_prompt: str, user_prompt: str) -> str:
+        return (
+            "You are the selected GPT-5.6 Terra prose renderer at high reasoning effort. "
+            "Treat the supplied BHF SYSTEM PROMPT and USER PROMPT as the complete and authoritative "
+            "generation contract. Do not call tools, inspect files, browse, use web research, outside "
+            "commentary, unsupported facts, or additional theology. Return only the requested raw JSON "
+            "object, with no Markdown fence or preamble.\n\nSYSTEM PROMPT\n"
+            + system_prompt + "\n\nUSER PROMPT\n" + user_prompt
+        )
+
+    def _existing_local_response(self, run_root: Path, entry: dict[str, Any]) -> bool:
+        chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+        raw_path, receipt_path = chapter_root / "raw-response.bin", chapter_root / "renderer-receipt.json"
+        if not raw_path.exists():
+            if receipt_path.exists():
+                raise V12IntegrityError(f"response receipt exists without raw response for {entry['reference']}")
+            return False
+        if not receipt_path.is_file():
+            raise V12IntegrityError(f"raw response has no host-local receipt for {entry['reference']}")
+        receipt = _load_json(receipt_path)
+        if receipt != {
+            "artifact_version": "commentary-v1.2-host-local-render-receipt-v1",
+            "run_id": run_root.name,
+            "reference": entry["reference"],
+            "book": entry["book"],
+            "chapter": int(entry["chapter"]),
+            "renderer_mode": "codex_cli_local",
+            "transport": "local_codex_cli",
+            "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT,
+            "raw_response_sha256": sha256_bytes(raw_path.read_bytes()),
+        }:
+            raise V12IntegrityError(f"existing response identity conflicts for {entry['reference']}")
+        return True
+
+    def render_local(
+        self,
+        run_id: str,
+        *,
+        codex_path: str | Path | None = None,
+        runner: Callable[..., subprocess.CompletedProcess[str]] | None = None,
+        timeout_seconds: int = 600,
+        finalize: bool = False,
+    ) -> dict[str, Any]:
+        """Render only missing responses from an existing frozen session on the host.
+
+        This transport is deliberately for a normal authenticated local terminal.
+        It does no discovery, does not call an API provider, and never rewrites a
+        first response. Tests inject ``runner``; production uses ``subprocess.run``.
+        """
+
+        run_root, manifest, state_path, state = self._prepared_run(run_id)
+        executable = resolve_codex_cli(codex_path)
+        invoke = runner or subprocess.run
+        rendered: list[str] = []
+        skipped: list[str] = []
+        source_limited: list[str] = []
+        state["renderer"] = {
+            "renderer_mode": "codex_cli_local",
+            "transport": "local_codex_cli",
+            "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT,
+            "codex_executable": str(executable),
+        }
+        write_json(state_path, state)
+        for index, entry in enumerate(manifest["chapters"], 1):
+            reference = entry["reference"]
+            record = state["chapters"][reference]
+            if record.get("classification") == "source-limited":
+                source_limited.append(reference)
+                continue
+            if record.get("status") != "awaiting_render":
+                raise V12IntegrityError(f"unexpected render state for {reference}: {record.get('status')}")
+            if self._existing_local_response(run_root, entry):
+                skipped.append(reference)
+                print(f"[{index}/{len(manifest['chapters'])}] {reference} SKIP already rendered", flush=True)
+                continue
+            system_prompt, user_prompt, metadata = self._local_renderer_input(run_root, entry)
+            chapter_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"]))
+            with tempfile.TemporaryDirectory(prefix="bhf-v12-local-render-") as temp_dir:
+                output = Path(temp_dir) / "response.bin"
+                transport = CodexCliV12ChapterPipeline(
+                    codex_path=executable, model=CODEX_TERRA_MODEL,
+                    effort=CODEX_TERRA_EFFORT, timeout_seconds=timeout_seconds,
+                )
+                completed = invoke(
+                    transport.command(temp_dir, output), input=self._local_exchange(system_prompt, user_prompt),
+                    text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                    check=False, timeout=timeout_seconds,
+                )
+                if completed.returncode != 0 or not output.is_file():
+                    attempt = int(record.get("transport_attempt", 0)) + 1
+                    diagnostic = {
+                        "artifact_version": "commentary-v1.2-host-local-render-failure-v1",
+                        "run_id": run_id, "reference": reference, "attempt": attempt,
+                        "returncode": completed.returncode,
+                        "stdout": completed.stdout or "", "stderr": completed.stderr or "",
+                    }
+                    write_json(chapter_root / "transport-failures" / f"attempt-{attempt:03d}.json", diagnostic, immutable=True)
+                    record.update({"transport_attempt": attempt, "last_transport_error": f"exit {completed.returncode}; no response bytes"})
+                    write_json(state_path, state)
+                    raise V12CorpusError(f"host-local Codex rendering failed for {reference}: exit {completed.returncode}")
+                raw = output.read_bytes()
+            raw_path = chapter_root / "raw-response.bin"
+            try:
+                write_immutable(raw_path, raw)
+            except Exception as exc:
+                raise V12IntegrityError(f"raw response collision for {reference}") from exc
+            receipt = {
+                "artifact_version": "commentary-v1.2-host-local-render-receipt-v1",
+                "run_id": run_id, "reference": reference, "book": entry["book"], "chapter": int(entry["chapter"]),
+                "renderer_mode": "codex_cli_local", "transport": "local_codex_cli",
+                "requested_model": CODEX_TERRA_MODEL, "requested_effort": CODEX_TERRA_EFFORT,
+                "raw_response_sha256": sha256_bytes(raw),
+            }
+            write_json(chapter_root / "renderer-receipt.json", receipt, immutable=True)
+            record.update({"transport_attempt": int(record.get("transport_attempt", 0)) + 1, "renderer_receipt_path": f"chapters/{_slug(entry['book'], int(entry['chapter']))}/renderer-receipt.json"})
+            write_json(state_path, state)
+            rendered.append(reference)
+            print(f"[{index}/{len(manifest['chapters'])}] {reference} RENDER", flush=True)
+        missing = [entry["reference"] for entry in manifest["chapters"] if state["chapters"][entry["reference"]].get("classification") != "source-limited" and not self._existing_local_response(run_root, entry)]
+        if missing:
+            raise V12CorpusError("host-local rendering remains incomplete: " + ", ".join(missing))
+        result: dict[str, Any] = {
+            "status": "RENDER_LOCAL_COMPLETE", "run_id": run_id,
+            "renderer_mode": "codex_cli_local", "transport": "local_codex_cli",
+            "codex_executable": str(executable), "requested_model": CODEX_TERRA_MODEL,
+            "requested_effort": CODEX_TERRA_EFFORT, "rendered": rendered,
+            "skipped": skipped, "source_limited": source_limited,
+        }
+        if finalize:
+            result["finalize"] = self.finalize(run_id=run_id)
+            result["next_dry_run"] = self.dry_run(MAX_BATCH_SIZE)
+        return result
+
     def _prepared_for_finalize(self, entry: dict[str, Any], run_root: Path):
         prepared, projection, envelope, binding, presentation, system_prompt, user_prompt = self._renderer_context(entry)
         input_root = run_root / "chapters" / _slug(entry["book"], int(entry["chapter"])) / "renderer-input"
@@ -1026,10 +1236,14 @@ class V12CorpusRunner:
         )
         return f"{prefix}_VALIDATED_WITH_WARNINGS" if has_quality_warnings else f"{prefix}_VALIDATED"
 
-    def finalize(self) -> dict[str, Any]:
+    def finalize(self, *, run_id: str | None = None) -> dict[str, Any]:
         """Validate frozen session responses without invoking any model."""
 
-        incomplete = self._incomplete_session()
+        if run_id is not None:
+            run_root, selected_manifest, _, _ = self._prepared_run(run_id)
+            incomplete = (run_root / "manifest.json", selected_manifest)
+        else:
+            incomplete = self._incomplete_session()
         if incomplete is None:
             raise V12CorpusError("no incomplete prepared codex_session run found")
         manifest_path, manifest = incomplete
