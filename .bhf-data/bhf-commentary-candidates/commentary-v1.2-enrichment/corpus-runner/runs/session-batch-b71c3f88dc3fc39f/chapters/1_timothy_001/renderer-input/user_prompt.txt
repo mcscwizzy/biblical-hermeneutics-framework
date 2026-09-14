@@ -1,0 +1,220 @@
+TASK: Generate BHF Commentary v1.8 for 1 Timothy 1.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_fd07fae73027d845: The autobiographical voice describes prior blasphemy, persecution, and violence, receipt of mercy in ignorance and unbelief… (categories: culture, history, interpretive_questions, language_literary)
+- reader_idea_aa33bdd12d6e64ba: First Timothy opens with Paul recalling a request that Timothy remain in Ephesus while he traveled to Macedonia to restrain… (categories: history, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_fd07fae73027d845: The autobiographical voice describes prior blasphemy, persecution, and violence, receipt of mercy in ignorance and unbelief… (importance: RELEVANT; categories: culture, history, interpretive_questions, language_literary)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["1tim-mercy", "1tim-opponents"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_a546b1fd2744"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["1tim-attribution", "1tim-date", "1tim-discipline", "1tim-ephesus", "1tim-law"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_cb8baf82b903"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:1", "1-timothy:interpretive_note:2", "1-timothy:interpretive_note:26", "1-timothy:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_e9ffda4e92c6"}
+- path_4: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:4", "1-timothy:interpretive_note:5", "1-timothy:interpretive_note:6", "1-timothy:interpretive_note:7", "1tim-arsenokoitai"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_fe2e76cce011"}
+- path_5: {"confidence": "low", "disputed": true, "evidence_ids": ["1tim-attribution", "1tim-date", "1tim-discipline", "1tim-ephesus", "1tim-law"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_0cba3955f05d"}
+- path_6: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:4", "1-timothy:interpretive_note:5", "1-timothy:interpretive_note:6", "1-timothy:interpretive_note:7", "1tim-arsenokoitai"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_24cdd635d20a"}
+- path_7: {"confidence": "low", "disputed": true, "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:1", "1-timothy:interpretive_note:2", "1-timothy:interpretive_note:26", "1-timothy:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_64bc804a5098"}
+- path_8: {"confidence": "medium", "disputed": true, "evidence_ids": ["1tim-mercy", "1tim-opponents"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_9bff1aec9fe1"}
+
+IDEA reader_idea_aa33bdd12d6e64ba: First Timothy opens with Paul recalling a request that Timothy remain in Ephesus while he traveled to Macedonia to restrain… (importance: RELEVANT; categories: history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["first-timothy-ephesian-setting", "first-timothy-ephesian-setting:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_c1901cfb0c4c"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["first-timothy-ephesian-setting", "first-timothy-ephesian-setting:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_472446ba589a"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Paul, an apostle of Christ Jesus according to the commandment of God our Saviour, and Christ Jesus our hope; 2. unto Timothy, my true child in faith: Grace, mercy, peace, from God the Father and Christ Jesus our Lord. 3. As I exhorted thee to tarry at Ephesus, when I was going into Macedonia, that thou mightest charge certain men not to teach a different doctrine, 4. neither to give heed to fables and endless genealogies, which minister questionings, rather than a dispensation of God which is in faith; `so do I now'. 5. But the end of the charge is love out of a pure heart and a good conscience and faith unfeigned: 6. from which things some having swerved have turned aside unto vain talking; 7. desiring to be teachers of the law, though they understand neither what they say, nor whereof they confidently affirm. 8. But we know that the law is good, if a man use it lawfully, 9. as knowing this, that law is not made for a righteous man, but for the lawless and unruly, for the ungodly and sinners, for the unholy and profane, for murderers of fathers and murderers of mothers, for manslayers, 10. for fornicators, for abusers of themselves with men, for menstealers, for liars, for false swearers, and if there be any other thing contrary to the sound doctrine; 11. according to the gospel of the glory of the blessed God, which was committed to my trust. 12. I thank him that enabled me, `even' Christ Jesus our Lord, for that he counted me faithful, appointing me to `his' service; 13. though I was before a blasphemer, and a persecutor, and injurious: howbeit I obtained mercy, because I did it ignorantly in unbelief; 14. and the grace of our Lord abounded exceedingly with faith and love which is in Christ Jesus. 15. Faithful is the saying, and worthy of all acceptation, that Christ Jesus came into the world to save sinners; of whom I am chief: 16. howbeit for this cause I obtained mercy, that in me as chief might Jesus Christ show forth all his longsuffering, for an ensample of them that should thereafter believe on him unto eternal life. 17. Now unto the King eternal, immortal, invisible, the only God, `be' honor and glory forever and ever. Amen. 18. This charge I commit unto thee, my child Timothy, according to the prophecies which led the way to thee, that by them thou mayest war the good warfare; 19. holding faith and a good conscience; which some having thrust from them made shipwreck concerning the faith: 20. of whom is Hymenaeus and Alexander; whom I delivered unto Satan, that they might be taught not to blaspheme.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 15, "history": 7, "language": 1}, "evidence_item_count": 23, "relationship_unit_count": 5, "specific_evidence_count": 19, "unit_kind_counts": {"interpretive_questions": 5, "why_it_matters": 5}, "unused_evidence_ids": ["ephesus:ancient_near_east_context:0", "ephesus:hebraic_worldview:0", "ephesus:historical_context:0", "ephesus:second_temple_context:0"], "used_evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:1", "1-timothy:interpretive_note:2", "1-timothy:interpretive_note:26", "1-timothy:interpretive_note:3", "1-timothy:interpretive_note:4", "1-timothy:interpretive_note:5", "1-timothy:interpretive_note:6", "1-timothy:interpretive_note:7", "1tim-arsenokoitai", "1tim-attribution", "1tim-date", "1tim-discipline", "1tim-ephesus", "1tim-law", "1tim-mercy", "1tim-opponents", "first-timothy-ephesian-setting", "first-timothy-ephesian-setting:passage-relevance"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}], "synthesis_hash": "2921a8a496a3be194061c9ac05647c3343689fd77bcd05fe07138846d30b9cfc", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["1tim-mercy", "1tim-opponents"], "facts": ["The autobiographical voice describes prior blasphemy, persecution, and violence, receipt of mercy in ignorance and unbelief, overflowing grace, and exemplary patience.", "The letter attacks different teaching, myths, genealogies, speculative inquiry, misused law, ascetic prohibitions, controversy, and falsely named knowledge without demonstrating one opponent system."], "id": "syn_interpretive_questions_a546b1fd2744", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"], "verse_refs": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"]}, {"confidence": "medium", "entity_ids": ["ephesus"], "evidence_ids": ["first-timothy-ephesian-setting", "first-timothy-ephesian-setting:passage-relevance"], "facts": ["First Timothy opens with Paul recalling a request that Timothy remain in Ephesus while he traveled to Macedonia to restrain different teaching.", "The city name licenses bounded Ephesian comparison but neither dates the letter from Acts nor identifies its teachers as Artemis devotees, magicians, Jews, Gnostics, or women."], "id": "syn_interpretive_questions_c1901cfb0c4c", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 1:3-7"], "verse_refs": ["1 Timothy 1:3-7"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1tim-attribution", "1tim-date", "1tim-discipline", "1tim-ephesus", "1tim-law"], "facts": ["The prescript names Paul as apostle and Timothy as a genuine child in faith.", "The letter supplies no absolute date; Pauline and Pauline-school models place it in different parts of the first or early second century.", "Hymenaeus and Alexander are said to have rejected conscience, shipwrecked faith, and been handed to Satan so that they might learn not to blaspheme.", "The narrated Paul urged Timothy to remain in Ephesus while traveling to Macedonia so that he might stop different teaching.", "The letter calls the law good if used lawfully and aligns it with the entrusted gospel rather than rejecting it."], "id": "syn_interpretive_questions_cb8baf82b903", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"], "verse_refs": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:1", "1-timothy:interpretive_note:2", "1-timothy:interpretive_note:26", "1-timothy:interpretive_note:3"], "facts": ["Authorship: the text names Paul, but vocabulary, style, theology, biography, and institutional setting sustain major disagreement among qualified scholars.", "Composition: secretary-assisted and Pauline-school proposals are explanatory models, not people identified by the letter or manuscript evidence.", "Setting: Ephesus and Macedonia are explicit in the narrated situation, but attempts to fit the itinerary inside or after Acts remain chronological reconstructions.", "Gift: prophecy and the elders' laying on hands accompany Timothy's charisma, but later ordination systems differ on sacramental and institutional implications.", "Opponents: myths, genealogies, misuse of law, ascetic prohibitions, controversy, and false knowledge may not describe one coherent group."], "id": "syn_interpretive_questions_e9ffda4e92c6", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"], "verse_refs": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:4", "1-timothy:interpretive_note:5", "1-timothy:interpretive_note:6", "1-timothy:interpretive_note:7", "1tim-arsenokoitai"], "facts": ["Law: the letter calls the law good when used lawfully; it does not authorize antisemitism, supersessionism, or blame of Jewish people for false teaching.", "Vice list: arsenokoitai is a rare compound with debated scope; translating it with a modern identity label can collapse lexical, historical, and ethical questions.", "Mercy: the autobiographical Paul is presented as a former persecutor whose receipt of mercy becomes an example, not a license to glorify trauma or excuse leaders' harm.", "Discipline: handing Hymenaeus and Alexander to Satan is not a transparent modern procedure and cannot justify violence, humiliation, or unaccountable spiritual abuse.", "Arsenokoitai occurs in the vice list and plausibly echoes Greek Levitical wording, but its exact historical scope is disputed."], "id": "syn_interpretive_questions_fe2e76cce011", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "language"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"], "verse_refs": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1tim-attribution", "1tim-date", "1tim-discipline", "1tim-ephesus", "1tim-law"], "facts": ["The prescript names Paul as apostle and Timothy as a genuine child in faith.", "The letter supplies no absolute date; Pauline and Pauline-school models place it in different parts of the first or early second century.", "Hymenaeus and Alexander are said to have rejected conscience, shipwrecked faith, and been handed to Satan so that they might learn not to blaspheme.", "The narrated Paul urged Timothy to remain in Ephesus while traveling to Macedonia so that he might stop different teaching.", "The letter calls the law good if used lawfully and aligns it with the entrusted gospel rather than rejecting it."], "id": "syn_why_it_matters_0cba3955f05d", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_cb8baf82b903"], "source_anchors": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"], "verse_refs": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:4", "1-timothy:interpretive_note:5", "1-timothy:interpretive_note:6", "1-timothy:interpretive_note:7", "1tim-arsenokoitai"], "facts": ["Law: the letter calls the law good when used lawfully; it does not authorize antisemitism, supersessionism, or blame of Jewish people for false teaching.", "Vice list: arsenokoitai is a rare compound with debated scope; translating it with a modern identity label can collapse lexical, historical, and ethical questions.", "Mercy: the autobiographical Paul is presented as a former persecutor whose receipt of mercy becomes an example, not a license to glorify trauma or excuse leaders' harm.", "Discipline: handing Hymenaeus and Alexander to Satan is not a transparent modern procedure and cannot justify violence, humiliation, or unaccountable spiritual abuse.", "Arsenokoitai occurs in the vice list and plausibly echoes Greek Levitical wording, but its exact historical scope is disputed."], "id": "syn_why_it_matters_24cdd635d20a", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_fe2e76cce011"], "source_anchors": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"], "verse_refs": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"]}, {"confidence": "medium", "entity_ids": ["ephesus"], "evidence_ids": ["first-timothy-ephesian-setting", "first-timothy-ephesian-setting:passage-relevance"], "facts": ["First Timothy opens with Paul recalling a request that Timothy remain in Ephesus while he traveled to Macedonia to restrain different teaching.", "The city name licenses bounded Ephesian comparison but neither dates the letter from Acts nor identifies its teachers as Artemis devotees, magicians, Jews, Gnostics, or women."], "id": "syn_why_it_matters_472446ba589a", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_c1901cfb0c4c"], "source_anchors": ["1 Timothy 1:3-7"], "verse_refs": ["1 Timothy 1:3-7"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-timothy:interpretive_note:0", "1-timothy:interpretive_note:1", "1-timothy:interpretive_note:2", "1-timothy:interpretive_note:26", "1-timothy:interpretive_note:3"], "facts": ["Authorship: the text names Paul, but vocabulary, style, theology, biography, and institutional setting sustain major disagreement among qualified scholars.", "Composition: secretary-assisted and Pauline-school proposals are explanatory models, not people identified by the letter or manuscript evidence.", "Setting: Ephesus and Macedonia are explicit in the narrated situation, but attempts to fit the itinerary inside or after Acts remain chronological reconstructions.", "Gift: prophecy and the elders' laying on hands accompany Timothy's charisma, but later ordination systems differ on sacramental and institutional implications.", "Opponents: myths, genealogies, misuse of law, ascetic prohibitions, controversy, and false knowledge may not describe one coherent group."], "id": "syn_why_it_matters_64bc804a5098", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_e9ffda4e92c6"], "source_anchors": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"], "verse_refs": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["1tim-mercy", "1tim-opponents"], "facts": ["The autobiographical voice describes prior blasphemy, persecution, and violence, receipt of mercy in ignorance and unbelief, overflowing grace, and exemplary patience.", "The letter attacks different teaching, myths, genealogies, speculative inquiry, misused law, ascetic prohibitions, controversy, and falsely named knowledge without demonstrating one opponent system."], "id": "syn_why_it_matters_9bff1aec9fe1", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_a546b1fd2744"], "source_anchors": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"], "verse_refs": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "low", "id": "1-timothy:interpretive_note:0", "passage_anchors": ["1 Timothy 1:1"], "source_ids": ["1tim-greek", "collins", "johnson", "marshall", "towner"]}, {"confidence": "medium", "id": "1-timothy:interpretive_note:1", "passage_anchors": ["1 Timothy 1:1-2"], "source_ids": ["ehrman", "marshall", "towner"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:2", "passage_anchors": ["1 Timothy 1:3"], "source_ids": ["1tim-greek", "marshall", "trebilco"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:26", "passage_anchors": ["1 Timothy 1:18"], "source_ids": ["1tim-greek", "marshall", "towner"]}, {"confidence": "low", "id": "1-timothy:interpretive_note:3", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["1tim-greek", "huizenga", "johnson", "marshall"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:4", "passage_anchors": ["1 Timothy 1:5-11"], "source_ids": ["1tim-greek", "levine-jant", "marshall"]}, {"confidence": "low", "id": "1-timothy:interpretive_note:5", "passage_anchors": ["1 Timothy 1:9-10"], "source_ids": ["1tim-greek", "bdag", "levine-jant"]}, {"confidence": "high", "id": "1-timothy:interpretive_note:6", "passage_anchors": ["1 Timothy 1:12-16"], "source_ids": ["1tim-greek", "huizenga", "johnson"]}, {"confidence": "medium", "id": "1-timothy:interpretive_note:7", "passage_anchors": ["1 Timothy 1:19-20"], "source_ids": ["1tim-greek", "huizenga", "marshall"]}, {"confidence": "low", "id": "1tim-arsenokoitai", "passage_anchors": ["1 Timothy 1:10"], "source_ids": ["1tim-greek", "bdag", "levine-jant", "nets-lxx"]}, {"confidence": "high", "id": "1tim-attribution", "passage_anchors": ["1 Timothy 1:1-2"], "source_ids": ["1tim-greek", "marshall", "towner"]}, {"confidence": "low", "id": "1tim-date", "passage_anchors": ["1 Timothy 1:3"], "source_ids": ["collins", "marshall", "towner", "trebilco"]}, {"confidence": "high", "id": "1tim-discipline", "passage_anchors": ["1 Timothy 1:18-20"], "source_ids": ["1tim-greek", "marshall"]}, {"confidence": "high", "id": "1tim-ephesus", "passage_anchors": ["1 Timothy 1:3-4"], "source_ids": ["1tim-greek", "trebilco"]}, {"confidence": "high", "id": "1tim-law", "passage_anchors": ["1 Timothy 1:8-11"], "source_ids": ["1tim-greek", "levine-jant", "marshall"]}, {"confidence": "high", "id": "1tim-mercy", "passage_anchors": ["1 Timothy 1:12-16"], "source_ids": ["1tim-greek", "johnson", "marshall"]}, {"confidence": "medium", "id": "1tim-opponents", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["1tim-greek", "collins", "johnson", "marshall"]}, {"confidence": "medium", "id": "ephesus:ancient_near_east_context:0", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["acts-ephesus-place", "ephesian-letter-passages", "ephesus-evidence-cluster", "oeai-ephesus-place"]}, {"confidence": "medium", "id": "ephesus:hebraic_worldview:0", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["acts-ephesus-place", "ephesian-letter-passages", "ephesus-evidence-cluster", "oeai-ephesus-place"]}, {"confidence": "medium", "id": "ephesus:historical_context:0", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["acts-ephesus-place", "ephesian-letter-passages", "ephesus-evidence-cluster", "oeai-ephesus-place"]}, {"confidence": "medium", "id": "ephesus:second_temple_context:0", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["acts-ephesus-place", "ephesian-letter-passages", "ephesus-evidence-cluster", "oeai-ephesus-place"]}, {"confidence": "medium", "id": "first-timothy-ephesian-setting", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["ephesus-biblical-texts", "trebilco-ephesus"]}, {"confidence": "medium", "id": "first-timothy-ephesian-setting:passage-relevance", "passage_anchors": ["1 Timothy 1:3-7"], "source_ids": ["ephesus-biblical-texts", "trebilco-ephesus"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "1 Timothy 1",
+  "book": "1 Timothy",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["1 Timothy 1:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in 1 Timothy 1:
+   for example `1 Timothy 1:1` or `1 Timothy 1:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["1 Timothy 1:1", "1 Timothy 1:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 2921a8a496a3be194061c9ac05647c3343689fd77bcd05fe07138846d30b9cfc.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_182af49309a71c80fd30b525", "renderer_verse_refs": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"], "source_verse_refs": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"], "synthesis_unit": "syn_interpretive_questions_a546b1fd2744"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_90a3961e9e9d321d19983b00", "renderer_verse_refs": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"], "source_verse_refs": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"], "synthesis_unit": "syn_interpretive_questions_cb8baf82b903"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_72cddec80ee97bde50e6bcad", "renderer_verse_refs": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"], "source_verse_refs": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"], "synthesis_unit": "syn_interpretive_questions_e9ffda4e92c6"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_68b6c16117e2a986bbf891d9", "renderer_verse_refs": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"], "source_verse_refs": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"], "synthesis_unit": "syn_interpretive_questions_fe2e76cce011"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_a1b3a024848d4a805dce93ae", "renderer_verse_refs": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"], "source_verse_refs": ["1 Timothy 1:1-2", "1 Timothy 1:18-20", "1 Timothy 1:3", "1 Timothy 1:3-4", "1 Timothy 1:8-11"], "synthesis_unit": "syn_why_it_matters_0cba3955f05d"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_0c628843f11229822843d381", "renderer_verse_refs": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"], "source_verse_refs": ["1 Timothy 1:10", "1 Timothy 1:12-16", "1 Timothy 1:19-20", "1 Timothy 1:5-11", "1 Timothy 1:9-10"], "synthesis_unit": "syn_why_it_matters_24cdd635d20a"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_d33f6b3bbcc459a335274640", "renderer_verse_refs": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"], "source_verse_refs": ["1 Timothy 1:1", "1 Timothy 1:1-2", "1 Timothy 1:18", "1 Timothy 1:3", "1 Timothy 1:3-7"], "synthesis_unit": "syn_why_it_matters_64bc804a5098"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_94da0b5784c684d689390ab2", "renderer_verse_refs": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"], "source_verse_refs": ["1 Timothy 1:12-16", "1 Timothy 1:3-7"], "synthesis_unit": "syn_why_it_matters_9bff1aec9fe1"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_22502f59e31f0af601922145", "renderer_verse_refs": ["1 Timothy 1:3-7"], "source_verse_refs": ["1 Timothy 1:3-7"], "synthesis_unit": "syn_interpretive_questions_c1901cfb0c4c"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_timothy_001_4fb5cca3a5409d7d1f15436e", "renderer_verse_refs": ["1 Timothy 1:3-7"], "source_verse_refs": ["1 Timothy 1:3-7"], "synthesis_unit": "syn_why_it_matters_472446ba589a"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

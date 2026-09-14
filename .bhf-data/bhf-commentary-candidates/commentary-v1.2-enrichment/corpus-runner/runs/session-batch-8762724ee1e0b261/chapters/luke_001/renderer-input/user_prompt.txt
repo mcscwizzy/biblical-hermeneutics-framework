@@ -1,0 +1,219 @@
+TASK: Generate BHF Commentary v1.8 for Luke 1.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_1234b7cd6dc1ae8d: Luke (categories: culture, geography, history, interpretive_questions)
+
+RELEVANT:
+- reader_idea_e363a7986d258f0a: Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication… (categories: culture, interpretive_questions)
+- reader_idea_766c539f4d1cf134: Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau… (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_1234b7cd6dc1ae8d: Luke (importance: CORE; categories: culture, geography, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["luke-anonymous"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_60c1a2182842"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["luke-quirinius", "luke-sources"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_49af84caa0ad"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["luke-acts-relation", "luke-infancy", "luke-magnificat", "luke-prologue", "luke-provenance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_8b09b6edce55"}
+- path_4: {"confidence": "high", "disputed": true, "evidence_ids": ["luke-quirinius", "luke-sources"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_6bde6464374e"}
+- path_5: {"confidence": "low", "disputed": true, "evidence_ids": ["luke-acts-relation", "luke-infancy", "luke-magnificat", "luke-prologue", "luke-provenance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_8db9975c2d52"}
+
+IDEA reader_idea_e363a7986d258f0a: Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["acts-common-authorship", "acts-sequel", "acts-theophilus"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_54b8f5c818a1"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["acts-common-authorship", "acts-sequel", "acts-theophilus"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_5e0e14ff26ee"}
+
+IDEA reader_idea_766c539f4d1cf134: Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["malachi-new-testament"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_d102b40e59b1"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Forasmuch as many have taken in hand to draw up a narrative concerning those matters which have been fulfilled among us, 2. even as they delivered them unto us, who from the beginning wer eyewitnesses and ministers of the word, 3. it seemed good to me also, having traced the course of all things accurately from the first, to write unto thee in order, most excellent Theophilus; 4. that thou mightest know the certainty concerning the things wherein thou wast instructed. 5. There was in the days of Herod, king of Judaea, a certain priest named Zacharias, of the course of Abijah: and he had a wife of the daughters of Aaron, and her name was Elisabeth. 6. And they were both righteous before God, walking in all the commandments and ordinances of the Lord blameless. 7. And they had no child, because that Elisabeth was barren, and they both were `now' well stricken in years. 8. Now it came to pass, while he executed the priest's office before God in the order of his course, 9. according to the custom of the priest's office, his lot was to enter into the temple of the Lord and burn incense. 10. And the whole multitude of the people were praying without at the hour of incense. 11. And there appeared unto him an angel of the Lord standing on the right side of altar of incense. 12. And Zacharias was troubled when he saw `him', and fear fell upon him. 13. But the angel said unto him, Fear not, Zacharias: because thy supplication is heard, and thy wife Elisabeth shall bear thee a son, and thou shalt call his name John. 14. And thou shalt have joy and gladness; and many shall rejoice at his birth. 15. For he shall be great in the sight of the Lord, and he shall drink no wine nor strong drink; and he shall be filled with the Holy Spirit, even from his mother's womb. 16. And many of the children of Israel shall be turn unto the Lord their God. 17. And he shall go before his face in the spirit and power of Elijah, to turn the hearts of the fathers to the children, and the disobedient `to walk' in the wisdom of the just; to make ready for the Lord a people prepared `for him'. 18. And Zacharias said unto the angel, Whereby shall I know this? for I am an old man, and my wife well stricken in years. 19. And the angel answering said unto him, I am Gabriel, that stand in the presence of God; and I was sent to speak unto thee, and to bring thee these good tidings. 20. And behold, thou shalt be silent and not able to speak, until the day that these things shall come to pass, because thou believedst not my words, which shall be fulfilled in their season. 21. And the people were waiting for Zacharias, and they marvelled while he tarried in the temple. 22. And when he came out, he could not speak unto them: and they perceived that he had seen a vision in the temple: and he continued making signs unto them, and remained dumb. 23. And it came to pass, when the days of his ministration were fulfilled, he departed unto his house. 24. And after these days Elisabeth his wife conceived; and she hid herself five months, saying, 25. Thus hath the Lord done unto me in the days wherein he looked upon `me', to take away my reproach among men. 26. Now in the sixth month the angel Gabriel was sent from God unto a city of Galilee, named Nazareth, 27. to a virgin betrothed to a man whose name was Joseph, of the house of David; and the virgin's name was Mary. 28. And he came in unto her, and said, Hail, thou that art highly favored, the Lord `is' with thee. 29. But she was greatly troubled at the saying, and cast in her mind what manner of salutation this might be. 30. And the angel said unto her, Fear not, Mary: for thou hast found favor with God. 31. And behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name JESUS. 32. He shall be great, and shall be called the Son of the Most High: and the Lord God shall give unto him the throne of his father David: 33. and he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end. 34. And Mary said unto the angel, How shall this be, seeing I know not a man? 35. And the angel answered and said unto her, The Holy Spirit shall come upon thee, and the power of the Most High shall overshadow thee: wherefore also the holy thing which is begotten shall be called the Son of God. 36. And behold, Elisabeth thy kinswoman, she also hath conceived a son in her old age; and this is the sixth month with her that was called barren. 37. For no word from God shall be void of power. 38. And Mary said, Behold, the handmaid of the Lord; be it unto me according to thy word. And the angel departed from her. 39. And Mary arose in these days and went into the hill country with haste, into a city of Judah; 40. and entered into the house of Zacharias and saluted Elisabeth. 41. And it came to pass, when Elisabeth heard the salutation of Mary, the babe leaped in her womb; and Elisabeth was filled with the Holy Spirit; 42. and she lifted up her voice with a loud cry, and said, Blessed `art' thou among women, and blessed `is' the fruit of thy womb. 43. And whence is this to me, that the mother of my Lord should come unto me? 44. For behold, when the voice of thy salutation came into mine ears, the babe leaped in my womb for joy. 45. And blessed `is' she that believed; for there shall be a fulfilment of the things which have been spoken to her from the Lord. 46. And Mary said, My soul doth magnify the Lord, 47. And my spirit hath rejoiced in God my Saviour. 48. For he hath looked upon the low estate of his handmaid: For behold, from henceforth all generations shall call me blessed. 49. For he that is mighty hath done to me great things; And holy is his name. 50. And his mercy is unto generations and generations On them that fear him. 51. He hath showed strength with his arm; He hath scattered the proud in the imagination of their heart. 52. He hath put down princes from `their' thrones, And hath exalted them of low degree. 53. The hungry he hath filled with good things; And the rich he hath sent empty away. 54. He hath given help to Israel his servant, That he might remember mercy 55. (As he spake unto our fathers) Toward Abraham and his seed for ever. 56. And Mary abode with her about three months, and returned unto her house. 57. Now Elisabeth's time was fulfilled that she should be delivered; and she brought forth a son. 58. And her neighbors and her kinsfolk heard that the Lord had magnified his mercy towards her; and they rejoiced with her. 59. And it came to pass on the eighth day, that they came to circumcise the child; and they would have called him Zacharias, after the name of the father. 60. And his mother answered and said, Not so; but he shall be called John. 61. And they said unto her, There is none of thy kindred that is called by this name. 62. And they made signs to his father, what he would have him called. 63. And he asked for a writing tablet, and wrote, saying, His name is John. And they marvelled all. 64. And his mouth was opened immediately, and his tongue `loosed', and he spake, blessing God. 65. And fear came on all that dwelt round about them: and all these sayings were noised abroad throughout all the hill country of Judaea. 66. And all that heard them laid them up in their heart, saying, What then shall this child be? For the hand of the Lord was with him. 67. And his father Zacharias was filled with the Holy Spirit, and prophesied, saying, 68. Blessed `be' the Lord, the God of Israel; For he hath visited and wrought redemption for his people, 69. And hath raised up a horn of salvation for us In the house of his servant David 70. (As he spake by the mouth of his holy prophets that have been from of old), 71. Salvation from our enemies, and from the hand of all that hate us; 72. To show mercy towards, our fathers, And to remember his holy covenant; 73. The oath which he spake unto Abraham our father, 74. To grant unto us that we being delivered out of the hand of our enemies Should serve him without fear, 75. In holiness and righteousness before him all our days. 76. Yea and thou, child, shalt be called the prophet of the Most High: For thou shalt go before the face of the Lord to make ready his ways; 77. To give knowledge of salvation unto his people In the remission of their sins, 78. Because of the tender mercy of our God, Whereby the dayspring from on high shall visit us, 79. To shine upon them that sit in darkness and the shadow of death; To guide our feet into the way of peace. 80. And the child grew, and waxed strong in spirit, and was in the deserts till the day of his showing unto Israel.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 3, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 16, "geography": 1, "history": 9}, "evidence_item_count": 26, "relationship_unit_count": 3, "specific_evidence_count": 12, "unit_kind_counts": {"historical_context": 1, "interpretive_questions": 4, "why_it_matters": 3}, "unused_evidence_ids": ["annunciation-to-mary:ancient_near_east_context:0", "annunciation-to-mary:historical_context:0", "birth-of-jesus:ancient_near_east_context:0", "birth-of-jesus:historical_context:0", "davidic-covenant:ancient_near_east_context:0", "davidic-covenant:historical_context:0", "nazareth:ancient_near_east_context:0", "nazareth:hebraic_worldview:0", "nazareth:historical_context:0", "nazareth:second_temple_context:0", "spirit-theme:ancient_near_east_context:0", "spirit-theme:historical_context:0", "who-was-david:ancient_near_east_context:0", "who-was-david:historical_context:0"], "used_evidence_ids": ["acts-common-authorship", "acts-sequel", "acts-theophilus", "luke-acts-relation", "luke-anonymous", "luke-infancy", "luke-magnificat", "luke-prologue", "luke-provenance", "luke-quirinius", "luke-sources", "malachi-new-testament"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "f72341346dfcec3e5023c130fce79f8cc46f920c7c7b8b53100dd0ed38beb01c", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["luke-anonymous"], "facts": ["The continuous Greek Gospel is internally anonymous; Luke 1:1-4 uses a first-person preface but supplies no authorial name, profession, or Pauline relationship."], "id": "syn_historical_context_60c1a2182842", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Luke 1:1-4"], "verse_refs": ["Luke 1:1-4"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["luke-quirinius", "luke-sources"], "facts": ["Luke links Jesus' birth with Herod's era and a registration associated with Quirinius, creating a serious chronological problem because Quirinius' documented Syrian governorship and census belong to 6 CE; proposed resolutions remain disputed.", "Luke's extensive order and wording agreements with Mark support Markan use in the majority Synoptic model; other shared and distinctive material may derive from oral, written, compositional, and publication processes that cannot be reconstructed with certainty."], "id": "syn_interpretive_questions_49af84caa0ad", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Luke 1:1-4", "Luke 1:5"], "verse_refs": ["Luke 1:1-4", "Luke 1:5"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["acts-common-authorship", "acts-sequel", "acts-theophilus"], "facts": ["Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated.", "Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke.", "Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown."], "id": "syn_interpretive_questions_54b8f5c818a1", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Luke 1:1-4", "Luke 1:3"], "verse_refs": ["Luke 1:1-4", "Luke 1:3"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["luke-acts-relation", "luke-infancy", "luke-magnificat", "luke-prologue", "luke-provenance"], "facts": ["Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement.", "Luke 1-2 pairs John and Jesus through annunciations, births, songs, Spirit-filled speech, temple scenes, and growth notices, using Septuagintal diction and Israel-scripture patterns.", "The dominant Greek manuscript tradition attributes the Magnificat to Mary, while some early reception associates it with Elizabeth; speaker, transmission, and composition questions should remain distinct.", "Luke 1:1-4 claims predecessors, traditions traced to eyewitnesses and word-servants, investigation, ordered writing, and assurance for Theophilus; it does not claim that the author personally witnessed Jesus' ministry.", "Theophilus is named, but proposed places, Jewish-Gentile audience profiles, social settings, and community crises remain reconstructions rather than facts stated by the Gospel."], "id": "syn_interpretive_questions_8b09b6edce55", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography", "history"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"], "verse_refs": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["malachi-new-testament"], "facts": ["Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau language."], "id": "syn_interpretive_questions_d102b40e59b1", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Luke 1:16-17"], "verse_refs": ["Luke 1:16-17"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["acts-common-authorship", "acts-sequel", "acts-theophilus"], "facts": ["Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated.", "Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke.", "Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown."], "id": "syn_why_it_matters_5e0e14ff26ee", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_54b8f5c818a1"], "source_anchors": ["Luke 1:1-4", "Luke 1:3"], "verse_refs": ["Luke 1:1-4", "Luke 1:3"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["luke-quirinius", "luke-sources"], "facts": ["Luke links Jesus' birth with Herod's era and a registration associated with Quirinius, creating a serious chronological problem because Quirinius' documented Syrian governorship and census belong to 6 CE; proposed resolutions remain disputed.", "Luke's extensive order and wording agreements with Mark support Markan use in the majority Synoptic model; other shared and distinctive material may derive from oral, written, compositional, and publication processes that cannot be reconstructed with certainty."], "id": "syn_why_it_matters_6bde6464374e", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_49af84caa0ad"], "source_anchors": ["Luke 1:1-4", "Luke 1:5"], "verse_refs": ["Luke 1:1-4", "Luke 1:5"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["luke-acts-relation", "luke-infancy", "luke-magnificat", "luke-prologue", "luke-provenance"], "facts": ["Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement.", "Luke 1-2 pairs John and Jesus through annunciations, births, songs, Spirit-filled speech, temple scenes, and growth notices, using Septuagintal diction and Israel-scripture patterns.", "The dominant Greek manuscript tradition attributes the Magnificat to Mary, while some early reception associates it with Elizabeth; speaker, transmission, and composition questions should remain distinct.", "Luke 1:1-4 claims predecessors, traditions traced to eyewitnesses and word-servants, investigation, ordered writing, and assurance for Theophilus; it does not claim that the author personally witnessed Jesus' ministry.", "Theophilus is named, but proposed places, Jewish-Gentile audience profiles, social settings, and community crises remain reconstructions rather than facts stated by the Gospel."], "id": "syn_why_it_matters_8db9975c2d52", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_8b09b6edce55"], "source_anchors": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"], "verse_refs": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "acts-common-authorship", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["cambridge-unity", "parsons-pervo-unity"]}, {"confidence": "high", "id": "acts-sequel", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["acts-greek", "harvey-acts"]}, {"confidence": "high", "id": "acts-theophilus", "passage_anchors": ["Luke 1:3"], "source_ids": ["acts-greek", "harvey-acts"]}, {"confidence": "medium", "id": "annunciation-to-mary:ancient_near_east_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["2-samuel-7-12-16", "annunciation-to-mary-historical-orientation", "isaiah-7-14", "luke-1-26-38", "matthew-1-18-25"]}, {"confidence": "medium", "id": "annunciation-to-mary:historical_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["2-samuel-7-12-16", "annunciation-to-mary-historical-orientation", "isaiah-7-14", "luke-1-26-38", "matthew-1-18-25"]}, {"confidence": "medium", "id": "birth-of-jesus:ancient_near_east_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["birth-of-jesus-historical-orientation", "galatians-4", "isaiah-7", "isaiah-9", "luke-1-2", "matthew-1-2", "micah-5", "philippians-2"]}, {"confidence": "medium", "id": "birth-of-jesus:historical_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["birth-of-jesus-historical-orientation", "galatians-4", "isaiah-7", "isaiah-9", "luke-1-2", "matthew-1-2", "micah-5", "philippians-2"]}, {"confidence": "medium", "id": "davidic-covenant:ancient_near_east_context:0", "passage_anchors": ["Luke 1:30-33"], "source_ids": ["2-samuel-7", "acts-2", "isaiah-9", "jeremiah-23", "luke-1", "psalm-2", "psalm-89", "revelation-5"]}, {"confidence": "medium", "id": "davidic-covenant:historical_context:0", "passage_anchors": ["Luke 1:30-33"], "source_ids": ["2-samuel-7", "acts-2", "isaiah-9", "jeremiah-23", "luke-1", "psalm-2", "psalm-89", "revelation-5"]}, {"confidence": "high", "id": "luke-acts-relation", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["marguerat-unity", "secondary-prefaces", "walters-unity"]}, {"confidence": "high", "id": "luke-anonymous", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["luke-greek", "walters-unity"]}, {"confidence": "high", "id": "luke-infancy", "passage_anchors": ["Luke 1:5-80"], "source_ids": ["green-theology", "luke-greek"]}, {"confidence": "medium", "id": "luke-magnificat", "passage_anchors": ["Luke 1:46-55"], "source_ids": ["luke-greek", "ntvmr-luke"]}, {"confidence": "high", "id": "luke-prologue", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["alexander-preface", "luke-greek"]}, {"confidence": "low", "id": "luke-provenance", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["cambridge-luke-introduction", "esler-community"]}, {"confidence": "high", "id": "luke-quirinius", "passage_anchors": ["Luke 1:5"], "source_ids": ["huebner-census", "josephus-antiquities", "thorley-census"]}, {"confidence": "high", "id": "luke-sources", "passage_anchors": ["Luke 1:1-4"], "source_ids": ["methods-luke", "oxford-synoptic-problem"]}, {"confidence": "high", "id": "malachi-new-testament", "passage_anchors": ["Luke 1:16-17"], "source_ids": ["early-christian-prophets", "sblgnt", "schart-malachi"]}, {"confidence": "medium", "id": "nazareth:ancient_near_east_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "nazareth:hebraic_worldview:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "nazareth:historical_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "nazareth:second_temple_context:0", "passage_anchors": ["Luke 1:26-38"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "spirit-theme:ancient_near_east_context:0", "passage_anchors": ["Luke 1:35"], "source_ids": ["acts-2", "ezekiel-36-37", "galatians-5", "genesis-1", "joel-2", "john-14-16", "romans-8", "spirit-theme-historical-orientation"]}, {"confidence": "medium", "id": "spirit-theme:historical_context:0", "passage_anchors": ["Luke 1:35"], "source_ids": ["acts-2", "ezekiel-36-37", "galatians-5", "genesis-1", "joel-2", "john-14-16", "romans-8", "spirit-theme-historical-orientation"]}, {"confidence": "medium", "id": "who-was-david:ancient_near_east_context:0", "passage_anchors": ["Luke 1:30-33"], "source_ids": ["1-samuel-16", "1-samuel-17", "2-samuel-7", "acts-2", "luke-1", "psalm-110", "psalm-2", "revelation-5"]}, {"confidence": "medium", "id": "who-was-david:historical_context:0", "passage_anchors": ["Luke 1:30-33"], "source_ids": ["1-samuel-16", "1-samuel-17", "2-samuel-7", "acts-2", "luke-1", "psalm-110", "psalm-2", "revelation-5"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Luke 1",
+  "book": "Luke",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Luke 1:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Luke 1:
+   for example `Luke 1:1` or `Luke 1:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Luke 1:1", "Luke 1:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash f72341346dfcec3e5023c130fce79f8cc46f920c7c7b8b53100dd0ed38beb01c.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_eceb16822ef434f8b5821ec5", "renderer_verse_refs": ["Luke 1:1-4"], "source_verse_refs": ["Luke 1:1-4"], "synthesis_unit": "syn_historical_context_60c1a2182842"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_470af584d5fdc8191167604a", "renderer_verse_refs": ["Luke 1:1-4", "Luke 1:5"], "source_verse_refs": ["Luke 1:1-4", "Luke 1:5"], "synthesis_unit": "syn_interpretive_questions_49af84caa0ad"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_75b05724daccfa2f0721c690", "renderer_verse_refs": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"], "source_verse_refs": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"], "synthesis_unit": "syn_interpretive_questions_8b09b6edce55"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_aebba60bf6ca6e668ec05bf3", "renderer_verse_refs": ["Luke 1:1-4", "Luke 1:5"], "source_verse_refs": ["Luke 1:1-4", "Luke 1:5"], "synthesis_unit": "syn_why_it_matters_6bde6464374e"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_2c68926f9f5e0025fed90606", "renderer_verse_refs": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"], "source_verse_refs": ["Luke 1:1-4", "Luke 1:46-55", "Luke 1:5-80"], "synthesis_unit": "syn_why_it_matters_8db9975c2d52"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_b7164b215f1b130da1c691ad", "renderer_verse_refs": ["Luke 1:1-4", "Luke 1:3"], "source_verse_refs": ["Luke 1:1-4", "Luke 1:3"], "synthesis_unit": "syn_interpretive_questions_54b8f5c818a1"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_642bd1c437f28ee1249a1a46", "renderer_verse_refs": ["Luke 1:1-4", "Luke 1:3"], "source_verse_refs": ["Luke 1:1-4", "Luke 1:3"], "synthesis_unit": "syn_why_it_matters_5e0e14ff26ee"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_luke_001_bf741a5a5115f814ce3ff0b2", "renderer_verse_refs": ["Luke 1:16-17"], "source_verse_refs": ["Luke 1:16-17"], "synthesis_unit": "syn_interpretive_questions_d102b40e59b1"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

@@ -1,0 +1,217 @@
+TASK: Generate BHF Commentary v1.8 for James 3.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_9b86e71ac31f3a8c: James (categories: culture, interpretive_questions)
+
+RELEVANT:
+- reader_idea_23bd22c774a9f291: James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic… (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_9b86e71ac31f3a8c: James (importance: CORE; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["james:interpretive_note:22"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_4ade4d38f48e"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["james:interpretive_note:8", "jas-teachers", "jas-wisdom-above"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_9dbf0d2d4b35"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["james:interpretive_note:20", "james:interpretive_note:21", "james:interpretive_note:40", "james:interpretive_note:41"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_c1055a9f7e8b"}
+- path_4: {"confidence": "high", "disputed": false, "evidence_ids": ["jas-tongue"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_language_literary_304ab71f7146"}
+- path_5: {"confidence": "medium", "disputed": true, "evidence_ids": ["james:interpretive_note:20", "james:interpretive_note:21", "james:interpretive_note:40", "james:interpretive_note:41"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_59218acac8b5"}
+- path_6: {"confidence": "medium", "disputed": true, "evidence_ids": ["james:interpretive_note:8", "jas-teachers", "jas-wisdom-above"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_6bce239bd0dd"}
+
+IDEA reader_idea_23bd22c774a9f291: James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic… (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["jas-genre", "jas-provenance"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_6ae729cba7dd"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["jas-genre", "jas-provenance"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_8d4af7de9fb5"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["james:interpretive_note:5"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_ea824575395c"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Be not many `of you' teachers, my brethren, knowing that we shall receive heavier judgment. 2. For in many things we all stumble. If any stumbleth not in word, the same is a perfect man, able to bridle the whole body also. 3. Now if we put the horses' bridles into their mouths that they may obey us, we turn about their whole body also. 4. Behold, the ships also, though they are so great and are driven by rough winds, are yet turned about by a very small rudder, whither the impulse of the steersman willeth. 5. So the tongue also is a little member, and boasteth great things. Behold, how much wood is kindled by how small a fire! 6. And the tongue is a fire: the world of iniquity among our members is the tongue, which defileth the whole body, and setteth on fire the wheel of nature, and is set on fire by hell. 7. For every kind of beasts and birds, of creeping things and things in the sea, is tamed, and hath been tamed by mankind. 8. But the tongue can no man tame; `it is' a restless evil, `it is' full of deadly poison. 9. Therewith bless we the Lord and Father; and therewith curse we men, who are made after the likeness of God: 10. out of the same mouth cometh forth blessing and cursing. My brethren, these things ought not so to be. 11. Doth the fountain send forth from the same opening sweet `water' and bitter? 12. Can a fig tree, my brethren, yield olives, or a vine figs? Neither `can' salt water yield sweet. 13. Who is wise and understanding among you? let him show by his good life his works in meekness of wisdom. 14. But if ye have bitter jealousy and faction in your heart, glory not and lie not against the truth. 15. This wisdom is not `a wisdom' that cometh down from above, but is earthly, sensual, devilish. 16. For where jealousy and faction are, there is confusion and every vile deed. 17. But the wisdom that is from above is first pure, then peaceable, gentle, easy to be entreated, full of mercy and good fruits, without variance, without hypocrisy. 18. And the fruit of righteousness is sown in peace for them that make peace.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 17, "history": 3}, "evidence_item_count": 20, "relationship_unit_count": 3, "specific_evidence_count": 12, "unit_kind_counts": {"cultural_context": 1, "interpretive_questions": 2, "language_literary": 1, "surrounding_passages": 3, "why_it_matters": 2}, "unused_evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:historical_context:0", "image-of-god-theme:second_temple_context:0", "what-is-biblical-wisdom:ancient_near_east_context:0", "what-is-biblical-wisdom:historical_context:0", "what-is-the-image-of-god:ancient_near_east_context:0", "what-is-the-image-of-god:historical_context:0"], "used_evidence_ids": ["james:interpretive_note:20", "james:interpretive_note:21", "james:interpretive_note:22", "james:interpretive_note:40", "james:interpretive_note:41", "james:interpretive_note:5", "james:interpretive_note:8", "jas-genre", "jas-provenance", "jas-teachers", "jas-tongue", "jas-wisdom-above"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "a41262f30080ca857f1b9a2ec17f74e399d5a6e43d580d2c29999ffd65e41371", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["james:interpretive_note:22"], "facts": ["Wisdom from above is known by conduct described as peaceable, gentle, open to reason, merciful, impartial, and sincere; coercive certainty contradicts that profile."], "id": "syn_cultural_context_4ade4d38f48e", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["James 3:13-18"], "verse_refs": ["James 3:13-18"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["james:interpretive_note:8", "jas-teachers", "jas-wisdom-above"], "facts": ["Perfect language emphasizes completeness or wholeness in context; claims of sinless perfection require a separate theological argument.", "James warns that teachers will receive stricter judgment and immediately treats failures in speech.", "Wisdom from above is contrasted with earthly wisdom and described through purity, peace, gentleness, reasonableness, mercy, good fruits, impartiality, and sincerity."], "id": "syn_interpretive_questions_9dbf0d2d4b35", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["James 3:1-2", "James 3:13-18", "James 3:2"], "verse_refs": ["James 3:1-2", "James 3:13-18", "James 3:2"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["james:interpretive_note:20", "james:interpretive_note:21", "james:interpretive_note:40", "james:interpretive_note:41"], "facts": ["Teachers receive stricter judgment because speech carries responsibility; the text cannot legitimate authoritarian teaching, clerical immunity, or spiritual abuse.", "Tongue and fire are metaphors for disproportionate harm by speech; they do not authorize policing marginalized speech while ignoring institutional power.", "James addresses brothers and sisters through conventionally masculine Greek forms; reception should neither erase women nor turn ancient address forms into a warrant for misogyny.", "Application must reject misogyny, anti-LGBTQ coercion, racism, caste hierarchy, nationalism, colonial mission, forced conversion, religious violence, prosperity extraction, and ecological neglect."], "id": "syn_interpretive_questions_c1055a9f7e8b", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"], "verse_refs": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["jas-tongue"], "facts": ["James uses bit, rudder, fire, animal, spring, and tree images to expose speech's disproportionate power and inconsistency."], "id": "syn_language_literary_304ab71f7146", "interpretation_level": "fact", "kind": "language_literary", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["James 3:3-12"], "verse_refs": ["James 3:3-12"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["jas-genre", "jas-provenance"], "facts": ["James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning.", "James does not name Jerusalem or another place of composition."], "id": "syn_surrounding_passages_6ae729cba7dd", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["James 1:1-5:20"], "verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["jas-genre", "jas-provenance"], "facts": ["James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning.", "James does not name Jerusalem or another place of composition."], "id": "syn_surrounding_passages_8d4af7de9fb5", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_6ae729cba7dd"], "source_anchors": ["James 1:1-5:20"], "verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["james:interpretive_note:5"], "facts": ["The epistolary greeting and paraenetic sequence coexist; labeling James wisdom, diatribe, sermon, or anthology highlights features without exhausting its genre."], "id": "syn_surrounding_passages_ea824575395c", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["James 1:1-5:20"], "verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["james:interpretive_note:20", "james:interpretive_note:21", "james:interpretive_note:40", "james:interpretive_note:41"], "facts": ["Teachers receive stricter judgment because speech carries responsibility; the text cannot legitimate authoritarian teaching, clerical immunity, or spiritual abuse.", "Tongue and fire are metaphors for disproportionate harm by speech; they do not authorize policing marginalized speech while ignoring institutional power.", "James addresses brothers and sisters through conventionally masculine Greek forms; reception should neither erase women nor turn ancient address forms into a warrant for misogyny.", "Application must reject misogyny, anti-LGBTQ coercion, racism, caste hierarchy, nationalism, colonial mission, forced conversion, religious violence, prosperity extraction, and ecological neglect."], "id": "syn_why_it_matters_59218acac8b5", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_c1055a9f7e8b"], "source_anchors": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"], "verse_refs": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["james:interpretive_note:8", "jas-teachers", "jas-wisdom-above"], "facts": ["Perfect language emphasizes completeness or wholeness in context; claims of sinless perfection require a separate theological argument.", "James warns that teachers will receive stricter judgment and immediately treats failures in speech.", "Wisdom from above is contrasted with earthly wisdom and described through purity, peace, gentleness, reasonableness, mercy, good fruits, impartiality, and sincerity."], "id": "syn_why_it_matters_6bce239bd0dd", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_9dbf0d2d4b35"], "source_anchors": ["James 3:1-2", "James 3:13-18", "James 3:2"], "verse_refs": ["James 3:1-2", "James 3:13-18", "James 3:2"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "image-of-god-theme:ancient_near_east_context:0", "passage_anchors": ["James 3:9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:hebraic_worldview:0", "passage_anchors": ["James 3:9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:historical_context:0", "passage_anchors": ["James 3:9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:second_temple_context:0", "passage_anchors": ["James 3:9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "high", "id": "james:interpretive_note:20", "passage_anchors": ["James 3:1-2"], "source_ids": ["james-greek", "mcknight", "moo"]}, {"confidence": "high", "id": "james:interpretive_note:21", "passage_anchors": ["James 3:1-12"], "source_ids": ["james-greek", "johnson"]}, {"confidence": "high", "id": "james:interpretive_note:22", "passage_anchors": ["James 3:13-18"], "source_ids": ["hartin", "james-greek", "nets-lxx"]}, {"confidence": "medium", "id": "james:interpretive_note:40", "passage_anchors": ["James 3:1"], "source_ids": ["allison", "james-greek", "levine-jant"]}, {"confidence": "high", "id": "james:interpretive_note:41", "passage_anchors": ["James 3:13-18"], "source_ids": ["batten", "james-greek", "kloppenborg", "levine-jant"]}, {"confidence": "medium", "id": "james:interpretive_note:5", "passage_anchors": ["James 1:1-5:20"], "source_ids": ["allison", "dibelius", "moo"]}, {"confidence": "medium", "id": "james:interpretive_note:8", "passage_anchors": ["James 3:2"], "source_ids": ["bdag", "james-greek", "moo"]}, {"confidence": "high", "id": "jas-genre", "passage_anchors": ["James 1:1-5:20"], "source_ids": ["allison", "dibelius", "james-greek"]}, {"confidence": "high", "id": "jas-provenance", "passage_anchors": ["James 1:1-5:20"], "source_ids": ["allison", "james-greek"]}, {"confidence": "high", "id": "jas-teachers", "passage_anchors": ["James 3:1-2"], "source_ids": ["james-greek", "moo"]}, {"confidence": "high", "id": "jas-tongue", "passage_anchors": ["James 3:3-12"], "source_ids": ["james-greek", "johnson"]}, {"confidence": "high", "id": "jas-wisdom-above", "passage_anchors": ["James 3:13-18"], "source_ids": ["bdag", "hartin", "james-greek"]}, {"confidence": "medium", "id": "what-is-biblical-wisdom:ancient_near_east_context:0", "passage_anchors": ["James 3:13-18"], "source_ids": ["1-corinthians-1", "ecclesiastes-12", "james-3", "job-28", "matthew-7", "proverbs-1", "proverbs-3", "psalm-1"]}, {"confidence": "medium", "id": "what-is-biblical-wisdom:historical_context:0", "passage_anchors": ["James 3:13-18"], "source_ids": ["1-corinthians-1", "ecclesiastes-12", "james-3", "job-28", "matthew-7", "proverbs-1", "proverbs-3", "psalm-1"]}, {"confidence": "medium", "id": "what-is-the-image-of-god:ancient_near_east_context:0", "passage_anchors": ["James 3:9-10"], "source_ids": ["1-corinthians-11", "colossians-3", "genesis-1", "genesis-5", "genesis-9", "james-3", "psalm-8", "romans-8"]}, {"confidence": "medium", "id": "what-is-the-image-of-god:historical_context:0", "passage_anchors": ["James 3:9-10"], "source_ids": ["1-corinthians-11", "colossians-3", "genesis-1", "genesis-5", "genesis-9", "james-3", "psalm-8", "romans-8"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "James 3",
+  "book": "James",
+  "chapter": 3,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["James 3:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in James 3:
+   for example `James 3:1` or `James 3:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["James 3:1", "James 3:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash a41262f30080ca857f1b9a2ec17f74e399d5a6e43d580d2c29999ffd65e41371.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_james_003_668afb95e22256038601d0b0", "renderer_verse_refs": ["James 3:13-18"], "source_verse_refs": ["James 3:13-18"], "synthesis_unit": "syn_cultural_context_4ade4d38f48e"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_james_003_6f81a31374fb8393b2540b6e", "renderer_verse_refs": ["James 3:1-2", "James 3:13-18", "James 3:2"], "source_verse_refs": ["James 3:1-2", "James 3:13-18", "James 3:2"], "synthesis_unit": "syn_interpretive_questions_9dbf0d2d4b35"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_james_003_e892d0413642af400065cc4a", "renderer_verse_refs": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"], "source_verse_refs": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"], "synthesis_unit": "syn_interpretive_questions_c1055a9f7e8b"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_james_003_0c308fc1eba7063a94a324c2", "renderer_verse_refs": ["James 3:3-12"], "source_verse_refs": ["James 3:3-12"], "synthesis_unit": "syn_language_literary_304ab71f7146"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_james_003_9f1d1405c90ec17f77299111", "renderer_verse_refs": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"], "source_verse_refs": ["James 3:1", "James 3:1-12", "James 3:1-2", "James 3:13-18"], "synthesis_unit": "syn_why_it_matters_59218acac8b5"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_james_003_943051c0cce2f1f4a893d47e", "renderer_verse_refs": ["James 3:1-2", "James 3:13-18", "James 3:2"], "source_verse_refs": ["James 3:1-2", "James 3:13-18", "James 3:2"], "synthesis_unit": "syn_why_it_matters_6bce239bd0dd"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_james_003_21d9f20f9363b3f5f59539ea", "renderer_verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"], "source_verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"], "synthesis_unit": "syn_surrounding_passages_6ae729cba7dd"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_james_003_35b44df6d091e38ef208d25f", "renderer_verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"], "source_verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"], "synthesis_unit": "syn_surrounding_passages_8d4af7de9fb5"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_james_003_54f433e7d9dcb775b1753b19", "renderer_verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"], "source_verse_refs": ["James 1:1-27", "James 2:1-26", "James 4:1-17", "James 5:1-20"], "synthesis_unit": "syn_surrounding_passages_ea824575395c"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

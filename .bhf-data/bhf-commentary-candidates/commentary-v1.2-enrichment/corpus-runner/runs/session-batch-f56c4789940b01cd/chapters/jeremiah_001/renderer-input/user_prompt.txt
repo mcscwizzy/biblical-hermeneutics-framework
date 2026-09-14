@@ -1,0 +1,208 @@
+TASK: Generate BHF Commentary v1.8 for Jeremiah 1.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_3873d78d7e11b82e: Jeremiah's call presents prenatal knowledge, appointment as prophet to nations, reluctance, divine touch, and a commission to uproot… (categories: culture, history, interpretive_questions)
+- reader_idea_654e8c2b69cdb9c5: The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation… (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_3873d78d7e11b82e: Jeremiah's call presents prenatal knowledge, appointment as prophet to nations, reluctance, divine touch, and a commission to uproot… (importance: RELEVANT; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["jeremiah-call-commission", "jeremiah-historical-crisis", "jeremiah-superscription-prophet"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_01d748268c00"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["jeremiah-call-commission", "jeremiah-historical-crisis", "jeremiah-superscription-prophet"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_64ebef0caf73"}
+
+IDEA reader_idea_654e8c2b69cdb9c5: The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation… (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["jeremiah-long-composition", "jeremiah-practical-mt-outline"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_26b0604f4380"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["jeremiah-long-composition", "jeremiah-practical-mt-outline"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f812ce72a3b2"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. The words of Jeremiah the son of Hilkiah, of the priests that were in Anathoth in the land of Benjamin: 2. to whom the word of Jehovah came in the days of Josiah the son of Amon, king of Judah, in the thirteenth year of his reign. 3. It came also in the days of Jehoiakim the son of Josiah, king of Judah, unto the end of the eleventh year of Zedekiah, the son of Josiah, king of Judah, unto the carrying away of Jerusalem captive in the fifth month. 4. Now the word of Jehovah came unto me, saying, 5. Before I formed thee in the belly I knew thee, and before thou camest forth out of the womb I sanctified thee; I have appointed thee a prophet unto the nations. 6. Then said I, Ah, Lord Jehovah! behold, I know not how to speak; for I am a child. 7. But Jehovah said unto me, Say not, I am a child; for to whomsoever I shall send thee thou shalt go, and whatsoever I shall command thee thou shalt speak. 8. Be not afraid because of them; for I am with thee to deliver thee, saith Jehovah. 9. Then Jehovah put forth his hand, and touched my mouth; and Jehovah said unto me, Behold, I have put my words in thy mouth: 10. see, I have this day set thee over the nations and over the kingdoms, to pluck up and to break down and to destroy and to overthrow, to build and to plant. 11. Moreover the word of Jehovah came unto me, saying, Jeremiah, what seest thou? And I said, I see a rod of an almond-tree. 12. Then said Jehovah unto me, Thou hast well seen: for I watch over my word to perform it. 13. And the word of Jehovah came unto me the second time, saying, What seest thou? And I said, I see a boiling caldron; and the face thereof is from the north. 14. Then Jehovah said unto me, Out of the north evil shall break forth upon all the inhabitants of the land. 15. For, lo, I will call all the families of the kingdoms of the north, saith Jehovah; and they shall come, and they shall set every one his throne at the entrance of the gates of Jerusalem, and against all the walls thereof round about, and against all the cities of Judah. 16. And I will utter my judgments against them touching all their wickedness, in that they have forsaken me, and have burned incense unto other gods, and worshipped the works of their own hands. 17. Thou therefore gird up thy loins, and arise, and speak unto them all that I command thee: be not dismayed at them, lest I dismay thee before them. 18. For, behold, I have made thee this day a fortified city, and an iron pillar, and brazen walls, against the whole land, against the kings of Judah, against the princes thereof, against the priests thereof, and against the people of the land. 19. And they shall fight against thee; but they shall not prevail against thee: for I am with thee, saith Jehovah, to deliver thee.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 5, "history": 4}, "evidence_item_count": 9, "relationship_unit_count": 2, "specific_evidence_count": 5, "unit_kind_counts": {"interpretive_questions": 1, "surrounding_passages": 2, "why_it_matters": 1}, "unused_evidence_ids": ["how-should-i-read-prophecy:ancient_near_east_context:0", "how-should-i-read-prophecy:historical_context:0", "what-is-a-prophet:ancient_near_east_context:0", "what-is-a-prophet:historical_context:0"], "used_evidence_ids": ["jeremiah-call-commission", "jeremiah-historical-crisis", "jeremiah-long-composition", "jeremiah-practical-mt-outline", "jeremiah-superscription-prophet"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "abf1836fb9ffeca7369854dc8b1764d30189406860e8c76e273da376b7e3869f", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["jeremiah-call-commission", "jeremiah-historical-crisis", "jeremiah-superscription-prophet"], "facts": ["Jeremiah's call presents prenatal knowledge, appointment as prophet to nations, reluctance, divine touch, and a commission to uproot and destroy as well as build and plant.", "Jeremiah's narrated world is rooted in Judah's transition from Josiah through Babylonian domination, the 597 deportation, Zedekiah's siege, Jerusalem's 587/586 destruction, Gedaliah, and flight to Egypt.", "Jeremiah 1:1-3 names Jeremiah son of Hilkiah, associates him with priests at Anathoth, and frames his words from Josiah's thirteenth year through Jerusalem's exile."], "id": "syn_interpretive_questions_01d748268c00", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"], "verse_refs": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["jeremiah-long-composition", "jeremiah-practical-mt-outline"], "facts": ["The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.", "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition."], "id": "syn_surrounding_passages_26b0604f4380", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Jeremiah 1:1-52:34"], "verse_refs": ["Jeremiah 10:1-25", "Jeremiah 11:1-23", "Jeremiah 12:1-17", "Jeremiah 13:1-27", "Jeremiah 14:1-22", "Jeremiah 15:1-21", "Jeremiah 16:1-21", "Jeremiah 17:1-27", "Jeremiah 18:1-23", "Jeremiah 19:1-15", "Jeremiah 20:1-18", "Jeremiah 21:1-14", "Jeremiah 22:1-30", "Jeremiah 23:1-40", "Jeremiah 24:1-10", "Jeremiah 25:1-38", "Jeremiah 26:1-24", "Jeremiah 27:1-22", "Jeremiah 28:1-17", "Jeremiah 29:1-32", "Jeremiah 2:1-37", "Jeremiah 30:1-24", "Jeremiah 31:1-40", "Jeremiah 32:1-44", "Jeremiah 33:1-26", "Jeremiah 34:1-22", "Jeremiah 35:1-19", "Jeremiah 36:1-32", "Jeremiah 37:1-21", "Jeremiah 38:1-28", "Jeremiah 39:1-18", "Jeremiah 3:1-25", "Jeremiah 40:1-16", "Jeremiah 41:1-18", "Jeremiah 42:1-22", "Jeremiah 43:1-13", "Jeremiah 44:1-30", "Jeremiah 45:1-5", "Jeremiah 46:1-28", "Jeremiah 47:1-7", "Jeremiah 48:1-47", "Jeremiah 49:1-39", "Jeremiah 4:1-31", "Jeremiah 50:1-46", "Jeremiah 51:1-64", "Jeremiah 52:1-34", "Jeremiah 5:1-31", "Jeremiah 6:1-30", "Jeremiah 7:1-34", "Jeremiah 8:1-22", "Jeremiah 9:1-26"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["jeremiah-long-composition", "jeremiah-practical-mt-outline"], "facts": ["The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.", "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition."], "id": "syn_surrounding_passages_f812ce72a3b2", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_26b0604f4380"], "source_anchors": ["Jeremiah 1:1-52:34"], "verse_refs": ["Jeremiah 10:1-25", "Jeremiah 11:1-23", "Jeremiah 12:1-17", "Jeremiah 13:1-27", "Jeremiah 14:1-22", "Jeremiah 15:1-21", "Jeremiah 16:1-21", "Jeremiah 17:1-27", "Jeremiah 18:1-23", "Jeremiah 19:1-15", "Jeremiah 20:1-18", "Jeremiah 21:1-14", "Jeremiah 22:1-30", "Jeremiah 23:1-40", "Jeremiah 24:1-10", "Jeremiah 25:1-38", "Jeremiah 26:1-24", "Jeremiah 27:1-22", "Jeremiah 28:1-17", "Jeremiah 29:1-32", "Jeremiah 2:1-37", "Jeremiah 30:1-24", "Jeremiah 31:1-40", "Jeremiah 32:1-44", "Jeremiah 33:1-26", "Jeremiah 34:1-22", "Jeremiah 35:1-19", "Jeremiah 36:1-32", "Jeremiah 37:1-21", "Jeremiah 38:1-28", "Jeremiah 39:1-18", "Jeremiah 3:1-25", "Jeremiah 40:1-16", "Jeremiah 41:1-18", "Jeremiah 42:1-22", "Jeremiah 43:1-13", "Jeremiah 44:1-30", "Jeremiah 45:1-5", "Jeremiah 46:1-28", "Jeremiah 47:1-7", "Jeremiah 48:1-47", "Jeremiah 49:1-39", "Jeremiah 4:1-31", "Jeremiah 50:1-46", "Jeremiah 51:1-64", "Jeremiah 52:1-34", "Jeremiah 5:1-31", "Jeremiah 6:1-30", "Jeremiah 7:1-34", "Jeremiah 8:1-22", "Jeremiah 9:1-26"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["jeremiah-call-commission", "jeremiah-historical-crisis", "jeremiah-superscription-prophet"], "facts": ["Jeremiah's call presents prenatal knowledge, appointment as prophet to nations, reluctance, divine touch, and a commission to uproot and destroy as well as build and plant.", "Jeremiah's narrated world is rooted in Judah's transition from Josiah through Babylonian domination, the 597 deportation, Zedekiah's siege, Jerusalem's 587/586 destruction, Gedaliah, and flight to Egypt.", "Jeremiah 1:1-3 names Jeremiah son of Hilkiah, associates him with priests at Anathoth, and frames his words from Josiah's thirteenth year through Jerusalem's exile."], "id": "syn_why_it_matters_64ebef0caf73", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_01d748268c00"], "source_anchors": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"], "verse_refs": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "how-should-i-read-prophecy:ancient_near_east_context:0", "passage_anchors": ["Jeremiah 1:4-10"], "source_ids": ["2-peter-1", "amos-5", "deuteronomy-18", "ezekiel-37", "how-should-i-read-prophecy-historical-orientation", "isaiah-6", "jeremiah-1", "luke-4"]}, {"confidence": "medium", "id": "how-should-i-read-prophecy:historical_context:0", "passage_anchors": ["Jeremiah 1:4-10"], "source_ids": ["2-peter-1", "amos-5", "deuteronomy-18", "ezekiel-37", "how-should-i-read-prophecy-historical-orientation", "isaiah-6", "jeremiah-1", "luke-4"]}, {"confidence": "high", "id": "jeremiah-call-commission", "passage_anchors": ["Jeremiah 1:4-10"], "source_ids": ["jeremiah-masoretic", "lundbom-jeremiah-1-20"]}, {"confidence": "high", "id": "jeremiah-historical-crisis", "passage_anchors": ["Jeremiah 1:1-3"], "source_ids": ["british-museum-babylonian-chronicle", "crouch-jeremiah-contexts", "jeremiah-masoretic", "lundbom-jeremiah-37-52"]}, {"confidence": "high", "id": "jeremiah-long-composition", "passage_anchors": ["Jeremiah 1:1-52:34"], "source_ids": ["biddle-jeremiah-content", "jeremiah-masoretic", "oxford-handbook-jeremiah", "stulman-jeremiah"]}, {"confidence": "medium", "id": "jeremiah-practical-mt-outline", "passage_anchors": ["Jeremiah 1:1-52:34"], "source_ids": ["biddle-jeremiah-content", "jeremiah-masoretic", "stulman-jeremiah"]}, {"confidence": "high", "id": "jeremiah-superscription-prophet", "passage_anchors": ["Jeremiah 1:1-3"], "source_ids": ["jeremiah-masoretic", "lundbom-jeremiah-1-20", "oxford-handbook-jeremiah"]}, {"confidence": "medium", "id": "what-is-a-prophet:ancient_near_east_context:0", "passage_anchors": ["Jeremiah 1:4-10"], "source_ids": ["1-samuel-3", "acts-3", "amos-5", "deuteronomy-18", "ezekiel-2", "isaiah-6", "jeremiah-1", "luke-4", "what-is-a-prophet-historical-orientation"]}, {"confidence": "medium", "id": "what-is-a-prophet:historical_context:0", "passage_anchors": ["Jeremiah 1:4-10"], "source_ids": ["1-samuel-3", "acts-3", "amos-5", "deuteronomy-18", "ezekiel-2", "isaiah-6", "jeremiah-1", "luke-4", "what-is-a-prophet-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Jeremiah 1",
+  "book": "Jeremiah",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Jeremiah 1:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Jeremiah 1:
+   for example `Jeremiah 1:1` or `Jeremiah 1:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Jeremiah 1:1", "Jeremiah 1:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash abf1836fb9ffeca7369854dc8b1764d30189406860e8c76e273da376b7e3869f.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_jeremiah_001_a70f811d3a99738fbafcd847", "renderer_verse_refs": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"], "source_verse_refs": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"], "synthesis_unit": "syn_interpretive_questions_01d748268c00"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_jeremiah_001_2f8d34f1f632b8568b7fb384", "renderer_verse_refs": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"], "source_verse_refs": ["Jeremiah 1:1-3", "Jeremiah 1:4-10"], "synthesis_unit": "syn_why_it_matters_64ebef0caf73"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_jeremiah_001_f3e687c7b0045a85962b7bc4", "renderer_verse_refs": ["Jeremiah 10:1-25", "Jeremiah 11:1-23", "Jeremiah 12:1-17", "Jeremiah 13:1-27", "Jeremiah 14:1-22", "Jeremiah 15:1-21", "Jeremiah 16:1-21", "Jeremiah 17:1-27", "Jeremiah 18:1-23", "Jeremiah 19:1-15", "Jeremiah 20:1-18", "Jeremiah 21:1-14", "Jeremiah 22:1-30", "Jeremiah 23:1-40", "Jeremiah 24:1-10", "Jeremiah 25:1-38", "Jeremiah 26:1-24", "Jeremiah 27:1-22", "Jeremiah 28:1-17", "Jeremiah 29:1-32", "Jeremiah 2:1-37", "Jeremiah 30:1-24", "Jeremiah 31:1-40", "Jeremiah 32:1-44", "Jeremiah 33:1-26", "Jeremiah 34:1-22", "Jeremiah 35:1-19", "Jeremiah 36:1-32", "Jeremiah 37:1-21", "Jeremiah 38:1-28", "Jeremiah 39:1-18", "Jeremiah 3:1-25", "Jeremiah 40:1-16", "Jeremiah 41:1-18", "Jeremiah 42:1-22", "Jeremiah 43:1-13", "Jeremiah 44:1-30", "Jeremiah 45:1-5", "Jeremiah 46:1-28", "Jeremiah 47:1-7", "Jeremiah 48:1-47", "Jeremiah 49:1-39", "Jeremiah 4:1-31", "Jeremiah 50:1-46", "Jeremiah 51:1-64", "Jeremiah 52:1-34", "Jeremiah 5:1-31", "Jeremiah 6:1-30", "Jeremiah 7:1-34", "Jeremiah 8:1-22", "Jeremiah 9:1-26"], "source_verse_refs": ["Jeremiah 10:1-25", "Jeremiah 11:1-23", "Jeremiah 12:1-17", "Jeremiah 13:1-27", "Jeremiah 14:1-22", "Jeremiah 15:1-21", "Jeremiah 16:1-21", "Jeremiah 17:1-27", "Jeremiah 18:1-23", "Jeremiah 19:1-15", "Jeremiah 20:1-18", "Jeremiah 21:1-14", "Jeremiah 22:1-30", "Jeremiah 23:1-40", "Jeremiah 24:1-10", "Jeremiah 25:1-38", "Jeremiah 26:1-24", "Jeremiah 27:1-22", "Jeremiah 28:1-17", "Jeremiah 29:1-32", "Jeremiah 2:1-37", "Jeremiah 30:1-24", "Jeremiah 31:1-40", "Jeremiah 32:1-44", "Jeremiah 33:1-26", "Jeremiah 34:1-22", "Jeremiah 35:1-19", "Jeremiah 36:1-32", "Jeremiah 37:1-21", "Jeremiah 38:1-28", "Jeremiah 39:1-18", "Jeremiah 3:1-25", "Jeremiah 40:1-16", "Jeremiah 41:1-18", "Jeremiah 42:1-22", "Jeremiah 43:1-13", "Jeremiah 44:1-30", "Jeremiah 45:1-5", "Jeremiah 46:1-28", "Jeremiah 47:1-7", "Jeremiah 48:1-47", "Jeremiah 49:1-39", "Jeremiah 4:1-31", "Jeremiah 50:1-46", "Jeremiah 51:1-64", "Jeremiah 52:1-34", "Jeremiah 5:1-31", "Jeremiah 6:1-30", "Jeremiah 7:1-34", "Jeremiah 8:1-22", "Jeremiah 9:1-26"], "synthesis_unit": "syn_surrounding_passages_26b0604f4380"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_jeremiah_001_ef6ee10abc568a357e6824e9", "renderer_verse_refs": ["Jeremiah 10:1-25", "Jeremiah 11:1-23", "Jeremiah 12:1-17", "Jeremiah 13:1-27", "Jeremiah 14:1-22", "Jeremiah 15:1-21", "Jeremiah 16:1-21", "Jeremiah 17:1-27", "Jeremiah 18:1-23", "Jeremiah 19:1-15", "Jeremiah 20:1-18", "Jeremiah 21:1-14", "Jeremiah 22:1-30", "Jeremiah 23:1-40", "Jeremiah 24:1-10", "Jeremiah 25:1-38", "Jeremiah 26:1-24", "Jeremiah 27:1-22", "Jeremiah 28:1-17", "Jeremiah 29:1-32", "Jeremiah 2:1-37", "Jeremiah 30:1-24", "Jeremiah 31:1-40", "Jeremiah 32:1-44", "Jeremiah 33:1-26", "Jeremiah 34:1-22", "Jeremiah 35:1-19", "Jeremiah 36:1-32", "Jeremiah 37:1-21", "Jeremiah 38:1-28", "Jeremiah 39:1-18", "Jeremiah 3:1-25", "Jeremiah 40:1-16", "Jeremiah 41:1-18", "Jeremiah 42:1-22", "Jeremiah 43:1-13", "Jeremiah 44:1-30", "Jeremiah 45:1-5", "Jeremiah 46:1-28", "Jeremiah 47:1-7", "Jeremiah 48:1-47", "Jeremiah 49:1-39", "Jeremiah 4:1-31", "Jeremiah 50:1-46", "Jeremiah 51:1-64", "Jeremiah 52:1-34", "Jeremiah 5:1-31", "Jeremiah 6:1-30", "Jeremiah 7:1-34", "Jeremiah 8:1-22", "Jeremiah 9:1-26"], "source_verse_refs": ["Jeremiah 10:1-25", "Jeremiah 11:1-23", "Jeremiah 12:1-17", "Jeremiah 13:1-27", "Jeremiah 14:1-22", "Jeremiah 15:1-21", "Jeremiah 16:1-21", "Jeremiah 17:1-27", "Jeremiah 18:1-23", "Jeremiah 19:1-15", "Jeremiah 20:1-18", "Jeremiah 21:1-14", "Jeremiah 22:1-30", "Jeremiah 23:1-40", "Jeremiah 24:1-10", "Jeremiah 25:1-38", "Jeremiah 26:1-24", "Jeremiah 27:1-22", "Jeremiah 28:1-17", "Jeremiah 29:1-32", "Jeremiah 2:1-37", "Jeremiah 30:1-24", "Jeremiah 31:1-40", "Jeremiah 32:1-44", "Jeremiah 33:1-26", "Jeremiah 34:1-22", "Jeremiah 35:1-19", "Jeremiah 36:1-32", "Jeremiah 37:1-21", "Jeremiah 38:1-28", "Jeremiah 39:1-18", "Jeremiah 3:1-25", "Jeremiah 40:1-16", "Jeremiah 41:1-18", "Jeremiah 42:1-22", "Jeremiah 43:1-13", "Jeremiah 44:1-30", "Jeremiah 45:1-5", "Jeremiah 46:1-28", "Jeremiah 47:1-7", "Jeremiah 48:1-47", "Jeremiah 49:1-39", "Jeremiah 4:1-31", "Jeremiah 50:1-46", "Jeremiah 51:1-64", "Jeremiah 52:1-34", "Jeremiah 5:1-31", "Jeremiah 6:1-30", "Jeremiah 7:1-34", "Jeremiah 8:1-22", "Jeremiah 9:1-26"], "synthesis_unit": "syn_surrounding_passages_f812ce72a3b2"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

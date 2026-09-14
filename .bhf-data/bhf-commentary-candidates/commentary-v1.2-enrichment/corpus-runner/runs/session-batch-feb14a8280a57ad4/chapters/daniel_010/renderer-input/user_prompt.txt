@@ -1,0 +1,200 @@
+TASK: Generate BHF Commentary v1.8 for Daniel 10.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_d160f87b35a2da4d: Daniel 10 portrays an angelic messenger delayed by the prince of Persia, aided by Michael, and anticipating conflict involving… (categories: culture, geography, history, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_d160f87b35a2da4d: Daniel 10 portrays an angelic messenger delayed by the prince of Persia, aided by Michael, and anticipating conflict involving… (importance: RELEVANT; categories: culture, geography, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["daniel-heavenly-conflict", "daniel:interpretive_note:20", "daniel:interpretive_note:21"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_06ee33169281"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["daniel-heavenly-conflict", "daniel:interpretive_note:20", "daniel:interpretive_note:21"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_5142fb52300b"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. In the third year of Cyrus king of Persia a thing was revealed unto Daniel, whose name was called Belteshazzar; and the thing was true, even a great warfare: and he understood the thing, and had understanding of the vision. 2. In those days I, Daniel, was mourning three whole weeks. 3. I ate no pleasant bread, neither came flesh nor wine into my mouth, neither did I anoint myself at all, till three whole weeks were fulfilled. 4. And in the four and twentieth day of the first month, as I was by the side of the great river, which is Hiddekel, 5. I lifted up mine eyes, and looked, and, behold, a man clothed in linen, whose loins were girded with pure gold of Uphaz: 6. his body also was like the beryl, and his face as the appearance of lightning, and his eyes as flaming torches, and his arms and his feet like unto burnished brass, and the voice of his words like the voice of a multitude. 7. And I, Daniel, alone saw the vision; for the men that were with me saw not the vision; but a great quaking fell upon them, and they fled to hide themselves. 8. So I was left alone, and saw this great vision, and there remained no strength in me; for my comeliness was turned in me into corruption, and I retained no strength. 9. Yet heard I the voice of his words; and when I heard the voice of his words, then was I fallen into a deep sleep on my face, with my face toward the ground. 10. And, behold, a hand touched me, which set me upon my knees and upon the palms of my hands. 11. And he said unto me, O Daniel, thou man greatly beloved, understand the words that I speak unto thee, and stand upright; for unto thee am I now sent. And when he had spoken this word unto me, I stood trembling. 12. Then said he unto me, Fear not, Daniel; for from the first day that thou didst set thy heart to understand, and to humble thyself before thy God, thy words were heard: and I am come for thy words' sake. 13. But the prince of the kingdom of Persia withstood me one and twenty days; but, lo, Michael, one of the chief princes, came to help me: and I remained there with the kings of Persia. 14. Now I am come to make thee understand what shall befall thy people in the latter days; for the vision is yet for `many' days: 15. and when he had spoken unto me according to these words, I set my face toward the ground, and was dumb. 16. And, behold, one in the likeness of the sons of men touched my lips: then I opened my mouth, and spake and said unto him that stood before me, O my lord, by reason of the vision my sorrows are turned upon me, and I retain no strength. 17. For how can the servant of this my lord talk with this my lord? for as for me, straightway there remained no strength in me, neither was there breath left in me. 18. Then there touched me again one like the appearance of a man, and he strengthened me. 19. And he said, O man greatly beloved, fear not: peace be unto thee, be strong, yea, be strong. And when he spake unto me, I was strengthened, and said, Let my lord speak; for thou hast strengthened me. 20. Then said he, Knowest thou wherefore I am come unto thee? and now will I return to fight with the prince of Persia: and when I go forth, lo, the prince of Greece shall come. 21. But I will tell thee that which is inscribed in the writing of truth: and there is none that holdeth with me against these, but Michael your prince.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 3, "events": 0, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 7, "geography": 1, "history": 5}, "evidence_item_count": 13, "relationship_unit_count": 1, "specific_evidence_count": 3, "unit_kind_counts": {"interpretive_questions": 1, "why_it_matters": 1}, "unused_evidence_ids": ["dead-sea-scrolls:ancient_near_east_context:0", "dead-sea-scrolls:historical_context:0", "persia:ancient_near_east_context:0", "persia:hebraic_worldview:0", "persia:historical_context:0", "persia:second_temple_context:0", "temple-mount-area-finds:ancient_near_east_context:0", "temple-mount-area-finds:historical_context:0", "wadi-murabbaat-scrolls:ancient_near_east_context:0", "wadi-murabbaat-scrolls:historical_context:0"], "used_evidence_ids": ["daniel-heavenly-conflict", "daniel:interpretive_note:20", "daniel:interpretive_note:21"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "bb2b48a6dd7ae0c06c2eeed37e64e68e2d16d6c16c58dee6ed8da019fa4fe0fa", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["daniel-heavenly-conflict", "daniel:interpretive_note:20", "daniel:interpretive_note:21"], "facts": ["Daniel 10 portrays an angelic messenger delayed by the prince of Persia, aided by Michael, and anticipating conflict involving Greece, presenting earthly history alongside a heavenly conflict.", "The princes of Persia and Greece and Michael belong to Daniel's angelic geography; they do not authorize demonizing present peoples or assigning a demon to every nation.", "Daniel 10 does not make prayer a technique for controlling angels, detecting territorial spirits, or explaining delayed outcomes through spiritual conspiracy."], "id": "syn_interpretive_questions_06ee33169281", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography", "history"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Daniel 10:1-21"], "verse_refs": ["Daniel 10:1-21"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["daniel-heavenly-conflict", "daniel:interpretive_note:20", "daniel:interpretive_note:21"], "facts": ["Daniel 10 portrays an angelic messenger delayed by the prince of Persia, aided by Michael, and anticipating conflict involving Greece, presenting earthly history alongside a heavenly conflict.", "The princes of Persia and Greece and Michael belong to Daniel's angelic geography; they do not authorize demonizing present peoples or assigning a demon to every nation.", "Daniel 10 does not make prayer a technique for controlling angels, detecting territorial spirits, or explaining delayed outcomes through spiritual conspiracy."], "id": "syn_why_it_matters_5142fb52300b", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_06ee33169281"], "source_anchors": ["Daniel 10:1-21"], "verse_refs": ["Daniel 10:1-21"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "daniel-heavenly-conflict", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["daniel-masoretic", "newsom-daniel-commentary", "segal-dreams-riddles-visions"]}, {"confidence": "high", "id": "daniel:interpretive_note:20", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["daniel-masoretic", "newsom-daniel-commentary", "segal-dreams-riddles-visions"]}, {"confidence": "medium", "id": "daniel:interpretive_note:21", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["daniel-masoretic", "newsom-daniel-commentary", "oxford-apocalyptic-handbook"]}, {"confidence": "medium", "id": "dead-sea-scrolls:ancient_near_east_context:0", "passage_anchors": ["Daniel 10"], "source_ids": ["dead-sea-scrolls", "isaiah-40", "israel-museum", "manuscript-library", "shrine-of-the-book-israel-museum"]}, {"confidence": "medium", "id": "dead-sea-scrolls:historical_context:0", "passage_anchors": ["Daniel 10"], "source_ids": ["dead-sea-scrolls", "isaiah-40", "israel-museum", "manuscript-library", "shrine-of-the-book-israel-museum"]}, {"confidence": "medium", "id": "persia:ancient_near_east_context:0", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:hebraic_worldview:0", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:historical_context:0", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "persia:second_temple_context:0", "passage_anchors": ["Daniel 10:1-21"], "source_ids": ["bm-cyrus-persia", "grabbe-persia-yehud", "kuhrt-persia-cylinder", "persian-period-biblical-texts"]}, {"confidence": "medium", "id": "temple-mount-area-finds:ancient_near_east_context:0", "passage_anchors": ["Daniel 10"], "source_ids": ["dead-sea-scrolls", "isaiah-40", "israel-museum", "manuscript-library", "shrine-of-the-book-israel-museum"]}, {"confidence": "medium", "id": "temple-mount-area-finds:historical_context:0", "passage_anchors": ["Daniel 10"], "source_ids": ["dead-sea-scrolls", "isaiah-40", "israel-museum", "manuscript-library", "shrine-of-the-book-israel-museum"]}, {"confidence": "medium", "id": "wadi-murabbaat-scrolls:ancient_near_east_context:0", "passage_anchors": ["Daniel 10"], "source_ids": ["dead-sea-scrolls", "isaiah-40", "israel-museum", "manuscript-library", "shrine-of-the-book-israel-museum"]}, {"confidence": "medium", "id": "wadi-murabbaat-scrolls:historical_context:0", "passage_anchors": ["Daniel 10"], "source_ids": ["dead-sea-scrolls", "isaiah-40", "israel-museum", "manuscript-library", "shrine-of-the-book-israel-museum"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Daniel 10",
+  "book": "Daniel",
+  "chapter": 10,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Daniel 10:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Daniel 10:
+   for example `Daniel 10:1` or `Daniel 10:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Daniel 10:1", "Daniel 10:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash bb2b48a6dd7ae0c06c2eeed37e64e68e2d16d6c16c58dee6ed8da019fa4fe0fa.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_daniel_010_68b5626120873aeea6a67472", "renderer_verse_refs": ["Daniel 10:1-21"], "source_verse_refs": ["Daniel 10:1-21"], "synthesis_unit": "syn_interpretive_questions_06ee33169281"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_daniel_010_9037a0537451136e241beb37", "renderer_verse_refs": ["Daniel 10:1-21"], "source_verse_refs": ["Daniel 10:1-21"], "synthesis_unit": "syn_why_it_matters_5142fb52300b"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

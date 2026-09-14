@@ -1,0 +1,19 @@
+{
+  "config_version": 1,
+  "adapter": "openai_compatible",
+  "base_url": "https://api.openai.com/v1",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "high",
+  "profile": "commentary-v1.2-terra-high",
+  "temperature": 0.3,
+  "max_tokens": 8192,
+  "commentary_max_tokens": 4500,
+  "context_window": 128000,
+  "timeout_seconds": 600,
+  "show_method_notes": true,
+  "debug": false,
+  "auto_repair": false,
+  "max_repair_attempts": 0,
+  "repair_threshold": 80,
+  "response_format_policy": "json_object"
+}

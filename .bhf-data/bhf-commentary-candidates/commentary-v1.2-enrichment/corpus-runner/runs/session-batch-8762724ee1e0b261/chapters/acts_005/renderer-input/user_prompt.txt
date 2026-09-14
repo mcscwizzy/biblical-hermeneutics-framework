@@ -1,0 +1,209 @@
+TASK: Generate BHF Commentary v1.8 for Acts 5.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_f7f02e68287e4b97: Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or… (categories: culture, geography, surrounding_passages)
+
+RELEVANT:
+- reader_idea_296f6ddc8d20a964: Acts narrates Ananias and Sapphira dying after deceptive claims about a sale, but does not command leaders to threaten donors or… (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_296f6ddc8d20a964: Acts narrates Ananias and Sapphira dying after deceptive claims about a sale, but does not command leaders to threaten donors or… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["acts-ananias-sapphira"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_9a052bed310a"}
+
+IDEA reader_idea_f7f02e68287e4b97: Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or… (importance: CORE; categories: culture, geography, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["acts-historical-method"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_4bffef4f759c"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["acts-text-witnesses"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_9704b801605e"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["acts-property", "acts-western-text"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_ee770c546f1f"}
+- path_4: {"confidence": "medium", "disputed": true, "evidence_ids": ["acts-property", "acts-western-text"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f6bd32d7a5ce"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. But a certain man named Ananias, with Sapphira his wife, sold a possession, 2. and kept back `part' of the price, his wife also being privy to it, and brought a certain part, and laid it at the apostles' feet. 3. But Peter said, Ananias, why hath Satan filled thy heart to lie to the Holy Spirit, and to keep back `part' of the price of the land? 4. While it remained, did it not remain thine own? and after it was sold, was it not in thy power? How is it that thou hast conceived this thing in thy heart? thou has not lied unto men, but unto God. 5. And Ananias hearing these words fell down and gave up the ghost: and great fear came upon all that heard it. 6. And the young men arose and wrapped him round, and they carried him out and buried him. 7. And it was about the space of three hours after, when his wife, not knowing what was done, came in. 8. And Peter answered unto her, Tell me whether ye sold the land for so much. And she said, Yea, for so much. 9. But Peter `said' unto her, How is it that ye have agreed together to try the Spirit of the Lord? behold, the feet of them that have buried thy husband are at the door, and they shall carry thee out. 10. And she fell down immediately at his feet, and gave up the ghost: and the young men came in and found her dead, and they carried her out and buried her by her husband. 11. And great fear came upon the whole church, and upon all that heard these things. 12. And by the hands of the apostles were many signs and wonders wrought among the people; and they were all with one accord in Solomon's porch. 13. But of the rest durst no man join himself to them: howbeit the people magnified them; 14. and believers were the more added to the Lord, multitudes both of them and women; 15. insomuch that they even carried out the sick into the streets, and laid them on beds and couches, that, as Peter came by, at the least his shadow might overshadow some one of them. 16. And there also came together the multitudes from the cities round about Jerusalem, bring sick folk, and them that were vexed with unclean spirits: and they were healed every one. 17. But the high priest rose up, and all they that were with him (which is the sect of the Sadducees), and they were filled with jealousy, 18. and laid hands on the apostles, and put them in public ward. 19. But an angel of the Lord by night opened the prison doors, and brought them out, and said, 20. Go ye, and stand and speak in the temple to the people all the words of this Life. 21. And when they heard `this', they entered into the temple about daybreak, and taught. But the high priest came, and they that were with him, and called the council together, and all the senate of the children of Israel, and sent to the prison-house to have them brought. 22. But the officers that came found them not in the prison; and they returned, and told, 23. saying, The prison-house we found shut in all safety, and the keepers standing at the doors: but when we had opened, we found no man within. 24. Now when the captain of the temple and the chief priests heard these words, they were much perplexed concerning them whereunto this would grow. 25. And there came one and told them, Behold, the men whom ye put in the prison are in the temple standing and teaching the people. 26. Then went the captain with the officers, and brought them, `but' without violence; for they feared the people, lest they should be stoned. 27. And when they had brought them, they set them before the council. And the high priest asked them, 28. saying, We strictly charged you not to teach in this name: and behold, ye have filled Jerusalem with your teaching, and intend to bring this man's blood upon us. 29. But Peter and the apostles answered and said, We must obey God rather than men. 30. The God of our fathers raised up Jesus, whom ye slew, hanging him on a tree. 31. Him did God exalt with his right hand `to be' a Prince and a Saviour, to give repentance to Israel, and remission of sins. 32. And we are witnesses of these things; and `so is' the Holy Spirit, whom God hath given to them that obey him. 33. But they, when they heard this, were cut to the heart, and minded to slay them. 34. But there stood up one in the council, a Pharisee, named Gamaliel, a doctor of the law, had in honor of all the people, and commanded to put the men forth a little while. 35. And he said unto them, Ye men of Israel, take heed to yourselves as touching these men, what ye are about to do. 36. For before these days rose up Theudas, giving himself out to be somebody; to whom a number of men, about four hundred, joined themselves: who was slain; and all, as many as obeyed him, were dispersed, and came to nought. 37. After this man rose up Judas of Galilee in the days of the enrolment, and drew away `some of the' people after him: he also perished; and all, as many as obeyed him, were scattered abroad. 38. And now I say unto you, Refrain from these men, and let them alone: for if this counsel or this work be of men, it will be overthrown: 39. but if it is of God, ye will not be able to overthrow them; lest haply ye be found even to be fighting against God. 40. And to him they agreed: and when they had called the apostles unto them, they beat them and charged them not to speak in the name of Jesus, and let them go. 41. They therefore departed from the presence of the council, rejoicing that they were counted worthy to suffer dishonor for the Name. 42. And every day, in the temple and at home, they ceased not to teach and to preach Jesus `as' the Christ.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 3, "people": 0, "places": 0}, "evidence_categories": {"culture": 13, "geography": 1, "history": 8, "social": 3}, "evidence_item_count": 25, "relationship_unit_count": 2, "specific_evidence_count": 7, "unit_kind_counts": {"interpretive_questions": 2, "surrounding_passages": 4, "why_it_matters": 1}, "unused_evidence_ids": ["pharisees:ancient_near_east_context:0", "pharisees:hebraic_worldview:0", "pharisees:historical_context:0", "pharisees:historical_setting:0", "pharisees:original_audience:0", "pharisees:second_temple_context:0", "sadducees:ancient_near_east_context:0", "sadducees:hebraic_worldview:0", "sadducees:historical_context:0", "sadducees:historical_setting:0", "sadducees:original_audience:0", "sadducees:second_temple_context:0", "sanhedrin:ancient_near_east_context:0", "sanhedrin:hebraic_worldview:0", "sanhedrin:historical_context:0", "sanhedrin:historical_setting:0", "sanhedrin:original_audience:0", "sanhedrin:second_temple_context:0"], "used_evidence_ids": ["acts-ananias-sapphira", "acts-historical-method", "acts-property", "acts-text-witnesses", "acts-western-text", "josephus-census-tax-resistance", "josephus-census-tax-resistance:passage-relevance"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "54f0d9b930d3d7251e32d063a80db54308584e81510308f0be2b14d1d9d899ca", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["josephus-census-tax-resistance", "josephus-census-tax-resistance:passage-relevance"], "facts": ["Josephus reports that Quirinius assessed Judean property after Archelaus's removal and that Judas opposed the assessment as enslavement.", "The account closely contextualizes Acts 5's memory of Judas while exposing rather than resolving the chronological difficulty posed by Luke 2."], "id": "syn_interpretive_questions_14dcf322d5c1", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Acts 5:33-39"], "verse_refs": ["Acts 5:33-39"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-ananias-sapphira"], "facts": ["Acts narrates Ananias and Sapphira dying after deceptive claims about a sale, but does not command leaders to threaten donors or reproduce the judgment."], "id": "syn_interpretive_questions_9a052bed310a", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Acts 5:1-11"], "verse_refs": ["Acts 5:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-historical-method"], "facts": ["Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability."], "id": "syn_surrounding_passages_4bffef4f759c", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Acts 1:1-28:31"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["acts-text-witnesses"], "facts": ["Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."], "id": "syn_surrounding_passages_9704b801605e", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Acts 1:1-28:31"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["acts-property", "acts-western-text"], "facts": ["Acts presents voluntary selling and distribution as community ideals in particular summaries, not an explicit universal legal code abolishing all possession.", "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."], "id": "syn_surrounding_passages_ee770c546f1f", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_f6bd32d7a5ce"], "source_anchors": ["Acts 1:1-28:31", "Acts 4:32-5:4"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 4:32-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["acts-property", "acts-western-text"], "facts": ["Acts presents voluntary selling and distribution as community ideals in particular summaries, not an explicit universal legal code abolishing all possession.", "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."], "id": "syn_surrounding_passages_f6bd32d7a5ce", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Acts 1:1-28:31", "Acts 4:32-5:4"], "verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 4:32-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["josephus-census-tax-resistance", "josephus-census-tax-resistance:passage-relevance"], "facts": ["Josephus reports that Quirinius assessed Judean property after Archelaus's removal and that Judas opposed the assessment as enslavement.", "The account closely contextualizes Acts 5's memory of Judas while exposing rather than resolving the chronological difficulty posed by Luke 2."], "id": "syn_why_it_matters_f24376a0d4ce", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_14dcf322d5c1"], "source_anchors": ["Acts 5:33-39"], "verse_refs": ["Acts 5:33-39"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "acts-ananias-sapphira", "passage_anchors": ["Acts 5:1-11"], "source_ids": ["acts-greek", "johnson-sharing"]}, {"confidence": "high", "id": "acts-historical-method", "passage_anchors": ["Acts 1:1-28:31"], "source_ids": ["keener-acts", "marguerat-historian"]}, {"confidence": "medium", "id": "acts-property", "passage_anchors": ["Acts 4:32-5:4"], "source_ids": ["acts-greek", "johnson-sharing"]}, {"confidence": "high", "id": "acts-text-witnesses", "passage_anchors": ["Acts 1:1-28:31"], "source_ids": ["bezae-cambridge", "p45-cbl", "p53-michigan", "p74-vatican", "sinaiticus", "vaticanus"]}, {"confidence": "high", "id": "acts-western-text", "passage_anchors": ["Acts 1:1-28:31"], "source_ids": ["bezae-cambridge", "parker-bezae"]}, {"confidence": "medium", "id": "josephus-census-tax-resistance", "passage_anchors": ["Acts 5:33-39"], "source_ids": ["josephus-antiquities-18-tax", "judean-gospel-acts-passages", "keddie-taxation"]}, {"confidence": "medium", "id": "josephus-census-tax-resistance:passage-relevance", "passage_anchors": ["Acts 5:33-39"], "source_ids": ["josephus-antiquities-18-tax", "judean-gospel-acts-passages", "keddie-taxation"]}, {"confidence": "medium", "id": "pharisees:ancient_near_east_context:0", "passage_anchors": ["Acts 5:33-40"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "pharisees-historical-orientation"]}, {"confidence": "medium", "id": "pharisees:hebraic_worldview:0", "passage_anchors": ["Acts 5:33-40"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "pharisees-historical-orientation"]}, {"confidence": "medium", "id": "pharisees:historical_context:0", "passage_anchors": ["Acts 5:33-40"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "pharisees-historical-orientation"]}, {"confidence": "medium", "id": "pharisees:historical_setting:0", "passage_anchors": ["Acts 5:33-40"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "pharisees-historical-orientation"]}, {"confidence": "medium", "id": "pharisees:original_audience:0", "passage_anchors": ["Acts 5:33-40"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "pharisees-historical-orientation"]}, {"confidence": "medium", "id": "pharisees:second_temple_context:0", "passage_anchors": ["Acts 5:33-40"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "pharisees-historical-orientation"]}, {"confidence": "medium", "id": "sadducees:ancient_near_east_context:0", "passage_anchors": ["Acts 5:17-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sadducees-historical-orientation"]}, {"confidence": "medium", "id": "sadducees:hebraic_worldview:0", "passage_anchors": ["Acts 5:17-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sadducees-historical-orientation"]}, {"confidence": "medium", "id": "sadducees:historical_context:0", "passage_anchors": ["Acts 5:17-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sadducees-historical-orientation"]}, {"confidence": "medium", "id": "sadducees:historical_setting:0", "passage_anchors": ["Acts 5:17-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sadducees-historical-orientation"]}, {"confidence": "medium", "id": "sadducees:original_audience:0", "passage_anchors": ["Acts 5:17-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sadducees-historical-orientation"]}, {"confidence": "medium", "id": "sadducees:second_temple_context:0", "passage_anchors": ["Acts 5:17-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sadducees-historical-orientation"]}, {"confidence": "medium", "id": "sanhedrin:ancient_near_east_context:0", "passage_anchors": ["Acts 5:21-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sanhedrin-historical-orientation"]}, {"confidence": "medium", "id": "sanhedrin:hebraic_worldview:0", "passage_anchors": ["Acts 5:21-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sanhedrin-historical-orientation"]}, {"confidence": "medium", "id": "sanhedrin:historical_context:0", "passage_anchors": ["Acts 5:21-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sanhedrin-historical-orientation"]}, {"confidence": "medium", "id": "sanhedrin:historical_setting:0", "passage_anchors": ["Acts 5:21-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sanhedrin-historical-orientation"]}, {"confidence": "medium", "id": "sanhedrin:original_audience:0", "passage_anchors": ["Acts 5:21-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sanhedrin-historical-orientation"]}, {"confidence": "medium", "id": "sanhedrin:second_temple_context:0", "passage_anchors": ["Acts 5:21-42"], "source_ids": ["1-samuel-8-12", "acts-23-26", "deuteronomy-16-18", "exodus-18", "sanhedrin-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Acts 5",
+  "book": "Acts",
+  "chapter": 5,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Acts 5:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Acts 5:
+   for example `Acts 5:1` or `Acts 5:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Acts 5:1", "Acts 5:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 54f0d9b930d3d7251e32d063a80db54308584e81510308f0be2b14d1d9d899ca.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_acts_005_d58f791fdf823e46af103e1d", "renderer_verse_refs": ["Acts 5:1-11"], "source_verse_refs": ["Acts 5:1-11"], "synthesis_unit": "syn_interpretive_questions_9a052bed310a"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_005_486db201037db5dbb78f09a8", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_4bffef4f759c"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_005_22e9a47f7d12afd71703291d", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_9704b801605e"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_005_b0dd45368683ee5191d5eb64", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 4:32-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 4:32-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_ee770c546f1f"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_acts_005_e57e7d7b5fd1ee07821bc0da", "renderer_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 4:32-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "source_verse_refs": ["Acts 10:1-48", "Acts 11:1-30", "Acts 12:1-25", "Acts 13:1-52", "Acts 14:1-28", "Acts 15:1-41", "Acts 16:1-40", "Acts 17:1-34", "Acts 18:1-28", "Acts 19:1-41", "Acts 1:1-26", "Acts 20:1-38", "Acts 21:1-40", "Acts 22:1-30", "Acts 23:1-35", "Acts 24:1-27", "Acts 25:1-27", "Acts 26:1-32", "Acts 27:1-44", "Acts 28:1-31", "Acts 2:1-47", "Acts 3:1-26", "Acts 4:1-37", "Acts 4:32-37", "Acts 6:1-15", "Acts 7:1-60", "Acts 8:1-40", "Acts 9:1-43"], "synthesis_unit": "syn_surrounding_passages_f6bd32d7a5ce"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

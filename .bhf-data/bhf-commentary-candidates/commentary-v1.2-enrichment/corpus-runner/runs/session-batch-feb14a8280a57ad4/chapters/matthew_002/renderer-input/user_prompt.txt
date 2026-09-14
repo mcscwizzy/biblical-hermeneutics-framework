@@ -1,0 +1,218 @@
+TASK: Generate BHF Commentary v1.8 for Matthew 2.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_6122678cae95a6de: Later reuse of Jeremiah includes inner-biblical reinterpretation, Jewish textual and liturgical reception, New Testament quotation… (categories: culture, interpretive_questions)
+- reader_idea_a0c8f6f76da2c9b9: Matthew's use of Hosea 11:1 is a later figural rereading of Israel's exodus, not a denial that Hosea refers retrospectively to… (categories: culture, interpretive_questions)
+- reader_idea_fa0fdd2c99193182: Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts. (categories: culture, interpretive_questions)
+- reader_idea_8e01273054543253: Matthew alone narrates Herod's killing of Bethlehem's young children; broad Herodian brutality is independently contextualized, but… (categories: culture, geography, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_6122678cae95a6de: Later reuse of Jeremiah includes inner-biblical reinterpretation, Jewish textual and liturgical reception, New Testament quotation… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["jeremiah-reception-distinction"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_556adee2e005"}
+
+IDEA reader_idea_a0c8f6f76da2c9b9: Matthew's use of Hosea 11:1 is a later figural rereading of Israel's exodus, not a denial that Hosea refers retrospectively to… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["hosea:interpretive_note:18"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_58c23dd1bf30"}
+
+IDEA reader_idea_fa0fdd2c99193182: Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["micah-new-testament-reception"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_5d8ee17327e7"}
+
+IDEA reader_idea_8e01273054543253: Matthew alone narrates Herod's killing of Bethlehem's young children; broad Herodian brutality is independently contextualized, but… (importance: RELEVANT; categories: culture, geography, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["matthew-herod-bethlehem", "matthew-magi-star", "matthew-roman-setting", "matthew-scripture-use"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_ce268ff3244f"}
+- path_2: {"confidence": "low", "disputed": true, "evidence_ids": ["matthew-herod-bethlehem", "matthew-magi-star", "matthew-roman-setting", "matthew-scripture-use"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_cacc146ab2a2"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Now when Jesus was born in Bethlehem of Judaea in the days of Herod the king, behold, Wise-men from the east came to Jerusalem, saying, 2. Where is he that is born King of the Jews? for we saw his star in the east, and are come to worship him. 3. And when Herod the king heard it, he was troubled, and all Jerusalem with him. 4. And gathering together all the chief priests and scribes of the people, he inquired of them where the Christ should be born. 5. And they said unto him, In Bethlehem of Judaea: for thus it is written through the prophet, 6. And thou Bethlehem, land of Judah, Art in no wise least among the princes of Judah: For out of thee shall come forth a governor, Who shall be shepherd of my people Israel. 7. Then Herod privily called the Wise-men, and learned of them exactly what time the star appeared. 8. And he sent them to Bethlehem, and said, Go and search out exactly concerning the young child; and when ye have found `him,' bring me word, that I also may come and worship him. 9. And they, having heard the king, went their way; and lo, the star, which they saw in the east, went before them, till it came and stood over where the young child was. 10. And when they saw the star, they rejoiced with exceeding great joy. 11. And they came into the house and saw the young child with Mary his mother; and they fell down and worshipped him; and opening their treasures they offered unto him gifts, gold and frankincense and myrrh. 12. And being warned `of God' in a dream that they should not return to Herod, they departed into their own country another way. 13. Now when they were departed, behold, an angel of the Lord appeareth to Joseph in a dream, saying, Arise and take the young child and his mother, and flee into Egypt, and be thou there until I tell thee: for Herod will seek the young child to destroy him. 14. And he arose and took the young child and his mother by night, and departed into Egypt; 15. and was there until the death of Herod: that it might be fulfilled which was spoken by the Lord through the prophet, saying, Out of Egypt did I call my son. 16. Then Herod, when he saw that he was mocked of the Wise-men, was exceeding wroth, and sent forth, and slew all the male children that were in Bethlehem, and in all the borders thereof, from two years old and under, according to the time which he had exactly learned of the Wise-men. 17. Then was fulfilled that which was spoken through Jeremiah the prophet, saying, 18. A voice was heard in Ramah, Weeping and great mourning, Rachel weeping for her children; And she would not be comforted, because they are not. 19. But when Herod was dead, behold, an angel of the Lord appeareth in a dream to Joseph in Egypt, saying, 20. Arise and take the young child and his mother, and go into the land of Israel: for they are dead that sought the young child's life. 21. And he arose and took the young child and his mother, and came into the land of Israel. 22. But when he heard that Archelaus was reigning over Judaea in the room of his father Herod, he was afraid to go thither; and being warned `of God' in a dream, he withdrew into the parts of Galilee, 23. and came and dwelt in a city called Nazareth; that it might be fulfilled which was spoken through the prophets, that he should be called a Nazarene.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 1, "groups": 0, "people": 6, "places": 2}, "evidence_categories": {"culture": 19, "geography": 5, "history": 9}, "evidence_item_count": 33, "relationship_unit_count": 1, "specific_evidence_count": 7, "unit_kind_counts": {"interpretive_questions": 4, "why_it_matters": 1}, "unused_evidence_ids": ["balaam:ancient_near_east_context:0", "balaam:historical_context:0", "birth-of-jesus:ancient_near_east_context:0", "birth-of-jesus:historical_context:0", "caiaphas:ancient_near_east_context:0", "caiaphas:historical_context:0", "cain:ancient_near_east_context:0", "cain:historical_context:0", "egypt:ancient_near_east_context:0", "egypt:hebraic_worldview:0", "egypt:historical_context:0", "egypt:key_places:0", "egypt:key_places:1", "egypt:key_places:2", "egypt:key_places:3", "egypt:second_temple_context:0", "herod-the-great:ancient_near_east_context:0", "herod-the-great:historical_context:0", "judas-iscariot:ancient_near_east_context:0", "judas-iscariot:historical_context:0", "nazareth:ancient_near_east_context:0", "nazareth:hebraic_worldview:0", "nazareth:historical_context:0", "nazareth:second_temple_context:0", "pontius-pilate:ancient_near_east_context:0", "pontius-pilate:historical_context:0"], "used_evidence_ids": ["hosea:interpretive_note:18", "jeremiah-reception-distinction", "matthew-herod-bethlehem", "matthew-magi-star", "matthew-roman-setting", "matthew-scripture-use", "micah-new-testament-reception"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "3247a06fc2b87d11623896db0367659f322b23492ef5a73e87075272930f4f5b", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["jeremiah-reception-distinction"], "facts": ["Later reuse of Jeremiah includes inner-biblical reinterpretation, Jewish textual and liturgical reception, New Testament quotation and allusion, christological reading, and ecclesial theology; these modes should not be collapsed into direct prediction."], "id": "syn_interpretive_questions_556adee2e005", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Matthew 2:17-18"], "verse_refs": ["Matthew 2:17-18"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:18"], "facts": ["Matthew's use of Hosea 11:1 is a later figural rereading of Israel's exodus, not a denial that Hosea refers retrospectively to Israel as God's child."], "id": "syn_interpretive_questions_58c23dd1bf30", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Matthew 2:13-15"], "verse_refs": ["Matthew 2:13-15"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["micah-new-testament-reception"], "facts": ["Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts."], "id": "syn_interpretive_questions_5d8ee17327e7", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Matthew 2:5-6"], "verse_refs": ["Matthew 2:5-6"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["matthew-herod-bethlehem", "matthew-magi-star", "matthew-roman-setting", "matthew-scripture-use"], "facts": ["Matthew alone narrates Herod's killing of Bethlehem's young children; broad Herodian brutality is independently contextualized, but this event is not independently attested.", "Matthew narrates eastern magi, a star, gifts, Herod's alarm, and worship of the child without numbering the magi or calling them kings.", "Herodian client rule, Roman provincial authority, taxation, elite power, and crucifixion frame Matthew's remembered first-century setting.", "Matthew repeatedly frames events with citations and fulfillment formulas drawing on varied Hebrew and Greek scriptural forms."], "id": "syn_interpretive_questions_ce268ff3244f", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"], "verse_refs": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["matthew-herod-bethlehem", "matthew-magi-star", "matthew-roman-setting", "matthew-scripture-use"], "facts": ["Matthew alone narrates Herod's killing of Bethlehem's young children; broad Herodian brutality is independently contextualized, but this event is not independently attested.", "Matthew narrates eastern magi, a star, gifts, Herod's alarm, and worship of the child without numbering the magi or calling them kings.", "Herodian client rule, Roman provincial authority, taxation, elite power, and crucifixion frame Matthew's remembered first-century setting.", "Matthew repeatedly frames events with citations and fulfillment formulas drawing on varied Hebrew and Greek scriptural forms."], "id": "syn_why_it_matters_cacc146ab2a2", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_ce268ff3244f"], "source_anchors": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"], "verse_refs": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "balaam:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "balaam-historical-orientation", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "balaam:historical_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "balaam-historical-orientation", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "birth-of-jesus:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-12"], "source_ids": ["birth-of-jesus-historical-orientation", "galatians-4", "isaiah-7", "isaiah-9", "luke-1-2", "matthew-1-2", "micah-5", "philippians-2"]}, {"confidence": "medium", "id": "birth-of-jesus:historical_context:0", "passage_anchors": ["Matthew 2:1-12"], "source_ids": ["birth-of-jesus-historical-orientation", "galatians-4", "isaiah-7", "isaiah-9", "luke-1-2", "matthew-1-2", "micah-5", "philippians-2"]}, {"confidence": "medium", "id": "caiaphas:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "caiaphas-historical-orientation", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "caiaphas:historical_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "caiaphas-historical-orientation", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "cain:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "cain-historical-orientation", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "cain:historical_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "cain-historical-orientation", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "egypt:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:hebraic_worldview:0", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:historical_context:0", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:key_places:0", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:key_places:1", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:key_places:2", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:key_places:3", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "egypt:second_temple_context:0", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["egypt-historical-orientation", "exodus-1-15", "genesis-12", "genesis-37-50", "matthew-2"]}, {"confidence": "medium", "id": "herod-the-great:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "genesis-4", "herod-the-great-historical-orientation", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "herod-the-great:historical_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "genesis-4", "herod-the-great-historical-orientation", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "high", "id": "hosea:interpretive_note:18", "passage_anchors": ["Matthew 2:13-15"], "source_ids": ["hosea-masoretic", "moyise-hosea-new-testament", "new-testament-hosea-reuse"]}, {"confidence": "medium", "id": "jeremiah-reception-distinction", "passage_anchors": ["Matthew 2:17-18"], "source_ids": ["dimant-jeremiah-qumran", "new-testament-jeremiah", "second-temple-jeremiah-reception", "williams-jeremiah-new-testament"]}, {"confidence": "medium", "id": "judas-iscariot:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "genesis-4", "judas-iscariot-historical-orientation", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "medium", "id": "judas-iscariot:historical_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "genesis-4", "judas-iscariot-historical-orientation", "matthew-2", "matthew-26-27", "numbers-22-24"]}, {"confidence": "low", "id": "matthew-herod-bethlehem", "passage_anchors": ["Matthew 2:16-18"], "source_ids": ["cambridge-matthew-introduction", "josephus-herod", "matthew-greek"]}, {"confidence": "high", "id": "matthew-magi-star", "passage_anchors": ["Matthew 2:1-12"], "source_ids": ["france-matthew", "matthew-greek"]}, {"confidence": "high", "id": "matthew-roman-setting", "passage_anchors": ["Matthew 2:1"], "source_ids": ["josephus-herod", "josephus-roman-judea", "riches-roman-palestine"]}, {"confidence": "high", "id": "matthew-scripture-use", "passage_anchors": ["Matthew 2:15", "Matthew 2:17-18"], "source_ids": ["deines-matthew", "matthew-greek", "matthew-hebrew-bible", "matthew-septuagint"]}, {"confidence": "high", "id": "micah-new-testament-reception", "passage_anchors": ["Matthew 2:5-6"], "source_ids": ["gignilliat-micah", "micah-new-testament", "shepherd-early-christianity"]}, {"confidence": "medium", "id": "nazareth:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:19-23"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "nazareth:hebraic_worldview:0", "passage_anchors": ["Matthew 2:19-23"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "nazareth:historical_context:0", "passage_anchors": ["Matthew 2:19-23"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "nazareth:second_temple_context:0", "passage_anchors": ["Matthew 2:19-23"], "source_ids": ["acts", "john", "luke", "mark", "matthew", "nazareth-historical-orientation"]}, {"confidence": "medium", "id": "pontius-pilate:ancient_near_east_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24", "pontius-pilate-historical-orientation"]}, {"confidence": "medium", "id": "pontius-pilate:historical_context:0", "passage_anchors": ["Matthew 2:1-23"], "source_ids": ["acts-12", "genesis-4", "matthew-2", "matthew-26-27", "numbers-22-24", "pontius-pilate-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Matthew 2",
+  "book": "Matthew",
+  "chapter": 2,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Matthew 2:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Matthew 2:
+   for example `Matthew 2:1` or `Matthew 2:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Matthew 2:1", "Matthew 2:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 3247a06fc2b87d11623896db0367659f322b23492ef5a73e87075272930f4f5b.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_matthew_002_5a1f63613b996e68c59c2e0f", "renderer_verse_refs": ["Matthew 2:17-18"], "source_verse_refs": ["Matthew 2:17-18"], "synthesis_unit": "syn_interpretive_questions_556adee2e005"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_matthew_002_0387a2ba1dc7c9aa163389fb", "renderer_verse_refs": ["Matthew 2:13-15"], "source_verse_refs": ["Matthew 2:13-15"], "synthesis_unit": "syn_interpretive_questions_58c23dd1bf30"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_matthew_002_74318137109a0088625390f6", "renderer_verse_refs": ["Matthew 2:5-6"], "source_verse_refs": ["Matthew 2:5-6"], "synthesis_unit": "syn_interpretive_questions_5d8ee17327e7"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_matthew_002_e4226e4f44a881e94e13998a", "renderer_verse_refs": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"], "source_verse_refs": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"], "synthesis_unit": "syn_interpretive_questions_ce268ff3244f"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_matthew_002_4106165810825f1a377888ac", "renderer_verse_refs": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"], "source_verse_refs": ["Matthew 2:1", "Matthew 2:1-12", "Matthew 2:15", "Matthew 2:16-18", "Matthew 2:17-18"], "synthesis_unit": "syn_why_it_matters_cacc146ab2a2"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

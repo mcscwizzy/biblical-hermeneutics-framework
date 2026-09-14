@@ -1,0 +1,200 @@
+TASK: Generate BHF Commentary v1.8 for Revelation 17.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_db37cfbcd010e547: Babylon probably signifies Rome in the first-century horizon while extending biblical Babylon imagery into a critique of imperial… (categories: culture, history, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_db37cfbcd010e547: Babylon probably signifies Rome in the first-century horizon while extending biblical Babylon imagery into a critique of imperial… (importance: RELEVANT; categories: culture, history, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["rev-babylon-rome", "rev-imperial-context", "rev-scriptural-reuse"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_28191493ade0"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["rev-babylon-rome", "rev-imperial-context", "rev-scriptural-reuse"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_954a6c20d692"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And there came one of the seven angels that had the seven bowls, and spake with me, saying, Come hither, I will show thee the judgment of the great harlot that sitteth upon many waters; 2. with whom the kings of the earth committed fornication, and they that dwell in the earth were made drunken with the wine of her fornication. 3. And he carried me away in the Spirit into a wilderness: and I saw a woman sitting upon a scarlet-colored beast, full of names of blasphemy, having seven heads and ten horns. 4. And the woman was arrayed in purple and scarlet, and decked with gold and precious stone and pearls, having in her hand a golden cup full of abominations, even the unclean things of her fornication, 5. and upon her forehead a name written, MYSTERY, BABYLON THE GREAT, THE MOTHER OF THE HARLOTS AND OF THE ABOMINATIONS OF THE EARTH. 6. And I saw the woman drunken with the blood of the saints, and with the blood of the martyrs of Jesus. And when I saw her, I wondered with a great wonder. 7. And the angel said unto me, Wherefore didst thou wonder? I will tell thee the mystery of the woman, and of the beast that carrieth her, which hath the seven heads and the ten horns. 8. The beast that thou sawest was, and is not; and is about to come up out of the abyss, and to go into perdition. And they that dwell on the earth shall wonder, `they' whose name hath not been written in the book of life from the foundation of the world, when they behold the beast, how that he was, and is not, and shall come. 9. Here is the mind that hath wisdom. The seven heads are seven mountains, on which the woman sitteth: 10. and they are seven kings; the five are fallen, the one is, the other is not yet come; and when he cometh, he must continue a little while. 11. And the beast that was, and is not, is himself also an eighth, and is of the seven; and he goeth into perdition. 12. And the ten horns that thou sawest are ten kings, who have received no kingdom as yet; but they receive authority as kings, with the beast, for one hour. 13. These have one mind, and they give their power and authority unto the beast. 14. These shall war against the Lamb, and the Lamb shall overcome them, for he is Lord of lords, and King of kings; and they `also shall overcome' that are with him, called and chosen and faithful. 15. And he saith unto me, The waters which thou sawest, where the harlot sitteth, are peoples, and multitudes, and nations, and tongues. 16. And the ten horns which thou sawest, and the beast, these shall hate the harlot, and shall make her desolate and naked, and shall eat her flesh, and shall burn her utterly with fire. 17. For God did put in their hearts to do his mind, and to come to one mind, and to give their kingdom unto the beast, until the words of God should be accomplished. 18. And the woman whom thou sawest is the great city, which reigneth over the kings of the earth.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 5, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 6, "economics": 1, "geography": 5, "history": 3, "politics": 1}, "evidence_item_count": 16, "relationship_unit_count": 1, "specific_evidence_count": 3, "unit_kind_counts": {"surrounding_passages": 2}, "unused_evidence_ids": ["babylon-1:ancient_near_east_context:0", "babylon-1:hebraic_worldview:0", "babylon-1:historical_context:0", "babylon-1:key_places:0", "babylon-1:key_places:1", "babylon-1:key_places:2", "babylon-1:key_places:3", "babylon-1:key_places:4", "babylon-1:second_temple_context:0", "what-is-the-ancient-near-east:ancient_near_east_context:0", "what-is-the-ancient-near-east:historical_context:0", "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0", "what-is-the-roman-empire-in-the-bible:historical_context:0"], "used_evidence_ids": ["rev-babylon-rome", "rev-imperial-context", "rev-scriptural-reuse"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "dc2c8b9b96f884067b0043fe0e4f282a95f34e311d379806df60c1dc443fe926", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["rev-babylon-rome", "rev-imperial-context", "rev-scriptural-reuse"], "facts": ["Babylon probably signifies Rome in the first-century horizon while extending biblical Babylon imagery into a critique of imperial city-power.", "Roman imperial power, civic religion, and economy are major historical contexts, but Revelation does not name a single emperor as the complete key.", "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms."], "id": "syn_surrounding_passages_28191493ade0", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "economics", "politics"], "support_count": 3}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Revelation 17:1-18:24", "Revelation 1:1-22:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["rev-babylon-rome", "rev-imperial-context", "rev-scriptural-reuse"], "facts": ["Babylon probably signifies Rome in the first-century horizon while extending biblical Babylon imagery into a critique of imperial city-power.", "Roman imperial power, civic religion, and economy are major historical contexts, but Revelation does not name a single emperor as the complete key.", "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms."], "id": "syn_surrounding_passages_954a6c20d692", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_28191493ade0"], "source_anchors": ["Revelation 17:1-18:24", "Revelation 1:1-22:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "babylon-1:ancient_near_east_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:hebraic_worldview:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:historical_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:key_places:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:key_places:1", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:key_places:2", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:key_places:3", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:key_places:4", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "babylon-1:second_temple_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["alstola-babylon-judeans", "babylon-biblical-texts", "bm-babylon-chronicle"]}, {"confidence": "medium", "id": "rev-babylon-rome", "passage_anchors": ["Revelation 17:1-18:24"], "source_ids": ["friesen", "koester", "royaltty"]}, {"confidence": "medium", "id": "rev-imperial-context", "passage_anchors": ["Revelation 17:1-18:24"], "source_ids": ["de-silva", "friesen", "royaltty"]}, {"confidence": "high", "id": "rev-scriptural-reuse", "passage_anchors": ["Revelation 1:1-22:21"], "source_ids": ["beale", "koester", "moyise"]}, {"confidence": "medium", "id": "what-is-the-ancient-near-east:ancient_near_east_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["daniel-1-6", "exodus-1-15", "ezra-1-6", "genesis-10-12", "revelation-17-18", "what-is-the-ancient-near-east-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-ancient-near-east:historical_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["daniel-1-6", "exodus-1-15", "ezra-1-6", "genesis-10-12", "revelation-17-18", "what-is-the-ancient-near-east-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["1-peter-2", "acts-17", "john-19", "luke-2", "revelation-13", "revelation-17-18", "romans-13", "what-is-the-roman-empire-in-the-bible-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-roman-empire-in-the-bible:historical_context:0", "passage_anchors": ["Revelation 17:1-18"], "source_ids": ["1-peter-2", "acts-17", "john-19", "luke-2", "revelation-13", "revelation-17-18", "romans-13", "what-is-the-roman-empire-in-the-bible-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Revelation 17",
+  "book": "Revelation",
+  "chapter": 17,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Revelation 17:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Revelation 17:
+   for example `Revelation 17:1` or `Revelation 17:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Revelation 17:1", "Revelation 17:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash dc2c8b9b96f884067b0043fe0e4f282a95f34e311d379806df60c1dc443fe926.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_revelation_017_d3550ba8b4735d2eb375649d", "renderer_verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"], "source_verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"], "synthesis_unit": "syn_surrounding_passages_28191493ade0"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_revelation_017_8721a8fa1b0644e5e16f99f6", "renderer_verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"], "source_verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"], "synthesis_unit": "syn_surrounding_passages_954a6c20d692"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

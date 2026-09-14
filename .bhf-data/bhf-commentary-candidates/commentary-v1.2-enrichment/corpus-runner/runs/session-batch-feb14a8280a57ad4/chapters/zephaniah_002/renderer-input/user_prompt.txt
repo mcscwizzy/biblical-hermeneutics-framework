@@ -1,0 +1,206 @@
+TASK: Generate BHF Commentary v1.8 for Zephaniah 2.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_261ac0dc83088ffc: Zephaniah (categories: culture, history, interpretive_questions)
+
+RELEVANT:
+- None
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_261ac0dc83088ffc: Zephaniah (importance: CORE; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["zephaniah-chronicle"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_ac6fd589846a"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["zephaniah-assyrian-sources"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_b6a64b7390c6"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["zephaniah-cush", "zephaniah-date", "zephaniah-moab-ammon", "zephaniah-nineveh", "zephaniah-philistia"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_5c01c66f33cb"}
+- path_4: {"confidence": "high", "disputed": true, "evidence_ids": ["zephaniah-seek"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_eb88368434b4"}
+- path_5: {"confidence": "medium", "disputed": true, "evidence_ids": ["zephaniah-cush", "zephaniah-date", "zephaniah-moab-ammon", "zephaniah-nineveh", "zephaniah-philistia"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_3fdb29f9ffdc"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Gather yourselves together, yea, gather together, O nation that hath no shame; 2. before the decree bring forth, `before' the day pass as the chaff, before the fierce anger of Jehovah come upon you, before the day of Jehovah's anger come upon you. 3. Seek ye Jehovah, all ye meek of the earth, that have kept his ordinances; seek righteousness, seek meekness: it may be ye will be hid in the day of Jehovah's anger. 4. For Gaza shall be forsaken, and Ashkelon a desolation; they shall drive out Ashdod at noonday, and Ekron shall be rooted up. 5. Woe unto the inhabitants of the sea-coast, the nation of the Cherethites! The word of Jehovah is against you, O Canaan, the land of the Philistines; I will destroy thee, that there shall be no inhabitant. 6. And the sea-coast shall be pastures, with cottages for shepherds and folds for flocks. 7. And the coast shall be for the remnant of the house of Judah; they shall feed `their flocks' thereupon; in the houses of Ashkelon shall they lie down in the evening; for Jehovah their God will visit them, and bring back their captivity. 8. I have heard the reproach of Moab, and the revilings of the children of Ammon, wherewith they have reproached my people, and magnified themselves against their border. 9. Therefore as I live, saith Jehovah of hosts, the God of Israel, Surely Moab shall be as Sodom, and the children of Ammon as Gomorrah, a possession of nettles, and saltpits, and a perpetual desolation: the residue of my people shall make a prey of them, and the remnant of my nation shall inherit them. 10. This shall they have for their pride, because they have reproached and magnified themselves against the people of Jehovah of hosts. 11. Jehovah will be terrible unto them; for he will famish all the gods of the earth; and men shall worship him, every one from his place, even all the isles of the nations. 12. Ye Ethiopians also, ye shall be slain by my sword. 13. And he will stretch out his hand against the north, and destroy Assyria, and will make Nineveh a desolation, and dry like the wilderness. 14. And herds shall lie down in the midst of her, all the beasts of the nations: both the pelican and the porcupine shall lodge in the capitals thereof; `their' voice shall sing in the windows; desolation shall be in the thresholds: for he hath laid bare the cedar-work. 15. This is the joyous city that dwelt carelessly, that said in her heart, I am, and there is none besides me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, and wag his hand.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 6, "history": 4, "politics": 1}, "evidence_item_count": 11, "relationship_unit_count": 1, "specific_evidence_count": 9, "unit_kind_counts": {"cultural_context": 1, "historical_context": 1, "interpretive_questions": 2, "surrounding_passages": 1, "why_it_matters": 1}, "unused_evidence_ids": ["judgment-against-the-nations:ancient_near_east_context:0", "judgment-against-the-nations:historical_context:0"], "used_evidence_ids": ["zephaniah-assyrian-sources", "zephaniah-chronicle", "zephaniah-cush", "zephaniah-date", "zephaniah-ethical-reception", "zephaniah-moab-ammon", "zephaniah-nineveh", "zephaniah-philistia", "zephaniah-seek"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "86ad15a30d331ea85aa07433cc11e735cc69cf998b03682e71c278f9df36875c", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["zephaniah-chronicle"], "facts": ["BM 21901 documents the fall of Nineveh in 612 BCE and Harran in 609 from a Babylonian chronicle perspective, providing a historical anchor but not a date stamp for every Zephaniah layer."], "id": "syn_cultural_context_ac6fd589846a", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Zephaniah 2:13-15"], "verse_refs": ["Zephaniah 2:13-15"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["zephaniah-assyrian-sources"], "facts": ["Neo-Assyrian royal inscriptions illuminate Nineveh's palaces, gardens, cult, imperial ideology, tribute, conquest, and self-presentation but are not neutral descriptions of all late Assyrian society."], "id": "syn_historical_context_b6a64b7390c6", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["politics"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Zephaniah 2:13-15"], "verse_refs": ["Zephaniah 2:13-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["zephaniah-cush", "zephaniah-date", "zephaniah-moab-ammon", "zephaniah-nineveh", "zephaniah-philistia"], "facts": ["Zephaniah 2:12 addresses Cushites in one terse line whose scope and historical referent are not identified.", "Josiah's reign is the explicit frame and pre-612 BCE is a common horizon for the Nineveh oracle, but the book's exact date and relation to Josiah's reform remain disputed.", "Zephaniah 2:8-11 condemns Moabite and Ammonite taunts and pride, compares their fate to Sodom and Gomorrah, promises remnant possession, and envisions nations bowing to YHWH.", "Zephaniah 2:13-15 imagines Assyria's destruction and Nineveh as an arid ruin inhabited by creatures, reversing the secure city's self-exalting boast.", "Zephaniah 2:4-7 addresses Gaza, Ashkelon, Ashdod, Ekron, the coast, Cherethites, and Canaan before promising pasture and possession to Judah's remnant."], "id": "syn_interpretive_questions_5c01c66f33cb", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"], "verse_refs": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["zephaniah-seek"], "facts": ["Zephaniah 2:1-3 summons a difficultly described nation or people to gather and tells the humble to seek YHWH, righteousness, and humility, with perhaps preserving contingency rather than guaranteed protection."], "id": "syn_interpretive_questions_eb88368434b4", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Zephaniah 2:1-3"], "verse_refs": ["Zephaniah 2:1-3"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["zephaniah-ethical-reception"], "facts": ["Responsible modern reception confronts divine violence, racialized genealogy, anti-African and anti-Arab mapping, disability stigma, poverty romanticization, trauma exploitation, ecological loss, nationalism, colonialism, and partisan enemy-making."], "id": "syn_surrounding_passages_81932cb0a2b9", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Zephaniah 2:4-15"], "verse_refs": ["Zephaniah 2:4-15"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["zephaniah-cush", "zephaniah-date", "zephaniah-moab-ammon", "zephaniah-nineveh", "zephaniah-philistia"], "facts": ["Zephaniah 2:12 addresses Cushites in one terse line whose scope and historical referent are not identified.", "Josiah's reign is the explicit frame and pre-612 BCE is a common horizon for the Nineveh oracle, but the book's exact date and relation to Josiah's reform remain disputed.", "Zephaniah 2:8-11 condemns Moabite and Ammonite taunts and pride, compares their fate to Sodom and Gomorrah, promises remnant possession, and envisions nations bowing to YHWH.", "Zephaniah 2:13-15 imagines Assyria's destruction and Nineveh as an arid ruin inhabited by creatures, reversing the secure city's self-exalting boast.", "Zephaniah 2:4-7 addresses Gaza, Ashkelon, Ashdod, Ekron, the coast, Cherethites, and Canaan before promising pasture and possession to Judah's remnant."], "id": "syn_why_it_matters_3fdb29f9ffdc", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_5c01c66f33cb"], "source_anchors": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"], "verse_refs": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "judgment-against-the-nations:ancient_near_east_context:0", "passage_anchors": ["Zephaniah 2:1-15"], "source_ids": ["amos-1-2", "isaiah-13", "jeremiah-46-51", "judgment-against-the-nations-historical-orientation", "nahum", "obadiah", "zephaniah-2"]}, {"confidence": "medium", "id": "judgment-against-the-nations:historical_context:0", "passage_anchors": ["Zephaniah 2:1-15"], "source_ids": ["amos-1-2", "isaiah-13", "jeremiah-46-51", "judgment-against-the-nations-historical-orientation", "nahum", "obadiah", "zephaniah-2"]}, {"confidence": "high", "id": "zephaniah-assyrian-sources", "passage_anchors": ["Zephaniah 2:13-15"], "source_ids": ["rinap-assyria"]}, {"confidence": "high", "id": "zephaniah-chronicle", "passage_anchors": ["Zephaniah 2:13-15"], "source_ids": ["bm-nineveh-chronicle"]}, {"confidence": "high", "id": "zephaniah-cush", "passage_anchors": ["Zephaniah 2:12"], "source_ids": ["berlin-zephaniah", "gafney-zephaniah", "zephaniah-masoretic"]}, {"confidence": "medium", "id": "zephaniah-date", "passage_anchors": ["Zephaniah 2:13-15"], "source_ids": ["berlin-zephaniah", "bm-nineveh-chronicle", "quine-zephaniah"]}, {"confidence": "high", "id": "zephaniah-ethical-reception", "passage_anchors": ["Zephaniah 2:4-15"], "source_ids": ["gafney-zephaniah", "oxford-postcolonial", "oxford-trauma", "timmer-theology"]}, {"confidence": "high", "id": "zephaniah-moab-ammon", "passage_anchors": ["Zephaniah 2:8-11"], "source_ids": ["berlin-zephaniah", "timmer-theology", "zephaniah-masoretic"]}, {"confidence": "high", "id": "zephaniah-nineveh", "passage_anchors": ["Zephaniah 2:13-15"], "source_ids": ["berlin-zephaniah", "bm-nineveh-chronicle", "rinap-assyria", "zephaniah-masoretic"]}, {"confidence": "high", "id": "zephaniah-philistia", "passage_anchors": ["Zephaniah 2:4-7"], "source_ids": ["berlin-zephaniah", "timmer-theology", "zephaniah-masoretic"]}, {"confidence": "high", "id": "zephaniah-seek", "passage_anchors": ["Zephaniah 2:1-3"], "source_ids": ["berlin-zephaniah", "quine-zephaniah", "zephaniah-masoretic"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Zephaniah 2",
+  "book": "Zephaniah",
+  "chapter": 2,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Zephaniah 2:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Zephaniah 2:
+   for example `Zephaniah 2:1` or `Zephaniah 2:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Zephaniah 2:1", "Zephaniah 2:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 86ad15a30d331ea85aa07433cc11e735cc69cf998b03682e71c278f9df36875c.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_zephaniah_002_aac671be42eecb6d3950aaa1", "renderer_verse_refs": ["Zephaniah 2:13-15"], "source_verse_refs": ["Zephaniah 2:13-15"], "synthesis_unit": "syn_cultural_context_ac6fd589846a"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_zephaniah_002_cb3d67d5c3afa1fb710b0cb5", "renderer_verse_refs": ["Zephaniah 2:13-15"], "source_verse_refs": ["Zephaniah 2:13-15"], "synthesis_unit": "syn_historical_context_b6a64b7390c6"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_zephaniah_002_67a93ddc5319c6248fedab05", "renderer_verse_refs": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"], "source_verse_refs": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"], "synthesis_unit": "syn_interpretive_questions_5c01c66f33cb"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_zephaniah_002_1ed21dca49c8f1c1ab6e466b", "renderer_verse_refs": ["Zephaniah 2:1-3"], "source_verse_refs": ["Zephaniah 2:1-3"], "synthesis_unit": "syn_interpretive_questions_eb88368434b4"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_zephaniah_002_9631741fa2a5b3fe6e91c13c", "renderer_verse_refs": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"], "source_verse_refs": ["Zephaniah 2:12", "Zephaniah 2:13-15", "Zephaniah 2:4-7", "Zephaniah 2:8-11"], "synthesis_unit": "syn_why_it_matters_3fdb29f9ffdc"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

@@ -1,0 +1,215 @@
+TASK: Generate BHF Commentary v1.8 for Ephesians 3.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_fc19d25196856ebd: Ephesians (categories: culture, history, interpretive_questions)
+
+RELEVANT:
+- reader_idea_db11cb5ad8de84e0: Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated. (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_fc19d25196856ebd: Ephesians (importance: CORE; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["ephesians:interpretive_note:16", "ephesians:interpretive_note:17", "ephesians:interpretive_note:19"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_d75ecef20ac5"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["eph-mystery", "eph-voice"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_f884f8638da0"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["eph-audience", "eph-authorship", "eph-date", "eph-powers"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_2202b485f325"}
+- path_4: {"confidence": "low", "disputed": true, "evidence_ids": ["ephesians:interpretive_note:18"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_512a5585a9fe"}
+- path_5: {"confidence": "low", "disputed": true, "evidence_ids": ["eph-audience", "eph-authorship", "eph-date", "eph-powers"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_ae305cfde502"}
+- path_6: {"confidence": "high", "disputed": false, "evidence_ids": ["ephesians:interpretive_note:16", "ephesians:interpretive_note:17", "ephesians:interpretive_note:19"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_be6fb3a46936"}
+- path_7: {"confidence": "high", "disputed": false, "evidence_ids": ["eph-mystery", "eph-voice"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_c82f80c64a6c"}
+
+IDEA reader_idea_db11cb5ad8de84e0: Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated. (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["eph-colossians"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_231f93c2a6a3"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. For this cause I Paul, the prisoner of Christ Jesus in behalf of you Gentiles,-- 2. if so be that ye have heard of the dispensation of that grace of God which was given me to you-ward; 3. how that by revelation was made known unto me the mystery, as I wrote before in few words, 4. whereby, when ye read, ye can perceive my understanding in the mystery of Christ; 5. which in other generation was not made known unto the sons of men, as it hath now been revealed unto his holy apostles and prophets in the Spirit; 6. `to wit', that the Gentiles are fellow-heirs, and fellow-members of the body, and fellow-partakers of the promise in Christ Jesus through the gospel, 7. whereof I was made a minister, according to the gift of that grace of God which was given me according to the working of his power. 8. Unto me, who am less than the least of all saints, was this grace given, to preach unto the Gentiles the unsearchable riches of Christ; 9. and to make all men see what is the dispensation of the mystery which for ages hath been hid in God who created all things; 10. to the intent that now unto the principalities and the powers in the heavenly `places' might be made known through the church the manifold wisdom of God, 11. according to the eternal purpose which he purposed in Christ Jesus our Lord: 12. in whom we have boldness and access in confidence through our faith in him. 13. Wherefore I ask that ye may not faint at my tribulations for you, which are your glory. 14. For this cause I bow my knees unto the Father, 15. from whom every family in heaven and on earth is named, 16. that he would grant you, according to the riches of his glory, that ye may be strengthened with power through his Spirit in the inward man; 17. that Christ may dwell in your hearts through faith; to the end that ye, being rooted and grounded in love, 18. may be strong to apprehend with all the saints what is the breadth and length and height and depth, 19. and to know the love of Christ which passeth knowledge, that ye may be filled unto all the fulness of God. 20. Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us, 21. unto him `be' the glory in the church and in Christ Jesus unto all generations for ever and ever. Amen.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 8, "history": 2, "politics": 1}, "evidence_item_count": 11, "relationship_unit_count": 3, "specific_evidence_count": 11, "unit_kind_counts": {"cultural_context": 1, "historical_context": 1, "interpretive_questions": 2, "surrounding_passages": 1, "why_it_matters": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["eph-audience", "eph-authorship", "eph-colossians", "eph-date", "eph-mystery", "eph-powers", "eph-voice", "ephesians:interpretive_note:16", "ephesians:interpretive_note:17", "ephesians:interpretive_note:18", "ephesians:interpretive_note:19"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "3ff256aa810022f341cfc73b89dc9425505324c5f8d1711aac40edad9c0962c6", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["ephesians:interpretive_note:16", "ephesians:interpretive_note:17", "ephesians:interpretive_note:19"], "facts": ["Mystery is disclosed gentile co-inheritance, not a password for conspiracy theories, secret elites, or anti-intellectualism.", "The prison language should not romanticize incarceration, martyrdom, trauma, or abusive leaders who display suffering as authority.", "Prayer for inner strength is compatible with medicine, mental-health care, safeguarding, and practical aid."], "id": "syn_cultural_context_d75ecef20ac5", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"], "verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["eph-mystery", "eph-voice"], "facts": ["The disclosed mystery is gentile co-heirship, co-membership, and co-participation in the promise in Messiah.", "The canonical voice names Paul as an apostle and prisoner but does not narrate the composition process."], "id": "syn_historical_context_f884f8638da0", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ephesians 3:1", "Ephesians 3:1-13"], "verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["eph-audience", "eph-authorship", "eph-date", "eph-powers"], "facts": ["The addressees are treated as gentiles but their city, assembly structure, and full demographics are not disclosed.", "Direct Pauline authorship is substantially disputed; Pauline, secretary-mediated, associate, and school proposals remain live.", "Early-60s and roughly 70-90 CE date ranges depend chiefly on authorship models rather than an explicit date.", "The church displays divine wisdom to rulers and authorities in heavenly places; the referents and cosmology remain debated."], "id": "syn_interpretive_questions_2202b485f325", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"], "verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["ephesians:interpretive_note:18"], "facts": ["Rulers and powers may include cosmic and political dimensions; labeling human opponents demonic invites scapegoating and violence."], "id": "syn_interpretive_questions_512a5585a9fe", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["politics"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Ephesians 3:10"], "verse_refs": ["Ephesians 3:10"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["eph-colossians"], "facts": ["Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated."], "id": "syn_surrounding_passages_231f93c2a6a3", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Ephesians 1:1-6:24"], "verse_refs": ["Ephesians 1:1-23", "Ephesians 2:1-22", "Ephesians 4:1-32", "Ephesians 5:1-33", "Ephesians 6:1-24"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["eph-audience", "eph-authorship", "eph-date", "eph-powers"], "facts": ["The addressees are treated as gentiles but their city, assembly structure, and full demographics are not disclosed.", "Direct Pauline authorship is substantially disputed; Pauline, secretary-mediated, associate, and school proposals remain live.", "Early-60s and roughly 70-90 CE date ranges depend chiefly on authorship models rather than an explicit date.", "The church displays divine wisdom to rulers and authorities in heavenly places; the referents and cosmology remain debated."], "id": "syn_why_it_matters_ae305cfde502", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_2202b485f325"], "source_anchors": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"], "verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["ephesians:interpretive_note:16", "ephesians:interpretive_note:17", "ephesians:interpretive_note:19"], "facts": ["Mystery is disclosed gentile co-inheritance, not a password for conspiracy theories, secret elites, or anti-intellectualism.", "The prison language should not romanticize incarceration, martyrdom, trauma, or abusive leaders who display suffering as authority.", "Prayer for inner strength is compatible with medicine, mental-health care, safeguarding, and practical aid."], "id": "syn_why_it_matters_be6fb3a46936", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_d75ecef20ac5"], "source_anchors": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"], "verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["eph-mystery", "eph-voice"], "facts": ["The disclosed mystery is gentile co-heirship, co-membership, and co-participation in the promise in Messiah.", "The canonical voice names Paul as an apostle and prisoner but does not narrate the composition process."], "id": "syn_why_it_matters_c82f80c64a6c", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_historical_context_f884f8638da0"], "source_anchors": ["Ephesians 3:1", "Ephesians 3:1-13"], "verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "eph-audience", "passage_anchors": ["Ephesians 3:1-13"], "source_ids": ["cohick-ephesians", "macdonald-col-eph"]}, {"confidence": "low", "id": "eph-authorship", "passage_anchors": ["Ephesians 3:1"], "source_ids": ["cohick-ephesians", "hoeher-ephesians", "lincoln-ephesians"]}, {"confidence": "high", "id": "eph-colossians", "passage_anchors": ["Ephesians 1:1-6:24"], "source_ids": ["best-ephesians", "lincoln-ephesians"]}, {"confidence": "medium", "id": "eph-date", "passage_anchors": ["Ephesians 3:1"], "source_ids": ["lincoln-ephesians", "thielman-ephesians"]}, {"confidence": "high", "id": "eph-mystery", "passage_anchors": ["Ephesians 3:1-13"], "source_ids": ["eph-greek", "thielman-ephesians"]}, {"confidence": "medium", "id": "eph-powers", "passage_anchors": ["Ephesians 3:10"], "source_ids": ["arnold-ephesians", "gombis-powers"]}, {"confidence": "high", "id": "eph-voice", "passage_anchors": ["Ephesians 3:1"], "source_ids": ["eph-greek", "thielman-ephesians"]}, {"confidence": "high", "id": "ephesians:interpretive_note:16", "passage_anchors": ["Ephesians 3:1-13"], "source_ids": ["cohick-ephesians", "eph-greek"]}, {"confidence": "high", "id": "ephesians:interpretive_note:17", "passage_anchors": ["Ephesians 3:1"], "source_ids": ["cohick-ephesians", "eph-greek"]}, {"confidence": "low", "id": "ephesians:interpretive_note:18", "passage_anchors": ["Ephesians 3:10"], "source_ids": ["cohick-ephesians", "eph-greek"]}, {"confidence": "high", "id": "ephesians:interpretive_note:19", "passage_anchors": ["Ephesians 3:14-21"], "source_ids": ["cohick-ephesians", "eph-greek"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Ephesians 3",
+  "book": "Ephesians",
+  "chapter": 3,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Ephesians 3:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Ephesians 3:
+   for example `Ephesians 3:1` or `Ephesians 3:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Ephesians 3:1", "Ephesians 3:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 3ff256aa810022f341cfc73b89dc9425505324c5f8d1711aac40edad9c0962c6.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_5ffb061b4a1f867bd58b1ccf", "renderer_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"], "source_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"], "synthesis_unit": "syn_cultural_context_d75ecef20ac5"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_e510223430ea4ca067c85a6e", "renderer_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13"], "source_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13"], "synthesis_unit": "syn_historical_context_f884f8638da0"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_3397b8006eafb65a41418bff", "renderer_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"], "source_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"], "synthesis_unit": "syn_interpretive_questions_2202b485f325"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_5d50aa4f0e7398fec7a961ae", "renderer_verse_refs": ["Ephesians 3:10"], "source_verse_refs": ["Ephesians 3:10"], "synthesis_unit": "syn_interpretive_questions_512a5585a9fe"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_0f8a67bc1c0b16c65e83cb2b", "renderer_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"], "source_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:10"], "synthesis_unit": "syn_why_it_matters_ae305cfde502"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_7d861bc398c4e49398b7ddcc", "renderer_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"], "source_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13", "Ephesians 3:14-21"], "synthesis_unit": "syn_why_it_matters_be6fb3a46936"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_26c3b39ca5dcf56973775a45", "renderer_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13"], "source_verse_refs": ["Ephesians 3:1", "Ephesians 3:1-13"], "synthesis_unit": "syn_why_it_matters_c82f80c64a6c"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_ephesians_003_9f81abdef6580d861335e54e", "renderer_verse_refs": ["Ephesians 1:1-23", "Ephesians 2:1-22", "Ephesians 4:1-32", "Ephesians 5:1-33", "Ephesians 6:1-24"], "source_verse_refs": ["Ephesians 1:1-23", "Ephesians 2:1-22", "Ephesians 4:1-32", "Ephesians 5:1-33", "Ephesians 6:1-24"], "synthesis_unit": "syn_surrounding_passages_231f93c2a6a3"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

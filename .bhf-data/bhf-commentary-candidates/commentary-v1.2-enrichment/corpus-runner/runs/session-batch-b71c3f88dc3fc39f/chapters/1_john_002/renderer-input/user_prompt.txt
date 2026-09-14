@@ -1,0 +1,229 @@
+TASK: Generate BHF Commentary v1.8 for 1 John 2.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_d1dffd9cb1865c50: 1 John (categories: culture, history, interpretive_questions, language_literary)
+- reader_idea_dee29248b538d9f3: The work does not name its writer, addressees, location, or destination. (categories: culture, history, surrounding_passages)
+
+RELEVANT:
+- reader_idea_b36825df133b71ba: 2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel. (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_d1dffd9cb1865c50: 1 John (importance: CORE; categories: culture, history, interpretive_questions, language_literary)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": false, "evidence_ids": ["1-john:interpretive_note:26"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_4737b9d40536"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["1jn-world"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_01c2f092912a"}
+- path_3: {"confidence": "high", "disputed": true, "evidence_ids": ["1-john:interpretive_note:10", "1-john:interpretive_note:11", "1-john:interpretive_note:12", "1-john:interpretive_note:13", "1-john:interpretive_note:14"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_33cdba5314c6"}
+- path_4: {"confidence": "medium", "disputed": true, "evidence_ids": ["1-john:interpretive_note:7", "1-john:interpretive_note:8", "1-john:interpretive_note:9", "1jn-advocate", "1jn-anointing"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_7358a99020f8"}
+- path_5: {"confidence": "low", "disputed": true, "evidence_ids": ["1-john:interpretive_note:15", "1-john:interpretive_note:16", "1-john:interpretive_note:17", "1-john:interpretive_note:40"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_bc65ff07fb22"}
+- path_6: {"confidence": "high", "disputed": true, "evidence_ids": ["1jn-antichrists", "1jn-commandments", "1jn-hilasmos", "1jn-new-old", "1jn-remaining"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_d0a020ac8c12"}
+- path_7: {"confidence": "medium", "disputed": true, "evidence_ids": ["1-john:interpretive_note:7", "1-john:interpretive_note:8", "1-john:interpretive_note:9", "1jn-advocate", "1jn-anointing"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_5ddc3e462beb"}
+- path_8: {"confidence": "low", "disputed": true, "evidence_ids": ["1-john:interpretive_note:15", "1-john:interpretive_note:16", "1-john:interpretive_note:17", "1-john:interpretive_note:40"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_5e7a2ae2af8c"}
+- path_9: {"confidence": "high", "disputed": true, "evidence_ids": ["1-john:interpretive_note:10", "1-john:interpretive_note:11", "1-john:interpretive_note:12", "1-john:interpretive_note:13", "1-john:interpretive_note:14"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_af3eee13aa50"}
+- path_10: {"confidence": "high", "disputed": true, "evidence_ids": ["1jn-antichrists", "1jn-commandments", "1jn-hilasmos", "1jn-new-old", "1jn-remaining"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_cb204ee03230"}
+
+IDEA reader_idea_b36825df133b71ba: 2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["2jn-johannine-relation"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_1716dfb391cc"}
+
+IDEA reader_idea_dee29248b538d9f3: The work does not name its writer, addressees, location, or destination. (importance: CORE; categories: culture, history, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["1jn-anonymous"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_316c8f8e245e"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["1-john:interpretive_note:4"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_7656f516e3a3"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. My little children, these things write I unto you that ye may not sin. And if any man sin, we have an Advocate with the Father, Jesus Christ the righteous: 2. and he is the propitiation for our sins; and not for ours only, but also for the whole world. 3. And hereby we know that we know him, if we keep his commandments. 4. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him; 5. but whoso keepeth his word, in him verily hath the love of God been perfected. Hereby we know that we are in him: 6. he that saith he abideth in him ought himself also to walk even as he walked. 7. Beloved, no new commandment write I unto you, but an old commandment which ye had from the beginning: the old commandment is the word which ye heard. 8. Again, a new commandment write I unto you, which thing is true in him and in you; because the darkness is passing away, and the true light already shineth. 9. He that saith he is in the light and hateth his brother, is in the darkness even until now. 10. He that loveth his brother abideth in the light, and there is no occasion of stumbling in him. 11. But he that hateth his brother is in the darkness, and walketh in the darkness, and knoweth not whither he goeth, because the darkness hath blinded his eyes. 12. I write unto you, `my' little children, because your sins are forgiven you for his name's sake. 13. I write unto you, fathers, because ye know him who is from the beginning. I write unto you, young men, because ye have overcome the evil one. I have written unto you, little children, because ye know the Father. 14. I have written unto you, fathers, because ye know him who is from the beginning. I have written unto you, young men, because ye are strong, and the word of God abideth in you, and ye have overcome the evil one. 15. Love not the world, neither the things that are in the world. If any man love the world, the love of the Father is not in him. 16. For all that is in the world, the lust of the flesh and the lust of the eyes and the vain glory of life, is not of the Father, but is of the world. 17. And the world passeth away, and the lust thereof: but he that doeth the will of God abideth for ever. 18. Little children, it is the last hour: and as ye heard that antichrist cometh, even now have there arisen many antichrists; whereby we know that it is the last hour. 19. They went out from us, but they were not of us; for if they had been of us, they would have continued with us: but `they went out', that they might be made manifest that they all are not of us. 20. And ye have an anointing from the Holy One, and ye know all the things. 21. I have not written unto you because ye know not the truth, but because ye know it, and because no lie is of the truth. 22. Who is the liar but he that denieth that Jesus is the Christ? This is the antichrist, `even' he that denieth the Father and the Son. 23. Whosoever denieth the Son, the same hath not the Father: he that confesseth the Son hath the Father also. 24. As for you, let that abide in you which ye heard from the beginning. If that which ye heard from the beginning abide in you, ye also shall abide in the Son, and in the Father. 25. And this is the promise which he promised us, `even' the life eternal. 26. These things have I written unto you concerning them that would lead you astray. 27. And as for you, the anointing which ye received of him abideth in you, and ye need not that any one teach you; but as his anointing teacheth you; concerning all things, and is true, and is no lie, and even as it taught you, ye abide in him. 28. And now, `my' little children, abide in him; that, if he shall be manifested, we may have boldness, and not be ashamed before him at his coming. 29. If ye know that he is righteous, ye know that every one also that doeth righteousness is begotten of him.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 22, "history": 3, "language": 2, "politics": 1}, "evidence_item_count": 28, "relationship_unit_count": 4, "specific_evidence_count": 24, "unit_kind_counts": {"cultural_context": 1, "interpretive_questions": 6, "surrounding_passages": 2, "why_it_matters": 4}, "unused_evidence_ids": ["atonement:ancient_near_east_context:0", "atonement:historical_context:0", "priesthood-of-believers:ancient_near_east_context:0", "priesthood-of-believers:historical_context:0"], "used_evidence_ids": ["1-john:interpretive_note:10", "1-john:interpretive_note:11", "1-john:interpretive_note:12", "1-john:interpretive_note:13", "1-john:interpretive_note:14", "1-john:interpretive_note:15", "1-john:interpretive_note:16", "1-john:interpretive_note:17", "1-john:interpretive_note:26", "1-john:interpretive_note:4", "1-john:interpretive_note:40", "1-john:interpretive_note:7", "1-john:interpretive_note:8", "1-john:interpretive_note:9", "1jn-advocate", "1jn-anointing", "1jn-anonymous", "1jn-antichrists", "1jn-commandments", "1jn-hilasmos", "1jn-new-old", "1jn-remaining", "1jn-world", "2jn-johannine-relation"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}], "synthesis_hash": "1890fb4a676348da88fb0df1084299badb486f4fc86ab9c060fce5c44c7c5e49", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:26"], "facts": ["Authority claims require accountable testing; Authority must not enable spiritual abuse, authoritarian leadership, or anti-intellectualism."], "id": "syn_cultural_context_4737b9d40536", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:20-27"], "verse_refs": ["1 John 2:20-27"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1jn-world"], "facts": ["The audience is told not to love the world or its desires, although elsewhere God loves and sends the Son for the world."], "id": "syn_interpretive_questions_01c2f092912a", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["language"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:15-17"], "verse_refs": ["1 John 2:15-17"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["2jn-johannine-relation"], "facts": ["2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel."], "id": "syn_interpretive_questions_1716dfb391cc", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:7-27"], "verse_refs": ["1 John 2:7-27"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:10", "1-john:interpretive_note:11", "1-john:interpretive_note:12", "1-john:interpretive_note:13", "1-john:interpretive_note:14"], "facts": ["The old-new commandment participates in Johannine Jesus tradition; literary relationship is clearer than direction of borrowing.", "Kosmos changes sense by context; 'do not love the world' cannot support hatred of humanity, embodiment, culture, or material creation.", "Last-hour language creates urgency but supplies no timetable for date setting or conspiracy theories.", "Antichrists are plural rhetorical figures tied to denial and departure; the term is not a warrant for speculative labeling of political or marginalized groups.", "Opponents are visible only through polemic; Opponents must not be subjected to dehumanization, and the departure report must not be weaponized to enforce schism."], "id": "syn_interpretive_questions_33cdba5314c6", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "politics"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"], "verse_refs": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:7", "1-john:interpretive_note:8", "1-john:interpretive_note:9", "1jn-advocate", "1jn-anointing"], "facts": ["Parakletos names Jesus in 2:1; comparison with the Gospel's Spirit-Paraclete is useful but does not erase different referents and functions.", "Hilasmos should be translated and theologized with lexical, scriptural, and reception evidence; no single later atonement theory exhausts it.", "Commandment keeping continues Jewish ethical language and must not be framed as Christian grace replacing Jewish legalism.", "Jesus Christ the righteous is named as parakletos with the Father when anyone sins.", "The audience is said to have an anointing that teaches and remains in them."], "id": "syn_interpretive_questions_7358a99020f8", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"], "verse_refs": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:15", "1-john:interpretive_note:16", "1-john:interpretive_note:17", "1-john:interpretive_note:40"], "facts": ["Anointing may evoke Spirit, received teaching, baptism, or a linked complex; it does not make leaders or hearers immune from correction.", "The claim that anointing teaches 'all things' must be read beside the writer's own teaching and communal spirit testing, not as anti-intellectualism.", "Remaining describes fidelity and relationship across several contexts; authoritarian systems must not redefine it as unconditional loyalty to themselves.", "Love of neighbor and refusal of exploitative desire oppose ecological neglect; care for vulnerable neighbors includes the material creation on which life depends."], "id": "syn_interpretive_questions_bc65ff07fb22", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"], "verse_refs": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1jn-antichrists", "1jn-commandments", "1jn-hilasmos", "1jn-new-old", "1jn-remaining"], "facts": ["The last hour is marked by many antichrists who are associated with departure and denial.", "Knowing God is tested by keeping commandments and walking as Jesus walked.", "Jesus is called hilasmos for sins, not only 'ours' but for the whole world.", "The commandment is described as both old and new and is interpreted through love and hatred.", "Remaining language links received teaching, the Son and Father, anointing, confidence, love, and divine life."], "id": "syn_interpretive_questions_d0a020ac8c12", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "language"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"], "verse_refs": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1jn-anonymous"], "facts": ["The work does not name its writer, addressees, location, or destination."], "id": "syn_surrounding_passages_316c8f8e245e", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["1 John 1:1-5:21"], "verse_refs": ["1 John 1:1-10", "1 John 3:1-24", "1 John 4:1-21", "1 John 5:1-21"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:4"], "facts": ["Sinlessness language must be read across 1:8-2:2 and 3:4-10; Sinlessness claims must not feed perfectionism, scrupulosity, or mental-health shame."], "id": "syn_surrounding_passages_7656f516e3a3", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["1 John 1:8-2:2"], "verse_refs": ["1 John 1:8-10"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:7", "1-john:interpretive_note:8", "1-john:interpretive_note:9", "1jn-advocate", "1jn-anointing"], "facts": ["Parakletos names Jesus in 2:1; comparison with the Gospel's Spirit-Paraclete is useful but does not erase different referents and functions.", "Hilasmos should be translated and theologized with lexical, scriptural, and reception evidence; no single later atonement theory exhausts it.", "Commandment keeping continues Jewish ethical language and must not be framed as Christian grace replacing Jewish legalism.", "Jesus Christ the righteous is named as parakletos with the Father when anyone sins.", "The audience is said to have an anointing that teaches and remains in them."], "id": "syn_why_it_matters_5ddc3e462beb", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_7358a99020f8"], "source_anchors": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"], "verse_refs": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:15", "1-john:interpretive_note:16", "1-john:interpretive_note:17", "1-john:interpretive_note:40"], "facts": ["Anointing may evoke Spirit, received teaching, baptism, or a linked complex; it does not make leaders or hearers immune from correction.", "The claim that anointing teaches 'all things' must be read beside the writer's own teaching and communal spirit testing, not as anti-intellectualism.", "Remaining describes fidelity and relationship across several contexts; authoritarian systems must not redefine it as unconditional loyalty to themselves.", "Love of neighbor and refusal of exploitative desire oppose ecological neglect; care for vulnerable neighbors includes the material creation on which life depends."], "id": "syn_why_it_matters_5e7a2ae2af8c", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_bc65ff07fb22"], "source_anchors": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"], "verse_refs": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1-john:interpretive_note:10", "1-john:interpretive_note:11", "1-john:interpretive_note:12", "1-john:interpretive_note:13", "1-john:interpretive_note:14"], "facts": ["The old-new commandment participates in Johannine Jesus tradition; literary relationship is clearer than direction of borrowing.", "Kosmos changes sense by context; 'do not love the world' cannot support hatred of humanity, embodiment, culture, or material creation.", "Last-hour language creates urgency but supplies no timetable for date setting or conspiracy theories.", "Antichrists are plural rhetorical figures tied to denial and departure; the term is not a warrant for speculative labeling of political or marginalized groups.", "Opponents are visible only through polemic; Opponents must not be subjected to dehumanization, and the departure report must not be weaponized to enforce schism."], "id": "syn_why_it_matters_af3eee13aa50", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_33cdba5314c6"], "source_anchors": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"], "verse_refs": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1jn-antichrists", "1jn-commandments", "1jn-hilasmos", "1jn-new-old", "1jn-remaining"], "facts": ["The last hour is marked by many antichrists who are associated with departure and denial.", "Knowing God is tested by keeping commandments and walking as Jesus walked.", "Jesus is called hilasmos for sins, not only 'ours' but for the whole world.", "The commandment is described as both old and new and is interpreted through love and hatred.", "Remaining language links received teaching, the Son and Father, anointing, confidence, love, and divine life."], "id": "syn_why_it_matters_cb204ee03230", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_d0a020ac8c12"], "source_anchors": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"], "verse_refs": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "1-john:interpretive_note:10", "passage_anchors": ["1 John 2:7-11"], "source_ids": ["brown", "john-gospel"]}, {"confidence": "high", "id": "1-john:interpretive_note:11", "passage_anchors": ["1 John 2:15-17"], "source_ids": ["1jn-greek", "bdag"]}, {"confidence": "high", "id": "1-john:interpretive_note:12", "passage_anchors": ["1 John 2:18"], "source_ids": ["1jn-scripture", "lieu"]}, {"confidence": "high", "id": "1-john:interpretive_note:13", "passage_anchors": ["1 John 2:18-23"], "source_ids": ["1jn-scripture", "mendez"]}, {"confidence": "high", "id": "1-john:interpretive_note:14", "passage_anchors": ["1 John 2:18-27"], "source_ids": ["brown", "mendez"]}, {"confidence": "low", "id": "1-john:interpretive_note:15", "passage_anchors": ["1 John 2:20-27"], "source_ids": ["brown", "kruse"]}, {"confidence": "medium", "id": "1-john:interpretive_note:16", "passage_anchors": ["1 John 2:20-27"], "source_ids": ["1jn-scripture", "lieu"]}, {"confidence": "medium", "id": "1-john:interpretive_note:17", "passage_anchors": ["1 John 2:24-28"], "source_ids": ["1jn-greek", "thompson"]}, {"confidence": "medium", "id": "1-john:interpretive_note:26", "passage_anchors": ["1 John 2:20-27"], "source_ids": ["1jn-scripture", "mendez"]}, {"confidence": "high", "id": "1-john:interpretive_note:4", "passage_anchors": ["1 John 1:8-2:2"], "source_ids": ["brown", "yarbrough"]}, {"confidence": "medium", "id": "1-john:interpretive_note:40", "passage_anchors": ["1 John 2:15-17"], "source_ids": ["1jn-scripture", "desilva"]}, {"confidence": "high", "id": "1-john:interpretive_note:7", "passage_anchors": ["1 John 2:1"], "source_ids": ["1jn-greek", "john-gospel"]}, {"confidence": "high", "id": "1-john:interpretive_note:8", "passage_anchors": ["1 John 2:2"], "source_ids": ["bdag", "smalley"]}, {"confidence": "medium", "id": "1-john:interpretive_note:9", "passage_anchors": ["1 John 2:3-11"], "source_ids": ["levine-jant", "nets"]}, {"confidence": "high", "id": "1jn-advocate", "passage_anchors": ["1 John 2:1"], "source_ids": ["1jn-greek", "bdag", "brown"]}, {"confidence": "high", "id": "1jn-anointing", "passage_anchors": ["1 John 2:20-27"], "source_ids": ["1jn-greek", "kruse", "yarbrough"]}, {"confidence": "high", "id": "1jn-anonymous", "passage_anchors": ["1 John 1:1-5:21"], "source_ids": ["1jn-scripture", "brown"]}, {"confidence": "high", "id": "1jn-antichrists", "passage_anchors": ["1 John 2:18-23"], "source_ids": ["1jn-scripture", "brown", "mendez"]}, {"confidence": "high", "id": "1jn-commandments", "passage_anchors": ["1 John 2:3-6"], "source_ids": ["1jn-scripture", "levine-jant", "thompson"]}, {"confidence": "high", "id": "1jn-hilasmos", "passage_anchors": ["1 John 2:2"], "source_ids": ["1jn-greek", "bdag", "smalley"]}, {"confidence": "high", "id": "1jn-new-old", "passage_anchors": ["1 John 2:7-11"], "source_ids": ["1jn-scripture", "john-gospel", "lieu"]}, {"confidence": "high", "id": "1jn-remaining", "passage_anchors": ["1 John 2:24-28"], "source_ids": ["1jn-greek", "bdag", "thompson"]}, {"confidence": "high", "id": "1jn-world", "passage_anchors": ["1 John 2:15-17"], "source_ids": ["1jn-greek", "bdag", "brown"]}, {"confidence": "high", "id": "2jn-johannine-relation", "passage_anchors": ["1 John 2:7-27"], "source_ids": ["1jn-scripture", "3jn-scripture", "brown", "john-gospel", "lieu"]}, {"confidence": "medium", "id": "atonement:ancient_near_east_context:0", "passage_anchors": ["1 John 2:1-2"], "source_ids": ["1-john-2", "atonement-historical-orientation", "hebrews-9-10", "isaiah-53", "leviticus-16"]}, {"confidence": "medium", "id": "atonement:historical_context:0", "passage_anchors": ["1 John 2:1-2"], "source_ids": ["1-john-2", "atonement-historical-orientation", "hebrews-9-10", "isaiah-53", "leviticus-16"]}, {"confidence": "medium", "id": "priesthood-of-believers:ancient_near_east_context:0", "passage_anchors": ["1 John 2:1-2"], "source_ids": ["1-john-2", "hebrews-9-10", "isaiah-53", "leviticus-16", "priesthood-of-believers-historical-orientation"]}, {"confidence": "medium", "id": "priesthood-of-believers:historical_context:0", "passage_anchors": ["1 John 2:1-2"], "source_ids": ["1-john-2", "hebrews-9-10", "isaiah-53", "leviticus-16", "priesthood-of-believers-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "1 John 2",
+  "book": "1 John",
+  "chapter": 2,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["1 John 2:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in 1 John 2:
+   for example `1 John 2:1` or `1 John 2:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["1 John 2:1", "1 John 2:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 1890fb4a676348da88fb0df1084299badb486f4fc86ab9c060fce5c44c7c5e49.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_c5c5d776cc1551064ee4c87e", "renderer_verse_refs": ["1 John 2:20-27"], "source_verse_refs": ["1 John 2:20-27"], "synthesis_unit": "syn_cultural_context_4737b9d40536"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_af753fa36cbf0854b1089e4c", "renderer_verse_refs": ["1 John 2:15-17"], "source_verse_refs": ["1 John 2:15-17"], "synthesis_unit": "syn_interpretive_questions_01c2f092912a"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_c60747f81a0953ff24e0e643", "renderer_verse_refs": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"], "source_verse_refs": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"], "synthesis_unit": "syn_interpretive_questions_33cdba5314c6"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_817a19c13ce07894d2c7d203", "renderer_verse_refs": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"], "source_verse_refs": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"], "synthesis_unit": "syn_interpretive_questions_7358a99020f8"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_ab99460763c80b50c11cc830", "renderer_verse_refs": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"], "source_verse_refs": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"], "synthesis_unit": "syn_interpretive_questions_bc65ff07fb22"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_cbb49f394b8311c20362b48e", "renderer_verse_refs": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"], "source_verse_refs": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"], "synthesis_unit": "syn_interpretive_questions_d0a020ac8c12"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_62f9195a74ee263942886c2f", "renderer_verse_refs": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"], "source_verse_refs": ["1 John 2:1", "1 John 2:2", "1 John 2:20-27", "1 John 2:3-11"], "synthesis_unit": "syn_why_it_matters_5ddc3e462beb"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_af506f0f63b28f5c6ff8396d", "renderer_verse_refs": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"], "source_verse_refs": ["1 John 2:15-17", "1 John 2:20-27", "1 John 2:24-28"], "synthesis_unit": "syn_why_it_matters_5e7a2ae2af8c"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_f050115b097dbb48c9bc11a9", "renderer_verse_refs": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"], "source_verse_refs": ["1 John 2:15-17", "1 John 2:18", "1 John 2:18-23", "1 John 2:18-27", "1 John 2:7-11"], "synthesis_unit": "syn_why_it_matters_af3eee13aa50"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_b1209988e8befcdb621bb8fa", "renderer_verse_refs": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"], "source_verse_refs": ["1 John 2:18-23", "1 John 2:2", "1 John 2:24-28", "1 John 2:3-6", "1 John 2:7-11"], "synthesis_unit": "syn_why_it_matters_cb204ee03230"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_fa3e46a7e1733068cd12e7db", "renderer_verse_refs": ["1 John 2:7-27"], "source_verse_refs": ["1 John 2:7-27"], "synthesis_unit": "syn_interpretive_questions_1716dfb391cc"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_a0564f445b372cd4e3023529", "renderer_verse_refs": ["1 John 1:1-10", "1 John 3:1-24", "1 John 4:1-21", "1 John 5:1-21"], "source_verse_refs": ["1 John 1:1-10", "1 John 3:1-24", "1 John 4:1-21", "1 John 5:1-21"], "synthesis_unit": "syn_surrounding_passages_316c8f8e245e"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_1_john_002_acea9edaa4cfd18466760d39", "renderer_verse_refs": ["1 John 1:8-10"], "source_verse_refs": ["1 John 1:8-10"], "synthesis_unit": "syn_surrounding_passages_7656f516e3a3"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

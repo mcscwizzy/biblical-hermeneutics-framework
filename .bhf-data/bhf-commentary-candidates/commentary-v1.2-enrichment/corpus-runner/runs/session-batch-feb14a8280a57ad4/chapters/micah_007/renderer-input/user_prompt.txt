@@ -1,0 +1,214 @@
+TASK: Generate BHF Commentary v1.8 for Micah 7.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_42a11bcc51f20098: The extant book likely preserves eighth-century prophetic material and a long history of collection and shaping, with scholarly… (categories: culture, history, interpretive_questions)
+- reader_idea_a31a8f5ac643e1b4: Micah's final form repeatedly alternates judgment and hope while moving through chapters 1-2, 3-5, and 6-7 in one influential… (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_42a11bcc51f20098: The extant book likely preserves eighth-century prophetic material and a long history of collection and shaping, with scholarly… (importance: RELEVANT; categories: culture, history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["micah-composition", "micah-empire-reception", "micah-mercy-conclusion"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_407d015c8daf"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["micah-seven-voices"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_cc0f6cdd3f25"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["micah-composition", "micah-empire-reception", "micah-mercy-conclusion"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_b40ceea692e0"}
+
+IDEA reader_idea_a31a8f5ac643e1b4: Micah's final form repeatedly alternates judgment and hope while moving through chapters 1-2, 3-5, and 6-7 in one influential… (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["micah-structure", "micah-textual-witnesses", "micah-twelve-placement"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_0a96b7128aa1"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["micah-genre", "micah-jewish-reception"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_29553e7487b5"}
+- path_3: {"confidence": "high", "disputed": true, "evidence_ids": ["micah-genre", "micah-jewish-reception"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_2b8496c214b5"}
+- path_4: {"confidence": "high", "disputed": true, "evidence_ids": ["micah-structure", "micah-textual-witnesses", "micah-twelve-placement"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_79f52d7c5b8c"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Woe is me! for I am as when they have gathered the summer fruits, as the grape gleanings of the vintage: there is no cluster to eat; my soul desireth the first-ripe fig. 2. The godly man is perished out of the earth, and there is none upright among men: they all lie in wait for blood; they hunt every man his brother with a net. 3. Their hands are upon that which is evil to do it diligently; the prince asketh, and the judge `is ready' for a reward; and the great man, he uttereth the evil desire of his soul: thus they weave it together. 4. The best of them is as a brier; the most upright is `worse' than a thorn hedge: the day of thy watchmen, even thy visitation, is come; now shall be their perplexity. 5. Trust ye not in a neighbor; put ye not confidence in a friend; keep the doors of thy mouth from her that lieth in thy bosom. 6. For the son dishonoreth the father, the daughter riseth up against her mother, the daughter-in-law against her mother-in-law; a man's enemies are the men of his own house. 7. But as for me, I will look unto Jehovah; I will wait for the God of my salvation: my God will hear me. 8. Rejoice not against me, O mine enemy: when I fall, I shall arise; when I sit in darkness, Jehovah will be a light unto me. 9. I will bear the indignation of Jehovah, because I have sinned against him, until he plead my cause, and execute judgment for me: he will bring me forth to the light, `and' I shall behold his righteousness. 10. Then mine enemy shall see it, and shame shall cover her who said unto me, Where is Jehovah thy God? Mine eyes shall see `my desire' upon her; now shall she be trodden down as the mire of the streets. 11. A day for building thy walls! in that day shall the decree be far removed. 12. In that day shall they come unto thee from Assyria and the cities of Egypt, and from Egypt even to the River, and from sea to sea, and `from' mountain to mountain. 13. Yet shall the land be desolate because of them that dwell therein, for the fruit of their doings. 14. Feed thy people with thy rod, the flock of thy heritage, which dwell solitarily, in the forest in the midst of Carmel: let them feed in Bashan and Gilead, as in the days of old. 15. As in the days of thy coming forth out of the land of Egypt will I show unto them marvellous things. 16. The nations shall see and be ashamed of all their might; they shall lay their hand upon their mouth; their ears shall be deaf. 17. They shall lick the dust like a serpent; like crawling things of the earth they shall come trembling out of their close places; they shall come with fear unto Jehovah our God, and shall be afraid because of thee. 18. Who is a God like unto thee, that pardoneth iniquity, and passeth over the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in lovingkindness. 19. He will again have compassion upon us; he will tread our iniquities under foot; and thou wilt cast all their sins into the depths of the sea. 20. Thou wilt perform the truth to Jacob, `and' the lovingkindness to Abraham, which thou hast sworn unto our fathers from the days of old.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 11, "history": 3, "politics": 1}, "evidence_item_count": 15, "relationship_unit_count": 3, "specific_evidence_count": 9, "unit_kind_counts": {"interpretive_questions": 2, "surrounding_passages": 4, "why_it_matters": 1}, "unused_evidence_ids": ["divine-mercy:ancient_near_east_context:0", "divine-mercy:historical_context:0", "grace:ancient_near_east_context:0", "grace:historical_context:0", "mercy-theme:ancient_near_east_context:0", "mercy-theme:historical_context:0"], "used_evidence_ids": ["micah-composition", "micah-empire-reception", "micah-genre", "micah-jewish-reception", "micah-mercy-conclusion", "micah-seven-voices", "micah-structure", "micah-textual-witnesses", "micah-twelve-placement"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "0c129fbe4be93d81f10ae23d18d3c54c4f3014c624b91c8b38f60e9843dfeba3", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["micah-composition", "micah-empire-reception", "micah-mercy-conclusion"], "facts": ["The extant book likely preserves eighth-century prophetic material and a long history of collection and shaping, with scholarly disagreement over the dates and extent of later layers.", "Postcolonial and trauma-aware interpretations examine Assyrian empire, siege, displacement, communal fracture, resistance, and hope while distinguishing ancient referent from modern analogy.", "Micah 7:18-20 praises YHWH as incomparable in forgiving iniquity, delighting in hesed, casting sins into the sea, and keeping promises to Jacob and Abraham."], "id": "syn_interpretive_questions_407d015c8daf", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "politics"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"], "verse_refs": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["micah-seven-voices"], "facts": ["Micah 7 combines lament over social collapse, watchful hope, enemy address, confession, shepherd prayer, nations imagery, and doxological praise with disputed speaker transitions."], "id": "syn_interpretive_questions_cc0f6cdd3f25", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Micah 7:1-20"], "verse_refs": ["Micah 7:1-20"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["micah-structure", "micah-textual-witnesses", "micah-twelve-placement"], "facts": ["Micah's final form repeatedly alternates judgment and hope while moving through chapters 1-2, 3-5, and 6-7 in one influential three-part reading.", "Micah is witnessed by the Masoretic tradition, Old Greek Michaias, Hebrew 4Q81 and 4Q82, MurXII, and the Greek Minor Prophets scroll from Nahal Hever, among other versions and fragments.", "Micah stands sixth in the Masoretic order of the Twelve and participates in both book-specific interpretation and collection-level links."], "id": "syn_surrounding_passages_0a96b7128aa1", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_79f52d7c5b8c"], "source_anchors": ["Micah 1:1-7:20"], "verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["micah-genre", "micah-jewish-reception"], "facts": ["Micah combines superscription, theophany, lament, dirge, woe, accusation, disputed speech, judgment and salvation oracles, instruction, disputation, confession, prayer, and doxology.", "Early and later Jewish readers received Micah as Scripture, including its judgment, consolation, ethical summons, Bethlehem hope, and divine mercy."], "id": "syn_surrounding_passages_29553e7487b5", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Micah 1:1-7:20", "Micah 4:1-7:20"], "verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["micah-genre", "micah-jewish-reception"], "facts": ["Micah combines superscription, theophany, lament, dirge, woe, accusation, disputed speech, judgment and salvation oracles, instruction, disputation, confession, prayer, and doxology.", "Early and later Jewish readers received Micah as Scripture, including its judgment, consolation, ethical summons, Bethlehem hope, and divine mercy."], "id": "syn_surrounding_passages_2b8496c214b5", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_29553e7487b5"], "source_anchors": ["Micah 1:1-7:20", "Micah 4:1-7:20"], "verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["micah-structure", "micah-textual-witnesses", "micah-twelve-placement"], "facts": ["Micah's final form repeatedly alternates judgment and hope while moving through chapters 1-2, 3-5, and 6-7 in one influential three-part reading.", "Micah is witnessed by the Masoretic tradition, Old Greek Michaias, Hebrew 4Q81 and 4Q82, MurXII, and the Greek Minor Prophets scroll from Nahal Hever, among other versions and fragments.", "Micah stands sixth in the Masoretic order of the Twelve and participates in both book-specific interpretation and collection-level links."], "id": "syn_surrounding_passages_79f52d7c5b8c", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Micah 1:1-7:20"], "verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["micah-composition", "micah-empire-reception", "micah-mercy-conclusion"], "facts": ["The extant book likely preserves eighth-century prophetic material and a long history of collection and shaping, with scholarly disagreement over the dates and extent of later layers.", "Postcolonial and trauma-aware interpretations examine Assyrian empire, siege, displacement, communal fracture, resistance, and hope while distinguishing ancient referent from modern analogy.", "Micah 7:18-20 praises YHWH as incomparable in forgiving iniquity, delighting in hesed, casting sins into the sea, and keeping promises to Jacob and Abraham."], "id": "syn_why_it_matters_b40ceea692e0", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_407d015c8daf"], "source_anchors": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"], "verse_refs": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "divine-mercy:ancient_near_east_context:0", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "divine-mercy:historical_context:0", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "grace:ancient_near_east_context:0", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "grace:historical_context:0", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "mercy-theme:ancient_near_east_context:0", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "mercy-theme:historical_context:0", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["ephesians-2", "exodus-34", "micah-7", "psalm-103", "titus-2"]}, {"confidence": "medium", "id": "micah-composition", "passage_anchors": ["Micah 7:20"], "source_ids": ["andersen-freedman-micah", "kessler-micah", "smith-christopher-micah", "waltke-micah"]}, {"confidence": "medium", "id": "micah-empire-reception", "passage_anchors": ["Micah 7:1-20"], "source_ids": ["cataldo-postcolonial", "kessler-micah", "oxford-minor-prophets"]}, {"confidence": "high", "id": "micah-genre", "passage_anchors": ["Micah 1:1-7:20"], "source_ids": ["kessler-micah", "micah-masoretic", "sbl-new-form-twelve"]}, {"confidence": "high", "id": "micah-jewish-reception", "passage_anchors": ["Micah 4:1-7:20"], "source_ids": ["fuchs-jewish-life", "iaa-8hevxii", "simkovich-early-judaism"]}, {"confidence": "high", "id": "micah-mercy-conclusion", "passage_anchors": ["Micah 7:18-20"], "source_ids": ["gignilliat-micah", "kessler-micah", "micah-masoretic"]}, {"confidence": "high", "id": "micah-seven-voices", "passage_anchors": ["Micah 7:1-20"], "source_ids": ["gignilliat-micah", "kessler-micah", "micah-masoretic"]}, {"confidence": "high", "id": "micah-structure", "passage_anchors": ["Micah 1:1-7:20"], "source_ids": ["kessler-micah", "micah-masoretic", "waltke-micah"]}, {"confidence": "high", "id": "micah-textual-witnesses", "passage_anchors": ["Micah 1:1-7:20"], "source_ids": ["catss-micah", "iaa-4q81", "iaa-4q82", "iaa-8hevxii", "iaa-murxii", "nets-twelve"]}, {"confidence": "high", "id": "micah-twelve-placement", "passage_anchors": ["Micah 1:1-7:20"], "source_ids": ["kessler-micah", "sbl-new-form-twelve", "sieges-one-or-twelve"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Micah 7",
+  "book": "Micah",
+  "chapter": 7,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Micah 7:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Micah 7:
+   for example `Micah 7:1` or `Micah 7:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Micah 7:1", "Micah 7:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 0c129fbe4be93d81f10ae23d18d3c54c4f3014c624b91c8b38f60e9843dfeba3.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_micah_007_e890d32a5cb26f96b25c6604", "renderer_verse_refs": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"], "source_verse_refs": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"], "synthesis_unit": "syn_interpretive_questions_407d015c8daf"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_micah_007_2569c6533355be8fc5083f04", "renderer_verse_refs": ["Micah 7:1-20"], "source_verse_refs": ["Micah 7:1-20"], "synthesis_unit": "syn_interpretive_questions_cc0f6cdd3f25"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_micah_007_8f787999bc6dabcd40bfc7a4", "renderer_verse_refs": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"], "source_verse_refs": ["Micah 7:1-20", "Micah 7:18-20", "Micah 7:20"], "synthesis_unit": "syn_why_it_matters_b40ceea692e0"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_micah_007_74ee324e9fcfeb246cff840b", "renderer_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "source_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "synthesis_unit": "syn_surrounding_passages_0a96b7128aa1"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_micah_007_d229104d710324dd1058da73", "renderer_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "source_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "synthesis_unit": "syn_surrounding_passages_29553e7487b5"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_micah_007_29d3c8b564ef8c483c9f2b70", "renderer_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "source_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "synthesis_unit": "syn_surrounding_passages_2b8496c214b5"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_micah_007_237afc790c2a2a6402def2b7", "renderer_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "source_verse_refs": ["Micah 1:1-16", "Micah 2:1-13", "Micah 3:1-12", "Micah 4:1-13", "Micah 5:1-15", "Micah 6:1-16"], "synthesis_unit": "syn_surrounding_passages_79f52d7c5b8c"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
