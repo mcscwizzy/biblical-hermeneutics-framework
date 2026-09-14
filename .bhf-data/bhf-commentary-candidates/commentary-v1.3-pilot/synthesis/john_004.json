@@ -6,129 +6,9 @@
   "evidence_bundle_version": "1.1",
   "synthesis_schema_version": "1.1",
   "synthesis_compiler_version": "1.1",
-  "synthesis_hash": "e75cbf88cd978dd7a232ff1048b4b55317ee7faeabc56c2e12e2adf1d0cde99c",
+  "synthesis_hash": "5f8626783e689b48318feb3f3e6d90ce0631c6096bc652c6f8d257db3197c182",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
-    {
-      "id": "syn_cultural_context_35232e238fed",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Worship Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 15:1-18, Psalm 95:1-7, theology-of-worship, and psalms without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "John 4:19-24"
-      ],
-      "evidence_ids": [
-        "worship-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "John 4:19-24"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_3f1149ba1002",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Theology of Worship includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 15:1-18, Psalm 95:1-7, worship-theme, and psalms without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "John 4:19-24"
-      ],
-      "evidence_ids": [
-        "theology-of-worship:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "John 4:19-24"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_47fe5151327f",
-      "kind": "historical_context",
-      "facts": [
-        "Worship Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "John 4:19-24"
-      ],
-      "evidence_ids": [
-        "worship-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "John 4:19-24"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_ebdd268bf79f",
-      "kind": "historical_context",
-      "facts": [
-        "Theology of Worship is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "John 4:19-24"
-      ],
-      "evidence_ids": [
-        "theology-of-worship:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "John 4:19-24"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
     {
       "id": "syn_interpretive_questions_cbe4836fa5d8",
       "kind": "interpretive_questions",
@@ -218,20 +98,21 @@
     "used_evidence_ids": [
       "john-4-22",
       "john-ioudaioi",
-      "john-samaritan-woman",
+      "john-samaritan-woman"
+    ],
+    "unused_evidence_ids": [
       "theology-of-worship:ancient_near_east_context:0",
       "theology-of-worship:historical_context:0",
       "worship-theme:ancient_near_east_context:0",
       "worship-theme:historical_context:0"
     ],
-    "unused_evidence_ids": [],
     "evidence_categories": {
       "culture": 4,
       "history": 2,
       "language": 1
     },
     "category_diversity": 3,
-    "specific_evidence_count": 7,
+    "specific_evidence_count": 3,
     "entity_counts": {
       "people": 0,
       "places": 0,
@@ -240,8 +121,6 @@
       "artifacts": 0
     },
     "unit_kind_counts": {
-      "cultural_context": 2,
-      "historical_context": 2,
       "interpretive_questions": 1,
       "why_it_matters": 1
     },

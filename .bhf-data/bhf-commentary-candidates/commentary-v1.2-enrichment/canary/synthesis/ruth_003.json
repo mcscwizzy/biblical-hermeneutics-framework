@@ -6,73 +6,9 @@
   "evidence_bundle_version": "1.1",
   "synthesis_schema_version": "1.1",
   "synthesis_compiler_version": "1.1",
-  "synthesis_hash": "f9aabf5213636acb6e7d3e6fd2120d9d18a97cd2fd5ef67eb53d16cd4d7d27f5",
+  "synthesis_hash": "fa058f9d632206f2699182ad2351e30d6c589bf7f27487981348fb84a3568f07",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
-    {
-      "id": "syn_cultural_context_db7a11ec65a8",
-      "kind": "cultural_context",
-      "facts": [
-        "Boaz belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
-      ],
-      "verse_refs": [
-        "Ruth 3:1-18"
-      ],
-      "evidence_ids": [
-        "boaz:ancient_near_east_context:0"
-      ],
-      "entity_ids": [
-        "boaz"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Ruth 3:1-18"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_5cf730c29c63",
-      "kind": "historical_context",
-      "facts": [
-        "Boaz's story is set in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate."
-      ],
-      "verse_refs": [
-        "Ruth 3:1-18"
-      ],
-      "evidence_ids": [
-        "boaz:historical_context:0"
-      ],
-      "entity_ids": [
-        "boaz"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Ruth 3:1-18"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
     {
       "id": "syn_interpretive_questions_4913e116774e",
       "kind": "interpretive_questions",
@@ -216,20 +152,21 @@
   "coverage": {
     "evidence_item_count": 6,
     "used_evidence_ids": [
-      "boaz:ancient_near_east_context:0",
-      "boaz:historical_context:0",
       "nehemiah:interpretive_note:7",
       "ruth-literary-movement",
       "ruth-providence-through-action",
       "ruth:interpretive_note:2"
     ],
-    "unused_evidence_ids": [],
+    "unused_evidence_ids": [
+      "boaz:ancient_near_east_context:0",
+      "boaz:historical_context:0"
+    ],
     "evidence_categories": {
       "culture": 5,
       "history": 1
     },
     "category_diversity": 2,
-    "specific_evidence_count": 6,
+    "specific_evidence_count": 4,
     "entity_counts": {
       "people": 1,
       "places": 0,
@@ -238,8 +175,6 @@
       "artifacts": 0
     },
     "unit_kind_counts": {
-      "cultural_context": 1,
-      "historical_context": 1,
       "interpretive_questions": 1,
       "surrounding_passages": 2,
       "why_it_matters": 1

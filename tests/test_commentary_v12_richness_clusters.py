@@ -8,6 +8,8 @@ from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_
 from bhf_agent.chapter_commentary.richness_clusters import (
     CORE_CLASSIFIER_V1,
     CORE_CLASSIFIER_V2,
+    RICHNESS_POLICY_VERSION_V3,
+    CoverageEligibility,
     DuplicateReason,
     DumpSeverity,
     GateClass,
@@ -59,6 +61,8 @@ def _evidence(
     disputed="",
     role=None,
     passage_relationship="",
+    parent_title="",
+    semantic_relationship="",
 ):
     return EvidenceItem(
         id=ident,
@@ -70,9 +74,11 @@ def _evidence(
         confidence="high",
         relevance_metadata={
             "parent_object_id": parent,
+            "parent_title": parent_title,
             "dispute_status": disputed,
             "presentation_role": role,
             "passage_relationship": passage_relationship,
+            "semantic_relationship": semantic_relationship,
         },
     )
 
@@ -269,6 +275,154 @@ def test_v2_core_classifier_requires_direct_passage_context():
     refined = cluster_synthesis_units([unit], evidence, core_classifier=CORE_CLASSIFIER_V2)[0]
     assert refined.quality_class == QualityClass.SUPPORTING.value
     assert refined.importance_basis == ["entity_background_not_direct_passage_context"]
+
+
+def test_v3_generic_unrelated_entity_background_does_not_inflate_coverage():
+    unit = _unit(
+        "euphrates-background",
+        facts=("The Euphrates shaped Mesopotamian trade and imperial power.",),
+        evidence_ids=("e",),
+        entity_ids=("euphrates",),
+    )
+    evidence = [
+        _evidence(
+            "e",
+            parent="euphrates",
+            parent_title="Euphrates",
+            entity_ids=("euphrates",),
+            semantic_relationship="GENERIC_BACKGROUND",
+        )
+    ]
+    score = score_synthesis_richness(
+        [unit],
+        evidence_items=evidence,
+        coverage_policy=RICHNESS_POLICY_VERSION_V3,
+        passage_text="Israel crossed the sea while Pharaoh pursued.",
+    )
+    assert score.meaningful_cluster_count == 0
+    assert score.eligible_weighted_denominator == 0.0
+    assert score.clusters[0].quality_class == QualityClass.SUPPORTING.value
+    assert (
+        score.clusters[0].coverage_eligibility
+        == CoverageEligibility.CONTEXTUAL_OPTIONAL.value
+    )
+
+
+def test_v3_passage_relevant_entity_background_still_counts():
+    unit = _unit(
+        "job-setting",
+        facts=(
+            "Job's setting reflects clan life, sacrificial practice, and eastern wisdom disputation.",
+        ),
+        evidence_ids=("e",),
+        entity_ids=("job",),
+    )
+    evidence = [
+        _evidence(
+            "e",
+            parent="job",
+            parent_title="Job",
+            entity_ids=("job",),
+            semantic_relationship="GENERIC_BACKGROUND",
+        )
+    ]
+    score = score_synthesis_richness(
+        [unit],
+        evidence_items=evidence,
+        consumed_synthesis_ids=[unit.id],
+        coverage_policy=RICHNESS_POLICY_VERSION_V3,
+        passage_text="There was a man in the land of Uz whose name was Job.",
+    )
+    assert score.meaningful_cluster_count == 1
+    assert score.weighted_idea_coverage == 1.0
+    assert score.clusters[0].coverage_eligibility == CoverageEligibility.RELEVANT.value
+
+
+def test_v3_distinct_reader_ideas_remain_distinct():
+    units = [
+        _unit("priest", facts=("A priest guarded the sanctuary.",), evidence_ids=("e1",)),
+        _unit("festival", facts=("A festival marked the harvest.",), evidence_ids=("e2",)),
+    ]
+    evidence = [
+        _evidence("e1", parent="priesthood", semantic_relationship="DIRECT_CONTEXT"),
+        _evidence("e2", parent="festival", semantic_relationship="DIRECT_CONTEXT"),
+    ]
+    clusters = cluster_synthesis_units(
+        units,
+        evidence,
+        coverage_policy=RICHNESS_POLICY_VERSION_V3,
+        passage_text="The priest guarded the sanctuary during the harvest festival.",
+    )
+    assert len(clusters) == 2
+    assert all(cluster.duplicate_reason == DuplicateReason.DISTINCT.value for cluster in clusters)
+
+
+def test_v3_redundant_evidence_representations_still_collapse():
+    units = [
+        _unit(
+            "resurrection-theme",
+            facts=("Resurrection hope declares God's victory over death.",),
+            evidence_ids=("e1",),
+        ),
+        _unit(
+            "resurrection-faq",
+            facts=("Resurrection hope proclaims God's victory over death.",),
+            evidence_ids=("e2",),
+        ),
+    ]
+    evidence = [
+        _evidence("e1", parent="resurrection"),
+        _evidence("e2", parent="what-is-the-resurrection"),
+    ]
+    clusters = cluster_synthesis_units(
+        units,
+        evidence,
+        coverage_policy=RICHNESS_POLICY_VERSION_V3,
+        passage_text="Death shall be no more.",
+    )
+    assert len(clusters) == 1
+    assert clusters[0].duplicate_reason == DuplicateReason.PARENT_PARALLEL.value
+
+
+def test_v3_omitted_job_style_later_reception_still_hurts_coverage():
+    units = [
+        _unit(
+            f"idea-{index}",
+            facts=(fact,),
+            evidence_ids=(f"e{index}",),
+            interpretation_level="disputed",
+        )
+        for index, fact in enumerate(
+            (
+                "The prologue distinguishes reader knowledge from Job's knowledge.",
+                "The accuser challenges whether reverence depends on benefit.",
+                "Job is declared upright before the losses begin.",
+                "James receives Job as an example of endurance amid suffering.",
+            )
+        )
+    ]
+    evidence = [
+        _evidence(
+            f"e{index}",
+            parent=f"parent-{index}",
+            disputed="major_scholarly_disagreement",
+            semantic_relationship=("LATER_RECEPTION" if index == 3 else "DIRECT_CONTEXT"),
+        )
+        for index in range(4)
+    ]
+    score = score_synthesis_richness(
+        units,
+        evidence_items=evidence,
+        consumed_synthesis_ids=["idea-0", "idea-1", "idea-2"],
+        coverage_policy=RICHNESS_POLICY_VERSION_V3,
+        passage_text="Job was upright before his losses.",
+    )
+    assert score.meaningful_cluster_count == 4
+    assert score.weighted_idea_coverage == 0.75
+    assert all(
+        cluster.coverage_eligibility == CoverageEligibility.RELEVANT.value
+        for cluster in score.clusters
+    )
 
 
 def test_small_cluster_comprehensive_coverage_is_not_dumping():

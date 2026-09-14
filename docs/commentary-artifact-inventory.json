@@ -11,6 +11,7 @@
           "docs/chapter-commentary.md",
           "docs/ckl-parent-scope-integrity-audit.md",
           "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md",
           "docs/commentary-dense-reader-v0.1.md",
           "docs/commentary-production-v1.md",
           "docs/commentary-ui.md",
@@ -166,6 +167,7 @@
           "tests/test_commentary_renderer_qualification_v2.py",
           "tests/test_commentary_v11_semantic_pass2.py",
           "tests/test_commentary_v12_reader_idea_ancestry_envelope.py",
+          "tests/test_commentary_v12_reader_integration.py",
           "tests/test_commentary_v12_reader_provenance_binding.py",
           "tests/test_commentary_v12_release_promotion.py",
           "tests/test_commentary_v12_richness_clusters.py",
@@ -201,6 +203,7 @@
       "current_consumer_or_reference": {
         "docs": [
           "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md",
           "docs/commentary-v1.1-premerge-audit.md",
           "docs/commentary-v1.1-release.md",
           "docs/commentary-v1.1-release/certified-runtime-reconciliation.json",
@@ -240,7 +243,8 @@
       "classification": "ACTIVE_RUNTIME_RELEASE",
       "current_consumer_or_reference": {
         "docs": [
-          "docs/commentary-artifact-inventory.json"
+          "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md"
         ],
         "python": [
           "bhf_agent/runtime_paths.py",
@@ -248,6 +252,7 @@
           "tools/commentary_v12_release_promotion.py"
         ],
         "tests": [
+          "tests/test_commentary_v12_reader_integration.py",
           "tests/test_commentary_v12_release_promotion.py"
         ]
       },
@@ -270,6 +275,7 @@
       "current_consumer_or_reference": {
         "docs": [
           "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md",
           "docs/commentary-production-v1.md"
         ],
         "python": [
@@ -308,6 +314,7 @@
           "docs/chapter-commentary.md",
           "docs/ckl-parent-scope-integrity-audit.md",
           "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md",
           "docs/commentary-next-steps.md",
           "docs/commentary-production-v1.md",
           "docs/commentary-ui.md",
@@ -366,6 +373,7 @@
           "docs/commentary-v1.2-prompt-1.8-renderability-remediation.md",
           "docs/commentary-v1.2-reader-enrichment.md",
           "docs/commentary-v1.2-reader-idea-ancestry-envelope-v1.md",
+          "docs/commentary-v1.2-reader-integration.md",
           "docs/commentary-v1.2-reader-level-idea-projection-seven-chapter.md",
           "docs/commentary-v1.2-reader-level-idea-projection-v1.md",
           "docs/commentary-v1.2-reader-provenance-binding-v1.md",
@@ -565,6 +573,7 @@
           "tests/test_commentary_v12_five_chapter_structured_enrichment.py",
           "tests/test_commentary_v12_post_applicability_coverage_census.py",
           "tests/test_commentary_v12_reader_idea_ancestry_envelope.py",
+          "tests/test_commentary_v12_reader_integration.py",
           "tests/test_commentary_v12_reader_projection_seven_chapter.py",
           "tests/test_commentary_v12_reader_provenance_binding.py",
           "tests/test_commentary_v12_release_promotion.py",
@@ -625,6 +634,7 @@
         "docs": [
           "docs/ckl-parent-scope-integrity-audit.md",
           "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md",
           "docs/commentary-dense-reader-v0.1.md",
           "docs/commentary-v1.0.1-correctness.md",
           "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
@@ -903,6 +913,7 @@
         "docs": [
           "docs/ckl-parent-scope-integrity-audit.md",
           "docs/commentary-artifact-inventory.json",
+          "docs/commentary-artifact-retention.md",
           "docs/commentary-v1.1-batch-007-quarantine-adjudication.md",
           "docs/commentary-v1.1-canary-report.md",
           "docs/commentary-v1.1-canonical-runtime-reconciliation.md",
@@ -921,6 +932,7 @@
           "docs/commentary-v1.1-semantic-relevance-audit.md",
           "docs/commentary-v1.2-architecture-baseline.md",
           "docs/commentary-v1.2-reader-enrichment.md",
+          "docs/commentary-v1.2-reader-integration.md",
           "docs/vercel-function-bundle-audit.json",
           "docs/vercel-function-bundle-audit.md"
         ],
@@ -970,6 +982,7 @@
           "tests/test_commentary_remediation_groups.py",
           "tests/test_commentary_v11_semantic_pass2.py",
           "tests/test_commentary_v12_canary.py",
+          "tests/test_commentary_v12_reader_integration.py",
           "tests/test_commentary_v12_release_promotion.py",
           "tests/test_terra_commentary_scaled_batch.py",
           "tests/test_terra_commentary_supplemental_control.py",

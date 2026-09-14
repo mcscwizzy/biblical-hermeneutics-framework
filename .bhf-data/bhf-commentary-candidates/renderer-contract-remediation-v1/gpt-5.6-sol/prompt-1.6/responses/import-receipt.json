@@ -1,0 +1,50 @@
+{
+  "artifact_version": "commentary-renderer-remediation-import-v1",
+  "remediation_id": "renderer-remediation-v1-gpt-5.6-sol-2d03bb002c24cdbcca72",
+  "renderer": "gpt-5.6-sol",
+  "renderer_effort": "medium",
+  "response_count": 5,
+  "raw_responses_immutable": true,
+  "responses": [
+    {
+      "ordinal": 1,
+      "reference": "Exodus 14",
+      "packet_id": "commentary-renderer-remediation-v1-packet:d9eb0f0e23fadf4a3470512e43c0d2e325af2fa7e6ec40bae1519ebbec2eca93",
+      "packet_hash": "d9eb0f0e23fadf4a3470512e43c0d2e325af2fa7e6ec40bae1519ebbec2eca93",
+      "response_filename": "001_exodus_014.json",
+      "raw_sha256": "33a44acff607a25b9b42e348331aae8c48e59d096f72a175bfcd07334d0c0b5c"
+    },
+    {
+      "ordinal": 2,
+      "reference": "Deuteronomy 10",
+      "packet_id": "commentary-renderer-remediation-v1-packet:03fffd3afe53b8054d14def68f2e4d214553644d6a7dd5803a57c7b2492fadee",
+      "packet_hash": "03fffd3afe53b8054d14def68f2e4d214553644d6a7dd5803a57c7b2492fadee",
+      "response_filename": "002_deuteronomy_010.json",
+      "raw_sha256": "e0c58c2af624f7b8d17d911c1469443079082d01d7b9096e3c7c5aa79a88b098"
+    },
+    {
+      "ordinal": 3,
+      "reference": "Job 1",
+      "packet_id": "commentary-renderer-remediation-v1-packet:7a542a00be569601e661ef067f80afdb034ed45fc751bb4b2bfa4dbd9d98236b",
+      "packet_hash": "7a542a00be569601e661ef067f80afdb034ed45fc751bb4b2bfa4dbd9d98236b",
+      "response_filename": "003_job_001.json",
+      "raw_sha256": "ae8dc8c77a532da88fd428eb42e6804c76038d02e665934092ab3e3e0865d58c"
+    },
+    {
+      "ordinal": 4,
+      "reference": "1 Corinthians 14",
+      "packet_id": "commentary-renderer-remediation-v1-packet:17796085671f6c7198ba8e1dfc232ead76aa94a3f28c1bd91be75a1d6a77e267",
+      "packet_hash": "17796085671f6c7198ba8e1dfc232ead76aa94a3f28c1bd91be75a1d6a77e267",
+      "response_filename": "004_1_corinthians_014.json",
+      "raw_sha256": "5b3ad533216709162713ccb096f4f95c712217086c3f0e844167c06850e16bb0"
+    },
+    {
+      "ordinal": 5,
+      "reference": "Revelation 21",
+      "packet_id": "commentary-renderer-remediation-v1-packet:53764d4de121f5b06d343d79619c6c2d336e0096d467c79c5feb537c263ed2e8",
+      "packet_hash": "53764d4de121f5b06d343d79619c6c2d336e0096d467c79c5feb537c263ed2e8",
+      "response_filename": "005_revelation_021.json",
+      "raw_sha256": "44dee4da84f7652162d4132507063a5b563950f7c741b93efe40e567c99d817f"
+    }
+  ]
+}

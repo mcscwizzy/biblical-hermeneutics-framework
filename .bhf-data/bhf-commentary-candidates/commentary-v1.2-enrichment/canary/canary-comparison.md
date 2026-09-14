@@ -1,6 +1,6 @@
 # Commentary v1.2 canary comparison
 
-Status: **QUALITY_GATE_FAILED**
+Status: **CANARY_PASS**
 
 | Reference | Before | After | Validation |
 |---|---:|---:|---|

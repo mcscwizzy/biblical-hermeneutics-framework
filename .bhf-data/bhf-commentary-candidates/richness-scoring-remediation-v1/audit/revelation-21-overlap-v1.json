@@ -1,0 +1,2891 @@
+{
+  "artifact_version": "commentary-richness-overlap-audit-v1",
+  "namespace_version": "commentary-richness-scoring-remediation-v1",
+  "reference": "Revelation 21",
+  "cluster_audit_version": "commentary-richness-clusters-v2",
+  "duplicate_rule_version": "commentary-richness-duplicate-rules-v1",
+  "cluster_count": 40,
+  "duplicate_reason_distribution": {
+    "EXACT_DUPLICATE": 21,
+    "DISTINCT": 14,
+    "HIGH_FACT_OVERLAP": 4,
+    "PARENT_PARALLEL": 1
+  },
+  "thematic_parent_family_groups": {
+    "creation": 9,
+    "divine-presence": 2,
+    "eschatology": 2,
+    "exile-return": 4,
+    "ezekiel": 1,
+    "final-judgment": 2,
+    "glorification": 2,
+    "glory": 2,
+    "hope": 2,
+    "how-should-i-read-apocalyptic-literature": 2,
+    "jerusalem": 3,
+    "land": 2,
+    "messianic-hope": 2,
+    "new-creation": 2,
+    "new-exodus": 2,
+    "new-jerusalem": 5,
+    "new-temple": 2,
+    "presence": 2,
+    "providence": 2,
+    "redemption": 2,
+    "remnant": 2,
+    "repentance": 2,
+    "restoration": 3,
+    "resurrection": 4,
+    "revelation": 2,
+    "sanctuary": 1,
+    "second-coming": 2,
+    "seed": 2,
+    "shepherd": 2,
+    "temple": 8,
+    "water": 2,
+    "why-does-bible-repeat-themes": 2
+  },
+  "same_family_pairs": [
+    {
+      "left_cluster_id": "idea_cluster_016c95a5cfe2",
+      "right_cluster_id": "idea_cluster_0eab3d8c1fbd",
+      "shared_parent_families": [
+        "jerusalem"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_016c95a5cfe2",
+      "right_cluster_id": "idea_cluster_4e3d8895d7fe",
+      "shared_parent_families": [
+        "jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1429,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_035da8110029",
+      "right_cluster_id": "idea_cluster_1178b74c7f5b",
+      "shared_parent_families": [
+        "resurrection"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.375,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_035da8110029",
+      "right_cluster_id": "idea_cluster_29d8f5ee7ea3",
+      "shared_parent_families": [
+        "resurrection"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.3125,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_035da8110029",
+      "right_cluster_id": "idea_cluster_df0b65a9550e",
+      "shared_parent_families": [
+        "resurrection"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.25,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_0eab3d8c1fbd",
+      "right_cluster_id": "idea_cluster_4e3d8895d7fe",
+      "shared_parent_families": [
+        "jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.2941,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_1178b74c7f5b",
+      "right_cluster_id": "idea_cluster_29d8f5ee7ea3",
+      "shared_parent_families": [
+        "resurrection"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.375,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_1178b74c7f5b",
+      "right_cluster_id": "idea_cluster_df0b65a9550e",
+      "shared_parent_families": [
+        "resurrection"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.125,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.3571,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_517ad4e6d695",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1429,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_5f2421a822ac",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1296,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.175,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_63538457e44c",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.3125,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1579,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3684,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_14dc4f566ee0",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.2308,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_1826d34bedfe",
+      "right_cluster_id": "idea_cluster_269da03dbf43",
+      "shared_parent_families": [
+        "exile-return"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.35,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_1826d34bedfe",
+      "right_cluster_id": "idea_cluster_bc38df3262c4",
+      "shared_parent_families": [
+        "exile-return"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_1826d34bedfe",
+      "right_cluster_id": "idea_cluster_fa46384abb05",
+      "shared_parent_families": [
+        "exile-return"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.35,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_20992f8315ab",
+      "right_cluster_id": "idea_cluster_47dbffda91e8",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1667,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_20992f8315ab",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.5,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_20992f8315ab",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.5,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_20992f8315ab",
+      "right_cluster_id": "idea_cluster_e29624b106d8",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0714,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_440d7c941173",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.12,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "PARENT_PARALLEL"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.24,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_b7245de6588e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1667,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_b9f92a2e8940",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1875,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_c4b6236fce0e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.12,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_e56f67d45e11",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1304,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_243e0cbb763d",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3182,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_269da03dbf43",
+      "right_cluster_id": "idea_cluster_bc38df3262c4",
+      "shared_parent_families": [
+        "exile-return"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_269da03dbf43",
+      "right_cluster_id": "idea_cluster_fa46384abb05",
+      "shared_parent_families": [
+        "exile-return"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.25,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_29d8f5ee7ea3",
+      "right_cluster_id": "idea_cluster_df0b65a9550e",
+      "shared_parent_families": [
+        "resurrection"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3333,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_36f1f3e578ab",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "restoration"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_36f1f3e578ab",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "restoration"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.2,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3c5118d2a7d0",
+      "right_cluster_id": "idea_cluster_430b2ba9f5d3",
+      "shared_parent_families": [
+        "how-should-i-read-apocalyptic-literature"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_517ad4e6d695",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_5f2421a822ac",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.2143,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3571,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_63538457e44c",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1429,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.3571,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.3571,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_3ec02ba25f9e",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.4286,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_440d7c941173",
+      "right_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.5,
+      "current_duplicate_reasons": [
+        "PARENT_PARALLEL",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_440d7c941173",
+      "right_cluster_id": "idea_cluster_b7245de6588e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "PARENT_PARALLEL",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_440d7c941173",
+      "right_cluster_id": "idea_cluster_b9f92a2e8940",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0625,
+      "current_duplicate_reasons": [
+        "PARENT_PARALLEL",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_440d7c941173",
+      "right_cluster_id": "idea_cluster_c4b6236fce0e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3846,
+      "current_duplicate_reasons": [
+        "PARENT_PARALLEL",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_440d7c941173",
+      "right_cluster_id": "idea_cluster_e56f67d45e11",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.087,
+      "current_duplicate_reasons": [
+        "PARENT_PARALLEL",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_440d7c941173",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0455,
+      "current_duplicate_reasons": [
+        "PARENT_PARALLEL",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_47dbffda91e8",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3333,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_47dbffda91e8",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.25,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_47dbffda91e8",
+      "right_cluster_id": "idea_cluster_e29624b106d8",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1667,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_516505d4f5d3",
+      "right_cluster_id": "idea_cluster_d9d4fe4bc68f",
+      "shared_parent_families": [
+        "why-does-bible-repeat-themes"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0909,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_517ad4e6d695",
+      "right_cluster_id": "idea_cluster_5f2421a822ac",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0714,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_517ad4e6d695",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_517ad4e6d695",
+      "right_cluster_id": "idea_cluster_63538457e44c",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_517ad4e6d695",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_517ad4e6d695",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0714,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_517ad4e6d695",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1429,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_568f3b9a8d27",
+      "right_cluster_id": "idea_cluster_842f9f3cf63c",
+      "shared_parent_families": [
+        "revelation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1304,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_5f2421a822ac",
+      "right_cluster_id": "idea_cluster_6109fd484cf4",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.025,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_5f2421a822ac",
+      "right_cluster_id": "idea_cluster_63538457e44c",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0625,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_5f2421a822ac",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1111,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_5f2421a822ac",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1053,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_5f2421a822ac",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1538,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_6109fd484cf4",
+      "right_cluster_id": "idea_cluster_63538457e44c",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.125,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_6109fd484cf4",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "creation",
+        "divine-presence",
+        "eschatology",
+        "final-judgment",
+        "glorification",
+        "glory",
+        "hope",
+        "land",
+        "messianic-hope",
+        "new-creation",
+        "new-exodus",
+        "new-jerusalem",
+        "new-temple",
+        "presence",
+        "providence",
+        "redemption",
+        "remnant",
+        "repentance",
+        "restoration",
+        "second-coming",
+        "seed",
+        "shepherd",
+        "water"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.7,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "already_consolidated_inside_existing_clusters"
+    },
+    {
+      "left_cluster_id": "idea_cluster_6109fd484cf4",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1579,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_6109fd484cf4",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.2692,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_6109fd484cf4",
+      "right_cluster_id": "idea_cluster_e29624b106d8",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1333,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_63538457e44c",
+      "right_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.25,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "HIGH_FACT_OVERLAP"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_63538457e44c",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.125,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_63538457e44c",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3125,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "right_cluster_id": "idea_cluster_a3997c8def39",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.2105,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.3846,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_9fec8ea04a6b",
+      "right_cluster_id": "idea_cluster_e29624b106d8",
+      "shared_parent_families": [
+        "new-jerusalem"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.2667,
+      "current_duplicate_reasons": [
+        "HIGH_FACT_OVERLAP",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_a3997c8def39",
+      "right_cluster_id": "idea_cluster_d0e955e6aba5",
+      "shared_parent_families": [
+        "creation"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.2105,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "right_cluster_id": "idea_cluster_b7245de6588e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1667,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "right_cluster_id": "idea_cluster_b9f92a2e8940",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.125,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "right_cluster_id": "idea_cluster_c4b6236fce0e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.4242,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "right_cluster_id": "idea_cluster_e56f67d45e11",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1304,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1364,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b7245de6588e",
+      "right_cluster_id": "idea_cluster_b9f92a2e8940",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "DISTINCT"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b7245de6588e",
+      "right_cluster_id": "idea_cluster_c4b6236fce0e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.1667,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b7245de6588e",
+      "right_cluster_id": "idea_cluster_e56f67d45e11",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b7245de6588e",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b9f92a2e8940",
+      "right_cluster_id": "idea_cluster_c4b6236fce0e",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.125,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b9f92a2e8940",
+      "right_cluster_id": "idea_cluster_e56f67d45e11",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3125,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_b9f92a2e8940",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.3125,
+      "current_duplicate_reasons": [
+        "DISTINCT",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_bc38df3262c4",
+      "right_cluster_id": "idea_cluster_fa46384abb05",
+      "shared_parent_families": [
+        "exile-return"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_c4b6236fce0e",
+      "right_cluster_id": "idea_cluster_e56f67d45e11",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": false,
+      "fact_containment_overlap": 0.1739,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_c4b6236fce0e",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.0909,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    },
+    {
+      "left_cluster_id": "idea_cluster_e56f67d45e11",
+      "right_cluster_id": "idea_cluster_ebe19d7ddf91",
+      "shared_parent_families": [
+        "temple"
+      ],
+      "same_unit_kind": true,
+      "fact_containment_overlap": 0.2273,
+      "current_duplicate_reasons": [
+        "EXACT_DUPLICATE",
+        "EXACT_DUPLICATE"
+      ],
+      "deterministic_reading": "distinct_or_insufficiently_equivalent_reader_dimensions"
+    }
+  ],
+  "safe_new_merge_candidate_count": 0,
+  "conclusion": "NO_SAFE_NEW_MERGE_RULE",
+  "conclusion_reason": "Creation, resurrection, exile, Jerusalem, temple, and theme records span different unit kinds, evidence ancestries, and non-equivalent facts. Existing exact/ancestry/parent-parallel/high-fact-overlap rules already consolidate redundant representations; eligibility removes generic inventory from coverage without transitive semantic merging.",
+  "clusters": [
+    {
+      "cluster_id": "idea_cluster_016c95a5cfe2",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "archaeology_geography",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_archaeology_geography_e8030f82b358",
+        "syn_why_it_matters_943ebde19b79"
+      ],
+      "evidence_ids": [
+        "jerusalem:key_places:0",
+        "jerusalem:key_places:1",
+        "jerusalem:key_places:2",
+        "jerusalem:key_places:3",
+        "jerusalem:key_places:4"
+      ],
+      "parent_families": [
+        "jerusalem"
+      ],
+      "parent_ids": [
+        "jerusalem"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_e8030f82b358"
+      ],
+      "facts": [
+        "city-of-david",
+        "zion",
+        "mount-zion",
+        "bethlehem-1",
+        "judea-1",
+        "city-of-david",
+        "zion",
+        "mount-zion",
+        "bethlehem-1",
+        "judea-1"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_035da8110029",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_f2299710d44f"
+      ],
+      "evidence_ids": [
+        "resurrection-doctrine:historical_context:0"
+      ],
+      "parent_families": [
+        "resurrection"
+      ],
+      "parent_ids": [
+        "resurrection-doctrine"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Resurrection doctrine emerges from the church’s earliest proclamation and develops as a central Christian confession of hope, judgment, and new creation."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_0eab3d8c1fbd",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_6fe92900e971",
+        "syn_cultural_context_7d12d817b879",
+        "syn_why_it_matters_ecb971b680bb"
+      ],
+      "evidence_ids": [
+        "jerusalem:ancient_near_east_context:0",
+        "jerusalem:hebraic_worldview:0",
+        "jerusalem:second_temple_context:0",
+        "what-is-the-significance-of-jerusalem:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "jerusalem"
+      ],
+      "parent_ids": [
+        "jerusalem",
+        "what-is-the-significance-of-jerusalem"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_6fe92900e971"
+      ],
+      "facts": [
+        "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+        "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+        "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness.",
+        "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+        "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+        "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+        "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_1178b74c7f5b",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "HIGH_FACT_OVERLAP",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_c1876e086d5f",
+        "syn_historical_context_e58f64b79a1c"
+      ],
+      "evidence_ids": [
+        "resurrection-theme:historical_context:0",
+        "what-is-resurrection:historical_context:0"
+      ],
+      "parent_families": [
+        "resurrection"
+      ],
+      "parent_ids": [
+        "resurrection-theme",
+        "what-is-resurrection"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Resurrection hope develops from scattered hints in the Old Testament into explicit proclamation in the New Testament.",
+        "The biblical hope for resurrection develops from hints in the prophets into clear proclamation in the New Testament."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_14dc4f566ee0",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_14aa62ab6584",
+        "syn_why_it_matters_116e8a303037"
+      ],
+      "evidence_ids": [
+        "creation-doctrine-framework:ancient_near_east_context:0",
+        "creation-doctrine-framework:hebraic_worldview:0",
+        "creation-doctrine-framework:original_audience:0",
+        "creation-doctrine-framework:second_temple_context:0"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation-doctrine-framework"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_14aa62ab6584"
+      ],
+      "facts": [
+        "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+        "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+        "Readers learning Scripture's account of God, world, and human vocation",
+        "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+        "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+        "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+        "Readers learning Scripture's account of God, world, and human vocation",
+        "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_1826d34bedfe",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "chronology",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_chronology_59740bd95ff1",
+        "syn_chronology_dfe77881b14f",
+        "syn_why_it_matters_98d0cc6d3082",
+        "syn_why_it_matters_b23e807b62c0"
+      ],
+      "evidence_ids": [
+        "exile-and-return-storyline:timeline:0",
+        "exile-and-return-storyline:timeline:1",
+        "exile-and-return-storyline:timeline:2",
+        "exile-and-return-storyline:timeline:3",
+        "exile-and-return-storyline:timeline:4",
+        "exile-and-return-storyline:timeline:5",
+        "exile-and-return-storyline:timeline:6"
+      ],
+      "parent_families": [
+        "exile-return"
+      ],
+      "parent_ids": [
+        "exile-and-return-storyline"
+      ],
+      "related_unit_ids": [
+        "syn_chronology_59740bd95ff1",
+        "syn_chronology_dfe77881b14f"
+      ],
+      "facts": [
+        "Messianic restoration hope",
+        "New creation dwelling",
+        "Covenant warnings about exile",
+        "Assyrian exile of Israel",
+        "Babylonian exile of Judah",
+        "Persian decree and return",
+        "Temple and city rebuilding",
+        "Messianic restoration hope",
+        "New creation dwelling",
+        "Covenant warnings about exile",
+        "Assyrian exile of Israel",
+        "Babylonian exile of Judah",
+        "Persian decree and return",
+        "Temple and city rebuilding"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_20992f8315ab",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_bc55556c1875"
+      ],
+      "evidence_ids": [
+        "new-jerusalem:historical_context:0"
+      ],
+      "parent_families": [
+        "new-jerusalem"
+      ],
+      "parent_ids": [
+        "new-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "New Jerusalem appears as the final hope of the biblical story, reshaping Zion imagery after judgment and exile."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_243e0cbb763d",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "chronology",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_chronology_341a12eddca9",
+        "syn_chronology_3cb65650a7cb",
+        "syn_why_it_matters_6d2e701ebd04"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4",
+        "temple-symbol:timeline:5"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple-symbol"
+      ],
+      "related_unit_ids": [
+        "syn_chronology_3cb65650a7cb"
+      ],
+      "facts": [
+        "New Jerusalem has no temple because God and the Lamb dwell there",
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment",
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_269da03dbf43",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_0e467e62f887",
+        "syn_why_it_matters_f670f00f6e1e"
+      ],
+      "evidence_ids": [
+        "exile-and-return-storyline:ancient_near_east_context:0",
+        "exile-and-return-storyline:hebraic_worldview:0",
+        "exile-and-return-storyline:original_audience:0",
+        "exile-and-return-storyline:second_temple_context:0"
+      ],
+      "parent_families": [
+        "exile-return"
+      ],
+      "parent_ids": [
+        "exile-and-return-storyline"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_0e467e62f887"
+      ],
+      "facts": [
+        "Ancient empires used deportation and resettlement to control conquered peoples, but Scripture interprets exile theologically as covenant judgment and hope.",
+        "Exile is not only displacement; it is covenant loss, temple loss, land loss, and identity testing under God's promise to preserve a remnant.",
+        "Readers tracing judgment and restoration across the biblical canon",
+        "Second Temple Jewish communities often lived with partial-return realities, diaspora experience, and hope that God would fully restore Israel and judge oppressive powers.",
+        "Ancient empires used deportation and resettlement to control conquered peoples, but Scripture interprets exile theologically as covenant judgment and hope.",
+        "Exile is not only displacement; it is covenant loss, temple loss, land loss, and identity testing under God's promise to preserve a remnant.",
+        "Readers tracing judgment and restoration across the biblical canon",
+        "Second Temple Jewish communities often lived with partial-return realities, diaspora experience, and hope that God would fully restore Israel and judge oppressive powers."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_29d8f5ee7ea3",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_142e042b17b8",
+        "syn_why_it_matters_eb8e7b59f455"
+      ],
+      "evidence_ids": [
+        "resurrection-theme:ancient_near_east_context:0",
+        "resurrection-theme:hebraic_worldview:0",
+        "resurrection-theme:second_temple_context:0"
+      ],
+      "parent_families": [
+        "resurrection"
+      ],
+      "parent_ids": [
+        "resurrection-theme"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_142e042b17b8"
+      ],
+      "facts": [
+        "Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God’s power and faithfulness.",
+        "Resurrection hope affirms God's power over death and the renewal of his people.",
+        "Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive.",
+        "Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God’s power and faithfulness.",
+        "Resurrection hope affirms God's power over death and the renewal of his people.",
+        "Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_36f1f3e578ab",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_01cf6ba3062f"
+      ],
+      "evidence_ids": [
+        "restoration-prophecy:historical_context:0"
+      ],
+      "parent_families": [
+        "restoration"
+      ],
+      "parent_ids": [
+        "restoration-prophecy"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "These oracles speak to exile, displacement, and the rebuilding of life under God's mercy."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_3729f716ef6f",
+      "quality_class": "DISPUTED",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "surrounding_passages"
+      ],
+      "synthesis_ids": [
+        "syn_surrounding_passages_815971890352"
+      ],
+      "evidence_ids": [
+        "ezekiel-revelation-reuse"
+      ],
+      "parent_families": [
+        "ezekiel"
+      ],
+      "parent_ids": [
+        "ezekiel"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Revelation repeatedly recomposes Ezekielian throne, creature, scroll, measuring, witness, plague, Gog, battle, city, river, and tree imagery in its own literary sequence."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_3c5118d2a7d0",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_068da41914a0"
+      ],
+      "evidence_ids": [
+        "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "how-should-i-read-apocalyptic-literature"
+      ],
+      "parent_ids": [
+        "how-should-i-read-apocalyptic-literature"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Beasts, numbers, and cosmic imagery were common ways to speak about empires and divine sovereignty."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_3ec02ba25f9e",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_40902007e741"
+      ],
+      "evidence_ids": [
+        "creation-theme:historical_context:0"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation-theme"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_430b2ba9f5d3",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_b15fd4758d69"
+      ],
+      "evidence_ids": [
+        "how-should-i-read-apocalyptic-literature:historical_context:0"
+      ],
+      "parent_families": [
+        "how-should-i-read-apocalyptic-literature"
+      ],
+      "parent_ids": [
+        "how-should-i-read-apocalyptic-literature"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Apocalyptic writing emerges in pressure, exile, and persecution as faithful communities ask how God will act."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_440d7c941173",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "PARENT_PARALLEL",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_1255f86bbec6",
+        "syn_cultural_context_956d4d9fb47d",
+        "syn_cultural_context_c035d1f2c3dc"
+      ],
+      "evidence_ids": [
+        "temple:ancient_near_east_context:0",
+        "what-is-the-significance-of-the-temple:ancient_near_east_context:0",
+        "what-is-the-temple:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple",
+        "what-is-the-significance-of-the-temple",
+        "what-is-the-temple"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Temples were common in the ancient world, but Israel’s temple is defined by covenant holiness and the one true God.",
+        "Temples were common in the ancient world, but Israel's temple is defined by covenant holiness and the one true God.",
+        "Ancient temples were often royal and cultic centers; Israel’s temple is distinct because it foregrounds covenant holiness and atonement under one God."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_47dbffda91e8",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_dfa0ff3b0b13"
+      ],
+      "evidence_ids": [
+        "new-jerusalem-prophecy:historical_context:0"
+      ],
+      "parent_families": [
+        "new-jerusalem"
+      ],
+      "parent_ids": [
+        "new-jerusalem-prophecy"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "The vision grows from exile and temple loss into a picture of final dwelling and restored holiness."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_4e3d8895d7fe",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_d0de34e7e5fd",
+        "syn_historical_context_eb8b4b16987f"
+      ],
+      "evidence_ids": [
+        "jerusalem:historical_context:0",
+        "what-is-the-significance-of-jerusalem:historical_context:0"
+      ],
+      "parent_families": [
+        "jerusalem"
+      ],
+      "parent_ids": [
+        "jerusalem",
+        "what-is-the-significance-of-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+        "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_516505d4f5d3",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_438630fb0222"
+      ],
+      "evidence_ids": [
+        "why-does-the-bible-repeat-themes:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "why-does-bible-repeat-themes"
+      ],
+      "parent_ids": [
+        "why-does-the-bible-repeat-themes"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Repetition was mnemonic and pedagogical in the ancient world; biblical repetition also signals theological significance."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_517ad4e6d695",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_5cc4f55d44b3"
+      ],
+      "evidence_ids": [
+        "creation-theme:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation-theme"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_568f3b9a8d27",
+      "quality_class": "DISPUTED",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "interpretive_questions",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_interpretive_questions_4e800defcfd3",
+        "syn_why_it_matters_018ad88caa9a"
+      ],
+      "evidence_ids": [
+        "rev-cosmic-renewal",
+        "rev-healed-nations"
+      ],
+      "parent_families": [
+        "revelation"
+      ],
+      "parent_ids": [
+        "revelation"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_4e800defcfd3"
+      ],
+      "facts": [
+        "The ending presents new heaven, new earth, descending New Jerusalem, divine dwelling, and the end of death and mourning.",
+        "The tree's leaves are for healing the nations, and kings bring glory into the city.",
+        "The ending presents new heaven, new earth, descending New Jerusalem, divine dwelling, and the end of death and mourning.",
+        "The tree's leaves are for healing the nations, and kings bring glory into the city."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_5f2421a822ac",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_71b4960d047d",
+        "syn_why_it_matters_ac44dd352974"
+      ],
+      "evidence_ids": [
+        "creation:ancient_near_east_context:0",
+        "creation:hebraic_worldview:0"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_71b4960d047d"
+      ],
+      "facts": [
+        "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+        "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+        "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+        "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_6109fd484cf4",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "HIGH_FACT_OVERLAP",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_02e45a2af003",
+        "syn_historical_context_0320c7dee516",
+        "syn_historical_context_0ebf487ff0a4",
+        "syn_historical_context_1a1f095fa9a7",
+        "syn_historical_context_2366061cb160",
+        "syn_historical_context_23a2b53cc477",
+        "syn_historical_context_28a5009e0655",
+        "syn_historical_context_2d756370d45d",
+        "syn_historical_context_3565b646abad",
+        "syn_historical_context_4b05d98035a9",
+        "syn_historical_context_59211faa3c76",
+        "syn_historical_context_5b2be644a2ad",
+        "syn_historical_context_5c1fce097de1",
+        "syn_historical_context_87e45620f99b",
+        "syn_historical_context_953f6c0c8f67",
+        "syn_historical_context_aa767a258a96",
+        "syn_historical_context_adbd5dcd2961",
+        "syn_historical_context_d39d6f8c0b05",
+        "syn_historical_context_e67f6dfa51ac",
+        "syn_historical_context_f7fd29ce8238",
+        "syn_historical_context_fafa464f9f6f",
+        "syn_historical_context_fb1d1e29d45a",
+        "syn_historical_context_fbc173935d6b",
+        "syn_historical_context_fe8b548ea581"
+      ],
+      "evidence_ids": [
+        "creation-doctrine:historical_context:0",
+        "divine-presence:historical_context:0",
+        "eschatology:historical_context:0",
+        "final-judgment:historical_context:0",
+        "glorification:historical_context:0",
+        "glory-theme:historical_context:0",
+        "hope-theme:historical_context:0",
+        "land-theme:historical_context:0",
+        "messianic-hope:historical_context:0",
+        "new-creation-theme:historical_context:0",
+        "new-exodus-theme:historical_context:0",
+        "new-jerusalem-theme:historical_context:0",
+        "new-temple-theme:historical_context:0",
+        "presence-theme:historical_context:0",
+        "providence:historical_context:0",
+        "redemption-theme:historical_context:0",
+        "remnant-theme:historical_context:0",
+        "remnant:historical_context:0",
+        "repentance:historical_context:0",
+        "restoration-theme:historical_context:0",
+        "second-coming:historical_context:0",
+        "seed-theme:historical_context:0",
+        "shepherd-theme:historical_context:0",
+        "water-theme:historical_context:0"
+      ],
+      "parent_families": [
+        "creation",
+        "divine-presence",
+        "eschatology",
+        "final-judgment",
+        "glorification",
+        "glory",
+        "hope",
+        "land",
+        "messianic-hope",
+        "new-creation",
+        "new-exodus",
+        "new-jerusalem",
+        "new-temple",
+        "presence",
+        "providence",
+        "redemption",
+        "remnant",
+        "repentance",
+        "restoration",
+        "second-coming",
+        "seed",
+        "shepherd",
+        "water"
+      ],
+      "parent_ids": [
+        "creation-doctrine",
+        "divine-presence",
+        "eschatology",
+        "final-judgment",
+        "glorification",
+        "glory-theme",
+        "hope-theme",
+        "land-theme",
+        "messianic-hope",
+        "new-creation-theme",
+        "new-exodus-theme",
+        "new-jerusalem-theme",
+        "new-temple-theme",
+        "presence-theme",
+        "providence",
+        "redemption-theme",
+        "remnant",
+        "remnant-theme",
+        "repentance",
+        "restoration-theme",
+        "second-coming",
+        "seed-theme",
+        "shepherd-theme",
+        "water-theme"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "New Temple Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Eschatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Glory Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Glorification is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Land Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Seed Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Final Judgment is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Water Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Repentance is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Restoration Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Providence is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Presence Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "New Jerusalem Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Remnant Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "New Exodus Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Redemption Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Messianic Hope is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Second Coming is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Shepherd Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Remnant is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Hope Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+        "Divine Presence is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_63538457e44c",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_f4e05e225f51"
+      ],
+      "evidence_ids": [
+        "creation:historical_context:0"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Genesis presents creation as the foundational act that begins biblical history and establishes God’s sovereignty over all things."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_842f9f3cf63c",
+      "quality_class": "DISPUTED",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "surrounding_passages"
+      ],
+      "synthesis_ids": [
+        "syn_surrounding_passages_7c482886b056",
+        "syn_surrounding_passages_ad6796acc0d1"
+      ],
+      "evidence_ids": [
+        "rev-new-jerusalem",
+        "rev-scriptural-reuse"
+      ],
+      "parent_families": [
+        "revelation"
+      ],
+      "parent_ids": [
+        "revelation"
+      ],
+      "related_unit_ids": [
+        "syn_surrounding_passages_ad6796acc0d1"
+      ],
+      "facts": [
+        "New Jerusalem combines city, bride, sanctuary, Eden, and renewed-Zion imagery.",
+        "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+        "New Jerusalem combines city, bride, sanctuary, Eden, and renewed-Zion imagery.",
+        "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_919fb0668c76",
+      "quality_class": "DISPUTED",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "interpretive_questions",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_interpretive_questions_50e89a01fc74",
+        "syn_why_it_matters_07cb798383a5"
+      ],
+      "evidence_ids": [
+        "sanctuary-theme:interpretive_note:0",
+        "sanctuary-theme:interpretive_note:1"
+      ],
+      "parent_families": [
+        "sanctuary"
+      ],
+      "parent_ids": [
+        "sanctuary-theme"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_50e89a01fc74"
+      ],
+      "facts": [
+        "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+        "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability.",
+        "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+        "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_9fec8ea04a6b",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "HIGH_FACT_OVERLAP",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_0001e7f8a702",
+        "syn_cultural_context_01ac009c9e2e",
+        "syn_cultural_context_13982c6e771f",
+        "syn_cultural_context_14b4577a7598",
+        "syn_cultural_context_1f1f5303ca57",
+        "syn_cultural_context_1f37114ad20c",
+        "syn_cultural_context_2743343ce972",
+        "syn_cultural_context_2e3fa27737e3",
+        "syn_cultural_context_38310998ce2b",
+        "syn_cultural_context_6aceabffd594",
+        "syn_cultural_context_6e616c4ce091",
+        "syn_cultural_context_70d205e2f3cc",
+        "syn_cultural_context_7259a3a4e8c7",
+        "syn_cultural_context_73e594b5894e",
+        "syn_cultural_context_7f58c4ced92c",
+        "syn_cultural_context_8dc0a3ddcdc5",
+        "syn_cultural_context_8eabf9176d95",
+        "syn_cultural_context_9671a616aef5",
+        "syn_cultural_context_98bed2865050",
+        "syn_cultural_context_98e47f13e0cd",
+        "syn_cultural_context_9b60a1372932",
+        "syn_cultural_context_ac03c0d6730f",
+        "syn_cultural_context_c0e6c65b9b26",
+        "syn_cultural_context_c0fa8c927915",
+        "syn_cultural_context_c89b0a16c752",
+        "syn_cultural_context_e93d82142a0e"
+      ],
+      "evidence_ids": [
+        "creation-doctrine:ancient_near_east_context:0",
+        "divine-presence:ancient_near_east_context:0",
+        "eschatology:ancient_near_east_context:0",
+        "final-judgment:ancient_near_east_context:0",
+        "glorification:ancient_near_east_context:0",
+        "glory-theme:ancient_near_east_context:0",
+        "hope-theme:ancient_near_east_context:0",
+        "land-theme:ancient_near_east_context:0",
+        "messianic-hope:ancient_near_east_context:0",
+        "new-creation-theme:ancient_near_east_context:0",
+        "new-exodus-theme:ancient_near_east_context:0",
+        "new-jerusalem-prophecy:ancient_near_east_context:0",
+        "new-jerusalem-theme:ancient_near_east_context:0",
+        "new-temple-theme:ancient_near_east_context:0",
+        "presence-theme:ancient_near_east_context:0",
+        "providence:ancient_near_east_context:0",
+        "redemption-theme:ancient_near_east_context:0",
+        "remnant-theme:ancient_near_east_context:0",
+        "remnant:ancient_near_east_context:0",
+        "repentance:ancient_near_east_context:0",
+        "restoration-prophecy:ancient_near_east_context:0",
+        "restoration-theme:ancient_near_east_context:0",
+        "second-coming:ancient_near_east_context:0",
+        "seed-theme:ancient_near_east_context:0",
+        "shepherd-theme:ancient_near_east_context:0",
+        "water-theme:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "creation",
+        "divine-presence",
+        "eschatology",
+        "final-judgment",
+        "glorification",
+        "glory",
+        "hope",
+        "land",
+        "messianic-hope",
+        "new-creation",
+        "new-exodus",
+        "new-jerusalem",
+        "new-temple",
+        "presence",
+        "providence",
+        "redemption",
+        "remnant",
+        "repentance",
+        "restoration",
+        "second-coming",
+        "seed",
+        "shepherd",
+        "water"
+      ],
+      "parent_ids": [
+        "creation-doctrine",
+        "divine-presence",
+        "eschatology",
+        "final-judgment",
+        "glorification",
+        "glory-theme",
+        "hope-theme",
+        "land-theme",
+        "messianic-hope",
+        "new-creation-theme",
+        "new-exodus-theme",
+        "new-jerusalem-prophecy",
+        "new-jerusalem-theme",
+        "new-temple-theme",
+        "presence-theme",
+        "providence",
+        "redemption-theme",
+        "remnant",
+        "remnant-theme",
+        "repentance",
+        "restoration-prophecy",
+        "restoration-theme",
+        "second-coming",
+        "seed-theme",
+        "shepherd-theme",
+        "water-theme"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Ancient background for Divine Presence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme without letting comparison replace the biblical witness.",
+        "Ancient background for New Jerusalem Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Restoration Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Presence Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, glory-theme, and sanctuary-theme without letting comparison replace the biblical witness.",
+        "Ancient background for New Jerusalem Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 65:17-25, Isaiah 66:22-24, new-jerusalem-theme, and new-creation-theme without letting comparison replace the biblical witness.",
+        "Ancient background for Redemption Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Remnant Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for New Exodus Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Water Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme without letting comparison replace the biblical witness.",
+        "Ancient background for Glorification includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and second-coming without letting comparison replace the biblical witness.",
+        "Ancient background for Messianic Hope includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Eschatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, second-coming, and final-judgment without letting comparison replace the biblical witness.",
+        "Ancient background for Final Judgment includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and second-coming without letting comparison replace the biblical witness.",
+        "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness.",
+        "Ancient background for Land Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Providence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Restoration Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 40:1-11, Jeremiah 30:1-24, exile-theme, and remnant-prophecy without letting comparison replace the biblical witness.",
+        "Ancient background for New Temple Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple without letting comparison replace the biblical witness.",
+        "Ancient background for Shepherd Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Hope Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Remnant includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Second Coming includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and final-judgment without letting comparison replace the biblical witness.",
+        "Ancient background for Seed Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+        "Ancient background for Glory Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and sanctuary-theme without letting comparison replace the biblical witness.",
+        "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness.",
+        "Ancient background for Repentance includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_a3997c8def39",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "chronology",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_chronology_2edf54bee5a7",
+        "syn_chronology_ea92011ac148",
+        "syn_why_it_matters_c59af65cbb27"
+      ],
+      "evidence_ids": [
+        "creation-doctrine-framework:timeline:0",
+        "creation-doctrine-framework:timeline:1",
+        "creation-doctrine-framework:timeline:2",
+        "creation-doctrine-framework:timeline:3",
+        "creation-doctrine-framework:timeline:4",
+        "creation-doctrine-framework:timeline:5"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation-doctrine-framework"
+      ],
+      "related_unit_ids": [
+        "syn_chronology_ea92011ac148"
+      ],
+      "facts": [
+        "New creation promised",
+        "Creation declared good",
+        "Human vocation given",
+        "Fall disorders creation",
+        "Wisdom and worship confess the Creator",
+        "Christ revealed as agent and heir of creation",
+        "Creation declared good",
+        "Human vocation given",
+        "Fall disorders creation",
+        "Wisdom and worship confess the Creator",
+        "Christ revealed as agent and heir of creation"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_b4f1b03ed9c8",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_0f1316b045fb",
+        "syn_why_it_matters_242abd8a12ef"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple-symbol"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_0f1316b045fb"
+      ],
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority.",
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_b7245de6588e",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "archaeology_geography",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_archaeology_geography_44a51d3f18ec",
+        "syn_why_it_matters_123e1ed59452"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple-symbol"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_44a51d3f18ec"
+      ],
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2",
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_b9f92a2e8940",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_a01b7b4b83e2"
+      ],
+      "evidence_ids": [
+        "temple-theme:historical_context:0"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple-theme"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_bc38df3262c4",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "archaeology_geography",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_archaeology_geography_a297fbaaae98",
+        "syn_why_it_matters_321c9250d718"
+      ],
+      "evidence_ids": [
+        "exile-and-return-storyline:key_places:0",
+        "exile-and-return-storyline:key_places:1",
+        "exile-and-return-storyline:key_places:2",
+        "exile-and-return-storyline:key_places:3",
+        "exile-and-return-storyline:key_places:4"
+      ],
+      "parent_families": [
+        "exile-return"
+      ],
+      "parent_ids": [
+        "exile-and-return-storyline"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_a297fbaaae98"
+      ],
+      "facts": [
+        "jerusalem",
+        "babylon-1",
+        "persia",
+        "susa",
+        "zion",
+        "jerusalem",
+        "babylon-1",
+        "persia",
+        "susa",
+        "zion"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_c4b6236fce0e",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "cultural_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_0be32dd62dc5",
+        "syn_why_it_matters_7ed31ca5269e"
+      ],
+      "evidence_ids": [
+        "temple-theme:ancient_near_east_context:0",
+        "temple-theme:hebraic_worldview:0",
+        "temple-theme:second_temple_context:0"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple-theme"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_0be32dd62dc5"
+      ],
+      "facts": [
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life.",
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_d0e955e6aba5",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "historical_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_d76e3355cc3f",
+        "syn_why_it_matters_3ef5c89f1bac"
+      ],
+      "evidence_ids": [
+        "creation-doctrine-framework:historical_context:0",
+        "creation-doctrine-framework:historical_setting:0"
+      ],
+      "parent_families": [
+        "creation"
+      ],
+      "parent_ids": [
+        "creation-doctrine-framework"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_d76e3355cc3f"
+      ],
+      "facts": [
+        "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+        "Canonical teaching from Genesis through Revelation",
+        "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+        "Canonical teaching from Genesis through Revelation"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_d9d4fe4bc68f",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_be75e14df31f"
+      ],
+      "evidence_ids": [
+        "why-does-the-bible-repeat-themes:historical_context:0"
+      ],
+      "parent_families": [
+        "why-does-bible-repeat-themes"
+      ],
+      "parent_ids": [
+        "why-does-the-bible-repeat-themes"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_df0b65a9550e",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "HIGH_FACT_OVERLAP",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_01ba26ec9582",
+        "syn_cultural_context_cf15c48f968d"
+      ],
+      "evidence_ids": [
+        "resurrection-doctrine:ancient_near_east_context:0",
+        "what-is-resurrection:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "resurrection"
+      ],
+      "parent_ids": [
+        "resurrection-doctrine",
+        "what-is-resurrection"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "Resurrection hope stands out in a world where death was usually treated as final.",
+        "The doctrine stands out in a world where death was usually viewed as final, and it insists on God’s power to defeat death itself."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_e29624b106d8",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "DISTINCT",
+      "unit_kinds": [
+        "cultural_context"
+      ],
+      "synthesis_ids": [
+        "syn_cultural_context_6d6a364126a4"
+      ],
+      "evidence_ids": [
+        "new-jerusalem:ancient_near_east_context:0"
+      ],
+      "parent_families": [
+        "new-jerusalem"
+      ],
+      "parent_ids": [
+        "new-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "The vision reuses city and temple imagery familiar in the ancient world while transforming them around God’s direct presence."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_e56f67d45e11",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "historical_context"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_6d3af537e6c4",
+        "syn_historical_context_87b6fb42d65c",
+        "syn_historical_context_fc40b5ad8845"
+      ],
+      "evidence_ids": [
+        "temple:historical_context:0",
+        "what-is-the-significance-of-the-temple:historical_context:0",
+        "what-is-the-temple:historical_context:0"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple",
+        "what-is-the-significance-of-the-temple",
+        "what-is-the-temple"
+      ],
+      "related_unit_ids": [],
+      "facts": [
+        "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
+        "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
+        "The temple develops from tabernacle patterns into Solomon’s temple, survives in exilic memory, and is rebuilt in the second temple period."
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_ebe19d7ddf91",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "RELEVANT",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "historical_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_64e9e004fadb",
+        "syn_why_it_matters_d6c5f36b7588"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "parent_families": [
+        "temple"
+      ],
+      "parent_ids": [
+        "temple-symbol"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_64e9e004fadb"
+      ],
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation",
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ]
+    },
+    {
+      "cluster_id": "idea_cluster_fa46384abb05",
+      "quality_class": "SUPPORTING",
+      "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+      "duplicate_reason": "EXACT_DUPLICATE",
+      "unit_kinds": [
+        "historical_context",
+        "why_it_matters"
+      ],
+      "synthesis_ids": [
+        "syn_historical_context_07dc1a6195ee",
+        "syn_why_it_matters_b920236f530f"
+      ],
+      "evidence_ids": [
+        "exile-and-return-storyline:historical_context:0",
+        "exile-and-return-storyline:historical_setting:0"
+      ],
+      "parent_families": [
+        "exile-return"
+      ],
+      "parent_ids": [
+        "exile-and-return-storyline"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_07dc1a6195ee"
+      ],
+      "facts": [
+        "The storyline draws from Israel's and Judah's exiles, especially Assyrian and Babylonian judgment, Persian-period return, and the ongoing question of full restoration.",
+        "Assyrian exile, Babylonian exile, Persian-period return, and later restoration hope",
+        "The storyline draws from Israel's and Judah's exiles, especially Assyrian and Babylonian judgment, Persian-period return, and the ongoing question of full restoration.",
+        "Assyrian exile, Babylonian exile, Persian-period return, and later restoration hope"
+      ]
+    }
+  ]
+}

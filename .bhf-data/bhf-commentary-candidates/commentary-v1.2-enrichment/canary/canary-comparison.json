@@ -1,8 +1,8 @@
 {
   "artifact_version": "commentary-v1.2-canary-comparison-v1",
-  "status": "QUALITY_GATE_FAILED",
-  "gate_state": "QUALITY_GATE_FAILED",
-  "scale_gate_decision": "NOT_READY",
+  "status": "CANARY_PASS",
+  "gate_state": "CANARY_PASS",
+  "scale_gate_decision": "READY_FOR_HUMAN_REVIEW",
   "bulk_generation_authorized": false,
   "gate_checks": {
     "all_required_renderer_responses_present": true,
@@ -12,7 +12,7 @@
     "no_cross_chapter_or_unsupported_ancestry": true,
     "no_confidence_or_dispute_regression": true,
     "no_protected_artifact_changes": true,
-    "available_synthesis_gaps_meaningfully_enriched": false,
+    "available_synthesis_gaps_meaningfully_enriched": true,
     "data_gap_controls_conservative": true,
     "rich_enough_controls_not_regressed": true,
     "genealogy_list_controls_concise": true,
@@ -39,30 +39,11 @@
         "boilerplate_ratio": 0.0
       },
       "synthesis": {
-        "synthesis_unit_count": 49,
+        "synthesis_unit_count": 12,
         "evidence_ids_represented": [
           "2-corinthians:interpretive_note:21",
           "col-image",
           "col-new-humanity",
-          "creation-doctrine-framework:ancient_near_east_context:0",
-          "creation-doctrine-framework:hebraic_worldview:0",
-          "creation-doctrine-framework:historical_context:0",
-          "creation-doctrine-framework:historical_setting:0",
-          "creation-doctrine-framework:original_audience:0",
-          "creation-doctrine-framework:second_temple_context:0",
-          "creation-doctrine-framework:timeline:0",
-          "creation-doctrine-framework:timeline:1",
-          "creation-doctrine-framework:timeline:2",
-          "creation-doctrine-framework:timeline:3",
-          "creation-doctrine-framework:timeline:4",
-          "creation-doctrine-framework:timeline:5",
-          "creation-doctrine:ancient_near_east_context:0",
-          "creation-doctrine:historical_context:0",
-          "creation-theme:ancient_near_east_context:0",
-          "creation-theme:historical_context:0",
-          "creation:ancient_near_east_context:0",
-          "creation:hebraic_worldview:0",
-          "creation:historical_context:0",
           "enuma-elish-cosmic-ordering-comparison",
           "enuma-elish-cosmic-ordering-comparison:passage-relevance",
           "genesis-ane-comparative-context",
@@ -72,32 +53,8 @@
           "genesis:interpretive_note:0",
           "genesis:interpretive_note:1",
           "genesis:interpretive_note:2",
-          "image-of-god-theme:ancient_near_east_context:0",
-          "image-of-god-theme:hebraic_worldview:0",
-          "image-of-god-theme:historical_context:0",
-          "image-of-god-theme:second_temple_context:0",
           "john-logos",
-          "light-and-darkness-theme:ancient_near_east_context:0",
-          "light-and-darkness-theme:historical_context:0",
           "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
-          "new-creation-theme:ancient_near_east_context:0",
-          "new-creation-theme:historical_context:0",
-          "pneumatology:ancient_near_east_context:0",
-          "pneumatology:historical_context:0",
-          "spirit-theme:ancient_near_east_context:0",
-          "spirit-theme:historical_context:0",
-          "spiritual-gifts:ancient_near_east_context:0",
-          "spiritual-gifts:historical_context:0",
-          "water-and-spirit-theme:ancient_near_east_context:0",
-          "water-and-spirit-theme:historical_context:0",
-          "what-does-ruach-mean:ancient_near_east_context:0",
-          "what-does-ruach-mean:historical_context:0",
-          "what-is-the-holy-spirit:ancient_near_east_context:0",
-          "what-is-the-holy-spirit:historical_context:0",
-          "what-is-the-image-of-god:ancient_near_east_context:0",
-          "what-is-the-image-of-god:historical_context:0",
-          "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
-          "what-is-the-significance-of-the-holy-spirit:historical_context:0",
           "zephaniah-creation-reversal"
         ],
         "categories_represented": [
@@ -107,7 +64,7 @@
           "history",
           "social"
         ],
-        "synthesis_hash": "0c1f5f085d07eef107d641c89277ec23627aad1db83423956a860a383740a5df"
+        "synthesis_hash": "04bd8f1219a5d2965037512cbeb51a42b45990104e9f649838ea3338c7c8a778"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -236,7 +193,7 @@
       "deltas": {
         "section_delta": 3,
         "evidence_use_delta": 56,
-        "synthesis_use_percentage": 100.0,
+        "synthesis_use_percentage": 408.33,
         "word_count_delta": 1515,
         "boilerplate_removed": false,
         "richness_classification_changed": true
@@ -250,7 +207,7 @@
       "provenance_complete": true,
       "rejection_codes": [],
       "validation_errors": [],
-      "likely_failure_layer": null
+      "likely_failure_layer": "SYNTHESIS_COMPILER_GAP"
     },
     {
       "reference": "Leviticus 16",
@@ -284,61 +241,15 @@
         "boilerplate_ratio": 1.8
       },
       "synthesis": {
-        "synthesis_unit_count": 41,
+        "synthesis_unit_count": 6,
         "evidence_ids_represented": [
-          "atonement:ancient_near_east_context:0",
-          "atonement:historical_context:0",
-          "high-priesthood:ancient_near_east_context:0",
-          "high-priesthood:hebraic_worldview:0",
-          "high-priesthood:historical_context:0",
-          "high-priesthood:historical_setting:0",
-          "high-priesthood:original_audience:0",
-          "high-priesthood:second_temple_context:0",
           "leviticus-day-of-atonement",
           "leviticus-literary-movement",
           "leviticus:interpretive_note:2",
           "leviticus:interpretive_note:3",
-          "priesthood-of-believers:ancient_near_east_context:0",
-          "priesthood-of-believers:historical_context:0",
-          "priesthood:ancient_near_east_context:0",
-          "priesthood:hebraic_worldview:0",
-          "priesthood:historical_context:0",
-          "priesthood:second_temple_context:0",
-          "sacrifice-theme:ancient_near_east_context:0",
-          "sacrifice-theme:hebraic_worldview:0",
-          "sacrifice-theme:historical_context:0",
-          "sacrifice-theme:second_temple_context:0",
-          "sacrificial-system:ancient_near_east_context:0",
-          "sacrificial-system:historical_context:0",
           "tabernacle-graded-sacred-space",
           "tabernacle-graded-sacred-space:passage-relevance",
-          "tabernacle-presence-access-and-mobility:interpretive_note:1",
-          "tabernacle:ancient_near_east_context:0",
-          "tabernacle:archaeology:0",
-          "tabernacle:archaeology:1",
-          "tabernacle:date_ranges:0",
-          "tabernacle:date_ranges:1",
-          "tabernacle:hebraic_worldview:0",
-          "tabernacle:historical_context:0",
-          "tabernacle:historical_setting:0",
-          "tabernacle:original_audience:0",
-          "tabernacle:second_temple_context:0",
-          "tabernacle:timeline:0",
-          "tabernacle:timeline:1",
-          "tabernacle:timeline:2",
-          "tabernacle:timeline:3",
-          "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
-          "what-is-sacrifice-in-the-bible:historical_context:0",
-          "what-is-the-tabernacle:ancient_near_east_context:0",
-          "what-is-the-tabernacle:archaeology:0",
-          "what-is-the-tabernacle:archaeology:1",
-          "what-is-the-tabernacle:date_ranges:0",
-          "what-is-the-tabernacle:date_ranges:1",
-          "what-is-the-tabernacle:hebraic_worldview:0",
-          "what-is-the-tabernacle:historical_context:0",
-          "what-is-the-tabernacle:historical_setting:0",
-          "what-is-the-tabernacle:original_audience:0",
-          "what-is-the-tabernacle:second_temple_context:0"
+          "tabernacle-presence-access-and-mobility:interpretive_note:1"
         ],
         "categories_represented": [
           "archaeology",
@@ -348,7 +259,7 @@
           "history",
           "social"
         ],
-        "synthesis_hash": "6c9b25b87dde82946bb0620ce97f85a31311467dec6c8745e2d365de9f2904bc"
+        "synthesis_hash": "e8c356f918f0c127d1da2e7af6ebef9ffb9f5c37aea9fa54c5f1f4a486791030"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -399,7 +310,7 @@
       "deltas": {
         "section_delta": 3,
         "evidence_use_delta": 11,
-        "synthesis_use_percentage": 31.71,
+        "synthesis_use_percentage": 216.67,
         "word_count_delta": 449,
         "boilerplate_removed": true,
         "richness_classification_changed": false
@@ -413,7 +324,7 @@
       "provenance_complete": true,
       "rejection_codes": [],
       "validation_errors": [],
-      "likely_failure_layer": "RENDERER_PROMPT_GAP"
+      "likely_failure_layer": "SYNTHESIS_COMPILER_GAP"
     },
     {
       "reference": "Ruth 3",
@@ -449,10 +360,8 @@
         "boilerplate_ratio": 2.2
       },
       "synthesis": {
-        "synthesis_unit_count": 6,
+        "synthesis_unit_count": 4,
         "evidence_ids_represented": [
-          "boaz:ancient_near_east_context:0",
-          "boaz:historical_context:0",
           "nehemiah:interpretive_note:7",
           "ruth-literary-movement",
           "ruth-providence-through-action",
@@ -462,7 +371,7 @@
           "culture",
           "history"
         ],
-        "synthesis_hash": "f9aabf5213636acb6e7d3e6fd2120d9d18a97cd2fd5ef67eb53d16cd4d7d27f5"
+        "synthesis_hash": "fa058f9d632206f2699182ad2351e30d6c589bf7f27487981348fb84a3568f07"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -496,7 +405,7 @@
       "deltas": {
         "section_delta": 1,
         "evidence_use_delta": 1,
-        "synthesis_use_percentage": 100.0,
+        "synthesis_use_percentage": 150.0,
         "word_count_delta": -79,
         "boilerplate_removed": true,
         "richness_classification_changed": true
@@ -536,25 +445,19 @@
         "boilerplate_ratio": 0.0
       },
       "synthesis": {
-        "synthesis_unit_count": 7,
+        "synthesis_unit_count": 1,
         "evidence_ids_represented": [
-          "psalms-gateway-torah-king",
-          "what-does-torah-mean:ancient_near_east_context:0",
-          "what-does-torah-mean:historical_context:0",
-          "what-is-a-psalm:ancient_near_east_context:0",
-          "what-is-a-psalm:historical_context:0",
-          "what-is-biblical-wisdom:ancient_near_east_context:0",
-          "what-is-biblical-wisdom:historical_context:0"
+          "psalms-gateway-torah-king"
         ],
         "categories_represented": [
           "culture",
           "history",
           "politics"
         ],
-        "synthesis_hash": "96e6e3b7925719c8329091c54d84981b935af1b459020c314b2813b9f8bbb82a"
+        "synthesis_hash": "92b810c7a901069282d02a14204c0ce7d8a0843dd5e2e171e65a634db03c5cbe"
       },
       "after": {
-        "evidence_availability": "AVAILABLE",
+        "evidence_availability": "THIN",
         "richness_status": "RICH_ENOUGH",
         "section_count": 3,
         "commentary_block_count": 7,
@@ -587,7 +490,7 @@
       "deltas": {
         "section_delta": -1,
         "evidence_use_delta": 3,
-        "synthesis_use_percentage": 100.0,
+        "synthesis_use_percentage": 700.0,
         "word_count_delta": -128,
         "boilerplate_removed": false,
         "richness_classification_changed": false
@@ -601,7 +504,7 @@
       "provenance_complete": true,
       "rejection_codes": [],
       "validation_errors": [],
-      "likely_failure_layer": null
+      "likely_failure_layer": "SYNTHESIS_COMPILER_GAP"
     },
     {
       "reference": "1 Samuel 21",
@@ -632,7 +535,7 @@
         "categories_represented": [
           "politics"
         ],
-        "synthesis_hash": "10d448daa9df822e1e1a4a2c3879bbaf311000027306c8f32380ecd3d2c38908"
+        "synthesis_hash": "62aaae7d5677d9e2573ac88c0a52f180d4be0a1e8decdf27436a61756ac594f6"
       },
       "after": {
         "evidence_availability": "THIN",
@@ -700,7 +603,7 @@
           "culture",
           "politics"
         ],
-        "synthesis_hash": "35acf232a07be6ad3937330f9a01668b6b329f40359c9e5057b40c548214a005"
+        "synthesis_hash": "34e8acd3d343fcb3ba26f3989034024d72de83d867ed621ac3066a45b424e067"
       },
       "after": {
         "evidence_availability": "THIN",
@@ -772,17 +675,9 @@
         "boilerplate_ratio": 2.0
       },
       "synthesis": {
-        "synthesis_unit_count": 11,
+        "synthesis_unit_count": 3,
         "evidence_ids_represented": [
           "2-samuel:interpretive_note:4",
-          "ark-brought-to-jerusalem:ancient_near_east_context:0",
-          "ark-brought-to-jerusalem:historical_context:0",
-          "conquest-of-jericho:ancient_near_east_context:0",
-          "conquest-of-jericho:historical_context:0",
-          "david-anointed:ancient_near_east_context:0",
-          "david-anointed:historical_context:0",
-          "rise-of-saul:ancient_near_east_context:0",
-          "rise-of-saul:historical_context:0",
           "second-samuel-jerusalem-ark",
           "second-samuel-literary-movement"
         ],
@@ -790,7 +685,7 @@
           "culture",
           "history"
         ],
-        "synthesis_hash": "193545234c1576d974f1aed77d98d0aacb45803c3130b206cfabc3be7eed67a2"
+        "synthesis_hash": "aae0e7c12362f5719ab50f56a15ed74923e4489fc860ab11cd67613c2c59c800"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -834,7 +729,7 @@
       "deltas": {
         "section_delta": 0,
         "evidence_use_delta": 7,
-        "synthesis_use_percentage": 100.0,
+        "synthesis_use_percentage": 366.67,
         "word_count_delta": 73,
         "boilerplate_removed": true,
         "richness_classification_changed": true
@@ -848,7 +743,7 @@
       "provenance_complete": true,
       "rejection_codes": [],
       "validation_errors": [],
-      "likely_failure_layer": null
+      "likely_failure_layer": "SYNTHESIS_COMPILER_GAP"
     },
     {
       "reference": "2 Samuel 24",
@@ -888,7 +783,7 @@
         "categories_represented": [
           "culture"
         ],
-        "synthesis_hash": "3b89a5fb3f9d90f5cdb381a07adfd61817cd95d2e1d18122ee965a527ad1a510"
+        "synthesis_hash": "a0654252c88640623d836ac477c0b13bcb6d198e5ea22b85abae11924a0414c6"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -1033,68 +928,12 @@
         "boilerplate_ratio": 1.8
       },
       "synthesis": {
-        "synthesis_unit_count": 47,
+        "synthesis_unit_count": 2,
         "evidence_ids_represented": [
-          "creation-doctrine-framework:ancient_near_east_context:0",
-          "creation-doctrine-framework:hebraic_worldview:0",
-          "creation-doctrine-framework:historical_context:0",
-          "creation-doctrine-framework:historical_setting:0",
-          "creation-doctrine-framework:original_audience:0",
-          "creation-doctrine-framework:second_temple_context:0",
-          "creation-doctrine-framework:timeline:0",
-          "creation-doctrine-framework:timeline:1",
-          "creation-doctrine-framework:timeline:2",
-          "creation-doctrine-framework:timeline:3",
-          "creation-doctrine-framework:timeline:4",
-          "creation-doctrine-framework:timeline:5",
-          "creation-doctrine:ancient_near_east_context:0",
-          "creation-doctrine:historical_context:0",
-          "creation-theme:ancient_near_east_context:0",
-          "creation-theme:historical_context:0",
-          "creation:ancient_near_east_context:0",
-          "creation:hebraic_worldview:0",
-          "creation:historical_context:0",
-          "divine-presence:ancient_near_east_context:0",
-          "divine-presence:historical_context:0",
-          "glory-theme:ancient_near_east_context:0",
-          "glory-theme:historical_context:0",
-          "jesus:ancient_near_east_context:0",
-          "jesus:hebraic_worldview:0",
-          "jesus:historical_context:0",
-          "jesus:key_places:0",
-          "jesus:key_places:1",
-          "jesus:key_places:2",
-          "jesus:key_places:3",
-          "jesus:key_places:4",
-          "jesus:second_temple_context:0",
           "john-1-1",
           "john-1-18",
           "john-baptist-lamb",
-          "john-logos",
-          "light-and-darkness-theme:ancient_near_east_context:0",
-          "light-and-darkness-theme:historical_context:0",
-          "new-creation-theme:ancient_near_east_context:0",
-          "new-creation-theme:historical_context:0",
-          "new-temple-theme:ancient_near_east_context:0",
-          "new-temple-theme:historical_context:0",
-          "presence-theme:ancient_near_east_context:0",
-          "presence-theme:historical_context:0",
-          "sacrifice-theme:ancient_near_east_context:0",
-          "sacrifice-theme:hebraic_worldview:0",
-          "sacrifice-theme:historical_context:0",
-          "sacrifice-theme:second_temple_context:0",
-          "sanctuary-theme:ancient_near_east_context:0",
-          "sanctuary-theme:hebraic_worldview:0",
-          "sanctuary-theme:historical_context:0",
-          "sanctuary-theme:second_temple_context:0",
-          "trinity:ancient_near_east_context:0",
-          "trinity:historical_context:0",
-          "water-theme:ancient_near_east_context:0",
-          "water-theme:historical_context:0",
-          "what-is-intertextuality:ancient_near_east_context:0",
-          "what-is-intertextuality:historical_context:0",
-          "what-verses-show-identity-in-christ:ancient_near_east_context:0",
-          "what-verses-show-identity-in-christ:historical_context:0"
+          "john-logos"
         ],
         "categories_represented": [
           "chronology",
@@ -1104,7 +943,7 @@
           "language",
           "social"
         ],
-        "synthesis_hash": "42df24e59d2d0bb124e2f7663c16dfaaa5fd73f6eda99acce6e1f7a13163bb8e"
+        "synthesis_hash": "824360e8996f9b9d9f819c12e83b9da1864fcfa74d7c85c7606ea0f6f2f8bc48"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -1233,7 +1072,7 @@
       "deltas": {
         "section_delta": 2,
         "evidence_use_delta": 55,
-        "synthesis_use_percentage": 100.0,
+        "synthesis_use_percentage": 2350.0,
         "word_count_delta": 1513,
         "boilerplate_removed": true,
         "richness_classification_changed": true
@@ -1247,7 +1086,7 @@
       "provenance_complete": true,
       "rejection_codes": [],
       "validation_errors": [],
-      "likely_failure_layer": null
+      "likely_failure_layer": "SYNTHESIS_COMPILER_GAP"
     },
     {
       "reference": "Isaiah 6",
@@ -1280,32 +1119,18 @@
         "boilerplate_ratio": 2.25
       },
       "synthesis": {
-        "synthesis_unit_count": 17,
+        "synthesis_unit_count": 4,
         "evidence_ids_represented": [
-          "divine-holiness:ancient_near_east_context:0",
-          "divine-holiness:historical_context:0",
-          "holiness-theme:ancient_near_east_context:0",
-          "holiness-theme:historical_context:0",
-          "how-should-i-read-prophecy:ancient_near_east_context:0",
-          "how-should-i-read-prophecy:historical_context:0",
           "isaiah-holiness-justice-worship",
           "isaiah-many-voices",
           "isaiah-qumran-witnesses",
-          "isaiah-superscription-prophet",
-          "temple-theme:ancient_near_east_context:0",
-          "temple-theme:hebraic_worldview:0",
-          "temple-theme:historical_context:0",
-          "temple-theme:second_temple_context:0",
-          "what-is-a-prophet:ancient_near_east_context:0",
-          "what-is-a-prophet:historical_context:0",
-          "what-is-holiness:ancient_near_east_context:0",
-          "what-is-holiness:historical_context:0"
+          "isaiah-superscription-prophet"
         ],
         "categories_represented": [
           "culture",
           "history"
         ],
-        "synthesis_hash": "8ddb8a5f9bf90cbc3926b61c6a112b0623e59504d068a40bba577c02f942f435"
+        "synthesis_hash": "bc283fafee87127878ef17c004c4297f134813f4bf13fc588043b58e1322a7ce"
       },
       "after": {
         "evidence_availability": "AVAILABLE",
@@ -1362,7 +1187,7 @@
       "deltas": {
         "section_delta": 2,
         "evidence_use_delta": 14,
-        "synthesis_use_percentage": 100.0,
+        "synthesis_use_percentage": 425.0,
         "word_count_delta": 299,
         "boilerplate_removed": true,
         "richness_classification_changed": true
@@ -1376,7 +1201,7 @@
       "provenance_complete": true,
       "rejection_codes": [],
       "validation_errors": [],
-      "likely_failure_layer": null
+      "likely_failure_layer": "SYNTHESIS_COMPILER_GAP"
     },
     {
       "reference": "Revelation 12",

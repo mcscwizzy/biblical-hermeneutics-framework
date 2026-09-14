@@ -1,11 +1,10 @@
 {
   "pipeline_version": "commentary-v1.2-enrichment",
-  "current_stage": "CANARY_QUALITY_GATE_FAILED",
+  "current_stage": "CANARY_READY_FOR_RENDERER",
   "required_renderer": "approved_external_renderer",
   "required_effort": "medium",
   "full_bible_generation_authorized": true,
   "v1_1_mutated": false,
   "ckl_mutated": false,
-  "canary_chapter_count": 13,
-  "current_gate_state": "QUALITY_GATE_FAILED"
+  "canary_chapter_count": 13
 }

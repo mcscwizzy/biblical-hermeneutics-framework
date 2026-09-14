@@ -1,0 +1,2772 @@
+{
+  "artifact_version": "commentary-richness-denominator-audit-v1",
+  "namespace_version": "commentary-richness-scoring-remediation-v1",
+  "qualification_id": "renderer-qualification-v1-gpt-5.6-sol-a0f4063638cf9730958a",
+  "remediation_id": "renderer-remediation-v1-gpt-5.6-sol-2d03bb002c24cdbcca72",
+  "scoring_behavior_changed": false,
+  "note": "This is the required pre-policy denominator audit. Reader-relevance judgments are diagnostic and do not alter historical scores.",
+  "chapters": [
+    {
+      "reference": "Exodus 14",
+      "book": "Exodus",
+      "chapter": 14,
+      "evidence_hash": "a8b53c334b69629f2bbb0ea1ecdafc21ae687a26f7c59ce2d965de9b06058380",
+      "synthesis_hash": "1059b0c617109751eb944cc9b22b2d8e83233f720d258561449c4624f8c2b2db",
+      "current_cluster_audit_version": "commentary-richness-clusters-v1",
+      "current_core_classifier_version": "essential-passage-context-v2",
+      "current_richness_policy_version": "commentary-richness-policy-v2-proposed",
+      "current_gate_version": "commentary-richness-gate-v2.1",
+      "current_meaningful_cluster_count": 19,
+      "reader_relevant_judgment_count": 3,
+      "importance_basis_breakdown": {
+        "attribution_method": "equal split across a cluster's recorded importance_basis values",
+        "weighted_denominator": 13.4,
+        "by_importance_basis": {
+          "direct_passage_context": {
+            "attributed_weight": 1.0,
+            "denominator_percentage": 7.46
+          },
+          "disputed_or_contested_evidence": {
+            "attributed_weight": 0.5,
+            "denominator_percentage": 3.73
+          },
+          "entity_background_not_direct_passage_context": {
+            "attributed_weight": 11.9,
+            "denominator_percentage": 88.81
+          }
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_290e1afb17ca",
+          "synthesis_ids": [
+            "syn_historical_context_6b1bfe3623f9",
+            "syn_historical_context_abf808c1f47e"
+          ],
+          "evidence_ids": [
+            "red-sea-1:historical_context:0",
+            "salt-sea:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=red-sea-1,salt-sea|facts=feature belongs landscapes through israel travels settles remembers god's acts",
+          "facts": [
+            "This feature belongs to the landscapes through which Israel travels, settles, and remembers God's acts.",
+            "This feature belongs to the landscapes through which Israel travels, settles, and remembers God's acts."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_304529f2e7f4",
+          "synthesis_ids": [
+            "syn_surrounding_passages_026e4d2c9743",
+            "syn_surrounding_passages_0a7d9030662a",
+            "syn_surrounding_passages_112542770c73",
+            "syn_surrounding_passages_eb64949c19df"
+          ],
+          "evidence_ids": [
+            "exodus-ane-context",
+            "exodus-literary-movement",
+            "exodus:interpretive_note:0",
+            "exodus:interpretive_note:1",
+            "exodus:interpretive_note:2"
+          ],
+          "quality_class": "CORE",
+          "weight": 1.0,
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "categories": [
+            "culture",
+            "geography",
+            "surrounding_passages"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=surrounding_passages|parents=exodus|facts=ancient egyptian broader ancient near eastern evidence provides cultural context not produced inscription names moses narrates biblical exodus;egyptian royal ideology ancient near eastern covenant law traditions comparative sanctuary evidence form relevant background interpreting exodus;present proposed exodus dates routes population estimates pharaoh identifications reconstructions rather than facts explicitly supplied exodus;exodus moves oppression deliverance covenant covenant breach renewal tabernacle construction arrival divine glory;read deliverance covenant covenant breach renewal tabernacle presence connected movements book rather than treating departure egypt endpoint",
+          "facts": [
+            "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint.",
+            "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+            "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+            "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus.",
+            "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory.",
+            "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+            "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+            "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "direct passage context, explicit significance, or a passage-understanding unit"
+        },
+        {
+          "cluster_id": "idea_cluster_45fc5813aae3",
+          "synthesis_ids": [
+            "syn_cultural_context_994f9ef8c7a5"
+          ],
+          "evidence_ids": [
+            "mount-seir-1:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=mount-seir-1|facts=mount seir belongs edomite highland geography south dead sea shaping kinship memory travel routes conflict israel judah",
+          "facts": [
+            "Mount Seir belongs to Edomite highland geography south of the Dead Sea, shaping kinship memory, travel routes, and conflict with Israel and Judah."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_4b128ee5c2f4",
+          "synthesis_ids": [
+            "syn_archaeology_geography_95f0d27c58c3",
+            "syn_why_it_matters_fb6bf1b5ef52"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:key_places:0",
+            "exodus-to-sinai-timeline:key_places:1",
+            "exodus-to-sinai-timeline:key_places:2",
+            "exodus-to-sinai-timeline:key_places:3"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "geography"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=exodus-to-sinai-timeline|facts=egypt;kadesh barnea;mount sinai;red sea 1",
+          "facts": [
+            "egypt",
+            "red-sea-1",
+            "mount-sinai",
+            "kadesh-barnea",
+            "egypt",
+            "red-sea-1",
+            "mount-sinai",
+            "kadesh-barnea"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_4d5bd78a6c50",
+          "synthesis_ids": [
+            "syn_cultural_context_285373a82b38"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context|parents=red-sea-crossing|facts=episode narrated against egypt's eastern frontier chariot pursuit water wind wilderness movement geographic comparison must remain separate claims specific modern landform alleged artifact proves event",
+          "facts": [
+            "The episode is narrated against Egypt's eastern frontier, chariot pursuit, water, wind, and wilderness movement. Geographic comparison must remain separate from claims that a specific modern landform or alleged artifact proves the event."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_548f611bb6a5",
+          "synthesis_ids": [
+            "syn_chronology_1325e181a6aa",
+            "syn_chronology_f7f043e05474",
+            "syn_why_it_matters_24abfaa5cd26",
+            "syn_why_it_matters_d20f1fee3d50"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:timeline:0",
+            "exodus-to-sinai-timeline:timeline:1",
+            "exodus-to-sinai-timeline:timeline:2",
+            "exodus-to-sinai-timeline:timeline:3",
+            "exodus-to-sinai-timeline:timeline:4",
+            "exodus-to-sinai-timeline:timeline:5",
+            "exodus-to-sinai-timeline:timeline:6",
+            "exodus-to-sinai-timeline:timeline:7",
+            "exodus-to-sinai-timeline:timeline:8"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "chronology"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=chronology,why_it_matters|parents=exodus-to-sinai-timeline|facts=covenant given ratified;israel arrives sinai;israel crosses sea;wilderness provision testing begin;israel leaves egypt;israel oppressed egypt;moses called burning bush;passover marks deliverance;plagues confront pharaoh",
+          "facts": [
+            "Israel oppressed in Egypt",
+            "Moses called at the burning bush",
+            "Plagues confront Pharaoh",
+            "Passover marks deliverance",
+            "Israel leaves Egypt",
+            "Israel crosses the sea",
+            "Wilderness provision and testing begin",
+            "Israel arrives at Sinai",
+            "The covenant is given and ratified",
+            "Israel oppressed in Egypt",
+            "Moses called at the burning bush",
+            "Plagues confront Pharaoh",
+            "Passover marks deliverance",
+            "Israel leaves Egypt",
+            "Israel crosses the sea",
+            "Wilderness provision and testing begin",
+            "Israel arrives at Sinai",
+            "The covenant is given and ratified"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_67ca5d101ce8",
+          "synthesis_ids": [
+            "syn_cultural_context_582fc6c0b7bb"
+          ],
+          "evidence_ids": [
+            "euphrates:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=euphrates|facts=euphrates belongs mesopotamian river geography imperial boundaries irrigation systems trade routes shaped assyrian babylonian persian power",
+          "facts": [
+            "The Euphrates belongs to Mesopotamian river geography, imperial boundaries, irrigation systems, and trade routes that shaped Assyrian, Babylonian, and Persian power."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_80828302e651",
+          "synthesis_ids": [
+            "syn_historical_context_250efb57cf6a",
+            "syn_historical_context_2819fc9aa85b",
+            "syn_historical_context_641a82178876",
+            "syn_historical_context_9256a346e32b",
+            "syn_historical_context_99a722557766"
+          ],
+          "evidence_ids": [
+            "euphrates:historical_context:0",
+            "great-sea:historical_context:0",
+            "jordan:historical_context:0",
+            "mount-seir-1:historical_context:0",
+            "nile:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=euphrates,great-sea,jordan,mount-seir-1,nile|facts=historically euphrates located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically great sea located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically jordan located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically mount seir 1 located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval;historically nile located canonical setting entry connects setting exodus joshua son nun psalms related ckl objects contextual retrieval",
+          "facts": [
+            "Historically, Great Sea is located by its canonical setting; this entry connects that setting with exodus, joshua-son-of-nun, psalms and related CKL objects for contextual retrieval.",
+            "Historically, Mount Seir 1 is located by its canonical setting; this entry connects that setting with exodus, joshua-son-of-nun, psalms and related CKL objects for contextual retrieval.",
+            "Historically, Euphrates is located by its canonical setting; this entry connects that setting with exodus, joshua-son-of-nun, psalms and related CKL objects for contextual retrieval.",
+            "Historically, Jordan is located by its canonical setting; this entry connects that setting with exodus, joshua-son-of-nun, psalms and related CKL objects for contextual retrieval.",
+            "Historically, Nile is located by its canonical setting; this entry connects that setting with exodus, joshua-son-of-nun, psalms and related CKL objects for contextual retrieval."
+          ],
+          "central_parent_ratio": 0.2,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_8afcdacee3ba",
+          "synthesis_ids": [
+            "syn_interpretive_questions_4fbbf0d932c4",
+            "syn_why_it_matters_4429fee6510f"
+          ],
+          "evidence_ids": [
+            "exodus-wilderness-routes-and-water:interpretive_note:0",
+            "yam-suf-route-identification",
+            "yam-suf-route-identification:passage-relevance"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "geography",
+            "interpretive_questions"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=exodus-wilderness-routes-and-water|facts=evidence keeps narrative's actual geographic vocabulary view prevents familiar modern map being treated only route allowed passage;exodus numbers preserve ordered set route choices camp names around sea crossing while modern geographic identifications remain contested;text's sequence named stations evidence matching every name modern location separate disputed reconstruction",
+          "facts": [
+            "The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.",
+            "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.",
+            "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage.",
+            "The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.",
+            "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.",
+            "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_920b51ad2548",
+          "synthesis_ids": [
+            "syn_cultural_context_d65da9e602d0"
+          ],
+          "evidence_ids": [
+            "salt-sea:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=salt-sea|facts=salt sea belongs dead sea basin geography wilderness routes mineral landscape boundary descriptions israel's land traditions",
+          "facts": [
+            "The Salt Sea belongs to Dead Sea basin geography, wilderness routes, mineral landscape, and boundary descriptions in Israel's land traditions."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_9cddc4a1d9a3",
+          "synthesis_ids": [
+            "syn_cultural_context_8fd7dacc5eae"
+          ],
+          "evidence_ids": [
+            "red-sea-1:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=red-sea-1|facts=red sea belongs egypt sinai wilderness geography desert routes coastal travel exodus memory israel's movement away egyptian imperial power",
+          "facts": [
+            "The Red Sea belongs to Egypt-Sinai wilderness geography, desert routes, coastal travel, and exodus memory in Israel's movement away from Egyptian imperial power."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_a35f1331ae18",
+          "synthesis_ids": [
+            "syn_historical_context_44c57f4b3942"
+          ],
+          "evidence_ids": [
+            "the-exodus:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=historical_context|parents=the-exodus|facts=exodus becomes defining act redemption israel's memory starting point covenant nationhood",
+          "facts": [
+            "The exodus becomes the defining act of redemption in Israel's memory and the starting point for covenant nationhood."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_cc59a85f47b2",
+          "synthesis_ids": [
+            "syn_historical_context_dcabc485aee8",
+            "syn_why_it_matters_456cf3961efc"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:historical_context:0",
+            "exodus-to-sinai-timeline:historical_setting:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context,why_it_matters|parents=exodus-to-sinai-timeline|facts=exodus wilderness narrative;sequence belongs exodus wilderness narrative where israel moves slavery under pharaoh covenant assembly before lord sinai",
+          "facts": [
+            "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+            "Exodus wilderness narrative",
+            "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+            "Exodus wilderness narrative"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_d750e632f9af",
+          "synthesis_ids": [
+            "syn_cultural_context_b216944e1680"
+          ],
+          "evidence_ids": [
+            "the-exodus:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context|parents=the-exodus|facts=story confronts imperial egypt recasts deliverance lord's victory over human power death",
+          "facts": [
+            "The story confronts imperial Egypt and recasts deliverance as the LORD's victory over human power and death."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_df0766bcaa31",
+          "synthesis_ids": [
+            "syn_cultural_context_006f4c056add"
+          ],
+          "evidence_ids": [
+            "great-sea:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=great-sea|facts=great sea refers mediterranean maritime world phoenician trade coastal routes imperial movement israel's western geographic boundary",
+          "facts": [
+            "The Great Sea refers to the Mediterranean maritime world of Phoenician trade, coastal routes, imperial movement, and Israel's western geographic boundary."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_f45f2270a11c",
+          "synthesis_ids": [
+            "syn_cultural_context_0e4e3d2e7e36"
+          ],
+          "evidence_ids": [
+            "nile:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=nile|facts=nile belongs egyptian river civilization agricultural cycles royal ideology imperial power frame israel's memory bondage deliverance",
+          "facts": [
+            "The Nile belongs to Egyptian river civilization, agricultural cycles, royal ideology, and imperial power that frame Israel's memory of bondage and deliverance."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_f936a2d131a8",
+          "synthesis_ids": [
+            "syn_cultural_context_1a747fbb0c44"
+          ],
+          "evidence_ids": [
+            "jordan:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=jordan|facts=jordan belongs levantine river valley geography boundary crossing irrigation settlement patterns central israel's movement into land",
+          "facts": [
+            "The Jordan belongs to Levantine river-valley geography, boundary crossing, irrigation, and settlement patterns central to Israel's movement into the land."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_f9460316772b",
+          "synthesis_ids": [
+            "syn_historical_context_8688146f2433"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=historical_context|parents=red-sea-crossing|facts=exodus names route decisions camps around crossing does not provide modern coordinates proposed identifications range across eastern egyptian lakes lagoons gulfs so ckl preserves route markers without selecting crossing site",
+          "facts": [
+            "Exodus names route decisions and camps around the crossing but does not provide modern coordinates. Proposed identifications range across eastern Egyptian lakes, lagoons, and gulfs, so CKL preserves the route markers without selecting a crossing site."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_fc3d47d4b867",
+          "synthesis_ids": [
+            "syn_cultural_context_372de05475fd",
+            "syn_why_it_matters_ea5fdaf42f94"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:ancient_near_east_context:0",
+            "exodus-to-sinai-timeline:hebraic_worldview:0",
+            "exodus-to-sinai-timeline:original_audience:0",
+            "exodus-to-sinai-timeline:second_temple_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=exodus-to-sinai-timeline|facts=israel remembering ordered story deliverance covenant formation;route narrative set against egyptian imperial power desert travel water food scarcity formation people outside normal settled life;second temple jewish remembrance exodus sinai shaped passover covenant identity liberation hope later readings new exodus;timeline frames time remembered redemption israel's calendar worship identity begin god's deliverance before covenant instruction",
+          "facts": [
+            "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+            "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+            "Israel remembering the ordered story of deliverance and covenant formation",
+            "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus.",
+            "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+            "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+            "Israel remembering the ordered story of deliverance and covenant formation",
+            "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        }
+      ]
+    },
+    {
+      "reference": "Deuteronomy 10",
+      "book": "Deuteronomy",
+      "chapter": 10,
+      "evidence_hash": "636456e61202cd754c581f21caa93986fb638ef3f102e1a051de3c3cb8842a74",
+      "synthesis_hash": "b5c4daff54f89458f8d5c1be717edf05df013ff4515f2d7fec65b569978a1399",
+      "current_cluster_audit_version": "commentary-richness-clusters-v1",
+      "current_core_classifier_version": "essential-passage-context-v2",
+      "current_richness_policy_version": "commentary-richness-policy-v2-proposed",
+      "current_gate_version": "commentary-richness-gate-v2.1",
+      "current_meaningful_cluster_count": 8,
+      "reader_relevant_judgment_count": 1,
+      "importance_basis_breakdown": {
+        "attribution_method": "equal split across a cluster's recorded importance_basis values",
+        "weighted_denominator": 5.9,
+        "by_importance_basis": {
+          "direct_passage_context": {
+            "attributed_weight": 1.0,
+            "denominator_percentage": 16.95
+          },
+          "entity_background_not_direct_passage_context": {
+            "attributed_weight": 4.9,
+            "denominator_percentage": 83.05
+          }
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_08b1e1fd1004",
+          "synthesis_ids": [
+            "syn_cultural_context_12ef4e5c737c",
+            "syn_cultural_context_3957f404021c",
+            "syn_cultural_context_57381dac555b",
+            "syn_cultural_context_6fdc511e56ea",
+            "syn_cultural_context_7a5ebabc878b",
+            "syn_cultural_context_a84c7ba57884",
+            "syn_cultural_context_d729932a0180",
+            "syn_cultural_context_f37e1ac5f35a",
+            "syn_cultural_context_f879d98eb23a"
+          ],
+          "evidence_ids": [
+            "gibeah-1:ancient_near_east_context:0",
+            "gilead-1:ancient_near_east_context:0",
+            "gomorrah:ancient_near_east_context:0",
+            "hamath-1:ancient_near_east_context:0",
+            "jezreel-2:ancient_near_east_context:0",
+            "kadesh-barnea:ancient_near_east_context:0",
+            "lebanon:ancient_near_east_context:0",
+            "negeb:ancient_near_east_context:0",
+            "sodom:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=gibeah-1,gilead-1,gomorrah,hamath-1,jezreel-2,kadesh-barnea,lebanon,negeb,sodom|facts=ancient background gibeah 1 includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background gilead 1 includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background gomorrah includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background hamath 1 includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background jezreel 2 includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background kadesh barnea includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background lebanon includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background negeb includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness;ancient background sodom includes roads borders markets sanctuaries water sources imperial administration entry ties world genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme without letting comparison replace biblical witness",
+          "facts": [
+            "Ancient background for Jezreel 2 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Gibeah 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Gomorrah includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Gilead 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Hamath 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Kadesh-barnea includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Sodom includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Lebanon includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Negeb includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme without letting comparison replace the biblical witness."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_19cb3e654e34",
+          "synthesis_ids": [
+            "syn_historical_context_05f453dfbb6b",
+            "syn_historical_context_2b9a4bbfdb20",
+            "syn_historical_context_46ff8625644a",
+            "syn_historical_context_c41fb591ec40"
+          ],
+          "evidence_ids": [
+            "amalek:historical_context:0",
+            "arabah:historical_context:0",
+            "asia:historical_context:0",
+            "bashan:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=amalek,arabah,asia,bashan|facts=historically amalek located canonical setting entry connects setting exile theme kingdom theme new covenant related ckl objects contextual retrieval;historically arabah located canonical setting entry connects setting exile theme kingdom theme new covenant related ckl objects contextual retrieval;historically asia located canonical setting entry connects setting exile theme kingdom theme new covenant related ckl objects contextual retrieval;historically bashan located canonical setting entry connects setting exile theme kingdom theme new covenant related ckl objects contextual retrieval",
+          "facts": [
+            "Historically, Bashan is located by its canonical setting; this entry connects that setting with exile-theme, kingdom-theme, new-covenant and related CKL objects for contextual retrieval.",
+            "Historically, Arabah is located by its canonical setting; this entry connects that setting with exile-theme, kingdom-theme, new-covenant and related CKL objects for contextual retrieval.",
+            "Historically, Asia is located by its canonical setting; this entry connects that setting with exile-theme, kingdom-theme, new-covenant and related CKL objects for contextual retrieval.",
+            "Historically, Amalek is located by its canonical setting; this entry connects that setting with exile-theme, kingdom-theme, new-covenant and related CKL objects for contextual retrieval."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_40bf15400add",
+          "synthesis_ids": [
+            "syn_historical_context_0dd52e17c8a8",
+            "syn_historical_context_8b187f7e200c",
+            "syn_historical_context_902f0a3ee48a",
+            "syn_historical_context_a338a2e112d2",
+            "syn_historical_context_cf0056f20f85",
+            "syn_historical_context_e9e30fe03c4e"
+          ],
+          "evidence_ids": [
+            "aaron:historical_context:0",
+            "caleb:historical_context:0",
+            "jethro:historical_context:0",
+            "korah:historical_context:0",
+            "miriam:historical_context:0",
+            "phinehas:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=historical_context|parents=aaron,caleb,jethro,korah,miriam,phinehas|facts=aaron belongs exodus wilderness world israel's formation where deliverance covenant define people god;caleb belongs exodus wilderness world israel's formation where deliverance covenant define people god;jethro belongs exodus wilderness world israel's formation where deliverance covenant define people god;korah belongs exodus wilderness world israel's formation where deliverance covenant define people god;miriam belongs exodus wilderness world israel's formation where deliverance covenant define people god;phinehas belongs exodus wilderness world israel's formation where deliverance covenant define people god",
+          "facts": [
+            "Miriam belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
+            "Aaron belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
+            "Jethro belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
+            "Phinehas belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
+            "Caleb belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
+            "Korah belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God."
+          ],
+          "central_parent_ratio": 0.1667,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_4b3a3448f076",
+          "synthesis_ids": [
+            "syn_cultural_context_3b97b6e89cbd",
+            "syn_cultural_context_527b974975fb",
+            "syn_cultural_context_912968cd9590",
+            "syn_cultural_context_bd966e67d60a"
+          ],
+          "evidence_ids": [
+            "amalek:ancient_near_east_context:0",
+            "arabah:ancient_near_east_context:0",
+            "asia:ancient_near_east_context:0",
+            "bashan:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=amalek,arabah,asia,bashan|facts=amalek read within concrete geography shaped levantine routes imperial borders settlement patterns water access trade movement neighboring peoples named biblical narrative;arabah read within concrete geography shaped levantine routes imperial borders settlement patterns water access trade movement neighboring peoples named biblical narrative;asia read within concrete geography shaped levantine routes imperial borders settlement patterns water access trade movement neighboring peoples named biblical narrative;bashan read within concrete geography shaped levantine routes imperial borders settlement patterns water access trade movement neighboring peoples named biblical narrative",
+          "facts": [
+            "Arabah is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
+            "Asia is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
+            "Amalek is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
+            "Bashan is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_5465e8d9787e",
+          "synthesis_ids": [
+            "syn_cultural_context_75aa7c83778a"
+          ],
+          "evidence_ids": [
+            "phinehas:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=phinehas|facts=setting late second millennium world imperial pressure clan migration desert formation",
+          "facts": [
+            "The setting is the late second-millennium world of imperial pressure, clan migration, and desert formation."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_6e93660583db",
+          "synthesis_ids": [
+            "syn_surrounding_passages_946135095225",
+            "syn_surrounding_passages_b55b3bea6540"
+          ],
+          "evidence_ids": [
+            "deuteronomy-literary-movement",
+            "deuteronomy:interpretive_note:1"
+          ],
+          "quality_class": "CORE",
+          "weight": 1.0,
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=surrounding_passages|parents=deuteronomy|facts=deuteronomy moves remembered wilderness history through covenant instruction covenant consequences renewal succession song blessing moses's death;repeated instruction rhetorically adapted covenant exposition successor generation not simple verbatim duplication earlier laws",
+          "facts": [
+            "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+            "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "direct passage context, explicit significance, or a passage-understanding unit"
+        },
+        {
+          "cluster_id": "idea_cluster_742a93f2497a",
+          "synthesis_ids": [
+            "syn_cultural_context_07f4d409c047",
+            "syn_cultural_context_25b20bd90100",
+            "syn_cultural_context_74ac0692f89f",
+            "syn_cultural_context_887e9946b41b",
+            "syn_cultural_context_ae65be588f34"
+          ],
+          "evidence_ids": [
+            "aaron:ancient_near_east_context:0",
+            "caleb:ancient_near_east_context:0",
+            "jethro:ancient_near_east_context:0",
+            "korah:ancient_near_east_context:0",
+            "miriam:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context|parents=aaron,caleb,jethro,korah,miriam|facts=aaron belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;caleb belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;jethro belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;korah belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require;miriam belongs social world kinship obligations household economy temple synagogue life royal courts village elders imperial administration relevant passages require",
+          "facts": [
+            "Aaron belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+            "Caleb belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+            "Miriam belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+            "Korah belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+            "Jethro belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
+          ],
+          "central_parent_ratio": 0.2,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_8a6923e0989b",
+          "synthesis_ids": [
+            "syn_historical_context_2d1762092cb3",
+            "syn_historical_context_414370edc8f7",
+            "syn_historical_context_7423a3af0d15",
+            "syn_historical_context_83fd3c520630",
+            "syn_historical_context_91c8d67eb5a2",
+            "syn_historical_context_92da3a44686b",
+            "syn_historical_context_a1172c166e01",
+            "syn_historical_context_c061a3bbaaf8",
+            "syn_historical_context_ce6e1d43de51"
+          ],
+          "evidence_ids": [
+            "gibeah-1:historical_context:0",
+            "gilead-1:historical_context:0",
+            "gomorrah:historical_context:0",
+            "hamath-1:historical_context:0",
+            "jezreel-2:historical_context:0",
+            "kadesh-barnea:historical_context:0",
+            "lebanon:historical_context:0",
+            "negeb:historical_context:0",
+            "sodom:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=gibeah-1,gilead-1,gomorrah,hamath-1,jezreel-2,kadesh-barnea,lebanon,negeb,sodom|facts=historically gibeah 1 belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically gilead 1 belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically gomorrah belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically hamath 1 belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically jezreel 2 belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically kadesh barnea belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically lebanon belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically negeb belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events;historically sodom belongs within scriptural setting around genesis 10 1 32 where genesis 10 1 32 deuteronomy 10 6 9 exile theme kingdom theme help locate biblical place bible's people places events",
+          "facts": [
+            "Historically, Gomorrah belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Kadesh-barnea belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Jezreel 2 belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Hamath 1 belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Lebanon belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Gibeah 1 belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Negeb belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Gilead 1 belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events.",
+            "Historically, Sodom belongs within the scriptural setting around Genesis 10:1-32, where Genesis 10:1-32, Deuteronomy 10:6-9, exile-theme, and kingdom-theme help locate this biblical place in the Bible's people, places, and events."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        }
+      ]
+    },
+    {
+      "reference": "Job 1",
+      "book": "Job",
+      "chapter": 1,
+      "evidence_hash": "5a1f07d87121466f1b09649406d00d79cd756eba457dc921ec43e1e229fb28a3",
+      "synthesis_hash": "ed6925454ab06d79845271b8dbbd0a2068e70230d0b1501fdb475aa155342586",
+      "current_cluster_audit_version": "commentary-richness-clusters-v1",
+      "current_core_classifier_version": "essential-passage-context-v2",
+      "current_richness_policy_version": "commentary-richness-policy-v2-proposed",
+      "current_gate_version": "commentary-richness-gate-v2.1",
+      "current_meaningful_cluster_count": 8,
+      "reader_relevant_judgment_count": 4,
+      "importance_basis_breakdown": {
+        "attribution_method": "equal split across a cluster's recorded importance_basis values",
+        "weighted_denominator": 4.8,
+        "by_importance_basis": {
+          "disputed_or_contested_evidence": {
+            "attributed_weight": 2.0,
+            "denominator_percentage": 41.67
+          },
+          "entity_background_not_direct_passage_context": {
+            "attributed_weight": 1.4,
+            "denominator_percentage": 29.17
+          },
+          "general_contextual_support": {
+            "attributed_weight": 1.4,
+            "denominator_percentage": 29.17
+          }
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_045a2bb944a3",
+          "synthesis_ids": [
+            "syn_historical_context_48e4d1e786af",
+            "syn_historical_context_7bfee28e623b"
+          ],
+          "evidence_ids": [
+            "theology-of-suffering:historical_context:0",
+            "theology-of-the-cross:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=theology-of-suffering,theology-of-the-cross|facts=theology cross read across canon scripture develops theme israel's story into new testament witness;theology suffering read across canon scripture develops theme israel's story into new testament witness",
+          "facts": [
+            "Theology of the Cross is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Theology of Suffering is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_2836174d5836",
+          "synthesis_ids": [
+            "syn_surrounding_passages_449064da595f",
+            "syn_surrounding_passages_e032f98fc14e",
+            "syn_surrounding_passages_faab72d1dd5b"
+          ],
+          "evidence_ids": [
+            "job-heavenly-challenge-losses",
+            "job:interpretive_note:11",
+            "job:interpretive_note:3"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "surrounding_passages"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=surrounding_passages|parents=job|facts=accuser challenges whether job fears god without benefit after permission bounded first around possessions then around job's life job loses property servants children health without being told about heavenly proceedings;old greek job substantially shorter than masoretic form much poetry also contains expansions while qumran preserves hebrew fragments aramaic targum translation textual criticism should therefore identify witness view rather than treating every ancient form verbally identical;prologue lets readers know job's calamity not punishment hidden wickedness while job friends lack information does not say disasters necessary job's growth leaves readers wrestle divine permission accuser's agency deaths servants children",
+          "facts": [
+            "The prologue lets readers know Job's calamity is not punishment for hidden wickedness, while Job and the friends lack that information. It does not say the disasters are necessary for Job's growth, and it leaves readers to wrestle with divine permission, the accuser's agency, and the deaths of servants and children.",
+            "The accuser challenges whether Job fears God without benefit; after permission bounded first around possessions and then around Job's life, Job loses property, servants, children, and health without being told about the heavenly proceedings.",
+            "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+            "The accuser challenges whether Job fears God without benefit; after permission bounded first around possessions and then around Job's life, Job loses property, servants, children, and health without being told about the heavenly proceedings.",
+            "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_6c96d321a2f6",
+          "synthesis_ids": [
+            "syn_historical_context_0b5e762f96dd"
+          ],
+          "evidence_ids": [
+            "job-the-sufferer:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=job-the-sufferer|facts=figure associated reflection suffering reverence practical wisdom within israel's life",
+          "facts": [
+            "This figure is associated with reflection on suffering, reverence, and practical wisdom within Israel's life."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_7e7ce87e2247",
+          "synthesis_ids": [
+            "syn_interpretive_questions_34834d6fc9a6",
+            "syn_interpretive_questions_b6c4e5a7a127",
+            "syn_why_it_matters_1ca49b1af6d8",
+            "syn_why_it_matters_a45cccd73e9d"
+          ],
+          "evidence_ids": [
+            "job-righteous-before-testing",
+            "job:interpretive_note:0",
+            "job:interpretive_note:1",
+            "job:interpretive_note:12",
+            "job:interpretive_note:2"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=job|facts=epilogue restores wealth community family future does not say first ten children interchangeable new blessing erased grief must not become prosperity guarantee formula promising doubled assets replacement children every faithful sufferer;job 1 2 hasatan means accuser adversary carries hebrew article designates role heavenly council not yet unambiguous proper name later devil jewish christian canonical theology may connect figure satan developmental step should remain explicit;ezekiel 14 treats job renowned righteous figure reception does not settle genre historical referentiality completed book job's prose setting poetic dialogue literary artistry ancient reception must distinguished rather than used shortcuts prove either modern biography pure fiction;location uz uncertain associations edom aram northern arabia east arise biblical place traditions interlocutors labels no proposal supplies verified map job's household dates composition;prologue explicitly presents job blameless upright god fearing turning evil before any calamity yhwh repeats evaluation heavenly council",
+          "facts": [
+            "The prologue explicitly presents Job as blameless, upright, God-fearing, and turning from evil before any calamity, and YHWH repeats this evaluation in the heavenly council.",
+            "Ezekiel 14 treats Job as a renowned righteous figure, but that reception does not settle the genre or historical referentiality of the completed book. Job's prose setting, poetic dialogue, literary artistry, and ancient reception must be distinguished rather than used as shortcuts to prove either modern biography or pure fiction.",
+            "The location of Uz is uncertain. Associations with Edom, Aram, northern Arabia, and the east arise from biblical place traditions and the interlocutors' labels, but no proposal supplies a verified map of Job's household or dates the composition.",
+            "The epilogue restores wealth, community, and a family future, but it does not say the first ten children were interchangeable or that new blessing erased grief. It must not become a prosperity guarantee or a formula promising doubled assets and replacement children to every faithful sufferer.",
+            "In Job 1-2 hasatan means the accuser or adversary and carries the Hebrew article; it designates a role in the heavenly council, not yet an unambiguous proper name for the later devil. Jewish and Christian canonical theology may connect this figure to Satan, but the developmental step should remain explicit.",
+            "The epilogue restores wealth, community, and a family future, but it does not say the first ten children were interchangeable or that new blessing erased grief. It must not become a prosperity guarantee or a formula promising doubled assets and replacement children to every faithful sufferer.",
+            "In Job 1-2 hasatan means the accuser or adversary and carries the Hebrew article; it designates a role in the heavenly council, not yet an unambiguous proper name for the later devil. Jewish and Christian canonical theology may connect this figure to Satan, but the developmental step should remain explicit.",
+            "The prologue explicitly presents Job as blameless, upright, God-fearing, and turning from evil before any calamity, and YHWH repeats this evaluation in the heavenly council.",
+            "Ezekiel 14 treats Job as a renowned righteous figure, but that reception does not settle the genre or historical referentiality of the completed book. Job's prose setting, poetic dialogue, literary artistry, and ancient reception must be distinguished rather than used as shortcuts to prove either modern biography or pure fiction.",
+            "The location of Uz is uncertain. Associations with Edom, Aram, northern Arabia, and the east arise from biblical place traditions and the interlocutors' labels, but no proposal supplies a verified map of Job's household or dates the composition."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_aeccf3664e4b",
+          "synthesis_ids": [
+            "syn_cultural_context_74102c74aa01",
+            "syn_cultural_context_8465bb42ba09"
+          ],
+          "evidence_ids": [
+            "theology-of-suffering:ancient_near_east_context:0",
+            "theology-of-the-cross:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=theology-of-suffering,theology-of-the-cross|facts=ancient background theology cross includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world job 1 1 22 psalm 22 1 31 theology suffering job without letting comparison replace biblical witness;ancient background theology suffering includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world job 1 1 22 psalm 22 1 31 theology cross job without letting comparison replace biblical witness",
+          "facts": [
+            "Ancient background for Theology of Suffering includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Job 1:1-22, Psalm 22:1-31, theology-of-the-cross, and job without letting comparison replace the biblical witness.",
+            "Ancient background for Theology of the Cross includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Job 1:1-22, Psalm 22:1-31, theology-of-suffering, and job without letting comparison replace the biblical witness."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_c5bdbac8fb38",
+          "synthesis_ids": [
+            "syn_interpretive_questions_c409a450ab86",
+            "syn_why_it_matters_a0e437aba773"
+          ],
+          "evidence_ids": [
+            "ancient-divine-assembly-imagery:interpretive_note:0",
+            "job-sons-of-god-assembly",
+            "job-sons-of-god-assembly:passage-relevance"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=ancient-divine-assembly-imagery|facts=do not present reconstructed divine council system only possible reading every plural heavenly being text;heavenly scene frames reader's knowledge job's testing distinguishes narrative's description what job companions know;job's prose framework twice depicts sons god presenting themselves before yhwh satan among",
+          "facts": [
+            "Do not present a reconstructed divine-council system as the only possible reading of every plural heavenly-being text.",
+            "Job's prose framework twice depicts the sons of God presenting themselves before YHWH, with the satan among them.",
+            "The heavenly scene frames the reader's knowledge of Job's testing and distinguishes the narrative's description from what Job and his companions know.",
+            "Do not present a reconstructed divine-council system as the only possible reading of every plural heavenly-being text.",
+            "Job's prose framework twice depicts the sons of God presenting themselves before YHWH, with the satan among them.",
+            "The heavenly scene frames the reader's knowledge of Job's testing and distinguishes the narrative's description from what Job and his companions know."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_ce2b5fd9d3d5",
+          "synthesis_ids": [
+            "syn_cultural_context_c4bc1139b8bf"
+          ],
+          "evidence_ids": [
+            "job-the-sufferer:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context|parents=job-the-sufferer|facts=job's setting reflects patriarchal clan life wisdom disputation sacrificial practice edomite arabian geography rather than generic ancient world backdrop",
+          "facts": [
+            "Job's setting reflects patriarchal clan life, wisdom disputation, sacrificial practice, and Edomite or Arabian geography rather than a generic ancient-world backdrop."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_fce3f21ec169",
+          "synthesis_ids": [
+            "syn_surrounding_passages_e38f3be0d913",
+            "syn_surrounding_passages_f64fcc754719"
+          ],
+          "evidence_ids": [
+            "james:interpretive_note:31",
+            "jas-job"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=surrounding_passages|parents=james|facts=james names prophets job examples connected suffering patience endurance lord's compassionate outcome;job's endurance steadfastness can refer persistence outcome across story must not demand silent endurance abuse prevent escape protection",
+          "facts": [
+            "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+            "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome.",
+            "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+            "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        }
+      ]
+    },
+    {
+      "reference": "Revelation 21",
+      "book": "Revelation",
+      "chapter": 21,
+      "evidence_hash": "a470ccd9e79bf996b7b7a31161313c149d8de6e571ef0216f62242c2d91489ba",
+      "synthesis_hash": "750ad9065279a515f8cd7388fbe7c53eea26020881f9224aa828bf73fba09eaf",
+      "current_cluster_audit_version": "commentary-richness-clusters-v1",
+      "current_core_classifier_version": "essential-passage-context-v2",
+      "current_richness_policy_version": "commentary-richness-policy-v2-proposed",
+      "current_gate_version": "commentary-richness-gate-v2.1",
+      "current_meaningful_cluster_count": 40,
+      "reader_relevant_judgment_count": 16,
+      "importance_basis_breakdown": {
+        "attribution_method": "equal split across a cluster's recorded importance_basis values",
+        "weighted_denominator": 27.2,
+        "by_importance_basis": {
+          "disputed_or_contested_evidence": {
+            "attributed_weight": 2.0,
+            "denominator_percentage": 7.35
+          },
+          "entity_background_not_direct_passage_context": {
+            "attributed_weight": 4.9,
+            "denominator_percentage": 18.01
+          },
+          "general_contextual_support": {
+            "attributed_weight": 16.8,
+            "denominator_percentage": 61.76
+          },
+          "specific_contextual_support": {
+            "attributed_weight": 3.5,
+            "denominator_percentage": 12.87
+          }
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_016c95a5cfe2",
+          "synthesis_ids": [
+            "syn_archaeology_geography_e8030f82b358",
+            "syn_why_it_matters_943ebde19b79"
+          ],
+          "evidence_ids": [
+            "jerusalem:key_places:0",
+            "jerusalem:key_places:1",
+            "jerusalem:key_places:2",
+            "jerusalem:key_places:3",
+            "jerusalem:key_places:4"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "geography"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=jerusalem|facts=bethlehem 1;city david;judea 1;mount zion;zion",
+          "facts": [
+            "city-of-david",
+            "zion",
+            "mount-zion",
+            "bethlehem-1",
+            "judea-1",
+            "city-of-david",
+            "zion",
+            "mount-zion",
+            "bethlehem-1",
+            "judea-1"
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_035da8110029",
+          "synthesis_ids": [
+            "syn_historical_context_f2299710d44f"
+          ],
+          "evidence_ids": [
+            "resurrection-doctrine:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=resurrection-doctrine|facts=resurrection doctrine emerges church’s earliest proclamation develops central christian confession hope judgment new creation",
+          "facts": [
+            "Resurrection doctrine emerges from the church’s earliest proclamation and develops as a central Christian confession of hope, judgment, and new creation."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_0eab3d8c1fbd",
+          "synthesis_ids": [
+            "syn_cultural_context_6fe92900e971",
+            "syn_cultural_context_7d12d817b879",
+            "syn_why_it_matters_ecb971b680bb"
+          ],
+          "evidence_ids": [
+            "jerusalem:ancient_near_east_context:0",
+            "jerusalem:hebraic_worldview:0",
+            "jerusalem:second_temple_context:0",
+            "what-is-the-significance-of-jerusalem:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context",
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=jerusalem,significance-of-jerusalem|facts=jerusalem gathers israel's imagination around chosen place davidic rule temple presence pilgrimage repentance judgment hope restored worship;royal cultic center southern levant jerusalem sits intersection kingship worship imperial pressure;second temple period jerusalem rebuilt temple center under imperial pressure focus pilgrimage priestly authority messianic hope early christian witness;royal cultic center southern levant jerusalem sits intersection kingship worship imperial pressure",
+          "facts": [
+            "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+            "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+            "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness.",
+            "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+            "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+            "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+            "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_1178b74c7f5b",
+          "synthesis_ids": [
+            "syn_historical_context_c1876e086d5f",
+            "syn_historical_context_e58f64b79a1c"
+          ],
+          "evidence_ids": [
+            "resurrection-theme:historical_context:0",
+            "what-is-resurrection:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=resurrection,resurrection-theme|facts=biblical hope resurrection develops hints prophets into clear proclamation new testament;resurrection hope develops scattered hints old testament into explicit proclamation new testament",
+          "facts": [
+            "Resurrection hope develops from scattered hints in the Old Testament into explicit proclamation in the New Testament.",
+            "The biblical hope for resurrection develops from hints in the prophets into clear proclamation in the New Testament."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_14dc4f566ee0",
+          "synthesis_ids": [
+            "syn_cultural_context_14aa62ab6584",
+            "syn_why_it_matters_116e8a303037"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:ancient_near_east_context:0",
+            "creation-doctrine-framework:hebraic_worldview:0",
+            "creation-doctrine-framework:original_audience:0",
+            "creation-doctrine-framework:second_temple_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=creation-doctrine-framework|facts=creation good ordered accountable god humanity receives creaturely dignity responsibility rather than autonomous self definition;creation texts stand alongside mesopotamian origin traditions such enuma elish atrahasis while scripture presents creation ordered one covenant lord;readers learning scripture's account god world human vocation;second temple jewish literature early christian texts often connect creation wisdom resurrection hope god's power make all things new",
+          "facts": [
+            "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+            "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+            "Readers learning Scripture's account of God, world, and human vocation",
+            "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+            "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+            "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+            "Readers learning Scripture's account of God, world, and human vocation",
+            "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_1826d34bedfe",
+          "synthesis_ids": [
+            "syn_chronology_59740bd95ff1",
+            "syn_chronology_dfe77881b14f",
+            "syn_why_it_matters_98d0cc6d3082",
+            "syn_why_it_matters_b23e807b62c0"
+          ],
+          "evidence_ids": [
+            "exile-and-return-storyline:timeline:0",
+            "exile-and-return-storyline:timeline:1",
+            "exile-and-return-storyline:timeline:2",
+            "exile-and-return-storyline:timeline:3",
+            "exile-and-return-storyline:timeline:4",
+            "exile-and-return-storyline:timeline:5",
+            "exile-and-return-storyline:timeline:6"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "categories": [
+            "chronology"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=chronology,why_it_matters|parents=exile-and-return-storyline|facts=assyrian exile israel;babylonian exile judah;covenant warnings about exile;persian decree return;temple city rebuilding;messianic restoration hope;new creation dwelling",
+          "facts": [
+            "Messianic restoration hope",
+            "New creation dwelling",
+            "Covenant warnings about exile",
+            "Assyrian exile of Israel",
+            "Babylonian exile of Judah",
+            "Persian decree and return",
+            "Temple and city rebuilding",
+            "Messianic restoration hope",
+            "New creation dwelling",
+            "Covenant warnings about exile",
+            "Assyrian exile of Israel",
+            "Babylonian exile of Judah",
+            "Persian decree and return",
+            "Temple and city rebuilding"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "raw related-entity inventory is available context, not a reader-level explanatory idea"
+        },
+        {
+          "cluster_id": "idea_cluster_20992f8315ab",
+          "synthesis_ids": [
+            "syn_historical_context_bc55556c1875"
+          ],
+          "evidence_ids": [
+            "new-jerusalem:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=new-jerusalem|facts=new jerusalem appears final hope biblical story reshaping zion imagery after judgment exile",
+          "facts": [
+            "New Jerusalem appears as the final hope of the biblical story, reshaping Zion imagery after judgment and exile."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_243e0cbb763d",
+          "synthesis_ids": [
+            "syn_chronology_341a12eddca9",
+            "syn_chronology_3cb65650a7cb",
+            "syn_why_it_matters_6d2e701ebd04"
+          ],
+          "evidence_ids": [
+            "temple-symbol:timeline:0",
+            "temple-symbol:timeline:1",
+            "temple-symbol:timeline:2",
+            "temple-symbol:timeline:3",
+            "temple-symbol:timeline:4",
+            "temple-symbol:timeline:5"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "categories": [
+            "chronology"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=chronology,why_it_matters|parents=temple-symbol|facts=jesus identifies himself temple fulfillment;second temple worship restored;solomon's temple dedicated jerusalem;tabernacle presence wilderness;temple judged destroyed;new jerusalem no temple because god lamb dwell there",
+          "facts": [
+            "New Jerusalem has no temple because God and the Lamb dwell there",
+            "Tabernacle presence in the wilderness",
+            "Solomon's temple dedicated in Jerusalem",
+            "Temple judged and destroyed",
+            "Second Temple worship restored",
+            "Jesus identifies himself with temple fulfillment",
+            "Tabernacle presence in the wilderness",
+            "Solomon's temple dedicated in Jerusalem",
+            "Temple judged and destroyed",
+            "Second Temple worship restored",
+            "Jesus identifies himself with temple fulfillment"
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "specific contextual contribution supplies a distinct explanatory idea"
+        },
+        {
+          "cluster_id": "idea_cluster_269da03dbf43",
+          "synthesis_ids": [
+            "syn_cultural_context_0e467e62f887",
+            "syn_why_it_matters_f670f00f6e1e"
+          ],
+          "evidence_ids": [
+            "exile-and-return-storyline:ancient_near_east_context:0",
+            "exile-and-return-storyline:hebraic_worldview:0",
+            "exile-and-return-storyline:original_audience:0",
+            "exile-and-return-storyline:second_temple_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=exile-and-return-storyline|facts=ancient empires used deportation resettlement control conquered peoples scripture interprets exile theologically covenant judgment hope;exile not only displacement covenant loss temple loss land loss identity testing under god's promise preserve remnant;readers tracing judgment restoration across biblical canon;second temple jewish communities often lived partial return realities diaspora experience hope god would fully restore israel judge oppressive powers",
+          "facts": [
+            "Ancient empires used deportation and resettlement to control conquered peoples, but Scripture interprets exile theologically as covenant judgment and hope.",
+            "Exile is not only displacement; it is covenant loss, temple loss, land loss, and identity testing under God's promise to preserve a remnant.",
+            "Readers tracing judgment and restoration across the biblical canon",
+            "Second Temple Jewish communities often lived with partial-return realities, diaspora experience, and hope that God would fully restore Israel and judge oppressive powers.",
+            "Ancient empires used deportation and resettlement to control conquered peoples, but Scripture interprets exile theologically as covenant judgment and hope.",
+            "Exile is not only displacement; it is covenant loss, temple loss, land loss, and identity testing under God's promise to preserve a remnant.",
+            "Readers tracing judgment and restoration across the biblical canon",
+            "Second Temple Jewish communities often lived with partial-return realities, diaspora experience, and hope that God would fully restore Israel and judge oppressive powers."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_29d8f5ee7ea3",
+          "synthesis_ids": [
+            "syn_cultural_context_142e042b17b8",
+            "syn_why_it_matters_eb8e7b59f455"
+          ],
+          "evidence_ids": [
+            "resurrection-theme:ancient_near_east_context:0",
+            "resurrection-theme:hebraic_worldview:0",
+            "resurrection-theme:second_temple_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=resurrection-theme|facts=ancient cultures knew death final makes biblical resurrection striking claim about god’s power faithfulness;resurrection hope affirms god's power over death renewal people;second temple judaism debated bodily resurrection making new testament proclamation both rooted disruptive",
+          "facts": [
+            "Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God’s power and faithfulness.",
+            "Resurrection hope affirms God's power over death and the renewal of his people.",
+            "Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive.",
+            "Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God’s power and faithfulness.",
+            "Resurrection hope affirms God's power over death and the renewal of his people.",
+            "Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_36f1f3e578ab",
+          "synthesis_ids": [
+            "syn_historical_context_01cf6ba3062f"
+          ],
+          "evidence_ids": [
+            "restoration-prophecy:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=restoration-prophecy|facts=these oracles speak exile displacement rebuilding life under god's mercy",
+          "facts": [
+            "These oracles speak to exile, displacement, and the rebuilding of life under God's mercy."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_3729f716ef6f",
+          "synthesis_ids": [
+            "syn_surrounding_passages_815971890352"
+          ],
+          "evidence_ids": [
+            "ezekiel-revelation-reuse"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "geography",
+            "surrounding_passages"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=surrounding_passages|parents=ezekiel|facts=revelation repeatedly recomposes ezekielian throne creature scroll measuring witness plague gog battle city river tree imagery own literary sequence",
+          "facts": [
+            "Revelation repeatedly recomposes Ezekielian throne, creature, scroll, measuring, witness, plague, Gog, battle, city, river, and tree imagery in its own literary sequence."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_3c5118d2a7d0",
+          "synthesis_ids": [
+            "syn_cultural_context_068da41914a0"
+          ],
+          "evidence_ids": [
+            "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context|parents=how-should-i-read-apocalyptic-literature|facts=beasts numbers cosmic imagery common ways speak about empires divine sovereignty",
+          "facts": [
+            "Beasts, numbers, and cosmic imagery were common ways to speak about empires and divine sovereignty."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_3ec02ba25f9e",
+          "synthesis_ids": [
+            "syn_historical_context_40902007e741"
+          ],
+          "evidence_ids": [
+            "creation-theme:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=historical_context|parents=creation-theme|facts=creation new creation frame bible genesis revelation give coherence human vocation fall redemption hope",
+          "facts": [
+            "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_430b2ba9f5d3",
+          "synthesis_ids": [
+            "syn_historical_context_b15fd4758d69"
+          ],
+          "evidence_ids": [
+            "how-should-i-read-apocalyptic-literature:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=historical_context|parents=how-should-i-read-apocalyptic-literature|facts=apocalyptic writing emerges pressure exile persecution faithful communities ask how god will act",
+          "facts": [
+            "Apocalyptic writing emerges in pressure, exile, and persecution as faithful communities ask how God will act."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_440d7c941173",
+          "synthesis_ids": [
+            "syn_cultural_context_1255f86bbec6",
+            "syn_cultural_context_956d4d9fb47d",
+            "syn_cultural_context_c035d1f2c3dc"
+          ],
+          "evidence_ids": [
+            "temple:ancient_near_east_context:0",
+            "what-is-the-significance-of-the-temple:ancient_near_east_context:0",
+            "what-is-the-temple:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context",
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=significance-of-the-temple,temple|facts=ancient temples often royal cultic centers israel’s temple distinct because foregrounds covenant holiness atonement under one god;temples common ancient world israel's temple defined covenant holiness one true god;temples common ancient world israel’s temple defined covenant holiness one true god",
+          "facts": [
+            "Temples were common in the ancient world, but Israel’s temple is defined by covenant holiness and the one true God.",
+            "Temples were common in the ancient world, but Israel's temple is defined by covenant holiness and the one true God.",
+            "Ancient temples were often royal and cultic centers; Israel’s temple is distinct because it foregrounds covenant holiness and atonement under one God."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_47dbffda91e8",
+          "synthesis_ids": [
+            "syn_historical_context_dfa0ff3b0b13"
+          ],
+          "evidence_ids": [
+            "new-jerusalem-prophecy:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=new-jerusalem-prophecy|facts=vision grows exile temple loss into picture final dwelling restored holiness",
+          "facts": [
+            "The vision grows from exile and temple loss into a picture of final dwelling and restored holiness."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_4e3d8895d7fe",
+          "synthesis_ids": [
+            "syn_historical_context_d0de34e7e5fd",
+            "syn_historical_context_eb8b4b16987f"
+          ],
+          "evidence_ids": [
+            "jerusalem:historical_context:0",
+            "what-is-the-significance-of-jerusalem:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context",
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=jerusalem,significance-of-jerusalem|facts=jerusalem moves jebusite city davidic capital temple center then becomes focal point exile return messianic expectation",
+          "facts": [
+            "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+            "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_516505d4f5d3",
+          "synthesis_ids": [
+            "syn_cultural_context_438630fb0222"
+          ],
+          "evidence_ids": [
+            "why-does-the-bible-repeat-themes:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=why-does-the-bible-repeat-themes|facts=repetition mnemonic pedagogical ancient world biblical repetition also signals theological significance",
+          "facts": [
+            "Repetition was mnemonic and pedagogical in the ancient world; biblical repetition also signals theological significance."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_517ad4e6d695",
+          "synthesis_ids": [
+            "syn_cultural_context_5cc4f55d44b3"
+          ],
+          "evidence_ids": [
+            "creation-theme:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=creation-theme|facts=motif speaks against chaos centered polytheistic origin stories keeps creator god singular sovereign",
+          "facts": [
+            "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_568f3b9a8d27",
+          "synthesis_ids": [
+            "syn_interpretive_questions_4e800defcfd3",
+            "syn_why_it_matters_018ad88caa9a"
+          ],
+          "evidence_ids": [
+            "rev-cosmic-renewal",
+            "rev-healed-nations"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "history",
+            "interpretive_questions"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=revelation|facts=ending presents new heaven new earth descending new jerusalem divine dwelling end death mourning;tree's leaves healing nations kings bring glory into city",
+          "facts": [
+            "The ending presents new heaven, new earth, descending New Jerusalem, divine dwelling, and the end of death and mourning.",
+            "The tree's leaves are for healing the nations, and kings bring glory into the city.",
+            "The ending presents new heaven, new earth, descending New Jerusalem, divine dwelling, and the end of death and mourning.",
+            "The tree's leaves are for healing the nations, and kings bring glory into the city."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_5f2421a822ac",
+          "synthesis_ids": [
+            "syn_cultural_context_71b4960d047d",
+            "syn_why_it_matters_ac44dd352974"
+          ],
+          "evidence_ids": [
+            "creation:ancient_near_east_context:0",
+            "creation:hebraic_worldview:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=creation|facts=genesis 1 can compared ancient mesopotamian accounts cosmic waters ordering celestial bodies divine rule human vocation comparisons reveal shared discourse marked differences without proving single route dependence;genesis 1 depicts one god ordering world speech blessing living creatures assigning humans image bearing vocation resting seventh day these observations describe passage before later theological synthesis",
+          "facts": [
+            "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+            "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+            "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+            "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_6109fd484cf4",
+          "synthesis_ids": [
+            "syn_historical_context_02e45a2af003",
+            "syn_historical_context_0320c7dee516",
+            "syn_historical_context_0ebf487ff0a4",
+            "syn_historical_context_1a1f095fa9a7",
+            "syn_historical_context_2366061cb160",
+            "syn_historical_context_23a2b53cc477",
+            "syn_historical_context_28a5009e0655",
+            "syn_historical_context_2d756370d45d",
+            "syn_historical_context_3565b646abad",
+            "syn_historical_context_4b05d98035a9",
+            "syn_historical_context_59211faa3c76",
+            "syn_historical_context_5b2be644a2ad",
+            "syn_historical_context_5c1fce097de1",
+            "syn_historical_context_87e45620f99b",
+            "syn_historical_context_953f6c0c8f67",
+            "syn_historical_context_aa767a258a96",
+            "syn_historical_context_adbd5dcd2961",
+            "syn_historical_context_d39d6f8c0b05",
+            "syn_historical_context_e67f6dfa51ac",
+            "syn_historical_context_f7fd29ce8238",
+            "syn_historical_context_fafa464f9f6f",
+            "syn_historical_context_fb1d1e29d45a",
+            "syn_historical_context_fbc173935d6b",
+            "syn_historical_context_fe8b548ea581"
+          ],
+          "evidence_ids": [
+            "creation-doctrine:historical_context:0",
+            "divine-presence:historical_context:0",
+            "eschatology:historical_context:0",
+            "final-judgment:historical_context:0",
+            "glorification:historical_context:0",
+            "glory-theme:historical_context:0",
+            "hope-theme:historical_context:0",
+            "land-theme:historical_context:0",
+            "messianic-hope:historical_context:0",
+            "new-creation-theme:historical_context:0",
+            "new-exodus-theme:historical_context:0",
+            "new-jerusalem-theme:historical_context:0",
+            "new-temple-theme:historical_context:0",
+            "presence-theme:historical_context:0",
+            "providence:historical_context:0",
+            "redemption-theme:historical_context:0",
+            "remnant-theme:historical_context:0",
+            "remnant:historical_context:0",
+            "repentance:historical_context:0",
+            "restoration-theme:historical_context:0",
+            "second-coming:historical_context:0",
+            "seed-theme:historical_context:0",
+            "shepherd-theme:historical_context:0",
+            "water-theme:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=creation-doctrine,divine-presence,eschatology,final-judgment,glorification,glory-theme,hope-theme,land-theme,messianic-hope,new-creation-theme,new-exodus-theme,new-jerusalem-theme,new-temple-theme,presence-theme,providence,redemption-theme,remnant,remnant-theme,repentance,restoration-theme,second-coming,seed-theme,shepherd-theme,water-theme|facts=creation doctrine read across canon scripture develops theme israel's story into new testament witness;divine presence read across canon scripture develops theme israel's story into new testament witness;eschatology read across canon scripture develops theme israel's story into new testament witness;final judgment read across canon scripture develops theme israel's story into new testament witness;glorification read across canon scripture develops theme israel's story into new testament witness;glory theme read across canon scripture develops theme israel's story into new testament witness;hope theme read across canon scripture develops theme israel's story into new testament witness;land theme read across canon scripture develops theme israel's story into new testament witness;messianic hope read across canon scripture develops theme israel's story into new testament witness;new creation theme read across canon scripture develops theme israel's story into new testament witness;new exodus theme read across canon scripture develops theme israel's story into new testament witness;new jerusalem theme read across canon scripture develops theme israel's story into new testament witness;new temple theme read across canon scripture develops theme israel's story into new testament witness;presence theme read across canon scripture develops theme israel's story into new testament witness;providence read across canon scripture develops theme israel's story into new testament witness;redemption theme read across canon scripture develops theme israel's story into new testament witness;remnant read across canon scripture develops theme israel's story into new testament witness;remnant theme read across canon scripture develops theme israel's story into new testament witness;repentance read across canon scripture develops theme israel's story into new testament witness;restoration theme read across canon scripture develops theme israel's story into new testament witness;second coming read across canon scripture develops theme israel's story into new testament witness;seed theme read across canon scripture develops theme israel's story into new testament witness;shepherd theme read across canon scripture develops theme israel's story into new testament witness;water theme read across canon scripture develops theme israel's story into new testament witness",
+          "facts": [
+            "New Temple Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Eschatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Glory Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Glorification is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Land Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Seed Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Final Judgment is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Water Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Repentance is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Restoration Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Providence is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Presence Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "New Jerusalem Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Remnant Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "New Exodus Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Redemption Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Messianic Hope is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Second Coming is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Shepherd Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Remnant is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Hope Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "Divine Presence is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+          ],
+          "central_parent_ratio": 0.2083,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_63538457e44c",
+          "synthesis_ids": [
+            "syn_historical_context_f4e05e225f51"
+          ],
+          "evidence_ids": [
+            "creation:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=creation|facts=genesis presents creation foundational act begins biblical history establishes god’s sovereignty over all things",
+          "facts": [
+            "Genesis presents creation as the foundational act that begins biblical history and establishes God’s sovereignty over all things."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "generic, template-like, inventory-like, or non-central entity association is not required commentary coverage"
+        },
+        {
+          "cluster_id": "idea_cluster_842f9f3cf63c",
+          "synthesis_ids": [
+            "syn_surrounding_passages_7c482886b056",
+            "syn_surrounding_passages_ad6796acc0d1"
+          ],
+          "evidence_ids": [
+            "rev-new-jerusalem",
+            "rev-scriptural-reuse"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=surrounding_passages|parents=revelation|facts=new jerusalem combines city bride sanctuary eden renewed zion imagery;revelation repeatedly reworks israel's scriptures especially daniel ezekiel isaiah exodus zechariah genesis psalms",
+          "facts": [
+            "New Jerusalem combines city, bride, sanctuary, Eden, and renewed-Zion imagery.",
+            "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+            "New Jerusalem combines city, bride, sanctuary, Eden, and renewed-Zion imagery.",
+            "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_919fb0668c76",
+          "synthesis_ids": [
+            "syn_interpretive_questions_50e89a01fc74",
+            "syn_why_it_matters_07cb798383a5"
+          ],
+          "evidence_ids": [
+            "sanctuary-theme:interpretive_note:0",
+            "sanctuary-theme:interpretive_note:1"
+          ],
+          "quality_class": "DISPUTED",
+          "weight": 0.5,
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=sanctuary-theme|facts=later christian sanctuary readings cannot authorize antisemitism replacement claims destruction seizure holy places institutional immunity ethical accountability;sanctuary texts share dwelling holiness language tabernacle first temple second temple christological metaphor community metaphor heavenly sanctuary new creation remain distinct referents",
+          "facts": [
+            "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+            "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability.",
+            "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+            "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "bounded interpretive uncertainty or reception materially informs reader understanding"
+        },
+        {
+          "cluster_id": "idea_cluster_9fec8ea04a6b",
+          "synthesis_ids": [
+            "syn_cultural_context_0001e7f8a702",
+            "syn_cultural_context_01ac009c9e2e",
+            "syn_cultural_context_13982c6e771f",
+            "syn_cultural_context_14b4577a7598",
+            "syn_cultural_context_1f1f5303ca57",
+            "syn_cultural_context_1f37114ad20c",
+            "syn_cultural_context_2743343ce972",
+            "syn_cultural_context_2e3fa27737e3",
+            "syn_cultural_context_38310998ce2b",
+            "syn_cultural_context_6aceabffd594",
+            "syn_cultural_context_6e616c4ce091",
+            "syn_cultural_context_70d205e2f3cc",
+            "syn_cultural_context_7259a3a4e8c7",
+            "syn_cultural_context_73e594b5894e",
+            "syn_cultural_context_7f58c4ced92c",
+            "syn_cultural_context_8dc0a3ddcdc5",
+            "syn_cultural_context_8eabf9176d95",
+            "syn_cultural_context_9671a616aef5",
+            "syn_cultural_context_98bed2865050",
+            "syn_cultural_context_98e47f13e0cd",
+            "syn_cultural_context_9b60a1372932",
+            "syn_cultural_context_ac03c0d6730f",
+            "syn_cultural_context_c0e6c65b9b26",
+            "syn_cultural_context_c0fa8c927915",
+            "syn_cultural_context_c89b0a16c752",
+            "syn_cultural_context_e93d82142a0e"
+          ],
+          "evidence_ids": [
+            "creation-doctrine:ancient_near_east_context:0",
+            "divine-presence:ancient_near_east_context:0",
+            "eschatology:ancient_near_east_context:0",
+            "final-judgment:ancient_near_east_context:0",
+            "glorification:ancient_near_east_context:0",
+            "glory-theme:ancient_near_east_context:0",
+            "hope-theme:ancient_near_east_context:0",
+            "land-theme:ancient_near_east_context:0",
+            "messianic-hope:ancient_near_east_context:0",
+            "new-creation-theme:ancient_near_east_context:0",
+            "new-exodus-theme:ancient_near_east_context:0",
+            "new-jerusalem-prophecy:ancient_near_east_context:0",
+            "new-jerusalem-theme:ancient_near_east_context:0",
+            "new-temple-theme:ancient_near_east_context:0",
+            "presence-theme:ancient_near_east_context:0",
+            "providence:ancient_near_east_context:0",
+            "redemption-theme:ancient_near_east_context:0",
+            "remnant-theme:ancient_near_east_context:0",
+            "remnant:ancient_near_east_context:0",
+            "repentance:ancient_near_east_context:0",
+            "restoration-prophecy:ancient_near_east_context:0",
+            "restoration-theme:ancient_near_east_context:0",
+            "second-coming:ancient_near_east_context:0",
+            "seed-theme:ancient_near_east_context:0",
+            "shepherd-theme:ancient_near_east_context:0",
+            "water-theme:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=creation-doctrine,divine-presence,eschatology,final-judgment,glorification,glory-theme,hope-theme,land-theme,messianic-hope,new-creation-theme,new-exodus-theme,new-jerusalem-prophecy,new-jerusalem-theme,new-temple-theme,presence-theme,providence,redemption-theme,remnant,remnant-theme,repentance,restoration-prophecy,restoration-theme,second-coming,seed-theme,shepherd-theme,water-theme|facts=ancient background creation doctrine includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world genesis 1 1 31 genesis 2 1 25 creation theme genesis without letting comparison replace biblical witness;ancient background divine presence includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world exodus 3 1 6 exodus 40 34 38 presence theme glory theme without letting comparison replace biblical witness;ancient background eschatology includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world daniel 7 13 14 daniel 12 1 3 second coming final judgment without letting comparison replace biblical witness;ancient background final judgment includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world daniel 7 13 14 daniel 12 1 3 eschatology second coming without letting comparison replace biblical witness;ancient background glorification includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world daniel 7 13 14 daniel 12 1 3 eschatology second coming without letting comparison replace biblical witness;ancient background glory theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world exodus 3 1 6 exodus 40 34 38 presence theme sanctuary theme without letting comparison replace biblical witness;ancient background hope theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background land theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background messianic hope includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background new creation theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world genesis 1 1 31 genesis 2 1 25 creation theme creation doctrine without letting comparison replace biblical witness;ancient background new exodus theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background new jerusalem prophecy includes royal courts sanctuary worship covenant lawsuits exile restoration hope entry ties world isaiah 65 17 25 isaiah 66 22 24 new jerusalem theme new creation theme without letting comparison replace biblical witness;ancient background new jerusalem theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background new temple theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world exodus 25 8 9 exodus 40 34 38 temple theme what temple without letting comparison replace biblical witness;ancient background presence theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world exodus 3 1 6 exodus 40 34 38 glory theme sanctuary theme without letting comparison replace biblical witness;ancient background providence includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background redemption theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background remnant includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background remnant theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background repentance includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background restoration prophecy includes royal courts sanctuary worship covenant lawsuits exile restoration hope entry ties world isaiah 40 1 11 jeremiah 30 1 24 exile theme remnant prophecy without letting comparison replace biblical witness;ancient background restoration theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background second coming includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world daniel 7 13 14 daniel 12 1 3 eschatology final judgment without letting comparison replace biblical witness;ancient background seed theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background shepherd theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world deuteronomy 30 1 10 isaiah 40 1 11 exile theme why exile important without letting comparison replace biblical witness;ancient background water theme includes covenant practice worship kingship wisdom instruction prophetic critique entry ties world exodus 3 1 6 exodus 40 34 38 presence theme glory theme without letting comparison replace biblical witness",
+          "facts": [
+            "Ancient background for Divine Presence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme without letting comparison replace the biblical witness.",
+            "Ancient background for New Jerusalem Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Restoration Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Presence Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, glory-theme, and sanctuary-theme without letting comparison replace the biblical witness.",
+            "Ancient background for New Jerusalem Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 65:17-25, Isaiah 66:22-24, new-jerusalem-theme, and new-creation-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Redemption Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Remnant Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for New Exodus Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Water Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme without letting comparison replace the biblical witness.",
+            "Ancient background for Glorification includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and second-coming without letting comparison replace the biblical witness.",
+            "Ancient background for Messianic Hope includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Eschatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, second-coming, and final-judgment without letting comparison replace the biblical witness.",
+            "Ancient background for Final Judgment includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and second-coming without letting comparison replace the biblical witness.",
+            "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness.",
+            "Ancient background for Land Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Providence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Restoration Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 40:1-11, Jeremiah 30:1-24, exile-theme, and remnant-prophecy without letting comparison replace the biblical witness.",
+            "Ancient background for New Temple Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple without letting comparison replace the biblical witness.",
+            "Ancient background for Shepherd Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Hope Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Remnant includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Second Coming includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and final-judgment without letting comparison replace the biblical witness.",
+            "Ancient background for Seed Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+            "Ancient background for Glory Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and sanctuary-theme without letting comparison replace the biblical witness.",
+            "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness.",
+            "Ancient background for Repentance includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness."
+          ],
+          "central_parent_ratio": 0.1923,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_a3997c8def39",
+          "synthesis_ids": [
+            "syn_chronology_2edf54bee5a7",
+            "syn_chronology_ea92011ac148",
+            "syn_why_it_matters_c59af65cbb27"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:0",
+            "creation-doctrine-framework:timeline:1",
+            "creation-doctrine-framework:timeline:2",
+            "creation-doctrine-framework:timeline:3",
+            "creation-doctrine-framework:timeline:4",
+            "creation-doctrine-framework:timeline:5"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "categories": [
+            "chronology"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=chronology,why_it_matters|parents=creation-doctrine-framework|facts=christ revealed agent heir creation;creation declared good;fall disorders creation;human vocation given;wisdom worship confess creator;new creation promised",
+          "facts": [
+            "New creation promised",
+            "Creation declared good",
+            "Human vocation given",
+            "Fall disorders creation",
+            "Wisdom and worship confess the Creator",
+            "Christ revealed as agent and heir of creation",
+            "Creation declared good",
+            "Human vocation given",
+            "Fall disorders creation",
+            "Wisdom and worship confess the Creator",
+            "Christ revealed as agent and heir of creation"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "specific contextual contribution supplies a distinct explanatory idea"
+        },
+        {
+          "cluster_id": "idea_cluster_b4f1b03ed9c8",
+          "synthesis_ids": [
+            "syn_cultural_context_0f1316b045fb",
+            "syn_why_it_matters_242abd8a12ef"
+          ],
+          "evidence_ids": [
+            "temple-symbol:ancient_near_east_context:0",
+            "temple-symbol:hebraic_worldview:0",
+            "temple-symbol:original_audience:0",
+            "temple-symbol:second_temple_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=temple-symbol|facts=ancient temples understood divine dwelling royal cultic centers israel's temple symbol governed covenant holiness lord's chosen presence;readers tracing worship divine presence across canon;second temple period jerusalem temple shaped pilgrimage priesthood purity sacrifice national hope conflict over authority;temple symbol joins space holiness sacrifice priesthood presence approaching god requires consecrated access rather than casual familiarity",
+          "facts": [
+            "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+            "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+            "Readers tracing worship and divine presence across the canon",
+            "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority.",
+            "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+            "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+            "Readers tracing worship and divine presence across the canon",
+            "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template contextual explanation concerns a chapter-named central concept"
+        },
+        {
+          "cluster_id": "idea_cluster_b7245de6588e",
+          "synthesis_ids": [
+            "syn_archaeology_geography_44a51d3f18ec",
+            "syn_why_it_matters_123e1ed59452"
+          ],
+          "evidence_ids": [
+            "temple-symbol:key_places:0",
+            "temple-symbol:key_places:1",
+            "temple-symbol:key_places:2",
+            "temple-symbol:key_places:3"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "categories": [
+            "geography"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=temple-symbol|facts=holy place 2;jerusalem;most holy place 2;zion",
+          "facts": [
+            "jerusalem",
+            "zion",
+            "holy-place-2",
+            "most-holy-place-2",
+            "jerusalem",
+            "zion",
+            "holy-place-2",
+            "most-holy-place-2"
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "raw related-entity inventory is available context, not a reader-level explanatory idea"
+        },
+        {
+          "cluster_id": "idea_cluster_b9f92a2e8940",
+          "synthesis_ids": [
+            "syn_historical_context_a01b7b4b83e2"
+          ],
+          "evidence_ids": [
+            "temple-theme:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=temple-theme|facts=temple imagery develops tabernacle instruction through solomon’s temple exile return new testament’s re reading sacred space",
+          "facts": [
+            "Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template contextual explanation concerns a chapter-named central concept"
+        },
+        {
+          "cluster_id": "idea_cluster_bc38df3262c4",
+          "synthesis_ids": [
+            "syn_archaeology_geography_a297fbaaae98",
+            "syn_why_it_matters_321c9250d718"
+          ],
+          "evidence_ids": [
+            "exile-and-return-storyline:key_places:0",
+            "exile-and-return-storyline:key_places:1",
+            "exile-and-return-storyline:key_places:2",
+            "exile-and-return-storyline:key_places:3",
+            "exile-and-return-storyline:key_places:4"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "specific_contextual_support"
+          ],
+          "categories": [
+            "geography"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=archaeology_geography,why_it_matters|parents=exile-and-return-storyline|facts=babylon 1;jerusalem;persia;susa;zion",
+          "facts": [
+            "jerusalem",
+            "babylon-1",
+            "persia",
+            "susa",
+            "zion",
+            "jerusalem",
+            "babylon-1",
+            "persia",
+            "susa",
+            "zion"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "raw related-entity inventory is available context, not a reader-level explanatory idea"
+        },
+        {
+          "cluster_id": "idea_cluster_c4b6236fce0e",
+          "synthesis_ids": [
+            "syn_cultural_context_0be32dd62dc5",
+            "syn_why_it_matters_7ed31ca5269e"
+          ],
+          "evidence_ids": [
+            "temple-theme:ancient_near_east_context:0",
+            "temple-theme:hebraic_worldview:0",
+            "temple-theme:second_temple_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=temple-theme|facts=rebuilt temple priesthood festival calendar made temple theology central second temple life;temple represents holy space presence purity mediation pilgrimage;temples ancient near east often marked divine presence royal order israel’s temple theme centers holiness covenant atonement instead",
+          "facts": [
+            "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+            "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+            "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life.",
+            "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+            "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+            "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template contextual explanation concerns a chapter-named central concept"
+        },
+        {
+          "cluster_id": "idea_cluster_d0e955e6aba5",
+          "synthesis_ids": [
+            "syn_historical_context_d76e3355cc3f",
+            "syn_why_it_matters_3ef5c89f1bac"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:historical_context:0",
+            "creation-doctrine-framework:historical_setting:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context,why_it_matters|parents=creation-doctrine-framework|facts=canonical teaching genesis through revelation;creation doctrine draws israel's confession lord creator amid ancient origin accounts later biblical texts extend creation language redemption new creation",
+          "facts": [
+            "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+            "Canonical teaching from Genesis through Revelation",
+            "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+            "Canonical teaching from Genesis through Revelation"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_d9d4fe4bc68f",
+          "synthesis_ids": [
+            "syn_historical_context_be75e14df31f"
+          ],
+          "evidence_ids": [
+            "why-does-the-bible-repeat-themes:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=why-does-the-bible-repeat-themes|facts=oral liturgical cultures rely repetition scripture uses habit form covenant memory",
+          "facts": [
+            "Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_df0b65a9550e",
+          "synthesis_ids": [
+            "syn_cultural_context_01ba26ec9582",
+            "syn_cultural_context_cf15c48f968d"
+          ],
+          "evidence_ids": [
+            "resurrection-doctrine:ancient_near_east_context:0",
+            "what-is-resurrection:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=cultural_context|parents=resurrection,resurrection-doctrine|facts=doctrine stands out world where death usually viewed final insists god’s power defeat death itself;resurrection hope stands out world where death usually treated final",
+          "facts": [
+            "Resurrection hope stands out in a world where death was usually treated as final.",
+            "The doctrine stands out in a world where death was usually viewed as final, and it insists on God’s power to defeat death itself."
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        },
+        {
+          "cluster_id": "idea_cluster_e29624b106d8",
+          "synthesis_ids": [
+            "syn_cultural_context_6d6a364126a4"
+          ],
+          "evidence_ids": [
+            "new-jerusalem:ancient_near_east_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=cultural_context|parents=new-jerusalem|facts=vision reuses city temple imagery familiar ancient world while transforming around god’s direct presence",
+          "facts": [
+            "The vision reuses city and temple imagery familiar in the ancient world while transforming them around God’s direct presence."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_e56f67d45e11",
+          "synthesis_ids": [
+            "syn_historical_context_6d3af537e6c4",
+            "syn_historical_context_87b6fb42d65c",
+            "syn_historical_context_fc40b5ad8845"
+          ],
+          "evidence_ids": [
+            "temple:historical_context:0",
+            "what-is-the-significance-of-the-temple:historical_context:0",
+            "what-is-the-temple:historical_context:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "entity_background_not_direct_passage_context",
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context|parents=significance-of-the-temple,temple|facts=temple develops tabernacle patterns into solomon’s temple survives exilic memory rebuilt second temple period;temple grows out tabernacle reaches classical form under solomon remains central second temple period",
+          "facts": [
+            "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
+            "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
+            "The temple develops from tabernacle patterns into Solomon’s temple, survives in exilic memory, and is rebuilt in the second temple period."
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template entity context is tied to a majority of parent entities named in the chapter"
+        },
+        {
+          "cluster_id": "idea_cluster_ebe19d7ddf91",
+          "synthesis_ids": [
+            "syn_historical_context_64e9e004fadb",
+            "syn_why_it_matters_d6c5f36b7588"
+          ],
+          "evidence_ids": [
+            "temple-symbol:historical_context:0",
+            "temple-symbol:historical_setting:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": false,
+          "consumed_remediation_prompt_1_6": false,
+          "concept_signature": "kind=historical_context,why_it_matters|parents=temple-symbol|facts=tabernacle monarchy second temple judaism early christian interpretation;temple symbolism grows tabernacle worship solomon's temple second temple practice jesus temple actions new testament's temple imagery christ church",
+          "facts": [
+            "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+            "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation",
+            "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+            "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+          ],
+          "central_parent_ratio": 1.0,
+          "should_contribute_to_reader_facing_coverage": true,
+          "determination_reason": "non-template contextual explanation concerns a chapter-named central concept"
+        },
+        {
+          "cluster_id": "idea_cluster_fa46384abb05",
+          "synthesis_ids": [
+            "syn_historical_context_07dc1a6195ee",
+            "syn_why_it_matters_b920236f530f"
+          ],
+          "evidence_ids": [
+            "exile-and-return-storyline:historical_context:0",
+            "exile-and-return-storyline:historical_setting:0"
+          ],
+          "quality_class": "SUPPORTING",
+          "weight": 0.7,
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "categories": [
+            "history"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "consumed_original_prompt_1_5": true,
+          "consumed_remediation_prompt_1_6": true,
+          "concept_signature": "kind=historical_context,why_it_matters|parents=exile-and-return-storyline|facts=assyrian exile babylonian exile persian period return later restoration hope;storyline draws israel's judah's exiles especially assyrian babylonian judgment persian period return ongoing question full restoration",
+          "facts": [
+            "The storyline draws from Israel's and Judah's exiles, especially Assyrian and Babylonian judgment, Persian-period return, and the ongoing question of full restoration.",
+            "Assyrian exile, Babylonian exile, Persian-period return, and later restoration hope",
+            "The storyline draws from Israel's and Judah's exiles, especially Assyrian and Babylonian judgment, Persian-period return, and the ongoing question of full restoration.",
+            "Assyrian exile, Babylonian exile, Persian-period return, and later restoration hope"
+          ],
+          "central_parent_ratio": 0.0,
+          "should_contribute_to_reader_facing_coverage": false,
+          "determination_reason": "general or global background lacks a strong deterministic chapter-specific contribution"
+        }
+      ]
+    }
+  ]
+}

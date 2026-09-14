@@ -1,0 +1,714 @@
+{
+  "artifact_version": "commentary-richness-scoring-calibration-v1",
+  "namespace_version": "commentary-richness-scoring-remediation-v1",
+  "contracts": {
+    "old_richness_policy_version": "commentary-richness-policy-v2-proposed",
+    "new_richness_policy_version": "commentary-richness-policy-v3-reader-relevance",
+    "core_classifier_version": "essential-passage-context-v2",
+    "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+    "gate_version": "commentary-richness-gate-v2.1",
+    "gate_behavior_changed": false
+  },
+  "control_count": 22,
+  "sources": {
+    "commentary-v1.2-canary-control": 13,
+    "commentary-v1.5-batch-3": 9
+  },
+  "baseline_distribution": {
+    "SYNTHESIS_GAP": 13,
+    "EVIDENCE_GAP": 7,
+    "RICH_ENOUGH": 2
+  },
+  "evidence_availability_distribution": {
+    "THIN": 4,
+    "AVAILABLE": 13,
+    "DATA_GAP": 5
+  },
+  "outcome_transitions": {
+    "PASS->PASS": 18,
+    "PASS_WITH_WARNING->PASS_WITH_WARNING": 3,
+    "QUALITY_FAIL->QUALITY_FAIL": 1
+  },
+  "core_coverage_regressions": 0,
+  "dump_severity_changes": 0,
+  "rich_control_regressions": [],
+  "data_gap_regressions": [],
+  "high_dump_controls": [
+    {
+      "reference": "Genesis 1",
+      "old_gate": "QUALITY_FAIL",
+      "new_gate": "QUALITY_FAIL"
+    }
+  ],
+  "controls": [
+    {
+      "reference": "1 Chronicles 8",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "THIN",
+      "after_richness": "SYNTHESIS_GAP",
+      "old": {
+        "meaningful_clusters": 1,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 1,
+        "eligible_weighted_denominator": 0.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "RELEVANT": 1
+        }
+      }
+    },
+    {
+      "reference": "1 Samuel 21",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "THIN",
+      "after_richness": "EVIDENCE_GAP",
+      "old": {
+        "meaningful_clusters": 1,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 1,
+        "eligible_weighted_denominator": 1.0,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "1 Samuel 28",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "RICH_ENOUGH",
+      "evidence_availability": "THIN",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 2,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 2,
+        "eligible_weighted_denominator": 1.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "RELEVANT": 1,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "2 Samuel 6",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 6,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "LOW",
+        "gate_outcome": "PASS_WITH_WARNING"
+      },
+      "new": {
+        "meaningful_clusters": 2,
+        "eligible_weighted_denominator": 2.0,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "LOW",
+        "gate_outcome": "PASS_WITH_WARNING",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 4,
+          "REQUIRED": 2
+        }
+      }
+    },
+    {
+      "reference": "2 Samuel 24",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 2,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 2,
+        "eligible_weighted_denominator": 1.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "RELEVANT": 1,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "Genesis 1",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 25,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "HIGH",
+        "gate_outcome": "QUALITY_FAIL"
+      },
+      "new": {
+        "meaningful_clusters": 9,
+        "eligible_weighted_denominator": 6.1,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "HIGH",
+        "gate_outcome": "QUALITY_FAIL",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 16,
+          "RELEVANT": 7,
+          "REQUIRED": 2
+        }
+      }
+    },
+    {
+      "reference": "Isaiah 6",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 13,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 5,
+        "eligible_weighted_denominator": 3.4,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 8,
+          "RELEVANT": 4,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "John 1",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 21,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "MODERATE",
+        "gate_outcome": "PASS_WITH_WARNING"
+      },
+      "new": {
+        "meaningful_clusters": 4,
+        "eligible_weighted_denominator": 2.6,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "MODERATE",
+        "gate_outcome": "PASS_WITH_WARNING",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 17,
+          "RELEVANT": 4
+        }
+      }
+    },
+    {
+      "reference": "Leviticus 16",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "SYNTHESIS_GAP",
+      "old": {
+        "meaningful_clusters": 20,
+        "weighted_coverage": 0.5563,
+        "core_coverage": 1.0,
+        "category_coverage": 0.8571,
+        "synthesis_utilization": 0.3171,
+        "dump_severity": "LOW",
+        "gate_outcome": "PASS_WITH_WARNING"
+      },
+      "new": {
+        "meaningful_clusters": 6,
+        "eligible_weighted_denominator": 4.4,
+        "weighted_coverage": 0.8409,
+        "core_coverage": 1.0,
+        "category_coverage": 0.8571,
+        "synthesis_utilization": 0.8333,
+        "raw_synthesis_utilization": 0.3171,
+        "dump_severity": "LOW",
+        "gate_outcome": "PASS_WITH_WARNING",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 14,
+          "RELEVANT": 4,
+          "REQUIRED": 2
+        }
+      }
+    },
+    {
+      "reference": "Numbers 3",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "DATA_GAP",
+      "after_richness": "EVIDENCE_GAP",
+      "old": {
+        "meaningful_clusters": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 0,
+        "eligible_weighted_denominator": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "raw_synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {}
+      }
+    },
+    {
+      "reference": "Psalms 1",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "RICH_ENOUGH",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 7,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 1,
+        "eligible_weighted_denominator": 0.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 6,
+          "RELEVANT": 1
+        }
+      }
+    },
+    {
+      "reference": "Revelation 12",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 4,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 4,
+        "eligible_weighted_denominator": 2.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "RELEVANT": 3,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "Ruth 3",
+      "source": "commentary-v1.2-canary-control",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 4,
+        "eligible_weighted_denominator": 2.7,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 1,
+          "RELEVANT": 3,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "2 Chronicles 8",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "DATA_GAP",
+      "after_richness": "EVIDENCE_GAP",
+      "old": {
+        "meaningful_clusters": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 0,
+        "eligible_weighted_denominator": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "raw_synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {}
+      }
+    },
+    {
+      "reference": "Acts 6",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "SYNTHESIS_GAP",
+      "old": {
+        "meaningful_clusters": 2,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 0.6667,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 1,
+        "eligible_weighted_denominator": 1.0,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 0.6667,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 1,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "Ecclesiastes 4",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "THIN",
+      "after_richness": "SYNTHESIS_GAP",
+      "old": {
+        "meaningful_clusters": 1,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 1,
+        "eligible_weighted_denominator": 0.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "RELEVANT": 1
+        }
+      }
+    },
+    {
+      "reference": "Ezekiel 7",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "DATA_GAP",
+      "after_richness": "EVIDENCE_GAP",
+      "old": {
+        "meaningful_clusters": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 0,
+        "eligible_weighted_denominator": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "raw_synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {}
+      }
+    },
+    {
+      "reference": "James 3",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 10,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 0.875,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 4,
+        "eligible_weighted_denominator": 3.0,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 0.875,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 6,
+          "RELEVANT": 2,
+          "REQUIRED": 2
+        }
+      }
+    },
+    {
+      "reference": "Luke 5",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "DATA_GAP",
+      "after_richness": "EVIDENCE_GAP",
+      "old": {
+        "meaningful_clusters": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 0,
+        "eligible_weighted_denominator": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "raw_synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {}
+      }
+    },
+    {
+      "reference": "Nehemiah 2",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 6,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 0.8182,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 3,
+        "eligible_weighted_denominator": 2.0,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 0.8182,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "CONTEXTUAL_OPTIONAL": 3,
+          "RELEVANT": 2,
+          "REQUIRED": 1
+        }
+      }
+    },
+    {
+      "reference": "Proverbs 6",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "EVIDENCE_GAP",
+      "evidence_availability": "DATA_GAP",
+      "after_richness": "EVIDENCE_GAP",
+      "old": {
+        "meaningful_clusters": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 0,
+        "eligible_weighted_denominator": 0,
+        "weighted_coverage": 0.0,
+        "core_coverage": 1.0,
+        "category_coverage": 0.0,
+        "synthesis_utilization": 0.0,
+        "raw_synthesis_utilization": 0.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {}
+      }
+    },
+    {
+      "reference": "Zechariah 5",
+      "source": "commentary-v1.5-batch-3",
+      "baseline_richness": "SYNTHESIS_GAP",
+      "evidence_availability": "AVAILABLE",
+      "after_richness": "RICH_ENOUGH",
+      "old": {
+        "meaningful_clusters": 1,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS"
+      },
+      "new": {
+        "meaningful_clusters": 1,
+        "eligible_weighted_denominator": 0.5,
+        "weighted_coverage": 1.0,
+        "core_coverage": 1.0,
+        "category_coverage": 1.0,
+        "synthesis_utilization": 1.0,
+        "raw_synthesis_utilization": 1.0,
+        "dump_severity": "NONE",
+        "gate_outcome": "PASS",
+        "eligibility_distribution": {
+          "RELEVANT": 1
+        }
+      }
+    }
+  ]
+}

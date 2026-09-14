@@ -1,0 +1,227 @@
+{
+  "artifact_version": "commentary-richness-scoring-remediation-freeze-v1",
+  "namespace_version": "commentary-richness-scoring-remediation-v1",
+  "bounded_scope": "Commentary v1.2 richness/coverage scoring only",
+  "qualification_id": "renderer-qualification-v1-gpt-5.6-sol-a0f4063638cf9730958a",
+  "remediation_id": "renderer-remediation-v1-gpt-5.6-sol-2d03bb002c24cdbcca72",
+  "historical_contracts": {
+    "qualification": {
+      "commentary_prompt_version": "1.5",
+      "commentary_schema_version": "1.2",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "gate_version": "commentary-richness-gate-v2.1"
+    },
+    "remediation": {
+      "old_commentary_prompt_version": "1.5",
+      "candidate_commentary_prompt_version": "1.6",
+      "commentary_schema_version": "1.2",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "gate_version": "commentary-richness-gate-v2.1"
+    }
+  },
+  "historical_results": {
+    "qualification_result": "NOT_QUALIFIED",
+    "qualification_summary": {
+      "renderer_chapters": 21,
+      "structurally_valid": 20,
+      "structural_rejections": 1,
+      "structural_rejection_codes": {
+        "SYNTHESIS_ANCESTRY_MISMATCH": 1
+      },
+      "quality_fail": 4,
+      "high_dump": 0,
+      "evidence_bearing_valid_chapters": 18,
+      "weighted_coverage": 0.7885,
+      "core_coverage": 1.0,
+      "synthesis_utilization": 0.6294,
+      "category_coverage": 1.0,
+      "gate_distribution": {
+        "QUALITY_FAIL": 4,
+        "PASS": 16
+      },
+      "dump_distribution": {
+        "NONE": 20
+      }
+    },
+    "remediation_result": "FIVE_CHAPTER_REMEDIATION_FAILED",
+    "remediation_summary": {
+      "chapter_count": 5,
+      "structurally_valid": 5,
+      "structural_failures": 0,
+      "rejection_codes": {},
+      "hard_provenance_codes": [],
+      "quality_failures": 4,
+      "high_dump_count": 0,
+      "core_coverage_minimum_met": true,
+      "four_quality_cases_materially_improved": false,
+      "four_quality_cases_at_or_above_0_75": 0,
+      "one_corinthians_14_ancestry_result": "PASS"
+    }
+  },
+  "file_count": 32,
+  "files": [
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/evaluation/evaluation.json",
+      "sha256": "3faec37674b5f186092b7f7f837b429e45248100262aaa9a1b4c94ef52a4be8f",
+      "byte_count": 182339
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/manifest.json",
+      "sha256": "b017a480490037e11f5b3eee4410958b9c3554d1a393875d184f92cab7aaad0b",
+      "byte_count": 5779
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/responses/import-receipt.json",
+      "sha256": "576ae88e52b5dfe31fdce4ac7f9ef5b116eb90837838b6339446ee28d68b4560",
+      "byte_count": 2414
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/responses/raw/001_exodus_014.json",
+      "sha256": "33a44acff607a25b9b42e348331aae8c48e59d096f72a175bfcd07334d0c0b5c",
+      "byte_count": 7135
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/responses/raw/002_deuteronomy_010.json",
+      "sha256": "e0c58c2af624f7b8d17d911c1469443079082d01d7b9096e3c7c5aa79a88b098",
+      "byte_count": 3839
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/responses/raw/003_job_001.json",
+      "sha256": "ae8dc8c77a532da88fd428eb42e6804c76038d02e665934092ab3e3e0865d58c",
+      "byte_count": 6373
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/responses/raw/004_1_corinthians_014.json",
+      "sha256": "5b3ad533216709162713ccb096f4f95c712217086c3f0e844167c06850e16bb0",
+      "byte_count": 10380
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-contract-remediation-v1/gpt-5.6-sol/prompt-1.6/responses/raw/005_revelation_021.json",
+      "sha256": "44dee4da84f7652162d4132507063a5b563950f7c741b93efe40e567c99d817f",
+      "byte_count": 11500
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/evaluation/evaluation.json",
+      "sha256": "f303562fa1d3be7532193136efbb438b8d3808a2667bfb70e12025d20170f2f3",
+      "byte_count": 802269
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/qualification-manifest.json",
+      "sha256": "35f1eb6b16ddc2bae53e04a0352f19576c418b5749f5529d416bbbc183d0b9d7",
+      "byte_count": 15570
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/import-receipt.json",
+      "sha256": "0d72c26abb22248b2a03acd14025e4414c2d9de583ecc2499bf536f685919c7e",
+      "byte_count": 9810
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/001_exodus_014.json",
+      "sha256": "fdc169c85a9d3a05db013fa9c6286e892ce2cbb498cb79f6d8c56db1f160f4dd",
+      "byte_count": 6870
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/002_leviticus_008.json",
+      "sha256": "e396c079778dba4992875b09faeae2c18cf51a67afe8dffbaad8e49898b31d9e",
+      "byte_count": 5032
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/003_numbers_036.json",
+      "sha256": "04a0747435dadab03dd5f8b870a3863492a02046abaaa8c23a4d496185e8b93f",
+      "byte_count": 2247
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/004_deuteronomy_010.json",
+      "sha256": "181f427d5a93836bce817278df187cb73404a1392dbd9379c78a82f865158786",
+      "byte_count": 3438
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/005_ruth_002.json",
+      "sha256": "1627844012eb7e8a6ef5af4ada8293f36641e1192968b7639c67627833dfce23",
+      "byte_count": 5331
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/006_2_samuel_015.json",
+      "sha256": "31a12e1d811f83d75de2e3c9bb4096d9d7460b662200417d68681411a5e57e40",
+      "byte_count": 1662
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/007_ezra_008.json",
+      "sha256": "1c77880a7536e34a84038e7fdb19bb9ae543b3d932935abe6400c47df17d9f29",
+      "byte_count": 5011
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/008_nehemiah_007.json",
+      "sha256": "0273018b8d4be8f1038df51dfc389f510eff0a8503465af2a20f30a028ab8f47",
+      "byte_count": 2096
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/009_job_001.json",
+      "sha256": "75c117af4c7d2c7466c349882f506e8f099360a0e940499ac07f6905695d5e47",
+      "byte_count": 7074
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/010_isaiah_013.json",
+      "sha256": "8c6eedc2f8289ab8c8de52a2ca9584100fc942881288bf3898898d8ecd49349a",
+      "byte_count": 4283
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/011_amos_002.json",
+      "sha256": "12da53a619529a2720be1b3243c63ae775d03fb542338485744e49926905aab6",
+      "byte_count": 5044
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/012_matthew_004.json",
+      "sha256": "cf7209849ab7b85117460657d99fc675cb9e103e61ccec948e36e6fe81e51f5c",
+      "byte_count": 8181
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/013_matthew_019.json",
+      "sha256": "3f775e0482bda12080cc0ebf11add82ebf4df751f04140ebb80af0503de9c753",
+      "byte_count": 1649
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/014_matthew_020.json",
+      "sha256": "de3d3dade9d038563347b41138cdf38d5ff44d4fad7d769fc997f1a20e56d0de",
+      "byte_count": 1905
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/015_romans_003.json",
+      "sha256": "9773008c9051a98e55b72e1927bb59eb5208cca8896a081762bbbc739c50ed12",
+      "byte_count": 8971
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/016_1_corinthians_014.json",
+      "sha256": "62a04ec824c059abc6b661e4dc2c7b9d146459ddb776f3a9726ab8e79be20ae9",
+      "byte_count": 11523
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/017_hebrews_008.json",
+      "sha256": "858d5ea82621bdd408890cece0e661c9dd330445fd6391d5fa4f078f189b1348",
+      "byte_count": 12358
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/018_revelation_004.json",
+      "sha256": "700ba4c789d27850c9feea6b8649cdddadde87c38c394d1155ff109326ce100b",
+      "byte_count": 5025
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/019_revelation_019.json",
+      "sha256": "5e6ccf49cd22c020f39b979d77b1d4aa7779290515ee0b8f4ec9df63898f74df",
+      "byte_count": 4167
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/020_revelation_020.json",
+      "sha256": "a32a55b92b4010609da1e215043cdf0fc316057f8272431594d80f8678602848",
+      "byte_count": 7832
+    },
+    {
+      "path": ".bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/responses/raw/021_revelation_021.json",
+      "sha256": "82fc60c6b87c90cb7ab3cd87249db268260788a4f76f6d10cec351c0727f5717",
+      "byte_count": 13602
+    }
+  ],
+  "freeze_identity": "54a3a78da165f2ebdaab64e64f8401bd63dad59fa3d9e1a705111545b074b8c0"
+}

@@ -6,43 +6,9 @@
   "evidence_bundle_version": "1.1",
   "synthesis_schema_version": "1.1",
   "synthesis_compiler_version": "1.1",
-  "synthesis_hash": "1373609f949ec38237b289f79c6ae7c358ad9499b4688d19d1ad93b4e1f8d360",
+  "synthesis_hash": "1d26c9d1352587b20248ab24c2ebd490fdf8a6908403440cdbd1851729f4b301",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
-    {
-      "id": "syn_cultural_context_1525a973caf7",
-      "kind": "cultural_context",
-      "facts": [
-        "The site lies within the central highland road network. Judges 21's route description relative to Bethel, Lebonah, and the main road presents Shiloh as a recognizable regional gathering place rather than an unspecified sacred symbol.",
-        "Shiloh joins sacred presence, sacrifice, priestly responsibility, festival, and tribal assembly. Its later canonical use also insists that a revered sanctuary does not guarantee protection when covenant conduct is corrupt."
-      ],
-      "verse_refs": [
-        "Jeremiah 7:12-14"
-      ],
-      "evidence_ids": [
-        "shiloh:ancient_near_east_context:0",
-        "shiloh:hebraic_worldview:0"
-      ],
-      "entity_ids": [
-        "shiloh"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Jeremiah 7:12-14"
-      ],
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 2,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
     {
       "id": "syn_historical_context_2521ec47a15d",
       "kind": "historical_context",
@@ -62,38 +28,6 @@
       "passage_scope": "CURRENT_CHAPTER",
       "source_anchors": [
         "Jeremiah 7:1-34"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_ed8b91b91491",
-      "kind": "historical_context",
-      "facts": [
-        "Shiloh is commonly identified with Khirbet Seilun north of Bethel. Excavation documents a long occupation sequence including Iron I remains, but no excavated feature securely proves the location of the tent of meeting or an event narrated in Judges or Samuel."
-      ],
-      "verse_refs": [
-        "Jeremiah 7:12-14"
-      ],
-      "evidence_ids": [
-        "shiloh:historical_context:0"
-      ],
-      "entity_ids": [
-        "shiloh"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Jeremiah 7:12-14"
       ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
@@ -297,39 +231,6 @@
         "explicit_significance": false,
         "safe_for_significance": true
       }
-    },
-    {
-      "id": "syn_why_it_matters_f89e493264db",
-      "kind": "why_it_matters",
-      "facts": [
-        "The site lies within the central highland road network. Judges 21's route description relative to Bethel, Lebonah, and the main road presents Shiloh as a recognizable regional gathering place rather than an unspecified sacred symbol.",
-        "Shiloh joins sacred presence, sacrifice, priestly responsibility, festival, and tribal assembly. Its later canonical use also insists that a revered sanctuary does not guarantee protection when covenant conduct is corrupt."
-      ],
-      "verse_refs": [
-        "Jeremiah 7:12-14"
-      ],
-      "evidence_ids": [
-        "shiloh:ancient_near_east_context:0",
-        "shiloh:hebraic_worldview:0"
-      ],
-      "entity_ids": [
-        "shiloh"
-      ],
-      "related_unit_ids": [
-        "syn_cultural_context_1525a973caf7"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Jeremiah 7:12-14"
-      ],
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
     }
   ],
   "evidence_gaps": [
@@ -350,18 +251,19 @@
       "jeremiah-long-composition",
       "jeremiah-practical-mt-outline",
       "jeremiah-temple-justice",
-      "mark-temple-action",
+      "mark-temple-action"
+    ],
+    "unused_evidence_ids": [
       "shiloh:ancient_near_east_context:0",
       "shiloh:hebraic_worldview:0",
       "shiloh:historical_context:0"
     ],
-    "unused_evidence_ids": [],
     "evidence_categories": {
       "culture": 5,
       "history": 2
     },
     "category_diversity": 2,
-    "specific_evidence_count": 7,
+    "specific_evidence_count": 4,
     "entity_counts": {
       "people": 0,
       "places": 1,
@@ -370,12 +272,10 @@
       "artifacts": 0
     },
     "unit_kind_counts": {
-      "cultural_context": 1,
-      "historical_context": 2,
+      "historical_context": 1,
       "interpretive_questions": 1,
-      "surrounding_passages": 2,
-      "why_it_matters": 1
+      "surrounding_passages": 2
     },
-    "relationship_unit_count": 2
+    "relationship_unit_count": 1
   }
 }

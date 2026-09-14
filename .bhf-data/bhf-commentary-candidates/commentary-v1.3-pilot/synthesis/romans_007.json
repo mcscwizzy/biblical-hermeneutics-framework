@@ -6,7 +6,7 @@
   "evidence_bundle_version": "1.1",
   "synthesis_schema_version": "1.1",
   "synthesis_compiler_version": "1.1",
-  "synthesis_hash": "45c5b77ff7aa0a3d7216312510845f0c3c4aac25492b44d178575eae036a4e35",
+  "synthesis_hash": "7526e56fafd4fb4d3cb63a1c3560f871cd4f3d3b1c9ab4b881b8d2885b3716ff",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
@@ -33,66 +33,6 @@
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_fc00bfda481f",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code."
-      ],
-      "verse_refs": [
-        "Romans 7:7-12"
-      ],
-      "evidence_ids": [
-        "what-does-torah-mean:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Romans 7:7-12"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "passage_scope": "CURRENT_CHAPTER",
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_64a57326b5a4",
-      "kind": "historical_context",
-      "facts": [
-        "In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God."
-      ],
-      "verse_refs": [
-        "Romans 7:7-12"
-      ],
-      "evidence_ids": [
-        "what-does-torah-mean:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "passage_scope": "CURRENT_CHAPTER",
-      "source_anchors": [
-        "Romans 7:7-12"
-      ],
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
         ],
         "support_count": 1,
         "passage_scope": "CURRENT_CHAPTER",
@@ -740,11 +680,12 @@
       "romans:interpretive_note:76",
       "romans:interpretive_note:77",
       "romans:interpretive_note:8",
-      "romans:interpretive_note:9",
+      "romans:interpretive_note:9"
+    ],
+    "unused_evidence_ids": [
       "what-does-torah-mean:ancient_near_east_context:0",
       "what-does-torah-mean:historical_context:0"
     ],
-    "unused_evidence_ids": [],
     "evidence_categories": {
       "archaeology": 2,
       "culture": 14,
@@ -754,7 +695,7 @@
       "politics": 1
     },
     "category_diversity": 6,
-    "specific_evidence_count": 22,
+    "specific_evidence_count": 20,
     "entity_counts": {
       "people": 0,
       "places": 0,
@@ -763,8 +704,7 @@
       "artifacts": 0
     },
     "unit_kind_counts": {
-      "cultural_context": 2,
-      "historical_context": 1,
+      "cultural_context": 1,
       "interpretive_questions": 3,
       "surrounding_passages": 10,
       "why_it_matters": 2
