@@ -1,0 +1,208 @@
+TASK: Generate BHF Commentary v1.8 for Song of Songs 6.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_edcf7420f2a99880: Body-description poems map lovers through animals, architecture, agriculture, and landscape, making gaze and imaginative comparison… (categories: culture, interpretive_questions)
+- reader_idea_4866379221128755: Ancient Egyptian and Mesopotamian love poetry offers substantial analogues for the Song's voices, imagery, body praise, fragrance… (categories: culture, history, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_edcf7420f2a99880: Body-description poems map lovers through animals, architecture, agriculture, and landscape, making gaze and imaginative comparison… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["song-landscape-body-gaze"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_e4d95153217f"}
+
+IDEA reader_idea_4866379221128755: Ancient Egyptian and Mesopotamian love poetry offers substantial analogues for the Song's voices, imagery, body praise, fragrance… (importance: RELEVANT; categories: culture, history, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["song-ancient-love-poetry", "song-date-language-qumran", "song-greek-qumran-witnesses", "song-literal-allegorical-reception"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_2fdca66884a6"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["song-lyric-coherence-no-fixed-plot"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_b297ce74ffcb"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["song-ancient-love-poetry", "song-date-language-qumran", "song-greek-qumran-witnesses", "song-literal-allegorical-reception"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_e87e35755916"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Whither is thy beloved gone, O thou fairest among women? Whither hath thy beloved turned him, That we may seek him with thee? 2. My beloved is gone down to his garden, To the beds of spices, To feed in the gardens, and to gather lilies. 3. I am my beloved's, and my beloved is mine; He feedeth `his flock' among the lilies, 4. Thou art fair, O my love, as Tirzah, Comely as Jerusalem, Terrible as an army with banners. 5. Turn away thine eyes from me, For they have overcome me. Thy hair is as a flock of goats, That lie along the side of Gilead. 6. Thy teeth are like a flock of ewes, Which are come up from the washing; Whereof every one hath twins, And none is bereaved among them. 7. Thy temples are like a piece of a pomegranate Behind thy veil. 8. There are threescore queens, and fourscore concubines, And virgins without number. 9. My dove, my undefiled, is `but' one; She is the only one of her mother; She is the choice one of her that bare her. The daughters saw her, and called her blessed; `Yea', the queens and the concubines, and they praised her. 10. Who is she that looketh forth as the morning, Fair as the moon, Clear as the sun, Terrible as an army with banners? 11. I went down into the garden of nuts, To see the green plants of the valley, To see whether the vine budded, `And' the pomegranates were in flower. 12. Before I was aware, my soul set me `Among' the chariots of my princely people. 13. Return, return, O Shulammite; Return, return, that we may look upon thee. Why will ye look upon the Shulammite, As upon the dance of Mahanaim?
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 5, "history": 1}, "evidence_item_count": 6, "relationship_unit_count": 1, "specific_evidence_count": 6, "unit_kind_counts": {"interpretive_questions": 1, "surrounding_passages": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["song-ancient-love-poetry", "song-date-language-qumran", "song-greek-qumran-witnesses", "song-landscape-body-gaze", "song-literal-allegorical-reception", "song-lyric-coherence-no-fixed-plot"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "588803999b339583cb8df098e58ec0920ba47911e1faafb2839092c88863085a", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["song-landscape-body-gaze"], "facts": ["Body-description poems map lovers through animals, architecture, agriculture, and landscape, making gaze and imaginative comparison central to the book's poetics."], "id": "syn_interpretive_questions_e4d95153217f", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Song of Songs 6:4-7"], "verse_refs": ["Song of Songs 6:4-7"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["song-ancient-love-poetry", "song-date-language-qumran", "song-greek-qumran-witnesses", "song-literal-allegorical-reception"], "facts": ["Ancient Egyptian and Mesopotamian love poetry offers substantial analogues for the Song's voices, imagery, body praise, fragrance, and landscapes, without proving a single direct source or cult ritual.", "Linguistic evidence is frequently read as postexilic and compatible with Persian or Hellenistic composition or shaping, while the Qumran witnesses establish only that the Song existed by their copying dates.", "The Song is witnessed by four fragmentary Hebrew Judean Desert manuscripts and by a highly literal Old Greek translation titled Asma asmaton.", "Jewish God-Israel and Christian Christ-church or Word-soul interpretations are major reception traditions, but they are theological readings rather than explicit identifications made by the Song's speakers."], "id": "syn_surrounding_passages_2fdca66884a6", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 4}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_e87e35755916"], "source_anchors": ["Song of Songs 1-8", "Song of Songs 1:1-8:14", "Song of Songs 1:2-8:14"], "verse_refs": ["Song of Songs 1", "Song of Songs 1:1-17", "Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["song-lyric-coherence-no-fixed-plot"], "facts": ["The book uses recurring refrains, search sequences, descriptions, images, and phrases to create poetic coherence, but its sequence does not establish one uncontested drama, wedding cycle, dream plot, or biography."], "id": "syn_surrounding_passages_b297ce74ffcb", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Song of Songs 1:2-8:14"], "verse_refs": ["Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["song-ancient-love-poetry", "song-date-language-qumran", "song-greek-qumran-witnesses", "song-literal-allegorical-reception"], "facts": ["Ancient Egyptian and Mesopotamian love poetry offers substantial analogues for the Song's voices, imagery, body praise, fragrance, and landscapes, without proving a single direct source or cult ritual.", "Linguistic evidence is frequently read as postexilic and compatible with Persian or Hellenistic composition or shaping, while the Qumran witnesses establish only that the Song existed by their copying dates.", "The Song is witnessed by four fragmentary Hebrew Judean Desert manuscripts and by a highly literal Old Greek translation titled Asma asmaton.", "Jewish God-Israel and Christian Christ-church or Word-soul interpretations are major reception traditions, but they are theological readings rather than explicit identifications made by the Song's speakers."], "id": "syn_surrounding_passages_e87e35755916", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 4}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Song of Songs 1-8", "Song of Songs 1:1-8:14", "Song of Songs 1:2-8:14"], "verse_refs": ["Song of Songs 1", "Song of Songs 1:1-17", "Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "song-ancient-love-poetry", "passage_anchors": ["Song of Songs 1:2-8:14"], "source_ids": ["fox-egyptian-love-songs", "oxford-song-bibliography", "pope-song"]}, {"confidence": "medium", "id": "song-date-language-qumran", "passage_anchors": ["Song of Songs 1:1-8:14"], "source_ids": ["exum-song", "exum-unity-date", "iaa-song-scrolls", "oxford-song-bibliography", "song-qumran"]}, {"confidence": "high", "id": "song-greek-qumran-witnesses", "passage_anchors": ["Song of Songs 1-8"], "source_ids": ["iaa-song-scrolls", "nets-greek-song", "song-old-greek", "song-qumran"]}, {"confidence": "high", "id": "song-landscape-body-gaze", "passage_anchors": ["Song of Songs 6:4-7"], "source_ids": ["exum-song", "james-landscapes", "song-masoretic"]}, {"confidence": "medium", "id": "song-literal-allegorical-reception", "passage_anchors": ["Song of Songs 1-8"], "source_ids": ["kingsmill-eros-god", "new-testament-bride-texts", "norris-song-reception", "oxford-song-bibliography", "song-masoretic"]}, {"confidence": "high", "id": "song-lyric-coherence-no-fixed-plot", "passage_anchors": ["Song of Songs 1:2-8:14"], "source_ids": ["exum-song", "exum-unity-date", "oxford-song-bibliography", "song-masoretic"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Song of Songs 6",
+  "book": "Song of Songs",
+  "chapter": 6,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Song of Songs 6:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Song of Songs 6:
+   for example `Song of Songs 6:1` or `Song of Songs 6:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Song of Songs 6:1", "Song of Songs 6:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 588803999b339583cb8df098e58ec0920ba47911e1faafb2839092c88863085a.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_song_of_songs_006_c3d200616a0df2ddc0d2539a", "renderer_verse_refs": ["Song of Songs 6:4-7"], "source_verse_refs": ["Song of Songs 6:4-7"], "synthesis_unit": "syn_interpretive_questions_e4d95153217f"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_song_of_songs_006_b251809446845344138568df", "renderer_verse_refs": ["Song of Songs 1", "Song of Songs 1:1-17", "Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"], "source_verse_refs": ["Song of Songs 1", "Song of Songs 1:1-17", "Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"], "synthesis_unit": "syn_surrounding_passages_2fdca66884a6"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_song_of_songs_006_957ee256944d7d9d8f336056", "renderer_verse_refs": ["Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"], "source_verse_refs": ["Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"], "synthesis_unit": "syn_surrounding_passages_b297ce74ffcb"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_song_of_songs_006_4126034c255a403d83a30d1a", "renderer_verse_refs": ["Song of Songs 1", "Song of Songs 1:1-17", "Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"], "source_verse_refs": ["Song of Songs 1", "Song of Songs 1:1-17", "Song of Songs 1:2-17", "Song of Songs 2:1-17", "Song of Songs 3:1-11", "Song of Songs 4:1-16", "Song of Songs 5:1-16", "Song of Songs 7:1-13", "Song of Songs 8:1-14"], "synthesis_unit": "syn_surrounding_passages_e87e35755916"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.
