@@ -20,6 +20,9 @@ from .availability import evidence_contribution
 
 RICHNESS_CLUSTER_AUDIT_VERSION = "commentary-richness-clusters-v1"
 RICHNESS_POLICY_VERSION = "commentary-richness-policy-v2-proposed"
+RICHNESS_CLUSTER_AUDIT_VERSION_V2 = "commentary-richness-clusters-v2"
+RICHNESS_POLICY_VERSION_V3 = "commentary-richness-policy-v3-reader-relevance"
+COVERAGE_ELIGIBILITY_CLASSIFIER_V1 = "reader-relevance-eligibility-v1"
 RICHNESS_GATE_V2_VERSION = "commentary-richness-gate-v2.1"
 CORE_CLASSIFIER_V1 = "current-chapter-context-v1"
 CORE_CLASSIFIER_V2 = "essential-passage-context-v2"
@@ -79,6 +82,15 @@ class QualityClass(str, Enum):
     DISPUTED = "DISPUTED"
 
 
+class CoverageEligibility(str, Enum):
+    """Whether a valid source idea belongs in reader-facing coverage math."""
+
+    REQUIRED = "REQUIRED"
+    RELEVANT = "RELEVANT"
+    CONTEXTUAL_OPTIONAL = "CONTEXTUAL_OPTIONAL"
+    EXCLUDED_FROM_COVERAGE = "EXCLUDED_FROM_COVERAGE"
+
+
 class GateClass(str, Enum):
     """Chapter-level quality expectation selected from evidence and baseline."""
 
@@ -120,6 +132,8 @@ class SynthesisIdeaCluster:
     categories: list[str] = field(default_factory=list)
     importance_basis: list[str] = field(default_factory=list)
     dispute_present: bool = False
+    coverage_eligibility: str = CoverageEligibility.RELEVANT.value
+    coverage_eligibility_basis: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -177,6 +191,14 @@ class RichnessClusterScore:
     consolidation_ratio: float
     dump_diagnostics: EvidenceDumpDiagnostics
     clusters: list[SynthesisIdeaCluster]
+    eligible_weighted_denominator: float = 0.0
+    consumed_eligible_weight: float = 0.0
+    coverage_policy_version: str = RICHNESS_POLICY_VERSION
+    coverage_eligibility_classifier_version: str | None = None
+    eligibility_distribution: dict[str, int] = field(default_factory=dict)
+    eligible_synthesis_count: int = 0
+    consumed_eligible_synthesis_count: int = 0
+    eligible_synthesis_coverage: float = 0.0
 
     def to_dict(self) -> dict[str, Any]:
         result = asdict(self)
@@ -240,6 +262,8 @@ def cluster_synthesis_units(
     evidence_items: Iterable[Any] | Mapping[str, Any] | None = None,
     *,
     core_classifier: str = CORE_CLASSIFIER_V2,
+    coverage_policy: str = RICHNESS_POLICY_VERSION,
+    passage_text: str = "",
 ) -> list[SynthesisIdeaCluster]:
     """Cluster units with stable IDs using only structural/textual signals.
 
@@ -311,6 +335,14 @@ def cluster_synthesis_units(
             if any(_text(unit, "passage_scope") == "CURRENT_CHAPTER" for unit in members)
             else "SURROUNDING_PASSAGE"
         )
+        coverage_eligibility, coverage_eligibility_basis = _coverage_eligibility(
+            members,
+            evidence=evidence,
+            quality_class=quality_class,
+            importance_basis=importance_basis,
+            coverage_policy=coverage_policy,
+            passage_text=passage_text,
+        )
         clusters.append(
             SynthesisIdeaCluster(
                 id=cluster_id,
@@ -333,6 +365,8 @@ def cluster_synthesis_units(
                 categories=categories,
                 importance_basis=importance_basis,
                 dispute_present=QualityClass.DISPUTED.value in classes,
+                coverage_eligibility=coverage_eligibility,
+                coverage_eligibility_basis=coverage_eligibility_basis,
             )
         )
     return sorted(clusters, key=lambda cluster: cluster.id)
@@ -346,12 +380,24 @@ def score_synthesis_richness(
     blocks: Iterable[Any] | None = None,
     passage_ref: str = "",
     core_classifier: str = CORE_CLASSIFIER_V2,
+    coverage_policy: str = RICHNESS_POLICY_VERSION,
+    passage_text: str = "",
 ) -> RichnessClusterScore:
-    """Calculate proposed v2 metrics without changing current richness."""
+    """Calculate versioned cluster metrics without changing source evidence.
+
+    The historical v2 policy remains the default so old production and pilot
+    tools keep their recorded contract.  Callers opting into v3 must provide
+    ``coverage_policy=RICHNESS_POLICY_VERSION_V3`` and the canonical chapter
+    text used by its deterministic entity-centrality signal.
+    """
 
     ordered_units = list(units)
     clusters = cluster_synthesis_units(
-        ordered_units, evidence_items, core_classifier=core_classifier
+        ordered_units,
+        evidence_items,
+        core_classifier=core_classifier,
+        coverage_policy=coverage_policy,
+        passage_text=passage_text,
     )
     cluster_by_unit = {
         synthesis_id: cluster
@@ -366,8 +412,22 @@ def score_synthesis_richness(
         for synthesis_id in consumed_ids
         for cluster in [cluster_by_unit[synthesis_id]]
     }
-    meaningful = [cluster for cluster in clusters if cluster.quality_class != QualityClass.OPTIONAL.value]
+    coverage_eligible = {
+        CoverageEligibility.REQUIRED.value,
+        CoverageEligibility.RELEVANT.value,
+    }
+    meaningful = [
+        cluster
+        for cluster in clusters
+        if cluster.coverage_eligibility in coverage_eligible
+    ]
     consumed_meaningful = [cluster for cluster in meaningful if cluster.id in consumed_clusters]
+    eligible_synthesis_ids = {
+        synthesis_id
+        for cluster in meaningful
+        for synthesis_id in cluster.synthesis_ids
+    }
+    consumed_eligible_synthesis_ids = eligible_synthesis_ids.intersection(consumed_ids)
     raw_denominator = len(ordered_units)
     meaningful_denominator = len(meaningful)
     weighted_total = sum(cluster.importance_weight for cluster in meaningful)
@@ -390,7 +450,13 @@ def score_synthesis_richness(
         cluster_by_unit=cluster_by_unit,
         consumed_synthesis_ids=consumed_ids,
         passage_ref=passage_ref,
-        meaningful_cluster_count=meaningful_denominator,
+        # Dump detection intentionally retains all valid non-OPTIONAL source
+        # clusters. Removing denominator noise must not make evidence-shaped
+        # prose harder to detect.
+        meaningful_cluster_count=sum(
+            cluster.quality_class != QualityClass.OPTIONAL.value
+            for cluster in clusters
+        ),
         synthesis_unit_count=raw_denominator,
     )
     return RichnessClusterScore(
@@ -414,6 +480,22 @@ def score_synthesis_richness(
         consolidation_ratio=dump.consolidation_ratio,
         dump_diagnostics=dump,
         clusters=clusters,
+        eligible_weighted_denominator=round(weighted_total, 4),
+        consumed_eligible_weight=round(weighted_consumed, 4),
+        coverage_policy_version=coverage_policy,
+        coverage_eligibility_classifier_version=(
+            COVERAGE_ELIGIBILITY_CLASSIFIER_V1
+            if coverage_policy == RICHNESS_POLICY_VERSION_V3
+            else None
+        ),
+        eligibility_distribution=dict(
+            sorted(Counter(cluster.coverage_eligibility for cluster in clusters).items())
+        ),
+        eligible_synthesis_count=len(eligible_synthesis_ids),
+        consumed_eligible_synthesis_count=len(consumed_eligible_synthesis_ids),
+        eligible_synthesis_coverage=_ratio(
+            len(consumed_eligible_synthesis_ids), len(eligible_synthesis_ids)
+        ),
     )
 
 
@@ -699,6 +781,169 @@ def assess_gate_v2(
         material_improvement_signals=sorted(set(improvement_signals)),
         reasons=reasons,
         dump_severity=dump_severity,
+    )
+
+
+_ELIGIBILITY_TITLE_STOPWORDS = frozenset(
+    "a an and does framework is of significance story storyline symbol the theme what why".split()
+)
+_LOW_INFORMATION_CONTEXT_PATTERNS = (
+    "as the relevant passages require",
+    "belongs to a social world",
+    "entry connects that setting",
+    "entry ties that world",
+    "is located by its canonical setting",
+    "is read across the canon as scripture develops this theme",
+    "this feature belongs to the landscapes",
+    "this figure is associated with",
+)
+_READER_RELEVANT_RELATIONSHIPS = frozenset(
+    {
+        "book_context",
+        "direct_context",
+        "intertextual_reuse",
+        "later_reception",
+    }
+)
+
+
+def _coverage_eligibility(
+    units: list[Any],
+    *,
+    evidence: Mapping[str, Any],
+    quality_class: str,
+    importance_basis: list[str],
+    coverage_policy: str,
+    passage_text: str,
+) -> tuple[str, list[str]]:
+    """Classify denominator eligibility independently from evidence quality.
+
+    V3 admits only deterministic reader-relevance signals. It never consults
+    commentary consumption, so an omitted idea cannot score itself away.
+    """
+
+    if coverage_policy == RICHNESS_POLICY_VERSION:
+        if quality_class == QualityClass.OPTIONAL.value:
+            return CoverageEligibility.EXCLUDED_FROM_COVERAGE.value, [
+                "historical_optional_quality_class"
+            ]
+        return CoverageEligibility.RELEVANT.value, [
+            "historical_all_non_optional_clusters"
+        ]
+    if coverage_policy != RICHNESS_POLICY_VERSION_V3:
+        raise ValueError(f"unknown richness coverage policy: {coverage_policy}")
+    if quality_class == QualityClass.CORE.value:
+        return CoverageEligibility.REQUIRED.value, [
+            "core_quality_class_unchanged"
+        ]
+    if quality_class == QualityClass.OPTIONAL.value:
+        return CoverageEligibility.EXCLUDED_FROM_COVERAGE.value, [
+            "dig_deeper_or_optional_quality_class"
+        ]
+
+    items = [
+        evidence[item_id]
+        for unit in units
+        for item_id in _sequence(unit, "evidence_ids")
+        if item_id in evidence
+    ]
+    relationships = {
+        str((getattr(item, "relevance_metadata", None) or {}).get("semantic_relationship") or "").casefold()
+        for item in items
+    }
+    facts = [fact for unit in units for fact in _sequence(unit, "facts")]
+    if quality_class == QualityClass.DISPUTED.value:
+        if relationships.intersection(_READER_RELEVANT_RELATIONSHIPS):
+            return CoverageEligibility.RELEVANT.value, [
+                "bounded_dispute_with_reader_relevant_relationship"
+            ]
+        return CoverageEligibility.CONTEXTUAL_OPTIONAL.value, [
+            "dispute_lacks_direct_intertextual_or_reception_relationship"
+        ]
+    if "specific_contextual_support" in importance_basis:
+        if _is_raw_entity_inventory(facts):
+            return CoverageEligibility.CONTEXTUAL_OPTIONAL.value, [
+                "specific_metadata_but_raw_entity_inventory"
+            ]
+        return CoverageEligibility.RELEVANT.value, [
+            "specific_contextual_contribution"
+        ]
+
+    if set(importance_basis).intersection(
+        {
+            "entity_background_not_direct_passage_context",
+            "general_contextual_support",
+        }
+    ):
+        central_ratio = _central_parent_ratio(items, passage_text)
+        if (
+            central_ratio >= 0.5
+            and not _is_low_information_context(facts)
+            and not _is_raw_entity_inventory(facts)
+        ):
+            return CoverageEligibility.RELEVANT.value, [
+                "majority_parent_concepts_named_in_canonical_chapter",
+                "non_template_explanatory_facts",
+            ]
+        reasons = ["generic_or_general_context_not_required"]
+        if central_ratio < 0.5:
+            reasons.append("majority_parent_concepts_not_named_in_canonical_chapter")
+        if _is_low_information_context(facts):
+            reasons.append("template_like_context")
+        if _is_raw_entity_inventory(facts):
+            reasons.append("raw_entity_inventory")
+        return CoverageEligibility.CONTEXTUAL_OPTIONAL.value, reasons
+    if quality_class == QualityClass.SURROUNDING.value:
+        return CoverageEligibility.CONTEXTUAL_OPTIONAL.value, [
+            "surrounding_passage_without_stronger_relevance_signal"
+        ]
+    return CoverageEligibility.CONTEXTUAL_OPTIONAL.value, [
+        "no_deterministic_reader_relevance_signal"
+    ]
+
+
+def _central_parent_ratio(items: Iterable[Any], passage_text: str) -> float:
+    passage_words = _WORD_RE.findall(passage_text.casefold())
+    parents: dict[str, tuple[str, ...]] = {}
+    for item in items:
+        metadata = getattr(item, "relevance_metadata", None) or {}
+        parent_id = str(metadata.get("parent_object_id") or "").strip()
+        title = str(metadata.get("parent_title") or "").strip()
+        if not parent_id or not title:
+            continue
+        parents.setdefault(
+            parent_id,
+            tuple(
+                word
+                for word in _WORD_RE.findall(title.casefold())
+                if word not in _ELIGIBILITY_TITLE_STOPWORDS
+                and not word.isdigit()
+                and len(word) >= 3
+            ),
+        )
+    if not parents or not passage_words:
+        return 0.0
+    matched = sum(
+        bool(words)
+        and any(
+            tuple(passage_words[index : index + len(words)]) == words
+            for index in range(len(passage_words) - len(words) + 1)
+        )
+        for words in parents.values()
+    )
+    return matched / len(parents)
+
+
+def _is_low_information_context(facts: Iterable[str]) -> bool:
+    text = " ".join(str(value) for value in facts).casefold()
+    return any(pattern in text for pattern in _LOW_INFORMATION_CONTEXT_PATTERNS)
+
+
+def _is_raw_entity_inventory(facts: Iterable[str]) -> bool:
+    values = [str(value).strip() for value in facts if str(value).strip()]
+    return bool(values) and all(
+        len(value.split()) <= 4 and not re.search(r"[.!?]", value)
+        for value in values
     )
 
 

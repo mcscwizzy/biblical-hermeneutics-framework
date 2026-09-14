@@ -261,6 +261,9 @@ class CommentaryGenerationResult:
     status: str
     commentary: ChapterCommentary | None = None
     error: str | None = None
+    # Raw renderer bytes are retained by bounded runners for diagnosis.  This
+    # is deliberately optional so existing adapters and callers remain stable.
+    raw_response: bytes | None = None
 
 
 @dataclass(frozen=True)

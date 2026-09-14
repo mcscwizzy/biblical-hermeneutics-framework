@@ -176,6 +176,7 @@ def runtime_parameters(config: AgentConfig, *, reader_enabled: bool) -> dict[str
     return {
         "adapter": config.adapter,
         "model": str(config.model or ""),
+        "reasoning_effort": config.reasoning_effort,
         "base_url": config.base_url,
         "temperature": float(config.temperature),
         "max_tokens": int(config.max_tokens),

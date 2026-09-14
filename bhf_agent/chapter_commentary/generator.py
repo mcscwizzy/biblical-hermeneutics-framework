@@ -218,6 +218,7 @@ class CommentaryGenerator:
                 user_prompt=user_prompt,
                 model=self.config.model or "unknown",
                 temperature=self.config.temperature,
+                reasoning_effort=self.config.reasoning_effort,
                 max_tokens=max_tokens,
                 context_window=self.config.context_window,
                 metadata={"commentary_prompt_version": COMMENTARY_PROMPT_VERSION},

@@ -60,6 +60,8 @@ class OpenAICompatibleAdapter(ChatAdapter):
             "temperature": request.temperature,
             "max_tokens": request.max_tokens,
         }
+        if request.reasoning_effort is not None:
+            payload["reasoning_effort"] = request.reasoning_effort
         if request.response_format is not None:
             payload["response_format"] = request.response_format
         payload = self._augment_payload(payload, request)

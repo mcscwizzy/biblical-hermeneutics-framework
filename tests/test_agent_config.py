@@ -27,6 +27,7 @@ class AgentConfigTests(unittest.TestCase):
                         "base_url": "http://localhost:1234/v1",
                         "api_key": "local",
                         "model": "local-model",
+                        "reasoning_effort": "high",
                         "profile": "minimal-7b",
                         "temperature": 0.3,
                         "max_tokens": 2048,
@@ -43,6 +44,7 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.adapter, "openai_compatible")
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.model, "local-model")
+        self.assertEqual(config.reasoning_effort, "high")
         self.assertEqual(config.context_window, 12288)
         self.assertEqual(config.response_format_policy, "auto")
         self.assertEqual(config.runtime_profile_mode, "compact")
