@@ -2,11 +2,27 @@ from types import SimpleNamespace
 
 from bhf_agent.chapter_commentary.availability import EvidenceAvailability, classify_evidence_availability
 from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION
 
 
 def bundle(count):
-    items = [SimpleNamespace(id=f'e{i}', confidence='high', relevance_metadata={}) for i in range(count)]
-    return SimpleNamespace(evidence_items=items, evidence_by_id={i.id: i for i in items}, evidence_hash='h', version='1.0')
+    items = [
+        SimpleNamespace(
+            id=f'e{i}',
+            confidence='high',
+            category='history',
+            passage_anchors=['1 Samuel 28'],
+            relevance_metadata={
+                'source_kind': 'ckl_evidence_item',
+                'applicability_scope': 'section',
+                'anchor_source': 'child',
+                'anchor_specificity': 'chapter',
+                'passage_relationship': 'direct',
+            },
+        )
+        for i in range(count)
+    ]
+    return SimpleNamespace(passage_ref='1 Samuel 28', evidence_items=items, evidence_by_id={i.id: i for i in items}, evidence_hash='h', version='1.0')
 
 
 def scored_bundle(*items):
@@ -27,12 +43,20 @@ def evidence_item(
     category='history',
     dispute_status='not_disputed',
 ):
+    scope = 'book' if anchor == '1 Samuel 1-31' or anchor == '1 Samuel 24-30' else 'section' if ':' not in anchor else 'passage'
     return SimpleNamespace(
         id=item_id,
         passage_anchors=[anchor],
         confidence=confidence,
         category=category,
-        relevance_metadata={'dispute_status': dispute_status, 'passage_relationship': 'direct'},
+        relevance_metadata={
+            'source_kind': 'ckl_evidence_item',
+            'applicability_scope': scope,
+            'anchor_source': 'child',
+            'anchor_specificity': 'chapter' if ':' not in anchor else 'verse',
+            'dispute_status': dispute_status,
+            'passage_relationship': 'direct',
+        },
     )
 
 
@@ -90,11 +114,11 @@ def test_no_scored_evidence_remains_data_gap():
 
 
 def metadata():
-    return {'evidence_hash':'h','evidence_bundle_version':'1.0','commentary_schema_version':'1.0','commentary_prompt_version':'1.1','model':'fixture'}
+    return {'evidence_hash':'h','evidence_bundle_version':'1.0','commentary_schema_version':COMMENTARY_SCHEMA_VERSION,'commentary_prompt_version':COMMENTARY_PROMPT_VERSION,'model':'fixture'}
 
 
 def test_data_gap_allows_only_uncited_canonical_overview():
-    raw = {'reference':'Genesis 1','book':'Genesis','chapter':1,'status':'pending','evidence_availability':'DATA_GAP','generated_metadata':metadata(),'sections':[{'kind':'chapter_overview','title':'Overview','blocks':[{'id':'b','text':'The chapter opens with creation.','verse_refs':['Genesis 1:1'],'evidence_ids':[],'confidence':'high','interpretation_level':'fact'}]}]}
+    raw = {'reference':'Genesis 1','book':'Genesis','chapter':1,'status':'pending','evidence_availability':'DATA_GAP','data_gap_fallback':True,'generated_metadata':metadata(),'sections':[{'kind':'chapter_overview','title':'Context availability','blocks':[{'id':'data_gap_notice','text':'Passage-specific contextual evidence is not currently available for this chapter.','verse_refs':[],'evidence_ids':[],'synthesis_ids':[],'confidence':'high','interpretation_level':'fact'}]}]}
     result = validate_chapter_commentary(raw, bundle(0), expected_reference='Genesis 1', expected_book='Genesis', expected_chapter=1)
     assert result.valid
 

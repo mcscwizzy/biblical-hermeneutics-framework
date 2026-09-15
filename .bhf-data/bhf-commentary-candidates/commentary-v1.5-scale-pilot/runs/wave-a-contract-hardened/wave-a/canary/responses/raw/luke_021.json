@@ -1,0 +1,115 @@
+{
+  "reference": "Luke 21",
+  "packet_id": "commentary-v1.5-packet:935bb929795d1943f0370034ca842ae80db0d5c697b57374b8673274e9ffaa51",
+  "prompt_version": "1.5",
+  "evidence_hash": "794fa6dcf7e17dac9a97d8c659f69f9aebb2f817e28a42640f7e636079f96b29",
+  "synthesis_hash": "acbc06b818fedf8ec921a0c3244411e995cf78af7614e7976530887da36b844b",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Luke 21",
+    "book": "Luke",
+    "chapter": 21,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "A cultural detail that clarifies the passage is this: Deportation and relocation were common imperial tactics, but Scripture interprets exile as covenant consequence, not mere politics.",
+            "verse_refs": [
+              "Luke 21:20-24"
+            ],
+            "evidence_ids": [
+              "what-is-the-significance-of-the-exile:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_d811f14b768e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Exile was a common imperial strategy, but Scripture interprets it through covenant accountability rather than politics alone.",
+            "verse_refs": [
+              "Luke 21:20-24"
+            ],
+            "evidence_ids": [
+              "why-is-exile-important:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_56edc465c926"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_003",
+            "text": "Historically, this chapter is read within the following setting: The Babylonian conquest removed Judah's king, temple, and land, forcing the people to rethink covenant failure and future hope.",
+            "verse_refs": [
+              "Luke 21:20-24"
+            ],
+            "evidence_ids": [
+              "why-is-exile-important:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_9c53d5eeb9b4"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_004",
+            "text": "Historically, this chapter is read within the following setting: Jerusalem's fall, deportation to Babylon, and life in dispersion become defining moments for Judah's memory and theology.",
+            "verse_refs": [
+              "Luke 21:20-24"
+            ],
+            "evidence_ids": [
+              "what-is-the-significance-of-the-exile:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_eb33ca684727"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_005",
+            "text": "This helps frame an interpretive question raised by the passage: Luke 21 combines temple destruction, conflict, witness, Jerusalem's siege, cosmic imagery, Son of Man expectation, and watchfulness; it cannot securely identify a current nation, conspiracy, date, party, or territorial entitlement. Dates around 70-100 CE are common, but proposed dates range from before 70 CE into the early second century and depend on Synoptic relations, temple language, Acts, and reception. Luke places the widow's temple gift immediately after condemning scribes who consume widows' houses and before temple judgment; praise, lament, and institutional exposure remain debated, so the story cannot coerce poor people to surrender necessities. Luke 21 combines temple destruction, conflict, witness, Jerusalem's siege, cosmic imagery, Son of Man expectation, and watchfulness; it cannot securely identify a current nation, conspiracy, date, party, or territorial entitlement. Dates around 70-100 CE are common, but proposed dates range from before 70 CE into the early second century and depend on Synoptic relations, temple language, Acts, and reception. Luke places the widow's temple gift immediately after condemning scribes who consume widows' houses and before temple judgment; praise, lament, and institutional exposure remain debated, so the story cannot coerce poor people to surrender necessities.",
+            "verse_refs": [
+              "Luke 21:1-6",
+              "Luke 21:5-36",
+              "Luke 21:5-38"
+            ],
+            "evidence_ids": [
+              "luke-21",
+              "luke-date",
+              "luke-widow"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_8e522dcbbc2d",
+              "syn_why_it_matters_425a3098c9c7"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

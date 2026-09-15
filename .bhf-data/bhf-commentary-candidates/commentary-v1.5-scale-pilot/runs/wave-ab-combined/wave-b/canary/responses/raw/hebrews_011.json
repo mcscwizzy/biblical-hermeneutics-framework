@@ -1,0 +1,508 @@
+{
+  "reference": "Hebrews 11",
+  "packet_id": "commentary-v1.5-packet:7f7486663ee78c6877ca2755bb23e6627876232da1d96a82004e8346ff6a058c",
+  "prompt_version": "1.5",
+  "evidence_hash": "1ee771ec37fd2a53adf2523671cc40341d7745c4c8d5b0b804a5b3d538835c7f",
+  "synthesis_hash": "bc8282f9a4e67e79e2168329940e7fc803e8c5a6425051bd9368bddd2054120b",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Hebrews 11",
+    "book": "Hebrews",
+    "chapter": 11,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "archaeology_geography",
+        "title": "Archaeology Geography",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "The material or geographical setting adds this bounded context: canaan shechem hebron egypt canaan shechem hebron egypt",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "abraham:key_places:0",
+              "abraham:key_places:1",
+              "abraham:key_places:2",
+              "abraham:key_places:3"
+            ],
+            "synthesis_ids": [
+              "syn_archaeology_geography_0aa3c4036616",
+              "syn_why_it_matters_a6b271f833da"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Clans, inheritance, and covenant-making form the background. Clans, inheritance, and covenant-making form the background.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "binding-of-isaac:ancient_near_east_context:0",
+              "joseph-sold-into-egypt:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0f2032c48e9f",
+              "syn_cultural_context_76d6eaaa36e4"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_003",
+            "text": "A cultural detail that clarifies the passage is this: Mesopotamian flood traditions such as Atrahasis and Gilgamesh Tablet XI offer specific shared motifs and substantial differences. Comparison establishes an ancient literary environment but does not by itself prove direct borrowing or identify archaeological flood deposits with Genesis. Genesis attributes judgment, preservation, blessing, and covenant to one God and grounds post-flood human accountability in the divine image. Mesopotamian flood traditions such as Atrahasis and Gilgamesh Tablet XI offer specific shared motifs and substantial differences. Comparison establishes an ancient literary environment but does not by itself prove direct borrowing or identify archaeological flood deposits with Genesis. Genesis attributes judgment, preservation, blessing, and covenant to one God and grounds post-flood human accountability in the divine image.",
+            "verse_refs": [
+              "Hebrews 11:1-7"
+            ],
+            "evidence_ids": [
+              "the-flood:ancient_near_east_context:0",
+              "the-flood:hebraic_worldview:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_04d4a9d2cc7b",
+              "syn_why_it_matters_ef9272b7fcb2"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_004",
+            "text": "A cultural detail that clarifies the passage is this: The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East. Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance. Second Temple Jewish and early Christian writers regularly appeal to Abraham as ancestor, model of faith, covenant recipient, and witness to God's promises. The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East. Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance. Second Temple Jewish and early Christian writers regularly appeal to Abraham as ancestor, model of faith, covenant recipient, and witness to God's promises.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "abraham:ancient_near_east_context:0",
+              "abraham:hebraic_worldview:0",
+              "abraham:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_5c82fa1011b5",
+              "syn_why_it_matters_c2701cc64ca1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_005",
+            "text": "A cultural detail that clarifies the passage is this: Ancient households depended on heirs for land, memory, and provision, but Genesis presents Isaac primarily as gift and promise.",
+            "verse_refs": [
+              "Hebrews 11:11-12"
+            ],
+            "evidence_ids": [
+              "birth-of-isaac:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0ea821d115c4"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_006",
+            "text": "A cultural detail that clarifies the passage is this: Migration, kinship, and treaty language frame Abraham's world, but God's promise drives the narrative.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "who-was-abraham:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_841140a60166"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_007",
+            "text": "A cultural detail that clarifies the passage is this: Jacob belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Deborah belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Adam belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Eve belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Samson belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Gideon belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Bathsheba belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Samuel the Prophet belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Saul belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Abel belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages",
+            "verse_refs": [
+              "Hebrews 11:1-7",
+              "Hebrews 11:32-40",
+              "Hebrews 11:8-22"
+            ],
+            "evidence_ids": [
+              "abel:ancient_near_east_context:0",
+              "adam:ancient_near_east_context:0",
+              "bathsheba:ancient_near_east_context:0",
+              "deborah:ancient_near_east_context:0",
+              "eve:ancient_near_east_context:0",
+              "gideon:ancient_near_east_context:0",
+              "isaac:ancient_near_east_context:0",
+              "jacob:ancient_near_east_context:0",
+              "noah:ancient_near_east_context:0",
+              "samson:ancient_near_east_context:0",
+              "samuel-the-prophet:ancient_near_east_context:0",
+              "saul:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0d76ff7e80d0",
+              "syn_cultural_context_183c35664fb8",
+              "syn_cultural_context_306cb8e47601",
+              "syn_cultural_context_5ec4a622995b",
+              "syn_cultural_context_62ade4c7215b",
+              "syn_cultural_context_68b78c7cbf67",
+              "syn_cultural_context_7083badff6e1",
+              "syn_cultural_context_8bd846163e1c",
+              "syn_cultural_context_9aa898676195",
+              "syn_cultural_context_9d51ef596c9b",
+              "syn_cultural_context_aeb19435c1f2",
+              "syn_cultural_context_af126d68fac2"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_008",
+            "text": "Historically, this chapter is read within the following setting: The narrative belongs to Genesis's primeval history. Its event chronology and literary formation are debated, so the entry distinguishes the narrated world from the dates of surviving Mesopotamian flood witnesses.",
+            "verse_refs": [
+              "Hebrews 11:1-7"
+            ],
+            "evidence_ids": [
+              "the-flood:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_5cd3408ac4e4"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_009",
+            "text": "Historically, this chapter is read within the following setting: Genesis presents Abraham as the ancestor through whom Israel traces its identity, land promise, and blessing to the nations.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "who-was-abraham:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_0a8035385b98"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_010",
+            "text": "Historically, this chapter is read within the following setting: Abraham stands in the ancestral narratives of Genesis as the father of the covenant line. His story reflects clan migration, land promise, and divine promise in an early biblical setting rather than a fixed modern chronology.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "abraham:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_b9c18c629e0b"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_011",
+            "text": "Historically, this chapter is read within the following setting: Passover stands at the center of the exodus tradition and the formation of Israel as a redeemed people.",
+            "verse_refs": [
+              "Hebrews 11:28"
+            ],
+            "evidence_ids": [
+              "passover:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_3721062a1922"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_012",
+            "text": "Historically, this chapter is read within the following setting: Historically, Adam is located by its canonical setting; this entry connects that setting with creation, the-fall, new-creation-theme and related CKL objects for contextual retrieval. Historically, Abel is located by its canonical setting; this entry connects that setting with creation, the-fall, new-creation-theme and related CKL objects for contextual retrieval. Historically, Eve is located by its canonical setting; this entry connects that setting with creation, the-fall, new-creation-theme and related CKL objects for contextual retrieval. Historically, Noah is located by its canonical setting; this entry connects that setting with creation, the-fall, new-creation-theme and related CKL objects for contextual retrieval.",
+            "verse_refs": [
+              "Hebrews 11:1-7"
+            ],
+            "evidence_ids": [
+              "abel:historical_context:0",
+              "adam:historical_context:0",
+              "eve:historical_context:0",
+              "noah:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_3bc2a4cc105d",
+              "syn_historical_context_5e111c8bbfba",
+              "syn_historical_context_6084056cb2f4",
+              "syn_historical_context_f025c82d0a48"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_013",
+            "text": "Historically, this chapter is read within the following setting: Bathsheba belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Joseph belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Rebekah belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Isaac belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Sarah belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story. Jacob belongs to the ancestral world of Genesis, where clans, migration, inheritance, and land promise shape the story.",
+            "verse_refs": [
+              "Hebrews 11:8-22"
+            ],
+            "evidence_ids": [
+              "bathsheba:historical_context:0",
+              "isaac:historical_context:0",
+              "jacob:historical_context:0",
+              "joseph:historical_context:0",
+              "rebekah:historical_context:0",
+              "sarah:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_01b48fc93d79",
+              "syn_historical_context_278c84912704",
+              "syn_historical_context_df9d7c7a00eb",
+              "syn_historical_context_f03be3dc34d9",
+              "syn_historical_context_f8f36b887457",
+              "syn_historical_context_fb15256800d6"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_014",
+            "text": "Historically, this chapter is read within the following setting: The birth stands within the patriarchal household world, where inheritance and lineage shape family identity.",
+            "verse_refs": [
+              "Hebrews 11:11-12"
+            ],
+            "evidence_ids": [
+              "birth-of-isaac:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_040e8c7eb8c1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_015",
+            "text": "Historically, this chapter is read within the following setting: Genesis 12 marks the turning point from primeval history to patriarchal promise, anchoring Israel's identity in divine initiative.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "call-of-abraham:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_a153283034f8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_016",
+            "text": "Historically, this chapter is read within the following setting: Saul belongs to the period between conquest and monarchy, when tribal life, local conflict, and recurring covenant failure shaped Israel. Samuel the Prophet belongs to the period between conquest and monarchy, when tribal life, local conflict, and recurring covenant failure shaped Israel. Samson belongs to the period between conquest and monarchy, when tribal life, local conflict, and recurring covenant failure shaped Israel. Deborah belongs to the period between conquest and monarchy, when tribal life, local conflict, and recurring covenant failure shaped Israel. Gideon belongs to the period between conquest and monarchy, when tribal life, local conflict, and recurring covenant failure shaped Israel.",
+            "verse_refs": [
+              "Hebrews 11:32-40"
+            ],
+            "evidence_ids": [
+              "deborah:historical_context:0",
+              "gideon:historical_context:0",
+              "samson:historical_context:0",
+              "samuel-the-prophet:historical_context:0",
+              "saul:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_1329ad65c2a1",
+              "syn_historical_context_2279825c597a",
+              "syn_historical_context_b16d221d1f87",
+              "syn_historical_context_c88845fa1cde",
+              "syn_historical_context_ffbf1931ef78"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_017",
+            "text": "Historically, this chapter is read within the following setting: The exodus becomes the defining act of redemption in Israel's memory and the starting point for covenant nationhood.",
+            "verse_refs": [
+              "Hebrews 11:23-29"
+            ],
+            "evidence_ids": [
+              "the-exodus:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_05e2dbe03114"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_018",
+            "text": "Historically, this chapter is read within the following setting: Genesis presents creation as the foundational act that begins biblical history and establishes God’s sovereignty over all things.",
+            "verse_refs": [
+              "Hebrews 11:3"
+            ],
+            "evidence_ids": [
+              "creation:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_39590ec79f49"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_019",
+            "text": "Historically, this chapter is read within the following setting: The event belongs to the patriarchal world of movement, household life, and land promise. The event belongs to the patriarchal world of movement, household life, and land promise.",
+            "verse_refs": [
+              "Hebrews 11:8-19"
+            ],
+            "evidence_ids": [
+              "binding-of-isaac:historical_context:0",
+              "joseph-sold-into-egypt:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_aa7fc5a54625",
+              "syn_historical_context_c1e3c4cba62a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_020",
+            "text": "This helps frame an interpretive question raised by the passage: Hebrews 11 characterizes faith through assurance, conviction, testimony, seeking God, and actions of scriptural figures. Faith in 11:1 is characterized through assurance, conviction, testimony, and action across the chapter; it is not wishful thinking or a guarantee of prosperity. The witness list includes Sarah, Moses' parents, Rahab, women receiving their dead, and unnamed tortured people; reception should not erase women or turn suffering into spectacle. Hebrews 11 characterizes faith through assurance, conviction, testimony, seeking God, and actions of scriptural figures. Faith in 11:1 is characterized through assurance, conviction, testimony, and action across the chapter; it is not wishful thinking or a guarantee of prosperity. The witness list includes Sarah, Moses' parents, Rahab, women receiving their dead, and unnamed tortured people; reception should not erase women or turn suffering into spectacle.",
+            "verse_refs": [
+              "Hebrews 11:1-40",
+              "Hebrews 11:11",
+              "Hebrews 11:23",
+              "Hebrews 11:31",
+              "Hebrews 11:35"
+            ],
+            "evidence_ids": [
+              "heb-faith",
+              "hebrews:interpretive_note:28",
+              "hebrews:interpretive_note:29"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_c3b2a0efc7c0",
+              "syn_why_it_matters_c30265afe6de"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_021",
+            "text": "This helps frame an interpretive question raised by the passage: Christian connections involving Rahab and rest are later canonical reception and should be stated separately from the book's own land and covenant claims.",
+            "verse_refs": [
+              "Hebrews 11:30-31"
+            ],
+            "evidence_ids": [
+              "joshua:interpretive_note:4"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_205e98decc20"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_022",
+            "text": "The surrounding passage context adds this comparison: Sarah, Moses' parents, Rahab, and women who received their dead belong within the chapter's witness memory.",
+            "verse_refs": [
+              "Hebrews 11:11",
+              "Hebrews 11:23",
+              "Hebrews 11:31",
+              "Hebrews 11:35"
+            ],
+            "evidence_ids": [
+              "heb-women"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_1f9ea6289a3b"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_023",
+            "text": "The surrounding passage context adds this comparison: Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians. Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+            "verse_refs": [
+              "Hebrews 10:1-39",
+              "Hebrews 12:1-29",
+              "Hebrews 13:1-25",
+              "Hebrews 1:1-14",
+              "Hebrews 2:1-18",
+              "Hebrews 3:1-19",
+              "Hebrews 4:1-16",
+              "Hebrews 5:1-14",
+              "Hebrews 6:1-20",
+              "Hebrews 7:1-28",
+              "Hebrews 8:1-13",
+              "Hebrews 9:1-28"
+            ],
+            "evidence_ids": [
+              "heb-p46",
+              "heb-sinaiticus"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_6c5d649166fe",
+              "syn_surrounding_passages_a1912e3b22be"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_024",
+            "text": "The surrounding passage context adds this comparison: Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+            "verse_refs": [
+              "Hebrews 10:1-39",
+              "Hebrews 12:1-29",
+              "Hebrews 13:1-25",
+              "Hebrews 1:1-14",
+              "Hebrews 2:1-18",
+              "Hebrews 3:1-19",
+              "Hebrews 4:1-16",
+              "Hebrews 5:1-14",
+              "Hebrews 6:1-20",
+              "Hebrews 7:1-28",
+              "Hebrews 8:1-13",
+              "Hebrews 9:1-28"
+            ],
+            "evidence_ids": [
+              "hebrews:interpretive_note:39"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_8a71d10ef160"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

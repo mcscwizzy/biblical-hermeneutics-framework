@@ -1,0 +1,490 @@
+{
+  "reference": "1 Corinthians 12",
+  "packet_id": "commentary-v1.5-packet:698f9e291543fab841024c9dbf2233a287878103969303456411203d404f0458",
+  "prompt_version": "1.5",
+  "evidence_hash": "ecdc211a188293bcc9194ab518ab2a5f2eb3b37e8383356798ef3e8fa8f84e1a",
+  "synthesis_hash": "bf5434c0703760fe30a9ff7b29c77aa0ad2eb5ff97edfcc27d550f814ec7c6fe",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "1 Corinthians 12",
+    "book": "1 Corinthians",
+    "chapter": 12,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "A cultural detail that clarifies the passage is this: Festival gatherings and harvest celebrations are familiar in the ancient world, but Pentecost becomes the sign of a new covenant people filled with the Spirit.",
+            "verse_refs": [
+              "1 Corinthians 12:1-13"
+            ],
+            "evidence_ids": [
+              "pentecost:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_d5c5cfddf002"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Household Codes is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration. Apostleship is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration. Diaconate is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration. Covenant Assembly is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+            "verse_refs": [
+              "1 Corinthians 12:27-31"
+            ],
+            "evidence_ids": [
+              "apostleship:ancient_near_east_context:0",
+              "covenant-assembly:ancient_near_east_context:0",
+              "diaconate:ancient_near_east_context:0",
+              "household-codes:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_203fce723564",
+              "syn_cultural_context_8ae9bdcecfb7",
+              "syn_cultural_context_933f99072fae",
+              "syn_cultural_context_c2eb2c271ae3"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_003",
+            "text": "A cultural detail that clarifies the passage is this: Spirit-given gifts differ but are ordered toward common benefit and mutual dependence.",
+            "verse_refs": [
+              "1 Corinthians 12:1-31"
+            ],
+            "evidence_ids": [
+              "1cor-gifts"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_d9344b889320"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_004",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Prophets includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness. Ancient background for Public Reading of Scripture includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness. Ancient background for Levites includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "1 Corinthians 12:27-31"
+            ],
+            "evidence_ids": [
+              "levites:ancient_near_east_context:0",
+              "prophets:ancient_near_east_context:0",
+              "public-reading-of-scripture:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_2d3205d242af",
+              "syn_cultural_context_30033e4152ad",
+              "syn_cultural_context_ee474a9e1818"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_005",
+            "text": "Historically, this chapter is read within the following setting: Acts 2 places Pentecost in Jerusalem during a major pilgrimage feast when Jews from many nations are present.",
+            "verse_refs": [
+              "1 Corinthians 12:1-13"
+            ],
+            "evidence_ids": [
+              "pentecost:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_507fa9afa6d5"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_006",
+            "text": "Historically, this chapter is read within the following setting: Household Codes belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered. Apostleship belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered. Covenant Assembly belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered. Prophets belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered. Levites belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered. Diaconate belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered. Public Reading of Scripture belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered.",
+            "verse_refs": [
+              "1 Corinthians 12:27-31"
+            ],
+            "evidence_ids": [
+              "apostleship:historical_context:0",
+              "covenant-assembly:historical_context:0",
+              "diaconate:historical_context:0",
+              "household-codes:historical_context:0",
+              "levites:historical_context:0",
+              "prophets:historical_context:0",
+              "public-reading-of-scripture:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_1f4690ff4724",
+              "syn_historical_context_29d1107c06c8",
+              "syn_historical_context_374b43bd3dac",
+              "syn_historical_context_61c3c7ba2fd0",
+              "syn_historical_context_6e27981244e0",
+              "syn_historical_context_7454d7581599",
+              "syn_historical_context_cc0ce8de2af1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_007",
+            "text": "This helps frame an interpretive question raised by the passage: Tongues, prophecy, healing, or Spirit reception cannot be manufactured, compelled, sold, or required as proof of salvation or spiritual rank. Spiritual discernment must not diagnose seizures, psychosis, trauma responses, disability, neurodivergence, or involuntary behavior without qualified clinical assessment, consent, and urgent care where needed. Assembly order protects intelligibility, participation, and peace; it cannot justify gendered silencing, suppression of abuse reports, disability exclusion, or removal of dissent. Across the letters, Spirit language includes belonging, life, adoption, prayer, wisdom, character, gifts, service, speech, discernment, and healing without making them interchangeable. Prevents fruit, office, tongues, prophecy, healing, and indwelling from becoming one compulsory hierarchy. Tongues, prophecy, healing, or Spirit reception cannot be manufactured, compelled, sold, or required as proof of salvation or spiritual rank. Spiritual discernment must not diagnose seizures, psychosis, trauma responses, disability, neurodivergence, or involuntary behavior without qualified clinical assessment, consent, and urgent care where needed. Assembly order protects intelligibility, participation, and peace; it cannot justify gendered silencing, suppression of abuse reports, disability exclusion, or removal of dissent. Across the letters, Spirit language includes belonging, life, adoption, prayer, wisdom, character, gifts, service, speech, discernment, and healing without making them interchangeable. Prevents fruit, office, tongues, prophecy, healing, and indwelling from becoming one compulsory hierarchy.",
+            "verse_refs": [
+              "1 Corinthians 12:1-30",
+              "1 Corinthians 12:12-26",
+              "1 Corinthians 12:4-30",
+              "1 Corinthians 12:7-26"
+            ],
+            "evidence_ids": [
+              "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:2",
+              "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:3",
+              "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:4",
+              "spirit-categories-distinct",
+              "spirit-categories-distinct:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_f73c920bd167",
+              "syn_why_it_matters_f9a990fa7644"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_008",
+            "text": "This helps frame an interpretive question raised by the passage: The letter's unity appeals cannot be recruited for sectarian suppression, nationalism, partisan capture, or enforced institutional unanimity.",
+            "verse_refs": [
+              "1 Corinthians 12:12-27"
+            ],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:86"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_0b285f667799"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_009",
+            "text": "This helps frame an interpretive question raised by the passage: Prevents later office charts from masquerading as direct transcription and keeps ordinary service visible. Parallel clauses coordinate varieties of charismata, services, and activities with the same Spirit, Lord, and God working in everyone. Affirms diverse service without ranking people by visible intensity. The body argument reverses honor judgments by naming apparently weaker members necessary and directing special honor and care toward the less honored. Supports disability access, material care, and protection from charisma-based exclusion without assigning ancient diagnoses. Prevents later office charts from masquerading as direct transcription and keeps ordinary service visible. Parallel clauses coordinate varieties of charismata, services, and activities with the same Spirit, Lord, and God working in everyone. Affirms diverse service without ranking people by visible intensity. The body argument reverses honor judgments by naming apparently weaker members necessary and directing special honor and care toward the less honored. Supports disability access, material care, and protection from charisma-based exclusion without assigning ancient diagnoses.",
+            "verse_refs": [
+              "1 Corinthians 12:21-26",
+              "1 Corinthians 12:27-31",
+              "1 Corinthians 12:4-6"
+            ],
+            "evidence_ids": [
+              "corinthian-role-list-not-complete-hierarchy:passage-relevance",
+              "corinthian-varieties-triad",
+              "corinthian-varieties-triad:passage-relevance",
+              "corinthian-weaker-members-honor",
+              "corinthian-weaker-members-honor:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_5d961df7f9ca",
+              "syn_why_it_matters_7429f1e216f0"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_010",
+            "text": "This helps frame an interpretive question raised by the passage: Requires accessible notices and interviews, interpreters, alternative formats, sensory and mobility access, remote or asynchronous participation, breaks, support persons, and no forced encounter. The body metaphor calls apparently weaker members necessary and directs greater honor and care toward less honored parts. Supports disability access and protection of marginalized members rather than paternalism or exclusion. Requires accessible notices and interviews, interpreters, alternative formats, sensory and mobility access, remote or asynchronous participation, breaks, support persons, and no forced encounter. The body metaphor calls apparently weaker members necessary and directs greater honor and care toward less honored parts. Supports disability access and protection of marginalized members rather than paternalism or exclusion.",
+            "verse_refs": [
+              "1 Corinthians 12:12-26",
+              "1 Corinthians 12:22-26"
+            ],
+            "evidence_ids": [
+              "modern-access-restoration-without-contact:passage-relevance",
+              "weaker-members-honor",
+              "weaker-members-honor:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_b48d222fb0ea",
+              "syn_why_it_matters_c8bedce69032"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_011",
+            "text": "This helps frame an interpretive question raised by the passage: Tongues are Spirit-related speech requiring interpretation in the assembly; their exact phenomenology is uncertain.",
+            "verse_refs": [
+              "1 Corinthians 12:10"
+            ],
+            "evidence_ids": [
+              "1cor-tongues"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_b46e779b02b5"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_012",
+            "text": "This helps frame an interpretive question raised by the passage: The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims. Prevents Acts from becoming a verbatim Pauline manual while allowing bounded canonical comparison. The passage gives each person a manifestation of the Spirit toward shared benefit before naming examples. Makes communal benefit and harm review central to gift practice. A single Spirit is said to activate and distribute different manifestations individually as willed, followed by rhetorical questions expecting differentiated answers. The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims. Prevents Acts from becoming a verbatim Pauline manual while allowing bounded canonical comparison. The passage gives each person a manifestation of the Spirit toward shared benefit before naming examples. Makes communal benefit and harm review central to gift practice. A single Spirit is said to activate and distribute different manifestations individually as willed, followed by rhetorical questions expecting differentiated answers.",
+            "verse_refs": [
+              "1 Corinthians 12:1-31",
+              "1 Corinthians 12:28-30",
+              "1 Corinthians 12:7",
+              "1 Corinthians 12:8-11"
+            ],
+            "evidence_ids": [
+              "acts-letters-chronology-spirit",
+              "acts-letters-chronology-spirit:passage-relevance",
+              "corinthian-common-good",
+              "corinthian-common-good:passage-relevance",
+              "corinthian-distributed-not-entitled"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_e191e88e6c21",
+              "syn_why_it_matters_094aa24caf5e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_013",
+            "text": "This helps frame an interpretive question raised by the passage: The body analogy joins Spirit participation and social identity to divinely arranged functional difference among members. Prevents one manifestation, office, class, ethnicity, or embodiment from defining the whole community. First Corinthians supplies an ordered mix of people and activities while Romans offers a different list embedded in sober mutual service. The body analogy joins Spirit participation and social identity to divinely arranged functional difference among members. Prevents one manifestation, office, class, ethnicity, or embodiment from defining the whole community. First Corinthians supplies an ordered mix of people and activities while Romans offers a different list embedded in sober mutual service.",
+            "verse_refs": [
+              "1 Corinthians 12:12-20",
+              "1 Corinthians 12:27-31"
+            ],
+            "evidence_ids": [
+              "corinthian-one-body-diversity",
+              "corinthian-one-body-diversity:passage-relevance",
+              "corinthian-role-list-not-complete-hierarchy"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_36f69ac27d12",
+              "syn_why_it_matters_0e425c105293"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_014",
+            "text": "This helps frame an interpretive question raised by the passage: Manifestations of the Spirit are given for common benefit; gifts cannot be ranked into a hierarchy of human value or spiritual citizenship. The body metaphor honors members treated as weaker and less honorable; it cannot erase disability, demand conformity, or romanticize suffering. Not all hold the same gift; coercing tongues, prophecy, healing testimony, or any spiritual performance contradicts the rhetorical questions. Manifestations of the Spirit are given for common benefit; gifts cannot be ranked into a hierarchy of human value or spiritual citizenship. The body metaphor honors members treated as weaker and less honorable; it cannot erase disability, demand conformity, or romanticize suffering. Not all hold the same gift; coercing tongues, prophecy, healing testimony, or any spiritual performance contradicts the rhetorical questions.",
+            "verse_refs": [
+              "1 Corinthians 12:12-27",
+              "1 Corinthians 12:28-30",
+              "1 Corinthians 12:4-11"
+            ],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:54",
+              "1-corinthians:interpretive_note:55",
+              "1-corinthians:interpretive_note:56"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_d5d02395f1d4",
+              "syn_why_it_matters_2c5a0d2c72fe"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_015",
+            "text": "This helps frame an interpretive question raised by the passage: Different gifts, services, and workings are attributed to one Spirit, Lord, and God and are given for the common good. Tests authority claims by communal benefit rather than charisma, office, performance, or claimed revelation. Equitable processes provide disability and communication access, procedural accommodation, chosen support, safe pacing, and restoration paths compatible with permanent separation or indirect contact. Different gifts, services, and workings are attributed to one Spirit, Lord, and God and are given for the common good. Tests authority claims by communal benefit rather than charisma, office, performance, or claimed revelation. Equitable processes provide disability and communication access, procedural accommodation, chosen support, safe pacing, and restoration paths compatible with permanent separation or indirect contact.",
+            "verse_refs": [
+              "1 Corinthians 12:22-26",
+              "1 Corinthians 12:4-11"
+            ],
+            "evidence_ids": [
+              "gifts-common-good",
+              "gifts-common-good:passage-relevance",
+              "modern-access-restoration-without-contact"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_a60906f30307",
+              "syn_why_it_matters_6fede5dc797f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_016",
+            "text": "This helps frame an interpretive question raised by the passage: Rejects compulsory tongues, purchased power, fabricated manifestations, and gift-based salvation tests. Plural healings appear twice among diverse Spirit distributions, followed by a rhetorical question denying that all possess the same function. Prevents fees, guaranteed outcomes, faith-deficit blame, forced prayer, medication withdrawal, and disability exclusion. The gifts discussion opens by opposing a curse against Jesus to confession of Jesus as Lord through the Spirit. Makes allegiance to Jesus more basic than spectacle while preventing a bare formula from excusing harmful conduct. Rejects compulsory tongues, purchased power, fabricated manifestations, and gift-based salvation tests. Plural healings appear twice among diverse Spirit distributions, followed by a rhetorical question denying that all possess the same function. Prevents fees, guaranteed outcomes, faith-deficit blame, forced prayer, medication withdrawal, and disability exclusion. The gifts discussion opens by opposing a curse against Jesus to confession of Jesus as Lord through the Spirit. Makes allegiance to Jesus more basic than spectacle while preventing a bare formula from excusing harmful conduct.",
+            "verse_refs": [
+              "1 Corinthians 12:1-3",
+              "1 Corinthians 12:28-30",
+              "1 Corinthians 12:8-11",
+              "1 Corinthians 12:9"
+            ],
+            "evidence_ids": [
+              "corinthian-distributed-not-entitled:passage-relevance",
+              "corinthian-healings-plural-limits",
+              "corinthian-healings-plural-limits:passage-relevance",
+              "corinthian-jesus-confession-control",
+              "corinthian-jesus-confession-control:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_43bd85662483",
+              "syn_why_it_matters_28f27035db64"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_017",
+            "text": "This helps frame an interpretive question raised by the passage: Modern Christian traditions disagree over whether and how tongues, prophecy, healings, miracles, apostles, and related gifts continue, drawing on wider canonical and historical arguments. Prevents presenting either modern system as the direct unqualified wording of one Pauline paragraph. Paul's assembly texts offer no neurological or psychiatric diagnostic criteria, while modern health evidence identifies seizures as brain events, documents stigma and treatment needs, and calls for culturally competent assessment of spirituality. Prevents seizure, disability, psychosis, trauma, neurodivergence, or involuntary behavior from being mislabeled as tongues, prophecy, possession, unbelief, or moral failure. Indwelling, adoption, fruit, gifts, services, activities, roles, tongues, interpretation, prophecy, discernment, and healings must remain differentiated. Modern Christian traditions disagree over whether and how tongues, prophecy, healings, miracles, apostles, and related gifts continue, drawing on wider canonical and historical arguments. Prevents presenting either modern system as the direct unqualified wording of one Pauline paragraph. Paul's assembly texts offer no neurological or psychiatric diagnostic criteria, while modern health evidence identifies seizures as brain events, documents stigma and treatment needs, and calls for culturally competent assessment of spirituality. Prevents seizure, disability, psychosis, trauma, neurodivergence, or involuntary behavior from being mislabeled as tongues, prophecy, possession, unbelief, or moral failure. Indwelling, adoption, fruit, gifts, services, activities, roles, tongues, interpretation, prophecy, discernment, and healings must remain differentiated.",
+            "verse_refs": [
+              "1 Corinthians 12:1-30",
+              "1 Corinthians 12:1-31",
+              "1 Corinthians 12:7-26"
+            ],
+            "evidence_ids": [
+              "later-continuation-cessation-dispute",
+              "later-continuation-cessation-dispute:passage-relevance",
+              "modern-medical-discernment-boundary",
+              "modern-medical-discernment-boundary:passage-relevance",
+              "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:0"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_eb4a41f232f7",
+              "syn_why_it_matters_5fe6dce93e77"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_018",
+            "text": "The surrounding passage context adds this comparison: Acts depicts recognizable diaspora languages at Pentecost while the precise relation to other early Christian speech phenomena remains debated.",
+            "verse_refs": [
+              "1 Corinthians 13:1-13",
+              "1 Corinthians 14:1-40"
+            ],
+            "evidence_ids": [
+              "acts-pentecost-languages"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ed343472bc62"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_019",
+            "text": "The surrounding passage context adds this comparison: A sequence of extreme first-person conditions renders spectacular speech, knowledge, faith, giving, and bodily surrender worthless without love. Subordinates charisma and sacrifice to patient, non-self-seeking communal conduct. A sequence of extreme first-person conditions renders spectacular speech, knowledge, faith, giving, and bodily surrender worthless without love. Subordinates charisma and sacrifice to patient, non-self-seeking communal conduct.",
+            "verse_refs": [
+              "1 Corinthians 13:1-7"
+            ],
+            "evidence_ids": [
+              "corinthian-love-controls-gifts",
+              "corinthian-love-controls-gifts:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_94b0d4f4d7d6",
+              "syn_surrounding_passages_e5b636478b5f"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_020",
+            "text": "The surrounding passage context adds this comparison: Love is patient and kind, does not insist on its own way, does not rejoice in wrongdoing, and rejoices with truth. Makes truth, patience, and noncoercion controls on correction, gifts, leadership, and reconciliation. Love is patient and kind, does not insist on its own way, does not rejoice in wrongdoing, and rejoices with truth. Makes truth, patience, and noncoercion controls on correction, gifts, leadership, and reconciliation.",
+            "verse_refs": [
+              "1 Corinthians 13:1-13",
+              "1 Corinthians 14:1"
+            ],
+            "evidence_ids": [
+              "love-truth-control",
+              "love-truth-control:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_38caf7333d13",
+              "syn_surrounding_passages_f26e98a1f33c"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_021",
+            "text": "The surrounding passage context adds this comparison: Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision. The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable. Chapter 13 places love within the correction of gift competition rather than isolating it as romantic sentiment. P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context. Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision. The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable. Chapter 13 places love within the correction of gift competition rather than isolating it as romantic sentiment. P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+            "verse_refs": [
+              "1 Corinthians 10:1-33",
+              "1 Corinthians 11:1-34",
+              "1 Corinthians 13:1-13",
+              "1 Corinthians 14:1",
+              "1 Corinthians 14:1-40",
+              "1 Corinthians 15:1-58",
+              "1 Corinthians 16:1-24",
+              "1 Corinthians 1:1-31",
+              "1 Corinthians 2:1-16",
+              "1 Corinthians 3:1-23",
+              "1 Corinthians 4:1-21",
+              "1 Corinthians 5:1-13",
+              "1 Corinthians 6:1-20",
+              "1 Corinthians 7:1-40",
+              "1 Corinthians 8:1-13",
+              "1 Corinthians 9:1-27"
+            ],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:85",
+              "1cor-integrity",
+              "1cor-love",
+              "1cor-manuscripts"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_1dd4eb894562",
+              "syn_surrounding_passages_8332a5064cbc"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_022",
+            "text": "The surrounding passage context adds this comparison: Chapter 13 belongs between gift discussions and critiques rivalry, noise, knowledge, and self-display; romantic use is secondary, not its primary literary setting. P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph. Chapter 13 belongs between gift discussions and critiques rivalry, noise, knowledge, and self-display; romantic use is secondary, not its primary literary setting. P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+            "verse_refs": [
+              "1 Corinthians 10:1-33",
+              "1 Corinthians 11:1-34",
+              "1 Corinthians 13:1-13",
+              "1 Corinthians 14:1",
+              "1 Corinthians 14:1-40",
+              "1 Corinthians 15:1-58",
+              "1 Corinthians 16:1-24",
+              "1 Corinthians 1:1-31",
+              "1 Corinthians 2:1-16",
+              "1 Corinthians 3:1-23",
+              "1 Corinthians 4:1-21",
+              "1 Corinthians 5:1-13",
+              "1 Corinthians 6:1-20",
+              "1 Corinthians 7:1-40",
+              "1 Corinthians 8:1-13",
+              "1 Corinthians 9:1-27"
+            ],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:57",
+              "1-corinthians:interpretive_note:84"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_8995c7bd6e71",
+              "syn_surrounding_passages_e9f6be03a8ad"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

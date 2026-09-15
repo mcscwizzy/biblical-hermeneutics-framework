@@ -1,0 +1,49 @@
+{
+  "reference": "Deuteronomy 24",
+  "packet_id": "commentary-v1.4-packet:0f6a66c02ad230b4490eb77866c432970c2b813c75f8bc025ea21abc321545d3",
+  "prompt_version": "1.4",
+  "evidence_hash": "a843d3616c6ff7ed7ed021338006aec703cc99086757a2712791c2ebf2300dcd",
+  "synthesis_hash": "8877ac0d1c258e2fc6cd0de87df57fc61bcc131e301f200c5f9ac678bf6d0f2b",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Deuteronomy 24",
+    "book": "Deuteronomy",
+    "chapter": 24,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "Law within covenant instruction",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Deuteronomy 24 belongs to a wider collection of covenant instruction. Across the book, remembered wilderness history leads into laws, covenant consequences, renewal, succession, song, blessing, and Moses’s death.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_cfae3caea775"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_2",
+            "text": "The repeated instruction is presented as covenant exposition for a successor generation. It is a rhetorical re-presentation of law, not simply a verbatim duplication of earlier material.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_99b8bcfae9a5"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

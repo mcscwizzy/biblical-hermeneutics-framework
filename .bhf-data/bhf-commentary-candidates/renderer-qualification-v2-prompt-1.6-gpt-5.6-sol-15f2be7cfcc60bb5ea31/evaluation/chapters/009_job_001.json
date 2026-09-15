@@ -1,0 +1,530 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Job 1",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 8,
+    "eligible_weighted_denominator": 4.8,
+    "weighted_coverage": 0.4583,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.4118,
+    "dump_severity": "NONE",
+    "gate_result": "QUALITY_FAIL"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 4,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 0.75,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.75,
+    "raw_synthesis_utilization": 0.4118,
+    "eligible_unit_utilization": 0.5455,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 4,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 0.75,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.75,
+    "raw_synthesis_utilization": 0.2941,
+    "eligible_unit_utilization": 0.3636,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 4,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 0.75,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.75,
+    "eligible_unit_utilization": 0.4545,
+    "raw_synthesis_utilization": 0.3529,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 395,
+    "block_count": 5,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "Job 1",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 4,
+    "eligible_weighted_denominator": 2.0,
+    "weighted_coverage": 0.75,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.75,
+    "eligible_unit_utilization": 0.4545,
+    "raw_synthesis_utilization": 0.3529,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 395,
+    "block_count": 5,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 17,
+      "meaningful_cluster_count": 4,
+      "consumed_synthesis_count": 6,
+      "consumed_cluster_count": 3,
+      "raw_synthesis_coverage": 0.3529,
+      "idea_cluster_coverage": 0.75,
+      "weighted_idea_coverage": 0.75,
+      "core_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 4,
+      "consumed_category_count": 4,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.5,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 5,
+        "consumed_synthesis_count": 6,
+        "consumed_cluster_count": 4,
+        "mean_evidence_ids_per_block": 2.0,
+        "block_to_synthesis_ratio": 0.8333,
+        "consolidation_ratio": 0.5,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 8,
+        "block_to_cluster_ratio": 0.625,
+        "consumed_unit_ratio": 0.3529,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 49.0,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_045a2bb944a3",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_48e4d1e786af",
+            "syn_historical_context_7bfee28e623b"
+          ],
+          "evidence_ids": [
+            "theology-of-suffering:historical_context:0",
+            "theology-of-the-cross:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=theology-of-suffering,theology-of-the-cross|facts=theology cross read across canon scripture develops theme israel's story into new testament witness;theology suffering read across canon scripture develops theme israel's story into new testament witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_2836174d5836",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_449064da595f",
+            "syn_surrounding_passages_e032f98fc14e",
+            "syn_surrounding_passages_faab72d1dd5b"
+          ],
+          "evidence_ids": [
+            "job-heavenly-challenge-losses",
+            "job:interpretive_note:11",
+            "job:interpretive_note:3"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=job|facts=accuser challenges whether job fears god without benefit after permission bounded first around possessions then around job's life job loses property servants children health without being told about heavenly proceedings;old greek job substantially shorter than masoretic form much poetry also contains expansions while qumran preserves hebrew fragments aramaic targum translation textual criticism should therefore identify witness view rather than treating every ancient form verbally identical;prologue lets readers know job's calamity not punishment hidden wickedness while job friends lack information does not say disasters necessary job's growth leaves readers wrestle divine permission accuser's agency deaths servants children",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_6c96d321a2f6",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_0b5e762f96dd"
+          ],
+          "evidence_ids": [
+            "job-the-sufferer:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=job-the-sufferer|facts=figure associated reflection suffering reverence practical wisdom within israel's life",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_7e7ce87e2247",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_34834d6fc9a6",
+            "syn_interpretive_questions_b6c4e5a7a127",
+            "syn_why_it_matters_1ca49b1af6d8",
+            "syn_why_it_matters_a45cccd73e9d"
+          ],
+          "evidence_ids": [
+            "job-righteous-before-testing",
+            "job:interpretive_note:0",
+            "job:interpretive_note:1",
+            "job:interpretive_note:12",
+            "job:interpretive_note:2"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=job|facts=epilogue restores wealth community family future does not say first ten children interchangeable new blessing erased grief must not become prosperity guarantee formula promising doubled assets replacement children every faithful sufferer;job 1 2 hasatan means accuser adversary carries hebrew article designates role heavenly council not yet unambiguous proper name later devil jewish christian canonical theology may connect figure satan developmental step should remain explicit;ezekiel 14 treats job renowned righteous figure reception does not settle genre historical referentiality completed book job's prose setting poetic dialogue literary artistry ancient reception must distinguished rather than used shortcuts prove either modern biography pure fiction;location uz uncertain associations edom aram northern arabia east arise biblical place traditions interlocutors labels no proposal supplies verified map job's household dates composition;prologue explicitly presents job blameless upright god fearing turning evil before any calamity yhwh repeats evaluation heavenly council",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_aeccf3664e4b",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_74102c74aa01",
+            "syn_cultural_context_8465bb42ba09"
+          ],
+          "evidence_ids": [
+            "theology-of-suffering:ancient_near_east_context:0",
+            "theology-of-the-cross:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=theology-of-suffering,theology-of-the-cross|facts=ancient background theology cross includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world job 1 1 22 psalm 22 1 31 theology suffering job without letting comparison replace biblical witness;ancient background theology suffering includes covenant life temple worship royal ideology wisdom teaching early church confession entry ties world job 1 1 22 psalm 22 1 31 theology cross job without letting comparison replace biblical witness",
+          "importance_weight": 0.7,
+          "duplicate_reason": "HIGH_FACT_OVERLAP",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter",
+            "template_like_context"
+          ]
+        },
+        {
+          "id": "idea_cluster_c5bdbac8fb38",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_c409a450ab86",
+            "syn_why_it_matters_a0e437aba773"
+          ],
+          "evidence_ids": [
+            "ancient-divine-assembly-imagery:interpretive_note:0",
+            "job-sons-of-god-assembly",
+            "job-sons-of-god-assembly:passage-relevance"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=ancient-divine-assembly-imagery|facts=do not present reconstructed divine council system only possible reading every plural heavenly being text;heavenly scene frames reader's knowledge job's testing distinguishes narrative's description what job companions know;job's prose framework twice depicts sons god presenting themselves before yhwh satan among",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_ce2b5fd9d3d5",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_c4bc1139b8bf"
+          ],
+          "evidence_ids": [
+            "job-the-sufferer:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=job-the-sufferer|facts=job's setting reflects patriarchal clan life wisdom disputation sacrificial practice edomite arabian geography rather than generic ancient world backdrop",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_fce3f21ec169",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_e38f3be0d913",
+            "syn_surrounding_passages_f64fcc754719"
+          ],
+          "evidence_ids": [
+            "james:interpretive_note:31",
+            "jas-job"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=james|facts=james names prophets job examples connected suffering patience endurance lord's compassionate outcome;job's endurance steadfastness can refer persistence outcome across story must not demand silent endurance abuse prevent escape protection",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 2.0,
+      "consumed_eligible_weight": 1.5,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 4,
+        "RELEVANT": 4
+      },
+      "eligible_synthesis_count": 11,
+      "consumed_eligible_synthesis_count": 5,
+      "eligible_synthesis_coverage": 0.4545
+    },
+    "audit": {
+      "reference": "Job 1",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 19,
+      "specific_evidence_count": 19,
+      "evidence_score": 14.1,
+      "evidence_category_diversity": 3,
+      "evidence_categories": {
+        "culture": 13,
+        "economics": 1,
+        "history": 5
+      },
+      "entity_counts": {
+        "people": 1,
+        "places": 0,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 1,
+      "places_count": 0,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 5,
+      "commentary_block_count": 5,
+      "commentary_prose_char_count": 2652,
+      "commentary_prose_word_count": 395,
+      "verse_anchor_count": 19,
+      "verse_anchor_coverage": 0.8636,
+      "evidence_ids_referenced": [
+        "ancient-divine-assembly-imagery:interpretive_note:0",
+        "job-righteous-before-testing",
+        "job-sons-of-god-assembly",
+        "job-sons-of-god-assembly:passage-relevance",
+        "job-the-sufferer:ancient_near_east_context:0",
+        "job:interpretive_note:0",
+        "job:interpretive_note:1",
+        "job:interpretive_note:12",
+        "job:interpretive_note:2",
+        "job:interpretive_note:3"
+      ],
+      "unique_evidence_ids_consumed": 10,
+      "evidence_consumption_ratio": 0.5263,
+      "unused_evidence_ids": [
+        "james:interpretive_note:31",
+        "jas-job",
+        "job-heavenly-challenge-losses",
+        "job-the-sufferer:historical_context:0",
+        "job:interpretive_note:11",
+        "theology-of-suffering:ancient_near_east_context:0",
+        "theology-of-suffering:historical_context:0",
+        "theology-of-the-cross:ancient_near_east_context:0",
+        "theology-of-the-cross:historical_context:0"
+      ],
+      "unused_evidence_count": 9,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.036,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:1e94702d72393ed277a8fd713f5517c20b793dd309c72f73ef35507f3de272cd",
+    "packet_hash": "1e94702d72393ed277a8fd713f5517c20b793dd309c72f73ef35507f3de272cd",
+    "raw_sha256": "7ad196726582a12923d14ac84f3bbafa6e59b3dba859408991fb02bbc39c93d3"
+  }
+}

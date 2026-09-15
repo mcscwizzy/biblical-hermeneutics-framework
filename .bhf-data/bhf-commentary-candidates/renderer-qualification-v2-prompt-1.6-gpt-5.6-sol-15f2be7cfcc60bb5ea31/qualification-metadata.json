@@ -1,0 +1,22 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-metadata-v1",
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "status": "AWAITING_EXTERNAL_RESPONSE_BUNDLE",
+  "chapter_count": 21,
+  "renderer": "gpt-5.6-sol",
+  "renderer_effort": "medium",
+  "prompt_version": "1.6",
+  "contracts": {
+    "renderer_prompt_version": "1.6",
+    "commentary_schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "core_classifier_version": "essential-passage-context-v2",
+    "reader_relevance_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+    "richness_clustering_version": "commentary-richness-clusters-v2",
+    "richness_policy_version": "commentary-richness-policy-v3-reader-relevance",
+    "gate_version": "commentary-richness-gate-v2.1"
+  },
+  "source_qualification_id": "renderer-qualification-v1-gpt-5.6-sol-a0f4063638cf9730958a",
+  "response_import_command": ".venv/bin/python tools/commentary_renderer_qualification_v2.py import --qualification-root /home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31 --bundle <PATH_TO_VERIFIED_SOL_RESPONSE_BUNDLE.zip>"
+}

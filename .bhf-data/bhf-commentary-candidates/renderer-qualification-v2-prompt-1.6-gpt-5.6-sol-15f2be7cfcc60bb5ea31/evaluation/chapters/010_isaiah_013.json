@@ -1,0 +1,417 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Isaiah 13",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 6,
+    "eligible_weighted_denominator": 3.8,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 0.8571,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 2,
+    "eligible_weighted_denominator": 1.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 0.8571,
+    "eligible_unit_utilization": 0.6667,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 2,
+    "eligible_weighted_denominator": 1.0,
+    "weighted_coverage": 0.5,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.5,
+    "eligible_unit_utilization": 0.3333,
+    "raw_synthesis_utilization": 0.7143,
+    "category_coverage": 0.75,
+    "dump_severity": "NONE",
+    "word_count": 231,
+    "block_count": 3,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "BELOW_TARGET"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": -0.5,
+    "core_coverage": 0.0,
+    "category_coverage": -0.25
+  },
+  "diagnostic_classification": "CATEGORY_REGRESSION",
+  "full_result": {
+    "reference": "Isaiah 13",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 2,
+    "eligible_weighted_denominator": 1.0,
+    "weighted_coverage": 0.5,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 0.5,
+    "eligible_unit_utilization": 0.3333,
+    "raw_synthesis_utilization": 0.7143,
+    "category_coverage": 0.75,
+    "dump_severity": "NONE",
+    "word_count": 231,
+    "block_count": 3,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "BELOW_TARGET",
+    "score": {
+      "synthesis_unit_count": 7,
+      "meaningful_cluster_count": 2,
+      "consumed_synthesis_count": 5,
+      "consumed_cluster_count": 1,
+      "raw_synthesis_coverage": 0.7143,
+      "idea_cluster_coverage": 0.5,
+      "weighted_idea_coverage": 0.5,
+      "core_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 4,
+      "consumed_category_count": 3,
+      "category_coverage": 0.75,
+      "category_families": [
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.4,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 3,
+        "consumed_synthesis_count": 5,
+        "consumed_cluster_count": 5,
+        "mean_evidence_ids_per_block": 1.6667,
+        "block_to_synthesis_ratio": 0.6,
+        "consolidation_ratio": 0.4,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 6,
+        "block_to_cluster_ratio": 0.5,
+        "consumed_unit_ratio": 0.7143,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 38.0,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_0bb81fda14b2",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_85ad53daa5ea",
+            "syn_surrounding_passages_9ff0e444fa37"
+          ],
+          "evidence_ids": [
+            "isaiah-nations-empire",
+            "isaiah-qumran-witnesses"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=isaiah|facts=great isaiah scroll almost complete sixty six chapter witness broadly aligned masoretic tradition containing thousands orthographic substantive differences other qumran isaiah manuscripts pesharim show active transmission interpretation;isaiah judges judah israel foreign nations portrays empires instruments themselves accountable also envisions nations learning worshiping participating restoration",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_55b129309914",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_b1404d5f188e"
+          ],
+          "evidence_ids": [
+            "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=day-of-the-lord|facts=royal day king imagery helps explain metaphor here lord himself acts judge deliverer",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_68522dc8c175",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_e27b60d239e0"
+          ],
+          "evidence_ids": [
+            "isaiah-practical-outline"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions|parents=isaiah|facts=divisions 1 12 13 27 28 35 36 39 40 55 56 66 provide practical reading map not proof six authors one uncontested macrostructure",
+          "importance_weight": 0.5,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions"
+          ],
+          "categories": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        },
+        {
+          "id": "idea_cluster_86887a4b3ae2",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_b7e0ba614e8c"
+          ],
+          "evidence_ids": [
+            "judgment-against-the-nations:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=judgment-against-the-nations|facts=these oracles respond imperial aggression moral order nations",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_e3c6148c9bce",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_7cb3fb8dffed"
+          ],
+          "evidence_ids": [
+            "what-is-the-day-of-the-lord:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=day-of-the-lord|facts=prophets use phrase amid national crisis warn covenant judgment promise future vindication",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_e7f406d26c73",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_ac46004685c7"
+          ],
+          "evidence_ids": [
+            "judgment-against-the-nations:ancient_near_east_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=judgment-against-the-nations|facts=judgment against nations set within prophetic speech shaped israelite covenant lawsuit royal courts temple worship assyrian babylonian pressure persian restoration poetic oracle forms",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 1.0,
+      "consumed_eligible_weight": 0.5,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 4,
+        "RELEVANT": 2
+      },
+      "eligible_synthesis_count": 3,
+      "consumed_eligible_synthesis_count": 1,
+      "eligible_synthesis_coverage": 0.3333
+    },
+    "audit": {
+      "reference": "Isaiah 13",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 7,
+      "specific_evidence_count": 7,
+      "evidence_score": 5.5375,
+      "evidence_category_diversity": 2,
+      "evidence_categories": {
+        "culture": 4,
+        "history": 3
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 3,
+      "commentary_block_count": 3,
+      "commentary_prose_char_count": 1480,
+      "commentary_prose_word_count": 231,
+      "verse_anchor_count": 22,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "isaiah-nations-empire",
+        "judgment-against-the-nations:ancient_near_east_context:0",
+        "judgment-against-the-nations:historical_context:0",
+        "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+        "what-is-the-day-of-the-lord:historical_context:0"
+      ],
+      "unique_evidence_ids_consumed": 5,
+      "evidence_consumption_ratio": 0.7143,
+      "unused_evidence_ids": [
+        "isaiah-practical-outline",
+        "isaiah-qumran-witnesses"
+      ],
+      "unused_evidence_count": 2,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0227,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:042dbf2773d62461f73655cbf3535f8ce704f7b084b9787ab0552c701ef41043",
+    "packet_hash": "042dbf2773d62461f73655cbf3535f8ce704f7b084b9787ab0552c701ef41043",
+    "raw_sha256": "136d4d5a6298cc44d7c8947144ca673a8652efb8eb9702564937e75c9138ba50"
+  }
+}

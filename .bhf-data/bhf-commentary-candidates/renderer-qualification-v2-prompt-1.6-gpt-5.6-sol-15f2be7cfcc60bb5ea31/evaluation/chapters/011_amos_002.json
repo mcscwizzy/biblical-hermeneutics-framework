@@ -1,0 +1,273 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Amos 2",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 1,
+    "eligible_weighted_denominator": 0.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 1,
+    "eligible_weighted_denominator": 0.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 1,
+    "eligible_weighted_denominator": 0.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 0.75,
+    "raw_synthesis_utilization": 0.75,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 327,
+    "block_count": 4,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "Amos 2",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 1,
+    "eligible_weighted_denominator": 0.5,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 0.75,
+    "raw_synthesis_utilization": 0.75,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 327,
+    "block_count": 4,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 4,
+      "meaningful_cluster_count": 1,
+      "consumed_synthesis_count": 3,
+      "consumed_cluster_count": 1,
+      "raw_synthesis_coverage": 0.75,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_count": 0,
+      "consumed_core_cluster_count": 0,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 3,
+      "consumed_category_count": 3,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "consolidation_ratio": 0.3333,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 4,
+        "consumed_synthesis_count": 3,
+        "consumed_cluster_count": 1,
+        "mean_evidence_ids_per_block": 1.5,
+        "block_to_synthesis_ratio": 1.3333,
+        "consolidation_ratio": 0.3333,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 1,
+        "block_to_cluster_ratio": 4.0,
+        "consumed_unit_ratio": 0.75,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 326.0,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_a951b2648d82",
+          "kind": "interpretive_questions",
+          "synthesis_ids": [
+            "syn_interpretive_questions_302d9053341c",
+            "syn_interpretive_questions_a5b465a2961b",
+            "syn_why_it_matters_290f43a811a9",
+            "syn_why_it_matters_ff2d42af0bde"
+          ],
+          "evidence_ids": [
+            "amos-economic-exploitation",
+            "amos-nations-sequence",
+            "amos:interpretive_note:11",
+            "amos:interpretive_note:38",
+            "amos:interpretive_note:4",
+            "amos:interpretive_note:5",
+            "amos:interpretive_note:6",
+            "amos:interpretive_note:7",
+            "amos:interpretive_note:9"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=interpretive_questions,why_it_matters|parents=amos|facts=accusations against nations condemn wartime atrocity trafficking violated kinship desecration do not authorize modern readers assign collective ethnic guilt;amos's economic accusations must not romanticize poverty blame poor people shame wealth apart exploitative practice reduce structural debt labor abuse private generosity;nations sequence draws hearers toward israel's climactic indictment claims about original oral audience cheering earlier oracles remain rhetorical reconstruction;three transgressions four formula signals accumulated offense rhetorical fullness should not turned into literal count four crimes;amos 1 3 2 16 moves through damascus gaza tyre edom ammon moab judah climactically israel repeatedly using three four transgressions formula;amos 2 7's terse sexual accusation textually difficult should not used blame victims conceal coercion excuse household religious power;amos accuses powerful israelites selling righteous needy trampling poor people taking grain levies corrupting gate seizing pledged garments using dishonest measures;judgment exile divine violence amos require lament ethical scrutiny readers not authorized enact vengeance war coercion punishment prophet's name;prosperity under jeroboam ii book's accusations inequality provide plausible social horizon prophetic rhetoric not census complete economic archive",
+          "importance_weight": 0.5,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "DISPUTED",
+          "unit_kinds": [
+            "interpretive_questions",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "dispute_present": true,
+          "coverage_eligibility": "RELEVANT",
+          "coverage_eligibility_basis": [
+            "bounded_dispute_with_reader_relevant_relationship"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 0.5,
+      "consumed_eligible_weight": 0.5,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "RELEVANT": 1
+      },
+      "eligible_synthesis_count": 4,
+      "consumed_eligible_synthesis_count": 3,
+      "eligible_synthesis_coverage": 0.75
+    },
+    "audit": {
+      "reference": "Amos 2",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 9,
+      "specific_evidence_count": 9,
+      "evidence_score": 6.1125,
+      "evidence_category_diversity": 3,
+      "evidence_categories": {
+        "culture": 6,
+        "economics": 2,
+        "history": 1
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 4,
+      "commentary_block_count": 4,
+      "commentary_prose_char_count": 2164,
+      "commentary_prose_word_count": 327,
+      "verse_anchor_count": 16,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "amos-economic-exploitation",
+        "amos:interpretive_note:11",
+        "amos:interpretive_note:38",
+        "amos:interpretive_note:4",
+        "amos:interpretive_note:5",
+        "amos:interpretive_note:6"
+      ],
+      "unique_evidence_ids_consumed": 6,
+      "evidence_consumption_ratio": 0.6667,
+      "unused_evidence_ids": [
+        "amos-nations-sequence",
+        "amos:interpretive_note:7",
+        "amos:interpretive_note:9"
+      ],
+      "unused_evidence_count": 3,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0498,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:b9ebfeb703801fd67bc8fa4cbdc10f5610d29595c23076e913b01ae1dcc725f8",
+    "packet_hash": "b9ebfeb703801fd67bc8fa4cbdc10f5610d29595c23076e913b01ae1dcc725f8",
+    "raw_sha256": "341080cfe68259541c3b5d84a96da538815f8e4441b938e6d6ec529d1f789c8b"
+  }
+}

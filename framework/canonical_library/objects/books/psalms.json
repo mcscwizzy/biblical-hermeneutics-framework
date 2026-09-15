@@ -332,6 +332,21 @@
   ],
   "scripture_references": [
     {
+      "reference": "Psalm 2:1-12",
+      "relationship": "primary",
+      "notes": "Passage-specific structured commentary evidence for the royal psalm."
+    },
+    {
+      "reference": "Psalm 19:1-14",
+      "relationship": "primary",
+      "notes": "Passage-specific structured commentary evidence for the creation, Torah, and prayer movements."
+    },
+    {
+      "reference": "Psalm 103:1-22",
+      "relationship": "primary",
+      "notes": "Passage-specific structured commentary evidence for the Psalm's personal, covenantal, and cosmic movements."
+    },
+    {
       "reference": "Psalm 1:1-6",
       "relationship": "primary",
       "notes": "Torah meditation and the two ways open the collection."
@@ -837,9 +852,213 @@
       ],
       "notes": "Canonical reception requiring passage-specific analysis of quotation, context, and argument.",
       "id": "psalms-new-testament-reception"
+    },
+    {
+      "title": "Exodus 34",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": ["psalm-103-exodus-mercy-formula"],
+      "notes": "Primary biblical text used for the Psalm 103 intertextual observation.",
+      "id": "exodus-34"
     }
   ],
   "claims": [
+    {
+      "id": "psalm-19-creation-proclamation",
+      "claim": "Psalm 19:1-6 portrays the heavens and firmament as declaring God's glory while day and night pass on knowledge without ordinary speech; the communication is poetic and continuous rather than a literal spoken conversation.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 19:1-6"],
+      "source_ids": ["psalms-masoretic"],
+      "traditions": [],
+      "rationale": "The imagery and its contrast with ordinary speech are explicit in the poem.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-19-sun-bridegroom-runner",
+      "claim": "The sun imagery in Psalm 19:4-6 uses two similes—a bridegroom leaving his chamber and a runner completing a course—to emphasize joy, strength, and the sun's comprehensive reach within the poem.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 19:4-6"],
+      "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The two comparisons are stated by the Psalm and function within its sun imagery.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-19-creation-to-torah-movement",
+      "claim": "Psalm 19 turns in verses 7-11 from the testimony of creation to a series of names for the LORD's instruction—law, testimony, precepts, commandment, fear, and judgments—so the poem moves from the ordered heavens to covenant instruction.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": ["Psalms 19:7-11"],
+      "source_ids": ["psalms-masoretic", "declaisse-walford-jacobson-tanner", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The repeated instruction terms and the poem's change in subject establish the movement, while explanations of its composition differ.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-19-torah-gold-honey-value",
+      "claim": "Psalm 19:10-11 evaluates the LORD's judgments as more desirable than fine gold and sweeter than honey, joining moral instruction to images of worth, delight, and warning.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 19:10-11"],
+      "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The gold and honey comparisons and the warning function are explicit in the unit.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-19-hidden-and-presumptuous-faults",
+      "claim": "In Psalm 19:12-13 the speaker asks to be cleared from hidden faults and restrained from presumptuous sins, distinguishing unknown failure from deliberate, self-asserting transgression.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "lexical_uncertainty",
+      "scripture_references": ["Psalms 19:12-13"],
+      "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The prayer names hidden and presumptuous wrongdoing distinctly, although individual lexical decisions are discussed in commentaries.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-19-closing-prayer-rock-redeemer",
+      "claim": "Psalm 19:14 closes by asking that the speaker's words and meditation be acceptable before the LORD, addressed as the speaker's rock and redeemer; the prayer brings the cosmic and instructional movements into worshiper's speech.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 19:14"],
+      "source_ids": ["psalms-masoretic", "dahood-psalms"],
+      "traditions": [],
+      "rationale": "The closing address and prayer are explicit and provide the poem's final movement toward the worshiper.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-103-personal-blessing-catalogue",
+      "claim": "Psalm 103:1-5 begins with a repeated summons for the speaker's own soul to bless the LORD and then catalogs benefits: forgiveness, healing, rescue from the pit, steadfast love and mercy, and renewed strength.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 103:1-5"],
+      "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The summons and catalog are the Psalm's opening sequence.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-103-righteousness-moses",
+      "claim": "Psalm 103:6-7 pairs the LORD's acts of righteousness and justice for the oppressed with the disclosure of his ways to Moses and Israel, widening the Psalm from personal benefits to communal memory.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 103:6-7"],
+      "source_ids": ["psalms-masoretic", "declaisse-walford-jacobson-tanner"],
+      "traditions": [],
+      "rationale": "The verses explicitly join justice for the oppressed with Moses and Israel.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-103-exodus-mercy-formula",
+      "claim": "Psalm 103:8-13 reuses the familiar confession that the LORD is compassionate and gracious, slow to anger, and abounding in steadfast love; its fatherly comparison and east-to-west image portray compassionate distance from deserved judgment.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": ["Psalms 103:8-13"],
+      "source_ids": ["psalms-masoretic", "exodus-34", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The wording echoes Exodus 34:6-7, while the Psalm's father and east-west images are its own elaboration.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-103-dust-grass-mortality",
+      "claim": "Psalm 103:14-18 sets human mortality against the LORD's enduring steadfast love: humans are dust, their days are like grass and a flower, but the LORD's covenant faithfulness extends to those who fear him and to their descendants.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 103:14-18"],
+      "source_ids": ["psalms-masoretic", "hossfeld-zenger-psalms"],
+      "traditions": [],
+      "rationale": "The mortality images and covenant contrast are developed across the unit.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-103-throne-universal-blessing",
+      "claim": "Psalm 103:19-22 moves from the LORD's established throne and kingship to angels, heavenly hosts, servants, and all works, ending with a widening summons for the whole creation to bless the LORD.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 103:19-22"],
+      "source_ids": ["psalms-masoretic", "declaisse-walford-jacobson-tanner"],
+      "traditions": [],
+      "rationale": "The throne, heavenly servants, and expanding calls to bless are explicit in the conclusion.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-2-nations-kings-rebellion",
+      "claim": "Psalm 2:1-3 depicts nations, peoples, kings, and rulers conspiring against the LORD and his anointed, using the language of revolt and the image of breaking a yoke or bonds.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": ["Psalms 2:1-3"],
+      "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The named rulers, their counsel, and their stated aim are explicit in the opening scene.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-2-yhwh-zion-anointed",
+      "claim": "Psalm 2:4-6 answers the rulers' revolt with YHWH's enthroned laughter and announces that he has installed his king on Zion, making divine rule and the anointed king the psalm's counterclaim to earthly coalition.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": ["Psalms 2:4-6"],
+      "source_ids": ["psalms-masoretic", "goldingay-psalms", "declaisse-walford-jacobson-tanner"],
+      "traditions": [],
+      "rationale": "YHWH's response, Zion, and the installed king are stated directly; historical setting remains debated.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-2-son-decree-inheritance",
+      "claim": "In Psalm 2:7-9 the king reports a divine decree using 'You are my son' language, then receives the nations as inheritance and authority to break them with an iron rod like pottery; these are royal claims within the psalm's speech.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": ["Psalms 2:7-9"],
+      "source_ids": ["psalms-masoretic", "dahood-psalms", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The decree, son language, inheritance, and pottery image occur together in the king's speech.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-2-royal-ane-idiom-caution",
+      "claim": "The father-son, decree, inheritance, and enthronement language in Psalm 2:6-9 belongs to a royal idiom recognizable in the ancient Near Eastern world, but the poem itself does not identify a single historical accession ceremony or prove direct borrowing from one specific text.",
+      "claim_type": "historical_cultural",
+      "certainty": "plausible",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": ["Psalms 2:6-9"],
+      "source_ids": ["dahood-psalms", "goldingay-psalms", "zondervan-wisdom-backgrounds"],
+      "traditions": [],
+      "rationale": "Comparative royal language is useful context, but the claim explicitly limits the historical conclusions comparison can support.",
+      "notes": ""
+    },
+    {
+      "id": "psalm-2-closing-wisdom-warning",
+      "claim": "Psalm 2:10-12 turns the royal conflict into a warning addressed to kings and judges: serve the LORD, rejoice with trembling, and take refuge in him; the final expression often translated 'kiss the son' has a recognized lexical and translation dispute and should not be presented as settled wording.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "scripture_references": ["Psalms 2:10-12"],
+      "source_ids": ["psalms-masoretic", "dahood-psalms", "goldingay-psalms"],
+      "traditions": [],
+      "rationale": "The warning is explicit, while the final phrase is a documented lexical and translation question.",
+      "notes": ""
+    },
     {
       "id": "psalms-five-book-anthology",
       "claim": "The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150.",

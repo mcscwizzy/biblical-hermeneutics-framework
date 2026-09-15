@@ -1,0 +1,89 @@
+{
+  "reference": "Exodus 14",
+  "book": "Exodus",
+  "chapter": 14,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "Where Did the Crossing Occur?",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter carefully names Pihahiroth, Migdol, Baal-zephon, and the sea as Israel\u2019s camping place. Those names preserve the narrative\u2019s route and setting, but identifying each site on a modern map\u2014and therefore locating the crossing precisely\u2014remains disputed. The passage itself supplies the sequence of places without settling every modern reconstruction.",
+          "verse_refs": [
+            "Exodus 14:1-31"
+          ],
+          "evidence_ids": [
+            "exodus-wilderness-routes-and-water:interpretive_note:0",
+            "yam-suf-route-identification",
+            "yam-suf-route-identification:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_4fbbf0d932c4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "why_it_matters",
+      "title": "Reading the Place Names Carefully",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Keeping the chapter\u2019s own place names in view prevents a familiar modern map from being treated as the only possible route. The geographical uncertainty does not erase the text\u2019s setting; it distinguishes the named route in the narrative from later attempts to match every location with a modern site.",
+          "verse_refs": [
+            "Exodus 14:1-31"
+          ],
+          "evidence_ids": [
+            "exodus-wilderness-routes-and-water:interpretive_note:0",
+            "yam-suf-route-identification",
+            "yam-suf-route-identification:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_4429fee6510f"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Exodus as a Larger Story",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Exodus 14 is a climactic deliverance scene, but the book does not end with escape from Egypt. Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, the construction of the tabernacle, and the arrival of divine glory. Reading these movements together keeps the sea crossing within the book\u2019s larger account rather than treating departure from Egypt as its endpoint.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "exodus-literary-movement"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_112542770c73"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a8b53c334b69629f2bbb0ea1ecdafc21ae687a26f7c59ce2d965de9b06058380",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "01eefc01d0511fc67457a4c32c195e9e84c76ff670145324f7ce5a0453df1072",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

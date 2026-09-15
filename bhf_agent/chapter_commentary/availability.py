@@ -10,6 +10,8 @@ from typing import Any
 from bhf_agent.presentation.references import _BOOK_ALIASES
 from framework.canonical_library.scripture import parse_scripture_references
 
+from .evidence_applicability import evaluate_evidence_applicability
+
 
 class EvidenceAvailability(str, Enum):
     AVAILABLE = "AVAILABLE"
@@ -39,6 +41,8 @@ class EvidenceContribution:
     score: float
     specificity: str
     specific: bool
+    applicability_status: str = "rejected"
+    applicability_reason: str = ""
 
 
 def evidence_contribution(item: Any, _passage_ref: str) -> EvidenceContribution:
@@ -49,6 +53,7 @@ def evidence_contribution(item: Any, _passage_ref: str) -> EvidenceContribution:
     """
 
     metadata = getattr(item, "relevance_metadata", {}) or {}
+    applicability = evaluate_evidence_applicability(item, _passage_ref)
     anchors = list(getattr(item, "passage_anchors", ()) or ())
     specificity, anchor_weight = _anchor_weight(anchors)
     confidence = str(getattr(item, "confidence", "") or "").casefold()
@@ -71,16 +76,52 @@ def evidence_contribution(item: Any, _passage_ref: str) -> EvidenceContribution:
         "social",
         "chronology",
     } else 0.5
-    # Test doubles and older callers may not expose anchors. Treat those as
-    # legacy chapter-scoped items so the public threshold API remains stable.
-    if not anchors:
-        specificity, anchor_weight = "chapter", 1.0
     score = anchor_weight * confidence_weight * dispute_weight * relationship_weight * category_weight
+    if applicability.status == "rejected":
+        score = 0.0
+        specificity = "none"
+    elif not applicability.current_chapter_eligible:
+        # Broad/background evidence may explain why a chapter has some
+        # retrievable context, but it cannot satisfy passage-specificity.
+        specificity = f"background:{applicability.applicability_scope}"
     return EvidenceContribution(
         score=round(score, 4),
         specificity=specificity,
-        specific=anchor_weight >= 0.55,
+        specific=applicability.availability_specific,
+        applicability_status=applicability.status,
+        applicability_reason=applicability.reason,
     )
+
+
+def evidence_contribution_diagnostic(item: Any, passage_ref: str) -> dict[str, Any]:
+    """Return old-vs-new availability treatment for one evidence item."""
+
+    metadata = getattr(item, "relevance_metadata", {}) or {}
+    anchors = list(getattr(item, "passage_anchors", ()) or ())
+    raw_specificity, anchor_weight = _anchor_weight(anchors)
+    confidence = str(getattr(item, "confidence", "") or "").casefold()
+    confidence_weight = {"high": 1.0, "medium": 0.85, "low": 0.6}.get(confidence, 0.5)
+    dispute_status = str(metadata.get("dispute_status") or "").casefold()
+    dispute_weight = 0.75 if dispute_status not in {"", "not_disputed"} else 1.0
+    relationship_weight = 0.85 if metadata.get("passage_relationship") in {"background", "comparative"} else 1.0
+    category = str(getattr(item, "category", "") or "").casefold()
+    category_weight = 1.0 if not category or category in {"culture", "geography", "history", "archaeology", "language", "politics", "economics", "social", "chronology"} else 0.5
+    old_score = anchor_weight * confidence_weight * dispute_weight * relationship_weight * category_weight
+    decision = evaluate_evidence_applicability(item, passage_ref)
+    new = evidence_contribution(item, passage_ref)
+    return {
+        "evidence_id": getattr(item, "id", ""),
+        "raw_anchor_specificity": raw_specificity,
+        "applicability_scope": decision.applicability_scope,
+        "anchor_source": decision.anchor_source,
+        "inherited_from_parent": decision.inherited_from_parent,
+        "old_contribution": round(old_score, 4),
+        "new_contribution": new.score,
+        "old_specific": anchor_weight >= 0.55,
+        "new_specific": new.specific,
+        "status": decision.status,
+        "reason": decision.reason,
+    }
 
 
 def classify_evidence_availability(

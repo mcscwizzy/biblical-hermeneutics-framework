@@ -1,0 +1,1988 @@
+{
+  "reference": "John 2",
+  "book": "John",
+  "chapter": 2,
+  "evidence_hash": "f8f1e3ff98d5ee3540eab7ff1320e3ca9f8284f32e228e4c27e820cc7c811cde",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "4c45c0dce24d25b63e6fb93b3266026b39e72572ce1e1daa0864eea8523c31a1",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_ab81fd8405bf",
+      "kind": "archaeology_geography",
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_46b47d8c403c",
+      "kind": "chronology",
+      "facts": [
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_fbae891277a2",
+      "kind": "chronology",
+      "facts": [
+        "New Jerusalem has no temple because God and the Lamb dwell there"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_030e09893544",
+      "kind": "cultural_context",
+      "facts": [
+        "Bethlehem 1 is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "bethlehem-1:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "bethlehem-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_038b189ef8fb",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for New Temple Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:19-21"
+      ],
+      "evidence_ids": [
+        "new-temple-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:19-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_08fdfffec360",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Gilgal 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "gilgal-1:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "gilgal-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1bb07b0a3cda",
+      "kind": "cultural_context",
+      "facts": [
+        "City of David is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "city-of-david:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "city-of-david"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1d6a6306f62b",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Hebron includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "hebron:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "hebron"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_259b7ea79e5f",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Mount Zion includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "mount-zion:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "mount-zion"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_36cac6a6e3eb",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Most Holy Place 2 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "most-holy-place-2:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "most-holy-place-2"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_483233b99c9a",
+      "kind": "cultural_context",
+      "facts": [
+        "Beersheba 1 is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "beersheba-1:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "beersheba-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4b4b49074969",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "temple-theme:ancient_near_east_context:0",
+        "temple-theme:hebraic_worldview:0",
+        "temple-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4be71b82ca21",
+      "kind": "cultural_context",
+      "facts": [
+        "Gibeon is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "gibeon:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "gibeon"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4c8e5e6efb3d",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Holy Place 2 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "holy-place-2:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "holy-place-2"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5869a7de2266",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient temples were often royal and cultic centers; Israel’s temple is distinct because it foregrounds covenant holiness and atonement under one God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5ea8ce1214c9",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Mizpah 3 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "mizpah-3:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "mizpah-3"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_764a591808d0",
+      "kind": "cultural_context",
+      "facts": [
+        "The relevant comparative setting is Early Roman Galilee within the southern Levant and Roman eastern Mediterranean.",
+        "Jewish village, household, synagogue, purity, festival, and subsistence practices shaped life while communities also participated in wider regional exchange.",
+        "Archaeology and texts indicate substantial Jewish practice alongside local variation; Galilee should be neither isolated from Judaism nor flattened into Jerusalem's institutions."
+      ],
+      "verse_refs": [
+        "John 2:1-12"
+      ],
+      "evidence_ids": [
+        "galilee-1:ancient_near_east_context:0",
+        "galilee-1:hebraic_worldview:0",
+        "galilee-1:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "galilee-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_7bf9a0194c08",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples were common in the ancient world, but Israel’s temple is defined by covenant holiness and the one true God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "what-is-the-temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_8b55a58572b2",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Zion includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 12:6-7, Joshua 24:1-28, abraham, and joshua-son-of-nun without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "zion:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "zion"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_accaf388487f",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples were common in the ancient world, but Israel's temple is defined by covenant holiness and the one true God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_c28e373a8c58",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d6ed845b260a",
+      "kind": "cultural_context",
+      "facts": [
+        "Imperial patronage, local governance, and temple-centered identity shaped second temple life within the wider ancient world."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "what-is-the-second-temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_dbc878143da9",
+      "kind": "cultural_context",
+      "facts": [
+        "Bethel 1 is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "bethel-1:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "bethel-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_10f140598b0c",
+      "kind": "historical_context",
+      "facts": [
+        "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "what-is-the-temple:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_34825ce9c243",
+      "kind": "historical_context",
+      "facts": [
+        "Mount Zion appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "mount-zion:historical_context:0"
+      ],
+      "entity_ids": [
+        "mount-zion"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_392547682736",
+      "kind": "historical_context",
+      "facts": [
+        "Most Holy Place appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "most-holy-place-2:historical_context:0"
+      ],
+      "entity_ids": [
+        "most-holy-place-2"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_418d633d4967",
+      "kind": "historical_context",
+      "facts": [
+        "Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "temple-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_42d40a8731af",
+      "kind": "historical_context",
+      "facts": [
+        "Holy Place appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "holy-place-2:historical_context:0"
+      ],
+      "entity_ids": [
+        "holy-place-2"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_49c4fcc49e4d",
+      "kind": "historical_context",
+      "facts": [
+        "Gibeon appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "gibeon:historical_context:0"
+      ],
+      "entity_ids": [
+        "gibeon"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4aab7f82ba07",
+      "kind": "historical_context",
+      "facts": [
+        "New Temple Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "John 2:19-21"
+      ],
+      "evidence_ids": [
+        "new-temple-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:19-21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_58d358e2ac9a",
+      "kind": "historical_context",
+      "facts": [
+        "The second temple begins with the return from Babylon under Persian rule, develops through the Persian and Hellenistic periods, and stands in Jesus' day before its destruction in AD 70."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "what-is-the-second-temple:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_6087ae723db3",
+      "kind": "historical_context",
+      "facts": [
+        "The temple develops from tabernacle patterns into Solomon’s temple, survives in exilic memory, and is rebuilt in the second temple period."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "temple:historical_context:0"
+      ],
+      "entity_ids": [
+        "temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_69dc4909bfa2",
+      "kind": "historical_context",
+      "facts": [
+        "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-temple:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_7e552cb2eef5",
+      "kind": "historical_context",
+      "facts": [
+        "During most of Jesus's ministry Galilee was governed by Herod Antipas, not by the Roman prefect of Judea. Its villages combined farming, fishing, craft production, local markets, and movement along lake and land routes."
+      ],
+      "verse_refs": [
+        "John 2:1-12"
+      ],
+      "evidence_ids": [
+        "galilee-1:historical_context:0"
+      ],
+      "entity_ids": [
+        "galilee-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a5c83ec236a3",
+      "kind": "historical_context",
+      "facts": [
+        "Bethlehem appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "bethlehem-1:historical_context:0"
+      ],
+      "entity_ids": [
+        "bethlehem-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_affe0a7f6357",
+      "kind": "historical_context",
+      "facts": [
+        "Beersheba appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "beersheba-1:historical_context:0"
+      ],
+      "entity_ids": [
+        "beersheba-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c0e2ae9e7a84",
+      "kind": "historical_context",
+      "facts": [
+        "Mizpah appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "mizpah-3:historical_context:0"
+      ],
+      "entity_ids": [
+        "mizpah-3"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c2eca0f7a977",
+      "kind": "historical_context",
+      "facts": [
+        "Bethel appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "bethel-1:historical_context:0"
+      ],
+      "entity_ids": [
+        "bethel-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_d758435394e8",
+      "kind": "historical_context",
+      "facts": [
+        "Zion appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "zion:historical_context:0"
+      ],
+      "entity_ids": [
+        "zion"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_de72943986b3",
+      "kind": "historical_context",
+      "facts": [
+        "Gilgal appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "gilgal-1:historical_context:0"
+      ],
+      "entity_ids": [
+        "gilgal-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f1eacc462d2e",
+      "kind": "historical_context",
+      "facts": [
+        "Hebron appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "hebron:historical_context:0"
+      ],
+      "entity_ids": [
+        "hebron"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f555a04b17de",
+      "kind": "historical_context",
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f8e05171fd07",
+      "kind": "historical_context",
+      "facts": [
+        "City of David appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "city-of-david:historical_context:0"
+      ],
+      "entity_ids": [
+        "city-of-david"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_32895fa276e0",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Cana transformation is called the first sign and reveals glory; purification jars, abundance, wedding setting, and the mother-Jesus exchange shape interpretation without reducing the story to a proof trick.",
+        "Hoi Ioudaioi has context-sensitive referents including Jewish people, Judeans, festival crowds, and particular authorities; rendering or treating every occurrence as one hostile ethnic bloc distorts the Gospel and intensifies antisemitic harm.",
+        "Signs-source, discourse-source, displacement, multiple-edition, and Johannine-school models attempt to explain seams and development, but no proposed source or edition survives independently.",
+        "John shares people, places, passion, resurrection, and some episode patterns with the Synoptics but differs sharply in chronology, festival framework, speeches, signs, and characterization; direct literary dependence remains debated.",
+        "John places the temple action near the beginning while the Synoptics place it near the passion; harmonization and multiple-cleansing claims are possible but not textually demonstrated."
+      ],
+      "verse_refs": [
+        "John 2:1-12",
+        "John 2:11",
+        "John 2:13-22",
+        "John 2:6-20"
+      ],
+      "evidence_ids": [
+        "john-cana",
+        "john-ioudaioi",
+        "john-sources-editions",
+        "john-synoptic-relation",
+        "john-temple-chronology"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12",
+        "John 2:11",
+        "John 2:13-22",
+        "John 2:6-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "language"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_7f223433cca4",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Luke, Mark, and John portray Jerusalem festival travel together with lodging, offerings, exchange, animal sales, crowds, teaching, and conflict in the temple precincts.",
+        "The evidence prevents temple-action scenes from being detached from festival travel and the material systems that supported sacrifice and pilgrimage."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "gospel-pilgrimage-and-temple-economy",
+        "gospel-pilgrimage-and-temple-economy:passage-relevance"
+      ],
+      "entity_ids": [
+        "temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "social"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_9c55659dce05",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Workshop caves and production debris at Reina, approximately three kilometers from Nazareth, attest regional manufacture of soft-limestone vessels used in Jewish settlements.",
+        "The workshops show that stone vessels associated with purity practice were locally available, contextualizing John 2 and purity disputes without identifying the Cana jars or Mark's opponents."
+      ],
+      "verse_refs": [
+        "John 2:1-12"
+      ],
+      "evidence_ids": [
+        "reina-stone-vessel-production",
+        "reina-stone-vessel-production:passage-relevance"
+      ],
+      "entity_ids": [
+        "galilee-1"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_d8867b1a7c7e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+        "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability."
+      ],
+      "verse_refs": [
+        "John 2:13-22",
+        "John 2:19-21"
+      ],
+      "evidence_ids": [
+        "sanctuary-theme:interpretive_note:0",
+        "sanctuary-theme:interpretive_note:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22",
+        "John 2:19-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_102a25acf467",
+      "kind": "why_it_matters",
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_archaeology_geography_ab81fd8405bf"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_59f003a5435e",
+      "kind": "why_it_matters",
+      "facts": [
+        "The relevant comparative setting is Early Roman Galilee within the southern Levant and Roman eastern Mediterranean.",
+        "Jewish village, household, synagogue, purity, festival, and subsistence practices shaped life while communities also participated in wider regional exchange.",
+        "Archaeology and texts indicate substantial Jewish practice alongside local variation; Galilee should be neither isolated from Judaism nor flattened into Jerusalem's institutions."
+      ],
+      "verse_refs": [
+        "John 2:1-12"
+      ],
+      "evidence_ids": [
+        "galilee-1:ancient_near_east_context:0",
+        "galilee-1:hebraic_worldview:0",
+        "galilee-1:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "galilee-1"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_764a591808d0"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6915faa55ccb",
+      "kind": "why_it_matters",
+      "facts": [
+        "The Cana transformation is called the first sign and reveals glory; purification jars, abundance, wedding setting, and the mother-Jesus exchange shape interpretation without reducing the story to a proof trick.",
+        "Hoi Ioudaioi has context-sensitive referents including Jewish people, Judeans, festival crowds, and particular authorities; rendering or treating every occurrence as one hostile ethnic bloc distorts the Gospel and intensifies antisemitic harm.",
+        "Signs-source, discourse-source, displacement, multiple-edition, and Johannine-school models attempt to explain seams and development, but no proposed source or edition survives independently.",
+        "John shares people, places, passion, resurrection, and some episode patterns with the Synoptics but differs sharply in chronology, festival framework, speeches, signs, and characterization; direct literary dependence remains debated.",
+        "John places the temple action near the beginning while the Synoptics place it near the passion; harmonization and multiple-cleansing claims are possible but not textually demonstrated."
+      ],
+      "verse_refs": [
+        "John 2:1-12",
+        "John 2:11",
+        "John 2:13-22",
+        "John 2:6-20"
+      ],
+      "evidence_ids": [
+        "john-cana",
+        "john-ioudaioi",
+        "john-sources-editions",
+        "john-synoptic-relation",
+        "john-temple-chronology"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_32895fa276e0"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12",
+        "John 2:11",
+        "John 2:13-22",
+        "John 2:6-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8115ab49d3ba",
+      "kind": "why_it_matters",
+      "facts": [
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_chronology_46b47d8c403c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8c326b5a107e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "temple-theme:ancient_near_east_context:0",
+        "temple-theme:hebraic_worldview:0",
+        "temple-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_4b4b49074969"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8f4342905b39",
+      "kind": "why_it_matters",
+      "facts": [
+        "Workshop caves and production debris at Reina, approximately three kilometers from Nazareth, attest regional manufacture of soft-limestone vessels used in Jewish settlements.",
+        "The workshops show that stone vessels associated with purity practice were locally available, contextualizing John 2 and purity disputes without identifying the Cana jars or Mark's opponents."
+      ],
+      "verse_refs": [
+        "John 2:1-12"
+      ],
+      "evidence_ids": [
+        "reina-stone-vessel-production",
+        "reina-stone-vessel-production:passage-relevance"
+      ],
+      "entity_ids": [
+        "galilee-1"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_9c55659dce05"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_aba69d0ea29e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_c28e373a8c58"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b6d7493022ef",
+      "kind": "why_it_matters",
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ],
+      "verse_refs": [
+        "John 2:18-22"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_historical_context_f555a04b17de"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:18-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_d1df888189df",
+      "kind": "why_it_matters",
+      "facts": [
+        "Luke, Mark, and John portray Jerusalem festival travel together with lodging, offerings, exchange, animal sales, crowds, teaching, and conflict in the temple precincts.",
+        "The evidence prevents temple-action scenes from being detached from festival travel and the material systems that supported sacrifice and pilgrimage."
+      ],
+      "verse_refs": [
+        "John 2:13-22"
+      ],
+      "evidence_ids": [
+        "gospel-pilgrimage-and-temple-economy",
+        "gospel-pilgrimage-and-temple-economy:passage-relevance"
+      ],
+      "entity_ids": [
+        "temple"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_7f223433cca4"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e4993ca4f78e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+        "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability."
+      ],
+      "verse_refs": [
+        "John 2:13-22",
+        "John 2:19-21"
+      ],
+      "evidence_ids": [
+        "sanctuary-theme:interpretive_note:0",
+        "sanctuary-theme:interpretive_note:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_d8867b1a7c7e"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 2:13-22",
+        "John 2:19-21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [],
+  "coverage": {
+    "evidence_item_count": 69,
+    "used_evidence_ids": [
+      "beersheba-1:ancient_near_east_context:0",
+      "beersheba-1:historical_context:0",
+      "bethel-1:ancient_near_east_context:0",
+      "bethel-1:historical_context:0",
+      "bethlehem-1:ancient_near_east_context:0",
+      "bethlehem-1:historical_context:0",
+      "city-of-david:ancient_near_east_context:0",
+      "city-of-david:historical_context:0",
+      "galilee-1:ancient_near_east_context:0",
+      "galilee-1:hebraic_worldview:0",
+      "galilee-1:historical_context:0",
+      "galilee-1:second_temple_context:0",
+      "gibeon:ancient_near_east_context:0",
+      "gibeon:historical_context:0",
+      "gilgal-1:ancient_near_east_context:0",
+      "gilgal-1:historical_context:0",
+      "gospel-pilgrimage-and-temple-economy",
+      "gospel-pilgrimage-and-temple-economy:passage-relevance",
+      "hebron:ancient_near_east_context:0",
+      "hebron:historical_context:0",
+      "holy-place-2:ancient_near_east_context:0",
+      "holy-place-2:historical_context:0",
+      "john-cana",
+      "john-ioudaioi",
+      "john-sources-editions",
+      "john-synoptic-relation",
+      "john-temple-chronology",
+      "mizpah-3:ancient_near_east_context:0",
+      "mizpah-3:historical_context:0",
+      "most-holy-place-2:ancient_near_east_context:0",
+      "most-holy-place-2:historical_context:0",
+      "mount-zion:ancient_near_east_context:0",
+      "mount-zion:historical_context:0",
+      "new-temple-theme:ancient_near_east_context:0",
+      "new-temple-theme:historical_context:0",
+      "reina-stone-vessel-production",
+      "reina-stone-vessel-production:passage-relevance",
+      "sanctuary-theme:interpretive_note:0",
+      "sanctuary-theme:interpretive_note:1",
+      "temple-symbol:ancient_near_east_context:0",
+      "temple-symbol:hebraic_worldview:0",
+      "temple-symbol:historical_context:0",
+      "temple-symbol:historical_setting:0",
+      "temple-symbol:key_places:0",
+      "temple-symbol:key_places:1",
+      "temple-symbol:key_places:2",
+      "temple-symbol:key_places:3",
+      "temple-symbol:original_audience:0",
+      "temple-symbol:second_temple_context:0",
+      "temple-symbol:timeline:0",
+      "temple-symbol:timeline:1",
+      "temple-symbol:timeline:2",
+      "temple-symbol:timeline:3",
+      "temple-symbol:timeline:4",
+      "temple-symbol:timeline:5",
+      "temple-theme:ancient_near_east_context:0",
+      "temple-theme:hebraic_worldview:0",
+      "temple-theme:historical_context:0",
+      "temple-theme:second_temple_context:0",
+      "temple:ancient_near_east_context:0",
+      "temple:historical_context:0",
+      "what-is-the-second-temple:ancient_near_east_context:0",
+      "what-is-the-second-temple:historical_context:0",
+      "what-is-the-significance-of-the-temple:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-temple:historical_context:0",
+      "what-is-the-temple:ancient_near_east_context:0",
+      "what-is-the-temple:historical_context:0",
+      "zion:ancient_near_east_context:0",
+      "zion:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "archaeology": 2,
+      "chronology": 6,
+      "culture": 32,
+      "geography": 4,
+      "history": 21,
+      "language": 1,
+      "social": 3
+    },
+    "category_diversity": 7,
+    "specific_evidence_count": 69,
+    "entity_counts": {
+      "people": 0,
+      "places": 13,
+      "groups": 1,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "chronology": 2,
+      "cultural_context": 20,
+      "historical_context": 20,
+      "interpretive_questions": 4,
+      "why_it_matters": 10
+    },
+    "relationship_unit_count": 10
+  }
+}

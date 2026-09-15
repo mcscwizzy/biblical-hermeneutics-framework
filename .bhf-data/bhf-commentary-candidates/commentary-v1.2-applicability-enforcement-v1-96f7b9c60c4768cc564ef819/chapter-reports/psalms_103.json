@@ -1,0 +1,149 @@
+{
+  "after": {
+    "availability": "THIN",
+    "current_chapter_eligible_evidence_count": 0,
+    "current_chapter_synthesis_count": 0,
+    "evidence_count": 6,
+    "evidence_hash_changed": true,
+    "excluded_from_commentary_count": 6,
+    "reason_breakdown": {
+      "legacy_parent_inheritance_is_background_only": 6
+    },
+    "surrounding_passage_count": 0,
+    "synthesis_coverage": {
+      "chapter_verse_count": 22,
+      "spans": [
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "Psalms 103:1-5"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "Psalms 103:6-7"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "Psalms 103:8-13"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "Psalms 103:14-18"
+        },
+        {
+          "covered": false,
+          "eligible_evidence_verses": [],
+          "requested_interval": "Psalms 103:19-22"
+        }
+      ],
+      "useful_verse_ancestry_coverage": [],
+      "useful_verse_ancestry_coverage_count": 0,
+      "useful_verse_ancestry_coverage_percentage": 0.0
+    },
+    "synthesis_hash_changed": true,
+    "synthesis_unit_count": 0
+  },
+  "before": {
+    "availability": "AVAILABLE",
+    "bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_103.json",
+    "current_chapter_synthesis_count": 6,
+    "evidence_count": 6,
+    "evidence_hash": "8985f9d09142cfdf8f78377cd3360340bc938add6368a78afaed8d5dc0881c3d",
+    "surrounding_passage_count": 0,
+    "synthesis_hash": "6dfaefee8cdd52317084d91d44bccbd24fe8876b51bc4ecce6dd0faa6f2e76f0",
+    "synthesis_unit_count": 6
+  },
+  "controls": {
+    "numbers_1_or_2": false
+  },
+  "evidence_diagnostics": [
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "global",
+      "evidence_id": "divine-mercy:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "global",
+      "evidence_id": "divine-mercy:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "global",
+      "evidence_id": "grace:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "global",
+      "evidence_id": "grace:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "global",
+      "evidence_id": "mercy-theme:ancient_near_east_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    },
+    {
+      "anchor_source": "parent",
+      "applicability_scope": "global",
+      "evidence_id": "mercy-theme:historical_context:0",
+      "inherited_from_parent": true,
+      "new_contribution": 0.85,
+      "new_specific": false,
+      "old_contribution": 0.85,
+      "old_specific": true,
+      "raw_anchor_specificity": "verse",
+      "reason": "legacy_parent_inheritance_is_background_only",
+      "status": "background"
+    }
+  ],
+  "reference": "Psalms 103",
+  "source": {
+    "fresh_bundle_version": "1.0",
+    "fresh_evidence_hash": "11d03d25c291336c4aff47ce1706d76383a57cbd1c7c42cfe28cd33a8d2e4d7c",
+    "fresh_synthesis_hash": "605f91afa2b12af9542686f4f4a5074f921e638c2acbe4ff60fd4fd18e6d4e97",
+    "retrieved_ckl_object_count": 7
+  }
+}

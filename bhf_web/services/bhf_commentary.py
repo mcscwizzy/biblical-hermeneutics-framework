@@ -11,9 +11,34 @@ from bhf_agent.presentation.models import EvidenceBundle
 from bhf_agent.chapter_commentary.storage import load_commentary
 from bhf_agent.chapter_commentary.storage import list_commentaries
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
+from bhf_agent.chapter_commentary.release import release_chapter_state
 
 
 COMMENTARY_RELEASE = configured_commentary_release()
+
+
+def unavailable_commentary_state(
+    storage_dir: str | Path,
+    book: str,
+    chapter: int,
+) -> dict[str, Any] | None:
+    """Return a safe release-aware unavailable response, or legacy ``None``."""
+
+    state = release_chapter_state(storage_dir, book, chapter)
+    if state is None:
+        return None
+    release_state = str(state.get("release_state") or "")
+    reason = str(state.get("reason") or "commentary_not_available")
+    if release_state == "PUBLISHED":
+        reason = "commentary_published_artifact_missing"
+    return {
+        "available": False,
+        "reason": reason,
+        "release_state": release_state,
+        "release": COMMENTARY_RELEASE,
+        "book": book,
+        "chapter": chapter,
+    }
 
 
 def _unique(values: list[str]) -> list[str]:

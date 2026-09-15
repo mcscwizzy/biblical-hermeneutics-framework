@@ -1,0 +1,191 @@
+{
+  "artifact_version": "commentary-renderer-selection-breadth-diagnostic-v1-parsed-output-v1",
+  "reference": "Deuteronomy 10",
+  "raw_sha256": "b489b9572c2a23d8f237637016039c53dcc52aaa9bf7bf1daaa67776426336c9",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Deuteronomy 10",
+    "book": "Deuteronomy",
+    "chapter": 10,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Aaron belongs to the Exodus and wilderness period in which Israel is being formed as a people through deliverance and covenant. The notice of his death and Eleazar’s succession therefore remains part of the chapter’s remembered wilderness history rather than an isolated biographical detail.",
+            "verse_refs": [
+              "Deuteronomy 10:6-9"
+            ],
+            "evidence_ids": [
+              "aaron:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_8b187f7e200c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The account of Aaron and Eleazar comes from a social world shaped by kinship obligations, household relationships, and organized religious life. Deuteronomy 10 presents these dimensions together: Aaron dies and his son succeeds him, while the tribe of Levi is assigned continuing duties connected with the ark, ministry, and blessing.",
+            "verse_refs": [
+              "Deuteronomy 10:6-9"
+            ],
+            "evidence_ids": [
+              "aaron:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_07f4d409c047"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Within Deuteronomy’s larger movement, remembered wilderness history leads into covenant instruction, then covenant consequences, renewal, succession, song, blessing, and finally Moses’s death. Chapter 10 stands near the transition from recollection to sustained instruction: Moses recalls the renewed tablets and wilderness events before stating what God requires of Israel.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_946135095225"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_4",
+            "text": "One interpretive view understands the repeated commands in Deuteronomy 5–26 as covenant teaching rhetorically adapted for a successor generation, rather than as a merely word-for-word repetition of earlier laws. On that reading, chapter 10’s movement from remembered events to direct exhortation shows Moses applying inherited covenant instruction to the people now preparing to enter the land.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_b55b3bea6540"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Deuteronomy 10",
+    "book": "Deuteronomy",
+    "chapter": 10,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Aaron belongs to the Exodus and wilderness period in which Israel is being formed as a people through deliverance and covenant. The notice of his death and Eleazar’s succession therefore remains part of the chapter’s remembered wilderness history rather than an isolated biographical detail.",
+            "verse_refs": [
+              "Deuteronomy 10:6-9"
+            ],
+            "evidence_ids": [
+              "aaron:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_8b187f7e200c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The account of Aaron and Eleazar comes from a social world shaped by kinship obligations, household relationships, and organized religious life. Deuteronomy 10 presents these dimensions together: Aaron dies and his son succeeds him, while the tribe of Levi is assigned continuing duties connected with the ark, ministry, and blessing.",
+            "verse_refs": [
+              "Deuteronomy 10:6-9"
+            ],
+            "evidence_ids": [
+              "aaron:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_07f4d409c047"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Within Deuteronomy’s larger movement, remembered wilderness history leads into covenant instruction, then covenant consequences, renewal, succession, song, blessing, and finally Moses’s death. Chapter 10 stands near the transition from recollection to sustained instruction: Moses recalls the renewed tablets and wilderness events before stating what God requires of Israel.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_946135095225"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_4",
+            "text": "One interpretive view understands the repeated commands in Deuteronomy 5–26 as covenant teaching rhetorically adapted for a successor generation, rather than as a merely word-for-word repetition of earlier laws. On that reading, chapter 10’s movement from remembered events to direct exhortation shows Moses applying inherited covenant instruction to the people now preparing to enter the land.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "deuteronomy:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_b55b3bea6540"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "636456e61202cd754c581f21caa93986fb638ef3f102e1a051de3c3cb8842a74",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.7",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "b5c4daff54f89458f8d5c1be717edf05df013ff4515f2d7fec65b569978a1399",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "diagnostic_id": "renderer-remediation-prompt-1.7-selection-breadth-7e1f844705a27ef5d2a1",
+  "packet_id": "commentary-renderer-selection-breadth-diagnostic-v1-packet:ea578f2427af9e55c27a9c6619b972f0b007ffeb1a7f03e827380c9d7b37a17b",
+  "packet_hash": "ea578f2427af9e55c27a9c6619b972f0b007ffeb1a7f03e827380c9d7b37a17b"
+}

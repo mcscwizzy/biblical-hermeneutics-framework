@@ -1,0 +1,21 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Daniel 11",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/wave-a/canary/responses/raw/daniel_011.json",
+  "raw_sha256": "e874acc169eeaec2701c41aafe015f48cef84c2b5c4ffb1d780cc2021aecf15f",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_VERSE_REFERENCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "MALFORMED_VERSE_REFERENCE: section[0].block[1] has malformed verse reference 'Daniel 11'",
+    "MALFORMED_VERSE_REFERENCE: section[1].block[1] has malformed verse reference 'Daniel 11'"
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "reference": "Acts 1",
+  "packet_id": "commentary-v1.5-packet:77a4831c1d8b964ddf8dc149c80f4950186b61f0981b0e4f160b1466aed1def1",
+  "prompt_version": "1.5",
+  "evidence_hash": "c863852caadd98620db6b842fc182d2026de65e926d69888a19a33019236aeff",
+  "synthesis_hash": "7487b9e1c77f5cd0006ce84e05b8480aea2a1a3c2f46e8627420e883620d3a84",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Acts 1",
+    "book": "Acts",
+    "chapter": 1,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "archaeology_geography",
+        "title": "Archaeology Geography",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "The material or geographical setting adds this bounded context: city-of-david zion mount-zion bethlehem-1 judea-1 city-of-david zion mount-zion bethlehem-1 judea-1",
+            "verse_refs": [
+              "Acts 1:4-14"
+            ],
+            "evidence_ids": [
+              "jerusalem:key_places:0",
+              "jerusalem:key_places:1",
+              "jerusalem:key_places:2",
+              "jerusalem:key_places:3",
+              "jerusalem:key_places:4"
+            ],
+            "synthesis_ids": [
+              "syn_archaeology_geography_3005b3788ce3",
+              "syn_why_it_matters_93f787b8a072"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Teacher-disciple relationships were familiar in Jewish settings, while the number twelve evokes Israel's tribal identity.",
+            "verse_refs": [
+              "Acts 1:15-26"
+            ],
+            "evidence_ids": [
+              "calling-of-the-twelve:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_d24bcd12dda5"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_003",
+            "text": "A cultural detail that clarifies the passage is this: As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure. As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure. Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship. In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness. As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure. Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship. In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness.",
+            "verse_refs": [
+              "Acts 1:4-14"
+            ],
+            "evidence_ids": [
+              "jerusalem:ancient_near_east_context:0",
+              "jerusalem:hebraic_worldview:0",
+              "jerusalem:second_temple_context:0",
+              "what-is-the-significance-of-jerusalem:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_32e6b5ee5ad6",
+              "syn_cultural_context_f9af8285b590",
+              "syn_why_it_matters_285d04c4acd6"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_004",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for City of David Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Samuel 5:1-12, 2 Kings 25:8-17, jerusalem, and hezekiahs-tunnel-inscription-context without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Acts 1:1-8"
+            ],
+            "evidence_ids": [
+              "city-of-david-excavations:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_5974d7af5924"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_005",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Matthew the Tax Collector includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme without letting comparison replace the biblical witness. Ancient background for Peter includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme without letting comparison replace the biblical witness. Ancient background for Philip the Apostle includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme without letting comparison replace the biblical witness. Ancient background for Matthias includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Acts 1:1-26"
+            ],
+            "evidence_ids": [
+              "matthew-the-tax-collector:ancient_near_east_context:0",
+              "matthias:ancient_near_east_context:0",
+              "peter:ancient_near_east_context:0",
+              "philip-the-apostle:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_3b7e7ca84f8c",
+              "syn_cultural_context_44b7f6612ecf",
+              "syn_cultural_context_4fc49515ba67",
+              "syn_cultural_context_8535219f4fa6"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_006",
+            "text": "A cultural detail that clarifies the passage is this: John son of Zebedee belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. James son of Zebedee belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. James son of Alphaeus belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Andrew belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Bartholomew belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+            "verse_refs": [
+              "Acts 1:1-26"
+            ],
+            "evidence_ids": [
+              "andrew:ancient_near_east_context:0",
+              "bartholomew:ancient_near_east_context:0",
+              "james-son-of-alphaeus:ancient_near_east_context:0",
+              "james-son-of-zebedee:ancient_near_east_context:0",
+              "john-son-of-zebedee:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0ff7751cfa37",
+              "syn_cultural_context_17150d784a09",
+              "syn_cultural_context_17d932de9da6",
+              "syn_cultural_context_58ec46183c9d",
+              "syn_cultural_context_fcc137bcd017"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_007",
+            "text": "A cultural detail that clarifies the passage is this: The relevant setting is the Roman eastern Mediterranean and late Second Temple period rather than generalized ancient geography. Temple pilgrimage, purity, burial, land memory, and covenant identity persisted amid taxation, elite administration, and Roman coercion. Jerusalem concentrated sacrificial worship and festival pilgrimage while settlements and tomb landscapes extended across the Judean hills and wilderness. The relevant setting is the Roman eastern Mediterranean and late Second Temple period rather than generalized ancient geography. Temple pilgrimage, purity, burial, land memory, and covenant identity persisted amid taxation, elite administration, and Roman coercion. Jerusalem concentrated sacrificial worship and festival pilgrimage while settlements and tomb landscapes extended across the Judean hills and wilderness.",
+            "verse_refs": [
+              "Acts 1:1-8"
+            ],
+            "evidence_ids": [
+              "judea-1:ancient_near_east_context:0",
+              "judea-1:hebraic_worldview:0",
+              "judea-1:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_a8768d5a35d9",
+              "syn_why_it_matters_e1a9e5b79b7c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_008",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Witness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 12:1-3, Matthew 28:18-20, mission, and martyria without letting comparison replace the biblical witness. Ancient background for Mission includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 12:1-3, Matthew 28:18-20, witness-theme, and martyria without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Acts 1:8"
+            ],
+            "evidence_ids": [
+              "mission:ancient_near_east_context:0",
+              "witness-theme:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0fcccb402c06",
+              "syn_cultural_context_703590dddc1c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_009",
+            "text": "Historically, this chapter is read within the following setting: Judea's political status changed from Herodian kingdom to Roman prefecture, with Jerusalem's priestly leadership operating under imperial authority. The region must be distinguished chronologically and administratively from Antipas's Galilee.",
+            "verse_refs": [
+              "Acts 1:1-8"
+            ],
+            "evidence_ids": [
+              "judea-1:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_0ec3ba7df708"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_010",
+            "text": "Historically, this chapter is read within the following setting: City of David Excavations helps anchor the biblical world in physical evidence and archaeological context.",
+            "verse_refs": [
+              "Acts 1:1-8"
+            ],
+            "evidence_ids": [
+              "city-of-david-excavations:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_bd86bfdd57f3"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_011",
+            "text": "Historically, this chapter is read within the following setting: Acts is internally anonymous and never names its narrator or implied author.",
+            "verse_refs": [
+              "Acts 1:1-2"
+            ],
+            "evidence_ids": [
+              "acts-anonymous"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_c1188ffe68c1"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_012",
+            "text": "Historically, this chapter is read within the following setting: Witness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness. Mission is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "verse_refs": [
+              "Acts 1:8"
+            ],
+            "evidence_ids": [
+              "mission:historical_context:0",
+              "witness-theme:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_8b47272d100b",
+              "syn_historical_context_d5ed5b9b280b"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_013",
+            "text": "Historically, this chapter is read within the following setting: Historically, Peter belongs within the scriptural setting around Matthew 4:18-22, where Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme help locate this biblical figure in the Bible's people, places, and events. Historically, Matthias belongs within the scriptural setting around Matthew 4:18-22, where Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme help locate this biblical figure in the Bible's people, places, and events. Historically, Matthew the Tax Collector belongs within the scriptural setting around Matthew 4:18-22, where Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme help locate this biblical figure in the Bible's people, places, and events. Historically, Philip the Apostle belongs within the scriptural setting around Matthew 4:18-22, where Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme help locate this biblical figure in the Bible's people, places, and events.",
+            "verse_refs": [
+              "Acts 1:1-26"
+            ],
+            "evidence_ids": [
+              "matthew-the-tax-collector:historical_context:0",
+              "matthias:historical_context:0",
+              "peter:historical_context:0",
+              "philip-the-apostle:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_073ce5d864e7",
+              "syn_historical_context_25b57266bc55",
+              "syn_historical_context_628a89b2f406",
+              "syn_historical_context_db6395cb3b05"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_014",
+            "text": "Historically, this chapter is read within the following setting: Historically, James son of Zebedee is located by its canonical setting; this entry connects that setting with jesus, kingdom-theme, new-covenant and related CKL objects for contextual retrieval. Historically, Bartholomew is located by its canonical setting; this entry connects that setting with jesus, kingdom-theme, new-covenant and related CKL objects for contextual retrieval. Historically, James son of Alphaeus is located by its canonical setting; this entry connects that setting with jesus, kingdom-theme, new-covenant and related CKL objects for contextual retrieval. Historically, John son of Zebedee is located by its canonical setting; this entry connects that setting with jesus, kingdom-theme, new-covenant and related CKL objects for contextual retrieval. Historically, Andrew is located by its canonical setting; this entry connects that setting with jesus, kingdom-theme, new-covenant and related CKL objects for contextual retrieval.",
+            "verse_refs": [
+              "Acts 1:1-26"
+            ],
+            "evidence_ids": [
+              "andrew:historical_context:0",
+              "bartholomew:historical_context:0",
+              "james-son-of-alphaeus:historical_context:0",
+              "james-son-of-zebedee:historical_context:0",
+              "john-son-of-zebedee:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_1ffef6c3904d",
+              "syn_historical_context_5538f56b061f",
+              "syn_historical_context_6b187c9cc120",
+              "syn_historical_context_a0d2f779e29b",
+              "syn_historical_context_ce8fc07ecda3"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_015",
+            "text": "Historically, this chapter is read within the following setting: The event belongs to Jesus' Galilean ministry, where discipleship, teaching, healing, and opposition develop together.",
+            "verse_refs": [
+              "Acts 1:15-26"
+            ],
+            "evidence_ids": [
+              "calling-of-the-twelve:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_b47e6d29b8c6"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_016",
+            "text": "Historically, this chapter is read within the following setting: Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation. Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+            "verse_refs": [
+              "Acts 1:4-14"
+            ],
+            "evidence_ids": [
+              "jerusalem:historical_context:0",
+              "what-is-the-significance-of-jerusalem:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_21201e343e0c",
+              "syn_historical_context_f7b1f65252b9"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_017",
+            "text": "This helps frame an interpretive question raised by the passage: Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement. Luke 24:51-52 has textual variation concerning being carried into heaven and worship, while Acts 1 narrates an ascension after a renewed period of appearances; the endings should be compared rather than silently harmonized. Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement. Luke 24:51-52 has textual variation concerning being carried into heaven and worship, while Acts 1 narrates an ascension after a renewed period of appearances; the endings should be compared rather than silently harmonized.",
+            "verse_refs": [
+              "Acts 1:1-11"
+            ],
+            "evidence_ids": [
+              "luke-acts-relation",
+              "luke-ascension"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_3b8db6620964",
+              "syn_why_it_matters_1db41b342100"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_018",
+            "text": "This helps frame an interpretive question raised by the passage: Acts presents women as disciples, prophets, patrons, hosts, household leaders, teachers, workers, converts, and sufferers, though narration remains selective and patriarchal constraints persist.",
+            "verse_refs": [
+              "Acts 1:14"
+            ],
+            "evidence_ids": [
+              "acts-women"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_aadde7f6df62"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_019",
+            "text": "This helps frame an interpretive question raised by the passage: Matthias is selected by prayer, scriptural interpretation, nomination, and lot to restore the Twelve after Judas. Acts does not securely identify its place of composition or a single city of origin. Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke. Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown. Matthias is selected by prayer, scriptural interpretation, nomination, and lot to restore the Twelve after Judas. Acts does not securely identify its place of composition or a single city of origin. Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke. Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown.",
+            "verse_refs": [
+              "Acts 1:1",
+              "Acts 1:1-2",
+              "Acts 1:15-26"
+            ],
+            "evidence_ids": [
+              "acts-matthias",
+              "acts-provenance",
+              "acts-sequel",
+              "acts-theophilus"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_523362d8189a",
+              "syn_why_it_matters_15471f8eea7b"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_020",
+            "text": "This helps frame an interpretive question raised by the passage: Acts narrates Jesus' ascent, a cloud, and angelic interpretation, drawing on biblical theophanic imagery rather than supplying a modern physical mechanism. Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated. Acts participates in ancient historiographic narrative while also inviting comparison with biography, institutional origins, travel, and apologetic writing. The disciples ask about restoring the kingdom to Israel; Jesus redirects timing toward Spirit-empowered witness without declaring Israel irrelevant. Later Christian tradition identifies the author as Luke, Paul's physician companion, but Acts itself does not make that identification. Acts narrates Jesus' ascent, a cloud, and angelic interpretation, drawing on biblical theophanic imagery rather than supplying a modern physical mechanism. Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated. Acts participates in ancient historiographic narrative while also inviting comparison with biography, institutional origins, travel, and apologetic writing. The disciples ask about restoring the kingdom to Israel; Jesus redirects timing toward Spirit-empowered witness without declaring Israel irrelevant. Later Christian tradition identifies the author as Luke, Paul's physician companion, but Acts itself does not make that identification.",
+            "verse_refs": [
+              "Acts 1:1-2",
+              "Acts 1:6-8",
+              "Acts 1:9-11"
+            ],
+            "evidence_ids": [
+              "acts-ascension",
+              "acts-common-authorship",
+              "acts-genre",
+              "acts-kingdom-israel",
+              "acts-luke-tradition"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_dc82869ea48c",
+              "syn_why_it_matters_c2e6f46c4816"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "Language Literary",
+        "blocks": [
+          {
+            "id": "block_021",
+            "text": "A literary feature to notice is this: Acts 1:8 supplies a major geographic and theological program of witness in Jerusalem, Judea, Samaria, and to the earth's end.",
+            "verse_refs": [
+              "Acts 1:8"
+            ],
+            "evidence_ids": [
+              "acts-geographic-program"
+            ],
+            "synthesis_ids": [
+              "syn_language_literary_b3a4a526a694"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_022",
+            "text": "The surrounding passage context adds this comparison: The familiar title Acts of the Apostles is a reception-history label rather than the author's self-designation.",
+            "verse_refs": [
+              "Acts 1:1-2"
+            ],
+            "evidence_ids": [
+              "acts-title"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_45e3ba9dd705"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_023",
+            "text": "The surrounding passage context adds this comparison: Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+            "verse_refs": [
+              "Acts 10:1-48",
+              "Acts 11:1-30",
+              "Acts 12:1-25",
+              "Acts 13:1-52",
+              "Acts 14:1-28",
+              "Acts 15:1-41",
+              "Acts 16:1-40",
+              "Acts 17:1-34",
+              "Acts 18:1-28",
+              "Acts 19:1-41",
+              "Acts 20:1-38",
+              "Acts 21:1-40",
+              "Acts 22:1-30",
+              "Acts 23:1-35",
+              "Acts 24:1-27",
+              "Acts 25:1-27",
+              "Acts 26:1-32",
+              "Acts 27:1-44",
+              "Acts 28:1-31",
+              "Acts 2:1-47",
+              "Acts 3:1-26",
+              "Acts 4:1-37",
+              "Acts 5:1-42",
+              "Acts 6:1-15",
+              "Acts 7:1-60",
+              "Acts 8:1-40",
+              "Acts 9:1-43"
+            ],
+            "evidence_ids": [
+              "acts-western-text"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_491351433e3a"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_024",
+            "text": "The surrounding passage context adds this comparison: Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+            "verse_refs": [
+              "Acts 10:1-48",
+              "Acts 11:1-30",
+              "Acts 12:1-25",
+              "Acts 13:1-52",
+              "Acts 14:1-28",
+              "Acts 15:1-41",
+              "Acts 16:1-40",
+              "Acts 17:1-34",
+              "Acts 18:1-28",
+              "Acts 19:1-41",
+              "Acts 20:1-38",
+              "Acts 21:1-40",
+              "Acts 22:1-30",
+              "Acts 23:1-35",
+              "Acts 24:1-27",
+              "Acts 25:1-27",
+              "Acts 26:1-32",
+              "Acts 27:1-44",
+              "Acts 28:1-31",
+              "Acts 2:1-47",
+              "Acts 3:1-26",
+              "Acts 4:1-37",
+              "Acts 5:1-42",
+              "Acts 6:1-15",
+              "Acts 7:1-60",
+              "Acts 8:1-40",
+              "Acts 9:1-43"
+            ],
+            "evidence_ids": [
+              "acts-text-witnesses"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_5c9b9fc5944f"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

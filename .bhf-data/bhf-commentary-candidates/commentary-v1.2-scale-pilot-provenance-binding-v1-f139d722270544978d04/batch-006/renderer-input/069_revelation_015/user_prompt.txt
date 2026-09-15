@@ -1,0 +1,194 @@
+TASK: Generate BHF Commentary v1.7 for Revelation 15.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_d83677d576e3ead6: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_d83677d576e3ead6: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_0e0cf9a9548b"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_11c2bf5acbb8"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And I saw another sign in heaven, great and marvellous, seven angels having seven plagues, `which are' the last, for in them is finished the wrath of God. 2. And I saw as it were a sea of glass mingled with fire; and them that come off victorious from the beast, and from his image, and from the number of his name, standing by the sea of glass, having harps of God. 3. And they sing the song of Moses the servant of God, and the song of the Lamb, saying, Great and marvellous are thy works, O Lord God, the Almighty; righteous and true are thy ways, thou King of the ages. 4. Who shall not fear, O Lord, and glorify thy name? for thou only art holy; for all the nations shall come and worship before thee; for thy righteous acts have been made manifest. 5. And after these things I saw, and the temple of the tabernacle of the testimony in heaven was opened: 6. and there came out from the temple the seven angels that had the seven plagues, arrayed with `precious' stone, pure `and' bright, and girt about their breasts with golden girdles. 7. And one of the four living creatures gave unto the seven angels seven golden bowls full of the wrath of God, who liveth for ever and ever. 8. And the temple was filled with smoke from the glory of God, and from his power; and none was able to enter into the temple, till the seven plagues of the seven angels should be finished.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 1, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 2}, "evidence_item_count": 2, "relationship_unit_count": 1, "specific_evidence_count": 2, "unit_kind_counts": {"surrounding_passages": 2}, "unused_evidence_ids": [], "used_evidence_ids": ["rev-scriptural-reuse", "rev-septets"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "ebf95eefd07f6b427b42faedd9e6b2cf1307bb74552c30802f994d97fdee3783", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "facts": ["Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.", "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."], "id": "syn_surrounding_passages_0e0cf9a9548b", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_11c2bf5acbb8"], "source_anchors": ["Revelation 1:1-22:21", "Revelation 6:1-16:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "facts": ["Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.", "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."], "id": "syn_surrounding_passages_11c2bf5acbb8", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Revelation 1:1-22:21", "Revelation 6:1-16:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "rev-scriptural-reuse", "passage_anchors": ["Revelation 1:1-22:21"], "source_ids": ["beale", "koester", "moyise"]}, {"confidence": "high", "id": "rev-septets", "passage_anchors": ["Revelation 6:1-16:21"], "source_ids": ["beale", "koester", "rev-greek"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Revelation 15",
+  "book": "Revelation",
+  "chapter": 15,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Revelation 15:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Revelation 15:
+   for example `Revelation 15:1` or `Revelation 15:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Revelation 15:1", "Revelation 15:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash ebf95eefd07f6b427b42faedd9e6b2cf1307bb74552c30802f994d97fdee3783.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v1
+Choose one or more complete provenance_refs for each prose block.
+A provenance reference selects one precomputed reader-idea ancestry path.
+BHF will resolve each selected path to the canonical synthesis and evidence
+fields after generation. Do not choose or emit synthesis_ids or evidence_ids
+manually, and do not combine evidence from different paths.
+Only path IDs listed below are valid for this chapter.
+
+IDEA reader_idea_d83677d576e3ead6: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.
+- {"evidence_count": 2, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_revelation_015_6ff7f9f388376ace3c59952b", "synthesis_unit": "syn_surrounding_passages_0e0cf9a9548b", "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}
+- {"evidence_count": 2, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_revelation_015_e8dac33d8722aac2c39e619d", "synthesis_unit": "syn_surrounding_passages_11c2bf5acbb8", "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}
+
+PROVENANCE OUTPUT ADAPTER:
+In every block, replace the example synthesis_ids/evidence_ids fields
+with exactly this field:
+  "provenance_refs": ["reader_path_..."]
+Use one or more listed path IDs when a block combines distinct supported
+ideas. Do not emit any path ID from another chapter or invent one.
+This adapter changes only machine-readable provenance selection; keep
+the prompt 1.7 prose, breadth, uncertainty, and reader-facing rules.

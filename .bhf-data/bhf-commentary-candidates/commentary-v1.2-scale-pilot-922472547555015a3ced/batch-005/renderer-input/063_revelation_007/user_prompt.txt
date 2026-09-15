@@ -1,0 +1,176 @@
+TASK: Generate BHF Commentary v1.7 for Revelation 7.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_fe92913d499f501a: The 144,000 are numbered and sealed from Israel's tribes and later stand with the Lamb; relation to the multitude is disputed. (categories: culture, interpretive_questions)
+- reader_idea_d613f01d9316042a: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_fe92913d499f501a: The 144,000 are numbered and sealed from Israel's tribes and later stand with the Lamb; relation to the multitude is disputed. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-144000"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_84d497fcdcbd"}
+
+IDEA reader_idea_d613f01d9316042a: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_aa33565e5b7b"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_bd7e9202a220"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. After his I saw four angels standing at the four corners of the earth, holding the four winds of the earth, that no wind should blow on the earth, or on the sea, or upon any tree. 2. And I saw another angel ascend from the sunrising, having the seal of the living God: and he cried with a great voice to the four angels to whom it was given to hurt the earth and the sea, 3. saying, Hurt not the earth, neither the sea, nor the trees, till we shall have sealed the servants of our God on their foreheads. 4. And I heard the number of them that were sealed, a hundred and forty and four thousand, sealed out of every tribe of the children of Israel: 5. Of the tribe of Judah `were' sealed twelve thousand: Of the tribe of Reuben twelve thousand; Of the tribe of Gad twelve thousand; 6. Of the tribe of Asher twelve thousand; Of the tribe of Naphtali twelve thousand; Of the tribe of Manasseh twelve thousand; 7. Of the tribe of Simeon twelve thousand; Of the tribe of Levi twelve thousand; Of the tribe of Issachar twelve thousand; 8. Of the tribe of Zebulun twelve thousand; Of the tribe of Joseph twelve thousand; Of the tribe of Benjamin `were' sealed twelve thousand. 9. After these things I saw, and behold, a great multitude, which no man could number, out of every nation and of `all' tribes and peoples and tongues, standing before the throne and before the Lamb, arrayed in white robes, and palms in their hands; 10. and they cry with a great voice, saying, Salvation unto our God who sitteth on the throne, and unto the Lamb. 11. And all the angels were standing round about the throne, and `about' the elders and the four living creatures; and they fell before the throne on their faces, and worshipped God, 12. saying, Amen: Blessing, and glory, and wisdom, and thanksgiving, and honor, and power, and might, `be' unto our God for ever and ever. Amen. 13. And one of the elders answered, saying unto me, These that are arrayed in white robes, who are they, and whence came they? 14. And I say unto him, My lord, thou knowest. And he said to me, These are they that come of the great tribulation, and they washed their robes, and made them white in the blood of the Lamb. 15. Therefore are they before the throne of God; and they serve him day and night in his temple: and he that sitteth on the throne shall spread his tabernacle over them. 16. They shall hunger no more, neither thirst any more; neither shall the sun strike upon them, nor any heat: 17. for the Lamb that is in the midst of the throne shall be their shepherd, and shall guide them unto fountains of waters of life: and God shall wipe away every tear from their eyes.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 1, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 3}, "evidence_item_count": 3, "relationship_unit_count": 1, "specific_evidence_count": 3, "unit_kind_counts": {"interpretive_questions": 1, "surrounding_passages": 2}, "unused_evidence_ids": [], "used_evidence_ids": ["rev-144000", "rev-scriptural-reuse", "rev-septets"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "78f99501dadbf8b865323889b4dc3cf32200fbc95bf79ae558d14e64fed003bf", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-144000"], "facts": ["The 144,000 are numbered and sealed from Israel's tribes and later stand with the Lamb; relation to the multitude is disputed."], "id": "syn_interpretive_questions_84d497fcdcbd", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Revelation 7:1-17"], "verse_refs": ["Revelation 7:1-17"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "facts": ["Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.", "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."], "id": "syn_surrounding_passages_aa33565e5b7b", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_bd7e9202a220"], "source_anchors": ["Revelation 1:1-22:21", "Revelation 6:1-16:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "facts": ["Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.", "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."], "id": "syn_surrounding_passages_bd7e9202a220", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Revelation 1:1-22:21", "Revelation 6:1-16:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 8:1-13", "Revelation 9:1-21"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "rev-144000", "passage_anchors": ["Revelation 7:1-17"], "source_ids": ["beale", "koester", "rev-greek"]}, {"confidence": "high", "id": "rev-scriptural-reuse", "passage_anchors": ["Revelation 1:1-22:21"], "source_ids": ["beale", "koester", "moyise"]}, {"confidence": "high", "id": "rev-septets", "passage_anchors": ["Revelation 6:1-16:21"], "source_ids": ["beale", "koester", "rev-greek"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Revelation 7",
+  "book": "Revelation",
+  "chapter": 7,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Revelation 7:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Revelation 7:
+   for example `Revelation 7:1` or `Revelation 7:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Revelation 7:1", "Revelation 7:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 78f99501dadbf8b865323889b4dc3cf32200fbc95bf79ae558d14e64fed003bf.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.

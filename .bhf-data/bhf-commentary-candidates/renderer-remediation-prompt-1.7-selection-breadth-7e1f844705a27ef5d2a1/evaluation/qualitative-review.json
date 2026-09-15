@@ -1,0 +1,97 @@
+{
+  "artifact_version": "commentary-renderer-selection-breadth-diagnostic-v1-qualitative-review-v1",
+  "diagnostic_id": "renderer-remediation-prompt-1.7-selection-breadth-7e1f844705a27ef5d2a1",
+  "renderer": "gpt-5.6-sol",
+  "renderer_effort": "medium",
+  "prompt_version": "1.7",
+  "review_scope": [
+    "Isaiah 13",
+    "Romans 3",
+    "1 Corinthians 14",
+    "Revelation 20",
+    "Revelation 21",
+    "Exodus 14",
+    "Deuteronomy 10"
+  ],
+  "method": "Bounded human-readable review of the seven immutable raw responses after structural and frozen-contract scoring. This review does not override validation, provenance, richness, or Gate v2.1 results.",
+  "chapters": {
+    "Isaiah 13": {
+      "readability": "Good",
+      "natural_english": "Natural and explanatory.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Low; the Qumran transmission note is the most peripheral material but remains bounded.",
+      "abrupt_transitions": "No material abrupt transition.",
+      "excessive_length": "No; six short blocks remain proportionate.",
+      "missing_synthesis_connections": "No obvious missing connection in the selected concepts.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "The response connects imperial judgment, the day of the LORD, prophetic form, and Isaiah's wider treatment of nations."
+    },
+    "Romans 3": {
+      "readability": "Good, with a few dense sentences in the terminology section.",
+      "natural_english": "Natural human-facing explanation.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Low; several terms are synthesized rather than listed as separate records.",
+      "abrupt_transitions": "Transitions are coherent from courtroom language to sacrifice, terminology, and the chapter's argument.",
+      "excessive_length": "No; seven blocks and 448 words are proportionate to the chapter's distinct concepts.",
+      "missing_synthesis_connections": "The previous CORE omission is not apparent in the fresh response.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "The response preserves Jewish advantage, universal sin, justification, contested terminology, and one-God inclusion without collapsing them into a law-versus-grace slogan."
+    },
+    "1 Corinthians 14": {
+      "readability": "Good.",
+      "natural_english": "Natural and reader-facing.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Low; the response explains the chapter's tensions rather than exposing the evidence inventory.",
+      "abrupt_transitions": "No material abrupt transition.",
+      "excessive_length": "Moderate but acceptable at 536 words; it remains coherent rather than padded.",
+      "missing_synthesis_connections": "The response covers the major reader-facing themes, but the frozen scorer still records the same eligible utilization and one missing category as prompt 1.6.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "It clearly links tongues, prophecy, intelligibility, participation, discernment, and the disputed silence passage."
+    },
+    "Revelation 20": {
+      "readability": "Good.",
+      "natural_english": "Natural and concise.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Low.",
+      "abrupt_transitions": "No material abrupt transition.",
+      "excessive_length": "No; six blocks and 329 words show adaptive depth.",
+      "missing_synthesis_connections": "No obvious missing connection among the selected distinct ideas.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "The response gives the sequence, resurrection and judgment setting, Gog and Magog's scriptural reuse, and Revelation's wider intertextual frame."
+    },
+    "Revelation 21": {
+      "readability": "Generally good, though the historical-context block is dense.",
+      "natural_english": "Natural overall; not raw database narration.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Some density, but not an evidence inventory.",
+      "abrupt_transitions": "The move from broad restoration history to temple/presence significance is somewhat compressed but understandable.",
+      "excessive_length": "Not excessive for the chapter's density at 622 words, though sentence-level concision could improve readability.",
+      "missing_synthesis_connections": "Yes at the measuring-instrument level: despite nine coherent blocks and full category coverage, the response still consumes only 4.8 of 10.4 eligible weighted idea units and remains below the breadth target.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "It helps explain new creation, exile/restoration, resurrection hope, temple absence, presence, and the city's communal scope, but the unchanged richness score shows that distinct eligible ideas still did not reliably survive rendering."
+    },
+    "Exodus 14": {
+      "readability": "Good.",
+      "natural_english": "Natural and explanatory.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Low.",
+      "abrupt_transitions": "No material abrupt transition.",
+      "excessive_length": "No regression; the control remains bounded.",
+      "missing_synthesis_connections": "No obvious missing connection under the frozen score.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "It explains the crossing's imperial setting, narrative position, disputed geography, and movement toward covenant."
+    },
+    "Deuteronomy 10": {
+      "readability": "Good.",
+      "natural_english": "Natural and concise.",
+      "repetitive_evidence_phrasing": "None observed.",
+      "encyclopedic_feel": "Low.",
+      "abrupt_transitions": "No material abrupt transition.",
+      "excessive_length": "No; the sparse response remains concise.",
+      "missing_synthesis_connections": "No metric regression; it remains at full frozen coverage.",
+      "evidence_dumping": "None observed; Gate dump severity NONE.",
+      "reader_value": "It connects Aaron and Eleazar, Levitical duties, wilderness memory, and Deuteronomy's transition into exhortation without padding the chapter."
+    }
+  },
+  "conclusion": "The fresh prose is generally readable, natural, and free of evidence dumping. The remaining failure is selection breadth in dense cases, not universal verbosity or prose intelligibility."
+}

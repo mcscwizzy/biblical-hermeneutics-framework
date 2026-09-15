@@ -1,0 +1,188 @@
+{
+  "reference": "John 1",
+  "book": "John",
+  "chapter": 1,
+  "evidence_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "824360e8996f9b9d9f819c12e83b9da1864fcfa74d7c85c7606ea0f6f2f8bc48",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_09cbf01684f8",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Greek syntax of John 1:1 distinguishes the Logos from God while predicating theos of the Logos; translation and theological construal require attention to grammar and the whole prologue.",
+        "John 1:18 has an early textual variation between readings such as 'unique God' and 'unique Son'; either reading belongs within the prologue's claim that Jesus makes God known.",
+        "John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery.",
+        "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
+      ],
+      "verse_refs": [
+        "John 1:1-18",
+        "John 1:1-2",
+        "John 1:18",
+        "John 1:19-36"
+      ],
+      "evidence_ids": [
+        "john-1-1",
+        "john-1-18",
+        "john-baptist-lamb",
+        "john-logos"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 1:1-18",
+        "John 1:1-2",
+        "John 1:18",
+        "John 1:19-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history",
+          "language"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_af854b253d74",
+      "kind": "why_it_matters",
+      "facts": [
+        "The Greek syntax of John 1:1 distinguishes the Logos from God while predicating theos of the Logos; translation and theological construal require attention to grammar and the whole prologue.",
+        "John 1:18 has an early textual variation between readings such as 'unique God' and 'unique Son'; either reading belongs within the prologue's claim that Jesus makes God known.",
+        "John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery.",
+        "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
+      ],
+      "verse_refs": [
+        "John 1:1-18",
+        "John 1:1-2",
+        "John 1:18",
+        "John 1:19-36"
+      ],
+      "evidence_ids": [
+        "john-1-1",
+        "john-1-18",
+        "john-baptist-lamb",
+        "john-logos"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_09cbf01684f8"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "John 1:1-18",
+        "John 1:1-2",
+        "John 1:18",
+        "John 1:19-36"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [],
+  "coverage": {
+    "evidence_item_count": 60,
+    "used_evidence_ids": [
+      "john-1-1",
+      "john-1-18",
+      "john-baptist-lamb",
+      "john-logos"
+    ],
+    "unused_evidence_ids": [
+      "creation-doctrine-framework:ancient_near_east_context:0",
+      "creation-doctrine-framework:hebraic_worldview:0",
+      "creation-doctrine-framework:historical_context:0",
+      "creation-doctrine-framework:historical_setting:0",
+      "creation-doctrine-framework:original_audience:0",
+      "creation-doctrine-framework:second_temple_context:0",
+      "creation-doctrine-framework:timeline:0",
+      "creation-doctrine-framework:timeline:1",
+      "creation-doctrine-framework:timeline:2",
+      "creation-doctrine-framework:timeline:3",
+      "creation-doctrine-framework:timeline:4",
+      "creation-doctrine-framework:timeline:5",
+      "creation-doctrine:ancient_near_east_context:0",
+      "creation-doctrine:historical_context:0",
+      "creation-theme:ancient_near_east_context:0",
+      "creation-theme:historical_context:0",
+      "creation:ancient_near_east_context:0",
+      "creation:hebraic_worldview:0",
+      "creation:historical_context:0",
+      "divine-presence:ancient_near_east_context:0",
+      "divine-presence:historical_context:0",
+      "glory-theme:ancient_near_east_context:0",
+      "glory-theme:historical_context:0",
+      "jesus:ancient_near_east_context:0",
+      "jesus:hebraic_worldview:0",
+      "jesus:historical_context:0",
+      "jesus:key_places:0",
+      "jesus:key_places:1",
+      "jesus:key_places:2",
+      "jesus:key_places:3",
+      "jesus:key_places:4",
+      "jesus:second_temple_context:0",
+      "light-and-darkness-theme:ancient_near_east_context:0",
+      "light-and-darkness-theme:historical_context:0",
+      "new-creation-theme:ancient_near_east_context:0",
+      "new-creation-theme:historical_context:0",
+      "new-temple-theme:ancient_near_east_context:0",
+      "new-temple-theme:historical_context:0",
+      "presence-theme:ancient_near_east_context:0",
+      "presence-theme:historical_context:0",
+      "sacrifice-theme:ancient_near_east_context:0",
+      "sacrifice-theme:hebraic_worldview:0",
+      "sacrifice-theme:historical_context:0",
+      "sacrifice-theme:second_temple_context:0",
+      "sanctuary-theme:ancient_near_east_context:0",
+      "sanctuary-theme:hebraic_worldview:0",
+      "sanctuary-theme:historical_context:0",
+      "sanctuary-theme:second_temple_context:0",
+      "trinity:ancient_near_east_context:0",
+      "trinity:historical_context:0",
+      "water-theme:ancient_near_east_context:0",
+      "water-theme:historical_context:0",
+      "what-is-intertextuality:ancient_near_east_context:0",
+      "what-is-intertextuality:historical_context:0",
+      "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+      "what-verses-show-identity-in-christ:historical_context:0"
+    ],
+    "evidence_categories": {
+      "chronology": 6,
+      "culture": 28,
+      "geography": 5,
+      "history": 19,
+      "language": 1,
+      "social": 1
+    },
+    "category_diversity": 6,
+    "specific_evidence_count": 4,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 1,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1,
+      "why_it_matters": 1
+    },
+    "relationship_unit_count": 1
+  }
+}

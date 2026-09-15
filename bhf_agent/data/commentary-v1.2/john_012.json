@@ -1,0 +1,47 @@
+{
+  "reference": "John 12",
+  "book": "John",
+  "chapter": 12,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "Questions of Scope and Exclusion",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Two questions in this chapter call for caution. The rulers who believe but do not confess Jesus fear being put out of the synagogue (vv. 42\u201343). This has prompted reconstructions of a growing conflict between Johannine believers and synagogue communities, but these verses alone do not establish one late, universal decree or a uniform break. Likewise, Jesus\u2019 statement that, when lifted up, he will draw \u201call\u201d (vv. 32\u201333) is explicitly tied to his death, but readers differ over whether \u201call\u201d means every person, people broadly, or another scope. The wording does not support coercion.",
+          "verse_refs": [
+            "John 12:20-36",
+            "John 12:42-43"
+          ],
+          "evidence_ids": [
+            "john-aposynagogos",
+            "john-draw-all"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_8942b46c91f3"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "46f10a0f5c34bb2229b77588c5a75b4509b455359288498cc2a1868ba7f0cf17",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "2b8e70e3ac6fab4fac937f979d9b4d0ceb96359aaf75a19f9e6ca79c3d08a549",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,86 @@
+{
+  "reference": "1 Chronicles 27",
+  "book": "1 Chronicles",
+  "chapter": 27,
+  "evidence_hash": "cbb6ae133468c7e546933df95dd7a83fd2261392fc25e57d898f6798cf8954fc",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "b830958435081be2218bb3c19079229373156c73d1f71d322d6f367403207d17",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_11ab865c074a",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The detailed Levitical, musical, and administrative orders may preserve earlier traditions while also reflecting and authorizing later temple institutions; direct projection to one moment in David's reign is historically disputed."
+      ],
+      "verse_refs": [
+        "1 Chronicles 23:1-32",
+        "1 Chronicles 24:1-31",
+        "1 Chronicles 25:1-31",
+        "1 Chronicles 26:1-32"
+      ],
+      "evidence_ids": [
+        "1-chronicles:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Chronicles 23:1-27:34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "1-chronicles:interpretive_note:5"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

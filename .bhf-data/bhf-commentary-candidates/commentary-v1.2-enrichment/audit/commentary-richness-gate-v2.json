@@ -1,0 +1,1674 @@
+{
+  "artifact_version": "commentary-v1.2-richness-gate-v2-report-v1",
+  "gate_version": "commentary-richness-gate-v2",
+  "scoring_only": true,
+  "authoritative": false,
+  "bulk_generation_authorized": false,
+  "thresholds": {
+    "weighted_idea_coverage_min": 0.5,
+    "core_cluster_coverage_min": 0.75,
+    "category_coverage_min": 0.6,
+    "minimum_material_improvement_signals": 1,
+    "dense_cluster_min": 16,
+    "small_cluster_max": 5,
+    "moderate_dump_signal_min": 2,
+    "high_dump_signal_min": 3,
+    "exhaustive_unit_ratio_min": 0.95,
+    "one_block_unit_ratio_min": 0.95,
+    "block_cluster_ratio_min": 1.75,
+    "words_per_cluster_min": 55.0,
+    "low_consolidation_max": 0.45,
+    "repeated_block_ratio_min": 0.15,
+    "control_word_max": 250,
+    "max_boundary_repetition_ratio": 0.65
+  },
+  "canary": {
+    "artifact_version": "commentary-v1.2-richness-gate-v2-canary-v1",
+    "gate_version": "commentary-richness-gate-v2",
+    "core_classifier_v1": "current-chapter-context-v1",
+    "core_classifier_v2": "essential-passage-context-v2",
+    "chapters": [
+      {
+        "reference": "Genesis 1",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 49,
+        "idea_clusters": 25,
+        "meaningful_clusters": 25,
+        "core_clusters_v1": 2,
+        "core_covered_v1": 2,
+        "core_clusters_v2": 2,
+        "core_covered_v2": 2,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 49,
+        "words": 1627,
+        "dump": {
+          "signals": [
+            "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS",
+            "REPEATED_BLOCK_TEXT"
+          ],
+          "block_count": 49,
+          "consumed_synthesis_count": 49,
+          "consumed_cluster_count": 25,
+          "mean_evidence_ids_per_block": 1.7347,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.4235,
+          "repeated_block_count": 10,
+          "meaningful_cluster_count": 25,
+          "block_to_cluster_ratio": 1.96,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.2041,
+          "words_per_meaningful_cluster": 65.0,
+          "normalized_signals": [
+            "DENSE_NEAR_EXHAUSTIVE_UNIT_CONSUMPTION",
+            "DENSE_ONE_BLOCK_PER_UNIT",
+            "HIGH_BLOCK_TO_CLUSTER_RATIO",
+            "HIGH_WORDS_PER_CLUSTER",
+            "LOW_CLUSTER_CONSOLIDATION",
+            "REPEATED_BLOCK_TEXT_DENSITY"
+          ],
+          "severity": "HIGH",
+          "signal_count": 3
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": false,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "QUALITY_FAIL",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": false
+          },
+          "material_improvement_signals": [
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "one or more class-specific quality checks failed"
+          ],
+          "dump_severity": "HIGH"
+        }
+      },
+      {
+        "reference": "Leviticus 16",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 41,
+        "idea_clusters": 20,
+        "meaningful_clusters": 20,
+        "core_clusters_v1": 10,
+        "core_covered_v1": 5,
+        "core_clusters_v2": 2,
+        "core_covered_v2": 2,
+        "weighted_coverage": 0.5563,
+        "category_coverage": 0.8571,
+        "blocks": 10,
+        "words": 700,
+        "dump": {
+          "signals": [],
+          "block_count": 10,
+          "consumed_synthesis_count": 13,
+          "consumed_cluster_count": 11,
+          "mean_evidence_ids_per_block": 1.8,
+          "block_to_synthesis_ratio": 0.7692,
+          "consolidation_ratio": 0.4444,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 20,
+          "block_to_cluster_ratio": 0.5,
+          "consumed_unit_ratio": 0.3171,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 34.95,
+          "normalized_signals": [
+            "LOW_CLUSTER_CONSOLIDATION"
+          ],
+          "severity": "LOW",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": false,
+            "weighted_idea_coverage_adequate": false,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS_WITH_WARNING",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "dump severity is LOW; retained as warning"
+          ],
+          "dump_severity": "LOW"
+        }
+      },
+      {
+        "reference": "Ruth 3",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 6,
+        "idea_clusters": 5,
+        "meaningful_clusters": 5,
+        "core_clusters_v1": 2,
+        "core_covered_v1": 2,
+        "core_clusters_v2": 1,
+        "core_covered_v2": 1,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 6,
+        "words": 224,
+        "dump": {
+          "signals": [
+            "REPEATED_BLOCK_TEXT"
+          ],
+          "block_count": 6,
+          "consumed_synthesis_count": 6,
+          "consumed_cluster_count": 5,
+          "mean_evidence_ids_per_block": 1.3333,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.25,
+          "repeated_block_count": 1,
+          "meaningful_cluster_count": 5,
+          "block_to_cluster_ratio": 1.2,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.1667,
+          "words_per_meaningful_cluster": 44.4,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 1
+        },
+        "gate_v1": {
+          "outcome": "PASS",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "Psalms 1",
+        "gate_class": "RICH_CONTROL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "RICH_ENOUGH",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 7,
+        "idea_clusters": 7,
+        "meaningful_clusters": 7,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 0,
+        "core_covered_v2": 0,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 7,
+        "words": 146,
+        "dump": {
+          "signals": [],
+          "block_count": 7,
+          "consumed_synthesis_count": 7,
+          "consumed_cluster_count": 7,
+          "mean_evidence_ids_per_block": 1.0,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 7,
+          "block_to_cluster_ratio": 1.0,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 20.5714,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "PASS",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "RICH_CONTROL",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "remains_rich_enough": true,
+            "no_evidence_regression": true,
+            "no_new_boilerplate": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "evidence_utilization",
+            "idea_cluster_coverage"
+          ],
+          "reasons": [
+            "baseline RICH_ENOUGH requires non-regression only"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "1 Samuel 21",
+        "gate_class": "EVIDENCE_LIMITED_CONTROL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "EVIDENCE_GAP",
+        "evidence_availability": "THIN",
+        "raw_units": 1,
+        "idea_clusters": 1,
+        "meaningful_clusters": 1,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 1,
+        "core_covered_v2": 1,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 1,
+        "words": 24,
+        "dump": {
+          "signals": [],
+          "block_count": 1,
+          "consumed_synthesis_count": 1,
+          "consumed_cluster_count": 1,
+          "mean_evidence_ids_per_block": 1.0,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 1,
+          "block_to_cluster_ratio": 1.0,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 24.0,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": false,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": false,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "EVIDENCE_LIMITED_CONTROL",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "remains_evidence_limited": true,
+            "no_unsupported_enrichment": true,
+            "no_forced_filler": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "idea_cluster_coverage"
+          ],
+          "reasons": [
+            "THIN or EVIDENCE_GAP is judged for conservative accuracy, not richness"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "1 Samuel 28",
+        "gate_class": "RICH_CONTROL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "RICH_ENOUGH",
+        "evidence_availability": "THIN",
+        "raw_units": 2,
+        "idea_clusters": 2,
+        "meaningful_clusters": 2,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 1,
+        "core_covered_v2": 1,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 2,
+        "words": 56,
+        "dump": {
+          "signals": [],
+          "block_count": 2,
+          "consumed_synthesis_count": 2,
+          "consumed_cluster_count": 2,
+          "mean_evidence_ids_per_block": 1.0,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 2,
+          "block_to_cluster_ratio": 1.0,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 28.0,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": false,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": false,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "RICH_CONTROL",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "remains_rich_enough": true,
+            "no_evidence_regression": true,
+            "no_new_boilerplate": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "baseline RICH_ENOUGH requires non-regression only"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "2 Samuel 6",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 11,
+        "idea_clusters": 6,
+        "meaningful_clusters": 6,
+        "core_clusters_v1": 4,
+        "core_covered_v1": 4,
+        "core_clusters_v2": 2,
+        "core_covered_v2": 2,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 11,
+        "words": 270,
+        "dump": {
+          "signals": [
+            "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+            "LOW_EVIDENCE_PER_BLOCK_CONSOLIDATION"
+          ],
+          "block_count": 11,
+          "consumed_synthesis_count": 11,
+          "consumed_cluster_count": 6,
+          "mean_evidence_ids_per_block": 1.0,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 6,
+          "block_to_cluster_ratio": 1.8333,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 44.5,
+          "normalized_signals": [
+            "LOW_EVIDENCE_PER_BLOCK_CONSOLIDATION"
+          ],
+          "severity": "LOW",
+          "signal_count": 2
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": false,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS_WITH_WARNING",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "evidence_utilization",
+            "idea_cluster_coverage"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "dump severity is LOW; retained as warning"
+          ],
+          "dump_severity": "LOW"
+        }
+      },
+      {
+        "reference": "2 Samuel 24",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 3,
+        "idea_clusters": 2,
+        "meaningful_clusters": 2,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 1,
+        "core_covered_v2": 1,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 4,
+        "words": 183,
+        "dump": {
+          "signals": [],
+          "block_count": 4,
+          "consumed_synthesis_count": 3,
+          "consumed_cluster_count": 2,
+          "mean_evidence_ids_per_block": 1.0,
+          "block_to_synthesis_ratio": 1.3333,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 2,
+          "block_to_cluster_ratio": 2.0,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 91.5,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": false,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "idea_cluster_coverage"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "1 Chronicles 8",
+        "gate_class": "EVIDENCE_LIMITED_CONTROL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "THIN",
+        "raw_units": 1,
+        "idea_clusters": 1,
+        "meaningful_clusters": 1,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 0,
+        "core_covered_v2": 0,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 1,
+        "words": 31,
+        "dump": {
+          "signals": [],
+          "block_count": 1,
+          "consumed_synthesis_count": 1,
+          "consumed_cluster_count": 1,
+          "mean_evidence_ids_per_block": 1.0,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 1,
+          "block_to_cluster_ratio": 1.0,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 31.0,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": false,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": false,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "EVIDENCE_LIMITED_CONTROL",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "remains_evidence_limited": true,
+            "no_unsupported_enrichment": true,
+            "no_forced_filler": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "idea_cluster_coverage"
+          ],
+          "reasons": [
+            "THIN or EVIDENCE_GAP is judged for conservative accuracy, not richness"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "John 1",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 47,
+        "idea_clusters": 21,
+        "meaningful_clusters": 21,
+        "core_clusters_v1": 5,
+        "core_covered_v1": 5,
+        "core_clusters_v2": 0,
+        "core_covered_v2": 0,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 47,
+        "words": 1790,
+        "dump": {
+          "signals": [
+            "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS",
+            "REPEATED_BLOCK_TEXT"
+          ],
+          "block_count": 47,
+          "consumed_synthesis_count": 47,
+          "consumed_cluster_count": 21,
+          "mean_evidence_ids_per_block": 1.9362,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.4835,
+          "repeated_block_count": 9,
+          "meaningful_cluster_count": 21,
+          "block_to_cluster_ratio": 2.2381,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.1915,
+          "words_per_meaningful_cluster": 85.0952,
+          "normalized_signals": [
+            "DENSE_NEAR_EXHAUSTIVE_UNIT_CONSUMPTION",
+            "DENSE_ONE_BLOCK_PER_UNIT",
+            "HIGH_BLOCK_TO_CLUSTER_RATIO",
+            "HIGH_WORDS_PER_CLUSTER",
+            "REPEATED_BLOCK_TEXT_DENSITY"
+          ],
+          "severity": "MODERATE",
+          "signal_count": 3
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": false,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS_WITH_WARNING",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+            "dump severity is MODERATE; retained as warning"
+          ],
+          "dump_severity": "MODERATE"
+        }
+      },
+      {
+        "reference": "Isaiah 6",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 17,
+        "idea_clusters": 13,
+        "meaningful_clusters": 13,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 1,
+        "core_covered_v2": 1,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 17,
+        "words": 538,
+        "dump": {
+          "signals": [
+            "ONE_BLOCK_PER_SYNTHESIS_UNIT",
+            "REPEATED_BLOCK_TEXT"
+          ],
+          "block_count": 17,
+          "consumed_synthesis_count": 17,
+          "consumed_cluster_count": 13,
+          "mean_evidence_ids_per_block": 1.3529,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.2609,
+          "repeated_block_count": 2,
+          "meaningful_cluster_count": 13,
+          "block_to_cluster_ratio": 1.3077,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.1176,
+          "words_per_meaningful_cluster": 41.2308,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 2
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": true,
+            "evidence_dump_below_limit": false,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "coherent_consolidation",
+            "evidence_utilization",
+            "idea_cluster_coverage",
+            "useful_sections"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "Revelation 12",
+        "gate_class": "ENRICHMENT_TARGET",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "SYNTHESIS_GAP",
+        "evidence_availability": "AVAILABLE",
+        "raw_units": 5,
+        "idea_clusters": 4,
+        "meaningful_clusters": 4,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 1,
+        "core_covered_v2": 1,
+        "weighted_coverage": 1.0,
+        "category_coverage": 1.0,
+        "blocks": 5,
+        "words": 124,
+        "dump": {
+          "signals": [
+            "REPEATED_BLOCK_TEXT"
+          ],
+          "block_count": 5,
+          "consumed_synthesis_count": 5,
+          "consumed_cluster_count": 4,
+          "mean_evidence_ids_per_block": 1.4,
+          "block_to_synthesis_ratio": 1.0,
+          "consolidation_ratio": 0.2857,
+          "repeated_block_count": 1,
+          "meaningful_cluster_count": 4,
+          "block_to_cluster_ratio": 1.25,
+          "consumed_unit_ratio": 1.0,
+          "repeated_block_ratio": 0.2,
+          "words_per_meaningful_cluster": 31.0,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 1
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": true,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "evidence_use_increased": false,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "ENRICHMENT_TARGET",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_coverage_adequate": true,
+            "category_coverage_adequate": true,
+            "material_improvement": true,
+            "boundary_repetition_below_limit": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [
+            "boilerplate_removed",
+            "coherent_consolidation",
+            "idea_cluster_coverage"
+          ],
+          "reasons": [
+            "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+          ],
+          "dump_severity": "NONE"
+        }
+      },
+      {
+        "reference": "Numbers 3",
+        "gate_class": "DATA_GAP_CONTROL",
+        "safety_pass": true,
+        "safety_checks": {
+          "validation_clean": true,
+          "provenance_complete": true,
+          "evidence_ancestry_valid": true,
+          "synthesis_ancestry_valid": true,
+          "hashes_valid": true,
+          "chapter_boundaries_valid": true,
+          "confidence_valid": true,
+          "dispute_state_preserved": true,
+          "unsupported_significance_absent": true
+        },
+        "baseline_richness": "EVIDENCE_GAP",
+        "evidence_availability": "DATA_GAP",
+        "raw_units": 0,
+        "idea_clusters": 0,
+        "meaningful_clusters": 0,
+        "core_clusters_v1": 0,
+        "core_covered_v1": 0,
+        "core_clusters_v2": 0,
+        "core_covered_v2": 0,
+        "weighted_coverage": 0.0,
+        "category_coverage": 0.0,
+        "blocks": 1,
+        "words": 11,
+        "dump": {
+          "signals": [],
+          "block_count": 1,
+          "consumed_synthesis_count": 0,
+          "consumed_cluster_count": 0,
+          "mean_evidence_ids_per_block": 0.0,
+          "block_to_synthesis_ratio": 0.0,
+          "consolidation_ratio": 0.0,
+          "repeated_block_count": 0,
+          "meaningful_cluster_count": 0,
+          "block_to_cluster_ratio": 0.0,
+          "consumed_unit_ratio": 0.0,
+          "repeated_block_ratio": 0.0,
+          "words_per_meaningful_cluster": 0.0,
+          "normalized_signals": [],
+          "severity": "NONE",
+          "signal_count": 0
+        },
+        "gate_v1": {
+          "outcome": "FAIL",
+          "checks": {
+            "evidence_available": false,
+            "validation_clean": true,
+            "boilerplate_absent": true,
+            "core_coverage_adequate": true,
+            "weighted_idea_coverage_adequate": false,
+            "category_coverage_adequate": false,
+            "evidence_use_increased": false,
+            "evidence_dump_below_limit": true,
+            "boundary_repetition_below_limit": true
+          }
+        },
+        "gate_v2": {
+          "gate_class": "DATA_GAP_CONTROL",
+          "outcome": "PASS",
+          "safety_pass": true,
+          "safety_checks": {
+            "validation_clean": true,
+            "provenance_complete": true,
+            "evidence_ancestry_valid": true,
+            "synthesis_ancestry_valid": true,
+            "hashes_valid": true,
+            "chapter_boundaries_valid": true,
+            "confidence_valid": true,
+            "dispute_state_preserved": true,
+            "unsupported_significance_absent": true
+          },
+          "quality_checks": {
+            "remains_evidence_gap": true,
+            "zero_evidence_consumed": true,
+            "concise": true,
+            "not_high_dump": true
+          },
+          "material_improvement_signals": [],
+          "reasons": [
+            "DATA_GAP is judged for safe restraint, not enrichment"
+          ],
+          "dump_severity": "NONE"
+        }
+      }
+    ],
+    "outcome_distribution": {
+      "QUALITY_FAIL": 1,
+      "PASS_WITH_WARNING": 3,
+      "PASS": 9
+    }
+  },
+  "leviticus_16_provisional_core_audit": [
+    {
+      "cluster_id": "idea_cluster_336516c4ae63",
+      "kind": "historical_context",
+      "facts": [
+        "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
+        "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct.",
+        "The Pentateuch places the dwelling in the wilderness generation. Scholars debate its historical form and the date and composition of the detailed priestly texts, so the biblical description should not be equated with a museum reconstruction or a single archaeological analogy.",
+        "Sinai and subsequent wilderness travel in the story.",
+        "The Pentateuch places the dwelling in the wilderness generation. Scholars debate its historical form and the date and composition of the detailed priestly texts, so the biblical description should not be equated with a museum reconstruction or a single archaeological analogy.",
+        "Sinai and subsequent wilderness travel in the story.",
+        "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
+        "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct."
+      ],
+      "evidence_ancestry": [
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0",
+        "what-is-the-tabernacle:historical_context:0",
+        "what-is-the-tabernacle:historical_setting:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": true,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context",
+        "general_contextual_support"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_393758355c1e",
+      "kind": "cultural_context",
+      "facts": [
+        "Sacrificial rituals were common in the ancient world, but Israel's system is distinct because it is bound to covenant holiness, substitution, purification, and the one true God."
+      ],
+      "evidence_ancestry": [
+        "sacrificial-system:ancient_near_east_context:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": false,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_4e4435e73a5b",
+      "kind": "historical_context",
+      "facts": [
+        "Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel’s worship, then reappears in the second temple world and in New Testament reflection."
+      ],
+      "evidence_ancestry": [
+        "priesthood:historical_context:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": true,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_53dab9ad3cfa",
+      "kind": "archaeology_geography",
+      "facts": [
+        "No excavated object or site is securely identified as the wilderness tabernacle",
+        "Timna Site 200 remains a bounded and disputed shrine comparison",
+        "No excavated structure is securely identifiable as the wilderness tabernacle",
+        "Timna Site 200 is a disputed tented-shrine comparison, not the tabernacle",
+        "No excavated structure is securely identifiable as the wilderness tabernacle",
+        "Timna Site 200 is a disputed tented-shrine comparison, not the tabernacle",
+        "No excavated object or site is securely identified as the wilderness tabernacle",
+        "Timna Site 200 remains a bounded and disputed shrine comparison"
+      ],
+      "evidence_ancestry": [
+        "tabernacle:archaeology:0",
+        "tabernacle:archaeology:1",
+        "what-is-the-tabernacle:archaeology:0",
+        "what-is-the-tabernacle:archaeology:1"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": true,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context",
+        "specific_contextual_support"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_85a04c7589f1",
+      "kind": "historical_context",
+      "facts": [
+        "The sacrificial system is rooted in the wilderness tabernacle and continues through the temple periods as the central grammar of covenant approach to God."
+      ],
+      "evidence_ancestry": [
+        "sacrificial-system:historical_context:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": false,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_88c08ea6e00f",
+      "kind": "chronology",
+      "facts": [
+        "Temple reuse and later Jewish and Christian interpretation",
+        "Narrative setting at Sinai and in the wilderness; historical date disputed",
+        "Priestly sanctuary description and compositional development; dates disputed",
+        "Sinai instructions and construction in Exodus's narrative",
+        "Wilderness camp and transport in Numbers",
+        "Tabernacle and ark traditions before the Jerusalem temple",
+        "Narrative setting: Sinai and wilderness journey; date disputed",
+        "Composition and development of priestly sanctuary texts: disputed",
+        "Narrative setting: Sinai and wilderness journey; date disputed",
+        "Composition and development of priestly sanctuary texts: disputed",
+        "Narrative setting at Sinai and in the wilderness; historical date disputed",
+        "Priestly sanctuary description and compositional development; dates disputed",
+        "Sinai instructions and construction in Exodus's narrative",
+        "Wilderness camp and transport in Numbers",
+        "Tabernacle and ark traditions before the Jerusalem temple"
+      ],
+      "evidence_ancestry": [
+        "tabernacle:date_ranges:0",
+        "tabernacle:date_ranges:1",
+        "tabernacle:timeline:0",
+        "tabernacle:timeline:1",
+        "tabernacle:timeline:2",
+        "tabernacle:timeline:3",
+        "what-is-the-tabernacle:date_ranges:0",
+        "what-is-the-tabernacle:date_ranges:1"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": false,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context",
+        "specific_contextual_support"
+      ],
+      "classification_review": "supporting chronology or reconstruction, not necessary to follow the rite"
+    },
+    {
+      "cluster_id": "idea_cluster_9bfac146b97a",
+      "kind": "historical_context",
+      "facts": [
+        "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+        "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule.",
+        "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+        "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule."
+      ],
+      "evidence_ancestry": [
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": true,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_b4fbfb3d94ed",
+      "kind": "cultural_context",
+      "facts": [
+        "Mari's large public tent, Ramesside royal campaign tents, Timna's debated tented shrine phase, and Egyptian processional bark shrines provide limited comparisons for scale, mobility, or protected sacred objects. None is the biblical tabernacle or proves direct copying.",
+        "The tabernacle holds together divine nearness and holy boundaries: YHWH dwells among Israel, yet space, service, washing, sacrifice, and entry are ordered rather than unrestricted.",
+        "Readers and hearers of the Pentateuch are addressed through Israel's sanctuary memory; more specific source-level audiences remain reconstructed.",
+        "Later Jewish sanctuary traditions developed the meaning of the tabernacle and heavenly pattern in varied ways. Hebrews belongs within that Jewish scriptural world while advancing its distinct Christological argument.",
+        "Old Babylonian Mari texts, Ramesside Egyptian campaign reliefs and bark processions, and the Timna Site 200 shrine sequence attest large tents, royal campaign tents, tented cult space, and mobile shrines. They show that mobile elite and sacred space was culturally intelligible, but none is identical with or proves the biblical tabernacle.",
+        "The dwelling joins divine nearness with differentiated holiness: court, holy place, inner sanctuary, furnishings, priestly preparation, and restricted entry express ordered approach rather than divine containment or unrestricted access.",
+        "The received Pentateuch addresses Israel through a sanctuary narrative that orders collective worship and memory; proposals about earlier priestly audiences and compositional stages vary.",
+        "Second Temple Jewish texts and Hebrews reread tabernacle patterns in developed sanctuary, priesthood, and heavenly-pattern discussions; those later interpretations should not be projected back as the only meaning of Exodus.",
+        "Old Babylonian Mari texts, Ramesside Egyptian campaign reliefs and bark processions, and the Timna Site 200 shrine sequence attest large tents, royal campaign tents, tented cult space, and mobile shrines. They show that mobile elite and sacred space was culturally intelligible, but none is identical with or proves the biblical tabernacle.",
+        "The dwelling joins divine nearness with differentiated holiness: court, holy place, inner sanctuary, furnishings, priestly preparation, and restricted entry express ordered approach rather than divine containment or unrestricted access.",
+        "The received Pentateuch addresses Israel through a sanctuary narrative that orders collective worship and memory; proposals about earlier priestly audiences and compositional stages vary.",
+        "Second Temple Jewish texts and Hebrews reread tabernacle patterns in developed sanctuary, priesthood, and heavenly-pattern discussions; those later interpretations should not be projected back as the only meaning of Exodus.",
+        "Mari's large public tent, Ramesside royal campaign tents, Timna's debated tented shrine phase, and Egyptian processional bark shrines provide limited comparisons for scale, mobility, or protected sacred objects. None is the biblical tabernacle or proves direct copying.",
+        "The tabernacle holds together divine nearness and holy boundaries: YHWH dwells among Israel, yet space, service, washing, sacrifice, and entry are ordered rather than unrestricted.",
+        "Readers and hearers of the Pentateuch are addressed through Israel's sanctuary memory; more specific source-level audiences remain reconstructed.",
+        "Later Jewish sanctuary traditions developed the meaning of the tabernacle and heavenly pattern in varied ways. Hebrews belongs within that Jewish scriptural world while advancing its distinct Christological argument."
+      ],
+      "evidence_ancestry": [
+        "tabernacle:ancient_near_east_context:0",
+        "tabernacle:hebraic_worldview:0",
+        "tabernacle:original_audience:0",
+        "tabernacle:second_temple_context:0",
+        "what-is-the-tabernacle:ancient_near_east_context:0",
+        "what-is-the-tabernacle:hebraic_worldview:0",
+        "what-is-the-tabernacle:original_audience:0",
+        "what-is-the-tabernacle:second_temple_context:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": false,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context",
+        "general_contextual_support"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_c622873e6175",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
+        "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.",
+        "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue.",
+        "Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
+        "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.",
+        "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue."
+      ],
+      "evidence_ancestry": [
+        "priesthood:ancient_near_east_context:0",
+        "priesthood:hebraic_worldview:0",
+        "priesthood:second_temple_context:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": true,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    },
+    {
+      "cluster_id": "idea_cluster_e5a772925cdd",
+      "kind": "cultural_context",
+      "facts": [
+        "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+        "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+        "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+        "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome.",
+        "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+        "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+        "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+        "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome."
+      ],
+      "evidence_ancestry": [
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0"
+      ],
+      "passage_scope": "CURRENT_CHAPTER",
+      "importance_basis": [
+        "legacy_current_chapter_context"
+      ],
+      "covered": false,
+      "legacy_classifier_label": "CORE",
+      "refined_classifier_label": "SUPPORTING",
+      "refined_importance_basis": [
+        "entity_background_not_direct_passage_context"
+      ],
+      "classification_review": "generic/entity-linked supporting context; useful but not necessary for passage understanding"
+    }
+  ],
+  "full_corpus_simulation": {
+    "scope": "1189 canonical chapters; v1.1 prose as control input",
+    "evaluation_limit": "ENRICHMENT_TARGET is not quality-evaluated without v2 candidate prose",
+    "outcomes_by_availability": {
+      "AVAILABLE": {
+        "NOT_EVALUATED_BASELINE_ONLY": 822,
+        "PASS": 4
+      },
+      "THIN": {
+        "PASS": 17,
+        "PASS_WITH_WARNING": 194
+      },
+      "DATA_GAP": {
+        "PASS": 152
+      }
+    },
+    "outcomes_by_baseline": {
+      "RICH_ENOUGH": {
+        "PASS": 14
+      },
+      "SYNTHESIS_GAP": {
+        "NOT_EVALUATED_BASELINE_ONLY": 822,
+        "PASS": 6,
+        "PASS_WITH_WARNING": 161
+      },
+      "EVIDENCE_GAP": {
+        "PASS": 153,
+        "PASS_WITH_WARNING": 33
+      }
+    },
+    "outcomes_by_gate_class": {
+      "ENRICHMENT_TARGET": {
+        "NOT_EVALUATED_BASELINE_ONLY": 822
+      },
+      "RICH_CONTROL": {
+        "PASS": 14
+      },
+      "EVIDENCE_LIMITED_CONTROL": {
+        "PASS": 7,
+        "PASS_WITH_WARNING": 194
+      },
+      "DATA_GAP_CONTROL": {
+        "PASS": 152
+      }
+    },
+    "outcomes_by_density": {
+      "0": {
+        "PASS": 152
+      },
+      "1-5": {
+        "NOT_EVALUATED_BASELINE_ONLY": 357,
+        "PASS": 18,
+        "PASS_WITH_WARNING": 194
+      },
+      "6-10": {
+        "NOT_EVALUATED_BASELINE_ONLY": 169,
+        "PASS": 1
+      },
+      "11-20": {
+        "NOT_EVALUATED_BASELINE_ONLY": 139,
+        "PASS": 1
+      },
+      "21-40": {
+        "NOT_EVALUATED_BASELINE_ONLY": 96,
+        "PASS": 1
+      },
+      "41+": {
+        "NOT_EVALUATED_BASELINE_ONLY": 61
+      }
+    },
+    "dump_severity_distribution": {
+      "LOW": 74,
+      "NONE": 1115
+    },
+    "validated_control_inputs": 1189
+  },
+  "v1_reference": "commentary-richness-policy-v2-proposed (retained for comparison)"
+}

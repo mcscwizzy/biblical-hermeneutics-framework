@@ -1,0 +1,125 @@
+{
+  "reference": "John 2",
+  "book": "John",
+  "chapter": 2,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "At Cana, Jesus\u2019 act is explicitly called the first of his signs: it manifests his glory and leads his disciples to believe. The wedding setting, the stone jars associated with purification, and the unusually abundant wine are part of the scene\u2019s meaning; the episode is not framed simply as a display of unusual power.",
+          "verse_refs": [
+            "John 2:1-12",
+            "John 2:11",
+            "John 2:13-22",
+            "John 2:6-20"
+          ],
+          "evidence_ids": [
+            "john-cana",
+            "john-ioudaioi",
+            "john-sources-editions",
+            "john-synoptic-relation",
+            "john-temple-chronology"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_32895fa276e0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "cultural_context",
+      "title": "Festival and Temple",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The Passover setting places the temple scene within the practical world of pilgrimage and sacrifice. Animals for offerings and money exchange belonged to the material arrangements that enabled festival worship, alongside travel, crowds, and lodging. This context keeps Jesus\u2019 action from being read as though the sellers and exchangers were unrelated to the festival taking place in Jerusalem.",
+          "verse_refs": [
+            "John 2:13-22"
+          ],
+          "evidence_ids": [
+            "gospel-pilgrimage-and-temple-economy",
+            "gospel-pilgrimage-and-temple-economy:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_7f223433cca4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Terms and Placement",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The expression often translated \u201cthe Jews\u201d has a context-sensitive range in John: it can refer to Jewish people generally, Judeans, festival crowds, or particular authorities. In this chapter, it should not be flattened into a description of one hostile ethnic group. John also places the temple action near the beginning of Jesus\u2019 ministry, unlike the Synoptic Gospels, which place a comparable scene near the passion. Proposals that harmonize the accounts or posit two separate cleansings remain possible but are not demonstrated by the texts.",
+          "verse_refs": [
+            "John 2:1-12",
+            "John 2:11",
+            "John 2:13-22",
+            "John 2:6-20"
+          ],
+          "evidence_ids": [
+            "john-cana",
+            "john-ioudaioi",
+            "john-sources-editions",
+            "john-synoptic-relation",
+            "john-temple-chronology"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_32895fa276e0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "The Temple Saying",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The listeners understand Jesus\u2019 saying about destroying and raising the temple as a claim about the building, while the narrator explains that he spoke of his body. That clarification is important, but it does not make every use of sanctuary language interchangeable: tabernacle, temples, metaphorical uses for Christ or a community, heavenly sanctuary, and new creation can remain distinct referents.",
+          "verse_refs": [
+            "John 2:13-22",
+            "John 2:19-21"
+          ],
+          "evidence_ids": [
+            "sanctuary-theme:interpretive_note:0",
+            "sanctuary-theme:interpretive_note:1"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_d8867b1a7c7e"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f8f1e3ff98d5ee3540eab7ff1320e3ca9f8284f32e228e4c27e820cc7c811cde",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "7f546cc7da0a2832689555bf4fd5220d177b9a4a6d4810b08158f47e9da68b0b",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,88 @@
+{
+  "reference": "Ecclesiastes 4",
+  "book": "Ecclesiastes",
+  "chapter": 4,
+  "evidence_hash": "c62095131c8b51f7e0ee4198f99b58d35cfc4d4ea20d80514957d63dbe6ff57b",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "43925abddc5b31f7c3917f33b13b206749dee4ee350f1cebb6bdca663050ab63",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_13c33deb4e9b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Qohelet explicitly observes tears without comfort, power in oppressors' hands, corrupted places of judgment, political hierarchy, delayed justice, and the social fragility of poor wisdom."
+      ],
+      "verse_refs": [
+        "Ecclesiastes 4:1-3"
+      ],
+      "evidence_ids": [
+        "ecclesiastes-oppression-injustice"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ecclesiastes 4:1-3"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "ecclesiastes-oppression-injustice"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "politics": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

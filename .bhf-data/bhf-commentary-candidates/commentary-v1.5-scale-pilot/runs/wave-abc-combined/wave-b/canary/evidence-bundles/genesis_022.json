@@ -1,0 +1,2387 @@
+{
+  "passage_ref": "Genesis 22",
+  "entities": {
+    "people": [
+      {
+        "id": "abraham",
+        "title": "Abraham",
+        "type": "person",
+        "aliases": [
+          "who is abraham",
+          "tell me about abraham",
+          "why is abraham important"
+        ],
+        "metadata": {
+          "summary": "The patriarch called from Ur to follow God into promise, faith, and covenant formation.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:1-3",
+            "Genesis 15:1-21",
+            "Genesis 17:1-8",
+            "Genesis 22:1-18",
+            "Romans 4:1-25",
+            "Galatians 3:6-29",
+            "Hebrews 11:8-19"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "binding-of-isaac",
+        "title": "Binding of Isaac",
+        "type": "event",
+        "aliases": [
+          "what happened in binding of isaac",
+          "tell me about binding of isaac",
+          "why is binding of isaac important"
+        ],
+        "metadata": {
+          "summary": "Binding of Isaac is an ancestral event in Genesis that advances promise, testing, or family formation.",
+          "importance": 78,
+          "retrieval_score": 0.898,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:1-3",
+            "Genesis 15:1-21",
+            "Genesis 22:1-18",
+            "Hebrews 11:8-19"
+          ]
+        }
+      },
+      {
+        "id": "joseph-sold-into-egypt",
+        "title": "Joseph Sold into Egypt",
+        "type": "event",
+        "aliases": [
+          "what happened in joseph sold into egypt",
+          "tell me about joseph sold into egypt",
+          "why is joseph sold into egypt important"
+        ],
+        "metadata": {
+          "summary": "Joseph Sold into Egypt is an ancestral event in Genesis that advances promise, testing, or family formation.",
+          "importance": 78,
+          "retrieval_score": 0.898,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:1-3",
+            "Genesis 15:1-21",
+            "Genesis 22:1-18",
+            "Hebrews 11:8-19"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "abraham:ancient_near_east_context:0",
+      "claim": "The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:hebraic_worldview:0",
+      "claim": "Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:historical_context:0",
+      "claim": "Abraham stands in the ancestral narratives of Genesis as the father of the covenant line. His story reflects clan migration, land promise, and divine promise in an early biblical setting rather than a fixed modern chronology.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:key_places:0",
+      "claim": "canaan",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:key_places:1",
+      "claim": "shechem",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:key_places:2",
+      "claim": "hebron",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:key_places:3",
+      "claim": "egypt",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abraham:second_temple_context:0",
+      "claim": "Second Temple Jewish and early Christian writers regularly appeal to Abraham as ancestor, model of faith, covenant recipient, and witness to God's promises.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "abraham-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "abraham"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abraham",
+        "parent_title": "Abraham",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:ancient_near_east_context:0",
+      "claim": "Ancient covenant and oath practices provide a comparative backdrop, but Genesis emphasizes God's unilateral promise and covenant faithfulness rather than a merely human treaty.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:hebraic_worldview:0",
+      "claim": "The covenant frames identity as received promise: Abraham's household lives as sojourners who trust God's word before possessing the inheritance.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:historical_context:0",
+      "claim": "The Abrahamic covenant belongs to the patriarchal narratives of Genesis, where divine promise shapes family migration, land expectation, and the identity of Abraham's descendants.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:historical_setting:0",
+      "claim": "Patriarchal narratives in Genesis",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:key_places:0",
+      "claim": "canaan",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:key_places:1",
+      "claim": "shechem",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:key_places:2",
+      "claim": "hebron",
+      "category": "geography",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:original_audience:0",
+      "claim": "Israel remembering its identity as a people formed by divine promise",
+      "category": "social",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:second_temple_context:0",
+      "claim": "Second Temple Jewish and early Christian writers appeal to Abraham as ancestor, promise recipient, and model for debates about covenant membership and Gentile inclusion.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:timeline:0",
+      "claim": "Abraham called from his kinship setting",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:timeline:1",
+      "claim": "Promise ratified by covenant ceremony",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:timeline:2",
+      "claim": "Circumcision given as covenant sign",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:timeline:3",
+      "claim": "Isaac born as child of promise",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "abrahamic-covenant-framework:timeline:4",
+      "claim": "Promise reaffirmed after the binding of Isaac",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-12-15-17-22",
+        "romans-4",
+        "galatians-3",
+        "abrahamic-covenant-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "abrahamic-covenant-framework",
+        "parent_title": "Abrahamic Covenant Framework",
+        "parent_type": "covenant",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "binding-of-isaac:ancient_near_east_context:0",
+      "claim": "Clans, inheritance, and covenant-making form the background.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-50",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "binding-of-isaac-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "binding-of-isaac"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "binding-of-isaac",
+        "parent_title": "Binding of Isaac",
+        "parent_type": "event",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "binding-of-isaac:historical_context:0",
+      "claim": "The event belongs to the patriarchal world of movement, household life, and land promise.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-50",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "binding-of-isaac-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "binding-of-isaac"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "binding-of-isaac",
+        "parent_title": "Binding of Isaac",
+        "parent_type": "event",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "genesis-literary-movement",
+      "claim": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
+      "category": "culture",
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "hamilton-genesis-18-50"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2100,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "genesis:interpretive_note:0",
+      "claim": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+      "category": "culture",
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2100,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 27
+      }
+    },
+    {
+      "id": "genesis:interpretive_note:3",
+      "claim": "Do not use the absence of direct archaeological identification either to prove or to disprove every ancestral narrative; archaeology and literary interpretation answer different questions.",
+      "category": "culture",
+      "source_ids": [
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 11:27-50:26"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "genesis",
+        "parent_title": "Genesis",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1100,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "jas-abraham-rahab",
+      "claim": "James pairs Abraham and Rahab as examples in which deeds enact or complete faith.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "nets-lxx",
+        "ward",
+        "allison"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "joseph-sold-into-egypt:ancient_near_east_context:0",
+      "claim": "Clans, inheritance, and covenant-making form the background.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-50",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "joseph-sold-into-egypt-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "joseph-sold-into-egypt"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "joseph-sold-into-egypt",
+        "parent_title": "Joseph Sold into Egypt",
+        "parent_type": "event",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "joseph-sold-into-egypt:historical_context:0",
+      "claim": "The event belongs to the patriarchal world of movement, household life, and land promise.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-50",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "joseph-sold-into-egypt-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "joseph-sold-into-egypt"
+      ],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "joseph-sold-into-egypt",
+        "parent_title": "Joseph Sold into Egypt",
+        "parent_type": "event",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:ancient_near_east_context:0",
+      "claim": "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:hebraic_worldview:0",
+      "claim": "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:historical_context:0",
+      "claim": "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection.",
+      "category": "history",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:second_temple_context:0",
+      "claim": "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
+      "claim": "Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-8",
+        "genesis-22",
+        "exodus-24",
+        "leviticus-1",
+        "leviticus-16",
+        "psalm-40",
+        "isaiah-53",
+        "hebrews-9-10"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-sacrifice-in-the-bible",
+        "parent_title": "What is Sacrifice in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-sacrifice-in-the-bible:historical_context:0",
+      "claim": "From the patriarchs to the temple, sacrifice organizes worship around sin, gratitude, and restored access to God.",
+      "category": "history",
+      "source_ids": [
+        "genesis-8",
+        "genesis-22",
+        "exodus-24",
+        "leviticus-1",
+        "leviticus-16",
+        "psalm-40",
+        "isaiah-53",
+        "hebrews-9-10"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-sacrifice-in-the-bible",
+        "parent_title": "What is Sacrifice in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-abraham:ancient_near_east_context:0",
+      "claim": "Migration, kinship, and treaty language frame Abraham's world, but God's promise drives the narrative.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "genesis-15",
+        "genesis-17",
+        "genesis-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "james-2",
+        "who-was-abraham-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-abraham",
+        "parent_title": "Who was Abraham?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-abraham:historical_context:0",
+      "claim": "Genesis presents Abraham as the ancestor through whom Israel traces its identity, land promise, and blessing to the nations.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "genesis-15",
+        "genesis-17",
+        "genesis-22",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "james-2",
+        "who-was-abraham-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Genesis 22:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-abraham",
+        "parent_title": "Who was Abraham?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Canonical historical orientation for Abraham",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "abraham-historical-orientation",
+        "canonical_object_ids": [
+          "abraham"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Abrahamic Covenant Framework",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Genesis covenant promise foundation for the later biblical storyline",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "abrahamic-covenant-framework-historical-orientation",
+        "canonical_object_ids": [
+          "abrahamic-covenant-framework"
+        ]
+      },
+      {
+        "title": "James: A Critical and Exegetical Commentary",
+        "author": "Dale C. Allison Jr.",
+        "publisher": "T&T Clark",
+        "year": 2013,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/james-icc-9780567716934/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major critical commentary.",
+        "id": "allison",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Binding of Isaac",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "binding-of-isaac-historical-orientation",
+        "canonical_object_ids": [
+          "binding-of-isaac"
+        ]
+      },
+      {
+        "title": "Exodus 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-12",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Exodus 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-24",
+        "canonical_object_ids": [
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "Galatians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-3",
+        "canonical_object_ids": [
+          "abraham",
+          "abrahamic-covenant-framework",
+          "binding-of-isaac",
+          "joseph-sold-into-egypt",
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Genesis 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12",
+        "canonical_object_ids": [
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Genesis 12, 15, 17, 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12-15-17-22",
+        "canonical_object_ids": [
+          "abrahamic-covenant-framework"
+        ]
+      },
+      {
+        "title": "Genesis 12-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12-22",
+        "canonical_object_ids": [
+          "abraham"
+        ]
+      },
+      {
+        "title": "Genesis 12-50",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12-50",
+        "canonical_object_ids": [
+          "binding-of-isaac",
+          "joseph-sold-into-egypt"
+        ]
+      },
+      {
+        "title": "Genesis 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-15",
+        "canonical_object_ids": [
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Genesis 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-17",
+        "canonical_object_ids": [
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Genesis 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-22",
+        "canonical_object_ids": [
+          "sacrifice-theme",
+          "what-is-sacrifice-in-the-bible",
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Genesis 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-8",
+        "canonical_object_ids": [
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "The Book of Genesis, Chapters 1-17",
+        "author": "Victor P. Hamilton",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "Introduction and Genesis 1-17",
+        "url": "https://www.eerdmans.com/9780802825216/the-book-of-genesis-chapters-1-17/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "canonical-context",
+          "genesis-literary-movement",
+          "genesis-blessing-for-families"
+        ],
+        "notes": "NICOT commentary representing a conservative evangelical scholarly perspective.",
+        "id": "hamilton-genesis-1-17",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      },
+      {
+        "title": "The Book of Genesis, Chapters 18-50",
+        "author": "Victor P. Hamilton",
+        "publisher": "Eerdmans",
+        "year": 1995,
+        "locator": "Genesis 18-50",
+        "url": "https://www.eerdmans.com/9780802823090/the-book-of-genesis-chapters-18-50/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "genesis-literary-movement",
+          "genesis-ends-in-egypt"
+        ],
+        "notes": "NICOT commentary with literary, linguistic, theological, and reception-focused discussion.",
+        "id": "hamilton-genesis-18-50",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      },
+      {
+        "title": "Hebrews 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-11",
+        "canonical_object_ids": [
+          "abraham",
+          "binding-of-isaac",
+          "joseph-sold-into-egypt",
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Hebrews 9-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-9-10",
+        "canonical_object_ids": [
+          "sacrifice-theme",
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "sacrifice-theme",
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "James 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-2",
+        "canonical_object_ids": [
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: James",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "James",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical and textual controls.",
+        "id": "james-greek",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Joseph Sold into Egypt",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "joseph-sold-into-egypt-historical-orientation",
+        "canonical_object_ids": [
+          "joseph-sold-into-egypt"
+        ]
+      },
+      {
+        "title": "Leviticus 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-1",
+        "canonical_object_ids": [
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "Leviticus 1-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-1-7",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Leviticus 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-16",
+        "canonical_object_ids": [
+          "sacrifice-theme",
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Proverbs, Job, Sirach, Wisdom, and prophetic comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Translation control for Greek Jewish scriptural comparisons.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Psalm 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-40",
+        "canonical_object_ids": [
+          "what-is-sacrifice-in-the-bible"
+        ]
+      },
+      {
+        "title": "Romans 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-4",
+        "canonical_object_ids": [
+          "abraham",
+          "abrahamic-covenant-framework",
+          "binding-of-isaac",
+          "joseph-sold-into-egypt",
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Sacrifice Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "sacrifice-theme-historical-orientation",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Genesis",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary throughout",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "genesis-literary-movement",
+          "genesis-ane-comparative-context"
+        ],
+        "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "sarna-genesis",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      },
+      {
+        "title": "The Works of Abraham: James 2:14-26",
+        "author": "Roy Bowen Ward",
+        "publisher": "Harvard Theological Review",
+        "year": 1968,
+        "locator": "61.2: 283-290",
+        "url": "https://doi.org/10.1017/S0017816000028030",
+        "source_type": "journal-article",
+        "supports": [],
+        "notes": "Study of Abraham, faith, and works.",
+        "id": "ward",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Who was Abraham?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "who-was-abraham-historical-orientation",
+        "canonical_object_ids": [
+          "who-was-abraham"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Bruce Wells and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Genesis",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "genesis-ane-comparative-context"
+        ],
+        "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "genesis"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "abraham",
+        "type": "person",
+        "title": "Abraham",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "abrahamic-covenant-framework",
+        "type": "covenant",
+        "title": "Abrahamic Covenant Framework",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "binding-of-isaac",
+        "type": "event",
+        "title": "Binding of Isaac",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "genesis",
+        "type": "book",
+        "title": "Genesis",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.959
+      },
+      {
+        "id": "james",
+        "type": "book",
+        "title": "James",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "joseph-sold-into-egypt",
+        "type": "event",
+        "title": "Joseph Sold into Egypt",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "sacrifice-theme",
+        "type": "theme",
+        "title": "Sacrifice Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "what-is-sacrifice-in-the-bible",
+        "type": "faq",
+        "title": "What is Sacrifice in the Bible?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      },
+      {
+        "id": "who-was-abraham",
+        "type": "faq",
+        "title": "Who was Abraham?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "bed3f84ff2f57bf8bdd505ac873a08d6390af69d1238b899836d330962dd3916",
+  "evidence_hash_version": "2"
+}

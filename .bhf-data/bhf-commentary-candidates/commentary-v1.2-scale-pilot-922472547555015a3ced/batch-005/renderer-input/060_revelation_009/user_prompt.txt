@@ -1,0 +1,176 @@
+TASK: Generate BHF Commentary v1.7 for Revelation 9.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_1a8cc8208271baf2: Revelation plausibly reuses Joel's cosmic, trumpet, locust-army, harvest, winepress, and nations-judgment imagery, but these are… (categories: culture, interpretive_questions)
+- reader_idea_ba00662700b0eddb: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_1a8cc8208271baf2: Revelation plausibly reuses Joel's cosmic, trumpet, locust-army, harvest, winepress, and nations-judgment imagery, but these are… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["joel-revelation-reuse"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_81dddc2fbae4"}
+
+IDEA reader_idea_ba00662700b0eddb: Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_5f8d69f4dbf3"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f55f05c2075a"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. And the fifth angel sounded, and I saw a star from heaven fallen unto the earth: and there was given to him the key of the pit of the abyss. 2. And he opened the pit of the abyss; and there went up a smoke out of the pit, as the smoke of a great furnace; and the sun and the air were darkened by reason of the smoke of the pit. 3. And out of the smoke came forth locusts upon the earth; and power was given them, as the scorpions of the earth have power. 4. And it was said unto them that they should not hurt the grass of the earth, neither any green thing, neither any tree, but only such men as have not the seal of God on their foreheads. 5. And it was given them that they should not kill them, but that they should be tormented five months: and their torment was as the torment of a scorpion, when it striketh a man. 6. And in those days men shall seek death, and shall in no wise find it; and they shall desire to die, and death fleeth from them. 7. And the shapes of the locusts were like unto horses prepared for war; and upon their heads as it were crowns like unto gold, and their faces were as men's faces. 8. And they had hair as the hair of women, and their teeth were as `teeth' of lions. 9. And they had breastplates, as it were breastplates of iron; and the sound of their wings was as the sound of chariots, of many horses rushing to war. 10. And they have tails like unto scorpions, and stings; and in their tails is their power to hurt men five months. 11. They have over them as king the angel of the abyss: his name in Hebrew is Abaddon, and in the Greek `tongue' he hath the name Apollyon. 12. The first Woe is past: behold, there come yet two Woes hereafter. 13. And the sixth angel sounded, and I heard a voice from the horns of the golden altar which is before God, 14. one saying to the sixth angel that had one trumpet, Loose the four angels that are bound at the great river Euphrates. 15. And the four angels were loosed, that had been prepared for the hour and day and month and year, that they should kill the third part of men. 16. And the number of the armies of the horsemen was twice ten thousand times ten thousand: I heard the number of them. 17. And thus I saw the horses in the vision, and them that sat on them, having breastplates `as' of fire and of hyacinth and of brimstone: and the heads of lions; and out of their mouths proceedeth fire and smoke and brimstone. 18. By these three plagues was the third part of men killed, by the fire and the smoke and the brimstone, which proceeded out of their mouths. 19. For the power of the horses is in their mouth, and in their tails: for their tails are like unto serpents, and have heads; and with them they hurt. 20. And the rest of mankind, who were not killed with these plagues, repented not of the works of their hands, that they should not worship demons, and the idols of gold, and of silver, and of brass, and of stone, and of wood; which can neither see, nor hear, nor walk: 21. and they repented not of their murders, nor of their sorceries, nor of their fornication, nor of their thefts.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 1, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 3}, "evidence_item_count": 3, "relationship_unit_count": 1, "specific_evidence_count": 3, "unit_kind_counts": {"interpretive_questions": 1, "surrounding_passages": 2}, "unused_evidence_ids": [], "used_evidence_ids": ["joel-revelation-reuse", "rev-scriptural-reuse", "rev-septets"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "bf6428429e072a00c7aa5131002f7c1abd71f808f7ba345414aaea9047938fe5", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["joel-revelation-reuse"], "facts": ["Revelation plausibly reuses Joel's cosmic, trumpet, locust-army, harvest, winepress, and nations-judgment imagery, but these are cumulative allusions rather than an explicit quotation."], "id": "syn_interpretive_questions_81dddc2fbae4", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Revelation 9:1-21"], "verse_refs": ["Revelation 9:1-21"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "facts": ["Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.", "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."], "id": "syn_surrounding_passages_5f8d69f4dbf3", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Revelation 1:1-22:21", "Revelation 6:1-16:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["rev-scriptural-reuse", "rev-septets"], "facts": ["Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.", "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs."], "id": "syn_surrounding_passages_f55f05c2075a", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_5f8d69f4dbf3"], "source_anchors": ["Revelation 1:1-22:21", "Revelation 6:1-16:21"], "verse_refs": ["Revelation 10:1-11", "Revelation 11:1-19", "Revelation 12:1-17", "Revelation 13:1-18", "Revelation 14:1-20", "Revelation 15:1-8", "Revelation 16:1-21", "Revelation 17:1-18", "Revelation 18:1-24", "Revelation 19:1-21", "Revelation 1:1-20", "Revelation 20:1-15", "Revelation 21:1-27", "Revelation 22:1-21", "Revelation 2:1-29", "Revelation 3:1-22", "Revelation 4:1-11", "Revelation 5:1-14", "Revelation 6:1-17", "Revelation 7:1-17", "Revelation 8:1-13"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "joel-revelation-reuse", "passage_anchors": ["Revelation 9:1-21"], "source_ids": ["joel-nt-reuse", "nets-twelve-joel", "oxford-revelation-reception"]}, {"confidence": "high", "id": "rev-scriptural-reuse", "passage_anchors": ["Revelation 1:1-22:21"], "source_ids": ["beale", "koester", "moyise"]}, {"confidence": "high", "id": "rev-septets", "passage_anchors": ["Revelation 6:1-16:21"], "source_ids": ["beale", "koester", "rev-greek"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Revelation 9",
+  "book": "Revelation",
+  "chapter": 9,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Revelation 9:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Revelation 9:
+   for example `Revelation 9:1` or `Revelation 9:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Revelation 9:1", "Revelation 9:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash bf6428429e072a00c7aa5131002f7c1abd71f808f7ba345414aaea9047938fe5.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.

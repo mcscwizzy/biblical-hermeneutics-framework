@@ -1,0 +1,401 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "1 Corinthians 14",
+  "raw_sha256": "ac180c7c48d46ec59dd10da61e3683a2df72975732743010e85d9b9f95cfc10d",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "1 Corinthians 14",
+    "book": "1 Corinthians",
+    "chapter": 14,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Paul compares spiritual speech by what it does for the gathered church. Prophecy is understandable speech directed to people for upbuilding, encouragement, and consolation, whereas an uninterpreted tongue benefits only its speaker. Yet prophecy is not treated as unquestionable authority: only a few prophets are to speak, others must evaluate what they say, and one speaker must yield when another receives a revelation. Paul similarly joins spirit and understanding in prayer and song. The contrast is therefore not between spirituality and thought, but between speech that remains inaccessible and speech that enables others to learn and participate.",
+            "verse_refs": [
+              "1 Corinthians 14:1-19",
+              "1 Corinthians 14:29-33"
+            ],
+            "evidence_ids": [
+              "corinthian-prophecy-upbuilding",
+              "corinthian-prophecy-upbuilding:passage-relevance",
+              "corinthian-prophecy-weighed",
+              "corinthian-prophecy-weighed:passage-relevance",
+              "corinthian-spirit-mind-together"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_b12f9a795d61"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Speech in the Gathered Church",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The chapter pictures a participatory gathering: different people may bring a psalm, teaching, revelation, tongue, or interpretation. Participation, however, is organized around the shared benefit of the assembly. Tongue speakers and prophets speak in limited numbers and in turn; an uninterpreted tongue speaker remains silent; prophetic speech is evaluated; and speakers yield the floor when appropriate. Paul’s closing appeal to peace and order summarizes arrangements intended to make common learning and encouragement possible, not to replace participation with either chaos or one-person control.",
+            "verse_refs": [
+              "1 Corinthians 14:26-33",
+              "1 Corinthians 14:39-40"
+            ],
+            "evidence_ids": [
+              "corinthian-participatory-order",
+              "corinthian-participatory-order:passage-relevance",
+              "corinthian-peace-order-not-suppression",
+              "corinthian-peace-order-not-suppression:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_48738fe0e7f8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Tongues, Interpretation, and Outsiders",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The precise character of Corinthian tongues remains uncertain. The chapter associates them with prayer, praise, mysteries, meaningful sounds, possible interpretation, self-edification, and incomprehension by outsiders, but it supplies no surviving example that would settle whether every occurrence was a human language, ecstatic speech, or another kind of Spirit-related utterance. Paul’s practical concern is clearer than the phenomenon’s classification: public tongue speech must be limited, take place in sequence, and be interpreted; without an interpreter, the speaker is to remain silent in the gathering.",
+            "verse_refs": [
+              "1 Corinthians 14:1-19",
+              "1 Corinthians 14:26-28"
+            ],
+            "evidence_ids": [
+              "corinthian-tongues-underdetermined",
+              "corinthian-tongues-underdetermined:passage-relevance",
+              "corinthian-interpretation-required",
+              "corinthian-interpretation-required:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_1e5d4b45e0d0",
+              "syn_interpretive_questions_d2f573076d8d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_4",
+            "text": "Verses 20-25 contain a genuine interpretive difficulty. The quotation about strange tongues and the statement that tongues are a sign for unbelievers appear to pull against Paul’s next example: when everyone speaks in tongues, outsiders conclude that the gathering is mad, whereas understandable prophecy can expose what is hidden in a visitor’s heart and lead that person to acknowledge God’s presence. The paragraph should therefore not be reduced to a simple command to display tongues publicly or to manipulate visitors through disclosure.",
+            "verse_refs": [
+              "1 Corinthians 14:20-25"
+            ],
+            "evidence_ids": [
+              "corinthian-tongues-sign-crux",
+              "corinthian-tongues-sign-crux:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_2b58756fa889"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_5",
+            "text": "The command for women or wives to be silent in verses 34-35 requires qualification rather than either effortless universalization or silent removal. All surviving Greek witnesses contain the verses, although some Western witnesses place them after verse 40. Within this chapter, the same command to be silent is also applied contextually to an uninterpreted tongue speaker and to a prophet who must yield to another speaker. Moreover, the same letter assumes that women pray and prophesy. How these facts relate to the exact activity and scope prohibited in verses 34-35 remains disputed, but together they weigh against treating women alone as a permanently voiceless class. Women’s prophetic speech, like everyone else’s, remains subject to the chapter’s communal evaluation.",
+            "verse_refs": [
+              "1 Corinthians 14:26-35",
+              "1 Corinthians 14:40"
+            ],
+            "evidence_ids": [
+              "corinthian-silence-textual-displacement",
+              "corinthian-silence-textual-displacement:passage-relevance",
+              "corinthian-three-silence-contexts",
+              "corinthian-three-silence-contexts:passage-relevance",
+              "corinthian-chapters-eleven-fourteen-control",
+              "corinthian-chapters-eleven-fourteen-control:passage-relevance",
+              "corinthian-prophecy-edification-testing",
+              "corinthian-prophecy-edification-testing:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_8942b89fd4eb",
+              "syn_interpretive_questions_dbeacffc6c41"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Love and the Discussion of Gifts",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "Chapter 14 begins with “Follow after love” because chapter 13 belongs inside the letter’s discussion of spiritual gifts. Its description of love is not primarily an isolated romantic passage: it confronts rivalry, noise, self-display, and the insistence on one’s own way. Love’s patience, kindness, truthfulness, and refusal of coercion therefore frame the correction of gift practices that follows.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:57",
+              "love-truth-control",
+              "love-truth-control:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_3babc04d556f",
+              "syn_surrounding_passages_6a131b6168c9"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "The Purpose and Limits of Order",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Paul repeatedly connects orderly speech with intelligibility, learning, encouragement, self-control, and peace. That stated purpose matters: “order” cannot fairly be detached from communal benefit and turned into mere leader convenience, forced silence, or immunity from necessary questions. Because several prophets may speak and others must weigh their words, even a claimed revelation remains open to evidence, review, and correction.",
+            "verse_refs": [
+              "1 Corinthians 14:26-40"
+            ],
+            "evidence_ids": [
+              "order-peace-purpose",
+              "order-peace-purpose:passage-relevance",
+              "prophecy-plural-weighing"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_dab9bd0680f8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_8",
+            "text": "The chapter regulates speech in an assembly; it does not provide neurological or psychiatric diagnostic criteria. Seizures, psychosis, trauma responses, disability, neurodivergence, and other involuntary behavior should therefore not be relabeled as tongues, prophecy, possession, unbelief, or moral failure without qualified clinical assessment, consent, and urgent care where needed. Likewise, no spiritual title, intense experience, or claimed revelation removes a person from communal evaluation, safeguarding, evidence, correction, or law.",
+            "verse_refs": [
+              "1 Corinthians 14:26-33"
+            ],
+            "evidence_ids": [
+              "modern-medical-discernment-boundary",
+              "modern-medical-discernment-boundary:passage-relevance",
+              "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_661f727bdcc9"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "1 Corinthians 14",
+    "book": "1 Corinthians",
+    "chapter": 14,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Paul compares spiritual speech by what it does for the gathered church. Prophecy is understandable speech directed to people for upbuilding, encouragement, and consolation, whereas an uninterpreted tongue benefits only its speaker. Yet prophecy is not treated as unquestionable authority: only a few prophets are to speak, others must evaluate what they say, and one speaker must yield when another receives a revelation. Paul similarly joins spirit and understanding in prayer and song. The contrast is therefore not between spirituality and thought, but between speech that remains inaccessible and speech that enables others to learn and participate.",
+            "verse_refs": [
+              "1 Corinthians 14:1-19",
+              "1 Corinthians 14:29-33"
+            ],
+            "evidence_ids": [
+              "corinthian-prophecy-upbuilding",
+              "corinthian-prophecy-upbuilding:passage-relevance",
+              "corinthian-prophecy-weighed",
+              "corinthian-prophecy-weighed:passage-relevance",
+              "corinthian-spirit-mind-together"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_b12f9a795d61"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Speech in the Gathered Church",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The chapter pictures a participatory gathering: different people may bring a psalm, teaching, revelation, tongue, or interpretation. Participation, however, is organized around the shared benefit of the assembly. Tongue speakers and prophets speak in limited numbers and in turn; an uninterpreted tongue speaker remains silent; prophetic speech is evaluated; and speakers yield the floor when appropriate. Paul’s closing appeal to peace and order summarizes arrangements intended to make common learning and encouragement possible, not to replace participation with either chaos or one-person control.",
+            "verse_refs": [
+              "1 Corinthians 14:26-33",
+              "1 Corinthians 14:39-40"
+            ],
+            "evidence_ids": [
+              "corinthian-participatory-order",
+              "corinthian-participatory-order:passage-relevance",
+              "corinthian-peace-order-not-suppression",
+              "corinthian-peace-order-not-suppression:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_48738fe0e7f8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Tongues, Interpretation, and Outsiders",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The precise character of Corinthian tongues remains uncertain. The chapter associates them with prayer, praise, mysteries, meaningful sounds, possible interpretation, self-edification, and incomprehension by outsiders, but it supplies no surviving example that would settle whether every occurrence was a human language, ecstatic speech, or another kind of Spirit-related utterance. Paul’s practical concern is clearer than the phenomenon’s classification: public tongue speech must be limited, take place in sequence, and be interpreted; without an interpreter, the speaker is to remain silent in the gathering.",
+            "verse_refs": [
+              "1 Corinthians 14:1-19",
+              "1 Corinthians 14:26-28"
+            ],
+            "evidence_ids": [
+              "corinthian-tongues-underdetermined",
+              "corinthian-tongues-underdetermined:passage-relevance",
+              "corinthian-interpretation-required",
+              "corinthian-interpretation-required:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_1e5d4b45e0d0",
+              "syn_interpretive_questions_d2f573076d8d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_4",
+            "text": "Verses 20-25 contain a genuine interpretive difficulty. The quotation about strange tongues and the statement that tongues are a sign for unbelievers appear to pull against Paul’s next example: when everyone speaks in tongues, outsiders conclude that the gathering is mad, whereas understandable prophecy can expose what is hidden in a visitor’s heart and lead that person to acknowledge God’s presence. The paragraph should therefore not be reduced to a simple command to display tongues publicly or to manipulate visitors through disclosure.",
+            "verse_refs": [
+              "1 Corinthians 14:20-25"
+            ],
+            "evidence_ids": [
+              "corinthian-tongues-sign-crux",
+              "corinthian-tongues-sign-crux:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_2b58756fa889"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_5",
+            "text": "The command for women or wives to be silent in verses 34-35 requires qualification rather than either effortless universalization or silent removal. All surviving Greek witnesses contain the verses, although some Western witnesses place them after verse 40. Within this chapter, the same command to be silent is also applied contextually to an uninterpreted tongue speaker and to a prophet who must yield to another speaker. Moreover, the same letter assumes that women pray and prophesy. How these facts relate to the exact activity and scope prohibited in verses 34-35 remains disputed, but together they weigh against treating women alone as a permanently voiceless class. Women’s prophetic speech, like everyone else’s, remains subject to the chapter’s communal evaluation.",
+            "verse_refs": [
+              "1 Corinthians 14:26-35",
+              "1 Corinthians 14:40"
+            ],
+            "evidence_ids": [
+              "corinthian-silence-textual-displacement",
+              "corinthian-silence-textual-displacement:passage-relevance",
+              "corinthian-three-silence-contexts",
+              "corinthian-three-silence-contexts:passage-relevance",
+              "corinthian-chapters-eleven-fourteen-control",
+              "corinthian-chapters-eleven-fourteen-control:passage-relevance",
+              "corinthian-prophecy-edification-testing",
+              "corinthian-prophecy-edification-testing:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_8942b89fd4eb",
+              "syn_interpretive_questions_dbeacffc6c41"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Love and the Discussion of Gifts",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "Chapter 14 begins with “Follow after love” because chapter 13 belongs inside the letter’s discussion of spiritual gifts. Its description of love is not primarily an isolated romantic passage: it confronts rivalry, noise, self-display, and the insistence on one’s own way. Love’s patience, kindness, truthfulness, and refusal of coercion therefore frame the correction of gift practices that follows.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "1-corinthians:interpretive_note:57",
+              "love-truth-control",
+              "love-truth-control:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_3babc04d556f",
+              "syn_surrounding_passages_6a131b6168c9"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "The Purpose and Limits of Order",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Paul repeatedly connects orderly speech with intelligibility, learning, encouragement, self-control, and peace. That stated purpose matters: “order” cannot fairly be detached from communal benefit and turned into mere leader convenience, forced silence, or immunity from necessary questions. Because several prophets may speak and others must weigh their words, even a claimed revelation remains open to evidence, review, and correction.",
+            "verse_refs": [
+              "1 Corinthians 14:26-40"
+            ],
+            "evidence_ids": [
+              "order-peace-purpose",
+              "order-peace-purpose:passage-relevance",
+              "prophecy-plural-weighing"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_dab9bd0680f8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_8",
+            "text": "The chapter regulates speech in an assembly; it does not provide neurological or psychiatric diagnostic criteria. Seizures, psychosis, trauma responses, disability, neurodivergence, and other involuntary behavior should therefore not be relabeled as tongues, prophecy, possession, unbelief, or moral failure without qualified clinical assessment, consent, and urgent care where needed. Likewise, no spiritual title, intense experience, or claimed revelation removes a person from communal evaluation, safeguarding, evidence, correction, or law.",
+            "verse_refs": [
+              "1 Corinthians 14:26-33"
+            ],
+            "evidence_ids": [
+              "modern-medical-discernment-boundary",
+              "modern-medical-discernment-boundary:passage-relevance",
+              "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_661f727bdcc9"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "0f687d600e3fc75cebc24b21f963314a508be0c880a7dfae862e317ad5adc3e9",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "45c08801198bd076d8553b274e99c19f86f8d85056d225186a2612cd37757553",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:6beecb86b969b5e886004099852bee683b0805ca1b963b523b0a388ef063935a",
+  "packet_hash": "6beecb86b969b5e886004099852bee683b0805ca1b963b523b0a388ef063935a"
+}

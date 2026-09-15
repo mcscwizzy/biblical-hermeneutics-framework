@@ -1,0 +1,574 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "Hebrews 10",
+  "book": "Hebrews",
+  "chapter": 10,
+  "status": "validated",
+  "source_commentary": {
+    "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/responses/accepted/hebrews_010.json",
+    "artifact_sha256": "dfad1dc769abe9bf4c3982da7eba72a4c5f89c26969f3c4190bce406c8f02f5d",
+    "artifact_identity": "sha256:dfad1dc769abe9bf4c3982da7eba72a4c5f89c26969f3c4190bce406c8f02f5d",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "dfad1dc769abe9bf4c3982da7eba72a4c5f89c26969f3c4190bce406c8f02f5d",
+    "generation_identity": "commentary-dense-reader-v0.1:dfad1dc769abe9bf4c3982da7eba72a4c5f89c26969f3c4190bce406c8f02f5d"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": true,
+      "signal": "multi_signal_stress",
+      "signals": [
+        "dump_severity",
+        "high_block_count"
+      ]
+    },
+    "source_word_count": 1602,
+    "source_block_count": 24,
+    "omitted_source_block_ids": [],
+    "omission_reasons": {},
+    "reader_word_count": 933,
+    "reader_unit_count": 19,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Confidence to enter, a new and living way, confession, mutual provocation to love and good works, and gathering form one exhortation.",
+      "verse_refs": [
+        "Hebrews 10:19-25"
+      ],
+      "evidence_ids": [
+        "heb-access-community"
+      ],
+      "source_block_ids": [
+        "block_001"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_cd23617dfb2e"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_103cb39c68b9"
+      ],
+      "source_quality_classes": [
+        "CORE"
+      ]
+    },
+    {
+      "id": "reader_unit_002",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Covenant renewal patterns were familiar in the ancient world, but the new covenant is distinct because God himself provides inward renewal and lasting forgiveness. Treaty language in the ancient world often depended on external compliance, but the new covenant promises internalized obedience and divine help.",
+      "verse_refs": [
+        "Hebrews 10:15-18"
+      ],
+      "evidence_ids": [
+        "new-covenant:ancient_near_east_context:0",
+        "what-is-the-new-covenant:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_002",
+        "block_005"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_a19a2b07f75a",
+        "syn_cultural_context_ca8d835a0de0"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_e123305528c8"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_003",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources. The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically. Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews. Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome.",
+      "verse_refs": [
+        "Hebrews 10:19-22"
+      ],
+      "evidence_ids": [
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_003"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_87ba41b0b5d2",
+        "syn_why_it_matters_42ff9ae887a3"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_653ee7a879ed"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_004",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Levitical Service is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration. Feast Calendar is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration. Priestly Service is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "feast-calendar:ancient_near_east_context:0",
+        "levitical-service:ancient_near_east_context:0",
+        "priestly-service:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_004"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_6c2f005be5e7",
+        "syn_cultural_context_addb3814f1af",
+        "syn_cultural_context_f382d0965c0d"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_6bfb545e9e07"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_005",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Sacrificial rituals were common in the ancient world, but Israel's system is distinct because it is bound to covenant holiness, substitution, purification, and the one true God.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "sacrificial-system:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_006"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_da486ccf8246"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_72837f6f0129"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_006",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Covenant theology draws on biblical covenant forms that intersect with Hittite suzerain treaties, Neo-Assyrian loyalty oaths, kinship obligations, and royal grants.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "covenant-theology:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_007"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_664bf836f668"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_7d9e63b73811"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_007",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement. Sacrifice joins holiness, atonement, fellowship, and thanksgiving. Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_008"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_8cc4383d4f54",
+        "syn_why_it_matters_f037c058d59e"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_8c603d548942"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_008",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories. The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution. Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "crucifixion:ancient_near_east_context:0",
+        "crucifixion:hebraic_worldview:0",
+        "crucifixion:second_temple_context:0"
+      ],
+      "source_block_ids": [
+        "block_009"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_3520d7e4db57",
+        "syn_why_it_matters_018e4ffa11d8"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_a745b14c31d4"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_009",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Priesthood of Believers is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness. Atonement is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness. Perseverance is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "verse_refs": [
+        "Hebrews 10:1-18",
+        "Hebrews 10:19-39"
+      ],
+      "evidence_ids": [
+        "atonement:historical_context:0",
+        "perseverance:historical_context:0",
+        "priesthood-of-believers:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_010"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_5a9397696bcb",
+        "syn_historical_context_eb6b2be837f2",
+        "syn_historical_context_f13c4a63154c"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_1641798549e1"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_010",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Feast Calendar develops from wilderness worship into temple-centered practice and later second-temple memory. Priestly Service develops from wilderness worship into temple-centered practice and later second-temple memory. Levitical Service develops from wilderness worship into temple-centered practice and later second-temple memory.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "feast-calendar:historical_context:0",
+        "levitical-service:historical_context:0",
+        "priestly-service:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_011"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_1aa9c35b5d41",
+        "syn_historical_context_4c4ecea8abea",
+        "syn_historical_context_7c87326fd33f"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_1d16d9b507cd"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_011",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Jeremiah and Ezekiel announce a future covenant for a people who have failed under the old order and need inward renewal.",
+      "verse_refs": [
+        "Hebrews 10:15-18"
+      ],
+      "evidence_ids": [
+        "what-is-the-new-covenant:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_012"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_946617771e77"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_0785862599f3"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_012",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "crucifixion:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_013"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_75a9f5de1832"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_2f450f86b7de"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_013",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Covenant theology developed as a way of reading the Bible’s storyline, especially within Reformed and confessional traditions, but it is rooted in the biblical text itself.",
+      "verse_refs": [
+        "Hebrews 10:1-18"
+      ],
+      "evidence_ids": [
+        "covenant-theology:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_014"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_849a4dd75833"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_747eb9c92f93"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_014",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power. Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule.",
+      "verse_refs": [
+        "Hebrews 10:19-22"
+      ],
+      "evidence_ids": [
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0"
+      ],
+      "source_block_ids": [
+        "block_015"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_64c17f971646",
+        "syn_why_it_matters_f326bbaa10d5"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_9dcbd04f1e7d"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_015",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "The audience is asked to remember public affliction, solidarity with prisoners, property confiscation, compassion, and endurance. Hebrews 10 warns about deliberate sin, judgment, and insulting the Spirit of grace after knowledge of truth. Supersessionism is not a safe shortcut: Hebrews' covenant contrast must be read without contempt for Judaism, denigration of Torah, or erasure of living Jewish communities. Audience: prior suffering, confiscated property, present weariness, prisoners, leaders, Timothy, and Italian associates are textual clues, not a complete demographic profile. Conscience, cleansing, sanctification, and perfection describe cultic and relational access in context; later perfectionist psychologies require separate argument. Law language is differentiated within the argument; Hebrews does not authorize lawlessness, antisemitism, or a claim that Torah has no continuing Jewish meaning. The 10:26-31 warning addresses deliberate persistence after receiving knowledge; rival salvation systems disagree about its scope and pastoral use.",
+      "verse_refs": [
+        "Hebrews 10:1-18",
+        "Hebrews 10:26-31",
+        "Hebrews 10:32-39"
+      ],
+      "evidence_ids": [
+        "heb-former-days",
+        "heb-warning-ten",
+        "hebrews:interpretive_note:19",
+        "hebrews:interpretive_note:3",
+        "hebrews:interpretive_note:25",
+        "hebrews:interpretive_note:26",
+        "hebrews:interpretive_note:27"
+      ],
+      "source_block_ids": [
+        "block_016",
+        "block_017",
+        "block_018"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_be83cbb371d3",
+        "syn_why_it_matters_e689dafb60d6",
+        "syn_interpretive_questions_b781d0edeac9",
+        "syn_interpretive_questions_4cd6ea28422e",
+        "syn_why_it_matters_c600de31a8b9"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_23e6cb551c62"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_016",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Acts receives Habakkuk 1:5, and Romans, Galatians, and Hebrews receive Habakkuk 2:3-4 through Greek textual traditions for distinct rhetorical purposes.",
+      "verse_refs": [
+        "Hebrews 10:37-38"
+      ],
+      "evidence_ids": [
+        "habakkuk-new-testament"
+      ],
+      "source_block_ids": [
+        "block_019"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_7c91e134d83b"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_87a20baae4f0"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_017",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Later reuse of Jeremiah includes inner-biblical reinterpretation, Jewish textual and liturgical reception, New Testament quotation and allusion, christological reading, and ecclesial theology; these modes should not be collapsed into direct prediction.",
+      "verse_refs": [
+        "Hebrews 10:15-18"
+      ],
+      "evidence_ids": [
+        "jeremiah-reception-distinction"
+      ],
+      "source_block_ids": [
+        "block_020"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_137e521ef9e3"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_cda8455a12ff"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_018",
+      "section_kind": "surrounding_passages",
+      "section_title": "Surrounding Passages",
+      "text": "Once-for-all sacrifice claims are Christological rhetoric and must not be used to caricature Jewish worship as empty repetition or priests as spiritually inferior. Blood and sacrifice must not glorify violence, retraumatize survivors, normalize abuse, or portray divine care as delight in trauma. Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians. Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+      "verse_refs": [
+        "Hebrews 9:11-28",
+        "Hebrews 11:1-40",
+        "Hebrews 12:1-29",
+        "Hebrews 13:1-25",
+        "Hebrews 1:1-14",
+        "Hebrews 2:1-18",
+        "Hebrews 3:1-19",
+        "Hebrews 4:1-16",
+        "Hebrews 5:1-14",
+        "Hebrews 6:1-20",
+        "Hebrews 7:1-28",
+        "Hebrews 8:1-13",
+        "Hebrews 9:1-28"
+      ],
+      "evidence_ids": [
+        "hebrews:interpretive_note:22",
+        "hebrews:interpretive_note:24",
+        "heb-p46",
+        "heb-sinaiticus",
+        "hebrews:interpretive_note:39"
+      ],
+      "source_block_ids": [
+        "block_021",
+        "block_023",
+        "block_024"
+      ],
+      "source_synthesis_ids": [
+        "syn_surrounding_passages_6cc677b58159",
+        "syn_surrounding_passages_d1fad12c8862",
+        "syn_surrounding_passages_dcbd11ecd0c0",
+        "syn_surrounding_passages_fb26ca1b02a3",
+        "syn_surrounding_passages_6ec768913502"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_34c9210071c3"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_019",
+      "section_kind": "surrounding_passages",
+      "section_title": "Surrounding Passages",
+      "text": "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel.",
+      "verse_refs": [
+        "Hebrews 7",
+        "Hebrews 8:1-13",
+        "Hebrews 9:1-28"
+      ],
+      "evidence_ids": [
+        "leviticus:interpretive_note:3"
+      ],
+      "source_block_ids": [
+        "block_022"
+      ],
+      "source_synthesis_ids": [
+        "syn_surrounding_passages_b76ea18632b5"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_49fb017ff3a3"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "validated",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "4df18504e72ac84b0e8828e709af840d981d90f72d746c0ba9b93da1a07680d1"
+}

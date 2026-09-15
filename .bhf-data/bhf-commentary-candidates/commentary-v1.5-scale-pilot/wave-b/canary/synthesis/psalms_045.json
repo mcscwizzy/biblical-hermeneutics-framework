@@ -1,0 +1,56 @@
+{
+  "reference": "Psalms 45",
+  "book": "Psalms",
+  "chapter": 45,
+  "evidence_hash": "caf6b1e6acfc883552dc2ce9c8aee193505448a2a540c82d86463051cbfe6bc4",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "21f9c97bf45de15821b864b9678e474f107940a2028115799d26edffd4334d14",
+  "evidence_availability": "DATA_GAP",
+  "synthesis_units": [],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "No passage-scoped contextual evidence is available.",
+      "severity": "substantial"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 0,
+    "used_evidence_ids": [],
+    "unused_evidence_ids": [],
+    "evidence_categories": {},
+    "category_diversity": 0,
+    "specific_evidence_count": 0,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {},
+    "relationship_unit_count": 0
+  }
+}

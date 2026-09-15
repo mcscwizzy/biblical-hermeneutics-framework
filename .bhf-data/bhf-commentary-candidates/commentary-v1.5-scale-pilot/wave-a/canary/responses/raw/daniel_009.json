@@ -1,0 +1,126 @@
+{
+  "reference": "Daniel 9",
+  "packet_id": "commentary-v1.5-packet:357f98f5b95e49bc2bfdc67872223e2289f0f390134f0decbfc11d08bd1f4f94",
+  "prompt_version": "1.5",
+  "evidence_hash": "cb7f4a50a235c7e974ac70a305177386c7133919f57c9cd03887a989a3aa1a65",
+  "synthesis_hash": "31d3b2e5a7cfc014762d2580b7e6f8d8e76efd5b8b1cdde160564e3957e08312",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Daniel 9",
+    "book": "Daniel",
+    "chapter": 9,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Temple Mount Area Finds includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and jerusalem without letting comparison replace the biblical witness. Ancient background for Wadi Murabba'at Scrolls includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and jerusalem without letting comparison replace the biblical witness. Ancient background for Dead Sea Scrolls includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40, Psalm 119, qumran-archaeological-site, and qumran-caves without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Daniel 9"
+            ],
+            "evidence_ids": [
+              "dead-sea-scrolls:ancient_near_east_context:0",
+              "temple-mount-area-finds:ancient_near_east_context:0",
+              "wadi-murabbaat-scrolls:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_07ab97e83b5b",
+              "syn_cultural_context_d5eec94aa2ed",
+              "syn_cultural_context_e5281988c57d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: The communal confession in Daniel 9 should not be weaponized to blame persecuted Jewish people for state violence or to demand public confession from abuse survivors.",
+            "verse_refs": [
+              "Daniel 9:3-19"
+            ],
+            "evidence_ids": [
+              "daniel:interpretive_note:18"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_2457910976ed"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_003",
+            "text": "Historically, this chapter is read within the following setting: Historically, Wadi Murabba'at Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval. Historically, Dead Sea Scrolls is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, qumran-caves, isaiah and related CKL objects for contextual retrieval. Historically, Temple Mount Area Finds is located by its canonical setting; this entry connects that setting with qumran-archaeological-site, jerusalem, joshua and related CKL objects for contextual retrieval.",
+            "verse_refs": [
+              "Daniel 9"
+            ],
+            "evidence_ids": [
+              "dead-sea-scrolls:historical_context:0",
+              "temple-mount-area-finds:historical_context:0",
+              "wadi-murabbaat-scrolls:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_2035b548e0e3",
+              "syn_historical_context_83f5e79524d8",
+              "syn_historical_context_9c6b16c0c43b"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_004",
+            "text": "This helps frame an interpretive question raised by the passage: Daniel 9 rereads Jeremiah's seventy years as seventy weeks after a communal confession, but the weeks' starting point, anointed figures, subdivisions, and endpoint are not interpreted with unanimity. Daniel's seventy weeks do not license a certain modern date for the end; starting points, subdivisions, referents, calendars, and endpoints are disputed. The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed. Christian reception must not erase Daniel's Jewish settings, readers, or continuing Jewish interpretation; christological claims should be labeled as later canonical and confessional readings. Daniel 9 rereads Jeremiah's seventy years as seventy weeks after a communal confession, but the weeks' starting point, anointed figures, subdivisions, and endpoint are not interpreted with unanimity. Daniel's seventy weeks do not license a certain modern date for the end; starting points, subdivisions, referents, calendars, and endpoints are disputed. The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed. Christian reception must not erase Daniel's Jewish settings, readers, or continuing Jewish interpretation; christological claims should be labeled as later canonical and confessional readings.",
+            "verse_refs": [
+              "Daniel 9:1-27",
+              "Daniel 9:20-27",
+              "Daniel 9:27"
+            ],
+            "evidence_ids": [
+              "daniel-seventy-weeks",
+              "daniel:interpretive_note:17",
+              "daniel:interpretive_note:19",
+              "daniel:interpretive_note:27"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4986d1e85d9b",
+              "syn_why_it_matters_488603005537"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_005",
+            "text": "This helps frame an interpretive question raised by the passage: Later reuse of Jeremiah includes inner-biblical reinterpretation, Jewish textual and liturgical reception, New Testament quotation and allusion, christological reading, and ecclesial theology; these modes should not be collapsed into direct prediction. Jeremiah 25 and 29 associate Babylonian domination and restoration with seventy years, a period later reinterpreted in Chronicles, Daniel, and Second Temple literature. Later reuse of Jeremiah includes inner-biblical reinterpretation, Jewish textual and liturgical reception, New Testament quotation and allusion, christological reading, and ecclesial theology; these modes should not be collapsed into direct prediction. Jeremiah 25 and 29 associate Babylonian domination and restoration with seventy years, a period later reinterpreted in Chronicles, Daniel, and Second Temple literature.",
+            "verse_refs": [
+              "Daniel 9:1-27"
+            ],
+            "evidence_ids": [
+              "jeremiah-reception-distinction",
+              "jeremiah-seventy-years"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_1cdf53948976",
+              "syn_why_it_matters_d806615d02a8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

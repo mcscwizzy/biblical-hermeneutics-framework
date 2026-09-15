@@ -1,0 +1,292 @@
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Hosea 1.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_ffb743c06cc04336: Hosea (categories: culture, history, interpretive_questions, language_literary)
+
+RELEVANT:
+- reader_idea_49aac0567a714a35: Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles. (categories: culture, interpretive_questions)
+- reader_idea_6549d874cbe064d3: Jehu fulfills prophetic judgment on Ahab's house and destroys institutional Baal worship, yet the narrator faults his continued… (categories: culture, interpretive_questions)
+- reader_idea_7faafcf721775cc9: People of God and royal priesthood language must not become antisemitism, supersessionism, ethnic nationalism, or a claim that… (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_ffb743c06cc04336: Hosea (importance: CORE; categories: culture, history, interpretive_questions, language_literary)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["hosea:interpretive_note:1", "hosea:interpretive_note:23", "hosea:interpretive_note:29", "hosea:interpretive_note:31", "hosea:interpretive_note:4"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_f96a0e875bac"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["hosea:interpretive_note:7", "hosea:interpretive_note:9"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_ff8df0dc7e1b"}
+- path_3: {"confidence": "low", "disputed": true, "evidence_ids": ["hosea-textual-witnesses", "hosea:interpretive_note:0", "hosea:interpretive_note:2", "hosea:interpretive_note:25", "hosea:interpretive_note:26"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_1619069ed807"}
+- path_4: {"confidence": "low", "disputed": true, "evidence_ids": ["hosea-composition-twelve", "hosea-family-signs", "hosea-jezreel-jehu", "hosea-marriage-language", "hosea-superscription-setting"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_3433b96e2267"}
+- path_5: {"confidence": "medium", "disputed": true, "evidence_ids": ["hosea:interpretive_note:3", "hosea:interpretive_note:30"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_e73544c5b5a2"}
+- path_6: {"confidence": "low", "disputed": true, "evidence_ids": ["hosea-textual-witnesses", "hosea:interpretive_note:0", "hosea:interpretive_note:2", "hosea:interpretive_note:25", "hosea:interpretive_note:26"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_78976ef558fb"}
+- path_7: {"confidence": "high", "disputed": false, "evidence_ids": ["hosea:interpretive_note:7", "hosea:interpretive_note:9"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_7baf0a377e84"}
+- path_8: {"confidence": "low", "disputed": true, "evidence_ids": ["hosea-composition-twelve", "hosea-family-signs", "hosea-jezreel-jehu", "hosea-marriage-language", "hosea-superscription-setting"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_be365c6c8af7"}
+- path_9: {"confidence": "medium", "disputed": true, "evidence_ids": ["hosea:interpretive_note:3", "hosea:interpretive_note:30"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_c1f7c67719bc"}
+- path_10: {"confidence": "high", "disputed": false, "evidence_ids": ["hosea:interpretive_note:1", "hosea:interpretive_note:23", "hosea:interpretive_note:29", "hosea:interpretive_note:31", "hosea:interpretive_note:4"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_f2770235c890"}
+
+IDEA reader_idea_49aac0567a714a35: Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["romans-hosea-isaiah-calling", "romans-hosea-isaiah-calling:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_30fbaeeea0bf"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["romans-hosea-isaiah-calling", "romans-hosea-isaiah-calling:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_9279cb7a3521"}
+
+IDEA reader_idea_6549d874cbe064d3: Jehu fulfills prophetic judgment on Ahab's house and destroys institutional Baal worship, yet the narrator faults his continued… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["2-kings:interpretive_note:2"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_cbc5adfda5f4"}
+
+IDEA reader_idea_7faafcf721775cc9: People of God and royal priesthood language must not become antisemitism, supersessionism, ethnic nationalism, or a claim that… (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["1-peter:interpretive_note:15"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_eb751752cf43"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. The word of Jehovah that came unto Hosea the son of Beeri, in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah, and in the days of Jeroboam the son of Joash, king of Israel. 2. When Jehovah spake at the first by Hosea, Jehovah said unto Hosea, Go, take unto thee a wife of whoredom and children of whoredom; for the land doth commit great whoredom, `departing' from Jehovah. 3. So he went and took Gomer the daughter of Diblaim; and she conceived, and bare him a son. 4. And Jehovah said unto him, Call his name Jezreel; for yet a little while, and I will avenge the blood of Jezreel upon the house of Jehu, and will cause the kingdom of the house of Israel to cease. 5. And it shall come to pass at that day, that I will break the bow of Israel in the valley of Jezreel. 6. And she conceived again, and bare a daughter. And `Jehovah' said unto him, Call her name Lo-ruhamah; for I will no more have mercy upon the house of Israel, that I should in any wise pardon them. 7. But I will have mercy upon the house of Judah, and will save them by Jehovah their God, and will not save them by bow, nor by sword, nor by battle, by horses, nor by horsemen. 8. Now when she had weaned Lo-ruhamah, she conceived, and bare a son. 9. And `Jehovah' said, Call his name Lo-ammi; for ye are not my people, and I will not be your `God'. 10. Yet the number of the children of Israel shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass that, in the place where it was said unto them, Ye are not my people, it shall be said unto them, `Ye are' the sons of the living God. 11. And the children of Judah and the children of Israel shall be gathered together, and they shall appoint themselves one head, and shall go up from the land; for great shall be the day of Jezreel.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 1, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 23, "history": 5, "language": 1, "politics": 1}, "evidence_item_count": 30, "relationship_unit_count": 6, "specific_evidence_count": 24, "unit_kind_counts": {"cultural_context": 2, "interpretive_questions": 5, "surrounding_passages": 2, "why_it_matters": 6}, "unused_evidence_ids": ["fall-of-samaria:ancient_near_east_context:0", "fall-of-samaria:hebraic_worldview:0", "fall-of-samaria:historical_context:0", "fall-of-samaria:historical_setting:0", "what-is-the-kingdom-of-israel:ancient_near_east_context:0", "what-is-the-kingdom-of-israel:historical_context:0"], "used_evidence_ids": ["1-peter:interpretive_note:15", "2-kings:interpretive_note:2", "hosea-composition-twelve", "hosea-family-signs", "hosea-jezreel-jehu", "hosea-marriage-language", "hosea-superscription-setting", "hosea-textual-witnesses", "hosea:interpretive_note:0", "hosea:interpretive_note:1", "hosea:interpretive_note:2", "hosea:interpretive_note:23", "hosea:interpretive_note:25", "hosea:interpretive_note:26", "hosea:interpretive_note:28", "hosea:interpretive_note:29", "hosea:interpretive_note:3", "hosea:interpretive_note:30", "hosea:interpretive_note:31", "hosea:interpretive_note:4", "hosea:interpretive_note:7", "hosea:interpretive_note:9", "romans-hosea-isaiah-calling", "romans-hosea-isaiah-calling:passage-relevance"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}], "synthesis_hash": "3228131efbec28edec9f10fea5ef580d90e995f376782d49cc71d8c49e9c9223", "units": [{"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:1", "hosea:interpretive_note:23", "hosea:interpretive_note:29", "hosea:interpretive_note:31", "hosea:interpretive_note:4"], "facts": ["Gomer is named but never given direct speech; interpreters should not invent motives, diagnoses, occupations, consent, or moral history for her.", "Restoration language in Hosea should not be converted into a timetable, a modern territorial entitlement, or permission for nationalism, colonialism, displacement, war, or genocide.", "Christian reuse of Hosea must not erase Israel, Jewish readers, or continuing Jewish interpretation; ecclesial application is reception, not replacement.", "Pastoral use of Hosea must center survivor safety, trauma-informed care, consent, and accountability; no reader should be told to remain with an abuser because Hosea loved a woman.", "Children used as prophetic symbols must not normalize humiliating, threatening, or burdening children with adult conflict."], "id": "syn_cultural_context_f96a0e875bac", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:7", "hosea:interpretive_note:9"], "facts": ["Hosea's marriage and stripping imagery must not be used to authorize intimate-partner violence, coercive marriage, sexual humiliation, surveillance, deprivation, or forced reconciliation.", "Hosea does not support stereotypes that sex workers or trafficked people are inherently faithless; distinguish prostitution rhetoric from the lives and agency of real people."], "id": "syn_cultural_context_ff8df0dc7e1b", "interpretation_level": "inference", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["hosea-textual-witnesses", "hosea:interpretive_note:0", "hosea:interpretive_note:2", "hosea:interpretive_note:25", "hosea:interpretive_note:26"], "facts": ["Masoretic Hosea, Old Greek Osee, Qumran witnesses, Targum, Peshitta, and Vulgate preserve evidence for a difficult and pluriform textual history requiring passage-level comparison.", "The historicity and precise social scenario of Hosea's marriage cannot be established with certainty; biography, symbolic action, literary fiction, and layered-composition models remain under discussion.", "Eshet zenunim must not be flattened into 'prostitute'; its grammar, temporal force, and social reference are lexically disputed.", "The received book contains northern features and later Judah-facing materials; assigning each line to Hosea or an editor exceeds the evidence.", "Old Greek Osee is a translation and textual witness with distinctive readings, not a uniform correction of the Masoretic text."], "id": "syn_interpretive_questions_1619069ed807", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["romans-hosea-isaiah-calling", "romans-hosea-isaiah-calling:passage-relevance"], "facts": ["Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles.", "Preserves scriptural rereading without allowing gentile readers to confiscate Israel's prophetic restoration language."], "id": "syn_interpretive_questions_30fbaeeea0bf", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:10"], "verse_refs": ["Hosea 1:10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["hosea-composition-twelve", "hosea-family-signs", "hosea-jezreel-jehu", "hosea-marriage-language", "hosea-superscription-setting"], "facts": ["The received book plausibly preserves northern prophetic materials shaped through Judean transmission and later placement at the head of the Twelve, but no reconstruction of stages commands unanimity.", "Hosea 1 narrates marriage to Gomer daughter of Diblaim and names three children Jezreel, Lo-ruhamah, and Lo-ammi as embodied signs of judgment and later reversal.", "The name Jezreel links Hosea's family sign to judgment on Jehu's dynasty and Israelite kingship, reinterpreting royal violence remembered in Kings.", "The phrase eshet zenunim in Hosea 1:2 is lexically and socially disputed and should not be treated as a transparent biographical diagnosis of Gomer.", "Hosea 1:1 associates Hosea son of Beeri with Jeroboam II of Israel and four Judean kings, locating the prophetic memory in the eighth century BCE while raising chronological and editorial questions."], "id": "syn_interpretive_questions_3433b96e2267", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "history", "language", "politics"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["2-kings:interpretive_note:2"], "facts": ["Jehu fulfills prophetic judgment on Ahab's house and destroys institutional Baal worship, yet the narrator faults his continued adherence to Jeroboam's shrines and Hosea later condemns the bloodshed at Jezreel; commission does not make every method exemplary."], "id": "syn_interpretive_questions_cbc5adfda5f4", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:4-5"], "verse_refs": ["Hosea 1:4-5"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:3", "hosea:interpretive_note:30"], "facts": ["The children function unmistakably as literary signs, but their biological paternity and the relation between narrated household and metaphor remain uncertain.", "Romans 9 and 1 Peter 2 reuse Lo-ammi and Lo-ruhamah language in distinct communities; neither passage licenses antisemitism or contempt for Jews."], "id": "syn_interpretive_questions_e73544c5b5a2", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:28"], "facts": ["Rabbinic interpretations sometimes redistribute repentance among Israel, Hosea, and God and rework threatened violence; they should be heard as substantive interpretation, not a preface to Christian readings."], "id": "syn_surrounding_passages_4fa1b04b6a5a", "interpretation_level": "inference", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["1-peter:interpretive_note:15"], "facts": ["People of God and royal priesthood language must not become antisemitism, supersessionism, ethnic nationalism, or a claim that Jewish people were rejected; First Peter reasons through Israel's scriptures rather than erasing Israel."], "id": "syn_surrounding_passages_eb751752cf43", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Hosea 1:6-2:23"], "verse_refs": ["Hosea 2:1-23"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["hosea-textual-witnesses", "hosea:interpretive_note:0", "hosea:interpretive_note:2", "hosea:interpretive_note:25", "hosea:interpretive_note:26"], "facts": ["Masoretic Hosea, Old Greek Osee, Qumran witnesses, Targum, Peshitta, and Vulgate preserve evidence for a difficult and pluriform textual history requiring passage-level comparison.", "The historicity and precise social scenario of Hosea's marriage cannot be established with certainty; biography, symbolic action, literary fiction, and layered-composition models remain under discussion.", "Eshet zenunim must not be flattened into 'prostitute'; its grammar, temporal force, and social reference are lexically disputed.", "The received book contains northern features and later Judah-facing materials; assigning each line to Hosea or an editor exceeds the evidence.", "Old Greek Osee is a translation and textual witness with distinctive readings, not a uniform correction of the Masoretic text."], "id": "syn_why_it_matters_78976ef558fb", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_1619069ed807"], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:7", "hosea:interpretive_note:9"], "facts": ["Hosea's marriage and stripping imagery must not be used to authorize intimate-partner violence, coercive marriage, sexual humiliation, surveillance, deprivation, or forced reconciliation.", "Hosea does not support stereotypes that sex workers or trafficked people are inherently faithless; distinguish prostitution rhetoric from the lives and agency of real people."], "id": "syn_why_it_matters_7baf0a377e84", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_ff8df0dc7e1b"], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["romans-hosea-isaiah-calling", "romans-hosea-isaiah-calling:passage-relevance"], "facts": ["Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles.", "Preserves scriptural rereading without allowing gentile readers to confiscate Israel's prophetic restoration language."], "id": "syn_why_it_matters_9279cb7a3521", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_30fbaeeea0bf"], "source_anchors": ["Hosea 1:10"], "verse_refs": ["Hosea 1:10"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["hosea-composition-twelve", "hosea-family-signs", "hosea-jezreel-jehu", "hosea-marriage-language", "hosea-superscription-setting"], "facts": ["The received book plausibly preserves northern prophetic materials shaped through Judean transmission and later placement at the head of the Twelve, but no reconstruction of stages commands unanimity.", "Hosea 1 narrates marriage to Gomer daughter of Diblaim and names three children Jezreel, Lo-ruhamah, and Lo-ammi as embodied signs of judgment and later reversal.", "The name Jezreel links Hosea's family sign to judgment on Jehu's dynasty and Israelite kingship, reinterpreting royal violence remembered in Kings.", "The phrase eshet zenunim in Hosea 1:2 is lexically and socially disputed and should not be treated as a transparent biographical diagnosis of Gomer.", "Hosea 1:1 associates Hosea son of Beeri with Jeroboam II of Israel and four Judean kings, locating the prophetic memory in the eighth century BCE while raising chronological and editorial questions."], "id": "syn_why_it_matters_be365c6c8af7", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_3433b96e2267"], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:3", "hosea:interpretive_note:30"], "facts": ["The children function unmistakably as literary signs, but their biological paternity and the relation between narrated household and metaphor remain uncertain.", "Romans 9 and 1 Peter 2 reuse Lo-ammi and Lo-ruhamah language in distinct communities; neither passage licenses antisemitism or contempt for Jews."], "id": "syn_why_it_matters_c1f7c67719bc", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_e73544c5b5a2"], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hosea:interpretive_note:1", "hosea:interpretive_note:23", "hosea:interpretive_note:29", "hosea:interpretive_note:31", "hosea:interpretive_note:4"], "facts": ["Gomer is named but never given direct speech; interpreters should not invent motives, diagnoses, occupations, consent, or moral history for her.", "Restoration language in Hosea should not be converted into a timetable, a modern territorial entitlement, or permission for nationalism, colonialism, displacement, war, or genocide.", "Christian reuse of Hosea must not erase Israel, Jewish readers, or continuing Jewish interpretation; ecclesial application is reception, not replacement.", "Pastoral use of Hosea must center survivor safety, trauma-informed care, consent, and accountability; no reader should be told to remain with an abuser because Hosea loved a woman.", "Children used as prophetic symbols must not normalize humiliating, threatening, or burdening children with adult conflict."], "id": "syn_why_it_matters_f2770235c890", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_f96a0e875bac"], "source_anchors": ["Hosea 1:1-11"], "verse_refs": ["Hosea 1:1-11"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "1-peter:interpretive_note:15", "passage_anchors": ["Hosea 1:6-2:23"], "source_ids": ["jobes", "levine-jant", "nets-lxx"]}, {"confidence": "high", "id": "2-kings:interpretive_note:2", "passage_anchors": ["Hosea 1:4-5"], "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"]}, {"confidence": "medium", "id": "fall-of-samaria:ancient_near_east_context:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["2-kings-17", "2-kings-18", "amos-5", "fall-of-samaria-historical-orientation", "hosea-8", "isaiah-7"]}, {"confidence": "medium", "id": "fall-of-samaria:hebraic_worldview:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["2-kings-17", "2-kings-18", "amos-5", "fall-of-samaria-historical-orientation", "hosea-8", "isaiah-7"]}, {"confidence": "medium", "id": "fall-of-samaria:historical_context:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["2-kings-17", "2-kings-18", "amos-5", "fall-of-samaria-historical-orientation", "hosea-8", "isaiah-7"]}, {"confidence": "medium", "id": "fall-of-samaria:historical_setting:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["2-kings-17", "2-kings-18", "amos-5", "fall-of-samaria-historical-orientation", "hosea-8", "isaiah-7"]}, {"confidence": "medium", "id": "hosea-composition-twelve", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["ben-zvi-wilson-hosea-prophet", "irvine-hosea", "leuchter-hosea-twelve", "rudnig-zelt-hosea-redaction"]}, {"confidence": "high", "id": "hosea-family-signs", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["andersen-freedman-hosea", "hosea-masoretic", "kalmanofsky-hosea-marriage"]}, {"confidence": "high", "id": "hosea-jezreel-jehu", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["dearman-hosea", "hosea-masoretic", "kings-hosea-context"]}, {"confidence": "low", "id": "hosea-marriage-language", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["andersen-freedman-hosea", "hosea-masoretic", "lovelace-feminist-womanist", "sherwood-prostitute-prophet"]}, {"confidence": "high", "id": "hosea-superscription-setting", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["hasegawa-hosea-history", "hosea-masoretic", "kelle-hosea-overview"]}, {"confidence": "high", "id": "hosea-textual-witnesses", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["catss-hosea-variants", "nets-twelve", "qumran-twelve-4q78", "tully-hosea-texts"]}, {"confidence": "low", "id": "hosea:interpretive_note:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["hosea-masoretic", "kalmanofsky-hosea-marriage", "kelle-hosea-overview"]}, {"confidence": "high", "id": "hosea:interpretive_note:1", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["hosea-masoretic", "lovelace-feminist-womanist", "sherwood-prostitute-prophet"]}, {"confidence": "low", "id": "hosea:interpretive_note:2", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["andersen-freedman-hosea", "tully-hosea-texts"]}, {"confidence": "high", "id": "hosea:interpretive_note:23", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["kelle-hosea-overview", "oxford-handbook-hosea"]}, {"confidence": "medium", "id": "hosea:interpretive_note:25", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["ben-zvi-wilson-hosea-prophet", "irvine-hosea", "rudnig-zelt-hosea-redaction"]}, {"confidence": "high", "id": "hosea:interpretive_note:26", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["catss-hosea-variants", "nets-twelve", "tully-hosea-texts"]}, {"confidence": "high", "id": "hosea:interpretive_note:28", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["schoenfeld-hosea-rabbinic"]}, {"confidence": "high", "id": "hosea:interpretive_note:29", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["moyise-hosea-new-testament", "oxford-handbook-hosea", "schoenfeld-hosea-rabbinic"]}, {"confidence": "medium", "id": "hosea:interpretive_note:3", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["hosea-masoretic", "kalmanofsky-hosea-marriage"]}, {"confidence": "high", "id": "hosea:interpretive_note:30", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["moyise-hosea-new-testament", "new-testament-hosea-reuse"]}, {"confidence": "high", "id": "hosea:interpretive_note:31", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["cobb-gender-violence", "lovelace-feminist-womanist"]}, {"confidence": "high", "id": "hosea:interpretive_note:4", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["cobb-gender-violence", "lovelace-feminist-womanist"]}, {"confidence": "high", "id": "hosea:interpretive_note:7", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["cobb-gender-violence", "lovelace-feminist-womanist", "sherwood-prostitute-prophet"]}, {"confidence": "high", "id": "hosea:interpretive_note:9", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["lovelace-feminist-womanist", "sherwood-prostitute-prophet"]}, {"confidence": "medium", "id": "romans-hosea-isaiah-calling", "passage_anchors": ["Hosea 1:10"], "source_ids": ["romans-israel-text", "thiessen-gentile", "wolter-romans-israel"]}, {"confidence": "medium", "id": "romans-hosea-isaiah-calling:passage-relevance", "passage_anchors": ["Hosea 1:10"], "source_ids": ["romans-israel-text", "thiessen-gentile", "wolter-romans-israel"]}, {"confidence": "medium", "id": "what-is-the-kingdom-of-israel:ancient_near_east_context:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["1-kings-12", "1-kings-16", "2-kings-17", "amos-5", "hosea-1", "isaiah-7", "what-is-the-kingdom-of-israel-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-kingdom-of-israel:historical_context:0", "passage_anchors": ["Hosea 1:1-11"], "source_ids": ["1-kings-12", "1-kings-16", "2-kings-17", "amos-5", "hosea-1", "isaiah-7", "what-is-the-kingdom-of-israel-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Hosea 1",
+  "book": "Hosea",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Hosea 1:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Hosea 1:
+   for example `Hosea 1:1` or `Hosea 1:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Hosea 1:1", "Hosea 1:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 3228131efbec28edec9f10fea5ef580d90e995f376782d49cc71d8c49e9c9223.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_e08eff33025ddae8073e7314", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_cultural_context_f96a0e875bac"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_879735fb67d0ad1e15f5fecc", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_cultural_context_ff8df0dc7e1b"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_8c9903e3dbbf0e8091a86d51", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_interpretive_questions_1619069ed807"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_a6d1035eb51daf4a5358ebb2", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_interpretive_questions_3433b96e2267"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_7497f3942f74e1b4d0bb8001", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_interpretive_questions_e73544c5b5a2"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_28330176fada7b679a5b214b", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_why_it_matters_78976ef558fb"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_5d5e8b0747e9f1973964052f", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_why_it_matters_7baf0a377e84"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_f47336c66317a59047a962bb", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_why_it_matters_be365c6c8af7"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_1885afe8aefd47dca2cfe971", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_why_it_matters_c1f7c67719bc"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_5107748fc839ea962fc303c4", "renderer_verse_refs": ["Hosea 1:1-11"], "source_verse_refs": ["Hosea 1:1-11"], "synthesis_unit": "syn_why_it_matters_f2770235c890"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_c0a4dddff797d0438da9eb94", "renderer_verse_refs": ["Hosea 1:10"], "source_verse_refs": ["Hosea 1:10"], "synthesis_unit": "syn_interpretive_questions_30fbaeeea0bf"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_2bd0717e2b4010c6d18639f8", "renderer_verse_refs": ["Hosea 1:10"], "source_verse_refs": ["Hosea 1:10"], "synthesis_unit": "syn_why_it_matters_9279cb7a3521"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_6ae97f22f660ae65352a6ecd", "renderer_verse_refs": ["Hosea 1:4-5"], "source_verse_refs": ["Hosea 1:4-5"], "synthesis_unit": "syn_interpretive_questions_cbc5adfda5f4"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_hosea_001_bfb59eed59139158bd0885c9", "renderer_verse_refs": ["Hosea 2:1-23"], "source_verse_refs": ["Hosea 2:1-23"], "synthesis_unit": "syn_surrounding_passages_eb751752cf43"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

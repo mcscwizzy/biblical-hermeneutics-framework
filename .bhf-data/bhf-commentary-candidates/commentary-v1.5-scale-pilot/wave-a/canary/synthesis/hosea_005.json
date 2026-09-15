@@ -1,0 +1,88 @@
+{
+  "reference": "Hosea 5",
+  "book": "Hosea",
+  "chapter": 5,
+  "evidence_hash": "a92d6dbd0394649d731d327732563264018c6024c27cdf2112dbc26f5b8dbb34",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "a2be0db012f95228b26bf12b7b286e104da62ee5f5862fcfbbdf35946b6ae050",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_f25953249532",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Hosea's references to Assyria, Egypt, tribute, treaties, war alarms, kings, and palace intrigue align with the northern kingdom's later eighth-century imperial crisis."
+      ],
+      "verse_refs": [
+        "Hosea 5:1-15"
+      ],
+      "evidence_ids": [
+        "hosea-assyrian-crisis"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Hosea 5:1-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "hosea-assyrian-crisis"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "politics": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

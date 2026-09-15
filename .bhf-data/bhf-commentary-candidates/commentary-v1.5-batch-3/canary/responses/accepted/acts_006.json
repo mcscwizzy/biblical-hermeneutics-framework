@@ -1,0 +1,98 @@
+{
+  "reference": "Acts 6",
+  "book": "Acts",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Synagogue, instruction, and witness",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 6 places Stephen's dispute within a Jerusalem setting where synagogue life could center on Torah reading, instruction, and hospitality for visitors. A Greek dedicatory inscription associated with a priest and synagogue leader provides bounded comparative context for that setting; it does not establish every detail of the scene.",
+          "verse_refs": [
+            "Acts 6:8-15"
+          ],
+          "evidence_ids": [
+            "theodotus-synagogue-inscription",
+            "theodotus-synagogue-inscription:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_29de182def1d",
+            "syn_why_it_matters_168873a16add"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Text and historical judgment",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The wider textual history of Acts includes early papyri and major Greek codices with different textual profiles. Historical evaluation therefore compares particular claims with particular witnesses rather than assigning blanket reliability or unreliability to the whole book.",
+          "verse_refs": [
+            "Acts 10:1-48",
+            "Acts 11:1-30",
+            "Acts 12:1-25",
+            "Acts 13:1-52",
+            "Acts 14:1-28",
+            "Acts 15:1-41",
+            "Acts 16:1-40",
+            "Acts 17:1-34",
+            "Acts 18:1-28",
+            "Acts 19:1-41",
+            "Acts 1:1-26",
+            "Acts 20:1-38",
+            "Acts 21:1-40",
+            "Acts 22:1-30",
+            "Acts 23:1-35",
+            "Acts 24:1-27",
+            "Acts 25:1-27",
+            "Acts 26:1-32",
+            "Acts 27:1-44",
+            "Acts 28:1-31",
+            "Acts 2:1-47",
+            "Acts 3:1-26",
+            "Acts 4:1-37",
+            "Acts 5:1-42",
+            "Acts 7:1-60",
+            "Acts 8:1-40",
+            "Acts 9:1-43"
+          ],
+          "evidence_ids": [
+            "acts-historical-method",
+            "acts-text-witnesses"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_bd6053707d47",
+            "syn_surrounding_passages_f23d3d8d8175"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b217ea5fa4093bbf1695ca0d83d38c20178c36b69d283208808b2e0186ede5c0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.5",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T00:00:00+00:00",
+    "synthesis_hash": "3e8cebb6ac520fcd21b5db86e961fb6a0f490e49972af6e1ba0b422ab80d98fb",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-07T00:00:00+00:00",
+    "candidate_id": "commentary-v1.2-candidate:911da22a7f8d11faa7dbebb347900ae8d7bf80942aa4e0067a805161afde776b"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

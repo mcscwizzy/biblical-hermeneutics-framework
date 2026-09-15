@@ -144,6 +144,9 @@ def build_evidence_bundle(
                 normalized_reference,
                 {
                 "source_kind": "archaeology_resolver",
+                "applicability_scope": "passage",
+                "anchor_source": "resolver",
+                "inherited_from_parent": False,
                 "passage_relationship": "direct",
                 "anchor_specificity": anchor_specificity(normalized_reference),
                 "verse_distance": 0,
@@ -288,6 +291,9 @@ def _append_geography_evidence(
                 passage_ref,
                 {
                     "source_kind": f"passage_map_{kind}",
+                    "applicability_scope": "passage",
+                    "anchor_source": "resolver",
+                    "inherited_from_parent": False,
                     "passage_relationship": "direct",
                     "map_resource_kind": kind,
                     "map_resource_id": record_id,

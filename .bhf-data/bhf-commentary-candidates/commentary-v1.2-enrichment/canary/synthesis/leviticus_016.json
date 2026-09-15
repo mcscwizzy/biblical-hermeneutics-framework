@@ -1,0 +1,326 @@
+{
+  "reference": "Leviticus 16",
+  "book": "Leviticus",
+  "chapter": 16,
+  "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "e8c356f918f0c127d1da2e7af6ebef9ffb9f5c37aea9fa54c5f1f4a486791030",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_historical_context_7a6f1c2a8e71",
+      "kind": "historical_context",
+      "facts": [
+        "Leviticus 16 prescribes an annual rite addressing the sanctuary, priesthood, and people and identifies it as a Sabbath of solemn rest and a lasting statute."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "leviticus-day-of-atonement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_3a51791818d0",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Curtains, veils, rooms, furnishings, washing, personnel, and restricted occasions of entry organize access in graded rather than undifferentiated space.",
+        "This evidence explains why barriers and priestly duties are integral to holiness and approach rather than arbitrary decoration.",
+        "The court, outer room, inner room, veils, washing, and differentiated personnel form a graded system of access; assigning an independent symbolic meaning to every measurement, color, or material exceeds what Exodus explains."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "tabernacle-graded-sacred-space",
+        "tabernacle-graded-sacred-space:passage-relevance",
+        "tabernacle-presence-access-and-mobility:interpretive_note:1"
+      ],
+      "entity_ids": [
+        "priesthood",
+        "tabernacle"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_d99fcd0db6e9",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+        "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."
+      ],
+      "verse_refs": [
+        "Leviticus 16"
+      ],
+      "evidence_ids": [
+        "leviticus:interpretive_note:2",
+        "leviticus:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0d43076c9992",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows."
+      ],
+      "verse_refs": [
+        "Leviticus 1",
+        "Leviticus 10:1-20",
+        "Leviticus 11:1-47",
+        "Leviticus 12:1-8",
+        "Leviticus 13:1-59",
+        "Leviticus 14:1-57",
+        "Leviticus 15:1-33",
+        "Leviticus 17:1-16",
+        "Leviticus 18:1-30",
+        "Leviticus 19:1-37",
+        "Leviticus 20:1-27",
+        "Leviticus 21:1-24",
+        "Leviticus 22:1-33",
+        "Leviticus 23:1-44",
+        "Leviticus 24:1-23",
+        "Leviticus 25:1-55",
+        "Leviticus 26:1-46",
+        "Leviticus 27:1-34",
+        "Leviticus 2:1-16",
+        "Leviticus 3:1-17",
+        "Leviticus 4:1-35",
+        "Leviticus 5:1-19",
+        "Leviticus 6:1-30",
+        "Leviticus 7:1-38",
+        "Leviticus 8:1-36",
+        "Leviticus 9:1-24"
+      ],
+      "evidence_ids": [
+        "leviticus-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Leviticus 1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5f2837cc0f6d",
+      "kind": "why_it_matters",
+      "facts": [
+        "Curtains, veils, rooms, furnishings, washing, personnel, and restricted occasions of entry organize access in graded rather than undifferentiated space.",
+        "This evidence explains why barriers and priestly duties are integral to holiness and approach rather than arbitrary decoration.",
+        "The court, outer room, inner room, veils, washing, and differentiated personnel form a graded system of access; assigning an independent symbolic meaning to every measurement, color, or material exceeds what Exodus explains."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "tabernacle-graded-sacred-space",
+        "tabernacle-graded-sacred-space:passage-relevance",
+        "tabernacle-presence-access-and-mobility:interpretive_note:1"
+      ],
+      "entity_ids": [
+        "priesthood",
+        "tabernacle"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_3a51791818d0"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_76b27b863c82",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+        "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."
+      ],
+      "verse_refs": [
+        "Leviticus 16"
+      ],
+      "evidence_ids": [
+        "leviticus:interpretive_note:2",
+        "leviticus:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_d99fcd0db6e9"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 53,
+    "used_evidence_ids": [
+      "leviticus-day-of-atonement",
+      "leviticus-literary-movement",
+      "leviticus:interpretive_note:2",
+      "leviticus:interpretive_note:3",
+      "tabernacle-graded-sacred-space",
+      "tabernacle-graded-sacred-space:passage-relevance",
+      "tabernacle-presence-access-and-mobility:interpretive_note:1"
+    ],
+    "unused_evidence_ids": [
+      "atonement:ancient_near_east_context:0",
+      "atonement:historical_context:0",
+      "high-priesthood:ancient_near_east_context:0",
+      "high-priesthood:hebraic_worldview:0",
+      "high-priesthood:historical_context:0",
+      "high-priesthood:historical_setting:0",
+      "high-priesthood:original_audience:0",
+      "high-priesthood:second_temple_context:0",
+      "priesthood-of-believers:ancient_near_east_context:0",
+      "priesthood-of-believers:historical_context:0",
+      "priesthood:ancient_near_east_context:0",
+      "priesthood:hebraic_worldview:0",
+      "priesthood:historical_context:0",
+      "priesthood:second_temple_context:0",
+      "sacrifice-theme:ancient_near_east_context:0",
+      "sacrifice-theme:hebraic_worldview:0",
+      "sacrifice-theme:historical_context:0",
+      "sacrifice-theme:second_temple_context:0",
+      "sacrificial-system:ancient_near_east_context:0",
+      "sacrificial-system:historical_context:0",
+      "tabernacle:ancient_near_east_context:0",
+      "tabernacle:archaeology:0",
+      "tabernacle:archaeology:1",
+      "tabernacle:date_ranges:0",
+      "tabernacle:date_ranges:1",
+      "tabernacle:hebraic_worldview:0",
+      "tabernacle:historical_context:0",
+      "tabernacle:historical_setting:0",
+      "tabernacle:original_audience:0",
+      "tabernacle:second_temple_context:0",
+      "tabernacle:timeline:0",
+      "tabernacle:timeline:1",
+      "tabernacle:timeline:2",
+      "tabernacle:timeline:3",
+      "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
+      "what-is-sacrifice-in-the-bible:historical_context:0",
+      "what-is-the-tabernacle:ancient_near_east_context:0",
+      "what-is-the-tabernacle:archaeology:0",
+      "what-is-the-tabernacle:archaeology:1",
+      "what-is-the-tabernacle:date_ranges:0",
+      "what-is-the-tabernacle:date_ranges:1",
+      "what-is-the-tabernacle:hebraic_worldview:0",
+      "what-is-the-tabernacle:historical_context:0",
+      "what-is-the-tabernacle:historical_setting:0",
+      "what-is-the-tabernacle:original_audience:0",
+      "what-is-the-tabernacle:second_temple_context:0"
+    ],
+    "evidence_categories": {
+      "archaeology": 4,
+      "chronology": 8,
+      "culture": 24,
+      "geography": 1,
+      "history": 13,
+      "social": 3
+    },
+    "category_diversity": 6,
+    "specific_evidence_count": 7,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 4,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "historical_context": 1,
+      "interpretive_questions": 2,
+      "surrounding_passages": 1,
+      "why_it_matters": 2
+    },
+    "relationship_unit_count": 2
+  }
+}

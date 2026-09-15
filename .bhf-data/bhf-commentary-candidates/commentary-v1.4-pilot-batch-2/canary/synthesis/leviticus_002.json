@@ -1,0 +1,140 @@
+{
+  "reference": "Leviticus 2",
+  "book": "Leviticus",
+  "chapter": 2,
+  "evidence_hash": "d8cb3005576644ff7c625adb2a2577324985355b305a2bf94289ec603e4ae4a5",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "42ce2a4e990e6badc4af6bd00b877bfb1ba6df0b55ac1afea284263c5563f9c2",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_00f90190d83d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows."
+      ],
+      "verse_refs": [
+        "Leviticus 1",
+        "Leviticus 10:1-20",
+        "Leviticus 11:1-47",
+        "Leviticus 12:1-8",
+        "Leviticus 13:1-59",
+        "Leviticus 14:1-57",
+        "Leviticus 15:1-33",
+        "Leviticus 16:1-34",
+        "Leviticus 17:1-16",
+        "Leviticus 18:1-30",
+        "Leviticus 19:1-37",
+        "Leviticus 20:1-27",
+        "Leviticus 21:1-24",
+        "Leviticus 22:1-33",
+        "Leviticus 23:1-44",
+        "Leviticus 24:1-23",
+        "Leviticus 25:1-55",
+        "Leviticus 26:1-46",
+        "Leviticus 27:1-34",
+        "Leviticus 3:1-17",
+        "Leviticus 4:1-35",
+        "Leviticus 5:1-19",
+        "Leviticus 6:1-30",
+        "Leviticus 7:1-38",
+        "Leviticus 8:1-36",
+        "Leviticus 9:1-24"
+      ],
+      "evidence_ids": [
+        "leviticus-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Leviticus 1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_126f6508fb72",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed."
+      ],
+      "verse_refs": [
+        "Leviticus 1",
+        "Leviticus 3:1-17",
+        "Leviticus 4:1-35",
+        "Leviticus 5:1-19",
+        "Leviticus 6:1-30",
+        "Leviticus 7:1-38"
+      ],
+      "evidence_ids": [
+        "leviticus:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Leviticus 1-7"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "leviticus-literary-movement",
+      "leviticus:interpretive_note:2"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1,
+      "geography": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 2
+    },
+    "relationship_unit_count": 0
+  }
+}

@@ -1,0 +1,1246 @@
+{
+  "reference": "Exodus 25",
+  "book": "Exodus",
+  "chapter": 25,
+  "evidence_hash": "16c5a6eea7c9e7859dd4734f53367a22eb26fdccf171d46951e2624ccd2d2da3",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "3b950c0571d98888e444b52b8ffc4d15440a9ca10efad0972214a065632e9409",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_9b29a075c708",
+      "kind": "archaeology_geography",
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_38d1b2481471",
+      "kind": "chronology",
+      "facts": [
+        "New Jerusalem has no temple because God and the Lamb dwell there"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_5b13b81ed092",
+      "kind": "chronology",
+      "facts": [
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_3a4de4af0c9d",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-theme:ancient_near_east_context:0",
+        "temple-theme:hebraic_worldview:0",
+        "temple-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_54165490e486",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient temples were often royal and cultic centers; Israel’s temple is distinct because it foregrounds covenant holiness and atonement under one God."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5c9e8e8cdf3d",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples were common in the ancient world, but Israel’s temple is defined by covenant holiness and the one true God."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_78a62cffe559",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b3c7a9d3da82",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples were common in the ancient world, but Israel's temple is defined by covenant holiness and the one true God."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_ba727342c810",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for New Temple Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "new-temple-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d30edbe109aa",
+      "kind": "cultural_context",
+      "facts": [
+        "Exodus connects the tabernacle's purpose with God's dwelling among Israel and ends when divine glory fills the completed dwelling."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "exodus-tabernacle-presence"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_547bad13870c",
+      "kind": "historical_context",
+      "facts": [
+        "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-temple:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_756b17096b17",
+      "kind": "historical_context",
+      "facts": [
+        "Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_770e71d04304",
+      "kind": "historical_context",
+      "facts": [
+        "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-temple:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_79116f51b22f",
+      "kind": "historical_context",
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_9c197dadf299",
+      "kind": "historical_context",
+      "facts": [
+        "The temple develops from tabernacle patterns into Solomon’s temple, survives in exilic memory, and is rebuilt in the second temple period."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple:historical_context:0"
+      ],
+      "entity_ids": [
+        "temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a8399d785b85",
+      "kind": "historical_context",
+      "facts": [
+        "New Temple Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "new-temple-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_863cd0d5e41d",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Exodus explicitly connects sanctuary construction with YHWH dwelling among Israel and meeting Israel there.",
+        "This evidence explains why the tabernacle section is integral to Exodus's movement from deliverance and covenant to mediated divine presence.",
+        "Exodus gives the sanctuary's purpose as divine dwelling among Israel; this wording does not imply that Israel contains, controls, or owns God."
+      ],
+      "verse_refs": [
+        "Exodus 25:1-9",
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "tabernacle-dwelling-purpose",
+        "tabernacle-dwelling-purpose:passage-relevance",
+        "tabernacle-presence-access-and-mobility:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:1-9",
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_a5fae7fc5f1d",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "sanctuary-theme:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_bfe01ef00f91",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Exodus itself identifies dwelling among Israel as the sanctuary's purpose and glory filling the completed dwelling as the narrative climax."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "tabernacle:interpretive_note:0"
+      ],
+      "entity_ids": [
+        "tabernacle"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_cc08d92eae98",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The shortest text-grounded definition is: Israel's divinely instructed sanctuary and tent of meeting, made so YHWH may dwell among the people and ordered for holy, mediated, mobile worship."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-tabernacle:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_077350950f65",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 12:1-51",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_3e7520b9ffe4",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Shared mobility, tent construction, central placement, or restricted sacred objects establish analogy only; they do not prove direct borrowing, identical dimensions, common deity, or historical identity."
+      ],
+      "verse_refs": [
+        "Exodus 26:1-37",
+        "Exodus 27:1-19"
+      ],
+      "evidence_ids": [
+        "ancient-portable-sanctuaries-and-tabernacle-comparisons:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 25:1-27:19"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_53bee1852a86",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Exodus narrates the sanctuary twice—first as instruction and then as construction—with repeated compliance formulas and a concluding inspection.",
+        "This evidence treats the repeated detail as part of Exodus's literary emphasis on authorized, communal, and completed construction."
+      ],
+      "verse_refs": [
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18"
+      ],
+      "evidence_ids": [
+        "tabernacle-command-construction-correspondence",
+        "tabernacle-command-construction-correspondence:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 25:1-31:18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_b1000ef31469",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 12:1-51",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-ane-context"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_c15557df043f",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Exodus narrates the sanctuary twice—first as instruction and then as construction—with repeated compliance formulas and a concluding inspection.",
+        "This evidence treats the repeated detail as part of Exodus's literary emphasis on authorized, communal, and completed construction."
+      ],
+      "verse_refs": [
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18"
+      ],
+      "evidence_ids": [
+        "tabernacle-command-construction-correspondence",
+        "tabernacle-command-construction-correspondence:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_53bee1852a86"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 25:1-31:18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_faf0e7fdbe6a",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 12:1-51",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus:interpretive_note:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_110dae87e0ce",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_78a62cffe559"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_2a3dec79742b",
+      "kind": "why_it_matters",
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_archaeology_geography_9b29a075c708"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5ce1023a97aa",
+      "kind": "why_it_matters",
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_historical_context_79116f51b22f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_63453a7546f9",
+      "kind": "why_it_matters",
+      "facts": [
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-theme:ancient_near_east_context:0",
+        "temple-theme:hebraic_worldview:0",
+        "temple-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_3a4de4af0c9d"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_653b074c368b",
+      "kind": "why_it_matters",
+      "facts": [
+        "Exodus explicitly connects sanctuary construction with YHWH dwelling among Israel and meeting Israel there.",
+        "This evidence explains why the tabernacle section is integral to Exodus's movement from deliverance and covenant to mediated divine presence.",
+        "Exodus gives the sanctuary's purpose as divine dwelling among Israel; this wording does not imply that Israel contains, controls, or owns God."
+      ],
+      "verse_refs": [
+        "Exodus 25:1-9",
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "tabernacle-dwelling-purpose",
+        "tabernacle-dwelling-purpose:passage-relevance",
+        "tabernacle-presence-access-and-mobility:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_863cd0d5e41d"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:1-9",
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_98de830034d5",
+      "kind": "why_it_matters",
+      "facts": [
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ],
+      "verse_refs": [
+        "Exodus 25:8-9"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_chronology_5b13b81ed092"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 25:8-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 41,
+    "used_evidence_ids": [
+      "ancient-portable-sanctuaries-and-tabernacle-comparisons:interpretive_note:0",
+      "exodus-ane-context",
+      "exodus-literary-movement",
+      "exodus-tabernacle-presence",
+      "exodus:interpretive_note:1",
+      "new-temple-theme:ancient_near_east_context:0",
+      "new-temple-theme:historical_context:0",
+      "sanctuary-theme:interpretive_note:0",
+      "tabernacle-command-construction-correspondence",
+      "tabernacle-command-construction-correspondence:passage-relevance",
+      "tabernacle-dwelling-purpose",
+      "tabernacle-dwelling-purpose:passage-relevance",
+      "tabernacle-presence-access-and-mobility:interpretive_note:0",
+      "tabernacle:interpretive_note:0",
+      "temple-symbol:ancient_near_east_context:0",
+      "temple-symbol:hebraic_worldview:0",
+      "temple-symbol:historical_context:0",
+      "temple-symbol:historical_setting:0",
+      "temple-symbol:key_places:0",
+      "temple-symbol:key_places:1",
+      "temple-symbol:key_places:2",
+      "temple-symbol:key_places:3",
+      "temple-symbol:original_audience:0",
+      "temple-symbol:second_temple_context:0",
+      "temple-symbol:timeline:0",
+      "temple-symbol:timeline:1",
+      "temple-symbol:timeline:2",
+      "temple-symbol:timeline:3",
+      "temple-symbol:timeline:4",
+      "temple-symbol:timeline:5",
+      "temple-theme:ancient_near_east_context:0",
+      "temple-theme:hebraic_worldview:0",
+      "temple-theme:historical_context:0",
+      "temple-theme:second_temple_context:0",
+      "temple:ancient_near_east_context:0",
+      "temple:historical_context:0",
+      "what-is-the-significance-of-the-temple:ancient_near_east_context:0",
+      "what-is-the-significance-of-the-temple:historical_context:0",
+      "what-is-the-tabernacle:interpretive_note:0",
+      "what-is-the-temple:ancient_near_east_context:0",
+      "what-is-the-temple:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "chronology": 6,
+      "culture": 22,
+      "geography": 5,
+      "history": 7,
+      "social": 1
+    },
+    "category_diversity": 5,
+    "specific_evidence_count": 41,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 2,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "chronology": 2,
+      "cultural_context": 7,
+      "historical_context": 6,
+      "interpretive_questions": 4,
+      "surrounding_passages": 6,
+      "why_it_matters": 6
+    },
+    "relationship_unit_count": 7
+  }
+}

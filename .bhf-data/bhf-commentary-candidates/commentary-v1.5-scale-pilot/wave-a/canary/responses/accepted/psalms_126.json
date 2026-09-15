@@ -1,0 +1,60 @@
+{
+  "reference": "Psalms 126",
+  "book": "Psalms",
+  "chapter": 126,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "surrounding_passages",
+      "title": "Surrounding Passages",
+      "blocks": [
+        {
+          "id": "block_001",
+          "text": "The surrounding passage context adds this comparison: Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship.",
+          "verse_refs": [
+            "Psalms 120:1-7",
+            "Psalms 121:1-8",
+            "Psalms 122:1-9",
+            "Psalms 123:1-4",
+            "Psalms 124:1-8",
+            "Psalms 125:1-5",
+            "Psalms 127:1-5",
+            "Psalms 128:1-6",
+            "Psalms 129:1-8",
+            "Psalms 130:1-8",
+            "Psalms 131:1-3",
+            "Psalms 132:1-18",
+            "Psalms 133:1-3",
+            "Psalms 134:1-3"
+          ],
+          "evidence_ids": [
+            "psalms-exile-restoration-pilgrimage"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_be9dfed377d3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cc17287ce6413d0b7c5277a0f785a95c75a2f249a6748f22cc7c05e8a642b8a4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.5",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-08T06:10:30.609524+00:00",
+    "synthesis_hash": "2818274d977abdcdeac8f8a24e24895ba3a6d14382ae2b10670d3ea9e237ea8e",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-08T06:10:30.609524+00:00",
+    "candidate_id": "commentary-v1.2-candidate:df5440dec0337a6bd4b9f07f928cf4405032e806a55ad5ba730fa9d072f39579"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

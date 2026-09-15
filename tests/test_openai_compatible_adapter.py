@@ -54,6 +54,7 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
             user_prompt="user",
             model="local-model",
             temperature=0.3,
+            reasoning_effort="high",
             max_tokens=2048,
             response_format={"type": "json_object"},
         )
@@ -66,6 +67,7 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
         self.assertLessEqual(captured["timeout"], 5)
         self.assertEqual(captured["headers"]["Authorization"], "Bearer local")
         self.assertEqual(captured["body"]["model"], "local-model")
+        self.assertEqual(captured["body"]["reasoning_effort"], "high")
         self.assertEqual(captured["body"]["messages"][0]["role"], "system")
         self.assertEqual(captured["body"]["messages"][1]["content"], "user")
         self.assertEqual(captured["body"]["response_format"], {"type": "json_object"})

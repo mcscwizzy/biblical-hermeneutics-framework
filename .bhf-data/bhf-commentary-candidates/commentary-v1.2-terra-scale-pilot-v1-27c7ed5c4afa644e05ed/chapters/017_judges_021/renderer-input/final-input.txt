@@ -1,0 +1,272 @@
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Judges 21.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_b5b151292c05caf4: The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social… (categories: culture, surrounding_passages)
+
+RELEVANT:
+- reader_idea_6d0c54945b6e935a: The closing narratives repeatedly connect the absence of a king with people doing what is right in their own eyes. (categories: history, interpretive_questions)
+- reader_idea_d70a33d63f3edd88: Neither an Iron I open cult place nor occupation remains at Shiloh can by themselves be identified with Micah's shrine, the Danite… (categories: culture, geography, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_6d0c54945b6e935a: The closing narratives repeatedly connect the absence of a king with people doing what is right in their own eyes. (importance: RELEVANT; categories: history, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["judges-no-king-refrain", "judges:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_8fe5fada6857"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["judges-no-king-refrain", "judges:interpretive_note:1"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_cf96dfc00192"}
+
+IDEA reader_idea_d70a33d63f3edd88: Neither an Iron I open cult place nor occupation remains at Shiloh can by themselves be identified with Micah's shrine, the Danite… (importance: RELEVANT; categories: culture, geography, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["judges-household-religion-and-regional-cult-sites:interpretive_note:1", "shiloh-sanctuary-and-festival", "shiloh-sanctuary-and-festival:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_9f303957f95f"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["judges-household-religion-and-regional-cult-sites:interpretive_note:1", "shiloh-sanctuary-and-festival", "shiloh-sanctuary-and-festival:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_768bee230e08"}
+
+IDEA reader_idea_b5b151292c05caf4: The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social… (importance: CORE; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["judges:interpretive_note:4"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_4945bcb7ed39"}
+- path_2: {"confidence": "high", "disputed": false, "evidence_ids": ["judges-literary-movement"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_a3e2f2b1d346"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. Now the men of Israel had sworn in Mizpah, saying, There shall not any of us give his daughter unto Benjamin to wife. 2. And the people came to Beth-el, and sat there till even before God, and lifted up their voices, and wept sore. 3. And they said, O Jehovah, the God of Israel, why is this come to pass in Israel, that there should be to-day one tribe lacking in Israel? 4. And it came to pass on the morrow, that the people rose early, and built there an altar, and offered burnt-offerings and peace-offerings. 5. And the children of Israel said, Who is there among all the tribes of Israel that came not up in the assembly unto Jehovah? For they had made a great oath concerning him that came not up unto Jehovah to Mizpah, saying, He shall surely be put to death. 6. And the children of Israel repented them for Benjamin their brother, and said, There is one tribe cut off from Israel this day. 7. How shall we do for wives for them that remain, seeing we have sworn by Jehovah that we will not give them of our daughters to wives? 8. And they said, What one is there of the tribes of Israel that came not up unto Jehovah to Mizpah? And, behold, there came none to the camp from Jabesh-gilead to the assembly. 9. For when the people were numbered, behold, there were none of the inhabitants of Jabesh-gilead there. 10. And the congregation sent thither twelve thousand men of the valiantest, and commanded them, saying, Go and smite the inhabitants of Jabesh-gilead with the edge of the sword, with the women and the little ones. 11. And this is the thing that ye shall do: ye shall utterly destroy every male, and every woman that hath lain by man. 12. And they found among the inhabitants of Jabesh-gilead four hundred young virgins, that had not known man by lying with him; and they brought them unto the camp to Shiloh, which is in the land of Canaan. 13. And the whole congregation sent and spake to the children of Benjamin that were in the rock of Rimmon, and proclaimed peace unto them. 14. And Benjamin returned at that time; and they gave them the women whom they had saved alive of the women of Jabesh-gilead: and yet so they sufficed them not. 15. And the people repented them for Benjamin, because that Jehovah had made a breach in the tribes of Israel. 16. Then the elders of the congregation said, How shall we do for wives for them that remain, seeing the women are destroyed out of Benjamin? 17. And they said, There must be an inheritance for them that are escaped of Benjamin, that a tribe be not blotted out from Israel. 18. Howbeit we may not give them wives of our daughters, for the children of Israel had sworn, saying, Cursed be he that giveth a wife to Benjamin. 19. And they said, Behold, there is a feast of Jehovah from year to year in Shiloh, which is on the north of Beth-el, on the east side of the highway that goeth up from Beth-el to Shechem, and on the south of Lebonah. 20. And they commanded the children of Benjamin, saying, Go and lie in wait in the vineyards, 21. and see, and, behold, if the daughters of Shiloh come out to dance in the dances, then come ye out of the vineyards, and catch you every man his wife of the daughters of Shiloh, and go to the land of Benjamin. 22. And it shall be, when their fathers or their brethren come to complain unto us, that we will say unto them, Grant them graciously unto us, because we took not for each man `of them' his wife in battle, neither did ye give them unto them, else would ye now be guilty. 23. And the children of Benjamin did so, and took them wives, according to their number, of them that danced, whom they carried off: and they went and returned unto their inheritance, and built the cities, and dwelt in them. 24. And the children of Israel departed thence at that time, every man to his tribe and to his family, and they went out from thence every man to his inheritance. 25. In those days there was no king in Israel: every man did that which was right in his own eyes.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 0, "people": 0, "places": 1}, "evidence_categories": {"culture": 5, "geography": 2, "history": 2, "politics": 1}, "evidence_item_count": 10, "relationship_unit_count": 2, "specific_evidence_count": 7, "unit_kind_counts": {"interpretive_questions": 2, "surrounding_passages": 2, "why_it_matters": 2}, "unused_evidence_ids": ["shiloh:ancient_near_east_context:0", "shiloh:hebraic_worldview:0", "shiloh:historical_context:0"], "used_evidence_ids": ["judges-household-religion-and-regional-cult-sites:interpretive_note:1", "judges-literary-movement", "judges-no-king-refrain", "judges:interpretive_note:1", "judges:interpretive_note:4", "shiloh-sanctuary-and-festival", "shiloh-sanctuary-and-festival:passage-relevance"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "5fbe731a78216185351e9a165e7d825a9cfac4ce5360b9feb91609786b1cb368", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["judges-no-king-refrain", "judges:interpretive_note:1"], "facts": ["The closing narratives repeatedly connect the absence of a king with people doing what is right in their own eyes.", "The repeated statement that Israel had no king raises the kingship question but does not by itself endorse every form of monarchy; Abimelech's rule and 1 Samuel's warnings must remain in view."], "id": "syn_interpretive_questions_8fe5fada6857", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["history", "politics"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Judges 21:25"], "verse_refs": ["Judges 21:25"]}, {"confidence": "medium", "entity_ids": ["shiloh"], "evidence_ids": ["judges-household-religion-and-regional-cult-sites:interpretive_note:1", "shiloh-sanctuary-and-festival", "shiloh-sanctuary-and-festival:passage-relevance"], "facts": ["Neither an Iron I open cult place nor occupation remains at Shiloh can by themselves be identified with Micah's shrine, the Danite installation, the tent of meeting, or the festival of Judges 21.", "Judges refers to the house of God at Shiloh and gives a precise route description for an annual festival of YHWH there; excavation documents occupation but does not identify the narrated installations or event.", "The evidence grounds Judges 21 in a named regional gathering place while preventing occupation remains from being treated as proof of the festival or tabernacle."], "id": "syn_interpretive_questions_9f303957f95f", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Judges 21:19-23"], "verse_refs": ["Judges 21:19-23"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["judges:interpretive_note:4"], "facts": ["The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social collapse, not supplied as moral templates for imitation."], "id": "syn_surrounding_passages_4945bcb7ed39", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Judges 19-21"], "verse_refs": ["Judges 19", "Judges 20:1-48"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["judges-literary-movement"], "facts": ["Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war."], "id": "syn_surrounding_passages_a3e2f2b1d346", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Judges 1-21"], "verse_refs": ["Judges 1", "Judges 10:1-18", "Judges 11:1-40", "Judges 12:1-15", "Judges 13:1-25", "Judges 14:1-20", "Judges 15:1-20", "Judges 16:1-31", "Judges 17:1-13", "Judges 18:1-31", "Judges 19:1-30", "Judges 20:1-48", "Judges 2:1-23", "Judges 3:1-31", "Judges 4:1-24", "Judges 5:1-31", "Judges 6:1-40", "Judges 7:1-25", "Judges 8:1-35", "Judges 9:1-57"]}, {"confidence": "medium", "entity_ids": ["shiloh"], "evidence_ids": ["judges-household-religion-and-regional-cult-sites:interpretive_note:1", "shiloh-sanctuary-and-festival", "shiloh-sanctuary-and-festival:passage-relevance"], "facts": ["Neither an Iron I open cult place nor occupation remains at Shiloh can by themselves be identified with Micah's shrine, the Danite installation, the tent of meeting, or the festival of Judges 21.", "Judges refers to the house of God at Shiloh and gives a precise route description for an annual festival of YHWH there; excavation documents occupation but does not identify the narrated installations or event.", "The evidence grounds Judges 21 in a named regional gathering place while preventing occupation remains from being treated as proof of the festival or tabernacle."], "id": "syn_why_it_matters_768bee230e08", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_9f303957f95f"], "source_anchors": ["Judges 21:19-23"], "verse_refs": ["Judges 21:19-23"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["judges-no-king-refrain", "judges:interpretive_note:1"], "facts": ["The closing narratives repeatedly connect the absence of a king with people doing what is right in their own eyes.", "The repeated statement that Israel had no king raises the kingship question but does not by itself endorse every form of monarchy; Abimelech's rule and 1 Samuel's warnings must remain in view."], "id": "syn_why_it_matters_cf96dfc00192", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_8fe5fada6857"], "source_anchors": ["Judges 21:25"], "verse_refs": ["Judges 21:25"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "judges-household-religion-and-regional-cult-sites:interpretive_note:1", "passage_anchors": ["Judges 21:19-23"], "source_ids": ["finkelstein-shiloh-report-1985", "mazar-bull-site-1982", "nakhai-religions-canaan-israel-2001"]}, {"confidence": "high", "id": "judges-literary-movement", "passage_anchors": ["Judges 1-21"], "source_ids": ["butler-judges", "judges-1-21", "webb-judges"]}, {"confidence": "high", "id": "judges-no-king-refrain", "passage_anchors": ["Judges 21:25"], "source_ids": ["butler-judges", "judges-1-21"]}, {"confidence": "medium", "id": "judges:interpretive_note:1", "passage_anchors": ["Judges 21:25"], "source_ids": ["butler-judges", "judges-1-21", "webb-judges"]}, {"confidence": "high", "id": "judges:interpretive_note:4", "passage_anchors": ["Judges 19-21"], "source_ids": ["butler-judges", "judges-1-21", "webb-judges"]}, {"confidence": "medium", "id": "shiloh-sanctuary-and-festival", "passage_anchors": ["Judges 21:19-23"], "source_ids": ["finkelstein-shiloh-report-1985", "judges-17-21-text", "nakhai-religions-canaan-israel-2001", "webb-judges-2012-cult"]}, {"confidence": "medium", "id": "shiloh-sanctuary-and-festival:passage-relevance", "passage_anchors": ["Judges 21:19-23"], "source_ids": ["finkelstein-shiloh-report-1985", "judges-17-21-text", "nakhai-religions-canaan-israel-2001", "webb-judges-2012-cult"]}, {"confidence": "medium", "id": "shiloh:ancient_near_east_context:0", "passage_anchors": ["Judges 21:19-23"], "source_ids": ["finkelstein-shiloh-1985", "shiloh-biblical-texts", "webb-shiloh-2012"]}, {"confidence": "medium", "id": "shiloh:hebraic_worldview:0", "passage_anchors": ["Judges 21:19-23"], "source_ids": ["finkelstein-shiloh-1985", "shiloh-biblical-texts", "webb-shiloh-2012"]}, {"confidence": "medium", "id": "shiloh:historical_context:0", "passage_anchors": ["Judges 21:19-23"], "source_ids": ["finkelstein-shiloh-1985", "shiloh-biblical-texts", "webb-shiloh-2012"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Judges 21",
+  "book": "Judges",
+  "chapter": 21,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Judges 21:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Judges 21:
+   for example `Judges 21:1` or `Judges 21:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Judges 21:1", "Judges 21:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 5fbe731a78216185351e9a165e7d825a9cfac4ce5360b9feb91609786b1cb368.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_judges_021_5c1776296599158adebe09fa", "renderer_verse_refs": ["Judges 21:25"], "source_verse_refs": ["Judges 21:25"], "synthesis_unit": "syn_interpretive_questions_8fe5fada6857"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_judges_021_a15fca112060f7c9a6081a7a", "renderer_verse_refs": ["Judges 21:25"], "source_verse_refs": ["Judges 21:25"], "synthesis_unit": "syn_why_it_matters_cf96dfc00192"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_judges_021_e97eeceb7508e0ee2926d1bc", "renderer_verse_refs": ["Judges 21:19-23"], "source_verse_refs": ["Judges 21:19-23"], "synthesis_unit": "syn_interpretive_questions_9f303957f95f"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_judges_021_1e538f3f591f92d3f08d8087", "renderer_verse_refs": ["Judges 21:19-23"], "source_verse_refs": ["Judges 21:19-23"], "synthesis_unit": "syn_why_it_matters_768bee230e08"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_judges_021_3a8787676731a8385bec803e", "renderer_verse_refs": ["Judges 19", "Judges 20:1-48"], "source_verse_refs": ["Judges 19", "Judges 20:1-48"], "synthesis_unit": "syn_surrounding_passages_4945bcb7ed39"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_judges_021_6f16ba3e4e7cc8609d53e7a2", "renderer_verse_refs": ["Judges 1", "Judges 10:1-18", "Judges 11:1-40", "Judges 12:1-15", "Judges 13:1-25", "Judges 14:1-20", "Judges 15:1-20", "Judges 16:1-31", "Judges 17:1-13", "Judges 18:1-31", "Judges 19:1-30", "Judges 20:1-48", "Judges 2:1-23", "Judges 3:1-31", "Judges 4:1-24", "Judges 5:1-31", "Judges 6:1-40", "Judges 7:1-25", "Judges 8:1-35", "Judges 9:1-57"], "source_verse_refs": ["Judges 1", "Judges 10:1-18", "Judges 11:1-40", "Judges 12:1-15", "Judges 13:1-25", "Judges 14:1-20", "Judges 15:1-20", "Judges 16:1-31", "Judges 17:1-13", "Judges 18:1-31", "Judges 19:1-30", "Judges 20:1-48", "Judges 2:1-23", "Judges 3:1-31", "Judges 4:1-24", "Judges 5:1-31", "Judges 6:1-40", "Judges 7:1-25", "Judges 8:1-35", "Judges 9:1-57"], "synthesis_unit": "syn_surrounding_passages_a3e2f2b1d346"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

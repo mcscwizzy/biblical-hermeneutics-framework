@@ -1,0 +1,886 @@
+{
+  "reference": "James 5",
+  "book": "James",
+  "chapter": 5,
+  "evidence_hash": "9ff5429ce83a27f744a60f7a812d5a9258c8c5715234712642f000978280efb0",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "5ea8ea4e03886d45b2076b14b52c119729a26e41b41fe072b7a17919ead373ef",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_0fdbc5ca26a0",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Theology of Prayer includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, prayer-theme, and psalms without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "James 5:13-18"
+      ],
+      "evidence_ids": [
+        "theology-of-prayer:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_206e4a0ef9f3",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Prayer Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, theology-of-prayer, and psalms without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "James 5:13-18"
+      ],
+      "evidence_ids": [
+        "prayer-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_2079c564c597",
+      "kind": "cultural_context",
+      "facts": [
+        "Withheld wages cry out in James; modern application should resist wage theft and worker exploitation while attending to laborers' agency and material remedies.",
+        "James says wages withheld from harvest laborers cry out and that the laborers' cries reach the Lord of hosts."
+      ],
+      "verse_refs": [
+        "James 5:1-6",
+        "James 5:4"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:29",
+        "jas-wages"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:1-6",
+        "James 5:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "economics"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f12d204bcfa0",
+      "kind": "cultural_context",
+      "facts": [
+        "Job's setting reflects patriarchal clan life, wisdom disputation, sacrificial practice, and Edomite or Arabian geography rather than a generic ancient-world backdrop."
+      ],
+      "verse_refs": [
+        "James 5:7-11"
+      ],
+      "evidence_ids": [
+        "job-the-sufferer:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "job-the-sufferer"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:7-11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_38cb2f37bb90",
+      "kind": "historical_context",
+      "facts": [
+        "Prayer Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "James 5:13-18"
+      ],
+      "evidence_ids": [
+        "prayer-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_71f52f3614a2",
+      "kind": "historical_context",
+      "facts": [
+        "Theology of Prayer is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "James 5:13-18"
+      ],
+      "evidence_ids": [
+        "theology-of-prayer:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_d58e58ad9c57",
+      "kind": "historical_context",
+      "facts": [
+        "This figure is associated with reflection on suffering, reverence, and practical wisdom within Israel's life."
+      ],
+      "verse_refs": [
+        "James 5:7-11"
+      ],
+      "evidence_ids": [
+        "job-the-sufferer:historical_context:0"
+      ],
+      "entity_ids": [
+        "job-the-sufferer"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:7-11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_06ecb57865f1",
+      "kind": "interpretive_questions",
+      "facts": [
+        "James directs mutual confession of sins and mutual prayer in a healing context.",
+        "James presents Elijah as a human like the audience whose prayer is associated with drought and renewed rain.",
+        "James associates faithful prayer with saving or healing the sick person, the Lord's raising, and forgiveness if sins were committed.",
+        "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome."
+      ],
+      "verse_refs": [
+        "James 5:10-11",
+        "James 5:15",
+        "James 5:16",
+        "James 5:17-18"
+      ],
+      "evidence_ids": [
+        "jas-confession",
+        "jas-elijah",
+        "jas-healing",
+        "jas-job"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:10-11",
+        "James 5:15",
+        "James 5:16",
+        "James 5:17-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_09fa2de0ce1d",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Covering sins echoes scriptural language of forgiveness or limiting sin's effects; it never means concealing abuse, destroying evidence, or evading safeguarding duties.",
+        "Application must reject misogyny, anti-LGBTQ coercion, racism, caste hierarchy, nationalism, colonial mission, forced conversion, religious violence, prosperity extraction, and ecological neglect.",
+        "Parallels to sayings of Jesus can reflect shared tradition, memory, indirect influence, or literary contact; exact dependence is not uniform or demonstrable.",
+        "A sick person is to summon the elders, who pray over and anoint the person with oil in the Lord's name."
+      ],
+      "verse_refs": [
+        "James 5:1-6",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:19-20"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:39",
+        "james:interpretive_note:41",
+        "james:interpretive_note:6",
+        "jas-anointing"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:1-6",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:19-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_33061d879759",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Job authorizes lament, anger, confusion, and demands for justice within sustained address to God. Pastoral use should listen before explaining, avoid victim blaming and secret-sin diagnosis, distinguish general moral wisdom from case-specific certainty, and never pressure traumatized people to imitate a flattened 'patience of Job' that ignores his protest."
+      ],
+      "verse_refs": [
+        "James 5:11"
+      ],
+      "evidence_ids": [
+        "job:interpretive_note:13"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_73b00a5fb047",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Wealth rhetoric targets hoarding, luxury amid deprivation, condemnation, and unpaid wages; it must not fuel class contempt or prosperity extraction.",
+        "Parousia in James 5 grounds patience and nearness; chronology and later end-time systems cannot be reconstructed from these verses alone.",
+        "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+        "The oath prohibition resembles Jesus tradition, but communities disagree whether it bans every formal oath or condemns manipulative swearing; ordinary truthful speech is the stated goal.",
+        "Anointing with oil can be read medicinally, symbolically, sacramentally, or in combination; the verb and practice do not settle one later rite."
+      ],
+      "verse_refs": [
+        "James 5:1-6",
+        "James 5:10-11",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:7-9"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:28",
+        "james:interpretive_note:30",
+        "james:interpretive_note:31",
+        "james:interpretive_note:32",
+        "james:interpretive_note:33"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:1-6",
+        "James 5:10-11",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:7-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "economics"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_ac31bf875b9f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Healing language joins prayer, elders, oil, raising, salvation, and forgiveness; it does not guarantee immediate physical cure in every case.",
+        "Healing prayer must accompany appropriate care; using James to promote medical neglect, disability or illness shame, ableism, or blame for insufficient faith is an abuse of the passage.",
+        "Confession is mutual in James, not a tool for coercive disclosure, public shaming, surveillance, blackmail, or shielding leaders from accountability.",
+        "Elijah is described as human like the audience; his drought-and-rain example encourages prayer but does not make weather control or prosperity a guaranteed technique.",
+        "Restoring a wanderer aims to save from death and cover sins; it must be practiced without coercion, stalking, public shaming, forced conversion, or returning people to unsafe communities."
+      ],
+      "verse_refs": [
+        "James 5:13-18",
+        "James 5:16",
+        "James 5:17-18",
+        "James 5:19-20"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:34",
+        "james:interpretive_note:35",
+        "james:interpretive_note:36",
+        "james:interpretive_note:37",
+        "james:interpretive_note:38"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:13-18",
+        "James 5:16",
+        "James 5:17-18",
+        "James 5:19-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b0e15e633b6b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "James prohibits swearing by heaven, earth, or another oath and directs the hearers' yes and no to be reliable.",
+        "James grounds patient endurance in the coming of the Lord and the nearness of the judge.",
+        "The closing imagines someone wandering from truth and another turning that person back, with life-saving and sin-covering consequences."
+      ],
+      "verse_refs": [
+        "James 5:12",
+        "James 5:19-20",
+        "James 5:7-9"
+      ],
+      "evidence_ids": [
+        "jas-oaths",
+        "jas-parousia",
+        "jas-restoration"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:12",
+        "James 5:19-20",
+        "James 5:7-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_347b397298d2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "James does not name Jerusalem or another place of composition."
+      ],
+      "verse_refs": [
+        "James 1:1-27",
+        "James 2:1-26",
+        "James 3:1-18",
+        "James 4:1-17"
+      ],
+      "evidence_ids": [
+        "jas-provenance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "James 1:1-5:20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_5b458cea9574",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The epistolary greeting and paraenetic sequence coexist; labeling James wisdom, diatribe, sermon, or anthology highlights features without exhausting its genre."
+      ],
+      "verse_refs": [
+        "James 1:1-27",
+        "James 2:1-26",
+        "James 3:1-18",
+        "James 4:1-17"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "James 1:1-5:20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_95095291c69d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning."
+      ],
+      "verse_refs": [
+        "James 1:1-27",
+        "James 2:1-26",
+        "James 3:1-18",
+        "James 4:1-17"
+      ],
+      "evidence_ids": [
+        "jas-genre"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "James 1:1-5:20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_746fbf41efbe",
+      "kind": "why_it_matters",
+      "facts": [
+        "Healing language joins prayer, elders, oil, raising, salvation, and forgiveness; it does not guarantee immediate physical cure in every case.",
+        "Healing prayer must accompany appropriate care; using James to promote medical neglect, disability or illness shame, ableism, or blame for insufficient faith is an abuse of the passage.",
+        "Confession is mutual in James, not a tool for coercive disclosure, public shaming, surveillance, blackmail, or shielding leaders from accountability.",
+        "Elijah is described as human like the audience; his drought-and-rain example encourages prayer but does not make weather control or prosperity a guaranteed technique.",
+        "Restoring a wanderer aims to save from death and cover sins; it must be practiced without coercion, stalking, public shaming, forced conversion, or returning people to unsafe communities."
+      ],
+      "verse_refs": [
+        "James 5:13-18",
+        "James 5:16",
+        "James 5:17-18",
+        "James 5:19-20"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:34",
+        "james:interpretive_note:35",
+        "james:interpretive_note:36",
+        "james:interpretive_note:37",
+        "james:interpretive_note:38"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_ac31bf875b9f"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:13-18",
+        "James 5:16",
+        "James 5:17-18",
+        "James 5:19-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a3aba838e7ba",
+      "kind": "why_it_matters",
+      "facts": [
+        "Wealth rhetoric targets hoarding, luxury amid deprivation, condemnation, and unpaid wages; it must not fuel class contempt or prosperity extraction.",
+        "Parousia in James 5 grounds patience and nearness; chronology and later end-time systems cannot be reconstructed from these verses alone.",
+        "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+        "The oath prohibition resembles Jesus tradition, but communities disagree whether it bans every formal oath or condemns manipulative swearing; ordinary truthful speech is the stated goal.",
+        "Anointing with oil can be read medicinally, symbolically, sacramentally, or in combination; the verb and practice do not settle one later rite."
+      ],
+      "verse_refs": [
+        "James 5:1-6",
+        "James 5:10-11",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:7-9"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:28",
+        "james:interpretive_note:30",
+        "james:interpretive_note:31",
+        "james:interpretive_note:32",
+        "james:interpretive_note:33"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_73b00a5fb047"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:1-6",
+        "James 5:10-11",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:7-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ae21201776c8",
+      "kind": "why_it_matters",
+      "facts": [
+        "Covering sins echoes scriptural language of forgiveness or limiting sin's effects; it never means concealing abuse, destroying evidence, or evading safeguarding duties.",
+        "Application must reject misogyny, anti-LGBTQ coercion, racism, caste hierarchy, nationalism, colonial mission, forced conversion, religious violence, prosperity extraction, and ecological neglect.",
+        "Parallels to sayings of Jesus can reflect shared tradition, memory, indirect influence, or literary contact; exact dependence is not uniform or demonstrable.",
+        "A sick person is to summon the elders, who pray over and anoint the person with oil in the Lord's name."
+      ],
+      "verse_refs": [
+        "James 5:1-6",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:19-20"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:39",
+        "james:interpretive_note:41",
+        "james:interpretive_note:6",
+        "jas-anointing"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_09fa2de0ce1d"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:1-6",
+        "James 5:12",
+        "James 5:14-15",
+        "James 5:19-20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_da3d22a299a8",
+      "kind": "why_it_matters",
+      "facts": [
+        "James prohibits swearing by heaven, earth, or another oath and directs the hearers' yes and no to be reliable.",
+        "James grounds patient endurance in the coming of the Lord and the nearness of the judge.",
+        "The closing imagines someone wandering from truth and another turning that person back, with life-saving and sin-covering consequences."
+      ],
+      "verse_refs": [
+        "James 5:12",
+        "James 5:19-20",
+        "James 5:7-9"
+      ],
+      "evidence_ids": [
+        "jas-oaths",
+        "jas-parousia",
+        "jas-restoration"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b0e15e633b6b"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:12",
+        "James 5:19-20",
+        "James 5:7-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e04b271d899e",
+      "kind": "why_it_matters",
+      "facts": [
+        "James directs mutual confession of sins and mutual prayer in a healing context.",
+        "James presents Elijah as a human like the audience whose prayer is associated with drought and renewed rain.",
+        "James associates faithful prayer with saving or healing the sick person, the Lord's raising, and forgiveness if sins were committed.",
+        "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome."
+      ],
+      "verse_refs": [
+        "James 5:10-11",
+        "James 5:15",
+        "James 5:16",
+        "James 5:17-18"
+      ],
+      "evidence_ids": [
+        "jas-confession",
+        "jas-elijah",
+        "jas-healing",
+        "jas-job"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_06ecb57865f1"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:10-11",
+        "James 5:15",
+        "James 5:16",
+        "James 5:17-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f0368b371710",
+      "kind": "why_it_matters",
+      "facts": [
+        "Withheld wages cry out in James; modern application should resist wage theft and worker exploitation while attending to laborers' agency and material remedies.",
+        "James says wages withheld from harvest laborers cry out and that the laborers' cries reach the Lord of hosts."
+      ],
+      "verse_refs": [
+        "James 5:1-6",
+        "James 5:4"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:29",
+        "jas-wages"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_2079c564c597"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 5:1-6",
+        "James 5:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 33,
+    "used_evidence_ids": [
+      "james:interpretive_note:28",
+      "james:interpretive_note:29",
+      "james:interpretive_note:30",
+      "james:interpretive_note:31",
+      "james:interpretive_note:32",
+      "james:interpretive_note:33",
+      "james:interpretive_note:34",
+      "james:interpretive_note:35",
+      "james:interpretive_note:36",
+      "james:interpretive_note:37",
+      "james:interpretive_note:38",
+      "james:interpretive_note:39",
+      "james:interpretive_note:41",
+      "james:interpretive_note:5",
+      "james:interpretive_note:6",
+      "jas-anointing",
+      "jas-confession",
+      "jas-elijah",
+      "jas-genre",
+      "jas-healing",
+      "jas-job",
+      "jas-oaths",
+      "jas-parousia",
+      "jas-provenance",
+      "jas-restoration",
+      "jas-wages",
+      "job-the-sufferer:ancient_near_east_context:0",
+      "job-the-sufferer:historical_context:0",
+      "job:interpretive_note:13",
+      "prayer-theme:ancient_near_east_context:0",
+      "prayer-theme:historical_context:0",
+      "theology-of-prayer:ancient_near_east_context:0",
+      "theology-of-prayer:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 27,
+      "economics": 3,
+      "history": 3
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 33,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 4,
+      "historical_context": 3,
+      "interpretive_questions": 6,
+      "surrounding_passages": 3,
+      "why_it_matters": 6
+    },
+    "relationship_unit_count": 6
+  }
+}

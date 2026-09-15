@@ -1,0 +1,83 @@
+{
+  "reference": "Ezekiel 9",
+  "book": "Ezekiel",
+  "chapter": 9,
+  "evidence_hash": "1ff3ddaf86bee5fd651bb3eca16257f21df0d4e2c3228bd31ecc8954f7eb14ed",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "de5680bc34b582706d19106fae4f59f8131cc1d4bba04a1ddc1b389c14e67920",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_cb2c5c51700c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Ezekiel narrates YHWH's glory moving from the defiled Jerusalem temple and city in chapters 8-11 and returning to the visionary sanctuary in chapter 43."
+      ],
+      "verse_refs": [
+        "Ezekiel 9:1-11"
+      ],
+      "evidence_ids": [
+        "ezekiel-glory-departure-return"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ezekiel 9:1-11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "ezekiel-glory-departure-return"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

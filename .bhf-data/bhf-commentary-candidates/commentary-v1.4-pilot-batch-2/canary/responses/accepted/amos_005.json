@@ -1,0 +1,103 @@
+{
+  "reference": "Amos 5",
+  "book": "Amos",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Justice, worship, and the day of the LORD",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Amos joins its warning about the day of the LORD to an accusation of exploitation. The chapter describes injustice at the gate, harm to the poor, and corrupt judgment, then rejects festivals, offerings, and songs when worship is separated from justice.",
+          "verse_refs": [
+            "Amos 5:7-17",
+            "Amos 5:18-24"
+          ],
+          "evidence_ids": [
+            "amos-acts7-reuse",
+            "amos-day-yhwh",
+            "amos-economic-exploitation",
+            "amos-worship-justice",
+            "amos:interpretive_note:12",
+            "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_0af53b92615b",
+            "syn_cultural_context_86bdb1995d7c"
+          ],
+          "confidence": "low",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "A northern kingdom under pressure",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The northern kingdom formed after the united monarchy divided and was centered on Samaria. The chapter\u2019s warning belongs to a world of imperial pressure; the later siege and fall of Samaria are associated with the transition from Shalmaneser V to Sargon II, with details of chronology and deportation remaining debated.",
+          "verse_refs": [
+            "Amos 5:18-27"
+          ],
+          "evidence_ids": [
+            "fall-of-samaria:historical_context:0",
+            "fall-of-samaria:historical_setting:0",
+            "what-is-the-kingdom-of-israel:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_58d718b76ce6",
+            "syn_historical_context_2ab75d75e47d"
+          ],
+          "confidence": "low",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Do not turn the oracle into a slogan",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "\u201cLet justice roll down like waters\u201d is a communal demand rooted in the chapter\u2019s concerns with the gate, debt, land, labor, and worship. It is not a blank slogan for assigning one modern party, nation, economic ideology, or church program to the prophet.",
+          "verse_refs": [
+            "Amos 5:7-27"
+          ],
+          "evidence_ids": [
+            "amos:interpretive_note:13",
+            "amos:interpretive_note:14",
+            "amos:interpretive_note:15",
+            "amos:interpretive_note:16",
+            "amos:interpretive_note:17"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_1ca589e32c28"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "677d33e36464f157dfba78571427d276697b29ea2d4e4cc80a4fd5cd2acd5116",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.4",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T00:00:00+00:00",
+    "synthesis_hash": "f4188bdb7485c8b198228b0bd9cafb78dcdc87cbfcb7ef6f491a9a0e11864ef3",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "GPT-5 Codex",
+    "imported_timestamp": "2026-09-07T00:00:00+00:00",
+    "candidate_id": "commentary-v1.2-candidate:418a88b2d4eb9f1c28fce564d4001932f2fe35508d81ddbda6225a5b72aff259"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

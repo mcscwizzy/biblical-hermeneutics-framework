@@ -1,0 +1,369 @@
+{
+  "artifact_version": "commentary-renderer-selection-breadth-diagnostic-v1-parsed-output-v1",
+  "reference": "Romans 3",
+  "raw_sha256": "f07e322b7253e061ddc8f3e21b85c359bc7c1c01f225c7dd1ef54a2c1bcb4660",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Romans 3",
+    "book": "Romans",
+    "chapter": 3,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Courtroom and Covenant Language",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "“Justified” draws on the language of a court, where a verdict establishes a person’s status. Paul places that legal image within a covenantal discussion involving Abraham and the law, so the word describes God’s saving declaration rather than a claim that people have never sinned.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "what-is-justification:ancient_near_east_context:0",
+              "what-is-justification:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_8c1669577161",
+              "syn_historical_context_fb8be01f878c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_2",
+            "text": "Paul’s references to blood and atonement belong to a long scriptural sacrificial setting. Sacrifice was common in the ancient world, but Scripture connects it with holiness, atonement, covenant access, fellowship, and thanksgiving rather than mere appeasement. Temple sacrifice was still a living institution in the Second Temple period, so this language carried concrete ritual associations for Paul’s readers.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "sacrifice-theme:ancient_near_east_context:0",
+              "sacrifice-theme:hebraic_worldview:0",
+              "sacrifice-theme:second_temple_context:0",
+              "sacrifice-theme:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_78ac0ec80b5a",
+              "syn_historical_context_2b750d1e862a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "Roman Execution and Burial",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The death behind Paul’s reference to Christ’s blood occurred in first-century Judea under Roman authority. Crucifixion was an instrument of Roman imperial coercion, not a Jewish institution, although the Gospel narratives interpret that death through Israel’s scriptural and covenantal categories. The remains of a crucified man named Yehohanan show that at least one such victim later received tomb and ossuary burial in Jerusalem, but that single find cannot define what happened after every crucifixion.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "crucifixion:ancient_near_east_context:0",
+              "crucifixion:hebraic_worldview:0",
+              "crucifixion:second_temple_context:0",
+              "crucifixion:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ca63e816b839",
+              "syn_historical_context_483de655d61f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Key Terms and Debates",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Several expressions in this chapter cannot be exhausted by one English gloss. “God’s righteousness” may emphasize God’s saving justice, covenant faithfulness, rectitude, or a status-giving verdict. The phrase often rendered “faith in Jesus Christ” can also be construed as “Christ’s faithfulness,” and grammar alone does not settle the question. The word translated “propitiation” may evoke sacrifice, expiation, propitiation, or the mercy seat. “Works of the law” means works of Torah, but interpreters debate whether Paul emphasizes boundary practices, all commanded deeds, identity performance, or a broader posture. These uncertainties should be acknowledged rather than used to reduce the passage to a simple law-versus-grace caricature.",
+            "verse_refs": [
+              "Romans 3:20",
+              "Romans 3:21-26",
+              "Romans 3:28"
+            ],
+            "evidence_ids": [
+              "romans-hilasterion",
+              "romans-pistis-christou",
+              "romans-righteousness",
+              "romans-works-law",
+              "romans:interpretive_note:13",
+              "romans:interpretive_note:14",
+              "romans:interpretive_note:22",
+              "romans-justification-pistis-christou:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9489d624c71e",
+              "syn_interpretive_questions_2ed5753a8993",
+              "syn_interpretive_questions_09e4bdb9c363"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_5",
+            "text": "Paul’s declaration that Jews and Greeks are all under sin functions within an argument that brings both groups under judgment. It should neither erase Israel’s entrusted scriptural vocation nor turn Jewish advantage into ethnic supremacy. Likewise, the universal charge must not be redirected into blaming people for harms they have suffered or treating any group as uniquely depraved.",
+            "verse_refs": [
+              "Romans 3:1-20"
+            ],
+            "evidence_ids": [
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance",
+              "romans:interpretive_note:23"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_96eb7f62caf2",
+              "syn_interpretive_questions_2ed5753a8993"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "One God, Without Boasting",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The chapter holds together truths that can be pulled apart: Israel possesses a real advantage in being entrusted with God’s oracles, yet Jews and Greeks alike stand under sin; boasting is excluded, yet the law is not dismissed; and the one God justifies both circumcised and uncircumcised people through faith. This resists both Jewish and Christian ethnic triumphalism while preserving the differentiated peoples within the argument.",
+            "verse_refs": [
+              "Romans 3:1-20",
+              "Romans 3:27-31"
+            ],
+            "evidence_ids": [
+              "romans-boasting-law-faith",
+              "romans-boasting-law-faith:passage-relevance",
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_da699cecd85f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The Argument Continues",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Romans 4 continues the discussion through Abraham, showing that justification in Romans is not an isolated formula. It belongs to a wider argument about God’s action, faith, grace, Messiah, resurrection, boasting, Torah, and the relation of Jew and gentile.",
+            "verse_refs": [
+              "Romans 4:1-25"
+            ],
+            "evidence_ids": [
+              "romans-justification"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_0da6851e7dcf"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Romans 3",
+    "book": "Romans",
+    "chapter": 3,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Courtroom and Covenant Language",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "“Justified” draws on the language of a court, where a verdict establishes a person’s status. Paul places that legal image within a covenantal discussion involving Abraham and the law, so the word describes God’s saving declaration rather than a claim that people have never sinned.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "what-is-justification:ancient_near_east_context:0",
+              "what-is-justification:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_8c1669577161",
+              "syn_historical_context_fb8be01f878c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_2",
+            "text": "Paul’s references to blood and atonement belong to a long scriptural sacrificial setting. Sacrifice was common in the ancient world, but Scripture connects it with holiness, atonement, covenant access, fellowship, and thanksgiving rather than mere appeasement. Temple sacrifice was still a living institution in the Second Temple period, so this language carried concrete ritual associations for Paul’s readers.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "sacrifice-theme:ancient_near_east_context:0",
+              "sacrifice-theme:hebraic_worldview:0",
+              "sacrifice-theme:second_temple_context:0",
+              "sacrifice-theme:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_78ac0ec80b5a",
+              "syn_historical_context_2b750d1e862a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "Roman Execution and Burial",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The death behind Paul’s reference to Christ’s blood occurred in first-century Judea under Roman authority. Crucifixion was an instrument of Roman imperial coercion, not a Jewish institution, although the Gospel narratives interpret that death through Israel’s scriptural and covenantal categories. The remains of a crucified man named Yehohanan show that at least one such victim later received tomb and ossuary burial in Jerusalem, but that single find cannot define what happened after every crucifixion.",
+            "verse_refs": [
+              "Romans 3:21-26"
+            ],
+            "evidence_ids": [
+              "crucifixion:ancient_near_east_context:0",
+              "crucifixion:hebraic_worldview:0",
+              "crucifixion:second_temple_context:0",
+              "crucifixion:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ca63e816b839",
+              "syn_historical_context_483de655d61f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Key Terms and Debates",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Several expressions in this chapter cannot be exhausted by one English gloss. “God’s righteousness” may emphasize God’s saving justice, covenant faithfulness, rectitude, or a status-giving verdict. The phrase often rendered “faith in Jesus Christ” can also be construed as “Christ’s faithfulness,” and grammar alone does not settle the question. The word translated “propitiation” may evoke sacrifice, expiation, propitiation, or the mercy seat. “Works of the law” means works of Torah, but interpreters debate whether Paul emphasizes boundary practices, all commanded deeds, identity performance, or a broader posture. These uncertainties should be acknowledged rather than used to reduce the passage to a simple law-versus-grace caricature.",
+            "verse_refs": [
+              "Romans 3:20",
+              "Romans 3:21-26",
+              "Romans 3:28"
+            ],
+            "evidence_ids": [
+              "romans-hilasterion",
+              "romans-pistis-christou",
+              "romans-righteousness",
+              "romans-works-law",
+              "romans:interpretive_note:13",
+              "romans:interpretive_note:14",
+              "romans:interpretive_note:22",
+              "romans-justification-pistis-christou:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9489d624c71e",
+              "syn_interpretive_questions_2ed5753a8993",
+              "syn_interpretive_questions_09e4bdb9c363"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_5",
+            "text": "Paul’s declaration that Jews and Greeks are all under sin functions within an argument that brings both groups under judgment. It should neither erase Israel’s entrusted scriptural vocation nor turn Jewish advantage into ethnic supremacy. Likewise, the universal charge must not be redirected into blaming people for harms they have suffered or treating any group as uniquely depraved.",
+            "verse_refs": [
+              "Romans 3:1-20"
+            ],
+            "evidence_ids": [
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance",
+              "romans:interpretive_note:23"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_96eb7f62caf2",
+              "syn_interpretive_questions_2ed5753a8993"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "One God, Without Boasting",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The chapter holds together truths that can be pulled apart: Israel possesses a real advantage in being entrusted with God’s oracles, yet Jews and Greeks alike stand under sin; boasting is excluded, yet the law is not dismissed; and the one God justifies both circumcised and uncircumcised people through faith. This resists both Jewish and Christian ethnic triumphalism while preserving the differentiated peoples within the argument.",
+            "verse_refs": [
+              "Romans 3:1-20",
+              "Romans 3:27-31"
+            ],
+            "evidence_ids": [
+              "romans-boasting-law-faith",
+              "romans-boasting-law-faith:passage-relevance",
+              "romans-jewish-advantage-oracles",
+              "romans-jewish-advantage-oracles:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_da699cecd85f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The Argument Continues",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Romans 4 continues the discussion through Abraham, showing that justification in Romans is not an isolated formula. It belongs to a wider argument about God’s action, faith, grace, Messiah, resurrection, boasting, Torah, and the relation of Jew and gentile.",
+            "verse_refs": [
+              "Romans 4:1-25"
+            ],
+            "evidence_ids": [
+              "romans-justification"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_0da6851e7dcf"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "29ad454129fc29b21f2d080357b5a98920bc3925353ccb1714682e6755316332",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.7",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "cabe3ffbc864a311d6fba144d0ab5872c45de24779c7ed986dd6e454dea489bc",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "diagnostic_id": "renderer-remediation-prompt-1.7-selection-breadth-7e1f844705a27ef5d2a1",
+  "packet_id": "commentary-renderer-selection-breadth-diagnostic-v1-packet:06725c2d963a9d0905837b4640bcb5334356ffe44b28fd23d9a6ab286e785225",
+  "packet_hash": "06725c2d963a9d0905837b4640bcb5334356ffe44b28fd23d9a6ab286e785225"
+}

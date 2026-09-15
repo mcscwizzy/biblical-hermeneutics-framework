@@ -1,0 +1,817 @@
+{
+  "reference": "John 1",
+  "book": "John",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and Geography",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "bethlehem-1 nazareth galilee-1 jerusalem judea-1",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "jesus:key_places:0",
+            "jesus:key_places:1",
+            "jesus:key_places:2",
+            "jesus:key_places:3",
+            "jesus:key_places:4"
+          ],
+          "synthesis_ids": [
+            "syn_archaeology_geography_73aadaa0bf97"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "New creation promised",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:5"
+          ],
+          "synthesis_ids": [
+            "syn_chronology_e327ed46aae5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Creation declared good Human vocation given Fall disorders creation Wisdom and worship confess the Creator Christ revealed as agent and heir of creation",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:0",
+            "creation-doctrine-framework:timeline:1",
+            "creation-doctrine-framework:timeline:2",
+            "creation-doctrine-framework:timeline:3",
+            "creation-doctrine-framework:timeline:4"
+          ],
+          "synthesis_ids": [
+            "syn_chronology_f77368ccdabb"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "cultural_context",
+      "title": "Cultural Context",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord. Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition. Readers learning Scripture's account of God, world, and human vocation Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:ancient_near_east_context:0",
+            "creation-doctrine-framework:hebraic_worldview:0",
+            "creation-doctrine-framework:original_audience:0",
+            "creation-doctrine-framework:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_029556ffbf4c"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "Ancient background for Presence Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, glory-theme, and sanctuary-theme while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "presence-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_1fa666dc81df"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world. Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God. Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "jesus:ancient_near_east_context:0",
+            "jesus:hebraic_worldview:0",
+            "jesus:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_29ddd7b434cf"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_7",
+          "text": "Ancient background for Water Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "water-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_3c00d8027317"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_8",
+          "text": "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:1-9"
+          ],
+          "evidence_ids": [
+            "light-and-darkness-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_41691aa4c88a"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_9",
+          "text": "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_52c567115a5a"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_10",
+          "text": "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "new-creation-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_7980a68882b5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_11",
+          "text": "Ancient temples and mobile shrines contextualize divine dwelling, restricted access, cult personnel, offerings, and royal patronage. Comparisons must remain feature-specific: no Mari tent, Egyptian royal tent, Timna shrine phase, or bark shrine is the biblical tabernacle. Biblical sanctuary texts repeatedly join divine nearness with holiness, mediation, justice, and the warning that sacred space cannot be possessed as a guarantee against covenant judgment. Second Temple Jewish communities lived with a rebuilt Jerusalem sanctuary while also developing synagogue, purity, priestly, apocalyptic, and heavenly-temple discourse. Jesus and the New Testament writings emerge within this diverse Jewish setting.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "sanctuary-theme:ancient_near_east_context:0",
+            "sanctuary-theme:hebraic_worldview:0",
+            "sanctuary-theme:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_90fd09701151"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_12",
+          "text": "Family, household, citizenship, and patronage language shaped ancient identity, but the New Testament grounds Christian identity in God's gracious action in Christ rather than social rank or ethnicity.",
+          "verse_refs": [
+            "John 1:12"
+          ],
+          "evidence_ids": [
+            "what-verses-show-identity-in-christ:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_ae913162a29b"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_13",
+          "text": "Ancient background for Glory Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and sanctuary-theme while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "glory-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_c8041f035554"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_14",
+          "text": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence. Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later interpretation.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation:ancient_near_east_context:0",
+            "creation:hebraic_worldview:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_cadef8c41197"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_15",
+          "text": "Ancient background for Trinity includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Matthew 28:18-20, John 1:1-18, matthew, and john while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "trinity:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_d61515545ec7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_16",
+          "text": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_dd84abe32540"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_17",
+          "text": "Ancient background for Divine Presence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "divine-presence:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_eaa0e7045159"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_18",
+          "text": "Ancient background for New Temple Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple while keeping the passage\u2019s own witness central.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "new-temple-theme:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_eada2077700c"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_19",
+          "text": "In the ancient world, authoritative texts were often reactivated through citation and echo, and the Bible uses that practice to show ongoing divine speech.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "what-is-intertextuality:ancient_near_east_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_f15bf20a1060"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_20",
+          "text": "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God\u2019s redemptive purpose rather than mere appeasement. Sacrifice joins holiness, atonement, fellowship, and thanksgiving. Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+          "verse_refs": [
+            "John 1:29"
+          ],
+          "evidence_ids": [
+            "sacrifice-theme:ancient_near_east_context:0",
+            "sacrifice-theme:hebraic_worldview:0",
+            "sacrifice-theme:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_fc1101d0c4a9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical Context",
+      "blocks": [
+        {
+          "id": "block_21",
+          "text": "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection.",
+          "verse_refs": [
+            "John 1:29"
+          ],
+          "evidence_ids": [
+            "sacrifice-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_0b8de8983664"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_22",
+          "text": "Glory Theme appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "glory-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_1f27149c195e"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_23",
+          "text": "Water Theme appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "water-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_20b61a9a6afd"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_24",
+          "text": "Biblical authors wrote within a tradition of remembering, reusing, and reinterpreting earlier Scripture for new settings and audiences.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "what-is-intertextuality:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_4baef478ceb0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_25",
+          "text": "New Temple Theme appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "new-temple-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_5d2b67b20bdf"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_26",
+          "text": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_62f84daf7885"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_27",
+          "text": "Creation Doctrine appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_a9ef23d035ee"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_28",
+          "text": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "jesus:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_aa2e9dac58db"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_29",
+          "text": "Tabernacle, First Temple, exilic loss, Second Temple worship, and Roman-period destruction are different historical settings. A canonical theme connects their texts without treating every sanctuary as the same institution or assuming that archaeology proves theological claims.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "sanctuary-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_c7b0729d9841"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_30",
+          "text": "Genesis presents creation as the foundational act that begins biblical history and establishes God\u2019s sovereignty over all things.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_ce02115f7155"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_31",
+          "text": "Presence Theme appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "presence-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_d95409fdbdca"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_32",
+          "text": "Divine Presence appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "divine-presence:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_dd5ad7953932"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_33",
+          "text": "New Creation Theme appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "new-creation-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_ea697dc3e919"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_34",
+          "text": "Light and Darkness Theme appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:1-9"
+          ],
+          "evidence_ids": [
+            "light-and-darkness-theme:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_ee5c3d6d4f0e"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_35",
+          "text": "These texts come mainly from Pauline and Johannine letters written to churches learning to understand their status, belonging, and conduct in light of Christ's death and resurrection.",
+          "verse_refs": [
+            "John 1:12"
+          ],
+          "evidence_ids": [
+            "what-verses-show-identity-in-christ:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_ef52fec216e2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_36",
+          "text": "Trinity appears as a theme that Scripture develops across its story.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "trinity:historical_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_f94df8d68cfe"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_37",
+          "text": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation. Canonical teaching from Genesis through Revelation",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:historical_context:0",
+            "creation-doctrine-framework:historical_setting:0"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_f968bb158102"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpretive Questions",
+      "blocks": [
+        {
+          "id": "block_38",
+          "text": "The Greek syntax of John 1:1 distinguishes the Logos from God while predicating theos of the Logos; translation and theological construal require attention to grammar and the whole prologue. John 1:18 has an early textual variation between readings such as 'unique God' and 'unique Son'; either reading belongs within the prologue's claim that Jesus makes God known. John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery. John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation.",
+          "verse_refs": [
+            "John 1:1-18",
+            "John 1:1-2",
+            "John 1:18",
+            "John 1:19-36"
+          ],
+          "evidence_ids": [
+            "john-1-1",
+            "john-1-18",
+            "john-baptist-lamb",
+            "john-logos"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_09cbf01684f8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "why_it_matters",
+      "title": "Why It Matters",
+      "blocks": [
+        {
+          "id": "block_39",
+          "text": "bethlehem-1 nazareth galilee-1 jerusalem judea-1",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "jesus:key_places:0",
+            "jesus:key_places:1",
+            "jesus:key_places:2",
+            "jesus:key_places:3",
+            "jesus:key_places:4"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_0f5f652ef815"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_40",
+          "text": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord. Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition. Readers learning Scripture's account of God, world, and human vocation Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:ancient_near_east_context:0",
+            "creation-doctrine-framework:hebraic_worldview:0",
+            "creation-doctrine-framework:original_audience:0",
+            "creation-doctrine-framework:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_32ebe93490fd"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_41",
+          "text": "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God\u2019s redemptive purpose rather than mere appeasement. Sacrifice joins holiness, atonement, fellowship, and thanksgiving. Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+          "verse_refs": [
+            "John 1:29"
+          ],
+          "evidence_ids": [
+            "sacrifice-theme:ancient_near_east_context:0",
+            "sacrifice-theme:hebraic_worldview:0",
+            "sacrifice-theme:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_34f86bee613f"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_42",
+          "text": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world. Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God. Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "evidence_ids": [
+            "jesus:ancient_near_east_context:0",
+            "jesus:hebraic_worldview:0",
+            "jesus:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_5eafa9136180"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_43",
+          "text": "Creation declared good Human vocation given Fall disorders creation Wisdom and worship confess the Creator Christ revealed as agent and heir of creation",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:0",
+            "creation-doctrine-framework:timeline:1",
+            "creation-doctrine-framework:timeline:2",
+            "creation-doctrine-framework:timeline:3",
+            "creation-doctrine-framework:timeline:4"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_6aadcee2cfe4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_44",
+          "text": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation. Canonical teaching from Genesis through Revelation",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:historical_context:0",
+            "creation-doctrine-framework:historical_setting:0"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_80be5ce82c23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_45",
+          "text": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence. Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later interpretation.",
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "evidence_ids": [
+            "creation:ancient_near_east_context:0",
+            "creation:hebraic_worldview:0"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_af4257598859"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "block_46",
+          "text": "The Greek syntax of John 1:1 distinguishes the Logos from God while predicating theos of the Logos; translation and theological construal require attention to grammar and the whole prologue. John 1:18 has an early textual variation between readings such as 'unique God' and 'unique Son'; either reading belongs within the prologue's claim that Jesus makes God known. John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery. John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation.",
+          "verse_refs": [
+            "John 1:1-18",
+            "John 1:1-2",
+            "John 1:18",
+            "John 1:19-36"
+          ],
+          "evidence_ids": [
+            "john-1-1",
+            "john-1-18",
+            "john-baptist-lamb",
+            "john-logos"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_af854b253d74"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_47",
+          "text": "Ancient temples and mobile shrines contextualize divine dwelling, restricted access, cult personnel, offerings, and royal patronage. Comparisons must remain feature-specific: no Mari tent, Egyptian royal tent, Timna shrine phase, or bark shrine is the biblical tabernacle. Biblical sanctuary texts repeatedly join divine nearness with holiness, mediation, justice, and the warning that sacred space cannot be possessed as a guarantee against covenant judgment. Second Temple Jewish communities lived with a rebuilt Jerusalem sanctuary while also developing synagogue, purity, priestly, apocalyptic, and heavenly-temple discourse. Jesus and the New Testament writings emerge within this diverse Jewish setting.",
+          "verse_refs": [
+            "John 1:14"
+          ],
+          "evidence_ids": [
+            "sanctuary-theme:ancient_near_east_context:0",
+            "sanctuary-theme:hebraic_worldview:0",
+            "sanctuary-theme:second_temple_context:0"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_fff4532ad67f"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.2",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T20:01:43.922172+00:00",
+    "synthesis_hash": "42df24e59d2d0bb124e2f7663c16dfaaa5fd73f6eda99acce6e1f7a13163bb8e",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "Luna Medium",
+    "imported_timestamp": "2026-09-07T20:01:43.922172+00:00",
+    "candidate_id": "commentary-v1.2-candidate:63dba3fa0d84eab3ab4a13f1440f7a6328cd67503a9333c38f34c36b236a3235"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

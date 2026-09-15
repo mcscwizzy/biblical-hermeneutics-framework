@@ -1,0 +1,38 @@
+{
+  "reference": "Ezekiel 9",
+  "packet_id": "commentary-v1.5-packet:ba82f9c12bb9d355f4a6a1502c0902afd8bd9b8839cf326d1135195847d00153",
+  "prompt_version": "1.5",
+  "evidence_hash": "1ff3ddaf86bee5fd651bb3eca16257f21df0d4e2c3228bd31ecc8954f7eb14ed",
+  "synthesis_hash": "de5680bc34b582706d19106fae4f59f8131cc1d4bba04a1ddc1b389c14e67920",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Ezekiel 9",
+    "book": "Ezekiel",
+    "chapter": 9,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "This helps frame an interpretive question raised by the passage: Ezekiel narrates YHWH's glory moving from the defiled Jerusalem temple and city in chapters 8-11 and returning to the visionary sanctuary in chapter 43.",
+            "verse_refs": [
+              "Ezekiel 9:1-11"
+            ],
+            "evidence_ids": [
+              "ezekiel-glory-departure-return"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_cb2c5c51700c"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

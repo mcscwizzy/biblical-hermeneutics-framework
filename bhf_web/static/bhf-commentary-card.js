@@ -1,4 +1,4 @@
-/* Read-only BHF Commentary v1.0 projection for the Study Companion. */
+/* Read-only BHF Commentary release projection for the Study Companion. */
 (function () {
   "use strict";
 
@@ -7,11 +7,22 @@
     THIN: "Limited contextual evidence",
     DATA_GAP: "Contextual evidence not currently available",
   });
+  const RELEASE_STATE_MESSAGES = Object.freeze({
+    NOT_RENDERABLE_SOURCE_LIMITED: "BHF commentary is not available yet because the supporting evidence is too limited.",
+    MODEL_OUTPUT_REJECTED: "BHF commentary is not available in the current release.",
+    QUALITY_REVIEW_REQUIRED: "BHF commentary for this chapter is still under review.",
+    OUTSIDE_VALIDATED_V1_2_POPULATION: "This chapter is not included in the current v1.2 commentary release.",
+    RELEASE_MANIFEST_INVALID: "BHF commentary is temporarily unavailable for this release.",
+  });
   const cache = new Map();
   const evidenceCache = new Map();
 
   function availabilityLabel(availability) {
     return AVAILABILITY_LABELS[availability] || "Context status not recorded";
+  }
+
+  function unavailableMessage(model) {
+    return RELEASE_STATE_MESSAGES[model.releaseState] || "BHF Commentary is not available for this chapter.";
   }
 
   function normalizePayload(payload) {
@@ -26,6 +37,7 @@
     return Object.freeze({
       available: source.available === true,
       release: String(source.release || ""),
+      releaseState: String(source.release_state || ""),
       book: String(source.book || ""),
       chapter: Number.isInteger(Number(source.chapter)) ? Number(source.chapter) : null,
       availability: typeof availability === "string" && availability ? availability : null,
@@ -135,9 +147,7 @@
     parts.card.removeAttribute("data-availability");
     setText(parts.availability, "");
     setText(parts.reference, model.book && model.chapter ? `${model.book} ${model.chapter}` : "");
-    setText(parts.status, model.available
-      ? ""
-      : "BHF Commentary is not available for this chapter.");
+    setText(parts.status, unavailableMessage(model));
     clearChildren(parts.body);
     parts.meta.hidden = true;
     resetEvidence(parts);
@@ -450,7 +460,8 @@
       load,
       render: (payload) => {
         currentModel = normalizePayload(payload);
-        renderReady(parts, currentModel);
+        if (!currentModel.available) renderUnavailable(parts, currentModel);
+        else renderReady(parts, currentModel);
       },
     };
   }
@@ -460,6 +471,7 @@
     normalizePayload,
     normalizeEvidencePayload,
     availabilityLabel,
+    unavailableMessage,
   });
 
   function boot() {

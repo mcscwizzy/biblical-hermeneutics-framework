@@ -1,0 +1,181 @@
+{
+  "reference": "1 Samuel 5",
+  "book": "1 Samuel",
+  "chapter": 5,
+  "evidence_hash": "4b5e6e1c3c7e148d1e2dc1ff514ed751d5d0460edda975e95eeb181c39b78ddd",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "da7b23c77557794607fd29a304b7668a6e5dff16ec4382a2e38c2c9a293c47aa",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_15e45c3c7509",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The ark narrative rejects Israel's use of the ark as a guarantee of victory and portrays the LORD judging Philistine gods and communities without an Israelite army rescuing the ark.",
+        "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death."
+      ],
+      "verse_refs": [
+        "1 Samuel 1",
+        "1 Samuel 10:1-27",
+        "1 Samuel 11:1-15",
+        "1 Samuel 12:1-25",
+        "1 Samuel 13:1-23",
+        "1 Samuel 14:1-52",
+        "1 Samuel 15:1-35",
+        "1 Samuel 16:1-23",
+        "1 Samuel 17:1-58",
+        "1 Samuel 18:1-30",
+        "1 Samuel 19:1-24",
+        "1 Samuel 20:1-42",
+        "1 Samuel 21:1-15",
+        "1 Samuel 22:1-23",
+        "1 Samuel 23:1-29",
+        "1 Samuel 24:1-22",
+        "1 Samuel 25:1-44",
+        "1 Samuel 26:1-25",
+        "1 Samuel 27:1-12",
+        "1 Samuel 28:1-25",
+        "1 Samuel 29:1-11",
+        "1 Samuel 2:1-36",
+        "1 Samuel 30:1-31",
+        "1 Samuel 31:1-13",
+        "1 Samuel 3:1-21",
+        "1 Samuel 4",
+        "1 Samuel 4:1-22",
+        "1 Samuel 6:1-21",
+        "1 Samuel 7:1-17",
+        "1 Samuel 8:1-22",
+        "1 Samuel 9:1-27"
+      ],
+      "evidence_ids": [
+        "first-samuel-ark-not-talisman",
+        "first-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Samuel 1-31",
+        "1 Samuel 4-6"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "politics"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_188b452a6258",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The ark narrative rejects Israel's use of the ark as a guarantee of victory and portrays the LORD judging Philistine gods and communities without an Israelite army rescuing the ark.",
+        "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death."
+      ],
+      "verse_refs": [
+        "1 Samuel 1",
+        "1 Samuel 10:1-27",
+        "1 Samuel 11:1-15",
+        "1 Samuel 12:1-25",
+        "1 Samuel 13:1-23",
+        "1 Samuel 14:1-52",
+        "1 Samuel 15:1-35",
+        "1 Samuel 16:1-23",
+        "1 Samuel 17:1-58",
+        "1 Samuel 18:1-30",
+        "1 Samuel 19:1-24",
+        "1 Samuel 20:1-42",
+        "1 Samuel 21:1-15",
+        "1 Samuel 22:1-23",
+        "1 Samuel 23:1-29",
+        "1 Samuel 24:1-22",
+        "1 Samuel 25:1-44",
+        "1 Samuel 26:1-25",
+        "1 Samuel 27:1-12",
+        "1 Samuel 28:1-25",
+        "1 Samuel 29:1-11",
+        "1 Samuel 2:1-36",
+        "1 Samuel 30:1-31",
+        "1 Samuel 31:1-13",
+        "1 Samuel 3:1-21",
+        "1 Samuel 4",
+        "1 Samuel 4:1-22",
+        "1 Samuel 6:1-21",
+        "1 Samuel 7:1-17",
+        "1 Samuel 8:1-22",
+        "1 Samuel 9:1-27"
+      ],
+      "evidence_ids": [
+        "first-samuel-ark-not-talisman",
+        "first-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_15e45c3c7509"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Samuel 1-31",
+        "1 Samuel 4-6"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "first-samuel-ark-not-talisman",
+      "first-samuel-literary-movement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1,
+      "politics": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 2
+    },
+    "relationship_unit_count": 1
+  }
+}

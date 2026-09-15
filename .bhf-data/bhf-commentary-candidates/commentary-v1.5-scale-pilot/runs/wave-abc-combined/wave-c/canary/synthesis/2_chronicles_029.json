@@ -1,0 +1,88 @@
+{
+  "reference": "2 Chronicles 29",
+  "book": "2 Chronicles",
+  "chapter": 29,
+  "evidence_hash": "878982884fc884b68529edf6545facd19eac2b0ebf287c4b725e998bbea33680",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "cb78015a5b8aa2e9843a5d5d873eb218f5189792e8b49ff5af998a0a2fa440ab",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_3d8a8d81e94c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Hezekiah restores temple worship and invites both Judah and northern Israel to a delayed Passover in Jerusalem, where prayer, healing, joy, and Levitical service underscore a renewed all-Israel horizon."
+      ],
+      "verse_refs": [
+        "2 Chronicles 29:1-36"
+      ],
+      "evidence_ids": [
+        "second-chronicles-hezekiah-passover"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 29:1-36"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "second-chronicles-hezekiah-passover"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

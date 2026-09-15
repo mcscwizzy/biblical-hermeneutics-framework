@@ -1,0 +1,1824 @@
+{
+  "passage_ref": "Exodus 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "exodus-to-sinai-timeline",
+        "title": "Exodus To Sinai Timeline",
+        "type": "timeline",
+        "aliases": [
+          "exodus to sinai timeline",
+          "timeline from passover to sinai",
+          "exodus timeline",
+          "how did israel get to sinai"
+        ],
+        "metadata": {
+          "summary": "A canonical sequence tracing Israel's deliverance from Egypt through Passover, the sea crossing, wilderness provision, and covenant arrival at Sinai.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 3:1-15",
+            "Exodus 7:1-13",
+            "Exodus 12:1-42",
+            "Exodus 14:1-31",
+            "Exodus 16:1-36",
+            "Exodus 19:1-25",
+            "Exodus 24:1-18"
+          ]
+        }
+      },
+      {
+        "id": "wilderness-wandering",
+        "title": "Wilderness Wandering",
+        "type": "event",
+        "aliases": [
+          "Israel in the wilderness",
+          "Exodus wilderness journey",
+          "wilderness itinerary and water crises"
+        ],
+        "metadata": {
+          "summary": "Israel's extended journey between Egypt and the Transjordan, narrated through ordered stations, resource crises, covenant episodes, rebellions, and changes of generation.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 15:22-27",
+            "Exodus 16:1-36",
+            "Exodus 17:1-7",
+            "Exodus 19:1-6",
+            "Numbers 10:11-12",
+            "Numbers 20:1-13",
+            "Numbers 33:1-49"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2cor-equality",
+      "claim": "Paul invokes present reciprocity and Exodus manna so that another's relief does not produce the Corinthians' affliction and there may be equality.",
+      "category": "culture",
+      "source_ids": [
+        "2cor-greek",
+        "nets-lxx",
+        "downs-collection"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 16:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-corinthians",
+        "parent_title": "2 Corinthians",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "collection-equality-manna",
+      "claim": "Second Corinthians connects present surplus and need to isotes and cites the manna statement that the one with much had no excess and the one with little no lack.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinthians-collection",
+        "exodus-manna",
+        "barclay-rich-poverty",
+        "downs-offering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 16:18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "collection-equality-manna:passage-relevance",
+      "claim": "Places sufficiency and mutual need at the center without pretending the passage supplies a complete fiscal program.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinthians-collection",
+        "exodus-manna",
+        "barclay-rich-poverty",
+        "downs-offering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 16:18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "collection-equality-manna"
+        ]
+      }
+    },
+    {
+      "id": "exodus-ane-context",
+      "claim": "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+      "category": "geography",
+      "source_ids": [
+        "sarna-exodus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 78
+      }
+    },
+    {
+      "id": "exodus-literary-movement",
+      "claim": "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-1-40",
+        "sarna-exodus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:ancient_near_east_context:0",
+      "claim": "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:hebraic_worldview:0",
+      "claim": "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:historical_context:0",
+      "claim": "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+      "category": "history",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:historical_setting:0",
+      "claim": "Exodus wilderness narrative",
+      "category": "history",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:key_places:0",
+      "claim": "egypt",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:key_places:1",
+      "claim": "red-sea-1",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:key_places:2",
+      "claim": "mount-sinai",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:key_places:3",
+      "claim": "kadesh-barnea",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:original_audience:0",
+      "claim": "Israel remembering the ordered story of deliverance and covenant formation",
+      "category": "social",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:second_temple_context:0",
+      "claim": "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:0",
+      "claim": "Israel oppressed in Egypt",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:1",
+      "claim": "Moses called at the burning bush",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:2",
+      "claim": "Plagues confront Pharaoh",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:3",
+      "claim": "Passover marks deliverance",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:4",
+      "claim": "Israel leaves Egypt",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:5",
+      "claim": "Israel crosses the sea",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:6",
+      "claim": "Wilderness provision and testing begin",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:7",
+      "claim": "Israel arrives at Sinai",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus-to-sinai-timeline:timeline:8",
+      "claim": "The covenant is given and ratified",
+      "category": "chronology",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-6",
+        "exodus-to-sinai-timeline-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "exodus-to-sinai-timeline"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exodus-to-sinai-timeline",
+        "parent_title": "Exodus To Sinai Timeline",
+        "parent_type": "timeline",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "exodus:interpretive_note:1",
+      "claim": "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint.",
+      "category": "culture",
+      "source_ids": [
+        "sarna-exodus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-sabbath:ancient_near_east_context:0",
+      "claim": "A distinct day of rest set Israel apart from surrounding cultures and signaled trust in the LORD rather than endless production.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-2",
+        "exodus-16",
+        "exodus-20",
+        "exodus-31",
+        "deuteronomy-5",
+        "mark-2",
+        "hebrews-4",
+        "what-is-the-significance-of-the-sabbath-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 16:22-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-sabbath",
+        "parent_title": "What is the significance of the Sabbath?",
+        "parent_type": "faq",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-sabbath:historical_context:0",
+      "claim": "Rooted in creation and Exodus, the Sabbath becomes a weekly rhythm that marks Israel's identity and dependence on God.",
+      "category": "history",
+      "source_ids": [
+        "genesis-2",
+        "exodus-16",
+        "exodus-20",
+        "exodus-31",
+        "deuteronomy-5",
+        "mark-2",
+        "hebrews-4",
+        "what-is-the-significance-of-the-sabbath-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 16:22-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-sabbath",
+        "parent_title": "What is the significance of the Sabbath?",
+        "parent_type": "faq",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "wilderness-wandering:ancient_near_east_context:0",
+      "claim": "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "wilderness-wandering:historical_context:0",
+      "claim": "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates.",
+      "category": "history",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Exodus 16:1-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Corinthians 1-13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text used with textual apparatus resources.",
+        "id": "2cor-greek",
+        "canonical_object_ids": [
+          "2-corinthians"
+        ]
+      },
+      {
+        "title": "Rich Poverty: 2 Corinthians 8.1-15 and the Social Meaning of Poverty and Wealth",
+        "author": "John M. G. Barclay",
+        "publisher": "New Testament Studies",
+        "year": 2023,
+        "locator": "69.3, pages 243-257",
+        "url": "https://doi.org/10.1017/S002868852200039X",
+        "source_type": "journal-article",
+        "supports": [
+          "macedonian-poverty-rhetoric",
+          "collection-equality-manna",
+          "collection-willingness-capacity"
+        ],
+        "notes": "Open-access analysis of agency, giving, poverty, wealth, mutuality, and rhetoric.",
+        "id": "barclay-rich-poverty",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+        "author": "G. I. Davies",
+        "publisher": "Cambridge University Press",
+        "year": 1979,
+        "locator": "Chapters 7-9: route points, Sinai routes, and identification",
+        "url": "https://www.cambridge.org/core/books/way-of-the-wilderness/19AE62B5E4C086F242F5C1F95BCC9CB1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical-geographic survey of itinerary interpretation and competing routes.",
+        "id": "davies-way-wilderness-1979",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Deuteronomy 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-5",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Deuteronomy 5-6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-5-6",
+        "canonical_object_ids": [
+          "exodus-to-sinai-timeline"
+        ]
+      },
+      {
+        "title": "The Offering of the Gentiles",
+        "author": "David J. Downs",
+        "publisher": "Mohr Siebeck",
+        "year": 2008,
+        "locator": "2 Corinthians 8-9",
+        "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161496073",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Study of the collection's chronology and theology.",
+        "id": "downs-collection",
+        "canonical_object_ids": [
+          "2-corinthians"
+        ]
+      },
+      {
+        "title": "The Offering of the Gentiles",
+        "author": "David J. Downs",
+        "publisher": "Mohr Siebeck",
+        "year": 2008,
+        "locator": "Paul's collection in chronological, cultural, and cultic contexts",
+        "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161515910/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Reconstructs collection chronology and compares associations, benefaction, common funds, poor relief, and translocal links.",
+        "id": "downs-offering",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Exodus 1-40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 1:1-40:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "canonical-context",
+          "key-people",
+          "key-places",
+          "key-events",
+          "exodus-literary-movement",
+          "exodus-priestly-kingdom",
+          "exodus-tabernacle-presence"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "exodus-1-40",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      },
+      {
+        "title": "Exodus 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-16",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Exodus 20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-20",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Exodus 3-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-3-24",
+        "canonical_object_ids": [
+          "exodus-to-sinai-timeline"
+        ]
+      },
+      {
+        "title": "Exodus 31",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-31",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Exodus 16:18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 16:18; cited in 2 Corinthians 8:15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "collection-equality-manna"
+        ],
+        "notes": "Primary scriptural intertext; no modern translation is reproduced.",
+        "id": "exodus-manna",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Exodus To Sinai Timeline",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Exodus narrative sequence that becomes a canonical pattern",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "exodus-to-sinai-timeline-historical-orientation",
+        "canonical_object_ids": [
+          "exodus-to-sinai-timeline"
+        ]
+      },
+      {
+        "title": "Exodus 15-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 15:22-27; 16:1-36; 17:1-7; 19:1-6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative text; no modern translation is reproduced.",
+        "id": "exodus-wilderness-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Genesis 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-2",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Hebrews 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-4",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Traditions",
+        "author": "James K. Hoffmeier",
+        "publisher": "Oxford University Press",
+        "year": 2005,
+        "locator": "Chapters 4-7: route, Sea, mountain, and wilderness travel",
+        "url": "https://academic.oup.com/book/36060",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "One detailed route reconstruction, retained as a scholarly model rather than CKL's settled map.",
+        "id": "hoffmeier-ancient-israel-sinai-2005",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Mark 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-2",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Exodus",
+        "author": "Carol Meyers",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "New Cambridge Bible Commentary, Exodus 15-19",
+        "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Literary, social, and historical commentary on the initial wilderness episodes.",
+        "id": "meyers-exodus-2005",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Exodus, Psalms, Isaiah, Jeremiah",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek scriptural comparanda.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "2-corinthians"
+        ]
+      },
+      {
+        "title": "Numbers 10, 20, and 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 10:11-12; 20:1-13; 33:1-49",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative and itinerary text.",
+        "id": "numbers-wilderness-itinerary-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Exodus",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1991,
+        "locator": "Introduction and commentary throughout",
+        "url": "https://jps.org/books/jps-torah-commentary-exodus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "exodus-literary-movement",
+          "exodus-priestly-kingdom",
+          "exodus-tabernacle-presence"
+        ],
+        "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "sarna-exodus",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      },
+      {
+        "title": "2 Corinthians 8:1-9:15",
+        "author": "Paul, with Timothy named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; integrity and rhetorical situation remain disputed.",
+        "id": "second-corinthians-collection",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the significance of the Sabbath?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-significance-of-the-sabbath-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-sabbath"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Bruce Wells and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Exodus",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "archaeology",
+          "exodus-ane-context",
+          "exodus-merneptah-limits"
+        ],
+        "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-corinthians",
+        "type": "book",
+        "title": "2 Corinthians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "exodus",
+        "type": "book",
+        "title": "Exodus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "exodus-to-sinai-timeline",
+        "type": "timeline",
+        "title": "Exodus To Sinai Timeline",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "patronage-hospitality-and-debt",
+        "type": "cultural_background",
+        "title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "what-is-the-significance-of-the-sabbath",
+        "type": "faq",
+        "title": "What is the significance of the Sabbath?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.909
+      },
+      {
+        "id": "wilderness-wandering",
+        "type": "event",
+        "title": "Wilderness Wandering",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "fe31c05b03812750e36fee61f09cfbc2bcaadb9e4e88d84519c0ba9bf69fbda0",
+  "evidence_hash_version": "2"
+}

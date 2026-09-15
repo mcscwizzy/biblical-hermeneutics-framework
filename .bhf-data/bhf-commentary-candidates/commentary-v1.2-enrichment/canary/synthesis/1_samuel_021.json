@@ -1,0 +1,117 @@
+{
+  "reference": "1 Samuel 21",
+  "book": "1 Samuel",
+  "chapter": 21,
+  "evidence_hash": "79c360812b8778c4c20d63faf5bf320e0926407eaf21eee2fe34001c803b47b7",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "62aaae7d5677d9e2573ac88c0a52f180d4be0a1e8decdf27436a61756ac594f6",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_263fddfbadb5",
+      "kind": "surrounding_passages",
+      "facts": [
+        "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death."
+      ],
+      "verse_refs": [
+        "1 Samuel 1",
+        "1 Samuel 10:1-27",
+        "1 Samuel 11:1-15",
+        "1 Samuel 12:1-25",
+        "1 Samuel 13:1-23",
+        "1 Samuel 14:1-52",
+        "1 Samuel 15:1-35",
+        "1 Samuel 16:1-23",
+        "1 Samuel 17:1-58",
+        "1 Samuel 18:1-30",
+        "1 Samuel 19:1-24",
+        "1 Samuel 20:1-42",
+        "1 Samuel 22:1-23",
+        "1 Samuel 23:1-29",
+        "1 Samuel 24:1-22",
+        "1 Samuel 25:1-44",
+        "1 Samuel 26:1-25",
+        "1 Samuel 27:1-12",
+        "1 Samuel 28:1-25",
+        "1 Samuel 29:1-11",
+        "1 Samuel 2:1-36",
+        "1 Samuel 30:1-31",
+        "1 Samuel 31:1-13",
+        "1 Samuel 3:1-21",
+        "1 Samuel 4:1-22",
+        "1 Samuel 5:1-12",
+        "1 Samuel 6:1-21",
+        "1 Samuel 7:1-17",
+        "1 Samuel 8:1-22",
+        "1 Samuel 9:1-27"
+      ],
+      "evidence_ids": [
+        "first-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Samuel 1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "first-samuel-literary-movement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "politics": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

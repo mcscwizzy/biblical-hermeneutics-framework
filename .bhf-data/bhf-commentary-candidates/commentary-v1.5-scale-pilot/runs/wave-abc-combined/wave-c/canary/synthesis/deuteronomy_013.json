@@ -1,0 +1,166 @@
+{
+  "reference": "Deuteronomy 13",
+  "book": "Deuteronomy",
+  "chapter": 13,
+  "evidence_hash": "fac0af61ae3d0680c498be29ddd107c2f852ad32c76faca204c60430e582a600",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "6f5023710dbd9fc3ce59a92ffade958fc9762a4020ed82f97f3b3e328439144c",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_db2d1430a1fd",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death."
+      ],
+      "verse_refs": [
+        "Deuteronomy 1",
+        "Deuteronomy 10:1-22",
+        "Deuteronomy 11:1-32",
+        "Deuteronomy 12:1-32",
+        "Deuteronomy 14:1-29",
+        "Deuteronomy 15:1-23",
+        "Deuteronomy 16:1-22",
+        "Deuteronomy 17:1-20",
+        "Deuteronomy 18:1-22",
+        "Deuteronomy 19:1-21",
+        "Deuteronomy 20:1-20",
+        "Deuteronomy 21:1-23",
+        "Deuteronomy 22:1-30",
+        "Deuteronomy 23:1-25",
+        "Deuteronomy 24:1-22",
+        "Deuteronomy 25:1-19",
+        "Deuteronomy 26:1-19",
+        "Deuteronomy 27:1-26",
+        "Deuteronomy 28:1-68",
+        "Deuteronomy 29:1-29",
+        "Deuteronomy 2:1-37",
+        "Deuteronomy 30:1-20",
+        "Deuteronomy 31:1-30",
+        "Deuteronomy 32:1-52",
+        "Deuteronomy 33:1-29",
+        "Deuteronomy 34:1-12",
+        "Deuteronomy 3:1-29",
+        "Deuteronomy 4:1-49",
+        "Deuteronomy 5:1-33",
+        "Deuteronomy 6:1-25",
+        "Deuteronomy 7:1-26",
+        "Deuteronomy 8:1-20",
+        "Deuteronomy 9:1-29"
+      ],
+      "evidence_ids": [
+        "deuteronomy-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_df64e934968c",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws."
+      ],
+      "verse_refs": [
+        "Deuteronomy 10:1-22",
+        "Deuteronomy 11:1-32",
+        "Deuteronomy 12:1-32",
+        "Deuteronomy 14:1-29",
+        "Deuteronomy 15:1-23",
+        "Deuteronomy 16:1-22",
+        "Deuteronomy 17:1-20",
+        "Deuteronomy 18:1-22",
+        "Deuteronomy 19:1-21",
+        "Deuteronomy 20:1-20",
+        "Deuteronomy 21:1-23",
+        "Deuteronomy 22:1-30",
+        "Deuteronomy 23:1-25",
+        "Deuteronomy 24:1-22",
+        "Deuteronomy 25:1-19",
+        "Deuteronomy 26:1-19",
+        "Deuteronomy 5",
+        "Deuteronomy 6:1-25",
+        "Deuteronomy 7:1-26",
+        "Deuteronomy 8:1-20",
+        "Deuteronomy 9:1-29"
+      ],
+      "evidence_ids": [
+        "deuteronomy:interpretive_note:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [
+      "deuteronomy-literary-movement",
+      "deuteronomy:interpretive_note:1"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 2
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 2
+    },
+    "relationship_unit_count": 0
+  }
+}

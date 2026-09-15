@@ -1,0 +1,1119 @@
+{
+  "reference": "1 Corinthians 1",
+  "book": "1 Corinthians",
+  "chapter": 1,
+  "evidence_hash": "82dcd6a9a7d97e9f34c3e545acd7026b797741db734d01dda36b266b8c419787",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "71cc5a8042af78419c7f8e4767089b90bfdf83ae127c098bbfee99692b00d4ee",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_1f761de9e61e",
+      "kind": "cultural_context",
+      "facts": [
+        "Calling divine action foolish or weak is paradoxical rhetoric and not a claim that God lacks wisdom or power."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:25"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_45577a2841a9",
+      "kind": "cultural_context",
+      "facts": [
+        "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:18-25"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b232138670d0",
+      "kind": "cultural_context",
+      "facts": [
+        "Corinth belongs to the Greco-Roman Mediterranean and should not be interpreted through generic Levantine or Ancient Near Eastern geography.",
+        "Acts locates Paul's initial activity in a diaspora synagogue, while the letters reason from Israel's Scriptures within mixed urban assemblies. Jewish and Greco-Roman horizons must remain mutually visible.",
+        "The city's Jewish diaspora setting, synagogue, and scriptural debates belong to first-century Judaism; later conflict must not be projected backward as a complete Jewish-Christian separation."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1-9"
+      ],
+      "evidence_ids": [
+        "corinth:ancient_near_east_context:0",
+        "corinth:hebraic_worldview:0",
+        "corinth:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "corinth"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_063d2fe28eb2",
+      "kind": "historical_context",
+      "facts": [
+        "Julius Caesar refounded Corinth in 44 BCE. By the early 50s CE its colonial institutions, provincial administration, two-port geography, migration, trade, slavery, sanctuaries, households, and economic inequalities formed the setting of Paul's activity and the Corinthian assemblies."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1-9"
+      ],
+      "evidence_ids": [
+        "corinth:historical_context:0"
+      ],
+      "entity_ids": [
+        "corinth"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_b8745641cefb",
+      "kind": "historical_context",
+      "facts": [
+        "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:18-25"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:18-25"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e56751fc1e2a",
+      "kind": "historical_context",
+      "facts": [
+        "1 Corinthians names Paul as apostle and principal sender."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1"
+      ],
+      "evidence_ids": [
+        "1cor-paul"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_102059b5c5ae",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability.",
+        "The evidence keeps calling, freedom, bodily belonging, meal humiliation, and household service within a slaveholding and economically unequal society without turning description into endorsement.",
+        "Excavated Corinth preserves a Roman forum, roads, basilicas, shops, fountains, temples, theater, inscriptions, and administrative monuments within a refounded colony and provincial capital.",
+        "Public hierarchy, adjudication, honor, commerce, and religious visibility form concrete context for status competition and lawsuits without identifying a faction or courtroom in First Corinthians."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:10-31",
+        "1 Corinthians 1:26-31"
+      ],
+      "evidence_ids": [
+        "household-slavery-status",
+        "household-slavery-status:passage-relevance",
+        "roman-colony-public-space",
+        "roman-colony-public-space:passage-relevance"
+      ],
+      "entity_ids": [
+        "corinth"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:10-31",
+        "1 Corinthians 1:26-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "archaeology",
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_2dc6906bc342",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Factional claims invoked Paul, Apollos, Cephas, and Christ, but their organization is uncertain.",
+        "Sosthenes is named as brother and co-sender, although his compositional role is not described."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:12-13"
+      ],
+      "evidence_ids": [
+        "1cor-factions",
+        "1cor-sosthenes"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:12-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_5504421363b7",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul says Chloe's people informed him of quarrels in Corinth, while their roles and the report process remain unstated.",
+        "Makes mediated reporting visible and rejects punishing reporters merely for bringing conflict to attention.",
+        "First Corinthians reports name-based slogans around Paul, Apollos, Cephas, and Christ while appealing against divisions.",
+        "Prevents reconstructing rigid parties or using unity language to silence a substantiated complaint.",
+        "Paul contrasts the word of the cross with status-producing wisdom and relocates boasting in the Lord."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "evidence_ids": [
+        "chloe-reporting-channel",
+        "chloe-reporting-channel:passage-relevance",
+        "corinth-faction-slogans",
+        "corinth-faction-slogans:passage-relevance",
+        "cross-status-reversal"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_5d0961ee0ad5",
+      "kind": "interpretive_questions",
+      "facts": [
+        "First Corinthians thanks God for grace, enriched speech and knowledge, gifts, and divine faithfulness before immediately naming quarrels.",
+        "Thanksgiving need not deny conflict, and conflict reporting does not cancel every good in a community."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:4-11"
+      ],
+      "evidence_ids": [
+        "corinth-thanksgiving-amid-conflict",
+        "corinth-thanksgiving-amid-conflict:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:4-11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_ba2dfd2fdfd3",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul is principal sender and Sosthenes is named co-sender; Sosthenes must not be erased or assigned an invented secretarial role.",
+        "The Sosthenes in Acts 18 and the co-sender in 1 Corinthians may be the same person, but the name alone cannot establish identity.",
+        "Chloe's people supplied a report, but whether they were relatives, enslaved agents, employees, clients, or assembly members is unknown.",
+        "Faction names need not denote four organized parties, and the Christ slogan need not reveal a uniquely superior or hostile group.",
+        "The word of the cross overturns status boasting; it cannot authorize anti-intellectualism, contempt for education, or conspiracy thinking."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:12",
+        "1 Corinthians 1:18-31"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:0",
+        "1-corinthians:interpretive_note:1",
+        "1-corinthians:interpretive_note:3",
+        "1-corinthians:interpretive_note:5",
+        "1-corinthians:interpretive_note:6"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:12",
+        "1 Corinthians 1:18-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_dd9225e45d69",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Constrains leadership prestige, educational elitism, and claims that public success proves divine approval.",
+        "Confidentiality protects privacy and fair process, but secrecy that hides danger, blocks reporting, destroys records, coordinates stories, or protects reputation is concealment.",
+        "Requires data minimization, informed privacy limits, secure records, need-to-know access, lawful reporting, and transparent conflict-of-interest handling.",
+        "Safe systems provide channels outside the accused person's authority, external options, conflict disclosure, timely triage, support, secure records, protection for complainants and witnesses, and remedies for retaliation.",
+        "Rejects accused leaders receiving sole reports, selecting investigators, controlling communications, funding silence, threatening status, or retaliating through sermons, references, work, housing, aid, immigration, or social networks."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "evidence_ids": [
+        "cross-status-reversal:passage-relevance",
+        "modern-confidentiality-not-concealment",
+        "modern-confidentiality-not-concealment:passage-relevance",
+        "modern-independent-reporting-nonretaliation",
+        "modern-independent-reporting-nonretaliation:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_eeaaea9c2f6b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The letter's unity appeals cannot be recruited for sectarian suppression, nationalism, partisan capture, or enforced institutional unanimity.",
+        "Chloe's people reported quarrels among the Corinthians."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:86",
+        "1cor-chloe"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_2ce3b77e4c0d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+        "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+        "The word of the cross reverses conventional evaluations of wisdom, power, status, and boasting."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 2:1-5",
+        "1 Corinthians 3:1-23",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:84",
+        "1-corinthians:interpretive_note:85",
+        "1cor-cross"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 1:18-2:5"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_9e2c03e91283",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Social weakness, bodily impairment, illness, injury, persecution, economic precarity, imprisonment, rhetorical weakness, and cruciform power overlap but are not interchangeable.",
+        "First Corinthians names a crucified Messiah as apparent foolishness and weakness yet also as God's power and wisdom in a community marked by low status.",
+        "Locates power reversal in cross proclamation and community formation rather than in demanding that vulnerable people remain powerless."
+      ],
+      "verse_refs": [
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 2:1-5",
+        "1 Corinthians 3:1-23",
+        "1 Corinthians 4:1-21"
+      ],
+      "evidence_ids": [
+        "categories-remain-distinct",
+        "cross-power-status-reversal",
+        "cross-power-status-reversal:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_c9f9495b149a"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:17-2:5",
+        "1 Corinthians 1:17-4:21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_beca1fd2e47b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+        "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+        "Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 3:1-23",
+        "1 Corinthians 3:1-4",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1cor-integrity",
+        "1cor-manuscripts",
+        "1cor-wisdom"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 1:18-3:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "archaeology",
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_c9f9495b149a",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Social weakness, bodily impairment, illness, injury, persecution, economic precarity, imprisonment, rhetorical weakness, and cruciform power overlap but are not interchangeable.",
+        "First Corinthians names a crucified Messiah as apparent foolishness and weakness yet also as God's power and wisdom in a community marked by low status.",
+        "Locates power reversal in cross proclamation and community formation rather than in demanding that vulnerable people remain powerless."
+      ],
+      "verse_refs": [
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 2:1-5",
+        "1 Corinthians 3:1-23",
+        "1 Corinthians 4:1-21"
+      ],
+      "evidence_ids": [
+        "categories-remain-distinct",
+        "cross-power-status-reversal",
+        "cross-power-status-reversal:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:17-2:5",
+        "1 Corinthians 1:17-4:21"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "economics"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_e3c163312193",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+        "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+        "Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 3:1-23",
+        "1 Corinthians 3:1-4",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1cor-integrity",
+        "1cor-manuscripts",
+        "1cor-wisdom"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_beca1fd2e47b"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 1:18-3:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_f7c9d645a461",
+      "kind": "surrounding_passages",
+      "facts": [
+        "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+        "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+        "The word of the cross reverses conventional evaluations of wisdom, power, status, and boasting."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 2:1-5",
+        "1 Corinthians 3:1-23",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:84",
+        "1-corinthians:interpretive_note:85",
+        "1cor-cross"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_2ce3b77e4c0d"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 1:18-2:5"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_1573a247cfc4",
+      "kind": "why_it_matters",
+      "facts": [
+        "The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability.",
+        "The evidence keeps calling, freedom, bodily belonging, meal humiliation, and household service within a slaveholding and economically unequal society without turning description into endorsement.",
+        "Excavated Corinth preserves a Roman forum, roads, basilicas, shops, fountains, temples, theater, inscriptions, and administrative monuments within a refounded colony and provincial capital.",
+        "Public hierarchy, adjudication, honor, commerce, and religious visibility form concrete context for status competition and lawsuits without identifying a faction or courtroom in First Corinthians."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:10-31",
+        "1 Corinthians 1:26-31"
+      ],
+      "evidence_ids": [
+        "household-slavery-status",
+        "household-slavery-status:passage-relevance",
+        "roman-colony-public-space",
+        "roman-colony-public-space:passage-relevance"
+      ],
+      "entity_ids": [
+        "corinth"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_102059b5c5ae"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:10-31",
+        "1 Corinthians 1:26-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_397732547a0c",
+      "kind": "why_it_matters",
+      "facts": [
+        "Corinth belongs to the Greco-Roman Mediterranean and should not be interpreted through generic Levantine or Ancient Near Eastern geography.",
+        "Acts locates Paul's initial activity in a diaspora synagogue, while the letters reason from Israel's Scriptures within mixed urban assemblies. Jewish and Greco-Roman horizons must remain mutually visible.",
+        "The city's Jewish diaspora setting, synagogue, and scriptural debates belong to first-century Judaism; later conflict must not be projected backward as a complete Jewish-Christian separation."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1-9"
+      ],
+      "evidence_ids": [
+        "corinth:ancient_near_east_context:0",
+        "corinth:hebraic_worldview:0",
+        "corinth:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "corinth"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_b232138670d0"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_68d493332880",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul is principal sender and Sosthenes is named co-sender; Sosthenes must not be erased or assigned an invented secretarial role.",
+        "The Sosthenes in Acts 18 and the co-sender in 1 Corinthians may be the same person, but the name alone cannot establish identity.",
+        "Chloe's people supplied a report, but whether they were relatives, enslaved agents, employees, clients, or assembly members is unknown.",
+        "Faction names need not denote four organized parties, and the Christ slogan need not reveal a uniquely superior or hostile group.",
+        "The word of the cross overturns status boasting; it cannot authorize anti-intellectualism, contempt for education, or conspiracy thinking."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:12",
+        "1 Corinthians 1:18-31"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:0",
+        "1-corinthians:interpretive_note:1",
+        "1-corinthians:interpretive_note:3",
+        "1-corinthians:interpretive_note:5",
+        "1-corinthians:interpretive_note:6"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_ba2dfd2fdfd3"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:12",
+        "1 Corinthians 1:18-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6d38dab96136",
+      "kind": "why_it_matters",
+      "facts": [
+        "Constrains leadership prestige, educational elitism, and claims that public success proves divine approval.",
+        "Confidentiality protects privacy and fair process, but secrecy that hides danger, blocks reporting, destroys records, coordinates stories, or protects reputation is concealment.",
+        "Requires data minimization, informed privacy limits, secure records, need-to-know access, lawful reporting, and transparent conflict-of-interest handling.",
+        "Safe systems provide channels outside the accused person's authority, external options, conflict disclosure, timely triage, support, secure records, protection for complainants and witnesses, and remedies for retaliation.",
+        "Rejects accused leaders receiving sole reports, selecting investigators, controlling communications, funding silence, threatening status, or retaliating through sermons, references, work, housing, aid, immigration, or social networks."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "evidence_ids": [
+        "cross-status-reversal:passage-relevance",
+        "modern-confidentiality-not-concealment",
+        "modern-confidentiality-not-concealment:passage-relevance",
+        "modern-independent-reporting-nonretaliation",
+        "modern-independent-reporting-nonretaliation:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_dd9225e45d69"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8cf6b9bfc4f6",
+      "kind": "why_it_matters",
+      "facts": [
+        "First Corinthians thanks God for grace, enriched speech and knowledge, gifts, and divine faithfulness before immediately naming quarrels.",
+        "Thanksgiving need not deny conflict, and conflict reporting does not cancel every good in a community."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:4-11"
+      ],
+      "evidence_ids": [
+        "corinth-thanksgiving-amid-conflict",
+        "corinth-thanksgiving-amid-conflict:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_5d0961ee0ad5"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:4-11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_dd8ecb5a2221",
+      "kind": "why_it_matters",
+      "facts": [
+        "Factional claims invoked Paul, Apollos, Cephas, and Christ, but their organization is uncertain.",
+        "Sosthenes is named as brother and co-sender, although his compositional role is not described."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:12-13"
+      ],
+      "evidence_ids": [
+        "1cor-factions",
+        "1cor-sosthenes"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_2dc6906bc342"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:1",
+        "1 Corinthians 1:12-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e91439c7b0eb",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul says Chloe's people informed him of quarrels in Corinth, while their roles and the report process remain unstated.",
+        "Makes mediated reporting visible and rejects punishing reporters merely for bringing conflict to attention.",
+        "First Corinthians reports name-based slogans around Paul, Apollos, Cephas, and Christ while appealing against divisions.",
+        "Prevents reconstructing rigid parties or using unity language to silence a substantiated complaint.",
+        "Paul contrasts the word of the cross with status-producing wisdom and relocates boasting in the Lord."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "evidence_ids": [
+        "chloe-reporting-channel",
+        "chloe-reporting-channel:passage-relevance",
+        "corinth-faction-slogans",
+        "corinth-faction-slogans:passage-relevance",
+        "cross-status-reversal"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_5504421363b7"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11",
+        "1 Corinthians 1:18-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ea74a8782988",
+      "kind": "why_it_matters",
+      "facts": [
+        "The letter's unity appeals cannot be recruited for sectarian suppression, nationalism, partisan capture, or enforced institutional unanimity.",
+        "Chloe's people reported quarrels among the Corinthians."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:86",
+        "1cor-chloe"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_eeaaea9c2f6b"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 1:10-17",
+        "1 Corinthians 1:11"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 42,
+    "used_evidence_ids": [
+      "1-corinthians:interpretive_note:0",
+      "1-corinthians:interpretive_note:1",
+      "1-corinthians:interpretive_note:3",
+      "1-corinthians:interpretive_note:5",
+      "1-corinthians:interpretive_note:6",
+      "1-corinthians:interpretive_note:7",
+      "1-corinthians:interpretive_note:84",
+      "1-corinthians:interpretive_note:85",
+      "1-corinthians:interpretive_note:86",
+      "1cor-chloe",
+      "1cor-cross",
+      "1cor-factions",
+      "1cor-integrity",
+      "1cor-manuscripts",
+      "1cor-paul",
+      "1cor-sosthenes",
+      "1cor-wisdom",
+      "categories-remain-distinct",
+      "chloe-reporting-channel",
+      "chloe-reporting-channel:passage-relevance",
+      "corinth-faction-slogans",
+      "corinth-faction-slogans:passage-relevance",
+      "corinth-thanksgiving-amid-conflict",
+      "corinth-thanksgiving-amid-conflict:passage-relevance",
+      "corinth:ancient_near_east_context:0",
+      "corinth:hebraic_worldview:0",
+      "corinth:historical_context:0",
+      "corinth:second_temple_context:0",
+      "cross-power-status-reversal",
+      "cross-power-status-reversal:passage-relevance",
+      "cross-status-reversal",
+      "cross-status-reversal:passage-relevance",
+      "household-slavery-status",
+      "household-slavery-status:passage-relevance",
+      "modern-confidentiality-not-concealment",
+      "modern-confidentiality-not-concealment:passage-relevance",
+      "modern-independent-reporting-nonretaliation",
+      "modern-independent-reporting-nonretaliation:passage-relevance",
+      "roman-colony-public-space",
+      "roman-colony-public-space:passage-relevance",
+      "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "what-is-biblical-wisdom:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "archaeology": 3,
+      "culture": 31,
+      "economics": 1,
+      "history": 5,
+      "social": 2
+    },
+    "category_diversity": 5,
+    "specific_evidence_count": 42,
+    "entity_counts": {
+      "people": 0,
+      "places": 1,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 3,
+      "historical_context": 3,
+      "interpretive_questions": 7,
+      "surrounding_passages": 6,
+      "why_it_matters": 8
+    },
+    "relationship_unit_count": 11
+  }
+}

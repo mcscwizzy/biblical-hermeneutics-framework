@@ -1,0 +1,152 @@
+{
+  "reference": "Isaiah 24",
+  "book": "Isaiah",
+  "chapter": 24,
+  "evidence_hash": "63b800e3bf4608dd20132da2837ce1960fa0f69b890fb71669535c272cbf995c",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "3377b18979d95909605513ba39186e23dc4cb5ae80aba336ac07546b30d8c38b",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_ba4170438989",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+      ],
+      "verse_refs": [
+        "Isaiah 10:1-34",
+        "Isaiah 11:1-16",
+        "Isaiah 12:1-6",
+        "Isaiah 13:1-22",
+        "Isaiah 14:1-32",
+        "Isaiah 15:1-9",
+        "Isaiah 16:1-14",
+        "Isaiah 17:1-14",
+        "Isaiah 18:1-7",
+        "Isaiah 19:1-25",
+        "Isaiah 1:1-31",
+        "Isaiah 20:1-6",
+        "Isaiah 21:1-17",
+        "Isaiah 22:1-25",
+        "Isaiah 23:1-18",
+        "Isaiah 25:1-12",
+        "Isaiah 26:1-21",
+        "Isaiah 27:1-13",
+        "Isaiah 28:1-29",
+        "Isaiah 29:1-24",
+        "Isaiah 2:1-22",
+        "Isaiah 30:1-33",
+        "Isaiah 31:1-9",
+        "Isaiah 32:1-20",
+        "Isaiah 33:1-24",
+        "Isaiah 34:1-17",
+        "Isaiah 35:1-10",
+        "Isaiah 36:1-22",
+        "Isaiah 37:1-38",
+        "Isaiah 38:1-22",
+        "Isaiah 39:1-8",
+        "Isaiah 3:1-26",
+        "Isaiah 40:1-31",
+        "Isaiah 41:1-29",
+        "Isaiah 42:1-25",
+        "Isaiah 43:1-28",
+        "Isaiah 44:1-28",
+        "Isaiah 45:1-25",
+        "Isaiah 46:1-13",
+        "Isaiah 47:1-15",
+        "Isaiah 48:1-22",
+        "Isaiah 49:1-26",
+        "Isaiah 4:1-6",
+        "Isaiah 50:1-11",
+        "Isaiah 51:1-23",
+        "Isaiah 52:1-15",
+        "Isaiah 53:1-12",
+        "Isaiah 54:1-17",
+        "Isaiah 55:1-13",
+        "Isaiah 56:1-12",
+        "Isaiah 57:1-21",
+        "Isaiah 58:1-14",
+        "Isaiah 59:1-21",
+        "Isaiah 5:1-30",
+        "Isaiah 60:1-22",
+        "Isaiah 61:1-11",
+        "Isaiah 62:1-12",
+        "Isaiah 63:1-19",
+        "Isaiah 64:1-12",
+        "Isaiah 65:1-25",
+        "Isaiah 66:1-24",
+        "Isaiah 6:1-13",
+        "Isaiah 7:1-25",
+        "Isaiah 8:1-22",
+        "Isaiah 9:1-21"
+      ],
+      "evidence_ids": [
+        "isaiah-qumran-witnesses"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "isaiah-qumran-witnesses"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

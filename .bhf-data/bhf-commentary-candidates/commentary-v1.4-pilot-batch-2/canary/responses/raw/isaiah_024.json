@@ -1,0 +1,36 @@
+{
+  "reference": "Isaiah 24",
+  "packet_id": "commentary-v1.4-packet:e9a221190860d17289747708ee2c6e300a2a9a53ad2c68247d4b746c38911911",
+  "prompt_version": "1.4",
+  "evidence_hash": "63b800e3bf4608dd20132da2837ce1960fa0f69b890fb71669535c272cbf995c",
+  "synthesis_hash": "3377b18979d95909605513ba39186e23dc4cb5ae80aba336ac07546b30d8c38b",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Isaiah 24",
+    "book": "Isaiah",
+    "chapter": 24,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "A textual witness beyond the chapter",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The Great Isaiah Scroll is an almost complete witness to all sixty-six chapters. It broadly aligns with the Masoretic tradition but also contains many orthographic and substantive differences, so it informs the history of transmission without settling every interpretive question.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "isaiah-qumran-witnesses"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ba4170438989"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

@@ -1,0 +1,2073 @@
+{
+  "passage_ref": "Luke 2",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "nazareth",
+        "title": "Nazareth",
+        "type": "place",
+        "aliases": [
+          "where is nazareth",
+          "tell me about nazareth",
+          "why is nazareth important"
+        ],
+        "metadata": {
+          "summary": "A small Galilean settlement remembered in the Gospels as Jesus's hometown and the setting of family identity, synagogue reception, and hometown rejection.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 2:19-23",
+            "Mark 6:1-6",
+            "Luke 1:26-38",
+            "Luke 2:39-52",
+            "Luke 4:16-30"
+          ]
+        }
+      }
+    ],
+    "groups": [
+      {
+        "id": "second-temple-administration",
+        "title": "Second Temple Administration",
+        "type": "institution",
+        "aliases": [
+          "Second Temple leadership",
+          "Jerusalem temple administration",
+          "priests scribes and councils",
+          "Jewish institutions under Persia and Rome"
+        ],
+        "metadata": {
+          "summary": "The changing network of temple personnel, high priests, scribes, elders, local assemblies, councils, and imperial authorities that ordered Jewish public life from Persian restoration to 70 CE.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Ezra 7:1-10",
+            "Nehemiah 8:1-18",
+            "Malachi 2:1-9",
+            "Luke 2:25-38",
+            "John 11:45-57",
+            "Acts 4:1-22",
+            "Acts 23:1-10"
+          ]
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": "birth-of-jesus",
+        "title": "Birth of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in birth of jesus",
+          "tell me about birth of jesus",
+          "why is birth of jesus important"
+        ],
+        "metadata": {
+          "summary": "Jesus is born in Bethlehem under Roman rule as the promised Messiah and Son of David.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Matthew 2:1-12",
+            "Luke 1:26-38",
+            "Luke 2:1-20",
+            "Micah 5:2",
+            "Isaiah 7:14",
+            "Isaiah 9:1-7",
+            "Galatians 4:4-5",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "birth-of-jesus:ancient_near_east_context:0",
+      "claim": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Luke 2:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:historical_context:0",
+      "claim": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Luke 2:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "gospel-pilgrimage-and-temple-economy",
+      "claim": "Luke, Mark, and John portray Jerusalem festival travel together with lodging, offerings, exchange, animal sales, crowds, teaching, and conflict in the temple precincts.",
+      "category": "social",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "keddie-class-power",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:41-52"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "gospel-pilgrimage-and-temple-economy:passage-relevance",
+      "claim": "The evidence prevents temple-action scenes from being detached from festival travel and the material systems that supported sacrifice and pilgrimage.",
+      "category": "social",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "keddie-class-power",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:41-52"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "gospel-pilgrimage-and-temple-economy"
+        ]
+      }
+    },
+    {
+      "id": "josephus-census-tax-resistance",
+      "claim": "Josephus reports that Quirinius assessed Judean property after Archelaus's removal and that Judas opposed the assessment as enslavement.",
+      "category": "history",
+      "source_ids": [
+        "josephus-antiquities-18-tax",
+        "judean-gospel-acts-passages",
+        "keddie-taxation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "josephus-census-tax-resistance:passage-relevance",
+      "claim": "The account closely contextualizes Acts 5's memory of Judas while exposing rather than resolving the chronological difficulty posed by Luke 2.",
+      "category": "history",
+      "source_ids": [
+        "josephus-antiquities-18-tax",
+        "judean-gospel-acts-passages",
+        "keddie-taxation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "josephus-census-tax-resistance"
+        ]
+      }
+    },
+    {
+      "id": "luke-2-14",
+      "claim": "Luke 2:14 has a well-known genitive-nominative variant commonly represented as peace among people of God's favor or goodwill versus goodwill toward people; translation should disclose the textual and grammatical issue.",
+      "category": "language",
+      "source_ids": [
+        "sblgnt",
+        "ntvmr-luke",
+        "p75-luke"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "probable",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "luke-infancy",
+      "claim": "Luke 1-2 pairs John and Jesus through annunciations, births, songs, Spirit-filled speech, temple scenes, and growth notices, using Septuagintal diction and Israel-scripture patterns.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "green-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:1-52"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "luke-quirinius",
+      "claim": "Luke links Jesus' birth with Herod's era and a registration associated with Quirinius, creating a serious chronological problem because Quirinius' documented Syrian governorship and census belong to 6 CE; proposed resolutions remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "huebner-census",
+        "thorley-census",
+        "josephus-antiquities"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "nazareth:ancient_near_east_context:0",
+      "claim": "Ancient background for Nazareth includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Matthew 28:16-20, Mark 16:19-20, jesus, and acts without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Luke 2:39-52"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "nazareth:hebraic_worldview:0",
+      "claim": "Kinship, hometown knowledge, synagogue assembly, and honor shape how the Gospel narratives portray recognition and rejection.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Luke 2:39-52"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "nazareth:historical_context:0",
+      "claim": "Early Roman remains at Nazareth include a dwelling and subterranean storage installations. They establish a modest inhabited settlement, not the identity of a particular family home.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Luke 2:39-52"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "nazareth:second_temple_context:0",
+      "claim": "Nazareth was a Jewish Galilean settlement under Herodian rule rather than direct Judean prefectural administration during most of Jesus's ministry.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "nazareth"
+      ],
+      "passage_anchors": [
+        "Luke 2:39-52"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "nazareth",
+        "parent_title": "Nazareth",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-temple-administration:ancient_near_east_context:0",
+      "claim": "Persian provincial administration is relevant to the early period; Hellenistic civic and Roman provincial structures are more relevant later. Comparative institutional claims must be tied to a particular century and source.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Luke 2:25-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-temple-administration:hebraic_worldview:0",
+      "claim": "Temple holiness, Torah, priestly teaching, sacrifice, purity, communal responsibility, and hope for divine rule shaped institutional life even when offices were entangled with imperial power.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Luke 2:25-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-temple-administration:historical_context:0",
+      "claim": "Second Temple administration changed substantially across Persian, Hellenistic, Hasmonean, Herodian, and Roman rule. Temple and Torah remained central, but no single arrangement should be projected across the entire 515 BCE-70 CE period.",
+      "category": "history",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Luke 2:25-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-temple-administration:historical_setting:0",
+      "claim": "Jerusalem, Judea, and Jewish diaspora communities from approximately 515 BCE to 70 CE under successive imperial and local regimes.",
+      "category": "history",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Luke 2:25-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-temple-administration:original_audience:0",
+      "claim": "Readers tracing how postexilic temple and Torah institutions developed into the diverse Jewish leadership world of the Gospels and Acts.",
+      "category": "social",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Luke 2:25-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-temple-administration:second_temple_context:0",
+      "claim": "Ezra-Nehemiah presents early priestly, Levitical, scribal, and gubernatorial arrangements. Josephus, inscriptions, the Gospels, and Acts attest later high priests, temple officers, synagogues, named groups, and councils under Herodian and Roman power.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-7-10",
+        "nehemiah-8-13",
+        "haggai-1-2",
+        "malachi-1-3",
+        "luke-1-2",
+        "john-11-18",
+        "acts-4-5",
+        "acts-23",
+        "vanderkam-second-temple-institutions",
+        "grabbe-second-temple-administration",
+        "collins-harlow-second-temple-institutions"
+      ],
+      "related_entity_ids": [
+        "second-temple-administration"
+      ],
+      "passage_anchors": [
+        "Luke 2:25-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "second-temple-administration",
+        "parent_title": "Second Temple Administration",
+        "parent_type": "institution",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0",
+      "claim": "Imperial rule, public cult, and patronage were normal features of the ancient world, and the New Testament speaks into that environment.",
+      "category": "culture",
+      "source_ids": [
+        "luke-2",
+        "john-19",
+        "acts-17",
+        "romans-13",
+        "1-peter-2",
+        "revelation-13",
+        "revelation-17-18",
+        "what-is-the-roman-empire-in-the-bible-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-roman-empire-in-the-bible",
+        "parent_title": "What is the Roman Empire in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible:historical_context:0",
+      "claim": "The first-century world of Jesus and the apostles is governed by Rome, with local rulers, roads, and armies serving imperial power.",
+      "category": "history",
+      "source_ids": [
+        "luke-2",
+        "john-19",
+        "acts-17",
+        "romans-13",
+        "1-peter-2",
+        "revelation-13",
+        "revelation-17-18",
+        "what-is-the-roman-empire-in-the-bible-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-roman-empire-in-the-bible",
+        "parent_title": "What is the Roman Empire in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-second-temple:ancient_near_east_context:0",
+      "claim": "Imperial patronage, local governance, and temple-centered identity shaped second temple life within the wider ancient world.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-1-6",
+        "haggai-1-2",
+        "zechariah-1-8",
+        "malachi-1-4",
+        "john-2",
+        "luke-2",
+        "hebrews-9",
+        "what-is-the-second-temple-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:22-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-second-temple",
+        "parent_title": "What is the Second Temple?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-second-temple:historical_context:0",
+      "claim": "The second temple begins with the return from Babylon under Persian rule, develops through the Persian and Hellenistic periods, and stands in Jesus' day before its destruction in AD 70.",
+      "category": "history",
+      "source_ids": [
+        "ezra-1-6",
+        "haggai-1-2",
+        "zechariah-1-8",
+        "malachi-1-4",
+        "john-2",
+        "luke-2",
+        "hebrews-9",
+        "what-is-the-second-temple-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 2:22-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-second-temple",
+        "parent_title": "What is the Second Temple?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Acts 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-17",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Acts 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Acts 4-5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-4-5",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Birth of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "birth-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Early Judaism: A Comprehensive Overview",
+        "author": "John J. Collins and Daniel C. Harlow, editors",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Essays on history, literature, archaeology, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802869227/early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "canonical-role",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author academic overview.",
+        "id": "collins-harlow-second-temple-institutions",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Ezra 1-6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-1-6",
+        "canonical_object_ids": [
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "Ezra 7-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-7-10",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on occupations, religion, mortality, disposal of the dead, and dwellings",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-crucifixion-and-burial",
+          "stepped-street-jerusalem",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Synthesis emphasizing ordinary persons and archaeological limits.",
+        "id": "fiensy-daily-life-judea",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Galatians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-4",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "An Introduction to Second Temple Judaism",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "Chapters on sources, history, and currents within Judaism",
+        "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Source-critical period overview.",
+        "id": "grabbe-second-temple-administration",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of Luke",
+        "author": "Joel B. Green",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "New Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-gospel-of-luke/64F2896964BA4BF847E8F5433E87CA03",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Book-level theological study.",
+        "id": "green-theology",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Haggai 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "haggai-1-2",
+        "canonical_object_ids": [
+          "second-temple-administration",
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "Hebrews 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-9",
+        "canonical_object_ids": [
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "In Those Days a Decree Went Out",
+        "author": "Sabine R. Huebner",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Papyri and the Social World of the New Testament, chapter 3",
+        "url": "https://www.cambridge.org/core/books/papyri-and-the-social-world-of-the-new-testament/in-those-days-a-decree-went-out/7D9BD3CA2D29EF513B7805F8FFE28ECB",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Roman census and papyrological context.",
+        "id": "huebner-census",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Isaiah 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-7",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "John 11-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-11-18",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "John 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-19",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "John 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-2",
+        "canonical_object_ids": [
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities",
+        "author": "Josephus",
+        "publisher": "Perseus Digital Library",
+        "year": null,
+        "locator": "Antiquities 17-18 on Herod, Quirinius, and Judas",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0146",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient historical comparison.",
+        "id": "josephus-antiquities",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Jewish Antiquities, Book 18",
+        "author": "Flavius Josephus",
+        "publisher": "University of Chicago LacusCurtius",
+        "year": 94,
+        "locator": "Antiquities 18.1-10, 26-35, 55-89",
+        "url": "https://penelope.uchicago.edu/josephus/ant-18.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "josephus-census-tax-resistance",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Later first-century historiography used with chronological and rhetorical caution.",
+        "id": "josephus-antiquities-18-tax",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Pilgrimage, taxation, Roman trial, crucifixion, and burial passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 2:1-52; 19:1-10; Mark 11:1-25; 12:13-17; 15:21-47; John 18:28-19:42; Acts 5:33-39",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "gospel-crucifixion-and-burial",
+          "josephus-census-tax-resistance",
+          "stepped-street-jerusalem",
+          "pilate-prefect-inscription",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "judean-gospel-acts-passages",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "url": "https://doi.org/10.1017/9781108656757",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "stepped-street-jerusalem",
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Taxation: Render unto Caesar and the Local Elites",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Class and Power in Roman Palestine, chapter 3, pp. 111-151",
+        "url": "https://doi.org/10.1017/9781108656757.004",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance"
+        ],
+        "notes": "Distinguishes direct tribute, censuses, tolls, customs, tax farming, and local elite supervision.",
+        "id": "keddie-taxation",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Luke 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus",
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Luke 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-2",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible",
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Malachi 1-3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "malachi-1-3",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Malachi 1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "malachi-1-4",
+        "canonical_object_ids": [
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Matthew 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Micah 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-5",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Nazareth",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "nazareth-historical-orientation",
+        "canonical_object_ids": [
+          "nazareth"
+        ]
+      },
+      {
+        "title": "Nehemiah 8-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "nehemiah-8-13",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "Luke manuscript workspace and variant evidence",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalog, images where licensed, and textual tools.",
+        "id": "ntvmr-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XIV-XV, P75",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Luke and John, Papyrus Hanna 1 (Mater Verbi)",
+        "url": "https://digi.vatlib.it/view/MSS_Pap.Hanna.1(Mater.Verbi)",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Early Greek papyrus manuscript images.",
+        "id": "p75-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Revelation 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-13",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Revelation 17-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-17-18",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Romans 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-13",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament",
+        "author": "Michael W. Holmes",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Nativity Census: What Does Luke Actually Say?",
+        "author": "John Thorley",
+        "publisher": "Cambridge University Press",
+        "year": 2009,
+        "locator": "Greece & Rome 26.1, 81-89",
+        "url": "https://www.cambridge.org/core/journals/greece-and-rome/article/nativity-census-what-does-luke-actually-say/09F87E230993C1D68CE2027E41007795",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical and linguistic census problem.",
+        "id": "thorley-census",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Second Temple Administration",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapters 1 and 4 on history, leaders, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "canonical-role",
+          "interpretive-notes"
+        ],
+        "notes": "Current scholarly synthesis of Second Temple institutions.",
+        "id": "vanderkam-second-temple-institutions",
+        "canonical_object_ids": [
+          "second-temple-administration"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Roman Empire in the Bible?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-roman-empire-in-the-bible-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Second Temple?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-second-temple-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-second-temple"
+        ]
+      },
+      {
+        "title": "Zechariah 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zechariah-1-8",
+        "canonical_object_ids": [
+          "what-is-the-second-temple"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "birth-of-jesus",
+        "type": "event",
+        "title": "Birth of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.958
+      },
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "nazareth",
+        "type": "place",
+        "title": "Nazareth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "second-temple-administration",
+        "type": "institution",
+        "title": "Second Temple Administration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "what-is-the-roman-empire-in-the-bible",
+        "type": "faq",
+        "title": "What is the Roman Empire in the Bible?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "what-is-the-second-temple",
+        "type": "faq",
+        "title": "What is the Second Temple?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "81f47bbeece82ed2c6ec4f486135bd4b3e5c472841e6c72fcb4489354d98ec80",
+  "evidence_hash_version": "2"
+}

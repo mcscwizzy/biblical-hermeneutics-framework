@@ -1,0 +1,97 @@
+name: Export Sol qualification artifact
+
+on:
+  push:
+    branches:
+      - feat/commentary-v1.2-enrichment
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    name: Package committed qualification handoff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify qualification handoff
+        env:
+          HANDOFF_DIR: .bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/chatgpt-handoff
+          QUALIFICATION_ID: renderer-qualification-v1-gpt-5.6-sol-a0f4063638cf9730958a
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path(os.environ["HANDOFF_DIR"])
+          manifest_path = root / "manifest.json"
+          if not manifest_path.is_file():
+              raise SystemExit("qualification handoff manifest is missing")
+
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          if manifest.get("qualification_id") != os.environ["QUALIFICATION_ID"]:
+              raise SystemExit("qualification ID mismatch")
+          if manifest.get("renderer_identity") != "gpt-5.6-sol":
+              raise SystemExit("renderer identity mismatch")
+
+          entries = manifest.get("entries")
+          if not isinstance(entries, list) or len(entries) != 21:
+              raise SystemExit("qualification manifest must contain exactly 21 entries")
+
+          expected_directories = []
+          for order, entry in enumerate(entries, 1):
+              if entry.get("order") != order:
+                  raise SystemExit(f"qualification order mismatch at entry {order}")
+              book, chapter = entry["reference"].rsplit(" ", 1)
+              expected_directories.append(
+                  f"{order:03d}_{book.lower().replace(' ', '_')}_{int(chapter):03d}"
+              )
+
+          chapter_directories = sorted(path.name for path in root.iterdir() if path.is_dir())
+          if chapter_directories != expected_directories:
+              raise SystemExit("qualification chapter directory set mismatch")
+
+          required_files = {"metadata.json", "system_prompt.txt", "user_prompt.txt"}
+          for directory_name in chapter_directories:
+              files = {path.name for path in (root / directory_name).iterdir() if path.is_file()}
+              if files != required_files:
+                  raise SystemExit(f"unexpected handoff files in {directory_name}")
+          PY
+
+      - name: Package exact committed handoff
+        id: package
+        env:
+          HANDOFF_DIR: .bhf-data/bhf-commentary-candidates/renderer-qualification-v1/gpt-5.6-sol/chatgpt-handoff
+          QUALIFICATION_ID: renderer-qualification-v1-gpt-5.6-sol-a0f4063638cf9730958a
+        run: |
+          set -euo pipefail
+          artifact_dir="$RUNNER_TEMP/sol-qualification-artifact"
+          zip_path="$artifact_dir/renderer-qualification-gpt-5.6-sol-input.zip"
+          mkdir -p "$artifact_dir"
+
+          git archive --format=zip --output="$zip_path" "$GITHUB_SHA" "$HANDOFF_DIR"
+
+          git ls-tree -r --name-only "$GITHUB_SHA" -- "$HANDOFF_DIR" > "$RUNNER_TEMP/expected-handoff-files.txt"
+          unzip -Z1 "$zip_path" | sed '/\/$/d' > "$RUNNER_TEMP/archived-handoff-files.txt"
+          diff -u "$RUNNER_TEMP/expected-handoff-files.txt" "$RUNNER_TEMP/archived-handoff-files.txt"
+
+          zip_sha256="$(sha256sum "$zip_path" | awk '{print $1}')"
+          {
+            printf 'qualification_id=%s\n' "$QUALIFICATION_ID"
+            printf 'git_sha=%s\n' "$GITHUB_SHA"
+            printf 'zip_sha256=%s\n' "$zip_sha256"
+          } > "$artifact_dir/artifact-metadata.txt"
+          printf 'zip_sha256=%s\n' "$zip_sha256" >> "$GITHUB_OUTPUT"
+
+      - name: Upload qualification input
+        uses: actions/upload-artifact@v4
+        with:
+          name: gpt-5.6-sol-qualification-input
+          path: |
+            ${{ runner.temp }}/sol-qualification-artifact/renderer-qualification-gpt-5.6-sol-input.zip
+            ${{ runner.temp }}/sol-qualification-artifact/artifact-metadata.txt
+          if-no-files-found: error

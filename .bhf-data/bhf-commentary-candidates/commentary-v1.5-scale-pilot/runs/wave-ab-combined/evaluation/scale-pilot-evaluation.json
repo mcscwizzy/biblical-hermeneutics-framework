@@ -1,0 +1,3760 @@
+{
+  "artifact_version": "commentary-v1.5-scale-pilot-evaluation-v1",
+  "status": "IN_PROGRESS",
+  "classification": "INCOMPLETE_SCALE_PILOT",
+  "renderer_identity": {
+    "renderer_label": "GPT-5 Codex",
+    "reasoning_effort": "NOT_EXPOSED"
+  },
+  "prompt_version": "1.5",
+  "schema_version": "1.2",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "gate_version": "commentary-richness-gate-v2.1",
+  "gate_state": "CANDIDATE_ONLY",
+  "reader_synthesis_plan": "NOT IMPLEMENTED / NOT REQUIRED",
+  "wave_results": {
+    "A": {
+      "aggregate": {
+        "generated": 20,
+        "validated": 20,
+        "rejected": 0,
+        "structural_rejections": 0,
+        "structural_rejection_codes": {},
+        "safety_failures": 0,
+        "gate_distribution": {
+          "PASS": 18,
+          "QUALITY_FAIL": 1,
+          "PASS_WITH_WARNING": 1
+        },
+        "availability_distribution": {
+          "THIN": 4,
+          "AVAILABLE": 14,
+          "DATA_GAP": 2
+        },
+        "density_distribution": {
+          "1-5": 4,
+          "11-20": 6,
+          "21-40": 4,
+          "41+": 1,
+          "6-10": 3,
+          "0": 2
+        },
+        "literary_distribution": {
+          "Prophets": 5,
+          "Gospels/Acts": 4,
+          "Genealogy/list/administrative": 1,
+          "Epistles": 2,
+          "Historical narrative": 3,
+          "Pentateuch": 3,
+          "Poetry/Wisdom": 1,
+          "Apocalyptic / highly symbolic": 1
+        },
+        "mean_median": {
+          "words": {
+            "mean": 651.95,
+            "median": 452.5
+          },
+          "blocks": {
+            "mean": 7.25,
+            "median": 6.5
+          },
+          "synthesis_utilization": {
+            "mean": 0.8842,
+            "median": 1.0
+          },
+          "idea_cluster_coverage": {
+            "mean": 0.8849,
+            "median": 1.0
+          },
+          "weighted_coverage": {
+            "mean": 0.8833,
+            "median": 1.0
+          },
+          "core_coverage": {
+            "mean": 0.975,
+            "median": 1.0
+          },
+          "category_coverage": {
+            "mean": 0.875,
+            "median": 1.0
+          },
+          "consolidation_ratio": {
+            "mean": 0.3876,
+            "median": 0.4226
+          },
+          "redundant_block_ratio": {
+            "mean": 0.0,
+            "median": 0.0
+          }
+        },
+        "availability_stratified": {
+          "AVAILABLE": {
+            "count": 14,
+            "validated": 14,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 12,
+              "QUALITY_FAIL": 1,
+              "PASS_WITH_WARNING": 1
+            },
+            "mean_weighted_coverage": 0.9761,
+            "mean_core_coverage": 0.9643,
+            "mean_category_coverage": 0.9643,
+            "mean_words": 911.9286,
+            "mean_blocks": 9.8571,
+            "mean_utilization": 0.9774,
+            "mean_consolidation": 0.518,
+            "dump_distribution": {
+              "NONE": 13,
+              "LOW": 1
+            }
+          },
+          "DATA_GAP": {
+            "count": 2,
+            "validated": 2,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 0.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.0,
+            "mean_words": 11,
+            "mean_blocks": 1,
+            "mean_utilization": 0.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "THIN": {
+            "count": 4,
+            "validated": 4,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 4
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 62.5,
+            "mean_blocks": 1.25,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.125,
+            "dump_distribution": {
+              "NONE": 4
+            }
+          }
+        },
+        "density_stratified": {
+          "0": {
+            "count": 2,
+            "validated": 2,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 0.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.0,
+            "mean_words": 11,
+            "mean_blocks": 1,
+            "mean_utilization": 0.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "1-5": {
+            "count": 4,
+            "validated": 4,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 4
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 62.5,
+            "mean_blocks": 1.25,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.125,
+            "dump_distribution": {
+              "NONE": 4
+            }
+          },
+          "11-20": {
+            "count": 6,
+            "validated": 6,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 5,
+              "QUALITY_FAIL": 1
+            },
+            "mean_weighted_coverage": 0.9828,
+            "mean_core_coverage": 0.9167,
+            "mean_category_coverage": 0.9445,
+            "mean_words": 529.3333,
+            "mean_blocks": 8.3333,
+            "mean_utilization": 0.9825,
+            "mean_consolidation": 0.4464,
+            "dump_distribution": {
+              "NONE": 6
+            }
+          },
+          "21-40": {
+            "count": 4,
+            "validated": 4,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 4
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 1686.25,
+            "mean_blocks": 11.75,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.7352,
+            "dump_distribution": {
+              "NONE": 4
+            }
+          },
+          "41+": {
+            "count": 1,
+            "validated": 1,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS_WITH_WARNING": 1
+            },
+            "mean_weighted_coverage": 0.7689,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.8333,
+            "mean_words": 1755,
+            "mean_blocks": 24,
+            "mean_utilization": 0.7895,
+            "mean_consolidation": 0.5556,
+            "dump_distribution": {
+              "LOW": 1
+            }
+          },
+          "6-10": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 3
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 363.6667,
+            "mean_blocks": 5.6667,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.3591,
+            "dump_distribution": {
+              "NONE": 3
+            }
+          }
+        },
+        "literary_stratified": {
+          "Apocalyptic / highly symbolic": {
+            "count": 1,
+            "validated": 1,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 1
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 412,
+            "mean_blocks": 7,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.4167,
+            "dump_distribution": {
+              "NONE": 1
+            }
+          },
+          "Epistles": {
+            "count": 2,
+            "validated": 2,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 2272,
+            "mean_blocks": 17,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.6909,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "Genealogy/list/administrative": {
+            "count": 1,
+            "validated": 1,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 1
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 126,
+            "mean_blocks": 1,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.5,
+            "dump_distribution": {
+              "NONE": 1
+            }
+          },
+          "Gospels/Acts": {
+            "count": 4,
+            "validated": 4,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 4
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 458.25,
+            "mean_blocks": 7,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.3952,
+            "dump_distribution": {
+              "NONE": 4
+            }
+          },
+          "Historical narrative": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "QUALITY_FAIL": 1,
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 0.6323,
+            "mean_core_coverage": 0.8333,
+            "mean_category_coverage": 0.5556,
+            "mean_words": 187.6667,
+            "mean_blocks": 5,
+            "mean_utilization": 0.6316,
+            "mean_consolidation": 0.098,
+            "dump_distribution": {
+              "NONE": 3
+            }
+          },
+          "Pentateuch": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS_WITH_WARNING": 1,
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 0.923,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.9444,
+            "mean_words": 902.6667,
+            "mean_blocks": 13,
+            "mean_utilization": 0.9298,
+            "mean_consolidation": 0.4681,
+            "dump_distribution": {
+              "LOW": 1,
+              "NONE": 2
+            }
+          },
+          "Poetry/Wisdom": {
+            "count": 1,
+            "validated": 1,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 1
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 33,
+            "mean_blocks": 1,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 1
+            }
+          },
+          "Prophets": {
+            "count": 5,
+            "validated": 5,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 5
+            },
+            "mean_weighted_coverage": 0.8,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.8,
+            "mean_words": 564,
+            "mean_blocks": 4,
+            "mean_utilization": 0.8,
+            "mean_consolidation": 0.4349,
+            "dump_distribution": {
+              "NONE": 5
+            }
+          }
+        },
+        "dump_distribution": {
+          "NONE": 19,
+          "LOW": 1
+        },
+        "one_unit_per_block_regressions": 0,
+        "malformed_verse_reference_count": 0,
+        "routing_failures": 0,
+        "provenance_failures": 0,
+        "unsupported_significance_count": 0,
+        "dense_available": {
+          "tested": 5,
+          "validated": 5,
+          "gate_distribution": {
+            "PASS": 4,
+            "PASS_WITH_WARNING": 1
+          },
+          "mean_weighted_coverage": 0.9538,
+          "mean_core_coverage": 1.0,
+          "mean_category_coverage": 0.9667,
+          "mean_utilization": 0.9579,
+          "mean_blocks": 14.2,
+          "mean_words": 1700,
+          "mean_consolidation": 0.6993,
+          "dump_distribution": {
+            "NONE": 4,
+            "LOW": 1
+          }
+        },
+        "diagnostic_distribution": {
+          "EVIDENCE_LIMITED_SAFE_RESTRAINT": 4,
+          "GOOD_CONSOLIDATED_ENRICHMENT": 13,
+          "UNDER_EXPLANATION": 1,
+          "DATA_GAP_SAFE_RESTRAINT": 2
+        }
+      },
+      "rows": [
+        {
+          "reference": "Zechariah 2",
+          "literary_category": "Prophets",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 32,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Matthew 24",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 15,
+          "synthesis_units": 15,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 7,
+          "refined_core_clusters": 1,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 7,
+          "words": 544,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 4,
+          "mean_synthesis_units_per_block": 2.1429,
+          "consolidation_ratio": 0.5333,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Matthew 13",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 12,
+          "synthesis_units": 11,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 8,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 8,
+          "words": 393,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 3,
+          "mean_synthesis_units_per_block": 1.375,
+          "consolidation_ratio": 0.3333,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "John 3",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 14,
+          "synthesis_units": 11,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 8,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 8,
+          "words": 590,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 3,
+          "mean_synthesis_units_per_block": 1.375,
+          "consolidation_ratio": 0.4286,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Numbers 2",
+          "literary_category": "Genealogy/list/administrative",
+          "evidence_availability": "THIN",
+          "evidence_count": 2,
+          "synthesis_units": 2,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 126,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 1,
+          "mean_synthesis_units_per_block": 2.0,
+          "consolidation_ratio": 0.5,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "1 Corinthians 16",
+          "literary_category": "Epistles",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 55,
+          "synthesis_units": 30,
+          "density_bucket": "21-40",
+          "meaningful_clusters": 8,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 2,
+          "blocks": 16,
+          "words": 2278,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 14,
+          "mean_synthesis_units_per_block": 1.875,
+          "consolidation_ratio": 0.7091,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Joshua 1",
+          "literary_category": "Historical narrative",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 19,
+          "synthesis_units": 19,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 13,
+          "refined_core_clusters": 2,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 2,
+          "blocks": 12,
+          "words": 493,
+          "synthesis_utilization": 0.8947,
+          "idea_cluster_coverage": 0.9231,
+          "weighted_coverage": 0.8969,
+          "core_coverage": 0.5,
+          "category_coverage": 0.6667,
+          "multi_synthesis_blocks": 2,
+          "mean_synthesis_units_per_block": 1.4167,
+          "consolidation_ratio": 0.2941,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": true,
+          "diagnostic_label": "UNDER_EXPLANATION",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "QUALITY_FAIL",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": false,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+              "one or more class-specific quality checks failed"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "1 Corinthians 9",
+          "literary_category": "Epistles",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 55,
+          "synthesis_units": 34,
+          "density_bucket": "21-40",
+          "meaningful_clusters": 10,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 2,
+          "blocks": 18,
+          "words": 2266,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 16,
+          "mean_synthesis_units_per_block": 1.8889,
+          "consolidation_ratio": 0.6727,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Genesis 15",
+          "literary_category": "Pentateuch",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 69,
+          "synthesis_units": 57,
+          "density_bucket": "41+",
+          "meaningful_clusters": 31,
+          "refined_core_clusters": 1,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 5,
+          "blocks": 24,
+          "words": 1755,
+          "synthesis_utilization": 0.7895,
+          "idea_cluster_coverage": 0.7742,
+          "weighted_coverage": 0.7689,
+          "core_coverage": 1.0,
+          "category_coverage": 0.8333,
+          "multi_synthesis_blocks": 15,
+          "mean_synthesis_units_per_block": 1.875,
+          "consolidation_ratio": 0.5556,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "LOW",
+          "dump_signals": [
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS"
+          ],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS_WITH_WARNING",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+              "dump severity is LOW; retained as warning"
+            ],
+            "dump_severity": "LOW"
+          }
+        },
+        {
+          "reference": "Psalms 126",
+          "literary_category": "Poetry/Wisdom",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 33,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Jeremiah 49",
+          "literary_category": "Prophets",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 33,
+          "synthesis_units": 32,
+          "density_bucket": "21-40",
+          "meaningful_clusters": 6,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 4,
+          "blocks": 6,
+          "words": 1247,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 6,
+          "mean_synthesis_units_per_block": 5.3333,
+          "consolidation_ratio": 0.8182,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Exodus 10",
+          "literary_category": "Pentateuch",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 8,
+          "synthesis_units": 7,
+          "density_bucket": "6-10",
+          "meaningful_clusters": 3,
+          "refined_core_clusters": 1,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 5,
+          "words": 373,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 2,
+          "mean_synthesis_units_per_block": 1.4,
+          "consolidation_ratio": 0.375,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Judges 20",
+          "literary_category": "Historical narrative",
+          "evidence_availability": "THIN",
+          "evidence_count": 2,
+          "synthesis_units": 2,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 1,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 2,
+          "words": 59,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "1 Kings 10",
+          "literary_category": "Historical narrative",
+          "evidence_availability": "DATA_GAP",
+          "evidence_count": 0,
+          "synthesis_units": 0,
+          "density_bucket": "0",
+          "meaningful_clusters": 0,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 11,
+          "synthesis_utilization": 0.0,
+          "idea_cluster_coverage": 0.0,
+          "weighted_coverage": 0.0,
+          "core_coverage": 1.0,
+          "category_coverage": 0.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 0.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "DATA_GAP_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "DATA_GAP_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "remains_evidence_gap": true,
+              "zero_evidence_consumed": true,
+              "concise": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "useful_sections"
+            ],
+            "reasons": [
+              "DATA_GAP is judged for safe restraint, not enrichment"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Daniel 11",
+          "literary_category": "Prophets",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 27,
+          "synthesis_units": 24,
+          "density_bucket": "21-40",
+          "meaningful_clusters": 6,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 7,
+          "words": 954,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 7,
+          "mean_synthesis_units_per_block": 3.4286,
+          "consolidation_ratio": 0.7407,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Luke 21",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 7,
+          "synthesis_units": 6,
+          "density_bucket": "6-10",
+          "meaningful_clusters": 5,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 5,
+          "words": 306,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 1,
+          "mean_synthesis_units_per_block": 1.2,
+          "consolidation_ratio": 0.2857,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Ezekiel 42",
+          "literary_category": "Prophets",
+          "evidence_availability": "DATA_GAP",
+          "evidence_count": 0,
+          "synthesis_units": 0,
+          "density_bucket": "0",
+          "meaningful_clusters": 0,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 11,
+          "synthesis_utilization": 0.0,
+          "idea_cluster_coverage": 0.0,
+          "weighted_coverage": 0.0,
+          "core_coverage": 1.0,
+          "category_coverage": 0.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 0.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "DATA_GAP_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "DATA_GAP_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "remains_evidence_gap": true,
+              "zero_evidence_consumed": true,
+              "concise": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "useful_sections"
+            ],
+            "reasons": [
+              "DATA_GAP is judged for safe restraint, not enrichment"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Exodus 1",
+          "literary_category": "Pentateuch",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 19,
+          "synthesis_units": 13,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 8,
+          "refined_core_clusters": 2,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 4,
+          "blocks": 10,
+          "words": 580,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 3,
+          "mean_synthesis_units_per_block": 1.3,
+          "consolidation_ratio": 0.4737,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Daniel 9",
+          "literary_category": "Prophets",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 13,
+          "synthesis_units": 11,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 5,
+          "refined_core_clusters": 1,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 5,
+          "words": 576,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 4,
+          "mean_synthesis_units_per_block": 2.2,
+          "consolidation_ratio": 0.6154,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Revelation 13",
+          "literary_category": "Apocalyptic / highly symbolic",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 12,
+          "synthesis_units": 9,
+          "density_bucket": "6-10",
+          "meaningful_clusters": 7,
+          "refined_core_clusters": 0,
+          "source": "wave-A",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 4,
+          "blocks": 7,
+          "words": 412,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 2,
+          "mean_synthesis_units_per_block": 1.2857,
+          "consolidation_ratio": 0.4167,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        }
+      ]
+    },
+    "B": {
+      "aggregate": {
+        "generated": 20,
+        "validated": 19,
+        "rejected": 1,
+        "structural_rejections": 1,
+        "structural_rejection_codes": {
+          "VALIDATION_FAILED": 1,
+          "MALFORMED_VERSE_REFERENCE": 1
+        },
+        "safety_failures": 0,
+        "gate_distribution": {
+          "PASS_WITH_WARNING": 3,
+          "PASS": 15,
+          "QUALITY_FAIL": 1
+        },
+        "availability_distribution": {
+          "AVAILABLE": 13,
+          "THIN": 5,
+          "DATA_GAP": 2
+        },
+        "density_distribution": {
+          "21-40": 2,
+          "11-20": 3,
+          "41+": 5,
+          "6-10": 3,
+          "1-5": 5,
+          "0": 2
+        },
+        "literary_distribution": {
+          "Pentateuch": 3,
+          "Genealogy/list/administrative": 3,
+          "Gospels/Acts": 4,
+          "Epistles": 3,
+          "Prophets": 3,
+          "Historical narrative": 1,
+          "Poetry/Wisdom": 3
+        },
+        "mean_median": {
+          "words": {
+            "mean": 976.2105,
+            "median": 573
+          },
+          "blocks": {
+            "mean": 10.3684,
+            "median": 6
+          },
+          "synthesis_utilization": {
+            "mean": 0.8365,
+            "median": 1.0
+          },
+          "idea_cluster_coverage": {
+            "mean": 0.8431,
+            "median": 1.0
+          },
+          "weighted_coverage": {
+            "mean": 0.8399,
+            "median": 1.0
+          },
+          "core_coverage": {
+            "mean": 1.0,
+            "median": 1.0
+          },
+          "category_coverage": {
+            "mean": 0.8947,
+            "median": 1.0
+          },
+          "consolidation_ratio": {
+            "mean": 0.3492,
+            "median": 0.4857
+          },
+          "redundant_block_ratio": {
+            "mean": 0.0,
+            "median": 0.0
+          }
+        },
+        "availability_stratified": {
+          "AVAILABLE": {
+            "count": 13,
+            "validated": 12,
+            "rejected": 1,
+            "gate_distribution": {
+              "PASS_WITH_WARNING": 3,
+              "PASS": 8,
+              "QUALITY_FAIL": 1
+            },
+            "mean_weighted_coverage": 0.9132,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 1528.1667,
+            "mean_blocks": 15.8333,
+            "mean_utilization": 0.9078,
+            "mean_consolidation": 0.5529,
+            "dump_distribution": {
+              "LOW": 2,
+              "NONE": 8,
+              "MODERATE": 2
+            }
+          },
+          "DATA_GAP": {
+            "count": 2,
+            "validated": 2,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 0.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.0,
+            "mean_words": 11,
+            "mean_blocks": 1,
+            "mean_utilization": 0.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "THIN": {
+            "count": 5,
+            "validated": 5,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 5
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 37.6,
+            "mean_blocks": 1,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 5
+            }
+          }
+        },
+        "density_stratified": {
+          "0": {
+            "count": 2,
+            "validated": 2,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 0.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.0,
+            "mean_words": 11,
+            "mean_blocks": 1,
+            "mean_utilization": 0.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "1-5": {
+            "count": 5,
+            "validated": 5,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 5
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 37.6,
+            "mean_blocks": 1,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 5
+            }
+          },
+          "11-20": {
+            "count": 3,
+            "validated": 2,
+            "rejected": 1,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 867.5,
+            "mean_blocks": 12,
+            "mean_utilization": 0.95,
+            "mean_consolidation": 0.517,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "21-40": {
+            "count": 2,
+            "validated": 2,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS_WITH_WARNING": 1,
+              "PASS": 1
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 1256,
+            "mean_blocks": 16.5,
+            "mean_utilization": 0.9062,
+            "mean_consolidation": 0.5222,
+            "dump_distribution": {
+              "LOW": 1,
+              "NONE": 1
+            }
+          },
+          "41+": {
+            "count": 5,
+            "validated": 5,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS_WITH_WARNING": 2,
+              "PASS": 2,
+              "QUALITY_FAIL": 1
+            },
+            "mean_weighted_coverage": 0.7916,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 2541.6,
+            "mean_blocks": 23.4,
+            "mean_utilization": 0.8361,
+            "mean_consolidation": 0.6569,
+            "dump_distribution": {
+              "MODERATE": 2,
+              "NONE": 2,
+              "LOW": 1
+            }
+          },
+          "6-10": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 3
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 461,
+            "mean_blocks": 5.3333,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.4239,
+            "dump_distribution": {
+              "NONE": 3
+            }
+          }
+        },
+        "literary_stratified": {
+          "Epistles": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2,
+              "QUALITY_FAIL": 1
+            },
+            "mean_weighted_coverage": 0.7329,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 2063.6667,
+            "mean_blocks": 21,
+            "mean_utilization": 0.7849,
+            "mean_consolidation": 0.6111,
+            "dump_distribution": {
+              "NONE": 2,
+              "LOW": 1
+            }
+          },
+          "Genealogy/list/administrative": {
+            "count": 3,
+            "validated": 2,
+            "rejected": 1,
+            "gate_distribution": {
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 38.5,
+            "mean_blocks": 1,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 2
+            }
+          },
+          "Gospels/Acts": {
+            "count": 4,
+            "validated": 4,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 2,
+              "PASS_WITH_WARNING": 2
+            },
+            "mean_weighted_coverage": 0.9399,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 2276.5,
+            "mean_blocks": 20.25,
+            "mean_utilization": 0.9565,
+            "mean_consolidation": 0.622,
+            "dump_distribution": {
+              "NONE": 2,
+              "MODERATE": 2
+            }
+          },
+          "Historical narrative": {
+            "count": 1,
+            "validated": 1,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 1
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 33,
+            "mean_blocks": 1,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 1
+            }
+          },
+          "Pentateuch": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS_WITH_WARNING": 1,
+              "PASS": 2
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 636,
+            "mean_blocks": 12,
+            "mean_utilization": 0.9042,
+            "mean_consolidation": 0.3947,
+            "dump_distribution": {
+              "LOW": 1,
+              "NONE": 2
+            }
+          },
+          "Poetry/Wisdom": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 3
+            },
+            "mean_weighted_coverage": 0.3333,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 0.3333,
+            "mean_words": 21.6667,
+            "mean_blocks": 1,
+            "mean_utilization": 0.3333,
+            "mean_consolidation": 0.0,
+            "dump_distribution": {
+              "NONE": 3
+            }
+          },
+          "Prophets": {
+            "count": 3,
+            "validated": 3,
+            "rejected": 0,
+            "gate_distribution": {
+              "PASS": 3
+            },
+            "mean_weighted_coverage": 1.0,
+            "mean_core_coverage": 1.0,
+            "mean_category_coverage": 1.0,
+            "mean_words": 389.3333,
+            "mean_blocks": 3.6667,
+            "mean_utilization": 1.0,
+            "mean_consolidation": 0.3763,
+            "dump_distribution": {
+              "NONE": 3
+            }
+          }
+        },
+        "dump_distribution": {
+          "LOW": 2,
+          "NONE": 15,
+          "MODERATE": 2
+        },
+        "one_unit_per_block_regressions": 0,
+        "malformed_verse_reference_count": 1,
+        "routing_failures": 0,
+        "provenance_failures": 0,
+        "unsupported_significance_count": 0,
+        "dense_available": {
+          "tested": 7,
+          "validated": 7,
+          "gate_distribution": {
+            "PASS_WITH_WARNING": 3,
+            "PASS": 3,
+            "QUALITY_FAIL": 1
+          },
+          "mean_weighted_coverage": 0.8512,
+          "mean_core_coverage": 1.0,
+          "mean_category_coverage": 1.0,
+          "mean_utilization": 0.8562,
+          "mean_blocks": 21.4286,
+          "mean_words": 2174.2857,
+          "mean_consolidation": 0.6184,
+          "dump_distribution": {
+            "LOW": 2,
+            "NONE": 3,
+            "MODERATE": 2
+          }
+        },
+        "diagnostic_distribution": {
+          "GOOD_CONSOLIDATED_ENRICHMENT": 11,
+          "CONTRACT_VARIANCE": 1,
+          "EVIDENCE_LIMITED_SAFE_RESTRAINT": 5,
+          "DATA_GAP_SAFE_RESTRAINT": 2,
+          "UNDER_EXPLANATION": 1
+        }
+      },
+      "rows": [
+        {
+          "reference": "Exodus 25",
+          "literary_category": "Pentateuch",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 41,
+          "synthesis_units": 32,
+          "density_bucket": "21-40",
+          "meaningful_clusters": 17,
+          "refined_core_clusters": 2,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 6,
+          "blocks": 18,
+          "words": 1007,
+          "synthesis_utilization": 0.8125,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 8,
+          "mean_synthesis_units_per_block": 1.4444,
+          "consolidation_ratio": 0.4857,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "LOW",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS_WITH_WARNING",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+              "dump severity is LOW; retained as warning"
+            ],
+            "dump_severity": "LOW"
+          }
+        },
+        {
+          "reference": "Numbers 33",
+          "literary_category": "Genealogy/list/administrative",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 19,
+          "synthesis_units": 15,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 11,
+          "refined_core_clusters": 2,
+          "source": "wave-B",
+          "validation_status": "rejected",
+          "rejection_codes": [
+            "VALIDATION_FAILED",
+            "MALFORMED_VERSE_REFERENCE"
+          ],
+          "sections": null,
+          "blocks": null,
+          "words": null,
+          "synthesis_utilization": null,
+          "idea_cluster_coverage": null,
+          "weighted_coverage": null,
+          "core_coverage": null,
+          "category_coverage": null,
+          "multi_synthesis_blocks": null,
+          "mean_synthesis_units_per_block": null,
+          "consolidation_ratio": null,
+          "redundant_block_ratio": null,
+          "dump_severity": null,
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "CONTRACT_VARIANCE",
+          "gate_v2_1": null
+        },
+        {
+          "reference": "Luke 2",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 23,
+          "synthesis_units": 17,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 12,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 12,
+          "words": 1084,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 5,
+          "mean_synthesis_units_per_block": 1.4167,
+          "consolidation_ratio": 0.4783,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "2 Corinthians 11",
+          "literary_category": "Epistles",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 34,
+          "synthesis_units": 29,
+          "density_bucket": "21-40",
+          "meaningful_clusters": 8,
+          "refined_core_clusters": 2,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 15,
+          "words": 1505,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 14,
+          "mean_synthesis_units_per_block": 1.9333,
+          "consolidation_ratio": 0.5588,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Acts 9",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 75,
+          "synthesis_units": 67,
+          "density_bucket": "41+",
+          "meaningful_clusters": 18,
+          "refined_core_clusters": 1,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 5,
+          "blocks": 21,
+          "words": 2250,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 12,
+          "mean_synthesis_units_per_block": 3.1905,
+          "consolidation_ratio": 0.72,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "MODERATE",
+          "dump_signals": [
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS"
+          ],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS_WITH_WARNING",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+              "dump severity is MODERATE; retained as warning"
+            ],
+            "dump_severity": "MODERATE"
+          }
+        },
+        {
+          "reference": "Micah 4",
+          "literary_category": "Prophets",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 12,
+          "synthesis_units": 9,
+          "density_bucket": "6-10",
+          "meaningful_clusters": 2,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 2,
+          "blocks": 5,
+          "words": 573,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 4,
+          "mean_synthesis_units_per_block": 1.8,
+          "consolidation_ratio": 0.5833,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Ezekiel 9",
+          "literary_category": "Prophets",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 35,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Hebrews 11",
+          "literary_category": "Epistles",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 70,
+          "synthesis_units": 66,
+          "density_bucket": "41+",
+          "meaningful_clusters": 30,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 6,
+          "blocks": 24,
+          "words": 1558,
+          "synthesis_utilization": 0.8182,
+          "idea_cluster_coverage": 0.7333,
+          "weighted_coverage": 0.7255,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 11,
+          "mean_synthesis_units_per_block": 2.25,
+          "consolidation_ratio": 0.5862,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS"
+          ],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "1 Chronicles 13",
+          "literary_category": "Historical narrative",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 1,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 33,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Psalms 6",
+          "literary_category": "Poetry/Wisdom",
+          "evidence_availability": "DATA_GAP",
+          "evidence_count": 0,
+          "synthesis_units": 0,
+          "density_bucket": "0",
+          "meaningful_clusters": 0,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 11,
+          "synthesis_utilization": 0.0,
+          "idea_cluster_coverage": 0.0,
+          "weighted_coverage": 0.0,
+          "core_coverage": 1.0,
+          "category_coverage": 0.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 0.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "DATA_GAP_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "DATA_GAP_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "remains_evidence_gap": true,
+              "zero_evidence_consumed": true,
+              "concise": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "useful_sections"
+            ],
+            "reasons": [
+              "DATA_GAP is judged for safe restraint, not enrichment"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Psalms 70",
+          "literary_category": "Poetry/Wisdom",
+          "evidence_availability": "DATA_GAP",
+          "evidence_count": 0,
+          "synthesis_units": 0,
+          "density_bucket": "0",
+          "meaningful_clusters": 0,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 11,
+          "synthesis_utilization": 0.0,
+          "idea_cluster_coverage": 0.0,
+          "weighted_coverage": 0.0,
+          "core_coverage": 1.0,
+          "category_coverage": 0.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 0.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "DATA_GAP_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "DATA_GAP_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "remains_evidence_gap": true,
+              "zero_evidence_consumed": true,
+              "concise": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "useful_sections"
+            ],
+            "reasons": [
+              "DATA_GAP is judged for safe restraint, not enrichment"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Acts 16",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 89,
+          "synthesis_units": 52,
+          "density_bucket": "41+",
+          "meaningful_clusters": 14,
+          "refined_core_clusters": 1,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 2,
+          "blocks": 24,
+          "words": 3810,
+          "synthesis_utilization": 0.8462,
+          "idea_cluster_coverage": 0.7857,
+          "weighted_coverage": 0.7595,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 20,
+          "mean_synthesis_units_per_block": 1.8333,
+          "consolidation_ratio": 0.7037,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS"
+          ],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Nahum 2",
+          "literary_category": "Prophets",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 11,
+          "synthesis_units": 8,
+          "density_bucket": "6-10",
+          "meaningful_clusters": 5,
+          "refined_core_clusters": 2,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 3,
+          "blocks": 5,
+          "words": 560,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 3,
+          "mean_synthesis_units_per_block": 1.6,
+          "consolidation_ratio": 0.5455,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Romans 8",
+          "literary_category": "Epistles",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 118,
+          "synthesis_units": 82,
+          "density_bucket": "41+",
+          "meaningful_clusters": 28,
+          "refined_core_clusters": 2,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 6,
+          "blocks": 24,
+          "words": 3128,
+          "synthesis_utilization": 0.5366,
+          "idea_cluster_coverage": 0.5,
+          "weighted_coverage": 0.4731,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 20,
+          "mean_synthesis_units_per_block": 1.8333,
+          "consolidation_ratio": 0.6883,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "LOW",
+          "dump_signals": [
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS"
+          ],
+          "under_explanation": true,
+          "diagnostic_label": "UNDER_EXPLANATION",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "QUALITY_FAIL",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": false,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+              "one or more class-specific quality checks failed"
+            ],
+            "dump_severity": "LOW"
+          }
+        },
+        {
+          "reference": "1 Chronicles 26",
+          "literary_category": "Genealogy/list/administrative",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 37,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Exodus 16",
+          "literary_category": "Pentateuch",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 29,
+          "synthesis_units": 20,
+          "density_bucket": "11-20",
+          "meaningful_clusters": 11,
+          "refined_core_clusters": 1,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 6,
+          "blocks": 12,
+          "words": 651,
+          "synthesis_utilization": 0.9,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 6,
+          "mean_synthesis_units_per_block": 1.5,
+          "consolidation_ratio": 0.5556,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Genesis 18",
+          "literary_category": "Pentateuch",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 7,
+          "synthesis_units": 7,
+          "density_bucket": "6-10",
+          "meaningful_clusters": 5,
+          "refined_core_clusters": 1,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 4,
+          "blocks": 6,
+          "words": 250,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 1,
+          "mean_synthesis_units_per_block": 1.1667,
+          "consolidation_ratio": 0.1429,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "2 Chronicles 31",
+          "literary_category": "Genealogy/list/administrative",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 40,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        },
+        {
+          "reference": "Acts 1",
+          "literary_category": "Gospels/Acts",
+          "evidence_availability": "AVAILABLE",
+          "evidence_count": 59,
+          "synthesis_units": 49,
+          "density_bucket": "41+",
+          "meaningful_clusters": 20,
+          "refined_core_clusters": 3,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 7,
+          "blocks": 24,
+          "words": 1962,
+          "synthesis_utilization": 0.9796,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 13,
+          "mean_synthesis_units_per_block": 2.0,
+          "consolidation_ratio": 0.5862,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "MODERATE",
+          "dump_signals": [
+            "HIGH_PROSE_WITH_MANY_RECORD_BLOCKS"
+          ],
+          "under_explanation": false,
+          "diagnostic_label": "GOOD_CONSOLIDATED_ENRICHMENT",
+          "gate_v2_1": {
+            "gate_class": "ENRICHMENT_TARGET",
+            "outcome": "PASS_WITH_WARNING",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "boilerplate_absent": true,
+              "core_coverage_adequate": true,
+              "weighted_coverage_adequate": true,
+              "category_coverage_adequate": true,
+              "material_improvement": true,
+              "boundary_repetition_below_limit": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "coherent_consolidation",
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals",
+              "dump severity is MODERATE; retained as warning"
+            ],
+            "dump_severity": "MODERATE"
+          }
+        },
+        {
+          "reference": "Psalms 9",
+          "literary_category": "Poetry/Wisdom",
+          "evidence_availability": "THIN",
+          "evidence_count": 1,
+          "synthesis_units": 1,
+          "density_bucket": "1-5",
+          "meaningful_clusters": 1,
+          "refined_core_clusters": 0,
+          "source": "wave-B",
+          "validation_status": "validated",
+          "rejection_codes": [],
+          "sections": 1,
+          "blocks": 1,
+          "words": 43,
+          "synthesis_utilization": 1.0,
+          "idea_cluster_coverage": 1.0,
+          "weighted_coverage": 1.0,
+          "core_coverage": 1.0,
+          "category_coverage": 1.0,
+          "multi_synthesis_blocks": 0,
+          "mean_synthesis_units_per_block": 1.0,
+          "consolidation_ratio": 0.0,
+          "redundant_block_ratio": 0.0,
+          "dump_severity": "NONE",
+          "dump_signals": [],
+          "under_explanation": false,
+          "diagnostic_label": "EVIDENCE_LIMITED_SAFE_RESTRAINT",
+          "gate_v2_1": {
+            "gate_class": "EVIDENCE_LIMITED_CONTROL",
+            "outcome": "PASS",
+            "safety_pass": true,
+            "safety_checks": {
+              "validation_clean": true,
+              "provenance_complete": true,
+              "hashes_valid": true,
+              "chapter_boundaries_valid": true,
+              "confidence_valid": true,
+              "dispute_state_preserved": true,
+              "unsupported_significance_absent": true
+            },
+            "quality_checks": {
+              "post_render_classification_valid": true,
+              "supported_evidence_represented": true,
+              "no_unsupported_enrichment": true,
+              "no_forced_filler": true,
+              "proportionate_to_evidence": true,
+              "not_high_dump": true
+            },
+            "material_improvement_signals": [
+              "evidence_utilization",
+              "idea_cluster_coverage",
+              "useful_sections"
+            ],
+            "reasons": [
+              "THIN or EVIDENCE_GAP is judged for safe, proportionate restraint, not enrichment thresholds"
+            ],
+            "dump_severity": "NONE"
+          }
+        }
+      ]
+    }
+  },
+  "cumulative_completed": {
+    "generated": 40,
+    "validated": 39,
+    "rejected": 1,
+    "structural_rejections": 1,
+    "structural_rejection_codes": {
+      "VALIDATION_FAILED": 1,
+      "MALFORMED_VERSE_REFERENCE": 1
+    },
+    "safety_failures": 0,
+    "gate_distribution": {
+      "PASS": 33,
+      "QUALITY_FAIL": 2,
+      "PASS_WITH_WARNING": 4
+    },
+    "availability_distribution": {
+      "THIN": 9,
+      "AVAILABLE": 27,
+      "DATA_GAP": 4
+    },
+    "density_distribution": {
+      "1-5": 9,
+      "11-20": 9,
+      "21-40": 6,
+      "41+": 6,
+      "6-10": 6,
+      "0": 4
+    },
+    "literary_distribution": {
+      "Prophets": 8,
+      "Gospels/Acts": 8,
+      "Genealogy/list/administrative": 4,
+      "Epistles": 5,
+      "Historical narrative": 4,
+      "Pentateuch": 6,
+      "Poetry/Wisdom": 4,
+      "Apocalyptic / highly symbolic": 1
+    },
+    "mean_median": {
+      "words": {
+        "mean": 809.9231,
+        "median": 544
+      },
+      "blocks": {
+        "mean": 8.7692,
+        "median": 6
+      },
+      "synthesis_utilization": {
+        "mean": 0.861,
+        "median": 1.0
+      },
+      "idea_cluster_coverage": {
+        "mean": 0.8645,
+        "median": 1.0
+      },
+      "weighted_coverage": {
+        "mean": 0.8622,
+        "median": 1.0
+      },
+      "core_coverage": {
+        "mean": 0.9872,
+        "median": 1.0
+      },
+      "category_coverage": {
+        "mean": 0.8846,
+        "median": 1.0
+      },
+      "consolidation_ratio": {
+        "mean": 0.3689,
+        "median": 0.4737
+      },
+      "redundant_block_ratio": {
+        "mean": 0.0,
+        "median": 0.0
+      }
+    },
+    "availability_stratified": {
+      "AVAILABLE": {
+        "count": 27,
+        "validated": 26,
+        "rejected": 1,
+        "gate_distribution": {
+          "PASS": 20,
+          "QUALITY_FAIL": 2,
+          "PASS_WITH_WARNING": 4
+        },
+        "mean_weighted_coverage": 0.9471,
+        "mean_core_coverage": 0.9808,
+        "mean_category_coverage": 0.9808,
+        "mean_words": 1196.3462,
+        "mean_blocks": 12.6154,
+        "mean_utilization": 0.9453,
+        "mean_consolidation": 0.5341,
+        "dump_distribution": {
+          "NONE": 21,
+          "LOW": 3,
+          "MODERATE": 2
+        }
+      },
+      "DATA_GAP": {
+        "count": 4,
+        "validated": 4,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 4
+        },
+        "mean_weighted_coverage": 0.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 0.0,
+        "mean_words": 11,
+        "mean_blocks": 1,
+        "mean_utilization": 0.0,
+        "mean_consolidation": 0.0,
+        "dump_distribution": {
+          "NONE": 4
+        }
+      },
+      "THIN": {
+        "count": 9,
+        "validated": 9,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 9
+        },
+        "mean_weighted_coverage": 1.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 48.6667,
+        "mean_blocks": 1.1111,
+        "mean_utilization": 1.0,
+        "mean_consolidation": 0.0556,
+        "dump_distribution": {
+          "NONE": 9
+        }
+      }
+    },
+    "density_stratified": {
+      "0": {
+        "count": 4,
+        "validated": 4,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 4
+        },
+        "mean_weighted_coverage": 0.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 0.0,
+        "mean_words": 11,
+        "mean_blocks": 1,
+        "mean_utilization": 0.0,
+        "mean_consolidation": 0.0,
+        "dump_distribution": {
+          "NONE": 4
+        }
+      },
+      "1-5": {
+        "count": 9,
+        "validated": 9,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 9
+        },
+        "mean_weighted_coverage": 1.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 48.6667,
+        "mean_blocks": 1.1111,
+        "mean_utilization": 1.0,
+        "mean_consolidation": 0.0556,
+        "dump_distribution": {
+          "NONE": 9
+        }
+      },
+      "11-20": {
+        "count": 9,
+        "validated": 8,
+        "rejected": 1,
+        "gate_distribution": {
+          "PASS": 7,
+          "QUALITY_FAIL": 1
+        },
+        "mean_weighted_coverage": 0.9871,
+        "mean_core_coverage": 0.9375,
+        "mean_category_coverage": 0.9583,
+        "mean_words": 613.875,
+        "mean_blocks": 9.25,
+        "mean_utilization": 0.9743,
+        "mean_consolidation": 0.464,
+        "dump_distribution": {
+          "NONE": 8
+        }
+      },
+      "21-40": {
+        "count": 6,
+        "validated": 6,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 5,
+          "PASS_WITH_WARNING": 1
+        },
+        "mean_weighted_coverage": 1.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 1542.8333,
+        "mean_blocks": 13.3333,
+        "mean_utilization": 0.9688,
+        "mean_consolidation": 0.6642,
+        "dump_distribution": {
+          "NONE": 5,
+          "LOW": 1
+        }
+      },
+      "41+": {
+        "count": 6,
+        "validated": 6,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS_WITH_WARNING": 3,
+          "PASS": 2,
+          "QUALITY_FAIL": 1
+        },
+        "mean_weighted_coverage": 0.7878,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 0.9722,
+        "mean_words": 2410.5,
+        "mean_blocks": 23.5,
+        "mean_utilization": 0.8284,
+        "mean_consolidation": 0.64,
+        "dump_distribution": {
+          "LOW": 2,
+          "MODERATE": 2,
+          "NONE": 2
+        }
+      },
+      "6-10": {
+        "count": 6,
+        "validated": 6,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 6
+        },
+        "mean_weighted_coverage": 1.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 412.3333,
+        "mean_blocks": 5.5,
+        "mean_utilization": 1.0,
+        "mean_consolidation": 0.3915,
+        "dump_distribution": {
+          "NONE": 6
+        }
+      }
+    },
+    "literary_stratified": {
+      "Apocalyptic / highly symbolic": {
+        "count": 1,
+        "validated": 1,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 1
+        },
+        "mean_weighted_coverage": 1.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 412,
+        "mean_blocks": 7,
+        "mean_utilization": 1.0,
+        "mean_consolidation": 0.4167,
+        "dump_distribution": {
+          "NONE": 1
+        }
+      },
+      "Epistles": {
+        "count": 5,
+        "validated": 5,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 4,
+          "QUALITY_FAIL": 1
+        },
+        "mean_weighted_coverage": 0.8397,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 2147,
+        "mean_blocks": 19.4,
+        "mean_utilization": 0.871,
+        "mean_consolidation": 0.643,
+        "dump_distribution": {
+          "NONE": 4,
+          "LOW": 1
+        }
+      },
+      "Genealogy/list/administrative": {
+        "count": 4,
+        "validated": 3,
+        "rejected": 1,
+        "gate_distribution": {
+          "PASS": 3
+        },
+        "mean_weighted_coverage": 1.0,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 67.6667,
+        "mean_blocks": 1,
+        "mean_utilization": 1.0,
+        "mean_consolidation": 0.1667,
+        "dump_distribution": {
+          "NONE": 3
+        }
+      },
+      "Gospels/Acts": {
+        "count": 8,
+        "validated": 8,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 6,
+          "PASS_WITH_WARNING": 2
+        },
+        "mean_weighted_coverage": 0.9699,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 1.0,
+        "mean_words": 1367.375,
+        "mean_blocks": 13.625,
+        "mean_utilization": 0.9782,
+        "mean_consolidation": 0.5086,
+        "dump_distribution": {
+          "NONE": 6,
+          "MODERATE": 2
+        }
+      },
+      "Historical narrative": {
+        "count": 4,
+        "validated": 4,
+        "rejected": 0,
+        "gate_distribution": {
+          "QUALITY_FAIL": 1,
+          "PASS": 3
+        },
+        "mean_weighted_coverage": 0.7242,
+        "mean_core_coverage": 0.875,
+        "mean_category_coverage": 0.6667,
+        "mean_words": 149,
+        "mean_blocks": 4,
+        "mean_utilization": 0.7237,
+        "mean_consolidation": 0.0735,
+        "dump_distribution": {
+          "NONE": 4
+        }
+      },
+      "Pentateuch": {
+        "count": 6,
+        "validated": 6,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS_WITH_WARNING": 2,
+          "PASS": 4
+        },
+        "mean_weighted_coverage": 0.9615,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 0.9722,
+        "mean_words": 769.3333,
+        "mean_blocks": 12.5,
+        "mean_utilization": 0.917,
+        "mean_consolidation": 0.4314,
+        "dump_distribution": {
+          "LOW": 2,
+          "NONE": 4
+        }
+      },
+      "Poetry/Wisdom": {
+        "count": 4,
+        "validated": 4,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 4
+        },
+        "mean_weighted_coverage": 0.5,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 0.5,
+        "mean_words": 24.5,
+        "mean_blocks": 1,
+        "mean_utilization": 0.5,
+        "mean_consolidation": 0.0,
+        "dump_distribution": {
+          "NONE": 4
+        }
+      },
+      "Prophets": {
+        "count": 8,
+        "validated": 8,
+        "rejected": 0,
+        "gate_distribution": {
+          "PASS": 8
+        },
+        "mean_weighted_coverage": 0.875,
+        "mean_core_coverage": 1.0,
+        "mean_category_coverage": 0.875,
+        "mean_words": 498.5,
+        "mean_blocks": 3.875,
+        "mean_utilization": 0.875,
+        "mean_consolidation": 0.4129,
+        "dump_distribution": {
+          "NONE": 8
+        }
+      }
+    },
+    "dump_distribution": {
+      "NONE": 34,
+      "LOW": 3,
+      "MODERATE": 2
+    },
+    "one_unit_per_block_regressions": 0,
+    "malformed_verse_reference_count": 1,
+    "routing_failures": 0,
+    "provenance_failures": 0,
+    "unsupported_significance_count": 0,
+    "dense_available": {
+      "tested": 12,
+      "validated": 12,
+      "gate_distribution": {
+        "PASS": 7,
+        "PASS_WITH_WARNING": 4,
+        "QUALITY_FAIL": 1
+      },
+      "mean_weighted_coverage": 0.8939,
+      "mean_core_coverage": 1.0,
+      "mean_category_coverage": 0.9861,
+      "mean_utilization": 0.8985,
+      "mean_blocks": 18.4167,
+      "mean_words": 1976.6667,
+      "mean_consolidation": 0.6521,
+      "dump_distribution": {
+        "NONE": 7,
+        "LOW": 3,
+        "MODERATE": 2
+      }
+    },
+    "diagnostic_distribution": {
+      "EVIDENCE_LIMITED_SAFE_RESTRAINT": 9,
+      "GOOD_CONSOLIDATED_ENRICHMENT": 24,
+      "UNDER_EXPLANATION": 2,
+      "DATA_GAP_SAFE_RESTRAINT": 4,
+      "CONTRACT_VARIANCE": 1
+    }
+  },
+  "completed_wave_count": 2,
+  "expected_wave_count": 3,
+  "structural_reference_variance": {
+    "repeated": false,
+    "codes": {
+      "VALIDATION_FAILED": 1,
+      "MALFORMED_VERSE_REFERENCE": 1
+    }
+  },
+  "full_bible_generation_authorized": false,
+  "scale_pilot_complete": false
+}

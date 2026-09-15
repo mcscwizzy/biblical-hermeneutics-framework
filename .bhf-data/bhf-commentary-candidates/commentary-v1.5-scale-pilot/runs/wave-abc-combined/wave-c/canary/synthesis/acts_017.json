@@ -1,0 +1,2987 @@
+{
+  "reference": "Acts 17",
+  "book": "Acts",
+  "chapter": 17,
+  "evidence_hash": "536e0fd41d40e0ccae2e710f5c6dc58a3e90e6357352695ed2768a10ea09ceb6",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "358cf15ac8ee0fdceee3d025263a3cadddc434b071a75794d9ace940f75488c2",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_292e7bfdc7c5",
+      "kind": "archaeology_geography",
+      "facts": [
+        "damascus",
+        "jerusalem",
+        "corinth",
+        "ephesus",
+        "rome"
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_archaeology_geography_2b488d566a80",
+      "kind": "archaeology_geography",
+      "facts": [
+        "Thessalonian civic inscriptions including IG X,2 1 32",
+        "Julio-Claudian civic coin types RPC I 1555 and 1566",
+        "The Thessalonian sanctuary of Egyptian gods and its votives",
+        "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons"
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:archaeology:0",
+        "thessalonica:archaeology:1",
+        "thessalonica:archaeology:2",
+        "thessalonica:archaeology:3"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_46ba65d994c8",
+      "kind": "chronology",
+      "facts": [
+        "Second through fourth centuries CE: surviving urban-house and funerary material supplies explicitly later comparisons"
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:timeline:5"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_7b62779dc2f2",
+      "kind": "chronology",
+      "facts": [
+        "Second century BCE: construction and development of the Via Egnatia strengthens Thessalonica's east-west connections",
+        "Late first century BCE: free-city privileges and early imperial civic coinage shape the Augustan setting",
+        "Approximately 49-52 CE: conventional horizon for the mission and First Thessalonians",
+        "Before the end of the first century CE: IG X,2 1 32 attests politarchs and civic-cult offices",
+        "Second century CE: the British Museum politarch block supplies later local attestation"
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:timeline:0",
+        "thessalonica:timeline:1",
+        "thessalonica:timeline:2",
+        "thessalonica:timeline:3",
+        "thessalonica:timeline:4"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_50d2c87793dc",
+      "kind": "cultural_context",
+      "facts": [
+        "The Thessalonian writings combine living-God, resurrection, day-of-the-Lord, trumpet, prophetic, and apocalyptic language with an address to gentiles turning from idols. The city's Roman setting does not cancel the Jewish scriptural world of the mission and letters.",
+        "Acts places the mission in a synagogue and names Jewish, God-fearing Greek, and prominent female hearers. First Thessalonians suggests substantial gentile participation, but neither source gives a demographic census or warrants collective Jewish blame for the assembly's affliction."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:hebraic_worldview:0",
+        "thessalonica:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5a6edd633034",
+      "kind": "cultural_context",
+      "facts": [
+        "Imperial rule, public cult, and patronage were normal features of the ancient world, and the New Testament speaks into that environment."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5c58187f714d",
+      "kind": "cultural_context",
+      "facts": [
+        "Local assembly spaces were common across the ancient world, but the synagogue is defined by Scripture, prayer, and instruction."
+      ],
+      "verse_refs": [
+        "Acts 17:1-4"
+      ],
+      "evidence_ids": [
+        "what-is-the-synagogue:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_6229e1837a54",
+      "kind": "cultural_context",
+      "facts": [
+        "The relevant evidence belongs to Hellenistic and Roman Jewish communities rather than generic Ancient Near Eastern village or sanctuary institutions.",
+        "Synagogue gatherings expressed communal identity through Torah, instruction, prayer, hospitality, deliberation, and discipline alongside continued orientation toward Jerusalem's temple.",
+        "Readers of the Gospels, Acts, and James encountering varied Jewish assembly settings in Judea and the diaspora.",
+        "Theodotus attests a Jerusalem synagogue for Torah reading and teaching before 70 CE; the Gospels and Acts portray diverse local synagogue scenes in Galilee and the diaspora."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12"
+      ],
+      "evidence_ids": [
+        "synagogue:ancient_near_east_context:0",
+        "synagogue:hebraic_worldview:0",
+        "synagogue:original_audience:0",
+        "synagogue:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "synagogue"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_6a127a549c73",
+      "kind": "cultural_context",
+      "facts": [
+        "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church.",
+        "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+        "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5efb1f4b5841",
+      "kind": "historical_context",
+      "facts": [
+        "Synagogues are epigraphically, archaeologically, and literarily attested before 70 CE in Judea and the diaspora, but their origin, architecture, leadership, and activities differed by place. An exilic origin is possible but not directly documented.",
+        "Hellenistic and Roman Jewish communities before and after 70 CE, with pre-70 evidence kept distinct from later standardized practice."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12"
+      ],
+      "evidence_ids": [
+        "synagogue:historical_context:0",
+        "synagogue:historical_setting:0"
+      ],
+      "entity_ids": [
+        "synagogue"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8c0f306db520",
+      "kind": "historical_context",
+      "facts": [
+        "Luke and Acts portray synagogues as settings for Scripture reading, teaching, communal response, and dispute."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12"
+      ],
+      "evidence_ids": [
+        "synagogue-textual-settings"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8e87cd4179af",
+      "kind": "historical_context",
+      "facts": [
+        "Synagogues become especially important after exile and in the diaspora when Torah-centered life must continue away from the temple."
+      ],
+      "verse_refs": [
+        "Acts 17:1-4"
+      ],
+      "evidence_ids": [
+        "what-is-the-synagogue:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a65548dbe836",
+      "kind": "historical_context",
+      "facts": [
+        "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "paul:historical_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_cf03f55d0b6d",
+      "kind": "historical_context",
+      "facts": [
+        "The first-century world of Jesus and the apostles is governed by Rome, with local rulers, roads, and armies serving imperial power."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "what-is-the-roman-empire-in-the-bible:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f4f93d7282de",
+      "kind": "historical_context",
+      "facts": [
+        "The city stood on the Via Egnatia at the head of the Thermaic Gulf and retained free-city institutions within Roman provincial rule. Pliny names its status; inscriptions attest politarchs; coins, sanctuaries, votives, associations, and later urban and funerary remains document a socially unequal and religiously plural city. These sources do not identify the assembly's building, full demographics, opponents, or every civic procedure narrated in Acts."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:historical_context:0"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_08f0900ee30e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Philippi, Thessalonica, and Beroea shared a province but differed in civic status, road position, institutions, and surviving evidence.",
+        "Acts names a Philippian women's prayer gathering and Lydia's household, prominent women and varied hearers at Thessalonica, and prominent Greek women and men at Beroea.",
+        "The comparison keeps women and mixed hearers visible while preventing one city's categories or proposed roles from being imposed on the others.",
+        "Regional evidence distinguishes Philippi's colony, Thessalonica's free-city institutions, and Beroea's inland civic and later league prominence.",
+        "The contrast explains why Acts narrates different offices and conflicts in each city and blocks a single 'Macedonian city' template."
+      ],
+      "verse_refs": [
+        "Acts 17:1-15",
+        "Acts 17:1-4",
+        "Acts 17:10-12",
+        "Acts 17:10-15",
+        "Acts 17:5-9"
+      ],
+      "evidence_ids": [
+        "macedonian-city-diversity",
+        "macedonian-hearers-women-and-households",
+        "macedonian-hearers-women-and-households:passage-relevance",
+        "philippi-thessalonica-beroea-civic-differences",
+        "philippi-thessalonica-beroea-civic-differences:passage-relevance"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "synagogue",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-15",
+        "Acts 17:1-4",
+        "Acts 17:10-12",
+        "Acts 17:10-15",
+        "Acts 17:5-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_0eecc3c870d4",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts' Areopagus scene moves from observation and creator claims to repentance, judgment, appointed agent, resurrection assurance, and ridicule, delay, or belief.",
+        "Keeps Acts' resurrection rhetoric in its own later narrative and prevents using mixed response as permission for contempt or coercion.",
+        "First Corinthians is an earlier occasional letter transmitting and arguing resurrection, while Acts later composes speeches and trial scenes with different wording, settings, and aims.",
+        "Prevents Acts 17, 23, or 24 from becoming verbatim Pauline transcripts or erasing differences among the letters."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "acts-athens-resurrection-response",
+        "acts-athens-resurrection-response:passage-relevance",
+        "acts-letter-chronology-resurrection",
+        "acts-letter-chronology-resurrection:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "chronology",
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_14d97bd6e521",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The evidence contextualizes accusations about Caesar and possible allegiance tensions while resisting the claim that every title or eschatological image is anti-imperial code.",
+        "Acts and the Pauline letters provide overlapping but distinct Macedonian travel evidence, so any single continuous chronology is a reconstruction.",
+        "The Via Egnatia supplied the main east-west road corridor through Macedonia, but Beroea connected through branch roads and individual travel routes and durations remain partly uncertain.",
+        "Philippi, Thessalonica, and Beroea belong to one province but have different road relationships, civic statuses, officials, and evidentiary profiles.",
+        "Acts and Paul's letters are distinct witnesses; a combined itinerary is a historical reconstruction rather than the wording of either source alone."
+      ],
+      "verse_refs": [
+        "Acts 17:1-15",
+        "Acts 17:14-34",
+        "Acts 17:7"
+      ],
+      "evidence_ids": [
+        "julio-claudian-imperial-honors:passage-relevance",
+        "macedonia-source-limits",
+        "macedonia-via-egnatia",
+        "macedonia:interpretive_note:1",
+        "macedonia:interpretive_note:2"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-15",
+        "Acts 17:14-34",
+        "Acts 17:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_2ef94641dff9",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts names Amphipolis and Apollonia between Philippi and Thessalonica; both are independently documented stations on the Via Egnatia.",
+        "The item grounds Acts 17:1 in specific geography while preventing narrative silence from becoming claims of preaching or church foundations.",
+        "Acts 17:28b closely reproduces Aratus's statement that humans are the deity's offspring; no surviving source secures the same attribution for in him we live and move and are.",
+        "The evidence documents actual Greek poetic reuse while preventing confident attribution of both clauses to Epimenides or Cleanthes.",
+        "Areopagus could denote the rocky hill west of the Acropolis and the Athenian council historically associated with it; Acts does not state a formal charge, verdict, or exact meeting place."
+      ],
+      "verse_refs": [
+        "Acts 17:1",
+        "Acts 17:19-22",
+        "Acts 17:28"
+      ],
+      "evidence_ids": [
+        "amphipolis-apollonia-named-transit",
+        "amphipolis-apollonia-named-transit:passage-relevance",
+        "aratus-offspring-quotation-and-first-clause-uncertainty",
+        "aratus-offspring-quotation-and-first-clause-uncertainty:passage-relevance",
+        "areopagus-place-council-and-procedure-ambiguity"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1",
+        "Acts 17:19-22",
+        "Acts 17:28"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "geography",
+          "history",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_464f419b6f34",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Strabo describes the Egnatian Way as an eastward, milestone-measured road; official route documentation traces its eastern Macedonian cities and terrain.",
+        "The road makes the sequence from Neapolis and Philippi through Amphipolis and Apollonia to Thessalonica geographically coherent without proving every detail of the mission party's movement.",
+        "Ancient literary and modern route evidence locates free-city Thessalonica at the Thermaic Gulf on the Via Egnatia.",
+        "The setting explains why Acts presents an overland arrival and why the letter describes news spreading through Macedonia and Achaia without making the city a frictionless communications hub."
+      ],
+      "verse_refs": [
+        "Acts 17:1",
+        "Acts 17:1-10"
+      ],
+      "evidence_ids": [
+        "via-egnatia-east-macedonian-corridor",
+        "via-egnatia-east-macedonian-corridor:passage-relevance",
+        "via-egnatia-port-and-free-city",
+        "via-egnatia-port-and-free-city:passage-relevance"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1",
+        "Acts 17:1-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_493dd233b9e2",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts' speech joins creation, divine self-sufficiency, human dependence, one human origin, allotted times and boundaries, divine nearness, and rejection of material deity-images.",
+        "The item identifies the speech's scriptural-worldview architecture without reducing it to Stoic natural theology or turning contextual evidence into a prescribed doctrine.",
+        "Acts 17:22 uses the comparative deisidaimonesterous, whose negative historical usage and possible rhetorical tact generate materially different translations.",
+        "The lexical uncertainty prevents a translation choice from predetermining whether the speech begins with praise, neutral observation, calculated ambiguity, or rebuke.",
+        "Acts names Dionysius the Areopagite, Damaris, and unnamed others among those who adhered, without describing a congregation, office structure, household, or later biography."
+      ],
+      "verse_refs": [
+        "Acts 17:22",
+        "Acts 17:24-29",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "creator-temple-idol-and-human-unity-argument",
+        "creator-temple-idol-and-human-unity-argument:passage-relevance",
+        "deisidaimonesterous-translation-and-rhetorical-force",
+        "deisidaimonesterous-translation-and-rhetorical-force:passage-relevance",
+        "dionysius-damaris-and-audience-limits"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:22",
+        "Acts 17:24-29",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "history",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_619b75186c80",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Beroea was connected to the Via Egnatia by branch roads; Acts does not place it directly on the Philippi-Amphipolis-Apollonia-Thessalonica trunk segment.",
+        "The regional label Macedonia does not make Philippi, Thessalonica, and Beroea institutionally or socially interchangeable.",
+        "Stoic and Stoic-adjacent traditions used divine reason, providence, kinship, and cosmic unity language; Aratus begins from Zeus and says that humans are his offspring.",
+        "The evidence explains recognizable points of contact in Acts 17:25-29 while preserving differences over creator, idols, repentance, appointed judgment, and resurrection.",
+        "A first-century Thessalonian inscription and a later monumental block attest the local title politarchs used in Acts 17."
+      ],
+      "verse_refs": [
+        "Acts 17:1-15",
+        "Acts 17:1-9",
+        "Acts 17:10-15",
+        "Acts 17:18",
+        "Acts 17:25-29"
+      ],
+      "evidence_ids": [
+        "roman-macedonia-road-network-and-city-diversity:interpretive_note:0",
+        "roman-macedonia-road-network-and-city-diversity:interpretive_note:1",
+        "stoic-providence-and-aratean-poetry-comparison",
+        "stoic-providence-and-aratean-poetry-comparison:passage-relevance",
+        "thessalonian-politarch-inscription"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-15",
+        "Acts 17:1-9",
+        "Acts 17:10-15",
+        "Acts 17:18",
+        "Acts 17:25-29"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "archaeology",
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_657607c308e5",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Areopagus speech engages Athenian religiosity and Greek poetry while calling for repentance and resurrection; its tone is neither simple endorsement nor contempt.",
+        "Acts' speeches are literary compositions within ancient narrative and cannot be treated as stenographic transcripts, though they may preserve traditions."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34",
+        "Acts 17:22-31"
+      ],
+      "evidence_ids": [
+        "acts-areopagus",
+        "acts-speeches"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34",
+        "Acts 17:22-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_67b94a7a1661",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Areopagus address is a literary speech within Acts and cannot be treated as a stenographic transcript, although it may preserve event or tradition.",
+        "Later ancient witnesses attest Athenian altars associated with unknown gods, but no surviving altar securely matches Acts 17:23 in wording, date, and provenance.",
+        "Early imperial Athens combined older Agora and Acropolis monuments with Roman-period building and institutional change.",
+        "Areopagus can denote both the rock west of the Acropolis and the council associated with it; Acts does not securely identify the precise meeting place or a formal trial.",
+        "Pausanias is a later witness to altars of gods called unknown near Phaleron; no securely identified first-century Athenian altar bearing Acts' exact singular wording has been recovered."
+      ],
+      "verse_refs": [
+        "Acts 17:16-21",
+        "Acts 17:19-22",
+        "Acts 17:22-31",
+        "Acts 17:23"
+      ],
+      "evidence_ids": [
+        "athens-speech-form",
+        "athens-unknown-god-comparison",
+        "athens-urban-setting",
+        "athens:interpretive_note:0",
+        "athens:interpretive_note:1"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-21",
+        "Acts 17:19-22",
+        "Acts 17:22-31",
+        "Acts 17:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "politics"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_764cba6c9efe",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts 17-18 and 1 Thessalonians 3 both involve Paul, Timothy, Athens, Macedonia, and later reunion but preserve different levels and sequences of detail.",
+        "The evidence allows both sources to inform the mission setting without silently inserting Timothy's movements into Acts or making Acts the controlling outline of Paul's letter.",
+        "The compact address is embedded in Acts' historiographic narrative and arranged for characterization, argument, and response rather than presented as a transcript with performance metadata."
+      ],
+      "verse_refs": [
+        "Acts 17:14-34",
+        "Acts 17:22-31"
+      ],
+      "evidence_ids": [
+        "acts-first-thessalonians-itinerary-comparison",
+        "acts-first-thessalonians-itinerary-comparison:passage-relevance",
+        "acts-speech-as-literary-composition"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:14-34",
+        "Acts 17:22-31"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_78af7495fc45",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The item allows historical and rhetorical study while preventing every surviving clause from being treated as Paul's exact words or every parallel as direct personal borrowing.",
+        "Acts narrates Paul reasoning in a synagogue and speaking daily in the agora with available hearers before philosophers engage him.",
+        "The item establishes the scene's two public encounter settings without turning either into a permanent school, church building, or complete mission diary.",
+        "Acts names Jewish, God-fearing Greek, and prominent female hearers; 1 Thessalonians describes recipients who turned from idols.",
+        "The evidence supports a Jewish mission setting and substantial gentile participation while preventing the whole assembly from being assigned one ethnicity."
+      ],
+      "verse_refs": [
+        "Acts 17:1-4",
+        "Acts 17:16-18",
+        "Acts 17:22-31"
+      ],
+      "evidence_ids": [
+        "acts-speech-as-literary-composition:passage-relevance",
+        "acts-synagogue-agora-sequence",
+        "acts-synagogue-agora-sequence:passage-relevance",
+        "acts-synagogue-and-audience-limits",
+        "acts-synagogue-and-audience-limits:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "synagogue",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-4",
+        "Acts 17:16-18",
+        "Acts 17:22-31"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "culture",
+          "history",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_794f263b2646",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The distinction blocks confident claims that Paul either delivered a tourist-site sermon or underwent a formal criminal trial before a full council.",
+        "Temples, altars, images, festivals, civic cults, household practices, philosophical critiques, and Roman imperial honors formed a plural and changing Athenian religious landscape.",
+        "The evidence contextualizes Paul's observation and objects of worship while rejecting the later trope that Athens literally had more gods than people.",
+        "Acts' Areopagus language does not securely decide between the hill, the council, or an event involving both.",
+        "Acts names Dionysius, Damaris, and unnamed others as adherents but does not establish their later careers, the community's size, or an Athenian church structure."
+      ],
+      "verse_refs": [
+        "Acts 17:16",
+        "Acts 17:19-22",
+        "Acts 17:22-23",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "areopagus-place-council-and-procedure-ambiguity:passage-relevance",
+        "athenian-cult-plurality-without-census",
+        "athenian-cult-plurality-without-census:passage-relevance",
+        "athens-areopagus-setting",
+        "athens-named-hearers"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16",
+        "Acts 17:19-22",
+        "Acts 17:22-23",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "history",
+          "politics",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_810ad7ee77d3",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts portrays Paul reasoning in the synagogue and daily marketplace, conversing with Epicurean and Stoic philosophers, and delivering a speech using local altar and poet references.",
+        "Illustrates later narrative contextualization across venues without authorizing deception, cultural theft, harassment, or treating public presence as consent to pressure.",
+        "Acts 17 uses reasoning and persuading language while also narrating opposition, public disturbance, crowd action, and civic intervention around mission activity.",
+        "Supports verbal persuasion while rejecting forced conversion, threats, material leverage, mob action, state coercion, and harassment."
+      ],
+      "verse_refs": [
+        "Acts 17:1-34",
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "acts-marketplace-adaptability",
+        "acts-marketplace-adaptability:passage-relevance",
+        "acts-persuasion-conflict-noncoercion",
+        "acts-persuasion-conflict-noncoercion:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-34",
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_9cc5a256c7e8",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Dionysius, Damaris, and unnamed others are the only adherents identified in the scene; later offices, biographies, community size, and gender-status reconstructions exceed Acts' evidence.",
+        "Ancient Beroea lay inland and connected with the Via Egnatia through branch roads toward Pella or Edessa rather than sitting on the east Macedonian trunk segment.",
+        "The geography corrects maps that place Beroea directly on the road sequence and keeps the onward journey to Athens open to competing land and sea reconstructions.",
+        "Excavation and ancient topography identify the Classical Agora as a long-lived center where administration, commerce, law, cult, movement, and conversation overlapped.",
+        "The mixed public character makes Acts' daily discussion plausible without implying that the agora was merely a modern market or a formal philosophical classroom."
+      ],
+      "verse_refs": [
+        "Acts 17:10-15",
+        "Acts 17:17",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "athens:interpretive_note:2",
+        "beroea-branch-road-constraint",
+        "beroea-branch-road-constraint:passage-relevance",
+        "classical-agora-mixed-public-space",
+        "classical-agora-mixed-public-space:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:10-15",
+        "Acts 17:17",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "archaeology",
+          "culture",
+          "geography"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_a204668f632f",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The inscriptions show that Luke's civic title in Acts 17 is locally appropriate, with the first-century witness close to the narrated period.",
+        "The speech moves from a cult inscription and acknowledged ignorance to proclamation of the creator, then critiques temple containment and material images.",
+        "The item keeps Acts 17:23 within the speech's full progression instead of treating the altar as proof that Athenians already worshiped Israel's God unknowingly.",
+        "Acts reports a singular altar inscription; Pausanias later describes altars of gods called unknown near Phaleron, and other later witnesses broaden the comparison.",
+        "The evidence shows that unknown-divinity dedications were intelligible in the wider Athenian setting but does not claim that archaeology has recovered Acts' altar."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9",
+        "Acts 17:22-29",
+        "Acts 17:23"
+      ],
+      "evidence_ids": [
+        "thessalonian-politarch-inscription:passage-relevance",
+        "unknown-god-as-rhetorical-entry",
+        "unknown-god-as-rhetorical-entry:passage-relevance",
+        "unknown-god-literary-comparanda",
+        "unknown-god-literary-comparanda:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9",
+        "Acts 17:22-29",
+        "Acts 17:23"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "archaeology",
+          "culture",
+          "history"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_a5d945489336",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Areopagus names both a place and a council; neither a formal criminal trial nor Paul's exact position on the hill is explicit.",
+        "The later plural unknown-gods comparanda neither disprove Acts' singular wording nor verify an exact surviving altar.",
+        "Epicurean and Stoic labels identify real schools but do not show that every hearer held a textbook position or that the speech simply blends Christianity with Stoicism.",
+        "The Augustan Roman Agora and relocated Temple of Ares joined older civic and cult monuments in a city governed under Rome.",
+        "The evidence prevents Acts' Athens from being pictured as an unchanged fifth-century BCE city or as a Roman colony stripped of Greek institutions."
+      ],
+      "verse_refs": [
+        "Acts 17:16-23",
+        "Acts 17:18-31",
+        "Acts 17:19-22",
+        "Acts 17:23"
+      ],
+      "evidence_ids": [
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:1",
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:2",
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:3",
+        "roman-athens-layered-urban-center",
+        "roman-athens-layered-urban-center:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-23",
+        "Acts 17:18-31",
+        "Acts 17:19-22",
+        "Acts 17:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "archaeology",
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_cd9d7150603e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts includes prominent women among those persuaded at Thessalonica but supplies neither names nor offices.",
+        "The notice prevents women from disappearing from the mission account while also preventing comparative benefaction evidence from manufacturing biographies.",
+        "Acts introduces Jesus and Anastasis in the philosophers' first reaction, ends the speech with resurrection as assurance of judgment, and narrates mockery, deferred hearing, and adherence.",
+        "The item shows that the scene's outcome is mixed and resurrection-centered, resisting claims of either total philosophical success or total failure.",
+        "The Classical Agora and the nearby Roman Agora were distinct early imperial spaces; the narrative's agora should not be illustrated indiscriminately with later or differently purposed monuments."
+      ],
+      "verse_refs": [
+        "Acts 17:17",
+        "Acts 17:18",
+        "Acts 17:30-34",
+        "Acts 17:4"
+      ],
+      "evidence_ids": [
+        "prominent-women-status-limits",
+        "prominent-women-status-limits:passage-relevance",
+        "resurrection-and-divided-response",
+        "resurrection-and-divided-response:passage-relevance",
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:0"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:17",
+        "Acts 17:18",
+        "Acts 17:30-34",
+        "Acts 17:4"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "culture",
+          "politics",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_d9e2ebf3b411",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The evidence preserves named participation while blocking inflated conversion counts, gender stereotypes, and later hagiography from being read back into Acts.",
+        "Preserved Epicurean texts describe blessed gods free from troublesome intervention and teach that death is loss of sensation, positions that differ from Acts' active creator, judgment, and resurrection claims.",
+        "The comparison clarifies why providence, judgment, and bodily resurrection could be contentious without treating every Epicurean as an atheist or scripting the hearers' reactions.",
+        "Luke and Acts narrate local synagogue gatherings involving Scripture reading, teaching or invited address, communal deliberation, and disagreement.",
+        "The scenes show that synagogue encounters in Luke-Acts combine scriptural interpretation and communal response rather than functioning merely as visits to a worship building."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12",
+        "Acts 17:18",
+        "Acts 17:24-31",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "dionysius-damaris-and-audience-limits:passage-relevance",
+        "epicurean-gods-death-and-providence-comparison",
+        "epicurean-gods-death-and-providence-comparison:passage-relevance",
+        "gospel-acts-synagogue-reading",
+        "gospel-acts-synagogue-reading:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "synagogue"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12",
+        "Acts 17:18",
+        "Acts 17:24-31",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_fde49bd14107",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts narrates charges of acting against Caesar's decrees and naming another king in Thessalonica, then an Ephesian crowd, confused assembly, officials, legal channels, and a clerk's dismissal.",
+        "Shows Luke's selected civic-political scenes without proving the exact charges against the letter audience or that Roman institutions were consistently fair."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "acts-thessalonica-ephesus-civic-accusations",
+        "acts-thessalonica-ephesus-civic-accusations:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_fdec3987c7c6",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Accommodation in 1 Corinthians 9 and Acts' contextual speeches cannot authorize false identity, covert targeting, manipulative friendship, data extraction, cultural theft, aid-conditioned belief, harassment, forced conversion, or retaliation for refusal."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_fe0e089b269b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Acts narrates hospitality in Jason's house, while neither Acts nor the correspondence identifies the assembly's permanent venue or number of gatherings.",
+        "The house supplies a plausible gathering setting but cannot be equated with an excavated building, a wealthy mansion, or the sole assembly venue.",
+        "Acts 17 narrates a house search, defendants before politarchs, accusations involving Caesar and another king, and security taken before release.",
+        "Local civic institutions make sense of the politarch setting, while the episode must not be inflated into a Roman provincial trial or conviction.",
+        "Local coinage and civic evidence attest selective and differentiated honors for Julius Caesar, Augustus, Tiberius, Livia, and other Julio-Claudians."
+      ],
+      "verse_refs": [
+        "Acts 17:5-9",
+        "Acts 17:7"
+      ],
+      "evidence_ids": [
+        "household-venue-uncertainty",
+        "household-venue-uncertainty:passage-relevance",
+        "jason-house-civic-security",
+        "jason-house-civic-security:passage-relevance",
+        "julio-claudian-imperial-honors"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:5-9",
+        "Acts 17:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0be6fc4da2f1",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-text-witnesses"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0dbd6c600190",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts narrates Paul arriving from Beroea, summoning Silas and Timothy, departing for Corinth, and later meeting them there; First Thessalonians says Timothy was sent from Athens and returned with news.",
+        "The comparison places Athens in Paul's travel network without inserting unreported movements into either source or using Acts as a transparent diary."
+      ],
+      "verse_refs": [
+        "Acts 18:1-5"
+      ],
+      "evidence_ids": [
+        "acts-first-thessalonians-athens-itinerary",
+        "acts-first-thessalonians-athens-itinerary:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 17:14-18:5"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_30e441321a70",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Build chronology first from the direct letters. Acts 13-20 is a later narrative witness whose sequence, speeches, travel compression, and emphases must not silently replace Galatians or the letters' own plans and absences."
+      ],
+      "verse_refs": [
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 20:1-38"
+      ],
+      "evidence_ids": [
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 13:1-20:38"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_755ddfea5d8a",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-western-text"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_d8432289bd31",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability."
+      ],
+      "verse_refs": [
+        "Acts 10:1-48",
+        "Acts 11:1-30",
+        "Acts 12:1-25",
+        "Acts 13:1-52",
+        "Acts 14:1-28",
+        "Acts 15:1-41",
+        "Acts 16:1-40",
+        "Acts 18:1-28",
+        "Acts 19:1-41",
+        "Acts 1:1-26",
+        "Acts 20:1-38",
+        "Acts 21:1-40",
+        "Acts 22:1-30",
+        "Acts 23:1-35",
+        "Acts 24:1-27",
+        "Acts 25:1-27",
+        "Acts 26:1-32",
+        "Acts 27:1-44",
+        "Acts 28:1-31",
+        "Acts 2:1-47",
+        "Acts 3:1-26",
+        "Acts 4:1-37",
+        "Acts 5:1-42",
+        "Acts 6:1-15",
+        "Acts 7:1-60",
+        "Acts 8:1-40",
+        "Acts 9:1-43"
+      ],
+      "evidence_ids": [
+        "acts-historical-method"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_ed4bdf48d578",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Acts narrates Paul arriving from Beroea, summoning Silas and Timothy, departing for Corinth, and later meeting them there; First Thessalonians says Timothy was sent from Athens and returned with news.",
+        "The comparison places Athens in Paul's travel network without inserting unreported movements into either source or using Acts as a transparent diary."
+      ],
+      "verse_refs": [
+        "Acts 18:1-5"
+      ],
+      "evidence_ids": [
+        "acts-first-thessalonians-athens-itinerary",
+        "acts-first-thessalonians-athens-itinerary:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_surrounding_passages_0dbd6c600190"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Acts 17:14-18:5"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_03ac4f5d4a03",
+      "kind": "why_it_matters",
+      "facts": [
+        "The Thessalonian writings combine living-God, resurrection, day-of-the-Lord, trumpet, prophetic, and apocalyptic language with an address to gentiles turning from idols. The city's Roman setting does not cancel the Jewish scriptural world of the mission and letters.",
+        "Acts places the mission in a synagogue and names Jewish, God-fearing Greek, and prominent female hearers. First Thessalonians suggests substantial gentile participation, but neither source gives a demographic census or warrants collective Jewish blame for the assembly's affliction."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:hebraic_worldview:0",
+        "thessalonica:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_50d2c87793dc"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_294da5fb9be5",
+      "kind": "why_it_matters",
+      "facts": [
+        "The distinction blocks confident claims that Paul either delivered a tourist-site sermon or underwent a formal criminal trial before a full council.",
+        "Temples, altars, images, festivals, civic cults, household practices, philosophical critiques, and Roman imperial honors formed a plural and changing Athenian religious landscape.",
+        "The evidence contextualizes Paul's observation and objects of worship while rejecting the later trope that Athens literally had more gods than people.",
+        "Acts' Areopagus language does not securely decide between the hill, the council, or an event involving both.",
+        "Acts names Dionysius, Damaris, and unnamed others as adherents but does not establish their later careers, the community's size, or an Athenian church structure."
+      ],
+      "verse_refs": [
+        "Acts 17:16",
+        "Acts 17:19-22",
+        "Acts 17:22-23",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "areopagus-place-council-and-procedure-ambiguity:passage-relevance",
+        "athenian-cult-plurality-without-census",
+        "athenian-cult-plurality-without-census:passage-relevance",
+        "athens-areopagus-setting",
+        "athens-named-hearers"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_794f263b2646"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16",
+        "Acts 17:19-22",
+        "Acts 17:22-23",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_2b444ed8763a",
+      "kind": "why_it_matters",
+      "facts": [
+        "Dionysius, Damaris, and unnamed others are the only adherents identified in the scene; later offices, biographies, community size, and gender-status reconstructions exceed Acts' evidence.",
+        "Ancient Beroea lay inland and connected with the Via Egnatia through branch roads toward Pella or Edessa rather than sitting on the east Macedonian trunk segment.",
+        "The geography corrects maps that place Beroea directly on the road sequence and keeps the onward journey to Athens open to competing land and sea reconstructions.",
+        "Excavation and ancient topography identify the Classical Agora as a long-lived center where administration, commerce, law, cult, movement, and conversation overlapped.",
+        "The mixed public character makes Acts' daily discussion plausible without implying that the agora was merely a modern market or a formal philosophical classroom."
+      ],
+      "verse_refs": [
+        "Acts 17:10-15",
+        "Acts 17:17",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "athens:interpretive_note:2",
+        "beroea-branch-road-constraint",
+        "beroea-branch-road-constraint:passage-relevance",
+        "classical-agora-mixed-public-space",
+        "classical-agora-mixed-public-space:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_9cc5a256c7e8"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:10-15",
+        "Acts 17:17",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_3923e860a13f",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts includes prominent women among those persuaded at Thessalonica but supplies neither names nor offices.",
+        "The notice prevents women from disappearing from the mission account while also preventing comparative benefaction evidence from manufacturing biographies.",
+        "Acts introduces Jesus and Anastasis in the philosophers' first reaction, ends the speech with resurrection as assurance of judgment, and narrates mockery, deferred hearing, and adherence.",
+        "The item shows that the scene's outcome is mixed and resurrection-centered, resisting claims of either total philosophical success or total failure.",
+        "The Classical Agora and the nearby Roman Agora were distinct early imperial spaces; the narrative's agora should not be illustrated indiscriminately with later or differently purposed monuments."
+      ],
+      "verse_refs": [
+        "Acts 17:17",
+        "Acts 17:18",
+        "Acts 17:30-34",
+        "Acts 17:4"
+      ],
+      "evidence_ids": [
+        "prominent-women-status-limits",
+        "prominent-women-status-limits:passage-relevance",
+        "resurrection-and-divided-response",
+        "resurrection-and-divided-response:passage-relevance",
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:0"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_cd9d7150603e"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:17",
+        "Acts 17:18",
+        "Acts 17:30-34",
+        "Acts 17:4"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_3fc2c230efa1",
+      "kind": "why_it_matters",
+      "facts": [
+        "The relevant evidence belongs to Hellenistic and Roman Jewish communities rather than generic Ancient Near Eastern village or sanctuary institutions.",
+        "Synagogue gatherings expressed communal identity through Torah, instruction, prayer, hospitality, deliberation, and discipline alongside continued orientation toward Jerusalem's temple.",
+        "Readers of the Gospels, Acts, and James encountering varied Jewish assembly settings in Judea and the diaspora.",
+        "Theodotus attests a Jerusalem synagogue for Torah reading and teaching before 70 CE; the Gospels and Acts portray diverse local synagogue scenes in Galilee and the diaspora."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12"
+      ],
+      "evidence_ids": [
+        "synagogue:ancient_near_east_context:0",
+        "synagogue:hebraic_worldview:0",
+        "synagogue:original_audience:0",
+        "synagogue:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "synagogue"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_6229e1837a54"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_43c1311f441e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts narrates charges of acting against Caesar's decrees and naming another king in Thessalonica, then an Ephesian crowd, confused assembly, officials, legal channels, and a clerk's dismissal.",
+        "Shows Luke's selected civic-political scenes without proving the exact charges against the letter audience or that Roman institutions were consistently fair."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "acts-thessalonica-ephesus-civic-accusations",
+        "acts-thessalonica-ephesus-civic-accusations:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_fde49bd14107"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_4cbfba76430c",
+      "kind": "why_it_matters",
+      "facts": [
+        "Philippi, Thessalonica, and Beroea shared a province but differed in civic status, road position, institutions, and surviving evidence.",
+        "Acts names a Philippian women's prayer gathering and Lydia's household, prominent women and varied hearers at Thessalonica, and prominent Greek women and men at Beroea.",
+        "The comparison keeps women and mixed hearers visible while preventing one city's categories or proposed roles from being imposed on the others.",
+        "Regional evidence distinguishes Philippi's colony, Thessalonica's free-city institutions, and Beroea's inland civic and later league prominence.",
+        "The contrast explains why Acts narrates different offices and conflicts in each city and blocks a single 'Macedonian city' template."
+      ],
+      "verse_refs": [
+        "Acts 17:1-15",
+        "Acts 17:1-4",
+        "Acts 17:10-12",
+        "Acts 17:10-15",
+        "Acts 17:5-9"
+      ],
+      "evidence_ids": [
+        "macedonian-city-diversity",
+        "macedonian-hearers-women-and-households",
+        "macedonian-hearers-women-and-households:passage-relevance",
+        "philippi-thessalonica-beroea-civic-differences",
+        "philippi-thessalonica-beroea-civic-differences:passage-relevance"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "synagogue",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_08f0900ee30e"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-15",
+        "Acts 17:1-4",
+        "Acts 17:10-12",
+        "Acts 17:10-15",
+        "Acts 17:5-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_4d08e26a8fc0",
+      "kind": "why_it_matters",
+      "facts": [
+        "The item allows historical and rhetorical study while preventing every surviving clause from being treated as Paul's exact words or every parallel as direct personal borrowing.",
+        "Acts narrates Paul reasoning in a synagogue and speaking daily in the agora with available hearers before philosophers engage him.",
+        "The item establishes the scene's two public encounter settings without turning either into a permanent school, church building, or complete mission diary.",
+        "Acts names Jewish, God-fearing Greek, and prominent female hearers; 1 Thessalonians describes recipients who turned from idols.",
+        "The evidence supports a Jewish mission setting and substantial gentile participation while preventing the whole assembly from being assigned one ethnicity."
+      ],
+      "verse_refs": [
+        "Acts 17:1-4",
+        "Acts 17:16-18",
+        "Acts 17:22-31"
+      ],
+      "evidence_ids": [
+        "acts-speech-as-literary-composition:passage-relevance",
+        "acts-synagogue-agora-sequence",
+        "acts-synagogue-agora-sequence:passage-relevance",
+        "acts-synagogue-and-audience-limits",
+        "acts-synagogue-and-audience-limits:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "synagogue",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_78af7495fc45"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-4",
+        "Acts 17:16-18",
+        "Acts 17:22-31"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_635eb4dcd765",
+      "kind": "why_it_matters",
+      "facts": [
+        "Second century BCE: construction and development of the Via Egnatia strengthens Thessalonica's east-west connections",
+        "Late first century BCE: free-city privileges and early imperial civic coinage shape the Augustan setting",
+        "Approximately 49-52 CE: conventional horizon for the mission and First Thessalonians",
+        "Before the end of the first century CE: IG X,2 1 32 attests politarchs and civic-cult offices",
+        "Second century CE: the British Museum politarch block supplies later local attestation"
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:timeline:0",
+        "thessalonica:timeline:1",
+        "thessalonica:timeline:2",
+        "thessalonica:timeline:3",
+        "thessalonica:timeline:4"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_chronology_7b62779dc2f2"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6574332162e6",
+      "kind": "why_it_matters",
+      "facts": [
+        "Strabo describes the Egnatian Way as an eastward, milestone-measured road; official route documentation traces its eastern Macedonian cities and terrain.",
+        "The road makes the sequence from Neapolis and Philippi through Amphipolis and Apollonia to Thessalonica geographically coherent without proving every detail of the mission party's movement.",
+        "Ancient literary and modern route evidence locates free-city Thessalonica at the Thermaic Gulf on the Via Egnatia.",
+        "The setting explains why Acts presents an overland arrival and why the letter describes news spreading through Macedonia and Achaia without making the city a frictionless communications hub."
+      ],
+      "verse_refs": [
+        "Acts 17:1",
+        "Acts 17:1-10"
+      ],
+      "evidence_ids": [
+        "via-egnatia-east-macedonian-corridor",
+        "via-egnatia-east-macedonian-corridor:passage-relevance",
+        "via-egnatia-port-and-free-city",
+        "via-egnatia-port-and-free-city:passage-relevance"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_464f419b6f34"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1",
+        "Acts 17:1-10"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_66d7e33e91e9",
+      "kind": "why_it_matters",
+      "facts": [
+        "damascus",
+        "jerusalem",
+        "corinth",
+        "ephesus",
+        "rome"
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_292e7bfdc7c5"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_80ec9a3314e2",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts portrays Paul reasoning in the synagogue and daily marketplace, conversing with Epicurean and Stoic philosophers, and delivering a speech using local altar and poet references.",
+        "Illustrates later narrative contextualization across venues without authorizing deception, cultural theft, harassment, or treating public presence as consent to pressure.",
+        "Acts 17 uses reasoning and persuading language while also narrating opposition, public disturbance, crowd action, and civic intervention around mission activity.",
+        "Supports verbal persuasion while rejecting forced conversion, threats, material leverage, mob action, state coercion, and harassment."
+      ],
+      "verse_refs": [
+        "Acts 17:1-34",
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "acts-marketplace-adaptability",
+        "acts-marketplace-adaptability:passage-relevance",
+        "acts-persuasion-conflict-noncoercion",
+        "acts-persuasion-conflict-noncoercion:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_810ad7ee77d3"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-34",
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_89f762488e76",
+      "kind": "why_it_matters",
+      "facts": [
+        "The inscriptions show that Luke's civic title in Acts 17 is locally appropriate, with the first-century witness close to the narrated period.",
+        "The speech moves from a cult inscription and acknowledged ignorance to proclamation of the creator, then critiques temple containment and material images.",
+        "The item keeps Acts 17:23 within the speech's full progression instead of treating the altar as proof that Athenians already worshiped Israel's God unknowingly.",
+        "Acts reports a singular altar inscription; Pausanias later describes altars of gods called unknown near Phaleron, and other later witnesses broaden the comparison.",
+        "The evidence shows that unknown-divinity dedications were intelligible in the wider Athenian setting but does not claim that archaeology has recovered Acts' altar."
+      ],
+      "verse_refs": [
+        "Acts 17:1-9",
+        "Acts 17:22-29",
+        "Acts 17:23"
+      ],
+      "evidence_ids": [
+        "thessalonian-politarch-inscription:passage-relevance",
+        "unknown-god-as-rhetorical-entry",
+        "unknown-god-as-rhetorical-entry:passage-relevance",
+        "unknown-god-literary-comparanda",
+        "unknown-god-literary-comparanda:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_a204668f632f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9",
+        "Acts 17:22-29",
+        "Acts 17:23"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8abba483f466",
+      "kind": "why_it_matters",
+      "facts": [
+        "The evidence preserves named participation while blocking inflated conversion counts, gender stereotypes, and later hagiography from being read back into Acts.",
+        "Preserved Epicurean texts describe blessed gods free from troublesome intervention and teach that death is loss of sensation, positions that differ from Acts' active creator, judgment, and resurrection claims.",
+        "The comparison clarifies why providence, judgment, and bodily resurrection could be contentious without treating every Epicurean as an atheist or scripting the hearers' reactions.",
+        "Luke and Acts narrate local synagogue gatherings involving Scripture reading, teaching or invited address, communal deliberation, and disagreement.",
+        "The scenes show that synagogue encounters in Luke-Acts combine scriptural interpretation and communal response rather than functioning merely as visits to a worship building."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12",
+        "Acts 17:18",
+        "Acts 17:24-31",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "dionysius-damaris-and-audience-limits:passage-relevance",
+        "epicurean-gods-death-and-providence-comparison",
+        "epicurean-gods-death-and-providence-comparison:passage-relevance",
+        "gospel-acts-synagogue-reading",
+        "gospel-acts-synagogue-reading:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens",
+        "synagogue"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_d9e2ebf3b411"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12",
+        "Acts 17:18",
+        "Acts 17:24-31",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_93364a6aed8e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts narrates hospitality in Jason's house, while neither Acts nor the correspondence identifies the assembly's permanent venue or number of gatherings.",
+        "The house supplies a plausible gathering setting but cannot be equated with an excavated building, a wealthy mansion, or the sole assembly venue.",
+        "Acts 17 narrates a house search, defendants before politarchs, accusations involving Caesar and another king, and security taken before release.",
+        "Local civic institutions make sense of the politarch setting, while the episode must not be inflated into a Roman provincial trial or conviction.",
+        "Local coinage and civic evidence attest selective and differentiated honors for Julius Caesar, Augustus, Tiberius, Livia, and other Julio-Claudians."
+      ],
+      "verse_refs": [
+        "Acts 17:5-9",
+        "Acts 17:7"
+      ],
+      "evidence_ids": [
+        "household-venue-uncertainty",
+        "household-venue-uncertainty:passage-relevance",
+        "jason-house-civic-security",
+        "jason-house-civic-security:passage-relevance",
+        "julio-claudian-imperial-honors"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_fe0e089b269b"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:5-9",
+        "Acts 17:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a0636474b0e7",
+      "kind": "why_it_matters",
+      "facts": [
+        "The Areopagus address is a literary speech within Acts and cannot be treated as a stenographic transcript, although it may preserve event or tradition.",
+        "Later ancient witnesses attest Athenian altars associated with unknown gods, but no surviving altar securely matches Acts 17:23 in wording, date, and provenance.",
+        "Early imperial Athens combined older Agora and Acropolis monuments with Roman-period building and institutional change.",
+        "Areopagus can denote both the rock west of the Acropolis and the council associated with it; Acts does not securely identify the precise meeting place or a formal trial.",
+        "Pausanias is a later witness to altars of gods called unknown near Phaleron; no securely identified first-century Athenian altar bearing Acts' exact singular wording has been recovered."
+      ],
+      "verse_refs": [
+        "Acts 17:16-21",
+        "Acts 17:19-22",
+        "Acts 17:22-31",
+        "Acts 17:23"
+      ],
+      "evidence_ids": [
+        "athens-speech-form",
+        "athens-unknown-god-comparison",
+        "athens-urban-setting",
+        "athens:interpretive_note:0",
+        "athens:interpretive_note:1"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_67b94a7a1661"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-21",
+        "Acts 17:19-22",
+        "Acts 17:22-31",
+        "Acts 17:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a61254145fc9",
+      "kind": "why_it_matters",
+      "facts": [
+        "Synagogues are epigraphically, archaeologically, and literarily attested before 70 CE in Judea and the diaspora, but their origin, architecture, leadership, and activities differed by place. An exilic origin is possible but not directly documented.",
+        "Hellenistic and Roman Jewish communities before and after 70 CE, with pre-70 evidence kept distinct from later standardized practice."
+      ],
+      "verse_refs": [
+        "Acts 17:1-12"
+      ],
+      "evidence_ids": [
+        "synagogue:historical_context:0",
+        "synagogue:historical_setting:0"
+      ],
+      "entity_ids": [
+        "synagogue"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_5efb1f4b5841"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b6c7a5bcfd9f",
+      "kind": "why_it_matters",
+      "facts": [
+        "Beroea was connected to the Via Egnatia by branch roads; Acts does not place it directly on the Philippi-Amphipolis-Apollonia-Thessalonica trunk segment.",
+        "The regional label Macedonia does not make Philippi, Thessalonica, and Beroea institutionally or socially interchangeable.",
+        "Stoic and Stoic-adjacent traditions used divine reason, providence, kinship, and cosmic unity language; Aratus begins from Zeus and says that humans are his offspring.",
+        "The evidence explains recognizable points of contact in Acts 17:25-29 while preserving differences over creator, idols, repentance, appointed judgment, and resurrection.",
+        "A first-century Thessalonian inscription and a later monumental block attest the local title politarchs used in Acts 17."
+      ],
+      "verse_refs": [
+        "Acts 17:1-15",
+        "Acts 17:1-9",
+        "Acts 17:10-15",
+        "Acts 17:18",
+        "Acts 17:25-29"
+      ],
+      "evidence_ids": [
+        "roman-macedonia-road-network-and-city-diversity:interpretive_note:0",
+        "roman-macedonia-road-network-and-city-diversity:interpretive_note:1",
+        "stoic-providence-and-aratean-poetry-comparison",
+        "stoic-providence-and-aratean-poetry-comparison:passage-relevance",
+        "thessalonian-politarch-inscription"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_619b75186c80"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-15",
+        "Acts 17:1-9",
+        "Acts 17:10-15",
+        "Acts 17:18",
+        "Acts 17:25-29"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b93973e8fd60",
+      "kind": "why_it_matters",
+      "facts": [
+        "The evidence contextualizes accusations about Caesar and possible allegiance tensions while resisting the claim that every title or eschatological image is anti-imperial code.",
+        "Acts and the Pauline letters provide overlapping but distinct Macedonian travel evidence, so any single continuous chronology is a reconstruction.",
+        "The Via Egnatia supplied the main east-west road corridor through Macedonia, but Beroea connected through branch roads and individual travel routes and durations remain partly uncertain.",
+        "Philippi, Thessalonica, and Beroea belong to one province but have different road relationships, civic statuses, officials, and evidentiary profiles.",
+        "Acts and Paul's letters are distinct witnesses; a combined itinerary is a historical reconstruction rather than the wording of either source alone."
+      ],
+      "verse_refs": [
+        "Acts 17:1-15",
+        "Acts 17:14-34",
+        "Acts 17:7"
+      ],
+      "evidence_ids": [
+        "julio-claudian-imperial-honors:passage-relevance",
+        "macedonia-source-limits",
+        "macedonia-via-egnatia",
+        "macedonia:interpretive_note:1",
+        "macedonia:interpretive_note:2"
+      ],
+      "entity_ids": [
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_14d97bd6e521"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-15",
+        "Acts 17:14-34",
+        "Acts 17:7"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c41dee5f6203",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts 17-18 and 1 Thessalonians 3 both involve Paul, Timothy, Athens, Macedonia, and later reunion but preserve different levels and sequences of detail.",
+        "The evidence allows both sources to inform the mission setting without silently inserting Timothy's movements into Acts or making Acts the controlling outline of Paul's letter.",
+        "The compact address is embedded in Acts' historiographic narrative and arranged for characterization, argument, and response rather than presented as a transcript with performance metadata."
+      ],
+      "verse_refs": [
+        "Acts 17:14-34",
+        "Acts 17:22-31"
+      ],
+      "evidence_ids": [
+        "acts-first-thessalonians-itinerary-comparison",
+        "acts-first-thessalonians-itinerary-comparison:passage-relevance",
+        "acts-speech-as-literary-composition"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia",
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_764cba6c9efe"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:14-34",
+        "Acts 17:22-31"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c649849700e2",
+      "kind": "why_it_matters",
+      "facts": [
+        "Thessalonian civic inscriptions including IG X,2 1 32",
+        "Julio-Claudian civic coin types RPC I 1555 and 1566",
+        "The Thessalonian sanctuary of Egyptian gods and its votives",
+        "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons"
+      ],
+      "verse_refs": [
+        "Acts 17:1-9"
+      ],
+      "evidence_ids": [
+        "thessalonica:archaeology:0",
+        "thessalonica:archaeology:1",
+        "thessalonica:archaeology:2",
+        "thessalonica:archaeology:3"
+      ],
+      "entity_ids": [
+        "thessalonica"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_2b488d566a80"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_d3a04a5a3552",
+      "kind": "why_it_matters",
+      "facts": [
+        "Areopagus names both a place and a council; neither a formal criminal trial nor Paul's exact position on the hill is explicit.",
+        "The later plural unknown-gods comparanda neither disprove Acts' singular wording nor verify an exact surviving altar.",
+        "Epicurean and Stoic labels identify real schools but do not show that every hearer held a textbook position or that the speech simply blends Christianity with Stoicism.",
+        "The Augustan Roman Agora and relocated Temple of Ares joined older civic and cult monuments in a city governed under Rome.",
+        "The evidence prevents Acts' Athens from being pictured as an unchanged fifth-century BCE city or as a Roman colony stripped of Greek institutions."
+      ],
+      "verse_refs": [
+        "Acts 17:16-23",
+        "Acts 17:18-31",
+        "Acts 17:19-22",
+        "Acts 17:23"
+      ],
+      "evidence_ids": [
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:1",
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:2",
+        "roman-athens-agora-cult-and-philosophy:interpretive_note:3",
+        "roman-athens-layered-urban-center",
+        "roman-athens-layered-urban-center:passage-relevance"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_a5d945489336"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-23",
+        "Acts 17:18-31",
+        "Acts 17:19-22",
+        "Acts 17:23"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_e2ef1d2a2adb",
+      "kind": "why_it_matters",
+      "facts": [
+        "The Areopagus speech engages Athenian religiosity and Greek poetry while calling for repentance and resurrection; its tone is neither simple endorsement nor contempt.",
+        "Acts' speeches are literary compositions within ancient narrative and cannot be treated as stenographic transcripts, though they may preserve traditions."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34",
+        "Acts 17:22-31"
+      ],
+      "evidence_ids": [
+        "acts-areopagus",
+        "acts-speeches"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_657607c308e5"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34",
+        "Acts 17:22-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ea73b87760fc",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts' Areopagus scene moves from observation and creator claims to repentance, judgment, appointed agent, resurrection assurance, and ridicule, delay, or belief.",
+        "Keeps Acts' resurrection rhetoric in its own later narrative and prevents using mixed response as permission for contempt or coercion.",
+        "First Corinthians is an earlier occasional letter transmitting and arguing resurrection, while Acts later composes speeches and trial scenes with different wording, settings, and aims.",
+        "Prevents Acts 17, 23, or 24 from becoming verbatim Pauline transcripts or erasing differences among the letters."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "acts-athens-resurrection-response",
+        "acts-athens-resurrection-response:passage-relevance",
+        "acts-letter-chronology-resurrection",
+        "acts-letter-chronology-resurrection:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_0eecc3c870d4"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f208b2eb91ca",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts' speech joins creation, divine self-sufficiency, human dependence, one human origin, allotted times and boundaries, divine nearness, and rejection of material deity-images.",
+        "The item identifies the speech's scriptural-worldview architecture without reducing it to Stoic natural theology or turning contextual evidence into a prescribed doctrine.",
+        "Acts 17:22 uses the comparative deisidaimonesterous, whose negative historical usage and possible rhetorical tact generate materially different translations.",
+        "The lexical uncertainty prevents a translation choice from predetermining whether the speech begins with praise, neutral observation, calculated ambiguity, or rebuke.",
+        "Acts names Dionysius the Areopagite, Damaris, and unnamed others among those who adhered, without describing a congregation, office structure, household, or later biography."
+      ],
+      "verse_refs": [
+        "Acts 17:22",
+        "Acts 17:24-29",
+        "Acts 17:32-34"
+      ],
+      "evidence_ids": [
+        "creator-temple-idol-and-human-unity-argument",
+        "creator-temple-idol-and-human-unity-argument:passage-relevance",
+        "deisidaimonesterous-translation-and-rhetorical-force",
+        "deisidaimonesterous-translation-and-rhetorical-force:passage-relevance",
+        "dionysius-damaris-and-audience-limits"
+      ],
+      "entity_ids": [
+        "athens"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_493dd233b9e2"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:22",
+        "Acts 17:24-29",
+        "Acts 17:32-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f6c3da7caf3e",
+      "kind": "why_it_matters",
+      "facts": [
+        "Acts names Amphipolis and Apollonia between Philippi and Thessalonica; both are independently documented stations on the Via Egnatia.",
+        "The item grounds Acts 17:1 in specific geography while preventing narrative silence from becoming claims of preaching or church foundations.",
+        "Acts 17:28b closely reproduces Aratus's statement that humans are the deity's offspring; no surviving source secures the same attribution for in him we live and move and are.",
+        "The evidence documents actual Greek poetic reuse while preventing confident attribution of both clauses to Epimenides or Cleanthes.",
+        "Areopagus could denote the rocky hill west of the Acropolis and the Athenian council historically associated with it; Acts does not state a formal charge, verdict, or exact meeting place."
+      ],
+      "verse_refs": [
+        "Acts 17:1",
+        "Acts 17:19-22",
+        "Acts 17:28"
+      ],
+      "evidence_ids": [
+        "amphipolis-apollonia-named-transit",
+        "amphipolis-apollonia-named-transit:passage-relevance",
+        "aratus-offspring-quotation-and-first-clause-uncertainty",
+        "aratus-offspring-quotation-and-first-clause-uncertainty:passage-relevance",
+        "areopagus-place-council-and-procedure-ambiguity"
+      ],
+      "entity_ids": [
+        "athens",
+        "macedonia"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_2ef94641dff9"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:1",
+        "Acts 17:19-22",
+        "Acts 17:28"
+      ],
+      "metadata": {
+        "relationship_basis": "authored_significance_link",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_fd8f2ee7ee41",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul’s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel’s Scriptures for a multinational church.",
+        "Paul reasons from Israel's Scriptures as a Jewish apostle, reading covenant, Messiah, Spirit, resurrection, and Gentile inclusion through the risen Christ.",
+        "Paul's letters belong to the late Second Temple Jewish world of Torah interpretation, diaspora synagogues, Roman cities, and debates over Gentile belonging."
+      ],
+      "verse_refs": [
+        "Acts 17:16-34"
+      ],
+      "evidence_ids": [
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "paul"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_6a127a549c73"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Acts 17:16-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 129,
+    "used_evidence_ids": [
+      "acts-areopagus",
+      "acts-athens-resurrection-response",
+      "acts-athens-resurrection-response:passage-relevance",
+      "acts-first-thessalonians-athens-itinerary",
+      "acts-first-thessalonians-athens-itinerary:passage-relevance",
+      "acts-first-thessalonians-itinerary-comparison",
+      "acts-first-thessalonians-itinerary-comparison:passage-relevance",
+      "acts-historical-method",
+      "acts-letter-chronology-resurrection",
+      "acts-letter-chronology-resurrection:passage-relevance",
+      "acts-marketplace-adaptability",
+      "acts-marketplace-adaptability:passage-relevance",
+      "acts-persuasion-conflict-noncoercion",
+      "acts-persuasion-conflict-noncoercion:passage-relevance",
+      "acts-speech-as-literary-composition",
+      "acts-speech-as-literary-composition:passage-relevance",
+      "acts-speeches",
+      "acts-synagogue-agora-sequence",
+      "acts-synagogue-agora-sequence:passage-relevance",
+      "acts-synagogue-and-audience-limits",
+      "acts-synagogue-and-audience-limits:passage-relevance",
+      "acts-text-witnesses",
+      "acts-thessalonica-ephesus-civic-accusations",
+      "acts-thessalonica-ephesus-civic-accusations:passage-relevance",
+      "acts-western-text",
+      "amphipolis-apollonia-named-transit",
+      "amphipolis-apollonia-named-transit:passage-relevance",
+      "aratus-offspring-quotation-and-first-clause-uncertainty",
+      "aratus-offspring-quotation-and-first-clause-uncertainty:passage-relevance",
+      "areopagus-place-council-and-procedure-ambiguity",
+      "areopagus-place-council-and-procedure-ambiguity:passage-relevance",
+      "athenian-cult-plurality-without-census",
+      "athenian-cult-plurality-without-census:passage-relevance",
+      "athens-areopagus-setting",
+      "athens-named-hearers",
+      "athens-speech-form",
+      "athens-unknown-god-comparison",
+      "athens-urban-setting",
+      "athens:interpretive_note:0",
+      "athens:interpretive_note:1",
+      "athens:interpretive_note:2",
+      "beroea-branch-road-constraint",
+      "beroea-branch-road-constraint:passage-relevance",
+      "classical-agora-mixed-public-space",
+      "classical-agora-mixed-public-space:passage-relevance",
+      "creator-temple-idol-and-human-unity-argument",
+      "creator-temple-idol-and-human-unity-argument:passage-relevance",
+      "deisidaimonesterous-translation-and-rhetorical-force",
+      "deisidaimonesterous-translation-and-rhetorical-force:passage-relevance",
+      "dionysius-damaris-and-audience-limits",
+      "dionysius-damaris-and-audience-limits:passage-relevance",
+      "epicurean-gods-death-and-providence-comparison",
+      "epicurean-gods-death-and-providence-comparison:passage-relevance",
+      "gospel-acts-synagogue-reading",
+      "gospel-acts-synagogue-reading:passage-relevance",
+      "household-venue-uncertainty",
+      "household-venue-uncertainty:passage-relevance",
+      "jason-house-civic-security",
+      "jason-house-civic-security:passage-relevance",
+      "julio-claudian-imperial-honors",
+      "julio-claudian-imperial-honors:passage-relevance",
+      "macedonia-source-limits",
+      "macedonia-via-egnatia",
+      "macedonia:interpretive_note:1",
+      "macedonia:interpretive_note:2",
+      "macedonian-city-diversity",
+      "macedonian-hearers-women-and-households",
+      "macedonian-hearers-women-and-households:passage-relevance",
+      "paul:ancient_near_east_context:0",
+      "paul:hebraic_worldview:0",
+      "paul:historical_context:0",
+      "paul:key_places:0",
+      "paul:key_places:1",
+      "paul:key_places:2",
+      "paul:key_places:3",
+      "paul:key_places:4",
+      "paul:second_temple_context:0",
+      "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+      "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:2",
+      "philippi-thessalonica-beroea-civic-differences",
+      "philippi-thessalonica-beroea-civic-differences:passage-relevance",
+      "prominent-women-status-limits",
+      "prominent-women-status-limits:passage-relevance",
+      "resurrection-and-divided-response",
+      "resurrection-and-divided-response:passage-relevance",
+      "roman-athens-agora-cult-and-philosophy:interpretive_note:0",
+      "roman-athens-agora-cult-and-philosophy:interpretive_note:1",
+      "roman-athens-agora-cult-and-philosophy:interpretive_note:2",
+      "roman-athens-agora-cult-and-philosophy:interpretive_note:3",
+      "roman-athens-layered-urban-center",
+      "roman-athens-layered-urban-center:passage-relevance",
+      "roman-macedonia-road-network-and-city-diversity:interpretive_note:0",
+      "roman-macedonia-road-network-and-city-diversity:interpretive_note:1",
+      "stoic-providence-and-aratean-poetry-comparison",
+      "stoic-providence-and-aratean-poetry-comparison:passage-relevance",
+      "synagogue-textual-settings",
+      "synagogue:ancient_near_east_context:0",
+      "synagogue:hebraic_worldview:0",
+      "synagogue:historical_context:0",
+      "synagogue:historical_setting:0",
+      "synagogue:original_audience:0",
+      "synagogue:second_temple_context:0",
+      "thessalonian-politarch-inscription",
+      "thessalonian-politarch-inscription:passage-relevance",
+      "thessalonica:archaeology:0",
+      "thessalonica:archaeology:1",
+      "thessalonica:archaeology:2",
+      "thessalonica:archaeology:3",
+      "thessalonica:hebraic_worldview:0",
+      "thessalonica:historical_context:0",
+      "thessalonica:second_temple_context:0",
+      "thessalonica:timeline:0",
+      "thessalonica:timeline:1",
+      "thessalonica:timeline:2",
+      "thessalonica:timeline:3",
+      "thessalonica:timeline:4",
+      "thessalonica:timeline:5",
+      "unknown-god-as-rhetorical-entry",
+      "unknown-god-as-rhetorical-entry:passage-relevance",
+      "unknown-god-literary-comparanda",
+      "unknown-god-literary-comparanda:passage-relevance",
+      "via-egnatia-east-macedonian-corridor",
+      "via-egnatia-east-macedonian-corridor:passage-relevance",
+      "via-egnatia-port-and-free-city",
+      "via-egnatia-port-and-free-city:passage-relevance",
+      "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0",
+      "what-is-the-roman-empire-in-the-bible:historical_context:0",
+      "what-is-the-synagogue:ancient_near_east_context:0",
+      "what-is-the-synagogue:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "archaeology": 10,
+      "chronology": 8,
+      "culture": 57,
+      "geography": 15,
+      "history": 18,
+      "politics": 4,
+      "social": 17
+    },
+    "category_diversity": 7,
+    "specific_evidence_count": 129,
+    "entity_counts": {
+      "people": 1,
+      "places": 3,
+      "groups": 1,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 2,
+      "chronology": 2,
+      "cultural_context": 5,
+      "historical_context": 6,
+      "interpretive_questions": 21,
+      "surrounding_passages": 6,
+      "why_it_matters": 27
+    },
+    "relationship_unit_count": 28
+  }
+}

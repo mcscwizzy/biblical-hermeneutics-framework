@@ -7,8 +7,18 @@ from enum import Enum
 from typing import Any, Mapping
 
 
-COMMENTARY_SCHEMA_VERSION = "1.0"
-COMMENTARY_PROMPT_VERSION = "1.1"
+COMMENTARY_SCHEMA_VERSION = "1.2"
+COMMENTARY_PROMPT_VERSION = "1.5"
+# Candidate renderer contract.  Production remains on v1.5 until the bounded
+# remediation and a new full qualification have passed.
+COMMENTARY_RENDERER_REMEDIATION_PROMPT_VERSION = "1.6"
+# Candidate renderer contract for the bounded selection-breadth diagnostic.
+COMMENTARY_RENDERER_SELECTION_BREADTH_PROMPT_VERSION = "1.7"
+# Candidate renderer contract for the bounded renderability remediation.
+COMMENTARY_RENDERER_RENDERABILITY_PROMPT_VERSION = "1.8"
+DATA_GAP_FALLBACK_TEXT = (
+    "Passage-specific contextual evidence is not currently available for this chapter."
+)
 
 
 class CommentaryStatus(str, Enum):
@@ -34,12 +44,15 @@ class CommentarySectionKind(str, Enum):
 
     CHAPTER_OVERVIEW = "chapter_overview"
     HISTORICAL_CONTEXT = "historical_context"
+    CULTURAL_CONTEXT = "cultural_context"
     PEOPLE_PLACES = "people_places"
     ARCHAEOLOGY_GEOGRAPHY = "archaeology_geography"
     LANGUAGE_LITERARY = "language_literary"
     CHRONOLOGY = "chronology"
+    SURROUNDING_PASSAGES = "surrounding_passages"
     INTERPRETIVE_QUESTIONS = "interpretive_questions"
     THINGS_EASY_TO_MISS = "things_easy_to_miss"
+    WHY_IT_MATTERS = "why_it_matters"
     DIG_DEEPER = "dig_deeper"
 
 
@@ -47,7 +60,9 @@ SUPPORTED_SECTION_KINDS = frozenset(kind.value for kind in CommentarySectionKind
 VERSE_OPTIONAL_SECTION_KINDS = frozenset(
     {
         CommentarySectionKind.HISTORICAL_CONTEXT.value,
+        CommentarySectionKind.CULTURAL_CONTEXT.value,
         CommentarySectionKind.ARCHAEOLOGY_GEOGRAPHY.value,
+        CommentarySectionKind.SURROUNDING_PASSAGES.value,
     }
 )
 
@@ -76,11 +91,15 @@ class CommentaryBlock:
     text: str
     verse_refs: list[str] = field(default_factory=list)
     evidence_ids: list[str] = field(default_factory=list)
+    synthesis_ids: list[str] = field(default_factory=list)
     confidence: str = "medium"
     interpretation_level: str = "inference"
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        value = asdict(self)
+        if not self.synthesis_ids:
+            value.pop("synthesis_ids")
+        return value
 
 
 @dataclass(frozen=True)
@@ -109,9 +128,50 @@ class GeneratedMetadata:
     commentary_prompt_version: str
     model: str
     generated_timestamp: str | None = None
+    synthesis_hash: str | None = None
+    synthesis_schema_version: str | None = None
+    synthesis_compiler_version: str | None = None
+    renderer_label: str | None = None
+    imported_timestamp: str | None = None
+    candidate_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        value = asdict(self)
+        for key in (
+            "synthesis_hash",
+            "synthesis_schema_version",
+            "synthesis_compiler_version",
+            "renderer_label",
+            "imported_timestamp",
+            "candidate_id",
+        ):
+            if value[key] is None:
+                value.pop(key)
+        return value
+
+
+@dataclass(frozen=True)
+class ExternalCommentaryResponse:
+    """Untrusted renderer return envelope matched against a locked prompt packet."""
+
+    reference: str
+    packet_id: str
+    prompt_version: str
+    evidence_hash: str
+    synthesis_hash: str
+    renderer_label: str
+    response_payload: Mapping[str, Any]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "reference": self.reference,
+            "packet_id": self.packet_id,
+            "prompt_version": self.prompt_version,
+            "evidence_hash": self.evidence_hash,
+            "synthesis_hash": self.synthesis_hash,
+            "renderer_label": self.renderer_label,
+            "response_payload": dict(self.response_payload),
+        }
 
 
 @dataclass(frozen=True)
@@ -128,9 +188,10 @@ class ChapterCommentary:
     failure_reason: str | None = None
     validation_errors: list[str] = field(default_factory=list)
     validation_warnings: list[str] = field(default_factory=list)
+    data_gap_fallback: bool = False
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        value = {
             "reference": self.reference,
             "book": self.book,
             "chapter": self.chapter,
@@ -144,6 +205,40 @@ class ChapterCommentary:
             "validation_errors": self.validation_errors,
             "validation_warnings": self.validation_warnings,
         }
+        # Keep this application-owned marker absent from ordinary/v1.1 output.
+        if self.data_gap_fallback:
+            value["data_gap_fallback"] = True
+        return value
+
+
+def data_gap_fallback_payload(reference: str, book: str, chapter: int) -> dict[str, Any]:
+    """Build the only prose representation permitted for a true DATA_GAP."""
+
+    return {
+        "reference": reference,
+        "book": book,
+        "chapter": chapter,
+        "status": "pending",
+        "data_gap_fallback": True,
+        "sections": [
+            {
+                "kind": CommentarySectionKind.CHAPTER_OVERVIEW.value,
+                "title": "Context availability",
+                "blocks": [
+                    {
+                        "id": "data_gap_notice",
+                        "text": DATA_GAP_FALLBACK_TEXT,
+                        "verse_refs": [],
+                        "evidence_ids": [],
+                        "synthesis_ids": [],
+                        "confidence": "high",
+                        "interpretation_level": "fact",
+                    }
+                ],
+            }
+        ],
+        "generated_metadata": None,
+    }
 
 
 @dataclass(frozen=True)
@@ -154,6 +249,7 @@ class CommentaryGenerationRequest:
     chapter: int
     reference: str
     evidence_hash: str
+    synthesis_hash: str | None = None
     force_regenerate: bool = False
 
 
@@ -165,6 +261,9 @@ class CommentaryGenerationResult:
     status: str
     commentary: ChapterCommentary | None = None
     error: str | None = None
+    # Raw renderer bytes are retained by bounded runners for diagnosis.  This
+    # is deliberately optional so existing adapters and callers remain stable.
+    raw_response: bytes | None = None
 
 
 @dataclass(frozen=True)

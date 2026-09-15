@@ -1,0 +1,309 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Numbers 36",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 3,
+    "eligible_weighted_denominator": 3.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 3,
+    "eligible_weighted_denominator": 3.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 3,
+    "eligible_weighted_denominator": 3.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 103,
+    "block_count": 2,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "Numbers 36",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 3,
+    "eligible_weighted_denominator": 3.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 103,
+    "block_count": 2,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 3,
+      "meaningful_cluster_count": 3,
+      "consumed_synthesis_count": 3,
+      "consumed_cluster_count": 3,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_count": 3,
+      "consumed_core_cluster_count": 3,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 2,
+      "consumed_category_count": 2,
+      "category_coverage": 1.0,
+      "category_families": [
+        "culture",
+        "surrounding_passages"
+      ],
+      "consumed_category_families": [
+        "culture",
+        "surrounding_passages"
+      ],
+      "consolidation_ratio": 0.3333,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 2,
+        "consumed_synthesis_count": 3,
+        "consumed_cluster_count": 3,
+        "mean_evidence_ids_per_block": 1.5,
+        "block_to_synthesis_ratio": 0.6667,
+        "consolidation_ratio": 0.3333,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 3,
+        "block_to_cluster_ratio": 0.6667,
+        "consumed_unit_ratio": 1.0,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 34.3333,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_100948a62384",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_22c305617559"
+          ],
+          "evidence_ids": [
+            "numbers:interpretive_note:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context|parents=numbers|facts=numbers begins sinai ends plains moab egypt remembered place left behind rather than serving book's principal narrative location",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "cultural_context"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_333674b8b3b8",
+          "kind": "language_literary",
+          "synthesis_ids": [
+            "syn_language_literary_ac87ceb765b0"
+          ],
+          "evidence_ids": [
+            "numbers-literary-journey"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=language_literary|parents=numbers|facts=numbers geographically organized preparation sinai through kadesh transjordan preparation plains moab",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "language_literary"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_a70aae2d9d44",
+          "kind": "surrounding_passages",
+          "synthesis_ids": [
+            "syn_surrounding_passages_96a67d835ee8"
+          ],
+          "evidence_ids": [
+            "numbers-inheritance-preparation"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "concept_signature": "kind=surrounding_passages|parents=numbers|facts=final third numbers prepares new generation land inheritance through second census inheritance rulings joshua's commission land boundaries towns tribal safeguards",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "surrounding_passages"
+          ],
+          "categories": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 3.0,
+      "consumed_eligible_weight": 3.0,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "REQUIRED": 3
+      },
+      "eligible_synthesis_count": 3,
+      "consumed_eligible_synthesis_count": 3,
+      "eligible_synthesis_coverage": 1.0
+    },
+    "audit": {
+      "reference": "Numbers 36",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 3,
+      "specific_evidence_count": 3,
+      "evidence_score": 2.65,
+      "evidence_category_diversity": 1,
+      "evidence_categories": {
+        "culture": 3
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 0,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 0,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 2,
+      "commentary_block_count": 2,
+      "commentary_prose_char_count": 694,
+      "commentary_prose_word_count": 103,
+      "verse_anchor_count": 1,
+      "verse_anchor_coverage": 0.0769,
+      "evidence_ids_referenced": [
+        "numbers-inheritance-preparation",
+        "numbers-literary-journey",
+        "numbers:interpretive_note:0"
+      ],
+      "unique_evidence_ids_consumed": 3,
+      "evidence_consumption_ratio": 1.0,
+      "unused_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.05,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:f6ef3575ec68093f0e1a5260a6343e331c08dace4b100de4252a533ca0f0af63",
+    "packet_hash": "f6ef3575ec68093f0e1a5260a6343e331c08dace4b100de4252a533ca0f0af63",
+    "raw_sha256": "cab4d57a1e907dea955c36f7b76861dbb4a68d469d2b125c25ba8cc3c49c6bd6"
+  }
+}

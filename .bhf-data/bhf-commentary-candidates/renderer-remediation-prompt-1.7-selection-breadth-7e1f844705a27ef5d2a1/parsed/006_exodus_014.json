@@ -1,0 +1,336 @@
+{
+  "artifact_version": "commentary-renderer-selection-breadth-diagnostic-v1-parsed-output-v1",
+  "reference": "Exodus 14",
+  "raw_sha256": "81a6bf22ca5133923b26fca6301ce284fdfc27be56aa56734f31d3662ab38295",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Exodus 14",
+    "book": "Exodus",
+    "chapter": 14,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Exodus 14 presents deliverance as the LORD's victory over imperial Egypt, human power, and death. Pharaoh's chariots trap Israel between the pursuing army and the sea, but the threatened place becomes the means of Israel's escape and Egypt's defeat. The repeated declarations that the Egyptians will know who the LORD is frame the crossing as more than a successful flight from danger.",
+            "verse_refs": [
+              "Exodus 14:1-9",
+              "Exodus 14:15-31"
+            ],
+            "evidence_ids": [
+              "the-exodus:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_b216944e1680"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "chronology",
+        "title": "Where the Crossing Falls in the Story",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The sea crossing stands between two major sequences. Before it come Israel's oppression, Moses' call, the plagues, Passover, and the departure from Egypt. After it begin wilderness provision and testing, arrival at Sinai, and the giving and ratification of the covenant. The chapter is therefore both the climax of the escape from Pharaoh and the opening of Israel's journey toward life at Sinai.",
+            "verse_refs": [
+              "Exodus 14:1-31"
+            ],
+            "evidence_ids": [
+              "exodus-to-sinai-timeline:timeline:0",
+              "exodus-to-sinai-timeline:timeline:1",
+              "exodus-to-sinai-timeline:timeline:2",
+              "exodus-to-sinai-timeline:timeline:3",
+              "exodus-to-sinai-timeline:timeline:4",
+              "exodus-to-sinai-timeline:timeline:5",
+              "exodus-to-sinai-timeline:timeline:6",
+              "exodus-to-sinai-timeline:timeline:7",
+              "exodus-to-sinai-timeline:timeline:8"
+            ],
+            "synthesis_ids": [
+              "syn_chronology_1325e181a6aa",
+              "syn_chronology_f7f043e05474"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Frontier, Chariots, Wind, and Water",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The episode is set against Egypt's eastern frontier and brings together the features that drive its tension: wilderness movement, a body of water, wind, and an Egyptian chariot pursuit. Israel is outside settled life and exposed to the hazards of desert travel, while Pharaoh can still project imperial power through his army. This setting clarifies why the people regard their position as deadly and why the disabling of the chariots reverses the apparent balance of power.",
+            "verse_refs": [
+              "Exodus 14:1-12",
+              "Exodus 14:19-29"
+            ],
+            "evidence_ids": [
+              "red-sea-crossing:ancient_near_east_context:0",
+              "exodus-to-sinai-timeline:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_285373a82b38",
+              "syn_cultural_context_372de05475fd"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Can the Crossing Site Be Identified?",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The named route markers and sequence of camps are part of the text's geographic evidence, but assigning every name to a modern location is a separate and disputed reconstruction. Proposed routes place the crossing among different eastern Egyptian lakes, lagoons, or gulfs, and the chapter itself supplies no modern coordinates. Keeping that distinction in view prevents a familiar modern map—or a claimed landform or artifact—from being treated as the only geography the passage permits.",
+            "verse_refs": [
+              "Exodus 14:1-3",
+              "Exodus 14:9"
+            ],
+            "evidence_ids": [
+              "exodus-wilderness-routes-and-water:interpretive_note:0",
+              "yam-suf-route-identification",
+              "yam-suf-route-identification:passage-relevance",
+              "red-sea-crossing:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4fbbf0d932c4",
+              "syn_historical_context_8688146f2433"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Deliverance Before Covenant",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The ordered movement from Egypt toward Sinai frames Israel's identity around remembered redemption: deliverance comes before covenant instruction. Exodus 14 is thus not merely one stage on a route; it belongs to the story by which Israel remembers becoming a people outside Egyptian imperial control and moving toward covenant assembly. In later Second Temple Jewish remembrance, the linked memories of exodus and Sinai continued to shape Passover, covenant identity, hopes of liberation, and readings of a new exodus.",
+            "verse_refs": [
+              "Exodus 14:30-31"
+            ],
+            "evidence_ids": [
+              "exodus-to-sinai-timeline:ancient_near_east_context:0",
+              "exodus-to-sinai-timeline:hebraic_worldview:0",
+              "exodus-to-sinai-timeline:original_audience:0",
+              "exodus-to-sinai-timeline:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_ea5fdaf42f94"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The Larger Movement of Exodus",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The departure from Egypt is not the endpoint of Exodus. The book continues from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory. Reading those movements together places the sea crossing within a larger account of a delivered people being brought into covenant and divine presence.",
+            "evidence_ids": [
+              "exodus-literary-movement",
+              "exodus:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_112542770c73",
+              "syn_surrounding_passages_026e4d2c9743"
+            ],
+            "confidence": "high",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Exodus 14",
+    "book": "Exodus",
+    "chapter": 14,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Exodus 14 presents deliverance as the LORD's victory over imperial Egypt, human power, and death. Pharaoh's chariots trap Israel between the pursuing army and the sea, but the threatened place becomes the means of Israel's escape and Egypt's defeat. The repeated declarations that the Egyptians will know who the LORD is frame the crossing as more than a successful flight from danger.",
+            "verse_refs": [
+              "Exodus 14:1-9",
+              "Exodus 14:15-31"
+            ],
+            "evidence_ids": [
+              "the-exodus:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_b216944e1680"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "chronology",
+        "title": "Where the Crossing Falls in the Story",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The sea crossing stands between two major sequences. Before it come Israel's oppression, Moses' call, the plagues, Passover, and the departure from Egypt. After it begin wilderness provision and testing, arrival at Sinai, and the giving and ratification of the covenant. The chapter is therefore both the climax of the escape from Pharaoh and the opening of Israel's journey toward life at Sinai.",
+            "verse_refs": [
+              "Exodus 14:1-31"
+            ],
+            "evidence_ids": [
+              "exodus-to-sinai-timeline:timeline:0",
+              "exodus-to-sinai-timeline:timeline:1",
+              "exodus-to-sinai-timeline:timeline:2",
+              "exodus-to-sinai-timeline:timeline:3",
+              "exodus-to-sinai-timeline:timeline:4",
+              "exodus-to-sinai-timeline:timeline:5",
+              "exodus-to-sinai-timeline:timeline:6",
+              "exodus-to-sinai-timeline:timeline:7",
+              "exodus-to-sinai-timeline:timeline:8"
+            ],
+            "synthesis_ids": [
+              "syn_chronology_1325e181a6aa",
+              "syn_chronology_f7f043e05474"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Frontier, Chariots, Wind, and Water",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The episode is set against Egypt's eastern frontier and brings together the features that drive its tension: wilderness movement, a body of water, wind, and an Egyptian chariot pursuit. Israel is outside settled life and exposed to the hazards of desert travel, while Pharaoh can still project imperial power through his army. This setting clarifies why the people regard their position as deadly and why the disabling of the chariots reverses the apparent balance of power.",
+            "verse_refs": [
+              "Exodus 14:1-12",
+              "Exodus 14:19-29"
+            ],
+            "evidence_ids": [
+              "red-sea-crossing:ancient_near_east_context:0",
+              "exodus-to-sinai-timeline:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_285373a82b38",
+              "syn_cultural_context_372de05475fd"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Can the Crossing Site Be Identified?",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The named route markers and sequence of camps are part of the text's geographic evidence, but assigning every name to a modern location is a separate and disputed reconstruction. Proposed routes place the crossing among different eastern Egyptian lakes, lagoons, or gulfs, and the chapter itself supplies no modern coordinates. Keeping that distinction in view prevents a familiar modern map—or a claimed landform or artifact—from being treated as the only geography the passage permits.",
+            "verse_refs": [
+              "Exodus 14:1-3",
+              "Exodus 14:9"
+            ],
+            "evidence_ids": [
+              "exodus-wilderness-routes-and-water:interpretive_note:0",
+              "yam-suf-route-identification",
+              "yam-suf-route-identification:passage-relevance",
+              "red-sea-crossing:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4fbbf0d932c4",
+              "syn_historical_context_8688146f2433"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Deliverance Before Covenant",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The ordered movement from Egypt toward Sinai frames Israel's identity around remembered redemption: deliverance comes before covenant instruction. Exodus 14 is thus not merely one stage on a route; it belongs to the story by which Israel remembers becoming a people outside Egyptian imperial control and moving toward covenant assembly. In later Second Temple Jewish remembrance, the linked memories of exodus and Sinai continued to shape Passover, covenant identity, hopes of liberation, and readings of a new exodus.",
+            "verse_refs": [
+              "Exodus 14:30-31"
+            ],
+            "evidence_ids": [
+              "exodus-to-sinai-timeline:ancient_near_east_context:0",
+              "exodus-to-sinai-timeline:hebraic_worldview:0",
+              "exodus-to-sinai-timeline:original_audience:0",
+              "exodus-to-sinai-timeline:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_ea5fdaf42f94"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The Larger Movement of Exodus",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The departure from Egypt is not the endpoint of Exodus. The book continues from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory. Reading those movements together places the sea crossing within a larger account of a delivered people being brought into covenant and divine presence.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "exodus-literary-movement",
+              "exodus:interpretive_note:1"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_112542770c73",
+              "syn_surrounding_passages_026e4d2c9743"
+            ],
+            "confidence": "high",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "a8b53c334b69629f2bbb0ea1ecdafc21ae687a26f7c59ce2d965de9b06058380",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.7",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "1059b0c617109751eb944cc9b22b2d8e83233f720d258561449c4624f8c2b2db",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "diagnostic_id": "renderer-remediation-prompt-1.7-selection-breadth-7e1f844705a27ef5d2a1",
+  "packet_id": "commentary-renderer-selection-breadth-diagnostic-v1-packet:a0d6671bdd4bcd0806761317e6afa308024ea3224614f936c699e4377915971d",
+  "packet_hash": "a0d6671bdd4bcd0806761317e6afa308024ea3224614f936c699e4377915971d"
+}

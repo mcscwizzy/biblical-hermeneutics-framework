@@ -1,0 +1,610 @@
+{
+  "reference": "James 3",
+  "book": "James",
+  "chapter": 3,
+  "evidence_hash": "dc96acf4aa99d4c07fc473cba945ffe873677385ffc4cdfa3f7a59e90cf2e33d",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "c10e767b0e1f43268054e8922cdfe5644ea2439cccf88925c616a9f7c52d7226",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_136499f1ed27",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."
+      ],
+      "verse_refs": [
+        "James 3:9-10"
+      ],
+      "evidence_ids": [
+        "what-is-the-image-of-god:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:9-10"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_2b7cd04c4a1e",
+      "kind": "cultural_context",
+      "facts": [
+        "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD."
+      ],
+      "verse_refs": [
+        "James 3:13-18"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4ade4d38f48e",
+      "kind": "cultural_context",
+      "facts": [
+        "Wisdom from above is known by conduct described as peaceable, gentle, open to reason, merciful, impartial, and sincere; coercive certainty contradicts that profile."
+      ],
+      "verse_refs": [
+        "James 3:13-18"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:22"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_e13dc394cad1",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+      ],
+      "verse_refs": [
+        "James 3:9"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_0f39e21d5bbb",
+      "kind": "historical_context",
+      "facts": [
+        "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred."
+      ],
+      "verse_refs": [
+        "James 3:9"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c647ba34a844",
+      "kind": "historical_context",
+      "facts": [
+        "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living."
+      ],
+      "verse_refs": [
+        "James 3:13-18"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_fad3bc8c3e2f",
+      "kind": "historical_context",
+      "facts": [
+        "Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ."
+      ],
+      "verse_refs": [
+        "James 3:9-10"
+      ],
+      "evidence_ids": [
+        "what-is-the-image-of-god:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:9-10"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_9dbf0d2d4b35",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Perfect language emphasizes completeness or wholeness in context; claims of sinless perfection require a separate theological argument.",
+        "James warns that teachers will receive stricter judgment and immediately treats failures in speech.",
+        "Wisdom from above is contrasted with earthly wisdom and described through purity, peace, gentleness, reasonableness, mercy, good fruits, impartiality, and sincerity."
+      ],
+      "verse_refs": [
+        "James 3:1-2",
+        "James 3:13-18",
+        "James 3:2"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:8",
+        "jas-teachers",
+        "jas-wisdom-above"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:1-2",
+        "James 3:13-18",
+        "James 3:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_c1055a9f7e8b",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Teachers receive stricter judgment because speech carries responsibility; the text cannot legitimate authoritarian teaching, clerical immunity, or spiritual abuse.",
+        "Tongue and fire are metaphors for disproportionate harm by speech; they do not authorize policing marginalized speech while ignoring institutional power.",
+        "James addresses brothers and sisters through conventionally masculine Greek forms; reception should neither erase women nor turn ancient address forms into a warrant for misogyny.",
+        "Application must reject misogyny, anti-LGBTQ coercion, racism, caste hierarchy, nationalism, colonial mission, forced conversion, religious violence, prosperity extraction, and ecological neglect."
+      ],
+      "verse_refs": [
+        "James 3:1",
+        "James 3:1-12",
+        "James 3:1-2",
+        "James 3:13-18"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:20",
+        "james:interpretive_note:21",
+        "james:interpretive_note:40",
+        "james:interpretive_note:41"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:1",
+        "James 3:1-12",
+        "James 3:1-2",
+        "James 3:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_language_literary_304ab71f7146",
+      "kind": "language_literary",
+      "facts": [
+        "James uses bit, rudder, fire, animal, spring, and tree images to expose speech's disproportionate power and inconsistency."
+      ],
+      "verse_refs": [
+        "James 3:3-12"
+      ],
+      "evidence_ids": [
+        "jas-tongue"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:3-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_6ae729cba7dd",
+      "kind": "surrounding_passages",
+      "facts": [
+        "James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning.",
+        "James does not name Jerusalem or another place of composition."
+      ],
+      "verse_refs": [
+        "James 1:1-27",
+        "James 2:1-26",
+        "James 4:1-17",
+        "James 5:1-20"
+      ],
+      "evidence_ids": [
+        "jas-genre",
+        "jas-provenance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "James 1:1-5:20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_8d4af7de9fb5",
+      "kind": "surrounding_passages",
+      "facts": [
+        "James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning.",
+        "James does not name Jerusalem or another place of composition."
+      ],
+      "verse_refs": [
+        "James 1:1-27",
+        "James 2:1-26",
+        "James 4:1-17",
+        "James 5:1-20"
+      ],
+      "evidence_ids": [
+        "jas-genre",
+        "jas-provenance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_6ae729cba7dd"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "James 1:1-5:20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_ea824575395c",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The epistolary greeting and paraenetic sequence coexist; labeling James wisdom, diatribe, sermon, or anthology highlights features without exhausting its genre."
+      ],
+      "verse_refs": [
+        "James 1:1-27",
+        "James 2:1-26",
+        "James 4:1-17",
+        "James 5:1-20"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "James 1:1-5:20"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_59218acac8b5",
+      "kind": "why_it_matters",
+      "facts": [
+        "Teachers receive stricter judgment because speech carries responsibility; the text cannot legitimate authoritarian teaching, clerical immunity, or spiritual abuse.",
+        "Tongue and fire are metaphors for disproportionate harm by speech; they do not authorize policing marginalized speech while ignoring institutional power.",
+        "James addresses brothers and sisters through conventionally masculine Greek forms; reception should neither erase women nor turn ancient address forms into a warrant for misogyny.",
+        "Application must reject misogyny, anti-LGBTQ coercion, racism, caste hierarchy, nationalism, colonial mission, forced conversion, religious violence, prosperity extraction, and ecological neglect."
+      ],
+      "verse_refs": [
+        "James 3:1",
+        "James 3:1-12",
+        "James 3:1-2",
+        "James 3:13-18"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:20",
+        "james:interpretive_note:21",
+        "james:interpretive_note:40",
+        "james:interpretive_note:41"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_c1055a9f7e8b"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:1",
+        "James 3:1-12",
+        "James 3:1-2",
+        "James 3:13-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6bce239bd0dd",
+      "kind": "why_it_matters",
+      "facts": [
+        "Perfect language emphasizes completeness or wholeness in context; claims of sinless perfection require a separate theological argument.",
+        "James warns that teachers will receive stricter judgment and immediately treats failures in speech.",
+        "Wisdom from above is contrasted with earthly wisdom and described through purity, peace, gentleness, reasonableness, mercy, good fruits, impartiality, and sincerity."
+      ],
+      "verse_refs": [
+        "James 3:1-2",
+        "James 3:13-18",
+        "James 3:2"
+      ],
+      "evidence_ids": [
+        "james:interpretive_note:8",
+        "jas-teachers",
+        "jas-wisdom-above"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_9dbf0d2d4b35"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:1-2",
+        "James 3:13-18",
+        "James 3:2"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_ca823a684aa2",
+      "kind": "why_it_matters",
+      "facts": [
+        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+      ],
+      "verse_refs": [
+        "James 3:9"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_e13dc394cad1"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "James 3:9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 20,
+    "used_evidence_ids": [
+      "image-of-god-theme:ancient_near_east_context:0",
+      "image-of-god-theme:hebraic_worldview:0",
+      "image-of-god-theme:historical_context:0",
+      "image-of-god-theme:second_temple_context:0",
+      "james:interpretive_note:20",
+      "james:interpretive_note:21",
+      "james:interpretive_note:22",
+      "james:interpretive_note:40",
+      "james:interpretive_note:41",
+      "james:interpretive_note:5",
+      "james:interpretive_note:8",
+      "jas-genre",
+      "jas-provenance",
+      "jas-teachers",
+      "jas-tongue",
+      "jas-wisdom-above",
+      "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "what-is-biblical-wisdom:historical_context:0",
+      "what-is-the-image-of-god:ancient_near_east_context:0",
+      "what-is-the-image-of-god:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 17,
+      "history": 3
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 20,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 4,
+      "historical_context": 3,
+      "interpretive_questions": 2,
+      "language_literary": 1,
+      "surrounding_passages": 3,
+      "why_it_matters": 3
+    },
+    "relationship_unit_count": 4
+  }
+}

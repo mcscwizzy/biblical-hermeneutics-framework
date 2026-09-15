@@ -60,5 +60,10 @@ namespaces = true
 [tool.setuptools.package-data]
 "framework.canonical_library" = ["manifest.json", "objects/**/*.json", "schema/*.json", "benchmarks/*.json", "data/*.sqlite"]
 "framework.lexical" = ["schema/*.json", "database/*.sqlite", "database/*.sqlite.gz"]
-"bhf_agent" = ["data/*.json"]
+"bhf_agent" = [
+  "data/*.json",
+  "data/commentary-v1.2/*.json",
+  "data/commentary-v1.2/.bhf-commentary-release.json",
+  "data/commentary-v1.2/.bhf-commentary-release-checksums.json",
+]
 "bhf_web" = ["templates/*.html", "static/**/*"]

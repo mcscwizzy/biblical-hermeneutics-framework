@@ -1,0 +1,32 @@
+{
+  "reference": "1 Chronicles 9",
+  "packet_id": "commentary-v1.3-packet:bda678afdb5369019c17f2f2dc20fbd6a45554981c58074194bc8615c71bcdb1",
+  "prompt_version": "1.3",
+  "evidence_hash": "fbf79305a6356a2051ecbe14a4a27b7dd376e64fc10cd71f4e499ca521331eea",
+  "synthesis_hash": "a3907a591429b39fc2e0cb9158b8368cd79f1a6384b174f93cf07845b0717136",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "1 Chronicles 9",
+    "book": "1 Chronicles",
+    "chapter": 9,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "A selective register of restored identity",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The register in 1 Chronicles 9 should be read as a selective literary map of kinship, land, office, and restored identity rather than as an exhaustive modern biological pedigree. In the available context, 'all Israel' includes Judah-centered institutions while also incorporating northern and Transjordanian tribes; it should not be reduced either to a narrow biological category or to a claim that every group was equally present. The chapter thus connects the restored community with Adam, Israel's tribes, David, priests, Levites, and preexilic Jerusalem through chosen genealogies and registers.",
+            "verse_refs": ["1 Chronicles 9:1-34"],
+            "evidence_ids": ["1-chronicles:interpretive_note:1", "first-chronicles-genealogical-identity", "1-chronicles:interpretive_note:0"],
+            "synthesis_ids": ["syn_interpretive_questions_2e739dfd582b", "syn_surrounding_passages_0f2503d48cf6"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "artifact_version": "commentary-v1.2-canary-import-v1",
+  "status": "RESPONSES_IMPORTED",
+  "required_response_count": 4,
+  "raw_response_count": 4,
+  "matched_response_count": 4,
+  "accepted_count": 4,
+  "rejected_count": 0,
+  "missing_references": [],
+  "raw_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/raw",
+  "accepted_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/accepted",
+  "rejected_response_directory": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/rejected",
+  "v1_1_protected_fingerprints_verified": true,
+  "full_bible_generation_authorized": false,
+  "chapters": [
+    {
+      "reference": "1 Corinthians 11",
+      "packet_id": "commentary-v1.5-packet:43778b9ae04ad200f729ebf3e833cd757b0dc603e2fa4350a06f8d23714b1575",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/raw/1_corinthians_011.json",
+      "raw_sha256": "aee4e6fddfcfa3cb825917a5518aa3bf43793d43418770a7db3488c17c024256",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:75adee313c58eb1ee83dc7fecc4f8fe3642f32984e59d86f14f2548d1ccdcf7f",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/accepted/1_corinthians_011.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    },
+    {
+      "reference": "Amos 5",
+      "packet_id": "commentary-v1.5-packet:93e406561b91d12f31e993f8b283a477068b035041aac5c3693e5008a4f892a1",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/raw/amos_005.json",
+      "raw_sha256": "ebad70579e6721c4ada4bcbfde78f51ecfd622cbd34ebea2f58c78e6f1c8dd9c",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:9dad130a4995fa88c812fe4c606f9db17ae75260ce3ad065a8865e4c9aa88b00",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/accepted/amos_005.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    },
+    {
+      "reference": "Hebrews 4",
+      "packet_id": "commentary-v1.5-packet:ac6832c3d999038ae72b574a0601984d968848d986c15fc0a797ed46c507314e",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/raw/hebrews_004.json",
+      "raw_sha256": "ec7a26276557e31fd3bef1f947e645d5be5130cbbc5aa2e5e1110f60828d32bd",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:a739521b1071bc9400da4a83329f29c67c574f96aa972b514f64ba769b5794d6",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/accepted/hebrews_004.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    },
+    {
+      "reference": "Mark 7",
+      "packet_id": "commentary-v1.5-packet:d038decbd1bca9288f9760d03ffdea0aca24b30e4dbe9eb986c53af5db5cc310",
+      "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/raw/mark_007.json",
+      "raw_sha256": "34639a5ea016b009a71f60f059d40c13069be37209b0755ef4173d6a2e6e5160",
+      "import_status": "accepted",
+      "structurally_parsed": true,
+      "validation_status": "validated",
+      "candidate_id": "commentary-v1.2-candidate:fdaf17897fcd36aee4daf276340445ad210119ef5bfd9074a3ca5c0f0abedcb5",
+      "accepted_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-targeted-rerender/canary/responses/accepted/mark_007.json",
+      "rejection_codes": [],
+      "validation_errors": []
+    }
+  ]
+}

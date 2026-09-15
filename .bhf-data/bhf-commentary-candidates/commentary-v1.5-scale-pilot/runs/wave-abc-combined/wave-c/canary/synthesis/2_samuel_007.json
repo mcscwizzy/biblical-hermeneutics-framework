@@ -1,0 +1,1221 @@
+{
+  "reference": "2 Samuel 7",
+  "book": "2 Samuel",
+  "chapter": 7,
+  "evidence_hash": "3beb3a1faccfc1553f616acaea9af0a78fba1c03f1da226b156af2ca37242dbd",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "309901efa6be9e87431955e9b809d111d569cf866976c1ad03e24cfd16d5c38d",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_60afb3db41cd",
+      "kind": "archaeology_geography",
+      "facts": [
+        "bethlehem-1",
+        "hebron",
+        "jerusalem",
+        "zion"
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3"
+      ],
+      "entity_ids": [
+        "david"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_007e6e3cc74f",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God’s promise, righteousness, and suffering victory."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "messiah-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_122288a98ffa",
+      "kind": "cultural_context",
+      "facts": [
+        "His world is the world of kingship, patronage, warfare, and dynastic succession familiar across the ancient Near East.",
+        "David's story joins kingship, worship, repentance, covenant promise, and public responsibility before God rather than treating leadership as private charisma.",
+        "Second Temple Jewish hope often remembered David as the model king and used Davidic promise language to imagine restoration under foreign rule."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "david"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_35ffeeab2515",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal administration, dynastic succession, and state religion shape the background."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-17"
+      ],
+      "evidence_ids": [
+        "solomon-builds-the-temple:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_4b8620218392",
+      "kind": "cultural_context",
+      "facts": [
+        "Covenant theology draws on biblical covenant forms that intersect with Hittite suzerain treaties, Neo-Assyrian loyalty oaths, kinship obligations, and royal grants."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "covenant-theology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_6288f6c7304f",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God’s promise and righteous rule."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "what-is-the-messiah:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_7886a5fc8962",
+      "kind": "cultural_context",
+      "facts": [
+        "Messianic Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "messianic-prophecy:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_8f357d7e3bec",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal covenants and dynastic promises were common in the ancient world, but this one is grounded in divine grace rather than royal achievement."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-17",
+        "2 Samuel 7:18-29"
+      ],
+      "evidence_ids": [
+        "davidic-covenant:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "davidic-covenant"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-17",
+        "2 Samuel 7:18-29"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a2de7d4ddcf8",
+      "kind": "cultural_context",
+      "facts": [
+        "Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "who-was-david:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_c7d2b3d8dab4",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical covenants converse with treaty and grant patterns in the ancient Near East while keeping divine grace and holiness at the center.",
+        "Covenant is a corporate relationship of oath, loyalty, blessing, memory, and responsibility before God.",
+        "After the exile, covenant identity became central to debates about purity, law, and hope."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "covenant-theme:ancient_near_east_context:0",
+        "covenant-theme:hebraic_worldview:0",
+        "covenant-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_cc467f4e898f",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Christology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to 2 Samuel 7:8-16, Psalm 2:1-12, messiah-theme, and jesus without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "christology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d8e85f8899e2",
+      "kind": "cultural_context",
+      "facts": [
+        "Birth announcements are known literary forms, while Luke frames this announcement through Israel's royal and prophetic hopes."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:12-16"
+      ],
+      "evidence_ids": [
+        "annunciation-to-mary:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "annunciation-to-mary"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:12-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_eb4ad9d13c16",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Incarnation includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to 2 Samuel 7:8-16, Psalm 2:1-12, messiah-theme, and christology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "incarnation:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f88cfe522639",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal courts, dynastic succession, warfare, and imperial pressure shape the background."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "solomon:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "solomon"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_32e3dda3eafb",
+      "kind": "historical_context",
+      "facts": [
+        "Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "what-is-the-messiah:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_49eba17d2d5a",
+      "kind": "historical_context",
+      "facts": [
+        "David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "who-was-david:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4dfab129489a",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to first-century Jewish life under Roman rule, in the setting of Nazareth and Davidic expectation."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:12-16"
+      ],
+      "evidence_ids": [
+        "annunciation-to-mary:historical_context:0"
+      ],
+      "entity_ids": [
+        "annunciation-to-mary"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:12-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5d2575f01da5",
+      "kind": "historical_context",
+      "facts": [
+        "Solomon appears in the rise, division, or decline of Israel's kingdoms, where royal power and covenant accountability collide."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "solomon:historical_context:0"
+      ],
+      "entity_ids": [
+        "solomon"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_7ce085cd7205",
+      "kind": "historical_context",
+      "facts": [
+        "Incarnation is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "incarnation:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_94bc3690eaac",
+      "kind": "historical_context",
+      "facts": [
+        "Covenant theology developed as a way of reading the Bible’s storyline, especially within Reformed and confessional traditions, but it is rooted in the biblical text itself."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "covenant-theology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_9c7942ca8418",
+      "kind": "historical_context",
+      "facts": [
+        "Covenant language organizes the story of Noah, Abraham, Israel, David, and the new covenant in Christ."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "covenant-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a5f7af843f8f",
+      "kind": "historical_context",
+      "facts": [
+        "David stands in the early monarchy of Israel, where tribal leadership, royal authority, court politics, and military conflict converge."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "david:historical_context:0"
+      ],
+      "entity_ids": [
+        "david"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_b242f517a87c",
+      "kind": "historical_context",
+      "facts": [
+        "2 Samuel 7 frames a covenant promise to David after Jerusalem becomes the royal center."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-17",
+        "2 Samuel 7:18-29"
+      ],
+      "evidence_ids": [
+        "davidic-covenant:historical_context:0"
+      ],
+      "entity_ids": [
+        "davidic-covenant"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-17",
+        "2 Samuel 7:18-29"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_bb1982a43956",
+      "kind": "historical_context",
+      "facts": [
+        "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "messiah-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_dc1e9da8447d",
+      "kind": "historical_context",
+      "facts": [
+        "Messianic hope develops from the Davidic covenant and the prophetic search for a righteous king who will heal exile and injustice."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "messianic-prophecy:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e3b1d4653610",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the rise and development of Israel's monarchy and its theological consequences."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-17"
+      ],
+      "evidence_ids": [
+        "solomon-builds-the-temple:historical_context:0"
+      ],
+      "entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f6c134edec28",
+      "kind": "historical_context",
+      "facts": [
+        "Christology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "christology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_1d3ac98f93d1",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Second Samuel 7 promises an enduring Davidic house, includes father-son relationship and discipline for wrongdoing, and withholds temple building from David; later texts develop how enduring promise and historical judgment relate.",
+        "In 2 Samuel 7 the LORD refuses David's immediate temple plan, promises to make David a house, establishes his offspring's throne, and promises enduring covenant loyalty alongside discipline."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "2-samuel:interpretive_note:0",
+        "second-samuel-davidic-house"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_8cde5cc81010",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Chronicles states that David's warfare and bloodshed disqualify him from building the temple, an explanation not given in Nathan's oracle in 2 Samuel 7; interpreters should preserve both presentations."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-17"
+      ],
+      "evidence_ids": [
+        "1-chronicles:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_4735fa77d14b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Archaeology supports the existence of a later Davidic dynasty but does not establish one uncontested size, administration, or chronology for David's kingdom."
+      ],
+      "verse_refs": [
+        "2 Samuel 5",
+        "2 Samuel 6:1-23",
+        "2 Samuel 8:1-18"
+      ],
+      "evidence_ids": [
+        "2-samuel:interpretive_note:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "2 Samuel 5-8"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_bf8c0b4103a2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix."
+      ],
+      "verse_refs": [
+        "2 Samuel 1",
+        "2 Samuel 10:1-19",
+        "2 Samuel 11:1-27",
+        "2 Samuel 12:1-31",
+        "2 Samuel 13:1-39",
+        "2 Samuel 14:1-33",
+        "2 Samuel 15:1-37",
+        "2 Samuel 16:1-23",
+        "2 Samuel 17:1-29",
+        "2 Samuel 18:1-33",
+        "2 Samuel 19:1-43",
+        "2 Samuel 20:1-26",
+        "2 Samuel 21:1-22",
+        "2 Samuel 22:1-51",
+        "2 Samuel 23:1-39",
+        "2 Samuel 24:1-25",
+        "2 Samuel 2:1-32",
+        "2 Samuel 3:1-39",
+        "2 Samuel 4:1-12",
+        "2 Samuel 5:1-25",
+        "2 Samuel 6:1-23",
+        "2 Samuel 8:1-18",
+        "2 Samuel 9:1-13"
+      ],
+      "evidence_ids": [
+        "second-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "2 Samuel 1-24"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0c8f493da059",
+      "kind": "why_it_matters",
+      "facts": [
+        "Biblical covenants converse with treaty and grant patterns in the ancient Near East while keeping divine grace and holiness at the center.",
+        "Covenant is a corporate relationship of oath, loyalty, blessing, memory, and responsibility before God.",
+        "After the exile, covenant identity became central to debates about purity, law, and hope."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:8-16"
+      ],
+      "evidence_ids": [
+        "covenant-theme:ancient_near_east_context:0",
+        "covenant-theme:hebraic_worldview:0",
+        "covenant-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_c7d2b3d8dab4"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_10b61760f6ca",
+      "kind": "why_it_matters",
+      "facts": [
+        "Second Samuel 7 promises an enduring Davidic house, includes father-son relationship and discipline for wrongdoing, and withholds temple building from David; later texts develop how enduring promise and historical judgment relate.",
+        "In 2 Samuel 7 the LORD refuses David's immediate temple plan, promises to make David a house, establishes his offspring's throne, and promises enduring covenant loyalty alongside discipline."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "2-samuel:interpretive_note:0",
+        "second-samuel-davidic-house"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_1d3ac98f93d1"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_310b5baf5aad",
+      "kind": "why_it_matters",
+      "facts": [
+        "bethlehem-1",
+        "hebron",
+        "jerusalem",
+        "zion"
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "david:key_places:0",
+        "david:key_places:1",
+        "david:key_places:2",
+        "david:key_places:3"
+      ],
+      "entity_ids": [
+        "david"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_60afb3db41cd"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_cb8868f08475",
+      "kind": "why_it_matters",
+      "facts": [
+        "His world is the world of kingship, patronage, warfare, and dynastic succession familiar across the ancient Near East.",
+        "David's story joins kingship, worship, repentance, covenant promise, and public responsibility before God rather than treating leadership as private charisma.",
+        "Second Temple Jewish hope often remembered David as the model king and used Davidic promise language to imagine restoration under foreign rule."
+      ],
+      "verse_refs": [
+        "2 Samuel 7:1-29"
+      ],
+      "evidence_ids": [
+        "david:ancient_near_east_context:0",
+        "david:hebraic_worldview:0",
+        "david:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "david"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_122288a98ffa"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 39,
+    "used_evidence_ids": [
+      "1-chronicles:interpretive_note:4",
+      "2-samuel:interpretive_note:0",
+      "2-samuel:interpretive_note:4",
+      "annunciation-to-mary:ancient_near_east_context:0",
+      "annunciation-to-mary:historical_context:0",
+      "christology:ancient_near_east_context:0",
+      "christology:historical_context:0",
+      "covenant-theme:ancient_near_east_context:0",
+      "covenant-theme:hebraic_worldview:0",
+      "covenant-theme:historical_context:0",
+      "covenant-theme:second_temple_context:0",
+      "covenant-theology:ancient_near_east_context:0",
+      "covenant-theology:historical_context:0",
+      "david:ancient_near_east_context:0",
+      "david:hebraic_worldview:0",
+      "david:historical_context:0",
+      "david:key_places:0",
+      "david:key_places:1",
+      "david:key_places:2",
+      "david:key_places:3",
+      "david:second_temple_context:0",
+      "davidic-covenant:ancient_near_east_context:0",
+      "davidic-covenant:historical_context:0",
+      "incarnation:ancient_near_east_context:0",
+      "incarnation:historical_context:0",
+      "messiah-theme:ancient_near_east_context:0",
+      "messiah-theme:historical_context:0",
+      "messianic-prophecy:ancient_near_east_context:0",
+      "messianic-prophecy:historical_context:0",
+      "second-samuel-davidic-house",
+      "second-samuel-literary-movement",
+      "solomon-builds-the-temple:ancient_near_east_context:0",
+      "solomon-builds-the-temple:historical_context:0",
+      "solomon:ancient_near_east_context:0",
+      "solomon:historical_context:0",
+      "what-is-the-messiah:ancient_near_east_context:0",
+      "what-is-the-messiah:historical_context:0",
+      "who-was-david:ancient_near_east_context:0",
+      "who-was-david:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 21,
+      "geography": 4,
+      "history": 14
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 38,
+    "entity_counts": {
+      "people": 2,
+      "places": 0,
+      "groups": 0,
+      "events": 3,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "cultural_context": 13,
+      "historical_context": 13,
+      "interpretive_questions": 2,
+      "surrounding_passages": 2,
+      "why_it_matters": 4
+    },
+    "relationship_unit_count": 4
+  }
+}

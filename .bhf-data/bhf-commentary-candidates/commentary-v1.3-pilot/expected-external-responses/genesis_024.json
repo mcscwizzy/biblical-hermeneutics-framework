@@ -1,0 +1,32 @@
+{
+  "reference": "Genesis 24",
+  "packet_id": "commentary-v1.3-packet:61f9c2411e7c76fc8b9c1a815eb90fbab4661a7b4d64eb48d694c1b801fa21a8",
+  "prompt_version": "1.3",
+  "evidence_hash": "c19a649074540fd52e09f48ae6fe99eab51dda140c5715cf31a361f8aa7b9898",
+  "synthesis_hash": "28f349e1ae47ed8fd1e6b697ad0bbc7bbefcf8dee32b4659c38b6a108f24e9d3",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Genesis 24",
+    "book": "Genesis",
+    "chapter": 24,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "Genesis within the ancestral narratives",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Genesis 24 belongs to the book's ancestral family narratives, which follow the universal origins presented in chapters 1–11. That larger movement places the search for Isaac's wife within the continuing story of Abraham's household and the family line that will eventually be described in Egypt.",
+            "verse_refs": [],
+            "evidence_ids": ["genesis-literary-movement"],
+            "synthesis_ids": ["syn_surrounding_passages_8d0547bc70cb"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

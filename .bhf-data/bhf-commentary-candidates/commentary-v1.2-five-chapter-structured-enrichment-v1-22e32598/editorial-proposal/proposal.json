@@ -1,0 +1,478 @@
+{
+  "artifact_version": "commentary-v1.2-five-chapter-structured-enrichment-v1",
+  "proposal_status": "accepted_for_implementation",
+  "created_before_ckl_mutation": true,
+  "starting_sha": "22e32598c08f8a788f2bc31749eabd33abaf9b67",
+  "source_policy": "Reuse source records already present on the target CKL parent whenever they genuinely support the claim. The one copied source record, exodus-34, already exists elsewhere in CKL and is used only for an explicit Psalm 103 intertextual observation.",
+  "chapters": [
+    {
+      "reference": "Psalms 19",
+      "target_ckl_parent": "framework/canonical_library/objects/books/psalms.json",
+      "existing_source_records_inspected": [
+        "psalms-masoretic",
+        "goldingay-psalms",
+        "declaisse-walford-jacobson-tanner",
+        "dahood-psalms",
+        "oxford-psalter-metanarrative",
+        "zondervan-wisdom-backgrounds"
+      ],
+      "accepted_items": [
+        {
+          "proposed_id": "psalm-19-creation-proclamation",
+          "claim": "Psalm 19:1-6 portrays the heavens and firmament as declaring God's glory while day and night pass on knowledge without ordinary speech; the communication is poetic and continuous rather than a literal spoken conversation.",
+          "proposed_category": "biblical_text",
+          "verse_anchor": ["Psalms 19:1-6"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic"],
+          "reader_value": "It lets a reader follow the psalm's opening image without importing archaeology or treating poetic personification as a scientific statement.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-19-sun-bridegroom-runner",
+          "claim": "The sun imagery in Psalm 19:4-6 uses two similes—a bridegroom leaving his chamber and a runner completing a course—to emphasize joy, strength, and the sun's comprehensive reach within the poem.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 19:4-6"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+          "reader_value": "It explains the actual poetic work of the sun comparison rather than adding generic cosmological background.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-19-creation-to-torah-movement",
+          "claim": "Psalm 19 turns in verses 7-11 from the testimony of creation to a series of names for the LORD's instruction—law, testimony, precepts, commandment, fear, and judgments—so the poem moves from the ordered heavens to covenant instruction.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 19:7-11"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["psalms-masoretic", "declaisse-walford-jacobson-tanner", "goldingay-psalms"],
+          "reader_value": "It gives the reader the Psalm's central literary transition and keeps Torah terminology tied to this passage.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-19-torah-gold-honey-value",
+          "claim": "Psalm 19:10-11 evaluates the LORD's judgments as more desirable than fine gold and sweeter than honey, joining moral instruction to images of worth, delight, and warning.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 19:10-11"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+          "reader_value": "It distinguishes the Psalm's own value imagery from a generic definition of Torah.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-19-hidden-and-presumptuous-faults",
+          "claim": "In Psalm 19:12-13 the speaker asks to be cleared from hidden faults and restrained from presumptuous sins, distinguishing unknown failure from deliberate, self-asserting transgression.",
+          "proposed_category": "biblical_text",
+          "verse_anchor": ["Psalms 19:12-13"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "lexical_uncertainty",
+          "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+          "reader_value": "It makes the final movement toward self-examination visible and avoids flattening every failure into one category.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-19-closing-prayer-rock-redeemer",
+          "claim": "Psalm 19:14 closes by asking that the speaker's words and meditation be acceptable before the LORD, addressed as the speaker's rock and redeemer; the prayer brings the cosmic and instructional movements into worshiper's speech.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 19:14"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "dahood-psalms"],
+          "reader_value": "It explains why the closing prayer matters to the whole Psalm rather than treating verse 14 as an unrelated devotional line.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        }
+      ],
+      "rejected_items": [
+        {"proposed_id": "psalm-19-archaeological-noise-restoration", "reason": "Rejected: inherited archaeology records do not support Psalm 19 claim-level interpretation."},
+        {"proposed_id": "psalm-19-generic-torah-definition", "reason": "Rejected: duplicates broad legacy Torah prose and does not earn Psalm 19:7-11 scope."}
+      ]
+    },
+    {
+      "reference": "Psalms 103",
+      "target_ckl_parent": "framework/canonical_library/objects/books/psalms.json",
+      "existing_source_records_inspected": [
+        "psalms-masoretic",
+        "goldingay-psalms",
+        "declaisse-walford-jacobson-tanner",
+        "hossfeld-zenger-psalms"
+      ],
+      "accepted_items": [
+        {
+          "proposed_id": "psalm-103-personal-blessing-catalogue",
+          "claim": "Psalm 103:1-5 begins with a repeated summons for the speaker's own soul to bless the LORD and then catalogs benefits: forgiveness, healing, rescue from the pit, steadfast love and mercy, and renewed strength.",
+          "proposed_category": "biblical_text",
+          "verse_anchor": ["Psalms 103:1-5"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+          "reader_value": "It makes the opening personal catalogue visible instead of reducing the Psalm to a generic mercy theme.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-103-righteousness-moses",
+          "claim": "Psalm 103:6-7 pairs the LORD's acts of righteousness and justice for the oppressed with the disclosure of his ways to Moses and Israel, widening the Psalm from personal benefits to communal memory.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 103:6-7"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "declaisse-walford-jacobson-tanner"],
+          "reader_value": "It prevents verses 6-7 from disappearing inside a general account of compassion.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-103-exodus-mercy-formula",
+          "claim": "Psalm 103:8-13 reuses the familiar confession that the LORD is compassionate and gracious, slow to anger, and abounding in steadfast love; its fatherly comparison and east-to-west image portray compassionate distance from deserved judgment.",
+          "proposed_category": "intertextual",
+          "verse_anchor": ["Psalms 103:8-13"],
+          "claim_type": "intertextual",
+          "confidence": "medium",
+          "certainty": "strong_consensus",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["psalms-masoretic", "exodus-34", "goldingay-psalms"],
+          "reader_value": "It distinguishes the Psalm's wording and images from a decontextualized mercy slogan while identifying the Exodus echo.",
+          "scope_classification": "intertextual reuse with textual observation",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-103-dust-grass-mortality",
+          "claim": "Psalm 103:14-18 sets human mortality against the LORD's enduring steadfast love: humans are dust, their days are like grass and a flower, but the LORD's covenant faithfulness extends to those who fear him and to their descendants.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 103:14-18"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "hossfeld-zenger-psalms"],
+          "reader_value": "It exposes the mortality/covenant contrast that gives the Psalm's mercy language its shape.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-103-throne-universal-blessing",
+          "claim": "Psalm 103:19-22 moves from the LORD's established throne and kingship to angels, heavenly hosts, servants, and all works, ending with a widening summons for the whole creation to bless the LORD.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 103:19-22"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "declaisse-walford-jacobson-tanner"],
+          "reader_value": "It gives the ending its own movement toward cosmic kingship and praise rather than stopping at verses 8-13.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        }
+      ],
+      "rejected_items": [
+        {"proposed_id": "psalm-103-six-generic-mercy-fields", "reason": "Rejected: duplicates generic legacy mercy/grace prose without distinct Psalm 103 scope."},
+        {"proposed_id": "psalm-103-universal-theology-of-mercy", "reason": "Rejected: broad theological conclusion exceeds the chapter's authored evidence."}
+      ]
+    },
+    {
+      "reference": "2 Kings 4",
+      "target_ckl_parent": "framework/canonical_library/objects/books/2-kings.json",
+      "existing_source_records_inspected": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "lamb-first-second-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "accepted_items": [
+        {
+          "proposed_id": "second-kings-4-widow-oil-debt",
+          "claim": "In 2 Kings 4:1-7 a prophet's widow faces a creditor who would take her two sons; Elisha's instructions use her remaining oil and borrowed jars to turn a household crisis into saleable provision and debt payment.",
+          "proposed_category": "social",
+          "verse_anchor": ["2 Kings 4:1-7"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"],
+          "reader_value": "It explains the episode's household economics and narrative mechanics without importing an unsourced general rule about debt-servitude.",
+          "scope_classification": "textually explicit with restrained social context",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "second-kings-4-shunammite-hospitality-promise",
+          "claim": "In 2 Kings 4:8-17 a socially established Shunammite woman repeatedly offers hospitality to the man of God, receives a dedicated room, and is promised a son after Gehazi identifies her childlessness.",
+          "proposed_category": "social",
+          "verse_anchor": ["2 Kings 4:8-17"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"],
+          "reader_value": "It keeps the Shunammite episode distinct from the widow story and identifies hospitality, status, Gehazi, and promise as narrative details.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "second-kings-4-shunem-child-carmel",
+          "claim": "In 2 Kings 4:18-37 the promised child dies, the mother seeks Elisha at Carmel, and Elisha's staff, prayer, bodily action, and return to the child form the episode's sequence of prophetic response; the text names both Shunem and Carmel rather than leaving the setting generic.",
+          "proposed_category": "geography",
+          "verse_anchor": ["2 Kings 4:18-37"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings", "zondervan-kings-chronicles-backgrounds"],
+          "reader_value": "It follows the chapter's most extended narrative unit and preserves its named geography without claiming more than the text says.",
+          "scope_classification": "textually explicit with geographical observation",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "second-kings-4-prophetic-community-famine",
+          "claim": "In 2 Kings 4:38-41 Elisha returns to the prophetic community during famine; a communal stew made dangerous by unidentified gourds is made safe through prophetic action, and the repeated cry of 'death in the pot' makes the danger part of the scene's dialogue.",
+          "proposed_category": "social",
+          "verse_anchor": ["2 Kings 4:38-41"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings"],
+          "reader_value": "It prevents a short but distinct famine/community episode from being swallowed by the child narrative.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "second-kings-4-firstfruits-feeding",
+          "claim": "In 2 Kings 4:42-44 a man brings firstfruits and barley loaves to Elisha, who commands that the food be distributed to a hundred people; the narrated surplus fulfills the prophetic word that they will eat and have some left.",
+          "proposed_category": "economics",
+          "verse_anchor": ["2 Kings 4:42-44"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["2-kings-1-25", "cogan-tadmor-second-kings", "lamb-first-second-kings"],
+          "reader_value": "It identifies the firstfruits, barley, command, number fed, and surplus as the closing episode's own details.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        }
+      ],
+      "rejected_items": [
+        {"proposed_id": "second-kings-4-generic-prophet-biography", "reason": "Rejected: generic biography would not explain any of the chapter's five narrative units."},
+        {"proposed_id": "second-kings-4-unsourced-debt-law", "reason": "Rejected: exact debt-servitude background could not be responsibly supported from the inspected target sources without expanding scope."}
+      ]
+    },
+    {
+      "reference": "Psalms 2",
+      "target_ckl_parent": "framework/canonical_library/objects/books/psalms.json",
+      "existing_source_records_inspected": [
+        "psalms-masoretic",
+        "goldingay-psalms",
+        "declaisse-walford-jacobson-tanner",
+        "dahood-psalms",
+        "psalms-new-testament-reception"
+      ],
+      "accepted_items": [
+        {
+          "proposed_id": "psalm-2-nations-kings-rebellion",
+          "claim": "Psalm 2:1-3 depicts nations, peoples, kings, and rulers conspiring against the LORD and his anointed, using the language of revolt and the image of breaking a yoke or bonds.",
+          "proposed_category": "politics",
+          "verse_anchor": ["Psalms 2:1-3"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["psalms-masoretic", "goldingay-psalms"],
+          "reader_value": "It establishes the psalm's original political conflict before later reception is discussed.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-2-yhwh-zion-anointed",
+          "claim": "Psalm 2:4-6 answers the rulers' revolt with YHWH's enthroned laughter and announces that he has installed his king on Zion, making divine rule and the anointed king the psalm's counterclaim to earthly coalition.",
+          "proposed_category": "politics",
+          "verse_anchor": ["Psalms 2:4-6"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["psalms-masoretic", "goldingay-psalms", "declaisse-walford-jacobson-tanner"],
+          "reader_value": "It connects Zion and enthronement to the scene instead of jumping immediately to a later theological identification.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-2-son-decree-inheritance",
+          "claim": "In Psalm 2:7-9 the king reports a divine decree using 'You are my son' language, then receives the nations as inheritance and authority to break them with an iron rod like pottery; these are royal claims within the psalm's speech.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Psalms 2:7-9"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["psalms-masoretic", "dahood-psalms", "goldingay-psalms"],
+          "reader_value": "It explains the decree, sonship, inheritance, and pottery imagery together while preserving the royal setting.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-2-royal-ane-idiom-caution",
+          "claim": "The father-son, decree, inheritance, and enthronement language in Psalm 2:6-9 belongs to a royal idiom recognizable in the ancient Near Eastern world, but the poem itself does not identify a single historical accession ceremony or prove direct borrowing from one specific text.",
+          "proposed_category": "historical_cultural",
+          "verse_anchor": ["Psalms 2:6-9"],
+          "claim_type": "historical_cultural",
+          "confidence": "medium",
+          "certainty": "plausible",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["dahood-psalms", "goldingay-psalms", "zondervan-wisdom-backgrounds"],
+          "reader_value": "It supplies responsible ANE context while explicitly limiting what comparison can establish.",
+          "scope_classification": "contextual observation with interpretive caution",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "psalm-2-closing-wisdom-warning",
+          "claim": "Psalm 2:10-12 turns the royal conflict into a warning addressed to kings and judges: serve the LORD, rejoice with trembling, and take refuge in him; the final expression often translated 'kiss the son' has a recognized lexical and translation dispute and should not be presented as settled wording.",
+          "proposed_category": "disputed",
+          "verse_anchor": ["Psalms 2:10-12"],
+          "claim_type": "disputed",
+          "confidence": "medium",
+          "certainty": "disputed",
+          "dispute_status": "lexical_uncertainty",
+          "source_ids": ["psalms-masoretic", "dahood-psalms", "goldingay-psalms"],
+          "reader_value": "It preserves both the closing wisdom appeal and the translation issue without turning a disputed phrase into a doctrinal proof.",
+          "scope_classification": "textually explicit plus disputed translation question",
+          "similar_claim_exists": false
+        }
+      ],
+      "rejected_items": [
+        {"proposed_id": "psalm-2-immediate-christological-identification", "reason": "Rejected: later canonical reception must not replace original royal/contextual analysis."},
+        {"proposed_id": "psalm-2-specific-ancient-accession-ceremony", "reason": "Rejected: no inspected source justifies identifying one historical ceremony as the Psalm's setting."}
+      ]
+    },
+    {
+      "reference": "Genesis 5",
+      "target_ckl_parent": "framework/canonical_library/objects/books/genesis.json",
+      "existing_source_records_inspected": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "hamilton-genesis-18-50",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "accepted_items": [
+        {
+          "proposed_id": "genesis-5-adam-seth-image-lineage",
+          "claim": "Genesis 5:1-3 introduces the written account of Adam's generations, recalls humanity made in God's likeness, and follows Adam's line through Seth, whom Adam fathers in his own likeness and image.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Genesis 5:1-3"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+          "reader_value": "It ties the genealogy to the chapter's opening image/likeness language rather than treating the list as bare chronology.",
+          "scope_classification": "textually explicit",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "genesis-5-repeated-genealogy-formula",
+          "claim": "Genesis 5 repeatedly uses a genealogy formula—age at fathering, additional years, total lifespan, and a closing notice—so the chapter's regular pattern organizes the succession from Adam toward Noah.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Genesis 5:3-20", "Genesis 5:25-32"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+          "reader_value": "It shows why the repeated wording is a literary device and not merely an inconvenient list of numbers.",
+          "scope_classification": "textually explicit literary observation",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "genesis-5-and-he-died-mortality",
+          "claim": "The repeated words 'and he died' in Genesis 5:5, 8, 11, 14, 17, 20, 27, and 31 create a mortality refrain across the genealogy, while the exception of Enoch in verses 21-24 interrupts the pattern.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Genesis 5:5-31"],
+          "claim_type": "literary",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "not_disputed",
+          "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+          "reader_value": "It makes the chapter's narrative tension visible without calculating an external chronology.",
+          "scope_classification": "textually explicit literary observation",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "genesis-5-enoch-walks-with-god",
+          "claim": "Genesis 5:21-24 gives Enoch a distinct notice: he fathers Methuselah, walks with God for 300 years, and is said to have been taken by God rather than receiving the ordinary death formula.",
+          "proposed_category": "biblical_text",
+          "verse_anchor": ["Genesis 5:21-24"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "interpretive_uncertainty",
+          "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+          "reader_value": "It identifies the chapter's deliberate exception and marks interpretation of 'taken' as a question rather than a settled chronology claim.",
+          "scope_classification": "textually explicit with interpretive uncertainty",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "genesis-5-methuselah-lamech-noah-naming",
+          "claim": "Genesis 5:25-32 carries the line through Methuselah and Lamech to Noah and explains Noah's name through Lamech's hope for relief from the labor and pain associated with the ground that the LORD had cursed.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Genesis 5:25-32"],
+          "claim_type": "biblical_text",
+          "confidence": "high",
+          "certainty": "textually_explicit",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+          "reader_value": "It shows that the genealogy ends by handing the narrative forward to Noah and linking the name explanation to Genesis's earlier ground motif.",
+          "scope_classification": "textually explicit literary connection",
+          "similar_claim_exists": false
+        },
+        {
+          "proposed_id": "genesis-5-genealogy-narrative-function",
+          "claim": "As a literary unit, Genesis 5 preserves a continuous Adam-to-Noah line while carrying forward both human mortality and the hope attached to Noah; the chapter's function is therefore narrative continuity and thematic development, not an explicit modern chronology table.",
+          "proposed_category": "literary",
+          "verse_anchor": ["Genesis 5:1-32"],
+          "claim_type": "literary",
+          "confidence": "medium",
+          "certainty": "probable",
+          "dispute_status": "minor_scholarly_disagreement",
+          "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+          "reader_value": "It answers why the genealogy matters while refusing young-earth or old-earth calculations not made by the chapter itself.",
+          "scope_classification": "interpretive inference grounded in the chapter",
+          "similar_claim_exists": false
+        }
+      ],
+      "rejected_items": [
+        {"proposed_id": "genesis-5-calculated-world-age", "reason": "Rejected: later chronological calculations exceed what Genesis 5 explicitly claims."},
+        {"proposed_id": "genesis-5-complete-genealogical-no-gaps", "reason": "Rejected: the chapter does not establish that its genealogy is exhaustive for modern chronological purposes."}
+      ]
+    }
+  ],
+  "implementation_guard": {
+    "do_not_restore_legacy_parent_evidence": true,
+    "do_not_modify_frozen_contracts": true,
+    "do_not_run_broad_expansion": true,
+    "do_not_call_model_before_deterministic_validation": true,
+    "psalm_2_canonical_boundary_requires_preflight": true
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "reference": "Amos 5",
+  "packet_id": "commentary-v1.5-packet:93e406561b91d12f31e993f8b283a477068b035041aac5c3693e5008a4f892a1",
+  "prompt_version": "1.5",
+  "evidence_hash": "677d33e36464f157dfba78571427d276697b29ea2d4e4cc80a4fd5cd2acd5116",
+  "synthesis_hash": "f4188bdb7485c8b198228b0bd9cafb78dcdc87cbfcb7ef6f491a9a0e11864ef3",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Amos 5",
+    "book": "Amos",
+    "chapter": 5,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Amos 5 overturns confidence in a favorable “day of the LORD.” The chapter joins that reversal to concrete accusations against people who sell the righteous, exploit the poor, corrupt the gate, and seize what others have pledged. Its rejection of festivals, offerings, songs, and music is directed at worship joined to exploitation, not at ritual or music as such.",
+            "verse_refs": [
+              "Amos 5:7-17",
+              "Amos 5:18-24"
+            ],
+            "evidence_ids": [
+              "amos-acts7-reuse",
+              "amos-day-yhwh",
+              "amos-economic-exploitation",
+              "amos-worship-justice",
+              "amos:interpretive_note:12",
+              "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_0af53b92615b",
+              "syn_cultural_context_86bdb1995d7c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Prophetic and political setting",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The chapter uses courtroom, treaty, and royal imagery familiar in the ancient world, but the prophet speaks for the LORD. Royal “day” imagery helps explain the metaphor while Amos presents the LORD as judge and deliverer. The northern kingdom also lived under pressure from larger empires, so political instability and imperial danger form part of the chapter’s setting.",
+            "verse_refs": [
+              "Amos 5:18-20",
+              "Amos 5:21-24"
+            ],
+            "evidence_ids": [
+              "day-of-the-lord-prophecy:ancient_near_east_context:0",
+              "how-should-i-read-prophecy:ancient_near_east_context:0",
+              "what-is-a-prophet:ancient_near_east_context:0",
+              "what-is-the-kingdom-of-israel:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_0eda118399a7",
+              "syn_cultural_context_ca3f5d3f4b44",
+              "syn_cultural_context_64f112f31f99",
+              "syn_cultural_context_dc81593e52a6"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Israel under pressure",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "After the united monarchy divided, the northern kingdom was centered on Samaria. Amos speaks into real national crises rather than an abstract religious setting. The warnings address covenant breach and imperial pressure, while the later siege and fall of Samaria belong to the contested transition from Shalmaneser V to Sargon II, usually placed around 725–720 BCE. The precise sequence of capture, conquest, deportation, and provincial rule should remain qualified.",
+            "verse_refs": [
+              "Amos 5:18-27",
+              "Amos 5:21-24",
+              "Amos 5:18-20"
+            ],
+            "evidence_ids": [
+              "day-of-the-lord-prophecy:historical_context:0",
+              "fall-of-samaria:historical_context:0",
+              "fall-of-samaria:historical_setting:0",
+              "how-should-i-read-prophecy:historical_context:0",
+              "what-is-a-prophet:historical_context:0",
+              "what-is-the-day-of-the-lord:historical_context:0",
+              "what-is-the-kingdom-of-israel:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_58d718b76ce6",
+              "syn_historical_context_1543309878fd",
+              "syn_historical_context_2ab75d75e47d",
+              "syn_historical_context_790b14ee1596",
+              "syn_historical_context_accc425d9abb",
+              "syn_historical_context_ea62074391c6"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Justice, worship, and textual difficulty",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "“Let justice roll down like waters” is a communal demand grounded in the gate, debt, land, labor, and worship concerns named across the chapter. It should not be reduced to one modern party, nation, ideology, or church program. The day of the LORD is darkness for those who presume upon it, not a timetable for later speculation. Amos 5:25–27 also has a complicated textual and reception history: Acts 7 quotes a Greek form, while Sikkuth and Kiyyun remain difficult designations that should not be confidently equated with later names.",
+            "verse_refs": [
+              "Amos 5:7-17",
+              "Amos 5:18-27",
+              "Amos 5:25-27"
+            ],
+            "evidence_ids": [
+              "amos:interpretive_note:13",
+              "amos:interpretive_note:14",
+              "amos:interpretive_note:15",
+              "amos:interpretive_note:16",
+              "amos:interpretive_note:17",
+              "amos:interpretive_note:32",
+              "amos:interpretive_note:34",
+              "amos:interpretive_note:37",
+              "amos:interpretive_note:9",
+              "zephaniah-day"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_1ca589e32c28",
+              "syn_interpretive_questions_a02d290def96",
+              "syn_interpretive_questions_aa8e9779374f"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

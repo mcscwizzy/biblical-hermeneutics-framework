@@ -9,11 +9,13 @@ from fastapi.responses import JSONResponse
 from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.chapter_commentary.storage import load_commentary
+from bhf_agent.chapter_commentary.release import release_diagnostics, release_manifest_invalid
 from bhf_web.services.bhf_commentary import (
     COMMENTARY_RELEASE,
     load_commentary_projection,
     project_commentary_evidence,
     search_commentary,
+    unavailable_commentary_state,
 )
 
 
@@ -32,6 +34,9 @@ def register_bhf_commentary_routes(
         """Return diagnostic info about BHF commentary availability."""
         from bhf_agent.chapter_commentary.storage import list_commentaries
 
+        manifest = release_diagnostics(storage_path, COMMENTARY_RELEASE)
+        if manifest.get("manifest_available"):
+            return JSONResponse(manifest)
         commentaries = list_commentaries(storage_path)
         return JSONResponse(
             {
@@ -54,6 +59,8 @@ def register_bhf_commentary_routes(
         limit: int = 25,
     ) -> JSONResponse:
         """Search immutable commentary projections using existing reader data."""
+        if release_manifest_invalid(storage_path):
+            return JSONResponse({"release": COMMENTARY_RELEASE, "count": 0, "results": []})
         try:
             return JSONResponse(
                 search_commentary(
@@ -79,9 +86,21 @@ def register_bhf_commentary_routes(
     ) -> JSONResponse:
         """Get BHF commentary for a chapter."""
         try:
+            if release_manifest_invalid(storage_path):
+                unavailable = unavailable_commentary_state(storage_path, book, chapter)
+                return JSONResponse(unavailable or {
+                    "available": False,
+                    "reason": "commentary_release_unavailable",
+                    "release": COMMENTARY_RELEASE,
+                    "book": book,
+                    "chapter": chapter,
+                })
             commentary = load_commentary_projection(storage_path, book, chapter)
 
             if commentary is None:
+                unavailable = unavailable_commentary_state(storage_path, book, chapter)
+                if unavailable is not None:
+                    return JSONResponse(unavailable)
                 return JSONResponse(
                     {
                         "available": False,
@@ -113,8 +132,25 @@ def register_bhf_commentary_routes(
     async def bhf_commentary_evidence(book: str, chapter: int) -> JSONResponse:
         """Return only evidence explicitly cited by the stored commentary."""
         try:
+            if release_manifest_invalid(storage_path):
+                unavailable = unavailable_commentary_state(storage_path, book, chapter)
+                return JSONResponse(unavailable or {
+                    "available": False,
+                    "reason": "commentary_release_unavailable",
+                    "release": COMMENTARY_RELEASE,
+                    "book": book,
+                    "chapter": chapter,
+                })
             commentary = load_commentary(storage_path, book, chapter)
             if commentary is None:
+                unavailable = unavailable_commentary_state(storage_path, book, chapter)
+                if unavailable is not None:
+                    unavailable.update({
+                        "evidence_items": [],
+                        "unavailable_ids": [],
+                        "evidence_count": 0,
+                    })
+                    return JSONResponse(unavailable)
                 return JSONResponse(
                     {
                         "available": False,

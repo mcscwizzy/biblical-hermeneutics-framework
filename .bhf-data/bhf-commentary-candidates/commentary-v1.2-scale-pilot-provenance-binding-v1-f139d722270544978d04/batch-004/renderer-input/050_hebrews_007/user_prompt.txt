@@ -1,0 +1,229 @@
+TASK: Generate BHF Commentary v1.7 for Hebrews 7.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_9ba0f1d7cb4477f2: Hebrews (categories: culture, interpretive_questions)
+
+RELEVANT:
+- reader_idea_d052fc3c49d30576: Priesthood (categories: culture, history)
+- reader_idea_723e6dad86a11350: Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. (categories: archaeology, culture, surrounding_passages)
+- reader_idea_b69cc5c83b4d0b6e: Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own… (categories: culture, surrounding_passages)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_9ba0f1d7cb4477f2: Hebrews (importance: CORE; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["heb-priesthood-change"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_7e97def47d97"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["hebrews:interpretive_note:26"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_498fc45e532a"}
+- path_3: {"confidence": "medium", "disputed": true, "evidence_ids": ["heb-melchizedek", "hebrews:interpretive_note:13", "hebrews:interpretive_note:19"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_ddddfc6a6c35"}
+- path_4: {"confidence": "medium", "disputed": true, "evidence_ids": ["heb-melchizedek", "hebrews:interpretive_note:13", "hebrews:interpretive_note:19"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_01c5639da866"}
+
+IDEA reader_idea_d052fc3c49d30576: Priesthood (importance: RELEVANT; categories: culture, history)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": false, "evidence_ids": ["priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0", "priesthood:second_temple_context:0"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_cultural_context_8f0b4717852a"}
+- path_2: {"confidence": "medium", "disputed": false, "evidence_ids": ["priesthood:historical_context:0"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_historical_context_4fb87faf329b"}
+- path_3: {"confidence": "medium", "disputed": false, "evidence_ids": ["priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0", "priesthood:second_temple_context:0"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_35540763bda6"}
+
+IDEA reader_idea_723e6dad86a11350: Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate. (importance: RELEVANT; categories: archaeology, culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["heb-p46", "heb-sinaiticus"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_1fc633db60d8"}
+- path_2: {"confidence": "high", "disputed": true, "evidence_ids": ["hebrews:interpretive_note:39"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_945970ac70fa"}
+- path_3: {"confidence": "high", "disputed": true, "evidence_ids": ["heb-p46", "heb-sinaiticus"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_f84c47e0caf2"}
+
+IDEA reader_idea_b69cc5c83b4d0b6e: Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own… (importance: RELEVANT; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": true, "evidence_ids": ["leviticus:interpretive_note:3"], "interpretation_level": "disputed", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_699244a044f3"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. For this Melchizedek, king of Salem, priest of God Most High, who met Abraham returning from the slaughter of the kings and blessed him, 2. to whom also Abraham divided a tenth part of all (being first, by interpretation, King of righteousness, and then also King of Salem, which is King of peace; 3. without father, without mother, without genealogy, having neither beginning of days nor end of life, but made like unto the Son of God), abideth a priest continually. 4. Now consider how great this man was, unto whom Abraham, the patriarch, gave a tenth out of the chief spoils. 5. And they indeed of the sons of Levi that receive the priest's office have commandment to take tithes of the people according to the law, that is, of their brethren, though these have come out of the loins of Abraham: 6. but he whose genealogy is not counted from them hath taken tithes of Abraham, and hath blessed him that hath the promises. 7. But without any dispute the less is blessed of the better. 8. And here men that die receive tithes; but there one, of whom it is witnessed that he liveth. 9. And, so to say, through Abraham even Levi, who receiveth tithes, hath paid tithes; 10. for he was yet in the loins of his father, when Melchizedek met him. 11. Now if there was perfection through the Levitical priesthood (for under it hath the people received the law), what further need `was there' that another priest should arise after the order of Melchizedek, and not be reckoned after the order of Aaron? 12. For the priesthood being changed, there is made of necessity a change also of the law. 13. For he of whom these things are said belongeth to another tribe, from which no man hath given attendance at the altar. 14. For it is evident that our Lord hath sprung out of Judah; as to which tribe Moses spake nothing concerning priests. 15. And `what we say' is yet more abundantly evident, if after the likeness of Melchizedek there ariseth another priest, 16. who hath been made, not after the law of a carnal commandment, but after the power of an endless life: 17. for it is witnessed `of him,' Thou art a priest for ever After the order of Melchizedek. 18. For there is a disannulling of a foregoing commandment because of its weakness and unprofitableness 19. (for the law made nothing perfect), and a bringing in thereupon of a better hope, through which we draw nigh unto God. 20. And inasmuch as `it is' not without the taking of an oath 21. (for they indeed have been made priests without an oath; but he with an oath by him that saith of him, The Lord sware and will not repent himself, Thou art a priest for ever); 22. by so much also hath Jesus become the surety of a better covenant. 23. And they indeed have been made priests many in number, because that by death they are hindered from continuing: 24. but he, because he abideth for ever, hath his priesthood unchangeable. 25. Wherefore also he is able to save to the uttermost them that draw near unto God through him, seeing he ever liveth to make intercession for them. 26. For such a high priest became us, holy, guileless, undefiled, separated from sinners, and made higher than the heavens; 27. who needeth not daily, like those high priests, to offer up sacrifices, first for his own sins, and then for the `sins' of the people: for this he did once for all, when he offered up himself. 28. For the law appointeth men high priests, having infirmity; but the word of the oath, which was after the law, `appointeth' a Son, perfected for evermore.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 4, "entity_counts": {"artifacts": 0, "events": 0, "groups": 2, "people": 0, "places": 0}, "evidence_categories": {"archaeology": 2, "culture": 14, "history": 4, "social": 1}, "evidence_item_count": 21, "relationship_unit_count": 5, "specific_evidence_count": 21, "unit_kind_counts": {"cultural_context": 4, "historical_context": 3, "interpretive_questions": 2, "surrounding_passages": 4, "why_it_matters": 4}, "unused_evidence_ids": [], "used_evidence_ids": ["heb-melchizedek", "heb-p46", "heb-priesthood-change", "heb-sinaiticus", "hebrews:interpretive_note:13", "hebrews:interpretive_note:19", "hebrews:interpretive_note:26", "hebrews:interpretive_note:39", "high-priesthood:ancient_near_east_context:0", "high-priesthood:hebraic_worldview:0", "high-priesthood:historical_context:0", "high-priesthood:historical_setting:0", "high-priesthood:original_audience:0", "high-priesthood:second_temple_context:0", "leviticus:interpretive_note:3", "priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0", "priesthood:historical_context:0", "priesthood:second_temple_context:0", "what-is-the-role-of-priests:ancient_near_east_context:0", "what-is-the-role-of-priests:historical_context:0"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "5a548e7da9466d0dce61a960663d50570603e7eb1aec0c19a8808891012aace7", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-role-of-priests:ancient_near_east_context:0"], "facts": ["Priestly mediation is common in the ancient world, but Israel's priests serve under covenant holiness rather than local deity politics."], "id": "syn_cultural_context_6061f339b825", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:23-28"], "verse_refs": ["Hebrews 7:23-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-priesthood-change"], "facts": ["The argument links a changed priesthood with change in law and describes a better hope through which people approach God."], "id": "syn_cultural_context_7e97def47d97", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:11-19"], "verse_refs": ["Hebrews 7:11-19"]}, {"confidence": "medium", "entity_ids": ["priesthood"], "evidence_ids": ["priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0", "priesthood:second_temple_context:0"], "facts": ["Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.", "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.", "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue."], "id": "syn_cultural_context_8f0b4717852a", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:1-28"], "verse_refs": ["Hebrews 7:1-28"]}, {"confidence": "medium", "entity_ids": ["high-priesthood"], "evidence_ids": ["high-priesthood:ancient_near_east_context:0", "high-priesthood:hebraic_worldview:0", "high-priesthood:original_audience:0", "high-priesthood:second_temple_context:0"], "facts": ["Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.", "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.", "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.", "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome."], "id": "syn_cultural_context_bf09a6677211", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["culture", "social"], "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:11-28"], "verse_refs": ["Hebrews 7:11-28"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-role-of-priests:historical_context:0"], "facts": ["Aaronic and Levitical priests serve in tabernacle and temple settings, later adapting in the second temple period."], "id": "syn_historical_context_06fc77276fa3", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:23-28"], "verse_refs": ["Hebrews 7:23-28"]}, {"confidence": "medium", "entity_ids": ["high-priesthood"], "evidence_ids": ["high-priesthood:historical_context:0", "high-priesthood:historical_setting:0"], "facts": ["The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.", "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule."], "id": "syn_historical_context_23b16dc492ae", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["history"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:11-28"], "verse_refs": ["Hebrews 7:11-28"]}, {"confidence": "medium", "entity_ids": ["priesthood"], "evidence_ids": ["priesthood:historical_context:0"], "facts": ["Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel’s worship, then reappears in the second temple world and in New Testament reflection."], "id": "syn_historical_context_4fb87faf329b", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:1-28"], "verse_refs": ["Hebrews 7:1-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hebrews:interpretive_note:26"], "facts": ["Law language is differentiated within the argument; Hebrews does not authorize lawlessness, antisemitism, or a claim that Torah has no continuing Jewish meaning."], "id": "syn_interpretive_questions_498fc45e532a", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:11-19"], "verse_refs": ["Hebrews 7:11-19"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["heb-melchizedek", "hebrews:interpretive_note:13", "hebrews:interpretive_note:19"], "facts": ["Hebrews interprets Genesis 14 and Psalm 110 to present Melchizedek as a literary analogy for Jesus' enduring priesthood.", "Melchizedek is interpreted from Genesis 14 and Psalm 110 by textual analogy; Hebrews does not say that the Genesis figure literally lacked parents or was Jesus.", "Supersessionism is not a safe shortcut: Hebrews' covenant contrast must be read without contempt for Judaism, denigration of Torah, or erasure of living Jewish communities."], "id": "syn_interpretive_questions_ddddfc6a6c35", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Hebrews 7:1-28", "Hebrews 7:11-28"], "verse_refs": ["Hebrews 7:1-28", "Hebrews 7:11-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-p46", "heb-sinaiticus"], "facts": ["Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.", "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians."], "id": "syn_surrounding_passages_1fc633db60d8", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": ["syn_surrounding_passages_f84c47e0caf2"], "source_anchors": ["Hebrews 1:1-13:25"], "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 1:1-14", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 8:1-13", "Hebrews 9:1-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["leviticus:interpretive_note:3"], "facts": ["Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."], "id": "syn_surrounding_passages_699244a044f3", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Hebrews 7-10"], "verse_refs": ["Hebrews 10:1-39", "Hebrews 8:1-13", "Hebrews 9:1-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["hebrews:interpretive_note:39"], "facts": ["Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect."], "id": "syn_surrounding_passages_945970ac70fa", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Hebrews 1:1-13:25"], "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 1:1-14", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 8:1-13", "Hebrews 9:1-28"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["heb-p46", "heb-sinaiticus"], "facts": ["Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.", "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians."], "id": "syn_surrounding_passages_f84c47e0caf2", "interpretation_level": "disputed", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "shared_parent_object", "source_categories": ["archaeology"], "support_count": 2}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Hebrews 1:1-13:25"], "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 1:1-14", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 8:1-13", "Hebrews 9:1-28"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["heb-melchizedek", "hebrews:interpretive_note:13", "hebrews:interpretive_note:19"], "facts": ["Hebrews interprets Genesis 14 and Psalm 110 to present Melchizedek as a literary analogy for Jesus' enduring priesthood.", "Melchizedek is interpreted from Genesis 14 and Psalm 110 by textual analogy; Hebrews does not say that the Genesis figure literally lacked parents or was Jesus.", "Supersessionism is not a safe shortcut: Hebrews' covenant contrast must be read without contempt for Judaism, denigration of Torah, or erasure of living Jewish communities."], "id": "syn_why_it_matters_01c5639da866", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_ddddfc6a6c35"], "source_anchors": ["Hebrews 7:1-28", "Hebrews 7:11-28"], "verse_refs": ["Hebrews 7:1-28", "Hebrews 7:11-28"]}, {"confidence": "medium", "entity_ids": ["high-priesthood"], "evidence_ids": ["high-priesthood:ancient_near_east_context:0", "high-priesthood:hebraic_worldview:0", "high-priesthood:original_audience:0", "high-priesthood:second_temple_context:0"], "facts": ["Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.", "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.", "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.", "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome."], "id": "syn_why_it_matters_28a667fd256e", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 4}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_bf09a6677211"], "source_anchors": ["Hebrews 7:11-28"], "verse_refs": ["Hebrews 7:11-28"]}, {"confidence": "medium", "entity_ids": ["priesthood"], "evidence_ids": ["priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0", "priesthood:second_temple_context:0"], "facts": ["Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.", "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.", "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue."], "id": "syn_why_it_matters_35540763bda6", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_8f0b4717852a"], "source_anchors": ["Hebrews 7:1-28"], "verse_refs": ["Hebrews 7:1-28"]}, {"confidence": "medium", "entity_ids": ["high-priesthood"], "evidence_ids": ["high-priesthood:historical_context:0", "high-priesthood:historical_setting:0"], "facts": ["The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.", "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule."], "id": "syn_why_it_matters_e417e7242640", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_historical_context_23b16dc492ae"], "source_anchors": ["Hebrews 7:11-28"], "verse_refs": ["Hebrews 7:11-28"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "heb-melchizedek", "passage_anchors": ["Hebrews 7:1-28"], "source_ids": ["heb-greek", "mason", "nets-lxx"]}, {"confidence": "high", "id": "heb-p46", "passage_anchors": ["Hebrews 1:1-13:25"], "source_ids": ["ntvmr", "p46"]}, {"confidence": "high", "id": "heb-priesthood-change", "passage_anchors": ["Hebrews 7:11-19"], "source_ids": ["ell-ing", "heb-greek", "levine-jant"]}, {"confidence": "high", "id": "heb-sinaiticus", "passage_anchors": ["Hebrews 1:1-13:25"], "source_ids": ["ntvmr", "sinaiticus"]}, {"confidence": "high", "id": "hebrews:interpretive_note:13", "passage_anchors": ["Hebrews 7:1-28"], "source_ids": ["heb-greek", "mason", "nets-lxx"]}, {"confidence": "high", "id": "hebrews:interpretive_note:19", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["barmash", "levine-jant", "thiessen"]}, {"confidence": "high", "id": "hebrews:interpretive_note:26", "passage_anchors": ["Hebrews 7:11-19"], "source_ids": ["barmash", "heb-greek", "levine-jant"]}, {"confidence": "high", "id": "hebrews:interpretive_note:39", "passage_anchors": ["Hebrews 1:1-13:25"], "source_ids": ["carter", "levine-jant", "mitzi-smith"]}, {"confidence": "medium", "id": "high-priesthood:ancient_near_east_context:0", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["exodus-28-29", "hebrews-4-10", "high-priesthood-historical-orientation", "leviticus-16", "numbers-35", "zechariah-3"]}, {"confidence": "medium", "id": "high-priesthood:hebraic_worldview:0", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["exodus-28-29", "hebrews-4-10", "high-priesthood-historical-orientation", "leviticus-16", "numbers-35", "zechariah-3"]}, {"confidence": "medium", "id": "high-priesthood:historical_context:0", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["exodus-28-29", "hebrews-4-10", "high-priesthood-historical-orientation", "leviticus-16", "numbers-35", "zechariah-3"]}, {"confidence": "medium", "id": "high-priesthood:historical_setting:0", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["exodus-28-29", "hebrews-4-10", "high-priesthood-historical-orientation", "leviticus-16", "numbers-35", "zechariah-3"]}, {"confidence": "medium", "id": "high-priesthood:original_audience:0", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["exodus-28-29", "hebrews-4-10", "high-priesthood-historical-orientation", "leviticus-16", "numbers-35", "zechariah-3"]}, {"confidence": "medium", "id": "high-priesthood:second_temple_context:0", "passage_anchors": ["Hebrews 7:11-28"], "source_ids": ["exodus-28-29", "hebrews-4-10", "high-priesthood-historical-orientation", "leviticus-16", "numbers-35", "zechariah-3"]}, {"confidence": "high", "id": "leviticus:interpretive_note:3", "passage_anchors": ["Hebrews 7-10"], "source_ids": ["leviticus-1-27", "wenham-leviticus"]}, {"confidence": "medium", "id": "priesthood:ancient_near_east_context:0", "passage_anchors": ["Hebrews 7:1-28"], "source_ids": ["1-peter-2", "exodus-28-29", "hebrews-4-7", "leviticus-8-16", "numbers-18", "priesthood-historical-orientation", "psalm-110"]}, {"confidence": "medium", "id": "priesthood:hebraic_worldview:0", "passage_anchors": ["Hebrews 7:1-28"], "source_ids": ["1-peter-2", "exodus-28-29", "hebrews-4-7", "leviticus-8-16", "numbers-18", "priesthood-historical-orientation", "psalm-110"]}, {"confidence": "medium", "id": "priesthood:historical_context:0", "passage_anchors": ["Hebrews 7:1-28"], "source_ids": ["1-peter-2", "exodus-28-29", "hebrews-4-7", "leviticus-8-16", "numbers-18", "priesthood-historical-orientation", "psalm-110"]}, {"confidence": "medium", "id": "priesthood:second_temple_context:0", "passage_anchors": ["Hebrews 7:1-28"], "source_ids": ["1-peter-2", "exodus-28-29", "hebrews-4-7", "leviticus-8-16", "numbers-18", "priesthood-historical-orientation", "psalm-110"]}, {"confidence": "medium", "id": "what-is-the-role-of-priests:ancient_near_east_context:0", "passage_anchors": ["Hebrews 7:23-28"], "source_ids": ["1-peter-2", "exodus-28", "exodus-29", "hebrews-4", "hebrews-7-10", "leviticus-10", "malachi-2", "numbers-6", "what-is-the-role-of-priests-historical-orientation"]}, {"confidence": "medium", "id": "what-is-the-role-of-priests:historical_context:0", "passage_anchors": ["Hebrews 7:23-28"], "source_ids": ["1-peter-2", "exodus-28", "exodus-29", "hebrews-4", "hebrews-7-10", "leviticus-10", "malachi-2", "numbers-6", "what-is-the-role-of-priests-historical-orientation"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Hebrews 7",
+  "book": "Hebrews",
+  "chapter": 7,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Hebrews 7:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Hebrews 7:
+   for example `Hebrews 7:1` or `Hebrews 7:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Hebrews 7:1", "Hebrews 7:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 5a548e7da9466d0dce61a960663d50570603e7eb1aec0c19a8808891012aace7.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v1
+Choose one or more complete provenance_refs for each prose block.
+A provenance reference selects one precomputed reader-idea ancestry path.
+BHF will resolve each selected path to the canonical synthesis and evidence
+fields after generation. Do not choose or emit synthesis_ids or evidence_ids
+manually, and do not combine evidence from different paths.
+Only path IDs listed below are valid for this chapter.
+
+IDEA reader_idea_9ba0f1d7cb4477f2: Hebrews
+- {"evidence_count": 1, "kind": "cultural_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_f192f7f7f1d1a40332b15d1b", "synthesis_unit": "syn_cultural_context_7e97def47d97", "verse_refs": ["Hebrews 7:11-19"]}
+- {"evidence_count": 1, "kind": "interpretive_questions", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_142d83c0eeec1d409a9078b2", "synthesis_unit": "syn_interpretive_questions_498fc45e532a", "verse_refs": ["Hebrews 7:11-19"]}
+- {"evidence_count": 3, "kind": "interpretive_questions", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_624c1eaec6463d6417894ab3", "synthesis_unit": "syn_interpretive_questions_ddddfc6a6c35", "verse_refs": ["Hebrews 7:1-28", "Hebrews 7:11-28"]}
+- {"evidence_count": 3, "kind": "why_it_matters", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_37391ba0a98dd498a5caea70", "synthesis_unit": "syn_why_it_matters_01c5639da866", "verse_refs": ["Hebrews 7:1-28", "Hebrews 7:11-28"]}
+
+IDEA reader_idea_d052fc3c49d30576: Priesthood
+- {"evidence_count": 3, "kind": "cultural_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_fb0864370bd89b5be6c1fc26", "synthesis_unit": "syn_cultural_context_8f0b4717852a", "verse_refs": ["Hebrews 7:1-28"]}
+- {"evidence_count": 1, "kind": "historical_context", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_e63c04a3470c96f277dc9cbc", "synthesis_unit": "syn_historical_context_4fb87faf329b", "verse_refs": ["Hebrews 7:1-28"]}
+- {"evidence_count": 3, "kind": "why_it_matters", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_hebrews_007_c1ac536fb520ae55f12f73b9", "synthesis_unit": "syn_why_it_matters_35540763bda6", "verse_refs": ["Hebrews 7:1-28"]}
+
+IDEA reader_idea_723e6dad86a11350: Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.
+- {"evidence_count": 2, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_hebrews_007_cd875cbbd5af5e1b477e35fc", "synthesis_unit": "syn_surrounding_passages_1fc633db60d8", "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 1:1-14", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 8:1-13", "Hebrews 9:1-28"]}
+- {"evidence_count": 1, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_hebrews_007_57c1120bb2d516a16cc67468", "synthesis_unit": "syn_surrounding_passages_945970ac70fa", "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 1:1-14", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 8:1-13", "Hebrews 9:1-28"]}
+- {"evidence_count": 2, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_hebrews_007_738c1aa80fdc827c157a1901", "synthesis_unit": "syn_surrounding_passages_f84c47e0caf2", "verse_refs": ["Hebrews 10:1-39", "Hebrews 11:1-40", "Hebrews 12:1-29", "Hebrews 13:1-25", "Hebrews 1:1-14", "Hebrews 2:1-18", "Hebrews 3:1-19", "Hebrews 4:1-16", "Hebrews 5:1-14", "Hebrews 6:1-20", "Hebrews 8:1-13", "Hebrews 9:1-28"]}
+
+IDEA reader_idea_b69cc5c83b4d0b6e: Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own…
+- {"evidence_count": 1, "kind": "surrounding_passages", "passage_scope": "SURROUNDING_PASSAGE", "provenance_ref": "reader_path_hebrews_007_48400cb649dc78ce83c7ccaf", "synthesis_unit": "syn_surrounding_passages_699244a044f3", "verse_refs": ["Hebrews 10:1-39", "Hebrews 8:1-13", "Hebrews 9:1-28"]}
+
+PROVENANCE OUTPUT ADAPTER:
+In every block, replace the example synthesis_ids/evidence_ids fields
+with exactly this field:
+  "provenance_refs": ["reader_path_..."]
+Use one or more listed path IDs when a block combines distinct supported
+ideas. Do not emit any path ID from another chapter or invent one.
+This adapter changes only machine-readable provenance selection; keep
+the prompt 1.7 prose, breadth, uncertainty, and reader-facing rules.

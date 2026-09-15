@@ -1,0 +1,126 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-parsed-output-v1",
+  "reference": "Numbers 36",
+  "raw_sha256": "cab4d57a1e907dea955c36f7b76861dbb4a68d469d2b125c25ba8cc3c49c6bd6",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Numbers 36",
+    "book": "Numbers",
+    "chapter": 36,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "language_literary",
+        "title": "The Journey’s Closing Setting",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The closing notice places these commands on the plains of Moab. Numbers begins at Sinai and ends here, with Egypt remembered as the place left behind. Across the book, the geographical movement runs from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+            "verse_refs": [
+              "Numbers 36:13"
+            ],
+            "evidence_ids": [
+              "numbers:interpretive_note:0",
+              "numbers-literary-journey"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_22c305617559",
+              "syn_language_literary_ac87ceb765b0"
+            ],
+            "confidence": "high",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Preparing for the Inheritance",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Numbers 36 concludes a larger stretch devoted to preparing a new generation for its land inheritance. That preparation includes a second census, inheritance rulings, Joshua’s commission, land boundaries, towns, and safeguards concerning tribal land. The ruling about Zelophehad’s daughters therefore stands among several arrangements addressing how the inheritance is to be received and retained.",
+            "evidence_ids": [
+              "numbers-inheritance-preparation"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_96a67d835ee8"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Numbers 36",
+    "book": "Numbers",
+    "chapter": 36,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "language_literary",
+        "title": "The Journey’s Closing Setting",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The closing notice places these commands on the plains of Moab. Numbers begins at Sinai and ends here, with Egypt remembered as the place left behind. Across the book, the geographical movement runs from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+            "verse_refs": [
+              "Numbers 36:13"
+            ],
+            "evidence_ids": [
+              "numbers:interpretive_note:0",
+              "numbers-literary-journey"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_22c305617559",
+              "syn_language_literary_ac87ceb765b0"
+            ],
+            "confidence": "high",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Preparing for the Inheritance",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Numbers 36 concludes a larger stretch devoted to preparing a new generation for its land inheritance. That preparation includes a second census, inheritance rulings, Joshua’s commission, land boundaries, towns, and safeguards concerning tribal land. The ruling about Zelophehad’s daughters therefore stands among several arrangements addressing how the inheritance is to be received and retained.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "numbers-inheritance-preparation"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_96a67d835ee8"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "41c7ce3c338bc41134124f22ff874be249e9d3a58b2c119faee7810c1eac4859",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.6",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "04e511d15ef3ddde2da41b6e1d289d4d03d20417b075ec86fd53c8f1c2075e14",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "qualification_id": "renderer-qualification-v2-prompt-1.6-gpt-5.6-sol-15f2be7cfcc60bb5ea31",
+  "packet_id": "commentary-renderer-qualification-v2-packet:f6ef3575ec68093f0e1a5260a6343e331c08dace4b100de4252a533ca0f0af63",
+  "packet_hash": "f6ef3575ec68093f0e1a5260a6343e331c08dace4b100de4252a533ca0f0af63"
+}

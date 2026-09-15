@@ -1,0 +1,38 @@
+{
+  "reference": "Ecclesiastes 4",
+  "packet_id": "commentary-v1.5-packet:3f030b79c4c9c16359d0edfb9a80eba066a2ba486ca3604208098c02b4e52f63",
+  "prompt_version": "1.5",
+  "evidence_hash": "c62095131c8b51f7e0ee4198f99b58d35cfc4d4ea20d80514957d63dbe6ff57b",
+  "synthesis_hash": "43925abddc5b31f7c3917f33b13b206749dee4ee350f1cebb6bdca663050ab63",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Ecclesiastes 4",
+    "book": "Ecclesiastes",
+    "chapter": 4,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "A cautious reading",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The available context is too limited to add substantial historical or cultural detail to Ecclesiastes 4. Its interpretive question is disputed, so broader claims about the chapter should remain tentative rather than being supplied from outside the chapter's context.",
+            "verse_refs": [
+              "Ecclesiastes 4:1-3"
+            ],
+            "evidence_ids": [
+              "ecclesiastes-oppression-injustice"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_13c33deb4e9b"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

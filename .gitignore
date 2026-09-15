@@ -42,3 +42,11 @@ sources/openscriptures/
 
 # agents
 .agents
+
+# Portable external-renderer exchange payload; the immutable qualification
+# manifest is tracked, while the uploadable ZIP is deliberately local.
+.bhf-data/bhf-commentary-candidates/renderer-qualification-v1/*/renderer-qualification-*-input.zip
+
+# The retained candidate namespace remains visible; only its obsolete
+# top-level scratch-session directory is ignored.
+.bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/runs/

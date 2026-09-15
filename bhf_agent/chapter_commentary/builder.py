@@ -10,6 +10,7 @@ from typing import Any, Iterable
 
 from bhf_agent import bible
 from bhf_agent.config import AgentConfig
+from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
 
 from .evidence_bundling import get_chapter_evidence_bundle
 from .generator import CommentaryGenerator
@@ -22,6 +23,11 @@ from .models import (
     CommentaryStatus,
 )
 from .storage import load_commentary, save_commentary
+from .synthesis import (
+    SYNTHESIS_COMPILER_VERSION,
+    SYNTHESIS_SCHEMA_VERSION,
+    compile_chapter_synthesis,
+)
 
 
 PROGRESS_FILE = ".bhf-commentary-progress.json"
@@ -137,7 +143,11 @@ class CommentaryBuilder:
                 and commentary.generated_metadata.commentary_prompt_version == COMMENTARY_PROMPT_VERSION
                 and commentary.generated_metadata.commentary_schema_version == COMMENTARY_SCHEMA_VERSION
             ):
-                bundle = get_chapter_evidence_bundle(book, chapter)
+                bundle = get_chapter_evidence_bundle(
+                    book,
+                    chapter,
+                    evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+                )
             status = self._effective_status(commentary, book, chapter, bundle)
             if status not in counts or status in {CommentaryStatus.PENDING.value, CommentaryStatus.GENERATING.value}:
                 status = CommentaryStatus.PENDING.value
@@ -177,7 +187,11 @@ class CommentaryBuilder:
                 break
             existing = load_commentary(self.storage_dir, book, chapter_num)
             bundle = (
-                get_chapter_evidence_bundle(book, chapter_num)
+                get_chapter_evidence_bundle(
+                    book,
+                    chapter_num,
+                    evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+                )
                 if self._metadata_can_have_hash_drift(existing)
                 else None
             )
@@ -218,7 +232,11 @@ class CommentaryBuilder:
         for book, chapter_num in chapters:
             existing = load_commentary(self.storage_dir, book, chapter_num)
             bundle = (
-                get_chapter_evidence_bundle(book, chapter_num)
+                get_chapter_evidence_bundle(
+                    book,
+                    chapter_num,
+                    evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+                )
                 if self._metadata_can_have_hash_drift(existing)
                 else None
             )
@@ -241,7 +259,11 @@ class CommentaryBuilder:
             raise ValueError(f"Invalid chapter: {book} {chapter}") from exc
 
         existing = load_commentary(self.storage_dir, book_name, chapter)
-        bundle = get_chapter_evidence_bundle(book_name, chapter)
+        bundle = get_chapter_evidence_bundle(
+            book_name,
+            chapter,
+            evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+        )
         if not force and existing and self._effective_status(existing, book_name, chapter, bundle) == CommentaryStatus.VALIDATED.value:
             return existing
 
@@ -254,12 +276,21 @@ class CommentaryBuilder:
 
     def _generate_and_save(self, book: str, chapter: int, reference: str, *, bundle=None) -> Any:
         """Generate one chapter using an already loaded bundle when available."""
-        bundle = bundle or get_chapter_evidence_bundle(book, chapter)
+        bundle = bundle or get_chapter_evidence_bundle(
+            book,
+            chapter,
+            evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+        )
         request = CommentaryGenerationRequest(
             book=book,
             chapter=chapter,
             reference=reference,
             evidence_hash=bundle.evidence_hash if bundle else "",
+            synthesis_hash=(
+                compile_chapter_synthesis(bundle, book=book, chapter=chapter).synthesis_hash
+                if bundle is not None
+                else None
+            ),
         )
         return self.generator.generate(request)
 
@@ -273,10 +304,17 @@ class CommentaryBuilder:
             or metadata.commentary_schema_version != COMMENTARY_SCHEMA_VERSION
             or commentary.book != book
             or commentary.chapter != chapter
+            or metadata.synthesis_schema_version != SYNTHESIS_SCHEMA_VERSION
+            or metadata.synthesis_compiler_version != SYNTHESIS_COMPILER_VERSION
         ):
             return CommentaryStatus.STALE.value
-        if bundle is not None and metadata.evidence_hash != bundle.evidence_hash:
-            return CommentaryStatus.STALE.value
+        if bundle is not None:
+            synthesis = compile_chapter_synthesis(bundle, book=book, chapter=chapter)
+            if (
+                metadata.evidence_hash != bundle.evidence_hash
+                or metadata.synthesis_hash != synthesis.synthesis_hash
+            ):
+                return CommentaryStatus.STALE.value
         return commentary.status
 
     @staticmethod
@@ -286,6 +324,8 @@ class CommentaryBuilder:
             metadata
             and metadata.commentary_prompt_version == COMMENTARY_PROMPT_VERSION
             and metadata.commentary_schema_version == COMMENTARY_SCHEMA_VERSION
+            and metadata.synthesis_schema_version == SYNTHESIS_SCHEMA_VERSION
+            and metadata.synthesis_compiler_version == SYNTHESIS_COMPILER_VERSION
         )
 
     @staticmethod

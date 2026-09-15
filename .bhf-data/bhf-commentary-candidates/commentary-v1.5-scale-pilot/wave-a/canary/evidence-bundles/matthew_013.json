@@ -1,0 +1,1067 @@
+{
+  "passage_ref": "Matthew 13",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "kingdom-theology:ancient_near_east_context:0",
+      "claim": "Ancient background for Kingdom Theology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Psalm 2:1-12, Daniel 2:31-45, kingdom-theme, and theology-of-the-kingdom without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "matthew-4",
+        "matthew-13",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:31-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theology",
+        "parent_title": "Kingdom Theology",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kingdom-theology:historical_context:0",
+      "claim": "Kingdom Theology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "matthew-4",
+        "matthew-13",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:31-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "kingdom-theology",
+        "parent_title": "Kingdom Theology",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "matthew-discourses",
+      "claim": "Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "davies-allison-matthew",
+        "france-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:53"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "matthew-parables",
+      "claim": "Matthew 13 gathers kingdom parables with audience changes, Isaiah hardening language, and selective explanations.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "france-matthew",
+        "davies-allison-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:1-53"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "matthew-rural-economy",
+      "claim": "Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy.",
+      "category": "economics",
+      "source_ids": [
+        "early-roman-archaeology",
+        "keddie-class-power",
+        "riches-roman-palestine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:1-33"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "theology-of-the-kingdom:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of the Kingdom includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Psalm 2:1-12, Daniel 2:31-45, kingdom-theme, and matthew without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "matthew-4",
+        "matthew-13",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:31-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-the-kingdom",
+        "parent_title": "Theology of the Kingdom",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "theology-of-the-kingdom:historical_context:0",
+      "claim": "Theology of the Kingdom is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "matthew-4",
+        "matthew-13",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:31-33"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-the-kingdom",
+        "parent_title": "Theology of the Kingdom",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-a-parable:ancient_near_east_context:0",
+      "claim": "Story-based moral instruction was familiar in the ancient world, but Jesus uses parables to announce God's reign.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:10-17",
+        "Matthew 13:34-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.928,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-a-parable:historical_context:0",
+      "claim": "Jesus uses parables in first-century teaching settings to confront unbelief and form disciples.",
+      "category": "history",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:10-17",
+        "Matthew 13:34-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.928,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+      "claim": "Repetition was mnemonic and pedagogical in the ancient world; biblical repetition also signals theological significance.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "exodus-15",
+        "deuteronomy-6",
+        "psalm-78",
+        "isaiah-40",
+        "matthew-13",
+        "hebrews-1",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-does-the-bible-repeat-themes",
+        "parent_title": "Why does the Bible repeat themes?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-does-the-bible-repeat-themes:historical_context:0",
+      "claim": "Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "exodus-15",
+        "deuteronomy-6",
+        "psalm-78",
+        "isaiah-40",
+        "matthew-13",
+        "hebrews-1",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-does-the-bible-repeat-themes",
+        "parent_title": "Why does the Bible repeat themes?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "zephaniah-new-testament",
+      "claim": "Matthew and Revelation receive language and motifs comparable with Zephaniah, but direct quotation, shared tradition, and broad prophetic reuse must be distinguished passage by passage.",
+      "category": "culture",
+      "source_ids": [
+        "zephaniah-new-testament",
+        "oxford-early-christianity",
+        "oxford-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 13:41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zephaniah",
+        "parent_title": "Zephaniah",
+        "parent_type": "book",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Daniel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-2",
+        "canonical_object_ids": [
+          "kingdom-theology",
+          "theology-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Daniel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7",
+        "canonical_object_ids": [
+          "kingdom-theology",
+          "theology-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Matthew, Volume 1: 1-7",
+        "author": "Davies, W. D., and Dale C. Allison Jr.",
+        "publisher": "T&T Clark / Bloomsbury",
+        "year": 1988,
+        "locator": "International Critical Commentary; representative publisher page for three-volume work",
+        "url": "https://www.bloomsbury.com/us/matthew-9780567094810/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-genealogy",
+          "matthew-torah",
+          "matthew-eschatology"
+        ],
+        "notes": "Major historical-critical commentary; all volume-specific locators require reviewer verification.",
+        "id": "davies-allison-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Deuteronomy 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-6",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "The Early Roman (Herodian) Period, 40 BCE-70 CE",
+        "author": "Magness, Jodi",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "The Archaeology of the Holy Land, chapter 9",
+        "url": "https://www.cambridge.org/core/books/abs/archaeology-of-the-holy-land/early-roman-herodian-period-40-bce70-ce/0A26A9F4D24BE3BA15CB261FE3A171F7",
+        "source_type": "excavation-report",
+        "supports": [
+          "archaeology",
+          "historical-context",
+          "matthew-rural-economy"
+        ],
+        "notes": "Archaeological synthesis for Bethlehem, Galilee, Jerusalem, rural life, and Early Roman material culture.",
+        "id": "early-roman-archaeology",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Exodus 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-15",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "The Gospel of Matthew",
+        "author": "France, R. T.",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825018/the-gospel-of-matthew/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Major exegetical commentary focused on Matthew's final form in historical and cultural context.",
+        "id": "france-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Genesis 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Isaiah 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-40",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Keddie, Anthony",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "The Socioeconomic Setting of Judaism and Christian Origins",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-rural-economy",
+          "matthew-temple-tax"
+        ],
+        "notes": "Literary, documentary, epigraphic, and archaeological analysis of taxation, tenancy, temple, and unequal power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Luke 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-10",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Luke 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-15",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Mark 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-4",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-13",
+        "canonical_object_ids": [
+          "kingdom-theology",
+          "theology-of-the-kingdom",
+          "what-is-a-parable",
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Matthew 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-21",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-25",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-4",
+        "canonical_object_ids": [
+          "kingdom-theology",
+          "theology-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "zephaniah-new-testament"
+        ],
+        "notes": "Overview of New Testament and early Christian transmission and reception.",
+        "id": "oxford-early-christianity",
+        "canonical_object_ids": [
+          "zephaniah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of the Minor Prophets",
+        "author": "Julia M. O'Brien, editor",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Historical, literary, reception, and book-specific essays",
+        "url": "https://academic.oup.com/edited-volume/38566",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "second-temple-context",
+          "later-christian-reception",
+          "zephaniah-composition",
+          "zephaniah-new-testament"
+        ],
+        "notes": "Multi-perspective handbook on manuscripts, genres, the Twelve, reception, and contested issues.",
+        "id": "oxford-twelve",
+        "canonical_object_ids": [
+          "zephaniah"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "kingdom-theology",
+          "theology-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Psalm 78",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-78",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Revelation 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-11",
+        "canonical_object_ids": [
+          "kingdom-theology",
+          "theology-of-the-kingdom"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "The Political, Economic, Social, and Cultural Context of First-Century Palestinian Judaism",
+        "author": "Riches, John",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "The World of Jesus, chapter 1, pages 10-29",
+        "url": "https://www.cambridge.org/core/books/abs/world-of-jesus/political-economic-social-and-cultural-context-of-firstcentury-palestinian-judaism/78E9FC5FF52226BA04868426D9EDF481",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-roman-setting"
+        ],
+        "notes": "Broad political and socioeconomic context for Herodian and Roman Jewish life.",
+        "id": "riches-roman-palestine",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is a parable?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-a-parable-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "New Testament reception and comparanda for Zephaniah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 13:41; Revelation 6:12-17; 21:1-4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "zephaniah-new-testament"
+        ],
+        "notes": "Primary Christian reception texts; possible allusion must be distinguished from direct quotation.",
+        "id": "zephaniah-new-testament",
+        "canonical_object_ids": [
+          "zephaniah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "kingdom-theology",
+        "type": "theology",
+        "title": "Kingdom Theology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "theology-of-the-kingdom",
+        "type": "theology",
+        "title": "Theology of the Kingdom",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "what-is-a-parable",
+        "type": "faq",
+        "title": "What is a parable?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.928
+      },
+      {
+        "id": "why-does-the-bible-repeat-themes",
+        "type": "faq",
+        "title": "Why does the Bible repeat themes?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "zephaniah",
+        "type": "book",
+        "title": "Zephaniah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "40f475299e6f76d57543dec8dc3e89115cb619add5eff956e18f1473e2641aee",
+  "evidence_hash_version": "2"
+}

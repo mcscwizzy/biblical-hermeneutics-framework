@@ -1,0 +1,57 @@
+{
+  "reference": "Psalms 73",
+  "book": "Psalms",
+  "chapter": 73,
+  "evidence_hash": "844938d15b36fe8792fed7fcc443af64adde5556d793c91638b57658c8bb7b13",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "314f1929020c99be3fa78612e6ed31cebd7fa8a2c5eb3f5a534613f15e234523",
+  "evidence_availability": "THIN",
+  "synthesis_units": [],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 2,
+    "used_evidence_ids": [],
+    "unused_evidence_ids": [
+      "job-the-sufferer:ancient_near_east_context:0",
+      "job-the-sufferer:historical_context:0"
+    ],
+    "evidence_categories": {
+      "culture": 1,
+      "history": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 0,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {},
+    "relationship_unit_count": 0
+  }
+}

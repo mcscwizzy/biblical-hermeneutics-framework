@@ -1,0 +1,88 @@
+{
+  "reference": "1 Chronicles 10",
+  "book": "1 Chronicles",
+  "chapter": 10,
+  "evidence_hash": "a4af90f674ada827af7602b699a42f701e2405c64b15d29f01e25caff1c5909f",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "c3596ab6964625d19739fae8f38e32b404990ba809dd5e07ec88c51fb2f13b75",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_historical_context_c68d430b0543",
+      "kind": "historical_context",
+      "facts": [
+        "The Chronicler interprets Saul's death as the result of unfaithfulness, failure to keep the LORD's word, consulting a medium, and failure to seek the LORD."
+      ],
+      "verse_refs": [
+        "1 Chronicles 10:13-14"
+      ],
+      "evidence_ids": [
+        "first-chronicles-saul-unfaithful"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Chronicles 10:13-14"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "culture_social",
+      "reason": "No cultural or social evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "first-chronicles-saul-unfaithful"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "history": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "historical_context": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

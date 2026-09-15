@@ -1,0 +1,158 @@
+{
+  "reference": "Matthew 24",
+  "packet_id": "commentary-v1.5-packet:05bd224e81aa98d1898321ea981ce20178afc73de3d4f74dcbec2ffe590dcdad",
+  "prompt_version": "1.5",
+  "evidence_hash": "6e15f0ed48efdd90f3046a46c1ae570f1d84ef1b4803cc84e15733d8d16fbcb6",
+  "synthesis_hash": "764244feef957e249aaf1fd4d2a820291401155cbdd765fa4e35b55d4e9c15f3",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Matthew 24",
+    "book": "Matthew",
+    "chapter": 24,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "A cultural detail that clarifies the passage is this: Matthew cannot legitimately be used to excuse abuse, stigmatize disability or mental illness, enforce misogyny or anti-LGBTQ harm, blame poverty, set apocalyptic dates, or map ancient judgments onto modern peoples.",
+            "verse_refs": [
+              "Matthew 24:36"
+            ],
+            "evidence_ids": [
+              "matthew-application-boundaries"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_42ab51f79443"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: Beasts, numbers, and cosmic imagery were common ways to speak about empires and divine sovereignty.",
+            "verse_refs": [
+              "Matthew 24:29-35"
+            ],
+            "evidence_ids": [
+              "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_8ad92fd6f46d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_003",
+            "text": "A cultural detail that clarifies the passage is this: Ancient background for Glorification includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and second-coming without letting comparison replace the biblical witness. Ancient background for Eschatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, second-coming, and final-judgment without letting comparison replace the biblical witness. Ancient background for Second Coming includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and final-judgment without letting comparison replace the biblical witness. Ancient background for Final Judgment includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Daniel 7:13-14, Daniel 12:1-3, eschatology, and second-coming without letting comparison replace the biblical witness.",
+            "verse_refs": [
+              "Matthew 24:29-31"
+            ],
+            "evidence_ids": [
+              "eschatology:ancient_near_east_context:0",
+              "final-judgment:ancient_near_east_context:0",
+              "glorification:ancient_near_east_context:0",
+              "second-coming:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_08fea2145232",
+              "syn_cultural_context_818e18d222cb",
+              "syn_cultural_context_c88cf3545be4",
+              "syn_cultural_context_f794bf232c2c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_004",
+            "text": "Historically, this chapter is read within the following setting: Apocalyptic writing emerges in pressure, exile, and persecution as faithful communities ask how God will act.",
+            "verse_refs": [
+              "Matthew 24:29-35"
+            ],
+            "evidence_ids": [
+              "how-should-i-read-apocalyptic-literature:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_fbbc67e03b4e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_005",
+            "text": "Historically, this chapter is read within the following setting: Eschatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness. Second Coming is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness. Glorification is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness. Final Judgment is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+            "verse_refs": [
+              "Matthew 24:29-31"
+            ],
+            "evidence_ids": [
+              "eschatology:historical_context:0",
+              "final-judgment:historical_context:0",
+              "glorification:historical_context:0",
+              "second-coming:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_12a2abc8a5dd",
+              "syn_historical_context_2471693e65bd",
+              "syn_historical_context_56636cb9fed8",
+              "syn_historical_context_cd142eb0793d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_006",
+            "text": "This helps frame an interpretive question raised by the passage: Many scholars date Matthew approximately 70-100 CE, often after Jerusalem's temple destruction, but no exact year is textually stated. Matthew 24-25 combines temple destruction, tribulation, Son of Man coming, uncertainty of timing, readiness, stewardship, and judgment. Many scholars date Matthew approximately 70-100 CE, often after Jerusalem's temple destruction, but no exact year is textually stated. Matthew 24-25 combines temple destruction, tribulation, Son of Man coming, uncertainty of timing, readiness, stewardship, and judgment.",
+            "verse_refs": [
+              "Matthew 24:1-2",
+              "Matthew 24:1-51"
+            ],
+            "evidence_ids": [
+              "matthew-date",
+              "matthew-eschatology"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_dc964a22b9b5",
+              "syn_why_it_matters_a2823c8f70e1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_007",
+            "text": "This helps frame an interpretive question raised by the passage: The Synoptic Gospels and Revelation reuse Danielic abomination, distress, humanlike-figure, beast, horn, time, saint, book, and judgment imagery in new literary settings. The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed. The Synoptic Gospels and Revelation reuse Danielic abomination, distress, humanlike-figure, beast, horn, time, saint, book, and judgment imagery in new literary settings. The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed.",
+            "verse_refs": [
+              "Matthew 24:1-51",
+              "Matthew 24:15-28"
+            ],
+            "evidence_ids": [
+              "daniel-new-testament-reuse",
+              "daniel:interpretive_note:19"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_7799e32fb174",
+              "syn_why_it_matters_bf29e1c31ca9"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

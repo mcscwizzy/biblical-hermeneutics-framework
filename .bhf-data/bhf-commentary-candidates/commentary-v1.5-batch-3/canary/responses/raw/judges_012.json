@@ -1,0 +1,57 @@
+{
+  "reference": "Judges 12",
+  "packet_id": "commentary-v1.5-packet:89dd0b2cf0e053af3dd984b80533528aca4dfbc9ab8c2614138cc60ea0382fac",
+  "prompt_version": "1.5",
+  "evidence_hash": "6bebf831d680074a2f8074e433347704b67ae9273bd493f8c12759e775f56caa",
+  "synthesis_hash": "da04e7fa1a498d6af885395f9708542585e3e5a97e984308f7254c61da3c9985",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Judges 12",
+    "book": "Judges",
+    "chapter": 12,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "A restrained reading",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The available context for Judges 12 is thin and concerns the chapter's place within the surrounding Judges narrative. It does not support a fuller reconstruction of the conflict, the place names, or the speech distinction at the Jordan for this commentary.",
+            "verse_refs": [
+              "Judges 1",
+              "Judges 10:1-18",
+              "Judges 11:1-40",
+              "Judges 13:1-25",
+              "Judges 14:1-20",
+              "Judges 15:1-20",
+              "Judges 16:1-31",
+              "Judges 17:1-13",
+              "Judges 18:1-31",
+              "Judges 19:1-30",
+              "Judges 20:1-48",
+              "Judges 21:1-25",
+              "Judges 2:1-23",
+              "Judges 3:1-31",
+              "Judges 4:1-24",
+              "Judges 5:1-31",
+              "Judges 6:1-40",
+              "Judges 7:1-25",
+              "Judges 8:1-35",
+              "Judges 9:1-57"
+            ],
+            "evidence_ids": [
+              "judges-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_4c1af90ce2ad"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

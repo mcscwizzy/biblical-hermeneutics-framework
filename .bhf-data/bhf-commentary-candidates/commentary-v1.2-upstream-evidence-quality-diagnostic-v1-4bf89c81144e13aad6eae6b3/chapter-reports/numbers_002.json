@@ -1,0 +1,844 @@
+{
+  "case": "numbers_002",
+  "classification": {
+    "primary": "PASSAGE_COVERAGE_GAP",
+    "secondary": []
+  },
+  "coverage": {
+    "any_evidence_percentage": 100.0,
+    "any_evidence_verses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "chapter_verse_count": 34,
+    "spans": [
+      {
+        "any_evidence": true,
+        "any_evidence_verses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "genuinely_useful_evidence": true,
+        "only_generic_or_suspicious": false,
+        "requested_interval": "Numbers 2:1-34",
+        "selected_commentary_ancestry": true,
+        "useful_evidence_verses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      }
+    ],
+    "useful_evidence_percentage": 100.0,
+    "useful_evidence_verses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ]
+  },
+  "duplicate_groups": [],
+  "evidence_trace": [
+    {
+      "canonical_result_identity": {
+        "object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "object_json_sha256": "160addcf865d07e43c76184c5781a8f6a3ca24773b4912bab901abc66cae468c"
+      },
+      "ckl_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "ckl_object_type": "cultural_background",
+      "ckl_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+      "claim": "Ramesside Qadesh relief compositions depict the royal campaign tent at the center of a bounded military camp; scholars have compared aspects of its plan and centrality with the tabernacle and Israelite camp.",
+      "evidence_category": "archaeology",
+      "evidence_confidence": "medium",
+      "evidence_item_id": "qadesh-royal-tent-comparison",
+      "exact_matched_reference": [
+        "Numbers 2:1-34"
+      ],
+      "explicit_significance": [
+        true,
+        true
+      ],
+      "final_blocks": [
+        {
+          "block_id": "block_1",
+          "final_block": "The arrangement of Israel around the tent of meeting has been compared with Ramesside Qadesh reliefs depicting a royal campaign tent at the center of a bounded military camp. This comparison can help readers picture mobile architecture occupying a camp’s organizing center, but it remains disputed and does not establish that the royal tent was a sanctuary or that it supplied a blueprint for Israel’s camp.",
+          "section_kind": "why_it_matters",
+          "section_title": "Why the Camp’s Center Matters"
+        }
+      ],
+      "interpretation_level": [
+        "disputed",
+        "disputed"
+      ],
+      "originating_ckl_file_or_database_identity": {
+        "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+        "path": "framework/canonical_library/objects/cultural_background/ancient-portable-sanctuaries-and-tabernacle-comparisons.json",
+        "sha256": "20643ca946c086ee8ed8861fd072a33ac2d88d185839d62ac8de944b118e5d23"
+      },
+      "passage_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "passage_scope": [
+        "CURRENT_CHAPTER",
+        "CURRENT_CHAPTER"
+      ],
+      "queried_chapter": "Numbers 2",
+      "raw_stored_scripture_references": [
+        {
+          "notes": "Materials, sanctuary purpose, and pattern.",
+          "reference": "Exodus 25:1-9",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Curtains, coverings, frames, veil, and screen.",
+          "reference": "Exodus 26:1-37",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Courtyard enclosure and entrance.",
+          "reference": "Exodus 27:9-19",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Covering and transport responsibilities.",
+          "reference": "Numbers 4:1-33",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Departure order and transport of the dwelling.",
+          "reference": "Numbers 10:11-28",
+          "relationship": "supporting"
+        }
+      ],
+      "relationship_notes_attached_to_scripture_reference": [
+        {
+          "location": "evidence_items[1].scripture_references",
+          "value": {
+            "reference": "Numbers 2:1-34",
+            "relationship": "comparative",
+            "relevance_rationale": "The relief's central royal tent can be compared cautiously with the textual centrality of the dwelling in Israel's camp.",
+            "temporal_relation": "earlier-comparative",
+            "weight": 6
+          }
+        }
+      ],
+      "relevance_classification": "DEFENSIBLE_CONTEXT",
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "scholarly-reconstruction",
+        "broad_tag_only": false,
+        "certainty": "plausible",
+        "claim_type": "",
+        "dispute_status": "interpretive_uncertainty",
+        "evidence_type": "material-culture",
+        "exploration_potential": 1.0,
+        "field": "",
+        "note_type": "",
+        "object_importance": 94,
+        "overview_priority": 0,
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "comparative",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.914,
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "verse_distance": 0
+      },
+      "relevance_rationale": "The disputed sanctuary comparison is a specific contextual claim for the chapter-wide camp arrangement.",
+      "resulting_provenance_path_ids": [
+        "render_path_numbers_002_7061c95c42a4eff42ee07e19",
+        "render_path_numbers_002_e73b9a368dd6738618b8c554"
+      ],
+      "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+      "retrieval_match_type": "scripture",
+      "retrieval_score_ranking": {
+        "rank": "unavailable",
+        "score": 0.914
+      },
+      "selected_by_renderer": true,
+      "selected_path_ids": [
+        "render_path_numbers_002_e73b9a368dd6738618b8c554"
+      ],
+      "source_anchors": [
+        [
+          "Numbers 2:1-34"
+        ],
+        [
+          "Numbers 2:1-34"
+        ]
+      ],
+      "source_ids": [
+        "qadesh-camp-reliefs",
+        "homan-to-your-tents-2002"
+      ],
+      "support_count": [
+        2,
+        2
+      ],
+      "synthesis_confidence": [
+        "medium",
+        "medium"
+      ],
+      "synthesis_ids": [
+        "syn_interpretive_questions_ede50de2e4f9",
+        "syn_why_it_matters_10105ef9796e"
+      ],
+      "synthesis_kind": [
+        "interpretive_questions",
+        "why_it_matters"
+      ],
+      "verse_refs": [
+        [
+          "Numbers 2:1-34"
+        ],
+        [
+          "Numbers 2:1-34"
+        ]
+      ]
+    },
+    {
+      "canonical_result_identity": {
+        "object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "object_json_sha256": "160addcf865d07e43c76184c5781a8f6a3ca24773b4912bab901abc66cae468c"
+      },
+      "ckl_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "ckl_object_type": "cultural_background",
+      "ckl_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+      "claim": "The reliefs show mobile royal architecture and camp centrality in New Kingdom Egypt but cannot identify the royal tent as a sanctuary or blueprint for Exodus.",
+      "evidence_category": "archaeology",
+      "evidence_confidence": "medium",
+      "evidence_item_id": "qadesh-royal-tent-comparison:passage-relevance",
+      "exact_matched_reference": [
+        "Numbers 2:1-34"
+      ],
+      "explicit_significance": [
+        true,
+        true
+      ],
+      "final_blocks": [
+        {
+          "block_id": "block_1",
+          "final_block": "The arrangement of Israel around the tent of meeting has been compared with Ramesside Qadesh reliefs depicting a royal campaign tent at the center of a bounded military camp. This comparison can help readers picture mobile architecture occupying a camp’s organizing center, but it remains disputed and does not establish that the royal tent was a sanctuary or that it supplied a blueprint for Israel’s camp.",
+          "section_kind": "why_it_matters",
+          "section_title": "Why the Camp’s Center Matters"
+        }
+      ],
+      "interpretation_level": [
+        "disputed",
+        "disputed"
+      ],
+      "originating_ckl_file_or_database_identity": {
+        "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite",
+        "path": "framework/canonical_library/objects/cultural_background/ancient-portable-sanctuaries-and-tabernacle-comparisons.json",
+        "sha256": "20643ca946c086ee8ed8861fd072a33ac2d88d185839d62ac8de944b118e5d23"
+      },
+      "passage_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "passage_scope": [
+        "CURRENT_CHAPTER",
+        "CURRENT_CHAPTER"
+      ],
+      "queried_chapter": "Numbers 2",
+      "raw_stored_scripture_references": [
+        {
+          "notes": "Materials, sanctuary purpose, and pattern.",
+          "reference": "Exodus 25:1-9",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Curtains, coverings, frames, veil, and screen.",
+          "reference": "Exodus 26:1-37",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Courtyard enclosure and entrance.",
+          "reference": "Exodus 27:9-19",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Covering and transport responsibilities.",
+          "reference": "Numbers 4:1-33",
+          "relationship": "primary"
+        },
+        {
+          "notes": "Departure order and transport of the dwelling.",
+          "reference": "Numbers 10:11-28",
+          "relationship": "supporting"
+        }
+      ],
+      "relationship_notes_attached_to_scripture_reference": [
+        {
+          "location": "evidence_items[1].scripture_references",
+          "value": {
+            "reference": "Numbers 2:1-34",
+            "relationship": "comparative",
+            "relevance_rationale": "The relief's central royal tent can be compared cautiously with the textual centrality of the dwelling in Israel's camp.",
+            "temporal_relation": "earlier-comparative",
+            "weight": 6
+          }
+        }
+      ],
+      "relevance_classification": "DEFENSIBLE_CONTEXT",
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "scholarly-reconstruction",
+        "broad_tag_only": false,
+        "certainty": "plausible",
+        "claim_type": "",
+        "dispute_status": "interpretive_uncertainty",
+        "evidence_type": "material-culture",
+        "exploration_potential": 1.0,
+        "field": "",
+        "note_type": "",
+        "object_importance": 94,
+        "overview_priority": 0,
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "passage_relationship": "comparative",
+        "presentation_role": "significance",
+        "retrieval_score": 0.914,
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "source_kind": "ckl_evidence_item",
+        "supports_evidence_ids": [
+          "qadesh-royal-tent-comparison"
+        ],
+        "verse_distance": 0
+      },
+      "relevance_rationale": "The disputed sanctuary comparison is a specific contextual claim for the chapter-wide camp arrangement.",
+      "resulting_provenance_path_ids": [
+        "render_path_numbers_002_7061c95c42a4eff42ee07e19",
+        "render_path_numbers_002_e73b9a368dd6738618b8c554"
+      ],
+      "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+      "retrieval_match_type": "scripture",
+      "retrieval_score_ranking": {
+        "rank": "unavailable",
+        "score": 0.914
+      },
+      "selected_by_renderer": true,
+      "selected_path_ids": [
+        "render_path_numbers_002_e73b9a368dd6738618b8c554"
+      ],
+      "source_anchors": [
+        [
+          "Numbers 2:1-34"
+        ],
+        [
+          "Numbers 2:1-34"
+        ]
+      ],
+      "source_ids": [
+        "qadesh-camp-reliefs",
+        "homan-to-your-tents-2002"
+      ],
+      "support_count": [
+        2,
+        2
+      ],
+      "synthesis_confidence": [
+        "medium",
+        "medium"
+      ],
+      "synthesis_ids": [
+        "syn_interpretive_questions_ede50de2e4f9",
+        "syn_why_it_matters_10105ef9796e"
+      ],
+      "synthesis_kind": [
+        "interpretive_questions",
+        "why_it_matters"
+      ],
+      "verse_refs": [
+        [
+          "Numbers 2:1-34"
+        ],
+        [
+          "Numbers 2:1-34"
+        ]
+      ]
+    }
+  ],
+  "fallback_catalog": {
+    "compiled_synthesis_unit_count": 2,
+    "distinct_factual_claims": 2,
+    "distinct_kinds": [
+      "interpretive_questions",
+      "why_it_matters"
+    ],
+    "distinct_selected_useful_path_choice_count": 1,
+    "distinct_source_objects": [
+      "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+    ],
+    "distinct_useful_path_choice_count": 2,
+    "distinct_verse_scopes": [
+      [
+        "Numbers 2:1-34"
+      ]
+    ],
+    "duplicate_groups": [],
+    "fallback_path_count": 2,
+    "renderer_selected_path_ids": [
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "selected_useful_path_ids": [
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "suspicious_or_false_positive_count": 0,
+    "useful_path_ids": [
+      "render_path_numbers_002_7061c95c42a4eff42ee07e19",
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "useful_unselected_path_ids": [
+      "render_path_numbers_002_7061c95c42a4eff42ee07e19"
+    ]
+  },
+  "metrics": {
+    "defensible_context_count": 2,
+    "directly_relevant_count": 0,
+    "distinct_useful_claim_count": 2,
+    "duplicate_or_near_duplicate_group_count": 0,
+    "false_positive_count": 0,
+    "generic_count": 0,
+    "raw_evidence_count": 2,
+    "raw_fallback_or_priority_path_count": 2,
+    "raw_synthesis_count": 2,
+    "selected_useful_claim_count": 2,
+    "selected_useful_path_count": 1,
+    "suspicious_count": 0,
+    "useful_path_count": 2,
+    "useful_unselected_claim_count": 0,
+    "useful_unselected_path_count": 1
+  },
+  "paths": [
+    {
+      "evidence_ids": [
+        "qadesh-royal-tent-comparison",
+        "qadesh-royal-tent-comparison:passage-relevance"
+      ],
+      "path": {
+        "ancestry_hashes": {
+          "evidence_hash": "eb48e6dc1118519c37ad91755b00bfaae73e7aec57a1789b5268a9274d7ebf1e",
+          "synthesis_hash": "9293a1e9b57a55ae9fd889fa39f2334b8327124099938bb1cbc9083e77238bd7"
+        },
+        "disputed": true,
+        "evidence_ids": [
+          "qadesh-royal-tent-comparison",
+          "qadesh-royal-tent-comparison:passage-relevance"
+        ],
+        "interpretation_level": "disputed",
+        "kind": "interpretive_questions",
+        "passage_scope": "CURRENT_CHAPTER",
+        "source_anchors": [
+          "Numbers 2:1-34"
+        ],
+        "synthesis_confidence": "medium",
+        "synthesis_id": "syn_interpretive_questions_ede50de2e4f9",
+        "verse_refs": [
+          "Numbers 2:1-34"
+        ]
+      },
+      "path_class": "fallback_renderable",
+      "path_id": "render_path_numbers_002_7061c95c42a4eff42ee07e19",
+      "selected": false
+    },
+    {
+      "evidence_ids": [
+        "qadesh-royal-tent-comparison",
+        "qadesh-royal-tent-comparison:passage-relevance"
+      ],
+      "path": {
+        "ancestry_hashes": {
+          "evidence_hash": "eb48e6dc1118519c37ad91755b00bfaae73e7aec57a1789b5268a9274d7ebf1e",
+          "synthesis_hash": "9293a1e9b57a55ae9fd889fa39f2334b8327124099938bb1cbc9083e77238bd7"
+        },
+        "disputed": true,
+        "evidence_ids": [
+          "qadesh-royal-tent-comparison",
+          "qadesh-royal-tent-comparison:passage-relevance"
+        ],
+        "interpretation_level": "disputed",
+        "kind": "why_it_matters",
+        "passage_scope": "CURRENT_CHAPTER",
+        "source_anchors": [
+          "Numbers 2:1-34"
+        ],
+        "synthesis_confidence": "medium",
+        "synthesis_id": "syn_why_it_matters_10105ef9796e",
+        "verse_refs": [
+          "Numbers 2:1-34"
+        ]
+      },
+      "path_class": "fallback_renderable",
+      "path_id": "render_path_numbers_002_e73b9a368dd6738618b8c554",
+      "selected": true
+    }
+  ],
+  "production_input": {
+    "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-reader-provenance-renderer-reference-presentation-v1-bounded-validation-v1-ce695db52b3ad2d0e6f8/renderer-input/001_numbers_002/user_prompt.txt",
+    "sha256": "36512e478f47f253e9397101452b7eab71305e4e351aeaa87cabd9b3c3ba7fbe"
+  },
+  "quality_counterfactual": "Using every genuinely useful current-packet path would not plausibly cure under-explanation.",
+  "reference": "Numbers 2",
+  "renderer": {
+    "gate_diagnostics": {
+      "category_coverage": 0.0,
+      "core_coverage": 1.0,
+      "eligible_idea_utilization": 0.0,
+      "final_chapter_classification": "CLEAN_PASS",
+      "projected_idea_count": 0,
+      "rejection_codes": [],
+      "weighted_coverage": 0.0
+    },
+    "qualitative_review": {
+      "awkward_ancestry_phrasing": "PASS",
+      "checklist_behavior": "PASS",
+      "coherence": "PASS",
+      "evidence_dump_feel": "PASS",
+      "internal_terms_found": [],
+      "natural_english": "PASS",
+      "normal_reader_usefulness": "PASS",
+      "readability": "PASS",
+      "repeated_sentence": false,
+      "under_explanation": "PASS",
+      "unnecessary_verbosity": "PASS"
+    },
+    "quality_gate": "PASS",
+    "selected_path_ids": [
+      "render_path_numbers_002_e73b9a368dd6738618b8c554"
+    ],
+    "word_count": 66
+  },
+  "renderer_assessment": "GOOD_RESTRAINT",
+  "reproduced_synthesis": {
+    "expected_binding_synthesis_hash": "9293a1e9b57a55ae9fd889fa39f2334b8327124099938bb1cbc9083e77238bd7",
+    "synthesis_hash": "9293a1e9b57a55ae9fd889fa39f2334b8327124099938bb1cbc9083e77238bd7",
+    "unit_count": 2
+  },
+  "retrieval": {
+    "mechanism": "book-index candidate lookup plus parsed ScriptureReferenceSpan interval overlap; no string/token, relationship, reverse-reference, or cross-reference expansion",
+    "objects": [
+      {
+        "canonical_result_identity": {
+          "object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+          "object_json_sha256": "160addcf865d07e43c76184c5781a8f6a3ca24773b4912bab901abc66cae468c"
+        },
+        "ckl_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "ckl_object_type": "cultural_background",
+        "ckl_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "exact_matched_references": [
+          {
+            "location": "evidence_items[1].scripture_references",
+            "value": {
+              "reference": "Numbers 2:1-34",
+              "relationship": "comparative",
+              "relevance_rationale": "The relief's central royal tent can be compared cautiously with the textual centrality of the dwelling in Israel's camp.",
+              "temporal_relation": "earlier-comparative",
+              "weight": 6
+            }
+          },
+          {
+            "location": "claims[2].scripture_references",
+            "value": "Numbers 2:1-34"
+          }
+        ],
+        "matched_fields": [
+          "scripture_references",
+          "evidence_items",
+          "claims"
+        ],
+        "object_relevance_classification": "DEFENSIBLE_CONTEXT",
+        "object_relevance_rationale": "Classification is based on the exact immutable bundle evidence, not the explicit anchor alone.",
+        "originating_ckl_file_sha256": "20643ca946c086ee8ed8861fd072a33ac2d88d185839d62ac8de944b118e5d23",
+        "originating_ckl_path": "framework/canonical_library/objects/cultural_background/ancient-portable-sanctuaries-and-tabernacle-comparisons.json",
+        "queried_chapter": "Numbers 2:1-34",
+        "raw_stored_scripture_references": [
+          {
+            "notes": "Materials, sanctuary purpose, and pattern.",
+            "reference": "Exodus 25:1-9",
+            "relationship": "primary"
+          },
+          {
+            "notes": "Curtains, coverings, frames, veil, and screen.",
+            "reference": "Exodus 26:1-37",
+            "relationship": "primary"
+          },
+          {
+            "notes": "Courtyard enclosure and entrance.",
+            "reference": "Exodus 27:9-19",
+            "relationship": "primary"
+          },
+          {
+            "notes": "Covering and transport responsibilities.",
+            "reference": "Numbers 4:1-33",
+            "relationship": "primary"
+          },
+          {
+            "notes": "Departure order and transport of the dwelling.",
+            "reference": "Numbers 10:11-28",
+            "relationship": "supporting"
+          }
+        ],
+        "relationship_notes_attached_to_matching_references": [
+          {
+            "location": "evidence_items[1].scripture_references",
+            "value": {
+              "reference": "Numbers 2:1-34",
+              "relationship": "comparative",
+              "relevance_rationale": "The relief's central royal tent can be compared cautiously with the textual centrality of the dwelling in Israel's camp.",
+              "temporal_relation": "earlier-comparative",
+              "weight": 6
+            }
+          }
+        ],
+        "retrieval_match_locations": [
+          "claims[2]",
+          "evidence_items[1]"
+        ],
+        "retrieval_match_reason": "indexed scripture interval overlap in claims[2], evidence_items[1]",
+        "retrieval_match_type": "scripture",
+        "retrieval_rank": 1,
+        "retrieval_score": 0.914
+      }
+    ],
+    "query": "Numbers 2:1-34",
+    "result_count": 1
+  },
+  "source_bundle": {
+    "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/wave-a/canary/evidence-bundles/numbers_002.json",
+    "recorded_evidence_hash": "eb48e6dc1118519c37ad91755b00bfaae73e7aec57a1789b5268a9274d7ebf1e",
+    "sha256": "3d0ef7c6ff37e35c7765454bb1566565fc9a358b99a96b286fbc69be5ee7885e"
+  },
+  "synthesis_classification": [
+    {
+      "evidence_ids": [
+        "qadesh-royal-tent-comparison",
+        "qadesh-royal-tent-comparison:passage-relevance"
+      ],
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "relevance_classifications": [
+        "DEFENSIBLE_CONTEXT"
+      ],
+      "selected_path_ids": [
+        "render_path_numbers_002_e73b9a368dd6738618b8c554"
+      ],
+      "synthesis_confidence": "medium",
+      "synthesis_id": "syn_interpretive_questions_ede50de2e4f9",
+      "synthesis_kind": "interpretive_questions"
+    },
+    {
+      "evidence_ids": [
+        "qadesh-royal-tent-comparison",
+        "qadesh-royal-tent-comparison:passage-relevance"
+      ],
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "relevance_classifications": [
+        "DEFENSIBLE_CONTEXT"
+      ],
+      "selected_path_ids": [
+        "render_path_numbers_002_e73b9a368dd6738618b8c554"
+      ],
+      "synthesis_confidence": "medium",
+      "synthesis_id": "syn_why_it_matters_10105ef9796e",
+      "synthesis_kind": "why_it_matters"
+    }
+  ],
+  "synthesis_units": [
+    {
+      "confidence": "medium",
+      "entity_ids": [],
+      "evidence_ids": [
+        "qadesh-royal-tent-comparison",
+        "qadesh-royal-tent-comparison:passage-relevance"
+      ],
+      "facts": [
+        "Ramesside Qadesh relief compositions depict the royal campaign tent at the center of a bounded military camp; scholars have compared aspects of its plan and centrality with the tabernacle and Israelite camp.",
+        "The reliefs show mobile royal architecture and camp centrality in New Kingdom Egypt but cannot identify the royal tent as a sanctuary or blueprint for Exodus."
+      ],
+      "id": "syn_interpretive_questions_ede50de2e4f9",
+      "interpretation_level": "disputed",
+      "kind": "interpretive_questions",
+      "metadata": {
+        "explicit_significance": true,
+        "passage_scope": "CURRENT_CHAPTER",
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 2
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [],
+      "source_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "verse_refs": [
+        "Numbers 2:1-34"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "entity_ids": [],
+      "evidence_ids": [
+        "qadesh-royal-tent-comparison",
+        "qadesh-royal-tent-comparison:passage-relevance"
+      ],
+      "facts": [
+        "Ramesside Qadesh relief compositions depict the royal campaign tent at the center of a bounded military camp; scholars have compared aspects of its plan and centrality with the tabernacle and Israelite camp.",
+        "The reliefs show mobile royal architecture and camp centrality in New Kingdom Egypt but cannot identify the royal tent as a sanctuary or blueprint for Exodus."
+      ],
+      "id": "syn_why_it_matters_10105ef9796e",
+      "interpretation_level": "disputed",
+      "kind": "why_it_matters",
+      "metadata": {
+        "explicit_significance": true,
+        "relationship_basis": "shared_parent_object",
+        "safe_for_significance": true,
+        "support_count": 2
+      },
+      "passage_scope": "CURRENT_CHAPTER",
+      "related_unit_ids": [
+        "syn_interpretive_questions_ede50de2e4f9"
+      ],
+      "source_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "verse_refs": [
+        "Numbers 2:1-34"
+      ]
+    }
+  ]
+}

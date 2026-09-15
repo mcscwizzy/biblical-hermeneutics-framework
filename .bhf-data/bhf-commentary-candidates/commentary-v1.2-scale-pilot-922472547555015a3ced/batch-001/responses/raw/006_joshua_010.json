@@ -1,0 +1,54 @@
+{
+  "reference": "Joshua 10",
+  "book": "Joshua",
+  "chapter": 10,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "historical_context",
+      "title": "Gezer in the Campaign Account",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Gezer appears when its king comes to assist Lachish. Evidence associated with excavations at Gezer includes inscriptions, material culture, settlement layers, and traces of imperial administration. The site helps illuminate such matters as border control, agricultural life, and royal building programs, though comparison with that material does not replace the biblical account.",
+          "verse_refs": ["Joshua 10:33"],
+          "evidence_ids": ["gezer-excavations:ancient_near_east_context:0", "gezer-excavations:historical_context:0"],
+          "synthesis_ids": ["syn_cultural_context_2f72cd314568", "syn_historical_context_95240b302141"],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "The Scope of the Victory Summary",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The sweeping summary of victory in verses 40-43 should be read together with the book's later notices that land remained and possession was incomplete. This keeps the campaign summary in its literary setting rather than making its broad language answer every question about the extent or sequence of settlement.",
+          "verse_refs": ["Joshua 10:40-43"],
+          "evidence_ids": ["joshua:interpretive_note:1"],
+          "synthesis_ids": ["syn_interpretive_questions_5b8d611d4e87"],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Campaigns in the Larger Book",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Joshua moves from succession and entry through military campaigns to land allotment, tribal unity, farewell, and covenant renewal. Archaeological evidence connected with Jericho, Ai, Hazor, the highlands, and Mount Ebal differs by site and chronology and does not produce one uncontested reconstruction of the conquest. The warfare and destruction texts therefore require historical, literary, ethical, and theological scrutiny; they cannot authorize modern territorial or religious violence.",
+          "verse_refs": [],
+          "evidence_ids": ["joshua-literary-movement", "joshua:interpretive_note:2", "joshua:interpretive_note:3"],
+          "synthesis_ids": ["syn_surrounding_passages_d6df05112dbe", "syn_surrounding_passages_333285c958d1"],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}

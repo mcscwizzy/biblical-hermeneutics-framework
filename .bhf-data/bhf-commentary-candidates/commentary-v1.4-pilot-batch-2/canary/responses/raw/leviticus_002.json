@@ -1,0 +1,36 @@
+{
+  "reference": "Leviticus 2",
+  "packet_id": "commentary-v1.4-packet:62cd3509d24a31e91fbec9619ec8827b4495b087f4958097b557131db132a3d9",
+  "prompt_version": "1.4",
+  "evidence_hash": "d8cb3005576644ff7c625adb2a2577324985355b305a2bf94289ec603e4ae4a5",
+  "synthesis_hash": "42ce2a4e990e6badc4af6bd00b877bfb1ba6df0b55ac1afea284263c5563f9c2",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Leviticus 2",
+    "book": "Leviticus",
+    "chapter": 2,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "Leviticus in its wider movement",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Leviticus places this offering within a larger movement that begins with sacrifice and priestly inauguration, passes through purity and the Day of Atonement, and then turns toward holy communal life, sacred time, land, covenant consequences, and vows.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "leviticus-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_00f90190d83d"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "reference": "1 Samuel 28",
+  "book": "1 Samuel",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpretive Questions",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "At Endor the narrator calls the figure Samuel, yet interpretations differ over whether God exceptionally permits Samuel to appear, the medium produces an apparition, or the scene uses another literary-theological explanation.",
+          "verse_refs": [
+            "1 Samuel 28:3-25"
+          ],
+          "evidence_ids": [
+            "1-samuel:interpretive_note:3"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_1d28b4b83428"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Surrounding Passages",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_ddfb4fb718f7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d8962f9a3a73a02877b6da380436ede477591469ac29de954787b749a2ec0e69",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.2",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T20:01:43.922172+00:00",
+    "synthesis_hash": "35acf232a07be6ad3937330f9a01668b6b329f40359c9e5057b40c548214a005",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "Luna Medium",
+    "imported_timestamp": "2026-09-07T20:01:43.922172+00:00",
+    "candidate_id": "commentary-v1.2-candidate:cc08d36082f141790b5f89e1a3f53e7f2a64546b4d2643a84529f396a2d197c1"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

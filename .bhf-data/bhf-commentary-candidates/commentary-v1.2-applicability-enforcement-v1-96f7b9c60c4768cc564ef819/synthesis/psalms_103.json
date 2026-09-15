@@ -1,0 +1,61 @@
+{
+  "book": "Psalms",
+  "chapter": 103,
+  "coverage": {
+    "category_diversity": 2,
+    "entity_counts": {
+      "artifacts": 0,
+      "events": 0,
+      "groups": 0,
+      "people": 0,
+      "places": 0
+    },
+    "evidence_categories": {
+      "culture": 3,
+      "history": 3
+    },
+    "evidence_item_count": 6,
+    "relationship_unit_count": 0,
+    "specific_evidence_count": 0,
+    "unit_kind_counts": {},
+    "unused_evidence_ids": [
+      "divine-mercy:ancient_near_east_context:0",
+      "divine-mercy:historical_context:0",
+      "grace:ancient_near_east_context:0",
+      "grace:historical_context:0",
+      "mercy-theme:ancient_near_east_context:0",
+      "mercy-theme:historical_context:0"
+    ],
+    "used_evidence_ids": []
+  },
+  "evidence_availability": "THIN",
+  "evidence_bundle_version": "1.0",
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "evidence_hash": "11d03d25c291336c4aff47ce1706d76383a57cbd1c7c42cfe28cd33a8d2e4d7c",
+  "reference": "Psalms 103",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "605f91afa2b12af9542686f4f4a5074f921e638c2acbe4ff60fd4fd18e6d4e97",
+  "synthesis_schema_version": "1.1",
+  "synthesis_units": []
+}

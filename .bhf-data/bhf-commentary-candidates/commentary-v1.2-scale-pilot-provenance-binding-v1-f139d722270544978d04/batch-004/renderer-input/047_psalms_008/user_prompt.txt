@@ -1,0 +1,194 @@
+TASK: Generate BHF Commentary v1.7 for Psalms 8.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- None
+
+RELEVANT:
+- reader_idea_2ad8251a73a1cde9: Messiah is firstfruits, those belonging to him follow at his arrival, hostile powers are abolished, and death is named the last… (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_2ad8251a73a1cde9: Messiah is firstfruits, those belonging to him follow at his arrival, hostile powers are abolished, and death is named the last… (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["firstfruits-order-last-enemy", "firstfruits-order-last-enemy:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_cfec39c0dbac"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["firstfruits-order-last-enemy", "firstfruits-order-last-enemy:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_bfbfa0c8f58d"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. O Jehovah, our Lord, How excellent is thy name in all the earth, Who hast set thy glory upon the heavens! 2. Out of the mouth of babes and sucklings hast thou established strength, Because of thine adversaries, That thou mightest still the enemy and the avenger. 3. When I consider thy heavens, the work of thy fingers, The moon and the stars, which thou hast ordained; 4. What is man, that thou art mindful of him? And the son of man, that thou visitest him? 5. For thou hast made him but little lower than God, And crownest him with glory and honor. 6. Thou makest him to have dominion over the works of thy hands; Thou hast put all things under his feet: 7. All sheep and oxen, Yea, and the beasts of the field, 8. The birds of the heavens, and the fish of the sea, Whatsoever passeth through the paths of the seas. 9. O Jehovah, our Lord, How excellent is thy name in all the earth! Psalm 9 For the Chief Musician; set to Muthlabben. A Psalm of David.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 2, "entity_counts": {"artifacts": 0, "events": 1, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 11, "history": 6}, "evidence_item_count": 17, "relationship_unit_count": 3, "specific_evidence_count": 17, "unit_kind_counts": {"cultural_context": 6, "historical_context": 6, "interpretive_questions": 1, "why_it_matters": 3}, "unused_evidence_ids": [], "used_evidence_ids": ["creation-doctrine:ancient_near_east_context:0", "creation-doctrine:historical_context:0", "creation-theme:ancient_near_east_context:0", "creation-theme:historical_context:0", "creation:ancient_near_east_context:0", "creation:hebraic_worldview:0", "creation:historical_context:0", "firstfruits-order-last-enemy", "firstfruits-order-last-enemy:passage-relevance", "image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:historical_context:0", "image-of-god-theme:second_temple_context:0", "new-creation-theme:ancient_near_east_context:0", "new-creation-theme:historical_context:0", "what-is-the-image-of-god:ancient_near_east_context:0", "what-is-the-image-of-god:historical_context:0"]}, "evidence_gaps": [{"category": "archaeology_geography", "reason": "No archaeology or geography evidence was supplied.", "severity": "informational"}, {"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "8c62b63f05f728b6dd6e929dc958a3936be99f124467cc65a1cd64ed5fbca05b", "units": [{"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-image-of-god:ancient_near_east_context:0"], "facts": ["Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."], "id": "syn_cultural_context_06613368de51", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:3-8"], "verse_refs": ["Psalms 8:3-8"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["creation-theme:ancient_near_east_context:0"], "facts": ["The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign."], "id": "syn_cultural_context_06e8e731b860", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["new-creation-theme:ancient_near_east_context:0"], "facts": ["Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness."], "id": "syn_cultural_context_20901920f446", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": ["creation"], "evidence_ids": ["creation:ancient_near_east_context:0", "creation:hebraic_worldview:0"], "facts": ["Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.", "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis."], "id": "syn_cultural_context_d4aba1ec6425", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:second_temple_context:0"], "facts": ["Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.", "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.", "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."], "id": "syn_cultural_context_e14a6298cf53", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["creation-doctrine:ancient_near_east_context:0"], "facts": ["Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness."], "id": "syn_cultural_context_e6fe7e06d555", "interpretation_level": "fact", "kind": "cultural_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["what-is-the-image-of-god:historical_context:0"], "facts": ["Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ."], "id": "syn_historical_context_1ecbaeea7e6a", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:3-8"], "verse_refs": ["Psalms 8:3-8"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["image-of-god-theme:historical_context:0"], "facts": ["Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred."], "id": "syn_historical_context_3022fd42254e", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["creation-theme:historical_context:0"], "facts": ["Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope."], "id": "syn_historical_context_3cfbd961c738", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["new-creation-theme:historical_context:0"], "facts": ["New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."], "id": "syn_historical_context_55babd6c8c10", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["creation-doctrine:historical_context:0"], "facts": ["Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."], "id": "syn_historical_context_70f7b549dab7", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": ["creation"], "evidence_ids": ["creation:historical_context:0"], "facts": ["Genesis presents creation as the foundational act that begins biblical history and establishes God’s sovereignty over all things."], "id": "syn_historical_context_be3785ce5f4e", "interpretation_level": "fact", "kind": "historical_context", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["history"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["firstfruits-order-last-enemy", "firstfruits-order-last-enemy:passage-relevance"], "facts": ["Messiah is firstfruits, those belonging to him follow at his arrival, hostile powers are abolished, and death is named the last enemy.", "Frames resurrection as defeat of death rather than praise of suicide, preventable mortality, or bereavement."], "id": "syn_interpretive_questions_cfec39c0dbac", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Psalms 8:4-6"], "verse_refs": ["Psalms 8:4-6"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["firstfruits-order-last-enemy", "firstfruits-order-last-enemy:passage-relevance"], "facts": ["Messiah is firstfruits, those belonging to him follow at his arrival, hostile powers are abolished, and death is named the last enemy.", "Frames resurrection as defeat of death rather than praise of suicide, preventable mortality, or bereavement."], "id": "syn_why_it_matters_bfbfa0c8f58d", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_cfec39c0dbac"], "source_anchors": ["Psalms 8:4-6"], "verse_refs": ["Psalms 8:4-6"]}, {"confidence": "medium", "entity_ids": ["creation"], "evidence_ids": ["creation:ancient_near_east_context:0", "creation:hebraic_worldview:0"], "facts": ["Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.", "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis."], "id": "syn_why_it_matters_f49f52c89afd", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_d4aba1ec6425"], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}, {"confidence": "medium", "entity_ids": [], "evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:second_temple_context:0"], "facts": ["Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.", "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.", "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."], "id": "syn_why_it_matters_fd79ba14a8b8", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": false, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_cultural_context_e14a6298cf53"], "source_anchors": ["Psalms 8:1-9"], "verse_refs": ["Psalms 8:1-9"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "medium", "id": "creation-doctrine:ancient_near_east_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["genesis-1-2", "john-1", "psalm-8", "revelation-21", "romans-8"]}, {"confidence": "medium", "id": "creation-doctrine:historical_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["genesis-1-2", "john-1", "psalm-8", "revelation-21", "romans-8"]}, {"confidence": "medium", "id": "creation-theme:ancient_near_east_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["genesis-1-2", "john-1", "psalm-104", "psalm-8", "revelation-21", "romans-8"]}, {"confidence": "medium", "id": "creation-theme:historical_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["genesis-1-2", "john-1", "psalm-104", "psalm-8", "revelation-21", "romans-8"]}, {"confidence": "medium", "id": "creation:ancient_near_east_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["colossians-1", "genesis-1-2", "john-1", "psalm-104", "psalm-8", "revelation-21", "sarna-genesis-creation"]}, {"confidence": "medium", "id": "creation:hebraic_worldview:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["colossians-1", "genesis-1-2", "john-1", "psalm-104", "psalm-8", "revelation-21", "sarna-genesis-creation"]}, {"confidence": "medium", "id": "creation:historical_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["colossians-1", "genesis-1-2", "john-1", "psalm-104", "psalm-8", "revelation-21", "sarna-genesis-creation"]}, {"confidence": "medium", "id": "firstfruits-order-last-enemy", "passage_anchors": ["Psalms 8:4-6"], "source_ids": ["first-corinthians-resurrection-text", "isaiah-daniel-resurrection-texts", "thiselton-1cor-resurrection", "ware-final-triumph"]}, {"confidence": "medium", "id": "firstfruits-order-last-enemy:passage-relevance", "passage_anchors": ["Psalms 8:4-6"], "source_ids": ["first-corinthians-resurrection-text", "isaiah-daniel-resurrection-texts", "thiselton-1cor-resurrection", "ware-final-triumph"]}, {"confidence": "medium", "id": "image-of-god-theme:ancient_near_east_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:hebraic_worldview:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:historical_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "image-of-god-theme:second_temple_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["1-corinthians-11-7", "colossians-1-15-20", "colossians-3-9-10", "ephesians-4-22-24", "genesis-1-26-28", "genesis-5-1-3", "genesis-9-1-7", "image-of-god-theme-historical-orientation", "james-3-9", "psalm-8-1-9", "romans-8-28-30"]}, {"confidence": "medium", "id": "new-creation-theme:ancient_near_east_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["genesis-1-2", "john-1", "psalm-8", "revelation-21", "romans-8"]}, {"confidence": "medium", "id": "new-creation-theme:historical_context:0", "passage_anchors": ["Psalms 8:1-9"], "source_ids": ["genesis-1-2", "john-1", "psalm-8", "revelation-21", "romans-8"]}, {"confidence": "medium", "id": "what-is-the-image-of-god:ancient_near_east_context:0", "passage_anchors": ["Psalms 8:3-8"], "source_ids": ["1-corinthians-11", "colossians-3", "genesis-1", "genesis-5", "genesis-9", "james-3", "psalm-8", "romans-8"]}, {"confidence": "medium", "id": "what-is-the-image-of-god:historical_context:0", "passage_anchors": ["Psalms 8:3-8"], "source_ids": ["1-corinthians-11", "colossians-3", "genesis-1", "genesis-5", "genesis-9", "james-3", "psalm-8", "romans-8"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Psalms 8",
+  "book": "Psalms",
+  "chapter": 8,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Psalms 8:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Psalms 8:
+   for example `Psalms 8:1` or `Psalms 8:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Psalms 8:1", "Psalms 8:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. `generated_metadata` is application-owned. Leave it null.
+24. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+25. This contract is prompt 1.7, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash 8c62b63f05f728b6dd6e929dc958a3936be99f124467cc65a1cd64ed5fbca05b.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v1
+Choose one or more complete provenance_refs for each prose block.
+A provenance reference selects one precomputed reader-idea ancestry path.
+BHF will resolve each selected path to the canonical synthesis and evidence
+fields after generation. Do not choose or emit synthesis_ids or evidence_ids
+manually, and do not combine evidence from different paths.
+Only path IDs listed below are valid for this chapter.
+
+IDEA reader_idea_2ad8251a73a1cde9: Messiah is firstfruits, those belonging to him follow at his arrival, hostile powers are abolished, and death is named the last…
+- {"evidence_count": 2, "kind": "interpretive_questions", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_008_deb27ff46caabc342c07f07d", "synthesis_unit": "syn_interpretive_questions_cfec39c0dbac", "verse_refs": ["Psalms 8:4-6"]}
+- {"evidence_count": 2, "kind": "why_it_matters", "passage_scope": "CURRENT_CHAPTER", "provenance_ref": "reader_path_psalms_008_15b43f5be07b1f6a1b25443a", "synthesis_unit": "syn_why_it_matters_bfbfa0c8f58d", "verse_refs": ["Psalms 8:4-6"]}
+
+PROVENANCE OUTPUT ADAPTER:
+In every block, replace the example synthesis_ids/evidence_ids fields
+with exactly this field:
+  "provenance_refs": ["reader_path_..."]
+Use one or more listed path IDs when a block combines distinct supported
+ideas. Do not emit any path ID from another chapter or invent one.
+This adapter changes only machine-readable provenance selection; keep
+the prompt 1.7 prose, breadth, uncertainty, and reader-facing rules.

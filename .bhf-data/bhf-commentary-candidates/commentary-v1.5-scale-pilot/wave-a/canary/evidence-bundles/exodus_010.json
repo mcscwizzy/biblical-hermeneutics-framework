@@ -1,0 +1,569 @@
+{
+  "passage_ref": "Exodus 10",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "plagues-of-egypt",
+        "title": "Plagues of Egypt",
+        "type": "event",
+        "aliases": [
+          "the ten plagues",
+          "Exodus plague sequence",
+          "judgments on the gods of Egypt"
+        ],
+        "metadata": {
+          "summary": "The escalating sign and plague sequence in Exodus 7-12 that precedes Passover and Pharaoh's release of Israel.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 5:1-5",
+            "Exodus 7:1-25",
+            "Exodus 8:1-32",
+            "Exodus 9:1-35",
+            "Exodus 10:1-29",
+            "Exodus 11:1-10",
+            "Exodus 12:1-32",
+            "Numbers 33:3-4"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "exodus-ane-context",
+      "claim": "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+      "category": "geography",
+      "source_ids": [
+        "sarna-exodus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 900,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 78
+      }
+    },
+    {
+      "id": "exodus-literary-movement",
+      "claim": "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-1-40",
+        "sarna-exodus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 900,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "exodus:interpretive_note:0",
+      "claim": "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+      "category": "geography",
+      "source_ids": [
+        "sarna-exodus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-15:21"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 900,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 50
+      }
+    },
+    {
+      "id": "exodus:interpretive_note:1",
+      "claim": "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint.",
+      "category": "culture",
+      "source_ids": [
+        "sarna-exodus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 900,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "exodus:interpretive_note:2",
+      "claim": "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus.",
+      "category": "geography",
+      "source_ids": [
+        "zondervan-illustrated-pentateuch-backgrounds",
+        "museum-bible-merneptah-stele"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Exodus 1:1-15:21"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "exodus",
+        "parent_title": "Exodus",
+        "parent_type": "book",
+        "object_importance": 99,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 900,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "ancient-near-east-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "plagues-of-egypt:ancient_near_east_context:0",
+      "claim": "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Exodus 10:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "plagues-of-egypt",
+        "parent_title": "Plagues of Egypt",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "plagues-of-egypt:hebraic_worldview:0",
+      "claim": "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Exodus 10:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "plagues-of-egypt",
+        "parent_title": "Plagues of Egypt",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "plagues-of-egypt:historical_context:0",
+      "claim": "The narrative is set in Egypt under an unnamed Pharaoh and moves between royal audience scenes and disasters affecting land, animals, households, and cult. The record does not assign the episode to a dynasty or claim that an Egyptian artifact independently verifies the sequence.",
+      "category": "history",
+      "source_ids": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Exodus 10:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "plagues-of-egypt",
+        "parent_title": "Plagues of Egypt",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Exodus 1-40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 1:1-40:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "canonical-context",
+          "key-people",
+          "key-places",
+          "key-events",
+          "exodus-literary-movement",
+          "exodus-priestly-kingdom",
+          "exodus-tabernacle-presence"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "exodus-1-40",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      },
+      {
+        "title": "Exodus 5 and 7-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 5:1-5; 7:1-12:32",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "hebraic-worldview",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical text; no modern translation is reproduced.",
+        "id": "exodus-plague-sequence-text",
+        "canonical_object_ids": [
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "Exodus",
+        "author": "Carol Meyers",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "New Cambridge Bible Commentary, Exodus 5-12",
+        "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "hebraic-worldview",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, social, literary, and religious commentary on Exodus.",
+        "id": "meyers-exodus-2005",
+        "canonical_object_ids": [
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "The Merneptah Stele",
+        "author": "Museum of the Bible",
+        "publisher": "Museum of the Bible",
+        "year": 2020,
+        "locator": "Artifact overview",
+        "url": "https://www.museumofthebible.org/book-minute/the-merneptah-stele",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "exodus-merneptah-limits"
+        ],
+        "notes": "Public museum overview of the inscription's likely reference to Israel; the stele itself is held by the Egyptian Museum in Cairo.",
+        "id": "museum-bible-merneptah-stele",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      },
+      {
+        "title": "Numbers 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 33:3-4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "hebraic-worldview",
+          "interpretive-notes"
+        ],
+        "notes": "Itinerary notice repeating the judgment-on-the-gods formulation.",
+        "id": "numbers-33-judgment-text",
+        "canonical_object_ids": [
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Exodus",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1991,
+        "locator": "Introduction and commentary throughout",
+        "url": "https://jps.org/books/jps-torah-commentary-exodus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "exodus-literary-movement",
+          "exodus-priestly-kingdom",
+          "exodus-tabernacle-presence"
+        ],
+        "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "sarna-exodus",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Exodus",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1991,
+        "locator": "Commentary on Exodus 5 and 7-12",
+        "url": "https://jps.org/books/jps-torah-commentary-exodus/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "hebraic-worldview",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Academic Jewish commentary used for literary and historical control.",
+        "id": "sarna-exodus-1991",
+        "canonical_object_ids": [
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Bruce Wells and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Exodus",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "archaeology",
+          "exodus-ane-context",
+          "exodus-merneptah-limits"
+        ],
+        "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "exodus"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "exodus",
+        "type": "book",
+        "title": "Exodus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.939
+      },
+      {
+        "id": "plagues-of-egypt",
+        "type": "event",
+        "title": "Plagues of Egypt",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "41d1cc731711dc41ad7545bbd23e995092eac8532a0cec4647c8b4bfcd146b0a",
+  "evidence_hash_version": "2"
+}

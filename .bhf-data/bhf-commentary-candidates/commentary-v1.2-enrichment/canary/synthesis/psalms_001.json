@@ -1,0 +1,92 @@
+{
+  "reference": "Psalms 1",
+  "book": "Psalms",
+  "chapter": 1,
+  "evidence_hash": "faf60db8a7de36c4d00e951e3171a6e49e875a4f98f9cba12be3cd2bca9465f8",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "92b810c7a901069282d02a14204c0ce7d8a0843dd5e2e171e65a634db03c5cbe",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_cf0c8bcc49ac",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection."
+      ],
+      "verse_refs": [
+        "Psalms 2:1-12"
+      ],
+      "evidence_ids": [
+        "psalms-gateway-torah-king"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Psalms 1:1-2:12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "politics"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 7,
+    "used_evidence_ids": [
+      "psalms-gateway-torah-king"
+    ],
+    "unused_evidence_ids": [
+      "what-does-torah-mean:ancient_near_east_context:0",
+      "what-does-torah-mean:historical_context:0",
+      "what-is-a-psalm:ancient_near_east_context:0",
+      "what-is-a-psalm:historical_context:0",
+      "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "what-is-biblical-wisdom:historical_context:0"
+    ],
+    "evidence_categories": {
+      "culture": 3,
+      "history": 3,
+      "politics": 1
+    },
+    "category_diversity": 3,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

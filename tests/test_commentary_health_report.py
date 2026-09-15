@@ -1,12 +1,13 @@
 import json
 
 from tools.commentary_health_report import report
+from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION
 
 
 def write_fixture(tmp_path, *, verse='Genesis 1:1', evidence='e1'):
     (tmp_path / 'genesis_001.json').write_text(json.dumps({
         'book': 'Genesis', 'chapter': 1, 'reference': 'Genesis 1:1-31', 'status': 'validated', 'evidence_availability': 'AVAILABLE',
-        'generated_metadata': {'commentary_prompt_version': '1.1', 'commentary_schema_version': '1.0', 'evidence_hash': 'x', 'evidence_bundle_version': '1.0', 'model': 'fixture', 'generated_timestamp': '2026-01-01T00:00:00Z'},
+        'generated_metadata': {'commentary_prompt_version': COMMENTARY_PROMPT_VERSION, 'commentary_schema_version': COMMENTARY_SCHEMA_VERSION, 'evidence_hash': 'x', 'evidence_bundle_version': '1.1', 'model': 'fixture', 'generated_timestamp': '2026-01-01T00:00:00Z'},
         'sections': [{'kind': 'chapter_overview', 'title': 'Overview', 'blocks': [{'id': 'b1', 'text': 'Text', 'verse_refs': [verse], 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}]}]
     }))
 

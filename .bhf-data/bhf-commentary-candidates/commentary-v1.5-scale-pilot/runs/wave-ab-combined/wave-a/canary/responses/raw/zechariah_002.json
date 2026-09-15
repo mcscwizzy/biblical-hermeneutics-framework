@@ -1,0 +1,38 @@
+{
+  "reference": "Zechariah 2",
+  "packet_id": "commentary-v1.5-packet:fb46d2cac21676081bd2c64196bc46b8a3cd45aa609c2acbb44e6520db61b8d0",
+  "prompt_version": "1.5",
+  "evidence_hash": "2c4ac82dde123b6ebecf3ba4f62aff4b945737956acaf7ab42777029485cf0b5",
+  "synthesis_hash": "811c820f68d61efff4276d135aa2e61ec9bff85e19f8dd4745771c9a5931009e",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Zechariah 2",
+    "book": "Zechariah",
+    "chapter": 2,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "This helps frame an interpretive question raised by the passage: The measuring vision promises a populous, unwalled Jerusalem protected by divine fire and presence and summons escape from the north or Babylon.",
+            "verse_refs": [
+              "Zechariah 2:1-13"
+            ],
+            "evidence_ids": [
+              "zechariah-measurement"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_12b7a7058fdb"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

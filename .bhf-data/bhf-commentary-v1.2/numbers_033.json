@@ -1,0 +1,109 @@
+{
+  "reference": "Numbers 33",
+  "book": "Numbers",
+  "chapter": 33,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "archaeology_geography",
+      "title": "Water on the Journey",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The stop at Marah and then Elim preserves a meaningful contrast: after a three-day water shortage and undrinkable water at Marah, Elim is remembered for its springs and palm trees. Water is therefore a concrete constraint of travel in this wilderness itinerary, not merely background scenery.",
+          "verse_refs": [
+            "Numbers 33:8-10"
+          ],
+          "evidence_ids": [
+            "marah-elim-water-stations",
+            "marah-elim-water-stations:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_archaeology_geography_4198535616e9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Reading the Route",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Numbers 33 gives an ordered sequence of camps and movements, including the sea crossing and the approach to Sinai. That sequence is part of the text's evidence, but assigning every ancient place-name to a modern site remains disputed. Maps of this journey should therefore distinguish the biblical itinerary from proposed reconstructions rather than treating one modern route as certain.",
+          "verse_refs": [
+            "Numbers 33:11-16",
+            "Numbers 33:5-16",
+            "Numbers 33:5-8"
+          ],
+          "evidence_ids": [
+            "exodus-wilderness-routes-and-water:interpretive_note:0",
+            "sinai-itinerary-models",
+            "sinai-itinerary-models:passage-relevance",
+            "yam-suf-route-identification",
+            "yam-suf-route-identification:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_990b81c50bf9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_3",
+          "text": "Verse 4 explicitly says that the departure from Egypt involved judgment on Egypt's gods. The chapter does not identify a separate divine target for each plague, so detailed one-to-one charts go beyond what this passage states.",
+          "verse_refs": [
+            "Numbers 33:3-4"
+          ],
+          "evidence_ids": [
+            "egyptian-kingship-and-divine-order:interpretive_note:0",
+            "judgment-on-egypts-gods",
+            "judgment-on-egypts-gods:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_c6f310263618"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "The Larger Setting",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "This itinerary stands within the final portion of Numbers, which prepares the new generation for inheritance in the land through matters such as the second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards. The journey record leads into the chapter's instructions about taking and allotting the land.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "numbers-inheritance-preparation"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_2ef49e432e30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "262cb381a319e610cb3bca089ed63a8b8cd7f9ad08e4c90dabf4ebafef6413d1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "b936b36897f86a64c9282ebe9502fdb31206105b61f51d4e5790b3e039f6876b",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

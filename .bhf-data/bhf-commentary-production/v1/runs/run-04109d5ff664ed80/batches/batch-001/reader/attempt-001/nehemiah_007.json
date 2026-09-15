@@ -1,0 +1,100 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "Nehemiah 7",
+  "book": "Nehemiah",
+  "chapter": 7,
+  "status": "pending_validation",
+  "source_commentary": {
+    "artifact_path": "runs/run-04109d5ff664ed80/batches/batch-001/accepted/attempt-001/nehemiah_007.json",
+    "artifact_sha256": "62580fd4d24ae8cbfefa0f1afdfc5f3d9a002a80f26c2df47cc4ea1487f6c696",
+    "artifact_identity": "sha256:62580fd4d24ae8cbfefa0f1afdfc5f3d9a002a80f26c2df47cc4ea1487f6c696",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "62580fd4d24ae8cbfefa0f1afdfc5f3d9a002a80f26c2df47cc4ea1487f6c696",
+    "generation_identity": "commentary-dense-reader-v0.1:62580fd4d24ae8cbfefa0f1afdfc5f3d9a002a80f26c2df47cc4ea1487f6c696"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": true,
+      "signal": "multi_signal_stress",
+      "signals": [
+        "low_weighted_coverage",
+        "low_utilization"
+      ]
+    },
+    "source_word_count": 131,
+    "source_block_count": 2,
+    "omitted_source_block_ids": [],
+    "omission_reasons": {},
+    "reader_word_count": 131,
+    "reader_unit_count": 2,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "chapter_overview",
+      "section_title": "Guarding the city and registering the returnees",
+      "text": "After the wall is built and the gates are set in place, Nehemiah appoints trustworthy leaders and establishes watches for Jerusalem. Because the city is large but sparsely populated, he gathers the nobles, rulers, and people for registration and reads the record of those who first returned from captivity. The chapter then lists families, priests, Levites, singers, gatekeepers, temple servants, possessions, gifts, and the cities where the people settle.",
+      "verse_refs": [
+        "Nehemiah 7:1-73"
+      ],
+      "evidence_ids": [
+        "ezra:interpretive_note:3"
+      ],
+      "source_block_ids": [
+        "overview_1"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_169f113443a5"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_de6de41ec40f"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_002",
+      "section_kind": "interpretive_questions",
+      "section_title": "What does the register accomplish?",
+      "text": "The register is more than a headcount: its family groups, priestly qualifications, temple servants, singers, animals, and gifts make an administrative claim about the continuity and organization of the returned community. At the same time, differences from the parallel Ezra 2 list and uncertainty about ancient counting mean that the totals should not be treated as a precise modern census without qualification.",
+      "verse_refs": [
+        "Nehemiah 7:5-72"
+      ],
+      "evidence_ids": [
+        "ezra:interpretive_note:3"
+      ],
+      "source_block_ids": [
+        "question_1"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_169f113443a5"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_de6de41ec40f"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "8675bc05e2164aeefc8e9de19c0766752cbe0e741d89cf116469e6269a77dbc4"
+}

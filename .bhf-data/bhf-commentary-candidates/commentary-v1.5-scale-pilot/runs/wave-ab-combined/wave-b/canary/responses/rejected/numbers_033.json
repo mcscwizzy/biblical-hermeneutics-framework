@@ -1,0 +1,20 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Numbers 33",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/wave-b/canary/responses/raw/numbers_033.json",
+  "raw_sha256": "e93e592edb5a3080a309756582fd7a51684d826b582f221834f1e18d13e7e5d8",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_VERSE_REFERENCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "MALFORMED_VERSE_REFERENCE: section[3].block[2] requires a verse-level reference: 'Numbers 33'"
+  ]
+}

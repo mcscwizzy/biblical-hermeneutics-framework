@@ -1,0 +1,21 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Judges 12",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-batch-3/canary/responses/raw/judges_012.json",
+  "raw_sha256": "e62730b31e263b3f28ec687205d4a8d83b141759a5f3052035a6b940e7279ed9",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "MALFORMED_VERSE_REFERENCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "MALFORMED_VERSE_REFERENCE: section[0].block[0] has malformed verse reference 'Judges 1'"
+  ]
+}

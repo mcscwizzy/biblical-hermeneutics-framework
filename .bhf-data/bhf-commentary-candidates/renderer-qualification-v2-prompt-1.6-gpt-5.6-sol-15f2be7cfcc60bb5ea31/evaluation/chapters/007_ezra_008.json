@@ -1,0 +1,316 @@
+{
+  "artifact_version": "commentary-renderer-qualification-v2-evaluation-v1",
+  "reference": "Ezra 8",
+  "renderer_prompt_version": "1.6",
+  "historical_prompt_1_5_original": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 3,
+    "eligible_weighted_denominator": 2.4,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_5_v3_counterfactual": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "meaningful_cluster_count": 1,
+    "eligible_weighted_denominator": 1.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "category_coverage": 1.0,
+    "synthesis_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "dump_severity": "NONE",
+    "gate_result": "PASS"
+  },
+  "historical_prompt_1_6_priority_case": null,
+  "new_prompt_1_6": {
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "eligible_cluster_count": 1,
+    "eligible_weighted_denominator": 1.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 301,
+    "block_count": 4,
+    "quality_gate_outcome": "PASS",
+    "renderer_qualification_result": "PASS"
+  },
+  "delta_vs_historical_prompt_1_5_v3": {
+    "weighted_coverage": 0.0,
+    "core_coverage": 0.0,
+    "category_coverage": 0.0
+  },
+  "diagnostic_classification": "STABLE_PASS",
+  "full_result": {
+    "reference": "Ezra 8",
+    "renderer_prompt_version": "1.6",
+    "validation_status": "validated",
+    "structural_result": "ACCEPTED",
+    "rejection_codes": [],
+    "validation_errors": [],
+    "eligible_cluster_count": 1,
+    "eligible_weighted_denominator": 1.0,
+    "weighted_coverage": 1.0,
+    "core_coverage": 1.0,
+    "eligible_idea_utilization": 1.0,
+    "eligible_unit_utilization": 1.0,
+    "raw_synthesis_utilization": 1.0,
+    "category_coverage": 1.0,
+    "dump_severity": "NONE",
+    "word_count": 301,
+    "block_count": 4,
+    "quality_gate_outcome": "PASS",
+    "gate_v2_1": {
+      "gate_class": "ENRICHMENT_TARGET",
+      "outcome": "PASS",
+      "safety_pass": true,
+      "safety_checks": {
+        "validation_clean": true,
+        "provenance_complete": true,
+        "hashes_valid": true,
+        "chapter_boundaries_valid": true,
+        "confidence_valid": true,
+        "dispute_state_preserved": true,
+        "unsupported_significance_absent": true
+      },
+      "quality_checks": {
+        "boilerplate_absent": true,
+        "core_coverage_adequate": true,
+        "weighted_coverage_adequate": true,
+        "category_coverage_adequate": true,
+        "material_improvement": true,
+        "boundary_repetition_below_limit": true,
+        "not_high_dump": true
+      },
+      "material_improvement_signals": [
+        "coherent_consolidation",
+        "evidence_utilization",
+        "idea_cluster_coverage",
+        "useful_sections"
+      ],
+      "reasons": [
+        "AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals"
+      ],
+      "dump_severity": "NONE"
+    },
+    "renderer_qualification_result": "PASS",
+    "score": {
+      "synthesis_unit_count": 4,
+      "meaningful_cluster_count": 1,
+      "consumed_synthesis_count": 4,
+      "consumed_cluster_count": 1,
+      "raw_synthesis_coverage": 1.0,
+      "idea_cluster_coverage": 1.0,
+      "weighted_idea_coverage": 1.0,
+      "core_cluster_count": 1,
+      "consumed_core_cluster_count": 1,
+      "core_cluster_coverage": 1.0,
+      "available_category_count": 1,
+      "consumed_category_count": 1,
+      "category_coverage": 1.0,
+      "category_families": [
+        "history"
+      ],
+      "consumed_category_families": [
+        "history"
+      ],
+      "consolidation_ratio": 0.4286,
+      "dump_diagnostics": {
+        "signals": [],
+        "block_count": 4,
+        "consumed_synthesis_count": 4,
+        "consumed_cluster_count": 3,
+        "mean_evidence_ids_per_block": 1.75,
+        "block_to_synthesis_ratio": 1.0,
+        "consolidation_ratio": 0.4286,
+        "repeated_block_count": 0,
+        "meaningful_cluster_count": 3,
+        "block_to_cluster_ratio": 1.3333,
+        "consumed_unit_ratio": 1.0,
+        "repeated_block_ratio": 0.0,
+        "words_per_meaningful_cluster": 99.6667,
+        "normalized_signals": [],
+        "severity": "NONE",
+        "signal_count": 0
+      },
+      "clusters": [
+        {
+          "id": "idea_cluster_15adb1f503dd",
+          "kind": "cultural_context",
+          "synthesis_ids": [
+            "syn_cultural_context_0f55d9e4039b",
+            "syn_why_it_matters_fdc1427e2fda"
+          ],
+          "evidence_ids": [
+            "return-from-exile:ancient_near_east_context:0",
+            "return-from-exile:hebraic_worldview:0",
+            "return-from-exile:second_temple_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=cultural_context,why_it_matters|parents=return-from-exile|facts=ezra portrays return lord stirring rulers people preserving remnant restoring vessels sacrifice calling community covenant faithfulness imperial permission means within presentation not theological source;return established enlarged early second temple community concerned worship genealogy land torah taxation boundaries while many judeans continued living throughout empire;return occurred within achaemenid imperial government through royal authorization provincial officials temple patronage taxation written decrees travel across imperial routes cyrus cylinder offers babylonian comparative restoration rhetoric does not name judah",
+          "importance_weight": 0.7,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "confidence": "high",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "cultural_context",
+            "why_it_matters"
+          ],
+          "categories": [
+            "culture"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        },
+        {
+          "id": "idea_cluster_2362dbdbabba",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_262e004ac400"
+          ],
+          "evidence_ids": [
+            "ezra-ahava-journey"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=ezra|facts=ezra gathers returnees ahava recruits needed levites proclaims fast rather than requesting military escort entrusts gifts weight credits god safe arrival",
+          "importance_weight": 1.0,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "CORE",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "REQUIRED",
+          "coverage_eligibility_basis": [
+            "core_quality_class_unchanged"
+          ]
+        },
+        {
+          "id": "idea_cluster_856016f98d23",
+          "kind": "historical_context",
+          "synthesis_ids": [
+            "syn_historical_context_b961c4529aa4"
+          ],
+          "evidence_ids": [
+            "return-from-exile:historical_context:0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "concept_signature": "kind=historical_context|parents=return-from-exile|facts=after cyrus captured babylon 539 bce ezra presents authorization support return toward jerusalem narrative distinguishes early return temple community ezra's later artaxerxes era journey dates group sizes historical form decrees remain debated",
+          "importance_weight": 0.7,
+          "duplicate_reason": "DISTINCT",
+          "confidence": "low",
+          "quality_class": "SUPPORTING",
+          "unit_kinds": [
+            "historical_context"
+          ],
+          "categories": [
+            "history"
+          ],
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "dispute_present": false,
+          "coverage_eligibility": "CONTEXTUAL_OPTIONAL",
+          "coverage_eligibility_basis": [
+            "generic_or_general_context_not_required",
+            "majority_parent_concepts_not_named_in_canonical_chapter"
+          ]
+        }
+      ],
+      "eligible_weighted_denominator": 1.0,
+      "consumed_eligible_weight": 1.0,
+      "coverage_policy_version": "commentary-richness-policy-v3-reader-relevance",
+      "coverage_eligibility_classifier_version": "reader-relevance-eligibility-v1",
+      "eligibility_distribution": {
+        "CONTEXTUAL_OPTIONAL": 2,
+        "REQUIRED": 1
+      },
+      "eligible_synthesis_count": 1,
+      "consumed_eligible_synthesis_count": 1,
+      "eligible_synthesis_coverage": 1.0
+    },
+    "audit": {
+      "reference": "Ezra 8",
+      "commentary_status": "pending",
+      "validation_status": "pending",
+      "richness_status": "RICH_ENOUGH",
+      "richness_reasons": [
+        "supported evidence is materially represented in reader commentary"
+      ],
+      "evidence_availability": "AVAILABLE",
+      "evidence_item_count": 5,
+      "specific_evidence_count": 5,
+      "evidence_score": 4.4,
+      "evidence_category_diversity": 2,
+      "evidence_categories": {
+        "culture": 3,
+        "history": 2
+      },
+      "entity_counts": {
+        "people": 0,
+        "places": 0,
+        "groups": 0,
+        "events": 1,
+        "artifacts": 0
+      },
+      "people_count": 0,
+      "places_count": 0,
+      "events_groups_artifacts_count": 1,
+      "geography_evidence_count": 0,
+      "archaeology_evidence_count": 0,
+      "section_count": 4,
+      "commentary_block_count": 4,
+      "commentary_prose_char_count": 2064,
+      "commentary_prose_word_count": 301,
+      "verse_anchor_count": 36,
+      "verse_anchor_coverage": 1.0,
+      "evidence_ids_referenced": [
+        "ezra-ahava-journey",
+        "return-from-exile:ancient_near_east_context:0",
+        "return-from-exile:hebraic_worldview:0",
+        "return-from-exile:historical_context:0",
+        "return-from-exile:second_temple_context:0"
+      ],
+      "unique_evidence_ids_consumed": 5,
+      "evidence_consumption_ratio": 1.0,
+      "unused_evidence_ids": [],
+      "unused_evidence_count": 0,
+      "unknown_evidence_ids": [],
+      "boilerplate_detected": false,
+      "boilerplate_phrases": [],
+      "boilerplate_ratio": 0.0,
+      "mostly_repeats_opening_or_closing_verses": false,
+      "opening_closing_lexical_overlap": 0.0282,
+      "validated_but_contextually_thin": false
+    },
+    "evidence_availability": "AVAILABLE",
+    "packet_id": "commentary-renderer-qualification-v2-packet:ff242e4966437f7215463bf827fc80d98d34c37856b5c7832cfa1f8097126d98",
+    "packet_hash": "ff242e4966437f7215463bf827fc80d98d34c37856b5c7832cfa1f8097126d98",
+    "raw_sha256": "57e2e266f870dda8cbd4133bd42d9556ace16cbb64bf81b047e6960db4757fd8"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "reference": "Numbers 33",
+  "packet_id": "commentary-v1.5-packet:7833b133c75d513922c2283c90815316dcff0f5cc6e3eb9f26d4a953a9abcbd7",
+  "prompt_version": "1.5",
+  "evidence_hash": "262cb381a319e610cb3bca089ed63a8b8cd7f9ad08e4c90dabf4ebafef6413d1",
+  "synthesis_hash": "4483f5c9285f1761fdc5ca5d88c2882b3193f614c596cb04cfed22ddafedfd00",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Numbers 33",
+    "book": "Numbers",
+    "chapter": 33,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "archaeology_geography",
+        "title": "Archaeology Geography",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "The material or geographical setting adds this bounded context: Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order. The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery. Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order. The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery.",
+            "verse_refs": [
+              "Numbers 33:8-10"
+            ],
+            "evidence_ids": [
+              "marah-elim-water-stations",
+              "marah-elim-water-stations:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_archaeology_geography_4198535616e9",
+              "syn_why_it_matters_3cb33506460e"
+            ],
+            "confidence": "high",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_002",
+            "text": "A cultural detail that clarifies the passage is this: The episode is narrated against Egypt's eastern frontier, chariot pursuit, water, wind, and wilderness movement. Geographic comparison must remain separate from claims that a specific modern landform or alleged artifact proves the event.",
+            "verse_refs": [
+              "Numbers 33:5-8"
+            ],
+            "evidence_ids": [
+              "red-sea-crossing:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_67533b1675d2"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_003",
+            "text": "A cultural detail that clarifies the passage is this: Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations.",
+            "verse_refs": [
+              "Numbers 33:1-49"
+            ],
+            "evidence_ids": [
+              "wilderness-wandering:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_32ddd1029836"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_004",
+            "text": "A cultural detail that clarifies the passage is this: Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact. Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH. Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact. Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH.",
+            "verse_refs": [
+              "Numbers 33:3-4"
+            ],
+            "evidence_ids": [
+              "plagues-of-egypt:ancient_near_east_context:0",
+              "plagues-of-egypt:hebraic_worldview:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_b7bbab8a7190",
+              "syn_why_it_matters_268d6f6c97d1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_005",
+            "text": "Historically, this chapter is read within the following setting: Exodus names route decisions and camps around the crossing but does not provide modern coordinates. Proposed identifications range across eastern Egyptian lakes, lagoons, and gulfs, so CKL preserves the route markers without selecting a crossing site.",
+            "verse_refs": [
+              "Numbers 33:5-8"
+            ],
+            "evidence_ids": [
+              "red-sea-crossing:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_84ae57f9ccda"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_006",
+            "text": "Historically, this chapter is read within the following setting: Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates.",
+            "verse_refs": [
+              "Numbers 33:1-49"
+            ],
+            "evidence_ids": [
+              "wilderness-wandering:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_66ea2fd1bcd1"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_007",
+            "text": "Historically, this chapter is read within the following setting: The narrative is set in Egypt under an unnamed Pharaoh and moves between royal audience scenes and disasters affecting land, animals, households, and cult. The record does not assign the episode to a dynasty or claim that an Egyptian artifact independently verifies the sequence.",
+            "verse_refs": [
+              "Numbers 33:3-4"
+            ],
+            "evidence_ids": [
+              "plagues-of-egypt:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_8ff4d9e5313f"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_008",
+            "text": "This helps frame an interpretive question raised by the passage: The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction. The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain. This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage. Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested. This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage. The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction. The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain. This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage. Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested. This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage.",
+            "verse_refs": [
+              "Numbers 33:11-16",
+              "Numbers 33:5-16",
+              "Numbers 33:5-8"
+            ],
+            "evidence_ids": [
+              "exodus-wilderness-routes-and-water:interpretive_note:0",
+              "sinai-itinerary-models",
+              "sinai-itinerary-models:passage-relevance",
+              "yam-suf-route-identification",
+              "yam-suf-route-identification:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_990b81c50bf9",
+              "syn_why_it_matters_668bb829840a"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_009",
+            "text": "This helps frame an interpretive question raised by the passage: The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets. Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods. This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart. The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets. Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods. This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart.",
+            "verse_refs": [
+              "Numbers 33:3-4"
+            ],
+            "evidence_ids": [
+              "egyptian-kingship-and-divine-order:interpretive_note:0",
+              "judgment-on-egypts-gods",
+              "judgment-on-egypts-gods:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_c6f310263618",
+              "syn_why_it_matters_b46c32715f34"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_010",
+            "text": "This helps frame an interpretive question raised by the passage: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+            "verse_refs": [
+              "Numbers 33"
+            ],
+            "evidence_ids": [
+              "numbers:interpretive_note:2"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_9a0d5acd444a"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_011",
+            "text": "The surrounding passage context adds this comparison: The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards.",
+            "verse_refs": [
+              "Numbers 26",
+              "Numbers 27:1-23",
+              "Numbers 28:1-31",
+              "Numbers 29:1-40",
+              "Numbers 30:1-16",
+              "Numbers 31:1-54",
+              "Numbers 32:1-42",
+              "Numbers 34:1-29",
+              "Numbers 35:1-34",
+              "Numbers 36:1-13"
+            ],
+            "evidence_ids": [
+              "numbers-inheritance-preparation"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_2ef49e432e30"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

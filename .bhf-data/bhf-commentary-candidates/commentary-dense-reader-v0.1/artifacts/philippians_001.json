@@ -1,0 +1,735 @@
+{
+  "artifact_version": "dense-reader-synthesis-v0.1",
+  "schema_version": "0.1",
+  "experiment_version": "commentary-dense-reader-v0.1",
+  "reference": "Philippians 1",
+  "book": "Philippians",
+  "chapter": 1,
+  "status": "validated",
+  "source_commentary": {
+    "artifact_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.5-scale-pilot/runs/wave-abc-combined/wave-c/canary/responses/accepted/philippians_001.json",
+    "artifact_sha256": "5daf0d4b440a310ce0588877a21b43153de2388aaa5237ba08005f74cb88482c",
+    "artifact_identity": "sha256:5daf0d4b440a310ce0588877a21b43153de2388aaa5237ba08005f74cb88482c",
+    "prompt_version": "1.5",
+    "schema_version": "1.2",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "status": "validated"
+  },
+  "generation": {
+    "transform_version": "commentary-dense-reader-v0.1",
+    "method": "deterministic_extract_and_group",
+    "source_input_sha256": "5daf0d4b440a310ce0588877a21b43153de2388aaa5237ba08005f74cb88482c",
+    "generation_identity": "commentary-dense-reader-v0.1:5daf0d4b440a310ce0588877a21b43153de2388aaa5237ba08005f74cb88482c"
+  },
+  "diagnostics": {
+    "activation": {
+      "active": false,
+      "signal": "adaptive_restraint",
+      "signals": [
+        "high_block_count",
+        "high_word_count"
+      ]
+    },
+    "source_word_count": 3922,
+    "source_block_count": 22,
+    "omitted_source_block_ids": [],
+    "omission_reasons": {},
+    "reader_word_count": 2295,
+    "reader_unit_count": 22,
+    "grouping_strategy": "same-section cluster/evidence/text relationship; exact sentence deduplication",
+    "lossy_block_selection": false,
+    "warnings": []
+  },
+  "units": [
+    {
+      "id": "reader_unit_001",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Paul and Timothy are grammatically named as senders, but singular first-person narration and autobiography make Paul the dominant epistolary voice. Mission and gospel advance never authorize forced conversion, colonial domination, religious violence, public shaming, or partisan capture. ‘To live is Messiah and to die is gain’ expresses Paul's prison dilemma and hope; it must not romanticize death, encourage suicide, or replace urgent crisis support.",
+      "verse_refs": [
+        "Philippians 1:1",
+        "Philippians 1:12-18",
+        "Philippians 1:20-26"
+      ],
+      "evidence_ids": [
+        "philippians:interpretive_note:0",
+        "philippians:interpretive_note:45",
+        "philippians:interpretive_note:9"
+      ],
+      "source_block_ids": [
+        "block_001"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_3d2d07cc81cb",
+        "syn_why_it_matters_c7e4e4023ca0"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_07b4f5df8c99"
+      ],
+      "source_quality_classes": [
+        "CORE"
+      ]
+    },
+    {
+      "id": "reader_unit_002",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Dorcas belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Barnabas belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Epaphroditus belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require. Apollos belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "verse_refs": [
+        "Philippians 1:12-18"
+      ],
+      "evidence_ids": [
+        "apollos:ancient_near_east_context:0",
+        "barnabas:ancient_near_east_context:0",
+        "dorcas:ancient_near_east_context:0",
+        "epaphroditus:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_002"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_7c3cee5d762e",
+        "syn_cultural_context_a20bac362b39",
+        "syn_cultural_context_d5de562c1e50",
+        "syn_cultural_context_e04e8938fd49"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_82b162fd4711"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_003",
+      "section_kind": "cultural_context",
+      "section_title": "Cultural Context",
+      "text": "Ancient background for Eunice includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for Phoebe includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for James, Brother of Jesus includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for Philemon of Colossae includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for Jude of Jerusalem includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for John the Baptist includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for Lois includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness. Ancient background for Zechariah, Father of John includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Rom",
+      "verse_refs": [
+        "Philippians 1:12-18"
+      ],
+      "evidence_ids": [
+        "eunice:ancient_near_east_context:0",
+        "james-brother-of-jesus:ancient_near_east_context:0",
+        "john-the-baptist:ancient_near_east_context:0",
+        "jude-of-jerusalem:ancient_near_east_context:0",
+        "lois:ancient_near_east_context:0",
+        "luke-the-physician:ancient_near_east_context:0",
+        "mark-the-evangelist:ancient_near_east_context:0",
+        "onesimus:ancient_near_east_context:0",
+        "philemon-of-colossae:ancient_near_east_context:0",
+        "philip-the-evangelist:ancient_near_east_context:0",
+        "phoebe:ancient_near_east_context:0",
+        "zechariah-father-of-john:ancient_near_east_context:0"
+      ],
+      "source_block_ids": [
+        "block_003"
+      ],
+      "source_synthesis_ids": [
+        "syn_cultural_context_2e9ae69a3df5",
+        "syn_cultural_context_3d45ec80fa89",
+        "syn_cultural_context_591f77c930fe",
+        "syn_cultural_context_68ad92ff383d",
+        "syn_cultural_context_693e0a236793",
+        "syn_cultural_context_6ee6f8c56739",
+        "syn_cultural_context_7643a07316de",
+        "syn_cultural_context_9a401a85ae71",
+        "syn_cultural_context_ad73aef6e6f2",
+        "syn_cultural_context_df610cbcf51e",
+        "syn_cultural_context_ebf159084542",
+        "syn_cultural_context_f27950972a33"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_d50593f00cf0"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_004",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Historically, Onesimus belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, Eunice belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, Luke the Physician belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, James, Brother of Jesus belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, Jude of Jerusalem belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, Phoebe belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, Zechariah, Father of John belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, Philemon of Colossae belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events. Historically, John the Baptist belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and eve",
+      "verse_refs": [
+        "Philippians 1:12-18"
+      ],
+      "evidence_ids": [
+        "eunice:historical_context:0",
+        "james-brother-of-jesus:historical_context:0",
+        "john-the-baptist:historical_context:0",
+        "jude-of-jerusalem:historical_context:0",
+        "lois:historical_context:0",
+        "luke-the-physician:historical_context:0",
+        "mark-the-evangelist:historical_context:0",
+        "onesimus:historical_context:0",
+        "philemon-of-colossae:historical_context:0",
+        "philip-the-evangelist:historical_context:0",
+        "phoebe:historical_context:0",
+        "zechariah-father-of-john:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_004"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_048f1018861f",
+        "syn_historical_context_31a445408371",
+        "syn_historical_context_52b8ec8842c5",
+        "syn_historical_context_927e47f7a88f",
+        "syn_historical_context_9f07bc21cbc3",
+        "syn_historical_context_a26a7aed9d31",
+        "syn_historical_context_aefa011341cb",
+        "syn_historical_context_b5507d30b401",
+        "syn_historical_context_cf19482c050a",
+        "syn_historical_context_e682a6f7568b",
+        "syn_historical_context_e7fd5cf13a5f",
+        "syn_historical_context_e903b1050c3c"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_65087bba0fba"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_005",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Paul weighs death as gain against remaining for the communities' fruitful progress and joy. The letter frames the Philippians' relation to Paul as partnership in the gospel from the first day through imprisonment and renewed material aid. Paul and Timothy are named as senders, while Paul supplies the dominant first-person voice.",
+      "verse_refs": [
+        "Philippians 1:1",
+        "Philippians 1:19-26",
+        "Philippians 1:3-7"
+      ],
+      "evidence_ids": [
+        "phl-life-death",
+        "phl-partnership",
+        "phl-voice"
+      ],
+      "source_block_ids": [
+        "block_005"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_d26995c7a31a",
+        "syn_why_it_matters_53bee09f7304"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_b82fb160c4ba"
+      ],
+      "source_quality_classes": [
+        "CORE"
+      ]
+    },
+    {
+      "id": "reader_unit_006",
+      "section_kind": "historical_context",
+      "section_title": "Historical Context",
+      "text": "Historically, Apollos is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval. Historically, Dorcas is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval. Historically, Epaphroditus is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval. Historically, Barnabas is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval.",
+      "verse_refs": [
+        "Philippians 1:12-18"
+      ],
+      "evidence_ids": [
+        "apollos:historical_context:0",
+        "barnabas:historical_context:0",
+        "dorcas:historical_context:0",
+        "epaphroditus:historical_context:0"
+      ],
+      "source_block_ids": [
+        "block_006"
+      ],
+      "source_synthesis_ids": [
+        "syn_historical_context_5c29260151ef",
+        "syn_historical_context_72d93e9076ef",
+        "syn_historical_context_e202dcad2b46",
+        "syn_historical_context_eca512e6963e"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_ee7aa2099f6e"
+      ],
+      "source_quality_classes": [
+        "SUPPORTING"
+      ]
+    },
+    {
+      "id": "reader_unit_007",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Praetorium and Caesar's household do not mechanically locate the prison in Rome; Rome, Ephesus, and Caesarea remain argued provenance proposals. Philippian inscriptions document some women as donors and cultic leaders, while the letter honors Euodia and Syntyche as women who struggled alongside Paul in the gospel. The evidence widens historically plausible female agency without deriving Christian offices from cults, making the two women wealthy, or stereotyping their appeal as uniquely female conflict.",
+      "verse_refs": [
+        "Philippians 1:1",
+        "Philippians 1:13"
+      ],
+      "evidence_ids": [
+        "roman-philippi-colonial-civic-and-household-life:interpretive_note:8",
+        "women-public-roles-and-coworkers",
+        "women-public-roles-and-coworkers:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_007"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_5790c13a2d90",
+        "syn_why_it_matters_e12327ea8be8"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_59849691716e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_008",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Frames mission as sustained relationship and material participation rather than a one-time donor transaction.",
+      "verse_refs": [
+        "Philippians 1:3-7"
+      ],
+      "evidence_ids": [
+        "philippians-partnership-first-day:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_008"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_4bfddcafcbfa"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_a6e9465b1b88"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_009",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Philippians refers to opponents, dogs, evil workers, mutilation, and enemies of Messiah's cross without enough evidence to identify one stable group. Prevents antisemitism, collective blame, conspiracy identification, and using polemical labels as misconduct findings. Philippians distinguishes goodwill and love from envy, rivalry, selfish ambition, and intent to intensify Paul's affliction, yet Paul rejoices that Messiah is proclaimed. Separates a true message from harmful motive and conduct; doctrinal correctness does not defeat conduct review.",
+      "verse_refs": [
+        "Philippians 1:12-18",
+        "Philippians 1:27-30"
+      ],
+      "evidence_ids": [
+        "philippian-opponents-identity-limit",
+        "philippian-opponents-identity-limit:passage-relevance",
+        "philippian-rival-motives",
+        "philippian-rival-motives:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_009"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_b25bc323ee9c",
+        "syn_why_it_matters_fff310780e0a"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_29ff0b292112"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_010",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Strong consensus supports Pauline authorship; that consensus does not identify the prison, secretary, date, or stages of composition. Suffering is described as part of the assemblies' conflict, not as a command to remain in trauma, violence, exploitation, or an unsafe relationship. Politeuesthe in 1:27 can evoke civic conduct in a colony while chiefly directing life worthy of the gospel; its force and political resonance remain debated. Rome, Ephesus, and Caesarea each have defenders; praetorium, Caesar's household, distance, and travel plans require argument and do not mechanically settle the prison. UNESCO's 'small Rome' description and colonial archaeology bound comparison; Roman identity was important but Philippi was not culturally uniform.",
+      "verse_refs": [
+        "Philippians 1:1",
+        "Philippians 1:13",
+        "Philippians 1:27",
+        "Philippians 1:27-30"
+      ],
+      "evidence_ids": [
+        "philippians:interpretive_note:1",
+        "philippians:interpretive_note:10",
+        "philippians:interpretive_note:11",
+        "philippians:interpretive_note:2",
+        "philippians:interpretive_note:4"
+      ],
+      "source_block_ids": [
+        "block_010"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_5da26c7819a9",
+        "syn_why_it_matters_fa4b1f3c03de"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_4f6925db942b"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_011",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Paul prays that love increase in knowledge and all discernment toward testing what matters. Rejects love as indiscriminate approval, secrecy, bypassing evidence, or refusal to name harm. Paul expects that the audience's prayer and the Spirit's provision will turn toward deliverance, while the term may concern release, vindication, salvation, or a scriptural echo. Prevents a contested prison text from promising release, acquittal, healing, or survival in every case. Philippians joins every remembrance, thanksgiving, petition with joy, and partnership from the first day to the present.",
+      "verse_refs": [
+        "Philippians 1:19-20",
+        "Philippians 1:3-8",
+        "Philippians 1:9-11"
+      ],
+      "evidence_ids": [
+        "philippian-love-knowledge-discernment",
+        "philippian-love-knowledge-discernment:passage-relevance",
+        "philippian-prayer-deliverance-uncertain",
+        "philippian-prayer-deliverance-uncertain:passage-relevance",
+        "philippian-thanks-partnership-memory"
+      ],
+      "source_block_ids": [
+        "block_011"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_06896b194b90",
+        "syn_why_it_matters_c11c80bf9e5e"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_6e573290b69e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_012",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Treats custody as real constraint while preventing praetorium from mechanically proving Rome, elite access, or humane imprisonment. Paul expects the situation to turn toward deliverance or vindication through prayer and Spirit, hopes for boldness, weighs life and death, and chooses fruitful embodied service. Keeps prison uncertainty, bodily vulnerability, and community relation visible rather than reducing the passage to heroic defiance or martyrdom pressure. Paul distinguishes envy and rivalry from goodwill and love among Messiah proclaimers and interprets both as proclamation while he remains imprisoned. Shows contested religious speech under custody without endorsing rivalry, harassment, forced conversion, or state restriction of peaceful belief.",
+      "verse_refs": [
+        "Philippians 1:12-14",
+        "Philippians 1:15-18",
+        "Philippians 1:19-26"
+      ],
+      "evidence_ids": [
+        "philippians-prison-praetorium-uncertain:passage-relevance",
+        "philippians-public-vindication-body",
+        "philippians-public-vindication-body:passage-relevance",
+        "philippians-rival-preaching-under-custody",
+        "philippians-rival-preaching-under-custody:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_012"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_3d8a615a7392",
+        "syn_why_it_matters_a0239bbbb3ec"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_d33bb67f4b4e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_013",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Philippians frames material aid as shared affliction, giving and receiving, account, offering, and divine provision, while Macedonian and inscriptional evidence cautions against assuming either elite wealth or one patron-client script. Colonial foundations, Latin inscriptions, the street grid, and a Claudian-phase forum document Philippi's Roman civic institutions within a culturally mixed Macedonian population. The city evidence contextualizes Acts' colony label and civic scenes and makes resonance in Philippians plausible without assuming every recipient was Roman, a veteran, or a citizen. Philippi's Roman colonial status is secure, but its population was not uniformly Roman, veteran, Latin-speaking, elite, or enfranchised. Philippi's archaeology does not prove Acts' beating, earthquake, conversions, or jailer, and Acts does not identify Paul's prison when he wrote Philippians.",
+      "verse_refs": [
+        "Philippians 1:13",
+        "Philippians 1:27",
+        "Philippians 1:3-7"
+      ],
+      "evidence_ids": [
+        "gift-partnership-and-economic-range",
+        "philippi-roman-colony-and-forum",
+        "philippi-roman-colony-and-forum:passage-relevance",
+        "philippi:interpretive_note:0",
+        "philippi:interpretive_note:2"
+      ],
+      "source_block_ids": [
+        "block_013"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_c46f0a246b0d",
+        "syn_why_it_matters_23ccf61cece9"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_59849691716e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_014",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "The audience faces opponents, shares a conflict associated with Paul, and receives faith and suffering language within an exhortation not to be frightened. Supports solidarity under pressure without commanding passivity, concealment, martyrdom seeking, or refusal of legal and protective aid. Paul tells the audience only to conduct its common life as citizens worthy of Messiah's gospel, standing in one Spirit and striving together. Recognizes civic resonance in a Roman colony while refusing to equate gospel conduct with Roman citizenship, nationalism, or one modern constitution. Paul says his circumstances advanced the gospel, his bonds became known in the whole praetorium and elsewhere, and others gained confidence.",
+      "verse_refs": [
+        "Philippians 1:12-14",
+        "Philippians 1:27",
+        "Philippians 1:28-30"
+      ],
+      "evidence_ids": [
+        "philippians-conflict-no-coerced-suffering",
+        "philippians-conflict-no-coerced-suffering:passage-relevance",
+        "philippians-live-as-citizens-worthy",
+        "philippians-live-as-citizens-worthy:passage-relevance",
+        "philippians-prison-praetorium-uncertain"
+      ],
+      "source_block_ids": [
+        "block_014"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_51c3c79a1bc6",
+        "syn_why_it_matters_83a5897ccf13"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_d33bb67f4b4e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_015",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Resists heroic prison readings that romanticize custody, demand martyrdom, shame survival, or ignore self-harm risk and material dependence. Philippians addresses a community facing the same kind of conflict it saw and heard in Paul and frames its conduct through shared striving. Prevents institutions from manufacturing persecution, suppressing reports, or demanding continued exposure to harm as proof of loyalty.",
+      "verse_refs": [
+        "Philippians 1:12-26",
+        "Philippians 1:27-30"
+      ],
+      "evidence_ids": [
+        "philippians-prison-life-death:passage-relevance",
+        "philippians-shared-suffering-limit",
+        "philippians-shared-suffering-limit:passage-relevance"
+      ],
+      "source_block_ids": [
+        "block_015"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_def0309ee714",
+        "syn_why_it_matters_56f056b85464"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_7e3dab13184c"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_016",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Paul's treatment of imprisonment interprets constraint and vulnerability; it does not make incarceration good or excuse abuse by prisons, churches, employers, or states. Direct Pauline authorship enjoys strong scholarly consensus, though Timothy's and any secretary's compositional roles remain uncertain. Philippi was a Roman colony whose built environment and institutions were substantially Romanized while remaining culturally diverse. Politeuesthe directs worthy communal conduct and may resonate with Philippi's civic setting, but the strength of that resonance is disputed. Paul writes in imprisonment, but Rome, Ephesus, and Caesarea remain disputed provenance proposals.",
+      "verse_refs": [
+        "Philippians 1:1",
+        "Philippians 1:12-26",
+        "Philippians 1:13",
+        "Philippians 1:27",
+        "Philippians 1:7"
+      ],
+      "evidence_ids": [
+        "philippians:interpretive_note:8",
+        "phl-authorship",
+        "phl-colony",
+        "phl-politeuesthe",
+        "phl-prison"
+      ],
+      "source_block_ids": [
+        "block_016"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_5fa47d093d4a",
+        "syn_why_it_matters_8036cb27575c"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_4f6925db942b"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_017",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Acts' later narrative portrait and Paul's earlier occasional letters are distinct witnesses; Acts' healings and custody stories cannot silently diagnose or harmonize every Pauline bodily reference. Acts narrates economic conflict, seizure, public beating, stocks, imprisonment, prayer, earthquake, prevention of the jailer's suicide, release, and a public citizenship protest. Shows prayer and witness alongside suicide intervention and legal protest rather than passive sanctification of state violence. Social weakness, bodily impairment, illness, injury, persecution, economic precarity, imprisonment, rhetorical weakness, and cruciform power overlap but are not interchangeable. Philippians names bonds, uncertain trial outcome, desire concerning life and death, continued labor for others, allied messengers, and material gifts.",
+      "verse_refs": [
+        "Philippians 1:12-26",
+        "Philippians 1:12-30",
+        "Philippians 1:27-30"
+      ],
+      "evidence_ids": [
+        "acts-letter-chronology-control",
+        "acts-philippi-beating-custody-protest",
+        "acts-philippi-beating-custody-protest:passage-relevance",
+        "categories-remain-distinct",
+        "philippians-prison-life-death"
+      ],
+      "source_block_ids": [
+        "block_017"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_b77315398c8a",
+        "syn_why_it_matters_44ec8aedc3da"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_7e3dab13184c"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_018",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Frames memory as relational and reciprocal rather than a surveillance inventory or donor-ranking device. Rejoice in the Lord functions within a letter that also names suffering, anxiety, illness, and conflict, not as compulsory positivity.",
+      "verse_refs": [
+        "Philippians 1:29-30",
+        "Philippians 1:3-8"
+      ],
+      "evidence_ids": [
+        "philippian-thanks-partnership-memory:passage-relevance",
+        "prayer-37-rejoice-not-positivity"
+      ],
+      "source_block_ids": [
+        "block_018"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_46ad110acfc8",
+        "syn_why_it_matters_4c3c4ceda130"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_6e573290b69e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_019",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Paul says his circumstances have resulted in advancement of the good news, with his bonds becoming known and others gaining courage to speak. Records Paul's interpretation of custody without romanticizing incarceration or pressuring workers to accept preventable harm. Philippians distinguishes some proclaiming Messiah from goodwill and love and others from envy, rivalry, and selfish ambition, while Paul rejoices that Messiah is proclaimed. Separates message circulation from approval of a worker's motives or conduct. Paul thanks God for the Philippians' partnership in the good news from the first day until now and later recalls their repeated giving and receiving.",
+      "verse_refs": [
+        "Philippians 1:12-14",
+        "Philippians 1:15-18",
+        "Philippians 1:3-7"
+      ],
+      "evidence_ids": [
+        "philippians-imprisonment-advance",
+        "philippians-imprisonment-advance:passage-relevance",
+        "philippians-mixed-motives",
+        "philippians-mixed-motives:passage-relevance",
+        "philippians-partnership-first-day"
+      ],
+      "source_block_ids": [
+        "block_019"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_81ed1693ada4",
+        "syn_why_it_matters_0cf707bac76c"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_a6e9465b1b88"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_020",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Overseers and deacons are named in the prescript, but their number, duties, gender, ordination, hierarchy, and relation to later offices are not explained. Philippians' civic and cosmic language should not be captured by nationalism, militarism, conspiracy theories, or partisan claims that identify one modern state or party with God's reign. The addressees include named leaders and coworkers, but household count, ethnicity, wealth, legal status, gender proportions, and patronage roles remain partly unrecoverable. Gospel partnership includes prayer, suffering, labor, travel, and material assistance; it should not be reduced to fundraising. Rival preachers proclaim Messiah with mixed motives; the text does not identify them with the chapter 3 opponents or authorize character assassination of competitors.",
+      "verse_refs": [
+        "Philippians 1:1",
+        "Philippians 1:14-18",
+        "Philippians 1:27",
+        "Philippians 1:3-7"
+      ],
+      "evidence_ids": [
+        "philippians:interpretive_note:43",
+        "philippians:interpretive_note:47",
+        "philippians:interpretive_note:5",
+        "philippians:interpretive_note:6",
+        "philippians:interpretive_note:7"
+      ],
+      "source_block_ids": [
+        "block_020"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_28d9d65745a2",
+        "syn_why_it_matters_bbfc64e32af0"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_4f6925db942b"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_021",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Some people preach Messiah from envy and rivalry while others act from goodwill; their identities and relation to later opponents are unstated.",
+      "verse_refs": [
+        "Philippians 1:14-18"
+      ],
+      "evidence_ids": [
+        "phl-rivals"
+      ],
+      "source_block_ids": [
+        "block_021"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_f2a9f6483a46"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_4f6925db942b"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    },
+    {
+      "id": "reader_unit_022",
+      "section_kind": "interpretive_questions",
+      "section_title": "Interpretive Questions",
+      "text": "Philippians uses related civic terms for worthy communal conduct and a heavenly commonwealth or citizenship in a securely Roman colonial destination. The lexical and city evidence makes civic resonance plausible while not reducing the exhortation to local politics, implying dual modern nationality, or assuming every hearer possessed Roman citizenship. Philippians refers to the whole praetorium and greeters from Caesar's household while leaving the prison city and these groups' precise identity unstated. Lexical and material comparisons prevent praetorium from automatically meaning Rome's Praetorian Guard and Caesar's household from proving palace elites, leaving Rome, Ephesus, and Caesarea as proposals. Colonial civic language can sharpen Philippians 1:27 and 3:20 without reducing heavenly allegiance to modern nationality, proving every recipient was a Roman citizen, or making the metaphors exclusively anti-imperial.",
+      "verse_refs": [
+        "Philippians 1:13",
+        "Philippians 1:27"
+      ],
+      "evidence_ids": [
+        "politeuesthe-politeuma-colonial-resonance",
+        "politeuesthe-politeuma-colonial-resonance:passage-relevance",
+        "praetorium-caesars-household-provenance-limit",
+        "praetorium-caesars-household-provenance-limit:passage-relevance",
+        "roman-philippi-colonial-civic-and-household-life:interpretive_note:5"
+      ],
+      "source_block_ids": [
+        "block_022"
+      ],
+      "source_synthesis_ids": [
+        "syn_interpretive_questions_5957c910d7eb",
+        "syn_why_it_matters_1a79b6568457"
+      ],
+      "source_cluster_ids": [
+        "idea_cluster_59849691716e"
+      ],
+      "source_quality_classes": [
+        "DISPUTED"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "validated",
+    "errors": [],
+    "warnings": []
+  },
+  "artifact_identity": "82ee2eb5570941d560fc4b2022549884f25d3cfbf5959cdd8ab02b8753a9d71e"
+}

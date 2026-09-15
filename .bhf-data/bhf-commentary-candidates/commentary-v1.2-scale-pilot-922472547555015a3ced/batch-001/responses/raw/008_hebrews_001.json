@@ -1,0 +1,63 @@
+{
+  "reference": "Hebrews 1",
+  "book": "Hebrews",
+  "chapter": 1,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "cultural_context",
+      "title": "God's Speech in the Son",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The opening compresses an extraordinary series of claims into its description of the Son: he is heir of all things, the agent of creation, the radiance of God's glory, the exact imprint of God's being, the sustainer of all things, the one who makes purification for sins, and the one enthroned at God's right hand. These linked descriptions establish the basis for the comparison with angels that follows.",
+          "verse_refs": ["Hebrews 1:1-4"],
+          "evidence_ids": ["heb-son"],
+          "synthesis_ids": ["syn_cultural_context_0bac1776336b"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Authorship and the Scriptural Chain",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Hebrews does not name its author in either its opening or closing. Attributions to Paul, Barnabas, Apollos, Priscilla, Luke, or others belong to later reception and historical reconstruction rather than to the work's explicit wording, so certainty about any proposed author exceeds what the text itself states.",
+          "verse_refs": ["Hebrews 1:1"],
+          "evidence_ids": ["heb-anonymous", "hebrews:interpretive_note:0"],
+          "synthesis_ids": ["syn_interpretive_questions_717547a5ad6c"],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_3",
+          "text": "Verses 5-13 form a chain of scriptural quotations that distinguishes the Son from angels. New Testament writers repeatedly quote and echo psalms when speaking about Jesus' suffering, resurrection, enthronement, priesthood, mission, worship, and rule. Here the Son-language draws on psalms together with royal, wisdom, creation, and agency traditions. The comparison exalts the Son; it does not justify contempt for Jewish traditions about angels or speculative rankings of heavenly beings, and later creedal formulations should be recognized as later synthesis rather than silently inserted into every clause.",
+          "verse_refs": ["Hebrews 1:5-14"],
+          "evidence_ids": ["psalms-new-testament-reception", "hebrews:interpretive_note:4", "hebrews:interpretive_note:5"],
+          "synthesis_ids": ["syn_interpretive_questions_8479da0e3b6c", "syn_interpretive_questions_95fa35e89dda"],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Early Witnesses to Hebrews",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Papyrus 46 is an early and substantial witness to Hebrews, though parts are missing and its paleographic date remains approximate. Codex Sinaiticus also preserves Hebrews, placing it in its New Testament sequence after 2 Thessalonians. These witnesses attest the work's transmission without eliminating the need for care about gaps, dating, and differing manuscript arrangements.",
+          "verse_refs": [],
+          "evidence_ids": ["heb-p46", "heb-sinaiticus"],
+          "synthesis_ids": ["syn_surrounding_passages_0ca8e6e94760"],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}

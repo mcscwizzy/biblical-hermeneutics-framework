@@ -1,0 +1,1959 @@
+{
+  "reference": "1 Corinthians 3",
+  "book": "1 Corinthians",
+  "chapter": 3,
+  "evidence_hash": "285b415cfa3dc6bcca71edab966f939c7f18c0a670697d776520b9b7f16de0a8",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "ce650e6dc4b3914c5831603f8fc2e9261e8cba3cd9795a4bfd2b468d1e861815",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_archaeology_geography_2862100b38f0",
+      "kind": "archaeology_geography",
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_d942012d2cb7",
+      "kind": "chronology",
+      "facts": [
+        "New Jerusalem has no temple because God and the Lamb dwell there"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:5"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_chronology_f0d820c46e88",
+      "kind": "chronology",
+      "facts": [
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "chronology"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_19474300a355",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for James, Brother of Jesus includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "james-brother-of-jesus:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "james-brother-of-jesus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_23ed42a52fa0",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Mark the Evangelist includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "mark-the-evangelist:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "mark-the-evangelist"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_3d05b1b61fcf",
+      "kind": "cultural_context",
+      "facts": [
+        "Apollos belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "apollos:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "apollos"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5566163b3ebf",
+      "kind": "cultural_context",
+      "facts": [
+        "Dorcas belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "dorcas:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "dorcas"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_568a6dbcb43f",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Philemon of Colossae includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "philemon-of-colossae:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "philemon-of-colossae"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5ab297273b59",
+      "kind": "cultural_context",
+      "facts": [
+        "Epaphroditus belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "epaphroditus:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "epaphroditus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_602d6a17d71f",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Eunice includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "eunice:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "eunice"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_64121dbde1dd",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Zechariah, Father of John includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "zechariah-father-of-john:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "zechariah-father-of-john"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_8719e8d9e545",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Phoebe includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "phoebe:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "phoebe"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_ace0294297bb",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Onesimus includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "onesimus:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "onesimus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b5d74b73112e",
+      "kind": "cultural_context",
+      "facts": [
+        "Barnabas belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "barnabas:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "barnabas"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_b6fada273476",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "social"
+        ],
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_bbe45c0f9f84",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Philip the Evangelist includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "philip-the-evangelist:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "philip-the-evangelist"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_bea5fdee2fd8",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Jude of Jerusalem includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "jude-of-jerusalem:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "jude-of-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d4c4118d3b7d",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Luke the Physician includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "luke-the-physician:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "luke-the-physician"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_eff706750577",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for John the Baptist includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "john-the-baptist:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "john-the-baptist"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f4dc14efb9aa",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Lois includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "lois:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "lois"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_0f0ca9ee8983",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Dorcas is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "dorcas:historical_context:0"
+      ],
+      "entity_ids": [
+        "dorcas"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_1ab795ba75fe",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Onesimus belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "onesimus:historical_context:0"
+      ],
+      "entity_ids": [
+        "onesimus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3364b6903a09",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Epaphroditus is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "epaphroditus:historical_context:0"
+      ],
+      "entity_ids": [
+        "epaphroditus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_35710b1f7c48",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Eunice belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "eunice:historical_context:0"
+      ],
+      "entity_ids": [
+        "eunice"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3a0d11872144",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Apollos is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "apollos:historical_context:0"
+      ],
+      "entity_ids": [
+        "apollos"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3c02fa7ebe3c",
+      "kind": "historical_context",
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4086cd7ffbbc",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Mark the Evangelist belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "mark-the-evangelist:historical_context:0"
+      ],
+      "entity_ids": [
+        "mark-the-evangelist"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_47928cd54f7a",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Jude of Jerusalem belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "jude-of-jerusalem:historical_context:0"
+      ],
+      "entity_ids": [
+        "jude-of-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_628b3f4605a3",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Philip the Evangelist belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "philip-the-evangelist:historical_context:0"
+      ],
+      "entity_ids": [
+        "philip-the-evangelist"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_886b16481168",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Phoebe belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "phoebe:historical_context:0"
+      ],
+      "entity_ids": [
+        "phoebe"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a076282d7534",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, John the Baptist belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "john-the-baptist:historical_context:0"
+      ],
+      "entity_ids": [
+        "john-the-baptist"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_aab6b366f918",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Luke the Physician belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "luke-the-physician:historical_context:0"
+      ],
+      "entity_ids": [
+        "luke-the-physician"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_c036892be35e",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Lois belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "lois:historical_context:0"
+      ],
+      "entity_ids": [
+        "lois"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_cb3e52abcbea",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Zechariah, Father of John belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "zechariah-father-of-john:historical_context:0"
+      ],
+      "entity_ids": [
+        "zechariah-father-of-john"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_de9bf919a1ab",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Barnabas is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "barnabas:historical_context:0"
+      ],
+      "entity_ids": [
+        "barnabas"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e1aa18a9d493",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, James, Brother of Jesus belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "james-brother-of-jesus:historical_context:0"
+      ],
+      "entity_ids": [
+        "james-brother-of-jesus"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f6ad1d89bf83",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Philemon of Colossae belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:4-9"
+      ],
+      "evidence_ids": [
+        "philemon-of-colossae:historical_context:0"
+      ],
+      "entity_ids": [
+        "philemon-of-colossae"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:4-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_4d51c9dc053d",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The temple in 3:16-17 is grammatically communal; individual-body temple language appears later in 6:19.",
+        "Building materials and fire concern ministerial work and divine testing; they do not furnish a detailed map of the afterlife without further argument."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:10-15",
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:10",
+        "1-corinthians:interpretive_note:11"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:10-15",
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_85f024491e5e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul describes himself as a skilled builder laying a foundation, others building upon it, each one's work being tested, and Jesus Messiah as the only foundation.",
+        "Places founder activity under judgment and rejects founder immunity, proprietary branding, and community ownership.",
+        "The plural phrase theou synergoi can be construed as coworkers belonging to God or working with God, followed by God's field and God's building.",
+        "Retains the grammatical dispute while keeping ownership with God rather than a founder.",
+        "Paul asks what Apollos and Paul are, answers that they are servants through whom people believed, and assigns planting and watering while God gives growth."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:1-9",
+        "1 Corinthians 3:10-17",
+        "1 Corinthians 3:9"
+      ],
+      "evidence_ids": [
+        "corinth-foundation-builder-accountability",
+        "corinth-foundation-builder-accountability:passage-relevance",
+        "corinth-gods-coworkers-grammar",
+        "corinth-gods-coworkers-grammar:passage-relevance",
+        "corinth-paul-apollos-servants"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:1-9",
+        "1 Corinthians 3:10-17",
+        "1 Corinthians 3:9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_8f010c1861a6",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The temple image in 3:16-17 addresses the community collectively."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "1cor-temple"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_a78fbeb1868c",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Rejects personality factions and founder ownership by making human roles differentiated and nonultimate."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:1-9"
+      ],
+      "evidence_ids": [
+        "corinth-paul-apollos-servants:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_b7d7e3c27e23",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Paul and Apollos are servants through whom the audience believed, while God gives growth.",
+        "Rejects founder ownership of communities and treats leader rivalry as a category error."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:1-9"
+      ],
+      "evidence_ids": [
+        "servants-not-founders",
+        "servants-not-founders:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "social"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_611f993fa73d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+        "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+        "Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 1:1-31",
+        "1 Corinthians 1:18-31",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1cor-integrity",
+        "1cor-manuscripts",
+        "1cor-wisdom"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_bb4c7666bbae"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 1:18-3:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_67723baf012d",
+      "kind": "surrounding_passages",
+      "facts": [
+        "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+        "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+        "The spiritual person is rhetorically contested and must not become a label for unaccountable leaders or a hierarchy of human worth."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 1:1-31",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 2:15-16",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:84",
+        "1-corinthians:interpretive_note:85",
+        "1-corinthians:interpretive_note:9"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_699cf8fb2c52"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 2:15-3:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_699cf8fb2c52",
+      "kind": "surrounding_passages",
+      "facts": [
+        "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+        "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+        "The spiritual person is rhetorically contested and must not become a label for unaccountable leaders or a hierarchy of human worth."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 1:1-31",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 2:15-16",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:84",
+        "1-corinthians:interpretive_note:85",
+        "1-corinthians:interpretive_note:9"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 2:15-3:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_bb4c7666bbae",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+        "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+        "Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning."
+      ],
+      "verse_refs": [
+        "1 Corinthians 10:1-33",
+        "1 Corinthians 11:1-34",
+        "1 Corinthians 12:1-31",
+        "1 Corinthians 13:1-13",
+        "1 Corinthians 14:1-40",
+        "1 Corinthians 15:1-58",
+        "1 Corinthians 16:1-24",
+        "1 Corinthians 1:1-31",
+        "1 Corinthians 1:18-31",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 4:1-21",
+        "1 Corinthians 5:1-13",
+        "1 Corinthians 6:1-20",
+        "1 Corinthians 7:1-40",
+        "1 Corinthians 8:1-13",
+        "1 Corinthians 9:1-27"
+      ],
+      "evidence_ids": [
+        "1cor-integrity",
+        "1cor-manuscripts",
+        "1cor-wisdom"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:1-16:24",
+        "1 Corinthians 1:18-3:4"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "archaeology",
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_f8dc7ae75069",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Social weakness, bodily impairment, illness, injury, persecution, economic precarity, imprisonment, rhetorical weakness, and cruciform power overlap but are not interchangeable."
+      ],
+      "verse_refs": [
+        "1 Corinthians 1:17-31",
+        "1 Corinthians 2:1-16",
+        "1 Corinthians 4:1-21"
+      ],
+      "evidence_ids": [
+        "categories-remain-distinct"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Corinthians 1:17-4:21"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "economics"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0a6699249a72",
+      "kind": "why_it_matters",
+      "facts": [
+        "Temple symbolism grows from tabernacle worship, Solomon's temple, Second Temple practice, Jesus' temple actions, and the New Testament's temple imagery for Christ and the church.",
+        "Tabernacle, monarchy, Second Temple Judaism, and early Christian interpretation"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:historical_context:0",
+        "temple-symbol:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_historical_context_3c02fa7ebe3c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0b297649be66",
+      "kind": "why_it_matters",
+      "facts": [
+        "jerusalem",
+        "zion",
+        "holy-place-2",
+        "most-holy-place-2"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:key_places:0",
+        "temple-symbol:key_places:1",
+        "temple-symbol:key_places:2",
+        "temple-symbol:key_places:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_archaeology_geography_2862100b38f0"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_2e2c7ac35d2a",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient temples were understood as divine dwelling and royal-cultic centers, but Israel's temple symbol is governed by covenant holiness and the LORD's chosen presence.",
+        "The temple symbol joins space, holiness, sacrifice, priesthood, and presence: approaching God requires consecrated access rather than casual familiarity.",
+        "Readers tracing worship and divine presence across the canon",
+        "In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:ancient_near_east_context:0",
+        "temple-symbol:hebraic_worldview:0",
+        "temple-symbol:original_audience:0",
+        "temple-symbol:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_b6fada273476"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5c866656c0ff",
+      "kind": "why_it_matters",
+      "facts": [
+        "Tabernacle presence in the wilderness",
+        "Solomon's temple dedicated in Jerusalem",
+        "Temple judged and destroyed",
+        "Second Temple worship restored",
+        "Jesus identifies himself with temple fulfillment"
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "temple-symbol:timeline:0",
+        "temple-symbol:timeline:1",
+        "temple-symbol:timeline:2",
+        "temple-symbol:timeline:3",
+        "temple-symbol:timeline:4"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_chronology_f0d820c46e88"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_6ad16d3f053d",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul describes himself as a skilled builder laying a foundation, others building upon it, each one's work being tested, and Jesus Messiah as the only foundation.",
+        "Places founder activity under judgment and rejects founder immunity, proprietary branding, and community ownership.",
+        "The plural phrase theou synergoi can be construed as coworkers belonging to God or working with God, followed by God's field and God's building.",
+        "Retains the grammatical dispute while keeping ownership with God rather than a founder.",
+        "Paul asks what Apollos and Paul are, answers that they are servants through whom people believed, and assigns planting and watering while God gives growth."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:1-9",
+        "1 Corinthians 3:10-17",
+        "1 Corinthians 3:9"
+      ],
+      "evidence_ids": [
+        "corinth-foundation-builder-accountability",
+        "corinth-foundation-builder-accountability:passage-relevance",
+        "corinth-gods-coworkers-grammar",
+        "corinth-gods-coworkers-grammar:passage-relevance",
+        "corinth-paul-apollos-servants"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_85f024491e5e"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:1-9",
+        "1 Corinthians 3:10-17",
+        "1 Corinthians 3:9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 5,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_7c22bb2a4101",
+      "kind": "why_it_matters",
+      "facts": [
+        "The temple in 3:16-17 is grammatically communal; individual-body temple language appears later in 6:19.",
+        "Building materials and fire concern ministerial work and divine testing; they do not furnish a detailed map of the afterlife without further argument."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:10-15",
+        "1 Corinthians 3:16-17"
+      ],
+      "evidence_ids": [
+        "1-corinthians:interpretive_note:10",
+        "1-corinthians:interpretive_note:11"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_4d51c9dc053d"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:10-15",
+        "1 Corinthians 3:16-17"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8f6f3b0cbf84",
+      "kind": "why_it_matters",
+      "facts": [
+        "Paul and Apollos are servants through whom the audience believed, while God gives growth.",
+        "Rejects founder ownership of communities and treats leader rivalry as a category error."
+      ],
+      "verse_refs": [
+        "1 Corinthians 3:1-9"
+      ],
+      "evidence_ids": [
+        "servants-not-founders",
+        "servants-not-founders:passage-relevance"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_b7d7e3c27e23"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "1 Corinthians 3:1-9"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 66,
+    "used_evidence_ids": [
+      "1-corinthians:interpretive_note:10",
+      "1-corinthians:interpretive_note:11",
+      "1-corinthians:interpretive_note:84",
+      "1-corinthians:interpretive_note:85",
+      "1-corinthians:interpretive_note:9",
+      "1cor-integrity",
+      "1cor-manuscripts",
+      "1cor-temple",
+      "1cor-wisdom",
+      "apollos:ancient_near_east_context:0",
+      "apollos:historical_context:0",
+      "barnabas:ancient_near_east_context:0",
+      "barnabas:historical_context:0",
+      "categories-remain-distinct",
+      "corinth-foundation-builder-accountability",
+      "corinth-foundation-builder-accountability:passage-relevance",
+      "corinth-gods-coworkers-grammar",
+      "corinth-gods-coworkers-grammar:passage-relevance",
+      "corinth-paul-apollos-servants",
+      "corinth-paul-apollos-servants:passage-relevance",
+      "dorcas:ancient_near_east_context:0",
+      "dorcas:historical_context:0",
+      "epaphroditus:ancient_near_east_context:0",
+      "epaphroditus:historical_context:0",
+      "eunice:ancient_near_east_context:0",
+      "eunice:historical_context:0",
+      "james-brother-of-jesus:ancient_near_east_context:0",
+      "james-brother-of-jesus:historical_context:0",
+      "john-the-baptist:ancient_near_east_context:0",
+      "john-the-baptist:historical_context:0",
+      "jude-of-jerusalem:ancient_near_east_context:0",
+      "jude-of-jerusalem:historical_context:0",
+      "lois:ancient_near_east_context:0",
+      "lois:historical_context:0",
+      "luke-the-physician:ancient_near_east_context:0",
+      "luke-the-physician:historical_context:0",
+      "mark-the-evangelist:ancient_near_east_context:0",
+      "mark-the-evangelist:historical_context:0",
+      "onesimus:ancient_near_east_context:0",
+      "onesimus:historical_context:0",
+      "philemon-of-colossae:ancient_near_east_context:0",
+      "philemon-of-colossae:historical_context:0",
+      "philip-the-evangelist:ancient_near_east_context:0",
+      "philip-the-evangelist:historical_context:0",
+      "phoebe:ancient_near_east_context:0",
+      "phoebe:historical_context:0",
+      "servants-not-founders",
+      "servants-not-founders:passage-relevance",
+      "temple-symbol:ancient_near_east_context:0",
+      "temple-symbol:hebraic_worldview:0",
+      "temple-symbol:historical_context:0",
+      "temple-symbol:historical_setting:0",
+      "temple-symbol:key_places:0",
+      "temple-symbol:key_places:1",
+      "temple-symbol:key_places:2",
+      "temple-symbol:key_places:3",
+      "temple-symbol:original_audience:0",
+      "temple-symbol:second_temple_context:0",
+      "temple-symbol:timeline:0",
+      "temple-symbol:timeline:1",
+      "temple-symbol:timeline:2",
+      "temple-symbol:timeline:3",
+      "temple-symbol:timeline:4",
+      "temple-symbol:timeline:5",
+      "zechariah-father-of-john:ancient_near_east_context:0",
+      "zechariah-father-of-john:historical_context:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "archaeology": 1,
+      "chronology": 6,
+      "culture": 32,
+      "economics": 1,
+      "geography": 4,
+      "history": 19,
+      "social": 3
+    },
+    "category_diversity": 7,
+    "specific_evidence_count": 66,
+    "entity_counts": {
+      "people": 16,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "archaeology_geography": 1,
+      "chronology": 2,
+      "cultural_context": 17,
+      "historical_context": 17,
+      "interpretive_questions": 5,
+      "surrounding_passages": 5,
+      "why_it_matters": 7
+    },
+    "relationship_unit_count": 9
+  }
+}

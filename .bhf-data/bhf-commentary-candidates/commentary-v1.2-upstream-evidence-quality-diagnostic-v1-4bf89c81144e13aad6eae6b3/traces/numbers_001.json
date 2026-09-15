@@ -1,0 +1,950 @@
+[
+  {
+    "ckl_object_id": "leviticus",
+    "ckl_object_type": "book",
+    "ckl_title": "Leviticus",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/books/leviticus.json",
+      "sha256": "7c33673c7f60cdd82d891a04dd2d3897241f0c2e67d985806322910dbc2686f9",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Leviticus 1:1-17",
+        "relationship": "primary",
+        "notes": "The LORD calls from the tent and begins the offering instructions."
+      },
+      {
+        "reference": "Leviticus 8:1-36",
+        "relationship": "primary",
+        "notes": "Aaron and his sons are ordained."
+      },
+      {
+        "reference": "Leviticus 10:1-20",
+        "relationship": "primary",
+        "notes": "Nadab and Abihu die and priestly distinctions are emphasized."
+      },
+      {
+        "reference": "Leviticus 11:1-47",
+        "relationship": "supporting",
+        "notes": "Food distinctions and the call to holiness."
+      },
+      {
+        "reference": "Leviticus 16:1-34",
+        "relationship": "primary",
+        "notes": "The Day of Atonement cleanses the sanctuary and community."
+      },
+      {
+        "reference": "Leviticus 19:1-37",
+        "relationship": "primary",
+        "notes": "Holiness extends into worship, family, economics, justice, and neighbor love."
+      },
+      {
+        "reference": "Leviticus 23:1-44",
+        "relationship": "supporting",
+        "notes": "The appointed-time calendar."
+      },
+      {
+        "reference": "Leviticus 25:1-55",
+        "relationship": "supporting",
+        "notes": "Sabbath year, Jubilee, land, debt, and servitude."
+      },
+      {
+        "reference": "Leviticus 26:1-46",
+        "relationship": "primary",
+        "notes": "Covenant blessing, judgment, confession, and remembrance."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.916,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 1",
+    "exact_matched_reference": [
+      "Numbers 1:1"
+    ],
+    "canonical_result_identity": {
+      "object_id": "leviticus",
+      "object_json_sha256": "7503e98815594de71c911c2d77e7c05e1b340b22dbe324c8e30631114f2e163d"
+    },
+    "evidence_item_id": "leviticus:interpretive_note:0",
+    "evidence_category": "culture",
+    "evidence_confidence": "high",
+    "passage_anchors": [
+      "Numbers 1:1"
+    ],
+    "source_ids": [
+      "leviticus-1-27",
+      "levine-leviticus",
+      "wenham-leviticus"
+    ],
+    "claim": "Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings.",
+    "synthesis_ids": [
+      "syn_surrounding_passages_91e303c3467c"
+    ],
+    "synthesis_kind": [
+      "surrounding_passages"
+    ],
+    "synthesis_confidence": [
+      "high"
+    ],
+    "interpretation_level": [
+      "inference"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 1:1"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 1:1"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [],
+    "selected_by_renderer": false,
+    "selected_path_ids": [],
+    "final_blocks": [],
+    "relevance_classification": "DIRECTLY_RELEVANT",
+    "relevance_rationale": "The structured claim is explicitly about Numbers 1's setting, literary movement, or census structure.",
+    "relevance_metadata": {
+      "source_kind": "ckl_interpretive_note",
+      "parent_object_id": "leviticus",
+      "parent_title": "Leviticus",
+      "parent_type": "book",
+      "object_importance": 96,
+      "retrieval_score": 0.916,
+      "passage_relationship": "direct",
+      "anchor_specificity": "verse",
+      "verse_distance": 0,
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "assertion_type": "inference",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "literary-observation",
+      "field": "",
+      "applicability_scope": "passage",
+      "anchor_source": "child",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "presentation_role": "dig_deeper",
+      "overview_priority": 0
+    }
+  },
+  {
+    "ckl_object_id": "numbers",
+    "ckl_object_type": "book",
+    "ckl_title": "Numbers",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/books/numbers.json",
+      "sha256": "f95f740a2d933c1d8410e61068ba6e7680093db22f2315b8549aa969a2db6177",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Numbers 1:1-54",
+        "relationship": "primary",
+        "notes": "The first census and tribal organization at Sinai."
+      },
+      {
+        "reference": "Numbers 6:22-27",
+        "relationship": "supporting",
+        "notes": "The priestly blessing places the divine name on Israel."
+      },
+      {
+        "reference": "Numbers 10:11-36",
+        "relationship": "primary",
+        "notes": "Israel departs Sinai under the cloud."
+      },
+      {
+        "reference": "Numbers 11:1-35",
+        "relationship": "supporting",
+        "notes": "Complaint, provision, judgment, and shared leadership."
+      },
+      {
+        "reference": "Numbers 13:1-33",
+        "relationship": "primary",
+        "notes": "The land is surveyed and a divided report is given."
+      },
+      {
+        "reference": "Numbers 14:1-45",
+        "relationship": "primary",
+        "notes": "Israel refuses the land and the wilderness generation is judged."
+      },
+      {
+        "reference": "Numbers 16:1-50",
+        "relationship": "primary",
+        "notes": "Korah's rebellion, judgment, and priestly mediation."
+      },
+      {
+        "reference": "Numbers 20:1-29",
+        "relationship": "primary",
+        "notes": "Miriam dies, Moses fails at the rock, and Aaron dies."
+      },
+      {
+        "reference": "Numbers 21:4-35",
+        "relationship": "supporting",
+        "notes": "The bronze serpent and victories east of the Jordan."
+      },
+      {
+        "reference": "Numbers 22:1-41",
+        "relationship": "primary",
+        "notes": "Balak summons Balaam and the Balaam cycle begins."
+      },
+      {
+        "reference": "Numbers 24:1-25",
+        "relationship": "primary",
+        "notes": "Balaam's later blessings and oracles."
+      },
+      {
+        "reference": "Numbers 25:1-18",
+        "relationship": "primary",
+        "notes": "The Peor crisis and Phinehas's intervention."
+      },
+      {
+        "reference": "Numbers 26:1-65",
+        "relationship": "primary",
+        "notes": "The second census distinguishes the new generation."
+      },
+      {
+        "reference": "Numbers 27:1-23",
+        "relationship": "primary",
+        "notes": "The daughters of Zelophehad and Joshua's commission."
+      },
+      {
+        "reference": "Numbers 36:1-13",
+        "relationship": "supporting",
+        "notes": "Inheritance is clarified and the book closes on the plains of Moab."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.955,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 1",
+    "exact_matched_reference": [
+      "Numbers 1:1"
+    ],
+    "canonical_result_identity": {
+      "object_id": "numbers",
+      "object_json_sha256": "da1db3e9ba0def4fc91448a927c08823445237f69b8a3ce7091cc8655c012346"
+    },
+    "evidence_item_id": "numbers-literary-journey",
+    "evidence_category": "culture",
+    "evidence_confidence": "high",
+    "passage_anchors": [
+      "Numbers 1:1"
+    ],
+    "source_ids": [
+      "numbers-1-36",
+      "milgrom-numbers",
+      "ashley-numbers"
+    ],
+    "claim": "Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+    "synthesis_ids": [
+      "syn_language_literary_1ce482ed90f4",
+      "syn_why_it_matters_dd7137349c08"
+    ],
+    "synthesis_kind": [
+      "language_literary",
+      "why_it_matters"
+    ],
+    "synthesis_confidence": [
+      "high",
+      "high"
+    ],
+    "interpretation_level": [
+      "fact",
+      "inference"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER",
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ],
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ],
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ]
+    ],
+    "explicit_significance": [
+      false,
+      false
+    ],
+    "support_count": [
+      2,
+      2
+    ],
+    "resulting_provenance_path_ids": [
+      "reader_path_numbers_001_2dfeccd5d6ee4e0581ccdb83",
+      "reader_path_numbers_001_a4bdc19f7694761cb4fa34cc"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "reader_path_numbers_001_2dfeccd5d6ee4e0581ccdb83",
+      "reader_path_numbers_001_a4bdc19f7694761cb4fa34cc"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_2",
+        "section_kind": "language_literary",
+        "section_title": "The Opening Census",
+        "final_block": "This census belongs to the book’s larger geographical and generational structure. Numbers moves from preparation at Sinai through Kadesh and the Transjordan to renewed preparation on the plains of Moab. The census here and the later census in Numbers 26 frame that journey by counting first the generation at Sinai and then the generation prepared for inheritance near Moab."
+      },
+      {
+        "block_id": "block_3",
+        "section_kind": "why_it_matters",
+        "section_title": "Why the Census Matters",
+        "final_block": "The long enumeration is therefore more than an isolated administrative record. Together with the later census, it marks the transition between two generations and helps give the book its shape as a journey from preparation at Sinai to preparation near Moab."
+      }
+    ],
+    "relevance_classification": "DIRECTLY_RELEVANT",
+    "relevance_rationale": "The structured claim is explicitly about Numbers 1's setting, literary movement, or census structure.",
+    "relevance_metadata": {
+      "source_kind": "ckl_claim",
+      "parent_object_id": "numbers",
+      "parent_title": "Numbers",
+      "parent_type": "book",
+      "object_importance": 95,
+      "retrieval_score": 0.915,
+      "passage_relationship": "direct",
+      "anchor_specificity": "verse",
+      "verse_distance": 0,
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "literary",
+      "note_type": "",
+      "field": "",
+      "applicability_scope": "passage",
+      "anchor_source": "child",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "presentation_role": "language_literary",
+      "overview_priority": 98
+    }
+  },
+  {
+    "ckl_object_id": "numbers",
+    "ckl_object_type": "book",
+    "ckl_title": "Numbers",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/books/numbers.json",
+      "sha256": "f95f740a2d933c1d8410e61068ba6e7680093db22f2315b8549aa969a2db6177",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Numbers 1:1-54",
+        "relationship": "primary",
+        "notes": "The first census and tribal organization at Sinai."
+      },
+      {
+        "reference": "Numbers 6:22-27",
+        "relationship": "supporting",
+        "notes": "The priestly blessing places the divine name on Israel."
+      },
+      {
+        "reference": "Numbers 10:11-36",
+        "relationship": "primary",
+        "notes": "Israel departs Sinai under the cloud."
+      },
+      {
+        "reference": "Numbers 11:1-35",
+        "relationship": "supporting",
+        "notes": "Complaint, provision, judgment, and shared leadership."
+      },
+      {
+        "reference": "Numbers 13:1-33",
+        "relationship": "primary",
+        "notes": "The land is surveyed and a divided report is given."
+      },
+      {
+        "reference": "Numbers 14:1-45",
+        "relationship": "primary",
+        "notes": "Israel refuses the land and the wilderness generation is judged."
+      },
+      {
+        "reference": "Numbers 16:1-50",
+        "relationship": "primary",
+        "notes": "Korah's rebellion, judgment, and priestly mediation."
+      },
+      {
+        "reference": "Numbers 20:1-29",
+        "relationship": "primary",
+        "notes": "Miriam dies, Moses fails at the rock, and Aaron dies."
+      },
+      {
+        "reference": "Numbers 21:4-35",
+        "relationship": "supporting",
+        "notes": "The bronze serpent and victories east of the Jordan."
+      },
+      {
+        "reference": "Numbers 22:1-41",
+        "relationship": "primary",
+        "notes": "Balak summons Balaam and the Balaam cycle begins."
+      },
+      {
+        "reference": "Numbers 24:1-25",
+        "relationship": "primary",
+        "notes": "Balaam's later blessings and oracles."
+      },
+      {
+        "reference": "Numbers 25:1-18",
+        "relationship": "primary",
+        "notes": "The Peor crisis and Phinehas's intervention."
+      },
+      {
+        "reference": "Numbers 26:1-65",
+        "relationship": "primary",
+        "notes": "The second census distinguishes the new generation."
+      },
+      {
+        "reference": "Numbers 27:1-23",
+        "relationship": "primary",
+        "notes": "The daughters of Zelophehad and Joshua's commission."
+      },
+      {
+        "reference": "Numbers 36:1-13",
+        "relationship": "supporting",
+        "notes": "Inheritance is clarified and the book closes on the plains of Moab."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [
+      {
+        "location": "object.scripture_references",
+        "value": {
+          "reference": "Numbers 1:1-54",
+          "relationship": "primary",
+          "notes": "The first census and tribal organization at Sinai."
+        }
+      }
+    ],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.955,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 1",
+    "exact_matched_reference": [
+      "Numbers 1:1-54"
+    ],
+    "canonical_result_identity": {
+      "object_id": "numbers",
+      "object_json_sha256": "da1db3e9ba0def4fc91448a927c08823445237f69b8a3ce7091cc8655c012346"
+    },
+    "evidence_item_id": "numbers-two-generations",
+    "evidence_category": "culture",
+    "evidence_confidence": "high",
+    "passage_anchors": [
+      "Numbers 1:1-54"
+    ],
+    "source_ids": [
+      "numbers-1-36",
+      "milgrom-numbers"
+    ],
+    "claim": "The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab.",
+    "synthesis_ids": [
+      "syn_language_literary_1ce482ed90f4",
+      "syn_why_it_matters_dd7137349c08"
+    ],
+    "synthesis_kind": [
+      "language_literary",
+      "why_it_matters"
+    ],
+    "synthesis_confidence": [
+      "high",
+      "high"
+    ],
+    "interpretation_level": [
+      "fact",
+      "inference"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER",
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ],
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ],
+      [
+        "Numbers 1:1",
+        "Numbers 1:1-54"
+      ]
+    ],
+    "explicit_significance": [
+      false,
+      false
+    ],
+    "support_count": [
+      2,
+      2
+    ],
+    "resulting_provenance_path_ids": [
+      "reader_path_numbers_001_2dfeccd5d6ee4e0581ccdb83",
+      "reader_path_numbers_001_a4bdc19f7694761cb4fa34cc"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "reader_path_numbers_001_2dfeccd5d6ee4e0581ccdb83",
+      "reader_path_numbers_001_a4bdc19f7694761cb4fa34cc"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_2",
+        "section_kind": "language_literary",
+        "section_title": "The Opening Census",
+        "final_block": "This census belongs to the book’s larger geographical and generational structure. Numbers moves from preparation at Sinai through Kadesh and the Transjordan to renewed preparation on the plains of Moab. The census here and the later census in Numbers 26 frame that journey by counting first the generation at Sinai and then the generation prepared for inheritance near Moab."
+      },
+      {
+        "block_id": "block_3",
+        "section_kind": "why_it_matters",
+        "section_title": "Why the Census Matters",
+        "final_block": "The long enumeration is therefore more than an isolated administrative record. Together with the later census, it marks the transition between two generations and helps give the book its shape as a journey from preparation at Sinai to preparation near Moab."
+      }
+    ],
+    "relevance_classification": "DIRECTLY_RELEVANT",
+    "relevance_rationale": "The structured claim is explicitly about Numbers 1's setting, literary movement, or census structure.",
+    "relevance_metadata": {
+      "source_kind": "ckl_claim",
+      "parent_object_id": "numbers",
+      "parent_title": "Numbers",
+      "parent_type": "book",
+      "object_importance": 95,
+      "retrieval_score": 0.915,
+      "passage_relationship": "direct",
+      "anchor_specificity": "verse",
+      "verse_distance": 0,
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "assertion_type": "",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "literary",
+      "note_type": "",
+      "field": "",
+      "applicability_scope": "passage",
+      "anchor_source": "child",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "presentation_role": "language_literary",
+      "overview_priority": 98
+    }
+  },
+  {
+    "ckl_object_id": "numbers",
+    "ckl_object_type": "book",
+    "ckl_title": "Numbers",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/books/numbers.json",
+      "sha256": "f95f740a2d933c1d8410e61068ba6e7680093db22f2315b8549aa969a2db6177",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Numbers 1:1-54",
+        "relationship": "primary",
+        "notes": "The first census and tribal organization at Sinai."
+      },
+      {
+        "reference": "Numbers 6:22-27",
+        "relationship": "supporting",
+        "notes": "The priestly blessing places the divine name on Israel."
+      },
+      {
+        "reference": "Numbers 10:11-36",
+        "relationship": "primary",
+        "notes": "Israel departs Sinai under the cloud."
+      },
+      {
+        "reference": "Numbers 11:1-35",
+        "relationship": "supporting",
+        "notes": "Complaint, provision, judgment, and shared leadership."
+      },
+      {
+        "reference": "Numbers 13:1-33",
+        "relationship": "primary",
+        "notes": "The land is surveyed and a divided report is given."
+      },
+      {
+        "reference": "Numbers 14:1-45",
+        "relationship": "primary",
+        "notes": "Israel refuses the land and the wilderness generation is judged."
+      },
+      {
+        "reference": "Numbers 16:1-50",
+        "relationship": "primary",
+        "notes": "Korah's rebellion, judgment, and priestly mediation."
+      },
+      {
+        "reference": "Numbers 20:1-29",
+        "relationship": "primary",
+        "notes": "Miriam dies, Moses fails at the rock, and Aaron dies."
+      },
+      {
+        "reference": "Numbers 21:4-35",
+        "relationship": "supporting",
+        "notes": "The bronze serpent and victories east of the Jordan."
+      },
+      {
+        "reference": "Numbers 22:1-41",
+        "relationship": "primary",
+        "notes": "Balak summons Balaam and the Balaam cycle begins."
+      },
+      {
+        "reference": "Numbers 24:1-25",
+        "relationship": "primary",
+        "notes": "Balaam's later blessings and oracles."
+      },
+      {
+        "reference": "Numbers 25:1-18",
+        "relationship": "primary",
+        "notes": "The Peor crisis and Phinehas's intervention."
+      },
+      {
+        "reference": "Numbers 26:1-65",
+        "relationship": "primary",
+        "notes": "The second census distinguishes the new generation."
+      },
+      {
+        "reference": "Numbers 27:1-23",
+        "relationship": "primary",
+        "notes": "The daughters of Zelophehad and Joshua's commission."
+      },
+      {
+        "reference": "Numbers 36:1-13",
+        "relationship": "supporting",
+        "notes": "Inheritance is clarified and the book closes on the plains of Moab."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.955,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 1",
+    "exact_matched_reference": [
+      "Numbers 1:1"
+    ],
+    "canonical_result_identity": {
+      "object_id": "numbers",
+      "object_json_sha256": "da1db3e9ba0def4fc91448a927c08823445237f69b8a3ce7091cc8655c012346"
+    },
+    "evidence_item_id": "numbers:interpretive_note:0",
+    "evidence_category": "culture",
+    "evidence_confidence": "high",
+    "passage_anchors": [
+      "Numbers 1:1"
+    ],
+    "source_ids": [
+      "numbers-1-36",
+      "milgrom-numbers",
+      "ashley-numbers"
+    ],
+    "claim": "Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location.",
+    "synthesis_ids": [
+      "syn_cultural_context_43f4db5657f9"
+    ],
+    "synthesis_kind": [
+      "cultural_context"
+    ],
+    "synthesis_confidence": [
+      "high"
+    ],
+    "interpretation_level": [
+      "inference"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 1:1"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 1:1"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "reader_path_numbers_001_14a11b3f39ed3ab2f74e67a4"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "reader_path_numbers_001_14a11b3f39ed3ab2f74e67a4"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_1",
+        "section_kind": "cultural_context",
+        "section_title": "The Setting at Sinai",
+        "final_block": "Numbers begins at Sinai, where Israel is organized after leaving Egypt. Although Egypt remains the place from which the people came, it is not the book’s principal setting: the larger movement runs from Sinai toward the plains of Moab."
+      }
+    ],
+    "relevance_classification": "DIRECTLY_RELEVANT",
+    "relevance_rationale": "The structured claim is explicitly about Numbers 1's setting, literary movement, or census structure.",
+    "relevance_metadata": {
+      "source_kind": "ckl_interpretive_note",
+      "parent_object_id": "numbers",
+      "parent_title": "Numbers",
+      "parent_type": "book",
+      "object_importance": 95,
+      "retrieval_score": 0.915,
+      "passage_relationship": "direct",
+      "anchor_specificity": "verse",
+      "verse_distance": 0,
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "assertion_type": "inference",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "literary-observation",
+      "field": "",
+      "applicability_scope": "passage",
+      "anchor_source": "child",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "presentation_role": "historical_context",
+      "overview_priority": 110
+    }
+  },
+  {
+    "ckl_object_id": "numbers",
+    "ckl_object_type": "book",
+    "ckl_title": "Numbers",
+    "originating_ckl_file_or_database_identity": {
+      "path": "framework/canonical_library/objects/books/numbers.json",
+      "sha256": "f95f740a2d933c1d8410e61068ba6e7680093db22f2315b8549aa969a2db6177",
+      "database": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf/ckl.sqlite"
+    },
+    "raw_stored_scripture_references": [
+      {
+        "reference": "Numbers 1:1-54",
+        "relationship": "primary",
+        "notes": "The first census and tribal organization at Sinai."
+      },
+      {
+        "reference": "Numbers 6:22-27",
+        "relationship": "supporting",
+        "notes": "The priestly blessing places the divine name on Israel."
+      },
+      {
+        "reference": "Numbers 10:11-36",
+        "relationship": "primary",
+        "notes": "Israel departs Sinai under the cloud."
+      },
+      {
+        "reference": "Numbers 11:1-35",
+        "relationship": "supporting",
+        "notes": "Complaint, provision, judgment, and shared leadership."
+      },
+      {
+        "reference": "Numbers 13:1-33",
+        "relationship": "primary",
+        "notes": "The land is surveyed and a divided report is given."
+      },
+      {
+        "reference": "Numbers 14:1-45",
+        "relationship": "primary",
+        "notes": "Israel refuses the land and the wilderness generation is judged."
+      },
+      {
+        "reference": "Numbers 16:1-50",
+        "relationship": "primary",
+        "notes": "Korah's rebellion, judgment, and priestly mediation."
+      },
+      {
+        "reference": "Numbers 20:1-29",
+        "relationship": "primary",
+        "notes": "Miriam dies, Moses fails at the rock, and Aaron dies."
+      },
+      {
+        "reference": "Numbers 21:4-35",
+        "relationship": "supporting",
+        "notes": "The bronze serpent and victories east of the Jordan."
+      },
+      {
+        "reference": "Numbers 22:1-41",
+        "relationship": "primary",
+        "notes": "Balak summons Balaam and the Balaam cycle begins."
+      },
+      {
+        "reference": "Numbers 24:1-25",
+        "relationship": "primary",
+        "notes": "Balaam's later blessings and oracles."
+      },
+      {
+        "reference": "Numbers 25:1-18",
+        "relationship": "primary",
+        "notes": "The Peor crisis and Phinehas's intervention."
+      },
+      {
+        "reference": "Numbers 26:1-65",
+        "relationship": "primary",
+        "notes": "The second census distinguishes the new generation."
+      },
+      {
+        "reference": "Numbers 27:1-23",
+        "relationship": "primary",
+        "notes": "The daughters of Zelophehad and Joshua's commission."
+      },
+      {
+        "reference": "Numbers 36:1-13",
+        "relationship": "supporting",
+        "notes": "Inheritance is clarified and the book closes on the plains of Moab."
+      }
+    ],
+    "relationship_notes_attached_to_scripture_reference": [],
+    "retrieval_match_reason": "scripture interval overlap; evidence item was then produced from the matched parent object",
+    "retrieval_match_type": "scripture",
+    "retrieval_score_ranking": {
+      "score": 0.955,
+      "rank": "unavailable"
+    },
+    "queried_chapter": "Numbers 1",
+    "exact_matched_reference": [
+      "Numbers 1"
+    ],
+    "canonical_result_identity": {
+      "object_id": "numbers",
+      "object_json_sha256": "da1db3e9ba0def4fc91448a927c08823445237f69b8a3ce7091cc8655c012346"
+    },
+    "evidence_item_id": "numbers:interpretive_note:1",
+    "evidence_category": "culture",
+    "evidence_confidence": "low",
+    "passage_anchors": [
+      "Numbers 1"
+    ],
+    "source_ids": [
+      "numbers-1-36",
+      "milgrom-numbers",
+      "ashley-numbers",
+      "zondervan-illustrated-pentateuch-backgrounds"
+    ],
+    "claim": "The two census totals and the scale of Israel's wilderness population have major literary and historical interpretations; the record should not silently select one reconstruction.",
+    "synthesis_ids": [
+      "syn_interpretive_questions_ac529624339f"
+    ],
+    "synthesis_kind": [
+      "interpretive_questions"
+    ],
+    "synthesis_confidence": [
+      "low"
+    ],
+    "interpretation_level": [
+      "disputed"
+    ],
+    "passage_scope": [
+      "CURRENT_CHAPTER"
+    ],
+    "source_anchors": [
+      [
+        "Numbers 1"
+      ]
+    ],
+    "verse_refs": [
+      [
+        "Numbers 1"
+      ]
+    ],
+    "explicit_significance": [
+      false
+    ],
+    "support_count": [
+      1
+    ],
+    "resulting_provenance_path_ids": [
+      "reader_path_numbers_001_4b56e1acc9b3f47af93f395b"
+    ],
+    "selected_by_renderer": true,
+    "selected_path_ids": [
+      "reader_path_numbers_001_4b56e1acc9b3f47af93f395b"
+    ],
+    "final_blocks": [
+      {
+        "block_id": "block_4",
+        "section_kind": "interpretive_questions",
+        "section_title": "Interpreting the Numbers",
+        "final_block": "The census total of 603,550, together with the scale of Israel’s wilderness population, has received differing literary and historical interpretations. The chapter clearly presents the total, but choosing among proposed reconstructions remains disputed and should not be treated as settled."
+      }
+    ],
+    "relevance_classification": "DIRECTLY_RELEVANT",
+    "relevance_rationale": "The structured claim is explicitly about Numbers 1's setting, literary movement, or census structure.",
+    "relevance_metadata": {
+      "source_kind": "ckl_interpretive_note",
+      "parent_object_id": "numbers",
+      "parent_title": "Numbers",
+      "parent_type": "book",
+      "object_importance": 95,
+      "retrieval_score": 0.915,
+      "passage_relationship": "direct",
+      "anchor_specificity": "chapter",
+      "verse_distance": 0,
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "assertion_type": "inference",
+      "exploration_potential": 0.25,
+      "broad_tag_only": false,
+      "claim_type": "",
+      "note_type": "interpretive-caution",
+      "field": "",
+      "applicability_scope": "section",
+      "anchor_source": "child",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "presentation_role": "historical_context",
+      "overview_priority": 102
+    }
+  }
+]

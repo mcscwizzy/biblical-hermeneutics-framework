@@ -1,0 +1,550 @@
+{
+  "reference": "2 Chronicles 30",
+  "book": "2 Chronicles",
+  "chapter": 30,
+  "evidence_hash": "092c0c618fe8b24dbd688c657dd91b80a5d1288b26e3f88bb6d278fbd4a49ddf",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "818cd05344e4c59a475e2eeeb47878f7c84d03307c2f186d720fbec7d645df28",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_cultural_context_1694df4fd6aa",
+      "kind": "cultural_context",
+      "facts": [
+        "Hezekiah's Reforms unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "hezekiahs-reforms:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "hezekiahs-reforms"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_19917b335cc6",
+      "kind": "cultural_context",
+      "facts": [
+        "Fall of Babylon unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "fall-of-babylon:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "fall-of-babylon"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_1dbab2922e9e",
+      "kind": "cultural_context",
+      "facts": [
+        "Neo-Assyrian officials used forced resettlement to punish resistance, redistribute labor and expertise, recruit specialists, repopulate strategic places, and incorporate provinces. The policy was organized and coercive, even where deportees received assigned work or settlement.",
+        "Kings interprets exile as removal from YHWH's land and presence after covenant breach, but also preserves named destinations, imperial agents, and a differentiated aftermath."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "assyrian-exile-of-israel:ancient_near_east_context:0",
+        "assyrian-exile-of-israel:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_242b2b6b4c5d",
+      "kind": "cultural_context",
+      "facts": [
+        "Imperial campaigns, court politics, and temple memory frame the background."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "rebuilding-the-walls:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "rebuilding-the-walls"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a880474698b8",
+      "kind": "cultural_context",
+      "facts": [
+        "Elijah on Mount Carmel unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "elijah-on-mount-carmel:ancient_near_east_context:0"
+      ],
+      "entity_ids": [
+        "elijah-on-mount-carmel"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_396bc722ab48",
+      "kind": "historical_context",
+      "facts": [
+        "Tiglath-pileser III deported populations from annexed northern territories before Samaria fell. Second Kings and Sargon II's inscriptions then describe further removal, while surviving populations, incoming settlers, and provincial communities complicate any single-wave or total-disappearance model.",
+        "Northern Israel and Assyrian resettlement destinations during the later eighth and seventh centuries BCE."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "assyrian-exile-of-israel:historical_context:0",
+        "assyrian-exile-of-israel:historical_setting:0"
+      ],
+      "entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_67dbd45b1098",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Hezekiah's Reforms is located by its canonical setting; this entry connects that setting with elijah, jeremiah-the-prophet, exile-theme and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "hezekiahs-reforms:historical_context:0"
+      ],
+      "entity_ids": [
+        "hezekiahs-reforms"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_71c6adb3bb91",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Elijah on Mount Carmel is located by its canonical setting; this entry connects that setting with elijah, jeremiah-the-prophet, exile-theme and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "elijah-on-mount-carmel:historical_context:0"
+      ],
+      "entity_ids": [
+        "elijah-on-mount-carmel"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f718554f7faa",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the era of prophetic confrontation, exile, and eventual return."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "rebuilding-the-walls:historical_context:0"
+      ],
+      "entity_ids": [
+        "rebuilding-the-walls"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_fb009aa63bed",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Fall of Babylon is located by its canonical setting; this entry connects that setting with elijah, jeremiah-the-prophet, exile-theme and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "fall-of-babylon:historical_context:0"
+      ],
+      "entity_ids": [
+        "fall-of-babylon"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_453a31f1b194",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Hezekiah restores temple worship and invites both Judah and northern Israel to a delayed Passover in Jerusalem, where prayer, healing, joy, and Levitical service underscore a renewed all-Israel horizon.",
+        "After the division, the narrative follows the Davidic kings of Judah and the Jerusalem temple while continuing to address priests, Levites, worshipers, and captives from the northern tribes as part of all Israel."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:1-27"
+      ],
+      "evidence_ids": [
+        "second-chronicles-hezekiah-passover",
+        "second-chronicles-judah-focus"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_8ecc2c0c7646",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The Assyrian exile did not make every northern Israelite vanish; the evidence supports deportation, survival, provincial resettlement, and continuing identities rather than a literal disappearance of ten biological tribes."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-11"
+      ],
+      "evidence_ids": [
+        "assyrian-deportation-and-provincial-incorporation:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-11"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_886a61c24061",
+      "kind": "why_it_matters",
+      "facts": [
+        "Tiglath-pileser III deported populations from annexed northern territories before Samaria fell. Second Kings and Sargon II's inscriptions then describe further removal, while surviving populations, incoming settlers, and provincial communities complicate any single-wave or total-disappearance model.",
+        "Northern Israel and Assyrian resettlement destinations during the later eighth and seventh centuries BCE."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "assyrian-exile-of-israel:historical_context:0",
+        "assyrian-exile-of-israel:historical_setting:0"
+      ],
+      "entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_396bc722ab48"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_a2f752be136a",
+      "kind": "why_it_matters",
+      "facts": [
+        "Neo-Assyrian officials used forced resettlement to punish resistance, redistribute labor and expertise, recruit specialists, repopulate strategic places, and incorporate provinces. The policy was organized and coercive, even where deportees received assigned work or settlement.",
+        "Kings interprets exile as removal from YHWH's land and presence after covenant breach, but also preserves named destinations, imperial agents, and a differentiated aftermath."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:6-12"
+      ],
+      "evidence_ids": [
+        "assyrian-exile-of-israel:ancient_near_east_context:0",
+        "assyrian-exile-of-israel:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_1dbab2922e9e"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:6-12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f8302e473296",
+      "kind": "why_it_matters",
+      "facts": [
+        "Hezekiah restores temple worship and invites both Judah and northern Israel to a delayed Passover in Jerusalem, where prayer, healing, joy, and Levitical service underscore a renewed all-Israel horizon.",
+        "After the division, the narrative follows the Davidic kings of Judah and the Jerusalem temple while continuing to address priests, Levites, worshipers, and captives from the northern tribes as part of all Israel."
+      ],
+      "verse_refs": [
+        "2 Chronicles 30:1-27"
+      ],
+      "evidence_ids": [
+        "second-chronicles-hezekiah-passover",
+        "second-chronicles-judah-focus"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_453a31f1b194"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Chronicles 30:1-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 15,
+    "used_evidence_ids": [
+      "assyrian-deportation-and-provincial-incorporation:interpretive_note:3",
+      "assyrian-exile-of-israel:ancient_near_east_context:0",
+      "assyrian-exile-of-israel:hebraic_worldview:0",
+      "assyrian-exile-of-israel:historical_context:0",
+      "assyrian-exile-of-israel:historical_setting:0",
+      "elijah-on-mount-carmel:ancient_near_east_context:0",
+      "elijah-on-mount-carmel:historical_context:0",
+      "fall-of-babylon:ancient_near_east_context:0",
+      "fall-of-babylon:historical_context:0",
+      "hezekiahs-reforms:ancient_near_east_context:0",
+      "hezekiahs-reforms:historical_context:0",
+      "rebuilding-the-walls:ancient_near_east_context:0",
+      "rebuilding-the-walls:historical_context:0",
+      "second-chronicles-hezekiah-passover",
+      "second-chronicles-judah-focus"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 8,
+      "history": 7
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 15,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 5,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "cultural_context": 5,
+      "historical_context": 5,
+      "interpretive_questions": 2,
+      "why_it_matters": 3
+    },
+    "relationship_unit_count": 3
+  }
+}

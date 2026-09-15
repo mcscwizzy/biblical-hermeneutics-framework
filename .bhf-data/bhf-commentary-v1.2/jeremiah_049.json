@@ -1,0 +1,67 @@
+{
+  "reference": "Jeremiah 49",
+  "book": "Jeremiah",
+  "chapter": 49,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "A Shared Edom Oracle",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Jeremiah 49:7-16 closely overlaps with Obadiah 1-8. The resemblance is clear, but its explanation remains uncertain: one text may have drawn on the other, both may preserve a common tradition, or the material may reflect later editorial combination. It is therefore better to recognize the overlap without treating any one theory of its origin as settled.",
+          "verse_refs": [
+            "Jeremiah 49:7-16"
+          ],
+          "evidence_ids": [
+            "obadiah-jeremiah49",
+            "obadiah:interpretive_note:23"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_3441d96f9a76"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Jeremiah within the Book",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Jeremiah 49 belongs to the collection of oracles concerning nations in Jeremiah 46-51. The received book brings together varied material\u2014poetry, sermons, narratives, letters, headings, restoration collections, and an appendix\u2014through a long compositional history. Ancient editions of Jeremiah also differ markedly in length and in where the nation oracles appear, so this collection\u2019s placement and order should not be treated as identical in every ancient form of the book.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "jeremiah-long-composition",
+            "jeremiah-practical-mt-outline",
+            "jeremiah-two-editions"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_7c55063caeb3"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a8e1ab56d7cbae06cd3a7fe35b6c07d60a6f7dc0eebae1e1ce1b62bff531b392",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "b8589c6fa8934cea85bd416aa90c028aa82d98bb31dbd7c399b25c2cffd4d31c",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

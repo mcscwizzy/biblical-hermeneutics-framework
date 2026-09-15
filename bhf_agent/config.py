@@ -24,6 +24,7 @@ ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
 ALLOWED_ADAPTERS = ("claude_cli", "anthropic", "openai_compatible", "ollama", "openrouter")
 ALLOWED_RESPONSE_FORMAT_POLICIES = ("auto", "json_schema", "json_object", "off")
 ALLOWED_RUNTIME_PROFILE_MODES = ("compact", "full")
+ALLOWED_REASONING_EFFORTS = ("minimal", "none", "low", "medium", "high", "xhigh", "max")
 
 
 @dataclass(frozen=True)
@@ -197,7 +198,13 @@ class AgentConfig:
     base_url: Optional[str] = None
     api_key: Optional[str] = None
     temperature: float = 0.3
+    reasoning_effort: Optional[str] = None
     max_tokens: int = 8192
+    # Commentary has a separate output ceiling from the general agent limit.
+    # ``None`` preserves the historical environment/default resolution for
+    # non-production callers; production resolves and records the effective
+    # value before constructing its runner.
+    commentary_max_tokens: Optional[int] = None
     context_window: int = 12288
     show_method_notes: bool = True
     timeout_seconds: Optional[float] = 600
@@ -337,8 +344,15 @@ class AgentConfig:
             )
         if not 0 <= float(self.temperature) <= 2:
             raise ConfigError("temperature must be between 0 and 2")
+        if self.reasoning_effort is not None and self.reasoning_effort not in ALLOWED_REASONING_EFFORTS:
+            raise ConfigError(
+                "reasoning_effort must be one of: "
+                + ", ".join(ALLOWED_REASONING_EFFORTS)
+            )
         if int(self.max_tokens) <= 0:
             raise ConfigError("max_tokens must be greater than 0")
+        if self.commentary_max_tokens is not None and int(self.commentary_max_tokens) <= 0:
+            raise ConfigError("commentary_max_tokens must be greater than 0")
         if int(self.context_window) <= 0:
             raise ConfigError("context_window must be greater than 0")
         if self.timeout_seconds is not None and float(self.timeout_seconds) <= 0:

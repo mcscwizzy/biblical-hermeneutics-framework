@@ -1,0 +1,94 @@
+{
+  "reference": "Amos 5",
+  "packet_id": "commentary-v1.4-packet:37602230af11e1daf04b7eac0c8dd9d3fac3249701d932d9f52aa5ddb085b473",
+  "prompt_version": "1.4",
+  "evidence_hash": "677d33e36464f157dfba78571427d276697b29ea2d4e4cc80a4fd5cd2acd5116",
+  "synthesis_hash": "f4188bdb7485c8b198228b0bd9cafb78dcdc87cbfcb7ef6f491a9a0e11864ef3",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Amos 5",
+    "book": "Amos",
+    "chapter": 5,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Justice, worship, and the day of the LORD",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Amos joins its warning about the day of the LORD to an accusation of exploitation. The chapter describes injustice at the gate, harm to the poor, and corrupt judgment, then rejects festivals, offerings, and songs when worship is separated from justice.",
+            "verse_refs": [
+              "Amos 5:7-17",
+              "Amos 5:18-24"
+            ],
+            "evidence_ids": [
+              "amos-acts7-reuse",
+              "amos-day-yhwh",
+              "amos-economic-exploitation",
+              "amos-worship-justice",
+              "amos:interpretive_note:12",
+              "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_0af53b92615b",
+              "syn_cultural_context_86bdb1995d7c"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "A northern kingdom under pressure",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The northern kingdom formed after the united monarchy divided and was centered on Samaria. The chapter’s warning belongs to a world of imperial pressure; the later siege and fall of Samaria are associated with the transition from Shalmaneser V to Sargon II, with details of chronology and deportation remaining debated.",
+            "verse_refs": [
+              "Amos 5:18-27"
+            ],
+            "evidence_ids": [
+              "fall-of-samaria:historical_context:0",
+              "fall-of-samaria:historical_setting:0",
+              "what-is-the-kingdom-of-israel:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_58d718b76ce6",
+              "syn_historical_context_2ab75d75e47d"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Do not turn the oracle into a slogan",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "“Let justice roll down like waters” is a communal demand rooted in the chapter’s concerns with the gate, debt, land, labor, and worship. It is not a blank slogan for assigning one modern party, nation, economic ideology, or church program to the prophet.",
+            "verse_refs": [
+              "Amos 5:7-27"
+            ],
+            "evidence_ids": [
+              "amos:interpretive_note:13",
+              "amos:interpretive_note:14",
+              "amos:interpretive_note:15",
+              "amos:interpretive_note:16",
+              "amos:interpretive_note:17"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_1ca589e32c28"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

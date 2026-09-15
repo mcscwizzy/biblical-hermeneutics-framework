@@ -1,0 +1,269 @@
+{
+  "artifact_version": "commentary-renderer-selection-breadth-diagnostic-v1-parsed-output-v1",
+  "reference": "Isaiah 13",
+  "raw_sha256": "5fff3220d9d2585b413df420549fab4e422ec948be0d8e26a48ce6f87cc435f2",
+  "parse_status": "JSON_OBJECT",
+  "renderer_payload": {
+    "reference": "Isaiah 13",
+    "book": "Isaiah",
+    "chapter": 13,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The oracle against Babylon belongs to a prophetic response to imperial aggression and to questions about the moral order governing nations. The announcement is therefore more than a description of warfare: it presents a powerful empire as subject to judgment.",
+            "verse_refs": [
+              "Isaiah 13:1-5",
+              "Isaiah 13:17-22"
+            ],
+            "evidence_ids": [
+              "judgment-against-the-nations:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_b7e0ba614e8c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_2",
+            "text": "Prophets use the phrase “the day of Jehovah” amid national crisis to warn of covenant judgment and promise future vindication. In this chapter, the phrase gathers the scenes of terror, cosmic darkness, punishment, and upheaval into the announcement of a decisive act of divine judgment.",
+            "verse_refs": [
+              "Isaiah 13:6-13"
+            ],
+            "evidence_ids": [
+              "what-is-the-day-of-the-lord:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_7cb3fb8dffed"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Judgment against the nations appears here in prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms. The “day of Jehovah” also draws on royal “day of the king” imagery, but Isaiah’s oracle places the LORD himself in the role of judge and deliverer.",
+            "verse_refs": [
+              "Isaiah 13:1-5",
+              "Isaiah 13:6-13"
+            ],
+            "evidence_ids": [
+              "judgment-against-the-nations:ancient_near_east_context:0",
+              "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ac46004685c7",
+              "syn_cultural_context_b1404d5f188e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "One practical reading map divides Isaiah into 1–12, 13–27, 28–35, 36–39, 40–55, and 56–66, placing this chapter at the beginning of the 13–27 division. That outline can help readers recognize a shift into material concerning Babylon and other nations, but it is not proof of six authors or of one uncontested structure for the book.",
+            "verse_refs": [
+              "Isaiah 13:1"
+            ],
+            "evidence_ids": [
+              "isaiah-practical-outline"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_e27b60d239e0"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "Across Isaiah, judgment is directed not only toward foreign nations but also toward Judah and Israel. Empires may function as instruments within the book while remaining accountable themselves, and the book also looks beyond judgment to nations learning, worshiping, and sharing in restoration. Isaiah 13 should therefore be read within a wider treatment of the nations rather than as an isolated oracle about Babylon.",
+            "evidence_ids": [
+              "isaiah-nations-empire"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_85ad53daa5ea"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_6",
+            "text": "The Great Isaiah Scroll preserves an almost complete witness to all sixty-six chapters. It broadly aligns with the Masoretic tradition while containing thousands of orthographic and substantive differences; additional Isaiah manuscripts and interpretive writings from Qumran also show that the book was actively transmitted and interpreted.",
+            "evidence_ids": [
+              "isaiah-qumran-witnesses"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_85ad53daa5ea"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  },
+  "validated_commentary": {
+    "reference": "Isaiah 13",
+    "book": "Isaiah",
+    "chapter": 13,
+    "status": "pending",
+    "evidence_availability": "AVAILABLE",
+    "sections": [
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The oracle against Babylon belongs to a prophetic response to imperial aggression and to questions about the moral order governing nations. The announcement is therefore more than a description of warfare: it presents a powerful empire as subject to judgment.",
+            "verse_refs": [
+              "Isaiah 13:1-5",
+              "Isaiah 13:17-22"
+            ],
+            "evidence_ids": [
+              "judgment-against-the-nations:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_b7e0ba614e8c"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_2",
+            "text": "Prophets use the phrase “the day of Jehovah” amid national crisis to warn of covenant judgment and promise future vindication. In this chapter, the phrase gathers the scenes of terror, cosmic darkness, punishment, and upheaval into the announcement of a decisive act of divine judgment.",
+            "verse_refs": [
+              "Isaiah 13:6-13"
+            ],
+            "evidence_ids": [
+              "what-is-the-day-of-the-lord:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_7cb3fb8dffed"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Judgment against the nations appears here in prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms. The “day of Jehovah” also draws on royal “day of the king” imagery, but Isaiah’s oracle places the LORD himself in the role of judge and deliverer.",
+            "verse_refs": [
+              "Isaiah 13:1-5",
+              "Isaiah 13:6-13"
+            ],
+            "evidence_ids": [
+              "judgment-against-the-nations:ancient_near_east_context:0",
+              "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_ac46004685c7",
+              "syn_cultural_context_b1404d5f188e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "One practical reading map divides Isaiah into 1–12, 13–27, 28–35, 36–39, 40–55, and 56–66, placing this chapter at the beginning of the 13–27 division. That outline can help readers recognize a shift into material concerning Babylon and other nations, but it is not proof of six authors or of one uncontested structure for the book.",
+            "verse_refs": [
+              "Isaiah 13:1"
+            ],
+            "evidence_ids": [
+              "isaiah-practical-outline"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_e27b60d239e0"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "Across Isaiah, judgment is directed not only toward foreign nations but also toward Judah and Israel. Empires may function as instruments within the book while remaining accountable themselves, and the book also looks beyond judgment to nations learning, worshiping, and sharing in restoration. Isaiah 13 should therefore be read within a wider treatment of the nations rather than as an isolated oracle about Babylon.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "isaiah-nations-empire"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_85ad53daa5ea"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_6",
+            "text": "The Great Isaiah Scroll preserves an almost complete witness to all sixty-six chapters. It broadly aligns with the Masoretic tradition while containing thousands of orthographic and substantive differences; additional Isaiah manuscripts and interpretive writings from Qumran also show that the book was actively transmitted and interpreted.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "isaiah-qumran-witnesses"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_85ad53daa5ea"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": {
+      "evidence_hash": "061f1fe36f68dc82ce2550b7b29931d7b84a996d7b63700c9495d68048921c59",
+      "evidence_bundle_version": "1.1",
+      "commentary_schema_version": "1.2",
+      "commentary_prompt_version": "1.7",
+      "model": "gpt-5.6-sol",
+      "generated_timestamp": null,
+      "synthesis_hash": "bb7648b2d91162e19811879ed371365afd573bd168e7a24da769be1452e7f5cd",
+      "synthesis_schema_version": "1.1",
+      "synthesis_compiler_version": "1.1",
+      "renderer_label": "gpt-5.6-sol"
+    },
+    "failure_reason": null,
+    "validation_errors": [],
+    "validation_warnings": []
+  },
+  "validation_errors": [],
+  "diagnostic_id": "renderer-remediation-prompt-1.7-selection-breadth-7e1f844705a27ef5d2a1",
+  "packet_id": "commentary-renderer-selection-breadth-diagnostic-v1-packet:4e9c93331691cb3280018cedd14f889ee033c7c11e1b44919014f3b0a4d8dec6",
+  "packet_hash": "4e9c93331691cb3280018cedd14f889ee033c7c11e1b44919014f3b0a4d8dec6"
+}

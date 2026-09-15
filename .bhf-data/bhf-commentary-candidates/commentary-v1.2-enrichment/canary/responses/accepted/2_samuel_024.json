@@ -1,0 +1,105 @@
+{
+  "reference": "2 Samuel 24",
+  "book": "2 Samuel",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The census and the altar",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter moves from David's command to number Israel, through the census route and its aftermath, to confession, judgment, the stopping of the plague, and an altar at Araunah's threshing-floor. The closing purchase and offerings are presented as the point at which the plague is stayed.",
+          "verse_refs": [
+            "2 Samuel 24:1-10",
+            "2 Samuel 24:15-25"
+          ],
+          "evidence_ids": [
+            "2-samuel:interpretive_note:3"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_363cefa94cac"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Who incites the census?",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter begins by attributing the incitement to the LORD's anger, while First Chronicles attributes it to an adversary or Satan. Harmonizing, developmental, distinct-source, and other agency explanations remain debated. The difference should therefore be acknowledged rather than smoothed into a single certain account.",
+          "verse_refs": [
+            "2 Samuel 24:1"
+          ],
+          "evidence_ids": [
+            "2-samuel:interpretive_note:3"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_363cefa94cac"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_3",
+          "text": "The same interpretive question remains visible across the chapter's whole movement: the text presents David's command, his later remorse, and the resulting judgment, but the relation between divine anger, human agency, and the parallel account remains a matter of debate.",
+          "verse_refs": [
+            "2 Samuel 24:1-25"
+          ],
+          "evidence_ids": [
+            "1-chronicles:interpretive_note:3"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_3f9cd3a48046"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "A closing movement",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "As the closing chapter of Second Samuel, this account follows a larger movement that includes David's accession and kingdom consolidation, the ark and dynasty promise, royal abuse, household violence, rebellion, and grief. The chapter's census, judgment, and altar therefore function as a concluding movement in the book's portrayal of David's reign.",
+          "verse_refs": [
+            "2 Samuel 24:1-25"
+          ],
+          "evidence_ids": [
+            "second-samuel-literary-movement"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_94c9efd69cf7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bbe31ce9f67a01d10a7f33e8eb9110f3575dccc088e3fb2ae511fb7f44482f27",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.2",
+    "model": "external-renderer",
+    "generated_timestamp": "2026-09-07T20:01:43.922172+00:00",
+    "synthesis_hash": "3b89a5fb3f9d90f5cdb381a07adfd61817cd95d2e1d18122ee965a527ad1a510",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "Luna Medium",
+    "imported_timestamp": "2026-09-07T20:01:43.922172+00:00",
+    "candidate_id": "commentary-v1.2-candidate:4ab8647ccc1f9644d9519c9cbc8990f8202577fe1a954aa28c6dd2e85e0bbe90"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

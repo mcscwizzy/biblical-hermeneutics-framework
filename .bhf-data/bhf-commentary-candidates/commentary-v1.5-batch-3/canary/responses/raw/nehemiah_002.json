@@ -1,0 +1,134 @@
+{
+  "reference": "Nehemiah 2",
+  "packet_id": "commentary-v1.5-packet:4791ac0317846c1cdcae65d36ed23f5f1d62ba929d315fdad646df5e745e7f21",
+  "prompt_version": "1.5",
+  "evidence_hash": "f6ab76e08ca4471d60db1de6c6643c991696b788b51ce0070d9909c840032055",
+  "synthesis_hash": "c2c08d581dc4fb3fac623ae70c73641e8cbb81193bae9676612dc5ef15921483",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Nehemiah 2",
+    "book": "Nehemiah",
+    "chapter": 2,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Rebuilding within an empire",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Nehemiah 2 presents Jerusalem's rebuilding within Persian imperial administration. Artaxerxes is a real imperial authority whose authorization gives Nehemiah access to letters and timber, while the chapter does not portray Persian kings as covenant rulers or as restoring Davidic sovereignty.",
+            "verse_refs": [
+              "Nehemiah 2:1-20"
+            ],
+            "evidence_ids": [
+              "persia:ancient_near_east_context:0",
+              "persia:hebraic_worldview:0",
+              "persia:second_temple_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_898abe398102",
+              "syn_why_it_matters_138737c44be5"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Yehud under Persian rule",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Cyrus II's capture of Babylon in 539 BCE brought Judah into the wider Persian system as the small province of Yehud. The biblical narratives span several Persian kings, so their reigns should not be collapsed into one undifferentiated period.",
+            "verse_refs": [
+              "Nehemiah 2:1-20"
+            ],
+            "evidence_ids": [
+              "persia:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_d243ebf32cbc"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Dates, walls, and opposition",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Artaxerxes I is the conventional identification for Nehemiah's king, placing the twentieth year around 445/444 BCE, but accession-year and calendar questions leave the exact reckoning qualified. Archaeology confirms Persian-period occupation and administration without establishing an uncontested route or complete circuit for the wall. Sanballat, Tobiah, and Geshem should be read as regional interests in the narrative, not as a timeless ethnic feud.",
+            "verse_refs": [
+              "Nehemiah 2:1",
+              "Nehemiah 2:10-20",
+              "Nehemiah 2:11-20"
+            ],
+            "evidence_ids": [
+              "ezra:interpretive_note:5",
+              "nehemiah:interpretive_note:0",
+              "nehemiah:interpretive_note:2",
+              "nehemiah:interpretive_note:3"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_0fc1a3693c2d",
+              "syn_interpretive_questions_12e92b41d6eb",
+              "syn_why_it_matters_1eafea6a4a50"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "A later comparative witness",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "A 407 BCE petition from Judeans at Elephantine to Bagohi, governor of Judah, offers later comparative evidence for Persian provincial administration, priestly authority, and written appeals. It helps illuminate the administrative world around Ezra-Nehemiah, but it is not direct evidence for every detail of Nehemiah 2.",
+            "verse_refs": [
+              "Nehemiah 2:1-20"
+            ],
+            "evidence_ids": [
+              "elephantine-judah-governor-correspondence",
+              "elephantine-judah-governor-correspondence:passage-relevance"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_b9d74d0a9b7d",
+              "syn_why_it_matters_242ec049c26d"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "From prayer to authorization",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The surrounding narrative connects Nehemiah's response to Jerusalem's distress with mourning, fasting, confession, planning, and the request that Artaxerxes authorizes. The rebuilding project therefore follows a movement from remembered covenant crisis to practical imperial permission.",
+            "verse_refs": [
+              "Nehemiah 1:1-11"
+            ],
+            "evidence_ids": [
+              "nehemiah-prayer-authorization"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_9c701b16fd57"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

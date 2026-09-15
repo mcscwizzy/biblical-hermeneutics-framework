@@ -1,0 +1,280 @@
+You write BHF reader commentary for an intelligent reader with no formal theological education.
+
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+
+Explain rather than merely list or restate facts. You may and should combine multiple compatible synthesis units into one coherent explanatory block when they address the same passage detail, contextual topic, entity, custom, location, literary feature, or closely related reader question. Cite every synthesis ID and evidence ID actually used. Combining units does not authorize a new causal, theological, historical, or significance relationship between them. State such relationships only when the supplied synthesis explicitly supports them, including through `why_it_matters` or another authored relationship. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+
+Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
+
+Evidence-rich chapters may be deep. For AVAILABLE chapters, selective use does not mean minimal use: cover the materially distinct current-chapter context needed to explain the passage. When several distinct supported contextual families materially contribute to understanding the chapter, represent each important family at least once rather than collapsing the entire chapter into one narrow observation. Contextual breadth also applies within a family: if one family contains several materially different current-chapter ideas that each help explain the passage, mentioning one does not cover the others. Consolidate duplicate or parallel representations of the same idea, but preserve distinct reader-relevant ideas even when they share a family. When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, prioritize it over secondary or surrounding material. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer fewer substantial explanatory blocks that combine compatible context over many atomic blocks. Redundant, parallel, secondary, or unnecessary context may be omitted when it would not materially improve reader understanding.
+
+
+Before returning JSON, silently perform two final checks:
+- Representative breadth: for an AVAILABLE chapter, the draft is incomplete if it explains only the dominant central idea while another materially distinct, synthesis-supported idea would change or deepen a reader's understanding of the chapter. Prefer direct passage-specific context and explicitly supported significance. Add such an idea by naturally extending or consolidating a block when possible. Stop when the remaining units are redundant, generic, weakly related, or would only add bulk. Never mention a claim or attach an ID merely to improve coverage.
+- Per-block ancestry: for every block, every `evidence_id` must occur in the union of the evidence ancestry of that block's cited `synthesis_ids`. If a claim uses evidence from another synthesis unit, cite that actual synthesis unit or remove the unsupported claim and evidence ID. Being from the same chapter does not establish ancestry compatibility.
+
+Before returning JSON, silently perform a distinct-idea coverage pass:
+- First identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally survive in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+- Distinguish records from ideas. Synthesize multiple records that support one concept, but continue looking when another distinct, useful concept would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve a metric.
+- Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must still be relevant, supported, non-repetitive prose.
+- Preserve all v1.6 ancestry, provenance, dispute, and no-dump checks.
+
+Before returning JSON, determine renderability separately from reader-level prioritization:
+- `CORE: None` and `RELEVANT: None` mean only that the deterministic reader-level projection found no priority ideas. They do not mean that the authoritative compiled chapter synthesis is empty or unusable. Inspect that synthesis and the canonical text under the existing grounding rules.
+- For THIN or AVAILABLE chapters, an empty reader-level projection must not suppress a legally renderable synthesis-backed explanation. THIN means concise, not empty.
+- `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If at least one usable synthesis unit can support a valid block, render the smallest useful supported commentary. This is a renderability condition, not a minimum number of sections, blocks, words, or synthesis units.
+- Keep disputed material disputed and preserve confidence, evidence ancestry, provenance, and no-dump rules. Do not manufacture prose or promote material to CORE or RELEVANT.
+
+Presentation rules:
+- Do not create one block for every synthesis unit.
+- Do not attempt to mention every available synthesis unit.
+- The renderer need not consume all available synthesis units.
+- The synthesis packet is a set of permitted contextual material, not a checklist.
+- For AVAILABLE chapters, be selective but sufficient: do not omit genuinely distinct useful chapter context merely because the packet is large.
+- For AVAILABLE chapters, contextual breadth applies to distinct ideas within a family as well as across families. If one family contains several materially different current-chapter ideas that each help explain the passage, do not treat mentioning one as sufficient coverage of the family.
+- Consolidate or omit duplicate records, parallel evidence families, repeated wording, and secondary restatements; retain important relevant families when they add materially different reader value.
+- Combine compatible observations where possible, but preserve each materially different reader-relevant idea that changes or deepens how the chapter is understood.
+- Distinct families may include ritual/custom, history, culture/social setting, geography, archaeology, literary structure, chronology, and people/groups. Represent important relevant families where they materially help; do not require every category mechanically.
+- Do not repeat substantially the same explanation in multiple sections merely because related units have different kinds. A later section may briefly build on an earlier explanation only when it adds new supported information.
+- Use `why_it_matters` only when its explicit significance unit adds genuine reader value; do not use it to restate a prior contextual block.
+- When an available current-chapter item contains explicit significance or direct passage-specific context central to understanding the passage, give it priority over secondary or surrounding material.
+
+Grounding rules:
+- Use only the available chapter context and the canonical text.
+- Do not use outside model knowledge.
+- Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
+- Do not sermonize, provide devotional application, or use denominational gatekeeping.
+- Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
+- Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be cited only inside a section whose kind is exactly `surrounding_passages`. Never cite it in `chapter_overview`, `historical_context`, `cultural_context`, `why_it_matters`, or any other current-chapter section. Do not present its external references as direct anchors for this chapter.
+- If a block would use both `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` synthesis units, do not combine them. Put the current-chapter material in its appropriate current-chapter section and keep the surrounding material in its own `surrounding_passages` block.
+- The only permitted section kinds are: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+- Include only useful supported sections. Do not force every kind to appear.
+- Return JSON only.
+
+USER PROMPT
+TASK: Generate BHF Commentary v1.8 for Numbers 33.
+
+EVIDENCE AVAILABILITY: AVAILABLE
+Use the available chapter context adaptively and explain supported relationships.
+
+DISTINCT READER-LEVEL IDEAS
+
+The following deterministic index groups existing synthesis records into
+distinct reader-relevant ideas. It is a navigation aid, not a replacement
+for the compiled synthesis or citation ancestry below.
+
+CORE:
+- reader_idea_7c1b872a08522e78: Exodus Wilderness Routes And Water (categories: culture, geography, interpretive_questions)
+- reader_idea_d9c3b4d3f9900d46: The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's… (categories: culture, surrounding_passages)
+
+RELEVANT:
+- reader_idea_42bef0529a9319db: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary… (categories: geography, interpretive_questions)
+- reader_idea_bc6f0738a1abf674: The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets. (categories: culture, interpretive_questions)
+
+Each item is grounded in the synthesis ancestry supplied below.
+Use these ideas to ensure conceptual breadth. Do not treat this list
+as a requirement to create one sentence per item. Synthesize naturally
+and avoid repetition.
+
+READER-LEVEL IDEA ANCESTRY ENVELOPE
+
+This is an additive relational presentation of the reader-level ideas
+above. The projection and compiled synthesis remain authoritative.
+Each listed ancestry path pairs one synthesis unit with only the evidence
+IDs descended from that unit. When citing synthesis and evidence IDs for
+a prose block, only pair evidence IDs with synthesis IDs from the same
+listed ancestry path. Do not treat IDs from the same reader-level idea
+as interchangeable. If a block uses multiple paths, cite the synthesis
+and evidence IDs from each path actually used.
+
+IDEA reader_idea_7c1b872a08522e78: Exodus Wilderness Routes And Water (importance: CORE; categories: culture, geography, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["marah-elim-water-stations", "marah-elim-water-stations:passage-relevance"], "interpretation_level": "fact", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_archaeology_geography_4198535616e9"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["exodus-wilderness-routes-and-water:interpretive_note:0", "sinai-itinerary-models", "sinai-itinerary-models:passage-relevance", "yam-suf-route-identification", "yam-suf-route-identification:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_990b81c50bf9"}
+- path_3: {"confidence": "high", "disputed": false, "evidence_ids": ["marah-elim-water-stations", "marah-elim-water-stations:passage-relevance"], "interpretation_level": "inference", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_3cb33506460e"}
+- path_4: {"confidence": "medium", "disputed": true, "evidence_ids": ["exodus-wilderness-routes-and-water:interpretive_note:0", "sinai-itinerary-models", "sinai-itinerary-models:passage-relevance", "yam-suf-route-identification", "yam-suf-route-identification:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_668bb829840a"}
+
+IDEA reader_idea_42bef0529a9319db: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary… (importance: RELEVANT; categories: geography, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "low", "disputed": true, "evidence_ids": ["numbers:interpretive_note:2"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_9a0d5acd444a"}
+
+IDEA reader_idea_bc6f0738a1abf674: The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets. (importance: RELEVANT; categories: culture, interpretive_questions)
+Allowed ancestry paths:
+- path_1: {"confidence": "medium", "disputed": true, "evidence_ids": ["egyptian-kingship-and-divine-order:interpretive_note:0", "judgment-on-egypts-gods", "judgment-on-egypts-gods:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_interpretive_questions_c6f310263618"}
+- path_2: {"confidence": "medium", "disputed": true, "evidence_ids": ["egyptian-kingship-and-divine-order:interpretive_note:0", "judgment-on-egypts-gods", "judgment-on-egypts-gods:passage-relevance"], "interpretation_level": "disputed", "passage_scope": "CURRENT_CHAPTER", "synthesis_id": "syn_why_it_matters_b46c32715f34"}
+
+IDEA reader_idea_d9c3b4d3f9900d46: The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's… (importance: CORE; categories: culture, surrounding_passages)
+Allowed ancestry paths:
+- path_1: {"confidence": "high", "disputed": false, "evidence_ids": ["numbers-inheritance-preparation"], "interpretation_level": "fact", "passage_scope": "SURROUNDING_PASSAGE", "synthesis_id": "syn_surrounding_passages_2ef49e432e30"}
+
+Use the paths for citation pairing and the ideas for conceptual breadth.
+Do not create one block per path or expose this implementation view in
+reader-facing prose.
+
+CANONICAL TEXT:
+1. These are the journeys of the children of Israel, when they went forth out of the land of Egypt by their hosts under the hand of Moses and Aaron. 2. And Moses wrote their goings out according to their journeys by the commandment of Jehovah: and these are their journeys according to their goings out. 3. And they journeyed from Rameses in the first month, on the fifteenth day of the first month; on the morrow after the passover the children of Israel went out with a high hand in the sight of all the Egyptians, 4. while the Egyptians were burying all their first-born, whom Jehovah had smitten among them: upon their gods also Jehovah executed judgments. 5. And the children of Israel journeyed from Rameses, and encamped in Succoth. 6. And they journeyed from Succoth, and encamped in Etham, which is in the edge of the wilderness. 7. And they journeyed from Etham, and turned back unto Pihahiroth, which is before Baal-zephon: and they encamped before Migdol. 8. And they journeyed from before Hahiroth, and passed through the midst of the sea into the wilderness: and they went three days' journey in the wilderness of Etham, and encamped in Marah. 9. And they journeyed from Marah, and came unto Elim: and in Elim were twelve springs of water, and threescore and ten palm-trees; and they encamped there. 10. And they journeyed from Elim, and encamped by the Red Sea. 11. And they journeyed from the Red Sea, and encamped in the wilderness of Sin. 12. And they journeyed from the wilderness of Sin, and encamped in Dophkah. 13. And they journeyed from Dophkah, and encamped in Alush. 14. And they journeyed from Alush, and encamped in Rephidim, where was no water for the people to drink. 15. And they journeyed from Rephidim, and encamped in the wilderness of Sinai. 16. And they journeyed from the wilderness of Sinai, and encamped in Kibroth-hattaavah. 17. And they journeyed from Kibroth-hattaavah, and encamped in Hazeroth. 18. And they journeyed from Hazeroth, and encamped in Rithmah. 19. And they journeyed from Rithmah, and encamped in Rimmon-perez. 20. And they journeyed from Rimmon-perez, and encamped in Libnah. 21. And they journeyed from Libnah, and encamped in Rissah. 22. And they journeyed from Rissah, and encamped in Kehelathah. 23. And they journeyed from Kehelathah, and encamped in mount Shepher. 24. And they journeyed from mount Shepher, and encamped in Haradah. 25. And they journeyed from Haradah, and encamped in Makheloth. 26. And they journeyed from Makheloth, and encamped in Tahath. 27. And they journeyed from Tahath, and encamped in Terah. 28. And they journeyed from Terah, and encamped in Mithkah. 29. And they journeyed from Mithkah, and encamped in Hashmonah. 30. And they journeyed from Hashmonah, and encamped in Moseroth. 31. And they journeyed from Moseroth, and encamped in Bene-jaakan. 32. And they journeyed from Bene-jaakan, and encamped in Hor-haggidgad. 33. And they journeyed from Hor-haggidgad, and encamped in Jotbathah. 34. And they journeyed from Jotbathah, and encamped in Abronah. 35. And they journeyed from Abronah, and encamped in Ezion-geber. 36. And they journeyed from Ezion-geber, and encamped in the wilderness of Zin (the same is Kadesh). 37. And they journeyed from Kadesh, and encamped in mount Hor, in the edge of the land of Edom. 38. And Aaron the priest went up into mount Hor at the commandment of Jehovah, and died there, in the fortieth year after the children of Israel were come out of the land of Egypt, in the fifth month, on the first day of the month. 39. And Aaron was a hundred and twenty and three years old when he died in mount Hor. 40. And the Canaanite, the king of Arad, who dwelt in the South in the land of Canaan, heard of the coming of the children of Israel. 41. And they journeyed from mount Hor, and encamped in Zalmonah. 42. And they journeyed from Zalmonah, and encamped in Punon. 43. And they journeyed from Punon, and encamped in Oboth. 44. And they journeyed from Oboth, and encamped in Iye-abarim, in the border of Moab. 45. And they journeyed from Iyim, and encamped in Dibon-gad. 46. And they journeyed from Dibon-gad, and encamped in Almon-diblathaim. 47. And they journeyed from Almon-diblathaim, and encamped in the mountains of Abarim, before Nebo. 48. And they journeyed from the mountains of Abarim, and encamped in the plains of Moab by the Jordan at Jericho. 49. And they encamped by the Jordan, from Beth-jeshimoth even unto Abel-shittim in the plains of Moab. 50. And Jehovah spake unto Moses in the plains of Moab by the Jordan at Jericho, saying, 51. Speak unto the children of Israel, and say unto them, When ye pass over the Jordan into the land of Canaan, 52. then ye shall drive out all the inhabitants of the land from before you, and destroy all their figured `stones', and destroy all their molten images, and demolish all their high places: 53. and ye shall take possession of the land, and dwell therein; for unto you have I given the land to possess it. 54. And ye shall inherit the land by lot according to your families; to the more ye shall give the more inheritance, and to the fewer thou shalt give the less inheritance: wheresoever the lot falleth to any man, that shall be his; according to the tribes of your fathers shall ye inherit. 55. But if ye will not drive out the inhabitants of the land from before you, then shall those that ye let remain of them be as pricks in your eyes, and as thorns in your sides, and they shall vex you in the land wherein ye dwell. 56. And it shall come to pass, that, as I thought to do unto them, so will I do unto you.
+
+COMPILED CHAPTER SYNTHESIS:
+{"coverage": {"category_diversity": 3, "entity_counts": {"artifacts": 0, "events": 3, "groups": 0, "people": 0, "places": 0}, "evidence_categories": {"culture": 9, "geography": 7, "history": 3}, "evidence_item_count": 19, "relationship_unit_count": 3, "specific_evidence_count": 12, "unit_kind_counts": {"archaeology_geography": 1, "interpretive_questions": 3, "surrounding_passages": 1, "why_it_matters": 3}, "unused_evidence_ids": ["plagues-of-egypt:ancient_near_east_context:0", "plagues-of-egypt:hebraic_worldview:0", "plagues-of-egypt:historical_context:0", "red-sea-crossing:ancient_near_east_context:0", "red-sea-crossing:historical_context:0", "wilderness-wandering:ancient_near_east_context:0", "wilderness-wandering:historical_context:0"], "used_evidence_ids": ["egyptian-kingship-and-divine-order:interpretive_note:0", "exodus-wilderness-routes-and-water:interpretive_note:0", "judgment-on-egypts-gods", "judgment-on-egypts-gods:passage-relevance", "marah-elim-water-stations", "marah-elim-water-stations:passage-relevance", "numbers-inheritance-preparation", "numbers:interpretive_note:2", "sinai-itinerary-models", "sinai-itinerary-models:passage-relevance", "yam-suf-route-identification", "yam-suf-route-identification:passage-relevance"]}, "evidence_gaps": [{"category": "language_literary", "reason": "No language evidence was supplied.", "severity": "informational"}], "synthesis_hash": "b936b36897f86a64c9282ebe9502fdb31206105b61f51d4e5790b3e039f6876b", "units": [{"confidence": "high", "entity_ids": ["wilderness-wandering"], "evidence_ids": ["marah-elim-water-stations", "marah-elim-water-stations:passage-relevance"], "facts": ["Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order.", "The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery."], "id": "syn_archaeology_geography_4198535616e9", "interpretation_level": "fact", "kind": "archaeology_geography", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_entities", "source_categories": ["geography"], "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 33:8-10"], "verse_refs": ["Numbers 33:8-10"]}, {"confidence": "medium", "entity_ids": ["red-sea-crossing"], "evidence_ids": ["exodus-wilderness-routes-and-water:interpretive_note:0", "sinai-itinerary-models", "sinai-itinerary-models:passage-relevance", "yam-suf-route-identification", "yam-suf-route-identification:passage-relevance"], "facts": ["The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.", "The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain.", "This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage.", "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.", "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage."], "id": "syn_interpretive_questions_990b81c50bf9", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture", "geography"], "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"], "verse_refs": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"]}, {"confidence": "low", "entity_ids": [], "evidence_ids": ["numbers:interpretive_note:2"], "facts": ["Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established."], "id": "syn_interpretive_questions_9a0d5acd444a", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": false, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "single_evidence_item", "source_categories": ["geography"], "support_count": 1}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 33"], "verse_refs": ["Numbers 33"]}, {"confidence": "medium", "entity_ids": ["plagues-of-egypt"], "evidence_ids": ["egyptian-kingship-and-divine-order:interpretive_note:0", "judgment-on-egypts-gods", "judgment-on-egypts-gods:passage-relevance"], "facts": ["The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.", "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.", "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."], "id": "syn_interpretive_questions_c6f310263618", "interpretation_level": "disputed", "kind": "interpretive_questions", "metadata": {"explicit_significance": true, "passage_scope": "CURRENT_CHAPTER", "relationship_basis": "shared_parent_object", "source_categories": ["culture"], "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": [], "source_anchors": ["Numbers 33:3-4"], "verse_refs": ["Numbers 33:3-4"]}, {"confidence": "high", "entity_ids": [], "evidence_ids": ["numbers-inheritance-preparation"], "facts": ["The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards."], "id": "syn_surrounding_passages_2ef49e432e30", "interpretation_level": "fact", "kind": "surrounding_passages", "metadata": {"explicit_significance": false, "passage_scope": "SURROUNDING_PASSAGE", "relationship_basis": "single_evidence_item", "source_categories": ["culture"], "support_count": 1}, "passage_scope": "SURROUNDING_PASSAGE", "related_unit_ids": [], "source_anchors": ["Numbers 26-36"], "verse_refs": ["Numbers 26", "Numbers 27:1-23", "Numbers 28:1-31", "Numbers 29:1-40", "Numbers 30:1-16", "Numbers 31:1-54", "Numbers 32:1-42", "Numbers 34:1-29", "Numbers 35:1-34", "Numbers 36:1-13"]}, {"confidence": "high", "entity_ids": ["wilderness-wandering"], "evidence_ids": ["marah-elim-water-stations", "marah-elim-water-stations:passage-relevance"], "facts": ["Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order.", "The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery."], "id": "syn_why_it_matters_3cb33506460e", "interpretation_level": "inference", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_entities", "safe_for_significance": true, "support_count": 2}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_archaeology_geography_4198535616e9"], "source_anchors": ["Numbers 33:8-10"], "verse_refs": ["Numbers 33:8-10"]}, {"confidence": "medium", "entity_ids": ["red-sea-crossing"], "evidence_ids": ["exodus-wilderness-routes-and-water:interpretive_note:0", "sinai-itinerary-models", "sinai-itinerary-models:passage-relevance", "yam-suf-route-identification", "yam-suf-route-identification:passage-relevance"], "facts": ["The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.", "The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain.", "This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage.", "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.", "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage."], "id": "syn_why_it_matters_668bb829840a", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 5}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_990b81c50bf9"], "source_anchors": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"], "verse_refs": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"]}, {"confidence": "medium", "entity_ids": ["plagues-of-egypt"], "evidence_ids": ["egyptian-kingship-and-divine-order:interpretive_note:0", "judgment-on-egypts-gods", "judgment-on-egypts-gods:passage-relevance"], "facts": ["The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.", "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.", "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."], "id": "syn_why_it_matters_b46c32715f34", "interpretation_level": "disputed", "kind": "why_it_matters", "metadata": {"explicit_significance": true, "relationship_basis": "shared_parent_object", "safe_for_significance": true, "support_count": 3}, "passage_scope": "CURRENT_CHAPTER", "related_unit_ids": ["syn_interpretive_questions_c6f310263618"], "source_anchors": ["Numbers 33:3-4"], "verse_refs": ["Numbers 33:3-4"]}]}
+
+PERMITTED EVIDENCE CITATIONS:
+[{"confidence": "high", "id": "egyptian-kingship-and-divine-order:interpretive_note:0", "passage_anchors": ["Numbers 33:3-4"], "source_ids": ["exodus-royal-conflict-text", "meyers-exodus-2005", "numbers-33-judgment-text", "sarna-exodus-1991"]}, {"confidence": "high", "id": "exodus-wilderness-routes-and-water:interpretive_note:0", "passage_anchors": ["Numbers 33:5-16"], "source_ids": ["davies-way-wilderness-1979", "exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "numbers-33-itinerary-text"]}, {"confidence": "medium", "id": "judgment-on-egypts-gods", "passage_anchors": ["Numbers 33:3-4"], "source_ids": ["exodus-royal-conflict-text", "meyers-exodus-2005", "numbers-33-judgment-text", "sarna-exodus-1991"]}, {"confidence": "medium", "id": "judgment-on-egypts-gods:passage-relevance", "passage_anchors": ["Numbers 33:3-4"], "source_ids": ["exodus-royal-conflict-text", "meyers-exodus-2005", "numbers-33-judgment-text", "sarna-exodus-1991"]}, {"confidence": "high", "id": "marah-elim-water-stations", "passage_anchors": ["Numbers 33:8-10"], "source_ids": ["exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "meyers-exodus-2005", "numbers-33-itinerary-text", "propp-exodus-1-18-1999"]}, {"confidence": "high", "id": "marah-elim-water-stations:passage-relevance", "passage_anchors": ["Numbers 33:8-10"], "source_ids": ["exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "meyers-exodus-2005", "numbers-33-itinerary-text", "propp-exodus-1-18-1999"]}, {"confidence": "high", "id": "numbers-inheritance-preparation", "passage_anchors": ["Numbers 26-36"], "source_ids": ["ashley-numbers", "milgrom-numbers", "numbers-1-36"]}, {"confidence": "low", "id": "numbers:interpretive_note:2", "passage_anchors": ["Numbers 33"], "source_ids": ["ashley-numbers", "milgrom-numbers", "zondervan-illustrated-pentateuch-backgrounds"]}, {"confidence": "medium", "id": "plagues-of-egypt:ancient_near_east_context:0", "passage_anchors": ["Numbers 33:3-4"], "source_ids": ["exodus-plague-sequence-text", "meyers-exodus-2005", "numbers-33-judgment-text", "sarna-exodus-1991"]}, {"confidence": "medium", "id": "plagues-of-egypt:hebraic_worldview:0", "passage_anchors": ["Numbers 33:3-4"], "source_ids": ["exodus-plague-sequence-text", "meyers-exodus-2005", "numbers-33-judgment-text", "sarna-exodus-1991"]}, {"confidence": "medium", "id": "plagues-of-egypt:historical_context:0", "passage_anchors": ["Numbers 33:3-4"], "source_ids": ["exodus-plague-sequence-text", "meyers-exodus-2005", "numbers-33-judgment-text", "sarna-exodus-1991"]}, {"confidence": "medium", "id": "red-sea-crossing:ancient_near_east_context:0", "passage_anchors": ["Numbers 33:5-8"], "source_ids": ["davies-way-wilderness-1979", "exodus-sea-crossing-text", "hoffmeier-ancient-israel-sinai-2005", "numbers-33-sea-itinerary-text", "propp-exodus-1-18-1999"]}, {"confidence": "medium", "id": "red-sea-crossing:historical_context:0", "passage_anchors": ["Numbers 33:5-8"], "source_ids": ["davies-way-wilderness-1979", "exodus-sea-crossing-text", "hoffmeier-ancient-israel-sinai-2005", "numbers-33-sea-itinerary-text", "propp-exodus-1-18-1999"]}, {"confidence": "medium", "id": "sinai-itinerary-models", "passage_anchors": ["Numbers 33:11-16"], "source_ids": ["davies-way-wilderness-1979", "exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "meyers-exodus-2005", "numbers-33-itinerary-text"]}, {"confidence": "medium", "id": "sinai-itinerary-models:passage-relevance", "passage_anchors": ["Numbers 33:11-16"], "source_ids": ["davies-way-wilderness-1979", "exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "meyers-exodus-2005", "numbers-33-itinerary-text"]}, {"confidence": "medium", "id": "wilderness-wandering:ancient_near_east_context:0", "passage_anchors": ["Numbers 33:1-49"], "source_ids": ["davies-way-wilderness-1979", "exodus-wilderness-text", "hoffmeier-ancient-israel-sinai-2005", "meyers-exodus-2005", "numbers-wilderness-itinerary-text"]}, {"confidence": "medium", "id": "wilderness-wandering:historical_context:0", "passage_anchors": ["Numbers 33:1-49"], "source_ids": ["davies-way-wilderness-1979", "exodus-wilderness-text", "hoffmeier-ancient-israel-sinai-2005", "meyers-exodus-2005", "numbers-wilderness-itinerary-text"]}, {"confidence": "medium", "id": "yam-suf-route-identification", "passage_anchors": ["Numbers 33:5-8"], "source_ids": ["davies-way-wilderness-1979", "exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "numbers-33-itinerary-text", "propp-exodus-1-18-1999"]}, {"confidence": "medium", "id": "yam-suf-route-identification:passage-relevance", "passage_anchors": ["Numbers 33:5-8"], "source_ids": ["davies-way-wilderness-1979", "exodus-route-and-water-text", "hoffmeier-ancient-israel-sinai-2005", "numbers-33-itinerary-text", "propp-exodus-1-18-1999"]}]
+
+RESPOND WITH ONLY VALID JSON. Use this exact envelope:
+{
+  "reference": "Numbers 33",
+  "book": "Numbers",
+  "chapter": 33,
+  "status": "pending",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Natural reader-facing explanation",
+          "verse_refs": ["Numbers 33:1"],
+          "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
+          "synthesis_ids": ["synthesis-unit-id"],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": null
+}
+
+RULES:
+1. JSON only: no preamble, Markdown fence, or trailing explanation.
+2. Every evidence ID must belong to at least one cited synthesis unit.
+3. Every synthesis ID must appear in COMPILED CHAPTER SYNTHESIS.
+4. `confidence` must not exceed either cited synthesis or cited evidence.
+5. Disputed synthesis cannot become `fact`.
+6. Each block text must be at most 2,000 characters.
+7. Only the following section kinds are allowed: chapter_overview, historical_context, cultural_context, people_places, archaeology_geography, language_literary, chronology, surrounding_passages, interpretive_questions, things_easy_to_miss, why_it_matters, dig_deeper
+   Never invent values such as section, textual_section, contextual_notes, or textual_notes.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in Numbers 33:
+   for example `Numbers 33:1` or `Numbers 33:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["Numbers 33:1", "Numbers 33:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+    genuinely does not apply; surrounding-passage blocks must not masquerade as
+    current-chapter anchors. A `SURROUNDING_PASSAGE` synthesis unit may only be cited in `surrounding_passages`, never in `chapter_overview`,
+    `historical_context`, `cultural_context`, `why_it_matters`, or another
+    current-chapter section. Do not mix `CURRENT_CHAPTER` and `SURROUNDING_PASSAGE` units in one block; separate them into their proper
+    sections. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Multiple compatible synthesis units may share one commentary block when they
+   address the same passage detail, contextual topic, entity, custom, location,
+   literary feature, or closely related reader question. In that case, cite every
+   synthesis ID and evidence ID actually used, and keep evidence IDs within the
+   ancestry of the cited synthesis IDs.
+10. Do not create one block for every synthesis unit, attempt to mention every
+    available unit, or treat the synthesis packet as a checklist. Prefer fewer
+    substantial explanatory blocks that combine compatible context over many
+    atomic blocks. Redundant, parallel, secondary, or unnecessary context may be
+    omitted when it would not materially improve reader understanding.
+11. For AVAILABLE chapters, selective use does not mean minimal use. Cover the
+    materially distinct current-chapter context needed to explain the passage.
+    When several distinct supported contextual families materially contribute to
+    understanding the chapter, represent each important family at least once
+    rather than collapsing the chapter into one narrow observation. For
+    AVAILABLE chapters, this breadth applies within a family as well as across
+    families: if one family contains several materially different current-chapter
+    ideas that each help explain the passage, mentioning one is not sufficient.
+    Consolidate duplicate or parallel representations of the same idea, but
+    preserve distinct reader-relevant ideas even when they share a family.
+    Important families can include ritual/custom, history, culture/social
+    setting, geography, archaeology, literary structure, chronology, and
+    people/groups. Include relevant families when they materially help; do not
+    satisfy categories mechanically.
+12. Combining units is consolidation, not relationship inference. Do not invent a
+    causal, theological, historical, or significance relationship merely because
+    units appear in the same block. State such a relationship only when the
+    supplied synthesis explicitly supports it, including through `why_it_matters`
+    or another authored relationship.
+13. Do not repeat substantially the same explanation in multiple sections merely
+    because related units have different kinds. `why_it_matters` should add the
+    supported significance of an explicit significance unit, not duplicate prior
+    contextual explanation.
+14. When the chapter contains many synthesis units, prioritize context that most
+    directly helps the reader understand the chapter. When an available
+    current-chapter item contains explicit significance or direct passage-specific
+    context central to understanding the passage, prioritize it over secondary
+    or surrounding material. Use supporting and surrounding material selectively.
+15. Use `why_it_matters` only when citing an available unit of that exact kind.
+    Explain the supported relationship; do not invent another significance claim.
+16. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
+17. There are no hard output quotas: do not impose a minimum block count, minimum
+    word count, minimum synthesis percentage, or fixed section count. Calibrate
+    breadth to the distinct supported ideas and the chapter's evidence.
+18. Before returning JSON, silently perform a representative-breadth check for an
+    AVAILABLE chapter. The response is incomplete if it explains only the
+    dominant central idea while another materially distinct, synthesis-supported
+    idea would change or deepen a reader's understanding. Prefer direct
+    passage-specific context and explicitly supported significance. Merge such
+    ideas naturally. Stop when remaining units are redundant, generic, weakly
+    related, or would only add bulk. Never mention a claim or attach an ID merely
+    to improve coverage.
+19. Before returning JSON, silently verify each block independently: every
+    `evidence_id` must occur in the union of the evidence ancestry of that
+    block's cited `synthesis_ids`. If a claim uses evidence from another unit,
+    cite that actual synthesis unit or remove the unsupported claim and evidence
+    ID. Same-chapter membership does not establish ancestry compatibility.
+20. Before returning JSON, silently identify the genuinely distinct CORE passage-context ideas and other reader-relevant ideas supplied by the synthesis. Every distinct CORE idea should normally appear in reader-facing prose; combine it with another only when they are naturally the same concept. Do not omit a CORE concept merely for brevity.
+21. Distinguish evidence records from reader-facing ideas. Synthesize multiple records that support one concept, but continue looking for another distinct useful concept that would change or deepen the reader's understanding. Do not expose the inventory or add a claim only to improve coverage.
+22. Calibrate depth to the density of distinct eligible ideas: sparse chapters stay concise, while dense chapters may need additional sentences or paragraphs. There is no fixed length target, and extra depth must remain relevant, supported, and non-repetitive. Preserve the v1.6 no-dump behavior.
+23. Before returning JSON, separate reader-level prioritization from legal renderability. `CORE: None` and `RELEVANT: None` mean that the reader-level projection found no priority ideas; they do not mean that the authoritative compiled synthesis is empty or unusable. Inspect the compiled synthesis and canonical text under the existing grounding rules.
+24. For THIN or AVAILABLE chapters, THIN means concise, not empty. `sections: []` is valid only when no legally renderable reader-facing content exists under this contract. If a usable synthesis unit can support a valid block, render the smallest useful supported commentary rather than an empty envelope. This is not a minimum section, block, word, or synthesis-unit quota.
+25. Preserve the existing dispute, confidence, evidence-ancestry, provenance, and no-dump rules. Do not promote material into CORE or RELEVANT, manufacture claims, or add filler.
+26. The authoritative compiled synthesis remains the source of permitted renderable material; the reader-level projection is a prioritization/navigation aid, not an exhaustive renderability whitelist.
+27. `generated_metadata` is application-owned. Leave it null.
+28. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+29. This contract is prompt 1.8, commentary schema
+    1.2, synthesis schema 1.1, and
+    synthesis hash b936b36897f86a64c9282ebe9502fdb31206105b61f51d4e5790b3e039f6876b.
+
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY.
+
+READER PROVENANCE BINDING
+
+Binding version: reader-provenance-binding-v2
+Reference presentation: reader-provenance-renderer-reference-presentation-v1
+Choose one or more complete provenance_refs for each prose block.
+BHF resolves each selected path to canonical synthesis_ids and evidence_ids after generation.
+Do not choose or emit synthesis_ids or evidence_ids manually.
+Only path IDs listed below are valid for this chapter.
+
+SOURCE SCOPE AND RENDERER SERIALIZATION:
+source_verse_refs preserves the exact synthesis/provenance scope. renderer_verse_refs is the
+validator-legal serialization of that same scope only when the presentation audit proves exact
+whole-chapter equivalence. Do not narrow or invent a verse reference.
+
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_4249e5f1e57f945684a0be4e", "renderer_verse_refs": ["Numbers 33:8-10"], "source_verse_refs": ["Numbers 33:8-10"], "synthesis_unit": "syn_archaeology_geography_4198535616e9"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_d87517e27ca32118fd048115", "renderer_verse_refs": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"], "source_verse_refs": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"], "synthesis_unit": "syn_interpretive_questions_990b81c50bf9"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_a45451dae99fae40e5114cd5", "renderer_verse_refs": ["Numbers 33:8-10"], "source_verse_refs": ["Numbers 33:8-10"], "synthesis_unit": "syn_why_it_matters_3cb33506460e"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_fbebf1169512f72db8cc5116", "renderer_verse_refs": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"], "source_verse_refs": ["Numbers 33:11-16", "Numbers 33:5-16", "Numbers 33:5-8"], "synthesis_unit": "syn_why_it_matters_668bb829840a"}
+- {"canonicalization": "SAFE_FULL_CHAPTER_SCOPE", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_2c9623e68daae7452531faab", "renderer_verse_refs": ["Numbers 33:1-56"], "source_verse_refs": ["Numbers 33"], "synthesis_unit": "syn_interpretive_questions_9a0d5acd444a"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_6519e797a2adcb32fe4b75d5", "renderer_verse_refs": ["Numbers 33:3-4"], "source_verse_refs": ["Numbers 33:3-4"], "synthesis_unit": "syn_interpretive_questions_c6f310263618"}
+- {"canonicalization": "VALID_ALREADY", "passage_scope": "CURRENT_CHAPTER", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_5121bfb89e5a58ba8b0c1788", "renderer_verse_refs": ["Numbers 33:3-4"], "source_verse_refs": ["Numbers 33:3-4"], "synthesis_unit": "syn_why_it_matters_b46c32715f34"}
+- {"canonicalization": "AMBIGUOUS", "passage_scope": "SURROUNDING_PASSAGE", "path_class": "priority", "provenance_ref": "reader_path_numbers_033_3918a9112266a9c9799e8140", "renderer_verse_refs": ["Numbers 26", "Numbers 27:1-23", "Numbers 28:1-31", "Numbers 29:1-40", "Numbers 30:1-16", "Numbers 31:1-54", "Numbers 32:1-42", "Numbers 34:1-29", "Numbers 35:1-34", "Numbers 36:1-13"], "source_verse_refs": ["Numbers 26", "Numbers 27:1-23", "Numbers 28:1-31", "Numbers 29:1-40", "Numbers 30:1-16", "Numbers 31:1-54", "Numbers 32:1-42", "Numbers 34:1-29", "Numbers 35:1-34", "Numbers 36:1-13"], "synthesis_unit": "syn_surrounding_passages_2ef49e432e30"}
+
+OUTPUT ENVELOPE NOTE:
+Use the supplied renderer_verse_refs for ordinary block verse_refs. The source scope remains
+the source_verse_refs shown above. Never invent a narrower verse or copy a chapter-only value
+when a renderer_verse_refs value is supplied.
+
+In every block, use exactly this field: "provenance_refs": ["<listed path ID>"]
+Do not emit any path ID from another chapter or invent one.

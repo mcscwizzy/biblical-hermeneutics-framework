@@ -1,0 +1,3206 @@
+{
+  "artifact_version": "commentary-v1.4-within-family-audit-v1",
+  "prompt_version": "1.4",
+  "schema_version": "1.2",
+  "gate_version": "commentary-richness-gate-v2.1",
+  "deterministic": true,
+  "model_invoked": false,
+  "source_batch_report": ".bhf-data/bhf-commentary-candidates/commentary-v1.4-pilot-batch-2/evaluation/batch-2-report.json",
+  "failure_references": [
+    "Amos 5",
+    "Mark 7",
+    "1 Corinthians 11",
+    "Hebrews 4"
+  ],
+  "failures": [
+    {
+      "reference": "Amos 5",
+      "role": "FAILED_BATCH_2",
+      "evidence_availability": "AVAILABLE",
+      "raw_synthesis_units": 21,
+      "meaningful_clusters": 14,
+      "consumed_meaningful_clusters": 4,
+      "blocks": 3,
+      "words": 134,
+      "synthesis_utilization": 0.2381,
+      "weighted_idea_coverage": 0.2766,
+      "core_clusters": 0,
+      "consumed_core_clusters": 0,
+      "core_coverage": 1.0,
+      "category_coverage": 1.0,
+      "available_categories": [
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "consumed_categories": [
+        "culture",
+        "history",
+        "interpretive_questions"
+      ],
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "consolidation_ratio": 0.7857,
+      "category_rows": {
+        "culture": {
+          "available_meaningful_clusters": 8,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 5.2,
+          "weighted_consumed_ideas": 1.2,
+          "coverage": 0.2308
+        },
+        "history": {
+          "available_meaningful_clusters": 7,
+          "consumed_meaningful_clusters": 3,
+          "weighted_available_ideas": 4.7,
+          "weighted_consumed_ideas": 1.9,
+          "coverage": 0.4043
+        },
+        "interpretive_questions": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 0.5
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_1ed8e05a2131",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_ca3f5d3f4b44"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Prophetic oracles use treaty, courtroom, and royal imagery familiar in the ancient world, but they do so to speak for the LORD."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_3330567aa1d8",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_1543309878fd"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "These warnings address covenant breach and imperial pressure, then project judgment and deliverance into the future."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_3cae9930ee74",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_accc425d9abb"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "The prophets use this phrase amid national crisis to warn of covenant judgment and promise future vindication."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_59972758ae40",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_aa8e9779374f"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "DISPUTED_SECONDARY",
+          "facts": [
+            "Zephaniah 1:14-18 describes the near great Day of YHWH through battle cry, wrath, darkness, distress, trumpet, ruined defenses, blood, dust, and wealth unable to deliver."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_77e0d82808fa",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_2ab75d75e47d",
+            "syn_why_it_matters_b7069f3c7147"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Samaria's siege and fall belong to the transition from Shalmaneser V to Sargon II, approximately 725-720 BCE. Shalmaneser's capture, Sargon's conquest and reconquest claims, and the timing of deportation and provincialization remain debated rather than fixed to one uncontested year.",
+            "The final decades of the northern kingdom under Neo-Assyrian domination and the emergence of the province of Samaria.",
+            "Samaria's siege and fall belong to the transition from Shalmaneser V to Sargon II, approximately 725-720 BCE. Shalmaneser's capture, Sargon's conquest and reconquest claims, and the timing of deportation and provincialization remain debated rather than fixed to one uncontested year.",
+            "The final decades of the northern kingdom under Neo-Assyrian domination and the emergence of the province of Samaria."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_7d47787308d8",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_86bdb1995d7c"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Royal 'day of the king' imagery helps explain the metaphor, but here the LORD himself acts as judge and deliverer."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_8dd9528cf537",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_0eda118399a7"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Day of the Lord Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_b2f670f67ab7",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_dc81593e52a6"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Kings often had advisers and seers, but biblical prophets are distinct because they speak with the authority of the LORD."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_bb6d47937ba2",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_b0fb5d6af08d",
+            "syn_why_it_matters_7b3edf796a6e"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Assyria moved from vassal tribute to siege, annexation, forced population transfer, military recruitment, taxation, and direct provincial rule. Royal inscriptions advertise the king's achievement and require comparison with administrative documents and biblical narrative.",
+            "Second Kings interprets the fall as covenant judgment after sustained royal and communal unfaithfulness while still narrating concrete imperial causes and actions.",
+            "Assyria moved from vassal tribute to siege, annexation, forced population transfer, military recruitment, taxation, and direct provincial rule. Royal inscriptions advertise the king's achievement and require comparison with administrative documents and biblical narrative.",
+            "Second Kings interprets the fall as covenant judgment after sustained royal and communal unfaithfulness while still narrating concrete imperial causes and actions."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_bbf2c852c6dc",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_ea62074391c6"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Prophets appear in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_c72ed025679b",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_58d718b76ce6"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "After Solomon, the united monarchy split, and the northern tribes formed a kingdom centered on Samaria."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_cdc9c384de06",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_0af53b92615b",
+            "syn_interpretive_questions_1ca589e32c28",
+            "syn_interpretive_questions_a02d290def96",
+            "syn_why_it_matters_2804a9ce2da8",
+            "syn_why_it_matters_5cebdd2eef4b",
+            "syn_why_it_matters_adfe1a0eaab5"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1",
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Acts 7:42-43 explicitly quotes a Greek form of Amos 5:25-27, including forms rendered Moloch and Rephan, within Stephen's argument about Israel's worship history.",
+            "Amos 5:18-20 reverses desire for the day of YHWH by portraying it as darkness, danger, and no escape for the addressed audience.",
+            "Amos accuses powerful Israelites of selling the righteous and needy, trampling poor people, taking grain levies, corrupting the gate, seizing pledged garments, and using dishonest measures.",
+            "Amos 5:21-24 rejects festivals, assemblies, offerings, songs, and music presented amid injustice and demands that justice and righteousness flow.",
+            "Amos's attack on festivals, sacrifices, and songs targets worship joined to exploitation; it must not become a claim that ritual, music, temple worship, or Jewish practice is inherently false.",
+            "Let justice roll down like waters is a communal demand rooted in Amos's gate, debt, land, labor, and worship contexts, not a slogan detached from accountable practice.",
+            "Amos's justice language cannot be captured by one modern party, nation, economic ideology, or church program; proposed analogies require explicit evidence and accountability to affected people.",
+            "The day of YHWH in Amos 5 is darkness for those who desire it; the text gives no end-times timetable and should not be used to manufacture one.",
+            "Sikkuth and Kiyyun in Amos 5:26 are textually and historically difficult divine or cultic designations; confident identification with later names or modern groups is unwarranted.",
+            "The doxological passages in Amos 4:13, 5:8-9, and 9:5-6 integrate creation and judgment in the final form, even though their origin and editorial placement are disputed.",
+            "Old Greek Amos differs from the Masoretic form at significant points, especially Amos 5 and 9; Acts' quotations should be compared with Greek textual traditions rather than judged as careless quotations of an English Old Testament.",
+            "Acts 7's Moloch and Rephan forms belong to Greek textual and reception history; they should not be harmonized casually with Sikkuth and Kiyyun or weaponized against Jewish worship.",
+            "Modern Jewish, Black, civil-rights, liberation, womanist, and ecological readings disclose real dimensions of Amos while remaining situated interpretations that should not be collapsed into one voice.",
+            "Amos's economic accusations must not romanticize poverty, blame poor people, shame wealth apart from exploitative practice, or reduce structural debt and labor abuse to private generosity.",
+            "Acts 7:42-43 explicitly quotes a Greek form of Amos 5:25-27, including forms rendered Moloch and Rephan, within Stephen's argument about Israel's worship history.",
+            "Amos 5:18-20 reverses desire for the day of YHWH by portraying it as darkness, danger, and no escape for the addressed audience.",
+            "Amos accuses powerful Israelites of selling the righteous and needy, trampling poor people, taking grain levies, corrupting the gate, seizing pledged garments, and using dishonest measures.",
+            "Amos 5:21-24 rejects festivals, assemblies, offerings, songs, and music presented amid injustice and demands that justice and righteousness flow.",
+            "Amos's attack on festivals, sacrifices, and songs targets worship joined to exploitation; it must not become a claim that ritual, music, temple worship, or Jewish practice is inherently false.",
+            "Let justice roll down like waters is a communal demand rooted in Amos's gate, debt, land, labor, and worship contexts, not a slogan detached from accountable practice.",
+            "Amos's justice language cannot be captured by one modern party, nation, economic ideology, or church program; proposed analogies require explicit evidence and accountability to affected people.",
+            "The day of YHWH in Amos 5 is darkness for those who desire it; the text gives no end-times timetable and should not be used to manufacture one.",
+            "Sikkuth and Kiyyun in Amos 5:26 are textually and historically difficult divine or cultic designations; confident identification with later names or modern groups is unwarranted.",
+            "The doxological passages in Amos 4:13, 5:8-9, and 9:5-6 integrate creation and judgment in the final form, even though their origin and editorial placement are disputed.",
+            "Old Greek Amos differs from the Masoretic form at significant points, especially Amos 5 and 9; Acts' quotations should be compared with Greek textual traditions rather than judged as careless quotations of an English Old Testament.",
+            "Acts 7's Moloch and Rephan forms belong to Greek textual and reception history; they should not be harmonized casually with Sikkuth and Kiyyun or weaponized against Jewish worship.",
+            "Modern Jewish, Black, civil-rights, liberation, womanist, and ecological readings disclose real dimensions of Amos while remaining situated interpretations that should not be collapsed into one voice.",
+            "Amos's economic accusations must not romanticize poverty, blame poor people, shame wealth apart from exploitative practice, or reduce structural debt and labor abuse to private generosity."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_ef9146e34ae0",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_790b14ee1596"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "The prophets address real crises in Israel, Judah, and the nations, speaking to covenant breach and coming judgment or restoration."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_f357ca8b4ebf",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_64f112f31f99"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Small kingdoms lived under pressure from larger empires, and Israel's political instability becomes a theological warning sign in Scripture."
+          ]
+        }
+      ],
+      "summary": {
+        "touches_most_categories_but_misses_distinct_ideas_within_family": true,
+        "omitted_distinct_ideas_are_genuinely_distinct": true,
+        "omitted_current_chapter_count": 10,
+        "omitted_surrounding_count": 0,
+        "missed_core_ideas": 0,
+        "available_by_quality_class": {
+          "DISPUTED": 2,
+          "SUPPORTING": 12
+        },
+        "consumed_by_quality_class": {
+          "DISPUTED": 1,
+          "SUPPORTING": 3
+        },
+        "omitted_by_quality_class": {
+          "DISPUTED": 1,
+          "SUPPORTING": 9
+        },
+        "omitted_material_missing_context_count": 8,
+        "omitted_supporting_fraction": 0.75,
+        "material_improvement_from_distinct_current_ideas": true
+      }
+    },
+    {
+      "reference": "Mark 7",
+      "role": "FAILED_BATCH_2",
+      "evidence_availability": "AVAILABLE",
+      "raw_synthesis_units": 22,
+      "meaningful_clusters": 9,
+      "consumed_meaningful_clusters": 6,
+      "blocks": 5,
+      "words": 190,
+      "synthesis_utilization": 0.3636,
+      "weighted_idea_coverage": 0.6552,
+      "core_clusters": 1,
+      "consumed_core_clusters": 0,
+      "core_coverage": 0.0,
+      "category_coverage": 1.0,
+      "available_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "consumed_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "consolidation_ratio": 0.8214,
+      "category_rows": {
+        "archaeology": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 0.5
+        },
+        "culture": {
+          "available_meaningful_clusters": 6,
+          "consumed_meaningful_clusters": 4,
+          "weighted_available_ideas": 3.9,
+          "weighted_consumed_ideas": 2.4,
+          "coverage": 0.6154
+        },
+        "history": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 1.4,
+          "weighted_consumed_ideas": 1.4,
+          "coverage": 1.0
+        },
+        "interpretive_questions": {
+          "available_meaningful_clusters": 4,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 2.0,
+          "weighted_consumed_ideas": 1.0,
+          "coverage": 0.5
+        },
+        "language_literary": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 0.5
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_0aaf7372407f",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_986074336bd4",
+            "syn_why_it_matters_c8effce8d3ed"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+            "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage.",
+            "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+            "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_1ae6d85f4cfa",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "archaeology",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_46b9b5a90238",
+            "syn_why_it_matters_56dccdc3d431"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Workshop caves and production debris at Reina, approximately three kilometers from Nazareth, attest regional manufacture of soft-limestone vessels used in Jewish settlements.",
+            "The workshops show that stone vessels associated with purity practice were locally available, contextualizing John 2 and purity disputes without identifying the Cana jars or Mark's opponents.",
+            "Workshop caves and production debris at Reina, approximately three kilometers from Nazareth, attest regional manufacture of soft-limestone vessels used in Jewish settlements.",
+            "The workshops show that stone vessels associated with purity practice were locally available, contextualizing John 2 and purity disputes without identifying the Cana jars or Mark's opponents."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_522359d9e6f7",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_0ab4c9c16931",
+            "syn_why_it_matters_dda18985c588"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+            "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+            "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+            "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope.",
+            "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+            "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+            "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+            "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_6f0913cded34",
+          "quality_class": "CORE",
+          "importance_weight": 1.0,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_37e32299e89f"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Mark's conflicts with particular Jewish leaders cannot authorize antisemitism, supersessionism, deicide accusations, collective Jewish guilt, or portraying Pharisees and Judaism as uniquely hypocritical, impure, or hard-hearted."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_890749e82e2d",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_a647b1c5a7a7",
+            "syn_why_it_matters_ffcd8ec8fcf0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+            "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+            "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+            "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate.",
+            "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+            "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+            "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+            "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_d998057d4c49",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "archaeology",
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_341c31ad559a",
+            "syn_interpretive_questions_900262663215",
+            "syn_interpretive_questions_e528edc0892c",
+            "syn_why_it_matters_228fdfafe077",
+            "syn_why_it_matters_37cc470ef8f9",
+            "syn_why_it_matters_e798925af778"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Must surface whenever the verse becomes simple proof that Jesus ended all Jewish food practice or that no dietary implication is possible.",
+            "Mark narrates some disciples eating bread with common, unwashed hands before expanding into command, tradition, ingestion, and defilement.",
+            "Prevents opening the passage as though the accusation concerned eating a prohibited animal.",
+            "Mark contrasts ingested material entering stomach rather than heart with harmful acts proceeding from within.",
+            "Preserves the moral movement without turning bodily impurity, Jewish food practice, or food itself into vice.",
+            "Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes.",
+            "Requires passage-level interpretation before any verse becomes a timeless diet rule or cancels another text.",
+            "Leviticus assigns different causes, durations, rites, access effects, and sanctions to bodily impurity and prohibited conduct.",
+            "Prevents later clean and unclean language from becoming personal guilt, dirtiness, or diminished human worth.",
+            "Katharizon panta ta bromata admits competing analyses with different implications for hand-defiled food and Torah food distinctions.",
+            "4QMMT preserves disputed rulings, Galilean limestone workshops attest purity-oriented vessels, and Mishnah Yadayim later details hand purification.",
+            "Places Mark 7 and Acts 15 within real Jewish legal reasoning without constructing one monolithic Judaism.",
+            "Mark, Acts, Romans, and First Corinthians organize food and purity around different disputes, actors, settings, and outcomes.",
+            "Requires passage-level interpretation before any verse becomes a timeless diet rule or cancels another text.",
+            "Leviticus assigns different causes, durations, rites, access effects, and sanctions to bodily impurity and prohibited conduct.",
+            "Prevents later clean and unclean language from becoming personal guilt, dirtiness, or diminished human worth.",
+            "Katharizon panta ta bromata admits competing analyses with different implications for hand-defiled food and Torah food distinctions.",
+            "4QMMT preserves disputed rulings, Galilean limestone workshops attest purity-oriented vessels, and Mishnah Yadayim later details hand purification.",
+            "Places Mark 7 and Acts 15 within real Jewish legal reasoning without constructing one monolithic Judaism.",
+            "Must surface whenever the verse becomes simple proof that Jesus ended all Jewish food practice or that no dietary implication is possible.",
+            "Mark narrates some disciples eating bread with common, unwashed hands before expanding into command, tradition, ingestion, and defilement.",
+            "Prevents opening the passage as though the accusation concerned eating a prohibited animal.",
+            "Mark contrasts ingested material entering stomach rather than heart with harmful acts proceeding from within.",
+            "Preserves the moral movement without turning bodily impurity, Jewish food practice, or food itself into vice."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_e3a3d76dc6b4",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions",
+            "language_literary"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_9bf4ce4c753f",
+            "syn_interpretive_questions_c75b9550824f",
+            "syn_why_it_matters_817ae893505a"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_4",
+            "block_5"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Mark preserves and translates several Semitic expressions, including Boanerges, Talitha koum, Corban, Ephphatha, Bartimaeus, Abba, Golgotha, and Eloi.",
+            "Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure.",
+            "The grammar and scope of Mark 7:19 remain disputed; readings range from an editorial declaration about all foods to an anatomical claim about digestion that does not repeal kashrut.",
+            "Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic.",
+            "Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text.",
+            "The Syrophoenician woman answers Jesus' children-and-dogs saying and obtains her daughter's release; interpretations of testing, boundary, ethnicity, gender, and change remain disputed.",
+            "Mark preserves and translates several Semitic expressions, including Boanerges, Talitha koum, Corban, Ephphatha, Bartimaeus, Abba, Golgotha, and Eloi.",
+            "Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure.",
+            "The grammar and scope of Mark 7:19 remain disputed; readings range from an editorial declaration about all foods to an anatomical claim about digestion that does not repeal kashrut.",
+            "Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic.",
+            "Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_e9f5e19dbf0b",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions",
+            "language_literary"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_5ed0b95cee89",
+            "syn_why_it_matters_0397f5b892ed"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Six fragmentary Cave 4 manuscripts preserve portions of a reconstructed work addressing calendar and legal matters and explaining separation based on disputed practices.",
+            "4QMMT demonstrates that detailed Torah and purity disagreements could mark communal boundaries before the New Testament period without making its authors the unnamed background of any one Gospel or Acts dispute.",
+            "Josephus distinguishes three Jewish groups and assigns them different views or practices concerning law, providence, fate, afterlife, authority, and communal discipline.",
+            "His descriptions supply later-composed context for the Pharisee-Sadducee disagreement in Acts 23 while preserving the possibility that Luke and Josephus frame the groups differently.",
+            "Six fragmentary Cave 4 manuscripts preserve portions of a reconstructed work addressing calendar and legal matters and explaining separation based on disputed practices.",
+            "4QMMT demonstrates that detailed Torah and purity disagreements could mark communal boundaries before the New Testament period without making its authors the unnamed background of any one Gospel or Acts dispute.",
+            "Josephus distinguishes three Jewish groups and assigns them different views or practices concerning law, providence, fate, afterlife, authority, and communal discipline.",
+            "His descriptions supply later-composed context for the Pharisee-Sadducee disagreement in Acts 23 while preserving the possibility that Luke and Josephus frame the groups differently."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_f4613b358dd2",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_1f76521b9141",
+            "syn_why_it_matters_66a9295e3e93"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+            "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction.",
+            "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+            "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction."
+          ]
+        }
+      ],
+      "summary": {
+        "touches_most_categories_but_misses_distinct_ideas_within_family": true,
+        "omitted_distinct_ideas_are_genuinely_distinct": true,
+        "omitted_current_chapter_count": 3,
+        "omitted_surrounding_count": 0,
+        "missed_core_ideas": 1,
+        "available_by_quality_class": {
+          "CORE": 1,
+          "DISPUTED": 4,
+          "SUPPORTING": 4
+        },
+        "consumed_by_quality_class": {
+          "DISPUTED": 2,
+          "SUPPORTING": 4
+        },
+        "omitted_by_quality_class": {
+          "CORE": 1,
+          "DISPUTED": 2
+        },
+        "omitted_material_missing_context_count": 1,
+        "omitted_supporting_fraction": 0.0,
+        "material_improvement_from_distinct_current_ideas": true
+      }
+    },
+    {
+      "reference": "1 Corinthians 11",
+      "role": "FAILED_BATCH_2",
+      "evidence_availability": "AVAILABLE",
+      "raw_synthesis_units": 51,
+      "meaningful_clusters": 16,
+      "consumed_meaningful_clusters": 7,
+      "blocks": 5,
+      "words": 221,
+      "synthesis_utilization": 0.1765,
+      "weighted_idea_coverage": 0.4062,
+      "core_clusters": 0,
+      "consumed_core_clusters": 0,
+      "core_coverage": 1.0,
+      "category_coverage": 0.8571,
+      "available_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "language_literary",
+        "surrounding_passages"
+      ],
+      "consumed_categories": [
+        "chronology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "language_literary",
+        "surrounding_passages"
+      ],
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "consolidation_ratio": 0.8571,
+      "category_rows": {
+        "archaeology": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 0,
+          "weighted_available_ideas": 0.5,
+          "weighted_consumed_ideas": 0,
+          "coverage": 0.0
+        },
+        "chronology": {
+          "available_meaningful_clusters": 3,
+          "consumed_meaningful_clusters": 3,
+          "weighted_available_ideas": 1.5,
+          "weighted_consumed_ideas": 1.5,
+          "coverage": 1.0
+        },
+        "culture": {
+          "available_meaningful_clusters": 12,
+          "consumed_meaningful_clusters": 6,
+          "weighted_available_ideas": 6.8,
+          "weighted_consumed_ideas": 3.2,
+          "coverage": 0.4706
+        },
+        "history": {
+          "available_meaningful_clusters": 7,
+          "consumed_meaningful_clusters": 4,
+          "weighted_available_ideas": 4.3,
+          "weighted_consumed_ideas": 2.2,
+          "coverage": 0.5116
+        },
+        "interpretive_questions": {
+          "available_meaningful_clusters": 6,
+          "consumed_meaningful_clusters": 4,
+          "weighted_available_ideas": 3.0,
+          "weighted_consumed_ideas": 2.0,
+          "coverage": 0.6667
+        },
+        "language_literary": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 0.5,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 1.0
+        },
+        "surrounding_passages": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 0.5
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_0cd2323f0858",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "archaeology",
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_44e9ec7ac075",
+            "syn_surrounding_passages_507aa584ac20",
+            "syn_surrounding_passages_a2c50ecfaa39",
+            "syn_surrounding_passages_f37156aac991"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "SURROUNDING_ONLY",
+          "facts": [
+            "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+            "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+            "Chapters 8-10 distinguish knowledge about idols from loving responsibility toward conscience and participation.",
+            "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+            "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+            "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+            "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+            "Chapters 8-10 distinguish knowledge about idols from loving responsibility toward conscience and participation.",
+            "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+            "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_3f1bef1b6764",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_6b3b1633b2d2",
+            "syn_why_it_matters_b0c3bee86043"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1",
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The immediate context is Jewish festival and Greco-Roman communal dining rather than generalized ancient ritual.",
+            "Blessing, shared bread and cup, covenant memory, Passover chronology, table fellowship, and responsibility for other participants shape the meal traditions.",
+            "The Synoptic meals occur in a Jewish festival setting, though their chronology and relationship to Passover differ from John. Early assemblies also ate within hierarchical Roman households and cities.",
+            "The immediate context is Jewish festival and Greco-Roman communal dining rather than generalized ancient ritual.",
+            "Blessing, shared bread and cup, covenant memory, Passover chronology, table fellowship, and responsibility for other participants shape the meal traditions.",
+            "The Synoptic meals occur in a Jewish festival setting, though their chronology and relationship to Passover differ from John. Early assemblies also ate within hierarchical Roman households and cities."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_55843f73af3b",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "chronology",
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_0355bb9cd035",
+            "syn_interpretive_questions_4e856708fdbc",
+            "syn_interpretive_questions_8c586e169b16",
+            "syn_interpretive_questions_9f388511fe08",
+            "syn_interpretive_questions_b56c1e8dc63f",
+            "syn_why_it_matters_1203a25ce75b",
+            "syn_why_it_matters_5b4779c193ce",
+            "syn_why_it_matters_6b149dbd7d92",
+            "syn_why_it_matters_9d96c315ccaf",
+            "syn_why_it_matters_ff98d8765b97"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Allergy, disability, addiction, eating disorder, poverty, food safety, and interfaith-family questions are modern applications rather than hidden first-century diagnoses.",
+            "Applies welcome, nonharm, another's good, hunger, dignity, waiting, and shared participation without claiming modern conditions are ancient lexical referents.",
+            "Paul commands self-testing and discerning the body within a passage about bread, cup, Messiah's body, assembly humiliation, sickness, and waiting.",
+            "Keeps doctrinal precision and material regard for assembly members in view without making one interpretation invisible.",
+            "Paul says Corinthian gatherings are for the worse rather than the better and that divisions become visible when the assembly meets.",
+            "Places Eucharistic tradition inside an institutional harm assessment rather than treating ritual performance as self-validating.",
+            "Rhetorical questions contrast houses for eating and drinking with contempt for God's assembly and shaming people who have nothing.",
+            "Makes poverty and class humiliation a theological defect in the meal.",
+            "At the gathering each person proceeds with an own supper, leaving one hungry while another is intoxicated, so Paul denies that the result is the Lord's Supper.",
+            "Identifies material inequality, not merely incorrect ritual words, as central to the crisis.",
+            "Paul says he received and transmitted Lord tradition about the betrayal-night bread and after-supper cup, remembrance, new covenant, and proclamation until the Lord comes.",
+            "Preserves early tradition without removing it from the surrounding economic rebuke.",
+            "Paul links nondiscernment, judgment, weakness, sickness, and deaths, then frames discipline as protection from condemnation with the world.",
+            "Rejects blaming sick, disabled, or dying people for sacramental failure or using illness as proof of divine punishment.",
+            "The warning uses an adverb for eating the bread or drinking the cup unworthily before calling for self-examination and discerning the body.",
+            "Prevents an unworthy-person category from becoming automatic exclusion of poor, disabled, doubting, or stigmatized people.",
+            "Paul tells recipients to wait for or receive one another when they gather and directs a hungry person to eat at home so gathering does not result in judgment.",
+            "Returns the solution to coordinated participation and removal of private hunger pressure.",
+            "Allergy, disability, addiction, eating disorder, poverty, food safety, and interfaith-family questions are modern applications rather than hidden first-century diagnoses.",
+            "Applies welcome, nonharm, another's good, hunger, dignity, waiting, and shared participation without claiming modern conditions are ancient lexical referents.",
+            "Rejects blaming sick, disabled, or dying people for sacramental failure or using illness as proof of divine punishment.",
+            "The warning uses an adverb for eating the bread or drinking the cup unworthily before calling for self-examination and discerning the body.",
+            "Prevents an unworthy-person category from becoming automatic exclusion of poor, disabled, doubting, or stigmatized people.",
+            "Paul tells recipients to wait for or receive one another when they gather and directs a hungry person to eat at home so gathering does not result in judgment.",
+            "Returns the solution to coordinated participation and removal of private hunger pressure.",
+            "Places Eucharistic tradition inside an institutional harm assessment rather than treating ritual performance as self-validating.",
+            "Rhetorical questions contrast houses for eating and drinking with contempt for God's assembly and shaming people who have nothing.",
+            "Makes poverty and class humiliation a theological defect in the meal.",
+            "Paul commands self-testing and discerning the body within a passage about bread, cup, Messiah's body, assembly humiliation, sickness, and waiting.",
+            "Keeps doctrinal precision and material regard for assembly members in view without making one interpretation invisible.",
+            "Paul says Corinthian gatherings are for the worse rather than the better and that divisions become visible when the assembly meets.",
+            "At the gathering each person proceeds with an own supper, leaving one hungry while another is intoxicated, so Paul denies that the result is the Lord's Supper.",
+            "Identifies material inequality, not merely incorrect ritual words, as central to the crisis.",
+            "Paul says he received and transmitted Lord tradition about the betrayal-night bread and after-supper cup, remembrance, new covenant, and proclamation until the Lord comes.",
+            "Preserves early tradition without removing it from the surrounding economic rebuke.",
+            "Paul links nondiscernment, judgment, weakness, sickness, and deaths, then frames discipline as protection from condemnation with the world."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_6422043e0d33",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_5eed46f947dd"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_64581840571c",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_a0cc9bc12174"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_645d853ab6da",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_e9c0827bcb1b",
+            "syn_why_it_matters_8eb8dcf2991e"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+            "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+            "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity.",
+            "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+            "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+            "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_64a7250c24c0",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_3ab811b3e83f",
+            "syn_why_it_matters_67c4404e5532"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Greco-Roman associations commonly organized membership, officers, funds, honors, cult, funerals, and shared meals, offering bounded comparisons for Corinthian assemblies.",
+            "Association and banquet comparison helps explain why arrival time, food quantity, honor, leadership, and humiliation could structure a communal meal without proving the meeting occurred in a known dining room.",
+            "The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability.",
+            "The evidence keeps calling, freedom, bodily belonging, meal humiliation, and household service within a slaveholding and economically unequal society without turning description into endorsement.",
+            "Greco-Roman associations commonly organized membership, officers, funds, honors, cult, funerals, and shared meals, offering bounded comparisons for Corinthian assemblies.",
+            "Association and banquet comparison helps explain why arrival time, food quantity, honor, leadership, and humiliation could structure a communal meal without proving the meeting occurred in a known dining room.",
+            "The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability.",
+            "The evidence keeps calling, freedom, bodily belonging, meal humiliation, and household service within a slaveholding and economically unequal society without turning description into endorsement."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_754f3df34f07",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_c84e6f6432d0",
+            "syn_why_it_matters_63cd05a14987"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Ritual washing, meal fellowship, and covenant renewal provide the wider background.",
+            "Baptism belongs to purification, repentance, and new-identity language before later sacramental debates.",
+            "Purification washings, John the Baptist, and repentance shape the backdrop of baptism in the Gospels and Acts.",
+            "Ritual washing, meal fellowship, and covenant renewal provide the wider background.",
+            "Baptism belongs to purification, repentance, and new-identity language before later sacramental debates.",
+            "Purification washings, John the Baptist, and repentance shape the backdrop of baptism in the Gospels and Acts."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_79036ab468d2",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "chronology",
+            "culture",
+            "history",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_209f5a68b935",
+            "syn_interpretive_questions_e25b8129598c",
+            "syn_interpretive_questions_f62bab4f610a",
+            "syn_why_it_matters_597c32522779",
+            "syn_why_it_matters_8ce93eeb6b6a",
+            "syn_why_it_matters_e282d1a5b024"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Blocks a total speech ban while preserving the need to interpret rather than erase the difficult silence verses.",
+            "First Corinthians coordinates covered or uncovered heads, hair, shame, glory, nature, and custom without preserving a material description of the disputed practice.",
+            "Qualifies modern dress mandates and blocks sexualized or racialized shaming built on one uncertain reconstruction.",
+            "The head sequence in 1 Corinthians 11:3 uses kephale for several relations whose source, authority, prominence, and representative force are debated.",
+            "Prevents a contested lexical conclusion from being presented as a self-evident timeless gender hierarchy.",
+            "Acts narrates earlier Pauline mission settings from a later composition horizon, whereas Romans, First Corinthians, and Philippians are occasional letters closer to their stated situations.",
+            "Prevents Lydia or Prisca narratives from being used as an automatic solution to every Pauline instruction, or the letters from erasing Acts' narrative agency.",
+            "First Corinthians uses exousia rather than an explicit word for veil or sign in its compressed statement about a woman's head and angels.",
+            "Keeps women's agency visible and prevents supplied words or speculative angels from supporting fear-based control.",
+            "The same letter assumes women's prayer and prophecy, then regulates intelligibility, evaluation, turn-taking, and disputed silence.",
+            "The argument states that neither woman nor man is independent in the Lord, pairs creation origin with birth from woman, and locates all things from God.",
+            "Requires hierarchy readings to account for reciprocal dependence and prevents mutuality from erasing the passage's acknowledged distinctions.",
+            "First Corinthians 11 regulates how women and men pray and prophesy rather than denying that women participate.",
+            "Makes women's Spirit-related speech primary evidence that any interpretation of later silence language must explain.",
+            "Commendation, diakonia, prostatis, coworking, labor, apostleship, prophecy, teaching, hosting, and household agency overlap but do not name one undifferentiated office.",
+            "The argument states that neither woman nor man is independent in the Lord, pairs creation origin with birth from woman, and locates all things from God.",
+            "Requires hierarchy readings to account for reciprocal dependence and prevents mutuality from erasing the passage's acknowledged distinctions.",
+            "First Corinthians 11 regulates how women and men pray and prophesy rather than denying that women participate.",
+            "Makes women's Spirit-related speech primary evidence that any interpretation of later silence language must explain.",
+            "Commendation, diakonia, prostatis, coworking, labor, apostleship, prophecy, teaching, hosting, and household agency overlap but do not name one undifferentiated office.",
+            "Blocks a total speech ban while preserving the need to interpret rather than erase the difficult silence verses.",
+            "First Corinthians coordinates covered or uncovered heads, hair, shame, glory, nature, and custom without preserving a material description of the disputed practice.",
+            "Qualifies modern dress mandates and blocks sexualized or racialized shaming built on one uncertain reconstruction.",
+            "The head sequence in 1 Corinthians 11:3 uses kephale for several relations whose source, authority, prominence, and representative force are debated.",
+            "Prevents a contested lexical conclusion from being presented as a self-evident timeless gender hierarchy.",
+            "Acts narrates earlier Pauline mission settings from a later composition horizon, whereas Romans, First Corinthians, and Philippians are occasional letters closer to their stated situations.",
+            "Prevents Lydia or Prisca narratives from being used as an automatic solution to every Pauline instruction, or the letters from erasing Acts' narrative agency.",
+            "First Corinthians uses exousia rather than an explicit word for veil or sign in its compressed statement about a woman's head and angels.",
+            "Keeps women's agency visible and prevents supplied words or speculative angels from supporting fear-based control.",
+            "The same letter assumes women's prayer and prophecy, then regulates intelligibility, evaluation, turn-taking, and disputed silence."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_aaf8067b301a",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "chronology",
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_21ee906fedfe",
+            "syn_surrounding_passages_30613f4d0a45",
+            "syn_surrounding_passages_4182b4e27b2b",
+            "syn_surrounding_passages_c6b2237bd751",
+            "syn_surrounding_passages_e3221d7fae5a",
+            "syn_surrounding_passages_e395a2730f33"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_5"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Romans, First Corinthians, and Galatians differentiate disputed household practice, cultic dining, market food, private hospitality, assembly supper, and table withdrawal.",
+            "Prevents a single rule about idol food, conscience, Eucharist, or Jewish-gentile tables from flattening all cases.",
+            "Galatians reports Antioch in first person, First Corinthians reasons through differentiated food cases, and Acts later narrates a Jerusalem decree with its own sequence and aims.",
+            "Prevents Acts from silently overwriting Paul's cases and prevents the letters from erasing Acts' later canonical reception.",
+            "Eating and drinking are directed to God's glory, nonoffense toward Jews, Greeks, and God's assembly, another's salvation, and imitation of Paul only as he imitates Messiah.",
+            "Prevents imitation language from granting leaders unlimited control and keeps Jewish, gentile, and assembly relations visible.",
+            "Romans, First Corinthians, and Galatians differentiate disputed household practice, cultic dining, market food, private hospitality, assembly supper, and table withdrawal.",
+            "Prevents a single rule about idol food, conscience, Eucharist, or Jewish-gentile tables from flattening all cases.",
+            "Galatians reports Antioch in first person, First Corinthians reasons through differentiated food cases, and Acts later narrates a Jerusalem decree with its own sequence and aims.",
+            "Prevents Acts from silently overwriting Paul's cases and prevents the letters from erasing Acts' later canonical reception.",
+            "Eating and drinking are directed to God's glory, nonoffense toward Jews, Greeks, and God's assembly, another's salvation, and imitation of Paul only as he imitates Messiah.",
+            "Prevents imitation language from granting leaders unlimited control and keeps Jewish, gentile, and assembly relations visible."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_b68452dcdc6d",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_5db68167785c",
+            "syn_why_it_matters_77ff1244a726"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Paul says unequal eating means the gathering is not the Lord's Supper and asks whether the assembly humiliates those who have nothing.",
+            "Makes material exclusion and public shame accountability concerns rather than acceptable tools of correction.",
+            "Paul says unequal eating means the gathering is not the Lord's Supper and asks whether the assembly humiliates those who have nothing.",
+            "Makes material exclusion and public shame accountability concerns rather than acceptable tools of correction."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_bcd60dcbf780",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "history",
+            "interpretive_questions",
+            "language_literary"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_280ae81cc2e5",
+            "syn_interpretive_questions_4f80fbed5826",
+            "syn_interpretive_questions_d036e0c1d5ee",
+            "syn_interpretive_questions_d4a51d350042",
+            "syn_why_it_matters_0506bee32d3c",
+            "syn_why_it_matters_1b42b3d3cf10",
+            "syn_why_it_matters_3b3f7a799cc6",
+            "syn_why_it_matters_8ad060769569"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3",
+            "block_4"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The Lord's supper tradition is embedded in correction of privileged eating; sacramental remembrance cannot be detached from material solidarity.",
+            "The Lord's supper condemns class humiliation and cannot support eucharistic exclusion, inaccessible worship, or shaming poor and hungry people.",
+            "Unworthy manner modifies eating and drinking conduct; it should not be misread as demanding a perfectly worthy person before participation.",
+            "Weakness, illness, and death in 11:30 are interpreted in several ways; the verse cannot justify blaming sick or disabled people, refusing medicine, or claiming diagnostic certainty.",
+            "Discerning the body may involve Messiah's body, the gathered body, the meal, or overlapping senses; interpretations should remain qualified.",
+            "Imitate me is bounded by Paul's own qualification as he imitates Messiah; it cannot establish personality cults or unreviewable celebrity leadership.",
+            "The head coverings passage assumes women pray and prophesy; debates about garment, hair, kephale, angels, and nature cannot be resolved by silencing women or imposing gender essentialism.",
+            "Kephale's relational force is disputed; source, authority, prominence, and anatomical meanings should not be collapsed into an uncontested hierarchy.",
+            "Because of the angels has many proposals and should not be used to frighten women or enforce a speculative angelology.",
+            "Nature in 11:14 likely invokes socially perceived propriety rather than supplying a timeless biological account of every hairstyle.",
+            "Kephale means head, but whether its relational force is source, authority, prominence, or a blend is disputed.",
+            "The supper correction targets humiliating inequality in which some eat and drink while others remain hungry.",
+            "Paul reports receiving and delivering a Lord's supper tradition tied to Jesus' final night.",
+            "The relation of 14:34-35 to chapter 11 is disputed; textual displacement after verse 40 and the fact that women pray and prophesy require qualified, non-totalizing interpretation.",
+            "Chapter 11 assumes women and men pray and prophesy while disputing gendered head presentation.",
+            "The Lord's supper tradition is embedded in correction of privileged eating; sacramental remembrance cannot be detached from material solidarity.",
+            "The Lord's supper condemns class humiliation and cannot support eucharistic exclusion, inaccessible worship, or shaming poor and hungry people.",
+            "Unworthy manner modifies eating and drinking conduct; it should not be misread as demanding a perfectly worthy person before participation.",
+            "Weakness, illness, and death in 11:30 are interpreted in several ways; the verse cannot justify blaming sick or disabled people, refusing medicine, or claiming diagnostic certainty.",
+            "Discerning the body may involve Messiah's body, the gathered body, the meal, or overlapping senses; interpretations should remain qualified.",
+            "Imitate me is bounded by Paul's own qualification as he imitates Messiah; it cannot establish personality cults or unreviewable celebrity leadership.",
+            "The head coverings passage assumes women pray and prophesy; debates about garment, hair, kephale, angels, and nature cannot be resolved by silencing women or imposing gender essentialism.",
+            "Kephale's relational force is disputed; source, authority, prominence, and anatomical meanings should not be collapsed into an uncontested hierarchy.",
+            "Because of the angels has many proposals and should not be used to frighten women or enforce a speculative angelology.",
+            "Nature in 11:14 likely invokes socially perceived propriety rather than supplying a timeless biological account of every hairstyle.",
+            "The relation of 14:34-35 to chapter 11 is disputed; textual displacement after verse 40 and the fact that women pray and prophesy require qualified, non-totalizing interpretation.",
+            "Chapter 11 assumes women and men pray and prophesy while disputing gendered head presentation.",
+            "Kephale means head, but whether its relational force is source, authority, prominence, or a blend is disputed.",
+            "The supper correction targets humiliating inequality in which some eat and drink while others remain hungry.",
+            "Paul reports receiving and delivering a Lord's supper tradition tied to Jesus' final night."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_c4ce0d1437a4",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_495f96c22dfe"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Baptism appears in the New Testament as the church reflects on Jesus' saving work and the shape of the community."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_d7bc23a2c602",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_affe38c27447"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The Synoptic passion narratives and First Corinthians preserve related but distinct meal traditions. First Corinthians embeds the received words within a conflict over unequal access, hunger, humiliation, and communal discernment."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_dfa56c75c4db",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_f12d53526e23",
+            "syn_why_it_matters_9b02b1157432"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "The same verb orders silence for an uninterpreted tongue speaker, a prophet when another receives revelation, and women or wives in a text whose activity and scope remain disputed.",
+            "Prevents selective conversion of women into a permanently voiceless class or use of the verse against reporting harm.",
+            "The same verb orders silence for an uninterpreted tongue speaker, a prophet when another receives revelation, and women or wives in a text whose activity and scope remain disputed.",
+            "Prevents selective conversion of women into a permanently voiceless class or use of the verse against reporting harm."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_fc108d1edc5c",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_e08ed186ec23"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ."
+          ]
+        }
+      ],
+      "summary": {
+        "touches_most_categories_but_misses_distinct_ideas_within_family": true,
+        "omitted_distinct_ideas_are_genuinely_distinct": true,
+        "omitted_current_chapter_count": 8,
+        "omitted_surrounding_count": 1,
+        "missed_core_ideas": 0,
+        "available_by_quality_class": {
+          "DISPUTED": 8,
+          "SUPPORTING": 8
+        },
+        "consumed_by_quality_class": {
+          "DISPUTED": 5,
+          "SUPPORTING": 2
+        },
+        "omitted_by_quality_class": {
+          "DISPUTED": 3,
+          "SUPPORTING": 6
+        },
+        "omitted_material_missing_context_count": 4,
+        "omitted_supporting_fraction": 0.75,
+        "material_improvement_from_distinct_current_ideas": true
+      }
+    },
+    {
+      "reference": "Hebrews 4",
+      "role": "FAILED_BATCH_2",
+      "evidence_availability": "AVAILABLE",
+      "raw_synthesis_units": 26,
+      "meaningful_clusters": 19,
+      "consumed_meaningful_clusters": 8,
+      "blocks": 5,
+      "words": 193,
+      "synthesis_utilization": 0.3077,
+      "weighted_idea_coverage": 0.4341,
+      "core_clusters": 2,
+      "consumed_core_clusters": 2,
+      "core_coverage": 1.0,
+      "category_coverage": 1.0,
+      "available_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "consolidation_ratio": 0.6429,
+      "category_rows": {
+        "archaeology": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 0.5,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 1.0
+        },
+        "culture": {
+          "available_meaningful_clusters": 13,
+          "consumed_meaningful_clusters": 6,
+          "weighted_available_ideas": 8.7,
+          "weighted_consumed_ideas": 4.2,
+          "coverage": 0.4828
+        },
+        "history": {
+          "available_meaningful_clusters": 6,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 4.2,
+          "weighted_consumed_ideas": 1.4,
+          "coverage": 0.3333
+        },
+        "interpretive_questions": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 0.5
+        },
+        "surrounding_passages": {
+          "available_meaningful_clusters": 3,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 1.5,
+          "weighted_consumed_ideas": 1.0,
+          "coverage": 0.6667
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_14c34faff56d",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_444a445b3299",
+            "syn_why_it_matters_9392e507cd20"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+            "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule.",
+            "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+            "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_351396b4a322",
+          "quality_class": "CORE",
+          "importance_weight": 1.0,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_ef2b1a02585d"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Jesus the great high priest grounds holding confession and approaching the throne of grace with confidence for mercy and help."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_4104683b0b02",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_681a41f3d98c"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "A distinct day of rest set Israel apart from surrounding cultures and signaled trust in the LORD rather than endless production."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_49721074ff3e",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_cdd9272b8317"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The living word in 4:12 functions within the warning about divine speech and accountability; identifying it directly with Jesus is possible reception, not explicit grammar."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_54bb28d079a1",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "archaeology",
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_047f24dce45a",
+            "syn_surrounding_passages_722c23185f0c",
+            "syn_surrounding_passages_88b298233af9",
+            "syn_surrounding_passages_e4bc89f215c5"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_4"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.",
+            "The exhortation develops rest through Psalm 95, wilderness failure, creation, Joshua, Sabbath rest, and present diligence.",
+            "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+            "Rest in Hebrews 3-4 combines wilderness, land, Sabbath, creation, present access, and future promise; it is not reducible to one referent.",
+            "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.",
+            "The exhortation develops rest through Psalm 95, wilderness failure, creation, Joshua, Sabbath rest, and present diligence.",
+            "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+            "Rest in Hebrews 3-4 combines wilderness, land, Sabbath, creation, present access, and future promise; it is not reducible to one referent.",
+            "High-priest Christology joins solidarity, testing, mercy, access, and scriptural appointment; it should not authorize clerical caste or leader exceptionalism.",
+            "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+            "High-priest Christology joins solidarity, testing, mercy, access, and scriptural appointment; it should not authorize clerical caste or leader exceptionalism.",
+            "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_57d0f70b5149",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_e68ff987cdef"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Aaronic and Levitical priests serve in tabernacle and temple settings, later adapting in the second temple period."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_5a2393a72b6a",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_0617bf027e6c"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Joshua stands at the transition from wilderness wandering to settlement in Canaan, carrying the commission of Moses into the next generation."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_6144dba3ba07",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_e0b6797d6899"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Rooted in creation and Exodus, the Sabbath becomes a weekly rhythm that marks Israel's identity and dependence on God."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_7b36c50e8b59",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_a66279d7c2fa"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Priestly mediation is common in the ancient world, but Israel's priests serve under covenant holiness rather than local deity politics."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_8680313dc474",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_7c669f1d74b7"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "SURROUNDING_ONLY",
+          "facts": [
+            "New Testament use of the wilderness generation, bronze serpent, and Balaam is later canonical reception and should be identified separately from interpretation of Numbers in its Torah context."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_937b24583a91",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_c397a7c24eb2"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel’s worship, then reappears in the second temple world and in New Testament reflection."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_97d357397b6e",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_5a6e6de36252"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Sabbath emerges in creation theology and then in Israel's covenant life as a weekly sign of trust, liberation, and ordered time."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_9bb9b8f5f206",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_5c0a7cbebecd"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_5"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Christian exodus typology should identify explicit later canonical reuse and preserve Exodus's primary focus on the LORD's deliverance and covenant relationship with Israel."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_c9b2ba8258d1",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_b2aad1addbf7",
+            "syn_why_it_matters_0ebc3788fbc1"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Ancient cultures knew rest and festival calendars, but Israel's Sabbath uniquely ties rest to creation, redemption from slavery, and covenant holiness.",
+            "Creation rhythm, memory, trust, holiness, household rest, and freedom from oppression.",
+            "By the Second Temple period Sabbath observance marked covenant fidelity and shaped synagogue and household rhythms.",
+            "Ancient cultures knew rest and festival calendars, but Israel's Sabbath uniquely ties rest to creation, redemption from slavery, and covenant holiness.",
+            "Creation rhythm, memory, trust, holiness, household rest, and freedom from oppression.",
+            "By the Second Temple period Sabbath observance marked covenant fidelity and shaped synagogue and household rhythms."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_d539c8cb6c71",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_d176191c505e"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "His world is the world of tribal settlement, land claims, and fortified cities, but the narrative insists that inheritance depends on the LORD's faithfulness."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_d8757a775249",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_deb5227b4814"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "DISPUTED_SECONDARY",
+          "facts": [
+            "Christian connections involving Rahab and rest are later canonical reception and should be stated separately from the book's own land and covenant claims."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_dd547db62bca",
+          "quality_class": "CORE",
+          "importance_weight": 1.0,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_language_literary_c7b369414e9b"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The word of God is described as living, active, penetrating, discerning, and followed by exposure before God."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_e47acb455a74",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_1ed28fe5a200",
+            "syn_why_it_matters_47b4026cc6a9"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+            "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+            "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+            "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome.",
+            "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+            "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+            "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+            "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_f0d5438f2d83",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_ce69722a036e",
+            "syn_why_it_matters_8f243902a7ff"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
+            "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.",
+            "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue.",
+            "Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
+            "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.",
+            "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue."
+          ]
+        }
+      ],
+      "summary": {
+        "touches_most_categories_but_misses_distinct_ideas_within_family": true,
+        "omitted_distinct_ideas_are_genuinely_distinct": true,
+        "omitted_current_chapter_count": 10,
+        "omitted_surrounding_count": 1,
+        "missed_core_ideas": 0,
+        "available_by_quality_class": {
+          "CORE": 2,
+          "DISPUTED": 5,
+          "SUPPORTING": 12
+        },
+        "consumed_by_quality_class": {
+          "CORE": 2,
+          "DISPUTED": 3,
+          "SUPPORTING": 3
+        },
+        "omitted_by_quality_class": {
+          "DISPUTED": 2,
+          "SUPPORTING": 9
+        },
+        "omitted_material_missing_context_count": 7,
+        "omitted_supporting_fraction": 0.75,
+        "material_improvement_from_distinct_current_ideas": true
+      }
+    }
+  ],
+  "positive_controls": [
+    {
+      "reference": "Exodus 12",
+      "role": "POSITIVE_CONTROL_EXODUS_12",
+      "evidence_availability": "AVAILABLE",
+      "raw_synthesis_units": 46,
+      "meaningful_clusters": 28,
+      "consumed_meaningful_clusters": 17,
+      "blocks": 9,
+      "words": 503,
+      "synthesis_utilization": 0.413,
+      "weighted_idea_coverage": 0.615,
+      "core_clusters": 2,
+      "consumed_core_clusters": 2,
+      "core_coverage": 1.0,
+      "category_coverage": 1.0,
+      "available_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "consolidation_ratio": 0.8043,
+      "category_rows": {
+        "archaeology": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 1.0,
+          "coverage": 1.0
+        },
+        "chronology": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 0.7,
+          "weighted_consumed_ideas": 0.7,
+          "coverage": 1.0
+        },
+        "culture": {
+          "available_meaningful_clusters": 13,
+          "consumed_meaningful_clusters": 9,
+          "weighted_available_ideas": 9.2,
+          "weighted_consumed_ideas": 6.4,
+          "coverage": 0.6957
+        },
+        "geography": {
+          "available_meaningful_clusters": 3,
+          "consumed_meaningful_clusters": 3,
+          "weighted_available_ideas": 2.4,
+          "weighted_consumed_ideas": 2.4,
+          "coverage": 1.0
+        },
+        "history": {
+          "available_meaningful_clusters": 11,
+          "consumed_meaningful_clusters": 4,
+          "weighted_available_ideas": 7.7,
+          "weighted_consumed_ideas": 2.8,
+          "coverage": 0.3636
+        },
+        "interpretive_questions": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 0.5,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 1.0
+        },
+        "surrounding_passages": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 2.0,
+          "weighted_consumed_ideas": 2.0,
+          "coverage": 1.0
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_08121a02f3c1",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_ac82644832b0",
+            "syn_why_it_matters_bf65ea41d22c"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "The Moses story engages Egyptian power, wilderness survival, and the formation of a covenant people in contrast to imperial domination.",
+            "Moses' ministry presents covenant life as redeemed worship, mediated presence, Torah-shaped community, and dependence on God's holiness and mercy.",
+            "Second Temple Jewish traditions treat Moses as prophet, lawgiver, mediator, and model for interpreting Israel's identity under covenant pressure.",
+            "The Moses story engages Egyptian power, wilderness survival, and the formation of a covenant people in contrast to imperial domination.",
+            "Moses' ministry presents covenant life as redeemed worship, mediated presence, Torah-shaped community, and dependence on God's holiness and mercy.",
+            "Second Temple Jewish traditions treat Moses as prophet, lawgiver, mediator, and model for interpreting Israel's identity under covenant pressure."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_0faf9a29e299",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_323197c81f29",
+            "syn_why_it_matters_7c67eeb7c72d"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_9"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+            "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+            "Israel remembering the ordered story of deliverance and covenant formation",
+            "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus.",
+            "The route narrative is set against Egyptian imperial power, desert travel, water and food scarcity, and the formation of a people outside normal settled life.",
+            "The timeline frames time as remembered redemption: Israel's calendar, worship, and identity begin with God's deliverance before covenant instruction.",
+            "Israel remembering the ordered story of deliverance and covenant formation",
+            "Second Temple Jewish remembrance of exodus and Sinai shaped Passover, covenant identity, liberation hope, and later readings of new exodus."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_0fdd473b01ea",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_2c86fe917ac5"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Treaty markers and memorials were common in the ancient world, but Scripture gives them theological meaning rather than magical force."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_141a943870fc",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_235aa6e8c5d0"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The narrative is set in Egypt under an unnamed Pharaoh and moves between royal audience scenes and disasters affecting land, animals, households, and cult. The record does not assign the episode to a dynasty or claim that an Egyptian artifact independently verifies the sequence."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_2a85bce62fbc",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_0d80660aa965",
+            "syn_why_it_matters_663a02be4a25"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_4"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
+            "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+            "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+            "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
+            "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+            "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_3d348b649f53",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "geography"
+          ],
+          "synthesis_ids": [
+            "syn_archaeology_geography_6b91cbb6f615",
+            "syn_archaeology_geography_93728a116c8a",
+            "syn_why_it_matters_2b33c7f687fe",
+            "syn_why_it_matters_9d7b8128ba0f"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_6"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "egypt",
+            "red-sea-1",
+            "mount-sinai",
+            "kadesh-barnea",
+            "egypt",
+            "mount-sinai",
+            "red-sea-1",
+            "kadesh-barnea",
+            "egypt",
+            "red-sea-1",
+            "mount-sinai",
+            "kadesh-barnea",
+            "egypt",
+            "mount-sinai",
+            "red-sea-1",
+            "kadesh-barnea"
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_4745cb29be6e",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_984237e575c3"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Moses stands at the center of the exodus, wilderness, and covenant-making narratives. His role frames Israel as a redeemed people shaped by divine instruction and holy presence."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_48b290e95ca9",
+          "quality_class": "CORE",
+          "importance_weight": 1.0,
+          "category_families": [
+            "archaeology",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_27e9473fdf90",
+            "syn_why_it_matters_c6faf2bcb612"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "explicit_passage_significance"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_7"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "A New Kingdom offering table dedicated by Seti I depicts the king worshiping Seth and offering a libation to Nephthys.",
+            "The object provides concrete Egyptian evidence that royal representation included cultic interaction with deities, helping bound—but not prove—the political-religious context of Pharaoh's role in Exodus.",
+            "A New Kingdom offering table dedicated by Seti I depicts the king worshiping Seth and offering a libation to Nephthys.",
+            "The object provides concrete Egyptian evidence that royal representation included cultic interaction with deities, helping bound—but not prove—the political-religious context of Pharaoh's role in Exodus."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_4d3b56bf0747",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_10900e9b136a"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1",
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Passover stands at the center of the exodus tradition and the formation of Israel as a redeemed people."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_596a2f75654f",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "chronology"
+          ],
+          "synthesis_ids": [
+            "syn_chronology_197676847001",
+            "syn_chronology_c3528a38f46c",
+            "syn_why_it_matters_2ef379656b89",
+            "syn_why_it_matters_5e2d81a01a7e"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_5",
+            "block_9"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Israel crosses the sea",
+            "Wilderness provision and testing begin",
+            "Israel arrives at Sinai",
+            "The covenant is given and ratified",
+            "Israel oppressed in Egypt",
+            "Moses called at the burning bush",
+            "Plagues confront Pharaoh",
+            "Passover marks deliverance",
+            "Israel leaves Egypt",
+            "Israel crosses the sea",
+            "Wilderness provision and testing begin",
+            "Israel arrives at Sinai",
+            "The covenant is given and ratified",
+            "Israel oppressed in Egypt",
+            "Moses called at the burning bush",
+            "Plagues confront Pharaoh",
+            "Passover marks deliverance",
+            "Israel leaves Egypt"
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_64d9d47a6158",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_9cd13332cb2c"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The narrative is set within Egypt and frames God’s victory over imperial power and death through a covenant meal."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_75004f792178",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_1291b061c902"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The exodus becomes the defining act of redemption in Israel's memory and the starting point for covenant nationhood."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_75e73594bb0f",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "geography"
+          ],
+          "synthesis_ids": [
+            "syn_archaeology_geography_2d1be6618874",
+            "syn_why_it_matters_ddd49853d15d"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_6"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "canaan",
+            "nile",
+            "red-sea-1",
+            "mount-sinai",
+            "canaan",
+            "nile",
+            "red-sea-1",
+            "mount-sinai"
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_77f1489bc377",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_eba240a0215b"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_4"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Meal, blood, and household identity are familiar motifs in the ancient world, but Passover uniquely centers the LORD's saving act for his people."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_785cae57570b",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_4804504d71b8"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Ancient background for Typology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 12:1-14, Numbers 21:4-9, what-is-typology, and hebrews without letting comparison replace the biblical witness."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_a655d0ba1a53",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_7e3f69571c3c",
+            "syn_why_it_matters_e699975b6b25"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+            "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH.",
+            "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+            "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_aa91f3582551",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_c31ab113cae2"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Moses confronts Pharaoh, leads Israel out of Egypt, and mediates covenant at Sinai."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_acc483b67a45",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_da43f414c9f9"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_b2c48378eaaf",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_c34da6e7c35d"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The story confronts imperial Egypt and recasts deliverance as the LORD's victory over human power and death."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_b30ca8db0e18",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_7ce0a8e16843",
+            "syn_why_it_matters_1eaa5c63cf1b"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "As a powerful Nile-based empire, Egypt represents political might, agricultural abundance, and the temptation of security apart from covenant trust.",
+            "Egypt is remembered through dependence, oppression, deliverance, and warning: a place where God hears suffering and calls his people away from false security.",
+            "Second Temple Jewish communities knew Egypt as both diaspora setting and exodus-memory symbol, while early Christian texts reuse Egypt in Jesus' infancy narrative.",
+            "As a powerful Nile-based empire, Egypt represents political might, agricultural abundance, and the temptation of security apart from covenant trust.",
+            "Egypt is remembered through dependence, oppression, deliverance, and warning: a place where God hears suffering and calls his people away from false security.",
+            "Second Temple Jewish communities knew Egypt as both diaspora setting and exodus-memory symbol, while early Christian texts reuse Egypt in Jesus' infancy narrative."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_b945e3fcec17",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "culture"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_3ff8f12fa127"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Royal rescue stories and lawgiving are familiar in the ancient world, but Moses functions as prophet and covenant mediator under the LORD."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_c6d67b31f65f",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_df751d98aece"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Typology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_db93f95de986",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_a1bd9df8e4f6"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Egypt is a major ancient civilization that shapes several biblical episodes, especially the patriarchal sojourn, Joseph's rise, and the exodus from slavery."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_e019ddf248b0",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_2e9e6f51a7bc",
+            "syn_why_it_matters_08820bdba7cf"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+            "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+            "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart.",
+            "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+            "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+            "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_e98c9e70cc44",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_75c94b498e6c",
+            "syn_why_it_matters_a00cab98e724"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "entity_background_not_direct_passage_context"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "REDUNDANT_OR_PARALLEL",
+          "facts": [
+            "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+            "Exodus wilderness narrative",
+            "The sequence belongs to the Exodus wilderness narrative, where Israel moves from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+            "Exodus wilderness narrative"
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_efb5c566866b",
+          "quality_class": "CORE",
+          "importance_weight": 1.0,
+          "category_families": [
+            "culture",
+            "geography",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_103dde7710a1",
+            "syn_surrounding_passages_7dce90bc045f",
+            "syn_surrounding_passages_9de8a5f58a79",
+            "syn_surrounding_passages_a2029988cb61"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "direct_passage_context"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_8"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+            "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+            "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus.",
+            "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint.",
+            "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+            "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+            "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus.",
+            "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_f1005dfbc7de",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_c4a2a025571e"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Passover originates in the exodus and becomes Israel's annual memorial of redemption, identity, and covenant belonging."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_fdc6f834b606",
+          "quality_class": "SUPPORTING",
+          "importance_weight": 0.7,
+          "category_families": [
+            "history"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_c9e6dfe51a2b"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "general_contextual_support"
+          ],
+          "disputed_status": false,
+          "duplicate_reason": "DISTINCT",
+          "consumed": false,
+          "consuming_block_ids": [],
+          "omission_classification": "MATERIAL_MISSING_CONTEXT",
+          "facts": [
+            "Signs such as the rainbow, circumcision, Passover, and the Sabbath mark covenant identity and obligation."
+          ]
+        }
+      ],
+      "summary": {
+        "touches_most_categories_but_misses_distinct_ideas_within_family": true,
+        "omitted_distinct_ideas_are_genuinely_distinct": true,
+        "omitted_current_chapter_count": 11,
+        "omitted_surrounding_count": 0,
+        "missed_core_ideas": 0,
+        "available_by_quality_class": {
+          "CORE": 2,
+          "DISPUTED": 1,
+          "SUPPORTING": 25
+        },
+        "consumed_by_quality_class": {
+          "CORE": 2,
+          "DISPUTED": 1,
+          "SUPPORTING": 14
+        },
+        "omitted_by_quality_class": {
+          "SUPPORTING": 11
+        },
+        "omitted_material_missing_context_count": 9,
+        "omitted_supporting_fraction": 0.44,
+        "material_improvement_from_distinct_current_ideas": true
+      }
+    },
+    {
+      "reference": "Job 3",
+      "role": "POSITIVE_CONTROL_JOB_3",
+      "evidence_availability": "AVAILABLE",
+      "raw_synthesis_units": 5,
+      "meaningful_clusters": 3,
+      "consumed_meaningful_clusters": 3,
+      "blocks": 3,
+      "words": 97,
+      "synthesis_utilization": 0.6,
+      "weighted_idea_coverage": 1.0,
+      "core_clusters": 0,
+      "consumed_core_clusters": 0,
+      "core_coverage": 1.0,
+      "category_coverage": 1.0,
+      "available_categories": [
+        "culture",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "consumed_categories": [
+        "culture",
+        "interpretive_questions",
+        "surrounding_passages"
+      ],
+      "dump_severity": "NONE",
+      "dump_signals": [],
+      "consolidation_ratio": 0.4,
+      "category_rows": {
+        "culture": {
+          "available_meaningful_clusters": 3,
+          "consumed_meaningful_clusters": 3,
+          "weighted_available_ideas": 1.5,
+          "weighted_consumed_ideas": 1.5,
+          "coverage": 1.0
+        },
+        "interpretive_questions": {
+          "available_meaningful_clusters": 1,
+          "consumed_meaningful_clusters": 1,
+          "weighted_available_ideas": 0.5,
+          "weighted_consumed_ideas": 0.5,
+          "coverage": 1.0
+        },
+        "surrounding_passages": {
+          "available_meaningful_clusters": 2,
+          "consumed_meaningful_clusters": 2,
+          "weighted_available_ideas": 1.0,
+          "weighted_consumed_ideas": 1.0,
+          "coverage": 1.0
+        }
+      },
+      "clusters": [
+        {
+          "cluster_id": "idea_cluster_126fe5a4f8be",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "interpretive_questions"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_ff968a964641"
+          ],
+          "passage_scope": "CURRENT_CHAPTER",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "DISTINCT",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_1"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Job authorizes lament, anger, confusion, and demands for justice within sustained address to God. Pastoral use should listen before explaining, avoid victim blaming and secret-sin diagnosis, distinguish general moral wisdom from case-specific certainty, and never pressure traumatized people to imitate a flattened 'patience of Job' that ignores his protest."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_5783dca20b6a",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_45fd2cd8f2c9",
+            "syn_surrounding_passages_4f65b7e92906"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_3"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+            "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome.",
+            "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+            "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome."
+          ]
+        },
+        {
+          "cluster_id": "idea_cluster_6a67cd7af8fd",
+          "quality_class": "DISPUTED",
+          "importance_weight": 0.5,
+          "category_families": [
+            "culture",
+            "surrounding_passages"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_28d9ac647cd5",
+            "syn_surrounding_passages_b05328cf7d62"
+          ],
+          "passage_scope": "SURROUNDING_PASSAGE",
+          "importance_basis": [
+            "disputed_or_contested_evidence"
+          ],
+          "disputed_status": true,
+          "duplicate_reason": "EXACT_DUPLICATE",
+          "consumed": true,
+          "consuming_block_ids": [
+            "block_2"
+          ],
+          "omission_classification": null,
+          "facts": [
+            "After seven days of shared silence, Job curses the day of his birth and enters sustained debate with Eliphaz, Bildad, and Zophar, who increasingly explain his suffering through wrongdoing while Job rejects their diagnosis.",
+            "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+            "After seven days of shared silence, Job curses the day of his birth and enters sustained debate with Eliphaz, Bildad, and Zophar, who increasingly explain his suffering through wrongdoing while Job rejects their diagnosis.",
+            "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          ]
+        }
+      ],
+      "summary": {
+        "touches_most_categories_but_misses_distinct_ideas_within_family": false,
+        "omitted_distinct_ideas_are_genuinely_distinct": false,
+        "omitted_current_chapter_count": 0,
+        "omitted_surrounding_count": 0,
+        "missed_core_ideas": 0,
+        "available_by_quality_class": {
+          "DISPUTED": 3
+        },
+        "consumed_by_quality_class": {
+          "DISPUTED": 3
+        },
+        "omitted_by_quality_class": {},
+        "omitted_material_missing_context_count": 0,
+        "omitted_supporting_fraction": 0.0,
+        "material_improvement_from_distinct_current_ideas": false
+      }
+    }
+  ],
+  "root_cause_classification": "WITHIN_FAMILY_UNDERSAMPLING_CONFIRMED",
+  "gate_change_justified": false,
+  "prompt_change_justified": true,
+  "reader_synthesis_plan_needed": false,
+  "batch_3_authorized": false
+}

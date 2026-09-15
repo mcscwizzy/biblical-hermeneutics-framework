@@ -1,0 +1,450 @@
+{
+  "entities": {
+    "artifacts": [],
+    "events": [],
+    "groups": [],
+    "people": [],
+    "places": []
+  },
+  "evidence_hash": "f006d421c9438bcc7683f444cba10e692c389cacd8cf42caf07d8f8b5d81b33c",
+  "evidence_hash_version": "1",
+  "evidence_items": [
+    {
+      "category": "culture",
+      "claim": "Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings.",
+      "confidence": "high",
+      "id": "leviticus:interpretive_note:0",
+      "passage_anchors": [
+        "Numbers 1:1"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "",
+        "dispute_status": "not_disputed",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "literary-observation",
+        "object_importance": 96,
+        "overview_priority": 0,
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "dig_deeper",
+        "retrieval_score": 0.916,
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab.",
+      "confidence": "high",
+      "id": "numbers-literary-journey",
+      "passage_anchors": [
+        "Numbers 1:1"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "strong_consensus",
+        "claim_type": "literary",
+        "dispute_status": "not_disputed",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 98,
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "language_literary",
+        "retrieval_score": 0.955,
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "source_kind": "ckl_claim",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "The censuses in Numbers 1 and 26 frame a transition from the generation counted at Sinai to the generation prepared for inheritance near Moab.",
+      "confidence": "high",
+      "id": "numbers-two-generations",
+      "passage_anchors": [
+        "Numbers 1:1-54"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "literary",
+        "dispute_status": "not_disputed",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "",
+        "object_importance": 95,
+        "overview_priority": 98,
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "language_literary",
+        "retrieval_score": 0.955,
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "source_kind": "ckl_claim",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location.",
+      "confidence": "high",
+      "id": "numbers:interpretive_note:0",
+      "passage_anchors": [
+        "Numbers 1:1"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "verse",
+        "applicability_scope": "passage",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "textually_explicit",
+        "claim_type": "",
+        "dispute_status": "not_disputed",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "literary-observation",
+        "object_importance": 95,
+        "overview_priority": 110,
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.955,
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ]
+    },
+    {
+      "category": "culture",
+      "claim": "The two census totals and the scale of Israel's wilderness population have major literary and historical interpretations; the record should not silently select one reconstruction.",
+      "confidence": "low",
+      "id": "numbers:interpretive_note:1",
+      "passage_anchors": [
+        "Numbers 1"
+      ],
+      "related_entity_ids": [],
+      "relevance_metadata": {
+        "anchor_source": "child",
+        "anchor_specificity": "chapter",
+        "applicability_scope": "section",
+        "assertion_type": "inference",
+        "broad_tag_only": false,
+        "certainty": "disputed",
+        "claim_type": "",
+        "dispute_status": "major_scholarly_disagreement",
+        "exploration_potential": 0.25,
+        "field": "",
+        "note_type": "interpretive-caution",
+        "object_importance": 95,
+        "overview_priority": 102,
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "passage_relationship": "direct",
+        "presentation_role": "historical_context",
+        "retrieval_score": 0.955,
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "source_kind": "ckl_interpretive_note",
+        "verse_distance": 0
+      },
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ]
+    }
+  ],
+  "geography": {
+    "map_location_refs": [],
+    "map_route_refs": [],
+    "places": [],
+    "political_territories": [],
+    "regions": [],
+    "routes": []
+  },
+  "passage_ref": "Numbers 1",
+  "provenance": {
+    "canonical_objects": [
+      {
+        "id": "leviticus",
+        "object_version": "1",
+        "retrieval_score": 0.916,
+        "review_status": "in_review",
+        "title": "Leviticus",
+        "type": "book"
+      },
+      {
+        "id": "numbers",
+        "object_version": "1",
+        "retrieval_score": 0.955,
+        "review_status": "in_review",
+        "title": "Numbers",
+        "type": "book"
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ],
+    "sources": [
+      {
+        "author": "Timothy R. Ashley",
+        "canonical_object_ids": [
+          "numbers"
+        ],
+        "id": "ashley-numbers",
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "publisher": "Eerdmans",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "title": "The Book of Numbers",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "year": 2022
+      },
+      {
+        "author": "Baruch A. Levine",
+        "canonical_object_ids": [
+          "leviticus"
+        ],
+        "id": "levine-leviticus",
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "publisher": "Jewish Publication Society",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions"
+        ],
+        "title": "The JPS Torah Commentary: Leviticus",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "year": 1989
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "leviticus"
+        ],
+        "id": "leviticus-1-27",
+        "locator": "Leviticus 1:1-27:34",
+        "notes": "Primary biblical text.",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "title": "Leviticus 1-27",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Jacob Milgrom",
+        "canonical_object_ids": [
+          "numbers"
+        ],
+        "id": "milgrom-numbers",
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "publisher": "Jewish Publication Society",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "title": "The JPS Torah Commentary: Numbers",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "year": 1990
+      },
+      {
+        "author": "",
+        "canonical_object_ids": [
+          "numbers"
+        ],
+        "id": "numbers-1-36",
+        "locator": "Numbers 1:1-36:13",
+        "notes": "Primary biblical text.",
+        "publisher": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "numbers-two-generations",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing",
+          "numbers-inheritance-preparation"
+        ],
+        "title": "Numbers 1-36",
+        "url": "",
+        "year": null
+      },
+      {
+        "author": "Gordon J. Wenham",
+        "canonical_object_ids": [
+          "leviticus"
+        ],
+        "id": "wenham-leviticus",
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "publisher": "Eerdmans",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "title": "The Book of Leviticus",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "year": 1979
+      },
+      {
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "canonical_object_ids": [
+          "leviticus",
+          "numbers"
+        ],
+        "canonical_source_variants": [
+          {
+            "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+            "id": "zondervan-illustrated-pentateuch-backgrounds",
+            "locator": "Leviticus commentary and background notes",
+            "notes": "Comparative textual, material, historical, and cultural background.",
+            "publisher": "Zondervan",
+            "source_type": "reference-work",
+            "supports": [
+              "ancient-near-east-context",
+              "archaeology",
+              "historical-context",
+              "interpretive-notes",
+              "leviticus-purity-distinctions"
+            ],
+            "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+            "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+            "year": 2009
+          },
+          {
+            "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+            "id": "zondervan-illustrated-pentateuch-backgrounds",
+            "locator": "Numbers commentary and background notes",
+            "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+            "publisher": "Zondervan",
+            "source_type": "reference-work",
+            "supports": [
+              "ancient-near-east-context",
+              "archaeology",
+              "historical-context",
+              "interpretive-notes",
+              "numbers-deir-alla-limits"
+            ],
+            "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+            "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+            "year": 2009
+          }
+        ],
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "locator": "Leviticus commentary and background notes",
+        "notes": "Comparative textual, material, historical, and cultural background.",
+        "publisher": "Zondervan",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "leviticus-purity-distinctions"
+        ],
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "year": 2009
+      }
+    ]
+  },
+  "version": "1.0"
+}

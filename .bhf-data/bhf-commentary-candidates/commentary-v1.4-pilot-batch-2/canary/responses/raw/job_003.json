@@ -1,0 +1,72 @@
+{
+  "reference": "Job 3",
+  "packet_id": "commentary-v1.4-packet:8ff06c703f0577d9fab92604699683869765d320a6464cc93798253005feabc0",
+  "prompt_version": "1.4",
+  "evidence_hash": "3c6bdc20857d837f75e58c0ef8e3b06623cb89fe4f30e8814a142045b24e146e",
+  "synthesis_hash": "4dea694daea06c13d794edc8ae1bdc599a79510550f20f40c047e14edf2daef3",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "Job 3",
+    "book": "Job",
+    "chapter": 3,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Lament after silence",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "After the seven-day silence, Job’s speech turns from shared mourning to a sustained lament. He curses the day of his birth and voices grief, anger, confusion, and a demand for justice rather than offering a neat explanation for his suffering.",
+            "verse_refs": [
+              "Job 3:1-26"
+            ],
+            "evidence_ids": [
+              "job:interpretive_note:13"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_ff968a964641"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The debate that follows",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Job’s lament opens the extended debate with Eliphaz, Bildad, and Zophar. As the dialogue continues, his friends increasingly explain suffering through wrongdoing, while Job rejects that diagnosis.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "job-lament-dialogues",
+              "job:interpretive_note:11"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_28d9ac647cd5"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_3",
+            "text": "Later reflection can connect Job with endurance and compassionate outcome, but that connection should not turn the chapter’s protest into a demand for silent endurance or prevent protection from harm.",
+            "verse_refs": [],
+            "evidence_ids": [
+              "james:interpretive_note:31",
+              "jas-job"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_45fd2cd8f2c9"
+            ],
+            "confidence": "low",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

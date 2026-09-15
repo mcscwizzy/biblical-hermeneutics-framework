@@ -1,0 +1,38 @@
+{
+  "reference": "2 Chronicles 31",
+  "packet_id": "commentary-v1.5-packet:8eb9066c1413f5bf6375dd544213287500ee350c3529ced4f71d7c1c032781fd",
+  "prompt_version": "1.5",
+  "evidence_hash": "db24f7f0889bf91aa89e9918a7cbbf980c359a6516e904093e6ea9a2e6cad2cb",
+  "synthesis_hash": "b5e63d92198d397dc469873df0089d40c09d094a49e3d03b1dea006293c24cfc",
+  "renderer_label": "GPT-5 Codex",
+  "response_payload": {
+    "reference": "2 Chronicles 31",
+    "book": "2 Chronicles",
+    "chapter": 31,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "block_001",
+            "text": "This helps frame an interpretive question raised by the passage: Hezekiah restores temple worship and invites both Judah and northern Israel to a delayed Passover in Jerusalem, where prayer, healing, joy, and Levitical service underscore a renewed all-Israel horizon.",
+            "verse_refs": [
+              "2 Chronicles 31:1-21"
+            ],
+            "evidence_ids": [
+              "second-chronicles-hezekiah-passover"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_6936cfaae056"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

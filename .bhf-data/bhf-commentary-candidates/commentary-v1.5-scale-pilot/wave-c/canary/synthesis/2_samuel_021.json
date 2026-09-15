@@ -1,0 +1,110 @@
+{
+  "reference": "2 Samuel 21",
+  "book": "2 Samuel",
+  "chapter": 21,
+  "evidence_hash": "0b3cc4782ca42564468fa7f69323e3dd4ff528b3471ab52042dd7ccf694840a6",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "173f20085157e7d9e7c115412f3985b23d9ba79f44426f75695c166cf3ee2378",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_06652c2f56a2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix."
+      ],
+      "verse_refs": [
+        "2 Samuel 1",
+        "2 Samuel 10:1-19",
+        "2 Samuel 11:1-27",
+        "2 Samuel 12:1-31",
+        "2 Samuel 13:1-39",
+        "2 Samuel 14:1-33",
+        "2 Samuel 15:1-37",
+        "2 Samuel 16:1-23",
+        "2 Samuel 17:1-29",
+        "2 Samuel 18:1-33",
+        "2 Samuel 19:1-43",
+        "2 Samuel 20:1-26",
+        "2 Samuel 22:1-51",
+        "2 Samuel 23:1-39",
+        "2 Samuel 24:1-25",
+        "2 Samuel 2:1-32",
+        "2 Samuel 3:1-39",
+        "2 Samuel 4:1-12",
+        "2 Samuel 5:1-25",
+        "2 Samuel 6:1-23",
+        "2 Samuel 7:1-29",
+        "2 Samuel 8:1-18",
+        "2 Samuel 9:1-13"
+      ],
+      "evidence_ids": [
+        "second-samuel-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "2 Samuel 1-24"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "passage_specificity",
+      "reason": "No verse- or chapter-specific evidence was compiled.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "second-samuel-literary-movement"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 0,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}

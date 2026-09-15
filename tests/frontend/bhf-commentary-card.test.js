@@ -144,6 +144,41 @@ test("data gap card remains informative without an evidence explorer", () => {
 });
 
 
+test("v1.2 unavailable release states use safe reader language and clear stale content", () => {
+  const api = loadCard();
+  const cases = [
+    ["NOT_RENDERABLE_SOURCE_LIMITED", /supporting evidence is too limited/],
+    ["MODEL_OUTPUT_REJECTED", /not available in the current release/],
+    ["QUALITY_REVIEW_REQUIRED", /still under review/],
+    ["OUTSIDE_VALIDATED_V1_2_POPULATION", /not included in the current v1\.2 commentary release/],
+  ];
+
+  cases.forEach(([releaseState, expected]) => {
+    const root = makeRoot();
+    const instance = api.init(root);
+    instance.render({
+      available: false,
+      release: "commentary-v1.2",
+      release_state: releaseState,
+      reason: "internal diagnostic detail must not reach readers",
+      book: "Romans",
+      chapter: 3,
+      commentary: "stale commentary must be cleared",
+      verse_references: ["Romans 3:1-8"],
+      evidence_count: 2,
+    });
+
+    const status = root.selectors["[data-bhf-commentary-status]"].textContent;
+    assert.equal(root.dataset.state, "unavailable");
+    assert.match(status, expected);
+    assert.doesNotMatch(status, new RegExp(releaseState));
+    assert.doesNotMatch(status, /internal diagnostic/);
+    assert.equal(root.selectors["[data-bhf-commentary-body]"].textContent, "");
+    assert.equal(root.selectors["[data-bhf-commentary-evidence-toggle]"].hidden, true);
+  });
+});
+
+
 test("thin card exposes its limitation without hiding the commentary", () => {
   const api = loadCard();
   const root = makeRoot();

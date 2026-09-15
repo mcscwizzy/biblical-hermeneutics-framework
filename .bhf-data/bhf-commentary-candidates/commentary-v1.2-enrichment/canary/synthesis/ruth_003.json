@@ -1,0 +1,184 @@
+{
+  "reference": "Ruth 3",
+  "book": "Ruth",
+  "chapter": 3,
+  "evidence_hash": "46f678b6923b5313329b2af0af6af7bb53a305bdb1452e72b0c7c34f47dbd2de",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "fa058f9d632206f2699182ad2351e30d6c589bf7f27487981348fb84a3568f07",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_4913e116774e",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
+        "The threshing-floor scene contains risk and suggestive language, but the narrator presents Ruth's request as a redemption appeal and Boaz praises her character; claims of a completed sexual encounter exceed the text."
+      ],
+      "verse_refs": [
+        "Ruth 3:1-18"
+      ],
+      "evidence_ids": [
+        "ruth-providence-through-action",
+        "ruth:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ruth 3:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_2e64b7a2ea17",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Ruth moves from famine, bereavement, and Naomi's emptiness to harvest, kinship redemption, birth, communal blessing, and genealogy."
+      ],
+      "verse_refs": [
+        "Ruth 1",
+        "Ruth 2:1-23",
+        "Ruth 4:1-22"
+      ],
+      "evidence_ids": [
+        "ruth-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Ruth 1-4"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_ab8620b75fa2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban."
+      ],
+      "verse_refs": [
+        "Ruth 1:1-22",
+        "Ruth 2:1-23",
+        "Ruth 4:1-22"
+      ],
+      "evidence_ids": [
+        "nehemiah:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Ruth 1:1-4:22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0be17d539003",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
+        "The threshing-floor scene contains risk and suggestive language, but the narrator presents Ruth's request as a redemption appeal and Boaz praises her character; claims of a completed sexual encounter exceed the text."
+      ],
+      "verse_refs": [
+        "Ruth 3:1-18"
+      ],
+      "evidence_ids": [
+        "ruth-providence-through-action",
+        "ruth:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_4913e116774e"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ruth 3:1-18"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 6,
+    "used_evidence_ids": [
+      "nehemiah:interpretive_note:7",
+      "ruth-literary-movement",
+      "ruth-providence-through-action",
+      "ruth:interpretive_note:2"
+    ],
+    "unused_evidence_ids": [
+      "boaz:ancient_near_east_context:0",
+      "boaz:historical_context:0"
+    ],
+    "evidence_categories": {
+      "culture": 5,
+      "history": 1
+    },
+    "category_diversity": 2,
+    "specific_evidence_count": 4,
+    "entity_counts": {
+      "people": 1,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1,
+      "surrounding_passages": 2,
+      "why_it_matters": 1
+    },
+    "relationship_unit_count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "artifact_version": "unified-reader-projection-seven-chapter-v1-tests-v1",
+  "result": "PASS",
+  "passed": 41,
+  "failed": 0,
+  "warnings": 0,
+  "duration_seconds": 168.82,
+  "coverage": [
+    "prompt 1.7 immutability",
+    "reader-level projection determinism",
+    "ancestry-envelope determinism",
+    "legal synthesis-to-evidence paths",
+    "no cross-synthesis leakage",
+    "structural validator behavior",
+    "scoring contract immutability",
+    "seven-chapter artifact reproducibility",
+    "dense and sparse control behavior"
+  ]
+}

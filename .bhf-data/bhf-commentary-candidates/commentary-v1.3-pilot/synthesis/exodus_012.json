@@ -1,0 +1,537 @@
+{
+  "reference": "Exodus 12",
+  "book": "Exodus",
+  "chapter": 12,
+  "evidence_hash": "bb256e42ef226edfab3aec2814d103b6b5e910e73e0656caf77bdc8a87ae462b",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "63d6d202a1e6876bf0993725ce709b6f96f09991f553a217e60f289105ac639c",
+  "evidence_availability": "AVAILABLE",
+  "synthesis_units": [
+    {
+      "id": "syn_interpretive_questions_2e9e6f51a7bc",
+      "kind": "interpretive_questions",
+      "facts": [
+        "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+        "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+        "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."
+      ],
+      "verse_refs": [
+        "Exodus 12:12"
+      ],
+      "evidence_ids": [
+        "egyptian-kingship-and-divine-order:interpretive_note:0",
+        "judgment-on-egypts-gods",
+        "judgment-on-egypts-gods:passage-relevance"
+      ],
+      "entity_ids": [
+        "egypt",
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 12:12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_103dde7710a1",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+        "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+        "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-21",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-ane-context",
+        "exodus:interpretive_note:0",
+        "exodus:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_surrounding_passages_9de8a5f58a79"
+      ],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-15:21",
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_27e9473fdf90",
+      "kind": "surrounding_passages",
+      "facts": [
+        "A New Kingdom offering table dedicated by Seti I depicts the king worshiping Seth and offering a libation to Nephthys.",
+        "The object provides concrete Egyptian evidence that royal representation included cultic interaction with deities, helping bound—but not prove—the political-religious context of Pharaoh's role in Exodus."
+      ],
+      "verse_refs": [
+        "Exodus 12:12"
+      ],
+      "evidence_ids": [
+        "seti-royal-offering-scene",
+        "seti-royal-offering-scene:passage-relevance"
+      ],
+      "entity_ids": [
+        "egypt"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 12:12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "archaeology"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_7dce90bc045f",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Read deliverance, covenant, covenant breach and renewal, and tabernacle presence as connected movements of the book rather than treating the departure from Egypt as its endpoint."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus:interpretive_note:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_9de8a5f58a79",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Egyptian royal ideology, ancient Near Eastern covenant and law traditions, and comparative sanctuary evidence form relevant background for interpreting Exodus.",
+        "Present proposed exodus dates, routes, population estimates, and pharaoh identifications as reconstructions rather than as facts explicitly supplied by Exodus.",
+        "Ancient Egyptian and broader ancient Near Eastern evidence provides cultural context but has not produced an inscription that names Moses or narrates the biblical exodus."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-21",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-ane-context",
+        "exodus:interpretive_note:0",
+        "exodus:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-15:21",
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "geography"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_a2029988cb61",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Exodus moves from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and the arrival of divine glory."
+      ],
+      "verse_refs": [
+        "Exodus 10:1-29",
+        "Exodus 11:1-10",
+        "Exodus 13:1-22",
+        "Exodus 14:1-31",
+        "Exodus 15:1-27",
+        "Exodus 16:1-36",
+        "Exodus 17:1-16",
+        "Exodus 18:1-27",
+        "Exodus 19:1-25",
+        "Exodus 1:1-22",
+        "Exodus 20:1-26",
+        "Exodus 21:1-36",
+        "Exodus 22:1-31",
+        "Exodus 23:1-33",
+        "Exodus 24:1-18",
+        "Exodus 25:1-40",
+        "Exodus 26:1-37",
+        "Exodus 27:1-21",
+        "Exodus 28:1-43",
+        "Exodus 29:1-46",
+        "Exodus 2:1-25",
+        "Exodus 30:1-38",
+        "Exodus 31:1-18",
+        "Exodus 32:1-35",
+        "Exodus 33:1-23",
+        "Exodus 34:1-35",
+        "Exodus 35:1-35",
+        "Exodus 36:1-38",
+        "Exodus 37:1-29",
+        "Exodus 38:1-31",
+        "Exodus 39:1-43",
+        "Exodus 3:1-22",
+        "Exodus 40:1-38",
+        "Exodus 4:1-31",
+        "Exodus 5:1-23",
+        "Exodus 6:1-30",
+        "Exodus 7:1-25",
+        "Exodus 8:1-32",
+        "Exodus 9:1-35"
+      ],
+      "evidence_ids": [
+        "exodus-literary-movement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Exodus 1:1-40:38"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_08820bdba7cf",
+      "kind": "why_it_matters",
+      "facts": [
+        "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+        "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+        "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart."
+      ],
+      "verse_refs": [
+        "Exodus 12:12"
+      ],
+      "evidence_ids": [
+        "egyptian-kingship-and-divine-order:interpretive_note:0",
+        "judgment-on-egypts-gods",
+        "judgment-on-egypts-gods:passage-relevance"
+      ],
+      "entity_ids": [
+        "egypt",
+        "plagues-of-egypt"
+      ],
+      "related_unit_ids": [
+        "syn_interpretive_questions_2e9e6f51a7bc"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 12:12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c6faf2bcb612",
+      "kind": "why_it_matters",
+      "facts": [
+        "A New Kingdom offering table dedicated by Seti I depicts the king worshiping Seth and offering a libation to Nephthys.",
+        "The object provides concrete Egyptian evidence that royal representation included cultic interaction with deities, helping bound—but not prove—the political-religious context of Pharaoh's role in Exodus."
+      ],
+      "verse_refs": [
+        "Exodus 12:12"
+      ],
+      "evidence_ids": [
+        "seti-royal-offering-scene",
+        "seti-royal-offering-scene:passage-relevance"
+      ],
+      "entity_ids": [
+        "egypt"
+      ],
+      "related_unit_ids": [
+        "syn_surrounding_passages_27e9473fdf90"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Exodus 12:12"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 64,
+    "used_evidence_ids": [
+      "egyptian-kingship-and-divine-order:interpretive_note:0",
+      "exodus-ane-context",
+      "exodus-literary-movement",
+      "exodus:interpretive_note:0",
+      "exodus:interpretive_note:1",
+      "exodus:interpretive_note:2",
+      "judgment-on-egypts-gods",
+      "judgment-on-egypts-gods:passage-relevance",
+      "seti-royal-offering-scene",
+      "seti-royal-offering-scene:passage-relevance"
+    ],
+    "unused_evidence_ids": [
+      "egypt:ancient_near_east_context:0",
+      "egypt:hebraic_worldview:0",
+      "egypt:historical_context:0",
+      "egypt:key_places:0",
+      "egypt:key_places:1",
+      "egypt:key_places:2",
+      "egypt:key_places:3",
+      "egypt:second_temple_context:0",
+      "exodus-to-sinai-timeline:ancient_near_east_context:0",
+      "exodus-to-sinai-timeline:hebraic_worldview:0",
+      "exodus-to-sinai-timeline:historical_context:0",
+      "exodus-to-sinai-timeline:historical_setting:0",
+      "exodus-to-sinai-timeline:key_places:0",
+      "exodus-to-sinai-timeline:key_places:1",
+      "exodus-to-sinai-timeline:key_places:2",
+      "exodus-to-sinai-timeline:key_places:3",
+      "exodus-to-sinai-timeline:original_audience:0",
+      "exodus-to-sinai-timeline:second_temple_context:0",
+      "exodus-to-sinai-timeline:timeline:0",
+      "exodus-to-sinai-timeline:timeline:1",
+      "exodus-to-sinai-timeline:timeline:2",
+      "exodus-to-sinai-timeline:timeline:3",
+      "exodus-to-sinai-timeline:timeline:4",
+      "exodus-to-sinai-timeline:timeline:5",
+      "exodus-to-sinai-timeline:timeline:6",
+      "exodus-to-sinai-timeline:timeline:7",
+      "exodus-to-sinai-timeline:timeline:8",
+      "moses:ancient_near_east_context:0",
+      "moses:hebraic_worldview:0",
+      "moses:historical_context:0",
+      "moses:key_places:0",
+      "moses:key_places:1",
+      "moses:key_places:2",
+      "moses:key_places:3",
+      "moses:second_temple_context:0",
+      "passover:ancient_near_east_context:0",
+      "passover:historical_context:0",
+      "plagues-of-egypt:ancient_near_east_context:0",
+      "plagues-of-egypt:hebraic_worldview:0",
+      "plagues-of-egypt:historical_context:0",
+      "sacrifice-theme:ancient_near_east_context:0",
+      "sacrifice-theme:hebraic_worldview:0",
+      "sacrifice-theme:historical_context:0",
+      "sacrifice-theme:second_temple_context:0",
+      "the-exodus:ancient_near_east_context:0",
+      "the-exodus:historical_context:0",
+      "typology:ancient_near_east_context:0",
+      "typology:historical_context:0",
+      "what-is-a-covenant-sign:ancient_near_east_context:0",
+      "what-is-a-covenant-sign:historical_context:0",
+      "what-is-the-significance-of-passover:ancient_near_east_context:0",
+      "what-is-the-significance-of-passover:historical_context:0",
+      "who-was-moses:ancient_near_east_context:0",
+      "who-was-moses:historical_context:0"
+    ],
+    "evidence_categories": {
+      "archaeology": 2,
+      "chronology": 9,
+      "culture": 25,
+      "geography": 15,
+      "history": 12,
+      "social": 1
+    },
+    "category_diversity": 6,
+    "specific_evidence_count": 10,
+    "entity_counts": {
+      "people": 1,
+      "places": 1,
+      "groups": 0,
+      "events": 4,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "interpretive_questions": 1,
+      "surrounding_passages": 5,
+      "why_it_matters": 2
+    },
+    "relationship_unit_count": 3
+  }
+}

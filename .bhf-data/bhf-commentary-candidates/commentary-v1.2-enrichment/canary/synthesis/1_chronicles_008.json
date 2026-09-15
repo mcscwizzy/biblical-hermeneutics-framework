@@ -1,0 +1,90 @@
+{
+  "reference": "1 Chronicles 8",
+  "book": "1 Chronicles",
+  "chapter": 8,
+  "evidence_hash": "88e9ee6044db61d4315477ad887c5a5bbd16499ba177fddd6a63bfd0f529f36f",
+  "evidence_bundle_version": "1.1",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "6298453ce11850e769560fe12d67328e8eacd3eb142b849db13eca36e74915ed",
+  "evidence_availability": "THIN",
+  "synthesis_units": [
+    {
+      "id": "syn_surrounding_passages_af977c32e1d5",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review."
+      ],
+      "verse_refs": [
+        "1 Chronicles 1:1-54",
+        "1 Chronicles 2:1-55",
+        "1 Chronicles 3:1-24",
+        "1 Chronicles 4:1-43",
+        "1 Chronicles 5:1-26",
+        "1 Chronicles 6:1-81",
+        "1 Chronicles 7:1-40",
+        "1 Chronicles 9:1-44"
+      ],
+      "evidence_ids": [
+        "1-chronicles:interpretive_note:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Chronicles 1:1-9:44"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "category": "context",
+      "reason": "Passage-scoped contextual evidence is thin.",
+      "severity": "material"
+    },
+    {
+      "category": "archaeology_geography",
+      "reason": "No archaeology or geography evidence was supplied.",
+      "severity": "informational"
+    },
+    {
+      "category": "language_literary",
+      "reason": "No language evidence was supplied.",
+      "severity": "informational"
+    }
+  ],
+  "coverage": {
+    "evidence_item_count": 1,
+    "used_evidence_ids": [
+      "1-chronicles:interpretive_note:0"
+    ],
+    "unused_evidence_ids": [],
+    "evidence_categories": {
+      "culture": 1
+    },
+    "category_diversity": 1,
+    "specific_evidence_count": 1,
+    "entity_counts": {
+      "people": 0,
+      "places": 0,
+      "groups": 0,
+      "events": 0,
+      "artifacts": 0
+    },
+    "unit_kind_counts": {
+      "surrounding_passages": 1
+    },
+    "relationship_unit_count": 0
+  }
+}
