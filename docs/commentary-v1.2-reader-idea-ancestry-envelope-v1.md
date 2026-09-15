@@ -61,8 +61,12 @@ authority and still rejects the original pair.
 
 ## Fresh candidate result
 
-The isolated immutable namespace is
+The isolated immutable namespace was
 `.bhf-data/bhf-commentary-candidates/reader-idea-ancestry-envelope-v1-b970c53e1dc561f23530/`.
+It is historical generation-only material and was removed from the working
+tree by the post-freeze `.bhf-data` cleanup. The current source projection and
+ancestry-envelope baseline remain in
+`.bhf-data/bhf-commentary-candidates/commentary-v1.2-current-source-lineage-v2/`.
 
 - source projection hash: `4aa6438d0b7ac7812c35060a1c6e9fcde8a6e6d4e0eb75917e50ec7c2d28cdf1`
 - ancestry-envelope hash: `b62c50c1838f81e12573425165b9a469c9833a95eb5bbac28f42dc4ff4142f7b`
