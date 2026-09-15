@@ -71,7 +71,6 @@ def test_v12_reader_exposes_published_and_typed_unavailable_states_without_fallb
         "source_limited": "NOT_RENDERABLE_SOURCE_LIMITED",
         "rejected": "MODEL_OUTPUT_REJECTED",
         "review": "QUALITY_REVIEW_REQUIRED",
-        "outside": "OUTSIDE_VALIDATED_V1_2_POPULATION",
     }.items():
         payload = responses[key].json()
         assert responses[key].status_code == 200
@@ -79,6 +78,7 @@ def test_v12_reader_exposes_published_and_typed_unavailable_states_without_fallb
         assert payload["release"] == "commentary-v1.2"
         assert payload["release_state"] == expected
         assert "commentary-v1.1" not in str(payload)
+    assert responses["outside"].json()["available"] is True
 
 
 def test_v12_evidence_route_returns_only_stored_citations(monkeypatch):

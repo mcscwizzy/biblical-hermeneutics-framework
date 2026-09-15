@@ -15,6 +15,7 @@ from tools.commentary_v12_release_promotion import (
     _row_is_publishable,
     verify_validation_artifact,
 )
+from tools.commentary_v12_release import build_reconciliation_inventory
 
 
 RELEASE_ROOT = Path(".bhf-data/bhf-commentary-v1.2")
@@ -39,11 +40,17 @@ def test_packaged_v12_manifest_and_checksums_are_reader_safe():
     manifest = json.loads((RELEASE_ROOT / ".bhf-commentary-release.json").read_text())
 
     assert manifest["release"] == "commentary-v1.2"
-    assert manifest["published_chapter_count"] == 62
-    assert manifest["validated_population_count"] == 75
-    assert manifest["unavailable_not_published_count"] == 13
-    assert len(manifest["chapter_publication_index"]) == 75
-    assert len(list(RELEASE_ROOT.glob("*.json"))) == 64
+    assert manifest["published_chapter_count"] == 972
+    assert manifest["validated_population_count"] == 1189
+    assert manifest["unavailable_not_published_count"] == 217
+    assert len(manifest["chapter_publication_index"]) == 1189
+    assert manifest["terminal_state_counts"] == {
+        "MODEL_OUTPUT_REJECTED": 26,
+        "NOT_RENDERABLE_SOURCE_LIMITED": 185,
+        "PUBLISHED": 972,
+        "QUALITY_REVIEW_REQUIRED": 6,
+    }
+    assert len(list(RELEASE_ROOT.glob("*.json"))) == 974
     assert release_diagnostics(RELEASE_ROOT, "commentary-v1.2")["checksum_status"] == "valid"
 
 
@@ -53,7 +60,7 @@ def test_v12_states_distinguish_rejected_and_outside_chapters():
 
     assert release_chapter_state(RELEASE_ROOT, "Romans", 3)["release_state"] == "MODEL_OUTPUT_REJECTED"
     assert release_chapter_state(RELEASE_ROOT, "Galatians", 3)["release_state"] == "QUALITY_REVIEW_REQUIRED"
-    assert release_chapter_state(RELEASE_ROOT, "Genesis", 1)["release_state"] == "OUTSIDE_VALIDATED_V1_2_POPULATION"
+    assert release_chapter_state(RELEASE_ROOT, "Genesis", 1)["release_state"] == "PUBLISHED"
 
 
 def test_v12_is_opt_in_and_vercel_resolves_packaged_path():
@@ -63,6 +70,22 @@ def test_v12_is_opt_in_and_vercel_resolves_packaged_path():
     resolved = default_commentary_storage_path({"VERCEL": "1", "BHF_COMMENTARY_RELEASE": "commentary-v1.2"})
     assert resolved.name == "bhf-commentary-v1.2"
     assert "bhf-commentary-candidates" not in str(resolved)
+
+
+def test_full_corpus_reconciliation_inventory_is_complete_and_generation_free():
+    inventory = build_reconciliation_inventory()
+
+    assert len(inventory["canonical"]) == 1189
+    assert inventory["runner_result_count"] == 1114
+    assert inventory["counts"] == {
+        "MODEL_OUTPUT_REJECTED": 26,
+        "NOT_RENDERABLE_SOURCE_LIMITED": 185,
+        "PUBLISHED": 972,
+        "QUALITY_REVIEW_REQUIRED": 6,
+    }
+    manifest = json.loads((RELEASE_ROOT / ".bhf-commentary-release.json").read_text())
+    assert manifest["generation_performed"] is False
+    assert manifest["promotion_mode"] == "deterministic_finalized_artifact_reconciliation"
 
 
 def test_promotion_checksum_tampering_fails_closed(tmp_path):

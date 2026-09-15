@@ -473,12 +473,13 @@ class V12CorpusRunner:
             records[reference] = str(state)
         return records, conflicts
 
-    def _runner_records(self, canonical: dict[str, dict[str, Any]]) -> tuple[dict[str, str], list[str]]:
+    def _runner_records(self, canonical: dict[str, dict[str, Any]]) -> tuple[dict[str, str], dict[str, str], list[str]]:
         records: dict[str, str] = {}
+        release_states: dict[str, str] = {}
         conflicts: list[str] = []
         runs_root = self.runner_root / "runs"
         if not runs_root.is_dir():
-            return records, conflicts
+            return records, release_states, conflicts
         for result_path in sorted(runs_root.glob("*/chapters/*/result.json")):
             result = _load_json(result_path)
             if not isinstance(result, dict):
@@ -503,6 +504,29 @@ class V12CorpusRunner:
                 conflicts.append(f"duplicate runner result: {reference}")
                 continue
             records[reference] = str(status)
+            classification = result.get("classification")
+            derived_release_state = {
+                "published": "PUBLISHED",
+                "source-limited": "NOT_RENDERABLE_SOURCE_LIMITED",
+                "model-rejected": "MODEL_OUTPUT_REJECTED",
+                "quality-review": "QUALITY_REVIEW_REQUIRED",
+            }.get(classification)
+            # The lightweight ChapterPipeline contract used by tests and
+            # older local callers predates result classification. Preserve
+            # its terminal-state behavior while treating persisted v1.2
+            # corpus classifications as authoritative when present.
+            if derived_release_state is None and classification is None:
+                derived_release_state = (
+                    "PUBLISHED"
+                    if status == "validated"
+                    else "QUALITY_REVIEW_REQUIRED"
+                    if status in {"partial", "needs_review"}
+                    else "MODEL_OUTPUT_REJECTED"
+                )
+            if derived_release_state is None:
+                conflicts.append(f"runner result has unknown release classification for {reference}: {classification}")
+            else:
+                release_states[reference] = derived_release_state
         for state_path in sorted(runs_root.glob("*/state.json")):
             state = _load_json(state_path)
             chapter_states = state.get("chapters") if isinstance(state, dict) else None
@@ -522,20 +546,21 @@ class V12CorpusRunner:
                     conflicts.append(f"runner state has unknown status for {reference}: {status}")
                 elif records.get(reference) != status:
                     conflicts.append(f"runner state/result disagreement: {reference}")
-        return records, conflicts
+        return records, release_states, conflicts
 
     def _state(self) -> tuple[list[dict[str, Any]], dict[str, str], list[str]]:
         rows, canonical, conflicts = self._canonical()
         release, release_conflicts = self._release_records(canonical)
-        runner, runner_conflicts = self._runner_records(canonical)
+        runner, runner_release_states, runner_conflicts = self._runner_records(canonical)
         conflicts.extend(release_conflicts)
         conflicts.extend(runner_conflicts)
         terminal = dict(release)
         for reference, status in runner.items():
             if reference in terminal:
-                conflicts.append(f"conflicting v1.2 terminal sources: {reference}")
+                if terminal[reference] != runner_release_states.get(reference):
+                    conflicts.append(f"conflicting v1.2 terminal sources: {reference}")
             else:
-                terminal[reference] = status
+                terminal[reference] = runner_release_states[reference]
         return rows, terminal, sorted(set(conflicts))
 
     @staticmethod
