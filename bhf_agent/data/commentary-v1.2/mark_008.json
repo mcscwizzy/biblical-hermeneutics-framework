@@ -1,0 +1,74 @@
+{
+  "reference": "Mark 8",
+  "book": "Mark",
+  "chapter": 8,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "language_literary",
+      "title": "A Turning Point in Mark",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Mark 8:22-38 marks a turn in the narrative. It begins with a healing in which sight is restored in stages, then moves to Peter\u2019s confession that Jesus is the Christ, followed immediately by Jesus\u2019 open teaching about suffering, rejection, death, and resurrection. From here, the story moves toward further predictions of suffering and teaching about what it means to follow him. The disciples\u2019 confusion in this chapter is therefore part of a larger pattern: they are called to follow, yet they do not readily understand the path Jesus describes.",
+          "verse_refs": [
+            "Mark 8:22-38",
+            "Mark 8:31-38",
+            "Mark 8:32-38"
+          ],
+          "evidence_ids": [
+            "mark-discipleship",
+            "mark-passion-predictions",
+            "mark-structure"
+          ],
+          "synthesis_ids": [
+            "syn_language_literary_fa020f33a59a"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Healing, Identity, and Silence",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The healing of the blind man portrays an embodied need and a restoration to clear sight. It should not be read as implying that disability is caused by sin, weak faith, or spiritual failure; a cure-centered reading can itself stigmatize disabled people. Peter\u2019s confession identifies Jesus as the Christ, while Jesus\u2019 command not to tell others belongs to a recurring pattern of silence in Mark. Readers often call this pattern the \u201cmessianic secret,\u201d but its narrative, historical, and theological explanations remain debated.",
+          "verse_refs": [
+            "Mark 8:22-26",
+            "Mark 8:29",
+            "Mark 8:30"
+          ],
+          "evidence_ids": [
+            "mark-christology",
+            "mark-disability",
+            "mark-secrecy"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_443519d4b259"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "196c31336332cf405b7a03910128842280b7ca62cda04bd6dc55fd421360090e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "3eca93ed8355bc0e0744c14a64e57017431b1dd496907c8ab588cc72a89e64d9",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

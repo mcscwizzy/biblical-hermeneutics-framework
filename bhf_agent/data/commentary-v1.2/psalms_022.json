@@ -1,0 +1,60 @@
+{
+  "reference": "Psalms 22",
+  "book": "Psalms",
+  "chapter": 22,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "interpretive_questions",
+      "title": "Lament and Praise",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Psalm 22 shows that faithful speech to God can include anguish, protest, pleading, remembered trust, thanksgiving, and praise. Its movement from the cry of abandonment to public praise does not erase the earlier distress; it gives that distress a place within prayer.",
+          "verse_refs": [
+            "Psalms 22:1-31"
+          ],
+          "evidence_ids": [
+            "psalms-lament-praise-range"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_ace10abafc38"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_2",
+          "text": "The opening cry is also read alongside Mark\u2019s crucifixion narrative, which portrays public execution, mockery, abandonment, darkness, death, and later witness. This association is interpretive rather than a claim that Psalm 22 itself narrates those events.",
+          "verse_refs": [
+            "Psalms 22:1"
+          ],
+          "evidence_ids": [
+            "mark-crucifixion"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_f3130362ad96"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7eff29bac9468f0230ce520d86718b7f84d4b7546b953b527c1773a420cd1380",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "018432b4ace7d885feed534792a63949d6c50d759df136237f4bf981385aa855",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

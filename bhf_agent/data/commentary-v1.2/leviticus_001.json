@@ -1,0 +1,79 @@
+{
+  "reference": "Leviticus 1",
+  "book": "Leviticus",
+  "chapter": 1,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Leviticus opens with the LORD calling Moses from the tent of meeting, continuing directly from the tabernacle conclusion of Exodus. Its narrated setting is Sinai, after the tabernacle\u2019s completion and before the departure described in Numbers; Egypt and Moab are not the book\u2019s principal settings.",
+          "verse_refs": [
+            "Leviticus 1:1"
+          ],
+          "evidence_ids": [
+            "leviticus:interpretive_note:0",
+            "leviticus-called-from-tent"
+          ],
+          "synthesis_ids": [
+            "syn_cultural_context_cf933b98be06",
+            "syn_historical_context_ab6cb0655069"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "The Larger Movement of Leviticus",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Leviticus begins with sacrifice and then moves through priestly inauguration, purity, and the Day of Atonement before turning to holy communal life, sacred time, land, covenant consequences, and vows. This wider movement places the offering described here at the beginning of a larger body of instruction.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_32dab3494fa3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Comparisons with other ancient Near Eastern rituals may help illuminate ritual vocabulary and practice in Leviticus 1\u20137. Such comparisons remain debated, however: resemblance does not establish that Israelite rites had the same theology or were directly borrowed.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "leviticus:interpretive_note:2"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_22699ef4d482"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "36c57ea7d81611d58c4c5be4c82d9970aea541dd79b07107ed2c8de477b71ab8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "b39089eab1db46bea45ca3e73fb739f6764b283bd24db7cdf3a7e77fbbb1c3b3",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

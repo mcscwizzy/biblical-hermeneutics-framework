@@ -58,7 +58,14 @@ def packaged_commentary_storage_path(release: str = DEFAULT_COMMENTARY_RELEASE) 
 
     project_root = Path(__file__).resolve().parents[1]
     packaged_dir = _PACKAGED_COMMENTARY_DIRS.get(release, _PACKAGED_COMMENTARY_DIRS[DEFAULT_COMMENTARY_RELEASE])
-    return project_root / packaged_dir
+    source_checkout_path = project_root / packaged_dir
+    if source_checkout_path.is_dir():
+        return source_checkout_path
+    # Wheels cannot carry a repository-level ``.bhf-data`` directory.  The
+    # frozen v1.2 release is also included below the package for installed
+    # runtime verification and deployments outside a source checkout.
+    package_data_path = Path(__file__).resolve().parent / "data" / release
+    return package_data_path if package_data_path.is_dir() else source_checkout_path
 
 
 def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:

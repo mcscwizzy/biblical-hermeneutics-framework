@@ -1,0 +1,95 @@
+name: Commentary v1.2 freeze
+
+on:
+  pull_request:
+    paths:
+      - ".bhf-data/bhf-commentary-v1.2/**"
+      - "bhf_agent/**"
+      - "framework/commentary/**"
+      - "tools/commentary_v12_*.py"
+      - "tests/test_commentary_v12_*.py"
+      - "docs/commentary-v1.2-release.json"
+      - "pyproject.toml"
+  push:
+    branches: [main]
+    paths:
+      - ".bhf-data/bhf-commentary-v1.2/**"
+      - "bhf_agent/**"
+      - "framework/commentary/**"
+      - "tools/commentary_v12_*.py"
+      - "tests/test_commentary_v12_*.py"
+      - "docs/commentary-v1.2-release.json"
+      - "pyproject.toml"
+
+jobs:
+  commentary-v1.2-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install release-critical test dependencies
+        run: pip install -r tools/requirements.txt build
+
+      - name: Build deterministic CKL prerequisite
+        run: python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
+
+      - name: Verify frozen release
+        run: python tools/commentary_v12_freeze.py verify
+
+      - name: Verify current source lineage
+        run: python tools/commentary_v12_rebaseline_lineage.py verify
+
+      - name: Run release-critical deterministic suite
+        run: >-
+          pytest -q
+          tests/test_commentary_v12_freeze.py
+          tests/test_commentary_v12_release_promotion.py
+          tests/test_commentary_v12_reader_integration.py
+          tests/test_commentary_v12_corpus_runner.py
+          tests/test_commentary_v12_current_lineage.py
+          tests/test_commentary_v12_codex_cli.py
+          tests/test_commentary_v12_validation.py
+          tests/test_commentary_v12_external_import.py
+          tests/test_commentary_v12_prompt_18.py
+          tests/test_commentary_v12_reader_idea_ancestry_envelope.py
+          tests/test_commentary_v12_reader_provenance_binding.py
+          tests/test_commentary_v12_synthesis.py
+          tests/test_commentary_output_conformance.py
+          tests/test_commentary_availability.py
+          tests/test_commentary_canonical_runtime.py
+          tests/canonical_library/test_manifest.py
+          tests/canonical_library/test_release.py
+          tests/canonical_library/test_schema_package.py
+
+      - name: Build and verify installed package
+        run: |
+          python -m build
+          python -m venv /tmp/bhf-commentary-v12-wheel
+          /tmp/bhf-commentary-v12-wheel/bin/python -m pip install dist/*.whl
+          cd /tmp
+          BHF_COMMENTARY_RELEASE=commentary-v1.2 /tmp/bhf-commentary-v12-wheel/bin/python - <<'PY'
+          import os
+          from pathlib import Path
+
+          from bhf_agent.chapter_commentary.release import release_diagnostics
+          from bhf_agent.chapter_commentary.storage import load_commentary
+          from bhf_agent.runtime_paths import packaged_commentary_storage_path
+
+          root = packaged_commentary_storage_path("commentary-v1.2")
+          assert root.is_dir() and root.name == "commentary-v1.2"
+          diagnostics = release_diagnostics(root, "commentary-v1.2")
+          assert diagnostics["checksum_status"] == "valid"
+          assert diagnostics["published_commentary_count"] == 972
+          assert diagnostics["validated_population_count"] == 1189
+          assert diagnostics["unpublished_validated_count"] == 217
+          assert load_commentary(root, "Genesis", 1) is not None
+          assert not os.environ.get("OPENAI_API_KEY")
+          assert Path.cwd() == Path("/tmp")
+          PY
+
+      - name: Detect in-job frozen release mutation
+        run: git diff --exit-code -- .bhf-data/bhf-commentary-v1.2 docs/commentary-v1.2-release.json

@@ -92,6 +92,10 @@ class V12AuthorizationError(V12CorpusError):
     """Generation was requested without explicit persisted authorization."""
 
 
+class V12FrozenReleaseError(V12CorpusError):
+    """Normal v1.2 generation is disabled after the release is frozen."""
+
+
 class V12IntegrityError(V12CorpusError):
     """Persisted corpus state is inconsistent or ambiguous."""
 
@@ -400,6 +404,7 @@ class V12CorpusRunner:
         canonical_loader: Callable[[], list[dict[str, Any]]] = canonical_chapters,
         pipeline: ChapterPipeline | None = None,
         generation_metadata: dict[str, Any] | None = None,
+        allow_frozen_release_override: bool = False,
     ):
         self.repo_root = Path(repo_root)
         self.candidate_root = self._rooted(candidate_root)
@@ -408,6 +413,7 @@ class V12CorpusRunner:
         self.canonical_loader = canonical_loader
         self.pipeline = pipeline
         self.generation_metadata = dict(generation_metadata or {})
+        self.allow_frozen_release_override = allow_frozen_release_override
 
     def _rooted(self, path: str | Path) -> Path:
         candidate = Path(path)
@@ -422,6 +428,20 @@ class V12CorpusRunner:
         if not isinstance(value, bool):
             raise V12IntegrityError(f"v1.2 authorization field must be boolean: {state_path}")
         return value
+
+    def _ensure_generation_allowed(self) -> None:
+        """Reject ordinary mutation commands once v1.2 has been frozen."""
+
+        if self.allow_frozen_release_override:
+            return
+        descriptor_path = self.repo_root / "docs/commentary-v1.2-release.json"
+        if not descriptor_path.is_file():
+            return
+        descriptor = _load_json(descriptor_path)
+        if isinstance(descriptor, dict) and descriptor.get("release") == "commentary-v1.2" and descriptor.get("frozen") is True:
+            raise V12FrozenReleaseError(
+                "commentary-v1.2 is frozen; normal generation is disabled"
+            )
 
     def _canonical(self) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]], list[str]]:
         rows = list(self.canonical_loader())
@@ -864,6 +884,7 @@ class V12CorpusRunner:
     def prepare(self, batch_size: int = DEFAULT_BATCH_SIZE) -> dict[str, Any]:
         """Freeze one bounded batch for direct rendering in this Codex session."""
 
+        self._ensure_generation_allowed()
         discovery = self.discover(batch_size)
         if discovery.conflicts:
             raise V12IntegrityError("; ".join(discovery.conflicts))
@@ -1067,6 +1088,7 @@ class V12CorpusRunner:
         first response. Tests inject ``runner``; production uses ``subprocess.run``.
         """
 
+        self._ensure_generation_allowed()
         run_root, manifest, state_path, state = self._prepared_run(run_id)
         executable = resolve_codex_cli(codex_path)
         invoke = runner or subprocess.run
@@ -1389,6 +1411,7 @@ class V12CorpusRunner:
     def finalize(self, *, run_id: str | None = None) -> dict[str, Any]:
         """Validate frozen session responses without invoking any model."""
 
+        self._ensure_generation_allowed()
         if run_id is not None:
             run_root, selected_manifest, _, _ = self._prepared_run(run_id)
             incomplete = (run_root / "manifest.json", selected_manifest)
@@ -1482,6 +1505,7 @@ class V12CorpusRunner:
     def run(self, batch_size: int = DEFAULT_BATCH_SIZE) -> dict[str, Any]:
         """Execute one bounded batch through the existing chapter pipeline."""
 
+        self._ensure_generation_allowed()
         discovery = self.discover(batch_size)
         if discovery.conflicts:
             raise V12IntegrityError("; ".join(discovery.conflicts))

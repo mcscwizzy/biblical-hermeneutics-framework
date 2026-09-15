@@ -1,0 +1,132 @@
+{
+  "reference": "Acts 8",
+  "book": "Acts",
+  "chapter": 8,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "surrounding_passages",
+      "title": "The Chapter\u2019s Immediate Setting",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 8 begins in the aftermath of Stephen\u2019s death. The preceding speech retells Israel\u2019s contested history as rhetoric addressed to hostile council members; it should not be turned into blanket blame against all Jewish people.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "acts-stephen",
+            "acts-western-text"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_1d4cab3b2db5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Baptism, the Spirit, and Simon",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The Samaritan episode deliberately distinguishes baptism from the later prayer and laying on of hands by Peter and John. Simon then tries to purchase the authority he sees associated with this action, and Peter sharply rejects the attempt. Readers differ over how this scene relates to other accounts of receiving the Spirit, so it is best not to force it into a single universal sequence.",
+          "verse_refs": [
+            "Acts 8:14-24",
+            "Acts 8:4-25"
+          ],
+          "evidence_ids": [
+            "acts-samaria-power-not-for-sale",
+            "acts-samaria-power-not-for-sale:passage-relevance",
+            "acts-variable-reception-sequences",
+            "acts-variable-reception-sequences:passage-relevance",
+            "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:2"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_c9e77ffe9d5b"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "why_it_matters",
+      "title": "What Simon\u2019s Request Clarifies",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "This passage resists treating spiritual gifts, authority, or visible signs as commodities, credentials, or marks of spiritual rank. Across Acts, the narrated order and presence of faith, baptism, prayer, laying on of hands, and Spirit reception vary; absence of one element should not automatically be treated as exclusion.",
+          "verse_refs": [
+            "Acts 8:14-24",
+            "Acts 8:4-25"
+          ],
+          "evidence_ids": [
+            "acts-samaria-power-not-for-sale",
+            "acts-samaria-power-not-for-sale:passage-relevance",
+            "acts-variable-reception-sequences",
+            "acts-variable-reception-sequences:passage-relevance",
+            "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:2"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_0f173e5bc854"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Isaiah and the Ethiopian Official",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The passage the official reads belongs to Isaiah\u2019s portrayal of a servant who is humiliated, suffers and dies, bears on behalf of others, and is vindicated. Isaiah does not explicitly name this servant, and collective, individual, prophetic, messianic, and Christian readings have long been offered. Acts narrates Philip beginning with this text and explaining Jesus to the official.",
+          "verse_refs": [
+            "Acts 8:26-40"
+          ],
+          "evidence_ids": [
+            "isaiah-suffering-servant"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_de0dd3542866"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_5",
+          "text": "Acts identifies the traveler as a eunuch and as a powerful official responsible for the Ethiopian queen\u2019s treasury. Those descriptions should be allowed to stand on their own terms rather than being recast through modern racial categories or stereotypes.",
+          "verse_refs": [
+            "Acts 8:26-40"
+          ],
+          "evidence_ids": [
+            "acts-ethiopian"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_9ec29ba767ae"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "916fbc0c34511a494c0f0b00a656301bbe43d55f0a55e1d64fa862dc109fcb0e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "adf5d0efdda3369772958c87c014ceebdb6f36a1ffcf91caab30378f40ee4e04",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

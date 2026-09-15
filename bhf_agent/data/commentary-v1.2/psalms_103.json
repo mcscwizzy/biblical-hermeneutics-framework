@@ -1,0 +1,85 @@
+{
+  "reference": "Psalms 103",
+  "book": "Psalms",
+  "chapter": 103,
+  "status": "pending",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The psalm begins by calling the speaker\u2019s own soul to bless the LORD and to remember his benefits. The opening catalogues forgiveness, healing, rescue, steadfast love, mercy, and renewed strength, framing praise as a response to what the LORD has done.",
+          "verse_refs": [
+            "Psalms 103:1-5"
+          ],
+          "evidence_ids": [
+            "psalm-103-personal-blessing-catalogue"
+          ],
+          "synthesis_ids": [
+            "syn_historical_context_105dea29962b"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "The scope then widens beyond personal benefit. The LORD\u2019s righteous acts and justice for the oppressed are linked with what was made known to Moses and Israel. Later, human life is pictured as dust, grass, and a fading flower, while the LORD\u2019s steadfast love and covenant faithfulness endure. The final summons expands still further: angels, heavenly hosts, servants, and all works in the LORD\u2019s dominion are called to bless him.",
+          "verse_refs": [
+            "Psalms 103:14-18",
+            "Psalms 103:19-22",
+            "Psalms 103:6-7"
+          ],
+          "evidence_ids": [
+            "psalm-103-dust-grass-mortality",
+            "psalm-103-righteousness-moses",
+            "psalm-103-throne-universal-blessing"
+          ],
+          "synthesis_ids": [
+            "syn_language_literary_b1c4bdbc699f"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Mercy and Forgiveness",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Verses 8\u201313 describe the LORD as compassionate, gracious, slow to anger, and abundant in steadfast love. This language has been understood as drawing on a familiar confession about the LORD\u2019s character. The father-and-children comparison and the distance between east and west portray compassion in terms of the removal of transgressions rather than unending judgment.",
+          "verse_refs": [
+            "Psalms 103:8-13"
+          ],
+          "evidence_ids": [
+            "psalm-103-exodus-mercy-formula"
+          ],
+          "synthesis_ids": [
+            "syn_interpretive_questions_74b0abf592ef"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "77646aad1f9a95be2be717081d89779937377a35f491c6ef42a6da37186fa338",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "3113d138d2546e32012f57d7cbe57f12ebb72d67ed08ecc057c3834871e02dcf",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "terra"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
