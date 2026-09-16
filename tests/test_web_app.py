@@ -1060,6 +1060,9 @@ class WebAssetTests(unittest.TestCase):
         htmx_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         map_text_script = Path("bhf_web/static/maps/MapPanelText.js").read_text(encoding="utf-8")
         map_content_script = Path("bhf_web/static/maps/MapPanelContent.js").read_text(encoding="utf-8")
+        workspace_style = Path("bhf_web/static/styles/workspace.css").read_text(encoding="utf-8")
+        companion_style = Path("bhf_web/static/styles/companion.css").read_text(encoding="utf-8")
+        utilities_style = Path("bhf_web/static/styles/utilities.css").read_text(encoding="utf-8")
 
         self.assertIn("loadMapCatalog", map_script)
         self.assertIn("loadRoutesForPassage", map_script)
@@ -1074,6 +1077,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("data-passage-shortcut", map_text_script)
         self.assertNotIn("text-only geography fallback below", map_content_script)
         self.assertIn("Click a marker or route", map_content_script)
+        self.assertNotIn("map-ai-", workspace_style)
+        self.assertNotIn("map-ai-", companion_style)
+        self.assertNotIn("map-ai-", utilities_style)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))

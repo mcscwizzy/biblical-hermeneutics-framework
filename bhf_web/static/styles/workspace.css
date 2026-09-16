@@ -1632,8 +1632,7 @@ body.reader-mode .chapter-text {
 .saved-studies-panel,
 .notes-panel,
 .highlights-panel,
-.map-panel,
-.map-ai-panel {
+.map-panel {
   background: #fff;
   border: 1px solid #d8dee4;
   border-radius: 8px;
@@ -1830,25 +1829,6 @@ body.reader-mode .chapter-text {
   margin: 6px 0 0;
   color: #52616f;
   font-size: 0.92rem;
-}
-
-.map-ai-panel {
-  display: grid;
-  gap: 12px;
-  margin-top: 14px;
-  background: linear-gradient(180deg, #fcfdfe 0%, #f7fafc 100%);
-}
-
-.map-ai-panel .panel-heading {
-  margin-bottom: 0;
-}
-
-.map-ai-panel .panel-heading h2 {
-  font-size: 1rem;
-}
-
-.map-ai-answer-panel {
-  min-height: 96px;
 }
 
 .map-workspace {
@@ -2154,8 +2134,7 @@ html[data-theme="dark"] .status-panel,
 html[data-theme="dark"] .saved-studies-panel,
 html[data-theme="dark"] .notes-panel,
 html[data-theme="dark"] .highlights-panel,
-html[data-theme="dark"] .map-panel,
-html[data-theme="dark"] .map-ai-panel {
+html[data-theme="dark"] .map-panel {
   border-color: var(--border);
   background: var(--surface);
 }
@@ -2392,8 +2371,7 @@ html[data-theme="dark"] .map-panel-body {
   .saved-studies-panel,
   .notes-panel,
   .highlights-panel,
-  .map-panel,
-  .map-ai-panel {
+  .map-panel {
     padding: 12px;
   }
 
@@ -2657,8 +2635,7 @@ html[data-theme="dark"] .map-panel-body {
   .saved-studies-panel,
   .notes-panel,
   .highlights-panel,
-  .map-panel,
-  .map-ai-panel {
+  .map-panel {
     padding: 10px;
   }
 
