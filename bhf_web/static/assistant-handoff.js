@@ -16,6 +16,15 @@
     return `I'm studying ${String(reference || "").trim()} in the Biblical Hermeneutics Framework (BHF).\n\nMy question:\n${trimmedQuestion}`;
   }
 
+  function safeAssistantUrl(value) {
+    try {
+      const url = new URL(String(value || "").trim());
+      return url.protocol === "https:" ? url.href : "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
   function create(options = {}) {
     const dialog = options.dialog;
     const referenceNode = options.reference;
@@ -26,9 +35,9 @@
     const manualCopyButton = options.manualCopy;
     const openFallback = options.openFallback;
     const getSelection = options.getSelection || (() => ({}));
-    const assistantUrl = String(
+    const assistantUrl = safeAssistantUrl(
       options.assistantUrl || window.BHFRuntimeConfig?.assistantUrl || "",
-    ).trim();
+    );
     const openWindow = options.openWindow || ((...args) => window.open(...args));
     const writeClipboard = options.writeClipboard || ((text) => {
       if (!navigator.clipboard?.writeText) {
@@ -49,9 +58,13 @@
     }
 
     function showOpenFallback() {
-      if (!openFallback) return;
+      if (!openFallback || !assistantUrl) return;
       openFallback.href = assistantUrl;
       openFallback.hidden = false;
+    }
+
+    function reportInvalidDestination() {
+      setStatus("The BHF destination is unavailable. Please contact the site administrator.");
     }
 
     function prepare() {
@@ -68,11 +81,13 @@
       selection = getSelection() || {};
       const reference = formatReference(selection);
       if (referenceNode) referenceNode.textContent = reference;
+      setPrepared("");
       if (openFallback) {
-        openFallback.href = assistantUrl;
+        openFallback.href = assistantUrl || "";
         openFallback.hidden = true;
       }
-      setStatus("");
+      if (assistantUrl) setStatus("");
+      else reportInvalidDestination();
       if (typeof dialog?.showModal === "function" && !dialog.open) dialog.showModal();
       else if (dialog) dialog.hidden = false;
       questionNode?.focus?.();
@@ -107,9 +122,12 @@
         return;
       }
 
-      const popup = assistantUrl
-        ? openWindow(assistantUrl, "_blank", "noopener,noreferrer")
-        : null;
+      if (!assistantUrl) {
+        reportInvalidDestination();
+        return;
+      }
+
+      const popup = openWindow(assistantUrl, "_blank", "noopener,noreferrer");
       if (!popup) showOpenFallback();
       const copied = await copy(text);
       if (copied) {
@@ -121,17 +139,18 @@
 
     async function handleManualCopy(event) {
       event?.preventDefault?.();
-      let text = preparedNode?.value || "";
-      if (!text) {
-        try {
-          text = prepare();
-        } catch (error) {
-          setStatus(error.message);
-          questionNode?.focus?.();
-          return;
-        }
+      let text;
+      try {
+        text = prepare();
+      } catch (error) {
+        setStatus(error.message);
+        questionNode?.focus?.();
+        return;
       }
-      if (await copy(text)) setStatus("Question copied. You can now open BHF.");
+      if (await copy(text)) {
+        if (assistantUrl) setStatus("Question copied. You can now open BHF.");
+        else reportInvalidDestination();
+      }
     }
 
     primaryButton?.addEventListener?.("click", handlePrimaryClick);

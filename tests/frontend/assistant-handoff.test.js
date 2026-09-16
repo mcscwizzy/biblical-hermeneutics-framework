@@ -6,7 +6,7 @@ const vm = require("node:vm");
 
 function loadHandoff({runtimeConfig = {}, fetch} = {}) {
   const window = {BHFRuntimeConfig: runtimeConfig};
-  const context = vm.createContext({fetch, window});
+  const context = vm.createContext({fetch, URL, window});
   vm.runInContext(
     fs.readFileSync("bhf_web/static/assistant-handoff.js", "utf8"),
     context,
@@ -174,6 +174,62 @@ test("clipboard failure leaves the prepared question visible and selectable", as
   assert.match(nodes.prepared.value, /Why wisdom\?/);
   assert.equal(nodes.manualCopy.hidden, false);
   assert.match(nodes.status.textContent, /Copy the prepared question manually/i);
+});
+
+
+test("reopening clears stale prepared text so manual copy uses the current selection", async () => {
+  const handoff = loadHandoff({runtimeConfig: {assistantUrl: "https://assistant.example/bhf"}});
+  const nodes = handoffNodes();
+  let currentSelection = {book: "James", chapter: 1};
+  const copied = [];
+  let copyAttempts = 0;
+  const controller = handoff.create({
+    ...nodes,
+    getSelection: () => currentSelection,
+    openWindow: () => ({}),
+    writeClipboard: async (text) => {
+      copyAttempts += 1;
+      if (copyAttempts === 1) throw new Error("denied");
+      copied.push(text);
+    },
+  });
+  nodes.question.value = "Why James 1?";
+  controller.open();
+  await nodes.primary.dispatch("click");
+  assert.match(nodes.prepared.value, /James 1/);
+
+  currentSelection = {book: "James", chapter: 2};
+  nodes.question.value = "Why James 2?";
+  controller.open();
+  await nodes.manualCopy.dispatch("click");
+
+  const expected = "I'm studying James 2 in the Biblical Hermeneutics Framework (BHF).\n\nMy question:\nWhy James 2?";
+  assert.equal(nodes.prepared.value, expected);
+  assert.deepEqual(copied, [expected]);
+});
+
+
+test("unsafe configured URLs never populate the fallback or open a popup", async () => {
+  for (const assistantUrl of ["javascript:alert(1)", "data:text/html,unsafe", "http://assistant.example/bhf"]) {
+    const handoff = loadHandoff({runtimeConfig: {assistantUrl}});
+    const nodes = handoffNodes();
+    const opened = [];
+    const controller = handoff.create({
+      ...nodes,
+      getSelection: () => ({book: "James", chapter: 1}),
+      openWindow: (...args) => opened.push(args),
+      writeClipboard: async () => {},
+    });
+    nodes.question.value = "Why wisdom?";
+
+    controller.open();
+    await nodes.primary.dispatch("click");
+
+    assert.equal(nodes.openFallback.href, "");
+    assert.equal(opened.length, 0);
+    assert.match(nodes.status.textContent, /destination is unavailable/i);
+    assert.match(nodes.prepared.value, /Why wisdom\?/);
+  }
 });
 
 
