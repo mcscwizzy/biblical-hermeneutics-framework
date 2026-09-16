@@ -478,7 +478,7 @@ class RuntimeConfigTests(unittest.TestCase):
         env = {
             "BHF_RUNTIME_MODE": "capacitor",
             "BHF_API_BASE_URL": "https://example.com/bhf",
-            "BHF_PROVIDER_LABELS_JSON": '{"local":"On-device","openai":"Cloud"}',
+            "BHF_ASSISTANT_URL": "https://assistant.example/bhf",
             "BHF_COMMENTARY_RELEASE": "commentary-v1.0",
         }
 
@@ -488,10 +488,9 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["mode"], "capacitor")
         self.assertEqual(runtime["backendMode"], "same-origin")
         self.assertEqual(runtime["apiBaseUrl"], "https://example.com/bhf")
-        self.assertEqual(runtime["providerLabels"]["local"], "On-device")
-        self.assertEqual(runtime["providerLabels"]["openai"], "Cloud")
-        self.assertEqual(runtime["providerLabels"]["ollama"], "Ollama")
-        self.assertEqual(runtime["providerLabels"]["apple-native-placeholder"], "Apple Native Placeholder")
+        self.assertEqual(runtime["assistantUrl"], "https://assistant.example/bhf")
+        self.assertNotIn("ai", runtime)
+        self.assertNotIn("providerLabels", runtime)
         self.assertEqual(runtime["commentaryRelease"], "commentary-v1.0")
 
     def test_cors_origins_are_explicit_and_comma_separated(self):
