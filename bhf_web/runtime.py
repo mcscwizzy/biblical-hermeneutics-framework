@@ -65,7 +65,8 @@ def load_runtime_config() -> dict[str, Any]:
         "presentationTransport": presentation_transport,
         # Backwards compatibility for clients that only know the old job flag.
         "presentationJobs": presentation_transport == "job",
-        "assistantUrl": os.environ.get("BHF_ASSISTANT_URL", DEFAULT_ASSISTANT_URL).strip(),
+        "assistantUrl": os.environ.get("BHF_ASSISTANT_URL", "").strip()
+        or DEFAULT_ASSISTANT_URL,
         "breakpoints": dict(DEFAULT_BREAKPOINTS),
         "themeColor": "#245b82",
         "backgroundColor": "#f6f7f8",

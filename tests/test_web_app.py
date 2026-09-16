@@ -348,6 +348,13 @@ class WebFormTests(unittest.TestCase):
 
 
 class RuntimeConfigTests(unittest.TestCase):
+    @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI dependencies are not installed")
+    def test_app_startup_does_not_require_browser_ai_runtime_config(self):
+        with patch.dict(os.environ, {}, clear=True):
+            test_app = create_app()
+
+        self.assertNotIn("ai", test_app.state.runtime_config)
+
     def test_runtime_config_defaults_to_same_origin_with_no_api_url(self):
         with patch.dict(os.environ, {}, clear=True):
             runtime = load_runtime_config()

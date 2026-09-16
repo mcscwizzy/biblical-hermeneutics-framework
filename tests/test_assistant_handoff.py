@@ -21,3 +21,11 @@ def test_runtime_config_uses_configured_assistant_destination():
         config = load_runtime_config()
 
     assert config["assistantUrl"] == "https://assistant.example/bhf"
+
+
+def test_runtime_config_uses_default_for_blank_assistant_destination():
+    for value in ("", "   ", "\t\n"):
+        with patch.dict(os.environ, {"BHF_ASSISTANT_URL": value}, clear=True):
+            config = load_runtime_config()
+
+        assert config["assistantUrl"].startswith("https://chatgpt.com/")
