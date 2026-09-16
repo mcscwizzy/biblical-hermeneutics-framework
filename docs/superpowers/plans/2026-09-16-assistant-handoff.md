@@ -56,9 +56,9 @@ Files: none.
   git rev-parse HEAD
   git merge-base --is-ancestor commentary-v1.2 HEAD
   git status --short --branch
-- [ ] Snapshot protected paths:
-  git diff --name-status commentary-v1.2..HEAD -- .bhf-data docs/commentary-v1.2-release.json bhf_agent/data/commentary-v1.2
-  Expected: no implementation changes touch frozen paths.
+- [ ] Snapshot protected paths relative to the post-merge feature base (not the older tag, because origin/master includes intentional post-freeze cleanup):
+  git diff --name-status 7ae5e1560d16a1453e0064c05933949669fa6048..HEAD -- .bhf-data docs/commentary-v1.2-release.json bhf_agent/data/commentary-v1.2
+  Expected: no implementation changes touch frozen paths; pre-existing tag-to-base cleanup is out of scope.
 - [ ] Run npm test and the frozen v1.2 pytest tests. The known baseline is 9 frontend suites and 13 frozen tests; rerun the broader web tests in focused slices because the initial combined baseline did not return a final result.
 - [ ] Do not commit code in this task. Carry the evidence into the final report.
 
@@ -184,8 +184,8 @@ Files: only tests/docs/code needed to correct verified defects; never frozen Com
 - [ ] Search and classify leftovers:
   rg -n -i --hidden --glob "!.git/**" --glob "!*.sqlite*" "OpenRouter|Ollama|Bring Your Own Model|BYO model|AI provider|model selector|API key|Internal AI|local model" README.md docs bhf_web tests .env.example docker-compose*.yml
   Runtime/user-facing occurrences must be gone; maintainer-only and historical/docs occurrences must be identified in the final report.
-- [ ] Run final frozen comparison:
-  git diff --name-status commentary-v1.2..HEAD -- .bhf-data docs/commentary-v1.2-release.json bhf_agent/data/commentary-v1.2
+- [ ] Run final frozen comparison against the post-merge feature base:
+  git diff --name-status 7ae5e1560d16a1453e0064c05933949669fa6048..HEAD -- .bhf-data docs/commentary-v1.2-release.json bhf_agent/data/commentary-v1.2
   git diff --check
   git status --short --branch
 - [ ] Use fresh command output for the final report; do not claim completion without exit codes for tests, browser verification, build, package, and Commentary v1.2 frozen verification.
