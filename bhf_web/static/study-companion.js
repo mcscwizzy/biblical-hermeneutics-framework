@@ -730,6 +730,12 @@
 
   function handleEscape(event) {
     if (event.key !== "Escape") return;
+    const handoffDialog = document.querySelector("[data-ask-bhf-dialog]");
+    if (handoffDialog?.open) {
+      event.preventDefault();
+      handoffController?.close?.();
+      return;
+    }
     if (currentResource) navigateBackFromResource();
     else if (!compactViewport()) return;
     else if (currentState === "full") setState("study");

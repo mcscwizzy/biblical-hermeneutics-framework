@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pytest
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 from .pages import AskPage, BibleReaderPage, HomePage
 
@@ -54,3 +55,17 @@ def test_ask_bhf_restores_focus_to_its_trigger_on_close(driver, wait, base_url):
     page.close()
 
     assert driver.execute_script("return document.activeElement.matches('[data-ask-bhf]');")
+
+
+def test_escape_closes_handoff_without_collapsing_companion(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = AskPage(driver, wait, base_url)
+    page.open_workspace()
+    companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    before = companion.get_attribute("data-companion-state")
+
+    driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-question]").send_keys(Keys.ESCAPE)
+
+    wait.until(lambda _driver: not driver.find_element(By.CSS_SELECTOR, "[data-ask-bhf-dialog]").is_displayed())
+    assert companion.get_attribute("data-companion-state") == before

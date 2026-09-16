@@ -3247,6 +3247,10 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn('name="model"', body)
         self.assertNotIn('data-testid="ask-submit"', body)
         self.assertNotIn('model-settings.js', body)
+        self.assertNotIn('BHF Geography Fallback', body)
+        self.assertNotIn('data-testid="agent-status"', body)
+        self.assertNotIn('data-testid="answer-output"', body)
+        self.assertNotIn('AI explains', body)
 
     def test_ask_job_marks_previous_running_step_complete(self):
         job = AskJob(job_id="job-1")
