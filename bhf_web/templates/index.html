@@ -36,7 +36,6 @@
   {# static_asset('/htmx-lite.js') }}?v=20260906a #}
   <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/study-vault.js') }}?v=20260809a" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260906a" defer></script>
   <script src="{{ static_asset('/api/backend-routing.js') }}?v=20260822a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260821a" defer></script>
   <script src="{{ static_asset('/api/job-flow.js') }}?v=20260901a" defer></script>
@@ -45,6 +44,7 @@
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260906a" defer></script>
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260906a" defer></script>
+  <script src="{{ static_asset('/assistant-handoff.js') }}?v=20260916a" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/companion-context.js') }}?v=20260901c" defer></script>
   <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260901b" defer></script>
@@ -67,48 +67,6 @@
   {% endif %}
 </head>
 <body>
-  <dialog class="ai-setup-dialog" data-ai-setup aria-labelledby="ai-setup-title">
-    <div class="ai-setup-panel">
-      <p class="eyebrow">AI assistance</p>
-      <h2 id="ai-setup-title">Set Up AI for BHF</h2>
-      <p>AI is optional. Choose how BHF should provide study help; you can change this later in AI settings.</p>
-      <section class="ai-setup-recommended">
-        <p class="eyebrow">Recommended connection</p>
-        <h3>Connect OpenRouter</h3>
-        <p>Use a hosted model through an OpenRouter account. This is the simplest choice for strong answers on most devices.</p>
-        <button type="button" data-openrouter-connect title="Open a secure sign-in flow to connect an OpenRouter account.">Connect OpenRouter</button>
-        <p class="field-help">Your key is encrypted and stored only in this browser.</p>
-      </section>
-      <section class="ai-setup-options">
-        <div class="setup-section-heading">
-          <div>
-            <p class="eyebrow">Connection choices</p>
-            <h3>Other ways to use AI</h3>
-          </div>
-          <span class="settings-help" tabindex="0" role="img" aria-label="Help: These choices only configure AI. Your Bible reader, notes, studies, and maps work without AI." data-tooltip="These choices only configure AI. Your Bible reader, notes, studies, and maps work without AI.">?</span>
-        </div>
-        <div class="ai-setup-option-grid">
-          <button type="button" class="secondary" data-ai-local-provider title="Configure Ollama or another model server available on your computer or local network."><span>Use Local AI</span><small>Runs through Ollama or another model server on your computer or network.</small></button>
-          <button type="button" class="secondary" data-ai-other-provider title="Configure a service that supports the OpenAI-compatible API format."><span>Use Another OpenAI-Compatible Service</span><small>Connect another compatible provider.</small></button>
-          <button type="button" class="secondary" data-ai-continue-without title="Close setup and use BHF’s non-AI features. You can connect AI later from settings."><span>Continue Without AI</span><small>Use the Bible reader, search, CKL, lexicon, maps, and other non-AI tools.</small></button>
-        </div>
-      </section>
-      <details class="advanced-ai-settings">
-        <summary>Already have an OpenRouter key? Enter key manually</summary>
-        <label for="ai-manual-token"><span>OpenRouter key</span><span class="settings-help" tabindex="0" role="img" aria-label="Help: Paste an OpenRouter API key if you do not want to use the sign-in flow." data-tooltip="Paste an OpenRouter API key if you do not want to use the sign-in flow. The key is encrypted before BHF saves it in this browser.">?</span></label>
-        <div class="credential-input-row">
-          <input id="ai-manual-token" type="password" data-ai-manual-token autocomplete="new-password" aria-describedby="ai-manual-token-status">
-          <button type="button" class="secondary token-visibility-toggle" data-token-visibility-toggle="ai-manual-token" aria-label="Show OpenRouter key" title="Show OpenRouter key">
-            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M2.1 12s3.5-6 9.9-6 9.9 6 9.9 6-3.5 6-9.9 6-9.9-6-9.9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
-            <span data-token-visibility-label>Show</span>
-          </button>
-        </div>
-        <button type="button" class="secondary" data-ai-manual-dialog-save>Save key on this device</button>
-        <p id="ai-manual-token-status" class="field-help token-status" data-openrouter-token-status role="status" aria-live="polite">No OpenRouter key saved on this device.</p>
-      </details>
-      <p class="ai-setup-status" data-ai-setup-status role="status" aria-live="polite"></p>
-    </div>
-  </dialog>
   <main class="page reader-page" data-testid="app-shell">
     <header class="header" data-testid="app-header">
       <div>
@@ -157,13 +115,6 @@
               <button type="submit" data-testid="bible-search-button">Search</button>
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
-            <input type="hidden" name="adapter" value="{{ form.adapter }}">
-            <input type="hidden" name="model" value="{{ form.model }}">
-            <input type="hidden" name="base_url" value="{{ form.base_url }}">
-            <input type="hidden" name="max_tokens" value="{{ form.max_tokens }}">
-            <input type="hidden" name="context_window" value="{{ form.context_window }}">
-            <input type="hidden" name="timeout_seconds" value="{{ form.timeout_seconds }}">
-            {% if form.show_method_notes %}<input type="hidden" name="show_method_notes" value="on">{% endif %}
           </form>
         </div>
 
@@ -210,9 +161,6 @@
             <button type="button" data-passage-action="explore">
               <span aria-hidden="true">✦</span><span>Explore</span>
             </button>
-            <button type="button" data-passage-action="ask">
-              <span aria-hidden="true">?</span><span>Ask</span>
-            </button>
             <button type="button" data-passage-action="note" data-testid="add-note-button">
               <span aria-hidden="true">＋</span><span>Note</span>
             </button>
@@ -257,7 +205,7 @@
       </section>
 
       <aside class="study-panel" id="study-panel" aria-label="Study Companion" data-study-companion data-companion-state="closed">
-        <div class="workspace-panel study-companion" data-workspace-tabs data-default-tab="ask">
+        <div class="workspace-panel study-companion" data-workspace-tabs data-default-tab="commentary">
           <button type="button" class="companion-peek" data-companion-state-control="study" data-companion-drag-handle aria-controls="companion-overview" hidden>
             <span><strong data-companion-peek-reference>Chapter Companion</strong><small data-companion-resource-count>Study resources available</small></span>
             <span aria-hidden="true">⌃</span>
@@ -362,12 +310,8 @@
                 <div><span aria-hidden="true">◇</span><h3 id="companion-ask-title">Ask BHF</h3></div>
                 <p>AI explains the local research and Scripture context; it does not replace them.</p>
               </div>
-              <div class="companion-suggestions" data-companion-suggestions></div>
-              <form class="companion-quick-ask" data-companion-quick-ask>
-                <label for="companion-question" class="visually-hidden">Ask about this passage</label>
-                <input id="companion-question" name="question" type="text" placeholder="Ask about this passage…" autocomplete="off">
-                <button type="submit" aria-label="Open Ask BHF">Ask</button>
-              </form>
+              <p>BHF keeps Scripture and research context here; continue the conversation in the BHF assistant.</p>
+              <button type="button" data-ask-bhf aria-haspopup="dialog">Ask BHF</button>
             </section>
 
             <section class="companion-section" aria-labelledby="companion-deeper-title">
@@ -388,8 +332,7 @@
 
           <div class="workspace-toolbar">
             <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
-              <button type="button" class="workspace-tab is-commentary" id="workspace-tab-commentary" role="tab" aria-selected="false" aria-controls="workspace-pane-commentary" data-workspace-tab="commentary" tabindex="-1" data-testid="commentary-tab">Tyndale Companion</button>
-              <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask" data-testid="ask-tab">Ask</button>
+              <button type="button" class="workspace-tab is-commentary" id="workspace-tab-commentary" role="tab" aria-selected="true" aria-controls="workspace-pane-commentary" data-workspace-tab="commentary" data-testid="commentary-tab">Tyndale Companion</button>
               <button type="button" class="workspace-tab" id="workspace-tab-lexicon" role="tab" aria-selected="false" aria-controls="workspace-pane-lexicon" data-workspace-tab="lexicon" tabindex="-1" data-testid="lexicon-tab">Lexicon</button>
               <button type="button" class="workspace-tab" id="workspace-tab-context" role="tab" aria-selected="false" aria-controls="workspace-pane-context" data-workspace-tab="context" tabindex="-1" data-testid="context-tab">Context</button>
               <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1" data-testid="notes-tab">Notes</button>
@@ -408,7 +351,7 @@
           </div>
 
           <div class="workspace-pane-group">
-            <section class="workspace-pane commentary-pane" id="workspace-pane-commentary" role="tabpanel" aria-labelledby="workspace-tab-commentary" data-workspace-pane="commentary" hidden>
+            <section class="workspace-pane commentary-pane" id="workspace-pane-commentary" role="tabpanel" aria-labelledby="workspace-tab-commentary" data-workspace-pane="commentary">
               <aside class="commentary-panel" data-commentary-panel aria-label="Tyndale Study Notes">
                 <header class="commentary-header">
                   <span>
@@ -420,148 +363,6 @@
                   <p class="empty">Loading Tyndale Study Notes...</p>
                 </div>
               </aside>
-            </section>
-
-            <section class="workspace-pane ask-pane" id="workspace-pane-ask" role="tabpanel" aria-labelledby="workspace-tab-ask" data-workspace-pane="ask">
-              <form
-                class="ask-form"
-                method="post"
-                action="/ask"
-                data-job-post="/ask/jobs"
-                data-status-base="/ask/status/"
-                data-result-base="/ask/result/"
-                data-target="#answer-panel"
-                data-status-target="#status-panel"
-              >
-                <input type="hidden" name="reader_book" value="John">
-                <input type="hidden" name="reader_chapter" value="1">
-                <input type="hidden" name="reader_start_verse" value="">
-                <input type="hidden" name="reader_end_verse" value="">
-                <input type="hidden" name="reader_selected_verses" value="">
-                <input type="hidden" name="reader_selected_text" value="">
-                <input type="hidden" name="reader_selected_word" value="">
-                <input type="hidden" name="reader_translation" value="{{ default_translation }}">
-                <input type="hidden" name="question_scope" value="">
-                <input type="hidden" name="ask_mode" value="">
-                <input type="hidden" name="study_action" value="">
-                <input type="hidden" name="deterministic_fact_packet" value="">
-                <input type="hidden" name="map_context" value="">
-
-                <section class="selection-card" aria-live="polite">
-                  <h2 data-ask-heading>Ask BHF</h2>
-                  <p id="selection-summary" class="selection-summary"></p>
-                </section>
-
-                <label class="full question-field">
-                  <span data-ask-question-label>Question</span>
-                  <textarea name="question" rows="4" placeholder="Ask me a question!" data-testid="question-input">{{ form.question }}</textarea>
-                </label>
-
-                <details class="settings full" data-ai-settings>
-                  <summary>AI settings</summary>
-                  <div class="config-fields" data-config-fields>
-                  <label>
-                    <span>AI provider</span>
-                    <select name="adapter">
-                      {% for adapter in adapters %}
-                        <option value="{{ adapter }}" {% if adapter == form.adapter %}selected{% endif %}>{{ adapter_labels.get(adapter, adapter) }}</option>
-                      {% endfor %}
-                    </select>
-                  </label>
-
-                  <div class="openrouter-credential" data-openrouter-credential hidden>
-                    <label for="openrouter-token"><span>OpenRouter key</span></label>
-                    <div class="credential-input-row">
-                      <input id="openrouter-token" type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter key" aria-describedby="openrouter-token-status">
-                      <button type="button" class="secondary token-visibility-toggle" data-token-visibility-toggle="openrouter-token" aria-label="Show OpenRouter key" title="Show OpenRouter key">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M2.1 12s3.5-6 9.9-6 9.9 6 9.9 6-3.5 6-9.9 6-9.9-6-9.9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
-                        <span data-token-visibility-label>Show</span>
-                      </button>
-                    </div>
-                    <div class="action-row">
-                      <button type="button" class="secondary" data-ai-manual-save>Save key on this device</button>
-                    </div>
-                    <p id="openrouter-token-status" class="field-help token-status" data-openrouter-token-status role="status" aria-live="polite">No OpenRouter key saved on this device.</p>
-                  </div>
-
-                  <p class="field-help" role="status" aria-live="polite" data-ai-connection-status>Not connected</p>
-                  <div class="action-row">
-                    <button type="button" class="secondary" data-ai-test-connection>Test connection</button>
-                    <button type="button" class="secondary" data-ai-reconnect>Reconnect</button>
-                    <button type="button" class="secondary" data-ai-disconnect>Disconnect</button>
-                    <button type="button" class="secondary" data-ai-settings-open>Set up AI</button>
-                  </div>
-
-                  <label class="ai-model-field">
-                    <span>Model</span>
-                    <select data-openrouter-model hidden aria-label="OpenRouter study model"></select>
-                    <input type="text" name="model" value="{{ form.model }}" required>
-                  </label>
-
-                  <details class="settings advanced-ai-settings">
-                    <summary>Advanced settings</summary>
-                    <div data-local-provider-fields>
-                      <label>
-                        <span>Base URL</span>
-                        <input type="url" name="base_url" value="{{ form.base_url }}" required>
-                      </label>
-                    </div>
-                    <label>
-                      <span>Custom OpenRouter model</span>
-                      <input type="text" data-openrouter-custom-model hidden placeholder="provider/model:free">
-                    </label>
-                    <label>
-                      <span>Output-token limit</span>
-                      <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
-                    </label>
-                    <label>
-                      <span>Context window</span>
-                      <input type="number" name="context_window" min="1" step="1" value="{{ form.context_window }}" required>
-                    </label>
-                    <label>
-                      <span>Timeout seconds</span>
-                      <input type="number" name="timeout_seconds" min="1" step="1" value="{{ form.timeout_seconds }}" required>
-                    </label>
-                    <label>
-                      <span>Response-format policy</span>
-                      <select name="response_format_policy">
-                        <option value="auto" {% if form.response_format_policy == "auto" %}selected{% endif %}>Automatic</option>
-                        <option value="json_object" {% if form.response_format_policy == "json_object" %}selected{% endif %}>JSON object</option>
-                        <option value="off" {% if form.response_format_policy == "off" %}selected{% endif %}>Plain text</option>
-                      </select>
-                    </label>
-                    <p class="field-help">BHF chooses a provider-appropriate response style and temperature for normal study use.</p>
-                  </details>
-
-                  <label class="check">
-                    <input type="checkbox" name="show_method_notes" {% if form.show_method_notes %}checked{% endif %}>
-                    <span>Show method notes</span>
-                  </label>
-
-                  </div>
-                </details>
-
-                <div class="action-row">
-                  <button type="submit" data-testid="ask-submit" data-idle-label="Ask BHF">Ask BHF</button>
-                  <button type="button" class="secondary" data-save-study data-testid="ask-save-study" disabled>Save Study</button>
-                  <button type="button" class="secondary" data-add-note data-testid="ask-add-note-button">Add note</button>
-                </div>
-              </form>
-
-              <section id="status-panel" class="status-panel" aria-live="polite" hidden data-testid="agent-status">
-                <div class="status-summary" hidden></div>
-                <div class="status-active">
-                  <div class="status-topline">
-                    <span class="status-loading-indicator" aria-hidden="true"></span>
-                    <div>
-                      <div class="status-heading">Agent status</div>
-                      <div class="status-current">Preparing request</div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section id="answer-panel" class="answer-panel" aria-live="polite" data-testid="answer-output"></section>
             </section>
 
             <section class="workspace-pane" id="workspace-pane-lexicon" role="tabpanel" aria-labelledby="workspace-tab-lexicon" data-workspace-pane="lexicon" hidden>
@@ -913,6 +714,35 @@
     </dialog>
 
   </main>
+  <dialog class="ask-bhf-dialog" data-ask-bhf-dialog aria-labelledby="ask-bhf-dialog-title" aria-describedby="ask-bhf-dialog-description">
+    <form class="ask-bhf-dialog-shell" method="dialog">
+      <header class="ask-bhf-dialog-header">
+        <div>
+          <p class="eyebrow">External BHF assistant</p>
+          <h2 id="ask-bhf-dialog-title">Ask BHF</h2>
+          <p id="ask-bhf-dialog-description">Continue this question with the BHF assistant. Your current reference stays visible here.</p>
+        </div>
+        <button type="button" class="secondary" data-ask-bhf-close aria-label="Close Ask BHF">Close</button>
+      </header>
+      <div class="ask-bhf-dialog-body">
+        <p class="ask-bhf-reference" data-ask-bhf-reference aria-live="polite"></p>
+        <label class="ask-bhf-field" for="ask-bhf-question">
+          <span>Question</span>
+          <textarea id="ask-bhf-question" data-ask-bhf-question rows="5" placeholder="What would you like to explore?"></textarea>
+        </label>
+        <label class="ask-bhf-field" for="ask-bhf-prepared">
+          <span>Prepared question</span>
+          <textarea id="ask-bhf-prepared" data-ask-bhf-prepared rows="6" readonly aria-describedby="ask-bhf-status"></textarea>
+        </label>
+        <p class="ask-bhf-status" data-ask-bhf-status role="status" aria-live="polite"></p>
+      </div>
+      <footer class="ask-bhf-dialog-actions">
+        <button type="button" data-ask-bhf-primary>Copy Question &amp; Open BHF</button>
+        <button type="button" class="secondary" data-ask-bhf-manual-copy hidden>Copy prepared question</button>
+        <a class="secondary ask-bhf-open-link" data-ask-bhf-open href="" target="_blank" rel="noopener noreferrer" hidden>Open BHF</a>
+      </footer>
+    </form>
+  </dialog>
   <nav class="app-dock" aria-label="Application navigation" data-app-dock>
     <section class="app-dock-group" aria-label="Read">
       <span class="app-dock-group-label">Read</span>
@@ -922,9 +752,6 @@
     </section>
     <section class="app-dock-group" aria-label="Study">
       <span class="app-dock-group-label">Study</span>
-    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false" aria-label="Ask" title="Ask" hidden>
-      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.5 8.5 0 0 1-3.4-.7L4 20l1.7-4.1A7.2 7.2 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5ZM8.5 11.5h.01m3.49 0H12m3.49 0h.01"/></svg><span class="app-dock-label">Ask</span>
-    </button>
     <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false" aria-label="My Study" title="My Study">
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 3.5h9l3 3V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-15a1.5 1.5 0 0 1 1-1.5Zm8.5 0V7H18M8 11h8m-8 3h8m-8 3h5"/></svg><span class="app-dock-label">My Study</span>
     </button>

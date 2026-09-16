@@ -674,14 +674,13 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn('currentMode === "explore"', companion_script)
         self.assertIn('await actions?.perform?.("open_map_panel", mapContext);', companion_script)
 
-    def test_explore_questions_use_the_general_question_scope(self):
-        reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+    def test_companion_questions_use_the_external_handoff_controller(self):
         companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
 
-        self.assertIn('return ["maps", "ask"];', reader_script)
-        self.assertIn('function setAskQuestionScope(scope)', reader_script)
-        self.assertIn('questionScope: GENERAL_QUESTION_MODE, appSection: "explore"', reader_script)
-        self.assertIn('questionScope: "general_question", appSection: "explore"', companion_script)
+        self.assertIn('window.BHFAssistantHandoff?.create?.({', companion_script)
+        self.assertIn('getSelection: () => window.BHFStudySelection?.getState?.() || {},', companion_script)
+        self.assertIn('handoffController?.open?.();', companion_script)
+        self.assertNotIn('questionScope: "general_question", appSection: "explore"', companion_script)
         self.assertIn('Explore questions are not limited to the selected passage.', companion_script)
 
     def test_companion_archaeology_cards_open_curated_evidence_details(self):
@@ -3227,6 +3226,27 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertNotIn("data-testid=\"chapter-prev\"", response["body"])
         self.assertNotIn("data-testid=\"chapter-next\"", response["body"])
+
+    def test_reader_shell_exposes_only_the_external_ask_bhf_handoff(self):
+        response = asgi_request("GET", "/")
+
+        self.assertEqual(response["status"], 200)
+        body = response["body"]
+        self.assertEqual(len(re.findall(r"<button[^>]*\bdata-ask-bhf(?:\s|=|>)", body)), 1)
+        self.assertIn('data-ask-bhf-dialog', body)
+        self.assertIn('data-ask-bhf-reference', body)
+        self.assertIn('data-ask-bhf-question', body)
+        self.assertIn('data-ask-bhf-prepared', body)
+        self.assertIn('data-ask-bhf-status', body)
+        self.assertIn('data-ask-bhf-primary', body)
+        self.assertIn('data-ask-bhf-manual-copy', body)
+        self.assertIn('data-ask-bhf-open', body)
+        self.assertNotIn('data-ai-setup', body)
+        self.assertNotIn('data-ai-settings', body)
+        self.assertNotIn('name="adapter"', body)
+        self.assertNotIn('name="model"', body)
+        self.assertNotIn('data-testid="ask-submit"', body)
+        self.assertNotIn('model-settings.js', body)
 
     def test_ask_job_marks_previous_running_step_complete(self):
         job = AskJob(job_id="job-1")

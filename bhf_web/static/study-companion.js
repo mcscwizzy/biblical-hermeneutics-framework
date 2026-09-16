@@ -24,7 +24,9 @@
   let saveStateController = null;
   let historyController = null;
   let viewportController = null;
+  let handoffController = null;
   let lastTrigger = null;
+  let lastAskTrigger = null;
   let lastResourceTrigger = null;
   let lastCompact = null;
   let resizeFrame = null;
@@ -54,7 +56,8 @@
       button.addEventListener("click", () => performPersonalAction(button.dataset.companionAction));
     });
     panel.addEventListener("click", handleCompanionClick);
-    panel.querySelector("[data-companion-quick-ask]")?.addEventListener("submit", handleQuickAsk);
+    const askButton = panel.querySelector("[data-ask-bhf]");
+    askButton?.addEventListener("click", () => openAsk("", askButton));
     actionStrip?.addEventListener("click", handlePassageAction);
     document.querySelector("[data-app-dock]")?.addEventListener("click", handlePrimaryNavigation);
     document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChanged);
@@ -169,6 +172,20 @@
     if (window.BHFStudySelection?.subscribe) {
       window.BHFStudySelection.subscribe(handleSelectionChange);
     }
+    handoffController = window.BHFAssistantHandoff?.create?.({
+      dialog: document.querySelector("[data-ask-bhf-dialog]"),
+      reference: document.querySelector("[data-ask-bhf-reference]"),
+      question: document.querySelector("[data-ask-bhf-question]"),
+      prepared: document.querySelector("[data-ask-bhf-prepared]"),
+      status: document.querySelector("[data-ask-bhf-status]"),
+      primary: document.querySelector("[data-ask-bhf-primary]"),
+      manualCopy: document.querySelector("[data-ask-bhf-manual-copy]"),
+      openFallback: document.querySelector("[data-ask-bhf-open]"),
+      getSelection: () => window.BHFStudySelection?.getState?.() || {},
+    });
+    const handoffDialog = document.querySelector("[data-ask-bhf-dialog]");
+    document.querySelector("[data-ask-bhf-close]")?.addEventListener("click", () => handoffController?.close?.());
+    handoffDialog?.addEventListener("close", restoreAskFocus);
 
     window.BHFStudyCompanion = Object.freeze({
       setState,
@@ -367,11 +384,6 @@
     if (description) {
       description.textContent = "Search across Scripture and BHF’s research collections. Explore questions are not limited to the selected passage.";
     }
-    const input = panel.querySelector("#companion-question");
-    if (input) {
-      input.placeholder = "Search or ask about the Bible…";
-      input.setAttribute("aria-label", "Search or ask about the Bible");
-    }
     renderSuggestions([
       "Who was Paul?",
       "Where was Nineveh?",
@@ -488,12 +500,7 @@
     const card = panel.querySelector(".companion-ask-card");
     const description = card?.querySelector(".companion-section-heading p");
     if (description) {
-      description.textContent = "AI explains the local research and Scripture context; it does not replace them.";
-    }
-    const input = panel.querySelector("#companion-question");
-    if (input) {
-      input.placeholder = "Ask about this passage…";
-      input.setAttribute("aria-label", "Ask about this passage");
+      description.textContent = "Bring a question from this Scripture and research context to the BHF assistant.";
     }
   }
 
@@ -611,7 +618,7 @@
     }
     const question = event.target.closest("[data-companion-question]");
     if (question) {
-      openAsk(question.dataset.companionQuestion);
+      openAsk(question.dataset.companionQuestion, question);
       return;
     }
     const entity = event.target.closest("[data-companion-entity]");
@@ -635,25 +642,16 @@
     return new Set(context?.evidence_bundle?.geography?.map_location_refs || []);
   }
 
-  function handleQuickAsk(event) {
-    event.preventDefault();
-    const input = event.currentTarget.elements.question;
-    const question = String(input?.value || "").trim();
-    openAsk(question);
+  function openAsk(question, trigger = null) {
+    lastAskTrigger = trigger || document.activeElement;
+    handoffController?.open?.();
+    const field = document.querySelector("[data-ask-bhf-question]");
+    if (field && question) field.value = question;
+    field?.focus?.({preventScroll: true});
   }
 
-  function openAsk(question) {
-    const isExploreQuestion = currentMode === "explore";
-    window.BHFStudyActions?.syncAskSelection?.();
-    const field = document.querySelector('.ask-form [name="question"]');
-    if (field && question) {
-      field.value = question;
-      field.dispatchEvent(new Event("input", {bubbles: true}));
-    }
-    openResource("ask", isExploreQuestion
-      ? {questionScope: "general_question", appSection: "explore"}
-      : {questionScope: "", appSection: "bible"},
-    ).then(() => field?.focus({preventScroll: true}));
+  function restoreAskFocus() {
+    if (lastAskTrigger?.isConnected) lastAskTrigger.focus({preventScroll: true});
   }
 
   async function performPersonalAction(action) {
@@ -685,7 +683,6 @@
     lastTrigger = button;
     const action = button.dataset.passageAction;
     if (action === "explore") showOverview({mode: "passage", source: "navigation"});
-    else if (action === "ask") openAsk("");
     else if (action === "note") performPersonalAction("note");
     else if (action === "highlight") window.BHFStudyActions?.perform?.("highlight");
   }
