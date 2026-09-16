@@ -881,9 +881,6 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderRelatedPassagesList", map_content_script)
         self.assertIn("addCurrentMapNote", map_script)
         self.assertIn("reset_map_view", map_script)
-        self.assertIn("data-passage-shortcut", map_script)
-        self.assertIn("submitRelatedPassageShortcut", map_script)
-        self.assertIn("setReaderPassageContext", map_script)
         self.assertIn("renderSourceAttribution", map_content_script)
         self.assertIn("map-attribution", map_content_script)
         map_text_script = Path("bhf_web/static/maps/MapPanelText.js").read_text(encoding="utf-8")
@@ -1057,6 +1054,26 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260906a", index_html)
         self.assertIn("static_asset('/htmx-lite.js') }}?v=20260906a", index_html)
+
+    def test_map_surface_has_only_deterministic_map_actions(self):
+        map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+        htmx_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        map_text_script = Path("bhf_web/static/maps/MapPanelText.js").read_text(encoding="utf-8")
+        map_content_script = Path("bhf_web/static/maps/MapPanelContent.js").read_text(encoding="utf-8")
+
+        self.assertIn("loadMapCatalog", map_script)
+        self.assertIn("loadRoutesForPassage", map_script)
+        self.assertIn("openPassageReference", map_script)
+        self.assertNotIn("requestMapAIFallback", map_script)
+        self.assertNotIn("Asking BHF", map_script)
+        self.assertNotIn("map-ai-answer-panel", htmx_script)
+        self.assertNotIn("map-ai-status-panel", htmx_script)
+        self.assertNotIn("requestMapAIFallback", htmx_script)
+        self.assertNotIn("Ask about this passage", map_text_script)
+        self.assertIn("data-map-open-passage", map_text_script)
+        self.assertNotIn("data-passage-shortcut", map_text_script)
+        self.assertNotIn("text-only geography fallback below", map_content_script)
+        self.assertIn("Click a marker or route", map_content_script)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))

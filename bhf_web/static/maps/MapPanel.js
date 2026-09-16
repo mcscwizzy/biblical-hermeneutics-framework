@@ -689,25 +689,13 @@ async function openMapPanel(context = {}) {
         );
         if (noCuratedMatches) {
           setPinHint(
-            "The local map dataset does not contain a curated place pin for this passage, so the map is falling back to a text-only geography explanation.",
-            { summary: "Why there is no local map data" }
+            "No curated local place pin or route matched this passage. Browse the map catalog or select another passage.",
+            { summary: "No local map match" }
           );
           setStatus(
-            "No curated local map data matched this passage. Asking BHF for a text-based geography fallback inside this Maps tab.",
+            "No curated local map place or route matched this passage. You can browse the map catalog or continue reading.",
             "empty"
           );
-          if (window.BHFWorkspace && typeof window.BHFWorkspace.requestMapAIFallback === "function") {
-            window.BHFWorkspace.requestMapAIFallback(
-              {
-                ...context,
-                passage_reference: formatReference(context),
-              },
-              {
-                localSummary:
-                  "No curated local map places or routes matched this passage.",
-              }
-            );
-          }
         } else {
           setPinHint(
             "This passage did not resolve to a local point pin, but it does have an available route to study."
@@ -922,85 +910,6 @@ function applyRequestedMapFocus(context = {}) {
   return false;
 }
 
-function activateAskWorkspace() {
-  if (window.BHFWorkspace && typeof window.BHFWorkspace.focusAskPanel === "function") {
-    window.BHFWorkspace.focusAskPanel();
-    return;
-  }
-  const askTab = document.querySelector('[data-workspace-tab="ask"]');
-  if (askTab && askTab.getAttribute("aria-selected") !== "true") {
-    askTab.click();
-  }
-}
-
-function setMapStudyQuestion(question) {
-  const input = document.querySelector(".ask-form [name='question']");
-  if (input) {
-    input.value = question;
-  }
-}
-
-function setStudyFormValue(name, value) {
-  const input = document.querySelector(`.ask-form [name="${name}"]`);
-  if (input) {
-    input.value = value;
-  }
-}
-
-function setStudyMapContext(context) {
-  const input = document.querySelector('.ask-form [name="map_context"]');
-  if (input) {
-    input.value = context ? JSON.stringify(context) : "";
-  }
-}
-
-function setReaderPassageContext(reference) {
-  if (!reference) {
-    return "";
-  }
-  const book = String(reference.book || "").trim();
-  const chapter = String(reference.chapter || "").trim();
-  const verseStart = reference.verseStart || reference.verse_start || "";
-  const verseEnd = reference.verseEnd || reference.verse_end || verseStart || "";
-  const readable = verseStart
-    ? `${book} ${chapter}:${verseStart}${String(verseEnd) !== String(verseStart) ? `-${verseEnd}` : ""}`
-    : `${book} ${chapter}`;
-  setStudyFormValue("reader_book", book);
-  setStudyFormValue("reader_chapter", chapter);
-  setStudyFormValue("reader_start_verse", verseStart ? String(verseStart) : "");
-  setStudyFormValue("reader_end_verse", verseStart ? String(verseEnd) : "");
-  setStudyFormValue("reader_selected_text", "");
-  return readable;
-}
-
-function submitRelatedPassageShortcut(reference, questionPrefix = "What should I know about") {
-  const readable = setReaderPassageContext(reference);
-  if (!readable) {
-    return;
-  }
-  const form = document.querySelector(".ask-form");
-  if (!form) {
-    return;
-  }
-  setStudyFormValue("ask_mode", "cross_references");
-  setStudyFormValue("study_action", "related_passages");
-  setMapStudyQuestion(`${questionPrefix} ${readable}?`);
-  setStudyMapContext({
-    shortcut_reference: readable,
-    selected_passage_reference: readable,
-  });
-  submitStudyForm(form);
-}
-
-function submitStudyForm(form) {
-  activateAskWorkspace();
-  if (typeof form.requestSubmit === "function") {
-    form.requestSubmit();
-  } else {
-    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  }
-}
-
 function renderEmptyDetails(message) {
   const { details } = getPanelElements();
   if (!details) {
@@ -1064,20 +973,10 @@ async function handleMapPanelClick(event) {
     }
     return;
   }
-  const passageShortcut = target.closest("[data-passage-shortcut]");
   const openPassageButton = target.closest("[data-map-open-passage]");
   if (openPassageButton) {
     await openPassageReference(openPassageButton.getAttribute("data-map-open-passage"));
     return;
-  }
-  if (passageShortcut) {
-    await submitRelatedPassageShortcut({
-      book: passageShortcut.getAttribute("data-book") || "",
-      chapter: passageShortcut.getAttribute("data-chapter") || "",
-      verse_start: passageShortcut.getAttribute("data-verse-start") || "",
-      verse_end: passageShortcut.getAttribute("data-verse-end") || "",
-      reference: passageShortcut.getAttribute("data-reference") || "",
-    });
   }
 }
 

@@ -119,7 +119,6 @@ let currentNotes = [];
 let currentHighlights = [];
 const savedStudiesCache = new Map();
 const savedStudiesRequests = new Map();
-let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let latestDeterministicStudyResult = null;
 let appSection = null;
@@ -1142,7 +1141,6 @@ async function initializeReader() {
     closeWorkspaceDrawer();
   });
   wireAnswerPanelControls(document.querySelector("#answer-panel"));
-  wireAnswerPanelControls(document.querySelector("#map-ai-answer-panel"));
   wireSaveStudyButtons(document);
   syncMapWorkspaceEmptyState();
 }
@@ -1241,7 +1239,6 @@ function initializeWorkspaceBridge() {
     return;
   }
   window.BHFWorkspace = {
-    requestMapAIFallback,
     focusAskPanel,
   };
   window.BHFReader = {
@@ -5454,50 +5451,6 @@ function submitAskForm() {
   } else {
     form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
   }
-}
-
-function requestMapAIFallback(mapContext = {}, options = {}) {
-  const form = document.querySelector(".ask-form");
-  if (!form) {
-    return false;
-  }
-  const reference =
-    mapContext.passage_reference ||
-    [mapContext.book, mapContext.chapter].filter(Boolean).join(" ") ||
-    "the selected passage";
-  const localSummary =
-    options.localSummary ||
-    "No curated local map places, routes, archaeology, manuscripts, historical layers, or political-context overlays matched this passage.";
-  const key = JSON.stringify({
-    reference,
-    summary: localSummary,
-  });
-  if (lastMapAIFallbackKey === key) {
-    return false;
-  }
-  lastMapAIFallbackKey = key;
-  form.dataset.activeTarget = "#map-ai-answer-panel";
-  form.dataset.activeStatusTarget = "#map-ai-status-panel";
-  activateWorkspaceTab("maps");
-  setFormValue(
-    "question",
-    options.question ||
-      `The local curated map dataset has no direct match for ${reference}. Give a cautious text-only geography explanation, identify any explicit or implied locations or regions, and clearly label uncertainty.`,
-  );
-  setFormValue("ask_mode", "maps");
-  setFormValue("study_action", "ask_location");
-  setMapContextValue({
-    ...mapContext,
-    local_map_fallback: true,
-    local_map_summary: localSummary,
-  });
-  const mapAnswerPanel = document.querySelector("#map-ai-answer-panel");
-  if (mapAnswerPanel) {
-    activeLiveAnswerPanel = mapAnswerPanel;
-  }
-  updateSaveButtons();
-  submitAskForm();
-  return true;
 }
 
 function clearDocumentSelection() {
