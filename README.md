@@ -5,14 +5,14 @@
 BHF is an open-source, local-first Bible study workspace built around a
 hermeneutical method. It brings Scripture, literary and historical context,
 original-language data, archaeology, maps, commentary, and curated research
-together before an AI model is asked to explain the evidence. The model is an
-optional explanation layer—not the source of the study method.
+together in a deterministic study layer. When users want conversation, **Ask
+BHF** hands the current Scripture context to an external BHF assistant.
 
 What began as a prompt framework has become a full study application: a Bible
 reader, reference library, archaeology explorer, map workspace, and private
 place for notes and saved studies. You can use its reading and research tools
-without connecting AI, or add OpenRouter, Ollama, or another
-OpenAI-compatible service when you want generated study help.
+without configuring an AI provider. Ask BHF opens a handoff composer that
+copies a concise question and opens the external assistant.
 
 BHF teaches a process: observe, interpret in context, distinguish evidence
 from inference, qualify uncertainty, and apply last. It does this without
@@ -31,18 +31,12 @@ cp .env.example .env
 docker compose up -d --build
 ```
 
-Open <http://localhost:8080>. At first launch, connect OpenRouter, configure a
-local model, or choose **Continue Without AI**. Confirm that the app is running
-at <http://localhost:8080/api/health>.
-
-For a fully local model path using the bundled Ollama service, run:
-
-```bash
-docker compose -f docker-compose.ollama.yml up -d --build
-```
+Open <http://localhost:8080>. BHF does not require provider setup. Confirm that
+the app is running at <http://localhost:8080/api/health>.
 
 See [Docker installation and operations](docs/docker.md) for prerequisites,
 configuration, updates, data handling, and uninstallation.
+For the handoff boundary, see [Ask BHF assistant handoff](docs/assistant-handoff.md).
 For split-host production or same-origin PWA settings, see
 [Frontend and backend routing](docs/deployment-routing.md).
 
@@ -54,9 +48,9 @@ Open the HTTPS address published by the BHF project maintainer. The repository
 does not currently declare or deploy a canonical production domain, so avoid
 bookmarks copied from test fixtures or old deployments.
 
-The first-launch dialog lets you connect OpenRouter, configure a local AI
-service, or continue without AI. See [Using the website and PWA](docs/web-pwa.md)
-for the reader workflow, privacy boundary, installation steps, and offline
+The reader has no provider setup dialog. Use **Ask BHF** when you want to
+continue a question with the external assistant. See [Using the website and
+PWA](docs/web-pwa.md) for the reader workflow, installation steps, and offline
 limitations.
 
 ### Build and run from source
@@ -73,7 +67,7 @@ uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
 Open <http://127.0.0.1:8000>. See [Local build and development](docs/local-development.md)
-for provider setup, database builds, tests, packaging, and platform-specific
+for database builds, tests, packaging, maintainer tooling, and platform-specific
 virtual-environment activation.
 
 ### Use only the prompt framework
@@ -96,16 +90,14 @@ flowchart LR
     Q[Question or selected passage] --> D[Detect reference, genre, and question type]
     D --> R[Retrieve Scripture and local evidence]
     R --> E[Rank and package the evidence]
-    E --> P[Build a grounded prompt]
-    P --> M[Selected AI provider]
-    M --> V[Clean, validate, and optionally repair]
-    V --> A[Final study answer]
+    E --> S[Study tools and evidence views]
+    S --> H[Ask BHF handoff]
+    H --> A[External BHF assistant]
 ```
 
-The important boundary is that retrieval data remains internal. Ordinary ask
-responses expose validated answer prose, while developer debug routes can show
-controlled retrieval metadata. The detailed component and request-flow diagrams
-are in [Architecture](docs/architecture.md).
+The important boundary is that BHF owns deterministic study data and evidence;
+the external BHF assistant owns conversational synthesis. The detailed
+component and request-flow diagrams are in [Architecture](docs/architecture.md).
 
 ## What BHF includes today
 
@@ -136,16 +128,14 @@ are in [Architecture](docs/architecture.md).
 - Encrypted study-vault backup and restore, plus optional OneDrive or iCloud
   vault sync.
 
-### Choose how AI fits your study
+### Continue with the external assistant
 
 - No AI connection is required for the reader and local research tools.
-- OpenRouter, native Ollama, and OpenAI-compatible model adapters are
-  available for generated study answers.
-- A CLI, FastAPI web app, Docker Compose stacks, validation, evaluation, and
-  browser-test tooling support local use and development.
-
-AI answers are not offline merely because the PWA is installed. They still need
-either an internet-accessible provider or a reachable local model runtime.
+- **Ask BHF** copies the current Scripture context and question, then opens the
+  configured external BHF assistant.
+- Maintainers still have separate CLI and offline generation tooling for
+  producing and validating future release artifacts; that tooling is not part
+  of the web application's runtime.
 
 ## Repository map
 

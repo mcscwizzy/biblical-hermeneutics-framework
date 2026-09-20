@@ -390,13 +390,8 @@
   }
 
   function isAiOnlyPath(path) {
-    return [
-      "/ask",
-      "/api/llm/health",
-      "/api/bible/search/fallback",
-      "/api/debug/ckl-search",
-      "/api/study/presentation",
-    ].some((prefix) => path === prefix || path.startsWith(prefix));
+    return path === "/api/debug/ckl-search"
+      || path.startsWith("/api/debug/ckl-search/");
   }
 
   function notifyOfflineSyncChanged() {

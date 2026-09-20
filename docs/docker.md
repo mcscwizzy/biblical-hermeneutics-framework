@@ -6,11 +6,9 @@ lexical, and Tyndale commentary databases. During the image build it downloads
 the checksum-pinned Tyndale archive and lexical sources, then validates each
 generated database.
 
-Two stacks are supported:
-
-- `docker-compose.yml` runs BHF and defaults to browser-connected OpenRouter.
-- `docker-compose.ollama.yml` runs BHF, Ollama, and a one-time model pull for a
-  fully local model path.
+`docker-compose.yml` runs the deterministic BHF web application. Conversational
+follow-up is handed to the external assistant configured by
+`BHF_ASSISTANT_URL`.
 
 ## Prerequisites
 
@@ -25,7 +23,7 @@ Confirm that Compose is available:
 docker compose version
 ```
 
-## Install with OpenRouter
+## Install BHF
 
 Clone and configure the repository:
 
@@ -49,72 +47,8 @@ docker compose logs --tail=100 bhf-web
 curl http://localhost:8080/api/health
 ```
 
-Open <http://localhost:8080>. On first launch, choose **Connect OpenRouter** and
-complete the browser authorization flow. Alternatively, set `BHF_API_KEY` in
-the uncommitted `.env` file for a server-side credential.
-
-The browser authorization flow works on `localhost` and `127.0.0.1` over HTTP.
-A remote or public deployment must use a browser-trusted HTTPS origin.
-
-## Install with bundled Ollama
-
-The Ollama stack keeps inference on the local machine after the image and model
-have been downloaded:
-
-```bash
-docker compose -f docker-compose.ollama.yml up -d --build
-```
-
-The default model is `qwen2.5:0.5b`. Override it in `.env` before starting:
-
-```dotenv
-OLLAMA_MODEL=llama3.2:1b
-BHF_CONTEXT_WINDOW=12288
-```
-
-The first start waits for Ollama to become healthy and for `ollama-init` to pull
-the model. Inspect progress with:
-
-```bash
-docker compose -f docker-compose.ollama.yml ps
-docker compose -f docker-compose.ollama.yml logs -f ollama-init
-```
-
-Open <http://localhost:8080>. Ollama is also published at
-<http://localhost:11434>; list its installed models with:
-
-```bash
-curl http://localhost:11434/api/tags
-```
-
-The named `ollama` volume preserves models across normal container restarts and
-`docker compose down`.
-
-## Use a model server on the host
-
-Use the default stack and edit `.env` when Ollama, LM Studio, llama.cpp, or
-another OpenAI-compatible server already runs on the host.
-
-Native Ollama adapter:
-
-```dotenv
-LLM_PROVIDER=ollama
-BHF_BASE_URL=http://host.docker.internal:11434
-BHF_MODEL=qwen2.5:0.5b
-```
-
-LM Studio or another OpenAI-compatible `/v1` server:
-
-```dotenv
-LLM_PROVIDER=openai_compatible
-BHF_BASE_URL=http://host.docker.internal:1234/v1
-BHF_MODEL=local-model
-BHF_API_KEY=local
-```
-
-`host.docker.internal` is mapped by the Compose service. Make sure the model
-server listens on an interface reachable from Docker and that its own firewall
-policy permits the connection.
+Open <http://localhost:8080>. No provider or API key setup is required. Use
+**Ask BHF** in the reader when you want to continue with the external assistant.
 
 ## Configuration
 
@@ -123,13 +57,7 @@ The most useful `.env` settings are:
 | Variable | Default | Purpose |
 |---|---|---|
 | `BHF_HTTP_PORT` | `8080` | Host port for the BHF website/API. |
-| `LLM_PROVIDER` | `openrouter` | `openrouter`, `ollama`, or `openai_compatible`. |
-| `BHF_BASE_URL` | OpenRouter API | Provider base URL for the default stack. |
-| `BHF_MODEL` | current OpenRouter default | Provider model identifier. |
-| `BHF_API_KEY` | empty | Optional server-side provider key. |
-| `BHF_CONTEXT_WINDOW` | `8192` in `.env.example` | Model context-window budget. |
-| `BHF_MAX_TOKENS` | `1536` | Maximum generated tokens. |
-| `BHF_TIMEOUT_SECONDS` | `120` | Provider request deadline in seconds. |
+| `BHF_ASSISTANT_URL` | current BHF assistant | External destination opened by Ask BHF. |
 | `BHF_DATA_DIR` | `.bhf-data` outside the image | Shared directory for writable runtime state. |
 | `BHF_JOB_DB_PATH` | `$BHF_DATA_DIR/jobs.sqlite` | Explicit override for durable background-job state. |
 | `BHF_STUDY_DB_PATH` | `$BHF_DATA_DIR/study.sqlite` | Explicit override for server study data. |
@@ -156,8 +84,6 @@ Both app stacks mount the repository's `.bhf/` directory at
 | `.bhf/lexicon.sqlite` | Generated lexical and verse-token database. |
 | `.bhf/commentary.sqlite` | Generated Tyndale Open Study Notes database. |
 | `.bhf/study.sqlite` | Notes, highlights, saved studies, sources, and other server study data. |
-| `.bhf/jobs.sqlite` | Asynchronous question state and completed results. |
-| `.bhf/sessions/` | Optional local agent memory. |
 | `.bhf/translations/` | Server-installed translation data and metadata. |
 | `.bhf/web-config.json` | Optional local web defaults. |
 
@@ -251,12 +177,6 @@ Stop without deleting application data or images:
 docker compose down
 ```
 
-For the Ollama stack:
-
-```bash
-docker compose -f docker-compose.ollama.yml down
-```
-
 Start existing containers again:
 
 ```bash
@@ -286,8 +206,7 @@ Then recreate the stack and open <http://localhost:8081>.
 
 ## Reset data
 
-Stopping containers does not delete `.bhf/`. To reset only optional agent
-memory, stop BHF and delete `.bhf/sessions/`, then start it again.
+Stopping containers does not delete `.bhf/`.
 
 To reset the Docker lexical database without deleting other study data, stop
 the stack, delete `.bhf/lexicon.sqlite`, and start with the default `refresh` or
@@ -308,13 +227,6 @@ keeping `.bhf/` data:
 docker compose down --rmi local --remove-orphans
 ```
 
-Remove the Ollama stack, locally built image, and downloaded-model volume while
-keeping `.bhf/` data:
-
-```bash
-docker compose -f docker-compose.ollama.yml down --rmi local --volumes --remove-orphans
-```
-
 For a complete local data purge, first export anything you need from the PWA,
 stop the applicable stack, and then remove the exact repository-local data
 directory:
@@ -331,8 +243,8 @@ directory if you no longer want the source tree.
 ## LAN and public access
 
 Another trusted device on the LAN can open
-`http://YOUR_HOST_LAN_IP:8080`, subject to the host firewall. Plain LAN HTTP is
-not a secure OpenRouter browser-authorization origin.
+`http://YOUR_HOST_LAN_IP:8080`, subject to the host firewall. Ask BHF still
+requires internet access to open its external destination.
 
 The supplied stack has no accounts, authentication, rate limiting, or public
 internet hardening. Do not publish port 8080 directly. Put a public deployment
@@ -347,13 +259,6 @@ lexical sources are cloned and imported.
 
 **The port is already in use:** change `BHF_HTTP_PORT` in `.env` and recreate
 the stack.
-
-**BHF cannot reach a host model:** use `host.docker.internal`, confirm the model
-server is listening, and test it from the host first.
-
-**Ollama is healthy but BHF says the model is missing:** inspect
-`ollama-init` logs and confirm `OLLAMA_MODEL` is the same in the init and app
-services.
 
 **CKL routes fail after changing volumes:** restore the documented
 `./.bhf:/app/.bhf-data` mount so `/app/.bhf/ckl.sqlite` remains visible.

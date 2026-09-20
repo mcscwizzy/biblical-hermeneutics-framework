@@ -14,7 +14,6 @@
     "mapStudies",
     "mutationQueue",
     "metadata",
-    "modelSettings",
     "tombstones",
     "vaultSettings",
   ];
@@ -324,7 +323,6 @@
       results: results.slice(0, limit),
       total_results: results.length,
       direct_reference: false,
-      ai_fallback_eligible: false,
       no_results_message: results.length === 0 ? `No local ${translationLabel} matches were found.` : null,
       translation: translationLabel,
       offline: true,

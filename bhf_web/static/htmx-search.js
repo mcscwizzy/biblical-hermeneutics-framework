@@ -5,7 +5,6 @@ const BHF_BIBLE_SEARCH_STATE = window.BHFBibleSearchState || (window.BHFBibleSea
 async function submitBibleSearch(event) {
   event.preventDefault();
   const form = event.target;
-  syncBibleSearchConfig(form);
   const queryInput = form.querySelector("[name='query']");
   const query = queryInput ? queryInput.value.trim() : "";
   const translationId = typeof selectedTranslationId === "function" ? selectedTranslationId() : "kjv";
@@ -33,13 +32,6 @@ async function submitBibleSearch(event) {
       return;
     }
 
-    if (data.ai_fallback_eligible) {
-      updateBibleSearchSummary(`No local ${translationLabel} matches for “${query}”. Checking the Canonical Knowledge Library for likely passages.`);
-      setBibleSearchStatus("No local match found. Checking the Canonical Knowledge Library...", "loading");
-      await runBibleSearchFallback(form, query, requestId);
-      return;
-    }
-
     updateBibleSearchSummary(`No local ${translationLabel} matches for “${query}”`);
     clearBibleSearchResults();
   } catch (error) {
@@ -47,113 +39,6 @@ async function submitBibleSearch(event) {
       return;
     }
     setBibleSearchStatus(error.message || `Could not search the ${translationLabel} text.`, "error");
-  }
-}
-
-async function runBibleSearchFallback(form, query, requestId) {
-  const payload = new FormData(form);
-  const providerHeaders = window.BHFModelSettings
-    ? await window.BHFModelSettings.getProviderHeaders()
-    : {};
-  if (window.BHFRuntimeConfig?.asyncJobs === false) {
-    const result = await requestJson("/api/bible/search/fallback", {
-      method: "POST",
-      body: payload,
-      headers: { Accept: "application/json", ...providerHeaders },
-    }, "BHF search fallback failed.");
-    return renderBibleSearchFallbackResult(result, query, requestId);
-  }
-  const job = await requestJson("/api/bible/search/fallback/jobs", {
-    method: "POST",
-    body: payload,
-    headers: { Accept: "application/json", ...providerHeaders },
-  }, "Could not start the BHF search fallback.");
-  if (!job.job_id) {
-    throw new Error("Could not start the BHF search fallback.");
-  }
-  const result = await pollBibleSearchFallback(job.job_id, requestId);
-  return renderBibleSearchFallbackResult(result, query, requestId);
-}
-
-function renderBibleSearchFallbackResult(result, query, requestId) {
-  if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
-    return;
-  }
-  if (Array.isArray(result.results) && result.results.length > 0) {
-    showBibleSearchResults();
-    updateBibleSearchSummary(`BHF suggested ${result.results.length} likely passage${result.results.length === 1 ? "" : "s"} for “${query}”`);
-    clearBibleSearchStatus();
-    renderBibleSearchResults(result.results, { source: "ckl_fallback" });
-    return;
-  }
-  clearBibleSearchResults();
-}
-
-function syncBibleSearchConfig(searchForm) {
-  const askForm = document.querySelector(".ask-form");
-  if (!askForm || !searchForm) {
-    return;
-  }
-  for (const name of [
-    "adapter",
-    "model",
-    "base_url",
-    "max_tokens",
-    "timeout_seconds",
-    "reader_translation",
-  ]) {
-    const askInput = askForm.querySelector(`[name="${name}"]`);
-    let searchInput = searchForm.querySelector(`[name="${name}"]`);
-    if (!searchInput) {
-      searchInput = document.createElement("input");
-      searchInput.type = "hidden";
-      searchInput.name = name;
-      searchForm.appendChild(searchInput);
-    }
-    if (name === "reader_translation") {
-      searchInput.value = askInput && askInput.value ? askInput.value : (typeof selectedTranslationId === "function" ? selectedTranslationId() : "kjv");
-    } else {
-      searchInput.value = askInput ? askInput.value : "";
-    }
-  }
-  syncBibleSearchCheckbox(searchForm, askForm, "show_method_notes");
-}
-
-function syncBibleSearchCheckbox(searchForm, askForm, name) {
-  const existing = searchForm.querySelector(`[name="${name}"]`);
-  const askInput = askForm.querySelector(`[name="${name}"]`);
-  const checked = Boolean(askInput && askInput.checked);
-  if (!checked && existing) {
-    existing.remove();
-    return;
-  }
-  if (checked && !existing) {
-    const input = document.createElement("input");
-    input.type = "hidden";
-    input.name = name;
-    input.value = "on";
-    searchForm.appendChild(input);
-    return;
-  }
-  if (existing) {
-    existing.value = "on";
-  }
-}
-
-async function pollBibleSearchFallback(jobId, requestId) {
-  while (true) {
-    const status = await requestJson(`/api/bible/search/fallback/status/${encodeURIComponent(jobId)}`, {}, "Could not check BHF fallback search status.");
-    if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
-      return { results: [], message: "" };
-    }
-    if (status.done) {
-      if (status.error) {
-        throw new Error(status.error);
-      }
-      const result = await requestJson(`/api/bible/search/fallback/result/${encodeURIComponent(jobId)}`, {}, "BHF search fallback failed.");
-      return result;
-    }
-    await new Promise((resolve) => window.setTimeout(resolve, 750));
   }
 }
 
@@ -256,13 +141,9 @@ function renderBibleSearchResults(results, options = {}) {
 function renderBibleSearchResultCard(result, options = {}) {
   const canGoToVerse = Boolean(result.verse_start);
   const source = options.source || "local";
-  const isFallbackSource = source !== "local";
   const translationLabel = options.translationLabel || "Text";
-  const sourceBadge = isFallbackSource ? "CKL suggested passage" : result.match_type === "direct_reference" ? "Direct reference" : translationLabel;
-  const confidenceBadge = isFallbackSource && result.confidence ? `<span class="search-badge">${escapeHtml(String(result.confidence))}</span>` : "";
-  const subtitle = isFallbackSource
-    ? escapeHtml(result.reason || result.excerpt || "Likely topical connection.")
-    : escapeHtml(result.excerpt || "");
+  const sourceBadge = result.match_type === "direct_reference" ? "Direct reference" : translationLabel;
+  const subtitle = escapeHtml(result.excerpt || "");
   return `
     <article class="search-result-card">
       <div class="search-result-header">
@@ -271,8 +152,7 @@ function renderBibleSearchResultCard(result, options = {}) {
           <p class="search-result-meta">${subtitle}</p>
         </div>
         <div class="search-result-badges">
-          <span class="search-badge ${isFallbackSource ? "source-ckl" : ""}">${escapeHtml(sourceBadge)}</span>
-          ${confidenceBadge}
+          <span class="search-badge">${escapeHtml(sourceBadge)}</span>
         </div>
       </div>
       <div class="search-result-actions">

@@ -18,8 +18,8 @@ test("same-origin and NAS PWA backend requests stay relative", () => {
     {mode: "pwa", backendMode: "same-origin", apiBaseUrl: "https://ignored.example"},
     {mode: "pwa", apiBaseUrl: "https://not-inferred.example"},
   ]) {
-    assert.equal(routing.resolveUrl("/ask/jobs", runtime), "/ask/jobs");
-    assert.equal(routing.resolveUrl("/ask/status/abc", runtime), "/ask/status/abc");
+    assert.equal(routing.resolveUrl("/api/bible/search", runtime), "/api/bible/search");
+    assert.equal(routing.resolveUrl("/api/study/companion-context", runtime), "/api/study/companion-context");
   }
 });
 
@@ -32,20 +32,15 @@ test("an explicit deployment error blocks same-origin routing", () => {
 
   assert.equal(routing.configurationError(runtime), runtime.backendConfigError);
   assert.throws(
-    () => routing.resolveUrl("/ask/jobs", runtime),
+    () => routing.resolveUrl("/api/bible/search", runtime),
     {name: "BHFBackendConfigurationError", message: routing.CONFIGURATION_MESSAGE},
   );
 });
 
 test("the full async flow and API calls use the remote backend", () => {
   for (const path of [
-    "/ask/jobs",
-    "/ask/status/abc",
-    "/ask/result/abc",
     "/api/health",
-    "/api/bible/search/fallback/jobs",
-    "/api/bible/search/fallback/status/abc",
-    "/api/bible/search/fallback/result/abc",
+    "/api/study/actions",
   ]) {
     assert.equal(routing.resolveUrl(path, remote), `https://backend.example.com${path}`);
   }
@@ -71,7 +66,7 @@ test("remote mode without a valid API URL refuses backend requests", () => {
     const runtime = {backendMode: "remote", apiBaseUrl};
     assert.equal(routing.configurationError(runtime), routing.CONFIGURATION_MESSAGE);
     assert.throws(
-      () => routing.resolveUrl("/ask/jobs", runtime),
+      () => routing.resolveUrl("/api/study/actions", runtime),
       {name: "BHFBackendConfigurationError", message: routing.CONFIGURATION_MESSAGE},
     );
   }

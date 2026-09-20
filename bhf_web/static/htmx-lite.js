@@ -2,16 +2,11 @@
 // It is the central client-side controller for reader, notes, highlights,
 // map fallback, and search interactions, and the shared request helpers and
 // status helpers have already been split into separate scripts.
-const POLL_INTERVAL_MS = 2000;
-const MAX_POLL_INTERVAL_MS = 5000;
-const POLL_REQUEST_TIMEOUT_MS = 10000;
-const POLL_DEADLINE_GRACE_MS = 15000;
 const APP_SECTION_STORAGE_KEY = "bhf-app-section";
 const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
 const BHF_RUNTIME = window.BHFRuntimeConfig || {};
 const TABLET_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.tablet || 900);
 const APP_DOCK_BOTTOM_HIDE_THRESHOLD_PX = 24;
-const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const READER_SPEECH_RATE_STORAGE_KEY = "bhf-reader-speech-rate";
@@ -44,28 +39,6 @@ const BHF_CANONICAL_BOOK_NAMES = [
 ];
 const READER_LOCATION_STORAGE_KEY = "bhf-reader-location";
 const READER_LOCATION_METADATA_ID = "reader-location";
-const BHF_STUDY_ACTIONS = new Set([
-  "full_context",
-  "historical_context",
-  "cultural_context",
-  "original_audience",
-  "covenant_context",
-  // Legacy action values remain accepted for saved links and older clients.
-  "ancient_context",
-  "literary_context",
-  "cross_references",
-  "related_ot_themes",
-  "fulfillment_nt",
-  "compare_translations",
-  "timeline",
-  "word_study",
-  "people",
-  "places",
-  "themes",
-  "archaeology",
-  "compare_archaeology",
-]);
-
 const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
   "full_context",
   "historical_context",
@@ -96,8 +69,6 @@ const BHF_STUDY_ACTION_ALIASES = {
   related_ot_themes: "themes",
 };
 
-let latestJobId = null;
-let latestJobComplete = false;
 let currentChapter = null;
 let currentSelection = null;
 let readerTabs = [];
@@ -135,15 +106,6 @@ let pendingReaderTabsPersistence = null;
 let wordStudyNavigationStack = [];
 let lastArchaeologyStudyAction = null;
 const BHF_HTTP = window.BHFApi || {};
-const BHF_JOB_FLOW = window.BHFJobFlow || {
-  backendStartError: (_http, runtime) =>
-    String(runtime?.backendMode || "same-origin") === "remote"
-      ? "BHF backend is not configured for this deployment."
-      : "",
-  missingJobStateMessage: () => "",
-  shouldFetchResult: (status) => !status?.error,
-  useSynchronousAsk: () => false,
-};
 
 document.addEventListener("DOMContentLoaded", function () {
   initializeTheme();
@@ -164,138 +126,6 @@ document.addEventListener("visibilitychange", () => {
 });
 
 window.addEventListener("pagehide", flushReaderLocationPersistence);
-
-document.addEventListener("submit", async function (event) {
-  const form = event.target;
-  if (!form.matches("[data-job-post]")) {
-    return;
-  }
-
-  event.preventDefault();
-
-  const targets = resolveSubmitTargets(form);
-  const answerPanel = targets.answerPanel;
-  const statusPanel = targets.statusPanel;
-  const submitButton = form.querySelector("button[type='submit']");
-  const backendStartError = BHF_JOB_FLOW.backendStartError(BHF_HTTP, BHF_RUNTIME);
-  if (backendStartError) {
-    if (answerPanel && statusPanel) {
-      resetStatus(statusPanel);
-      markStatusFailed(statusPanel, backendStartError);
-      answerPanel.innerHTML = errorHtml(backendStartError);
-      answerPanel.removeAttribute("aria-busy");
-      setRunning(form, submitButton, false);
-      revealAnswerPanel(answerPanel);
-    } else {
-      console.error(backendStartError);
-    }
-    return;
-  }
-  if (!answerPanel || !statusPanel) {
-    form.submit();
-    return;
-  }
-
-  activeLiveAnswerPanel = answerPanel;
-  updateSaveButtons();
-  setRunning(form, submitButton, true);
-  resetStatus(statusPanel);
-  startWaiting(statusPanel);
-  answerPanel.innerHTML = "";
-  answerPanel.setAttribute("aria-busy", "true");
-
-  try {
-    const providerHeaders = window.BHFModelSettings
-      ? await window.BHFModelSettings.getProviderHeaders()
-      : {};
-    if (BHF_JOB_FLOW.useSynchronousAsk(BHF_RUNTIME)) {
-      const startedAt = Date.now();
-      const response = await fetch(resolveBackendUrl(form.action || "/ask"), {
-        method: "POST",
-        body: new FormData(form),
-        headers: {Accept: "text/html", ...providerHeaders},
-      });
-      const result = await response.text();
-      if (!result.trim()) {
-        throw new Error(`Could not ask BHF. (HTTP ${response.status}; empty response)`);
-      }
-      answerPanel.innerHTML = result;
-      latestJobId = null;
-      latestJobComplete = response.ok;
-      if (response.ok) {
-        markStatusComplete(statusPanel, {
-          elapsed_total_seconds: (Date.now() - startedAt) / 1000,
-        });
-      } else {
-        markStatusFailed(statusPanel, "Request failed.");
-      }
-      expandWorkspaceForMobileAnswer();
-      addMobileAnswerCloseControl(answerPanel);
-      wireAnswerPanelControls(answerPanel);
-      revealAnswerPanel(answerPanel);
-      await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
-      return;
-    }
-    const job = await requestJson(
-      form.dataset.jobPost,
-      {
-        method: "POST",
-        body: new FormData(form),
-        headers: {Accept: "application/json", ...providerHeaders},
-      },
-      "Could not start request.",
-    );
-    if (!job.job_id) {
-      throw new Error("Could not start request.");
-    }
-    latestJobId = job.job_id;
-    latestJobComplete = false;
-
-    const finalStatus = await pollJob(form, statusPanel, job.job_id);
-    if (!BHF_JOB_FLOW.shouldFetchResult(finalStatus)) {
-      markStatusFailed(statusPanel, finalStatus.error || "Request failed.");
-      answerPanel.innerHTML = errorHtml(finalStatus.error || "Request failed.");
-      expandWorkspaceForMobileAnswer();
-      addMobileAnswerCloseControl(answerPanel);
-      wireAnswerPanelControls(answerPanel);
-      revealAnswerPanel(answerPanel);
-      latestJobComplete = false;
-    } else {
-      const result = await requestText(
-        form.dataset.resultBase + finalStatus.job_id,
-        {},
-        "Could not render result.",
-      );
-      answerPanel.innerHTML = result;
-      markStatusComplete(statusPanel, finalStatus);
-      latestJobComplete = true;
-      expandWorkspaceForMobileAnswer();
-      addMobileAnswerCloseControl(answerPanel);
-      wireAnswerPanelControls(answerPanel);
-      revealAnswerPanel(answerPanel);
-      await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
-    }
-  } catch (error) {
-    markStatusFailed(statusPanel, error.message || "Request failed.");
-    answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
-    expandWorkspaceForMobileAnswer();
-    addMobileAnswerCloseControl(answerPanel);
-    wireAnswerPanelControls(answerPanel);
-    revealAnswerPanel(answerPanel);
-    latestJobComplete = false;
-  } finally {
-    if (window.BHFModelSettings) {
-      window.BHFModelSettings.persistFormSettings().catch(() => {});
-    }
-    stopWaiting();
-    answerPanel.removeAttribute("aria-busy");
-    resetSubmitTargets(form);
-    setFormValue("deterministic_fact_packet", "");
-    setFormValue("ask_mode", "");
-    setFormValue("study_action", "");
-    setRunning(form, submitButton, false);
-  }
-});
 
 function createReaderTabId() {
   readerTabSequence += 1;
@@ -1166,17 +996,9 @@ function initializeWorkspaceTabs() {
     return;
   }
   const tabs = Array.from(workspace.querySelectorAll("[data-workspace-tab]"));
-  const defaultTab = workspace.dataset.defaultTab || "ask";
+  const defaultTab = workspace.dataset.defaultTab || "commentary";
   for (const tab of tabs) {
     tab.addEventListener("click", () => {
-      if (tab.dataset.workspaceTab === "ask") {
-        focusAskPanel(
-          appSection === "explore"
-            ? {questionScope: GENERAL_QUESTION_MODE, appSection: "explore"}
-            : {},
-        );
-        return;
-      }
       activateWorkspaceTab(tab.dataset.workspaceTab);
     });
     tab.addEventListener("keydown", (event) =>
@@ -1208,7 +1030,7 @@ function initializeAppNavigation() {
     button.addEventListener("click", () => {
       const section = button.dataset.appSection || "bible";
       if (section === "ask") {
-        focusAskPanel();
+        document.querySelector("[data-ask-bhf]")?.click();
         return;
       }
       activateAppSection(section);
@@ -1238,9 +1060,7 @@ function initializeWorkspaceBridge() {
   if (typeof window === "undefined") {
     return;
   }
-  window.BHFWorkspace = {
-    focusAskPanel,
-  };
+  window.BHFWorkspace = {};
   window.BHFReader = {
     navigateToPassage,
     openPassageReference,
@@ -2625,35 +2445,7 @@ function activateWorkspaceTab(tabId) {
 }
 
 function focusAskPanel(options = {}) {
-  if (window.BHFMaps && typeof window.BHFMaps.closeMapModal === "function") {
-    window.BHFMaps.closeMapModal();
-  }
-
-  const isGeneralQuestion = options.questionScope === GENERAL_QUESTION_MODE;
-  setAskQuestionScope(isGeneralQuestion ? GENERAL_QUESTION_MODE : "");
-  const targetSection = options.appSection || (window.BHFStudyCompanion ? "bible" : "ask");
-  activateAppSection(targetSection);
-  activateWorkspaceTab("ask");
-  window.BHFStudyCompanion?.ensureResourceVisible?.("ask");
-
-  const focusQuestion = () => {
-    const question = document.querySelector('.ask-form [name="question"]');
-    if (!question || question.disabled || question.hidden) {
-      return;
-    }
-    question.focus({preventScroll: true});
-    if (isCompactViewport()) {
-      question.scrollIntoView({block: "nearest", behavior: "smooth"});
-    }
-  };
-
-  // Let the drawer/modal transition settle before focusing so it cannot steal
-  // focus back to the triggering map or dock control.
-  const schedule =
-    typeof window.requestAnimationFrame === "function"
-      ? window.requestAnimationFrame.bind(window)
-      : (callback) => window.setTimeout(callback, 0);
-  schedule(() => schedule(focusQuestion));
+  document.querySelector("[data-ask-bhf]")?.click();
 }
 
 function setWorkspaceDrawerOpen(open) {
@@ -2754,8 +2546,6 @@ async function loadReaderChapter(book, chapter, options = {}) {
       chapter: Number(data.chapter),
       translation: String(data.translation?.id || translationId),
     }, "reader-chapter");
-    latestJobId = null;
-    latestJobComplete = false;
     currentNotes = [];
     currentHighlights = [];
     if (tab) {
@@ -4375,22 +4165,10 @@ async function dispatchStudyAction(studyAction) {
     BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
   if (studyAction.type === "ask_bhf") {
     applyStudyActionContext(studyAction);
-    focusAskPanel({questionScope: ""});
-    setFormValue("ask_mode", "");
-    setFormValue("study_action", "");
-    setFormValue("deterministic_fact_packet", "");
-    setMapContextValue("");
-    insertSelectedTextIntoAskQuestion(studyAction);
+    document.querySelector("[data-ask-bhf]")?.click();
   } else if (BHF_DETERMINISTIC_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
     await requestDeterministicStudyAction(studyAction);
-  } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
-    applyStudyActionContext(studyAction);
-    focusAskPanel({questionScope: ""});
-    setFormValue("ask_mode", studyAction.type);
-    setFormValue("study_action", studyAction.type);
-    setMapContextValue(buildReaderMapContext(studyAction));
-    submitAskForm();
   } else if (studyAction.type === "note") {
     applyStudyActionContext(studyAction);
     openNoteEditor();
@@ -4408,14 +4186,7 @@ async function dispatchStudyAction(studyAction) {
     openMapPanel(studyAction);
   } else if (studyAction.type === "compare_archaeology") {
     applyStudyActionContext(studyAction);
-    setFormValue("ask_mode", "maps");
-    setFormValue("study_action", studyAction.type);
-    setFormValue(
-      "question",
-      "What archaeology is connected with this passage or location?",
-    );
-    setMapContextValue(buildReaderMapContext(studyAction));
-    submitAskForm();
+    await requestDeterministicStudyAction({...studyAction, type: "archaeology"});
   }
 }
 
@@ -4588,8 +4359,6 @@ async function requestDeterministicStudyAction(studyAction, options = {}) {
   );
   const statusPanel = document.querySelector("#status-panel");
   activeLiveAnswerPanel = answerPanel;
-  latestJobId = null;
-  latestJobComplete = false;
   latestDeterministicStudyResult = null;
 
   if (
@@ -4619,7 +4388,6 @@ async function requestDeterministicStudyAction(studyAction, options = {}) {
         },
         body: JSON.stringify({
           ...deterministicStudyPayload(studyAction),
-          ...(shouldAutoOrganizeContext(studyAction) ? {presentation: "ai"} : {}),
         }),
       },
       "Could not load deterministic study result.",
@@ -4722,7 +4490,6 @@ function renderDeterministicStudyResult(result, options = {}) {
         </div>
         <div class="answer-actions">
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
-          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>${result.evidence_packet ? "Organize with AI" : "Explain with BHF"}</button>` : ""}
           <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
       </header>
@@ -4808,7 +4575,6 @@ function renderArchaeologyResult(result) {
         </div>
         <div class="answer-actions">
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
-          <button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>
           <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
       </header>
@@ -4880,12 +4646,11 @@ function renderContextPresentation(result) {
     <article class="answer deterministic-study-result context-presentation" data-deterministic-study-result>
       <header class="answer-header">
         <div>
-          <p class="answer-eyebrow">${escapeHtml(presentation.mode === "ai" ? "AI-organized validated evidence" : "Validated CKL evidence")}</p>
+          <p class="answer-eyebrow">Validated CKL evidence</p>
           <h2>${escapeHtml(result.title || "Context")}</h2>
         </div>
         <div class="answer-actions">
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
-          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>` : ""}
           <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
       </header>
@@ -4935,7 +4700,6 @@ function renderWordStudyResult(result, options = {}) {
         <div class="answer-actions">
           ${options.showWordStudyBack ? `<button type="button" class="secondary word-study-back" data-word-study-back>Back to word list</button>` : ""}
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
-          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain in Context</button>` : ""}
         </div>
       </header>
       ${bodyHtml}
@@ -5193,89 +4957,15 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
     });
   });
   answerPanel
-    .querySelector("[data-deterministic-explain]")
-    ?.addEventListener("click", async () => {
-      if (result.action === "archaeology") {
-        const packet = result.fact_packet || compactDeterministicResult(result);
-        setFormValue("deterministic_fact_packet", JSON.stringify(packet));
-        setFormValue("ask_mode", "");
-        setFormValue("study_action", result.action || studyAction.type);
-        setFormValue(
-          "question",
-          `Explain ${result.title || "this archaeological evidence"} using BHF, preserving the supplied citations and uncertainty.`,
-        );
-        submitAskForm();
-        return;
-      }
-      if (result.evidence_packet) {
-        await requestAIContextPresentation(studyAction, answerPanel);
-        return;
-      }
-      const packet = result.fact_packet || compactDeterministicResult(result);
-      setFormValue("deterministic_fact_packet", JSON.stringify(packet));
-      setFormValue("ask_mode", "");
-      setFormValue("study_action", result.action || studyAction.type);
-      setFormValue(
-        "question",
-        `Explain ${result.title || "this deterministic study result"} using BHF.`,
-      );
-      submitAskForm();
-    });
-  answerPanel
     .querySelector("[data-deterministic-ask]")
     ?.addEventListener("click", () => {
-      setFormValue("deterministic_fact_packet", "");
-      focusAskPanel({questionScope: ""});
-      const question = document.querySelector('.ask-form [name="question"]');
-      if (question) {
-        question.value = "";
-      }
+      document.querySelector("[data-ask-bhf]")?.click();
     });
   answerPanel
     .querySelector("[data-deterministic-save]")
     ?.addEventListener("click", async () => {
       await saveDeterministicStudy(result, studyAction);
     });
-}
-
-async function requestAIContextPresentation(studyAction, answerPanel) {
-  const statusPanel = document.querySelector("#status-panel");
-  if (answerPanel) {
-    answerPanel.setAttribute("aria-busy", "true");
-    answerPanel.innerHTML = `<p class="empty">Organizing validated evidence...</p>`;
-  }
-  try {
-    const result = await requestJson(
-      "/api/study/actions",
-      {
-        method: "POST",
-        headers: {Accept: "application/json", "Content-Type": "application/json"},
-        body: JSON.stringify({...deterministicStudyPayload(studyAction), presentation: "ai"}),
-      },
-      "Could not organize the context result.",
-    );
-    if (answerPanel) {
-      answerPanel.innerHTML = renderDeterministicStudyResult(result, {
-        showWordStudyBack: wordStudyNavigationStack.length > 0,
-      });
-      wireDeterministicStudyControls(answerPanel, result, studyAction);
-      addMobileAnswerCloseControl(answerPanel);
-    }
-  } catch (error) {
-    if (answerPanel) {
-      const message = error.message || "Could not organize the context result.";
-      answerPanel.innerHTML = `${errorHtml(message)}${wordStudyNavigationStack.length > 0 ? `<div class="answer-actions"><button type="button" class="secondary" data-word-study-back>Back to word list</button></div>` : ""}`;
-      wireWordStudyBackControl(answerPanel);
-      addMobileAnswerCloseControl(answerPanel);
-    }
-  } finally {
-    if (answerPanel) {
-      answerPanel.removeAttribute("aria-busy");
-    }
-    if (statusPanel && typeof markStatusComplete === "function") {
-      markStatusComplete(statusPanel, {message: "Context result ready", percent_complete: 100});
-    }
-  }
 }
 
 function wireWordStudyBackControl(answerPanel) {
@@ -5439,18 +5129,6 @@ function contextPresentationMarkdown(result) {
 
 function studyActionLabel(action) {
   return String(action || "study action").replace(/_/g, " ");
-}
-
-function submitAskForm() {
-  const form = document.querySelector(".ask-form");
-  if (!form) {
-    return;
-  }
-  if (typeof form.requestSubmit === "function") {
-    form.requestSubmit();
-  } else {
-    form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
-  }
 }
 
 function clearDocumentSelection() {
@@ -5799,39 +5477,7 @@ function setFormValue(name, value) {
 }
 
 function isGeneralQuestionScope() {
-  const input = document.querySelector('.ask-form [name="question_scope"]');
-  return input?.value === GENERAL_QUESTION_MODE;
-}
-
-function setAskQuestionScope(scope) {
-  const form = document.querySelector(".ask-form");
-  const isGeneralQuestion = scope === GENERAL_QUESTION_MODE;
-  setFormValue("question_scope", isGeneralQuestion ? GENERAL_QUESTION_MODE : "");
-  if (form) {
-    form.dataset.questionScope = isGeneralQuestion ? GENERAL_QUESTION_MODE : "passage";
-  }
-
-  const heading = document.querySelector("[data-ask-heading]");
-  const questionLabel = document.querySelector("[data-ask-question-label]");
-  const question = document.querySelector('.ask-form [name="question"]');
-  const submitButton = document.querySelector('[data-testid="ask-submit"]');
-  const summary = document.querySelector("#selection-summary");
-
-  if (heading) heading.textContent = isGeneralQuestion ? "Explore BHF" : "Ask BHF";
-  if (questionLabel) questionLabel.textContent = isGeneralQuestion ? "Search or ask" : "Question";
-  if (question) {
-    question.placeholder = isGeneralQuestion
-      ? "Ask about a person, place, theme, or passage…"
-      : "Ask me a question!";
-  }
-  if (submitButton) {
-    submitButton.dataset.idleLabel = isGeneralQuestion ? "Search BHF" : "Ask BHF";
-    if (!submitButton.disabled) submitButton.textContent = submitButton.dataset.idleLabel;
-  }
-  if (summary && isGeneralQuestion) {
-    summary.textContent = "Search across Scripture and BHF’s research collections. Your question is not limited to the selected passage.";
-  }
-  updateSaveButtons();
+  return false;
 }
 
 function setMapContextValue(context) {
@@ -5885,59 +5531,4 @@ function openMapPanel(context) {
   window.BHFPendingMapPanelContext = hasPassageContext
     ? context
     : {mode: "browse"};
-}
-
-async function pollJob(form, statusPanel, jobId) {
-  const configuredTimeoutSeconds = Number(
-    form.querySelector('[name="timeout_seconds"]')?.value || 120,
-  );
-  const deadline = Date.now()
-    + Math.max(30, configuredTimeoutSeconds) * 1000
-    + POLL_DEADLINE_GRACE_MS;
-  let pollInterval = POLL_INTERVAL_MS;
-  while (true) {
-    if (Date.now() >= deadline) {
-      throw new Error(
-        `The request exceeded its ${configuredTimeoutSeconds}-second model deadline. Try a shorter answer or another model.`,
-      );
-    }
-    const controller = new AbortController();
-    const requestTimer = window.setTimeout(
-      () => controller.abort(),
-      POLL_REQUEST_TIMEOUT_MS,
-    );
-    let status;
-    try {
-      status = await requestJson(
-        form.dataset.statusBase + jobId,
-        {
-          headers: {Accept: "application/json"},
-          signal: controller.signal,
-        },
-        "Could not read request status.",
-      );
-      pollInterval = POLL_INTERVAL_MS;
-    } catch (error) {
-      const missingJobMessage = BHF_JOB_FLOW.missingJobStateMessage(error);
-      if (missingJobMessage) {
-        throw new Error(missingJobMessage);
-      }
-      if (error?.status !== 429) throw error;
-      const retryAfterMs = Number(error.retryAfterSeconds || 0) * 1000;
-      pollInterval = Math.min(
-        MAX_POLL_INTERVAL_MS,
-        Math.max(pollInterval * 2, retryAfterMs, POLL_INTERVAL_MS),
-      );
-      await delay(pollInterval);
-      continue;
-    } finally {
-      window.clearTimeout(requestTimer);
-    }
-
-    renderStatus(statusPanel, status);
-    if (status.done) {
-      return status;
-    }
-    await delay(pollInterval);
-  }
 }

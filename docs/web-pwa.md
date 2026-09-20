@@ -14,37 +14,17 @@ currently declare or deploy a canonical production domain.
 Do not treat hostnames found in tests, Git history, screenshots, or personal
 reverse-proxy examples as the official public URL.
 
-## First launch and AI setup
+## Ask BHF
 
-The setup dialog offers three choices:
+BHF has no provider setup dialog. The reader owns Scripture and deterministic
+study evidence. Select **Ask BHF** to open a handoff composer, review the
+current chapter context, enter a question, copy the prepared text, and open the
+external BHF assistant. The current destination is hosted in ChatGPT and can
+be changed with `BHF_ASSISTANT_URL` without changing the reader.
 
-1. **Connect OpenRouter** — recommended for a hosted HTTPS site or localhost.
-2. **Use Local AI** — connect Ollama running on the same computer or a trusted
-   network host.
-3. **Use Another OpenAI-Compatible Service** — connect LM Studio, llama.cpp, or
-   another compatible endpoint.
-
-You can also continue without AI. Bible reading, deterministic local Bible
-search, Maps, Explore → Archaeology, the Canonical Context browser, notes, highlights, saved studies,
-and installed offline data remain useful without a model connection.
-
-OpenRouter authorization uses a browser PKCE flow. The callback must return to
-the same BHF origin and browser session:
-
-- `http://localhost:<port>` and `http://127.0.0.1:<port>` are supported for
-  local use.
-- A remotely hosted BHF origin must use browser-trusted HTTPS.
-- A plain `http://192.168.x.x` LAN address is not a secure OpenRouter callback.
-
-The connected OpenRouter key is encrypted with Web Crypto and stored in that
-browser profile. A non-extractable browser encryption key protects the stored
-record; the decrypted value is held in memory and sent to BHF only for the
-current AI request. It is excluded from application logs, saved studies,
-service-worker caches, and offline exports. Clearing site data, reinstalling
-the PWA, or changing devices can require reconnection.
-
-OpenRouter and its selected upstream model have their own privacy and retention
-policies. Do not submit sensitive material until you have reviewed them.
+The handoff does not embed or automate the external assistant. If clipboard or
+popup access is blocked, the prepared text remains visible for manual copying
+and an explicit **Open BHF** fallback remains available.
 
 ## Read and study
 
@@ -54,7 +34,8 @@ The main workspace contains the Bible reader and a study panel.
 2. Read the chapter or select a verse range.
 3. Open **Ask BHF** and enter a question. With no selection, the current chapter
    supplies the reader context.
-4. Use the answer's study controls to save work or continue exploring.
+4. Use deterministic study tools to inspect evidence, save work, or continue
+   exploring.
 
 The **Explore** section is for free research: ask about any person, place,
 theme, or passage, or browse the research collections. Explore questions are
@@ -139,16 +120,12 @@ installable data packs.
 | Maps and journeys | Core data is available after the maps pack is installed; external tiles/links may not be. |
 | Notes, highlights, saved studies | Stored for the browser profile in IndexedDB and available offline. |
 | Imported translations | Device-only and available from that browser profile. |
-| AI answers and LLM health | Require a reachable internet or local model service. |
+| Ask BHF conversation | Requires internet access to open the external assistant. |
 | Translation downloads and licensed-provider content | Require a network/provider. |
 
 The `study` and `maps` packs are installed by default after a successful online
 load. The larger `sources` pack is optional and must be installed explicitly
 from the offline controls.
-
-An installed PWA is therefore offline-capable, not fully offline AI. With a
-reachable Ollama server on the local network, AI may work without internet, but
-the PWA must still be able to reach that server through the BHF backend.
 
 ## Manage offline storage
 
@@ -215,11 +192,8 @@ installation.
 **The app opens offline but a study area is empty:** reconnect, open settings,
 install or refresh the relevant study, maps, sources, or translation data.
 
-**Ask BHF fails offline:** connect to the internet provider or make sure the BHF
-backend can reach the configured local model server.
-
-**OpenRouter setup is rejected:** use the same browser session and origin that
-started setup, and use trusted HTTPS for non-localhost deployments.
+**Ask BHF is unavailable offline:** reconnect to the internet. Reading and
+deterministic study features remain independent of the external assistant.
 
 **A PWA update looks stuck:** use **App update**. It clears rebuildable/API
 cache data, checks for a new shell, and reloads the app. Reload all BHF windows

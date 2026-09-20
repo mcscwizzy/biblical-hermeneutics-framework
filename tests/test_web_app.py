@@ -574,7 +574,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("function markStatusComplete", status_script)
         self.assertIn('querySelector(".status-active").hidden = true', status_script)
         self.assertIn("stopWaiting();", status_script)
-        self.assertIn("setRunning(form, submitButton, false);", controller_script)
+        self.assertNotIn("setRunning(form, submitButton, false);", controller_script)
 
     def test_status_script_uses_rotating_waiting_text(self):
         script = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
@@ -591,43 +591,19 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("progress-track", script)
         self.assertNotIn("toFixed(3)", script)
 
-    def test_job_polling_has_backoff_deadline_and_real_stage_text(self):
+    def test_runtime_browser_has_no_model_job_polling(self):
         controller = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
-        status = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
+        self.assertNotIn("POLL_INTERVAL_MS", controller)
+        self.assertNotIn("BHF_JOB_FLOW", controller)
+        self.assertNotIn("/ask", controller)
 
-        self.assertIn("const POLL_INTERVAL_MS = 2000", controller)
-        self.assertIn("MAX_POLL_INTERVAL_MS", controller)
-        self.assertIn("POLL_DEADLINE_GRACE_MS", controller)
-        self.assertIn("error?.status !== 429", controller)
-        self.assertIn("runningStatusMessage(status)", status)
-        self.assertIn("elapsed_current_stage_seconds", status)
-
-    def test_job_polling_handles_lost_and_failed_jobs_without_result_fetch(self):
+    def test_runtime_browser_has_no_provider_headers_or_result_polling(self):
         controller = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         http = Path("bhf_web/static/api/http.js").read_text(encoding="utf-8")
-
-        failed_branch = controller.index(
-            "if (!BHF_JOB_FLOW.shouldFetchResult(finalStatus))"
-        )
-        submit_handler = controller.index(
-            'document.addEventListener("submit", async function (event)'
-        )
-        configuration_guard = controller.index(
-            "const backendStartError = BHF_JOB_FLOW.backendStartError",
-            submit_handler,
-        )
-        native_submission = controller.index("form.submit();", submit_handler)
-        result_fetch = controller.index(
-            "form.dataset.resultBase + finalStatus.job_id",
-            failed_branch,
-        )
-        self.assertLess(configuration_guard, native_submission)
-        self.assertIn("if (backendStartError)", controller[configuration_guard:native_submission])
-        self.assertLess(failed_branch, result_fetch)
-        self.assertIn("BHF_JOB_FLOW.missingJobStateMessage(error)", controller)
-        self.assertIn("throw new Error(missingJobMessage)", controller)
-        self.assertIn("stopWaiting();", controller)
-        self.assertIn("setRunning(form, submitButton, false);", controller)
+        self.assertNotIn("BHFModelSettings", controller)
+        self.assertNotIn("X-BHF-OpenRouter-Key", controller)
+        self.assertNotIn("/api/study/presentation", controller)
+        self.assertNotIn("/ask", controller)
         self.assertIn("error.errorCategory = data.error_category", http)
         self.assertIn("error.serverMessage = data.message", http)
 
@@ -645,11 +621,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("literary_context", script)
         self.assertIn("cross_references", script)
         self.assertIn("related_ot_themes", script)
-        self.assertIn("fulfillment_nt", script)
-        self.assertIn("compare_translations", script)
-        self.assertIn("timeline", script)
         self.assertIn("openMapPanel", script)
-        self.assertIn("BHF_STUDY_ACTIONS", script)
+        self.assertNotIn("BHF_STUDY_ACTIONS", script)
         self.assertIn("word_study", script)
         self.assertIn("open_map_panel", script)
         self.assertNotIn("reader-context-menu", script)
@@ -743,9 +716,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("function renderWordStudyResult", script)
         self.assertIn("function renderWordStudyScholar", script)
         self.assertIn("BHF_AUTO_ORGANIZED_CONTEXT_ACTIONS", script)
-        self.assertIn('presentation: "ai"', script)
+        self.assertNotIn('presentation: "ai"', script)
         self.assertIn("shouldAutoOrganizeContext", script)
-        self.assertIn("Explain in Context", script)
+        self.assertNotIn("Explain in Context", script)
         self.assertIn("Scholar View", script)
         self.assertIn("word_study_prompt_context", script)
         self.assertIn("data-word-study-position", script)
@@ -784,8 +757,8 @@ class WebAssetTests(unittest.TestCase):
 
         search_script = Path("bhf_web/static/htmx-search.js").read_text(encoding="utf-8")
         self.assertIn("submitBibleSearch", search_script)
-        self.assertIn("runBibleSearchFallback", search_script)
-        self.assertIn("syncBibleSearchConfig", search_script)
+        self.assertNotIn("runBibleSearchFallback", search_script)
+        self.assertNotIn("syncBibleSearchConfig", search_script)
         self.assertIn("renderBibleSearchResults", search_script)
         self.assertIn("handleBibleSearchResultAction", search_script)
 
@@ -1367,10 +1340,10 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(service_worker["status"], 200)
         self.assertIn('CACHE_VERSION = "v45"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
-        self.assertIn("/static/api/job-flow.js", service_worker["body"])
+        self.assertNotIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
-        self.assertIn('url.pathname.startsWith("/ask/")', service_worker["body"])
-        self.assertIn(
+        self.assertNotIn('url.pathname.startsWith("/ask/")', service_worker["body"])
+        self.assertNotIn(
             'url.pathname.startsWith("/api/bible/search/fallback/")',
             service_worker["body"],
         )
@@ -1394,7 +1367,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("cacheAssets", service_worker["body"])
         self.assertIn("/api/offline/manifest", service_worker["body"])
         self.assertIn("/static/offline/db.js", service_worker["body"])
-        self.assertIn("/static/model-settings.js", service_worker["body"])
+        self.assertNotIn("/static/model-settings.js", service_worker["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.css", service_worker["body"])
         self.assertIn("/static/vendor/leaflet/images/marker-icon.png", service_worker["body"])
         self.assertIn("isAiOnlyApiRequest", service_worker["body"])
@@ -1403,7 +1376,7 @@ class WebAppTests(unittest.TestCase):
         offline_data = json.loads(offline_manifest["body"])
         self.assertEqual(offline_data["schema_version"], 1)
         self.assertEqual(offline_data["app"], "bhf-bible-reader")
-        self.assertIn("ai_ask", offline_data["offline_boundary"]["requires_online_or_local_runtime"])
+        self.assertIn("assistant_handoff", offline_data["offline_boundary"]["requires_online_or_local_runtime"])
         self.assertIn("installed_translations", offline_data["offline_boundary"]["available"])
         self.assertEqual(
             [pack["id"] for pack in offline_data["packs"]],

@@ -1,9 +1,15 @@
 # Contextual Presentation Architecture
 
+> **Maintainer/release-engineering note:** This document describes the
+> provider-backed presentation-generation subsystem and its historical runtime
+> design. The current BHF web runtime uses deterministic presentation packets
+> and the generic Ask BHF handoff; it does not invoke a model provider or the
+> `/api/study/presentation` transport. Keep the generation interfaces here only
+> for offline artifact production, validation, and historical reproducibility.
+
 BHF's reader context follows one rule: CKL stores knowledge, BHF retrieves and
-ranks it, and an optional model turns a small grounded subset into an
-exploratory presentation. Generated prose is disposable. Evidence and its
-provenance are permanent.
+ranks it, and generated prose, when produced by maintainer tooling, is
+disposable. Evidence and its provenance are permanent.
 
 This is separate from the general ask/answer pipeline and from the older
 reader context narration. It is intentionally incremental: existing context,

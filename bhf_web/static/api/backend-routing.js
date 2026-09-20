@@ -21,9 +21,7 @@
     } catch (_error) {
       return false;
     }
-    return pathname === "/ask"
-      || pathname.startsWith("/ask/")
-      || pathname === "/api"
+    return pathname === "/api"
       || pathname.startsWith("/api/");
   }
 

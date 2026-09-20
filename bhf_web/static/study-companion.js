@@ -62,7 +62,6 @@
     document.querySelector("[data-app-dock]")?.addEventListener("click", handlePrimaryNavigation);
     document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChanged);
     document.addEventListener("bhf:companion-context-invalidated", handleContextInvalidated);
-    document.addEventListener("bhf:ai-presentation-setting-changed", handleAiPresentationSettingChanged);
     window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleEscape);
 
@@ -84,14 +83,12 @@
     contextController = window.BHFCompanionContextController?.create?.({
       onLoading: () => {
         if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
         renderLoadingState();
         renderDiscoveries({});
         renderEntities([]);
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
         renderDiscoveries(context);
         renderRecommendations(context);
         renderEntities([
@@ -102,36 +99,6 @@
         if (currentResource && currentMode === "passage") {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
         }
-      },
-      onEnhanced: (context) => {
-        if (currentMode !== "passage") return;
-        renderDiscoveries(context);
-        renderPresentationStatus("generated");
-      },
-      onEnhancementLoading: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("generating");
-      },
-      onEnhancementUnavailable: (reason) => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("unavailable", reason);
-      },
-      onEnhancementFallback: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("fallback");
-      },
-      onEnhancementError: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("failed");
-      },
-      onEnhancementCancelled: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
-      },
-      onPresentationReset: (context) => {
-        if (currentMode !== "passage") return;
-        renderDiscoveries(context);
-        renderPresentationStatus("idle");
       },
       onError: (message) => {
         if (currentMode !== "passage") return;
@@ -197,14 +164,6 @@
       getContext: () => contextController?.getRecord?.().context || null,
       getContextRecord: () => contextController?.getRecord?.(),
     });
-  }
-
-  function handleAiPresentationSettingChanged(event) {
-    if (event?.detail?.enabled === true) {
-      contextController?.refreshEnhancement?.();
-    } else {
-      contextController?.cancelEnhancement?.();
-    }
   }
 
   function setState(nextState, options = {}) {
@@ -564,11 +523,7 @@
         await actions?.perform?.("open_map_panel", mapContext);
       }
     } else if (resourceId === "ask") {
-      actions?.openWorkspaceTab?.("ask");
-      window.BHFWorkspace?.focusAskPanel?.({
-        questionScope: options.questionScope,
-        appSection: options.appSection,
-      });
+      document.querySelector("[data-ask-bhf]")?.click();
     } else if (RESOURCE_ACTIONS.has(resourceId)) {
       await actions?.perform?.(resourceId);
     }
