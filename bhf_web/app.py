@@ -8,7 +8,6 @@ from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse, Response
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -37,8 +36,6 @@ from bhf_agent.translation_settings import (
     save_reader_settings,
     set_default_reader_translation,
 )
-from bhf_agent.runner import BHFAgent
-from bhf_agent.context_pipeline import deterministic_context_presentation, present_context_with_ai
 from bhf_agent.lexicon import WordStudyService
 from bhf_agent.study_db import (
     StudyDataError,
@@ -46,14 +43,7 @@ from bhf_agent.study_db import (
     list_sources,
 )
 
-from .forms import (
-    ADAPTERS,
-    ADAPTER_LABELS,
-    form_values_from_config,
-    load_web_defaults,
-)
 from . import settings
-from .routes.ask import register_ask_routes
 from .routes.bhf_commentary import register_bhf_commentary_routes
 from .routes.canonical import register_canonical_routes
 from .routes.canonical import register_canonical_editor_routes
@@ -64,14 +54,7 @@ from .routes.archaeology import register_archaeology_routes
 from .routes.commentary import register_commentary_routes
 from .routes.commentary_coverage import register_commentary_coverage_routes
 from .routes.study import register_study_routes
-from .jobs import (
-    AskJob,
-    job_store,
-    run_ask_job as _run_ask_job,
-    run_search_fallback_job as _run_search_fallback_job,
-)
 from .offline import build_offline_manifest, build_offline_pack
-from .presentation_runtime import configure_presentation_runtime
 from .runtime import load_cors_origins, load_runtime_config
 from .services.companion_context import CompanionContextService
 
@@ -129,11 +112,6 @@ def create_app() -> FastAPI:
         )
     web_app = FastAPI(title="BHF Bible Reader")
     web_app.state.runtime_config = runtime_config
-    web_app.state.job_store = job_store
-    presentation_runtime = configure_presentation_runtime(
-        study_db_path=STUDY_DB_PATH,
-    )
-    web_app.state.presentation_runtime = presentation_runtime
     cors_origins = load_cors_origins()
     if cors_origins:
         web_app.add_middleware(
@@ -144,7 +122,6 @@ def create_app() -> FastAPI:
                 "Accept",
                 "Content-Type",
                 "X-BHF-Offline-Pack",
-                "X-BHF-OpenRouter-Key",
                 "X-BHF-Refresh",
             ],
             expose_headers=["Retry-After", "X-BHF-Offline"],
@@ -171,21 +148,6 @@ def create_app() -> FastAPI:
         if extra:
             context.update(extra)
         return context
-
-    def present_reader_context(packet: dict[str, object]) -> dict[str, object]:
-        try:
-            loaded = load_web_defaults()
-            agent = BHFAgent(loaded.config)
-            return present_context_with_ai(
-                packet,
-                adapter=agent.adapter,
-                model=loaded.config.model or "",
-                temperature=min(float(loaded.config.temperature), 0.3),
-                max_tokens=min(int(loaded.config.max_tokens), 900),
-                context_window=min(int(loaded.config.context_window), 4096),
-            )
-        except Exception:  # noqa: BLE001 - context panels always have a safe fallback
-            return deterministic_context_presentation(packet)
 
     @web_app.get("/manifest.webmanifest", include_in_schema=False)
     async def manifest() -> Response:
@@ -259,26 +221,6 @@ def create_app() -> FastAPI:
             shared_context(),
         )
 
-    @web_app.get("/api/llm/health", response_class=JSONResponse)
-    async def llm_health() -> JSONResponse:
-        loaded = load_web_defaults()
-        try:
-            agent = BHFAgent(loaded.config)
-            report = agent.adapter.health_check(loaded.config.model)
-        except Exception as exc:  # pragma: no cover - defensive route
-            return JSONResponse(
-                {
-                    "ok": False,
-                    "provider": loaded.config.adapter,
-                    "model": loaded.config.model,
-                    "base_url": loaded.config.base_url,
-                    "error": str(exc),
-                },
-                status_code=503,
-            )
-        status_code = 200 if report.get("ok") else 503
-        return JSONResponse(report, status_code=status_code)
-
     @web_app.get("/sources", response_class=HTMLResponse)
     async def sources_index(request: Request) -> HTMLResponse:
         sources = list_sources(path=STUDY_DB_PATH)
@@ -325,16 +267,11 @@ def create_app() -> FastAPI:
 
     @web_app.get("/", response_class=HTMLResponse)
     async def index(request: Request) -> HTMLResponse:
-        loaded = load_web_defaults()
         response = templates.TemplateResponse(
             request,
             "index.html",
             shared_context(
                 {
-                    "form": form_values_from_config(loaded.config),
-                    "adapters": ADAPTERS,
-                    "adapter_labels": ADAPTER_LABELS,
-                    "config_warning": loaded.warning,
                     "books": list_books(),
                     "default_translation": get_default_reader_translation(),
                     "test_mode": settings.TEST_MODE,
@@ -579,7 +516,6 @@ def create_app() -> FastAPI:
     companion_context_service = CompanionContextService(
         study_db_path=STUDY_DB_PATH,
         commentary_db_path=COMMENTARY_DB_PATH,
-        presentation_engine=presentation_runtime.engine,
     )
     register_bhf_commentary_routes(
         web_app,
@@ -590,22 +526,10 @@ def create_app() -> FastAPI:
         web_app,
         study_db_path=str(STUDY_DB_PATH),
         templates=templates,
-        job_store=job_store,
-        context_presenter=present_reader_context,
         commentary_db_path=str(COMMENTARY_DB_PATH),
         companion_context_service=companion_context_service,
-        presentation_transport=str(runtime_config["presentationTransport"]),
     )
     register_debug_routes(web_app)
-    register_ask_routes(
-        web_app,
-        templates=templates,
-        job_store=job_store,
-        agent_factory=lambda: BHFAgent,
-        ask_job_runner=_run_ask_job,
-        search_fallback_job_runner=_run_search_fallback_job,
-        test_mode=settings.TEST_MODE,
-    )
 
     return web_app
 

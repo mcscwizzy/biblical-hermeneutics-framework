@@ -1,4 +1,9 @@
-"""Form parsing and local defaults for the BHF web UI."""
+"""Maintainer-side model defaults used by offline generation tooling.
+
+The web application no longer imports this module for end-user runtime
+configuration. It remains available because commentary generation can use an
+explicit AgentConfig or these environment-backed maintainer defaults.
+"""
 
 from __future__ import annotations
 
@@ -16,13 +21,23 @@ from bhf_agent.config import (
     ConfigError,
 )
 
-from .ai_config import (
-    DEFAULT_OPENROUTER_MODEL,
-    OPENROUTER_AI_DEFAULTS,
-    OPENROUTER_BASE_URL,
-    WEB_AI_DEFAULTS,
-)
 from . import settings
+
+# Retained solely as the maintainer-facing default loader used by commentary
+# generation. The web app no longer imports this module or exposes providers.
+DEFAULT_OPENROUTER_MODEL = "openrouter/free"
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+WEB_AI_DEFAULTS = {
+    "max_tokens": 2048,
+    "context_window": 12288,
+    "runtime_profile_mode": "compact",
+    "memory_enabled": False,
+}
+OPENROUTER_AI_DEFAULTS = {
+    "max_tokens": 1536,
+    "context_window": 8192,
+    "timeout_seconds": 120,
+}
 
 WEB_CONFIG_PATH = settings.WEB_CONFIG_PATH
 

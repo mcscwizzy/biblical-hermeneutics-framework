@@ -2,63 +2,36 @@
 
 from __future__ import annotations
 
-import os
-
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from bhf_agent.presentation import SQLitePresentationCache, default_presentation_cache_path
-
 from .. import settings
-from ..forms import load_web_defaults
 from ..services.ckl_inspector import build_search_inspector_payload
 from ..services.web_helpers import request_payload
 
 
 def register_debug_routes(app: FastAPI) -> None:
+    def debug_enabled() -> bool:
+        return settings._env_bool("BHF_DEBUG", False)
+
     @app.get(
         "/api/debug/runtime-storage",
         response_class=JSONResponse,
         include_in_schema=False,
     )
     async def debug_runtime_storage() -> JSONResponse:
-        loaded = load_web_defaults()
-        if not bool(getattr(loaded.config, "debug", False)):
+        if not debug_enabled():
             return JSONResponse({"error": "not found"}, status_code=404)
-        presentation_cache_path = (
-            str(os.environ.get("BHF_PRESENTATION_CACHE_PATH") or "").strip()
-            or str(default_presentation_cache_path(settings.STUDY_DB_PATH))
-        )
         return JSONResponse(
             {
                 "data_directory": str(settings.DATA_DIR),
-                "job_database_path": str(settings.JOB_DB_PATH),
-                "job_store": "sqlite",
-                "job_store_status": (
-                    app.state.job_store.diagnostics()
-                    if getattr(app.state, "job_store", None) is not None
-                    else {
-                        "backend": "sqlite",
-                        "initialized": False,
-                        "available": None,
-                    }
-                ),
-                "presentation_cache": SQLitePresentationCache(
-                    presentation_cache_path
-                ).diagnostics(),
-                "presentation_generation": (
-                    app.state.presentation_runtime.diagnostics()
-                    if getattr(app.state, "presentation_runtime", None) is not None
-                    else {"enabled": False, "configured": False}
-                ),
                 "deployment_mode": "single_instance",
             }
         )
 
     @app.post("/api/debug/ckl-search", response_class=JSONResponse, include_in_schema=False)
     async def debug_ckl_search(request: Request) -> JSONResponse:
-        loaded = load_web_defaults()
-        if not bool(getattr(loaded.config, "debug", False)):
+        if not debug_enabled():
             return JSONResponse({"error": "not found"}, status_code=404)
 
         try:
@@ -71,17 +44,10 @@ def register_debug_routes(app: FastAPI) -> None:
             return JSONResponse({"error": "query is required"}, status_code=400)
 
         limit = _int_value(payload.get("limit"), default=8)
-        answer_mode = str(payload.get("answer_mode") or loaded.config.answer_mode or "study").strip() or "study"
+        answer_mode = str(payload.get("answer_mode") or "study").strip() or "study"
         max_context_tokens = _int_value(
             payload.get("max_context_tokens"),
-            default=int(
-                getattr(
-                    getattr(loaded.config, "canonical_library", None),
-                    "max_context_tokens",
-                    3000,
-                )
-                or 3000
-            ),
+            default=3000,
         )
 
         inspector = build_search_inspector_payload(

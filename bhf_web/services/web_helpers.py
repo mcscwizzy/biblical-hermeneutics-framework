@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import html
-import inspect
 import json
 import re
 from pathlib import Path
@@ -14,11 +13,9 @@ from fastapi import Request
 from bhf_agent.bible import BibleError, build_selected_passage_context, geography_for_book, load_translation_bible, testament_for_book, timeline_for_book, verse_range_reference
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
-from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
 from bhf_agent.study_actions import compact_fact_packet
 from bhf_agent.translation_catalog import catalog_by_id
-from ..forms import validate_question, config_from_form, load_web_defaults
 
 
 GENERAL_QUESTION_MODE = "general_question"
@@ -58,6 +55,13 @@ STUDY_ACTION_ALIASES = {
 }
 
 
+def _validated_question(form: dict[str, Any] | Any) -> str:
+    question = str(form.get("question") or "").strip()
+    if not question:
+        raise ConfigError("question is required")
+    return question
+
+
 def normalize_study_action(value: Any) -> str:
     """Return the canonical study action while accepting legacy callers."""
 
@@ -72,34 +76,6 @@ def is_transient_translation_lookup(form: dict[str, Any] | Any) -> bool:
         normalize_study_action(form.get(field)) == "compare_translations"
         for field in ("ask_mode", "study_action")
     )
-
-
-def ask_agent(
-    agent: Any,
-    question: str,
-    *,
-    status_callback: Any = None,
-    canonical_fact_packet: dict[str, Any] | None = None,
-    transient_translation_lookup: bool = False,
-) -> Any:
-    """Call an agent while preserving compatibility with lightweight test agents."""
-
-    kwargs: dict[str, Any] = {"canonical_fact_packet": canonical_fact_packet}
-    if status_callback is not None:
-        kwargs["status_callback"] = status_callback
-    if transient_translation_lookup:
-        try:
-            parameters = inspect.signature(agent.ask).parameters.values()
-            supports_policy = any(
-                parameter.kind == inspect.Parameter.VAR_KEYWORD
-                or parameter.name == "transient_translation_lookup"
-                for parameter in parameters
-            )
-        except (TypeError, ValueError):
-            supports_policy = False
-        if supports_policy:
-            kwargs["transient_translation_lookup"] = True
-    return agent.ask(question, **kwargs)
 
 
 def deterministic_fact_packet_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
@@ -532,18 +508,18 @@ def build_ask_question(
     if ask_mode == GENERAL_QUESTION_MODE or (
         question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
     ):
-        return validate_question(form), None
+        return _validated_question(form), None
 
     if not is_reader_submission(form):
-        return validate_question(form), None
+        return _validated_question(form), None
 
     context = reader_context_from_form(form)
     if context is None:
-        return validate_question(form), None
+        return _validated_question(form), None
     user_question = str(form.get("question") or "").strip()
     study_action = normalize_study_action(form.get("study_action"))
     if user_question:
-        user_question = validate_question(form)
+        user_question = _validated_question(form)
     if study_action:
         if path is not None:
             record_action(study_action, context, path=path)

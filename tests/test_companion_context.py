@@ -27,12 +27,9 @@ from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
 )
-from bhf_web.presentation_runtime import configure_presentation_runtime
-from bhf_web.jobs import AskJobStore
 from bhf_web.routes.study import register_study_routes
 from bhf_web.services.companion_context import (
     CompanionContextService,
-    StalePresentationEvidenceError,
 )
 from bhf_web.services.web_helpers import build_ask_question, reader_context_from_form
 
@@ -371,6 +368,7 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertTrue(result["resources"]["word_study"]["available"])
         self.assertTrue(result["resources"]["canonical"]["available"])
 
+    @unittest.skip("web runtime presentation inference was removed")
     @patch(
         "bhf_web.services.companion_context.list_archaeology_passage_summaries",
         return_value=[],
@@ -407,6 +405,7 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertTrue(result["resources"]["commentary"]["available"])
         self.assertTrue(result["resources"]["canonical"]["available"])
 
+    @unittest.skip("web runtime presentation inference was removed")
     @patch(
         "bhf_web.services.companion_context.list_archaeology_passage_summaries",
         return_value=[],
@@ -636,6 +635,7 @@ class CompanionContextServiceTests(unittest.TestCase):
 
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
     @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
+    @unittest.skip("web runtime presentation inference was removed")
     def test_lazy_enhancement_generates_and_returns_only_visible_evidence(self, _map_lookup, _archaeology_lookup):
         class WorkingProvider(PresentationProvider):
             model = "fixture-model"
@@ -676,6 +676,7 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertNotIn("evidence_items", enhanced["evidence_bundle"])
         self.assertNotIn("provenance", enhanced["evidence_bundle"])
 
+    @unittest.skip("web runtime presentation inference was removed")
     def test_lazy_enhancement_reaches_provider_when_optional_evidence_fails(self):
         class WorkingProvider(PresentationProvider):
             model = "fixture-model"
@@ -785,6 +786,7 @@ class CompanionContextServiceTests(unittest.TestCase):
 
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
     @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
+    @unittest.skip("web runtime presentation inference was removed")
     def test_lazy_enhancement_rejects_stale_evidence_hash(self, _map_lookup, _archaeology_lookup):
         service, library = self._service()
         initial = service.build(book="John", chapter=4, verse_start=23)
@@ -840,7 +842,6 @@ class CompanionContextRouteTests(unittest.TestCase):
                 app,
                 study_db_path=str(database),
                 templates=None,
-                job_store=None,
                 companion_context_service=service,
             )
 
@@ -895,7 +896,6 @@ class CompanionContextRouteTests(unittest.TestCase):
             app,
             study_db_path="unused.sqlite",
             templates=None,
-            job_store=None,
             companion_context_service=service,
         )
 
@@ -956,7 +956,6 @@ class CompanionContextRouteTests(unittest.TestCase):
             app,
             study_db_path="unused.sqlite",
             templates=None,
-            job_store=None,
             companion_context_service=service,
         )
 
@@ -991,6 +990,7 @@ class CompanionContextRouteTests(unittest.TestCase):
         self.assertIsNotNone(service.thread_id)
         self.assertNotEqual(service.thread_id, event_loop_id)
 
+    @unittest.skip("web runtime presentation inference routes were removed")
     def test_lazy_presentation_endpoint_uses_explicit_evidence_fingerprint(self):
         class FakeService:
             def __init__(self):
@@ -1063,6 +1063,7 @@ class CompanionContextRouteTests(unittest.TestCase):
         self.assertEqual(service.calls[0]["book"], "John")
         self.assertEqual(service.calls[0]["chapter"], 4)
 
+    @unittest.skip("web runtime presentation inference routes were removed")
     def test_lazy_presentation_endpoint_rejects_unsupported_request_provider(self):
         class FakeService:
             def __init__(self):
@@ -1122,6 +1123,7 @@ class CompanionContextRouteTests(unittest.TestCase):
         self.assertEqual(adapter_calls, [])
         self.assertEqual(service.calls, [])
 
+    @unittest.skip("web runtime presentation inference was removed")
     def test_ai_context_presenter_runs_outside_the_event_loop_thread(self):
         class FakeRouter:
             def execute(self, action, **values):
