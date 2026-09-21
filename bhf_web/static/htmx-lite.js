@@ -725,8 +725,7 @@ async function initializeReader() {
     "[data-reader-translation-import]",
   );
   const reader = document.querySelector("#chapter-reader");
-  const askForm = document.querySelector(".ask-form");
-  if (!bookSelect || !chapterSelect || !reader || !askForm) {
+  if (!bookSelect || !chapterSelect || !reader) {
     return;
   }
 

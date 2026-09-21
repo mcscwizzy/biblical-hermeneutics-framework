@@ -60,6 +60,15 @@ def test_ask_bhf_restores_focus_to_its_trigger_on_close(driver, wait, base_url):
 def test_escape_closes_handoff_without_collapsing_companion(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    wait.until(
+        lambda _driver: any(
+            resource.is_displayed()
+            for resource in _driver.find_elements(
+                By.CSS_SELECTOR, '[data-companion-resource="maps"]'
+            )
+        )
+    )
     page = AskPage(driver, wait, base_url)
     page.open_workspace()
     companion = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")

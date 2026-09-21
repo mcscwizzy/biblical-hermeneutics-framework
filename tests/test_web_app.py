@@ -630,6 +630,12 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("copyContextToClipboard", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
 
+    def test_reader_initialization_does_not_require_removed_ask_form(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+
+        self.assertNotIn('const askForm = document.querySelector(".ask-form")', script)
+        self.assertIn("if (!bookSelect || !chapterSelect || !reader) {", script)
+
     def test_map_workspace_opens_from_map_panel_events(self):
         reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")

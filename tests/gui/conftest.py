@@ -131,6 +131,44 @@ def browser_remote_url() -> str | None:
     return value or None
 
 
+def _seed_browser_offline_fixture(browser, base_url: str) -> None:
+    browser.get(f"{base_url}/offline")
+    result = browser.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          await new Promise((resolve, reject) => {
+            const request = indexedDB.deleteDatabase("bhf-offline");
+            request.onsuccess = request.onerror = request.onblocked = resolve;
+          });
+          await new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = "/static/offline/db.js?v=gui-fixture";
+            script.onload = resolve;
+            script.onerror = () => reject(new Error("offline database script failed to load"));
+            document.head.appendChild(script);
+          });
+          if (!window.BHFOfflineDB) {
+            throw new Error("BHFOfflineDB did not initialize");
+          }
+          const response = await fetch("/api/translations/kjv/offline-data", {
+            headers: {Accept: "application/json", "X-BHF-Refresh": "true"},
+          });
+          if (!response.ok) {
+            throw new Error(`KJV offline fixture returned HTTP ${response.status}`);
+          }
+          await window.BHFOfflineDB.cacheApiResponse(
+            "/api/translations/kjv/offline-data",
+            await response.json(),
+          );
+          return {translation: "kjv"};
+        })().then(done).catch((error) => done({error: String(error)}));
+        """,
+    )
+    if result.get("error"):
+        raise RuntimeError(result["error"])
+
+
 @pytest.fixture(scope="function")
 def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_url: str | None):
     pytest.importorskip("selenium")
@@ -169,6 +207,14 @@ def driver(request: pytest.FixtureRequest, artifacts_dir: Path, browser_remote_u
 
     browser.set_page_load_timeout(DEFAULT_WAIT_SECONDS)
     browser.set_script_timeout(DEFAULT_WAIT_SECONDS)
+    base_url = request.getfixturevalue("base_url")
+    if request.node.path.name == "test_ask.py":
+        browser.execute_cdp_cmd("Network.enable", {})
+        browser.execute_cdp_cmd(
+            "Network.setBlockedURLs",
+            {"urls": ["*/static/pwa.js*"]},
+        )
+    _seed_browser_offline_fixture(browser, base_url)
 
     yield browser
 
