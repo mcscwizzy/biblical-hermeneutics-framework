@@ -675,7 +675,6 @@ function openSavedStudy(studyId) {
     .then((html) => {
       answerPanel.innerHTML = html;
       activeLiveAnswerPanel = answerPanel;
-      latestJobComplete = false;
       wireAnswerPanelControls(answerPanel);
     });
 }
@@ -800,7 +799,7 @@ function updateSaveButtons() {
     const isActive = isAskFormButton
       ? activeLiveAnswerPanel?.id === "answer-panel"
       : Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
-    button.disabled = isGeneralQuestion || !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
+    button.disabled = isGeneralQuestion || !isActive;
   });
 }
 

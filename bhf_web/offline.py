@@ -60,9 +60,7 @@ def build_offline_manifest() -> dict[str, Any]:
                 "imported_translations",
             ],
             "requires_online_or_local_runtime": [
-                "ai_ask",
-                "llm_health",
-                "ai_search_fallback",
+                "assistant_handoff",
                 "translation_downloads",
                 "licensed_provider_content",
             ],

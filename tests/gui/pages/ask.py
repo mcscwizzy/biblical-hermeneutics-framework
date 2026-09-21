@@ -8,38 +8,32 @@ from .base import BasePage
 
 class AskPage(BasePage):
     def open_workspace(self):
-        self.driver.execute_script(
-            "window.BHFStudyCompanion && window.BHFStudyCompanion.openResource('ask');"
-        )
+        self.click("[data-ask-bhf]")
         self.wait.until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]'))
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-dialog]"))
         )
         return self
 
     def ask(self, question: str):
         self.open_workspace()
         question_box = self.wait.until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]'))
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-question]"))
         )
         question_box.clear()
         question_box.send_keys(question)
-        self.click('[data-testid="ask-submit"]')
+        self.click("[data-ask-bhf-primary]")
         return self
 
-    def wait_for_status_started(self):
-        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="agent-status"]')))
-        self.wait.until(
-            lambda driver: driver.find_element(By.CSS_SELECTOR, '[data-testid="agent-status"]').text.strip() != ""
-        )
-        return self
+    def reference(self):
+        return self.wait.until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-reference]"))
+        ).text
 
-    def wait_for_answer_or_error(self):
-        self.wait.until(
-            lambda driver: (
-                "Could not ask BHF" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
-                or "Deterministic test answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
-                or "Test answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
-                or "Answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
-            )
-        )
+    def status(self):
+        return self.wait.until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "[data-ask-bhf-status]"))
+        ).text
+
+    def close(self):
+        self.click("[data-ask-bhf-close]")
         return self

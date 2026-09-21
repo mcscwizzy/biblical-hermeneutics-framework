@@ -16,20 +16,9 @@ services:
       BHF_RUNTIME_MODE: "${BHF_RUNTIME_MODE:-web}"
       BHF_BACKEND_MODE: "${BHF_BACKEND_MODE:-same-origin}"
       BHF_API_BASE_URL: "${BHF_API_BASE_URL:-}"
+      BHF_ASSISTANT_URL: "${BHF_ASSISTANT_URL:-https://chatgpt.com/g/g-6a36d3641a1c8191afa101ed50a927e9-biblical-hermeneutics-framework-bhf}"
       BHF_CORS_ORIGINS: "${BHF_CORS_ORIGINS:-}"
-      LLM_PROVIDER: "${LLM_PROVIDER:-openrouter}"
-      BHF_BASE_URL: "${BHF_BASE_URL:-https://openrouter.ai/api/v1}"
-      BHF_MODEL: "${BHF_MODEL:-openrouter/free}"
-      BHF_API_KEY: "${BHF_API_KEY:-}"
-      BHF_PROFILE: "${BHF_PROFILE:-standard}"
-      BHF_ANSWER_MODE: "${BHF_ANSWER_MODE:-study}"
-      BHF_TEMPERATURE: "${BHF_TEMPERATURE:-0.3}"
-      BHF_MAX_TOKENS: "${BHF_MAX_TOKENS:-1536}"
-      BHF_CONTEXT_WINDOW: "${BHF_CONTEXT_WINDOW:-8192}"
-      BHF_TIMEOUT_SECONDS: "${BHF_TIMEOUT_SECONDS:-120}"
-      BHF_SHOW_METHOD_NOTES: "${BHF_SHOW_METHOD_NOTES:-true}"
       BHF_DATA_DIR: /app/.bhf-data
-      BHF_MEMORY_ENABLED: "${BHF_MEMORY_ENABLED:-false}"
       BHF_MEMORY_PATH: /app/.bhf-data/sessions
       BHF_LEXICAL_DATABASE_PATH: /app/.bhf-data/lexicon.sqlite
       BHF_LEXICAL_SEED_POLICY: "${BHF_LEXICAL_SEED_POLICY:-refresh}"

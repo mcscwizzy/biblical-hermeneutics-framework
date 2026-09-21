@@ -1,224 +1,71 @@
-# BHF Architecture
+# BHF architecture
 
-BHF has two related products in one repository:
+BHF has two related concerns in one repository:
 
-1. A composable Markdown hermeneutics framework that can be copied into any AI
-   system prompt.
-2. A Python/FastAPI application that retrieves local evidence and asks a chosen
-   model to synthesize a study answer.
+1. A composable Markdown hermeneutics framework and maintainer-side generation
+   tooling.
+2. A Python/FastAPI study application whose normal web runtime is
+   model-independent.
 
-The application does not ask the model to discover BHF files or perform CKL
-or archaeology retrieval. BHF gathers and bounds the evidence first; the model explains it.
+## Runtime boundary
+
+```text
+Browser / BHF application
+    deterministic Scripture, Commentary, CKL, lexicon, archaeology, maps,
+    cross-references, notes, and offline study data
+        ↓
+    Ask BHF handoff modal
+        ↓ clipboard + new tab
+External BHF assistant
+    conversational synthesis and follow-up
+```
+
+The current external destination is the BHF assistant hosted in ChatGPT. It is
+configured through the generic `BHF_ASSISTANT_URL` setting and injected as
+`assistantUrl`. A future plugin or supported assistant destination can replace
+the URL without changing the reader or evidence layer.
+
+The browser never embeds, scrapes, or automates the external assistant. Opening
+the modal, preparing text, browsing Scripture, and using deterministic study
+tools make no LLM/provider request. Users do not configure providers, API keys,
+models, endpoints, context windows, or output limits inside BHF.
 
 ## Evidence domains
 
-Scripture, CKL, Lexicon, Archaeology, Commentary, Maps, and Timeline are peer
-evidence domains. CKL owns curated biblical and interpretive context.
-Archaeology owns deterministic material evidence: sites, artifacts,
-inscriptions, excavations, dating, cautions, media, licensing, provenance, and
-Scripture links. They cross-reference stable IDs but neither owns the other's
-content or media.
+Scripture, CKL, lexicon, archaeology, Commentary v1.2, maps, and timeline are
+peer evidence domains. The application retrieves and renders deterministic
+evidence, preserves provenance and uncertainty, and keeps device-local notes,
+highlights, and saved studies available offline where supported.
 
-## Answer flow
+The companion context endpoint returns deterministic evidence bundles and
+precomputed presentation packets. It does not perform runtime inference.
 
-```mermaid
-flowchart TD
-    U[User question or reader selection] --> W[FastAPI web route, background ask job, or CLI]
-    W --> I[Normalize request and create request ID]
-    I --> D[Detect Scripture reference]
-    D --> S[Load focal passage and full chapter context]
-    S --> C[Classify genre and question type]
+## Maintainer boundary
 
-    C --> L[Gather local knowledge and map context]
-    C --> X{Word-study request?}
-    X -->|Yes| LX[Query generated Greek/Hebrew lexicon]
-    X -->|No| PKG
-    C --> K[Build and rank CKL query]
-    K --> KC[Select token-bounded CKL context]
-    C --> A[Resolve deterministic archaeology when relevant]
-    L --> PKG[Package retrieved evidence]
-    LX --> PKG
-    KC --> PKG
-    A --> PKG
+The repository still contains model adapters, provider modules, prompts,
+commentary-generation commands, renderer qualification, evidence compilation,
+and conformance tests needed for future offline release engineering and
+historical reproducibility. Those modules are not imported by the web runtime
+routes or browser assets.
 
-    PKG --> CV[Evaluate requested-dimension coverage]
-    CV --> PC{Validated reviewed-answer cache hit?}
-    PC -->|Yes| F[Finalize public answer]
-    PC -->|No| RC{Exact response cache hit?}
-    RC -->|Yes| F
-    RC -->|No| P[Build system and user prompts]
-    P --> M[OpenRouter, Ollama, or OpenAI-compatible model]
-    M --> N[Normalize and remove leaked runtime text]
-    N --> V[Validate the answer contract and method]
-    V --> R{Repair enabled and needed?}
-    R -->|Yes| RP[One validation-guided repair call]
-    R -->|No| F
-    RP --> F
-    F --> O[Answer prose returned to UI or CLI]
-```
-
-Not every branch runs for every request. Lexical retrieval is limited to word
-studies or explicit Strong's queries. Session memory and caches are optional.
-External research is disabled by default. A model failure returns a controlled
-error; it does not turn raw retrieved records into an answer.
-
-The Bible-search fallback is a separate deterministic path. It searches local
-Bible and CKL data for likely passages and returns structured suggestions
-without calling a model.
-
-Reader discoveries use a separate exploration-first path. Passage-scoped CKL,
-map, and archaeology records are normalized into an `EvidenceBundle`, narrowed
-by deterministic salience ranking, and rendered as a validated structured
-`PresentationPacket`. This path may use a provider as a curator, but works
-offline with no model. Valid generated packets use a separate disposable
-SQLite cache keyed by evidence and presentation versions; they are never
-written into CKL. See
-[`contextual-presentation.md`](contextual-presentation.md).
-
-## What each layer owns
-
-```mermaid
-flowchart LR
-    subgraph Browser[Browser / installed PWA]
-        UI[Reader and study workspace]
-        IDB[IndexedDB: translations, packs, notes, highlights, saved studies]
-        SW[Service worker and Cache Storage]
-    end
-
-    subgraph Server[FastAPI application]
-        API[Web routes and ask jobs]
-        AG[ BHF agent pipeline ]
-        DB[SQLite: study data, CKL, lexicon]
-        MOD[Framework modules and bundled Bible data]
-    end
-
-    subgraph Provider[Selected model service]
-        LLM[OpenRouter / Ollama / OpenAI-compatible API]
-    end
-
-    UI <--> API
-    UI <--> IDB
-    SW <--> UI
-    API --> AG
-    AG <--> DB
-    AG --> MOD
-    AG --> LLM
-    LLM --> AG
-```
-
-The browser owns PWA caches and device-local imported translations and records.
-The server owns deterministic retrieval and prompt construction. The selected
-provider receives the constructed model request and returns a draft answer.
-
-OpenRouter credentials connected through the UI are encrypted in browser
-storage. The decrypted value is held in browser memory and sent to the BHF
-server for the current request. It must not be written to logs, saved studies,
-offline exports, or service-worker caches.
-
-## Runtime responsibilities
-
-| Component | Responsibility |
-|---|---|
-| `bhf_web/app.py` | Creates the FastAPI app, mounts assets, and exposes health, PWA, Bible, and supporting API routes. |
-| `bhf_web/routes/ask.py` | Accepts synchronous and background ask requests and returns public answer prose. |
-| `bhf_web/jobs.py` | Persists bounded Ask and presentation lifecycle state in SQLite and runs Ask, presentation, or deterministic search-fallback jobs. |
-| `bhf_agent/runner.py` | Orchestrates the end-to-end evidence, cache, prompt, model, cleanup, validation, repair, and result pipeline. |
-| `bhf_agent/prompts.py` | Constructs the unified runtime prompt and answer contract. |
-| `bhf_agent/adapters/` | Implements OpenRouter, native Ollama, and OpenAI-compatible HTTP calls. |
-| `bhf_agent/presentation/` | Normalizes evidence, ranks salience, constrains optional presentation generation, validates cards/actions, versions caches, and renders deterministic fallback discoveries. |
-| `framework/canonical_library/` | Loads, ranks, validates, relates, and serializes curated CKL objects. |
-| `framework/lexical/` | Builds and queries the generated lexical and verse-token database. |
-| `framework/core/`, `genres/`, `books/`, `context/`, `language/` | Stores the portable Markdown hermeneutics framework. |
-| `bhf_web/static/sw.js` and `offline.py` | Define the PWA shell cache and installable offline data packs. |
-
-## Evidence boundary
-
-Internally, the runner builds a `RetrievedEvidence` package containing selected
-Scripture, immediate context, CKL objects, lexical entries, direct facts, and
-references. That package can inform prompt construction but is not a public
-response type.
-
-Only validated synthesis prose becomes the final answer. Normal ask responses
-do not expose CKL scores, filenames, serialized entries, prompts, or hidden
-analysis. Debug routes and saved-study views may expose explicitly controlled
-metadata for development or provenance.
-
-## Knowledge and fallback behavior
-
-CKL retrieval relevance and answer coverage are different signals:
-
-- Retrieval relevance asks whether a CKL object matches the query.
-- Answer coverage asks whether the gathered evidence addresses the dimensions
-  requested by the user.
-
-After Scripture, CKL, lexical, map, genre, and other local context are gathered,
-BHF assigns one of three routing modes: CKL-primary, targeted gap expansion, or
-broad knowledge expansion. Model-knowledge expansion can be disabled, and
-external retrieval requires an explicitly enabled provider. Strict CKL mode
-blocks both. These runtime settings live in the agent's `knowledge_expansion`
-configuration and are intended for advanced local deployments rather than
-ordinary reader setup.
-
-## Framework module composition
-
-The portable framework consists of Markdown files with YAML frontmatter and a
-fixed-section body. The authoritative contract is
-[`module-spec.md`](module-spec.md).
-
-| Type | Folder | Role |
-|---|---|---|
-| `core` | `framework/core/` | Always-on interpretive posture. |
-| `genre` | `framework/genres/` | Guidance for a literary genre. |
-| `book` | `framework/books/` | Guidance for a biblical book. |
-| `context` | `framework/context/` | Historical, cultural, literary, and social context. |
-| `language` | `framework/language/` | Original-language and literary-device guidance. |
-| `profile` | `profiles/` | Generated bundles for copy/paste use. |
-
-`tools/compose.py` resolves transitive `requires` dependencies, applies core
-inclusions, topologically orders modules, and concatenates them within a token
-budget. `tools/validate.py` verifies the schema, dependency graph, links, and
-generated profiles.
+The web application retains only deterministic routes such as:
 
 ```text
-selected modules -> dependency closure -> stable topological order -> prompt
+GET  /api/bible/{book}/{chapter}
+GET  /api/study/companion-context
+POST /api/study/actions
+GET  /api/bhf-commentary/{book}/{chapter}
 ```
 
-The generated prompt profiles remain useful outside the application. The
-application's agent path now uses a compact unified runtime prompt and retains
-legacy profile and answer-mode values only for compatibility.
+There is no runtime `/ask`, provider health, fallback-inference, or presentation
+generation API surface.
 
-## Storage and process boundaries
+## Offline behavior
 
-- `.bhf-data/study.sqlite` stores server-side study data in a source checkout.
-- `.bhf/ckl.sqlite` is the generated local CKL database.
-- `<study-db-stem>.presentation-cache.sqlite` stores disposable, validated
-  presentation packets separately from CKL when optional generation is enabled.
-- `framework/lexical/database/lexicon.sqlite` is the default source-run lexical
-  database; Docker uses `.bhf/lexicon.sqlite` on the host mount.
-- `.bhf-data/sessions/` stores optional web-agent session memory.
-- Browser IndexedDB and Cache Storage contain PWA data for that browser profile.
-- Background ask-job progress is process memory and disappears on restart.
+The service worker and IndexedDB cache Bible/study assets and device-local
+records. Reader, Commentary, CKL/evidence, lexicon data, maps, notes,
+highlights, and saved studies remain independent of the assistant destination.
+Only the external conversation handoff naturally requires network access.
 
-All `.bhf/` data is ignored by Git. A Docker volume must mount at
-`/app/.bhf-data`, not `/app/.bhf`, because the image-owned `/app/.bhf/ckl.sqlite`
-would otherwise be hidden.
-
-## Deployment boundary
-
-The supplied Compose files are intended for localhost or a trusted LAN. The app
-does not provide user accounts, authentication, rate limiting, or general
-public-internet hardening. A public deployment needs an HTTPS reverse proxy and
-the operator's own authentication, abuse controls, monitoring, backup, and
-secret-management plan.
-
-## Versioning
-
-BHF uses two levels of semantic versioning:
-
-- Framework version (`VERSION`, `CHANGELOG.md`): major for a breaking module
-  contract or core-method change, minor for new modules or sections, and patch
-  for corrections.
-- Per-module `version` frontmatter: tracks an individual module independently.
-
-Module lifecycle uses `draft`, `review`, `stable`, and `deprecated`. Releases
-are Git tags such as `v0.2.0`.
+See [Ask BHF assistant handoff](assistant-handoff.md) and
+[Frontend and backend routing](deployment-routing.md) for deployment details.

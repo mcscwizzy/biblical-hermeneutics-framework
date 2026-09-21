@@ -21,10 +21,8 @@ const STATIC_ASSETS = [
   "/static/styles/discoveries.css",
   "/static/api/http.js",
   "/static/api/backend-routing.js",
-  "/static/api/job-flow.js",
   "/static/offline/db.js",
   "/static/study-vault.js",
-  "/static/model-settings.js",
   "/static/htmx-lite.js",
   "/static/reader-selection.js",
   "/static/study-recommendations.js",
@@ -245,12 +243,7 @@ function isAuthCallbackUrl(url) {
 }
 
 function isLiveBackendJobRequest(url) {
-  return url.pathname === "/ask"
-    || url.pathname.startsWith("/ask/")
-    || url.pathname === "/api/bible/search/fallback"
-    || url.pathname.startsWith("/api/bible/search/fallback/")
-    || url.pathname === "/api/study/presentation"
-    || url.pathname.startsWith("/api/study/presentation/");
+  return false;
 }
 
 function isCacheableApiRequest(url) {
@@ -280,13 +273,7 @@ function isCacheableApiRequest(url) {
 }
 
 function isAiOnlyApiRequest(url) {
-  return [
-    "/api/llm/health",
-    "/api/bible/search/fallback",
-    "/api/debug/ckl-search",
-    "/api/study/presentation",
-    "/ask",
-  ].some((path) => url.pathname === path || url.pathname.startsWith(path));
+  return url.pathname === "/api/debug/ckl-search";
 }
 
 async function cacheAssets(cache, assets) {

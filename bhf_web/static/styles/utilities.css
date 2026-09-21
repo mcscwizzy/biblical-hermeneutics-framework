@@ -1033,8 +1033,7 @@ html[data-theme="dark"] .app-dock {
   .notes-panel,
   .highlights-panel,
   .saved-studies-panel,
-  .map-panel,
-  .map-ai-panel {
+  .map-panel {
     min-height: 0;
     overflow-y: auto;
   }
@@ -1214,7 +1213,6 @@ html[data-theme="dark"] .saved-studies-panel,
 html[data-theme="dark"] .notes-panel,
 html[data-theme="dark"] .highlights-panel,
 html[data-theme="dark"] .map-panel,
-html[data-theme="dark"] .map-ai-panel,
 html[data-theme="dark"] .reader-search-results,
 html[data-theme="dark"] .search-result-card,
 html[data-theme="dark"] .workspace-panel,

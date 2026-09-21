@@ -306,7 +306,6 @@ body.companion-sheet-full {
 .study-companion .workspace-pane > .highlights-panel,
 .study-companion .workspace-pane > .saved-studies-panel,
 .study-companion .workspace-pane > .map-panel,
-.study-companion .workspace-pane > .map-ai-panel,
 .study-companion .workspace-pane > .canonical-browser-panel,
 .study-companion .commentary-panel {
   border: 0;
@@ -726,16 +725,103 @@ body.companion-sheet-full {
   font-weight: 650;
 }
 
-.companion-quick-ask {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
-  margin-top: 12px;
+.ask-bhf-dialog {
+  width: min(640px, calc(100vw - 32px));
+  max-width: 100%;
+  max-height: min(760px, calc(100dvh - 32px));
+  padding: 0;
+  overflow: hidden;
+  color: var(--page-text);
+  border: 0;
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
 }
 
-.companion-quick-ask input,
-.companion-quick-ask button {
-  min-height: 44px;
+.ask-bhf-dialog::backdrop {
+  background: rgb(10 24 38 / 62%);
+}
+
+.ask-bhf-dialog-shell {
+  display: grid;
+  max-height: inherit;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.ask-bhf-dialog-header,
+.ask-bhf-dialog-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+}
+
+.ask-bhf-dialog-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.ask-bhf-dialog-header h2,
+.ask-bhf-dialog-header p {
+  margin: 0;
+}
+
+.ask-bhf-dialog-header .eyebrow {
+  margin-bottom: 4px;
+}
+
+.ask-bhf-dialog-header p:not(.eyebrow) {
+  max-width: 60ch;
+  margin-top: 6px;
+  color: var(--page-muted);
+}
+
+.ask-bhf-dialog-body {
+  display: grid;
+  min-width: 0;
+  gap: 16px;
+  padding: 20px 22px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.ask-bhf-reference {
+  margin: 0;
+  color: var(--accent-strong);
+  font-weight: 750;
+}
+
+.ask-bhf-field {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+  font-weight: 700;
+}
+
+.ask-bhf-field textarea {
+  width: 100%;
+  min-width: 0;
+  resize: vertical;
+}
+
+.ask-bhf-status {
+  min-height: 1.35em;
+  margin: 0;
+  color: var(--page-muted);
+}
+
+.ask-bhf-dialog-actions {
+  flex-wrap: wrap;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.ask-bhf-open-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .companion-text-button {
@@ -836,6 +922,30 @@ body.companion-sheet-full {
 }
 
 @media (max-width: 900px) {
+  .ask-bhf-dialog {
+    width: min(100vw - 16px, 640px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .ask-bhf-dialog-header,
+  .ask-bhf-dialog-body,
+  .ask-bhf-dialog-actions {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .ask-bhf-dialog-actions {
+    position: sticky;
+    bottom: 0;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .ask-bhf-dialog-actions > button,
+  .ask-bhf-dialog-actions > a {
+    flex: 1 1 100%;
+    min-height: 44px;
+  }
+
   .reader-page {
     width: min(100% - 24px, 1440px);
     padding-bottom: calc(22px + var(--app-dock-height) + env(safe-area-inset-bottom));

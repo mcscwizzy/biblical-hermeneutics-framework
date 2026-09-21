@@ -644,7 +644,6 @@ class StudyActionRouterTests(unittest.TestCase):
                 app,
                 study_db_path=str(tmp_path / "study.sqlite"),
                 templates=None,
-                job_store=None,
                 study_action_router=router,
             )
 

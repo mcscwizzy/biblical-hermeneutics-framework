@@ -2,21 +2,16 @@
 
 from __future__ import annotations
 
-import json
 import os
 from typing import Any, Mapping
 from urllib.parse import urlsplit
 
 from bhf_agent.runtime_paths import configured_commentary_release
 
-from .ai_config import browser_ai_config
-
-DEFAULT_PROVIDER_LABELS: dict[str, str] = {
-    "local": "Local",
-    "openai": "OpenAI",
-    "ollama": "Ollama",
-    "apple-native-placeholder": "Apple Native Placeholder",
-}
+DEFAULT_ASSISTANT_URL = (
+    "https://chatgpt.com/g/g-6a36d3641a1c8191afa101ed50a927e9-"
+    "biblical-hermeneutics-framework-bhf"
+)
 
 DEFAULT_BREAKPOINTS: dict[str, int] = {
     "phone": 680,
@@ -40,20 +35,6 @@ def load_runtime_config() -> dict[str, Any]:
         backend_mode,
         api_base_url,
     )
-    is_vercel_same_origin = (
-        backend_mode == "same-origin" and bool(os.environ.get("VERCEL"))
-    )
-    async_jobs = not is_vercel_same_origin
-    if backend_config_error:
-        presentation_transport = "unavailable"
-    elif backend_mode == "remote":
-        presentation_transport = "job"
-    elif is_vercel_same_origin:
-        presentation_transport = "synchronous"
-    else:
-        presentation_transport = "job"
-    provider_labels = _load_provider_labels()
-
     return {
         "appName": "BHF Bible Reader",
         "shortName": "BHF Bible",
@@ -61,25 +42,14 @@ def load_runtime_config() -> dict[str, Any]:
         "backendMode": backend_mode,
         "apiBaseUrl": api_base_url,
         "backendConfigError": backend_config_error,
-        # Vercel instances cannot reliably preserve an in-memory/SQLite job
-        # between polling requests.  The browser uses the synchronous /ask
-        # route there, while durable and self-hosted backends keep progress
-        # polling through /ask/jobs.
-        "asyncJobs": async_jobs,
-        # Presentation transport is explicit so the browser never has to infer
-        # deployment topology. Persistent backends use durable local jobs;
-        # same-origin Vercel keeps generation attached to one bounded request.
-        "presentationTransport": presentation_transport,
-        # Backwards compatibility for clients that only know the old job flag.
-        "presentationJobs": presentation_transport == "job",
-        "providerLabels": provider_labels,
+        "assistantUrl": os.environ.get("BHF_ASSISTANT_URL", "").strip()
+        or DEFAULT_ASSISTANT_URL,
         "breakpoints": dict(DEFAULT_BREAKPOINTS),
         "themeColor": "#245b82",
         "backgroundColor": "#f6f7f8",
         "enableServiceWorker": mode != "capacitor",
         "offlinePath": "/offline",
         "commentaryRelease": configured_commentary_release(),
-        "ai": browser_ai_config(),
         # OAuth client IDs and redirect URLs are public configuration. Secrets
         # are never injected into the browser; OneDrive uses PKCE.
         "studyVault": {
@@ -156,23 +126,3 @@ def load_cors_origins(environ: Mapping[str, str] | None = None) -> list[str]:
         if origin not in origins:
             origins.append(origin)
     return origins
-
-
-def _load_provider_labels() -> dict[str, str]:
-    raw = os.environ.get("BHF_PROVIDER_LABELS_JSON", "").strip()
-    if not raw:
-        return dict(DEFAULT_PROVIDER_LABELS)
-
-    try:
-        data = json.loads(raw)
-    except json.JSONDecodeError:
-        return dict(DEFAULT_PROVIDER_LABELS)
-
-    if not isinstance(data, dict):
-        return dict(DEFAULT_PROVIDER_LABELS)
-
-    labels: dict[str, str] = dict(DEFAULT_PROVIDER_LABELS)
-    for key, value in data.items():
-        if isinstance(key, str) and isinstance(value, str) and key.strip():
-            labels[key.strip()] = value.strip()
-    return labels

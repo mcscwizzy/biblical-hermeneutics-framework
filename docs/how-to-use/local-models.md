@@ -1,7 +1,12 @@
-# Using BHF with local models (Ollama, LM Studio, Open WebUI)
+# Using BHF prompt profiles with local models
 
-BHF works fully offline with local models. Compose a prompt and load it as the
-model's system prompt.
+This guide covers the standalone prompt framework only. The BHF web
+application does not connect to Ollama, LM Studio, Open WebUI, or another model
+runtime. In the application, use **Ask BHF** to hand a study question to the
+configured external BHF assistant.
+
+If you are using BHF's generated profiles outside the application, compose a
+profile and load it as the local model's system prompt.
 
 ## Ollama
 

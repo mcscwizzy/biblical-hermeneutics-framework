@@ -24,7 +24,9 @@
   let saveStateController = null;
   let historyController = null;
   let viewportController = null;
+  let handoffController = null;
   let lastTrigger = null;
+  let lastAskTrigger = null;
   let lastResourceTrigger = null;
   let lastCompact = null;
   let resizeFrame = null;
@@ -54,12 +56,12 @@
       button.addEventListener("click", () => performPersonalAction(button.dataset.companionAction));
     });
     panel.addEventListener("click", handleCompanionClick);
-    panel.querySelector("[data-companion-quick-ask]")?.addEventListener("submit", handleQuickAsk);
+    const askButton = panel.querySelector("[data-ask-bhf]");
+    askButton?.addEventListener("click", () => openAsk("", askButton));
     actionStrip?.addEventListener("click", handlePassageAction);
     document.querySelector("[data-app-dock]")?.addEventListener("click", handlePrimaryNavigation);
     document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChanged);
     document.addEventListener("bhf:companion-context-invalidated", handleContextInvalidated);
-    document.addEventListener("bhf:ai-presentation-setting-changed", handleAiPresentationSettingChanged);
     window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleEscape);
 
@@ -81,14 +83,12 @@
     contextController = window.BHFCompanionContextController?.create?.({
       onLoading: () => {
         if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
         renderLoadingState();
         renderDiscoveries({});
         renderEntities([]);
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
         renderDiscoveries(context);
         renderRecommendations(context);
         renderEntities([
@@ -99,36 +99,6 @@
         if (currentResource && currentMode === "passage") {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
         }
-      },
-      onEnhanced: (context) => {
-        if (currentMode !== "passage") return;
-        renderDiscoveries(context);
-        renderPresentationStatus("generated");
-      },
-      onEnhancementLoading: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("generating");
-      },
-      onEnhancementUnavailable: (reason) => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("unavailable", reason);
-      },
-      onEnhancementFallback: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("fallback");
-      },
-      onEnhancementError: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("failed");
-      },
-      onEnhancementCancelled: () => {
-        if (currentMode !== "passage") return;
-        renderPresentationStatus("idle");
-      },
-      onPresentationReset: (context) => {
-        if (currentMode !== "passage") return;
-        renderDiscoveries(context);
-        renderPresentationStatus("idle");
       },
       onError: (message) => {
         if (currentMode !== "passage") return;
@@ -169,6 +139,20 @@
     if (window.BHFStudySelection?.subscribe) {
       window.BHFStudySelection.subscribe(handleSelectionChange);
     }
+    handoffController = window.BHFAssistantHandoff?.create?.({
+      dialog: document.querySelector("[data-ask-bhf-dialog]"),
+      reference: document.querySelector("[data-ask-bhf-reference]"),
+      question: document.querySelector("[data-ask-bhf-question]"),
+      prepared: document.querySelector("[data-ask-bhf-prepared]"),
+      status: document.querySelector("[data-ask-bhf-status]"),
+      primary: document.querySelector("[data-ask-bhf-primary]"),
+      manualCopy: document.querySelector("[data-ask-bhf-manual-copy]"),
+      openFallback: document.querySelector("[data-ask-bhf-open]"),
+      getSelection: () => window.BHFStudySelection?.getState?.() || {},
+    });
+    const handoffDialog = document.querySelector("[data-ask-bhf-dialog]");
+    document.querySelector("[data-ask-bhf-close]")?.addEventListener("click", () => handoffController?.close?.());
+    handoffDialog?.addEventListener("close", restoreAskFocus);
 
     window.BHFStudyCompanion = Object.freeze({
       setState,
@@ -180,14 +164,6 @@
       getContext: () => contextController?.getRecord?.().context || null,
       getContextRecord: () => contextController?.getRecord?.(),
     });
-  }
-
-  function handleAiPresentationSettingChanged(event) {
-    if (event?.detail?.enabled === true) {
-      contextController?.refreshEnhancement?.();
-    } else {
-      contextController?.cancelEnhancement?.();
-    }
   }
 
   function setState(nextState, options = {}) {
@@ -367,11 +343,6 @@
     if (description) {
       description.textContent = "Search across Scripture and BHF’s research collections. Explore questions are not limited to the selected passage.";
     }
-    const input = panel.querySelector("#companion-question");
-    if (input) {
-      input.placeholder = "Search or ask about the Bible…";
-      input.setAttribute("aria-label", "Search or ask about the Bible");
-    }
     renderSuggestions([
       "Who was Paul?",
       "Where was Nineveh?",
@@ -488,12 +459,7 @@
     const card = panel.querySelector(".companion-ask-card");
     const description = card?.querySelector(".companion-section-heading p");
     if (description) {
-      description.textContent = "AI explains the local research and Scripture context; it does not replace them.";
-    }
-    const input = panel.querySelector("#companion-question");
-    if (input) {
-      input.placeholder = "Ask about this passage…";
-      input.setAttribute("aria-label", "Ask about this passage");
+      description.textContent = "Bring a question from this Scripture and research context to the BHF assistant.";
     }
   }
 
@@ -557,11 +523,7 @@
         await actions?.perform?.("open_map_panel", mapContext);
       }
     } else if (resourceId === "ask") {
-      actions?.openWorkspaceTab?.("ask");
-      window.BHFWorkspace?.focusAskPanel?.({
-        questionScope: options.questionScope,
-        appSection: options.appSection,
-      });
+      document.querySelector("[data-ask-bhf]")?.click();
     } else if (RESOURCE_ACTIONS.has(resourceId)) {
       await actions?.perform?.(resourceId);
     }
@@ -611,7 +573,7 @@
     }
     const question = event.target.closest("[data-companion-question]");
     if (question) {
-      openAsk(question.dataset.companionQuestion);
+      openAsk(question.dataset.companionQuestion, question);
       return;
     }
     const entity = event.target.closest("[data-companion-entity]");
@@ -635,25 +597,16 @@
     return new Set(context?.evidence_bundle?.geography?.map_location_refs || []);
   }
 
-  function handleQuickAsk(event) {
-    event.preventDefault();
-    const input = event.currentTarget.elements.question;
-    const question = String(input?.value || "").trim();
-    openAsk(question);
+  function openAsk(question, trigger = null) {
+    lastAskTrigger = trigger || document.activeElement;
+    handoffController?.open?.();
+    const field = document.querySelector("[data-ask-bhf-question]");
+    if (field && question) field.value = question;
+    field?.focus?.({preventScroll: true});
   }
 
-  function openAsk(question) {
-    const isExploreQuestion = currentMode === "explore";
-    window.BHFStudyActions?.syncAskSelection?.();
-    const field = document.querySelector('.ask-form [name="question"]');
-    if (field && question) {
-      field.value = question;
-      field.dispatchEvent(new Event("input", {bubbles: true}));
-    }
-    openResource("ask", isExploreQuestion
-      ? {questionScope: "general_question", appSection: "explore"}
-      : {questionScope: "", appSection: "bible"},
-    ).then(() => field?.focus({preventScroll: true}));
+  function restoreAskFocus() {
+    if (lastAskTrigger?.isConnected) lastAskTrigger.focus({preventScroll: true});
   }
 
   async function performPersonalAction(action) {
@@ -685,7 +638,6 @@
     lastTrigger = button;
     const action = button.dataset.passageAction;
     if (action === "explore") showOverview({mode: "passage", source: "navigation"});
-    else if (action === "ask") openAsk("");
     else if (action === "note") performPersonalAction("note");
     else if (action === "highlight") window.BHFStudyActions?.perform?.("highlight");
   }
@@ -733,6 +685,12 @@
 
   function handleEscape(event) {
     if (event.key !== "Escape") return;
+    const handoffDialog = document.querySelector("[data-ask-bhf-dialog]");
+    if (handoffDialog?.open) {
+      event.preventDefault();
+      handoffController?.close?.();
+      return;
+    }
     if (currentResource) navigateBackFromResource();
     else if (!compactViewport()) return;
     else if (currentState === "full") setState("study");

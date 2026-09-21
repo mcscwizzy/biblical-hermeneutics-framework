@@ -17,7 +17,6 @@ from bhf_agent.presentation import (
     EvidenceBundle,
     PresentationEngine,
     PresentationResult,
-    PresentationProvider,
     SQLitePresentationCache,
     build_evidence_bundle,
     default_presentation_cache_path,
@@ -53,10 +52,6 @@ _CULTURAL_FIELDS = (
     "hebraic_worldview",
     "second_temple_context",
 )
-
-
-class StalePresentationEvidenceError(ValueError):
-    """The browser requested presentation for an evidence fingerprint that changed."""
 
 
 def _default_canonical_library() -> Any:
@@ -293,97 +288,6 @@ class CompanionContextService:
                 "evidence_hash": evidence_bundle.evidence_hash,
             },
             "subsystems": subsystems,
-        }
-
-    def enhance_presentation(
-        self,
-        *,
-        book: str,
-        chapter: int,
-        evidence_hash: str,
-        verse_start: int | None = None,
-        verse_end: int | None = None,
-        provider: PresentationProvider | None = None,
-        generation_profile: str | None = None,
-    ) -> dict[str, Any]:
-        """Generate optional prose only after an explicit browser request."""
-
-        canonical_book = normalize_book_name(str(book))
-        chapter_number = _positive_int(chapter, "chapter")
-        start = _optional_positive_int(verse_start, "verse_start")
-        end = _optional_positive_int(verse_end, "verse_end") or start
-        if start is not None and end is not None and end < start:
-            raise ValueError("verse_end must be greater than or equal to verse_start")
-        expected_hash = str(evidence_hash or "").strip()
-        if not expected_hash:
-            raise ValueError("evidence_hash is required")
-        range_start, range_end = (start or 1), (end or 9999)
-        reference = _format_reference(canonical_book, chapter_number, start, end)
-        evidence_subsystems: dict[str, dict[str, Any]] = {}
-        geography = self._probe(
-            "map",
-            evidence_subsystems,
-            lambda: self._map_context(
-                canonical_book, chapter_number, range_start, range_end
-            ),
-            presentation_evidence=True,
-            fallback={},
-        )
-        archaeology = self._probe(
-            "archaeology",
-            evidence_subsystems,
-            lambda: list_archaeology_passage_summaries(
-                canonical_book,
-                chapter_number,
-                range_start,
-                range_end,
-                path=self.study_db_path,
-                limit=8,
-                prepare_schema=False,
-            ),
-            presentation_evidence=True,
-            fallback=[],
-        )
-        try:
-            bundle = build_evidence_bundle(
-                reference,
-                canonical_results=self._canonical_results(reference),
-                geography=geography,
-                archaeology=archaeology,
-            )
-        except Exception as exc:
-            LOGGER.error(
-                "presentation evidence build failed: %s",
-                type(exc).__name__,
-                extra={
-                    "event": "presentation_evidence_build",
-                    "exception_class": type(exc).__name__,
-                    "reference": reference,
-                    "subsystem": "canonical_or_bundle",
-                },
-            )
-            raise
-        if bundle.evidence_hash != expected_hash:
-            LOGGER.warning(
-                "presentation evidence changed before provider request",
-                extra={
-                    "event": "presentation_evidence_build",
-                    "evidence_hash_prefix": bundle.evidence_hash[:12],
-                    "reference": reference,
-                    "subsystem": "fingerprint",
-                },
-            )
-            raise StalePresentationEvidenceError(
-                "Passage evidence changed; reload Companion context before enhancing it."
-            )
-        presentation = self.presentation_engine.present_with_provider(
-            bundle,
-            provider if provider is not None else self.presentation_engine.provider,
-            generation_profile=generation_profile,
-        )
-        return {
-            "reference": reference,
-            **_presentation_payload(bundle, presentation),
         }
 
     def _local_presentation(self, bundle: EvidenceBundle) -> PresentationResult:

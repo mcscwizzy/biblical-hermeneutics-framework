@@ -1,21 +1,22 @@
 # BHF Documentation
 
-BHF is an AI-optional Bible study workspace as well as a hermeneutical
-framework. Start with the guide that matches whether you want to use the app,
-understand its evidence model, or develop and maintain it.
+BHF is a deterministic Bible study workspace with an external assistant
+handoff, as well as a hermeneutical framework. Start with the guide that
+matches whether you want to use the app, understand its evidence model, or
+develop and maintain it.
 
 ## Use BHF
 
 - [Website and PWA](web-pwa.md) — use the hosted or self-hosted application,
-  connect AI, install the PWA, and understand what works offline.
+  use Ask BHF, install the PWA, and understand what works offline.
 - [Frontend and backend routing](deployment-routing.md) — configure same-origin
   deployments, same-origin Vercel, or an optional durable remote backend.
 - [Study Vault Sync](study-vault-sync.md) — encrypt, back up, share, and
   configure OneDrive or iCloud synchronization for personal study records.
 - [Docker](docker.md) — install, configure, operate, update, reset, and uninstall
   a local containerized deployment.
-- [Local build and development](local-development.md) — run from source, select
-  a provider, build databases, run tests, and build a Python package.
+- [Local build and development](local-development.md) — run from source, build
+  databases, run tests, and build a Python package.
 - [ChatGPT, Claude, and Gemini](how-to-use/claude-chatgpt-gemini.md) — use the
   prompt-only framework without the BHF application.
 - [Local models](how-to-use/local-models.md) and

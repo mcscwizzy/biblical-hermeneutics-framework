@@ -275,13 +275,13 @@ function renderRelatedVerses(references) {
           <button
             type="button"
             class="secondary map-shortcut"
-            data-passage-shortcut
+            data-map-open-passage="${escapeHtml(reference.reference || `${reference.book || ""} ${reference.chapter || ""}:${verseRange}`)}"
             data-book="${escapeHtml(reference.book || "")}"
             data-chapter="${escapeHtml(String(reference.chapter || ""))}"
             data-verse-start="${escapeHtml(String(reference.verse_start || ""))}"
             data-verse-end="${escapeHtml(String(reference.verse_end || ""))}"
             data-reference="${escapeHtml(reference.reference || `${reference.book || ""} ${reference.chapter || ""}:${verseRange}`)}"
-          >Ask about this passage</button>
+          >Open passage in reader</button>
         </li>
       `;
     })
@@ -354,13 +354,13 @@ function renderRelatedPassagesList(passages) {
           <button
             type="button"
             class="secondary map-shortcut"
-            data-passage-shortcut
+            data-map-open-passage="${escapeHtml(passage.reference || "")}"
             data-book="${escapeHtml(passage.book || "")}"
             data-chapter="${escapeHtml(String(passage.chapter || ""))}"
             data-verse-start="${escapeHtml(String(passage.verse_start || ""))}"
             data-verse-end="${escapeHtml(String(passage.verse_end || ""))}"
             data-reference="${escapeHtml(passage.reference || "")}"
-          >Ask about this passage</button>
+          >Open passage in reader</button>
         </li>
       `;
     })

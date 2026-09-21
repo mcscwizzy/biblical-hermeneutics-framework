@@ -49,7 +49,7 @@ function renderMapOrientationCard(options = {}) {
       </div>
       <div class="map-next-steps">
         <strong>What to do next</strong>
-        <p>Click a marker or route, or use Expand for a larger map. If no local map data exists, BHF can still show a text-only geography fallback below.</p>
+        <p>Click a marker or route, or use Expand for a larger map. If no local match exists, browse the map catalog or continue reading.</p>
       </div>
     </section>
   `;
