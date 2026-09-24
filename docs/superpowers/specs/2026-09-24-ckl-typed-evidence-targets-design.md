@@ -11,7 +11,8 @@ mutating production CKL.
 
 The design is additive. Existing canonical JSON remains valid, the existing 20
 accepted geography-pilot candidate payloads remain byte-semantically identical,
-and Commentary v1.2 synthesis behavior does not change.
+legacy evidence payloads round-trip without introducing empty target fields, and
+Commentary v1.2 synthesis behavior does not change.
 
 ## Binding constraints
 
@@ -29,6 +30,10 @@ and Commentary v1.2 synthesis behavior does not change.
   provenance models.
 - Preserve the current 20 accepted `candidate_payload` hashes exactly when the
   complete queue is regenerated.
+- Preserve legacy `CanonicalEvidenceItem` canonical payloads exactly across a
+  mapping-to-model-to-mapping round trip. In particular, deserializing an item
+  which lacks `evidence_targets` must not add `"evidence_targets": []` or
+  otherwise change its canonical JSON/hash when it is serialized again.
 - Generate every new result from
   `docs/ckl-geography-pilot-source-lock.json`; do not patch generated candidate
   records by source-lock ID.
@@ -65,6 +70,32 @@ evidence_targets: list[CanonicalEvidenceTarget] = field(default_factory=list)
 `related_objects`, `related_evidence`, or `geography_ids`; existing records need
 no migration. New candidate families use `evidence_targets` when target
 semantics matter.
+
+### Legacy-field serialization invariant
+
+`evidence_targets` has distinct in-memory and wire semantics. In memory, an
+absent legacy field is represented as an empty target collection so consumers
+can use it without a null check. Its *field-presence state* is retained as
+non-canonical serializer state; it is not an additional JSON field and is not
+part of structural identity.
+
+`CanonicalEvidenceItem.to_dict()` emits `evidence_targets` exactly under these
+rules:
+
+- An item deserialized from a mapping that omitted the field omits it again,
+  even though its in-memory collection is empty.
+- An item deserialized from a mapping that explicitly contained
+  `"evidence_targets": []` emits that explicit empty array again.
+- A non-empty target collection always emits the field.
+- A newly constructed item whose targets use the default empty collection omits
+  the field; a caller that intentionally needs an explicit empty array must
+  construct from, or otherwise mark, an explicit empty field.
+
+Thus an absent legacy field is never materialized solely by validation,
+retrieval, database serialization, or a no-op candidate transaction. This is a
+canonical-payload compatibility guarantee, not merely an API convenience. The
+presence marker must remain private to the model/serializer and must not appear
+in JSON, SQLite payload JSON, fingerprints, or retrieval output.
 
 ### Entity target
 
@@ -240,15 +271,18 @@ Validation occurs at four layers:
    staged library.
 
 `CanonicalEvidenceItem.from_mapping()` accepts an absent `evidence_targets`
-field as `[]`. `to_dict()` preserves every target and qualifier. Tests perform
-mapping-to-model-to-mapping and JSON serialization round trips, including
-temporal scope and source provenance on the containing evidence item.
+field as an empty in-memory collection while retaining its absence for output.
+`to_dict()` follows the legacy-field serialization invariant above and preserves
+every emitted target and qualifier. Tests perform mapping-to-model-to-mapping
+and JSON serialization round trips, including temporal scope and source
+provenance on the containing evidence item.
 
 Canonical object payload JSON in generated SQLite databases retains the new
-field without a corpus migration. `RetrievedEvidenceItem` exposes structured
-targets additively so later EvidenceBundle work can consume them without
-parsing prose. This task does not make Commentary v1.2 select, render, or
-synthesize those targets and does not change current prose behavior.
+field when it is emitted, without a corpus migration; it does not materialize
+the field for legacy absent-field items. `RetrievedEvidenceItem` exposes
+structured targets additively so later EvidenceBundle work can consume them
+without parsing prose. This task does not make Commentary v1.2 select, render,
+or synthesize those targets and does not change current prose behavior.
 
 ## Structural deduplication
 
@@ -270,6 +304,47 @@ can deduplicate, while `physical-setting=hill-country` and
 `elevation-context=elevated` remain complementary. The new algorithm must
 prefer false negatives to collapsing semantically distinct evidence.
 
+### Provenance-preserving structural deduplication
+
+A structural fingerprint identifies an equivalent semantic claim; it is not a
+provenance-record identity. When two unified-target evidence records (whether
+already staged or newly converted) have the same structural fingerprint, the
+transaction must first determine whether their provenance is compatible. It
+must never discard an independently useful source, locator, Scripture link, or
+external reference merely because the semantic claim is equivalent.
+
+For compatible records, the transaction produces one deterministic surviving
+evidence item and merges provenance into the existing CKL representation. It
+selects the record with the lexicographically smallest canonical evidence ID as
+the survivor; an equal-ID collision is resolved only if all non-provenance
+canonical fields are identical, otherwise it is a conflict. It then:
+
+- merge parent `sources` by source ID, preserving every distinct complete
+  `CanonicalSource` mapping (and therefore each source locator);
+- merge the survivor's `source_ids`, `scripture_references`, and
+  `external_references` as de-duplicated canonical collections; and
+- order every merged collection by its canonical serialized representation so
+  the same input set produces the same payload irrespective of queue order.
+
+The merged evidence item must cite every merged source ID. Its parent must
+contain the corresponding complete source records, including their locators;
+the merged Scripture links and external references remain independently
+inspectable. The transaction report labels a newly converted merge as
+`duplicate-pilot-provenance-merged` (and an already-staged merge as
+`duplicate-existing-provenance-merged`) and lists all contributing
+candidate/source identities. This report is audit material only; the retained
+canonical source records and evidence associations are the durable provenance
+representation.
+
+If two candidates reuse a source ID with non-identical normalized
+`CanonicalSource` mappings, or any provenance reference cannot be validated or
+merged without overwriting a distinct value, they are not compatible duplicates.
+The transaction fails that candidate as `provenance-conflict` (with both
+provenance mappings in the report) rather than choosing one locator or source
+definition. Semantic equality never authorizes provenance loss. Non-provenance
+prose may be selected only after this merge succeeds and is not treated as a
+substitute for a source record.
+
 ## Transaction and dry-run reporting
 
 The transaction builds a fully in-memory simulated library containing existing
@@ -283,11 +358,11 @@ The report distinguishes:
 - existing objects that would change;
 - new entities that would be created;
 - previously accepted and hash-identical;
-- previously accepted but changed;
 - previously blocked and now representable;
 - still blocked;
 - newly rejected;
-- duplicate existing, duplicate pilot, complementary, and conflicting;
+- duplicate existing, duplicate pilot, provenance-merged duplicate existing,
+  provenance-merged duplicate pilot, complementary, and conflicting;
 - direct/dependent anchors and chapters;
 - production files and Commentary artifacts modified, which must both be zero.
 
@@ -301,7 +376,10 @@ Implementation follows test-driven development.
 1. Schema/model tests first demonstrate that valid entity and value targets do
    not yet deserialize and that malformed discriminators, free-form values,
    invalid qualifiers, incompatible roles, duplicate sequences, and unresolved
-   entity IDs fail.
+   entity IDs fail. A legacy evidence fixture with no `evidence_targets` must
+   round-trip mapping-to-model-to-mapping and through canonical JSON with no
+   added field and an identical payload hash; a fixture with an explicit empty
+   array must retain that explicit array.
 2. Transaction tests first demonstrate that a defensible bootstrap cannot yet
    be staged, then cover collision detection, duplicate bootstrap coalescing,
    simulated manifest counts, full-library validation, and byte-for-byte
@@ -315,7 +393,13 @@ Implementation follows test-driven development.
 6. The real dry-run transaction validates changed objects, the simulated full
    library, structural deduplication, leakage, temporal preservation, source
    locators, changed references, and Commentary v1.2 rebuild previews without
-   writes.
+   writes. A structural-deduplication regression fixture supplies two
+   source-backed unified-target evidence candidates with identical targets and
+   temporal scope but different valid source IDs and locators. It must produce
+   one semantic survivor whose `source_ids` and parent source records retain
+   both trails, and whose report records the provenance merge. A same-source-ID
+   / different-normalized-source fixture must fail as `provenance-conflict`,
+   never silently select one locator.
 7. The focused schema, expansion, source-lock, converter, retrieval, database,
    and Commentary compatibility tests run before the complete repository test
    suite.
