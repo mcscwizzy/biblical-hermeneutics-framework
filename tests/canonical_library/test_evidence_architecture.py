@@ -3,6 +3,7 @@ from __future__ import annotations
 import sqlite3
 import tempfile
 import unittest
+import json
 from pathlib import Path
 
 from bhf_agent.coverage import evaluate_answer_coverage
@@ -20,6 +21,34 @@ from framework.canonical_library.quality_report import build_quality_report
 from framework.canonical_library.query_analysis import analyze_query
 
 from .helpers import make_object, write_library
+
+
+def test_retrieved_evidence_exposes_structured_targets_without_parsing_prose(tmp_path: Path) -> None:
+    original = json.loads((Path(__file__).resolve().parents[2] / "framework/canonical_library/objects/events/david-and-goliath.json").read_text())
+    evidence = dict(original["evidence_items"][0])
+    evidence.update(
+        related_objects=[], related_evidence=[], geography_ids=[], claim_ids=[],
+        evidence_targets=[{"kind": "entity", "relationship": "near", "entity_id": "sychar"}],
+    )
+    legacy = {**evidence, "id": "legacy-weapon-description"}
+    legacy.pop("evidence_targets")
+    source = {**original["sources"][0], "supports": []}
+    root = tmp_path / "ckl"
+    write_library(root, [
+        make_object("bethlehem", "place", "Bethlehem", ["Bethlehem of Judah"], evidence_items=[evidence, legacy], sources=[source]),
+        make_object("sychar", "place", "Sychar", ["Village of Sychar"]),
+    ])
+    library = CanonicalLibrary(root=root).load()
+    ranked = library.retrieve_evidence_items(
+        "Goliath weapon", ["bethlehem"], scripture_references=["1 Samuel 17"],
+    )["bethlehem"]
+    item = next(value for value in ranked if value.evidence_id == evidence["id"])
+    expected = {"kind": "entity", "relationship": "near", "entity_id": "sychar"}
+    assert item.evidence_targets == (expected,)
+    assert item.to_dict()["evidence_targets"] == [expected]
+    legacy_item = next(value for value in ranked if value.evidence_id == legacy["id"])
+    assert legacy_item.evidence_targets == ()
+    assert "evidence_targets" not in legacy_item.to_dict()
 
 
 def evidence_objects() -> list[dict[str, object]]:

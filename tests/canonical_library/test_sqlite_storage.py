@@ -17,6 +17,30 @@ from framework.canonical_library.sqlite_repository import SQLiteCanonicalLibrary
 from .helpers import make_object, write_library
 
 
+def test_sqlite_payload_round_trip_preserves_absent_and_present_target_fields(tmp_path: Path) -> None:
+    original = json.loads((Path(__file__).resolve().parents[2] / "framework/canonical_library/objects/events/david-and-goliath.json").read_text())
+    legacy = dict(original["evidence_items"][0])
+    legacy.update(id="legacy-weapon-description", related_objects=[], related_evidence=[], geography_ids=[], claim_ids=[])
+    typed = {**legacy, "id": "typed-weapon-description", "evidence_targets": [
+        {"kind": "entity", "relationship": "near", "entity_id": "sychar"},
+    ]}
+    source = {**original["sources"][0], "supports": []}
+    root = tmp_path / "ckl"
+    write_library(root, [
+        make_object("bethlehem", "place", "Bethlehem", ["Bethlehem of Judah"], evidence_items=[typed, legacy], sources=[source]),
+        make_object("sychar", "place", "Sychar", ["Village of Sychar"]),
+    ])
+    database = tmp_path / "ckl.sqlite"
+    build_database(root, database)
+    with sqlite3.connect(database) as connection:
+        stored = connection.execute(
+            "SELECT payload_json FROM canonical_objects WHERE id = 'bethlehem'"
+        ).fetchone()[0]
+    evidence_items = json.loads(stored)["evidence_items"]
+    assert evidence_items[0]["evidence_targets"] == typed["evidence_targets"]
+    assert "evidence_targets" not in evidence_items[1]
+
+
 class SQLiteCKLStorageTests(unittest.TestCase):
     def test_build_verify_and_query_plan_use_indexes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
