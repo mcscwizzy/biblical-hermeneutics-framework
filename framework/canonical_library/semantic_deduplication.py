@@ -3,8 +3,58 @@
 from __future__ import annotations
 
 import re
+import hashlib
+import json
+from typing import Any, Mapping
 
+from .evidence_models import validate_temporal_scope
 from .normalization import normalize_text
+
+
+def evidence_structural_fingerprint(parent_id: str, evidence: Mapping[str, Any] | Any) -> str:
+    """Fingerprint typed evidence semantics without prose or provenance."""
+    raw = evidence.to_dict() if hasattr(evidence, "to_dict") else dict(evidence)
+    targets = raw.get("evidence_targets") or []
+    if not targets:
+        legacy = semantic_claim_fingerprint(
+            raw.get("description") or raw.get("primary_observation"), raw.get("evidence_type"),
+        )
+        return f"legacy:{parent_id}:{legacy}"
+
+    semantic_targets: list[dict[str, Any]] = []
+    for target in targets:
+        if target["kind"] == "entity":
+            semantic_targets.append({
+                "kind": "entity", "relationship": target["relationship"],
+                "entity_id": target["entity_id"], "role": target.get("role"),
+                "sequence": target.get("sequence"),
+            })
+        else:
+            qualifiers = [
+                {
+                    "kind": qualifier["kind"],
+                    "normalized_value": qualifier.get("normalized_value"),
+                    "entity_id": qualifier.get("entity_id"),
+                }
+                for qualifier in target.get("qualifiers", [])
+            ]
+            semantic_targets.append({
+                "kind": "value", "relationship": target["relationship"],
+                "value_type": target["value_type"],
+                "normalized_value": target["normalized_value"],
+                "qualifiers": sorted(qualifiers, key=_canonical_json),
+            })
+    payload = {
+        "parent_id": parent_id,
+        "evidence_type": raw["evidence_type"],
+        "evidence_targets": sorted(semantic_targets, key=_canonical_json),
+        "temporal_scope": validate_temporal_scope(raw.get("temporal_scope")).to_dict(),
+    }
+    return "typed:" + hashlib.sha256(_canonical_json(payload).encode("utf-8")).hexdigest()
+
+
+def _canonical_json(value: Any) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
 
 
 _DEMONYM_TERRITORIES = {
@@ -71,4 +121,4 @@ def _relation_subject(value: str) -> str:
     return " ".join(tokens)
 
 
-__all__ = ["semantic_claim_fingerprint"]
+__all__ = ["semantic_claim_fingerprint", "evidence_structural_fingerprint"]

@@ -15,6 +15,7 @@ from framework.canonical_library.expansion import (
     validate_candidate,
 )
 from framework.canonical_library.semantic_deduplication import semantic_claim_fingerprint
+from framework.canonical_library import semantic_deduplication
 
 from .helpers import make_object, write_library
 
@@ -82,6 +83,189 @@ def _candidate(**overrides: object) -> dict[str, object]:
     }
     candidate.update(overrides)
     return candidate
+
+
+def _typed_evidence(
+    evidence_id: str, source_id: str, *, description: str = "Bethlehem is near Sychar in this fixture.",
+    target_id: str = "sychar", temporal_period: str = "Ruth narrative setting",
+) -> dict[str, object]:
+    return {
+        "id": evidence_id, "title": "Bethlehem and Sychar proximity",
+        "evidence_type": "geography-environment", "description": description,
+        "assertion_type": "primary-evidence", "confidence": "high",
+        "confidence_rationale": "The source names the places.",
+        "passage_relevance": "The named setting is relevant to Ruth 1.",
+        "certainty": "textually_explicit", "dispute_status": "not_disputed",
+        "primary_observation": "Ruth 1 names Bethlehem.", "scholarly_interpretation": "",
+        "temporal_scope": {"periods": [temporal_period]},
+        "geography_ids": [], "related_objects": [], "related_evidence": [],
+        "evidence_targets": [{"kind": "entity", "relationship": "near", "entity_id": target_id}],
+        "scripture_references": [{
+            "reference": "Ruth 1:1-2", "relationship": "direct",
+            "temporal_relation": "contemporary", "relevance_rationale": "The passage names Bethlehem.",
+            "weight": 9,
+        }],
+        "source_ids": [source_id], "claim_ids": [], "external_references": [],
+        "metadata": {}, "notes": "",
+    }
+
+
+def _typed_source(source_id: str, locator: str) -> dict[str, object]:
+    return {**_source(source_id), "locator": locator}
+
+
+def _typed_library(tmp_path: Path, loaded: list[dict[str, object]]) -> CanonicalLibrary:
+    root = tmp_path / "typed-ckl"
+    sources = [_typed_source(source_id, f"Ruth 1:{index + 1}")
+               for index, source_id in enumerate(dict.fromkeys(
+                   source_id for evidence in loaded for source_id in evidence["source_ids"]
+               ))]
+    write_library(root, [
+        make_object(
+            "bethlehem", "place", "Bethlehem", ["Bethlehem Ephrathah"],
+            scripture_references=[{"reference": "Ruth 1:1-2", "relationship": "primary", "notes": "named place"}],
+            sources=sources, evidence_items=loaded,
+        ),
+        make_object("sychar", "place", "Sychar", ["Village of Sychar"]),
+        make_object("judah-territory", "place", "Judah territory", ["Territory of Judah"]),
+    ])
+    return CanonicalLibrary(root=root).load()
+
+
+def _typed_candidate(evidence_id: str, source_id: str, locator: str, *,
+                     description: str = "Independent source describes the same proximity.",
+                     target_id: str = "sychar") -> dict[str, object]:
+    return {
+        "source_lock_id": f"lock-{evidence_id}", "dimension": "geography",
+        "target_object_id": "bethlehem", "passage_reference": "Ruth 1:1-2",
+        "relationship": "near", "source_records": [_typed_source(source_id, locator)],
+        "evidence_item": _typed_evidence(evidence_id, source_id, description=description, target_id=target_id),
+    }
+
+
+def test_structural_fingerprint_ignores_prose_but_keeps_relationship_and_time() -> None:
+    first = _typed_evidence("first", "source-a")
+    same = _typed_evidence("second", "source-b", description="Different wording.")
+    different_target = _typed_evidence("third", "source-c", target_id="judah-territory")
+    different_time = _typed_evidence("fourth", "source-d", temporal_period="Different period")
+    fingerprint = semantic_deduplication.evidence_structural_fingerprint
+    assert fingerprint("bethlehem", first) == fingerprint("bethlehem", same)
+    assert fingerprint("bethlehem", first) != fingerprint("bethlehem", different_target)
+    assert fingerprint("bethlehem", first) != fingerprint("bethlehem", different_time)
+
+
+def test_staged_duplicate_preserves_loaded_canonical_id_and_merges_provenance(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [_typed_evidence("z-canonical", "existing")])
+    result = apply_candidate_queue(library.root, [
+        _typed_candidate("a-staged", "new", "Ruth 1:2"),
+    ], write=False)
+    merged = result.simulated_objects["bethlehem"]["evidence_items"]
+    assert [item["id"] for item in merged] == ["z-canonical"]
+    assert merged[0]["source_ids"] == ["existing", "new"]
+    assert {source["id"]: source["locator"] for source in result.simulated_objects["bethlehem"]["sources"]} == {
+        "existing": "Ruth 1:1", "new": "Ruth 1:2",
+    }
+    assert result.decisions[0].classification == "duplicate-existing-provenance-merged"
+    assert result.decisions[0].survivor_evidence_id == "z-canonical"
+
+
+def test_multiple_loaded_structural_matches_fail_closed(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [
+        _typed_evidence("first", "existing"), _typed_evidence("second", "second-source"),
+    ])
+    with pytest.raises(ValueError, match="canonical-structural-duplicate-conflict"):
+        apply_candidate_queue(library.root, [], write=False)
+
+
+def test_staged_structural_duplicate_chooses_lowest_id_regardless_of_queue_order(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    candidates = [
+        _typed_candidate("z-staged", "source-z", "Ruth 1:2"),
+        _typed_candidate("a-staged", "source-a", "Ruth 1:1"),
+    ]
+    first = apply_candidate_queue(library.root, candidates, write=False)
+    reverse = apply_candidate_queue(library.root, list(reversed(candidates)), write=False)
+    assert first.simulated_objects == reverse.simulated_objects
+    merged = first.simulated_objects["bethlehem"]["evidence_items"]
+    assert [item["id"] for item in merged] == ["a-staged"]
+    assert merged[0]["source_ids"] == ["source-a", "source-z"]
+    assert {decision.classification for decision in first.decisions} == {
+        "new", "duplicate-pilot-provenance-merged",
+    }
+    assert all(decision.contributing_source_ids == ["source-a", "source-z"] for decision in first.decisions)
+
+
+def test_structurally_distinct_typed_evidence_remains_complementary(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    result = apply_candidate_queue(library.root, [
+        _typed_candidate("sychar-near", "source-a", "Ruth 1:1"),
+        _typed_candidate("judah-near", "source-b", "Ruth 1:2", target_id="judah-territory"),
+    ], write=False)
+    assert len(result.simulated_objects["bethlehem"]["evidence_items"]) == 2
+
+
+def test_matching_source_id_with_different_locator_is_provenance_conflict(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [_typed_evidence("z-canonical", "existing")])
+    result = apply_candidate_queue(library.root, [
+        _typed_candidate("a-staged", "existing", "Different locator"),
+    ], write=False)
+    assert result.decisions[0].accepted is False
+    assert result.decisions[0].classification == "provenance-conflict"
+    assert result.decisions[0].provenance_conflicts == [{
+        "source_id": "existing",
+        "existing": _typed_source("existing", "Ruth 1:1"),
+        "candidate": _typed_source("existing", "Different locator"),
+    }]
+
+
+def test_identical_source_duplicate_keeps_one_canonical_record(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [_typed_evidence("z-canonical", "existing")])
+    result = apply_candidate_queue(library.root, [
+        _typed_candidate("a-staged", "existing", "Ruth 1:1"),
+    ], write=False)
+    assert [item["id"] for item in result.simulated_objects["bethlehem"]["evidence_items"]] == ["z-canonical"]
+    assert result.decisions[0].classification == "duplicate-existing"
+    assert result.changed_object_ids == []
+    assert result.changed_references == []
+
+
+def test_compatible_equal_id_merges_passage_and_external_provenance(tmp_path: Path) -> None:
+    loaded = _typed_evidence("same-id", "existing")
+    library = _typed_library(tmp_path, [loaded])
+    candidate = _typed_candidate("same-id", "new", "Ruth 1:2", description=str(loaded["description"]))
+    candidate["evidence_item"]["scripture_references"].append({
+        "reference": "Ruth 1:19-22", "relationship": "direct", "temporal_relation": "contemporary",
+        "relevance_rationale": "Ruth returns to Bethlehem.", "weight": 8,
+    })
+    candidate["evidence_item"]["external_references"] = [{
+        "domain": "map-place", "id": "external-sychar", "relationship": "same-evidence", "notes": "",
+    }]
+    result = apply_candidate_queue(library.root, [candidate], write=False)
+    evidence = result.simulated_objects["bethlehem"]["evidence_items"][0]
+    assert evidence["id"] == "same-id"
+    assert evidence["source_ids"] == ["existing", "new"]
+    assert {item["reference"] for item in evidence["scripture_references"]} == {"Ruth 1:1-2", "Ruth 1:19-22"}
+    assert [item["id"] for item in evidence["external_references"]] == ["external-sychar"]
+
+
+def test_equal_id_with_different_nonprovenance_fields_is_identity_conflict(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [_typed_evidence("same-id", "existing")])
+    result = apply_candidate_queue(library.root, [
+        _typed_candidate("same-id", "new", "Ruth 1:2", description="Changed assertion wording."),
+    ], write=False)
+    assert result.decisions[0].accepted is False
+    assert result.decisions[0].classification == "identity-conflict"
+
+
+def test_staged_duplicate_with_reused_source_id_and_changed_locator_is_rejected(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    result = apply_candidate_queue(library.root, [
+        _typed_candidate("a-staged", "shared-source", "Ruth 1:1"),
+        _typed_candidate("z-staged", "shared-source", "Ruth 1:2"),
+    ], write=False)
+    assert [item["id"] for item in result.simulated_objects["bethlehem"]["evidence_items"]] == ["a-staged"]
+    assert result.decisions[1].accepted is False
+    assert result.decisions[1].classification == "provenance-conflict"
 
 
 def test_expansion_adapter_accepts_anchored_source_backed_geography_claim(tmp_path: Path) -> None:

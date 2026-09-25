@@ -8,7 +8,7 @@ caller is allowed to write a record.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 import json
 import os
 from pathlib import Path
@@ -16,6 +16,7 @@ import re
 import tempfile
 from typing import Any, Iterable, Mapping, Sequence
 
+from .evidence_models import CanonicalEvidenceItem, EvidenceValidationError
 from .normalization import normalize_id
 from .schema import (
     CanonicalObject,
@@ -23,7 +24,7 @@ from .schema import (
     validate_object,
     validate_source_entry,
 )
-from .semantic_deduplication import semantic_claim_fingerprint
+from .semantic_deduplication import evidence_structural_fingerprint, semantic_claim_fingerprint
 from .scripture import (
     build_book_alias_lookup,
     format_scripture_reference,
@@ -73,6 +74,10 @@ class CandidateValidation:
     normalized_claim: dict[str, Any] | None = None
     normalized_evidence_item: dict[str, Any] | None = None
     changed_references: list[str] = field(default_factory=list)
+    classification: str = "new"
+    survivor_evidence_id: str = ""
+    contributing_source_ids: list[str] = field(default_factory=list)
+    provenance_conflicts: list[dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -87,6 +92,7 @@ class CandidateApplication:
     changed_references: list[str]
     changed_chapters: list[str]
     wrote: bool
+    simulated_objects: dict[str, dict[str, Any]] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -98,6 +104,10 @@ class CandidateApplication:
             "changed_chapters": list(self.changed_chapters),
             "wrote": self.wrote,
         }
+
+
+class CanonicalStructuralDuplicateConflict(ValueError):
+    """Multiple loaded canonical evidence items share one typed structure."""
 
 
 def validate_candidate(
@@ -161,9 +171,24 @@ def validate_candidate(
 
     source_ids = _string_list(child.get("source_ids"))
     source_map = _object_sources(target) if target is not None else {}
-    candidate_sources = _candidate_sources(payload)
+    provenance_conflicts: list[dict[str, Any]] = []
+    try:
+        candidate_sources = _candidate_sources(payload)
+    except ValueError:
+        candidate_sources = []
+        reasons.append("provenance-conflict")
     for candidate_source in candidate_sources:
-        source_map[normalize_id(str(candidate_source["id"]))] = candidate_source
+        source_id = normalize_id(str(candidate_source["id"]))
+        prior = source_map.get(source_id)
+        if prior is not None and not _sources_equivalent(prior, candidate_source):
+            reasons.append("provenance-conflict")
+            provenance_conflicts.append({
+                "source_id": source_id,
+                "existing": dict(prior),
+                "candidate": dict(candidate_source),
+            })
+        else:
+            source_map[source_id] = candidate_source
     if not source_ids:
         reasons.append("source-provenance-required")
     elif any(source_id not in source_map for source_id in source_ids):
@@ -206,7 +231,7 @@ def validate_candidate(
         # Never accept an out-of-schema qualifier that the merge would drop.
         reasons.append("historical-relationship-requires-temporal-evidence-item")
 
-    if target is not None and _semantic_duplicate(target, child):
+    if target is not None and not evidence_item.get("evidence_targets") and _semantic_duplicate(target, child):
         reasons.append("semantic-duplicate")
 
     normalized_claim: dict[str, Any] | None = None
@@ -218,6 +243,7 @@ def validate_candidate(
             candidate_sources,
             library=library,
             child_field="evidence_items" if evidence else "claims",
+            replace_child_id=str(evidence_item.get("id") or "") if evidence_item.get("evidence_targets") else "",
         )
         if normalized_child is None:
             reasons.append("ckl-validation-failed")
@@ -233,6 +259,10 @@ def validate_candidate(
         normalized_claim=normalized_claim,
         normalized_evidence_item=normalized_evidence_item,
         changed_references=_canonical_anchor_strings(anchors),
+        classification="new" if not reasons else (
+            "provenance-conflict" if "provenance-conflict" in reasons else "rejected"
+        ),
+        provenance_conflicts=provenance_conflicts,
     )
 
 
@@ -247,7 +277,7 @@ def validate_candidates(
     seen: set[str] = set()
     for candidate in candidates:
         decision = validate_candidate(candidate, library=library)
-        if decision.accepted:
+        if decision.accepted and not (decision.normalized_evidence_item or {}).get("evidence_targets"):
             child = decision.normalized_evidence_item or decision.normalized_claim or {}
             fingerprint = "|".join(
                 (
@@ -293,12 +323,34 @@ def apply_candidate_queue(
     library = CanonicalLibrary(root=Path(root)).load()
     candidate_values = [dict(item) for item in candidates]
     decisions = validate_candidates(candidate_values, library=library)
-    accepted = [item for item in decisions if item.accepted]
     before_objects = list(library.objects_by_id.values())
     after_data = {object_id: object_value.to_dict() for object_id, object_value in library.objects_by_id.items()}
     changed_object_ids: set[str] = set()
 
-    for decision in accepted:
+    loaded_typed: dict[tuple[str, str], dict[str, Any]] = {}
+    for parent_id, parent in after_data.items():
+        for raw in _sequence(parent.get("evidence_items")):
+            item = dict(_mapping(raw))
+            if not item.get("evidence_targets"):
+                continue
+            key = (parent_id, evidence_structural_fingerprint(parent_id, item))
+            if key in loaded_typed:
+                raise CanonicalStructuralDuplicateConflict(
+                    f"canonical-structural-duplicate-conflict: {parent_id}:{key[1]}"
+                )
+            loaded_typed[key] = item
+
+    typed_groups: dict[tuple[str, str], list[int]] = {}
+    for index, decision in enumerate(decisions):
+        child = decision.normalized_evidence_item or {}
+        if decision.accepted and child.get("evidence_targets"):
+            parent_id = normalize_id(str(decision.candidate.get("target_object_id") or ""))
+            key = (parent_id, evidence_structural_fingerprint(parent_id, child))
+            typed_groups.setdefault(key, []).append(index)
+
+    for decision in decisions:
+        if not decision.accepted or (decision.normalized_evidence_item or {}).get("evidence_targets"):
+            continue
         target_id = normalize_id(str(decision.candidate.get("target_object_id") or ""))
         target = after_data.get(target_id)
         if target is None:
@@ -322,6 +374,94 @@ def apply_candidate_queue(
             target_id=target_id,
         )
         changed_object_ids.add(target_id)
+
+    for (parent_id, fingerprint), indices in sorted(typed_groups.items()):
+        target = after_data[parent_id]
+        previous_payload = _canonical_json(target)
+        loaded = loaded_typed.get((parent_id, fingerprint))
+        ordered = sorted(indices, key=lambda index: (
+            str((decisions[index].normalized_evidence_item or {}).get("id") or ""),
+            str(decisions[index].candidate.get("source_lock_id") or ""),
+        ))
+        survivor = dict(loaded or decisions[ordered[0]].normalized_evidence_item or {})
+        survivor_id = str(survivor["id"])
+        merged_sources = list(_sequence(target.get("sources")))
+        merged_source_ids = list(_sequence(survivor.get("source_ids")))
+        merged_links = list(_sequence(survivor.get("scripture_references")))
+        merged_external = list(_sequence(survivor.get("external_references")))
+        contributing_sources: set[str] = set(str(value) for value in merged_source_ids)
+        survivors_added = False
+        for index in ordered:
+            decision = decisions[index]
+            child = dict(decision.normalized_evidence_item or {})
+            if child["id"] == survivor_id and _non_provenance_fields(child) != _non_provenance_fields(survivor):
+                decisions[index] = replace(
+                    decision, accepted=False, reasons=[*decision.reasons, "identity-conflict"],
+                    classification="identity-conflict", survivor_evidence_id=survivor_id,
+                )
+                continue
+            candidate_sources = _candidate_sources(decision.candidate)
+            try:
+                next_sources = _merge_candidate_sources(
+                    merged_sources, candidate_sources, target_id=parent_id,
+                )
+            except ValueError:
+                conflicts = _source_conflict_details(merged_sources, candidate_sources)
+                decisions[index] = replace(
+                    decision, accepted=False, reasons=[*decision.reasons, "provenance-conflict"],
+                    classification="provenance-conflict", survivor_evidence_id=survivor_id,
+                    provenance_conflicts=conflicts,
+                )
+                continue
+            old_provenance = (
+                _canonical_json(merged_sources), _canonical_json(merged_source_ids),
+                _canonical_json(merged_links), _canonical_json(merged_external),
+            )
+            merged_sources = next_sources
+            merged_source_ids = _canonical_union([*merged_source_ids, *_sequence(child.get("source_ids"))])
+            merged_links = _canonical_union([*merged_links, *_sequence(child.get("scripture_references"))])
+            merged_external = _canonical_union([*merged_external, *_sequence(child.get("external_references"))])
+            contributing_sources.update(str(value) for value in _sequence(child.get("source_ids")))
+            new_provenance = (
+                _canonical_json(merged_sources), _canonical_json(merged_source_ids),
+                _canonical_json(merged_links), _canonical_json(merged_external),
+            )
+            added_provenance = new_provenance != old_provenance
+            if loaded is not None:
+                classification = "duplicate-existing-provenance-merged" if added_provenance else "duplicate-existing"
+            elif not survivors_added and child["id"] == survivor_id:
+                classification = "new"
+            else:
+                classification = "duplicate-pilot-provenance-merged" if added_provenance else "duplicate-pilot"
+            decisions[index] = replace(
+                decision, classification=classification, survivor_evidence_id=survivor_id,
+                contributing_source_ids=sorted(contributing_sources),
+            )
+            survivors_added = True
+        if not survivors_added:
+            continue
+        for index in ordered:
+            if decisions[index].accepted:
+                decisions[index] = replace(
+                    decisions[index], contributing_source_ids=sorted(contributing_sources),
+                )
+        survivor["source_ids"] = merged_source_ids
+        survivor["scripture_references"] = merged_links
+        survivor["external_references"] = merged_external
+        target["sources"] = sorted(merged_sources, key=_canonical_json)
+        evidence_items = list(_sequence(target.get("evidence_items")))
+        if loaded is not None:
+            evidence_items = [
+                survivor if _mapping(item).get("id") == survivor_id else dict(_mapping(item))
+                for item in evidence_items
+            ]
+        else:
+            if any(_mapping(item).get("id") == survivor_id for item in evidence_items):
+                raise ValueError(f"identity-conflict: {parent_id}:{survivor_id}")
+            evidence_items.append(survivor)
+        target["evidence_items"] = evidence_items
+        if _canonical_json(target) != previous_payload:
+            changed_object_ids.add(parent_id)
 
     source_paths = {
         object_id: path
@@ -356,6 +496,7 @@ def apply_candidate_queue(
         changed_references=changed,
         changed_chapters=chapters,
         wrote=write,
+        simulated_objects=after_data,
     )
 
 
@@ -547,10 +688,14 @@ def _validate_merged_target(
     *,
     library: Any,
     child_field: str,
+    replace_child_id: str = "",
 ) -> dict[str, Any] | None:
     raw = _mapping(target)
     merged = dict(raw)
-    merged_children = [dict(_mapping(item)) for item in _sequence(raw.get(child_field))]
+    merged_children = [
+        dict(_mapping(item)) for item in _sequence(raw.get(child_field))
+        if not replace_child_id or _mapping(item).get("id") != replace_child_id
+    ]
     merged_children.append(dict(child))
     merged[child_field] = merged_children
     merged["sources"] = _merge_candidate_sources(
@@ -651,6 +796,42 @@ def _sources_equivalent(left: Mapping[str, Any], right: Mapping[str, Any]) -> bo
         return validate_source_entry(left).to_dict() == validate_source_entry(right).to_dict()
     except Exception:  # noqa: BLE001 - the regular object validator reports malformed sources
         return left == right
+
+
+def _source_conflict_details(
+    existing: Sequence[Any], candidates: Sequence[Mapping[str, Any]],
+) -> list[dict[str, Any]]:
+    by_id = {
+        normalize_id(str(_mapping(source).get("id") or "")): dict(_mapping(source))
+        for source in existing
+    }
+    return [
+        {
+            "source_id": source_id,
+            "existing": by_id[source_id],
+            "candidate": dict(source),
+        }
+        for source in candidates
+        if (source_id := normalize_id(str(source.get("id") or ""))) in by_id
+        and not _sources_equivalent(by_id[source_id], source)
+    ]
+
+
+def _canonical_json(value: Any) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+
+
+def _canonical_union(values: Sequence[Any]) -> list[Any]:
+    by_json = {_canonical_json(value): value for value in values}
+    return [by_json[key] for key in sorted(by_json)]
+
+
+def _non_provenance_fields(evidence: Mapping[str, Any]) -> dict[str, Any]:
+    normalized = CanonicalEvidenceItem.from_mapping(evidence).to_dict()
+    return {
+        key: value for key, value in normalized.items()
+        if key not in {"source_ids", "scripture_references", "external_references"}
+    }
 
 
 def _object_map(values: Iterable[CanonicalObject | Mapping[str, Any]]) -> dict[str, Mapping[str, Any]]:
