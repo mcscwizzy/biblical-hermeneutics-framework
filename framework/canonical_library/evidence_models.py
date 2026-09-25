@@ -341,6 +341,57 @@ def _target_token(value: Any, label: str) -> str:
     return value
 
 
+def _validate_target_relationships(item: CanonicalEvidenceItem) -> None:
+    grouped: dict[str, list[CanonicalEvidenceTarget]] = {}
+    for target in item.evidence_targets:
+        grouped.setdefault(target.relationship, []).append(target)
+
+    for relationship, targets in grouped.items():
+        entities = [target for target in targets if isinstance(target, CanonicalEntityEvidenceTarget)]
+        values = [target for target in targets if isinstance(target, CanonicalValueEvidenceTarget)]
+        if relationship in {"encamped-between", "river-water-context"}:
+            role = "boundary" if relationship == "encamped-between" else "compared-river"
+            if len(targets) != 2 or len(entities) != 2:
+                raise EvidenceValidationError(f"{relationship} requires exactly two entity targets")
+            if any(target.role != role or target.sequence is not None for target in entities):
+                raise EvidenceValidationError(f"{relationship} requires role={role} without sequence")
+        elif relationship == "narrated-navigation-markers":
+            roles = {"intended-destination", "reached", "passed", "nearby"}
+            sequences = [target.sequence for target in entities]
+            if len(entities) != len(targets) or not entities or any(target.role not in roles for target in entities):
+                raise EvidenceValidationError("narrated-navigation-markers requires named entity roles")
+            if any(sequence is None for sequence in sequences) or len(sequences) != len(set(sequences)):
+                raise EvidenceValidationError("narrated-navigation-markers requires unique positive sequence")
+        elif relationship in {"ruled-by", "located-in", "near"}:
+            if len(targets) != 1:
+                raise EvidenceValidationError(f"{relationship} requires exactly one target")
+            if relationship != "near" and len(entities) != 1:
+                raise EvidenceValidationError(f"{relationship} requires one entity target")
+            if relationship == "near" and values and values[0].value_type != "geographic-feature":
+                raise EvidenceValidationError("near value target must be geographic-feature")
+            if entities and (entities[0].role or entities[0].sequence is not None):
+                raise EvidenceValidationError(f"{relationship} does not permit role or sequence")
+        elif relationship in {"territorial-inheritance", "tithe-as-inheritance"}:
+            domain = "territorial" if relationship == "territorial-inheritance" else "economic"
+            normalized = "none" if relationship == "territorial-inheritance" else "tithe"
+            if len(targets) != 1 or len(values) != 1 or values[0].value_type != "entitlement" or values[0].normalized_value != normalized:
+                raise EvidenceValidationError(f"{relationship} requires one entitlement:{normalized} target")
+            if not any(qualifier.kind == "domain" and qualifier.normalized_value == domain for qualifier in values[0].qualifiers):
+                raise EvidenceValidationError(f"{relationship} requires domain={domain}")
+            if item.temporal_scope.to_dict() == CanonicalTemporalScope().to_dict():
+                raise EvidenceValidationError(f"{relationship} requires non-empty temporal scope")
+        else:
+            raise EvidenceValidationError(f"unsupported evidence target relationship: {relationship}")
+
+        for target in values:
+            for qualifier in target.qualifiers:
+                if qualifier.kind in {"contextual-addressee", "attributed-giver", "attributed-recipient"}:
+                    if not qualifier.entity_id:
+                        raise EvidenceValidationError(f"{qualifier.kind} qualifier requires entity_id")
+                elif not qualifier.normalized_value:
+                    raise EvidenceValidationError(f"{qualifier.kind} qualifier requires normalized_value")
+
+
 @dataclass(frozen=True)
 class CanonicalEvidenceItem:
     id: str
@@ -554,6 +605,7 @@ def validate_evidence_item(value: Mapping[str, Any] | CanonicalEvidenceItem) -> 
         metadata=metadata,
         notes=_string(value.get("notes", ""), "notes"),
     )
+    _validate_target_relationships(item)
     object.__setattr__(item, "_evidence_targets_present", "evidence_targets" in value)
     return item
 

@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 from .evidence_models import (
+    CanonicalEntityEvidenceTarget,
     CanonicalEvidenceItem,
     CanonicalTemporalScope,
     EvidenceValidationError,
@@ -1102,7 +1103,12 @@ class CanonicalObject:
     human_review_required: bool = True
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        result = asdict(self)
+        result["evidence_items"] = [
+            item.to_dict() if isinstance(item, CanonicalEvidenceItem) else dict(item)
+            for item in self.evidence_items
+        ]
+        return result
 
     @classmethod
     def from_mapping(
@@ -3208,6 +3214,40 @@ def validate_object(
     return CanonicalObject.from_mapping(normalized_data, path=path)
 
 
+def validate_evidence_target_compatibility(
+    item: CanonicalEvidenceItem,
+    parent: CanonicalObject,
+    object_index: Mapping[str, CanonicalObject],
+) -> None:
+    """Resolve typed target identities and check relationship object types."""
+    for target in item.evidence_targets:
+        relationship = target.relationship
+        if relationship in {
+            "encamped-between", "river-water-context", "narrated-navigation-markers",
+            "ruled-by", "located-in", "near",
+        } and parent.type != "place":
+            raise EvidenceValidationError(f"{relationship} requires a place subject")
+        if relationship in {"territorial-inheritance", "tithe-as-inheritance"}:
+            if parent.id != "levites" or parent.type != "institution":
+                raise EvidenceValidationError(f"{relationship} requires the levites institution subject")
+
+        if isinstance(target, CanonicalEntityEvidenceTarget):
+            resolved = object_index.get(target.entity_id)
+            if resolved is None:
+                raise EvidenceValidationError(f"evidence target references missing canonical entity {target.entity_id}")
+            expected_type = "person" if relationship == "ruled-by" else "place"
+            if resolved.type != expected_type:
+                raise EvidenceValidationError(
+                    f"{relationship} requires a {expected_type} target; {target.entity_id} is {resolved.type}"
+                )
+        else:
+            for qualifier in target.qualifiers:
+                if qualifier.entity_id and qualifier.entity_id not in object_index:
+                    raise EvidenceValidationError(
+                        f"evidence qualifier references missing canonical entity {qualifier.entity_id}"
+                    )
+
+
 def validate_library(
     objects: Mapping[str, CanonicalObject] | list[CanonicalObject],
     *,
@@ -3304,6 +3344,11 @@ def validate_library(
             )
         except EvidenceValidationError as exc:
             errors.append(str(_error(str(exc), path=path, object_id=obj.id)))
+        for item in evidence_lookup.get(obj.id, []):
+            try:
+                validate_evidence_target_compatibility(item, obj, seen_ids)
+            except EvidenceValidationError as exc:
+                errors.append(str(_error(str(exc), path=path, object_id=obj.id)))
 
     counts = {category: 0 for category in SUPPORTED_CATEGORIES}
     for obj in items:

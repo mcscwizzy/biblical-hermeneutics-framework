@@ -550,6 +550,59 @@
         "image_attribution": {"type": "string"}
       }
     },
+    "evidenceQualifier": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "normalized_value"],
+          "properties": {
+            "kind": {"$ref": "#/$defs/canonicalId"},
+            "normalized_value": {"$ref": "#/$defs/canonicalId"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "entity_id"],
+          "properties": {
+            "kind": {"$ref": "#/$defs/canonicalId"},
+            "entity_id": {"$ref": "#/$defs/canonicalId"}
+          }
+        }
+      ]
+    },
+    "entityEvidenceTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "relationship", "entity_id"],
+      "properties": {
+        "kind": {"const": "entity"},
+        "relationship": {"$ref": "#/$defs/canonicalId"},
+        "entity_id": {"$ref": "#/$defs/canonicalId"},
+        "role": {"$ref": "#/$defs/canonicalId"},
+        "sequence": {"type": "integer", "minimum": 1}
+      }
+    },
+    "valueEvidenceTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "relationship", "value_type", "normalized_value", "display_value", "qualifiers"],
+      "properties": {
+        "kind": {"const": "value"},
+        "relationship": {"$ref": "#/$defs/canonicalId"},
+        "value_type": {"$ref": "#/$defs/canonicalId"},
+        "normalized_value": {"$ref": "#/$defs/canonicalId"},
+        "display_value": {"type": "string", "minLength": 1},
+        "qualifiers": {"type": "array", "items": {"$ref": "#/$defs/evidenceQualifier"}}
+      }
+    },
+    "evidenceTarget": {
+      "oneOf": [
+        {"$ref": "#/$defs/entityEvidenceTarget"},
+        {"$ref": "#/$defs/valueEvidenceTarget"}
+      ]
+    },
     "evidenceItem": {
       "type": "object",
       "additionalProperties": false,
@@ -643,6 +696,10 @@
         "related_evidence": {
           "type": "array",
           "items": {"$ref": "#/$defs/evidenceRelationship"}
+        },
+        "evidence_targets": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidenceTarget"}
         },
         "scripture_references": {
           "type": "array",

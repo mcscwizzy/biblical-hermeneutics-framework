@@ -1,6 +1,10 @@
 from __future__ import annotations
 
 import unittest
+import json
+from pathlib import Path
+
+import pytest
 
 from framework.canonical_library import (
     CanonicalObject,
@@ -18,6 +22,7 @@ from framework.canonical_library import (
     validate_library,
     validate_object,
 )
+from framework.canonical_library.schema.validator import validate_base_object
 
 
 def valid_mapping() -> dict[str, object]:
@@ -27,6 +32,28 @@ def valid_mapping() -> dict[str, object]:
         title="Shechem",
         aliases=["where is shechem", "why is shechem important"],
     ).to_dict()
+
+
+def test_base_schema_accepts_typed_evidence_target_union() -> None:
+    path = Path(__file__).resolve().parents[2] / "framework/canonical_library/objects/events/david-and-goliath.json"
+    evidence = json.loads(path.read_text(encoding="utf-8"))["evidence_items"][0]
+    evidence["evidence_targets"] = [
+        {"kind": "entity", "relationship": "near", "entity_id": "sychar"},
+        {
+            "kind": "value", "relationship": "territorial-inheritance",
+            "value_type": "entitlement", "normalized_value": "none",
+            "display_value": "No inheritance", "qualifiers": [
+                {"kind": "domain", "normalized_value": "territorial"},
+            ],
+        },
+    ]
+    raw = valid_mapping()
+    raw["evidence_items"] = [evidence]
+    validate_base_object(raw)
+
+    evidence["evidence_targets"][0]["unexpected"] = True
+    with pytest.raises(CanonicalValidationError):
+        validate_base_object(raw)
 
 
 def complete_section_status() -> dict[str, str]:
