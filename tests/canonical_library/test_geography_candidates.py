@@ -4,12 +4,16 @@ import json
 import hashlib
 from copy import deepcopy
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
 from framework.canonical_library.geography_candidates import build_geography_candidate_queue, _typed_targets
 from framework.canonical_library.loader import CanonicalLibrary
 from framework.canonical_library.expansion import apply_candidate_queue
+from framework.canonical_library.expansion import CandidateValidation, CanonicalStructuralDuplicateConflict
+from tools import ckl_geography_candidate_dry_run as dry_run_tool
+from tools.ckl_geography_candidate_dry_run import _apply_decisions, _report
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -177,3 +181,106 @@ def test_dry_run_uses_candidate_sources_without_writing_production_ckl(
         for path in (ROOT / "framework" / "canonical_library" / "objects").rglob("*.json")
     }
     assert after == before
+
+
+def test_report_exposes_structured_duplicate_survivor_and_provenance() -> None:
+    record = {
+        "source_lock_id": "fixture-existing-duplicate", "outcome": "NEW",
+        "target_ckl_object_id": "bethlehem-1", "scripture_anchors": [{"reference": "Ruth 1:1"}],
+        "chapter_reference": "Ruth 1", "relationship_type": "near", "subject": {},
+        "target": {}, "source_locks": [], "temporal_scope": {},
+        "candidate_payload": {"evidence_item": {"temporal_scope": {}}},
+    }
+    decision = CandidateValidation(
+        accepted=True, candidate={"source_lock_id": "fixture-existing-duplicate", "target_object_id": "bethlehem-1"},
+        classification="duplicate-existing-provenance-merged",
+        survivor_evidence_id="z-canonical", contributing_source_ids=["existing", "new"],
+    )
+    unrelated = CandidateValidation(
+        accepted=True, candidate={"source_lock_id": "other-parent", "target_object_id": "sidon"},
+        classification="duplicate-existing", survivor_evidence_id="z-canonical",
+    )
+
+    _apply_decisions([record], {"fixture-existing-duplicate": decision, "other-parent": unrelated})
+
+    assert record["outcome"] == "DUPLICATE_EXISTING"
+    assert record["dedup_result"] == "duplicate-existing-provenance-merged"
+    assert record["survivor_evidence_id"] == "z-canonical"
+    assert record["contributing_source_ids"] == ["existing", "new"]
+    assert record["contributing_source_lock_ids"] == ["fixture-existing-duplicate"]
+
+
+def test_report_preserves_conflict_details() -> None:
+    record = {"source_lock_id": "fixture-conflict", "outcome": "NEW", "target_ckl_object_id": "bethlehem-1"}
+    decision = CandidateValidation(
+        accepted=False, candidate={"source_lock_id": "fixture-conflict"},
+        reasons=["provenance-conflict"], classification="provenance-conflict",
+        survivor_evidence_id="z-canonical",
+        provenance_conflicts=[{"source_id": "same", "existing": {"locator": "Ruth 1:1"}, "candidate": {"locator": "Ruth 1:2"}}],
+    )
+
+    _apply_decisions([record], {"fixture-conflict": decision})
+
+    assert record["outcome"] == "CONFLICTING"
+    assert record["dedup_result"] == "provenance-conflict"
+    assert record["survivor_evidence_id"] == "z-canonical"
+    assert record["provenance_conflicts"][0]["source_id"] == "same"
+
+
+def test_report_counts_staged_entities_and_provenance_merges() -> None:
+    record = {
+        "source_lock_id": "fixture-merge", "outcome": "DUPLICATE_EXISTING",
+        "dedup_result": "duplicate-existing-provenance-merged",
+        "transaction_classification": "duplicate-existing-provenance-merged",
+        "validation_result": "PASS", "survivor_evidence_id": "z-canonical",
+        "contributing_source_ids": ["existing", "new"],
+        "contributing_source_lock_ids": ["fixture-merge"],
+        "target_ckl_file": "framework/canonical_library/objects/places/bethlehem-1.json",
+        "relationship_type": "near", "subject": {}, "target": {}, "source_locks": [],
+        "temporal_scope": {}, "chapter_reference": "Ruth 1", "scripture_anchors": [],
+        "candidate_payload": {"entity_bootstraps": [{"id": "new-place", "type": "place"}], "evidence_item": {"temporal_scope": {}}},
+    }
+    source_locks = {"chapters": [{"claims": [{"status": "LOCKED"}]}]}
+    transaction = SimpleNamespace(
+        changed_object_ids=["new-place", "bethlehem-1"],
+        simulated_objects={"new-place": {}, "bethlehem-1": {}}, wrote=False,
+    )
+
+    report = _report(
+        source_locks, {"candidates": [record]}, transaction=transaction,
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+    )
+
+    assert report["candidates"]["duplicate_existing_provenance_merged"] == 1
+    assert report["candidates"]["accepted"] == 1
+    assert report["candidates"]["insertions"] == 0
+    assert report["dry_run"]["staged_bootstrap_count"] == 1
+    assert report["dry_run"]["staged_manifest_object_count"] == 2
+    assert "framework/canonical_library/objects/places/new-place.json" in report["dry_run"]["files_that_would_change"]
+    assert "framework/canonical_library/objects/places/bethlehem-1.json" in report["dry_run"]["files_that_would_change"]
+    assert report["dry_run"]["provenance_merges"][0]["survivor_evidence_id"] == "z-canonical"
+    assert report["dry_run"]["wrote"] is False
+
+
+def test_dry_run_reports_loaded_structural_conflict_without_writing(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    lock_path = tmp_path / "locks.json"
+    lock_path.write_text(json.dumps({"chapters": [{"claims": [{"status": "LOCKED"}]}]}))
+    queue = {"candidates": [{
+        "source_lock_id": "fixture-conflict", "outcome": "NEW", "target_ckl_object_id": "bethlehem-1",
+        "candidate_payload": {"evidence_item": {}}, "chapter_reference": "Ruth 1",
+        "relationship_type": "near", "subject": {}, "target": {}, "source_locks": [],
+        "scripture_anchors": [], "temporal_scope": {},
+    }]}
+    monkeypatch.setattr(dry_run_tool.CanonicalLibrary, "load", lambda self: self)
+    monkeypatch.setattr(dry_run_tool, "build_geography_candidate_queue", lambda *args, **kwargs: queue)
+    monkeypatch.setattr(dry_run_tool, "apply_candidate_queue", lambda *args, **kwargs: (_ for _ in ()).throw(
+        CanonicalStructuralDuplicateConflict("canonical-structural-duplicate-conflict: bethlehem-1:hash")
+    ))
+
+    result = dry_run_tool.run(source_lock_path=lock_path, ckl_root=tmp_path)
+
+    assert result["queue"]["candidates"][0]["dedup_result"] == "canonical-structural-duplicate-conflict"
+    assert result["report"]["dry_run"]["full_library_validation"] == "FAIL"
+    assert result["report"]["dry_run"]["wrote"] is False

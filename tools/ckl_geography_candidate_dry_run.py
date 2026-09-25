@@ -6,14 +6,22 @@ import argparse
 from collections import Counter
 import json
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, Mapping
-
-from framework.canonical_library.expansion import apply_candidate_queue, selective_recompile
-from framework.canonical_library.geography_candidates import build_geography_candidate_queue
-from framework.canonical_library.loader import CanonicalLibrary
-
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from framework.canonical_library.expansion import (
+    CanonicalStructuralDuplicateConflict, apply_candidate_queue,
+)
+from framework.canonical_library.geography_candidates import build_geography_candidate_queue
+from framework.canonical_library.loader import CanonicalLibrary
+from framework.canonical_library.schema import CATEGORY_FOLDERS
+
+
 DEFAULT_SOURCE_LOCK = ROOT / "docs" / "ckl-geography-pilot-source-lock.json"
 DEFAULT_QUEUE = ROOT / "docs" / "ckl-geography-pilot-candidates.json"
 DEFAULT_REPORT = ROOT / "docs" / "ckl-geography-pilot-candidates.md"
@@ -42,7 +50,10 @@ def run(
         for item in queue["candidates"]
         if item["outcome"] == "NEW"
     ]
-    transaction = apply_candidate_queue(ckl_root, staged, write=False)
+    try:
+        transaction = apply_candidate_queue(ckl_root, staged, write=False)
+    except CanonicalStructuralDuplicateConflict as exc:
+        return _structural_conflict_report(source_locks, queue, str(exc))
     decisions = {
         str(item.candidate.get("source_lock_id") or ""): item
         for item in transaction.decisions
@@ -56,7 +67,10 @@ def run(
     direct_chapters = _chapters_from_records(queue["candidates"])
     dependent_chapters = sorted(set(all_changed_chapters) - set(direct_chapters))
     preview_references = sorted(set(all_changed_chapters))
-    commentary_preview = selective_recompile(preview_references) if preview_references else []
+    commentary_preview = [
+        {"reference": reference, "pipeline": "commentary-v1.2-enrichment", "operation": "would-rebuild"}
+        for reference in preview_references
+    ]
 
     report = _report(
         source_locks,
@@ -72,8 +86,49 @@ def run(
     return {"queue": queue, "report": report}
 
 
+def _structural_conflict_report(
+    source_locks: Mapping[str, Any], queue: dict[str, Any], message: str,
+) -> dict[str, Any]:
+    parts = message.split(":", 2)
+    offending_parent = parts[1].strip() if len(parts) > 1 else ""
+    for record in queue["candidates"]:
+        if record["outcome"] != "NEW":
+            record.update(validation_result="NOT_STAGED", dedup_result="NOT_STAGED", leakage_result="NOT_STAGED")
+            continue
+        if record.get("target_ckl_object_id") == offending_parent:
+            record.update(
+                outcome="CONFLICTING", validation_result="FAIL",
+                dedup_result="canonical-structural-duplicate-conflict",
+                transaction_classification="canonical-structural-duplicate-conflict",
+                rejection_reason=message, leakage_result="NOT_STAGED",
+            )
+        else:
+            record.update(
+                outcome="REJECTED", validation_result="NOT_STAGED",
+                dedup_result="NOT_STAGED", rejection_reason="transaction-blocked-by-canonical-structural-duplicate",
+                leakage_result="NOT_STAGED",
+            )
+    report = _report(
+        source_locks, queue,
+        transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+    )
+    report["dry_run"].update(
+        full_library_validation="FAIL", transaction_result="BLOCKED",
+        transaction_blocker=message,
+    )
+    queue["dry_run"] = report
+    return {"queue": queue, "report": report}
+
+
 def _apply_decisions(records: list[dict[str, Any]], decisions: Mapping[str, Any]) -> None:
     seen_by_target: dict[str, str] = {}
+    contributors: dict[tuple[str, str], list[str]] = {}
+    for source_lock_id, decision in decisions.items():
+        survivor = str(decision.survivor_evidence_id or "")
+        if survivor:
+            parent_id = str(decision.candidate.get("target_object_id") or "")
+            contributors.setdefault((parent_id, survivor), []).append(str(source_lock_id))
     for record in records:
         if record["outcome"] != "NEW":
             record["validation_result"] = "NOT_STAGED"
@@ -91,25 +146,51 @@ def _apply_decisions(records: list[dict[str, Any]], decisions: Mapping[str, Any]
             )
             continue
         reasons = list(decision.reasons)
+        classification = str(decision.classification or "rejected")
         record["validation_result"] = "PASS" if decision.accepted else "FAIL"
         record["validation_reasons"] = reasons
+        record["transaction_classification"] = classification
+        if decision.survivor_evidence_id:
+            record["survivor_evidence_id"] = decision.survivor_evidence_id
+            record["contributing_source_lock_ids"] = sorted(contributors.get(
+                (str(record["target_ckl_object_id"]), decision.survivor_evidence_id), [],
+            ))
+        if decision.contributing_source_ids:
+            record["contributing_source_ids"] = list(decision.contributing_source_ids)
+        if decision.provenance_conflicts:
+            record["provenance_conflicts"] = list(decision.provenance_conflicts)
         record["leakage_result"] = "PASS" if not any(
             value.startswith(("geography-target", "scripture-anchor"))
             for value in reasons
         ) else "REJECTED"
         if not decision.accepted:
-            record["outcome"] = "DUPLICATE_EXISTING" if "semantic-duplicate" in reasons else "REJECTED"
-            record["dedup_result"] = record["outcome"] if "semantic-duplicate" in reasons else "NOT_DUPLICATE"
+            if classification in {"identity-conflict", "provenance-conflict", "canonical-structural-duplicate-conflict"}:
+                record["outcome"] = "CONFLICTING"
+            elif classification == "duplicate-pilot":
+                record["outcome"] = "DUPLICATE_PILOT"
+            elif classification == "duplicate-existing" or "semantic-duplicate" in reasons:
+                record["outcome"] = "DUPLICATE_EXISTING"
+            else:
+                record["outcome"] = "REJECTED"
+            record["dedup_result"] = classification if record["outcome"] != "REJECTED" else "not-duplicate"
             record["rejection_reason"] = "; ".join(reasons)
+            continue
+        if classification.startswith("duplicate-existing"):
+            record["outcome"] = "DUPLICATE_EXISTING"
+            record["dedup_result"] = classification
+            continue
+        if classification.startswith("duplicate-pilot"):
+            record["outcome"] = "DUPLICATE_PILOT"
+            record["dedup_result"] = classification
             continue
         target = str(record["target_ckl_object_id"])
         if target in seen_by_target:
             record["outcome"] = "COMPLEMENTARY"
-            record["dedup_result"] = "COMPLEMENTARY"
+            record["dedup_result"] = "complementary"
             record["complementary_to"] = seen_by_target[target]
         else:
             record["outcome"] = "NEW"
-            record["dedup_result"] = "NEW"
+            record["dedup_result"] = "new"
             seen_by_target[target] = str(record["source_lock_id"])
 
 
@@ -119,6 +200,9 @@ def _direct_references(records: list[dict[str, Any]]) -> list[str]:
             str(anchor["reference"])
             for record in records
             if record["outcome"] in {"NEW", "COMPLEMENTARY"}
+            or record.get("dedup_result") in {
+                "duplicate-existing-provenance-merged", "duplicate-pilot-provenance-merged",
+            }
             for anchor in record["scripture_anchors"]
         }
     )
@@ -130,6 +214,9 @@ def _chapters_from_records(records: list[dict[str, Any]]) -> list[str]:
             str(record["chapter_reference"])
             for record in records
             if record["outcome"] in {"NEW", "COMPLEMENTARY"}
+            or record.get("dedup_result") in {
+                "duplicate-existing-provenance-merged", "duplicate-pilot-provenance-merged",
+            }
         }
     )
 
@@ -153,8 +240,14 @@ def _report(
     )
     outcomes = Counter(str(item["outcome"]) for item in records)
     resolved = [item for item in records if item["outcome"] in {"NEW", "COMPLEMENTARY"}]
-    relationship_types = Counter(str(item["relationship_type"]) for item in resolved)
-    locators = [lock for item in resolved for lock in item["source_locks"]]
+    accepted_records = [item for item in records if item.get("validation_result") == "PASS"]
+    merged = [item for item in records if item.get("dedup_result", "").endswith("provenance-merged")]
+    staged_ids = {
+        item["id"] for record in records for item in record.get("candidate_payload", {}).get("entity_bootstraps", [])
+        if record.get("validation_result") == "PASS"
+    }
+    relationship_types = Counter(str(item["relationship_type"]) for item in accepted_records)
+    locators = [lock for item in accepted_records for lock in item["source_locks"]]
     protected = {
         chapter: sum(item["chapter_reference"] == chapter for item in records)
         for chapter in sorted(PROTECTED_CHAPTERS)
@@ -167,29 +260,36 @@ def _report(
         },
         "candidates": {
             "total_generated": len(records),
-            "accepted": outcomes["NEW"] + outcomes["COMPLEMENTARY"],
+            "accepted": len(accepted_records),
+            "insertions": len(resolved),
             "rejected": outcomes["REJECTED"],
             "duplicate_existing": outcomes["DUPLICATE_EXISTING"],
             "duplicate_pilot": outcomes["DUPLICATE_PILOT"],
             "complementary": outcomes["COMPLEMENTARY"],
             "conflicting": outcomes["CONFLICTING"],
+            "duplicate_existing_provenance_merged": sum(item["outcome"] == "DUPLICATE_EXISTING" for item in merged),
+            "duplicate_pilot_provenance_merged": sum(item["outcome"] == "DUPLICATE_PILOT" for item in merged),
         },
         "relationship_types": dict(sorted(relationship_types.items())),
         "entity_resolution": {
-            "resolved_subjects": sum(bool(item["subject"].get("entity_id")) for item in resolved),
-            "resolved_targets": sum(bool(item["target"].get("entity_id")) for item in resolved),
+            "resolved_subjects": sum(bool(item["subject"].get("entity_id")) for item in accepted_records),
+            "resolved_targets": sum(bool(item["target"].get("entity_id")) for item in accepted_records),
             "unresolved_records": [
                 {"source_lock_id": item["source_lock_id"], "reason": item.get("rejection_reason")}
                 for item in records
                 if item["outcome"] == "REJECTED"
             ],
-            "collisions_detected": [],
+            "collisions_detected": [
+                {"source_lock_id": item["source_lock_id"], "classification": item.get("transaction_classification"),
+                 "provenance_conflicts": item.get("provenance_conflicts", [])}
+                for item in records if item["outcome"] == "CONFLICTING"
+            ],
         },
         "temporal": {
-            "time_qualified_candidates": len(resolved),
+            "time_qualified_candidates": len(accepted_records),
             "preservation_verified": all(
                 item["candidate_payload"]["evidence_item"]["temporal_scope"] == item["temporal_scope"]
-                for item in resolved
+                for item in accepted_records
             ),
             "failures": [],
         },
@@ -200,14 +300,28 @@ def _report(
         },
         "dry_run": {
             "objects_that_would_change": transaction.changed_object_ids,
+            "staged_bootstrap_count": len(staged_ids),
+            "staged_manifest_object_count": len(transaction.simulated_objects),
             "files_that_would_change": sorted(
                 {
                     item["target_ckl_file"]
-                    for item in resolved
+                    for item in accepted_records
                     if item.get("target_ckl_file")
+                } | {
+                    f"framework/canonical_library/objects/{CATEGORY_FOLDERS[item['type']]}/{item['id']}.json"
+                    for record in records
+                    if record.get("validation_result") == "PASS"
+                    for item in record.get("candidate_payload", {}).get("entity_bootstraps", [])
                 }
             ),
             "claims_that_would_be_inserted": [item["source_lock_id"] for item in resolved],
+            "provenance_merges": [
+                {"source_lock_id": item["source_lock_id"],
+                 "survivor_evidence_id": item.get("survivor_evidence_id"),
+                 "contributing_source_ids": item.get("contributing_source_ids", []),
+                 "contributing_source_lock_ids": item.get("contributing_source_lock_ids", [])}
+                for item in merged
+            ],
             "full_library_validation": "PASS",
             "transaction_result": "DRY_RUN_PASS",
             "wrote": transaction.wrote,
@@ -220,6 +334,7 @@ def _report(
             "unexpected_propagation": [],
         },
         "commentary_v12_preview": {
+            "preview_mode": "reference-only",
             "evidence_bundles_that_would_rebuild": commentary_preview,
             "chapter_syntheses_that_would_rebuild": [item["reference"] for item in commentary_preview],
             "production_artifacts_modified": False,
@@ -251,6 +366,8 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             "",
             f"- Generated: {candidates['total_generated']}",
             f"- Accepted: {candidates['accepted']}; rejected: {candidates['rejected']}; duplicate existing: {candidates['duplicate_existing']}; duplicate pilot: {candidates['duplicate_pilot']}; complementary: {candidates['complementary']}; conflicting: {candidates['conflicting']}",
+            f"- New or complementary insertions: {candidates['insertions']}",
+            f"- Provenance merges: existing {candidates['duplicate_existing_provenance_merged']}; pilot {candidates['duplicate_pilot_provenance_merged']}",
             f"- Relationship types: {report['relationship_types']}",
             "",
             "## Dry run",
@@ -258,7 +375,10 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             f"- Full-library validation: {dry_run['full_library_validation']}",
             f"- Transaction: {dry_run['transaction_result']}; wrote production CKL: {dry_run['wrote']}",
             f"- Objects: {dry_run['objects_that_would_change']}",
+            f"- Staged bootstrap objects: {dry_run['staged_bootstrap_count']}; simulated manifest objects: {dry_run['staged_manifest_object_count']}",
             f"- Files: {dry_run['files_that_would_change']}",
+            f"- Provenance merge details: {dry_run['provenance_merges']}",
+            f"- Transaction blocker: {dry_run.get('transaction_blocker', 'none')}",
             "",
             "## Changed references",
             "",
@@ -267,6 +387,7 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             "",
             "## Commentary v1.2 preview",
             "",
+            f"- Preview mode: {preview['preview_mode']}; synthesis was not recomputed.",
             f"- EvidenceBundles and syntheses that would rebuild: {len(preview['evidence_bundles_that_would_rebuild'])}",
             "- No production Commentary artifacts were modified.",
             "",
@@ -278,7 +399,7 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             "",
             "NOT READY TO APPLY",
             "",
-            "Eight source-locked claims require entity bootstrap or a typed target-value representation that the current CKL schema cannot preserve. No production apply was run.",
+            f"{candidates['rejected']} source-locked claims remain rejected. No production apply was run; bootstrap-bearing transactions remain dry-run only.",
             "",
         ]
     )

@@ -270,7 +270,8 @@ def validate_candidate(
         normalized_evidence_item=normalized_evidence_item,
         changed_references=_canonical_anchor_strings(anchors),
         classification="new" if not reasons else (
-            "provenance-conflict" if "provenance-conflict" in reasons else "rejected"
+            "provenance-conflict" if "provenance-conflict" in reasons else
+            "duplicate-existing" if "semantic-duplicate" in reasons else "rejected"
         ),
         provenance_conflicts=provenance_conflicts,
     )
@@ -308,6 +309,7 @@ def validate_candidates(
                     normalized_claim=decision.normalized_claim,
                     normalized_evidence_item=decision.normalized_evidence_item,
                     changed_references=decision.changed_references,
+                    classification="duplicate-pilot",
                 )
             else:
                 seen.add(fingerprint)
