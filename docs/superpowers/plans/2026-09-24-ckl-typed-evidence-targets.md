@@ -59,7 +59,7 @@ Before changing model, transaction, converter, or report code, run the original 
 
 ### Baseline-aware repository-suite gate
 
-Before Task 1, run `.venv/bin/pytest -q` in the isolated worktree with the prerequisite files and frozen fixture in place. Save the exact command, exit status, failing node IDs, and relevant failure output in the execution ledger. At Task 7, rerun the same command and compare failures by node ID. Every newly failing test attributable to this branch must be fixed and rerun; pre-existing unrelated failures remain documented and do not authorize unrelated code changes. If baseline collection is interrupted, it is not a passing baseline; rerun it or record the specific blocker before implementation. Focused tests for Tasks 1–7 still must pass.
+Before Task 1, freeze the pre-implementation feature HEAD (after prerequisite and fixture commits) and start `.venv/bin/pytest -q` from an immutable detached baseline worktree at that commit. Keep that test process separate from the implementation worktree so concurrent edits cannot affect the baseline. Save the exact command, exit status, failing node IDs, and relevant failure output in the execution ledger before the Task 7 repository-suite gate. At Task 7, run the same command in the implementation worktree and compare failures by node ID. Every newly failing test attributable to this branch must be fixed and rerun; pre-existing unrelated failures remain documented and do not authorize unrelated code changes. An interrupted baseline run is not a passing baseline; rerun it from the frozen commit or record the specific blocker before final verification. Focused tests for Tasks 1–7 still must pass.
 
 ### Final branch verification and review
 
@@ -568,7 +568,7 @@ git commit -m "feat: report typed geography dry-run decisions"
 ## Plan Self-Review
 
 - Isolation: the verified `master` SHA and original dirty status are recorded before branch creation; all prerequisite, fixture, and Task 1–7 commits stay on the isolated feature branch. Final review uses `master` baseline → feature HEAD and checks that `master`, source locks, production objects, and unrelated local work are unchanged.
-- Fixture and suite: the original 20 hash map is frozen from pre-implementation output before Task 1; the repository-suite gate compares final failures with the recorded pre-implementation baseline.
+- Fixture and suite: the original 20 hash map is frozen from pre-implementation output before Task 1; the repository-suite gate compares final failures with the recorded test result from a detached pre-implementation worktree.
 - Spec coverage: Tasks 1–3 cover the union, strict schema, legacy payload stability, library resolution, retrieval, and SQLite payload persistence. Tasks 4–5 cover structural identity, canonical survivor precedence, provenance-safe merging, conflicts, bootstrap staging, and non-write boundaries. Tasks 6–7 cover locked conversion, 20-payload stability, audit output, and full verification.
 - Placeholder scan: complete; no open placeholders, implicit error handling, or cross-task-only interfaces remain.
 - Type consistency: `CanonicalEvidenceTarget` is the model collection; mappings are emitted only at serializer/retrieval/transaction boundaries; transaction reports expose `classification` and `survivor_evidence_id` consistently.
