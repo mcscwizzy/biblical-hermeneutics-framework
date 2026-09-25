@@ -3222,10 +3222,10 @@ def validate_evidence_target_compatibility(
     """Resolve typed target identities and check relationship object types."""
     for target in item.evidence_targets:
         relationship = target.relationship
-        if relationship in {
-            "encamped-between", "river-water-context", "narrated-navigation-markers",
-            "ruled-by", "located-in", "near",
-        } and parent.type != "place":
+        if relationship in {"encamped-between", "river-water-context", "narrated-navigation-markers"}:
+            if parent.type not in {"book", "event", "place"}:
+                raise EvidenceValidationError(f"{relationship} requires a book, event, or place subject")
+        elif relationship in {"ruled-by", "located-in", "near"} and parent.type != "place":
             raise EvidenceValidationError(f"{relationship} requires a place subject")
         if relationship in {"territorial-inheritance", "tithe-as-inheritance"}:
             if parent.id != "levites" or parent.type != "institution":

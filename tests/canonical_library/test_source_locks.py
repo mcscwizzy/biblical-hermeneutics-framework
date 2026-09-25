@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -164,6 +165,30 @@ def test_checked_in_pilot_source_locks_resolve_to_local_source_records() -> None
     queue = json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
 
     validate_source_lock_queue_against_repository(queue, root=ROOT)
+
+
+def test_maritime_lock_names_exact_imported_occurrence_records() -> None:
+    queue = json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
+    claim = next(
+        claim for chapter in queue["chapters"] for claim in chapter["claims"]
+        if claim["id"] == "acts-27-sidon-crete-maritime-itinerary"
+    )
+    locator = next(
+        lock["locator"] for lock in claim["source_locks"]
+        if lock["source_id"] == "openbible-geocoding-data"
+    )
+    locked_ids = set(re.findall(r"openbible-[a-z0-9]+", locator))
+    imported = json.loads((ROOT / "bhf_agent/data/openbible_places.json").read_text(encoding="utf-8"))
+    records = [item for item in imported if item["id"] in locked_ids]
+    assert len(locked_ids) == len(records) == 8
+    assert {item["name"] for item in records} == {
+        "Italy", "Sidon", "Myra", "Cyprus", "Cnidus", "Crete", "Fair Havens", "Lasea",
+    }
+    assert all(any(
+        ref["book"] == "Acts" and ref["chapter"] == 27 and
+        ref["verse_start"] <= 8 and ref["verse_end"] >= 1
+        for ref in item["references"]
+    ) for item in records)
 
 
 def test_repository_source_crosscheck_rejects_a_missing_source_id() -> None:

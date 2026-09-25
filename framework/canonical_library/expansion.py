@@ -149,13 +149,22 @@ def validate_candidate(
             and target_id == "levites"
             and passage_reference.startswith("Numbers 18:")
             and bool(evidence_item.get("temporal_scope"))
-            and any(
-                normalize_id(str(_mapping(item).get("relationship") or "")) == "territory-of"
-                and re.search(
-                    r"\b(?:negative|no|without|excluded)\b",
-                    str(_mapping(item).get("notes") or "").casefold(),
+            and (
+                any(
+                    normalize_id(str(_mapping(item).get("relationship") or ""))
+                    in {"territorial-inheritance", "tithe-as-inheritance"}
+                    and _mapping(item).get("kind") == "value"
+                    and _mapping(item).get("value_type") == "entitlement"
+                    for item in _sequence(evidence_item.get("evidence_targets"))
                 )
-                for item in _sequence(evidence_item.get("related_objects"))
+                or any(
+                    normalize_id(str(_mapping(item).get("relationship") or "")) == "territory-of"
+                    and re.search(
+                        r"\b(?:negative|no|without|excluded)\b",
+                        str(_mapping(item).get("notes") or "").casefold(),
+                    )
+                    for item in _sequence(evidence_item.get("related_objects"))
+                )
             )
         )
         if _value(target, "type") not in allowed_types and not (
@@ -406,8 +415,29 @@ def _validate_bootstrap_provenance(obj: CanonicalObject, candidate: Mapping[str,
             for reference in evidence.external_references
             if reference.domain == "map-place"
         }
-        if not record_ids.intersection(external_ids) or not re.search(
-            rf"/{re.escape(obj.id)}(?:\b|$)", locator,
+        locked_external_ids = record_ids.intersection(external_ids)
+        imported_identity = False
+        if locked_external_ids and not re.search(rf"/{re.escape(obj.id)}(?:\b|$)", locator):
+            import_path = Path(__file__).resolve().parents[2] / "bhf_agent/data/openbible_places.json"
+            try:
+                imported = json.loads(import_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                imported = []
+            imported_identity = any(
+                entry.get("id") in locked_external_ids
+                and str(entry.get("source_url") or "").rstrip("/").endswith(f"/{obj.id}")
+                and any(
+                    _anchors_overlap(
+                        f"{reference.get('book')} {reference.get('chapter')}:{reference.get('verse_start')}-{reference.get('verse_end')}",
+                        anchors,
+                    )
+                    for reference in _sequence(entry.get("references"))
+                    if isinstance(reference, Mapping)
+                )
+                for entry in imported if isinstance(entry, Mapping)
+            )
+        if not locked_external_ids or not (
+            re.search(rf"/{re.escape(obj.id)}(?:\b|$)", locator) or imported_identity
         ):
             raise ValueError(f"bootstrap OpenBible identity/occurrence lock mismatch: {obj.id}")
 
