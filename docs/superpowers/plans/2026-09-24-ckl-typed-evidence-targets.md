@@ -59,7 +59,7 @@ Before changing model, transaction, converter, or report code, run the original 
 
 ### Baseline-aware repository-suite gate
 
-Before Task 1, freeze the pre-implementation feature HEAD (after prerequisite and fixture commits) and start `.venv/bin/pytest -q` from an immutable detached baseline worktree at that commit. Keep that test process separate from the implementation worktree so concurrent edits cannot affect the baseline. Save the exact command, exit status, failing node IDs, and relevant failure output in the execution ledger before the Task 7 repository-suite gate. At Task 7, run the same command in the implementation worktree and compare failures by node ID. Every newly failing test attributable to this branch must be fixed and rerun; pre-existing unrelated failures remain documented and do not authorize unrelated code changes. An interrupted baseline run is not a passing baseline; rerun it from the frozen commit or record the specific blocker before final verification. Focused tests for Tasks 1–7 still must pass.
+Before Task 1, freeze the pre-implementation feature HEAD (after prerequisite and fixture commits) in an immutable detached baseline worktree. Run `.venv/bin/pytest -q -n 8` there, separately from the implementation worktree so concurrent edits cannot affect the baseline. The repository has 2,436 collected tests; eight pytest-xdist workers keep the complete suite practical. Save the exact command, exit status, failing node IDs, and relevant failure output in the execution ledger before the Task 7 repository-suite gate. At Task 7, run the same command with eight workers in the implementation worktree and compare failures by node ID. Every newly failing test attributable to this branch must be fixed and rerun; pre-existing unrelated failures remain documented and do not authorize unrelated code changes. An interrupted baseline run is not a passing baseline; rerun it from the frozen commit or record the specific blocker before final verification. Focused tests for Tasks 1–7 still must pass.
 
 ### Final branch verification and review
 
@@ -554,7 +554,7 @@ Expected: all focused tests pass; generated candidates/report reflect the comple
 
 - [ ] **Step 5: Run the baseline-aware repository suite before completion**
 
-Run: `.venv/bin/pytest -q`
+Run: `.venv/bin/pytest -q -n 8`
 
 Expected: PASS for all branch-relevant tests, with no new failures relative to the recorded pre-Task-1 run. Record exact failing node IDs and output. Fix new branch-caused failures within the responsible task and rerun the full suite. Keep any unrelated pre-existing failures in the final report without expanding scope.
 
