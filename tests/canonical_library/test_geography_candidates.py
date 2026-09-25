@@ -317,8 +317,12 @@ def test_dry_run_reports_loaded_structural_conflict_without_writing(
     assert result["report"]["dry_run"]["wrote"] is False
 
 
+@pytest.mark.parametrize("collision_message", [
+    "bootstrap title collision: Bethlehem with bethlehem-1",
+    "bootstrap id collision: colliding-place with bethlehem-1",
+])
 def test_dry_run_reports_bootstrap_collision_without_writing(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, collision_message: str,
 ) -> None:
     lock_path = tmp_path / "locks.json"
     lock_path.write_text(json.dumps({"chapters": [{"claims": [{"status": "LOCKED"}]}]}))
@@ -336,7 +340,7 @@ def test_dry_run_reports_bootstrap_collision_without_writing(
     monkeypatch.setattr(dry_run_tool.CanonicalLibrary, "load", lambda self: self)
     monkeypatch.setattr(dry_run_tool, "build_geography_candidate_queue", lambda *args, **kwargs: queue)
     monkeypatch.setattr(dry_run_tool, "apply_candidate_queue", lambda *args, **kwargs: (_ for _ in ()).throw(
-        ValueError("bootstrap title collision: Bethlehem with bethlehem-1")
+        ValueError(collision_message)
     ))
 
     result = dry_run_tool.run(source_lock_path=lock_path, ckl_root=tmp_path)

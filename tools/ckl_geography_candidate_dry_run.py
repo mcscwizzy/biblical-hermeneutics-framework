@@ -140,6 +140,9 @@ def _bootstrap_conflict_report(
             if message.startswith("bootstrap id conflict: "):
                 if str(bootstrap.get("id")) == message.removeprefix("bootstrap id conflict: "):
                     return True
+            if message.startswith("bootstrap id collision: "):
+                if str(bootstrap.get("id")) == message.removeprefix("bootstrap id collision: ").split(" with ", 1)[0]:
+                    return True
             if message.startswith("bootstrap source-identity collision: "):
                 source_id = message.removeprefix("bootstrap source-identity collision: ")
                 if any(source.get("id") == source_id for source in bootstrap.get("sources", [])):
