@@ -418,30 +418,29 @@ def _validate_bootstrap_provenance(obj: CanonicalObject, candidate: Mapping[str,
             if reference.domain == "map-place"
         }
         locked_external_ids = record_ids.intersection(external_ids)
-        imported_identity = False
-        if locked_external_ids and not re.search(rf"/{re.escape(obj.id)}(?:\b|$)", locator):
-            import_path = Path(__file__).resolve().parents[2] / "bhf_agent/data/openbible_places.json"
-            try:
-                imported = json.loads(import_path.read_text(encoding="utf-8"))
-            except (OSError, json.JSONDecodeError):
-                imported = []
-            imported_identity = any(
-                entry.get("id") in locked_external_ids
-                and str(entry.get("source_url") or "").rstrip("/").endswith(f"/{obj.id}")
-                and any(
-                    _anchors_overlap(
-                        f"{reference.get('book')} {reference.get('chapter')}:{reference.get('verse_start')}-{reference.get('verse_end')}",
-                        anchors,
-                    )
-                    for reference in _sequence(entry.get("references"))
-                    if isinstance(reference, Mapping)
-                )
-                for entry in imported if isinstance(entry, Mapping)
-            )
-        if not locked_external_ids or not (
-            re.search(rf"/{re.escape(obj.id)}(?:\b|$)", locator) or imported_identity
-        ):
+        if not locked_external_ids or not _openbible_import_matches(locked_external_ids, obj.id, anchors):
             raise ValueError(f"bootstrap OpenBible identity/occurrence lock mismatch: {obj.id}")
+
+
+def _openbible_import_matches(record_ids: set[str], object_id: str, anchors: list[str]) -> bool:
+    import_path = Path(__file__).resolve().parents[2] / "bhf_agent/data/openbible_places.json"
+    try:
+        imported = json.loads(import_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return any(
+        entry.get("id") in record_ids
+        and str(entry.get("source_url") or "").rstrip("/").endswith(f"/{object_id}")
+        and any(
+            _anchors_overlap(
+                f"{reference.get('book')} {reference.get('chapter')}:{reference.get('verse_start')}-{reference.get('verse_end')}",
+                anchors,
+            )
+            for reference in _sequence(entry.get("references"))
+            if isinstance(reference, Mapping)
+        )
+        for entry in imported if isinstance(entry, Mapping)
+    )
 
 
 def apply_candidate_queue(
@@ -466,7 +465,47 @@ def apply_candidate_queue(
     before_objects = list(library.objects_by_id.values())
     staged_bootstraps = _stage_bootstraps(library, candidate_values)
     library.objects_by_id.update(staged_bootstraps)
+    if staged_bootstraps:
+        staged_paths = {
+            object_id: path for object_id in library.objects_by_id
+            if (path := library.source_path_for(object_id)) is not None
+        }
+        staged_paths.update({
+            object_id: Path(root) / "objects" / CATEGORY_FOLDERS[obj.type] / f"{object_id}.json"
+            for object_id, obj in staged_bootstraps.items()
+        })
+        staged_manifest = dict(library.manifest)
+        categories = dict(staged_manifest.get("categories") or {})
+        for obj in staged_bootstraps.values():
+            folder = CATEGORY_FOLDERS[obj.type]
+            categories[folder] = int(categories.get(folder, 0)) + 1
+        staged_manifest["object_count"] = len(library.objects_by_id)
+        staged_manifest["categories"] = categories
+        try:
+            validate_library(
+                list(library.objects_by_id.values()),
+                manifest=staged_manifest, source_paths=staged_paths,
+            )
+        except Exception as exc:
+            raise ValueError(f"candidate queue fails final CKL validation: {exc}") from exc
     decisions = validate_candidates(candidate_values, library=library)
+    # A staged object is part of the transaction only while an accepted
+    # candidate owns it. Revalidate after pruning because another candidate
+    # may have relied on an object owned solely by a rejected candidate.
+    while True:
+        accepted_bootstrap_ids = {
+            normalize_id(str(raw.get("id") or ""))
+            for decision in decisions if decision.accepted
+            for raw in _sequence(decision.candidate.get("entity_bootstraps"))
+            if isinstance(raw, Mapping)
+        }
+        orphan_ids = set(staged_bootstraps) - accepted_bootstrap_ids
+        if not orphan_ids:
+            break
+        for object_id in orphan_ids:
+            staged_bootstraps.pop(object_id)
+            library.objects_by_id.pop(object_id)
+        decisions = validate_candidates(candidate_values, library=library)
     after_data = {object_id: object_value.to_dict() for object_id, object_value in library.objects_by_id.items()}
     changed_object_ids: set[str] = set(staged_bootstraps)
 
@@ -605,6 +644,17 @@ def apply_candidate_queue(
         target["evidence_items"] = evidence_items
         if _canonical_json(target) != previous_payload:
             changed_object_ids.add(parent_id)
+
+    accepted_bootstrap_ids = {
+        normalize_id(str(raw.get("id") or ""))
+        for decision in decisions if decision.accepted
+        for raw in _sequence(decision.candidate.get("entity_bootstraps"))
+        if isinstance(raw, Mapping)
+    }
+    for object_id in set(staged_bootstraps) - accepted_bootstrap_ids:
+        staged_bootstraps.pop(object_id)
+        after_data.pop(object_id)
+        changed_object_ids.discard(object_id)
 
     source_paths = {
         object_id: path

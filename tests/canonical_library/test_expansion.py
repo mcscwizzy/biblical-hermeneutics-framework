@@ -189,6 +189,9 @@ def test_staged_structural_duplicate_chooses_lowest_id_regardless_of_queue_order
     merged = first.simulated_objects["bethlehem"]["evidence_items"]
     assert [item["id"] for item in merged] == ["a-staged"]
     assert merged[0]["source_ids"] == ["source-a", "source-z"]
+    assert {(source["id"], source["locator"]) for source in first.simulated_objects["bethlehem"]["sources"]} == {
+        ("source-a", "Ruth 1:1"), ("source-z", "Ruth 1:2"),
+    }
     assert {decision.classification for decision in first.decisions} == {
         "new", "duplicate-pilot-provenance-merged",
     }
@@ -299,6 +302,17 @@ def _bootstrap_candidate(entity_id: str = "new-place") -> dict[str, object]:
     return candidate
 
 
+@pytest.fixture
+def synthetic_openbible_identity(monkeypatch: pytest.MonkeyPatch) -> None:
+    # The unit bootstrap fixture uses a synthetic record. Production imported
+    # records are exercised separately without this stub.
+    from framework.canonical_library import expansion
+    real_match = expansion._openbible_import_matches
+    monkeypatch.setattr(expansion, "_openbible_import_matches", lambda ids, obj_id, anchors:
+        "openbible-a123" in ids or real_match(ids, obj_id, anchors))
+
+
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_dry_run_stages_bootstrap_before_target_resolution_without_writing(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     before = {path: path.read_bytes() for path in library.root.rglob("*.json")}
@@ -310,6 +324,7 @@ def test_dry_run_stages_bootstrap_before_target_resolution_without_writing(tmp_p
     assert {path: path.read_bytes() for path in library.root.rglob("*.json")} == before
 
 
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_identical_bootstrap_requests_coalesce(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     first = _bootstrap_candidate()
@@ -333,6 +348,7 @@ def test_identical_bootstrap_requests_coalesce(tmp_path: Path) -> None:
         (lambda bootstrap: bootstrap.update(evidence_items=[]), "bootstrap.*identity evidence"),
     ],
 )
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_bootstrap_collision_and_identity_gates_fail_closed(tmp_path: Path, mutation, message: str) -> None:
     library = _typed_library(tmp_path, [])
     candidate = _bootstrap_candidate()
@@ -341,6 +357,7 @@ def test_bootstrap_collision_and_identity_gates_fail_closed(tmp_path: Path, muta
         apply_candidate_queue(library.root, [candidate], write=False)
 
 
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_bootstrap_same_id_with_different_mapping_conflicts(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     first = _bootstrap_candidate()
@@ -359,6 +376,7 @@ def test_bootstrap_write_mode_rejects_before_any_writer_runs(tmp_path: Path, mon
         apply_candidate_queue(library.root, [_bootstrap_candidate()], write=True)
 
 
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_bootstrap_rejects_unattached_openbible_identity_source(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     candidate = _bootstrap_candidate()
@@ -369,6 +387,7 @@ def test_bootstrap_rejects_unattached_openbible_identity_source(tmp_path: Path) 
         apply_candidate_queue(library.root, [candidate], write=False)
 
 
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_bootstrap_direct_source_record_must_overlap_lock_anchor(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     candidate = _bootstrap_candidate()
@@ -378,6 +397,7 @@ def test_bootstrap_direct_source_record_must_overlap_lock_anchor(tmp_path: Path)
         apply_candidate_queue(library.root, [candidate], write=False)
 
 
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_bootstrap_source_identity_collision_fails_closed(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     first = _bootstrap_candidate("new-place")
@@ -394,6 +414,7 @@ def test_unbootstrapped_entity_target_stays_rejected(tmp_path: Path) -> None:
     assert "new-place" not in result.simulated_objects
 
 
+@pytest.mark.usefixtures("synthetic_openbible_identity")
 def test_bootstrap_full_library_validation_rejects_missing_entity_reference(tmp_path: Path) -> None:
     library = _typed_library(tmp_path, [])
     candidate = _bootstrap_candidate()
@@ -403,6 +424,32 @@ def test_bootstrap_full_library_validation_rejects_missing_entity_reference(tmp_
     }]
     with pytest.raises(ValueError, match="candidate queue fails final CKL validation.*never-bootstrapped"):
         apply_candidate_queue(library.root, [candidate], write=False)
+
+
+@pytest.mark.usefixtures("synthetic_openbible_identity")
+def test_rejected_candidate_does_not_leave_its_bootstrap_in_transaction(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    candidate = _bootstrap_candidate()
+    candidate["evidence_item"]["source_ids"] = ["missing-source"]
+
+    result = apply_candidate_queue(library.root, [candidate], write=False)
+
+    assert result.decisions[0].accepted is False
+    assert "new-place" not in result.simulated_objects
+    assert result.changed_object_ids == []
+    assert len(result.simulated_objects) == len(library.objects_by_id)
+
+
+def test_openbible_url_in_lock_does_not_replace_imported_identity_check() -> None:
+    from framework.canonical_library.expansion import _openbible_import_matches
+
+    assert not _openbible_import_matches({"openbible-a123"}, "new-place", ["Ruth 1:1"])
+
+
+def test_bootstrap_rejects_fictional_record_even_with_matching_url(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    with pytest.raises(ValueError, match="bootstrap OpenBible identity/occurrence lock mismatch"):
+        apply_candidate_queue(library.root, [_bootstrap_candidate()], write=False)
 
 
 def test_expansion_adapter_accepts_anchored_source_backed_geography_claim(tmp_path: Path) -> None:

@@ -272,6 +272,32 @@
             ],
             "notes": "Primary biblical text.",
             "id": "1-samuel-1-31"
+          },
+          {
+            "title": "1 Samuel 1-31",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "1 Samuel 17:1",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary_context",
+              "structure",
+              "key_people",
+              "key_places",
+              "key_events",
+              "scripture_references",
+              "first-samuel-literary-movement",
+              "first-samuel-hannah-reversal",
+              "first-samuel-ark-not-talisman",
+              "first-samuel-accountable-monarchy",
+              "first-samuel-saul-rejected",
+              "first-samuel-david-spares-saul"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "1samuel-17-socoh-azekah-encampment-ckl-1samuel-primary-lock"
           }
         ],
         "evidence_item": {
@@ -300,7 +326,8 @@
             }
           ],
           "source_ids": [
-            "1-samuel-1-31"
+            "1-samuel-1-31",
+            "1samuel-17-socoh-azekah-encampment-ckl-1samuel-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [
@@ -757,7 +784,8 @@
         "1samuel-17-socoh-azekah-encampment"
       ],
       "contributing_source_ids": [
-        "1-samuel-1-31"
+        "1-samuel-1-31",
+        "1samuel-17-socoh-azekah-encampment-ckl-1samuel-primary-lock"
       ],
       "leakage_result": "PASS",
       "dedup_result": "complementary",
@@ -861,6 +889,34 @@
             ],
             "notes": "Primary biblical text.",
             "id": "2-kings-1-25"
+          },
+          {
+            "title": "2 Kings 1-25",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "2 Kings 5:12",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "structure",
+              "key_people",
+              "key_places",
+              "key_events",
+              "scripture_references",
+              "interpretive_notes",
+              "second-kings-literary-movement",
+              "second-kings-elisha-succeeds",
+              "second-kings-naaman-healed",
+              "second-kings-samaria-falls",
+              "second-kings-jerusalem-delivered",
+              "second-kings-josiah-reform",
+              "second-kings-jerusalem-falls",
+              "second-kings-jehoiachin-released"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "2kings-5-damascus-river-comparison-ckl-2kings-primary-lock"
           }
         ],
         "evidence_item": {
@@ -889,7 +945,8 @@
             }
           ],
           "source_ids": [
-            "2-kings-1-25"
+            "2-kings-1-25",
+            "2kings-5-damascus-river-comparison-ckl-2kings-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [
@@ -1346,7 +1403,8 @@
         "2kings-5-damascus-river-comparison"
       ],
       "contributing_source_ids": [
-        "2-kings-1-25"
+        "2-kings-1-25",
+        "2kings-5-damascus-river-comparison-ckl-2kings-primary-lock"
       ],
       "leakage_result": "PASS",
       "dedup_result": "new"
@@ -1874,6 +1932,21 @@
               "interpretive_notes"
             ],
             "notes": "Open critical Greek text used for direct textual and lexical controls."
+          },
+          {
+            "id": "acts-27-sidon-crete-maritime-itinerary-ckl-acts-primary-lock",
+            "title": "The Greek New Testament: Acts",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Acts 27:1-8",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "claims",
+              "interpretive_notes"
+            ],
+            "notes": "Open critical Greek text used for direct textual and lexical controls."
           }
         ],
         "evidence_item": {
@@ -1902,7 +1975,8 @@
             }
           ],
           "source_ids": [
-            "acts-greek"
+            "acts-greek",
+            "acts-27-sidon-crete-maritime-itinerary-ckl-acts-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [
@@ -3448,6 +3522,7 @@
         "acts-27-sidon-crete-maritime-itinerary"
       ],
       "contributing_source_ids": [
+        "acts-27-sidon-crete-maritime-itinerary-ckl-acts-primary-lock",
         "acts-greek"
       ],
       "leakage_result": "PASS",
@@ -4669,6 +4744,23 @@
               "interpretive_notes"
             ],
             "notes": "Open critical Greek text."
+          },
+          {
+            "id": "john-4-sychar-well-near-jacob-field-ckl-john-primary-lock",
+            "title": "The Gospel according to John, Greek text",
+            "author": "",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "John 4:5-6",
+            "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "structure",
+              "claims",
+              "interpretive_notes"
+            ],
+            "notes": "Open critical Greek text."
           }
         ],
         "evidence_item": {
@@ -4697,7 +4789,8 @@
             }
           ],
           "source_ids": [
-            "john-greek"
+            "john-greek",
+            "john-4-sychar-well-near-jacob-field-ckl-john-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [
@@ -4950,6 +5043,7 @@
         "john-4-sychar-well-near-jacob-field"
       ],
       "contributing_source_ids": [
+        "john-4-sychar-well-near-jacob-field-ckl-john-primary-lock",
         "john-greek"
       ],
       "leakage_result": "PASS",
@@ -5437,6 +5531,25 @@
               "matthew-resurrection"
             ],
             "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus."
+          },
+          {
+            "id": "matthew-2-archelaus-judea-administration-ckl-matthew-primary-lock",
+            "title": "The Greek New Testament: SBL Edition, Matthew",
+            "author": "Holmes, Michael W., editor",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Matthew 2:22",
+            "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+            "source_type": "scripture",
+            "supports": [
+              "scripture_references",
+              "greek_words",
+              "matthew-greek-narrative",
+              "matthew-discourses",
+              "matthew-passion-responsibility",
+              "matthew-resurrection"
+            ],
+            "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus."
           }
         ],
         "evidence_item": {
@@ -5465,7 +5578,8 @@
             }
           ],
           "source_ids": [
-            "matthew-greek"
+            "matthew-greek",
+            "matthew-2-archelaus-judea-administration-ckl-matthew-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [],
@@ -5679,6 +5793,7 @@
         "matthew-2-archelaus-judea-administration"
       ],
       "contributing_source_ids": [
+        "matthew-2-archelaus-judea-administration-ckl-matthew-primary-lock",
         "matthew-greek"
       ],
       "leakage_result": "PASS",
@@ -6202,6 +6317,30 @@
             ],
             "notes": "Primary biblical text.",
             "id": "numbers-1-36"
+          },
+          {
+            "title": "Numbers 1-36",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Numbers 18:20, 23-24",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary_context",
+              "structure",
+              "key_people",
+              "key_places",
+              "key_events",
+              "scripture_references",
+              "numbers-two-generations",
+              "numbers-kadesh-judgment",
+              "numbers-balaam-blessing",
+              "numbers-inheritance-preparation"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "numbers-18-levites-no-territorial-inheritance-ckl-numbers-primary-lock"
           }
         ],
         "evidence_item": {
@@ -6237,7 +6376,8 @@
             }
           ],
           "source_ids": [
-            "numbers-1-36"
+            "numbers-1-36",
+            "numbers-18-levites-no-territorial-inheritance-ckl-numbers-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [],
@@ -6254,6 +6394,10 @@
                 {
                   "kind": "domain",
                   "normalized_value": "territorial"
+                },
+                {
+                  "kind": "scope",
+                  "normalized_value": "among-israel"
                 },
                 {
                   "kind": "contextual-addressee",
@@ -6273,7 +6417,8 @@
         "numbers-18-levites-no-territorial-inheritance"
       ],
       "contributing_source_ids": [
-        "numbers-1-36"
+        "numbers-1-36",
+        "numbers-18-levites-no-territorial-inheritance-ckl-numbers-primary-lock"
       ],
       "leakage_result": "PASS",
       "dedup_result": "new"
@@ -6367,6 +6512,30 @@
             ],
             "notes": "Primary biblical text.",
             "id": "numbers-1-36"
+          },
+          {
+            "title": "Numbers 1-36",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Numbers 18:21, 24",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary_context",
+              "structure",
+              "key_people",
+              "key_places",
+              "key_events",
+              "scripture_references",
+              "numbers-two-generations",
+              "numbers-kadesh-judgment",
+              "numbers-balaam-blessing",
+              "numbers-inheritance-preparation"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "numbers-18-levites-tithe-as-inheritance-ckl-numbers-primary-lock"
           }
         ],
         "evidence_item": {
@@ -6402,7 +6571,8 @@
             }
           ],
           "source_ids": [
-            "numbers-1-36"
+            "numbers-1-36",
+            "numbers-18-levites-tithe-as-inheritance-ckl-numbers-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [],
@@ -6442,7 +6612,8 @@
         "numbers-18-levites-tithe-as-inheritance"
       ],
       "contributing_source_ids": [
-        "numbers-1-36"
+        "numbers-1-36",
+        "numbers-18-levites-tithe-as-inheritance-ckl-numbers-primary-lock"
       ],
       "leakage_result": "PASS",
       "dedup_result": "complementary",
@@ -6545,6 +6716,32 @@
             ],
             "notes": "Primary biblical text.",
             "id": "ruth-1-4"
+          },
+          {
+            "title": "Ruth 1-4",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Ruth 1:1",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary_context",
+              "structure",
+              "key_people",
+              "key_places",
+              "key_events",
+              "scripture_references",
+              "ruth-literary-movement",
+              "ruth-loyal-pledge",
+              "ruth-gleaning-protection",
+              "ruth-redemption-arrangement",
+              "ruth-providence-through-action",
+              "ruth-obed-david-genealogy"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "ruth-1-bethlehem-judah-territory-ckl-ruth-primary-lock"
           }
         ],
         "evidence_item": {
@@ -6573,7 +6770,8 @@
             }
           ],
           "source_ids": [
-            "ruth-1-4"
+            "ruth-1-4",
+            "ruth-1-bethlehem-judah-territory-ckl-ruth-primary-lock"
           ],
           "claim_ids": [],
           "external_references": [
@@ -6794,7 +6992,8 @@
         "ruth-1-bethlehem-judah-territory"
       ],
       "contributing_source_ids": [
-        "ruth-1-4"
+        "ruth-1-4",
+        "ruth-1-bethlehem-judah-territory-ckl-ruth-primary-lock"
       ],
       "leakage_result": "PASS",
       "dedup_result": "complementary",

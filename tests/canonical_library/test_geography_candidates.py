@@ -107,6 +107,18 @@ def test_typed_families_cover_all_eight_locked_claims(result: dict[str, object])
     }
 
 
+def test_territorial_entitlement_retains_among_israel_scope(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "numbers-18-levites-no-territorial-inheritance")
+    target = record["candidate_payload"]["evidence_item"]["evidence_targets"][0]
+    assert {"kind": "scope", "normalized_value": "among-israel"} in target["qualifiers"]
+
+
+def test_typed_scripture_source_uses_exact_locked_locator(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "numbers-18-levites-no-territorial-inheritance")
+    payload = record["candidate_payload"]
+    assert any(source["locator"] == "Numbers 18:20, 23-24" and source["id"] in payload["evidence_item"]["source_ids"] for source in payload["source_records"])
+
+
 def test_original_twenty_payload_hashes_are_unchanged(result: dict[str, object]) -> None:
     frozen = json.loads((ROOT / "tests/fixtures/canonical_library/geography_original_20_payload_hashes.json").read_text())
     actual = {}
@@ -235,6 +247,7 @@ def test_report_counts_staged_entities_and_provenance_merges() -> None:
         "validation_result": "PASS", "survivor_evidence_id": "z-canonical",
         "contributing_source_ids": ["existing", "new"],
         "contributing_source_lock_ids": ["fixture-merge"],
+        "target_ckl_object_id": "bethlehem-1",
         "target_ckl_file": "framework/canonical_library/objects/places/bethlehem-1.json",
         "relationship_type": "near", "subject": {}, "target": {}, "source_locks": [],
         "temporal_scope": {}, "chapter_reference": "Ruth 1", "scripture_anchors": [],
@@ -262,6 +275,24 @@ def test_report_counts_staged_entities_and_provenance_merges() -> None:
     assert report["dry_run"]["wrote"] is False
 
 
+def test_report_excludes_unchanged_duplicate_files() -> None:
+    record = {
+        "source_lock_id": "already-present", "outcome": "DUPLICATE_EXISTING",
+        "validation_result": "PASS", "dedup_result": "duplicate-existing",
+        "target_ckl_object_id": "bethlehem-1",
+        "target_ckl_file": "framework/canonical_library/objects/places/bethlehem-1.json",
+        "relationship_type": "near", "subject": {}, "target": {}, "source_locks": [],
+        "temporal_scope": {}, "chapter_reference": "Ruth 1", "scripture_anchors": [],
+        "candidate_payload": {"evidence_item": {"temporal_scope": {}}},
+    }
+    report = _report(
+        {"chapters": [{"claims": [{"status": "LOCKED"}]}]}, {"candidates": [record]},
+        transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+    )
+    assert report["dry_run"]["files_that_would_change"] == []
+
+
 def test_dry_run_reports_loaded_structural_conflict_without_writing(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -282,5 +313,29 @@ def test_dry_run_reports_loaded_structural_conflict_without_writing(
     result = dry_run_tool.run(source_lock_path=lock_path, ckl_root=tmp_path)
 
     assert result["queue"]["candidates"][0]["dedup_result"] == "canonical-structural-duplicate-conflict"
+    assert result["report"]["dry_run"]["full_library_validation"] == "FAIL"
+    assert result["report"]["dry_run"]["wrote"] is False
+
+
+def test_dry_run_reports_bootstrap_collision_without_writing(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    lock_path = tmp_path / "locks.json"
+    lock_path.write_text(json.dumps({"chapters": [{"claims": [{"status": "LOCKED"}]}]}))
+    queue = {"candidates": [{
+        "source_lock_id": "fixture-collision", "outcome": "NEW", "target_ckl_object_id": "bethlehem-1",
+        "candidate_payload": {"evidence_item": {}}, "chapter_reference": "Ruth 1",
+        "relationship_type": "near", "subject": {}, "target": {}, "source_locks": [],
+        "scripture_anchors": [], "temporal_scope": {},
+    }]}
+    monkeypatch.setattr(dry_run_tool.CanonicalLibrary, "load", lambda self: self)
+    monkeypatch.setattr(dry_run_tool, "build_geography_candidate_queue", lambda *args, **kwargs: queue)
+    monkeypatch.setattr(dry_run_tool, "apply_candidate_queue", lambda *args, **kwargs: (_ for _ in ()).throw(
+        ValueError("bootstrap title collision: Bethlehem with bethlehem-1")
+    ))
+
+    result = dry_run_tool.run(source_lock_path=lock_path, ckl_root=tmp_path)
+
+    assert result["queue"]["candidates"][0]["dedup_result"] == "bootstrap-collision"
     assert result["report"]["dry_run"]["full_library_validation"] == "FAIL"
     assert result["report"]["dry_run"]["wrote"] is False

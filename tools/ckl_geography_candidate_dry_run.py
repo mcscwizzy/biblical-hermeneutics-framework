@@ -54,6 +54,10 @@ def run(
         transaction = apply_candidate_queue(ckl_root, staged, write=False)
     except CanonicalStructuralDuplicateConflict as exc:
         return _structural_conflict_report(source_locks, queue, str(exc))
+    except ValueError as exc:
+        if not str(exc).startswith("bootstrap "):
+            raise
+        return _bootstrap_conflict_report(source_locks, queue, str(exc))
     decisions = {
         str(item.candidate.get("source_lock_id") or ""): item
         for item in transaction.decisions
@@ -108,6 +112,32 @@ def _structural_conflict_report(
                 dedup_result="NOT_STAGED", rejection_reason="transaction-blocked-by-canonical-structural-duplicate",
                 leakage_result="NOT_STAGED",
             )
+    report = _report(
+        source_locks, queue,
+        transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
+        direct=[], dependent=[], direct_chapters=[], dependent_chapters=[], commentary_preview=[],
+    )
+    report["dry_run"].update(
+        full_library_validation="FAIL", transaction_result="BLOCKED",
+        transaction_blocker=message,
+    )
+    queue["dry_run"] = report
+    return {"queue": queue, "report": report}
+
+
+def _bootstrap_conflict_report(
+    source_locks: Mapping[str, Any], queue: dict[str, Any], message: str,
+) -> dict[str, Any]:
+    for record in queue["candidates"]:
+        if record["outcome"] == "NEW":
+            record.update(
+                outcome="CONFLICTING", validation_result="FAIL",
+                dedup_result="bootstrap-collision",
+                transaction_classification="bootstrap-collision",
+                rejection_reason=message, leakage_result="NOT_STAGED",
+            )
+        else:
+            record.update(validation_result="NOT_STAGED", dedup_result="NOT_STAGED", leakage_result="NOT_STAGED")
     report = _report(
         source_locks, queue,
         transaction=SimpleNamespace(changed_object_ids=[], simulated_objects={}, wrote=False),
@@ -302,18 +332,18 @@ def _report(
             "objects_that_would_change": transaction.changed_object_ids,
             "staged_bootstrap_count": len(staged_ids),
             "staged_manifest_object_count": len(transaction.simulated_objects),
-            "files_that_would_change": sorted(
-                {
-                    item["target_ckl_file"]
-                    for item in accepted_records
-                    if item.get("target_ckl_file")
-                } | {
+            "files_that_would_change": sorted({
+                path for object_id in transaction.changed_object_ids
+                if (path := next((
+                    record["target_ckl_file"] for record in records
+                    if record.get("target_ckl_object_id") == object_id and record.get("target_ckl_file")
+                ), "") or next((
                     f"framework/canonical_library/objects/{CATEGORY_FOLDERS[item['type']]}/{item['id']}.json"
                     for record in records
-                    if record.get("validation_result") == "PASS"
                     for item in record.get("candidate_payload", {}).get("entity_bootstraps", [])
-                }
-            ),
+                    if item["id"] == object_id
+                ), ""))
+            }),
             "claims_that_would_be_inserted": [item["source_lock_id"] for item in resolved],
             "provenance_merges": [
                 {"source_lock_id": item["source_lock_id"],

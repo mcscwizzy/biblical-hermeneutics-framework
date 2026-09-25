@@ -177,6 +177,26 @@ def _typed_candidate_record(
     source_records, reason = _source_records(claim, sources=sources, root=root)
     if reason:
         return {**base, "outcome": "REJECTED", "rejection_reason": reason}
+    # The CKL source can span a whole book. Preserve each locked Scripture
+    # locator in a distinct source record so provenance survives deduplication.
+    for lock in claim["source_locks"]:
+        source = sources.get(str(lock["source_id"]))
+        if source is None:
+            return {**base, "outcome": "REJECTED", "rejection_reason": "source-record-unresolved"}
+        if source.get("registry_status") != "existing-ckl-object-source":
+            continue
+        original_id = normalize_id(str(_mapping(source.get("provenance")).get("record_source_id") or ""))
+        matching = next(
+            (record for record in source_records if normalize_id(str(record["id"])) == original_id),
+            None,
+        )
+        if matching is None:
+            return {**base, "outcome": "REJECTED", "rejection_reason": "source-record-unresolved"}
+        source_records.append({
+            **matching,
+            "id": normalize_id(f"{claim['id']}-{lock['source_id']}-lock"),
+            "locator": str(lock["locator"]),
+        })
     try:
         targets, named_entities = _typed_targets(claim, family=family, library=library, root=root)
         bootstraps = [
@@ -260,7 +280,10 @@ def _typed_targets(
             raise ValueError("unregistered-entitlement-vocabulary")
         qualifiers = [{"kind": "domain", "normalized_value": "territorial" if relationship == "territorial-inheritance" else "economic"}]
         if relationship == "territorial-inheritance":
-            qualifiers.append({"kind": "contextual-addressee", "entity_id": "aaron"})
+            qualifiers.extend([
+                {"kind": "scope", "normalized_value": "among-israel"},
+                {"kind": "contextual-addressee", "entity_id": "aaron"},
+            ])
         else:
             qualifiers.extend([{"kind": "source", "normalized_value": "israel"}, {"kind": "basis", "normalized_value": "levite-service"}])
         return [{"kind": "value", "relationship": relationship, "value_type": "entitlement",
