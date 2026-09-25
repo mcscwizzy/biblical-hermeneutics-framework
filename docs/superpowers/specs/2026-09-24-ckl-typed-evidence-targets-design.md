@@ -314,10 +314,26 @@ must never discard an independently useful source, locator, Scripture link, or
 external reference merely because the semantic claim is equivalent.
 
 For compatible records, the transaction produces one deterministic surviving
-evidence item and merges provenance into the existing CKL representation. It
-selects the record with the lexicographically smallest canonical evidence ID as
-the survivor; an equal-ID collision is resolved only if all non-provenance
-canonical fields are identical, otherwise it is a conflict. It then:
+evidence item and merges provenance into the existing CKL representation. The
+survivor rule preserves production referential stability:
+
+- If exactly one structurally equivalent evidence item is already present in
+  the loaded canonical CKL, that existing evidence ID is always the survivor.
+  A staged candidate with an earlier lexicographic ID must never replace it.
+- Compatible provenance from every structurally equivalent staged candidate is
+  merged into that existing evidence item.
+- Only when no structurally equivalent canonical item exists may the
+  transaction choose among structurally equivalent staged candidates. In that
+  case it selects the lexicographically smallest canonical evidence ID as the
+  survivor.
+- If multiple existing canonical evidence items share a structural fingerprint,
+  the transaction must report a `canonical-structural-duplicate-conflict` and
+  fail closed for human review. It must not collapse, select among, or merge
+  those existing items or any staged candidate into them. The existing dedup
+  model supplies no safer explicit resolution rule.
+
+An equal-ID collision is resolved only if all non-provenance canonical fields
+are identical; otherwise it is a conflict. It then:
 
 - merge parent `sources` by source ID, preserving every distinct complete
   `CanonicalSource` mapping (and therefore each source locator);
@@ -330,11 +346,11 @@ The merged evidence item must cite every merged source ID. Its parent must
 contain the corresponding complete source records, including their locators;
 the merged Scripture links and external references remain independently
 inspectable. The transaction report labels a newly converted merge as
-`duplicate-pilot-provenance-merged` (and an already-staged merge as
-`duplicate-existing-provenance-merged`) and lists all contributing
-candidate/source identities. This report is audit material only; the retained
-canonical source records and evidence associations are the durable provenance
-representation.
+`duplicate-pilot-provenance-merged` and a merge into one loaded canonical
+survivor as `duplicate-existing-provenance-merged`. Each merge report includes
+the retained survivor evidence ID and all contributing candidate/source
+identities. This report is audit material only; the retained canonical source
+records and evidence associations are the durable provenance representation.
 
 If two candidates reuse a source ID with non-identical normalized
 `CanonicalSource` mappings, or any provenance reference cannot be validated or
@@ -397,9 +413,18 @@ Implementation follows test-driven development.
    source-backed unified-target evidence candidates with identical targets and
    temporal scope but different valid source IDs and locators. It must produce
    one semantic survivor whose `source_ids` and parent source records retain
-   both trails, and whose report records the provenance merge. A same-source-ID
-   / different-normalized-source fixture must fail as `provenance-conflict`,
-   never silently select one locator.
+   both trails, and whose report records the provenance merge. A second
+   regression fixture loads one canonical unified-target evidence item and
+   stages a structurally equivalent candidate whose evidence ID sorts earlier
+   and whose valid source ID and locator are new. It must retain the loaded
+   canonical evidence ID, merge both valid source/locator trails into that
+   item, omit the staged candidate ID from the resulting evidence collection,
+   and report `duplicate-existing-provenance-merged` with the canonical survivor
+   ID. A fixture with multiple loaded canonical items sharing one structural
+   fingerprint must fail closed with
+   `canonical-structural-duplicate-conflict`, without choosing a survivor. A
+   same-source-ID / different-normalized-source fixture must fail as
+   `provenance-conflict`, never silently select one locator.
 7. The focused schema, expansion, source-lock, converter, retrieval, database,
    and Commentary compatibility tests run before the complete repository test
    suite.
