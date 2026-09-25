@@ -17,8 +17,9 @@ import tempfile
 from typing import Any, Iterable, Mapping, Sequence
 
 from .evidence_models import CanonicalEvidenceItem, EvidenceValidationError
-from .normalization import normalize_id
+from .normalization import normalize_alias, normalize_id
 from .schema import (
+    CATEGORY_FOLDERS,
     CanonicalObject,
     validate_library,
     validate_object,
@@ -305,6 +306,112 @@ def validate_candidates(
     return decisions
 
 
+def _stage_bootstraps(
+    library: Any, candidates: Sequence[Mapping[str, Any]],
+) -> dict[str, CanonicalObject]:
+    staged: dict[str, CanonicalObject] = {}
+    label_owners: dict[str, str] = {}
+    source_identities: dict[str, list[dict[str, Any]]] = {}
+    for obj in library.objects_by_id.values():
+        for label in (obj.id, obj.title, *obj.aliases):
+            label_owners.setdefault(normalize_alias(label), obj.id)
+        for source in obj.sources:
+            source_identities.setdefault(source.id, []).append(source.to_dict())
+
+    for candidate in candidates:
+        raw_bootstraps = candidate.get("entity_bootstraps", [])
+        if not isinstance(raw_bootstraps, list):
+            raise ValueError("bootstrap entity_bootstraps must be a list")
+        for raw in raw_bootstraps:
+            if not isinstance(raw, Mapping):
+                raise ValueError("bootstrap entry must be a canonical object mapping")
+            object_id = normalize_id(str(raw.get("id") or ""))
+            if not object_id:
+                raise ValueError("bootstrap id is required")
+            try:
+                obj = validate_object(raw, path=Path(library.root) / f"{object_id}.json")
+            except Exception as exc:
+                raise ValueError(f"bootstrap validation failed for {object_id}: {exc}") from exc
+            _validate_bootstrap_provenance(obj, candidate)
+            prior = staged.get(obj.id) or library.objects_by_id.get(obj.id)
+            if prior is not None:
+                if prior.to_dict() != obj.to_dict():
+                    raise ValueError(f"bootstrap id conflict: {obj.id}")
+                continue
+            for label_type, label in (
+                ("id", obj.id), ("title", obj.title),
+                *(("alias", alias) for alias in obj.aliases),
+            ):
+                owner = label_owners.get(normalize_alias(label))
+                if owner is not None and owner != obj.id:
+                    raise ValueError(f"bootstrap {label_type} collision: {label} with {owner}")
+            for source in obj.sources:
+                prior_sources = source_identities.get(source.id, [])
+                if prior_sources and any(not _sources_equivalent(previous, source.to_dict()) for previous in prior_sources):
+                    raise ValueError(f"bootstrap source-identity collision: {source.id}")
+            staged[obj.id] = obj
+            for label in (obj.id, obj.title, *obj.aliases):
+                label_owners[normalize_alias(label)] = obj.id
+            for source in obj.sources:
+                source_identities.setdefault(source.id, []).append(source.to_dict())
+    return staged
+
+
+def _validate_bootstrap_provenance(obj: CanonicalObject, candidate: Mapping[str, Any]) -> None:
+    if obj.content_status != "draft" or obj.review_status != "unreviewed" or not obj.human_review_required:
+        raise ValueError(f"bootstrap {obj.id} must be draft, unreviewed, and human-review-required")
+    anchors = [str(_value(item, "reference") or "") for item in obj.scripture_references]
+    passage = str(candidate.get("passage_reference") or "")
+    if not anchors or not _anchors_overlap(passage, anchors):
+        raise ValueError(f"bootstrap anchor must overlap passage: {obj.id}")
+    if not obj.evidence_items:
+        raise ValueError(f"bootstrap identity evidence is required: {obj.id}")
+    source_map = {source.id: source for source in obj.sources}
+    locks = [_mapping(lock) for lock in _sequence(candidate.get("source_locks"))]
+    if not locks:
+        raise ValueError(f"bootstrap source locks are required: {obj.id}")
+    direct = [lock for lock in locks if lock.get("support_type") == "direct-textual"]
+    if not any(
+        source_id in source_map
+        and source_map[source_id].source_type == "scripture"
+        and _anchors_overlap(str(lock.get("locator") or ""), anchors)
+        and _anchors_overlap(source_map[source_id].locator, anchors)
+        and any(
+            source_id in evidence.source_ids
+            and _anchors_overlap(passage, [link.reference for link in evidence.scripture_references])
+            for evidence in obj.evidence_items
+        )
+        for lock in direct
+        if (source_id := normalize_id(str(lock.get("source_id") or "")))
+    ):
+        raise ValueError(f"bootstrap direct Scripture source/anchor overlap is required: {obj.id}")
+
+    identity_locks = [
+        lock for lock in locks
+        if lock.get("support_type") == "entity-identification-and-occurrence"
+    ]
+    if identity_locks and obj.type != "place":
+        raise ValueError(f"bootstrap type must be place for OpenBible identity: {obj.id}")
+    for lock in identity_locks:
+        locator = str(lock.get("locator") or "")
+        source_id = normalize_id(str(lock.get("source_id") or ""))
+        if source_id not in source_map or not any(
+            source_id in evidence.source_ids for evidence in obj.evidence_items
+        ):
+            raise ValueError(f"bootstrap OpenBible source is not attached to identity evidence: {obj.id}")
+        record_ids = set(re.findall(r"openbible-[a-z0-9]+", locator))
+        external_ids = {
+            reference.id
+            for evidence in obj.evidence_items
+            for reference in evidence.external_references
+            if reference.domain == "map-place"
+        }
+        if not record_ids.intersection(external_ids) or not re.search(
+            rf"/{re.escape(obj.id)}(?:\b|$)", locator,
+        ):
+            raise ValueError(f"bootstrap OpenBible identity/occurrence lock mismatch: {obj.id}")
+
+
 def apply_candidate_queue(
     root: str | Path,
     candidates: Iterable[Mapping[str, Any]],
@@ -322,10 +429,14 @@ def apply_candidate_queue(
 
     library = CanonicalLibrary(root=Path(root)).load()
     candidate_values = [dict(item) for item in candidates]
-    decisions = validate_candidates(candidate_values, library=library)
+    if write and any(_sequence(item.get("entity_bootstraps")) for item in candidate_values):
+        raise ValueError("write=True is forbidden for bootstrap-bearing candidate transactions")
     before_objects = list(library.objects_by_id.values())
+    staged_bootstraps = _stage_bootstraps(library, candidate_values)
+    library.objects_by_id.update(staged_bootstraps)
+    decisions = validate_candidates(candidate_values, library=library)
     after_data = {object_id: object_value.to_dict() for object_id, object_value in library.objects_by_id.items()}
-    changed_object_ids: set[str] = set()
+    changed_object_ids: set[str] = set(staged_bootstraps)
 
     loaded_typed: dict[tuple[str, str], dict[str, Any]] = {}
     for parent_id, parent in after_data.items():
@@ -468,6 +579,16 @@ def apply_candidate_queue(
         for object_id in after_data
         if (path := library.source_path_for(object_id)) is not None
     }
+    for object_id, obj in staged_bootstraps.items():
+        source_paths[object_id] = Path(root) / "objects" / CATEGORY_FOLDERS[obj.type] / f"{object_id}.json"
+    simulated_manifest = dict(library.manifest)
+    if staged_bootstraps:
+        categories = dict(simulated_manifest.get("categories") or {})
+        for obj in staged_bootstraps.values():
+            folder = CATEGORY_FOLDERS[obj.type]
+            categories[folder] = int(categories.get(folder, 0)) + 1
+        simulated_manifest["object_count"] = len(after_data)
+        simulated_manifest["categories"] = categories
     try:
         after_objects = [
             validate_object(after_data[object_id], path=source_paths.get(object_id))
@@ -475,7 +596,7 @@ def apply_candidate_queue(
         ]
         validate_library(
             after_objects,
-            manifest=library.manifest,
+            manifest=simulated_manifest,
             source_paths=source_paths,
         )
     except Exception as exc:  # noqa: BLE001 - preserve fail-closed transaction boundary

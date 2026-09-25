@@ -268,6 +268,143 @@ def test_staged_duplicate_with_reused_source_id_and_changed_locator_is_rejected(
     assert result.decisions[1].classification == "provenance-conflict"
 
 
+def _bootstrap_candidate(entity_id: str = "new-place") -> dict[str, object]:
+    scripture_source = {**_typed_source("scripture-source", "Ruth 1:1"), "source_type": "scripture"}
+    identity_source = _typed_source("openbible-source", f"records openbible-a123; https://www.openbible.info/geo/atlas/{entity_id}")
+    identity = _typed_evidence(f"{entity_id}-identity", "scripture-source")
+    identity.update(
+        title=f"{entity_id} identity", description=f"{entity_id} is named in Ruth 1:1.",
+        evidence_targets=[], source_ids=["scripture-source", "openbible-source"],
+        external_references=[{
+            "domain": "map-place", "id": "openbible-a123",
+            "relationship": "same-evidence", "notes": "",
+        }],
+    )
+    identity.pop("evidence_targets")
+    bootstrap = make_object(
+        entity_id, "place", entity_id.replace("-", " ").title(), [f"alias for {entity_id}"],
+        content_status="draft", review_status="unreviewed", human_review_required=True,
+        scripture_references=[{"reference": "Ruth 1:1-2", "relationship": "primary", "notes": "named place"}],
+        sources=[scripture_source, identity_source], evidence_items=[identity],
+    )
+    candidate = _typed_candidate(
+        f"{entity_id}-near", "scripture-source", "Ruth 1:1", target_id=entity_id,
+    )
+    candidate["source_records"] = [scripture_source]
+    candidate["entity_bootstraps"] = [bootstrap]
+    candidate["source_locks"] = [
+        {"source_id": "scripture-source", "locator": "Ruth 1:1", "support_type": "direct-textual"},
+        {"source_id": "openbible-source", "locator": identity_source["locator"], "support_type": "entity-identification-and-occurrence"},
+    ]
+    return candidate
+
+
+def test_dry_run_stages_bootstrap_before_target_resolution_without_writing(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    before = {path: path.read_bytes() for path in library.root.rglob("*.json")}
+    result = apply_candidate_queue(library.root, [_bootstrap_candidate()], write=False)
+    assert result.wrote is False
+    assert "new-place" in result.simulated_objects
+    assert result.changed_object_ids == ["bethlehem", "new-place"]
+    assert result.decisions[0].accepted is True
+    assert {path: path.read_bytes() for path in library.root.rglob("*.json")} == before
+
+
+def test_identical_bootstrap_requests_coalesce(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    first = _bootstrap_candidate()
+    second = _bootstrap_candidate()
+    second["evidence_item"] = _typed_evidence(
+        "another-near", "scripture-source", target_id="new-place",
+        description="Another source locates the place near Bethlehem.",
+    )
+    result = apply_candidate_queue(library.root, [first, second], write=False)
+    assert list(result.simulated_objects).count("new-place") == 1
+    assert result.simulated_objects["new-place"]["id"] == "new-place"
+
+
+@pytest.mark.parametrize(
+    ("mutation", "message"),
+    [
+        (lambda bootstrap: bootstrap.update(title="Bethlehem"), "bootstrap.*title.*collision"),
+        (lambda bootstrap: bootstrap.update(aliases=["Bethlehem Ephrathah"]), "bootstrap.*alias.*collision"),
+        (lambda bootstrap: bootstrap.update(type="person"), "bootstrap.*type|bootstrap.*id.*conflict"),
+        (lambda bootstrap: bootstrap.update(scripture_references=[]), "bootstrap.*anchor"),
+        (lambda bootstrap: bootstrap.update(evidence_items=[]), "bootstrap.*identity evidence"),
+    ],
+)
+def test_bootstrap_collision_and_identity_gates_fail_closed(tmp_path: Path, mutation, message: str) -> None:
+    library = _typed_library(tmp_path, [])
+    candidate = _bootstrap_candidate()
+    mutation(candidate["entity_bootstraps"][0])
+    with pytest.raises(ValueError, match=message):
+        apply_candidate_queue(library.root, [candidate], write=False)
+
+
+def test_bootstrap_same_id_with_different_mapping_conflicts(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    first = _bootstrap_candidate()
+    second = _bootstrap_candidate()
+    second["entity_bootstraps"][0]["summary"] = "A different identity assertion."
+    with pytest.raises(ValueError, match="bootstrap.*id.*conflict"):
+        apply_candidate_queue(library.root, [first, second], write=False)
+
+
+def test_bootstrap_write_mode_rejects_before_any_writer_runs(tmp_path: Path, monkeypatch) -> None:
+    library = _typed_library(tmp_path, [])
+    def forbidden_writer(*args, **kwargs):
+        raise AssertionError("writer reached")
+    monkeypatch.setattr("framework.canonical_library.expansion._write_json_atomically", forbidden_writer)
+    with pytest.raises(ValueError, match="write=True.*bootstrap"):
+        apply_candidate_queue(library.root, [_bootstrap_candidate()], write=True)
+
+
+def test_bootstrap_rejects_unattached_openbible_identity_source(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    candidate = _bootstrap_candidate()
+    bootstrap = candidate["entity_bootstraps"][0]
+    bootstrap["sources"] = [source for source in bootstrap["sources"] if source["id"] != "openbible-source"]
+    bootstrap["evidence_items"][0]["source_ids"] = ["scripture-source"]
+    with pytest.raises(ValueError, match="bootstrap.*OpenBible source"):
+        apply_candidate_queue(library.root, [candidate], write=False)
+
+
+def test_bootstrap_direct_source_record_must_overlap_lock_anchor(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    candidate = _bootstrap_candidate()
+    bootstrap = candidate["entity_bootstraps"][0]
+    bootstrap["sources"][0]["locator"] = "Ruth 2:1"
+    with pytest.raises(ValueError, match="bootstrap.*direct Scripture source"):
+        apply_candidate_queue(library.root, [candidate], write=False)
+
+
+def test_bootstrap_source_identity_collision_fails_closed(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    first = _bootstrap_candidate("new-place")
+    second = _bootstrap_candidate("another-place")
+    with pytest.raises(ValueError, match="bootstrap source-identity collision"):
+        apply_candidate_queue(library.root, [first, second], write=False)
+
+
+def test_unbootstrapped_entity_target_stays_rejected(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    candidate = _typed_candidate("missing-near", "source-a", "Ruth 1:1", target_id="new-place")
+    result = apply_candidate_queue(library.root, [candidate], write=False)
+    assert result.decisions[0].accepted is False
+    assert "new-place" not in result.simulated_objects
+
+
+def test_bootstrap_full_library_validation_rejects_missing_entity_reference(tmp_path: Path) -> None:
+    library = _typed_library(tmp_path, [])
+    candidate = _bootstrap_candidate()
+    identity = candidate["entity_bootstraps"][0]["evidence_items"][0]
+    identity["evidence_targets"] = [{
+        "kind": "entity", "relationship": "near", "entity_id": "never-bootstrapped",
+    }]
+    with pytest.raises(ValueError, match="candidate queue fails final CKL validation.*never-bootstrapped"):
+        apply_candidate_queue(library.root, [candidate], write=False)
+
+
 def test_expansion_adapter_accepts_anchored_source_backed_geography_claim(tmp_path: Path) -> None:
     decision = validate_candidate(_candidate(), library=_library(tmp_path))
 
