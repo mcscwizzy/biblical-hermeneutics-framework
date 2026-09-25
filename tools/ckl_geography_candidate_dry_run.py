@@ -128,14 +128,44 @@ def _structural_conflict_report(
 def _bootstrap_conflict_report(
     source_locks: Mapping[str, Any], queue: dict[str, Any], message: str,
 ) -> dict[str, Any]:
+    def owns_collision(record: Mapping[str, Any]) -> bool:
+        bootstraps = record.get("candidate_payload", {}).get("entity_bootstraps", [])
+        for bootstrap in bootstraps:
+            if message.startswith("bootstrap title collision: "):
+                if str(bootstrap.get("title")) == message.removeprefix("bootstrap title collision: ").split(" with ", 1)[0]:
+                    return True
+            if message.startswith("bootstrap alias collision: "):
+                if message.removeprefix("bootstrap alias collision: ").split(" with ", 1)[0] in bootstrap.get("aliases", []):
+                    return True
+            if message.startswith("bootstrap id conflict: "):
+                if str(bootstrap.get("id")) == message.removeprefix("bootstrap id conflict: "):
+                    return True
+            if message.startswith("bootstrap source-identity collision: "):
+                source_id = message.removeprefix("bootstrap source-identity collision: ")
+                if any(source.get("id") == source_id for source in bootstrap.get("sources", [])):
+                    return True
+            if message.endswith(f": {bootstrap.get('id')}") or message.startswith(f"bootstrap validation failed for {bootstrap.get('id')}: "):
+                return True
+        return False
+        return False
+
     for record in queue["candidates"]:
         if record["outcome"] == "NEW":
-            record.update(
-                outcome="CONFLICTING", validation_result="FAIL",
-                dedup_result="bootstrap-collision",
-                transaction_classification="bootstrap-collision",
-                rejection_reason=message, leakage_result="NOT_STAGED",
-            )
+            if owns_collision(record):
+                record.update(
+                    outcome="CONFLICTING", validation_result="FAIL",
+                    dedup_result="bootstrap-collision",
+                    transaction_classification="bootstrap-collision",
+                    rejection_reason=message, leakage_result="NOT_STAGED",
+                )
+            else:
+                record.update(
+                    outcome="REJECTED", validation_result="NOT_STAGED",
+                    dedup_result="NOT_STAGED",
+                    transaction_classification="transaction-blocked",
+                    rejection_reason="transaction-blocked-by-bootstrap-collision",
+                    leakage_result="NOT_STAGED",
+                )
         else:
             record.update(validation_result="NOT_STAGED", dedup_result="NOT_STAGED", leakage_result="NOT_STAGED")
     report = _report(

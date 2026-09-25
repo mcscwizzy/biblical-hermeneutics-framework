@@ -324,9 +324,14 @@ def test_dry_run_reports_bootstrap_collision_without_writing(
     lock_path.write_text(json.dumps({"chapters": [{"claims": [{"status": "LOCKED"}]}]}))
     queue = {"candidates": [{
         "source_lock_id": "fixture-collision", "outcome": "NEW", "target_ckl_object_id": "bethlehem-1",
-        "candidate_payload": {"evidence_item": {}}, "chapter_reference": "Ruth 1",
+        "candidate_payload": {"evidence_item": {}, "entity_bootstraps": [{"id": "colliding-place", "title": "Bethlehem"}]}, "chapter_reference": "Ruth 1",
         "relationship_type": "near", "subject": {}, "target": {}, "source_locks": [],
         "scripture_anchors": [], "temporal_scope": {},
+    }, {
+        "source_lock_id": "fixture-unrelated", "outcome": "NEW", "target_ckl_object_id": "sidon",
+        "candidate_payload": {"evidence_item": {}, "entity_bootstraps": [{"id": "unrelated-place", "title": "Unrelated"}]},
+        "chapter_reference": "Ruth 1", "relationship_type": "near", "subject": {}, "target": {},
+        "source_locks": [], "scripture_anchors": [], "temporal_scope": {},
     }]}
     monkeypatch.setattr(dry_run_tool.CanonicalLibrary, "load", lambda self: self)
     monkeypatch.setattr(dry_run_tool, "build_geography_candidate_queue", lambda *args, **kwargs: queue)
@@ -337,5 +342,7 @@ def test_dry_run_reports_bootstrap_collision_without_writing(
     result = dry_run_tool.run(source_lock_path=lock_path, ckl_root=tmp_path)
 
     assert result["queue"]["candidates"][0]["dedup_result"] == "bootstrap-collision"
+    assert result["queue"]["candidates"][1]["dedup_result"] == "NOT_STAGED"
+    assert result["queue"]["candidates"][1]["transaction_classification"] == "transaction-blocked"
     assert result["report"]["dry_run"]["full_library_validation"] == "FAIL"
     assert result["report"]["dry_run"]["wrote"] is False
