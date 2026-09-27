@@ -774,6 +774,45 @@
             "confidence": "unrated",
             "human_review_required": true
           }
+        ],
+        "locked_identity_claim": {
+          "id": "1samuel-17-socoh-azekah-encampment",
+          "subject": {
+            "label": "Philistine force in 1 Samuel 17",
+            "entity_type": "passage-event",
+            "resolution": "embedded-passage-event"
+          },
+          "target": {
+            "label": "Socoh and Azekah",
+            "entity_type": "place-pair",
+            "resolution": "OpenBible identities; CKL entities require bootstrap"
+          },
+          "source_locks": [
+            {
+              "source_id": "ckl-1samuel-primary",
+              "locator": "1 Samuel 17:1",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "openbible-geocoding-data",
+              "locator": "records openbible-a39a6b9 and openbible-af2ca0c; https://www.openbible.info/geo/atlas/socoh-1 and /azekah",
+              "support_type": "entity-identification-and-occurrence"
+            }
+          ]
+        },
+        "entity_designations": [
+          {
+            "entity_id": "socoh-1",
+            "identity_kind": "openbible-place",
+            "label": "Socoh",
+            "imported_record_id": "openbible-a39a6b9"
+          },
+          {
+            "entity_id": "azekah",
+            "identity_kind": "openbible-place",
+            "label": "Azekah",
+            "imported_record_id": "openbible-af2ca0c"
+          }
         ]
       },
       "validation_result": "PASS",
@@ -1392,6 +1431,45 @@
             "last_reviewed": null,
             "confidence": "unrated",
             "human_review_required": true
+          }
+        ],
+        "locked_identity_claim": {
+          "id": "2kings-5-damascus-river-comparison",
+          "subject": {
+            "label": "Naaman's water comparison",
+            "entity_type": "passage-event",
+            "resolution": "embedded-passage-event"
+          },
+          "target": {
+            "label": "Abana and Pharpar as rivers of Damascus",
+            "entity_type": "water-feature-pair",
+            "resolution": "textual-designation plus OpenBible identities"
+          },
+          "source_locks": [
+            {
+              "source_id": "ckl-2kings-primary",
+              "locator": "2 Kings 5:12",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "openbible-geocoding-data",
+              "locator": "records openbible-aea17b7 and openbible-a8d054a; https://www.openbible.info/geo/atlas/abana and /pharpar",
+              "support_type": "entity-identification-and-occurrence"
+            }
+          ]
+        },
+        "entity_designations": [
+          {
+            "entity_id": "abana",
+            "identity_kind": "openbible-place",
+            "label": "Abana",
+            "imported_record_id": "openbible-aea17b7"
+          },
+          {
+            "entity_id": "pharpar",
+            "identity_kind": "openbible-place",
+            "label": "Pharpar",
+            "imported_record_id": "openbible-a8d054a"
           }
         ]
       },
@@ -3512,6 +3590,75 @@
             "confidence": "unrated",
             "human_review_required": true
           }
+        ],
+        "locked_identity_claim": {
+          "id": "acts-27-sidon-crete-maritime-itinerary",
+          "subject": {
+            "label": "Acts 27 voyage",
+            "entity_type": "passage-event",
+            "resolution": "embedded-passage-event"
+          },
+          "target": {
+            "label": "Italy intended; Sidon and Myra reached; Cyprus, Cnidus, and Crete passed; Fair Havens reached and Lasea nearby",
+            "entity_type": "maritime-narrative-sequence",
+            "resolution": "textual-navigation-roles; not a list of visited ports"
+          },
+          "source_locks": [
+            {
+              "source_id": "ckl-acts-primary",
+              "locator": "Acts 27:1-8",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "openbible-geocoding-data",
+              "locator": "records openbible-a7184a7, openbible-a98e4d7, openbible-a2e7601, openbible-aa4b3e2, openbible-ab793ce, openbible-a26aa94, openbible-aae626a, and openbible-a56788c",
+              "support_type": "entity-identification-and-occurrence"
+            }
+          ]
+        },
+        "entity_designations": [
+          {
+            "entity_id": "italy",
+            "identity_kind": "openbible-place",
+            "label": "Italy",
+            "imported_record_id": "openbible-a7184a7"
+          },
+          {
+            "entity_id": "myra",
+            "identity_kind": "openbible-place",
+            "label": "Myra",
+            "imported_record_id": "openbible-aa4b3e2"
+          },
+          {
+            "entity_id": "cyprus",
+            "identity_kind": "openbible-place",
+            "label": "Cyprus",
+            "imported_record_id": "openbible-a2e7601"
+          },
+          {
+            "entity_id": "cnidus",
+            "identity_kind": "openbible-place",
+            "label": "Cnidus",
+            "imported_record_id": "openbible-ab793ce"
+          },
+          {
+            "entity_id": "crete",
+            "identity_kind": "openbible-place",
+            "label": "Crete",
+            "imported_record_id": "openbible-a26aa94"
+          },
+          {
+            "entity_id": "fair-havens",
+            "identity_kind": "openbible-place",
+            "label": "Fair Havens",
+            "imported_record_id": "openbible-aae626a"
+          },
+          {
+            "entity_id": "lasea",
+            "identity_kind": "openbible-place",
+            "label": "Lasea",
+            "imported_record_id": "openbible-a56788c"
+          }
         ]
       },
       "validation_result": "PASS",
@@ -5033,6 +5180,39 @@
             "confidence": "unrated",
             "human_review_required": true
           }
+        ],
+        "locked_identity_claim": {
+          "id": "john-4-sychar-well-near-jacob-field",
+          "subject": {
+            "label": "Sychar",
+            "entity_type": "settlement",
+            "resolution": "OpenBible identity; CKL entity bootstrap required"
+          },
+          "target": {
+            "label": "field Jacob gave to Joseph",
+            "entity_type": "textual-field",
+            "resolution": "textual-setting"
+          },
+          "source_locks": [
+            {
+              "source_id": "ckl-john-primary",
+              "locator": "John 4:5-6",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "openbible-geocoding-data",
+              "locator": "record openbible-a27b472; https://www.openbible.info/geo/atlas/sychar",
+              "support_type": "entity-identification-and-occurrence"
+            }
+          ]
+        },
+        "entity_designations": [
+          {
+            "entity_id": "sychar",
+            "identity_kind": "openbible-place",
+            "label": "Sychar",
+            "imported_record_id": "openbible-a27b472"
+          }
         ]
       },
       "validation_result": "PASS",
@@ -5782,6 +5962,34 @@
             "last_reviewed": null,
             "confidence": "unrated",
             "human_review_required": true
+          }
+        ],
+        "locked_identity_claim": {
+          "id": "matthew-2-archelaus-judea-administration",
+          "subject": {
+            "entity_id": "judea-1",
+            "label": "Judea",
+            "entity_type": "region",
+            "resolution": "existing-ckl-entity"
+          },
+          "target": {
+            "label": "Archelaus",
+            "entity_type": "person-ruler",
+            "resolution": "new-person-entity-required"
+          },
+          "source_locks": [
+            {
+              "source_id": "ckl-matthew-primary",
+              "locator": "Matthew 2:22",
+              "support_type": "direct-textual"
+            }
+          ]
+        },
+        "entity_designations": [
+          {
+            "entity_id": "archelaus",
+            "identity_kind": "person",
+            "label": "Archelaus"
           }
         ]
       },
@@ -6981,6 +7189,39 @@
             "last_reviewed": null,
             "confidence": "unrated",
             "human_review_required": true
+          }
+        ],
+        "locked_identity_claim": {
+          "id": "ruth-1-bethlehem-judah-territory",
+          "subject": {
+            "entity_id": "bethlehem-1",
+            "label": "Bethlehem",
+            "entity_type": "place",
+            "resolution": "existing-ckl-entity"
+          },
+          "target": {
+            "label": "Judah",
+            "entity_type": "territory",
+            "resolution": "new-territory-entity-required"
+          },
+          "source_locks": [
+            {
+              "source_id": "ckl-ruth-primary",
+              "locator": "Ruth 1:1",
+              "support_type": "direct-textual"
+            },
+            {
+              "source_id": "openbible-geocoding-data",
+              "locator": "record openbible-a112427; https://www.openbible.info/geo/atlas/bethlehem-1",
+              "support_type": "entity-identification-only"
+            }
+          ]
+        },
+        "entity_designations": [
+          {
+            "entity_id": "judah-territory",
+            "identity_kind": "territory",
+            "label": "Judah"
           }
         ]
       },

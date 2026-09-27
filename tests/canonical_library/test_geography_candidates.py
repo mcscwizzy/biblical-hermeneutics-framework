@@ -11,7 +11,9 @@ import pytest
 from framework.canonical_library.geography_candidates import build_geography_candidate_queue, _typed_targets
 from framework.canonical_library.loader import CanonicalLibrary
 from framework.canonical_library.expansion import apply_candidate_queue
+from framework.canonical_library.expansion import _validate_bootstrap_provenance
 from framework.canonical_library.expansion import CandidateValidation, CanonicalStructuralDuplicateConflict
+from framework.canonical_library.schema import validate_object
 from tools import ckl_geography_candidate_dry_run as dry_run_tool
 from tools.ckl_geography_candidate_dry_run import _apply_decisions, _report
 
@@ -105,6 +107,72 @@ def test_typed_families_cover_all_eight_locked_claims(result: dict[str, object])
         "socoh-1", "azekah", "abana", "pharpar", "italy", "myra", "cyprus",
         "cnidus", "crete", "fair-havens", "lasea", "sychar", "archelaus", "judah-territory",
     }
+
+
+def test_pilot_bootstrap_identities_match_their_locked_designations(result: dict[str, object]) -> None:
+    bootstraps = [
+        (bootstrap, record["candidate_payload"])
+        for record in result["candidates"]
+        for bootstrap in record.get("candidate_payload", {}).get("entity_bootstraps", [])
+    ]
+    assert len(bootstraps) == 14
+    for raw, candidate in bootstraps:
+        _validate_bootstrap_provenance(validate_object(raw), candidate)
+
+
+def test_person_bootstrap_rejects_renamed_canonical_title(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "matthew-2-archelaus-judea-administration")
+    candidate = deepcopy(record["candidate_payload"])
+    bootstrap = candidate["entity_bootstraps"][0]
+    bootstrap["title"] = "Fictional Ruler"
+    bootstrap["aliases"] = ["Fictional Ruler in Matthew 2:22"]
+
+    with pytest.raises(ValueError, match="bootstrap identity-binding"):
+        _validate_bootstrap_provenance(validate_object(bootstrap), candidate)
+
+
+def test_territory_bootstrap_requires_typed_canonical_title(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "ruth-1-bethlehem-judah-territory")
+    candidate = deepcopy(record["candidate_payload"])
+    bootstrap = candidate["entity_bootstraps"][0]
+    bootstrap["title"] = "Judah"
+
+    with pytest.raises(ValueError, match="bootstrap identity-binding"):
+        _validate_bootstrap_provenance(validate_object(bootstrap), candidate)
+
+
+def test_openbible_bootstrap_rejects_title_for_different_imported_place(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "1samuel-17-socoh-azekah-encampment")
+    candidate = deepcopy(record["candidate_payload"])
+    bootstrap = next(item for item in candidate["entity_bootstraps"] if item["id"] == "socoh-1")
+    bootstrap["title"] = "Azekah"
+    bootstrap["aliases"] = ["Azekah in 1 Samuel 17:1"]
+
+    with pytest.raises(ValueError, match="bootstrap identity-binding"):
+        _validate_bootstrap_provenance(validate_object(bootstrap), candidate)
+
+
+def test_openbible_bootstrap_rejects_designation_not_in_imported_record(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "1samuel-17-socoh-azekah-encampment")
+    candidate = deepcopy(record["candidate_payload"])
+    bootstrap = next(item for item in candidate["entity_bootstraps"] if item["id"] == "socoh-1")
+    bootstrap["title"] = "Fictional Place"
+    bootstrap["aliases"] = ["Fictional Place in 1 Samuel 17:1"]
+    designation = next(item for item in candidate["entity_designations"] if item["entity_id"] == "socoh-1")
+    designation["label"] = "Fictional Place"
+    candidate["locked_identity_claim"]["target"]["label"] = "Fictional Place and Azekah"
+
+    with pytest.raises(ValueError, match="bootstrap identity-binding"):
+        _validate_bootstrap_provenance(validate_object(bootstrap), candidate)
+
+
+def test_openbible_bootstrap_accepts_imported_name_alias(result: dict[str, object]) -> None:
+    record = next(item for item in result["candidates"] if item["source_lock_id"] == "1samuel-17-socoh-azekah-encampment")
+    candidate = deepcopy(record["candidate_payload"])
+    bootstrap = next(item for item in candidate["entity_bootstraps"] if item["id"] == "socoh-1")
+    bootstrap["aliases"].append("Socoh 1")
+
+    _validate_bootstrap_provenance(validate_object(bootstrap), candidate)
 
 
 def test_territorial_entitlement_retains_among_israel_scope(result: dict[str, object]) -> None:

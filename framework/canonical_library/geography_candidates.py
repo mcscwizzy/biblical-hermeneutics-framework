@@ -224,6 +224,23 @@ def _typed_candidate_record(
         "source_records": source_records, "evidence_item": evidence,
         "entity_bootstraps": bootstraps,
     }
+    if bootstraps:
+        candidate_payload["locked_identity_claim"] = {
+            "id": claim["id"],
+            "subject": dict(subject),
+            "target": dict(target),
+            "source_locks": [dict(item) for item in claim["source_locks"]],
+        }
+        candidate_payload["entity_designations"] = [
+            {
+                "entity_id": entity_id,
+                "identity_kind": "openbible-place" if record is not None else family,
+                "label": label,
+                **({"imported_record_id": record["id"]} if record is not None else {}),
+            }
+            for entity_id, label, record in named_entities
+            if any(bootstrap["id"] == entity_id for bootstrap in bootstraps)
+        ]
     target_object = _object(library, target_id)
     return {
         **base, "outcome": "NEW", "target_ckl_object_id": target_id,

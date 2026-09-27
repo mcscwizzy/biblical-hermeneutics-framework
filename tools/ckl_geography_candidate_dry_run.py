@@ -150,7 +150,6 @@ def _bootstrap_conflict_report(
             if message.endswith(f": {bootstrap.get('id')}") or message.startswith(f"bootstrap validation failed for {bootstrap.get('id')}: "):
                 return True
         return False
-        return False
 
     for record in queue["candidates"]:
         if record["outcome"] == "NEW":

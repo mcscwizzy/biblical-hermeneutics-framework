@@ -144,31 +144,14 @@ def validate_candidate(
     evidence = bool(evidence_item)
     if dimension == "geography" and target is not None:
         allowed_types = {"place", "event", "book"}
-        numbers_18_levites = (
-            evidence
-            and target_id == "levites"
-            and passage_reference.startswith("Numbers 18:")
-            and bool(evidence_item.get("temporal_scope"))
-            and (
-                any(
-                    normalize_id(str(_mapping(item).get("relationship") or ""))
-                    in {"territorial-inheritance", "tithe-as-inheritance"}
-                    and _mapping(item).get("kind") == "value"
-                    and _mapping(item).get("value_type") == "entitlement"
-                    for item in _sequence(evidence_item.get("evidence_targets"))
-                )
-                or any(
-                    normalize_id(str(_mapping(item).get("relationship") or "")) == "territory-of"
-                    and re.search(
-                        r"\b(?:negative|no|without|excluded)\b",
-                        str(_mapping(item).get("notes") or "").casefold(),
-                    )
-                    for item in _sequence(evidence_item.get("related_objects"))
-                )
-            )
+        typed_entitlement = evidence and any(
+            _mapping(item).get("kind") == "value"
+            and _mapping(item).get("relationship") in {"territorial-inheritance", "tithe-as-inheritance"}
+            and _mapping(item).get("value_type") == "entitlement"
+            for item in _sequence(evidence_item.get("evidence_targets"))
         )
         if _value(target, "type") not in allowed_types and not (
-            _value(target, "type") == "institution" and numbers_18_levites
+            _value(target, "type") == "institution" and typed_entitlement
         ):
             reasons.append("geography-target-not-relevant")
     anchors = _claim_anchors(child, evidence=evidence)
@@ -343,11 +326,11 @@ def _stage_bootstraps(
                 obj = validate_object(raw, path=Path(library.root) / f"{object_id}.json")
             except Exception as exc:
                 raise ValueError(f"bootstrap validation failed for {object_id}: {exc}") from exc
-            _validate_bootstrap_provenance(obj, candidate)
             prior = staged.get(obj.id) or library.objects_by_id.get(obj.id)
             if prior is not None:
                 if prior.to_dict() != obj.to_dict():
                     raise ValueError(f"bootstrap id conflict: {obj.id}")
+                _validate_bootstrap_provenance(obj, candidate)
                 continue
             for label_type, label in (
                 ("id", obj.id), ("title", obj.title),
@@ -360,6 +343,7 @@ def _stage_bootstraps(
                 prior_sources = source_identities.get(source.id, [])
                 if prior_sources and any(not _sources_equivalent(previous, source.to_dict()) for previous in prior_sources):
                     raise ValueError(f"bootstrap source-identity collision: {source.id}")
+            _validate_bootstrap_provenance(obj, candidate)
             staged[obj.id] = obj
             for label in (obj.id, obj.title, *obj.aliases):
                 label_owners[normalize_alias(label)] = obj.id
@@ -381,6 +365,7 @@ def _validate_bootstrap_provenance(obj: CanonicalObject, candidate: Mapping[str,
     locks = [_mapping(lock) for lock in _sequence(candidate.get("source_locks"))]
     if not locks:
         raise ValueError(f"bootstrap source locks are required: {obj.id}")
+    identity = _bootstrap_identity_designation(obj, candidate)
     direct = [lock for lock in locks if lock.get("support_type") == "direct-textual"]
     if not any(
         source_id in source_map
@@ -420,6 +405,126 @@ def _validate_bootstrap_provenance(obj: CanonicalObject, candidate: Mapping[str,
         locked_external_ids = record_ids.intersection(external_ids)
         if not locked_external_ids or not _openbible_import_matches(locked_external_ids, obj.id, anchors):
             raise ValueError(f"bootstrap OpenBible identity/occurrence lock mismatch: {obj.id}")
+    _validate_bootstrap_identity(obj, identity, candidate, identity_locks, anchors)
+
+
+def _bootstrap_identity_designation(
+    obj: CanonicalObject, candidate: Mapping[str, Any],
+) -> Mapping[str, Any]:
+    claim = _mapping(candidate.get("locked_identity_claim"))
+    source_locks = list(_sequence(candidate.get("source_locks")))
+    if (
+        claim.get("id") != candidate.get("source_lock_id")
+        or claim.get("source_locks") != source_locks
+        or not isinstance(claim.get("subject"), Mapping)
+        or not isinstance(claim.get("target"), Mapping)
+    ):
+        raise ValueError(f"bootstrap identity-binding requires the locked claim: {obj.id}")
+    identities = [
+        _mapping(value) for value in _sequence(candidate.get("entity_designations"))
+        if _mapping(value).get("entity_id") == obj.id
+    ]
+    if len(identities) != 1:
+        raise ValueError(f"bootstrap identity-binding requires one entity designation: {obj.id}")
+    identity = identities[0]
+    label = str(identity.get("label") or "").strip()
+    structured_labels = (
+        str(_mapping(claim["subject"]).get("label") or ""),
+        str(_mapping(claim["target"]).get("label") or ""),
+    )
+    name = normalize_alias(label)
+    if not name or not any(
+        re.search(rf"(?<!\w){re.escape(name)}(?!\w)", normalize_alias(text))
+        for text in structured_labels
+    ):
+        raise ValueError(f"bootstrap identity-binding designation is absent from the locked claim: {obj.id}")
+    return identity
+
+
+def _validate_bootstrap_identity(
+    obj: CanonicalObject, identity: Mapping[str, Any], candidate: Mapping[str, Any],
+    identity_locks: list[Mapping[str, Any]], anchors: list[str],
+) -> None:
+    kind = str(identity.get("identity_kind") or "")
+    label = str(identity.get("label") or "").strip()
+    claim = _mapping(candidate["locked_identity_claim"])
+    target = _mapping(claim["target"])
+    approved_titles = {normalize_alias(label)}
+    approved_aliases = set(approved_titles)
+    if kind == "openbible-place":
+        record_id = str(identity.get("imported_record_id") or "")
+        locked_ids = {
+            record_id_value
+            for lock in identity_locks
+            for record_id_value in re.findall(r"openbible-[a-z0-9]+", str(lock.get("locator") or ""))
+        }
+        imported = _openbible_imported_record(record_id, obj.id, anchors)
+        if obj.type != "place" or record_id not in locked_ids or imported is None:
+            raise ValueError(f"bootstrap identity-binding imported place mismatch: {obj.id}")
+        imported_designations = {
+            normalize_alias(str(name))
+            for name in (imported.get("name"), *_sequence(imported.get("aliases")))
+            if name
+        }
+        if normalize_alias(label) not in imported_designations:
+            raise ValueError(f"bootstrap identity-binding label is not an imported name or alias: {obj.id}")
+        if not any(
+            reference.domain == "map-place" and reference.id == record_id
+            for evidence in obj.evidence_items for reference in evidence.external_references
+        ):
+            raise ValueError(f"bootstrap identity-binding imported record is not attached: {obj.id}")
+        imported_name = str(imported.get("name") or "")
+        if imported_name:
+            approved_titles.add(normalize_alias(imported_name))
+        approved_aliases.update(imported_designations)
+    elif kind in {"person", "territory"}:
+        expected_type = "person" if kind == "person" else "place"
+        expected_target_type = "person-ruler" if kind == "person" else "territory"
+        expected_title = label if kind == "person" else f"{label} territory"
+        if (
+            obj.type != expected_type
+            or target.get("entity_type") != expected_target_type
+            or normalize_alias(str(target.get("label") or "")) != normalize_alias(label)
+            or obj.id != normalize_id(expected_title)
+            or identity_locks
+        ):
+            raise ValueError(f"bootstrap identity-binding typed designation mismatch: {obj.id}")
+        if kind == "territory":
+            approved_titles = {normalize_alias(expected_title)}
+        approved_titles.add(normalize_alias(expected_title))
+        approved_aliases.add(normalize_alias(expected_title))
+    else:
+        raise ValueError(f"bootstrap identity-binding unknown identity kind: {obj.id}")
+    if normalize_alias(obj.title) not in approved_titles:
+        raise ValueError(f"bootstrap identity-binding canonical title mismatch: {obj.id}")
+    approved_aliases.update({
+        normalize_alias(f"{label} in {anchor}") for anchor in anchors
+    })
+    if any(normalize_alias(alias) not in approved_aliases for alias in obj.aliases):
+        raise ValueError(f"bootstrap identity-binding alias mismatch: {obj.id}")
+
+
+def _openbible_imported_record(
+    record_id: str, object_id: str, anchors: list[str],
+) -> Mapping[str, Any] | None:
+    import_path = Path(__file__).resolve().parents[2] / "bhf_agent/data/openbible_places.json"
+    try:
+        imported = json.loads(import_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return next((
+        entry for entry in imported if isinstance(entry, Mapping)
+        and entry.get("id") == record_id
+        and str(entry.get("source_url") or "").rstrip("/").endswith(f"/{object_id}")
+        and any(
+            _anchors_overlap(
+                f"{reference.get('book')} {reference.get('chapter')}:{reference.get('verse_start')}-{reference.get('verse_end')}",
+                anchors,
+            )
+            for reference in _sequence(entry.get("references"))
+            if isinstance(reference, Mapping)
+        )
+    ), None)
 
 
 def _openbible_import_matches(record_ids: set[str], object_id: str, anchors: list[str]) -> bool:

@@ -285,7 +285,8 @@ def _bootstrap_candidate(entity_id: str = "new-place") -> dict[str, object]:
     )
     identity.pop("evidence_targets")
     bootstrap = make_object(
-        entity_id, "place", entity_id.replace("-", " ").title(), [f"alias for {entity_id}"],
+        entity_id, "place", entity_id.replace("-", " ").title(),
+        [f"{entity_id.replace('-', ' ').title()} in Ruth 1:1-2"],
         content_status="draft", review_status="unreviewed", human_review_required=True,
         scripture_references=[{"reference": "Ruth 1:1-2", "relationship": "primary", "notes": "named place"}],
         sources=[scripture_source, identity_source], evidence_items=[identity],
@@ -299,6 +300,16 @@ def _bootstrap_candidate(entity_id: str = "new-place") -> dict[str, object]:
         {"source_id": "scripture-source", "locator": "Ruth 1:1", "support_type": "direct-textual"},
         {"source_id": "openbible-source", "locator": identity_source["locator"], "support_type": "entity-identification-and-occurrence"},
     ]
+    candidate["locked_identity_claim"] = {
+        "id": candidate["source_lock_id"],
+        "subject": {"label": "Bethlehem", "entity_type": "place"},
+        "target": {"label": entity_id.replace("-", " ").title(), "entity_type": "place"},
+        "source_locks": candidate["source_locks"],
+    }
+    candidate["entity_designations"] = [{
+        "entity_id": entity_id, "identity_kind": "openbible-place",
+        "label": entity_id.replace("-", " ").title(), "imported_record_id": "openbible-a123",
+    }]
     return candidate
 
 
@@ -308,8 +319,12 @@ def synthetic_openbible_identity(monkeypatch: pytest.MonkeyPatch) -> None:
     # records are exercised separately without this stub.
     from framework.canonical_library import expansion
     real_match = expansion._openbible_import_matches
+    real_record = expansion._openbible_imported_record
     monkeypatch.setattr(expansion, "_openbible_import_matches", lambda ids, obj_id, anchors:
         "openbible-a123" in ids or real_match(ids, obj_id, anchors))
+    monkeypatch.setattr(expansion, "_openbible_imported_record", lambda record_id, obj_id, anchors:
+        {"name": obj_id.replace("-", " ").title(), "aliases": []}
+        if record_id == "openbible-a123" else real_record(record_id, obj_id, anchors))
 
 
 @pytest.mark.usefixtures("synthetic_openbible_identity")
@@ -673,10 +688,10 @@ def test_candidate_queue_dry_run_does_not_write_and_explicit_apply_writes_only_t
     assert [item.id for item in written.evidence_items] == ["bethlehem-ruth-travel-context"]
 
 
-def test_geography_evidence_item_allows_an_institutional_territory_subject(
+def test_legacy_prose_does_not_authorize_an_institutional_geography_subject(
     tmp_path: Path,
 ) -> None:
-    """Numbers 18 cannot be represented if geography is restricted to places."""
+    """Negation in legacy notes cannot authorize an institutional geography claim."""
 
     root = tmp_path / "levites-ckl"
     write_library(
@@ -738,8 +753,33 @@ def test_geography_evidence_item_allows_an_institutional_territory_subject(
         library=CanonicalLibrary(root=root).load(),
     )
 
-    assert decision.accepted is True
-    assert "geography-target-not-relevant" not in decision.reasons
+    assert decision.accepted is False
+    assert "geography-target-not-relevant" in decision.reasons
+
+    for relationship, normalized_value, domain in (
+        ("territorial-inheritance", "none", "territorial"),
+        ("tithe-as-inheritance", "tithe", "economic"),
+    ):
+        typed = validate_candidate(
+            {
+                **decision.candidate,
+                "relationship": relationship,
+                "evidence_item": {
+                    **decision.candidate["evidence_item"],
+                    "id": f"levites-{relationship}",
+                    "related_objects": [],
+                    "geography_ids": [],
+                    "evidence_targets": [{
+                        "kind": "value", "relationship": relationship,
+                        "value_type": "entitlement", "normalized_value": normalized_value,
+                        "display_value": normalized_value,
+                        "qualifiers": [{"kind": "domain", "normalized_value": domain}],
+                    }],
+                },
+            },
+            library=CanonicalLibrary(root=root).load(),
+        )
+        assert typed.accepted is True, typed.reasons
 
     unrelated = validate_candidate(
         {**decision.candidate, "passage_reference": "Ruth 1:1-2"},
