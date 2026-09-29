@@ -177,6 +177,222 @@ class CanonicalExternalEvidenceReference:
 
 
 @dataclass(frozen=True)
+class CanonicalEvidenceQualifier:
+    kind: str
+    normalized_value: str = ""
+    entity_id: str = ""
+
+    def to_dict(self) -> dict[str, str]:
+        result = {"kind": self.kind}
+        if self.entity_id:
+            result["entity_id"] = self.entity_id
+        else:
+            result["normalized_value"] = self.normalized_value
+        return result
+
+
+@dataclass(frozen=True)
+class CanonicalEntityEvidenceTarget:
+    kind: str
+    relationship: str
+    entity_id: str
+    role: str = ""
+    sequence: int | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "kind": self.kind,
+            "relationship": self.relationship,
+            "entity_id": self.entity_id,
+        }
+        if self.role:
+            result["role"] = self.role
+        if self.sequence is not None:
+            result["sequence"] = self.sequence
+        return result
+
+
+@dataclass(frozen=True)
+class CanonicalValueEvidenceTarget:
+    kind: str
+    relationship: str
+    value_type: str
+    normalized_value: str
+    display_value: str
+    qualifiers: list[CanonicalEvidenceQualifier]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "kind": self.kind,
+            "relationship": self.relationship,
+            "value_type": self.value_type,
+            "normalized_value": self.normalized_value,
+            "display_value": self.display_value,
+            "qualifiers": [qualifier.to_dict() for qualifier in self.qualifiers],
+        }
+
+
+CanonicalEvidenceTarget = CanonicalEntityEvidenceTarget | CanonicalValueEvidenceTarget
+
+
+VALUE_TARGET_REGISTRY = {
+    "entitlement": {
+        "values": {"none", "tithe"},
+        "qualifiers": {"domain", "scope", "source", "basis", "contextual-addressee"},
+    },
+    "geographic-feature": {
+        "values": {"field"},
+        "qualifiers": {"attributed-giver", "attributed-recipient"},
+    },
+}
+
+
+def validate_evidence_targets(value: Any) -> list[CanonicalEvidenceTarget]:
+    if not isinstance(value, list):
+        raise EvidenceValidationError("evidence_targets must be a list")
+    targets: list[CanonicalEvidenceTarget] = []
+    seen: set[str] = set()
+    for raw in value:
+        if not isinstance(raw, Mapping):
+            raise EvidenceValidationError("each evidence target must be an object")
+        kind = raw.get("kind")
+        if kind == "entity":
+            _reject_unknown_fields(
+                raw, {"kind", "relationship", "entity_id", "role", "sequence"},
+                label="evidence target",
+            )
+            role = _target_token(raw["role"], "evidence target role") if "role" in raw else ""
+            sequence = raw.get("sequence")
+            if sequence is not None and (type(sequence) is not int or sequence < 1):
+                raise EvidenceValidationError("evidence target sequence must be a positive integer")
+            target: CanonicalEvidenceTarget = CanonicalEntityEvidenceTarget(
+                kind="entity",
+                relationship=_target_token(raw.get("relationship"), "evidence target relationship"),
+                entity_id=_target_token(raw.get("entity_id"), "evidence target entity_id"),
+                role=role,
+                sequence=sequence,
+            )
+        elif kind == "value":
+            _reject_unknown_fields(
+                raw,
+                {"kind", "relationship", "value_type", "normalized_value", "display_value", "qualifiers"},
+                label="evidence target",
+            )
+            value_type = _target_token(raw.get("value_type"), "evidence target value_type")
+            registry = VALUE_TARGET_REGISTRY.get(value_type)
+            if registry is None:
+                raise EvidenceValidationError(f"unknown evidence target value_type: {value_type}")
+            normalized_value = _target_token(raw.get("normalized_value"), "evidence target normalized_value")
+            if normalized_value not in registry["values"]:
+                raise EvidenceValidationError(f"unsupported evidence target normalized_value: {normalized_value}")
+            raw_qualifiers = raw.get("qualifiers")
+            if not isinstance(raw_qualifiers, list):
+                raise EvidenceValidationError("evidence target qualifiers must be a list")
+            qualifiers: list[CanonicalEvidenceQualifier] = []
+            seen_qualifiers: set[tuple[str, str, str]] = set()
+            for raw_qualifier in raw_qualifiers:
+                if not isinstance(raw_qualifier, Mapping):
+                    raise EvidenceValidationError("each evidence qualifier must be an object")
+                _reject_unknown_fields(
+                    raw_qualifier, {"kind", "normalized_value", "entity_id"},
+                    label="evidence qualifier",
+                )
+                qualifier_kind = _target_token(raw_qualifier.get("kind"), "evidence qualifier kind")
+                if qualifier_kind not in registry["qualifiers"]:
+                    raise EvidenceValidationError(f"unsupported evidence qualifier kind: {qualifier_kind}")
+                if ("normalized_value" in raw_qualifier) == ("entity_id" in raw_qualifier):
+                    raise EvidenceValidationError("evidence qualifier requires exactly one value form")
+                normalized = (
+                    _target_token(raw_qualifier["normalized_value"], "evidence qualifier normalized_value")
+                    if "normalized_value" in raw_qualifier else ""
+                )
+                entity_id = (
+                    _target_token(raw_qualifier["entity_id"], "evidence qualifier entity_id")
+                    if "entity_id" in raw_qualifier else ""
+                )
+                key = (qualifier_kind, normalized, entity_id)
+                if key in seen_qualifiers:
+                    raise EvidenceValidationError("duplicate evidence qualifier")
+                seen_qualifiers.add(key)
+                qualifiers.append(CanonicalEvidenceQualifier(
+                    kind=qualifier_kind, normalized_value=normalized, entity_id=entity_id,
+                ))
+            target = CanonicalValueEvidenceTarget(
+                kind="value",
+                relationship=_target_token(raw.get("relationship"), "evidence target relationship"),
+                value_type=value_type,
+                normalized_value=normalized_value,
+                display_value=_required_string(raw, "display_value"),
+                qualifiers=qualifiers,
+            )
+        else:
+            raise EvidenceValidationError("evidence target kind must be entity or value")
+        encoded = repr(target.to_dict())
+        if encoded in seen:
+            raise EvidenceValidationError("duplicate evidence target")
+        seen.add(encoded)
+        targets.append(target)
+    return targets
+
+
+def _target_token(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not value or value != normalize_id(value) or not _KEBAB_CASE_RE.fullmatch(value):
+        raise EvidenceValidationError(f"{label} must be canonical kebab-case")
+    return value
+
+
+def _validate_target_relationships(item: CanonicalEvidenceItem) -> None:
+    grouped: dict[str, list[CanonicalEvidenceTarget]] = {}
+    for target in item.evidence_targets:
+        grouped.setdefault(target.relationship, []).append(target)
+
+    for relationship, targets in grouped.items():
+        entities = [target for target in targets if isinstance(target, CanonicalEntityEvidenceTarget)]
+        values = [target for target in targets if isinstance(target, CanonicalValueEvidenceTarget)]
+        if relationship in {"encamped-between", "river-water-context"}:
+            role = "boundary" if relationship == "encamped-between" else "compared-river"
+            if len(targets) != 2 or len(entities) != 2:
+                raise EvidenceValidationError(f"{relationship} requires exactly two entity targets")
+            if any(target.role != role or target.sequence is not None for target in entities):
+                raise EvidenceValidationError(f"{relationship} requires role={role} without sequence")
+        elif relationship == "narrated-navigation-markers":
+            roles = {"intended-destination", "reached", "passed", "nearby"}
+            sequences = [target.sequence for target in entities]
+            if len(entities) != len(targets) or not entities or any(target.role not in roles for target in entities):
+                raise EvidenceValidationError("narrated-navigation-markers requires named entity roles")
+            if any(sequence is None for sequence in sequences) or len(sequences) != len(set(sequences)):
+                raise EvidenceValidationError("narrated-navigation-markers requires unique positive sequence")
+        elif relationship in {"ruled-by", "located-in", "near"}:
+            if len(targets) != 1:
+                raise EvidenceValidationError(f"{relationship} requires exactly one target")
+            if relationship != "near" and len(entities) != 1:
+                raise EvidenceValidationError(f"{relationship} requires one entity target")
+            if relationship == "near" and values and values[0].value_type != "geographic-feature":
+                raise EvidenceValidationError("near value target must be geographic-feature")
+            if entities and (entities[0].role or entities[0].sequence is not None):
+                raise EvidenceValidationError(f"{relationship} does not permit role or sequence")
+        elif relationship in {"territorial-inheritance", "tithe-as-inheritance"}:
+            domain = "territorial" if relationship == "territorial-inheritance" else "economic"
+            normalized = "none" if relationship == "territorial-inheritance" else "tithe"
+            if len(targets) != 1 or len(values) != 1 or values[0].value_type != "entitlement" or values[0].normalized_value != normalized:
+                raise EvidenceValidationError(f"{relationship} requires one entitlement:{normalized} target")
+            if not any(qualifier.kind == "domain" and qualifier.normalized_value == domain for qualifier in values[0].qualifiers):
+                raise EvidenceValidationError(f"{relationship} requires domain={domain}")
+            if item.temporal_scope.to_dict() == CanonicalTemporalScope().to_dict():
+                raise EvidenceValidationError(f"{relationship} requires non-empty temporal scope")
+        else:
+            raise EvidenceValidationError(f"unsupported evidence target relationship: {relationship}")
+
+        for target in values:
+            for qualifier in target.qualifiers:
+                if qualifier.kind in {"contextual-addressee", "attributed-giver", "attributed-recipient"}:
+                    if not qualifier.entity_id:
+                        raise EvidenceValidationError(f"{qualifier.kind} qualifier requires entity_id")
+                elif not qualifier.normalized_value:
+                    raise EvidenceValidationError(f"{qualifier.kind} qualifier requires normalized_value")
+
+
+@dataclass(frozen=True)
 class CanonicalEvidenceItem:
     id: str
     title: str
@@ -198,11 +414,17 @@ class CanonicalEvidenceItem:
     source_ids: list[str] = field(default_factory=list)
     claim_ids: list[str] = field(default_factory=list)
     external_references: list[CanonicalExternalEvidenceReference] = field(default_factory=list)
+    evidence_targets: list[CanonicalEvidenceTarget] = field(default_factory=list)
     metadata: dict[str, str] = field(default_factory=dict)
     notes: str = ""
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        result = asdict(self)
+        if self.evidence_targets:
+            result["evidence_targets"] = [target.to_dict() for target in self.evidence_targets]
+        elif not getattr(self, "_evidence_targets_present", False):
+            result.pop("evidence_targets")
+        return result
 
     @classmethod
     def from_mapping(cls, value: Mapping[str, Any] | "CanonicalEvidenceItem") -> "CanonicalEvidenceItem":
@@ -306,6 +528,7 @@ def validate_evidence_item(value: Mapping[str, Any] | CanonicalEvidenceItem) -> 
         "source_ids",
         "claim_ids",
         "external_references",
+        "evidence_targets",
         "metadata",
         "notes",
     }
@@ -354,7 +577,7 @@ def validate_evidence_item(value: Mapping[str, Any] | CanonicalEvidenceItem) -> 
     if metadata.get("image_source_url") and not metadata.get("image_attribution"):
         raise EvidenceValidationError("evidence metadata image_source_url requires image_attribution")
 
-    return CanonicalEvidenceItem(
+    item = CanonicalEvidenceItem(
         id=item_id,
         title=_required_string(value, "title"),
         evidence_type=evidence_type,
@@ -378,9 +601,13 @@ def validate_evidence_item(value: Mapping[str, Any] | CanonicalEvidenceItem) -> 
         source_ids=source_ids,
         claim_ids=_id_list(value.get("claim_ids", []), "claim_ids"),
         external_references=_external_references(value.get("external_references", [])),
+        evidence_targets=validate_evidence_targets(value.get("evidence_targets", [])),
         metadata=metadata,
         notes=_string(value.get("notes", ""), "notes"),
     )
+    _validate_target_relationships(item)
+    object.__setattr__(item, "_evidence_targets_present", "evidence_targets" in value)
+    return item
 
 
 def validate_evidence_references(

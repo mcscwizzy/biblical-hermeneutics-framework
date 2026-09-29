@@ -87,13 +87,16 @@ class RetrievedEvidenceItem:
     related_objects: tuple[dict[str, Any], ...]
     related_evidence: tuple[dict[str, Any], ...]
     external_references: tuple[dict[str, Any], ...]
+    evidence_targets: tuple[dict[str, Any], ...]
     metadata: dict[str, str]
     retrieval_score: float
     retrieval_reason: tuple[str, ...]
     matched_terms: tuple[str, ...]
+    _evidence_targets_present: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         data = asdict(self)
+        presence = data.pop("_evidence_targets_present")
         for field_name in (
             "scripture_references",
             "sources",
@@ -101,10 +104,13 @@ class RetrievedEvidenceItem:
             "related_objects",
             "related_evidence",
             "external_references",
+            "evidence_targets",
             "retrieval_reason",
             "matched_terms",
         ):
             data[field_name] = list(data[field_name])
+        if not presence and not data["evidence_targets"]:
+            data.pop("evidence_targets")
         return data
 
 
@@ -242,10 +248,12 @@ def rank_evidence_items(
                 related_objects=tuple(relationship.to_dict() for relationship in item.related_objects),
                 related_evidence=tuple(relationship.to_dict() for relationship in item.related_evidence),
                 external_references=tuple(reference.to_dict() for reference in item.external_references),
+                evidence_targets=tuple(target.to_dict() for target in item.evidence_targets),
                 metadata=dict(item.metadata),
                 retrieval_score=round(min(score, 1.0), 4),
                 retrieval_reason=tuple(reasons),
                 matched_terms=matched_terms,
+                _evidence_targets_present=getattr(item, "_evidence_targets_present", False),
             )
         )
 

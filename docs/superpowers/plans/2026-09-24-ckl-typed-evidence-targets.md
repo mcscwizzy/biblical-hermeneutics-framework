@@ -12,6 +12,7 @@
 
 ## Global Constraints
 
+- Tasks 1–7 MUST run and commit only on `feat/ckl-typed-evidence-targets`, starting from the verified current `master` commit. The `master` checkout and its unrelated local work remain untouched.
 - Do not modify `framework/canonical_library/objects/**`, the source-lock queue, production Commentary artifacts, or production databases.
 - Do not invoke candidate apply mode; bootstrap-bearing transactions reject `write=True`.
 - Preserve the 20 existing accepted candidate payload hashes exactly; regenerate derived candidate/report artifacts only from `docs/ckl-geography-pilot-source-lock.json`.
@@ -19,6 +20,50 @@
 - Reuse existing temporal scope, sources, source IDs, Scripture links, external references, confidence, and library validation. Unknown vocabulary, unresolved identities, identity collisions, incompatible targets, and provenance conflicts fail closed.
 - Existing canonical evidence identity wins over a staged structural duplicate. Multiple loaded canonical items with one structural fingerprint produce `canonical-structural-duplicate-conflict`, never an automatic merge.
 - Keep the work additive: no broad migration of legacy `related_objects`, no Commentary v1.2 selection/rendering/prose behavior change, and no production entity creation.
+- Freeze the original 20 accepted candidate payload hashes in a committed fixture before Task 1; derive them from the pre-implementation queue and never regenerate that fixture from implementation output.
+- Treat the repository-suite gate as a comparison against a recorded pre-implementation baseline. Attribute and fix new failures caused by this branch; report unrelated pre-existing failures without expanding the implementation scope.
+
+## Binding pre-execution requirements
+
+### Branch and worktree isolation
+
+This implementation MUST NOT be performed directly on `master`.
+
+Before Task 1:
+
+1. Verify the current `master` commit, `origin/master` relationship, working-tree state, and any existing worktrees. Record the full baseline SHA and a status inventory. Preserve every unrelated local change exactly as-is.
+2. Use the Superpowers `using-git-worktrees` workflow to create or verify an isolated implementation workspace. From an approved current `master` baseline, the clean-checkout path is:
+
+   ```bash
+   git switch master
+   git pull --ff-only
+   git switch -c feat/ckl-typed-evidence-targets
+   ```
+
+   When unrelated local work is present, prefer a separate worktree instead of switching that checkout:
+
+   ```bash
+   git worktree add ../bhf-ckl-typed-evidence-targets -b feat/ckl-typed-evidence-targets master
+   cd ../bhf-ckl-typed-evidence-targets
+   ```
+
+   If sandbox placement requires another path, record the actual path. If `git pull --ff-only` cannot fetch, record the failure, verify the local `master` and `origin/master` SHAs, and do not claim that the remote was refreshed. Stop if the baseline identity cannot be established.
+3. If this plan depends on pre-existing uncommitted files in the original checkout, copy only the identified prerequisite files into the isolated worktree without modifying the originals. Record their source paths and SHA-256 hashes before and after copying. Keep unrelated work out of implementation commits and account for any prerequisite baseline commit separately from Tasks 1–7.
+4. Confirm `git branch --show-current` is `feat/ckl-typed-evidence-targets` and the worktree is isolated before any implementation edit or commit.
+
+All implementation commits from Tasks 1–7 must remain on `feat/ckl-typed-evidence-targets`. Do not commit implementation changes to `master`, merge into `master`, rebase `master`, force-push, push implementation commits to another shared branch, or modify or discard unrelated worktree changes. Pushing this feature branch for backup or review is allowed with `git push -u origin feat/ckl-typed-evidence-targets`; merging it is outside this plan.
+
+### Freeze the original 20-candidate fixture
+
+Before changing model, transaction, converter, or report code, run the original locked queue against the pre-implementation converter. Select the 20 records whose original `outcome` is `NEW`; fail if the count, IDs, or `candidate_payload` values are missing. Store a sorted map of `source_lock_id` to SHA-256 of UTF-8 canonical JSON (`json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)`) at `tests/fixtures/canonical_library/geography_original_20_payload_hashes.json`. Commit this fixture separately on the feature branch. Task 6 must compare regenerated payloads against this frozen map; it must never update the map to make a changed converter pass.
+
+### Baseline-aware repository-suite gate
+
+Before Task 1, freeze the pre-implementation feature HEAD (after prerequisite and fixture commits) in an immutable detached baseline worktree. Run `.venv/bin/pytest -q -n 8 --dist loadfile` there, separately from the implementation worktree so concurrent edits cannot affect the baseline. The repository has 2,436 collected tests; eight pytest-xdist workers assigned by file keep class/module setup together. Save the exact command, exit status, failing node IDs, and relevant failure output in the execution ledger before the Task 7 repository-suite gate. At Task 7, run the same command in the implementation worktree and compare failures by node ID. Every newly failing test attributable to this branch must be fixed and rerun; pre-existing unrelated failures remain documented and do not authorize unrelated code changes. An interrupted baseline run is not a passing baseline; rerun it from the frozen commit or record the specific blocker before final verification. Focused tests for Tasks 1–7 still must pass.
+
+### Final branch verification and review
+
+Review the whole diff from the recorded `master` starting commit to `feat/ckl-typed-evidence-targets` HEAD. Report the branch name, starting commit, final HEAD, per-task commit SHAs, and any separate prerequisite/fixture commits. Verify that `master` still points to the starting commit (apart from an explicitly recorded fast-forward before branch creation), that the original checkout's local status inventory is unchanged, and that production CKL objects and source locks have identical pre/post content hashes. Do not merge the feature branch into `master`.
 
 ## Review Focus
 
@@ -414,6 +459,7 @@ git commit -m "feat: stage CKL entity bootstraps in dry runs"
 **Interfaces:**
 - Consumes: unchanged `docs/ckl-geography-pilot-source-lock.json`, loaded CKL, and staged bootstrap support.
 - Produces: deterministic candidate records with `entity_bootstraps`, typed `evidence_targets`, retained lock provenance, and explicit rejection reasons.
+- Reads: the pre-implementation hash fixture at `tests/fixtures/canonical_library/geography_original_20_payload_hashes.json`; this task must not rewrite it.
 
 - [ ] **Step 1: Write failing conversion/hash tests**
 
@@ -425,7 +471,9 @@ def test_converter_emits_typed_targets_and_bootstraps_only_for_registered_famili
 
 
 def test_original_twenty_payload_hashes_are_unchanged(result):
-    assert accepted_payload_hashes(result) == json.loads(FIXTURE_PATH.read_text())
+    assert accepted_payload_hashes(result) == json.loads(
+        (ROOT / "tests/fixtures/canonical_library/geography_original_20_payload_hashes.json").read_text()
+    )
 ```
 
 Also assert malformed maritime clauses, ambiguous textual-field grammar, missing OpenBible occurrence records, unsupported relationships, invalid bootstrap identity evidence, and unregistered vocabulary remain rejected rather than coerced.
@@ -504,11 +552,11 @@ git status --short framework/canonical_library/objects docs/ckl-geography-pilot-
 
 Expected: all focused tests pass; generated candidates/report reflect the complete classification; the final diff is whitespace-clean and the final `git status` command prints no object or source-lock changes.
 
-- [ ] **Step 5: Run the repository suite before completion**
+- [ ] **Step 5: Run the baseline-aware repository suite before completion**
 
-Run: `.venv/bin/pytest -q`
+Run: `.venv/bin/pytest -q -n 8 --dist loadfile`
 
-Expected: PASS. If any test fails, record its exact name and output, fix it within the responsible task, and rerun the full suite.
+Expected: PASS for all branch-relevant tests, with no new failures relative to the recorded pre-Task-1 run. Record exact failing node IDs and output. Fix new branch-caused failures within the responsible task and rerun the full suite. Keep any unrelated pre-existing failures in the final report without expanding scope.
 
 - [ ] **Step 6: Commit the dry-run/report slice**
 
@@ -519,6 +567,8 @@ git commit -m "feat: report typed geography dry-run decisions"
 
 ## Plan Self-Review
 
+- Isolation: the verified `master` SHA and original dirty status are recorded before branch creation; all prerequisite, fixture, and Task 1–7 commits stay on the isolated feature branch. Final review uses `master` baseline → feature HEAD and checks that `master`, source locks, production objects, and unrelated local work are unchanged.
+- Fixture and suite: the original 20 hash map is frozen from pre-implementation output before Task 1; the repository-suite gate compares final failures with the recorded test result from a detached pre-implementation worktree.
 - Spec coverage: Tasks 1–3 cover the union, strict schema, legacy payload stability, library resolution, retrieval, and SQLite payload persistence. Tasks 4–5 cover structural identity, canonical survivor precedence, provenance-safe merging, conflicts, bootstrap staging, and non-write boundaries. Tasks 6–7 cover locked conversion, 20-payload stability, audit output, and full verification.
 - Placeholder scan: complete; no open placeholders, implicit error handling, or cross-task-only interfaces remain.
 - Type consistency: `CanonicalEvidenceTarget` is the model collection; mappings are emitted only at serializer/retrieval/transaction boundaries; transaction reports expose `classification` and `survivor_evidence_id` consistently.
