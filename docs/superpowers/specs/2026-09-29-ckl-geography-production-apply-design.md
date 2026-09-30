@@ -155,6 +155,56 @@ The predicted changed chapters are `1 Samuel 17`, `2 Kings 5`, `Acts 27`,
 `Genesis 13`, `Genesis 34`, `Isaiah 36`, `John 4`, `Joshua 6`, `Judges 20`,
 `Matthew 2`, `Numbers 18`, and `Ruth 1`. They are an integrity comparison only.
 
+## Production authorization for one simulated transaction
+
+Production authorization may be created only after a successful full-path
+simulation against an isolated copied CKL root. The simulation produces the
+canonical mutation-plan bytes and their `mutation_plan_sha256`, then an
+immutable successful simulation receipt bytes and their
+`simulation_receipt_sha256`. The receipt records the plan hash, completion
+time, and validated copied-root outcome. The
+operator reviews that result and creates the authorization JSON outside the
+repository. The tool does not create or silently update authorization.
+
+The authorization record binds exactly these fields:
+
+```text
+authorization_version
+authorized_action
+reviewed_apply_implementation_sha
+approved_design_spec_sha256
+approved_implementation_plan_sha256
+frozen_ckl_baseline_sha
+mutation_plan_sha256
+simulation_receipt_sha256
+exclusive_maintenance_window_asserted
+authorized_at
+operator
+```
+
+`authorized_action` is the fixed identifier
+`"ckl-geography-production-apply"`. The approved spec and implementation-plan
+SHA-256 values identify the final reviewed bytes of those documents. In
+particular, the plan identity is established from the amended plan after its
+correction commit, not from the earlier plan commit. The reviewed apply
+implementation SHA remains unknown until implementation and whole-branch
+review are complete. The successful simulation receipt must exist unchanged
+and its hash, plan hash, and implementation/spec/plan/baseline identities must
+agree with the authorization record. `authorized_at` must follow the
+receipt's successful completion time; a preexisting authorization cannot be
+made valid by generating a receipt later.
+
+Production apply independently reruns frozen-input verification, replay,
+staging, full-tree validation, and canonical mutation-plan construction. It
+checks the fixed action, reviewed implementation SHA, approved spec and plan
+identities, frozen baseline, successful simulation receipt, and maintenance
+assertion. Before creating backups or making any production write, it requires
+`freshly_computed_mutation_plan_sha256 == authorization.mutation_plan_sha256`.
+Any mismatch fails closed with zero production CKL changes. A changed
+transaction requires a new simulation, new human review, and new
+authorization; an authorization is never reused for a different mutation
+plan. It permits one exact reviewed transaction, not general CKL writes.
+
 ## Durable CKL transaction and recovery state machine
 
 The writer is a same-filesystem transaction on the repository's supported
