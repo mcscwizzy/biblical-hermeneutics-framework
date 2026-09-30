@@ -8,8 +8,10 @@ dry-run CKL change while making a crash, concurrent reader, stale input, or
 post-write mismatch recoverable and visible. The selected architecture is an
 explicit mutation plan, staged files and complete-tree validation, then a
 29-path replacement transaction with durable backups and a rollback journal.
+Production apply requires an offline, exclusive maintenance window in which
+no application or runtime process reads the canonical CKL tree.
 
-This document authorizes no apply, implementation plan, source research,
+This document authorizes no apply, source research,
 candidate regeneration, source-lock edit, CKL edit, derived rebuild, or
 Commentary edit. The 14 bootstraps must remain the reviewed identity-only
 representations. It introduces no distributed CKL root or generic migration
@@ -21,10 +23,10 @@ The base is clean `master` commit
 `02aa16d354f8dd8d5a98f528e16fbda647651c3b`. A later specification-only
 commit may change repository HEAD; the CKL object tree and the files below
 must still match these identities at apply preflight. All SHA-256 values are of
-raw file bytes. The apply records the actual running code commit and verifies
-the reviewed converter/schema identities before replay; a code change requires
-its own review and a new explicit code-identity approval, never silent
-substitution.
+raw file bytes. These identities are the **frozen evidence/data baseline**,
+not the final production writer identity: that writer does not exist yet. The
+writer must replay the frozen decisions and validate frozen outputs under its
+reviewed implementation before writing anything.
 
 | Input | Frozen identity |
 | --- | --- |
@@ -46,7 +48,7 @@ that no unexpected object JSON or symlink is present; the signature and Git
 tree identity complement the loaded semantic fingerprint. The manifest starts
 at 665 objects.
 
-The reviewed replay code identities at this base are:
+The replay code identities observed at this base are:
 
 | Code | SHA-256 |
 | --- | --- |
@@ -58,9 +60,14 @@ The reviewed replay code identities at this base are:
 
 Preflight must also record and check the Git tree identity of the transitive
 schema package and any other converter/validator dependencies used by the
-reviewed replay. The future apply implementation gets its own reviewed code
-identity. This table does not license changed behavior merely because a new
-implementation produces the same counts. The candidate Markdown report
+reviewed replay. The final `reviewed_apply_implementation_sha` is established
+only after implementation and final code review. Production apply requires
+that exact reviewed commit as HEAD, a clean worktree, expected ancestry from
+the frozen base, and no uncommitted transaction-critical code changes. An
+arbitrary later working-tree version cannot execute the frozen transaction.
+Code changes require new review and explicit code-identity authorization;
+matching counts alone do not authorize substitution. The candidate Markdown
+report
 (`docs/ckl-geography-pilot-candidates.md`, SHA-256
 `014d4c6295342c05effd0ab55c80ea4d6e3c7de9300c52e3303ef8276daf15f4`)
 is audit material, not a semantic input; the writer must not parse it.
@@ -71,21 +78,26 @@ Use a fixed CKL-local lock file and a nonblocking operating-system exclusive
 file lock. The file may persist; *ownership* means a live kernel lock, not mere
 file existence. Record process ID, host, transaction ID, and acquisition time
 for diagnostics. A second apply fails closed if it cannot acquire the lock.
-Every local production CKL reader must take a shared lock for its complete
-disk load and validation. No reader may see the manifest-last interval.
-Cached in-memory libraries must be discarded for post-apply work. Before this
-writer can be used in production, the local reader entry points must be
-reviewed for participation or quiesced for the transaction; an unguarded
-reader is a deployment blocker. No cross-host locking is implied.
+This lock prevents concurrent production writers; it does not coordinate
+arbitrary CKL readers. The operator must separately assert an exclusive
+maintenance window with no application or runtime process reading the
+canonical CKL tree. Record this assertion in the receipt. Keep readers
+quiesced through commit or completed rollback and lock release. Subsequent
+work must discard cached CKL instances and reload the committed tree. Live,
+uninterrupted readership would require a versioned-root architecture outside
+this implementation. Do not make every CKL reader lock-aware in this task.
 
 Acquire the exclusive lock before preflight. Under that lock, inspect journal
 presence first. Any incomplete journal enters recovery before input checks,
 staging, or a new transaction. A stale lock metadata file with no live lock
 does not skip recovery; a live owner cannot be overridden on PID or age alone.
-If journal bytes are unreadable, backups are incomplete, or ownership is
-ambiguous, hold the production gate closed for manual restoration from
-verified backups. Release the lock only after a durable `COMMITTED` or
-`ROLLED_BACK` decision and its receipt are recorded.
+If the journal cannot prove safe automatic recovery, enter `RECOVERY_BLOCKED`:
+make no new production writes or automatic deletions, preserve the journal
+and backups, report the exact inconsistency, and require explicit operator
+review. Do not guess whether to resume or roll back. The apply lock may be
+released after the blocked condition is durably reported; the production
+gate stays closed. Normal release follows a durable `COMMITTED` or
+`ROLLED_BACK` decision and receipt.
 
 ## Replay, staging, and exact mutation plan
 
@@ -145,14 +157,24 @@ The predicted changed chapters are `1 Samuel 17`, `2 Kings 5`, `Acts 27`,
 
 ## Durable CKL transaction and recovery state machine
 
+The writer is a same-filesystem transaction on the repository's supported
+platform. Before mutation, verify that staging, backups, journal, and target
+CKL files meet the filesystem assumptions needed for atomic replacement and
+durability; reject cross-filesystem paths, symlinks, or unsupported filesystem
+operations. For each durable write, write a complete temporary file, flush
+its contents, `fsync` the file, atomically replace into the intended path,
+`fsync` its parent directory, then durably advance the transaction journal.
+Use the same discipline for backup and journal creation. Backups and journal
+must be flushed and verified before the first production replacement. If the
+actual platform cannot satisfy these guarantees, fail closed rather than
+silently downgrade. Do not build a generic cross-platform transaction system.
+
 The journal and backup directory are private control data outside the CKL
-object tree. Journal updates use write-to-new-file, file `fsync`, atomic rename,
-and parent-directory `fsync`. Staged files and backups are also flushed, and
-the containing directories are flushed after each rename, creation, or
-deletion. The journal records transaction ID, immutable plan hash and path
+object tree. The journal records transaction ID, immutable plan hash and path
 list, frozen input identities, before and staged after hashes, backup paths and
-hashes, intended new paths, last durable state, and per-file progress. A
-transition is effective only after its journal update is durable and readable.
+hashes, intended new paths, last durable state, per-file progress, and an
+integrity checksum. A transition is effective only after its journal update
+is durable and readable.
 
 | State | Durable entry condition | Permitted next state |
 | --- | --- | --- |
@@ -165,27 +187,35 @@ transition is effective only after its journal update is durable and readable.
 | `COMMITTED` | Final decision and CKL receipt durable; rollback material may then be retired | terminal |
 | `ROLLBACK_IN_PROGRESS` | Rollback intent durable; restoration progress recorded | `ROLLED_BACK` |
 | `ROLLED_BACK` | Exact frozen byte signature and loaded inventory restored and verified; receipt durable | terminal; next apply needs new preflight |
+| `RECOVERY_BLOCKED` | Journal or backup integrity is insufficient to prove safe automatic rollback; material is preserved and exact inconsistency reported | terminal for automatic apply; explicit operator review required |
 
 Before entering `WRITE_IN_PROGRESS`, create and hash-check all 15 backups
 (14 modified objects and manifest), record before-hashes for each, record all
 14 planned new paths as absent, flush the journal, and reread it. Replace the
 28 object files from the staged same-filesystem files with atomic renames;
 write `manifest.json` last. Recheck staged after-hash at each replacement.
-Manifest-last is an ordering rule, not the commit point. Keep backups until
-`COMMITTED` is durable.
+Manifest-last is an ordering rule, not the commit point. Commit requires a
+fresh post-write reload and validation. Keep backups until `COMMITTED` is
+durable.
 
-For any interrupted state short of `COMMITTED`, default recovery is rollback,
-never silent resume. For states before `BACKUPS_COMPLETE`, no production write
-was permitted: verify the frozen before-state; if it differs, fail closed for
-manual recovery. From `BACKUPS_COMPLETE` onward, enter
+For any valid incomplete journal short of `COMMITTED`, default recovery is
+rollback followed by a completely new preflight, never silent resume. For
+states before `BACKUPS_COMPLETE`, no production write was permitted: verify
+the frozen before-state; if it differs, enter `RECOVERY_BLOCKED`. From
+`BACKUPS_COMPLETE` onward, enter
 `ROLLBACK_IN_PROGRESS`, restore every original file from its verified backup,
 remove each planned new file if present, and verify the exact frozen byte
 signature, manifest, 665-object load, inventory fingerprint, and baseline
 warnings. Rollback is idempotent; interruption during rollback repeats it
-under the lock. Unknown files, backup/hash disagreement, or a failed
-restoration leaves the journal incomplete and production unavailable for
-manual repair. A crash after `POSTWRITE_VALIDATED` but before durable
-`COMMITTED` still rolls back. No downstream stage starts before commit.
+under the lock. An unreadable, malformed, checksum-invalid, or otherwise
+unverifiable journal, or a journal inconsistent with backups or current CKL
+bytes, enters `RECOVERY_BLOCKED` without new writes or automatic deletions.
+Unknown files, backup/hash disagreement, or a failed restoration likewise
+preserve journal and backups for explicit operator review. A blocked condition
+is reported in a separate durable diagnostic; the corrupt journal is never
+rewritten to claim a verified state. A crash after `POSTWRITE_VALIDATED` but
+before durable `COMMITTED` still rolls back. No downstream stage starts before
+commit.
 
 ## CKL validation and changed-reference authority
 
@@ -214,13 +244,24 @@ rollback; it does not widen downstream work. Only then enter
 **Transaction A — CKL:** the locked 29-path transaction above. A valid commit
 is retained even if later work fails. Its receipt stores actual changed
 references and the committed post-apply CKL fingerprint.
+The first implementation plan covers only Transaction A: frozen input
+verification, state model, writer lock, mutation plan, staged validation,
+backups, durable journal, controlled writer, rollback and recovery, fresh
+post-write validation, actual changed references, receipt, and a full-path
+simulation against an isolated copied CKL root. The production writer stays
+disabled by default. Its implementation does not authorize production apply.
+Production execution requires a separate human authorization after
+implementation and whole-branch review, adversarial and recovery tests,
+frozen-input verification, and mutation-plan review. No test or ordinary CLI
+invocation may mutate the production CKL.
 
 **Transaction B — derived runtime/database artifacts:** start from a new,
 explicitly verified CKL load with the committed fingerprint. Rebuild runtime
 and database artifacts in a separate candidate location, validate them
 independently, and publish them only through their own gate. Record the CKL
 fingerprint consumed. Failure marks derived readiness blocked without
-rolling back a valid Transaction A.
+rolling back a valid Transaction A. It requires a separate implementation
+plan after Transaction A is implemented, tested, and reviewed.
 
 **Transaction C — EvidenceBundles and Commentary:** derive the impacted
 chapter set only from Transaction A's actual changed references. Use a fresh
@@ -228,6 +269,9 @@ verified CKL load and record its fingerprint; selectively rebuild bundles and
 syntheses, then perform quality review before publication. The dry run's 12
 chapters are an exact integrity expectation, not a selection input. No new
 evidence research is part of this workflow.
+
+Transaction C likewise requires a separate implementation plan after
+Transaction A review. Neither B nor C is part of the first implementation.
 
 `docs/commentary-v1.2-release.json` says `"frozen": true`. Rebuilt commentary
 must go into a separate, versioned candidate namespace pending its own release
@@ -247,33 +291,38 @@ writer. A successful A may therefore be reported as
 
 ## Receipt and readiness
 
-The production receipt is control/audit metadata outside CKL and Commentary
-input paths. It records frozen identities and code identities, plan hash,
-journal transitions, lock owner, per-path before and after hashes, backup and
-recovery actions, staged and actual validation results, warning identities,
-actual changed anchors and chapters, each downstream CKL fingerprint and gate
-state, and Commentary quality classifications. Its statuses distinguish
-`CKL_COMMITTED`, `DERIVED_REBUILD_BLOCKED`, `DERIVED_VALIDATED`,
-`COMMENTARY_CANDIDATE_BLOCKED`, and `PUBLICATION_READY` as applicable. The
-receipt must never be ingested as CKL evidence, a source, or Commentary context.
+The Transaction A production receipt is control/audit metadata outside CKL
+and Commentary input paths. It records `frozen_ckl_baseline_sha`,
+`reviewed_apply_implementation_sha`, the operator's exclusive-maintenance
+assertion, frozen input identities, plan hash, journal transitions, lock
+owner, per-path before and after hashes, backup and recovery actions, staged
+and actual validation results, warning identities, and actual changed anchors
+and chapters. Its CKL status is `CKL_COMMITTED`, `ROLLED_BACK`, or
+`RECOVERY_BLOCKED` as applicable. Later transaction receipts may record their
+own CKL fingerprints, gate states, and Commentary quality classifications;
+they do not expand the Transaction A implementation. No receipt may be
+ingested as CKL evidence, a source, or Commentary context.
 
 ## Remaining design risks and review gates
 
-1. Local reader exclusion depends on every production reader taking the
-   shared lock or being quiesced. Reader inventory is required before any
-   implementation may be considered ready to apply.
+1. The repository apply lock prevents concurrent writers. Reader exclusion
+   depends on the asserted exclusive maintenance window and requires
+   operational verification before production apply.
 2. An unreadable journal or failed/partial backup has no safe automatic
-   recovery proof. The design deliberately stops for manual restoration.
+   recovery proof. `RECOVERY_BLOCKED` preserves recovery material and stops
+   for explicit operator review.
 3. Directory `fsync` and atomic rename guarantees must be verified on the
    actual local filesystem; cross-filesystem staging is forbidden.
-4. Converter/schema dependency identities and the future writer's code
-   identity need a reviewed lock record before apply. The baseline hashes
-   above are necessary but do not by themselves certify new code.
+4. Converter/schema dependency identities and the future writer's exact
+   reviewed commit need a reviewed authorization record before apply. The
+   frozen evidence/data baseline does not certify new code.
 5. Transaction C is currently blocked by the preparer interface mismatch;
    the CKL commit does not imply publication readiness.
 
-Specification review is the next gate. No implementation plan or production
-apply follows from this document alone.
+The approved design direction permits a Transaction A implementation plan
+after this amendment is committed and self-reviewed. The plan requires its
+own review before implementation. Production apply remains a separate human
+authorization gate.
 
 ## Specification self-review
 
@@ -285,5 +334,8 @@ authoring audit returned 665 objects, the stated inventory fingerprint, zero
 errors, and the 14 identified warnings. The byte-signature calculation covered
 the manifest and 665 object JSON files. The frozen v1.2 release marker and the
 selective helper/preparer signature mismatch were checked in their current
-files. No production CKL, source lock, candidate, fixture, or Commentary file
-was changed while writing this specification.
+files. The amendment distinguishes writer exclusion from the maintenance
+window, requires fail-closed same-filesystem durability and recovery, defers
+final writer identity until review, and limits the first plan to Transaction A.
+No production CKL, source lock, candidate, fixture, or Commentary file was
+changed while writing this specification.
