@@ -15,6 +15,22 @@ CKL_ROOT = REPO_ROOT / "framework" / "canonical_library"
 OBJECTS_ROOT = CKL_ROOT / "objects"
 MANIFEST_PATH = CKL_ROOT / "manifest.json"
 EXPECTED_FOLDERS = set(CATEGORY_FOLDERS.values())
+IDENTITY_DRAFTS = {
+    "abana",
+    "archelaus",
+    "azekah",
+    "cnidus",
+    "crete",
+    "cyprus",
+    "fair-havens",
+    "italy",
+    "judah-territory",
+    "lasea",
+    "myra",
+    "pharpar",
+    "socoh-1",
+    "sychar",
+}
 EXPECTED_EMPTY_STRING_FIELDS = (
     "summary",
     "historical_context",
@@ -81,6 +97,19 @@ class CanonicalInventoryTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.library = CanonicalLibrary.load_default()
 
+    def assert_identity_draft(self, obj) -> None:
+        self.assertEqual(obj.content_status, "draft", obj.id)
+        self.assertEqual(obj.review_status, "unreviewed", obj.id)
+        self.assertEqual(obj.importance, 0, obj.id)
+        self.assertEqual(obj.confidence, "unrated", obj.id)
+        self.assertTrue(obj.human_review_required, obj.id)
+        self.assertEqual(obj.generated_by, [], obj.id)
+        self.assertEqual(obj.reviewed_by, [], obj.id)
+        self.assertIsNone(obj.last_reviewed, obj.id)
+        self.assertNotEqual(obj.summary, "", obj.id)
+        self.assertNotEqual(obj.sources, [], obj.id)
+        self.assertNotEqual(obj.scripture_references, [], obj.id)
+
     def test_all_inventory_json_files_validate_and_receive_governance_defaults(self) -> None:
         seen_ids: set[str] = set()
         counts: Counter[str] = Counter()
@@ -106,6 +135,10 @@ class CanonicalInventoryTests(unittest.TestCase):
                     self.assertEqual(getattr(obj, field_name), expected)
                 self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
             elif obj.content_status in {"draft", "complete"}:
+                if obj.id in IDENTITY_DRAFTS:
+                    self.assert_identity_draft(obj)
+                    counts[obj.type] += 1
+                    continue
                 self.assertGreater(obj.importance, 0)
                 self.assertNotEqual(obj.summary, "")
                 self.assertNotEqual(obj.sources, [])
@@ -130,6 +163,7 @@ class CanonicalInventoryTests(unittest.TestCase):
             counts[obj.type] += 1
 
         self.assertEqual(len(seen_ids), len(self.library.objects_by_id))
+        self.assertTrue(IDENTITY_DRAFTS.issubset(seen_ids))
         self.assertEqual(counts["book"], 66)
         self.assertEqual(sum(counts.values()), len(self.library.objects_by_id))
 
@@ -173,6 +207,10 @@ class CanonicalInventoryTests(unittest.TestCase):
                 if category == "events" and obj.title.startswith("Event Placeholder"):
                     self.assertEqual(obj.content_status, "placeholder", obj.id)
                     self.assertEqual(obj.review_status, "unreviewed", obj.id)
+                    continue
+
+                if obj.id in IDENTITY_DRAFTS:
+                    self.assert_identity_draft(obj)
                     continue
 
                 self.assertEqual(obj.content_status, "complete", obj.id)

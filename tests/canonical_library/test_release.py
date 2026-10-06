@@ -9,6 +9,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from framework.canonical_library import __version__ as canonical_library_version
+from framework.canonical_library import CanonicalLibrary
 from framework.canonical_library.__main__ import main
 from framework.canonical_library.public_cache import load_framework_version
 
@@ -51,7 +52,9 @@ class CanonicalReleaseTests(unittest.TestCase):
         self.assertEqual(payload["framework_version"], load_framework_version())
         self.assertEqual(payload["ckl_manifest_framework_version"], "1.0")
         self.assertEqual(payload["ckl_manifest_schema_version"], "1.0")
-        self.assertEqual(payload["ckl_object_count"], 665)
+        library = CanonicalLibrary.load_default()
+        self.assertEqual(payload["ckl_object_count"], library.manifest["object_count"])
+        self.assertEqual(payload["ckl_object_count"], len(library.objects_by_id))
         self.assertIn("ckl_inventory_fingerprint", payload)
 
 

@@ -116,14 +116,20 @@
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     },
     {
       "note": "Later texts often reuse the place to recall promise, decision, or worship.",
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     }
   ],
   "common_questions": [
@@ -133,7 +139,7 @@
   ],
   "sources": [
     {
-      "title": "Genesis 12",
+      "title": "1 Kings 8",
       "author": "",
       "publisher": "",
       "year": null,
@@ -142,19 +148,7 @@
       "source_type": "scripture",
       "supports": [],
       "notes": "",
-      "id": "genesis-12"
-    },
-    {
-      "title": "Joshua 24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "joshua-24"
+      "id": "1-kings-8"
     },
     {
       "title": "2 Samuel 5-7",
@@ -169,7 +163,21 @@
       "id": "2-samuel-5-7"
     },
     {
-      "title": "1 Kings 8",
+      "title": "Canonical historical orientation for Bethlehem 1",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical-context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "bethlehem-1-historical-orientation"
+    },
+    {
+      "title": "Genesis 12",
       "author": "",
       "publisher": "",
       "year": null,
@@ -178,7 +186,7 @@
       "source_type": "scripture",
       "supports": [],
       "notes": "",
-      "id": "1-kings-8"
+      "id": "genesis-12"
     },
     {
       "title": "John 2",
@@ -193,6 +201,18 @@
       "id": "john-2"
     },
     {
+      "title": "Joshua 24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "joshua-24"
+    },
+    {
       "title": "Revelation 21",
       "author": "",
       "publisher": "",
@@ -205,20 +225,206 @@
       "id": "revelation-21"
     },
     {
-      "title": "Canonical historical orientation for Bethlehem 1",
+      "title": "Ruth 1-4",
       "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Ruth 1:1-4:22",
       "url": "",
-      "source_type": "reference-work",
+      "source_type": "scripture",
       "supports": [
-        "historical_context"
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "ruth-literary-movement",
+        "ruth-loyal-pledge",
+        "ruth-gleaning-protection",
+        "ruth-redemption-arrangement",
+        "ruth-providence-through-action",
+        "ruth-obed-david-genealogy"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "bethlehem-1-historical-orientation"
+      "notes": "Primary biblical text.",
+      "id": "ruth-1-4"
+    },
+    {
+      "title": "Ruth 1-4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Ruth 1:1",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "ruth-literary-movement",
+        "ruth-loyal-pledge",
+        "ruth-gleaning-protection",
+        "ruth-redemption-arrangement",
+        "ruth-providence-through-action",
+        "ruth-obed-david-genealogy"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "ruth-1-bethlehem-judah-territory-ckl-ruth-primary-lock"
+    },
+    {
+      "id": "matthew-greek",
+      "title": "The Greek New Testament: SBL Edition, Matthew",
+      "author": "Holmes, Michael W., editor",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Matthew 1-28",
+      "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "greek_words",
+        "matthew-greek-narrative",
+        "matthew-discourses",
+        "matthew-passion-responsibility",
+        "matthew-resurrection"
+      ],
+      "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus."
     }
   ],
+  "claims": [],
+  "temporal_scope": {
+    "start_year": null,
+    "end_year": null,
+    "approximate": false,
+    "periods": [],
+    "narrative_setting": "",
+    "source_composition_start_year": null,
+    "source_composition_end_year": null,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "evidence_items": [
+    {
+      "id": "source-lock-matthew-2-bethlehem-judea-territory",
+      "title": "matthew-2-bethlehem-judea-territory",
+      "evidence_type": "geography-environment",
+      "description": "Matthew 2:1 locates Bethlehem in Judea without implying ownership.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Matthew 2:1 calls the birth site Bethlehem of Judea.",
+      "passage_relevance": "Matthew 2:1 locates Bethlehem in Judea without implying ownership.",
+      "primary_observation": "Matthew 2:1 calls the birth site Bethlehem of Judea.",
+      "temporal_scope": {
+        "narrative_setting": "The Herod narrative setting in Matthew 2:1; a local regional designation, not a timeless political-control claim."
+      },
+      "geography_ids": [],
+      "related_objects": [
+        {
+          "id": "judea-1",
+          "relationship": "located-in",
+          "weight": 10,
+          "notes": "ckl-matthew-primary @ Matthew 2:1 (direct-textual); openbible-geocoding-data @ records openbible-a112427 and openbible-a149f13; https://www.openbible.info/geo/atlas/bethlehem-1 and /judea-1 (entity-identification-and-occurrence)"
+        }
+      ],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Matthew 2:1",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "Matthew 2:1 locates Bethlehem in Judea without implying ownership.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "matthew-greek"
+      ],
+      "claim_ids": [],
+      "external_references": [
+        {
+          "domain": "external-dataset",
+          "id": "openbible-geocoding-data",
+          "relationship": "entity-identification-and-occurrence",
+          "notes": "records openbible-a112427 and openbible-a149f13; https://www.openbible.info/geo/atlas/bethlehem-1 and /judea-1"
+        }
+      ],
+      "metadata": {},
+      "notes": "Source-lock identity: matthew-2-bethlehem-judea-territory; status: LOCKED. Subject: Bethlehem [place]. Relationship: located-in. Target: Judea [region]. Source locks: ckl-matthew-primary @ Matthew 2:1 (direct-textual); openbible-geocoding-data @ records openbible-a112427 and openbible-a149f13; https://www.openbible.info/geo/atlas/bethlehem-1 and /judea-1 (entity-identification-and-occurrence)"
+    },
+    {
+      "id": "source-lock-ruth-1-bethlehem-judah-territory",
+      "title": "ruth-1-bethlehem-judah-territory",
+      "evidence_type": "geography-environment",
+      "description": "Bethlehem in Judah identifies the departure setting without implying tribal ownership.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Ruth 1:1 explicitly calls Bethlehem a Judah location; no tribal ownership is claimed.",
+      "passage_relevance": "Bethlehem in Judah identifies the departure setting without implying tribal ownership.",
+      "primary_observation": "Ruth 1:1 explicitly calls Bethlehem a Judah location; no tribal ownership is claimed.",
+      "temporal_scope": {
+        "narrative_setting": "The narrated days of the judges; the lock is a local territorial designation, not timeless political control."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Ruth 1:1",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "Bethlehem in Judah identifies the departure setting without implying tribal ownership.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "ruth-1-4",
+        "ruth-1-bethlehem-judah-territory-ckl-ruth-primary-lock"
+      ],
+      "claim_ids": [],
+      "external_references": [
+        {
+          "domain": "external-dataset",
+          "id": "openbible-geocoding-data",
+          "relationship": "entity-identification-only",
+          "notes": "record openbible-a112427; https://www.openbible.info/geo/atlas/bethlehem-1"
+        }
+      ],
+      "metadata": {},
+      "notes": "Source-lock identity: ruth-1-bethlehem-judah-territory; status: LOCKED. Subject: Bethlehem [place]. Relationship: located-in. Target: Judah [territory]. Source locks: ckl-ruth-primary @ Ruth 1:1 (direct-textual); openbible-geocoding-data @ record openbible-a112427; https://www.openbible.info/geo/atlas/bethlehem-1 (entity-identification-only)",
+      "evidence_targets": [
+        {
+          "kind": "entity",
+          "relationship": "located-in",
+          "entity_id": "judah-territory"
+        }
+      ]
+    }
+  ],
+  "section_status": {
+    "core_summary": "missing",
+    "scripture_anchors": "missing",
+    "historical_context": "missing",
+    "literary_context": "missing",
+    "canonical_context": "missing",
+    "original_audience": "missing",
+    "lexical_links": "missing",
+    "intertextuality": "missing",
+    "interpretive_views": "missing",
+    "common_misinterpretations": "missing",
+    "sources": "missing",
+    "relationships": "missing",
+    "retrieval_metadata": "missing",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "historical_cultural",
+    "secondary": []
+  },
   "canonical_story": {
     "phase": "",
     "role": "",

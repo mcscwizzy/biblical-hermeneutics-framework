@@ -111,14 +111,20 @@
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     },
     {
       "note": "Their significance may be military, theological, or both.",
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     }
   ],
   "common_questions": [
@@ -184,12 +190,148 @@
       "url": "",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical-context"
       ],
       "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
       "id": "jericho-1-historical-orientation"
+    },
+    {
+      "title": "Joshua 1-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Joshua 1:1-24:33",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "joshua-literary-movement",
+        "joshua-torah-shaped-leadership",
+        "joshua-rahab-rescue",
+        "joshua-fulfilled-and-remaining-land",
+        "joshua-shechem-covenant"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "joshua-1-24"
     }
   ],
+  "claims": [],
+  "temporal_scope": {
+    "start_year": null,
+    "end_year": null,
+    "approximate": false,
+    "periods": [],
+    "narrative_setting": "",
+    "source_composition_start_year": null,
+    "source_composition_end_year": null,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "evidence_items": [
+    {
+      "id": "source-lock-joshua-6-jericho-closed-city",
+      "title": "joshua-6-jericho-closed-city",
+      "evidence_type": "geography-environment",
+      "description": "The closed-city condition explains the immediate setting of the chapter's instructions.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Joshua 6:1 says no one entered or left Jericho because of Israel.",
+      "passage_relevance": "The closed-city condition explains the immediate setting of the chapter's instructions.",
+      "primary_observation": "Joshua 6:1 says no one entered or left Jericho because of Israel.",
+      "temporal_scope": {
+        "narrative_setting": "The siege setting narrated in Joshua 6; it makes no archaeological or permanent strategic claim."
+      },
+      "geography_ids": [
+        "jericho-1"
+      ],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Joshua 6:1",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The closed-city condition explains the immediate setting of the chapter's instructions.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "joshua-1-24"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: joshua-6-jericho-closed-city; status: LOCKED. Subject: Jericho [place]. Relationship: settlement-access-context. Target: closed to entering and leaving because of Israel [settlement-condition]. Source locks: ckl-joshua-primary @ Joshua 6:1 (direct-textual)"
+    },
+    {
+      "id": "source-lock-joshua-6-jericho-encirclement",
+      "title": "joshua-6-jericho-encirclement",
+      "evidence_type": "geography-environment",
+      "description": "It provides the chapter's physical action around the city without importing claims beyond the narrative.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Joshua 6:3-4 and 15 state six days of circuits and seven on the seventh day.",
+      "passage_relevance": "It provides the chapter's physical action around the city without importing claims beyond the narrative.",
+      "primary_observation": "Joshua 6:3-4 and 15 state six days of circuits and seven on the seventh day.",
+      "temporal_scope": {
+        "narrative_setting": "The narrated encirclement in Joshua 6; no reconstructed conquest route or archaeological chronology."
+      },
+      "geography_ids": [
+        "jericho-1"
+      ],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Joshua 6:3-4",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "It provides the chapter's physical action around the city without importing claims beyond the narrative.",
+          "weight": 10
+        },
+        {
+          "reference": "Joshua 6:15",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "It provides the chapter's physical action around the city without importing claims beyond the narrative.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "joshua-1-24"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: joshua-6-jericho-encirclement; status: LOCKED. Subject: Jericho [place]. Relationship: encirclement-context. Target: Israel's narrated seven-day encirclement [passage-event]. Source locks: ckl-joshua-primary @ Joshua 6:3-4, 15 (direct-textual)"
+    }
+  ],
+  "section_status": {
+    "core_summary": "missing",
+    "scripture_anchors": "missing",
+    "historical_context": "missing",
+    "literary_context": "missing",
+    "canonical_context": "missing",
+    "original_audience": "missing",
+    "lexical_links": "missing",
+    "intertextuality": "missing",
+    "interpretive_views": "missing",
+    "common_misinterpretations": "missing",
+    "sources": "missing",
+    "relationships": "missing",
+    "retrieval_metadata": "missing",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "historical_cultural",
+    "secondary": []
+  },
   "canonical_story": {
     "phase": "",
     "role": "",

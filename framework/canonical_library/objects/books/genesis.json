@@ -453,7 +453,6 @@
   ],
   "sources": [
     {
-      "id": "genesis-1-50",
       "title": "Genesis 1-50",
       "author": "",
       "publisher": "",
@@ -463,18 +462,18 @@
       "source_type": "scripture",
       "supports": [
         "summary",
-        "literary_context",
-        "canonical_context",
-        "key_people",
-        "key_places",
-        "key_events",
+        "literary-context",
+        "canonical-context",
+        "key-people",
+        "key-places",
+        "key-events",
         "genesis-blessing-for-families",
         "genesis-ends-in-egypt"
       ],
-      "notes": "Primary biblical text."
+      "notes": "Primary biblical text.",
+      "id": "genesis-1-50"
     },
     {
-      "id": "sarna-genesis",
       "title": "The JPS Torah Commentary: Genesis",
       "author": "Nahum M. Sarna",
       "publisher": "Jewish Publication Society",
@@ -483,18 +482,18 @@
       "url": "https://jps.org/books/jps-torah-commentary-genesis/",
       "source_type": "reference-work",
       "supports": [
-        "literary_context",
-        "historical_context",
-        "ancient_near_east_context",
-        "authorship_positions",
-        "interpretive_disputes",
+        "literary-context",
+        "historical-context",
+        "ancient-near-east-context",
+        "authorship-positions",
+        "interpretive-disputes",
         "genesis-literary-movement",
         "genesis-ane-comparative-context"
       ],
-      "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship."
+      "notes": "Jewish scholarly commentary integrating the Hebrew text, classical interpretation, and modern scholarship.",
+      "id": "sarna-genesis"
     },
     {
-      "id": "hamilton-genesis-1-17",
       "title": "The Book of Genesis, Chapters 1-17",
       "author": "Victor P. Hamilton",
       "publisher": "Eerdmans",
@@ -503,16 +502,16 @@
       "url": "https://www.eerdmans.com/9780802825216/the-book-of-genesis-chapters-1-17/",
       "source_type": "reference-work",
       "supports": [
-        "authorship_positions",
-        "literary_context",
-        "canonical_context",
+        "authorship-positions",
+        "literary-context",
+        "canonical-context",
         "genesis-literary-movement",
         "genesis-blessing-for-families"
       ],
-      "notes": "NICOT commentary representing a conservative evangelical scholarly perspective."
+      "notes": "NICOT commentary representing a conservative evangelical scholarly perspective.",
+      "id": "hamilton-genesis-1-17"
     },
     {
-      "id": "hamilton-genesis-18-50",
       "title": "The Book of Genesis, Chapters 18-50",
       "author": "Victor P. Hamilton",
       "publisher": "Eerdmans",
@@ -521,15 +520,15 @@
       "url": "https://www.eerdmans.com/9780802823090/the-book-of-genesis-chapters-18-50/",
       "source_type": "reference-work",
       "supports": [
-        "literary_context",
-        "canonical_context",
+        "literary-context",
+        "canonical-context",
         "genesis-literary-movement",
         "genesis-ends-in-egypt"
       ],
-      "notes": "NICOT commentary with literary, linguistic, theological, and reception-focused discussion."
+      "notes": "NICOT commentary with literary, linguistic, theological, and reception-focused discussion.",
+      "id": "hamilton-genesis-18-50"
     },
     {
-      "id": "zondervan-illustrated-pentateuch-backgrounds",
       "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
       "author": "John H. Walton, general editor; Bruce Wells and other contributors",
       "publisher": "Zondervan",
@@ -538,11 +537,12 @@
       "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
       "source_type": "reference-work",
       "supports": [
-        "ancient_near_east_context",
+        "ancient-near-east-context",
         "archaeology",
         "genesis-ane-comparative-context"
       ],
-      "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background."
+      "notes": "Comparative ancient Near Eastern textual, cultural, geographic, and artifactual background.",
+      "id": "zondervan-illustrated-pentateuch-backgrounds"
     }
   ],
   "claims": [
@@ -552,20 +552,33 @@
       "claim_type": "literary",
       "certainty": "textually_explicit",
       "dispute_status": "not_disputed",
-      "scripture_references": ["Genesis 5:1-3"],
-      "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+      "scripture_references": [
+        "Genesis 5:1-3"
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
       "traditions": [],
       "rationale": "The chapter's opening formula and image/likeness language are explicit.",
       "notes": ""
     },
     {
       "id": "genesis-5-repeated-genealogy-formula",
-      "claim": "Genesis 5 repeatedly uses a genealogy formula—age at fathering, additional years, total lifespan, and a closing notice—so the chapter's regular pattern organizes the succession from Adam toward Noah.",
+      "claim": "Genesis 5 repeatedly uses a genealogy formula\u2014age at fathering, additional years, total lifespan, and a closing notice\u2014so the chapter's regular pattern organizes the succession from Adam toward Noah.",
       "claim_type": "literary",
       "certainty": "textually_explicit",
       "dispute_status": "not_disputed",
-      "scripture_references": ["Genesis 5:3-20", "Genesis 5:25-32"],
-      "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+      "scripture_references": [
+        "Genesis 5:3-20",
+        "Genesis 5:25-32"
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
       "traditions": [],
       "rationale": "The repeated sequence of ages, fathering, lifespan, and closing notices is visible in the chapter's form.",
       "notes": ""
@@ -576,8 +589,14 @@
       "claim_type": "literary",
       "certainty": "textually_explicit",
       "dispute_status": "not_disputed",
-      "scripture_references": ["Genesis 5:5-31"],
-      "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+      "scripture_references": [
+        "Genesis 5:5-31"
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
       "traditions": [],
       "rationale": "The refrain and Enoch's interruption are directly observable in the repeated notices.",
       "notes": ""
@@ -588,8 +607,14 @@
       "claim_type": "biblical_text",
       "certainty": "textually_explicit",
       "dispute_status": "minor_scholarly_disagreement",
-      "scripture_references": ["Genesis 5:21-24"],
-      "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+      "scripture_references": [
+        "Genesis 5:21-24"
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
       "traditions": [],
       "rationale": "The exceptional wording is explicit, while the precise interpretation of being taken remains a question.",
       "notes": ""
@@ -600,8 +625,14 @@
       "claim_type": "biblical_text",
       "certainty": "textually_explicit",
       "dispute_status": "minor_scholarly_disagreement",
-      "scripture_references": ["Genesis 5:25-32"],
-      "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+      "scripture_references": [
+        "Genesis 5:25-32"
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
       "traditions": [],
       "rationale": "The genealogy's closing names and Lamech's explanation are narrated directly.",
       "notes": ""
@@ -612,8 +643,14 @@
       "claim_type": "literary",
       "certainty": "probable",
       "dispute_status": "minor_scholarly_disagreement",
-      "scripture_references": ["Genesis 5:1-32"],
-      "source_ids": ["genesis-1-50", "sarna-genesis", "hamilton-genesis-1-17"],
+      "scripture_references": [
+        "Genesis 5:1-32"
+      ],
+      "source_ids": [
+        "genesis-1-50",
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
       "traditions": [],
       "rationale": "The chapter's repeated structure, mortality refrain, Enoch exception, and Noah transition support this restrained literary inference.",
       "notes": ""
@@ -686,6 +723,205 @@
       "traditions": [],
       "rationale": "Joseph explicitly recalls the oath to Abraham, Isaac, and Jacob and directs that his bones be carried up from Egypt.",
       "notes": "This unresolved ending supplies direct narrative background for Exodus."
+    }
+  ],
+  "temporal_scope": {
+    "start_year": null,
+    "end_year": null,
+    "approximate": false,
+    "periods": [],
+    "narrative_setting": "",
+    "source_composition_start_year": null,
+    "source_composition_end_year": null,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "evidence_items": [
+    {
+      "id": "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+      "title": "genesis-13-abram-negev-bethel-ai-movement",
+      "evidence_type": "geography-environment",
+      "description": "It locates Abram's return before the land-choice scene without adding route precision.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Genesis 13:1 and 3 state the Negev stage and a camp between Bethel and Ai.",
+      "passage_relevance": "It locates Abram's return before the land-choice scene without adding route precision.",
+      "primary_observation": "Genesis 13:1 and 3 state the Negev stage and a camp between Bethel and Ai.",
+      "temporal_scope": {
+        "narrative_setting": "The narrated journey stages in Genesis 13; no exact road, distance, or border crossing is asserted."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Genesis 13:1",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "It locates Abram's return before the land-choice scene without adding route precision.",
+          "weight": 10
+        },
+        {
+          "reference": "Genesis 13:3",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "It locates Abram's return before the land-choice scene without adding route precision.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50"
+      ],
+      "claim_ids": [],
+      "external_references": [
+        {
+          "domain": "external-dataset",
+          "id": "openbible-geocoding-data",
+          "relationship": "entity-identification-and-occurrence",
+          "notes": "records openbible-a64f355 and openbible-a7e13e1; https://www.openbible.info/geo/atlas/bethel-1 and /ai-1"
+        }
+      ],
+      "metadata": {},
+      "notes": "Source-lock identity: genesis-13-abram-negev-bethel-ai-movement; status: LOCKED. Subject: Abram's household movement [passage-event]. Relationship: narrated-travel-stages. Target: Negev to a place between Bethel and Ai [textual-stage-sequence]. Source locks: ckl-genesis-primary @ Genesis 13:1, 3 (direct-textual); openbible-geocoding-data @ records openbible-a64f355 and openbible-a7e13e1; https://www.openbible.info/geo/atlas/bethel-1 and /ai-1 (entity-identification-and-occurrence)"
+    },
+    {
+      "id": "source-lock-genesis-13-jordan-valley-well-watered-description",
+      "title": "genesis-13-jordan-valley-well-watered-description",
+      "evidence_type": "geography-environment",
+      "description": "The physical description is the stated basis for Lot's choice and is therefore passage material.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Genesis 13:10 describes the plain of the Jordan as well watered in Lot's view before the cities' destruction.",
+      "passage_relevance": "The physical description is the stated basis for Lot's choice and is therefore passage material.",
+      "primary_observation": "Genesis 13:10 describes the plain of the Jordan as well watered in Lot's view before the cities' destruction.",
+      "temporal_scope": {
+        "narrative_setting": "Lot's narrated visual assessment before Sodom and Gomorrah's destruction; no modern agricultural inference."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Genesis 13:10",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The physical description is the stated basis for Lot's choice and is therefore passage material.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: genesis-13-jordan-valley-well-watered-description; status: LOCKED. Subject: plain of the Jordan [physical-region]. Relationship: physical-setting. Target: well-watered appearance in the direction of Zoar [physical-geography-description]. Source locks: ckl-genesis-primary @ Genesis 13:10 (direct-textual)"
+    },
+    {
+      "id": "source-lock-genesis-13-lot-eastward-separation",
+      "title": "genesis-13-lot-eastward-separation",
+      "evidence_type": "geography-environment",
+      "description": "It makes the separation and Lot's settlement choice geographically explicit.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Genesis 13:11-12 narrates Lot's eastward choice and tents toward Sodom.",
+      "passage_relevance": "It makes the separation and Lot's settlement choice geographically explicit.",
+      "primary_observation": "Genesis 13:11-12 narrates Lot's eastward choice and tents toward Sodom.",
+      "temporal_scope": {
+        "narrative_setting": "Lot's eastward departure as narrated; it does not assert an ancient route."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Genesis 13:11-12",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "It makes the separation and Lot's settlement choice geographically explicit.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50"
+      ],
+      "claim_ids": [],
+      "external_references": [
+        {
+          "domain": "external-dataset",
+          "id": "openbible-geocoding-data",
+          "relationship": "entity-identification-and-occurrence",
+          "notes": "record openbible-a0aa664; https://www.openbible.info/geo/atlas/sodom"
+        }
+      ],
+      "metadata": {},
+      "notes": "Source-lock identity: genesis-13-lot-eastward-separation; status: LOCKED. Subject: Lot's movement [passage-event]. Relationship: movement-and-settlement. Target: Jordan plain, with tents toward Sodom [narrated-destination-and-camp]. Source locks: ckl-genesis-primary @ Genesis 13:11-12 (direct-textual); openbible-geocoding-data @ record openbible-a0aa664; https://www.openbible.info/geo/atlas/sodom (entity-identification-and-occurrence)"
+    },
+    {
+      "id": "source-lock-genesis-34-city-gate-negotiation-setting",
+      "title": "genesis-34-city-gate-negotiation-setting",
+      "evidence_type": "geography-environment",
+      "description": "The negotiation is located at a city gate; it may clarify the public settlement setting without claiming a resolved site or a broader trade network.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Genesis 34:20 locates Hamor and Shechem's proposal at their city gate.",
+      "passage_relevance": "The negotiation is located at a city gate; it may clarify the public settlement setting without claiming a resolved site or a broader trade network.",
+      "primary_observation": "Genesis 34:20 locates Hamor and Shechem's proposal at their city gate.",
+      "temporal_scope": {
+        "narrative_setting": "The narrated settlement negotiation in Genesis 34."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Genesis 34:20-21",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The negotiation is located at a city gate; it may clarify the public settlement setting without claiming a resolved site or a broader trade network.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: genesis-34-city-gate-negotiation-setting; status: LOCKED. Subject: Genesis 34 negotiation [passage-event]. Relationship: settlement-context. Target: city gate of Hamor's and Shechem's city [built-setting]. Source locks: ckl-genesis-primary @ Genesis 34:20-21 (direct-textual)"
+    },
+    {
+      "id": "source-lock-genesis-34-local-population-description",
+      "title": "genesis-34-local-population-description",
+      "evidence_type": "geography-environment",
+      "description": "It supplies only the narrated local-population context that makes Jacob's fear intelligible.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Genesis 34:30 names Canaanites and Perizzites in Jacob's fear; it gives no ethnic boundary.",
+      "passage_relevance": "It supplies only the narrated local-population context that makes Jacob's fear intelligible.",
+      "primary_observation": "Genesis 34:30 names Canaanites and Perizzites in Jacob's fear; it gives no ethnic boundary.",
+      "temporal_scope": {
+        "narrative_setting": "Jacob's stated local setting after the violence at Shechem; no timeless ethnic-territory relation."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Genesis 34:30",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "It supplies only the narrated local-population context that makes Jacob's fear intelligible.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "genesis-1-50"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: genesis-34-local-population-description; status: LOCKED. Subject: Jacob's household in Genesis 34 [passage-event]. Relationship: local-population-context. Target: Canaanites and Perizzites as named local populations [people-group-pair]. Source locks: ckl-genesis-primary @ Genesis 34:30 (direct-textual)"
     }
   ],
   "section_status": {

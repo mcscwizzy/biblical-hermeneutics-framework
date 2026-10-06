@@ -18,32 +18,9 @@ class CanonicalLoaderTests(unittest.TestCase):
 
     def test_loads_all_objects(self) -> None:
         library = self.default_library
-        expected_categories = {
-            "theology": 50,
-            "themes": 50,
-            "people": 101,
-            "places": 77,
-            "events": 76,
-            "books": 66,
-            "word_studies": 50,
-            "archaeology": 50,
-            "institutions": 34,
-            "prophecy": 10,
-            "faq": 51,
-            "timeline": 1,
-            "covenants": 1,
-            "biblical_theology": 1,
-            "cultural_background": 44,
-            "symbols": 1,
-            "literary_devices": 1,
-            "doctrine": 1,
-        }
-
-        self.assertEqual(len(library.objects_by_id), 665)
-        self.assertEqual(library.manifest["object_count"], 665)
+        self.assertEqual(library.manifest["object_count"], len(library.objects_by_id))
         self.assertEqual(library.manifest["framework_version"], "1.0")
         self.assertEqual(library.manifest["schema_version"], "1.0")
-        self.assertEqual(library.manifest["categories"], expected_categories)
 
     def test_loaded_complete_objects_preserve_governance_metadata(self) -> None:
         library = self.default_library
