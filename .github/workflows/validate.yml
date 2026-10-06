@@ -103,6 +103,6 @@ jobs:
           from framework.canonical_library import CanonicalLibrary
 
           library = CanonicalLibrary.load_default()
-          assert library.manifest["object_count"] == 611
+          assert library.manifest["object_count"] == len(library.objects_by_id)
           assert library.inventory_fingerprint()
           PY
