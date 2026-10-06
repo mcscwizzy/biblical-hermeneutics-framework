@@ -897,16 +897,22 @@ def selective_recompile(
     preparer = chapter_preparer
     if preparer is None:
         from framework.commentary.production.inputs import prepare_chapter
+        from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
+        from bhf_agent.study_db import require_current_study_database
+
+        current_study_db_path = (
+            study_db_path
+            if study_db_path is not None
+            else RUNTIME_DATA_PATHS.study_db_path
+        )
+        current_study_db_path = require_current_study_database(current_study_db_path)
 
         def prepare_current_v12(book: str, chapter: int) -> Any:
-            return prepare_chapter(
-                book,
-                chapter,
-                study_db_path=study_db_path,
-                read_only_inputs=True,
-            )
+            return prepare_chapter(book, chapter, study_db_path=current_study_db_path)
 
         preparer = prepare_current_v12
+    elif study_db_path is not None:
+        raise ValueError("study_db_path requires the default current v1.2 chapter preparer")
 
     results: list[dict[str, Any]] = []
     for reference in sorted(identities):
@@ -931,10 +937,16 @@ def selective_recompile(
         bundle_value = bundle.to_dict() if hasattr(bundle, "to_dict") else (
             dict(bundle) if isinstance(bundle, Mapping) else {}
         )
+        evidence_items = getattr(bundle, "evidence_items", bundle_value.get("evidence_items", []))
         result = {
             "reference": reference,
             "pipeline": V12_PIPELINE_VERSION,
             "operation": "evidence-synthesis-only",
+            "evidence_count": len(evidence_items),
+            "evidence_ids": sorted(
+                str(getattr(item, "id", item.get("id", "") if isinstance(item, Mapping) else ""))
+                for item in evidence_items
+            ),
         }
         for key, value in (
             ("evidence_bundle_version", getattr(bundle, "version", bundle_value.get("version"))),

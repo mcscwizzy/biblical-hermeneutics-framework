@@ -139,6 +139,7 @@ def _retrieve_geography(book: str, chapter: int, study_db_path: str | Path | Non
             end_verse=9999,
             path=study_db_path,
             limit=20,
+            prepare_schema=False,
         )
         if map_data:
             return {"places": map_data.get("places", []), "routes": map_data.get("routes", [])}
