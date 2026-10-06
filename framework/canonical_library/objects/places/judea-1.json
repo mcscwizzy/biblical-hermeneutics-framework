@@ -122,14 +122,20 @@
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     },
     {
       "note": "Geographic settings often help explain response, conflict, and mission.",
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     }
   ],
   "common_questions": [
@@ -139,7 +145,7 @@
   ],
   "sources": [
     {
-      "title": "Matthew",
+      "title": "Acts",
       "author": "",
       "publisher": "",
       "year": null,
@@ -148,31 +154,7 @@
       "source_type": "scripture",
       "supports": [],
       "notes": "",
-      "id": "matthew"
-    },
-    {
-      "title": "Mark",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "mark"
-    },
-    {
-      "title": "Luke",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "luke"
+      "id": "acts"
     },
     {
       "title": "John",
@@ -187,18 +169,6 @@
       "id": "john"
     },
     {
-      "title": "Acts",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts"
-    },
-    {
       "title": "Canonical historical orientation for Judea 1",
       "author": "",
       "publisher": "Canonical Knowledge Library",
@@ -207,12 +177,161 @@
       "url": "",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical-context"
       ],
       "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
       "id": "judea-1-historical-orientation"
+    },
+    {
+      "title": "Luke",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke"
+    },
+    {
+      "title": "Mark",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "mark"
+    },
+    {
+      "title": "Matthew",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "matthew"
+    },
+    {
+      "id": "matthew-2-archelaus-judea-administration-ckl-matthew-primary-lock",
+      "title": "The Greek New Testament: SBL Edition, Matthew",
+      "author": "Holmes, Michael W., editor",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Matthew 2:22",
+      "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "greek_words",
+        "matthew-greek-narrative",
+        "matthew-discourses",
+        "matthew-passion-responsibility",
+        "matthew-resurrection"
+      ],
+      "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus."
+    },
+    {
+      "id": "matthew-greek",
+      "title": "The Greek New Testament: SBL Edition, Matthew",
+      "author": "Holmes, Michael W., editor",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Matthew 1-28",
+      "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "greek_words",
+        "matthew-greek-narrative",
+        "matthew-discourses",
+        "matthew-passion-responsibility",
+        "matthew-resurrection"
+      ],
+      "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus."
     }
   ],
+  "claims": [],
+  "temporal_scope": {
+    "start_year": null,
+    "end_year": null,
+    "approximate": false,
+    "periods": [],
+    "narrative_setting": "",
+    "source_composition_start_year": null,
+    "source_composition_end_year": null,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "evidence_items": [
+    {
+      "id": "source-lock-matthew-2-archelaus-judea-administration",
+      "title": "matthew-2-archelaus-judea-administration",
+      "evidence_type": "geography-environment",
+      "description": "The local ruler named in the text explains why the family avoids Judea and goes to Galilee.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Matthew 2:22 directly names Archelaus as ruling Judea during the family's return.",
+      "passage_relevance": "The local ruler named in the text explains why the family avoids Judea and goes to Galilee.",
+      "primary_observation": "Matthew 2:22 directly names Archelaus as ruling Judea during the family's return.",
+      "temporal_scope": {
+        "narrative_setting": "The return episode after Herod's death in Matthew 2:19-22; the claim is explicitly limited to Archelaus's narrated rule in Judea."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Matthew 2:22",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The local ruler named in the text explains why the family avoids Judea and goes to Galilee.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "matthew-2-archelaus-judea-administration-ckl-matthew-primary-lock",
+        "matthew-greek"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: matthew-2-archelaus-judea-administration; status: LOCKED. Subject: Judea [region]. Relationship: ruled-by. Target: Archelaus [person-ruler]. Source locks: ckl-matthew-primary @ Matthew 2:22 (direct-textual)",
+      "evidence_targets": [
+        {
+          "kind": "entity",
+          "relationship": "ruled-by",
+          "entity_id": "archelaus"
+        }
+      ]
+    }
+  ],
+  "section_status": {
+    "core_summary": "missing",
+    "scripture_anchors": "missing",
+    "historical_context": "missing",
+    "literary_context": "missing",
+    "canonical_context": "missing",
+    "original_audience": "missing",
+    "lexical_links": "missing",
+    "intertextuality": "missing",
+    "interpretive_views": "missing",
+    "common_misinterpretations": "missing",
+    "sources": "missing",
+    "relationships": "missing",
+    "retrieval_metadata": "missing",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "historical_cultural",
+    "secondary": []
+  },
   "canonical_story": {
     "phase": "",
     "role": "",

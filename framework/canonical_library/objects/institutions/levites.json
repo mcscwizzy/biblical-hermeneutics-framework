@@ -112,14 +112,20 @@
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     },
     {
       "note": "The New Testament often reuses Israel's communal language for the church.",
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     }
   ],
   "common_questions": [
@@ -129,7 +135,7 @@
   ],
   "sources": [
     {
-      "title": "Exodus 19-24",
+      "title": "1 Corinthians 11-14",
       "author": "",
       "publisher": "",
       "year": null,
@@ -138,19 +144,7 @@
       "source_type": "scripture",
       "supports": [],
       "notes": "",
-      "id": "exodus-19-24"
-    },
-    {
-      "title": "Deuteronomy 6",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "deuteronomy-6"
+      "id": "1-corinthians-11-14"
     },
     {
       "title": "Acts 2",
@@ -165,7 +159,7 @@
       "id": "acts-2"
     },
     {
-      "title": "1 Corinthians 11-14",
+      "title": "Deuteronomy 6",
       "author": "",
       "publisher": "",
       "year": null,
@@ -174,7 +168,19 @@
       "source_type": "scripture",
       "supports": [],
       "notes": "",
-      "id": "1-corinthians-11-14"
+      "id": "deuteronomy-6"
+    },
+    {
+      "title": "Exodus 19-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-19-24"
     },
     {
       "title": "Canonical historical orientation for Levites",
@@ -185,12 +191,246 @@
       "url": "",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical-context"
       ],
       "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
       "id": "levites-historical-orientation"
+    },
+    {
+      "title": "Numbers 1-36",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Numbers 1:1-36:13",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "numbers-two-generations",
+        "numbers-kadesh-judgment",
+        "numbers-balaam-blessing",
+        "numbers-inheritance-preparation"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "numbers-1-36"
+    },
+    {
+      "title": "Numbers 1-36",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Numbers 18:20, 23-24",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "numbers-two-generations",
+        "numbers-kadesh-judgment",
+        "numbers-balaam-blessing",
+        "numbers-inheritance-preparation"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "numbers-18-levites-no-territorial-inheritance-ckl-numbers-primary-lock"
+    },
+    {
+      "title": "Numbers 1-36",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Numbers 18:21, 24",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "numbers-two-generations",
+        "numbers-kadesh-judgment",
+        "numbers-balaam-blessing",
+        "numbers-inheritance-preparation"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "numbers-18-levites-tithe-as-inheritance-ckl-numbers-primary-lock"
     }
   ],
+  "claims": [],
+  "temporal_scope": {
+    "start_year": null,
+    "end_year": null,
+    "approximate": false,
+    "periods": [],
+    "narrative_setting": "",
+    "source_composition_start_year": null,
+    "source_composition_end_year": null,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "evidence_items": [
+    {
+      "id": "source-lock-numbers-18-levites-tithe-as-inheritance",
+      "title": "numbers-18-levites-tithe-as-inheritance",
+      "evidence_type": "geography-environment",
+      "description": "This complementary fact explains the chapter's tithe provision without turning it into a generic economic claim.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "Numbers 18:21 and 24 assign the Levites tithes as inheritance in return for service.",
+      "passage_relevance": "This complementary fact explains the chapter's tithe provision without turning it into a generic economic claim.",
+      "primary_observation": "Numbers 18:21 and 24 assign the Levites tithes as inheritance in return for service.",
+      "temporal_scope": {
+        "narrative_setting": "The allocation instruction framed in Numbers 18; no later administrative system is projected back into the claim."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Numbers 18:21",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This complementary fact explains the chapter's tithe provision without turning it into a generic economic claim.",
+          "weight": 10
+        },
+        {
+          "reference": "Numbers 18:24",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "This complementary fact explains the chapter's tithe provision without turning it into a generic economic claim.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "numbers-1-36",
+        "numbers-18-levites-tithe-as-inheritance-ckl-numbers-primary-lock"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: numbers-18-levites-tithe-as-inheritance; status: LOCKED. Subject: Levites [institution]. Relationship: tithe-as-inheritance. Target: Israel's tithes assigned as inheritance for Levite service [economic-entitlement]. Source locks: ckl-numbers-primary @ Numbers 18:21, 24 (direct-textual)",
+      "evidence_targets": [
+        {
+          "kind": "value",
+          "relationship": "tithe-as-inheritance",
+          "value_type": "entitlement",
+          "normalized_value": "tithe",
+          "display_value": "Israel's tithes assigned as inheritance for Levite service",
+          "qualifiers": [
+            {
+              "kind": "domain",
+              "normalized_value": "economic"
+            },
+            {
+              "kind": "source",
+              "normalized_value": "israel"
+            },
+            {
+              "kind": "basis",
+              "normalized_value": "levite-service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-lock-numbers-18-levites-no-territorial-inheritance",
+      "title": "numbers-18-levites-no-territorial-inheritance",
+      "evidence_type": "geography-environment",
+      "description": "The allocation speech contrasts land inheritance and tithe while keeping Aaron and Levites distinct.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Numbers 18:23-24 denies Levites an inheritance; verse 20 states land exclusion to Aaron within the same allocation speech.",
+      "passage_relevance": "The allocation speech contrasts land inheritance and tithe while keeping Aaron and Levites distinct.",
+      "primary_observation": "Numbers 18:23-24 denies Levites an inheritance; verse 20 states land exclusion to Aaron within the same allocation speech.",
+      "temporal_scope": {
+        "narrative_setting": "The allocation instruction framed in Numbers 18; it is not a timeless political-control claim."
+      },
+      "geography_ids": [],
+      "related_objects": [],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Numbers 18:20",
+          "relationship": "contextual",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The allocation speech contrasts land inheritance and tithe while keeping Aaron and Levites distinct.",
+          "weight": 10
+        },
+        {
+          "reference": "Numbers 18:23-24",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The allocation speech contrasts land inheritance and tithe while keeping Aaron and Levites distinct.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "numbers-1-36",
+        "numbers-18-levites-no-territorial-inheritance-ckl-numbers-primary-lock"
+      ],
+      "claim_ids": [],
+      "external_references": [],
+      "metadata": {},
+      "notes": "Source-lock identity: numbers-18-levites-no-territorial-inheritance; status: LOCKED. Subject: Levites [institution]. Relationship: territorial-inheritance. Target: no inheritance among Israel, with land context stated to Aaron [territorial-entitlement]. Source locks: ckl-numbers-primary @ Numbers 18:20, 23-24 (textual-contextual-inference)",
+      "evidence_targets": [
+        {
+          "kind": "value",
+          "relationship": "territorial-inheritance",
+          "value_type": "entitlement",
+          "normalized_value": "none",
+          "display_value": "no inheritance among Israel, with land context stated to Aaron",
+          "qualifiers": [
+            {
+              "kind": "domain",
+              "normalized_value": "territorial"
+            },
+            {
+              "kind": "scope",
+              "normalized_value": "among-israel"
+            },
+            {
+              "kind": "contextual-addressee",
+              "entity_id": "aaron"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "section_status": {
+    "core_summary": "missing",
+    "scripture_anchors": "missing",
+    "historical_context": "missing",
+    "literary_context": "missing",
+    "canonical_context": "missing",
+    "original_audience": "missing",
+    "lexical_links": "missing",
+    "intertextuality": "missing",
+    "interpretive_views": "missing",
+    "common_misinterpretations": "missing",
+    "sources": "missing",
+    "relationships": "missing",
+    "retrieval_metadata": "missing",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "historical_cultural",
+    "secondary": []
+  },
   "canonical_story": {
     "phase": "",
     "role": "",

@@ -116,14 +116,20 @@
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     },
     {
       "note": "Geographic settings often help explain response, conflict, and mission.",
       "note_type": "textual-observation",
       "certainty": "unknown",
       "dispute_status": "unknown",
-      "sources": []
+      "sources": [],
+      "scripture_references": [],
+      "traditions": [],
+      "rationale": ""
     }
   ],
   "common_questions": [
@@ -201,12 +207,112 @@
       "url": "",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical-context"
       ],
       "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
       "id": "nazareth-historical-orientation"
+    },
+    {
+      "id": "matthew-greek",
+      "title": "The Greek New Testament: SBL Edition, Matthew",
+      "author": "Holmes, Michael W., editor",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Matthew 1-28",
+      "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "greek_words",
+        "matthew-greek-narrative",
+        "matthew-discourses",
+        "matthew-passion-responsibility",
+        "matthew-resurrection"
+      ],
+      "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus."
     }
   ],
+  "claims": [],
+  "temporal_scope": {
+    "start_year": null,
+    "end_year": null,
+    "approximate": false,
+    "periods": [],
+    "narrative_setting": "",
+    "source_composition_start_year": null,
+    "source_composition_end_year": null,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "evidence_items": [
+    {
+      "id": "source-lock-matthew-2-nazareth-galilee-region",
+      "title": "matthew-2-nazareth-galilee-region",
+      "evidence_type": "geography-environment",
+      "description": "The immediately linked Galilee and Nazareth statements make the final destination understandable without additional regional detail.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Matthew 2:22-23 links the move into Galilee to residence at Nazareth; this is a local contextual inference.",
+      "passage_relevance": "The immediately linked Galilee and Nazareth statements make the final destination understandable without additional regional detail.",
+      "primary_observation": "Matthew 2:22-23 links the move into Galilee to residence at Nazareth; this is a local contextual inference.",
+      "temporal_scope": {
+        "narrative_setting": "Matthew's narrated move into the district of Galilee and residence at Nazareth; no later administrative geography is implied."
+      },
+      "geography_ids": [],
+      "related_objects": [
+        {
+          "id": "galilee-1",
+          "relationship": "located-in",
+          "weight": 10,
+          "notes": "ckl-matthew-primary @ Matthew 2:22-23 (direct-textual-local-inference); openbible-geocoding-data @ records openbible-af5884f and openbible-a9cf1e8; https://www.openbible.info/geo/atlas/nazareth and /galilee-1 (entity-identification-and-occurrence)"
+        }
+      ],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Matthew 2:22-23",
+          "relationship": "direct",
+          "temporal_relation": "unknown",
+          "relevance_rationale": "The immediately linked Galilee and Nazareth statements make the final destination understandable without additional regional detail.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "matthew-greek"
+      ],
+      "claim_ids": [],
+      "external_references": [
+        {
+          "domain": "external-dataset",
+          "id": "openbible-geocoding-data",
+          "relationship": "entity-identification-and-occurrence",
+          "notes": "records openbible-af5884f and openbible-a9cf1e8; https://www.openbible.info/geo/atlas/nazareth and /galilee-1"
+        }
+      ],
+      "metadata": {},
+      "notes": "Source-lock identity: matthew-2-nazareth-galilee-region; status: LOCKED. Subject: Nazareth [place]. Relationship: located-in. Target: Galilee [region]. Source locks: ckl-matthew-primary @ Matthew 2:22-23 (direct-textual-local-inference); openbible-geocoding-data @ records openbible-af5884f and openbible-a9cf1e8; https://www.openbible.info/geo/atlas/nazareth and /galilee-1 (entity-identification-and-occurrence)"
+    }
+  ],
+  "section_status": {
+    "core_summary": "missing",
+    "scripture_anchors": "missing",
+    "historical_context": "missing",
+    "literary_context": "missing",
+    "canonical_context": "missing",
+    "original_audience": "missing",
+    "lexical_links": "missing",
+    "intertextuality": "missing",
+    "interpretive_views": "missing",
+    "common_misinterpretations": "missing",
+    "sources": "missing",
+    "relationships": "missing",
+    "retrieval_metadata": "missing",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "historical_cultural",
+    "secondary": []
+  },
   "canonical_story": {
     "phase": "",
     "role": "",
