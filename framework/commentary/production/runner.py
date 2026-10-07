@@ -489,7 +489,27 @@ class ProductionRunner:
         assessment = assess_gate_v2(score=score, evidence_availability=prepared.synthesis.evidence_availability, baseline_richness="SYNTHESIS_GAP" if prepared.synthesis.evidence_availability == "AVAILABLE" else "EVIDENCE_GAP", after_richness=audit["richness_status"], safety_checks={name: True for name in ("validation_clean", "provenance_complete", "hashes_valid", "chapter_boundaries_valid", "confidence_valid", "dispute_state_preserved", "unsupported_significance_absent")}, evidence_use_delta=audit["unique_evidence_ids_consumed"], section_delta=audit["section_count"], commentary_word_count=audit["commentary_prose_word_count"], unique_evidence_ids_consumed=audit["unique_evidence_ids_consumed"])
         gate_value = {"artifact_version": "commentary-production-gate-v1", "reference": reference, "input_identity": chapter["input_identity"], "audit": audit, "score": score.to_dict(), "assessment": assessment.to_dict()}
         gate_path = self.repo_root / ".bhf-data" / "bhf-commentary-production" / "v1" / chapter["expected_artifacts"]["gate"]
-        write_json(gate_path, gate_value, immutable=True)
+        try:
+            write_json(gate_path, gate_value, immutable=True)
+        except ArtifactCollisionError:
+            if not chapter.get("derived_replay"):
+                raise
+            # A historical gate records the schema/scoring implementation
+            # used at original production time. Keep it immutable and attach
+            # the current replay under an explicit lineage/version path.
+            historical_gate_path = gate_path
+            gate_path = (
+                historical_gate_path.parent.parent
+                / "replay-v2"
+                / historical_gate_path.parent.name
+                / historical_gate_path.name
+            )
+            gate_value["artifact_version"] = "commentary-production-gate-replay-v2"
+            gate_value["lineage"] = {
+                "kind": "CURRENT_REPLAY_AFTER_HISTORICAL_GATE_COLLISION",
+                "historical_gate_path": _relative(self.repo_root, historical_gate_path),
+            }
+            write_json(gate_path, gate_value, immutable=True)
         record["gate_path"] = _relative(self.repo_root, gate_path)
         record["gate_status"] = assessment.outcome
         if assessment.outcome == "QUALITY_FAIL":

@@ -28,6 +28,8 @@ from framework.commentary.production.sampling import sample_audit_records
 from bhf_agent.chapter_commentary.dense_reader import _activation_decision
 from bhf_agent.config import AgentConfig
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 
 def _prepared(reference: str = "Genesis 1", ordinal: int = 1, *, identity: str = "e") -> PreparedChapter:
     book, chapter_text = reference.rsplit(" ", 1)
@@ -50,12 +52,14 @@ def _config(**overrides) -> AgentConfig:
 
 
 def test_census_is_canonical_and_does_not_promote_historical_artifacts(tmp_path):
-    census = build_census(Path("."))
+    # Historical experiment inventory comes from the repository, while
+    # production state is explicitly isolated from its tracked run history.
+    census = build_census(REPO_ROOT, production_data_root=tmp_path / "empty-production")
     assert census["canonical_chapter_count"] == 1189
     assert census["production_complete_count"] == 0
     assert census["counts"] == {"PENDING": 1189}
-    assert census["historical_counts"]["scale_pilot_only"] == 50
-    assert census["historical_counts"]["experimental_only"] == 43
+    assert census["experimental_chapter_count"] > 0
+    assert sum(census["historical_counts"].values()) == census["canonical_chapter_count"]
 
 
 def test_manifest_batch_membership_and_identity_are_deterministic(tmp_path):

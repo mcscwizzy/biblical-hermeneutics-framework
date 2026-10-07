@@ -463,10 +463,14 @@ class HandoffRunner(ProductionRunner):
             batch = batch_manifest(manifest, batch_info["batch_id"])
             state = self._load_state(manifest, batch_info["batch_id"])
             for chapter in batch["chapters"]:
+                record = state["chapters"][chapter["reference"]]
+                normalization = record.get("application_normalization") or {}
+                if normalization.get("kind") != "APPLICATION_OWNED_DATA_GAP_FALLBACK":
+                    continue
                 prepared = self._prepare_locked(manifest, chapter)
                 if self._reconcile_data_gap_reader_record(
                     manifest, batch, chapter, prepared,
-                    state["chapters"][chapter["reference"]], state,
+                    record, state,
                 ):
                     corrected.append(chapter["reference"])
         ledger = rebuild_ledger(self.repo_root)
@@ -543,7 +547,16 @@ class HandoffRunner(ProductionRunner):
             record.pop("rejection_codes", None)
             record["state"] = RAW_CAPTURED
             self._save_state(state)
-            outcome = self._import_and_evaluate(manifest, batch, chapter, prepared, record, state, authorization.get("generation", {}).get("reader_enabled", False))
+            replay_chapter = {**chapter, "derived_replay": True}
+            outcome = self._import_and_evaluate(
+                manifest,
+                batch,
+                replay_chapter,
+                prepared,
+                record,
+                state,
+                authorization.get("generation", {}).get("reader_enabled", False),
+            )
             receipt_path = production_root(self.repo_root) / "runs" / run_id / "batches" / item["batch_id"] / "adjudications" / "attempt-001" / f"{slug(chapter['book'], chapter['chapter'])}.json"
             receipt = {
                 "artifact_version": "commentary-production-derived-adjudication-v1",
