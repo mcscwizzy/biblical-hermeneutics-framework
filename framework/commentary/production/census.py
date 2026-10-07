@@ -111,11 +111,23 @@ def _production_records(root: Path) -> dict[str, dict[str, Any]]:
     return records
 
 
-def build_census(repo_root: Path, *, canonical: Iterable[dict[str, Any]] | None = None) -> dict[str, Any]:
+def build_census(
+    repo_root: Path,
+    *,
+    canonical: Iterable[dict[str, Any]] | None = None,
+    production_data_root: Path | None = None,
+) -> dict[str, Any]:
+    """Build the census, optionally injecting its production data root.
+
+    ``repo_root`` remains the source for historical experiment inventories.
+    Tests and diagnostics can supply a dedicated production data root so that
+    repository runs are never discovered implicitly.
+    """
+
     rows = [dict(row) for row in (canonical or canonical_chapters())]
     known = {row["reference"] for row in rows}
     historical = historical_experiment_references(repo_root, known)
-    production = _production_records(production_root(repo_root))
+    production = _production_records(production_data_root or production_root(repo_root))
     for row in rows:
         reference = row["reference"]
         history: list[str] = []

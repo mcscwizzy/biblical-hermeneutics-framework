@@ -138,7 +138,16 @@ def test_existing_data_gap_reader_artifacts_remain_historical_and_controls_remai
     reader_before = run_root / "batches/batch-001/reader/attempt-001/2_kings_011.json"
     assert reader_before.is_file()
 
-    result = HandoffRunner(tmp_path, renderer_identity="codex-gpt-5").reconcile_data_gap_reader_state(RUN_ID)
+    runner = HandoffRunner(tmp_path, renderer_identity="codex-gpt-5")
+    prepared_references = []
+    original_loader = runner.input_loader
+
+    def record_preparation(book, chapter):
+        prepared_references.append(f"{book} {chapter}")
+        return original_loader(book, chapter)
+
+    runner.input_loader = record_preparation
+    result = runner.reconcile_data_gap_reader_state(RUN_ID)
     after = json.loads(state_path.read_text())
     for reference in ("2 Kings 11", "Psalms 30", "Psalms 105", "Ezekiel 12"):
         record = after["chapters"][reference]
@@ -149,6 +158,8 @@ def test_existing_data_gap_reader_artifacts_remain_historical_and_controls_remai
         assert "reader_path" not in record
         assert (tmp_path / record["reader_adjudication_receipt_path"]).is_file()
     assert set(result["references"]) == {"2 Kings 11", "Psalms 30", "Psalms 105", "Ezekiel 12"}
+    assert set(prepared_references) == set(result["references"])
+    assert "Exodus 14" not in prepared_references
     assert reader_before.is_file()
     assert (run_root / "batches/batch-001/raw/attempt-001/2_kings_011.json").read_bytes() == raw_before
     for reference in ("Nehemiah 7", "1 Corinthians 14"):
@@ -177,6 +188,9 @@ def test_reprocess_existing_raw_preserves_raw_and_original_quarantine_history(tm
     raw_path = run_root / "batches/batch-001/raw/attempt-001/2_kings_011.json"
     before = raw_path.read_bytes()
     before_sha = hashlib.sha256(before).hexdigest()
+    historical_gate_path = run_root / "batches/batch-001/gate/attempt-001/2_kings_011.json"
+    historical_gate_before = historical_gate_path.read_bytes()
+    historical_gate_sha = hashlib.sha256(historical_gate_before).hexdigest()
 
     runner = HandoffRunner(tmp_path, renderer_identity="codex-gpt-5")
     result = runner.reprocess_derived(RUN_ID, ["2 Kings 11"])
@@ -192,6 +206,16 @@ def test_reprocess_existing_raw_preserves_raw_and_original_quarantine_history(tm
     assert record["historical_quarantines"][0]["rejection_codes"] == ["DATA_GAP_FALLBACK_REQUIRED"]
     assert (tmp_path / record["adjudication_receipt_path"]).is_file()
     assert (tmp_path / record["derived_validation_path"]).is_file()
+    assert historical_gate_path.read_bytes() == historical_gate_before
+    assert hashlib.sha256(historical_gate_path.read_bytes()).hexdigest() == historical_gate_sha
+    replay_gate_path = tmp_path / record["gate_path"]
+    replay_gate = json.loads(replay_gate_path.read_text())
+    assert replay_gate_path != historical_gate_path
+    assert replay_gate["artifact_version"] == "commentary-production-gate-replay-v2"
+    assert replay_gate["lineage"] == {
+        "kind": "CURRENT_REPLAY_AFTER_HISTORICAL_GATE_COLLISION",
+        "historical_gate_path": ".bhf-data/bhf-commentary-production/v1/runs/run-04109d5ff664ed80/batches/batch-001/gate/attempt-001/2_kings_011.json",
+    }
     repeat = runner.reprocess_derived(RUN_ID, ["2 Kings 11"])
     assert repeat["chapters"][0]["status"] == "SKIPPED_ALREADY_ADJUDICATED"
     assert json.loads(state_path.read_text())["chapters"]["2 Kings 11"]["attempt"] == 1

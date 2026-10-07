@@ -13,14 +13,67 @@ from framework.commentary.v12_current_lineage import (
     load_manifest,
     record_context,
 )
+from framework.commentary.production.inputs import prepare_chapter
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PRODUCTION_RUN = ROOT / ".bhf-data/bhf-commentary-production/v1/runs/run-04109d5ff664ed80"
 
 
 def _rows(kind: str) -> dict[str, dict]:
     manifest = load_manifest(ROOT)
     return {row["reference"]: row for row in manifest[kind]["chapters"]}
+
+
+def test_exodus14_historical_run_identity_is_distinct_from_current_reconstruction():
+    """A frozen production packet records its original inputs, not today's rebuild."""
+
+    manifest = json.loads((PRODUCTION_RUN / "manifest.json").read_text())
+    historical = next(row for row in manifest["chapters"] if row["reference"] == "Exodus 14")
+    packet = json.loads(
+        (PRODUCTION_RUN / "batches/batch-001/packets/exodus_014.json").read_text()
+    )
+    current = prepare_chapter("Exodus", 14)
+    old_identity = historical["input_identity"]
+    current_identity = current.row["input_identity"]
+
+    assert old_identity == {
+        "evidence_hash": "a8b53c334b69629f2bbb0ea1ecdafc21ae687a26f7c59ce2d965de9b06058380",
+        "synthesis_hash": "1059b0c617109751eb944cc9b22b2d8e83233f720d258561449c4624f8c2b2db",
+        "prompt_version": "1.5",
+        "commentary_schema_version": "1.2",
+        "synthesis_schema_version": "1.1",
+        "synthesis_compiler_version": "1.1",
+        "gate_version": "commentary-richness-gate-v2.1",
+        "validator_identity": "bhf_agent.chapter_commentary.validation:validate_chapter_commentary:sha256:b4bbb3ce24a2d84c3c026138626e2b8c7337d8fe029db31da5a6c28bed2880f2",
+        "packet_hash": "0de82498c76c923d6dbdb5825b6fe64842654a49e0977d33ed248e8cd7d1b73e",
+        "packet_id": "commentary-production-v1-packet:0de82498c76c923d6dbdb5825b6fe64842654a49e0977d33ed248e8cd7d1b73e",
+    }
+    packet_identity = {
+        "evidence_hash": packet["evidence_hash"],
+        "synthesis_hash": packet["synthesis_hash"],
+        "prompt_version": packet["commentary_prompt_version"],
+        "commentary_schema_version": packet["commentary_schema_version"],
+        "synthesis_schema_version": packet["synthesis_schema_version"],
+        "synthesis_compiler_version": packet["synthesis_compiler_version"],
+        "gate_version": packet["gate_version"],
+        "validator_identity": packet["validator_identity"],
+        "packet_hash": packet["packet_hash"],
+        "packet_id": packet["packet_id"],
+    }
+    assert packet_identity == old_identity
+    assert current_identity == {
+        **old_identity,
+        "synthesis_hash": "01eefc01d0511fc67457a4c32c195e9e84c76ff670145324f7ce5a0453df1072",
+        "packet_hash": "d2fcf9bbe1d8913bdbde08ebcc90368e837b13866dc0b4dab0a9da7f2817ce7b",
+        "packet_id": "commentary-production-v1-packet:d2fcf9bbe1d8913bdbde08ebcc90368e837b13866dc0b4dab0a9da7f2817ce7b",
+    }
+    assert old_identity["evidence_hash"] == current_identity["evidence_hash"]
+    assert old_identity["validator_identity"] == current_identity["validator_identity"]
+    assert old_identity["synthesis_hash"] != current_identity["synthesis_hash"]
+    assert old_identity["packet_hash"] != current_identity["packet_hash"]
+    assert packet["synthesis_unit_count"] == 34
+    assert current.row["synthesis_unit_count"] == 6
 
 
 def test_current_lineage_rebuild_is_deterministic_and_explicit():
