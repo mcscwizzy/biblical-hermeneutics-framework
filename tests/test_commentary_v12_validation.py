@@ -165,6 +165,37 @@ def test_disputed_synthesis_cannot_become_fact_and_confidence_cannot_increase():
     assert CommentaryRejectionCode.CONFIDENCE_EXCEEDS_EVIDENCE.value in codes
 
 
+def test_confidence_fields_are_required_valid_and_bounded_by_all_support():
+    bundle = _bundle(confidence="low")
+    synthesis = compile_chapter_synthesis(bundle)
+    raw = _raw(bundle, synthesis, confidence="low", interpretation="inference")
+
+    assert validate_chapter_commentary(raw, bundle, synthesis=synthesis).valid
+
+    missing = copy.deepcopy(raw)
+    missing_block = missing["sections"][0]["blocks"][0]
+    del missing_block["confidence"]
+    del missing_block["interpretation_level"]
+    missing_result = validate_chapter_commentary(missing, bundle, synthesis=synthesis)
+    assert any("confidence is required" in error for error in missing_result.errors)
+    assert any("interpretation_level is required" in error for error in missing_result.errors)
+
+    invalid = copy.deepcopy(raw)
+    invalid["sections"][0]["blocks"][0]["confidence"] = "certain"
+    invalid_result = validate_chapter_commentary(invalid, bundle, synthesis=synthesis)
+    assert any(CommentaryRejectionCode.INVALID_CONFIDENCE.value in error for error in invalid_result.errors)
+
+    promoted = copy.deepcopy(raw)
+    promoted["sections"][0]["blocks"][0]["confidence"] = "medium"
+    promoted_result = validate_chapter_commentary(promoted, bundle, synthesis=synthesis)
+    confidence_errors = [
+        error for error in promoted_result.errors
+        if CommentaryRejectionCode.CONFIDENCE_EXCEEDS_EVIDENCE.value in error
+    ]
+    assert any("exceeds its cited evidence" in error for error in confidence_errors)
+    assert any("exceeds its cited synthesis" in error for error in confidence_errors)
+
+
 def test_why_it_matters_requires_safe_relationship_unit():
     bundle = _bundle()
     synthesis = compile_chapter_synthesis(bundle)

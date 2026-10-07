@@ -170,14 +170,54 @@ The human-review package is `.bhf-data/bhf-commentary-candidates/transaction-c-c
 
 `COMMENTARY_CANDIDATES_PARTIAL_AWAITING_REVIEW`. Eleven valid candidates are ready for human review; Ruth 1 requires attention because its rendered artifact failed existing validation. Nothing is approved. C3, promotion, release-manifest updates, and publication are not started.
 
+## C2R Ruth 1 candidate repair
+
+### Root cause and repair
+
+The original Ruth 1 response was valid JSON, but its five blocks omitted both `confidence` and `interpretation_level`. The reconstructed Prompt 1.8 request requires both fields in the output shape, and its system contract says confidence cannot exceed either cited synthesis or evidence. `parse_renderer_json()` parsed the response without errors. `normalize_renderer_payload_v2()` only resolves the supplied provenance references to evidence/synthesis IDs and preserved the missing fields; it did not remove returned fields or supply defaults. The existing validator correctly rejected the missing required fields. While reporting those errors it used its internal `medium` fallback, which also exceeded the low-confidence evidence and synthesis cited by the disputed-question block. No fallback values were serialized as an accepted candidate.
+
+This was a malformed model response, not a prompt/schema ambiguity or parser, renderer, or validator defect. No production code, prompt, schema, parser, or validator behavior changed. The repair made one new call through the existing `CodexCliV12ChapterPipeline.generate("Ruth", 1)` path with model `gpt-5.6-terra`, high effort, Prompt 1.8, and host-local `codex-cli 0.160.1`. The normal parser, provenance normalizer, and full Commentary v1.2 validator ran unchanged.
+
+### Input identity and candidate result
+
+Before rendering, `prepare_chapter("Ruth", 1)` reconstructed the current CKL packet. It matched C1 and the original C2 manifest exactly:
+
+- Evidence hash: `1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba`.
+- Synthesis hash: `315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969`.
+- Evidence IDs: all 17 IDs equal C1's `new_identity.evidence_ids`.
+- Synthesis: all 8 current units reproduce the C1/C2 synthesis hash and unit count. Their ordered IDs are recorded in `ruth-repair-001/pre-repair-state.json`; C1 and the initial C2 candidate manifest stored the hash/count, not unit IDs.
+
+The single replacement completed from `2026-10-07T01:16:29.322038+00:00` to `2026-10-07T01:17:04.706021+00:00`, returned `validated`, and passed the complete existing candidate validator. Required confidence and interpretation fields are present; confidence values are valid (`low`, `medium`, or `high`) and the validator confirmed no block exceeds the confidence of its cited evidence or synthesis. The focused confidence regression test also proves missing fields are rejected, invalid confidence values are rejected, and a value above either supporting ceiling is rejected.
+
+The reconstructed Prompt 1.8 payload fingerprint is `d1af8d8dfb422f0c3737f146dce55997cbd30d7df707c8ea04164f39514f9f0c`. The independent post-render confidence audit re-ran the full validator on the persisted replacement and checked all five blocks against the exact current bundle and synthesis; all five passed. The per-block confidence ceilings are recorded in `ruth-repair-001/confidence-validation.json`.
+
+| Ruth 1 attempt | Artifact path | SHA-256 | Result |
+|---|---|---|---|
+| Initial C2 invalid attempt | `ruth-repair-001/history/ruth-001-invalid-commentary.json` | `0529d5ddf77b5cfa5fbe1afa2513785cb1e02062384eb00af39c90bf2fae6e76` | INVALID_ARTIFACT; preserved with raw response and validator errors |
+| C2R replacement | `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/ruth-repair-001/corpus-runner/runs/batch-9ae3229dd2fdd5bd/chapters/ruth_001/commentary.json` | `1b55bf3ec49942bc13eaf3cc58e4583adeeaf7b3786cafcff2eaeba4e353339e` | READY_FOR_HUMAN_REVIEW; not approved |
+
+The C2 manifest, Ruth review page, and review index now point to the replacement and retain the first attempt under `superseded_attempts`. The replacement raw response SHA-256 is `25e1043102d13a81c4970c65c58fba22eb59858acfd1d572bf9fdde21f501272`. Its provenance is in `ruth-repair-001/render-result.json`. The eleven other candidate artifact hashes recorded before repair in `ruth-repair-001/pre-repair-state.json` still match the candidate manifest byte-for-byte; none was regenerated or modified.
+
+### Isolation, controls, and verification
+
+- Published Commentary v1.2 remains byte-identical: all 974 paths and SHA-256 values match both the original C2 snapshot and the C2R pre-render snapshot; tree digest remains `9d92742f184a6707f46e597284b0167e4c7b974ea4eec957da1f10cb5efc98f4`. The production reader still resolves `.bhf-data/bhf-commentary-v1.2` when v1.2 is selected.
+- Psalms 76, Revelation 18, and Acts 16 were reconstructed after rendering. Their current evidence/synthesis hashes match their unchanged C1 identities, and there are no control candidate artifacts. Full identities and the reconstruction comparison are in `ruth-repair-001/control-verification.json`.
+- Candidate-set and C1 identity checks still prove exactly the original 12 chapters are present, every candidate input hash matches C1, and all twelve now have `READY_FOR_HUMAN_REVIEW`. No candidate is approved.
+- Added `test_confidence_fields_are_required_valid_and_bounded_by_all_support` in `tests/test_commentary_v12_validation.py`. It checks required fields, valid confidence values, and the evidence and synthesis confidence ceilings. Prompt 1.8's existing confidence constraint test remains unchanged.
+- Tests executed: final combined C1 impact, C2 candidate, Commentary validation, and Prompt 1.8 run `.venv/bin/pytest -q tests/test_transaction_c_commentary_impact.py tests/test_transaction_c2_commentary_candidates.py tests/test_commentary_v12_validation.py tests/test_commentary_v12_prompt_18.py` (38 passed); `.venv/bin/pytest -q tests/test_commentary_v12_corpus_runner.py tests/test_commentary_v12_codex_cli.py` (34 passed); `.venv/bin/pytest -q tests/canonical_library/test_expansion.py -k 'selective_recompile'` (13 passed, 52 deselected); `.venv/bin/pytest -q tests/test_commentary_v12_freeze.py tests/test_commentary_v12_reader_provenance_binding.py::test_current_record_reconstructs_to_its_frozen_source_identity tests/test_commentary_v12_current_lineage.py` (18 passed). The tests include the eleven-artifact hash comparison, 12-candidate cardinality/input identities, published release isolation, reader path, confidence invariant, and control assertions. `git diff --check` passed after the final edits.
+
+### Final C2 state after repair
+
+`COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW`. All 12 selective candidates are ready for human review and none is approved. C3, promotion, release-manifest changes, and publication are not started.
+
 ## Transaction state
 
 ```text
 Transaction A = CKL_COMMITTED
 Transaction B = DERIVED_RUNTIME_NOT_SEPARATELY_REQUIRED
 Transaction C1 = SELECTIVE_INPUT_IMPACT_VERIFIED
-Transaction C2 = COMMENTARY_CANDIDATES_PARTIAL_AWAITING_REVIEW
+Transaction C2 = COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW
 Published Commentary v1.2 = UNCHANGED
-Commentary candidates = 12 (11 READY_FOR_HUMAN_REVIEW, 1 INVALID_ARTIFACT)
+Commentary candidates = 12 (12 READY_FOR_HUMAN_REVIEW, 0 approved)
 C3 / promotion / publication = NOT STARTED
 ```

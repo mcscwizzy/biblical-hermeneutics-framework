@@ -1,9 +1,9 @@
 # Transaction C2 candidate review package
 
-**State:** `COMMENTARY_CANDIDATES_PARTIAL_AWAITING_REVIEW`
+**State:** `COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW`
 **Candidates:** 12 exact C1 chapters
-**Validated for human review:** 11
-**Invalid artifacts:** 1
+**Validated for human review:** 12
+**Invalid artifacts:** 0
 **Approved:** 0
 
 All Commentary shown below is a candidate. Review states do not constitute approval or publication.
@@ -15,7 +15,7 @@ All Commentary shown below is a candidate. Review states do not constitute appro
 | Numbers 18 | READY_FOR_HUMAN_REVIEW | `94b518a68787e9ca707665e95a262b0169bfb611f3cd51d8654e799ad99d204d` | `785aafb367ed47fa7eb77a2266b51348c31451de23d2cf455c6c77901dd9c6bc` | `81a4afab49a895a9957932a35496b7c574dc951ca032285e16f08c58c5007674` | `462866b275503b11655d321f4286a59d16d5637e50b0ad572e61f46f921f0253` | `4a2629a3e8b65a5fb99c3bbc972572e4e45a0341dcd6df46e9fdf4d8333c58c6` | [Numbers 18](chapters/numbers_018.md) |
 | Joshua 6 | READY_FOR_HUMAN_REVIEW | `d10fd021c232ebdfedea2bcbf61b9a18e0aa1f5ec3d414e1b8258e7fef6e6895` | `3d8ee512e4ccd07b52a096ad3fde0995b43509fcf048b9a5cf6892c97289a789` | `23eb1892b86436e5d84228a379184ba253b6bbcdda3ff602c09cd731536edaec` | `25a695fb8911720b3894a8a3385696c18ef46d4a7bf6e64e2d3cefc63d2b9a7c` | `74dbb0ee2be044b579af8ea8779d89beeb2d73dadf293decd9ad5ae24f3953a5` | [Joshua 6](chapters/joshua_006.md) |
 | Judges 20 | READY_FOR_HUMAN_REVIEW | `96f737fed1db2e5347af242223ccb9f6c2c423bfda2fd67960067f44ac67afc8` | `fd5efa85a5497c7355681d78dd0bbc376abb4f4c380ae352358bc0860473edd9` | `58284a66f1fc53aa3e59fe5bd5781da85390e693c5f3e962524d109bca86a392` | `331c586bed622fcec67d365d862566d23438f297dcac642134cc05d1b8f82f8e` | `e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129` | [Judges 20](chapters/judges_020.md) |
-| Ruth 1 | INVALID_ARTIFACT | `9b25f9ec169873ffbbcfe387f238bf2618195918a136c2c6eda37ca4c74c119c` | `1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba` | `ba93ac0b616347616f3e7d8c000cd05a31836a96429c0cd1268a194e351e72a7` | `315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969` | `0529d5ddf77b5cfa5fbe1afa2513785cb1e02062384eb00af39c90bf2fae6e76` | [Ruth 1](chapters/ruth_001.md) |
+| Ruth 1 | READY_FOR_HUMAN_REVIEW | `9b25f9ec169873ffbbcfe387f238bf2618195918a136c2c6eda37ca4c74c119c` | `1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba` | `ba93ac0b616347616f3e7d8c000cd05a31836a96429c0cd1268a194e351e72a7` | `315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969` | `1b55bf3ec49942bc13eaf3cc58e4583adeeaf7b3786cafcff2eaeba4e353339e` | [Ruth 1](chapters/ruth_001.md) |
 | 1 Samuel 17 | READY_FOR_HUMAN_REVIEW | `8c289caf94a73985981ef3dcc6406928169c3748f12780374fb0a92ad5655155` | `5556dbf59881489d3f94e32f0f0e01879fcdfdfdb11ac1a7f579ac833a9f67cd` | `664eaf4262927f411efd0d25886c72ab05e0299b0cc78ce930e577194afa5c65` | `1105d490acf8e7254af3d2168e1b81606026ac684aa36ec89b07199bf86c5d4d` | `f3b5669a33d28923a72bf5c801b177e81131969ce0c7236791351a0e4417b67d` | [1 Samuel 17](chapters/1_samuel_017.md) |
 | 2 Kings 5 | READY_FOR_HUMAN_REVIEW | `a92d1c9d4c6c771bc882fe0af2e8518526c88e484a141d6c595f762d4907a952` | `3809454fdb77b0baf035e62d82d15102942d170a17b5025163c308d3dd38e76c` | `13e54a21f10d4097fb1d360bb352e16f3725ca8e9afb10959b05d3a9811118de` | `6314975c710fce70018f69f07ae6c4e28a6c7097ca092e74669eba4e0b1666fc` | `480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6` | [2 Kings 5](chapters/2_kings_005.md) |
 | Isaiah 36 | READY_FOR_HUMAN_REVIEW | `d0a416ef62843e2a5bfd6b7afbc00b28e47e21663011b89e638f79bfa31faedb` | `a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f` | `13bfdd657d8894b1cffacbe5ced27c8d399b29266a306a31f1a8c28fdd4a3669` | `0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c` | `c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41` | [Isaiah 36](chapters/isaiah_036.md) |
@@ -29,3 +29,5 @@ All Commentary shown below is a candidate. Review states do not constitute appro
 - No control Commentary candidates were rendered.
 - Controls were reconstructed after rendering; their C1 evidence/synthesis identities match and no control artifact exists in the C2 review output.
 - Published v1.2 release-tree snapshot comparison: byte-identical.
+
+The original invalid Ruth 1 attempt remains archived with its raw response and validator errors; the replacement is not approved.
