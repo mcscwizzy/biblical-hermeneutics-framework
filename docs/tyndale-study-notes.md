@@ -1,6 +1,10 @@
 # Tyndale Open Study Notes
 
-Tyndale Open Study Notes are a published secondary study resource displayed beside the BHF Bible reader. They are separate from Scripture, the BHF-curated Canonical Knowledge Library (CKL), and the lexicon. The reader pane works without an AI provider and does not automatically inject Tyndale material into BHF answers.
+**Tyndale Companion** displays the independent, published Tyndale Open Study
+Notes beside the BHF Bible reader. It is separate from Scripture, CKL-backed
+**BHF Commentary** shown in BHF Context, and **Compare translations**, which
+shows parallel Bible text. The reader pane works without an AI provider and
+does not automatically inject Tyndale material into BHF answers.
 
 ## License and attribution
 
@@ -56,6 +60,10 @@ report and source provenance.
 The Bible reader has a labeled, collapsible Tyndale Study Notes companion pane. It automatically follows book/chapter changes, previous/next chapter navigation, translation-reader navigation, and restored reader tabs. The current chapter is fetched from:
 
 `GET /api/commentary/{book}/{chapter}`
+
+The pane retains the persisted workspace tab ID `commentary` and the
+`/api/commentary/...` compatibility endpoints. This identifier means Tyndale
+Study Notes; it does not refer to BHF Commentary or translation comparison.
 
 The API returns structured entries, anchors, and one source/provenance block. If the database is absent, it returns an ordinary `available: false` response with `reason: commentary_not_installed` and no error page.
 

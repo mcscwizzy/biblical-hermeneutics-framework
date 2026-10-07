@@ -951,3 +951,318 @@ def test_my_study_consolidates_personal_material(driver, wait, base_url):
     ]
     assert visible_tabs == ["Notes", "Highlights", "Saved"]
     assert driver.find_element(By.CSS_SELECTOR, '[data-testid="new-note-panel-button"]').is_displayed()
+
+
+def test_tyndale_companion_tab_remains_independent_and_follows_chapter_and_selection(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFCommentary);"))
+    driver.execute_script(
+        """
+        window.__tyndaleRequests = [];
+        window.BHFApi.requestJson = async (url) => {
+          const value = String(url);
+          window.__tyndaleRequests.push(value);
+          if (value.endsWith('/3')) return {available: false, reason: 'commentary_not_installed'};
+          const chapter = Number(value.match(/\\/(\\d+)$/)?.[1] || 1);
+          return {
+            available: true, book: 'John', chapter,
+            entries: [{
+              id: `tyndale-${chapter}`, title: `Tyndale note ${chapter}`,
+              kind: 'study_note', body: `Published Tyndale text for ${chapter}.`,
+              anchor: {book: 'John', start_chapter: chapter, start_verse: 4, end_chapter: chapter, end_verse: 4},
+            }],
+            source: {name: 'Tyndale Open Study Notes', attribution: 'Published secondary study notes'},
+          };
+        };
+        """
+    )
+    tab = driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="commentary"]')
+    driver.execute_script("window.BHFStudyActions.openWorkspaceTab('commentary');")
+    wait.until(lambda _driver: tab.get_attribute("aria-selected") == "true")
+    result = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          await window.BHFCommentary.loadChapter('John', 1);
+          window.BHFCommentary.focusSelection({book: 'John', chapter: 1, startVerse: 4, endVerse: 4});
+          const focused = document.querySelector('[data-commentary-body] .commentary-entry')?.classList.contains('is-focused');
+          await window.BHFCommentary.loadChapter('John', 2);
+          const chapterTwo = document.querySelector('[data-commentary-body]').textContent;
+          await window.BHFCommentary.loadChapter('John', 3);
+          const missingDatabase = document.querySelector('[data-commentary-body]').textContent;
+          done({focused, chapterTwo, missingDatabase, requests: window.__tyndaleRequests});
+        })().catch((error) => done({error: String(error)}));
+        """
+    )
+
+    assert "error" not in result, result
+    assert result["focused"] is True
+    assert "Published Tyndale text for 2." in result["chapterTwo"]
+    assert "not installed" in result["missingDatabase"].lower()
+    assert result["requests"][:3] == [
+        "/api/commentary/John/1", "/api/commentary/John/2", "/api/commentary/John/3",
+    ]
+    assert "/api/commentary/John/4" in result["requests"]
+    assert tab.get_attribute("data-workspace-tab") == "commentary"
+    assert driver.find_element(By.CSS_SELECTOR, "[data-commentary-panel]").get_attribute("aria-label") == "Tyndale Study Notes"
+
+
+def test_translation_comparison_reads_cached_bible_text_offline(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFOfflineDB && window.BHFStudySelection);"))
+    result = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          const installed = [{id: 'kjv', abbreviation: 'KJV', name: 'King James Version', installed: true}];
+          await window.BHFOfflineDB.cacheApiResponse('/api/translations/installed', {
+            translations: installed, sections: {installed}, default_translation: 'kjv',
+          });
+          Object.defineProperty(navigator, 'onLine', {configurable: true, value: false});
+          window.BHFStudySelection.setSelection({
+            book: 'John', chapter: 1, translation: 'kjv', selectedVerses: [1],
+            startVerse: 1, endVerse: 1, reference: 'John 1:1',
+          }, 'offline-comparison-test');
+          window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});
+          await window.BHFStudyActions.perform('compare_translations');
+          done({online: navigator.onLine});
+        })().catch((error) => done({error: String(error)}));
+        """
+    )
+    assert "error" not in result, result
+    wait.until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison-verse-text"))
+    )
+    comparison = driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
+    assert comparison.find_element(By.CSS_SELECTOR, "[data-comparison-reference]").text == "John 1:1"
+    assert comparison.find_element(By.CSS_SELECTOR, "[data-comparison-translation='kjv']").text.strip().startswith("KJV")
+    assert "Install or import another translation" in comparison.text
+
+
+def test_bhf_context_compare_translations_opens_translation_comparison_resource(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(
+        lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);")
+    )
+    driver.execute_script(
+        "window.BHFStudySelection.setChapter({book: 'John', chapter: 1, translation: 'kjv'}, 'comparison-test');"
+    )
+    selected_tab = driver.find_element(
+        By.CSS_SELECTOR, "[data-workspace-tab][aria-selected='true']"
+    ).get_attribute("data-workspace-tab")
+
+    driver.execute_script(
+        """
+        const card = document.querySelector('[data-bhf-commentary-card]');
+        card.hidden = false;
+        card.querySelector('[data-bhf-commentary-personal-action="compare_translations"]').click();
+        """
+    )
+    wait.until(
+        lambda _driver: driver.execute_script(
+            "return window.BHFStudyCompanion.getState().resource === 'translation_comparison';"
+        )
+    )
+
+    assert driver.find_element(
+        By.CSS_SELECTOR, "[data-workspace-tab][aria-selected='true']"
+    ).get_attribute("data-workspace-tab") == selected_tab
+
+
+def _prepare_translation_comparison(driver, selection, translations):
+    driver.execute_script(
+        """
+        const selection = arguments[0];
+        const translations = arguments[1];
+        const requests = [];
+        window.__translationComparisonRequests = requests;
+        window.BHFApi.requestJson = async (url) => {
+          requests.push(String(url));
+          if (String(url).startsWith('/api/translations/installed')) {
+            return {translations, sections: {installed: translations}, default_translation: selection.translation};
+          }
+          if (String(url).startsWith('/api/translations/catalog')) {
+            return {translations, sections: {installed: translations}, default_translation: selection.translation};
+          }
+          if (String(url).startsWith('/api/bible/')) {
+            const translationId = new URL(String(url), location.origin).searchParams.get('translation');
+            const entry = translations.find((item) => item.id.toLowerCase() === translationId);
+            if (!entry?.installed) throw new Error('translation is not installed');
+            return {
+              book: selection.book,
+              chapter: selection.chapter,
+              translation: {id: entry.abbreviation || entry.id.toUpperCase(), name: entry.name},
+              verses: Array.from({length: 7}, (_item, index) => ({
+                book: selection.book, chapter: selection.chapter, verse: index + 1,
+                text: `${entry.abbreviation || entry.id.toUpperCase()} verse ${index + 1}`,
+              })),
+            };
+          }
+          throw new Error(`Unexpected request: ${url}`);
+        };
+        window.BHFStudySelection.setSelection(selection, 'translation-comparison-test');
+        """,
+        selection,
+        translations,
+    )
+
+
+def test_translation_comparison_preserves_selected_range_and_reads_unique_installed_text(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
+    selection = {
+        "book": "John", "chapter": 4, "startVerse": 4, "endVerse": 6,
+        "selectedVerses": [4, 5, 6], "selectedText": "selected source text",
+        "translation": "kjv", "reference": "John 4:4-6",
+    }
+    translations = [
+        {"id": "asv", "abbreviation": "ASV", "name": "American Standard Version", "installed": True},
+        {"id": "kjv", "abbreviation": "KJV", "name": "King James Version", "installed": True},
+        {"id": "asv", "abbreviation": "ASV", "name": "Duplicate ASV", "installed": True},
+        {"id": "niv", "abbreviation": "NIV", "name": "Not installed", "installed": False},
+    ]
+    _prepare_translation_comparison(driver, selection, translations)
+    before = driver.execute_script("return window.BHFStudySelection.getState();")
+    driver.execute_script(
+        "document.querySelector('[data-bhf-commentary-card]').hidden = false;"
+        "document.querySelector('[data-bhf-commentary-personal-action=compare_translations]').click();"
+    )
+
+    host = wait.until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison"))
+    )
+    rendered = driver.execute_script(
+        """
+        const root = document.querySelector('.translation-comparison');
+        return {
+          reference: root.querySelector('[data-comparison-reference]')?.textContent,
+          translations: Array.from(root.querySelectorAll('[data-comparison-translation]')).map((node) => ({
+            id: node.dataset.comparisonTranslation,
+            title: node.querySelector('h4')?.textContent,
+            verses: Array.from(node.querySelectorAll('[data-comparison-verse]')).map((verse) => Number(verse.dataset.comparisonVerse)),
+          })),
+          selection: window.BHFStudySelection.getState(),
+          requests: window.__translationComparisonRequests,
+        };
+        """
+    )
+    assert host.is_displayed()
+    assert rendered["reference"] == "John 4:4-6"
+    assert [item["id"] for item in rendered["translations"]] == ["kjv", "asv"]
+    assert all(item["verses"] == [4, 5, 6] for item in rendered["translations"])
+    assert "King James Version" in rendered["translations"][0]["title"]
+    assert "Not installed" not in str(rendered["translations"])
+    assert rendered["selection"] == before
+    assert any("/api/bible/John/4?translation=kjv" in url for url in rendered["requests"])
+    assert any("/api/bible/John/4?translation=asv" in url for url in rendered["requests"])
+
+
+def test_translation_comparison_shows_chapter_and_single_translation_management_action(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
+    selection = {
+        "book": "John", "chapter": 4, "translation": "kjv", "selectedVerses": [],
+        "reference": "John 4", "level": "chapter",
+    }
+    translations = [
+        {"id": "kjv", "abbreviation": "KJV", "name": "King James Version", "installed": True},
+    ]
+    _prepare_translation_comparison(driver, selection, translations)
+    before = driver.execute_script("return window.BHFStudySelection.getState();")
+    driver.execute_script("window.BHFStudyActions.perform('compare_translations');")
+    wait.until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison"))
+    )
+
+    root = driver.find_element(By.CSS_SELECTOR, ".translation-comparison")
+    assert root.find_element(By.CSS_SELECTOR, "[data-comparison-reference]").text == "John 4"
+    assert len(root.find_elements(By.CSS_SELECTOR, "[data-comparison-verse]")) == 7
+    assert "Install or import another translation" in root.text
+    driver.find_element(By.CSS_SELECTOR, "[data-open-translation-management]").click()
+    assert driver.find_element(By.CSS_SELECTOR, "[data-translation-selector]").is_displayed()
+    assert driver.execute_script("return window.BHFStudySelection.getState();") == before
+
+
+def test_translation_comparison_mobile_layout_back_navigation_and_focus(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().assert_shell_visible()
+    wait.until(lambda _driver: driver.execute_script("return Boolean(window.BHFStudySelection);"))
+    selection = {
+        "book": "John", "chapter": 4, "translation": "kjv", "selectedVerses": [4],
+        "startVerse": 4, "endVerse": 4, "reference": "John 4:4",
+    }
+    translations = [
+        {"id": "kjv", "abbreviation": "KJV", "name": "King James Version", "installed": True},
+    ]
+    _prepare_translation_comparison(driver, selection, translations)
+    companion_state_before = driver.execute_script(
+        "return window.BHFStudyCompanion.getState().state;"
+    )
+    driver.execute_script(
+        """
+        window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});
+        const card = document.querySelector('[data-bhf-commentary-card]');
+        card.hidden = false;
+        const action = card.querySelector('[data-bhf-commentary-personal-action="compare_translations"]');
+        window.__comparisonAction = action;
+        action.focus();
+        window.__comparisonTriggerHadFocus = document.activeElement === action;
+        action.click();
+        """
+    )
+    wait.until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .translation-comparison"))
+    )
+    wait.until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, ".translation-comparison-verse-text"))
+    )
+
+    layout = driver.execute_script(
+        """
+        const host = document.querySelector('[data-companion-resource-host]');
+        const text = document.querySelector('.translation-comparison-verse-text');
+        return {
+          viewportWidth: window.innerWidth,
+          documentWidth: document.documentElement.scrollWidth,
+          hostOverflowY: getComputedStyle(host).overflowY,
+          hostOverflowX: getComputedStyle(host).overflowX,
+          textWrap: getComputedStyle(text).overflowWrap,
+          verseNumbers: Array.from(document.querySelectorAll('.translation-comparison-verse')).map((verse) => Number(verse.dataset.comparisonVerse)),
+          heading: document.querySelector('.translation-comparison-section h4')?.textContent,
+        };
+        """
+    )
+    assert layout["documentWidth"] <= layout["viewportWidth"]
+    assert layout["hostOverflowY"] == "auto"
+    assert layout["hostOverflowX"] == "hidden"
+    assert layout["textWrap"] == "anywhere"
+    assert layout["verseNumbers"] == [4]
+    assert layout["heading"].startswith("KJV")
+
+    driver.find_element(By.CSS_SELECTOR, "[data-companion-back]").click()
+    wait.until(
+        lambda _driver: driver.execute_script(
+            "return window.BHFStudyCompanion.getState().resource === null;"
+        )
+    )
+    assert driver.execute_script(
+        "return window.BHFStudyCompanion.getState().state;"
+    ) == companion_state_before
+    wait.until(
+        lambda _driver: driver.execute_script(
+            """
+            const trigger = window.__comparisonAction;
+            const canReturnToTrigger = trigger?.isConnected
+              && !trigger.closest('[hidden], [inert]')
+              && trigger.getClientRects().length > 0;
+            return canReturnToTrigger
+              ? document.activeElement === trigger
+              : window.BHFStudyCompanion.getState().state === 'peek'
+                ? document.activeElement.matches('[data-companion-state-control="study"]')
+                : document.activeElement.matches('[data-companion-reference]');
+            """
+        ),
+        message=str(driver.execute_script(
+            "return {triggerHadFocus: window.__comparisonTriggerHadFocus, triggerConnected: window.__comparisonAction?.isConnected, activeTag: document.activeElement?.tagName, activeAction: document.activeElement?.dataset?.bhfCommentaryPersonalAction, state: window.BHFStudyCompanion.getState()};"
+        )),
+    )

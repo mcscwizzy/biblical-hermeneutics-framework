@@ -6,7 +6,7 @@
   const RESOURCE_ACTIONS = new Set([
     "historical_context", "cultural_context", "literary_context", "original_audience",
     "covenant_context", "word_study", "cross_references", "people", "places",
-    "themes", "archaeology", "timeline", "compare_translations",
+    "themes", "archaeology", "timeline",
   ]);
   const runtime = window.BHFRuntimeConfig || {};
   const breakpoint = Number(runtime.breakpoints?.tablet || 900);
@@ -77,6 +77,11 @@
       getSelection: () => selection,
       getContext: () => contextController?.getRecord?.().context || null,
       getContextRecord: () => contextController?.getRecord?.(),
+      getReadableTranslations: () => window.BHFStudyActions?.loadReadableTranslations?.(),
+      loadChapterData: (book, chapter, translation, requestOptions) =>
+        window.BHFReader?.loadChapterData?.(book, chapter, translation, requestOptions),
+      openTranslationManager: (trigger) =>
+        window.BHFStudyActions?.openTranslationManager?.(trigger),
       openLegacy: openLegacyResource,
     });
 
@@ -449,8 +454,22 @@
       history: options.history,
       source: options.source || "navigation",
     });
-    if (options.focus !== false && previousResourceTrigger?.isConnected) {
-      window.requestAnimationFrame(() => previousResourceTrigger.focus({preventScroll: true}));
+    if (options.focus !== false) {
+      window.requestAnimationFrame(() => {
+        const triggerIsVisible = previousResourceTrigger?.isConnected
+          && !previousResourceTrigger.closest("[hidden], [inert]")
+          && previousResourceTrigger.getClientRects().length > 0;
+        const target = triggerIsVisible
+          ? previousResourceTrigger
+          : currentState === "peek"
+            ? panel.querySelector('[data-companion-state-control="study"]')
+            : panel.querySelector("[data-companion-reference]");
+        if (!target) return;
+        if (!target.matches("button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])")) {
+          target.setAttribute("tabindex", "-1");
+        }
+        target.focus({preventScroll: true});
+      });
     }
   }
 
@@ -464,6 +483,8 @@
   }
 
   async function openResource(resourceId, options = {}) {
+    const requestedResourceId = resourceId;
+    if (resourceId === "compare_translations") resourceId = "translation_comparison";
     if (options.trigger) lastResourceTrigger = options.trigger;
     if (options.mode) currentMode = options.mode;
     if (resourceId === "maps") {
@@ -474,14 +495,17 @@
       return;
     }
     const engine = window.BHFStudyRecommendations;
-    const resource = engine?.resources?.[resourceId] || {label: options.label || "Study Resource"};
+    const resource = engine?.resources?.[requestedResourceId]
+      || engine?.resources?.[resourceId]
+      || {label: options.label || "Study Resource"};
     ensureResourceVisible(resourceId, resource, {state: options.state});
     if (options.history !== false && historyController?.current()?.resource !== resourceId) {
       historyController?.push(historySnapshot());
     }
 
-    if (await resourceRouter?.open?.(resourceId, {mode: currentMode})) return;
+    if (await resourceRouter?.open?.(resourceId, {mode: currentMode})) return true;
     openLegacyResource(resourceId, options);
+    return false;
   }
 
   async function openLegacyResource(resourceId, options = {}) {

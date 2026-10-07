@@ -33,6 +33,7 @@
     covenant_context: {label: "Covenant Context", icon: "∞", description: "Promises and covenant relationships"},
     word_study: {label: "Word Study", icon: "Aa", description: "Greek or Hebrew terms in this passage"},
     commentary: {label: "Tyndale Study Notes", icon: "▤", description: "Published local commentary for this chapter"},
+    translation_comparison: {label: "Compare Translations", icon: "≋", description: "Parallel Scripture text from installed translations"},
     cross_references: {label: "Cross References", icon: "↗", description: "Related passages across Scripture"},
     people: {label: "People", icon: "♙", description: "People connected with this passage"},
     places: {label: "Places", icon: "⌖", description: "Places connected with this passage"},
