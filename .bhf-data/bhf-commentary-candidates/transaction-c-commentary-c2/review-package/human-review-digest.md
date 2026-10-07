@@ -1,16 +1,14 @@
-# Transaction C2/C2R human-review digest
+# Transaction C2/C2R/C2S human-review digest
 
 This digest covers the 12 active candidates in `candidate-manifest.json`. Candidates remain `READY_FOR_HUMAN_REVIEW`; recommendations below do not change approval state. See each linked chapter review for the full before/after prose, normalized semantic diff, evidence delta, hashes, and validation details.
 
 ## Chapter review
 
-### 1 Samuel 17 — `f3b5669a33d28923a72bf5c801b177e81131969ce0c7236791351a0e4417b67d`
+### 1 Samuel 17 — `50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d` (C2S)
 
-- **New evidence:** `azekah-1samuel-17-socoh-azekah-encampment-identity`, `socoh-1-1samuel-17-socoh-azekah-encampment-identity` identify the two Philistine encampment landmarks; `source-lock-1samuel-17-elah-opposing-slopes` and `source-lock-1samuel-17-socoh-azekah-encampment` place the armies on opposite slopes across the Elah valley.
-- **Commentary impact:** Adds the battlefield layout and sharpens the equipment discussion; removes the published note that the Greek and Masoretic forms differ substantially and that their relationship is disputed.
-- **Interpretive impact — INTERPRETIVE_CLARIFICATION:** The valley and opposing slopes make the scene’s physical staging clearer, without changing the account’s interpretation of David’s rise.
-- **Review risk — MEDIUM:** The new setting is straightforward, but a prior textual-history assertion disappears and the framing of the weapons paragraph changes.
-- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Check the removed textual-form note against the candidate’s intended scope. [Full review](chapters/1_samuel_017.md).
+- **Stabilization:** Restores the supported Greek/Masoretic textual-history caution with current evidence and synthesis provenance. Keeps the Socoh–Azekah–Valley of Elah opposing-slopes material, weapons section, and literary movement.
+- **Published material:** No substantive published claim disappears; old wording is recast for the geography-focused candidate.
+- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Confirm the restored text-history note alongside the new battlefield section. [Full review](chapters/1_samuel_017.md).
 
 ### 2 Kings 5 — `480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6`
 
@@ -60,13 +58,11 @@ This digest covers the 12 active candidates in `candidate-manifest.json`. Candid
 - **Review risk — MEDIUM:** The geography addition is modest, but the interpretive paragraph is substantially rewritten and broadens the explanation of a key term.
 - **Recommendation — RECOMMEND_CLOSE_REVIEW:** Compare the revised “Jews” explanation with the published wording. [Full review](chapters/john_004.md).
 
-### Joshua 6 — `74dbb0ee2be044b579af8ea8779d89beeb2d73dadf293decd9ad5ae24f3953a5`
+### Joshua 6 — `89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f` (C2S)
 
-- **New evidence:** `source-lock-joshua-6-jericho-closed-city` describes the city as sealed; `source-lock-joshua-6-jericho-encirclement` supports the encircling context.
-- **Commentary impact:** Explains the marches around a closed city and introduces Rahab’s rescue as a deliberate exception within the account of judgment; adds an explicit caution against using conquest texts to authorize modern violence.
-- **Interpretive impact — INTERPRETIVE_CLARIFICATION:** Jericho’s sealed condition clarifies the action, while the Rahab contrast and application to modern violence frame the narrative beyond location alone. The candidate does not endorse violence.
-- **Review risk — HIGH:** The added theological/ethical framing is materially significant and extends beyond the two geography claims.
-- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Closely inspect the Rahab and conquest-ethics statements. [Full review](chapters/joshua_006.md).
+- **Stabilization:** Keeps closed Jericho/encirclement prominent and retains Rahab. The conquest block remains low confidence/disputed. The modern-violence caution is supported by cited interpretive note 3 and remains within the synthesis confidence ceiling; wording attributes the caution to that note.
+- **Published material:** The former generic Joshua-context sentence is omitted because it is broad book framing rather than chapter-specific geography; chapter-specific Rahab and wider-conquest blocks remain.
+- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Review the restrained geography focus and low/disputed wider-conquest interpretation. [Full review](chapters/joshua_006.md).
 
 ### Judges 20 — `e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129`
 
@@ -84,21 +80,17 @@ This digest covers the 12 active candidates in `candidate-manifest.json`. Candid
 - **Review risk — HIGH:** The geography affects political context and the full scriptural-interpretation section is rewritten, even though its main interpretive positions were already present.
 - **Recommendation — RECOMMEND_CLOSE_REVIEW:** Check the combined political and scriptural framing before approval. [Full review](chapters/matthew_002.md).
 
-### Numbers 18 — `4a2629a3e8b65a5fb99c3bbc972572e4e45a0341dcd6df46e9fdf4d8333c58c6`
+### Numbers 18 — `502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a` (C2S)
 
-- **New evidence:** `source-lock-numbers-18-levites-no-territorial-inheritance` distinguishes the Levites’ lack of land inheritance; `source-lock-numbers-18-levites-tithe-as-inheritance` identifies the tithe as their provision/inheritance for service.
-- **Commentary impact:** Replaces a generic context sentence with a substantive account of Aaron’s lack of land inheritance and the Levites’ tithe, adding that the tithe is a defined provision rather than a general economic principle. Adds a caution about mapping uncertain wilderness sites.
-- **Interpretive impact — INTERPRETIVE_CLARIFICATION:** The candidate connects territorial inheritance and the tithe to the chapter’s stated arrangement; this is a new interpretive emphasis, not merely a location detail.
-- **Review risk — MEDIUM:** The new economic and institutional distinction is consequential but directly tied to the cited verses and evidence.
-- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Confirm the “rather than a general economic principle” limitation against the cited evidence. [Full review](chapters/numbers_018.md).
+- **Stabilization:** Keeps the land-inheritance/tithe connection, now saying that in this passage the tithe functions specifically as provision and inheritance for Levites in connection with their service. Preserves the low/disputed wilderness-route uncertainty note.
+- **Published material:** The generic book-context sentence is replaced by chapter-specific inheritance/tithe and route-uncertainty material; it contained no distinct claim about Numbers 18.
+- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Confirm the passage-bounded tithe formulation. [Full review](chapters/numbers_018.md).
 
-### Ruth 1 — `1b55bf3ec49942bc13eaf3cc58e4583adeeaf7b3786cafcff2eaeba4e353339e` (C2R replacement)
+### Ruth 1 — `8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47` (C2S)
 
-- **New evidence:** `judah-territory-ruth-1-bethlehem-judah-territory-identity` and `source-lock-ruth-1-bethlehem-judah-territory` identify Bethlehem’s location in Judah; `source-lock-ruth-1-bethlehem-moab-migration` clarifies the departure and return between Bethlehem and Moab.
-- **Commentary impact:** Adds that movement and territorial setting. The candidate also removes the published point about divine provision and human decisions, drops the dating caution about Judges/genealogy, and revises the Nehemiah comparison to mention texts welcoming faithful foreigners.
-- **Interpretive impact — INTERPRETIVE_CLARIFICATION:** The departure/return framing is clearer, but the dropped claims and altered canonical comparison go beyond the new geography and change the review surface.
-- **Review risk — HIGH:** Several prior assertions disappear or are reframed, and a new comparison appears that is not part of the geography evidence delta.
-- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Compare the whole interpretive section before approval; this is the C2R replacement, not the superseded invalid C2 attempt. [Full review](chapters/ruth_001.md).
+- **Stabilization:** Keeps Bethlehem–Moab–Bethlehem movement without an invented itinerary, Ruth’s pledge, and the wider story. Restores the supported providence-through-human-action observation and the Judges/Davidic-genealogy dating caution at low/disputed confidence.
+- **Canonical comparison:** Nehemiah remains in a narrower comparison with Ruth’s Moabite identity and loyalty. The nonspecific reference to “texts that welcome faithful foreigners” is removed because the cited provenance does not identify those texts. No substantive published claim disappears.
+- **Recommendation — RECOMMEND_CLOSE_REVIEW:** Review the retained cautions and narrowed Nehemiah comparison. This is the C2S replacement; earlier C2 and C2R lineage remains recorded. [Full review](chapters/ruth_001.md).
 
 ## Cross-chapter summary
 
@@ -129,3 +121,8 @@ This digest covers the 12 active candidates in `candidate-manifest.json`. Candid
 ## Transaction boundary
 
 This is a deterministic review aid only. It does not regenerate Commentary, approve candidates, modify CKL evidence, change the published Commentary v1.2 release, advance pipeline state, or begin C3.
+
+
+## C2S status
+
+The four stabilized artifacts remain `READY_FOR_HUMAN_REVIEW`; none is approved. Previous active hashes and paths are preserved in `candidate-manifest.json` under `superseded_attempts` and in `stabilization-001/history/`. The other eight candidates were not regenerated or modified.

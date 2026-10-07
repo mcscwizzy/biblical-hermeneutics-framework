@@ -68,3 +68,27 @@ This diff collapses whitespace within each section and prose block before compar
 +## surrounding_passages | Reading the Wider Conquest Account
 +- Questions about the conquest accounts cannot be settled by treating archaeological evidence as though it supplied one simple, uncontested reconstruction. Evidence from Jericho, Ai, Hazor, the highlands, and Mount Ebal varies by site and chronology. The warfare and devoted-destruction texts also require historical, literary, ethical, and theological scrutiny; they cannot authorize modern territorial or religious violence.
 ```
+
+## C2S semantic stabilization
+
+C2S keeps the closed-city/encirclement geography and Rahab rescue. The wider-conquest block remains low confidence and disputed; its exact modern-violence caution is supported by cited `joshua:interpretive_note:3` and the combined synthesis, whose confidence ceiling is low. The block now attributes the caution to that note. The published generic Joshua-context block disappears because the replacement focuses on the requested physical action, while the candidate keeps chapter-specific Rahab and wider-conquest material. No confidence or interpretation level was weakened.
+
+**Replacement artifact:** `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/joshua_6/commentary.json`
+**Replacement SHA-256:** `89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f`
+**Superseded C2 candidate SHA-256:** `74dbb0ee2be044b579af8ea8779d89beeb2d73dadf293decd9ad5ae24f3953a5`
+**C1 input identity:** evidence `3d8ee512e4ccd07b52a096ad3fde0995b43509fcf048b9a5cf6892c97289a789`; synthesis `25a695fb8911720b3894a8a3385696c18ef46d4a7bf6e64e2d3cefc63d2b9a7c` (unchanged).
+**Validation:** full Commentary v1.2 validator passed; candidate remains `READY_FOR_HUMAN_REVIEW`, not approved.
+
+### Replacement Commentary
+
+#### A City Shut In
+
+Jericho is described as completely closed because of Israel: no one could leave or enter. That condition supplies the immediate setting for the repeated encircling of the city. The marches are therefore presented as action around a sealed city, rather than as an encounter with people moving freely in and out.
+
+#### Rahab and Her Household
+
+The chapter sets the destruction of Jericho beside the rescue of Rahab and her household. Their preservation is tied directly to her having protected the messengers sent by Joshua, and the account adds that she thereafter lived within Israel. The contrast makes her rescue a deliberate exception within the chapter's account of the city's judgment.
+
+#### Reading the Wider Conquest Account
+
+Questions about the conquest accounts cannot be settled by treating archaeological evidence as though it supplied one simple, uncontested reconstruction. Evidence from Jericho, Ai, Hazor, the highlands, and Mount Ebal varies by site and chronology. The cited interpretive note also cautions that Joshua’s warfare and devoted-destruction texts require historical, literary, ethical, and theological scrutiny and cannot authorize modern territorial or religious violence.

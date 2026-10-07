@@ -84,3 +84,29 @@ This diff collapses whitespace within each section and prose block before compar
 +## surrounding_passages | Within First Samuel
 +- This chapter belongs within a larger movement in First Samuel: the book moves from Eli's failing priestly house through Samuel's leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. David's appearance here is therefore part of the book's developing account of David's rise.
 ```
+
+## C2S semantic stabilization
+
+C2S restores the published textual-history caution as a fourth block, using current synthesis `syn_surrounding_passages_f587f79ef87b` and evidence `1-samuel:interpretive_note:1`. It states that the ancient Greek form is substantially shorter than the Masoretic form and that their literary relationship remains disputed. The battlefield geography, weapons discussion, and book-movement block remain. No substantive published claim disappears; the weapons and literary-movement wording is recast, and the old generic context is superseded by the more specific geography plus retained literary frame. Confidence is high with `disputed` interpretation, within current synthesis/evidence ceilings.
+
+**Replacement artifact:** `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/1_samuel_17/commentary.json`
+**Replacement SHA-256:** `50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d`
+**Superseded C2 candidate SHA-256:** `f3b5669a33d28923a72bf5c801b177e81131969ce0c7236791351a0e4417b67d`
+**C1 input identity:** evidence `5556dbf59881489d3f94e32f0f0e01879fcdfdfdb11ac1a7f579ac833a9f67cd`; synthesis `1105d490acf8e7254af3d2168e1b81606026ac684aa36ec89b07199bf86c5d4d` (unchanged).
+**Validation:** full Commentary v1.2 validator passed; candidate remains `READY_FOR_HUMAN_REVIEW`, not approved.
+
+### Replacement Commentary
+
+#### The battlefield setting
+
+The confrontation opens with a carefully placed landscape: the Philistines are encamped between Socoh and Azekah, while Israel is in the Valley of Elah. The two armies occupy opposing slopes with a valley between them, establishing the physical space from which Goliath comes forward to issue his challenge.
+
+#### Why the weapons are described
+
+The chapter lingers over Goliath's bronze armor, bronze leg protection and javelin, and iron spearhead; later, David takes Goliath's sword. This inventory makes the materials, weight, and eventual capture of the champion's equipment salient features of the narrative rather than incidental battle detail.
+
+#### Within First Samuel
+
+This chapter belongs within a larger movement in First Samuel: the book moves from Eli's failing priestly house through Samuel's leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. David's appearance here is therefore part of the book's developing account of David's rise.
+
+The David and Goliath account is preserved in substantially shorter ancient Greek and longer Masoretic forms. How those forms are literarily related remains disputed, so this information should not be used to settle the meaning of particular details without further argument.

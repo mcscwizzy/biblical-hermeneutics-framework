@@ -66,8 +66,8 @@ def test_c2_candidate_artifacts_are_one_to_one_with_c1_and_match_locked_inputs()
     ruth = next(row for row in rows if row["reference"] == "Ruth 1")
     assert ruth["review_state"] == "READY_FOR_HUMAN_REVIEW"
     superseded = ruth["superseded_attempts"]
-    assert len(superseded) == 1
-    prior = superseded[0]
+    assert len(superseded) == 2
+    prior = next(row for row in superseded if row["review_state"] == "INVALID_ARTIFACT")
     archived = ROOT / prior["archived_candidate_artifact_path"]
     assert archived.is_file() and _sha256(archived) == prior["candidate_artifact_sha256"]
     assert prior["review_state"] == "INVALID_ARTIFACT"
@@ -105,7 +105,7 @@ def test_c2_published_v12_release_tree_matches_pre_render_snapshot():
     assert len(current) == repair_snapshot["file_count"]
 
 
-def test_ruth_repair_preserves_c1_inputs_and_eleven_candidate_artifacts():
+def test_c2s_stabilization_preserves_c1_inputs_and_eight_untouched_candidate_artifacts():
     impact = _json(IMPACT_PATH)
     c1 = {row["reference"]: row for row in impact["chapters"]}
     manifest = _json(C2_ROOT / "candidate-manifest.json")
@@ -123,9 +123,31 @@ def test_ruth_repair_preserves_c1_inputs_and_eleven_candidate_artifacts():
     assert ruth["renderer_input_evidence_hash"] == ruth_input["evidence_hash"]
     assert ruth["renderer_input_synthesis_hash"] == ruth_input["synthesis_hash"]
 
-    rows_before = {row["reference"]: row["sha256"] for row in before["untouched_candidate_artifacts"]}
-    rows_after = {row["reference"]: row["candidate_artifact_sha256"] for row in manifest["candidates"] if row["reference"] != "Ruth 1"}
+    stabilized = {"1 Samuel 17", "Joshua 6", "Numbers 18", "Ruth 1"}
+    rows_before = {
+        row["reference"]: row["sha256"]
+        for row in before["untouched_candidate_artifacts"]
+        if row["reference"] not in stabilized
+    }
+    rows_after = {
+        row["reference"]: row["candidate_artifact_sha256"]
+        for row in manifest["candidates"]
+        if row["reference"] not in stabilized
+    }
     assert rows_before == rows_after
+
+    for reference in stabilized:
+        row = next(row for row in manifest["candidates"] if row["reference"] == reference)
+        assert row["review_state"] == "READY_FOR_HUMAN_REVIEW"
+        assert row["stabilization"]["stage"] == "C2S"
+        assert row["stabilization"]["evidence_hash"] == c1[reference]["new_identity"]["evidence_hash"]
+        assert row["stabilization"]["synthesis_hash"] == c1[reference]["new_identity"]["synthesis_hash"]
+        history = next(
+            attempt for attempt in row["superseded_attempts"]
+            if attempt["attempt"] == "C2S semantic stabilization"
+        )
+        archived = ROOT / history["archived_candidate_artifact_path"]
+        assert archived.is_file() and _sha256(archived) == history["candidate_artifact_sha256"]
     assert _json(C2_ROOT / "ruth-repair-001/render-result.json")["status"] == "validated"
     confidence_audit = _json(C2_ROOT / "ruth-repair-001/confidence-validation.json")
     assert confidence_audit["status"] == "PASS"

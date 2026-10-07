@@ -1,1 +1,14 @@
-{"authorization_scope":"COMMENTARY_CANDIDATE_CHAPTER_SET only (12 exact C1 references)","controls_excluded":["Psalms 76","Revelation 18","Acts 16"],"current_stage":"COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW","full_bible_generation_authorized":true,"pipeline_version":"commentary-v1.2-enrichment","required_effort":"high","required_model":"gpt-5.6-terra","required_renderer":"codex_cli_local"}
+{
+  "authorization_scope": "COMMENTARY_CANDIDATE_CHAPTER_SET only (12 exact C1 references)",
+  "controls_excluded": [
+    "Psalms 76",
+    "Revelation 18",
+    "Acts 16"
+  ],
+  "current_stage": "COMMENTARY_CANDIDATES_READY_FOR_HUMAN_REVIEW",
+  "full_bible_generation_authorized": true,
+  "pipeline_version": "commentary-v1.2-enrichment",
+  "required_effort": "high",
+  "required_model": "gpt-5.6-terra",
+  "required_renderer": "codex_cli_local"
+}

@@ -109,3 +109,33 @@ This diff collapses whitespace within each section and prose block before compar
 +- Ruth 1 opens the book’s larger movement: famine, bereavement, and Naomi’s description of herself as empty are followed by harvest, kinship redemption, birth, communal blessing, and genealogy. The arrival at the beginning of barley harvest is therefore the opening turn within that broader movement, not the story’s resolution.
 +- A later canonical discussion in Nehemiah 13 applies an exclusion concerning Ammonites and Moabites while addressing Tobiah’s access to temple space. Read alongside Ruth the Moabite and texts that welcome faithful foreigners, this material should not be turned into a universal ethnic ban; how these texts relate is a debated interpretive question.
 ```
+
+## C2S semantic stabilization
+
+C2S restores the published observation that YHWH gives food while Naomi and Ruth’s return unfolds through their decisions/actions, and restores the caution that the Judges setting and Davidic genealogy do not establish the anonymous book’s final composition date. Both are supported by current `syn_interpretive_questions_8b734a3cb8ee` and its existing evidence IDs, at low confidence/disputed. Geography, pledge, and wider-story blocks remain. The Nehemiah block remains but removes “texts that welcome faithful foreigners”: the cited Nehemiah note and synthesis mention that category without identifying those texts. It now compares Nehemiah specifically with Ruth’s retained Moabite identity and loyalty, which the current synthesis explicitly supports. No substantive published claim disappears.
+
+**Replacement artifact:** `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/ruth_001/commentary.json`
+**Replacement SHA-256:** `8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47`
+**Superseded C2 candidate SHA-256:** `1b55bf3ec49942bc13eaf3cc58e4583adeeaf7b3786cafcff2eaeba4e353339e`
+**C1 input identity:** evidence `1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba`; synthesis `315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969` (unchanged).
+**Validation:** full Commentary v1.2 validator passed; candidate remains `READY_FOR_HUMAN_REVIEW`, not approved.
+
+### Replacement Commentary
+
+#### Places and movement
+
+The chapter begins in Bethlehem in Judah, with Judah named as the setting. Famine sends Elimelech’s family from Bethlehem to Moab, and the chapter closes with Naomi and Ruth returning to Bethlehem. These place names frame the chapter’s movement from departure to return without supplying an itinerary between the two places.
+
+#### Ruth’s pledge
+
+Ruth’s response to Naomi is more than an agreement to travel together. She pledges to go and live where Naomi does, to identify with Naomi’s people and God, and to remain with Naomi until death. The scene therefore presents Ruth’s decision as a comprehensive, enduring commitment after Orpah has returned home.
+
+#### A debated question
+
+The narrative says that the LORD gave food to his people, while Naomi and Ruth’s return also unfolds through their own decisions and actions. Ruth continues to be identified as a Moabite even as she pledges herself to Naomi, Naomi’s people, and Naomi’s God. Some readers connect this to later debates about intermarriage, but the proposal that the book directly answers a particular later policy remains debated. Likewise, the setting in the days of the judges and the genealogy leading to David do not establish when the anonymous book reached its final form.
+
+#### The wider story
+
+Ruth 1 opens the book’s larger movement: famine, bereavement, and Naomi’s description of herself as empty are followed by harvest, kinship redemption, birth, communal blessing, and genealogy. The arrival at the beginning of barley harvest is therefore the opening turn within that broader movement, not the story’s resolution.
+
+A later discussion in Nehemiah applies an exclusion concerning Ammonites and Moabites in a particular temple-access setting. Read alongside Ruth, which retains Ruth’s Moabite identity while presenting her loyalty to Naomi, Naomi’s people, and Naomi’s God, this cautions against treating the episode as support for a universal ethnic ban; how these texts relate remains disputed.

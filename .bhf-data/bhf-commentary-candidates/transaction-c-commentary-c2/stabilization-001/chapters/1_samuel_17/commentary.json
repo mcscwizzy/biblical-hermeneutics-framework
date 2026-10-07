@@ -1,0 +1,108 @@
+{
+  "reference": "1 Samuel 17",
+  "book": "1 Samuel",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "archaeology_geography",
+      "title": "The battlefield setting",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The confrontation opens with a carefully placed landscape: the Philistines are encamped between Socoh and Azekah, while Israel is in the Valley of Elah. The two armies occupy opposing slopes with a valley between them, establishing the physical space from which Goliath comes forward to issue his challenge.",
+          "verse_refs": [
+            "1 Samuel 17:1",
+            "1 Samuel 17:2-3"
+          ],
+          "evidence_ids": [
+            "source-lock-1samuel-17-elah-opposing-slopes",
+            "source-lock-1samuel-17-socoh-azekah-encampment",
+            "azekah-1samuel-17-socoh-azekah-encampment-identity",
+            "socoh-1-1samuel-17-socoh-azekah-encampment-identity"
+          ],
+          "synthesis_ids": [
+            "syn_archaeology_geography_08df2561b055",
+            "syn_archaeology_geography_285f3fb6c465",
+            "syn_archaeology_geography_82755223e429"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "why_it_matters",
+      "title": "Why the weapons are described",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter lingers over Goliath's bronze armor, bronze leg protection and javelin, and iron spearhead; later, David takes Goliath's sword. This inventory makes the materials, weight, and eventual capture of the champion's equipment salient features of the narrative rather than incidental battle detail.",
+          "verse_refs": [
+            "1 Samuel 17:4-7",
+            "1 Samuel 17:38-54"
+          ],
+          "evidence_ids": [
+            "goliath-weapon-description",
+            "goliath-weapon-description:passage-relevance"
+          ],
+          "synthesis_ids": [
+            "syn_why_it_matters_9d6682ffb2a7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "surrounding_passages",
+      "title": "Within First Samuel",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "This chapter belongs within a larger movement in First Samuel: the book moves from Eli's failing priestly house through Samuel's leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. David's appearance here is therefore part of the book's developing account of David's rise.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_e76a460a9188"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "The David and Goliath account is preserved in substantially shorter ancient Greek and longer Masoretic forms. How those forms are literarily related remains disputed, so this information should not be used to settle the meaning of particular details without further argument.",
+          "verse_refs": [
+            "1 Samuel 17-18"
+          ],
+          "evidence_ids": [
+            "1-samuel:interpretive_note:1"
+          ],
+          "synthesis_ids": [
+            "syn_surrounding_passages_f587f79ef87b"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5556dbf59881489d3f94e32f0f0e01879fcdfdfdb11ac1a7f579ac833a9f67cd",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.2",
+    "commentary_prompt_version": "1.8",
+    "model": "gpt-5.6-terra",
+    "generated_timestamp": null,
+    "synthesis_hash": "1105d490acf8e7254af3d2168e1b81606026ac684aa36ec89b07199bf86c5d4d",
+    "synthesis_schema_version": "1.1",
+    "synthesis_compiler_version": "1.1",
+    "renderer_label": "commentary-v1.2-codex-cli"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

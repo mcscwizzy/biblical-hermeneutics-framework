@@ -60,3 +60,23 @@ This diff collapses whitespace within each section and prose block before compar
 +## surrounding_passages | Wilderness-route maps
 +- Maps proposed for the wilderness journey described across Numbers 10–21 should mark uncertain site identifications as uncertain, rather than presenting one reconstructed itinerary as established.
 ```
+
+## C2S semantic stabilization
+
+C2S narrows the tithe sentence to: “In this passage, the tithe functions specifically as provision and inheritance for the Levites in connection with their service.” The claim remains bounded to Numbers 18 and preserves the inheritance/service connection without making a negative claim about tithe language elsewhere in Scripture. The published generic book-context sentence is replaced by the current wilderness-route uncertainty note and the requested inheritance/tithe explanation; the generic sentence is not chapter-specific and added no distinct interpretive claim. The wilderness-route note remains low/disputed with unchanged provenance.
+
+**Replacement artifact:** `.bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/numbers_18/commentary.json`
+**Replacement SHA-256:** `502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a`
+**Superseded C2 candidate SHA-256:** `4a2629a3e8b65a5fb99c3bbc972572e4e45a0341dcd6df46e9fdf4d8333c58c6`
+**C1 input identity:** evidence `785aafb367ed47fa7eb77a2266b51348c31451de23d2cf455c6c77901dd9c6bc`; synthesis `462866b275503b11655d321f4286a59d16d5637e50b0ad572e61f46f921f0253` (unchanged).
+**Validation:** full Commentary v1.2 validator passed; candidate remains `READY_FOR_HUMAN_REVIEW`, not approved.
+
+### Replacement Commentary
+
+#### Inheritance and the Levites' support
+
+Verses 20–24 distinguish Aaron from the Levites while linking both to the chapter’s provisions. Aaron is told he will have no land inheritance among Israel, and the Levites receive Israel’s tithe as their inheritance in return for their service at the tent of meeting. In this passage, the tithe functions specifically as provision and inheritance for the Levites in connection with their service.
+
+#### Wilderness-route maps
+
+Maps proposed for the wilderness journey described across Numbers 10–21 should mark uncertain site identifications as uncertain, rather than presenting one reconstructed itinerary as established.
