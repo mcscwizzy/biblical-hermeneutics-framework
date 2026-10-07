@@ -1,0 +1,158 @@
+{
+  "approval_boundary": "exact chapter reference and candidate artifact SHA-256, bound to evidence hash, synthesis hash, active source path, and validated state",
+  "approval_state": "EXPLICIT_HUMAN_APPROVAL",
+  "approvals": [
+    {
+      "book": "Genesis",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-13c4d7e346924c69/chapters/genesis_013/commentary.json",
+      "candidate_artifact_sha256": "c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4",
+      "chapter": 13,
+      "evidence_hash": "513efc8ac13f279874b658ffb3529b1fb78e0a5102c7f1bb650e38f93be21fc2",
+      "reference": "Genesis 13",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "c83250bfd35e5cfca438a18d707bfb57a1145e626fac61a4d8c998a9b1330c95",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Genesis",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-b7edc665c15bdc06/chapters/genesis_034/commentary.json",
+      "candidate_artifact_sha256": "811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd",
+      "chapter": 34,
+      "evidence_hash": "dd3fac5f67d75d70c3c4038fcc24d3470776e1692e9fe363e7db31441ddb1426",
+      "reference": "Genesis 34",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "dc91ea7b624f4c709028d8231c904ee1c9edffd2f21140d885dddb9e1b23ec0b",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Numbers",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/numbers_18/commentary.json",
+      "candidate_artifact_sha256": "502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a",
+      "chapter": 18,
+      "evidence_hash": "785aafb367ed47fa7eb77a2266b51348c31451de23d2cf455c6c77901dd9c6bc",
+      "reference": "Numbers 18",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "462866b275503b11655d321f4286a59d16d5637e50b0ad572e61f46f921f0253",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Joshua",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/joshua_6/commentary.json",
+      "candidate_artifact_sha256": "89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f",
+      "chapter": 6,
+      "evidence_hash": "3d8ee512e4ccd07b52a096ad3fde0995b43509fcf048b9a5cf6892c97289a789",
+      "reference": "Joshua 6",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "25a695fb8911720b3894a8a3385696c18ef46d4a7bf6e64e2d3cefc63d2b9a7c",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Judges",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0595ebb1c627f433/chapters/judges_020/commentary.json",
+      "candidate_artifact_sha256": "e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129",
+      "chapter": 20,
+      "evidence_hash": "fd5efa85a5497c7355681d78dd0bbc376abb4f4c380ae352358bc0860473edd9",
+      "reference": "Judges 20",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "331c586bed622fcec67d365d862566d23438f297dcac642134cc05d1b8f82f8e",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Ruth",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/ruth_001/commentary.json",
+      "candidate_artifact_sha256": "8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47",
+      "chapter": 1,
+      "evidence_hash": "1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba",
+      "reference": "Ruth 1",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969",
+      "validation_state": "validated"
+    },
+    {
+      "book": "1 Samuel",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/stabilization-001/chapters/1_samuel_17/commentary.json",
+      "candidate_artifact_sha256": "50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d",
+      "chapter": 17,
+      "evidence_hash": "5556dbf59881489d3f94e32f0f0e01879fcdfdfdb11ac1a7f579ac833a9f67cd",
+      "reference": "1 Samuel 17",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "1105d490acf8e7254af3d2168e1b81606026ac684aa36ec89b07199bf86c5d4d",
+      "validation_state": "validated"
+    },
+    {
+      "book": "2 Kings",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0e53eca15a36aa3a/chapters/2_kings_005/commentary.json",
+      "candidate_artifact_sha256": "480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6",
+      "chapter": 5,
+      "evidence_hash": "3809454fdb77b0baf035e62d82d15102942d170a17b5025163c308d3dd38e76c",
+      "reference": "2 Kings 5",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "6314975c710fce70018f69f07ae6c4e28a6c7097ca092e74669eba4e0b1666fc",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Isaiah",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9e3cec1b8c2f60be/chapters/isaiah_036/commentary.json",
+      "candidate_artifact_sha256": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
+      "chapter": 36,
+      "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+      "reference": "Isaiah 36",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Matthew",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0c56c7d053fadbec/chapters/matthew_002/commentary.json",
+      "candidate_artifact_sha256": "a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf",
+      "chapter": 2,
+      "evidence_hash": "c48913bd185047f1a80f086817bf59cf494bb37a6747310f3722b89bfec1b94e",
+      "reference": "Matthew 2",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "4fb286f565a7eddbd15488efb4ae30e793ff6fee6375638ac5c30e34e3dbb0c6",
+      "validation_state": "validated"
+    },
+    {
+      "book": "John",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-7c306bebfc473aa6/chapters/john_004/commentary.json",
+      "candidate_artifact_sha256": "bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10",
+      "chapter": 4,
+      "evidence_hash": "c838a5c9af50544141adfefc264077d001db9017d6f4ad25040f26ad80e2424b",
+      "reference": "John 4",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "acfe73951b7800c01c5f838061e6b2a3964267a38a6930b46518bfc42b9542ca",
+      "validation_state": "validated"
+    },
+    {
+      "book": "Acts",
+      "candidate_artifact_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9f02a6ae0a47569b/chapters/acts_027/commentary.json",
+      "candidate_artifact_sha256": "ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8",
+      "chapter": 27,
+      "evidence_hash": "ff14fba83fb2c7718d454252c70d64649e0901dabee5d2dd4ca12f860a601f78",
+      "reference": "Acts 27",
+      "review_state": "READY_FOR_HUMAN_REVIEW",
+      "synthesis_hash": "e763b6c025da056653022115b1799b21ad51d82e348a491936df211bede85a2a",
+      "validation_state": "validated"
+    }
+  ],
+  "approved_artifact_hashes": {
+    "1 Samuel 17": "50070415702264ae95cbfdbf1a334322bebadd6798f1c6ef1610e8c1e9bafa2d",
+    "2 Kings 5": "480c7585e9836ded362662004d2818ed8f81f05affb5e9568d367a572b08c3c6",
+    "Acts 27": "ac625b17687b3c0158f04a5d7678394f07b2c3877ee243b6f0342a0e043ef8d8",
+    "Genesis 13": "c389b19f4781f3000242d437c61c0d36ffefc48c596e20f00f7935bafe97c8d4",
+    "Genesis 34": "811c11c0421822df129b5c693d8c54047dc2a0c510b818eb3731c50385c760cd",
+    "Isaiah 36": "c6b3461fea00d331c7f839ff8310f3081f18298341dad0762a4f9a04acfbfc41",
+    "John 4": "bac11949ded437702a0e19933a2cb692718c03cadd16b61b68c5ca8581fbed10",
+    "Joshua 6": "89ada8ecbf6b942405d93d55cd460653cb1934ea972fb91fd9d67d9bf779b41f",
+    "Judges 20": "e10386a31b8fc9311fd992953f0958353ebee261530b97f960e7c32a00b31129",
+    "Matthew 2": "a4f3f0f115de23a5f94ce99e91a91e7941ff7ffcef588f80c37120d19d745ebf",
+    "Numbers 18": "502c079673d07725a126502a869ccdf28a8fefd054110f5495deb2e29753206a",
+    "Ruth 1": "8e3ceec1c3095b48b33fbb27f4948bf569d8e3dfc788423941e7638474114b47"
+  },
+  "approved_at": "2026-10-07T20:08:51Z",
+  "approved_by": "human operator via explicit user instruction",
+  "artifact_version": "transaction-c3-human-approval-manifest-v1",
+  "candidate_manifest_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/candidate-manifest.json",
+  "candidate_manifest_sha256": "8c99c500a3d576b8e1249b3363b4d3c589ab7d7f0d0a04e2015e2c618150424b",
+  "transaction": "C3"
+}

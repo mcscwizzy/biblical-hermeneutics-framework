@@ -142,6 +142,15 @@ def ensure_study_database_ready(path: str | Path = DEFAULT_DB_PATH) -> Path:
     return database_path
 
 
+def require_current_study_database(path: str | Path = DEFAULT_DB_PATH) -> Path:
+    """Require an already initialized study database without changing it."""
+
+    database_path = Path(path).expanduser().resolve(strict=False)
+    if not _study_database_schema_is_current(database_path):
+        raise StudyDataError("current study database required for read-only access")
+    return database_path
+
+
 def _database_file_signature(path: Path) -> tuple[int, int] | None:
     try:
         stat = path.stat()

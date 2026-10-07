@@ -1210,6 +1210,71 @@ def test_selective_recompile_uses_current_v12_evidence_and_synthesis_contract() 
     assert "commentary" not in row
 
 
+def test_selective_recompile_default_path_does_not_write_published_commentary() -> None:
+    import hashlib
+
+    from framework.commentary.v12_corpus import V12_RELEASE_ROOT
+
+    release_root = Path(V12_RELEASE_ROOT)
+    release_path = release_root / "ruth_001.json"
+    before = hashlib.sha256(release_path.read_bytes()).hexdigest()
+
+    result = selective_recompile(["Ruth 1"])
+
+    after = hashlib.sha256(release_path.read_bytes()).hexdigest()
+    assert result[0]["reference"] == "Ruth 1"
+    assert after == before
+
+
+def test_selective_recompile_map_input_does_not_prepare_database_schema(monkeypatch, tmp_path: Path) -> None:
+    from bhf_agent.chapter_commentary import evidence_bundling
+
+    calls: list[dict[str, object]] = []
+
+    def read_maps(book, chapter, **kwargs):
+        calls.append(kwargs)
+        return {"places": [], "routes": []}
+
+    monkeypatch.setattr(evidence_bundling, "list_passage_map_summaries", read_maps)
+
+    assert evidence_bundling._retrieve_geography("Ruth", 1, tmp_path / "study.sqlite") == {
+        "places": [],
+        "routes": [],
+    }
+    assert calls == [{
+        "start_verse": 1,
+        "end_verse": 9999,
+        "path": tmp_path / "study.sqlite",
+        "limit": 20,
+        "prepare_schema": False,
+    }]
+
+
+def test_selective_recompile_accepts_an_injected_current_v12_preparer() -> None:
+    from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
+    from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
+    from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
+
+    bundle = get_chapter_evidence_bundle(
+        "Genesis", 1, evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION
+    )
+    assert bundle is not None
+    synthesis = compile_chapter_synthesis(bundle, book="Genesis", chapter=1)
+    calls: list[tuple[str, int]] = []
+
+    def prepare(book: str, chapter: int):
+        calls.append((book, chapter))
+        return SimpleNamespace(bundle=bundle, synthesis=synthesis)
+
+    result = selective_recompile(["Genesis 1"], chapter_preparer=prepare)
+
+    assert calls == [("Genesis", 1)]
+    assert result[0]["evidence_hash"] == bundle.evidence_hash
+    assert result[0]["synthesis_hash"] == synthesis.synthesis_hash
+    assert result[0]["evidence_count"] == len(bundle.evidence_items)
+    assert result[0]["evidence_ids"] == sorted(item.id for item in bundle.evidence_items)
+
+
 def test_selective_recompile_revalidates_prepared_v12_synthesis() -> None:
     from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
     from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis

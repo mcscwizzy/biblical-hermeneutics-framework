@@ -1,0 +1,120 @@
+{
+  "artifact_version": "transaction-c2-execution-notes-v1",
+  "diagnostic_render": {
+    "raw_response_sha256": "2b8f5dbebb864c3c78eb7d9d2692bfd4f6e601a2410548b21ec317a7b985babc",
+    "reason": "Validator reported missing confidence/interpretation fields and confidence exceeding evidence/synthesis. Formal candidate run produced a separately persisted validated Genesis 13 artifact.",
+    "reference": "Genesis 13",
+    "status": "INVALID_ARTIFACT",
+    "type": "single_chapter_renderer_diagnostic"
+  },
+  "escalated_transport_resolution": "Used the same repository CodexCliV12ChapterPipeline and existing model/effort with local app-server state access; no provider/model substitution.",
+  "formal_render_run": {
+    "count": 12,
+    "finished_at": "2026-10-07T00:34:38.260175+00:00",
+    "results": [
+      {
+        "completed_at": "2026-10-07T00:29:22.674100+00:00",
+        "reference": "Genesis 13",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-13c4d7e346924c69/chapters/genesis_013/result.json",
+        "started_at": "2026-10-07T00:28:33.766903+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:29:50.503074+00:00",
+        "reference": "Genesis 34",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-b7edc665c15bdc06/chapters/genesis_034/result.json",
+        "started_at": "2026-10-07T00:29:22.674937+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:30:12.491571+00:00",
+        "reference": "Numbers 18",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-dae7a68dd8db0c99/chapters/numbers_018/result.json",
+        "started_at": "2026-10-07T00:29:50.504625+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:30:44.609487+00:00",
+        "reference": "Joshua 6",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-26540bca220b999c/chapters/joshua_006/result.json",
+        "started_at": "2026-10-07T00:30:12.492999+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:31:07.289032+00:00",
+        "reference": "Judges 20",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0595ebb1c627f433/chapters/judges_020/result.json",
+        "started_at": "2026-10-07T00:30:44.611578+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:31:40.795392+00:00",
+        "reference": "Ruth 1",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9ae3229dd2fdd5bd/chapters/ruth_001/result.json",
+        "started_at": "2026-10-07T00:31:07.290967+00:00",
+        "status": "needs_review"
+      },
+      {
+        "completed_at": "2026-10-07T00:32:13.435343+00:00",
+        "reference": "1 Samuel 17",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-48bc7a4b71863518/chapters/1_samuel_017/result.json",
+        "started_at": "2026-10-07T00:31:40.797856+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:32:35.279370+00:00",
+        "reference": "2 Kings 5",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0e53eca15a36aa3a/chapters/2_kings_005/result.json",
+        "started_at": "2026-10-07T00:32:13.437655+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:32:49.664930+00:00",
+        "reference": "Isaiah 36",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9e3cec1b8c2f60be/chapters/isaiah_036/result.json",
+        "started_at": "2026-10-07T00:32:35.282170+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:33:29.434030+00:00",
+        "reference": "Matthew 2",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-0c56c7d053fadbec/chapters/matthew_002/result.json",
+        "started_at": "2026-10-07T00:32:49.668087+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:33:57.199108+00:00",
+        "reference": "John 4",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-7c306bebfc473aa6/chapters/john_004/result.json",
+        "started_at": "2026-10-07T00:33:29.437657+00:00",
+        "status": "validated"
+      },
+      {
+        "completed_at": "2026-10-07T00:34:38.256284+00:00",
+        "reference": "Acts 27",
+        "result_path": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/model-render-001/corpus-runner/runs/batch-9f02a6ae0a47569b/chapters/acts_027/result.json",
+        "started_at": "2026-10-07T00:33:57.202647+00:00",
+        "status": "validated"
+      }
+    ],
+    "started_at": "2026-10-07T00:28:33.766444+00:00"
+  },
+  "initial_failure_reason": "Codex CLI exited before model responses because app-server initialization could not write local profile state under the sandbox.",
+  "initial_sandbox_model_response_count": 0,
+  "initial_sandbox_transport_failure_references": [
+    "Genesis 13",
+    "Genesis 34",
+    "Numbers 18",
+    "Joshua 6",
+    "Judges 20",
+    "Ruth 1",
+    "1 Samuel 17",
+    "2 Kings 5",
+    "Isaiah 36",
+    "Matthew 2",
+    "John 4",
+    "Acts 27"
+  ],
+  "initial_sandbox_transport_failures": 12,
+  "transaction_state": "COMMENTARY_CANDIDATES_PARTIAL_AWAITING_REVIEW"
+}

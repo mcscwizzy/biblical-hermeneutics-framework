@@ -1,0 +1,58 @@
+{
+  "artifact_version": "transaction-c2r-ruth-confidence-validation-v1",
+  "reference": "Ruth 1",
+  "status": "PASS",
+  "full_v12_validation_errors": [],
+  "evidence_hash": "1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba",
+  "synthesis_hash": "315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969",
+  "prompt_version": "1.8",
+  "prompt_payload_sha256": "d1af8d8dfb422f0c3737f146dce55997cbd30d7df707c8ea04164f39514f9f0c",
+  "block_count": 5,
+  "blocks": [
+    {
+      "section_index": 0,
+      "block_index": 0,
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "evidence_ceiling": "high",
+      "synthesis_ceiling": "high",
+      "passed": true
+    },
+    {
+      "section_index": 1,
+      "block_index": 0,
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "evidence_ceiling": "high",
+      "synthesis_ceiling": "high",
+      "passed": true
+    },
+    {
+      "section_index": 2,
+      "block_index": 0,
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "evidence_ceiling": "high",
+      "synthesis_ceiling": "low",
+      "passed": true
+    },
+    {
+      "section_index": 3,
+      "block_index": 0,
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "evidence_ceiling": "high",
+      "synthesis_ceiling": "high",
+      "passed": true
+    },
+    {
+      "section_index": 3,
+      "block_index": 1,
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "evidence_ceiling": "high",
+      "synthesis_ceiling": "high",
+      "passed": true
+    }
+  ]
+}

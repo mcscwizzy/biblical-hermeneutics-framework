@@ -62,9 +62,21 @@ def density_bucket(unit_count: int) -> str:
     return "41+"
 
 
-def prepare_chapter(book: str, chapter: int, *, run_id: str = "planned", batch_id: str = "batch-001") -> PreparedChapter:
+def prepare_chapter(
+    book: str,
+    chapter: int,
+    *,
+    run_id: str = "planned",
+    batch_id: str = "batch-001",
+    study_db_path: str | Path | None = None,
+) -> PreparedChapter:
     reference = bible.verse_range_reference(book, chapter)
-    bundle = get_chapter_evidence_bundle(book, chapter, evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION)
+    bundle = get_chapter_evidence_bundle(
+        book,
+        chapter,
+        study_db_path=study_db_path,
+        evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+    )
     if bundle is None:
         raise ProductionError(f"evidence bundle unavailable for {reference}")
     synthesis = compile_chapter_synthesis(bundle, book=book, chapter=chapter)

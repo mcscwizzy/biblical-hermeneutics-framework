@@ -1,0 +1,15 @@
+{
+  "approval_manifest": ".bhf-data/bhf-commentary-candidates/transaction-c-commentary-c2/approval-manifest.json",
+  "authorization_scope": "COMMENTARY_CANDIDATE_CHAPTER_SET only (12 exact C1 references)",
+  "controls_excluded": [
+    "Psalms 76",
+    "Revelation 18",
+    "Acts 16"
+  ],
+  "current_stage": "COMMENTARY_SELECTIVE_PROMOTION_VERIFIED_READY_TO_MERGE",
+  "full_bible_generation_authorized": true,
+  "pipeline_version": "commentary-v1.2-enrichment",
+  "required_effort": "high",
+  "required_model": "gpt-5.6-terra",
+  "required_renderer": "codex_cli_local"
+}

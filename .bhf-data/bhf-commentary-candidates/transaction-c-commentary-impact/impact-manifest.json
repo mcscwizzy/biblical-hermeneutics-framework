@@ -1,0 +1,893 @@
+{
+  "artifact_version": "transaction-c1-commentary-impact-manifest-v1",
+  "candidate_chapter_set": [
+    "1 Samuel 17",
+    "2 Kings 5",
+    "Acts 27",
+    "Genesis 13",
+    "Genesis 34",
+    "Isaiah 36",
+    "John 4",
+    "Joshua 6",
+    "Judges 20",
+    "Matthew 2",
+    "Numbers 18",
+    "Ruth 1"
+  ],
+  "chapters": [
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "azekah-1samuel-17-socoh-azekah-encampment-identity",
+          "socoh-1-1samuel-17-socoh-azekah-encampment-identity",
+          "source-lock-1samuel-17-elah-opposing-slopes",
+          "source-lock-1samuel-17-socoh-azekah-encampment"
+        ],
+        "removed_evidence_ids": [
+          "jericho-1:ancient_near_east_context:0",
+          "jericho-1:historical_context:0"
+        ]
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 46,
+        "evidence_hash": "5556dbf59881489d3f94e32f0f0e01879fcdfdfdb11ac1a7f579ac833a9f67cd",
+        "evidence_ids": [
+          "1-samuel:interpretive_note:1",
+          "ai-1:ancient_near_east_context:0",
+          "ai-1:historical_context:0",
+          "ashdod:ancient_near_east_context:0",
+          "ashdod:historical_context:0",
+          "azekah-1samuel-17-socoh-azekah-encampment-identity",
+          "david:ancient_near_east_context:0",
+          "david:hebraic_worldview:0",
+          "david:historical_context:0",
+          "david:key_places:0",
+          "david:key_places:1",
+          "david:key_places:2",
+          "david:key_places:3",
+          "david:second_temple_context:0",
+          "ekron:ancient_near_east_context:0",
+          "ekron:historical_context:0",
+          "first-samuel-literary-movement",
+          "gath-1:ancient_near_east_context:0",
+          "gath-1:historical_context:0",
+          "gaza:ancient_near_east_context:0",
+          "gaza:historical_context:0",
+          "goliath-weapon-description",
+          "goliath-weapon-description:passage-relevance",
+          "heshbon:ancient_near_east_context:0",
+          "heshbon:historical_context:0",
+          "jabesh-gilead:ancient_near_east_context:0",
+          "jabesh-gilead:historical_context:0",
+          "lachish:ancient_near_east_context:0",
+          "lachish:historical_context:0",
+          "nineveh:ancient_near_east_context:0",
+          "nineveh:historical_context:0",
+          "ramoth-gilead:ancient_near_east_context:0",
+          "ramoth-gilead:historical_context:0",
+          "sidon:ancient_near_east_context:0",
+          "sidon:historical_context:0",
+          "socoh-1-1samuel-17-socoh-azekah-encampment-identity",
+          "source-lock-1samuel-17-elah-opposing-slopes",
+          "source-lock-1samuel-17-socoh-azekah-encampment",
+          "susa:ancient_near_east_context:0",
+          "susa:historical_context:0",
+          "tell-es-safi-metal-production",
+          "tell-es-safi-metal-production:passage-relevance",
+          "tyre:ancient_near_east_context:0",
+          "tyre:historical_context:0",
+          "who-was-david:ancient_near_east_context:0",
+          "who-was-david:historical_context:0"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "1105d490acf8e7254af3d2168e1b81606026ac684aa36ec89b07199bf86c5d4d",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 10
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "8c289caf94a73985981ef3dcc6406928169c3748f12780374fb0a92ad5655155",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "664eaf4262927f411efd0d25886c72ab05e0299b0cc78ce930e577194afa5c65",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (azekah-1samuel-17-socoh-azekah-encampment-identity, socoh-1-1samuel-17-socoh-azekah-encampment-identity, source-lock-1samuel-17-elah-opposing-slopes, source-lock-1samuel-17-socoh-azekah-encampment); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "1 Samuel 17",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "abana-2kings-5-damascus-river-comparison-identity",
+          "pharpar-2kings-5-damascus-river-comparison-identity",
+          "source-lock-2kings-5-damascus-river-comparison",
+          "source-lock-2kings-5-naaman-aram-israel-jordan-journey",
+          "source-lock-2kings-5-naaman-jordan-immersion"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 6,
+        "evidence_hash": "3809454fdb77b0baf035e62d82d15102942d170a17b5025163c308d3dd38e76c",
+        "evidence_ids": [
+          "abana-2kings-5-damascus-river-comparison-identity",
+          "pharpar-2kings-5-damascus-river-comparison-identity",
+          "second-kings-naaman-healed",
+          "source-lock-2kings-5-damascus-river-comparison",
+          "source-lock-2kings-5-naaman-aram-israel-jordan-journey",
+          "source-lock-2kings-5-naaman-jordan-immersion"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "6314975c710fce70018f69f07ae6c4e28a6c7097ca092e74669eba4e0b1666fc",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 5
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "a92d1c9d4c6c771bc882fe0af2e8518526c88e484a141d6c595f762d4907a952",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "13e54a21f10d4097fb1d360bb352e16f3725ca8e9afb10959b05d3a9811118de",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (abana-2kings-5-damascus-river-comparison-identity, pharpar-2kings-5-damascus-river-comparison-identity, source-lock-2kings-5-damascus-river-comparison, source-lock-2kings-5-naaman-aram-israel-jordan-journey, source-lock-2kings-5-naaman-jordan-immersion); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "2 Kings 5",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "cnidus-acts-27-sidon-crete-maritime-itinerary-identity",
+          "crete-acts-27-sidon-crete-maritime-itinerary-identity",
+          "cyprus-acts-27-sidon-crete-maritime-itinerary-identity",
+          "fair-havens-acts-27-sidon-crete-maritime-itinerary-identity",
+          "italy-acts-27-sidon-crete-maritime-itinerary-identity",
+          "lasea-acts-27-sidon-crete-maritime-itinerary-identity",
+          "myra-acts-27-sidon-crete-maritime-itinerary-identity",
+          "source-lock-acts-27-crete-wind-navigation-conditions",
+          "source-lock-acts-27-sidon-crete-maritime-itinerary"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 14,
+        "evidence_hash": "ff14fba83fb2c7718d454252c70d64649e0901dabee5d2dd4ca12f860a601f78",
+        "evidence_ids": [
+          "acts-historical-method",
+          "acts-text-witnesses",
+          "acts-voyage",
+          "acts-we-passages",
+          "acts-western-text",
+          "cnidus-acts-27-sidon-crete-maritime-itinerary-identity",
+          "crete-acts-27-sidon-crete-maritime-itinerary-identity",
+          "cyprus-acts-27-sidon-crete-maritime-itinerary-identity",
+          "fair-havens-acts-27-sidon-crete-maritime-itinerary-identity",
+          "italy-acts-27-sidon-crete-maritime-itinerary-identity",
+          "lasea-acts-27-sidon-crete-maritime-itinerary-identity",
+          "myra-acts-27-sidon-crete-maritime-itinerary-identity",
+          "source-lock-acts-27-crete-wind-navigation-conditions",
+          "source-lock-acts-27-sidon-crete-maritime-itinerary"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "e763b6c025da056653022115b1799b21ad51d82e348a491936df211bede85a2a",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 14
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "43fab16887c84e08998867bfda7d0a272b276965f4d46b079f2613d81fa556db",
+        "release_state": "PUBLISHED",
+        "source": "historical-75-release",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "62bade47f701b4a49eee5cc595723774ead0772970780af5a4b74bcec3075a9d",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (cnidus-acts-27-sidon-crete-maritime-itinerary-identity, crete-acts-27-sidon-crete-maritime-itinerary-identity, cyprus-acts-27-sidon-crete-maritime-itinerary-identity, fair-havens-acts-27-sidon-crete-maritime-itinerary-identity, italy-acts-27-sidon-crete-maritime-itinerary-identity, lasea-acts-27-sidon-crete-maritime-itinerary-identity, myra-acts-27-sidon-crete-maritime-itinerary-identity, source-lock-acts-27-crete-wind-navigation-conditions, source-lock-acts-27-sidon-crete-maritime-itinerary); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Acts 27",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+          "source-lock-genesis-13-jordan-valley-well-watered-description",
+          "source-lock-genesis-13-lot-eastward-separation"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 6,
+        "evidence_hash": "513efc8ac13f279874b658ffb3529b1fb78e0a5102c7f1bb650e38f93be21fc2",
+        "evidence_ids": [
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "source-lock-genesis-13-abram-negev-bethel-ai-movement",
+          "source-lock-genesis-13-jordan-valley-well-watered-description",
+          "source-lock-genesis-13-lot-eastward-separation"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "c83250bfd35e5cfca438a18d707bfb57a1145e626fac61a4d8c998a9b1330c95",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 5
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "4b16ee265db55e19aa832b598ce57e18fe3e847f3a2fd0c0955eba97084f12f6",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "d22dadff9ff153050af30dbeeb1021b84248c1d310ef4830f6f73f709f0fe710",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-genesis-13-abram-negev-bethel-ai-movement, source-lock-genesis-13-jordan-valley-well-watered-description, source-lock-genesis-13-lot-eastward-separation); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Genesis 13",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-genesis-34-city-gate-negotiation-setting",
+          "source-lock-genesis-34-local-population-description"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 5,
+        "evidence_hash": "dd3fac5f67d75d70c3c4038fcc24d3470776e1692e9fe363e7db31441ddb1426",
+        "evidence_ids": [
+          "genesis-literary-movement",
+          "genesis:interpretive_note:0",
+          "genesis:interpretive_note:3",
+          "source-lock-genesis-34-city-gate-negotiation-setting",
+          "source-lock-genesis-34-local-population-description"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "dc91ea7b624f4c709028d8231c904ee1c9edffd2f21140d885dddb9e1b23ec0b",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 5
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "32aa624e5ce08506ccfa20866f8f73c6cb968fe230eb3df9465545c21102a994",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "aa06e626eff7f4dfe1fe229af641f77da4625fe7f1e9a276de3b9cca6997db48",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-genesis-34-city-gate-negotiation-setting, source-lock-genesis-34-local-population-description); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Genesis 34",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-isaiah-36-assyrian-campaign-against-judah",
+          "source-lock-isaiah-36-lachish-jerusalem-assyrian-deployment",
+          "source-lock-isaiah-36-upper-pool-conduit-field-setting"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 28,
+        "evidence_hash": "a4628db116c607cc1520eca1cf86d67cfc00082bacd9f8bb9bebd289752c237f",
+        "evidence_ids": [
+          "assyrian-tribute-and-royal-representation:interpretive_note:2",
+          "isaiah-assyria-trust",
+          "isaiah-long-composition",
+          "isaiah-many-voices",
+          "isaiah-practical-outline",
+          "isaiah-qumran-witnesses",
+          "isaiah-superscription-prophet",
+          "lachish-city-gate:ancient_near_east_context:0",
+          "lachish-city-gate:historical_context:0",
+          "lachish-ostraca:ancient_near_east_context:0",
+          "lachish-ostraca:historical_context:0",
+          "lachish-relief-royal-siege-rhetoric",
+          "lachish-relief-royal-siege-rhetoric:passage-relevance",
+          "lachish-reliefs:ancient_near_east_context:0",
+          "lachish-reliefs:historical_context:0",
+          "lachish-royal-victory-display",
+          "lachish-royal-victory-display:passage-relevance",
+          "nimrud-reliefs:ancient_near_east_context:0",
+          "nimrud-reliefs:historical_context:0",
+          "sennacherib-hezekiah-tribute",
+          "sennacherib-hezekiah-tribute:passage-relevance",
+          "source-lock-isaiah-36-assyrian-campaign-against-judah",
+          "source-lock-isaiah-36-lachish-jerusalem-assyrian-deployment",
+          "source-lock-isaiah-36-upper-pool-conduit-field-setting",
+          "taylor-prism-annals",
+          "taylor-prism-annals:passage-relevance",
+          "taylor-prism:ancient_near_east_context:0",
+          "taylor-prism:historical_context:0"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "0ae4045de8f1fe601699b54e05484e1fa0d77a3cfae66ebaa47d29b494cf737c",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 12
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "d0a416ef62843e2a5bfd6b7afbc00b28e47e21663011b89e638f79bfa31faedb",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "13bfdd657d8894b1cffacbe5ced27c8d399b29266a306a31f1a8c28fdd4a3669",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-isaiah-36-assyrian-campaign-against-judah, source-lock-isaiah-36-lachish-jerusalem-assyrian-deployment, source-lock-isaiah-36-upper-pool-conduit-field-setting); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Isaiah 36",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-john-4-judea-samaria-galilee-journey",
+          "source-lock-john-4-sychar-well-near-jacob-field",
+          "sychar-john-4-sychar-well-near-jacob-field-identity"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 10,
+        "evidence_hash": "c838a5c9af50544141adfefc264077d001db9017d6f4ad25040f26ad80e2424b",
+        "evidence_ids": [
+          "john-4-22",
+          "john-ioudaioi",
+          "john-samaritan-woman",
+          "source-lock-john-4-judea-samaria-galilee-journey",
+          "source-lock-john-4-sychar-well-near-jacob-field",
+          "sychar-john-4-sychar-well-near-jacob-field-identity",
+          "theology-of-worship:ancient_near_east_context:0",
+          "theology-of-worship:historical_context:0",
+          "worship-theme:ancient_near_east_context:0",
+          "worship-theme:historical_context:0"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "acfe73951b7800c01c5f838061e6b2a3964267a38a6930b46518bfc42b9542ca",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 5
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "5754dce09b19398db16f631917a2604c5ce5596e6cde0fe1f3331e2baa7dba0f",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "5f8626783e689b48318feb3f3e6d90ce0631c6096bc652c6f8d257db3197c182",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-john-4-judea-samaria-galilee-journey, source-lock-john-4-sychar-well-near-jacob-field, sychar-john-4-sychar-well-near-jacob-field-identity); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "John 4",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-joshua-6-jericho-closed-city",
+          "source-lock-joshua-6-jericho-encirclement"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 9,
+        "evidence_hash": "3d8ee512e4ccd07b52a096ad3fde0995b43509fcf048b9a5cf6892c97289a789",
+        "evidence_ids": [
+          "joshua-literary-movement",
+          "joshua-rahab-rescue",
+          "joshua:interpretive_note:0",
+          "joshua:interpretive_note:2",
+          "joshua:interpretive_note:3",
+          "source-lock-joshua-6-jericho-closed-city",
+          "source-lock-joshua-6-jericho-encirclement",
+          "tell-es-safi-excavations:ancient_near_east_context:0",
+          "tell-es-safi-excavations:historical_context:0"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "25a695fb8911720b3894a8a3385696c18ef46d4a7bf6e64e2d3cefc63d2b9a7c",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 7
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "d10fd021c232ebdfedea2bcbf61b9a18e0aa1f5ec3d414e1b8258e7fef6e6895",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "23eb1892b86436e5d84228a379184ba253b6bbcdda3ff602c09cd731536edaec",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-joshua-6-jericho-closed-city, source-lock-joshua-6-jericho-encirclement); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Joshua 6",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-judges-20-mizpah-gibeah-campaign-locations"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 3,
+        "evidence_hash": "fd5efa85a5497c7355681d78dd0bbc376abb4f4c380ae352358bc0860473edd9",
+        "evidence_ids": [
+          "judges-literary-movement",
+          "judges:interpretive_note:4",
+          "source-lock-judges-20-mizpah-gibeah-campaign-locations"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "331c586bed622fcec67d365d862566d23438f297dcac642134cc05d1b8f82f8e",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 3
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "96f737fed1db2e5347af242223ccb9f6c2c423bfda2fd67960067f44ac67afc8",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "58284a66f1fc53aa3e59fe5bd5781da85390e693c5f3e962524d109bca86a392",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-judges-20-mizpah-gibeah-campaign-locations); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Judges 20",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "archelaus-matthew-2-archelaus-judea-administration-identity",
+          "source-lock-matthew-2-archelaus-judea-administration",
+          "source-lock-matthew-2-bethlehem-judea-territory",
+          "source-lock-matthew-2-egypt-return-itinerary",
+          "source-lock-matthew-2-nazareth-galilee-region"
+        ],
+        "removed_evidence_ids": [
+          "nazareth:ancient_near_east_context:0",
+          "nazareth:hebraic_worldview:0",
+          "nazareth:historical_context:0",
+          "nazareth:second_temple_context:0"
+        ]
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 34,
+        "evidence_hash": "c48913bd185047f1a80f086817bf59cf494bb37a6747310f3722b89bfec1b94e",
+        "evidence_ids": [
+          "archelaus-matthew-2-archelaus-judea-administration-identity",
+          "balaam:ancient_near_east_context:0",
+          "balaam:historical_context:0",
+          "birth-of-jesus:ancient_near_east_context:0",
+          "birth-of-jesus:historical_context:0",
+          "caiaphas:ancient_near_east_context:0",
+          "caiaphas:historical_context:0",
+          "cain:ancient_near_east_context:0",
+          "cain:historical_context:0",
+          "egypt:ancient_near_east_context:0",
+          "egypt:hebraic_worldview:0",
+          "egypt:historical_context:0",
+          "egypt:key_places:0",
+          "egypt:key_places:1",
+          "egypt:key_places:2",
+          "egypt:key_places:3",
+          "egypt:second_temple_context:0",
+          "herod-the-great:ancient_near_east_context:0",
+          "herod-the-great:historical_context:0",
+          "hosea:interpretive_note:18",
+          "jeremiah-reception-distinction",
+          "judas-iscariot:ancient_near_east_context:0",
+          "judas-iscariot:historical_context:0",
+          "matthew-herod-bethlehem",
+          "matthew-magi-star",
+          "matthew-roman-setting",
+          "matthew-scripture-use",
+          "micah-new-testament-reception",
+          "pontius-pilate:ancient_near_east_context:0",
+          "pontius-pilate:historical_context:0",
+          "source-lock-matthew-2-archelaus-judea-administration",
+          "source-lock-matthew-2-bethlehem-judea-territory",
+          "source-lock-matthew-2-egypt-return-itinerary",
+          "source-lock-matthew-2-nazareth-galilee-region"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "4fb286f565a7eddbd15488efb4ae30e793ff6fee6375638ac5c30e34e3dbb0c6",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 10
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "1aeee333a66ab737a49c10c24eb5d603ddc1e22f140d03c62886a4990bfe524f",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "3247a06fc2b87d11623896db0367659f322b23492ef5a73e87075272930f4f5b",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (archelaus-matthew-2-archelaus-judea-administration-identity, source-lock-matthew-2-archelaus-judea-administration, source-lock-matthew-2-bethlehem-judea-territory, source-lock-matthew-2-egypt-return-itinerary, source-lock-matthew-2-nazareth-galilee-region); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Matthew 2",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "source-lock-numbers-18-levites-no-territorial-inheritance",
+          "source-lock-numbers-18-levites-tithe-as-inheritance"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 7,
+        "evidence_hash": "785aafb367ed47fa7eb77a2266b51348c31451de23d2cf455c6c77901dd9c6bc",
+        "evidence_ids": [
+          "numbers:interpretive_note:2",
+          "priesthood:ancient_near_east_context:0",
+          "priesthood:hebraic_worldview:0",
+          "priesthood:historical_context:0",
+          "priesthood:second_temple_context:0",
+          "source-lock-numbers-18-levites-no-territorial-inheritance",
+          "source-lock-numbers-18-levites-tithe-as-inheritance"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "462866b275503b11655d321f4286a59d16d5637e50b0ad572e61f46f921f0253",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 3
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "94b518a68787e9ca707665e95a262b0169bfb611f3cd51d8654e799ad99d204d",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "81a4afab49a895a9957932a35496b7c574dc951ca032285e16f08c58c5007674",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (source-lock-numbers-18-levites-no-territorial-inheritance, source-lock-numbers-18-levites-tithe-as-inheritance); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Numbers 18",
+      "role": "target"
+    },
+    {
+      "candidate_required": true,
+      "classification": "EVIDENCE_AND_SYNTHESIS_CHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [
+          "judah-territory-ruth-1-bethlehem-judah-territory-identity",
+          "source-lock-ruth-1-bethlehem-judah-territory",
+          "source-lock-ruth-1-bethlehem-moab-migration"
+        ],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 17,
+        "evidence_hash": "1224b8fcf887845f926aa765da713e3301c1b5f26f2d9bb8fc9505dc5e0677ba",
+        "evidence_ids": [
+          "cornelius:ancient_near_east_context:0",
+          "cornelius:historical_context:0",
+          "judah-territory-ruth-1-bethlehem-judah-territory-identity",
+          "nehemiah:interpretive_note:7",
+          "rahab:ancient_near_east_context:0",
+          "rahab:historical_context:0",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-providence-through-action",
+          "ruth-the-moabite:ancient_near_east_context:0",
+          "ruth-the-moabite:historical_context:0",
+          "ruth:interpretive_note:0",
+          "ruth:interpretive_note:3",
+          "source-lock-ruth-1-bethlehem-judah-territory",
+          "source-lock-ruth-1-bethlehem-moab-migration",
+          "what-does-hesed-mean:ancient_near_east_context:0",
+          "what-does-hesed-mean:historical_context:0"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "315fb5e50f38e7f3720f3bbdd574360e7d02e6dc48964b1edd1deae1a9e29969",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 8
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "9b25f9ec169873ffbbcfe387f238bf2618195918a136c2c6eda37ca4c74c119c",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "ba93ac0b616347616f3e7d8c000cd05a31836a96429c0cd1268a194e351e72a7",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Selected evidence IDs from CKL objects changed by Transaction A entered the current bundle (judah-territory-ruth-1-bethlehem-judah-territory-identity, source-lock-ruth-1-bethlehem-judah-territory, source-lock-ruth-1-bethlehem-moab-migration); the published evidence hash and synthesis hash both differ. Rebuilding against pre-Transaction A CKL reproduces both published hashes.",
+      "reference": "Ruth 1",
+      "role": "target"
+    },
+    {
+      "candidate_required": false,
+      "classification": "UNCHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "DATA_GAP",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 0,
+        "evidence_hash": "a4b7138baefd5f742058b5334dab09befa853dc0702151bc57c6965282fa2e72",
+        "evidence_ids": [],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "ff565d20e5bac53a9991662ea3d49ff549898064ec5472a0c2d68be5cae133ba",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 0
+      },
+      "old_identity": {
+        "evidence_bundle_version": null,
+        "evidence_hash": "a4b7138baefd5f742058b5334dab09befa853dc0702151bc57c6965282fa2e72",
+        "release_state": "NOT_RENDERABLE_SOURCE_LIMITED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": null,
+        "synthesis_hash": "ff565d20e5bac53a9991662ea3d49ff549898064ec5472a0c2d68be5cae133ba",
+        "synthesis_schema_version": null
+      },
+      "reason": "Pre-Transaction A CKL reconstruction reproduces the published hashes; current evidence and synthesis identities match with no control drift.",
+      "reference": "Psalms 76",
+      "role": "control"
+    },
+    {
+      "candidate_required": false,
+      "classification": "UNCHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 13,
+        "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+        "evidence_ids": [
+          "babylon-1:ancient_near_east_context:0",
+          "babylon-1:hebraic_worldview:0",
+          "babylon-1:historical_context:0",
+          "babylon-1:key_places:0",
+          "babylon-1:key_places:1",
+          "babylon-1:key_places:2",
+          "babylon-1:key_places:3",
+          "babylon-1:key_places:4",
+          "babylon-1:second_temple_context:0",
+          "rev-babylon-rome",
+          "rev-economy",
+          "rev-imperial-context",
+          "rev-scriptural-reuse"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 3
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "4278ced9a5bd1c4cb2331fb0946aaddb44069c5ea51c9fb449a2ca20084ebbc0",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Pre-Transaction A CKL reconstruction reproduces the published hashes; current evidence and synthesis identities match with no control drift.",
+      "reference": "Revelation 18",
+      "role": "control"
+    },
+    {
+      "candidate_required": false,
+      "classification": "UNCHANGED",
+      "geography_evidence_delta": {
+        "added_evidence_ids": [],
+        "removed_evidence_ids": []
+      },
+      "new_identity": {
+        "evidence_availability": "AVAILABLE",
+        "evidence_bundle_version": "1.1",
+        "evidence_count": 89,
+        "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+        "evidence_ids": [
+          "acts-and-galatians-distinct-itinerary-witnesses",
+          "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance",
+          "acts-historical-method",
+          "acts-household-baptism",
+          "acts-household-baptism-consent-gap",
+          "acts-household-baptism-consent-gap:passage-relevance",
+          "acts-letter-chronology-control",
+          "acts-letter-chronology-control:passage-relevance",
+          "acts-lydia-hospitality-boundary",
+          "acts-lydia-hospitality-boundary:passage-relevance",
+          "acts-lydia-household-agency",
+          "acts-lydia-household-agency:passage-relevance",
+          "acts-neapolis-via-egnatia-route",
+          "acts-neapolis-via-egnatia-route:passage-relevance",
+          "acts-philippi-beating-custody-protest",
+          "acts-philippi-beating-custody-protest:passage-relevance",
+          "acts-philippi-beating-custody-rights",
+          "acts-philippi-beating-custody-rights:passage-relevance",
+          "acts-phrygian-galatian-regional-wording",
+          "acts-phrygian-galatian-regional-wording:passage-relevance",
+          "acts-prayer-place-lydia-later",
+          "acts-prayer-place-lydia-later:passage-relevance",
+          "acts-roman-citizenship",
+          "acts-text-witnesses",
+          "acts-we-passages",
+          "acts-western-text",
+          "acts-women",
+          "custody-and-traditional-prison",
+          "custody-and-traditional-prison:passage-relevance",
+          "derbe-name-and-site-identification-limits",
+          "derbe-name-and-site-identification-limits:passage-relevance",
+          "enslaved-diviner-profit-exploitation",
+          "enslaved-diviner-profit-exploitation:passage-relevance",
+          "four-merides-province-and-acts-16-12",
+          "four-merides-province-and-acts-16-12:passage-relevance",
+          "galatia-acts-sequence",
+          "galatia-provincial-ethnic-distinction",
+          "galatia-regional-wording",
+          "galatia:interpretive_note:0",
+          "galatia:interpretive_note:2",
+          "household:ancient_near_east_context:0",
+          "household:historical_context:0",
+          "lydia-trade-household-hospitality",
+          "lydia-trade-household-hospitality:passage-relevance",
+          "lydia:interpretive_note:0",
+          "lydia:interpretive_note:1",
+          "lydia:interpretive_note:2",
+          "lydia:interpretive_note:3",
+          "lydia:interpretive_note:4",
+          "lystra-roman-colony-and-local-diversity",
+          "lystra-roman-colony-and-local-diversity:passage-relevance",
+          "macedonia-call-and-aegean-entry",
+          "macedonia-call-and-aegean-entry:passage-relevance",
+          "macedonia-provincial-history",
+          "macedonia-via-egnatia",
+          "macedonia:interpretive_note:0",
+          "macedonia:interpretive_note:1",
+          "macedonian-city-diversity",
+          "macedonian-hearers-women-and-households",
+          "macedonian-hearers-women-and-households:passage-relevance",
+          "magistrates-lictors-and-citizenship",
+          "magistrates-lictors-and-citizenship:passage-relevance",
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:3",
+          "philippi-roman-colony-and-forum",
+          "philippi-roman-colony-and-forum:passage-relevance",
+          "philippi-thessalonica-beroea-civic-differences",
+          "philippi-thessalonica-beroea-civic-differences:passage-relevance",
+          "philippi:interpretive_note:0",
+          "philippi:interpretive_note:1",
+          "philippi:interpretive_note:2",
+          "philippi:interpretive_note:3",
+          "riverside-prayer-gathering",
+          "riverside-prayer-gathering:passage-relevance",
+          "role-categories-not-synonyms",
+          "roman-citizenship-portrayal",
+          "roman-macedonia-road-network-and-city-diversity:interpretive_note:1",
+          "roman-philippi-colonial-civic-and-household-life:interpretive_note:0",
+          "roman-philippi-colonial-civic-and-household-life:interpretive_note:1",
+          "roman-philippi-colonial-civic-and-household-life:interpretive_note:2",
+          "roman-philippi-colonial-civic-and-household-life:interpretive_note:3",
+          "roman-philippi-colonial-civic-and-household-life:interpretive_note:4",
+          "roman-procedural-effects",
+          "roman-province-and-ethnic-galatia",
+          "roman-province-and-ethnic-galatia:passage-relevance",
+          "timothy-derbe-lystra-household-and-origin-limits",
+          "timothy-derbe-lystra-household-and-origin-limits:passage-relevance",
+          "via-egnatia-east-macedonian-corridor",
+          "via-egnatia-east-macedonian-corridor:passage-relevance"
+        ],
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+        "synthesis_schema_version": "1.1",
+        "synthesis_unit_count": 50
+      },
+      "old_identity": {
+        "evidence_bundle_version": "1.1",
+        "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+        "release_state": "PUBLISHED",
+        "source": "corpus-runner",
+        "synthesis_compiler_version": "1.1",
+        "synthesis_hash": "3ceb2889b3680af307b37f7304390010506014be0c2477bd93b4f83576f93592",
+        "synthesis_schema_version": "1.1"
+      },
+      "reason": "Pre-Transaction A CKL reconstruction reproduces the published hashes; current evidence and synthesis identities match with no control drift.",
+      "reference": "Acts 16",
+      "role": "control"
+    }
+  ],
+  "ckl_identity": {
+    "byte_signature": "0bd8259ce0af2a8cd748d1c82cda732010954ee98173e72238950f8de2661c40",
+    "inventory_fingerprint": "78d983e0aed63f489e1126a054d087e86049b10915ffd3810ca0fd5eb617defd",
+    "objects": 679,
+    "people": 102,
+    "places": 90,
+    "warnings": 14
+  },
+  "control_chapter_set": [
+    "Psalms 76",
+    "Revelation 18",
+    "Acts 16"
+  ],
+  "control_drift": [],
+  "current_contract": {
+    "deterministic_repeat_verified": true,
+    "evidence_bundle_version": "1.1",
+    "pipeline": "commentary-v1.2-enrichment",
+    "study_db_path": ".bhf-data/study.sqlite",
+    "synthesis_compiler_version": "1.1",
+    "synthesis_schema_version": "1.1"
+  },
+  "published_commentary_baseline": {
+    "artifact_root": ".bhf-data/bhf-commentary-v1.2",
+    "per_chapter_identity_source": ".bhf-data/bhf-commentary-v1.2/.bhf-commentary-release.json::chapter_publication_index[].source_lineage",
+    "pre_transaction_a_ckl_reconstruction": "all 15 old evidence and synthesis hashes reproduced exactly",
+    "release": "commentary-v1.2",
+    "release_manifest_identity": "1c8972058420f00c2c9f05f52e7924566bf9fb3f56547d16c4c8b9f1f48b65d7",
+    "release_source_lineage_identity": "e8af58131e066def98a2"
+  },
+  "source_git_sha": "0772c19c178bd4478991f40d6181a927f4095378",
+  "target_chapter_set": [
+    "1 Samuel 17",
+    "2 Kings 5",
+    "Acts 27",
+    "Genesis 13",
+    "Genesis 34",
+    "Isaiah 36",
+    "John 4",
+    "Joshua 6",
+    "Judges 20",
+    "Matthew 2",
+    "Numbers 18",
+    "Ruth 1"
+  ],
+  "transaction_c_version": "C1"
+}
